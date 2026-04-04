@@ -692,7 +692,7 @@ body.is-filter-open .catalog-filter-panel {
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  max-width: 760px;
+  max-width: 820px;
   color: #8c7b63;
   font-size: 12px;
   line-height: 1.5;
@@ -724,7 +724,7 @@ body.is-filter-open .catalog-filter-panel {
 
 .article-title {
   margin-top: 14px;
-  max-width: 760px;
+  max-width: 860px;
   font-size: clamp(32px, 4.2vw, 44px);
   line-height: 1.18;
   letter-spacing: -0.025em;
@@ -733,14 +733,14 @@ body.is-filter-open .catalog-filter-panel {
 
 .article-summary {
   margin-top: 14px;
-  max-width: 700px;
+  max-width: 780px;
   color: #667085;
   font-size: 16px;
   line-height: 1.72;
 }
 
 .article-top-nav {
-  max-width: 760px;
+  max-width: 860px;
   margin-top: 18px;
 }
 
@@ -813,6 +813,110 @@ body.is-filter-open .catalog-filter-panel {
   border-radius: 999px;
   background: #d2b48c;
   transform: translateY(-50%);
+}
+
+.article-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.article-tools--bottom {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border: 1px solid rgba(182, 141, 64, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fffdfa 0%, #fff8ef 100%);
+  box-shadow: 0 12px 28px rgba(35, 26, 13, 0.05);
+}
+
+.article-tools__share {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 1 1 260px;
+}
+
+.article-tools__label {
+  color: #8d633c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-tools__share-list,
+.article-tools__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.article-tools__actions {
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
+
+.article-share-icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(182, 141, 64, 0.18);
+  color: #6a4421;
+  font: inherit;
+  transition: transform 0.22s ease, border-color 0.22s ease, color 0.22s ease, background 0.22s ease;
+  cursor: pointer;
+}
+
+.article-share-icon:hover {
+  transform: translateY(-1px);
+  border-color: rgba(182, 141, 64, 0.3);
+  color: var(--gold-dark);
+  background: #fff;
+}
+
+.article-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(182, 141, 64, 0.18);
+  background: rgba(255, 255, 255, 0.92);
+  color: #6a4421;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.22s ease, border-color 0.22s ease, color 0.22s ease, background 0.22s ease;
+}
+
+.article-tool-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(182, 141, 64, 0.3);
+  color: var(--gold-dark);
+  background: #fff;
+}
+
+.article-tool-btn.is-saved {
+  background: #f7efde;
+  border-color: rgba(182, 141, 64, 0.34);
+  color: #7d5718;
+}
+
+.article-tools--bottom + .article-next {
+  margin-top: 24px;
+  padding-top: 22px;
 }
 
 .article-top-nav__progress,
@@ -1665,6 +1769,44 @@ body.is-filter-open .catalog-filter-panel {
     display: none;
   }
 
+  .article-tools {
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .article-tools--bottom {
+    padding: 14px;
+    border-radius: 18px;
+    gap: 12px;
+  }
+
+  .article-tools__share,
+  .article-tools__actions {
+    width: 100%;
+  }
+
+  .article-tools__share {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .article-tools__actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .article-tool-btn {
+    justify-content: center;
+    min-height: 42px;
+    min-width: 112px;
+  }
+
+  .article-tools--bottom + .article-next {
+    margin-top: 20px;
+    padding-top: 18px;
+  }
+
   .article-meta-inline + .article-meta-inline {
     margin-left: 12px;
     padding-left: 12px;
@@ -1856,6 +1998,7 @@ body.is-filter-open .catalog-filter-panel {
 
   .article-next__grid {
     grid-template-columns: 1fr;
+    border-top: 0;
     border-bottom: 0;
   }
 

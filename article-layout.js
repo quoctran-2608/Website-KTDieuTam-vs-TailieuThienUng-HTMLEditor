@@ -122,6 +122,96 @@
     return data.hubHref || '#';
   }
 
+  function canonicalArticleUrl(data) {
+    if (data && data.canonicalUrl) return String(data.canonicalUrl);
+    try {
+      var current = new URL(location.href);
+      current.searchParams.delete('from');
+      current.hash = '';
+      if (/^https?:$/i.test(current.protocol)) {
+        return current.toString();
+      }
+    } catch (error) {
+      /* noop */
+    }
+    if (data && data.articleId) {
+      return 'https://ketoandieutam.com/' + String(data.articleId).replace(/^\//, '');
+    }
+    return '';
+  }
+
+  function savedArticlesStorageKey() {
+    return 'kdt:saved-articles:v1';
+  }
+
+  function readSavedArticles() {
+    try {
+      var raw = localStorage.getItem(savedArticlesStorageKey());
+      return raw ? JSON.parse(raw) : {};
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function writeSavedArticles(value) {
+    try {
+      localStorage.setItem(savedArticlesStorageKey(), JSON.stringify(value || {}));
+    } catch (error) {
+      /* noop */
+    }
+  }
+
+  function isSavedArticle(articleId) {
+    if (!articleId) return false;
+    var saved = readSavedArticles();
+    return Boolean(saved[articleId]);
+  }
+
+  function toggleSavedArticle(data) {
+    if (!data || !data.articleId) return false;
+    var saved = readSavedArticles();
+    if (saved[data.articleId]) {
+      delete saved[data.articleId];
+      writeSavedArticles(saved);
+      return false;
+    }
+    saved[data.articleId] = {
+      id: data.articleId,
+      title: data.currentTitle || '',
+      href: data.canonicalUrl || '',
+      section: data.hubLabel || '',
+      publishDate: data.publishDate || '',
+      savedAt: new Date().toISOString()
+    };
+    writeSavedArticles(saved);
+    return true;
+  }
+
+  function copyTextToClipboard(value) {
+    var text = String(value || '');
+    if (!text) return Promise.reject(new Error('empty'));
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      try {
+        var input = document.createElement('textarea');
+        input.value = text;
+        input.setAttribute('readonly', '');
+        input.style.position = 'fixed';
+        input.style.opacity = '0';
+        document.body.appendChild(input);
+        input.focus();
+        input.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(input);
+        ok ? resolve() : reject(new Error('copy failed'));
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
   function isMobileViewport() {
     return window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
   }
@@ -371,9 +461,11 @@
     if (!article || !view) return null;
 
     return {
+      articleId: article.id,
       sectionKey: article.section,
       hubHref: sitePath(article.sectionHref),
       hubLabel: article.sectionLabel,
+      canonicalUrl: article.canonical || '',
       topicLabel: article.topicLv2Label,
       currentTitle: article.title,
       authorName: meta.authorName || '',
@@ -488,6 +580,40 @@
           '<i class="fa-solid fa-arrow-left"></i>' +
           '<span>Về danh sách</span>' +
         '</a>' +
+      '</div>';
+  }
+
+  function renderArticleTools(data) {
+    var shareUrl = canonicalArticleUrl(data);
+    var shareText = data.currentTitle || 'Kế Toán Diệu Tâm';
+    var facebookHref = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
+    var xHref = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(shareText);
+    var linkedinHref = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
+
+    return '' +
+      '<div class="article-tools article-tools--bottom">' +
+        '<div class="article-tools__share">' +
+          '<span class="article-tools__label">Chia sẻ bài viết</span>' +
+          '<div class="article-tools__share-list">' +
+            '<a class="article-share-icon article-share-icon--facebook" href="' + escapeHtml(facebookHref) + '" target="_blank" rel="noopener" aria-label="Chia sẻ Facebook">' +
+              '<i class="fa-brands fa-facebook-f"></i>' +
+            '</a>' +
+            '<a class="article-share-icon article-share-icon--x" href="' + escapeHtml(xHref) + '" target="_blank" rel="noopener" aria-label="Chia sẻ X">' +
+              '<i class="fa-brands fa-x-twitter"></i>' +
+            '</a>' +
+            '<a class="article-share-icon article-share-icon--linkedin" href="' + escapeHtml(linkedinHref) + '" target="_blank" rel="noopener" aria-label="Chia sẻ LinkedIn">' +
+              '<i class="fa-brands fa-linkedin-in"></i>' +
+            '</a>' +
+            '<button id="articleCopyLink" class="article-share-icon article-share-icon--copy" type="button" data-default-label="Copy link" aria-label="Copy link">' +
+              '<i class="fa-solid fa-link"></i>' +
+            '</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="article-tools__actions">' +
+          '<button id="articleSaveToggle" class="article-tool-btn article-tool-btn--save" type="button" data-default-label="Lưu bài" data-saved-label="Đã lưu">' +
+            '<i class="fa-regular fa-bookmark"></i><span>Lưu bài</span>' +
+          '</button>' +
+        '</div>' +
       '</div>';
   }
 
@@ -619,6 +745,55 @@
     });
   }
 
+  function setButtonLabel(button, label, iconClass) {
+    if (!button) return;
+    var icon = button.querySelector('i');
+    var text = button.querySelector('span');
+    if (icon && iconClass) icon.className = iconClass;
+    if (text) text.textContent = label;
+    else if (label) button.setAttribute('aria-label', label);
+  }
+
+  function syncSaveButton(button, saved) {
+    if (!button) return;
+    button.classList.toggle('is-saved', saved);
+    button.setAttribute('aria-pressed', saved ? 'true' : 'false');
+    setButtonLabel(
+      button,
+      saved ? (button.dataset.savedLabel || 'Đã lưu') : (button.dataset.defaultLabel || 'Lưu bài'),
+      saved ? 'fa-solid fa-bookmark' : 'fa-regular fa-bookmark'
+    );
+  }
+
+  function attachArticleToolHandlers(data) {
+    var copyButton = document.getElementById('articleCopyLink');
+    var saveButton = document.getElementById('articleSaveToggle');
+    var shareUrl = canonicalArticleUrl(data);
+
+    if (copyButton) {
+      copyButton.addEventListener('click', function () {
+        copyTextToClipboard(shareUrl).then(function () {
+          setButtonLabel(copyButton, 'Đã chép', 'fa-solid fa-check');
+          window.setTimeout(function () {
+            setButtonLabel(copyButton, copyButton.dataset.defaultLabel || 'Copy link', 'fa-solid fa-link');
+          }, 1600);
+        }).catch(function () {
+          setButtonLabel(copyButton, 'Lỗi', 'fa-solid fa-triangle-exclamation');
+          window.setTimeout(function () {
+            setButtonLabel(copyButton, copyButton.dataset.defaultLabel || 'Copy link', 'fa-solid fa-link');
+          }, 1600);
+        });
+      });
+    }
+
+    if (saveButton) {
+      syncSaveButton(saveButton, isSavedArticle(data.articleId));
+      saveButton.addEventListener('click', function () {
+        syncSaveButton(saveButton, toggleSavedArticle(data));
+      });
+    }
+  }
+
   function ensureMobileNavHost() {
     var existing = document.getElementById('articleMobileNav');
     if (existing) return existing;
@@ -672,12 +847,13 @@
 
     sidebarHost.innerHTML = renderSidebar(data, returnHref);
     if (topNavHost) topNavHost.innerHTML = renderTopNav(data, returnHref);
-    if (bottomNavHost) bottomNavHost.innerHTML = renderBottomNav(data, returnHref);
+    if (bottomNavHost) bottomNavHost.innerHTML = renderArticleTools(data) + renderBottomNav(data, returnHref);
     if (recommendationsHost) recommendationsHost.innerHTML = renderRecommendations(data, returnHref);
     syncArticleAuxLayout(sidebarHost, recommendationsHost);
     if (mobileNavHost) mobileNavHost.innerHTML = renderMobileNav(data, returnHref);
 
     attachReturnHandlers(data, returnHref);
+    attachArticleToolHandlers(data);
   }
 
   document.addEventListener('DOMContentLoaded', initArticleLayout);
