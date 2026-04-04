@@ -63,13 +63,20 @@ Khi nhập bài vào `Ketoandieutam.com`, nên chạy sanitizer **ngay lúc buil
 
 4. **Phân loại bảng**
    - bảng **2 cột đơn giản**: giữ dạng table
-   - bảng **>= 3 cột**: sinh thêm bản mobile stack/card
+   - bảng **>= 3 cột dạng dữ liệu**: sinh thêm bản mobile stack/card
    - bảng header pháp lý kiểu “Quốc hội / Cộng hòa...” thường là 2 cột borderless, không cần card hóa
+   - bảng **biểu mẫu hẹp nhiều cột nhỏ** (`31px`, `36px`, `48px`, `60px`, `72px`...) phải xử lý theo hướng **preserve-source-width + fit-to-viewport**, không card hóa  
+     - rule hiện tại: `maxCols >= 8` và `smallCount >= 8`  
+     - hoặc `smallCount >= 6` nếu bảng có rất nhiều width inline (`>= 40`)
 
 5. **Wrap text trong ô**
-   - `white-space: normal`
-   - `word-break: break-word`
-   - `overflow-wrap: anywhere`
+   - mặc định:
+     - `white-space: normal`
+     - `word-break: break-word`
+     - `overflow-wrap: anywhere`
+   - ngoại lệ với bảng biểu mẫu hẹp:
+     - `word-break: normal`
+     - `overflow-wrap: normal`
 
 ### 5.2 Runtime safety net là lớp chặn cuối
 
@@ -83,7 +90,8 @@ Các lớp này đang làm:
 - normalize width cứng của HTML legacy
 - clamp margin-left trên mobile
 - ép bảng wrap cell
-- tự dựng **mobile card view** cho bảng phức tạp
+- tự dựng **mobile card view** cho bảng dữ liệu phức tạp
+- với bảng biểu mẫu hẹp: giữ width gốc của table, giữ width cột nhỏ và fit bảng vào viewport mobile
 
 ### 5.3 Quy trình rollout khuyến nghị
 

@@ -274,22 +274,51 @@ Ví dụ:
 
 #### Bảng 3 cột trở lên
 
+Không phải bảng nào nhiều cột cũng card hóa.
+
+##### A. Bảng dữ liệu / bảng giải thích
+
 => sinh thêm bản mobile stack/card
 
 Ví dụ hợp để card hóa:
 
 - bảng công thức
 - bảng thuế suất
-- bảng mẫu biểu nhiều cột
 - bảng danh sách chỉ tiêu
+- bảng so sánh / đối chiếu
+
+##### B. Bảng biểu mẫu hẹp, nhiều cột nhỏ
+
+Nhóm này phải **giữ gần bản gốc**, không card hóa.
+
+Dấu hiệu nhận diện:
+
+- có nhiều cột hẹp kiểu `31px`, `36px`, `48px`, `60px`, `72px`
+- `maxCols >= 8`
+- số lượng width nhỏ (`<= 72px`) đủ nhiều  
+  - rule hiện tại: `smallCount >= 8`  
+  - hoặc `smallCount >= 6` khi bảng có rất nhiều width inline (`>= 40`)
+- thường là bảng lương, bảng chấm công, bảng kê, mẫu lao động - thuế
+
+=> xử lý chuẩn:
+
+- giữ width gốc của `table`
+- **không xóa width inline của `td/th`**
+- `table-layout: auto`
+- với `td/th`:  
+  - `word-break: normal`  
+  - `overflow-wrap: normal`
+- mobile: **fit-to-viewport** (co bảng vừa khung), không ưu tiên scroll ngang và không card hóa
 
 ### D6. Ép wrap text trong cell
 
-Áp dụng:
+Chỉ áp dụng mặc định cho bảng dữ liệu / bảng card hóa:
 
 - `white-space: normal`
 - `word-break: break-word`
 - `overflow-wrap: anywhere`
+
+Không áp dụng máy móc cho bảng biểu mẫu hẹp như mục D5-B.
 
 ## Bước E — Build article/hub
 

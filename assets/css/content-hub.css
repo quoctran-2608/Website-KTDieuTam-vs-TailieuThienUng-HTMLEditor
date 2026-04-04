@@ -1395,6 +1395,18 @@ body.is-filter-open .catalog-filter-panel {
   border-radius: 18px;
 }
 
+.article-table-fit {
+  width: 100%;
+  margin: 18px 0;
+  overflow: hidden;
+}
+
+.article-prose table.article-table--source-width {
+  max-width: none;
+  table-layout: auto;
+  border-radius: 0;
+}
+
 .article-prose table.article-table--legacy,
 .article-prose table.article-table--legacy tbody,
 .article-prose table.article-table--legacy tr {
@@ -1460,6 +1472,17 @@ body.is-filter-open .catalog-filter-panel {
   white-space: normal !important;
   word-break: break-word;
   overflow-wrap: anywhere;
+}
+
+.article-prose table.article-table--source-width th,
+.article-prose table.article-table--source-width td {
+  box-sizing: content-box;
+  padding: 0 2px;
+  word-break: normal;
+  overflow-wrap: normal;
+  min-width: 0 !important;
+  line-height: 1.35;
+  background: transparent;
 }
 
 .article-prose blockquote {
