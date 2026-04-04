@@ -973,8 +973,9 @@ body.is-filter-open .catalog-filter-panel {
 }
 
 .article-side__section--news {
-  padding-bottom: 6px;
-  border-bottom: 1px solid rgba(182, 141, 64, 0.14);
+  padding: 10px 12px 8px;
+  border-radius: 16px;
+  background: rgba(239, 221, 187, 0.06);
 }
 
 .article-side__section--news .article-side__section-head h4 {
@@ -1859,10 +1860,11 @@ body.is-filter-open .catalog-filter-panel {
   }
 
   .catalog-card {
-    display: grid;
-    grid-template-columns: 112px minmax(0, 1fr);
+    display: flex;
+    flex-direction: column;
     align-items: stretch;
-    border-radius: 16px;
+    border-radius: 18px;
+    overflow: hidden;
   }
 
   .catalog-card:hover {
@@ -1871,9 +1873,10 @@ body.is-filter-open .catalog-filter-panel {
   }
 
   .catalog-card__media {
-    aspect-ratio: auto;
-    min-height: 100%;
-    border-right: 1px solid #efe7dc;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid #efe7dc;
   }
 
   .catalog-card__media img {
@@ -1882,8 +1885,8 @@ body.is-filter-open .catalog-filter-panel {
 
   .catalog-card__body {
     min-height: 0;
-    padding: 12px;
-    gap: 6px;
+    padding: 14px 14px 15px;
+    gap: 8px;
   }
 
   .catalog-card__badge {
@@ -1892,19 +1895,19 @@ body.is-filter-open .catalog-filter-panel {
   }
 
   .catalog-card__title {
-    font-size: 15px;
-    line-height: 1.45;
+    font-size: 16px;
+    line-height: 1.48;
   }
 
   .catalog-card__title a {
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
   }
 
   .catalog-card__excerpt {
     min-height: 0;
-    font-size: 12px;
-    line-height: 1.55;
-    -webkit-line-clamp: 2;
+    font-size: 13px;
+    line-height: 1.62;
+    -webkit-line-clamp: 3;
   }
 
   .catalog-card__meta {
@@ -1916,17 +1919,17 @@ body.is-filter-open .catalog-filter-panel {
   }
 
   .catalog-card__footer {
-    align-items: center;
-    gap: 6px;
+    align-items: flex-start;
+    gap: 8px;
   }
 
   .catalog-card__topic {
     min-width: 0;
-    font-size: 10px;
-    line-height: 1.35;
+    font-size: 11px;
+    line-height: 1.45;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     overflow: hidden;
   }
 
@@ -1936,6 +1939,7 @@ body.is-filter-open .catalog-filter-panel {
     gap: 4px;
     font-size: 12px;
     white-space: nowrap;
+    margin-top: 2px;
   }
 
   .article-bottom-nav__strip {

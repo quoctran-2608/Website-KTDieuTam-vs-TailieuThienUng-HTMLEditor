@@ -3,7 +3,7 @@
 
   function defaultFeatureImage() {
     var root = (document.body && document.body.dataset && document.body.dataset.root) || '';
-    return root + 'assets/images/site/feature-image.jpg';
+    return root + 'assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg';
   }
 
   function getHubData() {
