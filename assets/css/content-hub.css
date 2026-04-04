@@ -1662,7 +1662,7 @@ body.is-filter-open .catalog-filter-panel {
   }
 
   .article-top-nav__group .article-back-link {
-    align-self: flex-end;
+    display: none;
   }
 
   .article-meta-inline + .article-meta-inline {
