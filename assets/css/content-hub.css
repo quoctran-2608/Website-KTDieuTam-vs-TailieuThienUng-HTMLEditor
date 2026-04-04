@@ -1346,14 +1346,25 @@ body.is-filter-open .catalog-filter-panel {
 .article-prose h4 {
   margin-top: 1.75em;
   margin-bottom: 0.55em;
-  color: #1a1d24;
+  color: #28313e;
   line-height: 1.32;
   letter-spacing: -0.015em;
+  font-weight: 700;
 }
 
-.article-prose h2 { font-size: 28px; }
-.article-prose h3 { font-size: 22px; }
+.article-prose h2 { font-size: 25px; }
+.article-prose h3 { font-size: 21px; }
 .article-prose h4 { font-size: 18px; }
+
+.article-prose > h2:first-of-type {
+  margin-top: 0.9em;
+  margin-bottom: 0.7em;
+  color: #36404c;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.012em;
+}
 
 .article-prose p,
 .article-prose li {
@@ -2049,11 +2060,18 @@ body.is-filter-open .catalog-filter-panel {
   }
 
   .article-prose h2 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .article-prose h3 {
-    font-size: 20px;
+    font-size: 17px;
+  }
+
+  .article-prose > h2:first-of-type {
+    margin-top: 0.65em;
+    margin-bottom: 0.7em;
+    font-size: 18px;
+    line-height: 1.5;
   }
 
   .article-prose h4 {
