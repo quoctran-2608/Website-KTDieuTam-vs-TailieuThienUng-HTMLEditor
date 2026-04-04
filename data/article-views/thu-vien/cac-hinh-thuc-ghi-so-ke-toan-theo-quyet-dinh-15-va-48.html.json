@@ -1,25 +1,226 @@
 {
   "currentIndex": 30,
   "totalCount": 40,
-  "prev": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-linh-vuc-lao-dong.html",
-  "next": "thu-vien/cac-khoan-chi-phi-bi-khong-che-muc-duoc-tru-2026-moi-nhat.html",
+  "prev": {
+    "id": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-linh-vuc-lao-dong.html",
+    "section": "thu-vien",
+    "sectionLabel": "Thư viện",
+    "sectionHref": "thu-vien.html",
+    "href": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-linh-vuc-lao-dong.html",
+    "canonical": "https://ketoandieutam.com/thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-linh-vuc-lao-dong.html",
+    "title": "7 hành vi bị nghiêm cấm trong lĩnh vực lao động và Mức phạt vi phạm",
+    "excerpt": "Các hành vi bị nghiêm cấm trong lĩnh vực lao động hiện nay đang được quy định tại điều số 8 của Bộ luật lao động số 45/…",
+    "topicLabel": "Lao động - Tiền lương",
+    "tags": [],
+    "image": "assets/images/content/pic/Service/images/hanh-vi-bi-nghiem-cam.png",
+    "libraryKindLabel": "Hướng dẫn",
+    "publishDate": "2026-04-02",
+    "modifiedDate": null
+  },
+  "next": {
+    "id": "thu-vien/cac-khoan-chi-phi-bi-khong-che-muc-duoc-tru-2026-moi-nhat.html",
+    "section": "thu-vien",
+    "sectionLabel": "Thư viện",
+    "sectionHref": "thu-vien.html",
+    "href": "thu-vien/cac-khoan-chi-phi-bi-khong-che-muc-duoc-tru-2026-moi-nhat.html",
+    "canonical": "https://ketoandieutam.com/thu-vien/cac-khoan-chi-phi-bi-khong-che-muc-duoc-tru-2026-moi-nhat.html",
+    "title": "Các khoản chi phí bị khống chế mức được trừ 2026",
+    "excerpt": "Quy định về các khoản chi bị khống chế mức được tính vào làm chi phí được trừ khi tính thuế TNDN mới nhất năm 2026 theo…",
+    "topicLabel": "Nghiệp vụ theo phần hành",
+    "tags": [],
+    "image": "assets/images/content/pic/Service/images/cac-khoan-chi-phi-bi-khong-che.jpg",
+    "libraryKindLabel": "Hướng dẫn",
+    "publishDate": "2025-06-14",
+    "modifiedDate": null
+  },
   "newsLatest": [
-    "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-    "ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
-    "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html"
+    {
+      "id": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
+      "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
+      "topicLabel": "Khác",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "title": "Thông tư 152/2025/TT-BTC hướng dẫn kế toán cho hộ kinh doanh, cá nhân kinh doanh",
+      "excerpt": "Ngày 31/12/2025, Bộ Tài chính đã ban hành Thông tư 152/2025/TT-BTC hướng dẫn chế độ kế toán của hộ kinh doanh, cá nhân…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [
+        "Hộ kinh doanh"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thong-tu-152.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-12-31",
+      "modifiedDate": null
+    }
   ],
   "libraryLatest": [
-    "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
-    "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
-    "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html"
+    {
+      "id": "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "title": "Báo cáo tình hình sử dụng biên lai điện tử thu thuế, phí, lệ phí",
+      "excerpt": "Mẫu Báo cáo tình hình sử dụng biên lai điện tử thu thuế, phí, lệ phí mới nhất năm 2025 là Mẫu BC26/BLĐT Nghị định 70/20…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "title": "Đơn đề nghị hưởng trợ cấp thai sản Mẫu 11A-HSB",
+      "excerpt": "Đơn đề nghị hưởng trợ cấp thai sản Mẫu số 11A-HSB ban hành kèm Quyết định số 01/QĐ-BHXH ngày 03/01/2014 của BH…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "title": "Bảng kê giảm trừ gia cảnh cho người phụ thuộc Mẫu 2-1/BK-QTT-TNCN",
+      "excerpt": "Bảng kê giảm trừ gia cảnh cho người phụ thuộc Mẫu 2-1/BK-QTT-TNCN theo Thông tư số 92/2015/TT-BTC. Kèm theo tờ khai quy…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "TNCN"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    }
   ],
   "related": [
-    "thu-vien/cac-loai-so-nhat-ky-chung-tu-bang-ke-theo-thong-tu-99.html",
-    "thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
-    "thu-vien/cac-dieu-kien-ghi-nhan-tai-san-co-dinh-moi-nhat.html"
+    {
+      "id": "thu-vien/cac-loai-so-nhat-ky-chung-tu-bang-ke-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-loai-so-nhat-ky-chung-tu-bang-ke-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-loai-so-nhat-ky-chung-tu-bang-ke-theo-thong-tu-99.html",
+      "title": "Các loại sổ Nhật ký - Chứng từ, Bảng kê theo hình thức Nhật ký - Chứng từ",
+      "excerpt": "Các loại sổ Nhật ký - Chứng từ và Bảng kê theo hình thức Nhật ký - Chứng từ theo Thông tư số 99/2025/TT-BTC Trong hình…",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/cac-loai-so-bang-ke-theo-hinh-thuc-nhat-ky-chung-tu.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-10-27",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
+      "title": "Hướng dẫn chuyển số dư TK từ QĐ 15 sang Thông tư 200/2014/TT-BTC",
+      "excerpt": "Quyết định 15 đã được thay thế bằng Thông tư 200/2014/TT-BTC, trong đó có 1 số tài khoản đã được loại bỏ. Kế toán Diệu…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/cach%20chuyen%20so%20du%20tai%20khoan%20theo%20thong%20tu%20200.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cac-dieu-kien-ghi-nhan-tai-san-co-dinh-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-dieu-kien-ghi-nhan-tai-san-co-dinh-moi-nhat.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-dieu-kien-ghi-nhan-tai-san-co-dinh-moi-nhat.html",
+      "title": "Điều kiện ghi nhận Tài sản cố định hữu hình, vô hình",
+      "excerpt": "Điều kiện ghi nhận tài sản cố định hữu hình; Điều kiện ghi nhận TSCĐ vô hình; Các tiêu chuẩn ghi nhận Tài sản cố định t…",
+      "topicLabel": "Tài sản - Kho - CCDC",
+      "tags": [
+        "TSCĐ"
+      ],
+      "image": "assets/images/content/pic/Service/images/dieu-kien-ghi-nhan-tai-san-co-dinh.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    }
   ],
   "latestOther": [
-    "thu-vien/cac-loai-so-nhat-ky-chung-tu-bang-ke-theo-thong-tu-99.html",
-    "ban-tin/cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html"
+    {
+      "id": "thu-vien/cac-loai-so-nhat-ky-chung-tu-bang-ke-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-loai-so-nhat-ky-chung-tu-bang-ke-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-loai-so-nhat-ky-chung-tu-bang-ke-theo-thong-tu-99.html",
+      "title": "Các loại sổ Nhật ký - Chứng từ, Bảng kê theo hình thức Nhật ký - Chứng từ",
+      "excerpt": "Các loại sổ Nhật ký - Chứng từ và Bảng kê theo hình thức Nhật ký - Chứng từ theo Thông tư số 99/2025/TT-BTC Trong hình…",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/cac-loai-so-bang-ke-theo-hinh-thuc-nhat-ky-chung-tu.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-10-27",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html",
+      "title": "Công văn 2270/TCT-CS tiền thuê nhà của cá nhân là chi phí hợp lý",
+      "excerpt": "Ngày 18/06/2014 Bộ tài chính ban hành Công văn CV 2270/TCT-CS theo đó thì tiền thuê nhà của cá nhân dưới 100 tr/năm mà…",
+      "topicLabel": "Nghiệp vụ theo phần hành",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-06-18",
+      "modifiedDate": null
+    }
   ]
 }

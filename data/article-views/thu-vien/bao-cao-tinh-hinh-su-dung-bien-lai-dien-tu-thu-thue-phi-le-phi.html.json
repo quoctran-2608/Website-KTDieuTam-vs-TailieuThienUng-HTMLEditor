@@ -1,25 +1,231 @@
 {
   "currentIndex": 16,
   "totalCount": 40,
-  "prev": "thu-vien/bao-cao-thuc-tap-ke-toan-chi-phi-va-tinh-gia-thanh-san-pham.html",
-  "next": "thu-vien/bat-buoc-su-dung-hoa-don-dien-tu-khi-nao.html",
+  "prev": {
+    "id": "thu-vien/bao-cao-thuc-tap-ke-toan-chi-phi-va-tinh-gia-thanh-san-pham.html",
+    "section": "thu-vien",
+    "sectionLabel": "Thư viện",
+    "sectionHref": "thu-vien.html",
+    "href": "thu-vien/bao-cao-thuc-tap-ke-toan-chi-phi-va-tinh-gia-thanh-san-pham.html",
+    "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-chi-phi-va-tinh-gia-thanh-san-pham.html",
+    "title": "Mẫu báo cáo: Công tác kế toán tập hợp chi phí sản xuất và tính giá thành sản phẩm tại Công ty TNHH Thế Anh",
+    "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu báo cáo thực tập kế toán: Công tác kế toán tập hợp chi phí sản xuất và tính gi…",
+    "topicLabel": "Báo cáo thực tập",
+    "tags": [],
+    "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+    "libraryKindLabel": "Biểu mẫu",
+    "publishDate": "2026-04-02",
+    "modifiedDate": null
+  },
+  "next": {
+    "id": "thu-vien/bat-buoc-su-dung-hoa-don-dien-tu-khi-nao.html",
+    "section": "thu-vien",
+    "sectionLabel": "Thư viện",
+    "sectionHref": "thu-vien.html",
+    "href": "thu-vien/bat-buoc-su-dung-hoa-don-dien-tu-khi-nao.html",
+    "canonical": "https://ketoandieutam.com/thu-vien/bat-buoc-su-dung-hoa-don-dien-tu-khi-nao.html",
+    "title": "Thời hạn bắt buộc sử dụng hóa đơn điện tử",
+    "excerpt": "Khi nào bắt buộc sử dụng hóa đơn điện tử? Quy định về việc bắt buộc sử dụng hóa đơn điện tử; Lộ trình, đối tượng, thời…",
+    "topicLabel": "GTGT - Hóa đơn",
+    "tags": [
+      "GTGT",
+      "Hóa đơn điện tử"
+    ],
+    "image": "assets/images/content/pic/Service/images/bat-buoc-su-dung-hoa-don-dien-tu-khi-nao.png",
+    "libraryKindLabel": "Hướng dẫn",
+    "publishDate": "2020-11-01",
+    "modifiedDate": null
+  },
   "newsLatest": [
-    "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-    "ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
-    "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html"
+    {
+      "id": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
+      "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
+      "topicLabel": "Khác",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "title": "Thông tư 152/2025/TT-BTC hướng dẫn kế toán cho hộ kinh doanh, cá nhân kinh doanh",
+      "excerpt": "Ngày 31/12/2025, Bộ Tài chính đã ban hành Thông tư 152/2025/TT-BTC hướng dẫn chế độ kế toán của hộ kinh doanh, cá nhân…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [
+        "Hộ kinh doanh"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thong-tu-152.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-12-31",
+      "modifiedDate": null
+    }
   ],
   "libraryLatest": [
-    "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
-    "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
-    "thu-vien/bao-cao-tai-chinh-gom-nhung-gi-mau-bieu-bang-nao.html"
+    {
+      "id": "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "title": "Đơn đề nghị hưởng trợ cấp thai sản Mẫu 11A-HSB",
+      "excerpt": "Đơn đề nghị hưởng trợ cấp thai sản Mẫu số 11A-HSB ban hành kèm Quyết định số 01/QĐ-BHXH ngày 03/01/2014 của BH…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "title": "Bảng kê giảm trừ gia cảnh cho người phụ thuộc Mẫu 2-1/BK-QTT-TNCN",
+      "excerpt": "Bảng kê giảm trừ gia cảnh cho người phụ thuộc Mẫu 2-1/BK-QTT-TNCN theo Thông tư số 92/2015/TT-BTC. Kèm theo tờ khai quy…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "TNCN"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bao-cao-tai-chinh-gom-nhung-gi-mau-bieu-bang-nao.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bao-cao-tai-chinh-gom-nhung-gi-mau-bieu-bang-nao.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-tai-chinh-gom-nhung-gi-mau-bieu-bang-nao.html",
+      "title": "Báo cáo tài chính theo TT 99 gồm những gì? Mẫu biểu bảng nào?",
+      "excerpt": "Theo điều Điều 17 của Thông tư 99/2025/TT-BTC thì Hệ thống Báo cáo tài chính của doanh nghiệp bao gồm những phần sau: 1…",
+      "topicLabel": "Báo cáo tài chính",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/mau-bang-bieu-bao-cao-tai-chinh.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    }
   ],
   "related": [
-    "thu-vien/cac-bac-thue-mon-bai-moi-nhat.html",
-    "thu-vien/bao-cao-su-dung-chung-tu-khau-tru-thue-tncn-ctt25-ac.html",
-    "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html"
+    {
+      "id": "thu-vien/cac-bac-thue-mon-bai-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-bac-thue-mon-bai-moi-nhat.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-bac-thue-mon-bai-moi-nhat.html",
+      "title": "Các bậc thuế môn bài năm 2025 mới nhất",
+      "excerpt": "Quy định về lệ phí môn bài năm 2025 mới nhất: Các mức nộp thuế môn bài 2025 cho hộ cá nhân kinh doanh và Doanh nghiệp t…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/LE-PHI-MON-BAI-2025.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2015-06-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bao-cao-su-dung-chung-tu-khau-tru-thue-tncn-ctt25-ac.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bao-cao-su-dung-chung-tu-khau-tru-thue-tncn-ctt25-ac.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-su-dung-chung-tu-khau-tru-thue-tncn-ctt25-ac.html",
+      "title": "Báo cáo sử dụng Chứng từ khấu trừ thuế TNCN Mẫu CTT25/AC",
+      "excerpt": "Mẫu CTT25/AC Bảng kê Chứng từ khấu trừ thuế TNCN: Cách lập Báo cáo sử dụng Chứng từ khấu trừ thuế TNCN trên HTKK; Cách…",
+      "topicLabel": "Thuế thu nhập cá nhân",
+      "tags": [
+        "TNCN"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-nop-bang-ke-chung-tu-khau-tru-thue-tncn.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2013-03-14",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
+      "title": "Các khoản chi phí được trừ khi tính thuế TNDN 2026",
+      "excerpt": "Quy định về các khoản chi phí được trừ khi tính thuế TNDN theo Nghị định 320/2025/NĐ-CP hướng dẫn Luật Thuế thu nhập do…",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "TNDN"
+      ],
+      "image": "assets/images/content/pic/Service/images/Chi-phi-duoc-tru.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2021-01-26",
+      "modifiedDate": null
+    }
   ],
   "latestOther": [
-    "thu-vien/cac-bac-thue-mon-bai-moi-nhat.html",
-    "ban-tin/bai-bo-le-phi-mon-bai-tu-nam-2026.html"
+    {
+      "id": "thu-vien/cac-bac-thue-mon-bai-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-bac-thue-mon-bai-moi-nhat.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-bac-thue-mon-bai-moi-nhat.html",
+      "title": "Các bậc thuế môn bài năm 2025 mới nhất",
+      "excerpt": "Quy định về lệ phí môn bài năm 2025 mới nhất: Các mức nộp thuế môn bài 2025 cho hộ cá nhân kinh doanh và Doanh nghiệp t…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/LE-PHI-MON-BAI-2025.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2015-06-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/bai-bo-le-phi-mon-bai-tu-nam-2026.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/bai-bo-le-phi-mon-bai-tu-nam-2026.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/bai-bo-le-phi-mon-bai-tu-nam-2026.html",
+      "title": "Bãi bỏ lệ phí môn bài từ năm 2026 theo Nghị quyết 198/2025/QH15",
+      "excerpt": "Ngày 17/5/2025, Quốc hội thông qua Nghị quyết 198/2025/QH15 về một số cơ chế, chính sách đặc biệt phát triển kinh tế tư…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/Bai-bo-le-phi-mon-bai.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-05-17",
+      "modifiedDate": null
+    }
   ]
 }

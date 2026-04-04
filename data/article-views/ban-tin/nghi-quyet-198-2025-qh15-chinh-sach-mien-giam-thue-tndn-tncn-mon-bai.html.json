@@ -1,26 +1,250 @@
 {
   "currentIndex": 16,
   "totalCount": 20,
-  "prev": "ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html",
-  "next": "ban-tin/nhung-diem-moi-cua-thong-tu-119-2014-cua-bo-tai-chinh.html",
+  "prev": {
+    "id": "ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html",
+    "section": "ban-tin",
+    "sectionLabel": "Bản tin",
+    "sectionHref": "ban-tin.html",
+    "href": "ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html",
+    "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html",
+    "title": "Nghị định 04/2014/NĐ-CP quy định về hóa đơn bán hàng, cung ứng dịch vụ",
+    "excerpt": "Ngày 17/01/2014 Chính phủ ban hành Nghị định 04/2014/NĐ-CP sửa đổi bổ sung một số điều của Nghị định số 51/2010/NĐ-CP q…",
+    "topicLabel": "Nghị định",
+    "tags": [
+      "GTGT"
+    ],
+    "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+    "libraryKindLabel": "Hướng dẫn",
+    "publishDate": "2014-01-17",
+    "modifiedDate": null
+  },
+  "next": {
+    "id": "ban-tin/nhung-diem-moi-cua-thong-tu-119-2014-cua-bo-tai-chinh.html",
+    "section": "ban-tin",
+    "sectionLabel": "Bản tin",
+    "sectionHref": "ban-tin.html",
+    "href": "ban-tin/nhung-diem-moi-cua-thong-tu-119-2014-cua-bo-tai-chinh.html",
+    "canonical": "https://ketoandieutam.com/ban-tin/nhung-diem-moi-cua-thong-tu-119-2014-cua-bo-tai-chinh.html",
+    "title": "Những điểm mới của Thông tư 119/2014/TT-BTC",
+    "excerpt": "Ngày 26/8/2014 Bộ tài chính ban hành Công văn 3609/TCT-CS giới thiệu các nội dung mới của Thông tư 119/2014/TT-BTC. Côn…",
+    "topicLabel": "Khác",
+    "tags": [],
+    "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+    "libraryKindLabel": "Hướng dẫn",
+    "publishDate": "2014-08-26",
+    "modifiedDate": null
+  },
   "newsLatest": [
-    "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-    "ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
-    "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html"
+    {
+      "id": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
+      "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
+      "topicLabel": "Khác",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "title": "Thông tư 152/2025/TT-BTC hướng dẫn kế toán cho hộ kinh doanh, cá nhân kinh doanh",
+      "excerpt": "Ngày 31/12/2025, Bộ Tài chính đã ban hành Thông tư 152/2025/TT-BTC hướng dẫn chế độ kế toán của hộ kinh doanh, cá nhân…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [
+        "Hộ kinh doanh"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thong-tu-152.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-12-31",
+      "modifiedDate": null
+    }
   ],
   "libraryLatest": [
-    "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
-    "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
-    "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html"
+    {
+      "id": "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "title": "Báo cáo tình hình sử dụng biên lai điện tử thu thuế, phí, lệ phí",
+      "excerpt": "Mẫu Báo cáo tình hình sử dụng biên lai điện tử thu thuế, phí, lệ phí mới nhất năm 2025 là Mẫu BC26/BLĐT Nghị định 70/20…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "title": "Đơn đề nghị hưởng trợ cấp thai sản Mẫu 11A-HSB",
+      "excerpt": "Đơn đề nghị hưởng trợ cấp thai sản Mẫu số 11A-HSB ban hành kèm Quyết định số 01/QĐ-BHXH ngày 03/01/2014 của BH…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "title": "Bảng kê giảm trừ gia cảnh cho người phụ thuộc Mẫu 2-1/BK-QTT-TNCN",
+      "excerpt": "Bảng kê giảm trừ gia cảnh cho người phụ thuộc Mẫu 2-1/BK-QTT-TNCN theo Thông tư số 92/2015/TT-BTC. Kèm theo tờ khai quy…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "TNCN"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    }
   ],
   "related": [
-    "ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html",
-    "ban-tin/nghi-dinh-01-2021-nd-cp-quy-dinh-ve-dang-ky-doanh-nghiep.html",
-    "ban-tin/bo-luat-lao-dong-so-45-2019-qh14-cua-quoc-hoi.html"
+    {
+      "id": "ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html",
+      "title": "Nghị định 04/2014/NĐ-CP quy định về hóa đơn bán hàng, cung ứng dịch vụ",
+      "excerpt": "Ngày 17/01/2014 Chính phủ ban hành Nghị định 04/2014/NĐ-CP sửa đổi bổ sung một số điều của Nghị định số 51/2010/NĐ-CP q…",
+      "topicLabel": "Nghị định",
+      "tags": [
+        "GTGT"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-01-17",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/nghi-dinh-01-2021-nd-cp-quy-dinh-ve-dang-ky-doanh-nghiep.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/nghi-dinh-01-2021-nd-cp-quy-dinh-ve-dang-ky-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-01-2021-nd-cp-quy-dinh-ve-dang-ky-doanh-nghiep.html",
+      "title": "Nghị định 01/2021/NĐ-CP quy định về đăng ký doanh nghiệp",
+      "excerpt": "Ngày 04/01/2021 Chính phủ ban hành Nghị định 01/2021/NĐ-CP quy định chi tiết về hồ sơ, trình tự, thủ tục đăng ký doanh…",
+      "topicLabel": "Nghị định",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/Nghi-dinh-01-dang-ky-doanh-nghiep.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2021-01-04",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/bo-luat-lao-dong-so-45-2019-qh14-cua-quoc-hoi.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/bo-luat-lao-dong-so-45-2019-qh14-cua-quoc-hoi.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/bo-luat-lao-dong-so-45-2019-qh14-cua-quoc-hoi.html",
+      "title": "Bộ luật lao động số 45/2019/QH14 của Quốc hội",
+      "excerpt": "Ngày 20/11/2019 Quốc hội ban hành Bộ luật lao động Luật số 45/2019/QH14: Quy định quyền, nghĩa vụ, trách nhiệm của ngườ…",
+      "topicLabel": "Luật - Bộ luật",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/Luat-45-Bo-luat-lao-dong.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2019-11-20",
+      "modifiedDate": null
+    }
   ],
   "latestOther": [
-    "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
-    "thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
-    "ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html"
+    {
+      "id": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
+      "title": "Các khoản chi phí được trừ khi tính thuế TNDN 2026",
+      "excerpt": "Quy định về các khoản chi phí được trừ khi tính thuế TNDN theo Nghị định 320/2025/NĐ-CP hướng dẫn Luật Thuế thu nhập do…",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "TNDN"
+      ],
+      "image": "assets/images/content/pic/Service/images/Chi-phi-duoc-tru.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2021-01-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
+      "title": "Cách hoàn thuế thu nhập cá nhân tự động qua Etax 2025",
+      "excerpt": "Hướng dẫn cách làm hoàn thuế thu nhập cá nhân tự động qua Etax Mobile mới nhất năm 2025 1. Căn cứ hướng dẫn hoàn thuế T…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "tags": [
+        "TNCN"
+      ],
+      "image": "assets/images/content/pic/Service/images/hoan-thue-TNCN-tu-dong.jpg",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2025-01-24",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html",
+      "title": "Nghị định 04/2014/NĐ-CP quy định về hóa đơn bán hàng, cung ứng dịch vụ",
+      "excerpt": "Ngày 17/01/2014 Chính phủ ban hành Nghị định 04/2014/NĐ-CP sửa đổi bổ sung một số điều của Nghị định số 51/2010/NĐ-CP q…",
+      "topicLabel": "Nghị định",
+      "tags": [
+        "GTGT"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-01-17",
+      "modifiedDate": null
+    }
   ]
 }

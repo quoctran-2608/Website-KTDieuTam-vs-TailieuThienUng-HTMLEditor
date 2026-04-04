@@ -21,7 +21,7 @@ Nguyên tắc cốt lõi:
 - Mọi path bên dưới được tính từ **root của thư mục `Ketoandieutam.com/`**
 - Vì file này nằm trong `docs/`, khi mở trực tiếp từ đây thì:
   - `site-shell.js` tương ứng `../site-shell.js`
-  - `content-index.js` tương ứng `../content-index.js`
+- `data/article-views/...` tương ứng `../data/article-views/...`
   - `article-layout.js` tương ứng `../article-layout.js`
   - `assets/...` tương ứng `../assets/...`
 
@@ -58,7 +58,7 @@ Các phần này **không được hardcode riêng cho từng bài**:
 
 Các phần trên render từ:
 
-- `content-index.js` → runtime index hiện tại cho article chrome
+- `content-index.js` → runtime index hiện tại còn giữ để tương thích / sample tooling
 - `data/articles.json` → metadata canonical đã build
 - `data/article-views/...` → recommendation / prev-next theo bài
 - `article-layout.js` → layout/article chrome dùng chung
@@ -80,7 +80,9 @@ Render:
 - back-to-top
 
 ### `content-index.js`
-Là **runtime index hiện tại** cho article chrome.  
+Là **runtime index tương thích** đang còn được build ra.  
+Không nên coi đây là nguồn duy nhất cho article page khi scale lớn.
+
 Chứa metadata toàn bộ bài viết đã build:
 
 - section
@@ -144,7 +146,6 @@ Một bài viết HTML mới cần có các host/placeholder sau:
 
   <script id="article-meta" type="application/json">...</script>
   <script src="../site-shell.js"></script>
-  <script src="../content-index.js"></script>
   <script src="../article-layout.js"></script>
 </body>
 ```
@@ -238,7 +239,7 @@ Hiện tại hệ thống đã sẵn chỗ cho các field này. Khi thêm bài m
 3. Đặt slug ngắn, sạch, ổn định
 4. Không hardcode header / footer / sidebar riêng trong file bài
 5. Không nhúng riêng block related/latest theo kiểu copy-paste thủ công
-6. Bổ sung metadata vào nguồn build để `content-index.js` tự sinh lại
+6. Bổ sung metadata vào nguồn build để `data/`, `sitemap.xml`, `robots.txt` tự sinh lại
 
 ### Không nên
 - tự tạo nav bài trước/sau bằng tay
@@ -281,7 +282,6 @@ Hiện tại hệ thống đã sẵn chỗ cho các field này. Khi thêm bài m
 ### Kiến trúc
 - [ ] Không có header/menu/footer hardcode riêng trong bài
 - [ ] Có `site-shell.js`
-- [ ] Có `content-index.js`
 - [ ] Có `data/articles.json`
 - [ ] Có `data/article-views/...`
 - [ ] Có `article-layout.js`
@@ -316,8 +316,8 @@ Hiện tại hệ thống đã sẵn chỗ cho các field này. Khi thêm bài m
 
 ### Nên làm
 - giữ một **nguồn metadata trung tâm**
-- runtime hiện tại có thể đọc từ `content-index.js`
-- nhưng build chuẩn phải sinh thêm `data/` để scale lớn
+- `content-index.js` chỉ nên là lớp tương thích / bootstrap
+- build chuẩn phải sinh thêm `data/` để scale lớn
 - mọi thay đổi UI chung chỉ sửa trong:
   - `site-shell.js`
   - `article-layout.js`
@@ -326,7 +326,7 @@ Hiện tại hệ thống đã sẵn chỗ cho các field này. Khi thêm bài m
 ### Không nên
 - sửa thủ công 1 bài rồi quên không đồng bộ index
 - để bài mới thiếu `publishDate` / `modifiedDate`
-- thêm HTML mới mà không rebuild `content-index.js`
+- thêm HTML mới mà không rebuild `data/`
 - thêm batch mới mà không regenerate `data/`, `sitemap.xml`, `robots.txt`
 
 ---
@@ -337,7 +337,7 @@ Chuẩn hiện tại tốt nhất là:
 
 - **content lõi** của bài → giữ static trong file bài
 - **chrome quanh bài** → lấy từ template/script ngoài
-- **dữ liệu điều hướng / related / latest** → runtime có thể lấy từ `content-index.js`, nhưng về dài hạn nên bám `data/`
+- **dữ liệu điều hướng / related / latest** → article page nên ưu tiên `data/article-views/...`, hub page nên ưu tiên `data/hubs/*.json`
 
 Đây là cách bền nhất để:
 

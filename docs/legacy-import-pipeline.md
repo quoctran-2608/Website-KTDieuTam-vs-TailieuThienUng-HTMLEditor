@@ -46,6 +46,23 @@ python3 Ketoandieutam.com/tools/audit_content_classification.py
 
 - Output:
   - `docs/content-classification-audit.md`
+
+### 3.3 Build site
+
+- Tool: `.m/build_sample_sections.py`
+- Command:
+
+```bash
+python3 .m/build_sample_sections.py --mode sample
+python3 .m/build_sample_sections.py --mode full
+```
+
+- Output chính:
+  - HTML article/hub
+  - `content-index.js`
+  - `data/`
+  - `sitemap.xml`
+  - `robots.txt`
   - đối chiếu rule tại `docs/content-classification-policy.md`
 
 ### 3.3 Runtime safety net đang có sẵn trong site

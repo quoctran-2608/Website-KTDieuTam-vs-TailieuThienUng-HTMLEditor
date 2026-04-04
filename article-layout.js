@@ -55,6 +55,13 @@
     return window.KetoanDieuTamContentIndex || null;
   }
 
+  function fetchJson(url) {
+    return fetch(url).then(function (response) {
+      if (!response.ok) throw new Error('Fetch failed: ' + url);
+      return response.json();
+    });
+  }
+
   function upsertMeta(name, content) {
     var meta = document.querySelector('meta[name="' + name + '"]');
     if (!meta) {
@@ -599,8 +606,46 @@
     return getLegacyData();
   }
 
-  function resolveArticleData() {
-    return resolveDataFromIndex() || resolveLegacyData();
+  function sectionLabelFromKey(sectionKey) {
+    return sectionKey === 'ban-tin' ? 'Bản tin' : 'Thư viện';
+  }
+
+  function resolveDataFromViewJson(meta, view) {
+    if (!meta || !view) return null;
+    return {
+      articleId: meta.id,
+      sectionKey: meta.sectionKey,
+      hubHref: sitePath(meta.sectionKey + '.html'),
+      hubLabel: sectionLabelFromKey(meta.sectionKey),
+      canonicalUrl: canonicalArticleUrl({ canonicalUrl: '', articleId: meta.id }),
+      topicLabel: meta.topicLabel || '',
+      currentTitle: meta.title || '',
+      authorName: meta.authorName || '',
+      publishDate: meta.publishDate || '',
+      modifiedDate: meta.modifiedDate || '',
+      currentIndex: view.currentIndex,
+      totalCount: view.totalCount,
+      newsLatest: view.newsLatest || [],
+      libraryLatest: view.libraryLatest || [],
+      related: view.related || [],
+      latestOther: view.latestOther || [],
+      prev: view.prev || null,
+      next: view.next || null
+    };
+  }
+
+  function loadArticleData() {
+    var meta = getArticleMeta();
+    if (!meta || !meta.id) return Promise.resolve(resolveLegacyData());
+    var root = getRootPrefix();
+    var viewUrl = root + 'data/article-views/' + meta.id + '.json';
+    return fetchJson(viewUrl)
+      .then(function (view) {
+        return resolveDataFromViewJson(meta, view);
+      })
+      .catch(function () {
+        return resolveDataFromIndex() || resolveLegacyData();
+      });
   }
 
   function formatDateLabel(value) {
@@ -945,28 +990,31 @@
   }
 
   function initArticleLayout() {
-    var data = resolveArticleData();
     var sidebarHost = document.getElementById('articleSidebar');
-    if (!data || !sidebarHost) return;
+    if (!sidebarHost) return;
 
-    normalizeLegacyArticleContent();
+    loadArticleData().then(function (data) {
+      if (!data) return;
 
-    var returnHref = getReturnHref(data);
-    upsertMeta('robots', readFromParam() ? 'noindex,follow' : 'index,follow');
-    var topNavHost = document.getElementById('articleTopNav');
-    var bottomNavHost = document.getElementById('articleBottomNav');
-    var recommendationsHost = document.getElementById('articleRecommendations');
-    var mobileNavHost = ensureMobileNavHost();
+      normalizeLegacyArticleContent();
 
-    sidebarHost.innerHTML = renderSidebar(data, returnHref);
-    if (topNavHost) topNavHost.innerHTML = renderTopNav(data, returnHref);
-    if (bottomNavHost) bottomNavHost.innerHTML = renderArticleTools(data) + renderBottomNav(data, returnHref);
-    if (recommendationsHost) recommendationsHost.innerHTML = renderRecommendations(data, returnHref);
-    syncArticleAuxLayout(sidebarHost, recommendationsHost);
-    if (mobileNavHost) mobileNavHost.innerHTML = renderMobileNav(data, returnHref);
+      var returnHref = getReturnHref(data);
+      upsertMeta('robots', readFromParam() ? 'noindex,follow' : 'index,follow');
+      var topNavHost = document.getElementById('articleTopNav');
+      var bottomNavHost = document.getElementById('articleBottomNav');
+      var recommendationsHost = document.getElementById('articleRecommendations');
+      var mobileNavHost = ensureMobileNavHost();
 
-    attachReturnHandlers(data, returnHref);
-    attachArticleToolHandlers(data);
+      sidebarHost.innerHTML = renderSidebar(data, returnHref);
+      if (topNavHost) topNavHost.innerHTML = renderTopNav(data, returnHref);
+      if (bottomNavHost) bottomNavHost.innerHTML = renderArticleTools(data) + renderBottomNav(data, returnHref);
+      if (recommendationsHost) recommendationsHost.innerHTML = renderRecommendations(data, returnHref);
+      syncArticleAuxLayout(sidebarHost, recommendationsHost);
+      if (mobileNavHost) mobileNavHost.innerHTML = renderMobileNav(data, returnHref);
+
+      attachReturnHandlers(data, returnHref);
+      attachArticleToolHandlers(data);
+    });
   }
 
   document.addEventListener('DOMContentLoaded', initArticleLayout);

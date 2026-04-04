@@ -1,24 +1,217 @@
 {
   "currentIndex": 19,
   "totalCount": 20,
-  "prev": "ban-tin/nhung-diem-moi-cua-thong-tu-96-ve-thue-thu-nhap-doanh-nghiep.html",
-  "next": "ban-tin/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html",
+  "prev": {
+    "id": "ban-tin/nhung-diem-moi-cua-thong-tu-96-ve-thue-thu-nhap-doanh-nghiep.html",
+    "section": "ban-tin",
+    "sectionLabel": "Bản tin",
+    "sectionHref": "ban-tin.html",
+    "href": "ban-tin/nhung-diem-moi-cua-thong-tu-96-ve-thue-thu-nhap-doanh-nghiep.html",
+    "canonical": "https://ketoandieutam.com/ban-tin/nhung-diem-moi-cua-thong-tu-96-ve-thue-thu-nhap-doanh-nghiep.html",
+    "title": "Công văn 2512/TCT-CS - Những nội dung mới của TT 96/2015/TT-BTC về thuế TNDN",
+    "excerpt": "Công văn 2512/TCT-CS ngày 24/06/2015 của Bộ tài chính: Giới thiệu những nội dung mới Thông tư 96/2015/TT-BTC về thuế TN…",
+    "topicLabel": "Thuế thu nhập doanh nghiệp",
+    "tags": [
+      "TNDN"
+    ],
+    "image": "assets/images/content/pic/Service/images/nhung%20diem%20moi%20trong%20thong%20tu%2096%20ve%20thue%20tndn.png",
+    "libraryKindLabel": "Hướng dẫn",
+    "publishDate": "2015-06-24",
+    "modifiedDate": null
+  },
+  "next": {
+    "id": "ban-tin/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html",
+    "section": "ban-tin",
+    "sectionLabel": "Bản tin",
+    "sectionHref": "ban-tin.html",
+    "href": "ban-tin/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html",
+    "canonical": "https://ketoandieutam.com/ban-tin/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html",
+    "title": "Thông tư 01/2021/TT-BKHĐT hướng dẫn về đăng ký doanh nghiệp",
+    "excerpt": "Thông tư 01/2021/TT-BKHĐT ngày 16/3/2021 của Bộ kế hoạch đầu tư: Hướng dẫn về đăng ký doanh nghiệp; Biểu mẫu sử dụng tr…",
+    "topicLabel": "Thông tư",
+    "tags": [],
+    "image": "assets/images/content/pic/Service/images/thong-tu-01-quy-dinh-ve-dang-ky-doanh-nghiep.png",
+    "libraryKindLabel": "Hướng dẫn",
+    "publishDate": "2021-03-16",
+    "modifiedDate": null
+  },
   "newsLatest": [
-    "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-    "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
-    "ban-tin/cac-cong-van-huong-xu-ly-hoa-don-dien-tu-moi-nhat-nam-2025.html"
+    {
+      "id": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
+      "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
+      "topicLabel": "Khác",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "title": "Thông tư 152/2025/TT-BTC hướng dẫn kế toán cho hộ kinh doanh, cá nhân kinh doanh",
+      "excerpt": "Ngày 31/12/2025, Bộ Tài chính đã ban hành Thông tư 152/2025/TT-BTC hướng dẫn chế độ kế toán của hộ kinh doanh, cá nhân…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [
+        "Hộ kinh doanh"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thong-tu-152.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-12-31",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/cac-cong-van-huong-xu-ly-hoa-don-dien-tu-moi-nhat-nam-2025.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/cac-cong-van-huong-xu-ly-hoa-don-dien-tu-moi-nhat-nam-2025.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/cac-cong-van-huong-xu-ly-hoa-don-dien-tu-moi-nhat-nam-2025.html",
+      "title": "Các công văn ĐÁNG CHÚ Ý về hóa đơn điện tử mới nhất năm 2025",
+      "excerpt": "Tổng hợp các công văn hướng xử lý hóa đơn điện tử theo Nghị định 70/2025/NĐ-CP sửa đổi Nghị định 123/2020/NĐ-CP (B…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn điện tử"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cong-van-ve-hoa-don-dien-tu.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-10-16",
+      "modifiedDate": null
+    }
   ],
   "libraryLatest": [
-    "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
-    "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
-    "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html"
+    {
+      "id": "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "title": "Báo cáo tình hình sử dụng biên lai điện tử thu thuế, phí, lệ phí",
+      "excerpt": "Mẫu Báo cáo tình hình sử dụng biên lai điện tử thu thuế, phí, lệ phí mới nhất năm 2025 là Mẫu BC26/BLĐT Nghị định 70/20…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/don-de-nghi-huong-tro-cap-thai-san-mau-11a-hsb.html",
+      "title": "Đơn đề nghị hưởng trợ cấp thai sản Mẫu 11A-HSB",
+      "excerpt": "Đơn đề nghị hưởng trợ cấp thai sản Mẫu số 11A-HSB ban hành kèm Quyết định số 01/QĐ-BHXH ngày 03/01/2014 của BH…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "tags": [],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "title": "Bảng kê giảm trừ gia cảnh cho người phụ thuộc Mẫu 2-1/BK-QTT-TNCN",
+      "excerpt": "Bảng kê giảm trừ gia cảnh cho người phụ thuộc Mẫu 2-1/BK-QTT-TNCN theo Thông tư số 92/2015/TT-BTC. Kèm theo tờ khai quy…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "TNCN"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    }
   ],
   "related": [
-    "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
-    "ban-tin/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html",
-    "ban-tin/cong-van-10315-btc-tct-quy-dinh-muc-phat-cham-nop-tien-thue.html"
+    {
+      "id": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "title": "Thông tư 152/2025/TT-BTC hướng dẫn kế toán cho hộ kinh doanh, cá nhân kinh doanh",
+      "excerpt": "Ngày 31/12/2025, Bộ Tài chính đã ban hành Thông tư 152/2025/TT-BTC hướng dẫn chế độ kế toán của hộ kinh doanh, cá nhân…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [
+        "Hộ kinh doanh"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thong-tu-152.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-12-31",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html",
+      "title": "Thông tư 01/2021/TT-BKHĐT hướng dẫn về đăng ký doanh nghiệp",
+      "excerpt": "Thông tư 01/2021/TT-BKHĐT ngày 16/3/2021 của Bộ kế hoạch đầu tư: Hướng dẫn về đăng ký doanh nghiệp; Biểu mẫu sử dụng tr…",
+      "topicLabel": "Thông tư",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/thong-tu-01-quy-dinh-ve-dang-ky-doanh-nghiep.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2021-03-16",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/cong-van-10315-btc-tct-quy-dinh-muc-phat-cham-nop-tien-thue.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/cong-van-10315-btc-tct-quy-dinh-muc-phat-cham-nop-tien-thue.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/cong-van-10315-btc-tct-quy-dinh-muc-phat-cham-nop-tien-thue.html",
+      "title": "Công văn 10315/BTC-TCT Quy định mức phạt chậm nộp tiền thuế",
+      "excerpt": "Công văn 10315/BTC-TCT ngày 25/7/2016 của Bộ tài chính: Hướng dẫn thực hiện 106/2016/QH13: Quy định mức phạt chậm nộp t…",
+      "topicLabel": "Công văn",
+      "tags": [],
+      "image": "assets/images/content/pic/Service/images/cong%20van%2010315%20quy%20dinh%20muc%20phat%20cham%20nop%20tien%20thue.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2016-07-25",
+      "modifiedDate": null
+    }
   ],
   "latestOther": [
-    "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html"
+    {
+      "id": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
+      "title": "Các hàm Excel trong kế toán thường dùng",
+      "excerpt": "Các hàm Excel thông dụng trong kế toán thường dùng lên sổ sách, tính lương, kho, nhập xuất tồn, công nợ: Hướng dẫn cách…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel"
+      ],
+      "image": "assets/images/content/pic/Service/images/cac-ham-excel-thong-dung-trong-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2013-01-01",
+      "modifiedDate": null
+    }
   ]
 }

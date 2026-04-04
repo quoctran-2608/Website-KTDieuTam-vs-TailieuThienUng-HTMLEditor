@@ -17,6 +17,24 @@
     }
   }
 
+  function loadHubData() {
+    var inlineData = getHubData();
+    if (!inlineData) return Promise.resolve(null);
+    if (!inlineData.dataUrl) return Promise.resolve(inlineData);
+    return fetch(inlineData.dataUrl)
+      .then(function (response) {
+        if (!response.ok) throw new Error('Không tải được hub data');
+        return response.json();
+      })
+      .then(function (remote) {
+        return Object.assign({}, inlineData, remote);
+      })
+      .catch(function (error) {
+        console.error('Hub data tải lỗi', error);
+        return inlineData;
+      });
+  }
+
   function escapeHtml(value) {
     return String(value || '').replace(/[&<>"']/g, function (char) {
       return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char];
@@ -816,6 +834,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    initHubPage(getHubData());
+    loadHubData().then(initHubPage);
   });
 })();
