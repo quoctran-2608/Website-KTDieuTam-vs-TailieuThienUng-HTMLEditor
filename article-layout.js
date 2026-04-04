@@ -633,13 +633,17 @@
     return window.matchMedia && window.matchMedia('(max-width: 1180px)').matches;
   }
 
+  function isMobileArticleLayout() {
+    return window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
+  }
+
   function syncArticleAuxLayout(sidebarHost, recommendationsHost) {
     if (!sidebarHost) return;
     var grid = document.querySelector('.article-grid');
     var main = document.querySelector('.article-main');
     if (!grid || !main) return;
 
-    if (isStackedArticleLayout()) {
+    if (isStackedArticleLayout() && !isMobileArticleLayout()) {
       if (sidebarHost.parentNode !== main) {
         if (recommendationsHost && recommendationsHost.parentNode === main) {
           main.insertBefore(sidebarHost, recommendationsHost);

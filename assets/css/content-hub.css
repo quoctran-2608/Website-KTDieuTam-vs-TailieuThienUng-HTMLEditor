@@ -1661,6 +1661,10 @@ body.is-filter-open .catalog-filter-panel {
     font-size: 12px;
   }
 
+  .article-top-nav__group .article-back-link {
+    align-self: flex-end;
+  }
+
   .article-meta-inline + .article-meta-inline {
     margin-left: 12px;
     padding-left: 12px;
