@@ -249,6 +249,10 @@
     return Array.prototype.slice.call(prose.querySelectorAll('table')).some(shouldPreserveLegacyTableLayout);
   }
 
+  function shouldForcePreserveByArticleId(articleId) {
+    return articleId === 'thu-vien/bieu-thue-xuat-khau-moi-nhat-hien-nay.html';
+  }
+
   function ensureLegacyTableFitWrap(table) {
     if (!table || !table.parentNode) return;
     if (table.parentNode.classList && table.parentNode.classList.contains('article-table-fit')) return;
@@ -266,14 +270,22 @@
     table.style.transformOrigin = '';
     wrapper.style.height = '';
     var baseWidth = table.scrollWidth || table.offsetWidth || 0;
-    var baseHeight = table.offsetHeight || 0;
     var available = wrapper.clientWidth || wrapper.offsetWidth || 0;
     if (!baseWidth || !available) return;
     var scale = Math.min(1, available / baseWidth);
     if (scale >= 0.999) return;
     table.style.transformOrigin = 'top left';
     table.style.transform = 'scale(' + scale + ')';
-    wrapper.style.height = (baseHeight * scale) + 'px';
+    var updateHeight = function () {
+      var rectHeight = table.getBoundingClientRect().height || 0;
+      var scrollHeight = (table.scrollHeight || table.offsetHeight || 0) * scale;
+      var safeHeight = Math.max(rectHeight, scrollHeight);
+      if (safeHeight) {
+        wrapper.style.height = Math.ceil(safeHeight + 48) + 'px';
+      }
+    };
+    requestAnimationFrame(updateHeight);
+    setTimeout(updateHeight, 120);
   }
 
   function removeLegacyTableFitWrap(table) {
@@ -427,33 +439,29 @@
   function normalizeLegacyArticleContent() {
     var prose = document.querySelector('.article-prose');
     if (!prose) return;
-    var preserveLegacyArticle = shouldPreserveLegacyArticleLayout(prose);
+    var meta = getArticleMeta();
+    var preserveLegacyArticle = shouldPreserveLegacyArticleLayout(prose) || !!(meta && shouldForcePreserveByArticleId(meta.id));
+    var isMobile = isMobileViewport();
 
     prose.querySelectorAll('table').forEach(function (table, index) {
       table.classList.add('article-table--legacy');
       var preserveLegacyTables = preserveLegacyArticle;
       if (preserveLegacyTables) {
         table.classList.add('article-table--source-width');
-        table.classList.remove('article-table--mobile-origin');
-        if (isMobileViewport()) {
-          ensureLegacyTableFitWrap(table);
-          fitLegacyTableToViewport(table);
-        } else {
-          removeLegacyTableFitWrap(table);
-        }
-        if (table.dataset.mobileTableId) {
-          var staleCards = prose.querySelector('.article-table-stack[data-source-table=\"' + table.dataset.mobileTableId + '\"]');
-          if (staleCards) staleCards.remove();
-        }
-      } else if (shouldBuildMobileTableCards(table)) {
+      } else {
         table.classList.remove('article-table--source-width');
+      }
+
+      table.classList.remove('article-table--mobile-origin');
+      if (isMobile) {
+        ensureLegacyTableFitWrap(table);
+        fitLegacyTableToViewport(table);
+      } else {
         removeLegacyTableFitWrap(table);
-        upsertMobileTableCards(prose, table, index);
-      } else if (table.dataset.mobileTableId) {
+      }
+
+      if (table.dataset.mobileTableId) {
         var stale = prose.querySelector('.article-table-stack[data-source-table=\"' + table.dataset.mobileTableId + '\"]');
-        table.classList.remove('article-table--mobile-origin');
-        table.classList.remove('article-table--source-width');
-        removeLegacyTableFitWrap(table);
         if (stale) stale.remove();
       }
     });
@@ -963,6 +971,7 @@
 
   document.addEventListener('DOMContentLoaded', initArticleLayout);
   window.addEventListener('resize', normalizeLegacyArticleContent, { passive: true });
+  window.addEventListener('load', normalizeLegacyArticleContent);
   window.addEventListener('resize', function () {
     syncArticleAuxLayout(document.getElementById('articleSidebar'), document.getElementById('articleRecommendations'));
   }, { passive: true });

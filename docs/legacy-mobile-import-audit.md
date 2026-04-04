@@ -62,10 +62,10 @@ Khi nhập bài vào `Ketoandieutam.com`, nên chạy sanitizer **ngay lúc buil
    - khuyến nghị: mobile không quá `16px`
 
 4. **Phân loại bảng**
-   - bảng **2 cột đơn giản**: giữ dạng table
-   - bảng **>= 3 cột dạng dữ liệu**: sinh thêm bản mobile stack/card
-   - bảng header pháp lý kiểu “Quốc hội / Cộng hòa...” thường là 2 cột borderless, không cần card hóa
-   - bảng **biểu mẫu hẹp nhiều cột nhỏ** (`31px`, `36px`, `48px`, `60px`, `72px`...) phải xử lý theo hướng **preserve-source-width + fit-to-viewport**, không card hóa  
+   - bảng **2 cột đơn giản**: giữ dạng table, mobile fit-to-viewport khi cần
+   - bảng **>= 3 cột dạng dữ liệu**: giữ dạng table, mobile fit-to-viewport
+   - bảng header pháp lý kiểu “Quốc hội / Cộng hòa...” thường là 2 cột borderless, không card hóa
+   - bảng **biểu mẫu hẹp nhiều cột nhỏ** (`31px`, `36px`, `48px`, `60px`, `72px`...) phải xử lý theo hướng **preserve-source-width + fit-to-viewport**  
      - rule hiện tại: `maxCols >= 8` và `smallCount >= 8`  
      - hoặc `smallCount >= 6` nếu bảng có rất nhiều width inline (`>= 40`)
 
@@ -90,8 +90,9 @@ Các lớp này đang làm:
 - normalize width cứng của HTML legacy
 - clamp margin-left trên mobile
 - ép bảng wrap cell
-- tự dựng **mobile card view** cho bảng dữ liệu phức tạp
+- mobile: **fit-to-viewport cho mọi bảng**
 - với bảng biểu mẫu hẹp: giữ width gốc của table, giữ width cột nhỏ và fit bảng vào viewport mobile
+- áp dụng **safe fix** để tránh wrapper tính thiếu chiều cao và cắt phần cuối bảng sau khi scale
 
 ### 5.3 Quy trình rollout khuyến nghị
 

@@ -270,7 +270,8 @@ Ví dụ:
 - bảng ký tên
 - bảng thông tin song song ngắn
 
-=> giữ table thường
+=> giữ table thường trên desktop  
+=> mobile vẫn **fit-to-viewport** nếu bảng rộng hơn khung
 
 #### Bảng 3 cột trở lên
 
@@ -278,9 +279,11 @@ Không phải bảng nào nhiều cột cũng card hóa.
 
 ##### A. Bảng dữ liệu / bảng giải thích
 
-=> sinh thêm bản mobile stack/card
+Từ rule mới, **không card hóa nữa**.
 
-Ví dụ hợp để card hóa:
+=> giữ table, mobile **fit-to-viewport**
+
+Ví dụ:
 
 - bảng công thức
 - bảng thuế suất
@@ -310,9 +313,19 @@ Dấu hiệu nhận diện:
   - `overflow-wrap: normal`
 - mobile: **fit-to-viewport** (co bảng vừa khung), không ưu tiên scroll ngang và không card hóa
 
+### D5.1 Rule mobile hiện tại cho tất cả bảng
+
+Trên mobile, mọi bảng trong bài đều ưu tiên:
+
+- **fit-to-viewport**
+- không dựng card stack
+- có **safe fix** chống clip phần cuối sau khi scale
+
+Nhóm bảng biểu mẫu hẹp ở mục D5-B sẽ được cộng thêm lớp preserve-source-width để nhìn gần bản gốc hơn.
+
 ### D6. Ép wrap text trong cell
 
-Chỉ áp dụng mặc định cho bảng dữ liệu / bảng card hóa:
+Chỉ áp dụng mặc định cho bảng thường:
 
 - `white-space: normal`
 - `word-break: break-word`
