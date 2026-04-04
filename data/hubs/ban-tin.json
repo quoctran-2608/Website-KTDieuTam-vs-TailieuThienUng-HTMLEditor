@@ -1,0 +1,125 @@
+{
+  "section": "ban-tin",
+  "sectionLabel": "Bản tin",
+  "sectionHref": "ban-tin.html",
+  "pageMap": {
+    "1": "ban-tin.html",
+    "2": "ban-tin/trang/2/index.html"
+  },
+  "libraryKinds": [],
+  "taxonomy": [
+    {
+      "key": "van-ban-phap-luat",
+      "label": "Văn bản pháp luật",
+      "count": 8,
+      "children": [
+        {
+          "key": "cong-van",
+          "label": "Công văn",
+          "count": 2
+        },
+        {
+          "key": "luat-bo-luat",
+          "label": "Luật - Bộ luật",
+          "count": 2
+        },
+        {
+          "key": "nghi-dinh",
+          "label": "Nghị định",
+          "count": 2
+        },
+        {
+          "key": "nghi-quyet-quyet-dinh",
+          "label": "Nghị quyết - Quyết định",
+          "count": 1
+        },
+        {
+          "key": "thong-tu",
+          "label": "Thông tư",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "key": "thue",
+      "label": "Thuế - Hóa đơn",
+      "count": 6,
+      "children": [
+        {
+          "key": "khac-mon-bai-ho-kinh-doanh-nha-thau",
+          "label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+          "count": 2
+        },
+        {
+          "key": "tndn",
+          "label": "Thuế thu nhập doanh nghiệp",
+          "count": 2
+        },
+        {
+          "key": "gtgt-hoa-don",
+          "label": "GTGT - Hóa đơn",
+          "count": 1
+        },
+        {
+          "key": "tncn",
+          "label": "Thuế thu nhập cá nhân",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "key": "tham-khao-hoc-lieu",
+      "label": "Học liệu - Tham khảo",
+      "count": 2,
+      "children": [
+        {
+          "key": "khac",
+          "label": "Khác",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "key": "lao-dong-bao-hiem",
+      "label": "Lao động - Bảo hiểm",
+      "count": 2,
+      "children": [
+        {
+          "key": "bao-hiem",
+          "label": "BHXH - BHYT - BHTN",
+          "count": 1
+        },
+        {
+          "key": "cong-doan",
+          "label": "Công đoàn",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "key": "ke-toan",
+      "label": "Kế toán",
+      "count": 1,
+      "children": [
+        {
+          "key": "nghiep-vu-theo-phan-hanh",
+          "label": "Nghiệp vụ theo phần hành",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "key": "phan-mem-cong-cu",
+      "label": "Phần mềm - Công cụ",
+      "count": 1,
+      "children": [
+        {
+          "key": "excel-va-cong-cu-khac",
+          "label": "Excel - Công cụ khác",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "count": 20
+}

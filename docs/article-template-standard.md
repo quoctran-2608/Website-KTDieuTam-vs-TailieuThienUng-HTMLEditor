@@ -58,7 +58,9 @@ Các phần này **không được hardcode riêng cho từng bài**:
 
 Các phần trên render từ:
 
-- `content-index.js` → dữ liệu metadata trung tâm
+- `content-index.js` → runtime index hiện tại cho article chrome
+- `data/articles.json` → metadata canonical đã build
+- `data/article-views/...` → recommendation / prev-next theo bài
 - `article-layout.js` → layout/article chrome dùng chung
 - `assets/css/content-hub.css` → style dùng chung
 - `assets/images/site/` → ảnh dùng chung của site
@@ -78,7 +80,7 @@ Render:
 - back-to-top
 
 ### `content-index.js`
-Là **nguồn dữ liệu trung tâm** cho article chrome.  
+Là **runtime index hiện tại** cho article chrome.  
 Chứa metadata toàn bộ bài viết đã build:
 
 - section
@@ -92,6 +94,14 @@ Chứa metadata toàn bộ bài viết đã build:
 - prev / next
 - related
 - latest other sections
+
+### `data/`
+Là lớp metadata tĩnh phục vụ scale lớn hơn:
+
+- `data/articles.json` → metadata bài viết canonical
+- `data/hubs/*.json` → taxonomy/hub metadata
+- `data/feeds/*.json` → feed mới nhất
+- `data/article-views/...` → recommendation theo bài
 
 ### `article-layout.js`
 Đọc:
@@ -272,6 +282,8 @@ Hiện tại hệ thống đã sẵn chỗ cho các field này. Khi thêm bài m
 - [ ] Không có header/menu/footer hardcode riêng trong bài
 - [ ] Có `site-shell.js`
 - [ ] Có `content-index.js`
+- [ ] Có `data/articles.json`
+- [ ] Có `data/article-views/...`
 - [ ] Có `article-layout.js`
 - [ ] Có `article-meta`
 
@@ -288,6 +300,8 @@ Hiện tại hệ thống đã sẵn chỗ cho các field này. Khi thêm bài m
 - [ ] `modifiedDate` có giá trị nếu đã chỉnh sửa
 - [ ] `authorName` có giá trị
 - [ ] `tags` có ý nghĩa, không nhồi từ khóa
+- [ ] `robots.txt` đã có
+- [ ] `sitemap.xml` đã regenerate
 
 ### Kỹ thuật
 - [ ] Ảnh có `alt`
@@ -302,7 +316,8 @@ Hiện tại hệ thống đã sẵn chỗ cho các field này. Khi thêm bài m
 
 ### Nên làm
 - giữ một **nguồn metadata trung tâm**
-- mọi article chrome đọc từ `content-index.js`
+- runtime hiện tại có thể đọc từ `content-index.js`
+- nhưng build chuẩn phải sinh thêm `data/` để scale lớn
 - mọi thay đổi UI chung chỉ sửa trong:
   - `site-shell.js`
   - `article-layout.js`
@@ -312,6 +327,7 @@ Hiện tại hệ thống đã sẵn chỗ cho các field này. Khi thêm bài m
 - sửa thủ công 1 bài rồi quên không đồng bộ index
 - để bài mới thiếu `publishDate` / `modifiedDate`
 - thêm HTML mới mà không rebuild `content-index.js`
+- thêm batch mới mà không regenerate `data/`, `sitemap.xml`, `robots.txt`
 
 ---
 
@@ -321,7 +337,7 @@ Chuẩn hiện tại tốt nhất là:
 
 - **content lõi** của bài → giữ static trong file bài
 - **chrome quanh bài** → lấy từ template/script ngoài
-- **dữ liệu điều hướng / related / latest** → lấy từ `content-index.js`
+- **dữ liệu điều hướng / related / latest** → runtime có thể lấy từ `content-index.js`, nhưng về dài hạn nên bám `data/`
 
 Đây là cách bền nhất để:
 
