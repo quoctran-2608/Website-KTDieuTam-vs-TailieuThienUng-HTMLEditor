@@ -41,16 +41,18 @@
 
 <section class="catalog-shell">
   <div class="container">
-    <main class="catalog-main">
-      <div class="catalog-toolbar">
-        <div class="catalog-toolbar__summary">
-          <span class="catalog-toolbar__label">Đang xem</span>
-          <p class="catalog-active-filter" id="hubActiveFilter">Tất cả bài viết</p>
+    <div class="catalog-layout">
+      <aside id="hubDesktopTree" class="catalog-sidebar" aria-label="Điều hướng chuyên đề"></aside>
+      <main class="catalog-main">
+        <div class="catalog-toolbar">
+          <div class="catalog-toolbar__summary">
+            <span class="catalog-toolbar__label">Đang xem</span>
+            <p class="catalog-active-filter" id="hubActiveFilter">Tất cả bài viết</p>
+          </div>
+          <p class="catalog-toolbar__count" id="hubInlineCount">231 bài</p>
         </div>
-        <p class="catalog-toolbar__count" id="hubInlineCount">231 bài</p>
-      </div>
-      <div id="hubChips" class="catalog-chip-row" style="display:none;"></div>
-      <div id="hubResults"><div class="catalog-grid"><article class="catalog-card catalog-card--news">
+        <div id="hubChips" class="catalog-chip-row" style="display:none;"></div>
+        <div id="hubResults"><div class="catalog-grid"><article class="catalog-card catalog-card--news">
             <a class="catalog-card__media" data-article-link="1" href="ban-tin/bai-bo-le-phi-mon-bai-tu-nam-2026.html?from=../ban-tin.html">
               <img loading="lazy" decoding="async" src="assets/images/content/pic/Service/images/Bai-bo-le-phi-mon-bai.png" alt="Bãi bỏ lệ phí môn bài từ năm 2026 theo Nghị quyết 198/2025/QH15">
             </a>
@@ -219,8 +221,9 @@
 	              </div>
 	            </div>
           </article></div></div>
-      <nav id="hubPagination" class="catalog-pagination" aria-label="Phân trang bài viết" style="display:flex;"><a class="catalog-pagination__btn catalog-pagination__nav is-disabled" href="ban-tin.html" aria-disabled="true" tabindex="-1" aria-label="Trang trước"><i class="fa-solid fa-angle-left"></i></a><a class="catalog-pagination__btn is-active" href="ban-tin.html" aria-current="page">1</a><a class="catalog-pagination__btn" href="ban-tin/trang/2/index.html">2</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="ban-tin/trang/20/index.html">20</a><a class="catalog-pagination__btn catalog-pagination__nav" href="ban-tin/trang/2/index.html" aria-label="Trang sau"><i class="fa-solid fa-angle-right"></i></a></nav>
-    </main>
+        <nav id="hubPagination" class="catalog-pagination" aria-label="Phân trang bài viết" style="display:flex;"><a class="catalog-pagination__btn catalog-pagination__nav is-disabled" href="ban-tin.html" aria-disabled="true" tabindex="-1" aria-label="Trang trước"><i class="fa-solid fa-angle-left"></i></a><a class="catalog-pagination__btn is-active" href="ban-tin.html" aria-current="page">1</a><a class="catalog-pagination__btn" href="ban-tin/trang/2/index.html">2</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="ban-tin/trang/20/index.html">20</a><a class="catalog-pagination__btn catalog-pagination__nav" href="ban-tin/trang/2/index.html" aria-label="Trang sau"><i class="fa-solid fa-angle-right"></i></a></nav>
+      </main>
+    </div>
   </div>
 </section>
 

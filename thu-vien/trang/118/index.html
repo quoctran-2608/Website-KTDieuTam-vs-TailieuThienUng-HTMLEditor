@@ -42,16 +42,18 @@
 
 <section class="catalog-shell">
   <div class="container">
-    <main class="catalog-main">
-      <div class="catalog-toolbar">
-        <div class="catalog-toolbar__summary">
-          <span class="catalog-toolbar__label">Đang xem</span>
-          <p class="catalog-active-filter" id="hubActiveFilter">Tất cả bài viết</p>
+    <div class="catalog-layout">
+      <aside id="hubDesktopTree" class="catalog-sidebar" aria-label="Điều hướng chuyên đề"></aside>
+      <main class="catalog-main">
+        <div class="catalog-toolbar">
+          <div class="catalog-toolbar__summary">
+            <span class="catalog-toolbar__label">Đang xem</span>
+            <p class="catalog-active-filter" id="hubActiveFilter">Tất cả bài viết</p>
+          </div>
+          <p class="catalog-toolbar__count" id="hubInlineCount">1835 bài</p>
         </div>
-        <p class="catalog-toolbar__count" id="hubInlineCount">1835 bài</p>
-      </div>
-      <div id="hubChips" class="catalog-chip-row" style="display:none;"></div>
-      <div id="hubResults"><div class="catalog-grid"><article class="catalog-card">
+        <div id="hubChips" class="catalog-chip-row" style="display:none;"></div>
+        <div id="hubResults"><div class="catalog-grid"><article class="catalog-card">
             <a class="catalog-card__media" data-article-link="1" href="../../phan-mem-ho-tro-ke-khai-thue-htkk-4-2-9-moi-nhat-2020.html?from=trang/118/index.html">
               <img loading="lazy" decoding="async" src="../../../assets/images/content/pic/Service/images/phan-mem-ho-ke-khai-thue-HTKK-4_2_9.png" alt="Phần mềm hỗ trợ kê khai thuế HTKK 4.2.9 mới nhất 2020">
             </a>
@@ -220,8 +222,9 @@
 	              </div>
 	            </div>
           </article></div></div>
-      <nav id="hubPagination" class="catalog-pagination" aria-label="Phân trang bài viết" style="display:flex;"><a class="catalog-pagination__btn catalog-pagination__nav" href="../117/index.html" aria-label="Trang trước"><i class="fa-solid fa-angle-left"></i></a><a class="catalog-pagination__btn" href="../../../thu-vien.html">1</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="../117/index.html">117</a><a class="catalog-pagination__btn is-active" href="index.html" aria-current="page">118</a><a class="catalog-pagination__btn" href="../119/index.html">119</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="../153/index.html">153</a><a class="catalog-pagination__btn catalog-pagination__nav" href="../119/index.html" aria-label="Trang sau"><i class="fa-solid fa-angle-right"></i></a></nav>
-    </main>
+        <nav id="hubPagination" class="catalog-pagination" aria-label="Phân trang bài viết" style="display:flex;"><a class="catalog-pagination__btn catalog-pagination__nav" href="../117/index.html" aria-label="Trang trước"><i class="fa-solid fa-angle-left"></i></a><a class="catalog-pagination__btn" href="../../../thu-vien.html">1</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="../117/index.html">117</a><a class="catalog-pagination__btn is-active" href="index.html" aria-current="page">118</a><a class="catalog-pagination__btn" href="../119/index.html">119</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="../153/index.html">153</a><a class="catalog-pagination__btn catalog-pagination__nav" href="../119/index.html" aria-label="Trang sau"><i class="fa-solid fa-angle-right"></i></a></nav>
+      </main>
+    </div>
   </div>
 </section>
 

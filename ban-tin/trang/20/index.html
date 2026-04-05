@@ -41,16 +41,18 @@
 
 <section class="catalog-shell">
   <div class="container">
-    <main class="catalog-main">
-      <div class="catalog-toolbar">
-        <div class="catalog-toolbar__summary">
-          <span class="catalog-toolbar__label">Đang xem</span>
-          <p class="catalog-active-filter" id="hubActiveFilter">Tất cả bài viết</p>
+    <div class="catalog-layout">
+      <aside id="hubDesktopTree" class="catalog-sidebar" aria-label="Điều hướng chuyên đề"></aside>
+      <main class="catalog-main">
+        <div class="catalog-toolbar">
+          <div class="catalog-toolbar__summary">
+            <span class="catalog-toolbar__label">Đang xem</span>
+            <p class="catalog-active-filter" id="hubActiveFilter">Tất cả bài viết</p>
+          </div>
+          <p class="catalog-toolbar__count" id="hubInlineCount">231 bài</p>
         </div>
-        <p class="catalog-toolbar__count" id="hubInlineCount">231 bài</p>
-      </div>
-      <div id="hubChips" class="catalog-chip-row" style="display:none;"></div>
-      <div id="hubResults"><div class="catalog-grid"><article class="catalog-card catalog-card--news">
+        <div id="hubChips" class="catalog-chip-row" style="display:none;"></div>
+        <div id="hubResults"><div class="catalog-grid"><article class="catalog-card catalog-card--news">
             <a class="catalog-card__media" data-article-link="1" href="../../thong-tu-so-156-2013-tt-btc-huong-dan-thi-hanh-luat-quan-ly-thue.html?from=trang/20/index.html">
               <img loading="lazy" decoding="async" src="../../../assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg" alt="Thông tư Số 156/2013/TT-BTC hướng dẫn thi hành luật quản lý Thuế">
             </a>
@@ -93,8 +95,9 @@
 	              </div>
 	            </div>
           </article></div></div>
-      <nav id="hubPagination" class="catalog-pagination" aria-label="Phân trang bài viết" style="display:flex;"><a class="catalog-pagination__btn catalog-pagination__nav" href="../19/index.html" aria-label="Trang trước"><i class="fa-solid fa-angle-left"></i></a><a class="catalog-pagination__btn" href="../../../ban-tin.html">1</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="../19/index.html">19</a><a class="catalog-pagination__btn is-active" href="index.html" aria-current="page">20</a><a class="catalog-pagination__btn catalog-pagination__nav is-disabled" href="index.html" aria-disabled="true" tabindex="-1" aria-label="Trang sau"><i class="fa-solid fa-angle-right"></i></a></nav>
-    </main>
+        <nav id="hubPagination" class="catalog-pagination" aria-label="Phân trang bài viết" style="display:flex;"><a class="catalog-pagination__btn catalog-pagination__nav" href="../19/index.html" aria-label="Trang trước"><i class="fa-solid fa-angle-left"></i></a><a class="catalog-pagination__btn" href="../../../ban-tin.html">1</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="../19/index.html">19</a><a class="catalog-pagination__btn is-active" href="index.html" aria-current="page">20</a><a class="catalog-pagination__btn catalog-pagination__nav is-disabled" href="index.html" aria-disabled="true" tabindex="-1" aria-label="Trang sau"><i class="fa-solid fa-angle-right"></i></a></nav>
+      </main>
+    </div>
   </div>
 </section>
 

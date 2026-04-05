@@ -322,6 +322,7 @@
     var reset = document.getElementById('hubResetFilters');
     var chips = document.getElementById('hubChips');
     var primaryFilters = document.getElementById('hubPrimaryFilters');
+    var desktopTree = document.getElementById('hubDesktopTree');
     var toggleFilters = document.getElementById('hubToggleFilters');
     var closeFilters = document.getElementById('hubCloseFilters');
     var filterPanel = document.getElementById('hubFilterPanel');
@@ -757,6 +758,86 @@
       });
     }
 
+    function renderDesktopTree() {
+      if (!desktopTree) return;
+      var sections = [];
+      if (data.section === 'thu-vien') {
+        (data.libraryKinds || []).forEach(function (kind) {
+          var subset = (data.articles || []).filter(function (article) {
+            return article.library_kind_key === kind.key;
+          });
+          var taxonomy = buildTaxonomyFromArticles(subset);
+          var rootActive = state.kind === kind.key;
+          var groups = taxonomy.map(function (lv1) {
+            var groupActive = rootActive && state.lv1 === lv1.key;
+            var children = (lv1.children || []).map(function (lv2) {
+              var childActive = state.kind === kind.key && state.lv2 === lv2.key;
+              return '' +
+                '<li>' +
+                  '<button class="catalog-tree__child' + (childActive ? ' is-active' : '') + '" type="button" data-kind="' + escapeHtml(kind.key) + '" data-lv1="' + escapeHtml(lv1.key) + '" data-lv2="' + escapeHtml(lv2.key) + '">' +
+                    '<span>' + escapeHtml(lv2.label) + '</span><small>' + lv2.count + '</small>' +
+                  '</button>' +
+                '</li>';
+            }).join('');
+            return '' +
+              '<li>' +
+                '<button class="catalog-tree__group' + (groupActive && !state.lv2 ? ' is-active' : '') + '" type="button" data-kind="' + escapeHtml(kind.key) + '" data-lv1="' + escapeHtml(lv1.key) + '">' +
+                  '<span>' + escapeHtml(lv1.label) + '</span><small>' + lv1.count + '</small>' +
+                '</button>' +
+                (groupActive && children ? '<ul class="catalog-tree__children">' + children + '</ul>' : '') +
+              '</li>';
+          }).join('');
+          sections.push(
+            '<section class="catalog-tree__section' + (rootActive ? ' is-active' : '') + '">' +
+              '<button class="catalog-tree__root' + (rootActive ? ' is-active' : '') + '" type="button" data-kind="' + escapeHtml(kind.key) + '">' +
+                '<span>' + escapeHtml(kind.label) + '</span><small>' + kind.count + '</small>' +
+              '</button>' +
+              (rootActive ? '<ul class="catalog-tree__groups">' + groups + '</ul>' : '') +
+            '</section>'
+          );
+        });
+      } else {
+        sections = (data.taxonomy || []).map(function (lv1) {
+          var rootActive = state.lv1 === lv1.key;
+          var children = (lv1.children || []).map(function (lv2) {
+            var childActive = state.lv2 === lv2.key;
+            return '' +
+              '<li>' +
+                '<button class="catalog-tree__child' + (childActive ? ' is-active' : '') + '" type="button" data-lv1="' + escapeHtml(lv1.key) + '" data-lv2="' + escapeHtml(lv2.key) + '">' +
+                  '<span>' + escapeHtml(lv2.label) + '</span><small>' + lv2.count + '</small>' +
+                '</button>' +
+              '</li>';
+          }).join('');
+          return '' +
+            '<section class="catalog-tree__section' + (rootActive ? ' is-active' : '') + '">' +
+              '<button class="catalog-tree__root' + (rootActive && !state.lv2 ? ' is-active' : '') + '" type="button" data-lv1="' + escapeHtml(lv1.key) + '">' +
+                '<span>' + escapeHtml(lv1.label) + '</span><small>' + lv1.count + '</small>' +
+              '</button>' +
+              (rootActive ? '<ul class="catalog-tree__children">' + children + '</ul>' : '') +
+            '</section>';
+        });
+      }
+
+      desktopTree.innerHTML =
+        '<h3 class="catalog-sidebar__title">' + (data.section === 'thu-vien' ? 'Thư viện' : 'Bản tin') + '</h3>' +
+        '<div class="catalog-tree">' + sections.join('') + '</div>';
+
+      desktopTree.querySelectorAll('button').forEach(function (button) {
+        button.addEventListener('click', function () {
+          state.badge = '';
+          state.tag = '';
+          if (button.dataset.kind !== undefined) {
+            state.kind = button.dataset.kind || '';
+          }
+          state.lv1 = button.dataset.lv1 || '';
+          state.lv2 = button.dataset.lv2 || '';
+          state.page = 1;
+          updateUrl(buildStateUrl(state), 'push');
+          renderAll();
+        });
+      });
+    }
+
 	    function renderAdvancedFilters() {
 	      if (!filters) return;
 
@@ -1046,6 +1127,7 @@
     function renderAll() {
       state = normalizeState(state, data);
       updateHeroContext();
+      renderDesktopTree();
       renderPrimaryFilters();
       renderAdvancedFilters();
       renderChips();

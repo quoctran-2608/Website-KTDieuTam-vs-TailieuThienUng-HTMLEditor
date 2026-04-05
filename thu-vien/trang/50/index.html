@@ -42,16 +42,18 @@
 
 <section class="catalog-shell">
   <div class="container">
-    <main class="catalog-main">
-      <div class="catalog-toolbar">
-        <div class="catalog-toolbar__summary">
-          <span class="catalog-toolbar__label">Đang xem</span>
-          <p class="catalog-active-filter" id="hubActiveFilter">Tất cả bài viết</p>
+    <div class="catalog-layout">
+      <aside id="hubDesktopTree" class="catalog-sidebar" aria-label="Điều hướng chuyên đề"></aside>
+      <main class="catalog-main">
+        <div class="catalog-toolbar">
+          <div class="catalog-toolbar__summary">
+            <span class="catalog-toolbar__label">Đang xem</span>
+            <p class="catalog-active-filter" id="hubActiveFilter">Tất cả bài viết</p>
+          </div>
+          <p class="catalog-toolbar__count" id="hubInlineCount">1835 bài</p>
         </div>
-        <p class="catalog-toolbar__count" id="hubInlineCount">1835 bài</p>
-      </div>
-      <div id="hubChips" class="catalog-chip-row" style="display:none;"></div>
-      <div id="hubResults"><div class="catalog-grid"><article class="catalog-card">
+        <div id="hubChips" class="catalog-chip-row" style="display:none;"></div>
+        <div id="hubResults"><div class="catalog-grid"><article class="catalog-card">
             <a class="catalog-card__media" data-article-link="1" href="../../chi-phi-tien-luong-hop-ly-thi-phai-gom-nhung-giay-to-gi.html?from=trang/50/index.html">
               <img loading="lazy" decoding="async" src="../../../assets/images/content/pic/Service/images/chi-phi-tien-luong-thuong-hop-ly-duoc-tru.jpg" alt="Chi phí tiền lương được trừ và không được trừ khi tính thuế TNDN">
             </a>
@@ -220,8 +222,9 @@
 	              </div>
 	            </div>
           </article></div></div>
-      <nav id="hubPagination" class="catalog-pagination" aria-label="Phân trang bài viết" style="display:flex;"><a class="catalog-pagination__btn catalog-pagination__nav" href="../49/index.html" aria-label="Trang trước"><i class="fa-solid fa-angle-left"></i></a><a class="catalog-pagination__btn" href="../../../thu-vien.html">1</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="../49/index.html">49</a><a class="catalog-pagination__btn is-active" href="index.html" aria-current="page">50</a><a class="catalog-pagination__btn" href="../51/index.html">51</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="../153/index.html">153</a><a class="catalog-pagination__btn catalog-pagination__nav" href="../51/index.html" aria-label="Trang sau"><i class="fa-solid fa-angle-right"></i></a></nav>
-    </main>
+        <nav id="hubPagination" class="catalog-pagination" aria-label="Phân trang bài viết" style="display:flex;"><a class="catalog-pagination__btn catalog-pagination__nav" href="../49/index.html" aria-label="Trang trước"><i class="fa-solid fa-angle-left"></i></a><a class="catalog-pagination__btn" href="../../../thu-vien.html">1</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="../49/index.html">49</a><a class="catalog-pagination__btn is-active" href="index.html" aria-current="page">50</a><a class="catalog-pagination__btn" href="../51/index.html">51</a><span class="catalog-pagination__ellipsis">…</span><a class="catalog-pagination__btn" href="../153/index.html">153</a><a class="catalog-pagination__btn catalog-pagination__nav" href="../51/index.html" aria-label="Trang sau"><i class="fa-solid fa-angle-right"></i></a></nav>
+      </main>
+    </div>
   </div>
 </section>
 
