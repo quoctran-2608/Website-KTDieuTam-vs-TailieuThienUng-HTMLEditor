@@ -33,7 +33,7 @@ python3 Ketoandieutam.com/tools/audit_legacy_mobile_readiness.py
 ```
 
 - Output:
-  - `docs/legacy-mobile-import-audit.md`
+  - `legacy-mobile-import-audit.md`
 
 ### 3.2 Audit phân loại nội dung
 
@@ -45,7 +45,7 @@ python3 Ketoandieutam.com/tools/audit_content_classification.py
 ```
 
 - Output:
-  - `docs/content-classification-audit.md`
+  - `content-classification-audit.md`
 
 ### 3.3 Build site
 
@@ -63,7 +63,7 @@ python3 .m/build_sample_sections.py --mode full
   - `data/`
   - `sitemap.xml`
   - `robots.txt`
-  - đối chiếu rule tại `docs/content-classification-policy.md`
+  - đối chiếu rule tại `content-classification-policy.md`
 
 ### 3.3 Runtime safety net đang có sẵn trong site
 
@@ -100,7 +100,7 @@ Hai file này hiện đã có các lớp bảo vệ:
 - ảnh bài viết trong:
   - `assets/images/content/`
 - report/docs:
-  - `docs/legacy-mobile-import-audit.md`
+  - `legacy-mobile-import-audit.md`
   - báo cáo batch import tương ứng
 
 ### 4.2a Taxonomy cần giữ đúng khi import
@@ -480,9 +480,9 @@ Mỗi lần chạy batch nên lưu 1 record với cấu trúc này:
 
 Khi quay lại import 2000+ bài:
 
-1. đọc `docs/legacy-mobile-import-audit.md`
-2. đọc `docs/content-classification-audit.md`
-3. đọc `docs/content-classification-policy.md`
+1. đọc `legacy-mobile-import-audit.md`
+2. đọc `content-classification-audit.md`
+3. đọc `content-classification-policy.md`
 4. đọc lại file này
 5. chốt batch
 6. sanitize khi import

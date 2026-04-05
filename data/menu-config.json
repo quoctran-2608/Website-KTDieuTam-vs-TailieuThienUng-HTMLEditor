@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-04-05T09:50:25.215742+00:00",
+  "items": [
+    {
+      "key": "home",
+      "label": "Trang Chủ",
+      "href": "index.html"
+    },
+    {
+      "key": "gioi-thieu",
+      "label": "Giới Thiệu",
+      "href": "gioi-thieu.html"
+    },
+    {
+      "key": "giai-phap",
+      "label": "Giải Pháp",
+      "href": "giai-phap.html"
+    },
+    {
+      "key": "dao-tao",
+      "label": "Đào Tạo",
+      "href": "dao-tao.html"
+    },
+    {
+      "key": "thu-vien",
+      "label": "Thư Viện",
+      "href": "thu-vien.html",
+      "category": "thu-vien",
+      "children": [
+        {
+          "key": "thu-vien-huong-dan",
+          "label": "Hướng dẫn",
+          "href": "thu-vien.html?kind=huong-dan",
+          "category": "huong-dan"
+        },
+        {
+          "key": "thu-vien-bieu-mau",
+          "label": "Biểu mẫu",
+          "href": "thu-vien.html?kind=bieu-mau",
+          "category": "bieu-mau"
+        },
+        {
+          "key": "thu-vien-cong-cu",
+          "label": "Công cụ",
+          "href": "thu-vien.html?kind=cong-cu",
+          "category": "cong-cu"
+        }
+      ]
+    },
+    {
+      "key": "ban-tin",
+      "label": "Bản Tin",
+      "href": "ban-tin.html",
+      "category": "ban-tin"
+    },
+    {
+      "key": "lien-he",
+      "label": "Liên Hệ",
+      "href": "lien-he.html"
+    }
+  ]
+}

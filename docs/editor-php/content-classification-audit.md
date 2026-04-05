@@ -150,5 +150,5 @@ python3 Ketoandieutam.com/tools/audit_content_classification.py
 
 Đọc kèm:
 
-- `docs/content-classification-policy.md`
-- `docs/legacy-import-pipeline.md`
+- `content-classification-policy.md`
+- `legacy-import-pipeline.md`

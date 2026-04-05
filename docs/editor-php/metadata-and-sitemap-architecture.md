@@ -87,6 +87,9 @@ Builder hiện đã được mở rộng để sinh thêm thư mục:
 Ketoandieutam.com/
   data/
     articles.json
+    taxonomy.json
+    editor-taxonomy.json
+    menu-config.json
     hubs/
       thu-vien.json
       ban-tin.json
@@ -114,6 +117,29 @@ Metadata canonical cho toàn bộ bài đã build:
 - library kind
 - publish/modified date
 - author
+
+#### `data/taxonomy.json`
+Tree taxonomy đang dùng ở frontend HTML hiện tại:
+
+- root `Thư viện / Bản tin`
+- nhánh `Hướng dẫn / Biểu mẫu / Công cụ`
+- topic lv1 / lv2
+- tool variants cho `Công cụ`
+
+#### `data/editor-taxonomy.json`
+Phiên bản taxonomy canonical để editor PHP đọc trực tiếp:
+
+- root category
+- children tree
+- variant map
+- field map giữa dữ liệu hiện tại và schema editor
+
+#### `data/menu-config.json`
+Cấu hình menu public tách riêng khỏi taxonomy:
+
+- top menu item
+- submenu
+- category mapping
 
 #### `data/hubs/<section>.json`
 Dữ liệu phục vụ trang hub:
@@ -271,4 +297,3 @@ Với static site, **không cần database vẫn quản nổi 2000+ bài**, nế
 Vấn đề không nằm ở “static hay không”, mà nằm ở:
 
 - có quản theo kiến trúc dữ liệu hay không
-

@@ -3,7 +3,7 @@
 - Thời điểm tạo: 2026-04-03 18:27:47
 - Nguồn scan: `TailieuKeToanThienUng/index.html` (`catalog-data`)
 - Script tạo báo cáo: `tools/audit_legacy_mobile_readiness.py`
-- File report: `docs/legacy-mobile-import-audit.md`
+- File report: `legacy-mobile-import-audit.md`
 
 ## 1) Mục đích
 

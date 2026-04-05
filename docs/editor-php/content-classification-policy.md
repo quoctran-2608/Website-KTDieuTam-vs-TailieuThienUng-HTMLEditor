@@ -218,7 +218,7 @@ python3 Ketoandieutam.com/tools/audit_content_classification.py
 
 Report sinh ra tại:
 
-- `docs/content-classification-audit.md`
+- `content-classification-audit.md`
 
 ## 10) Khi nào cần chỉnh lại rule?
 

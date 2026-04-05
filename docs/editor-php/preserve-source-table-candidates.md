@@ -87,5 +87,5 @@ Trong đó:
 
 - `Ketoandieutam.com/article-layout.js`
 - `Ketoandieutam.com/assets/css/content-hub.css`
-- `Ketoandieutam.com/docs/legacy-import-pipeline.md`
-- `Ketoandieutam.com/docs/legacy-mobile-import-audit.md`
+- `legacy-import-pipeline.md`
+- `legacy-mobile-import-audit.md`
