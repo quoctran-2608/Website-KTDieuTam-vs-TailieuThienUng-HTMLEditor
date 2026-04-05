@@ -200,6 +200,8 @@ Hiện tại hệ thống đã sẵn chỗ cho các field này. Khi thêm bài m
 - `sectionKey`
 - `topic_lv1`
 - `topic_lv2`
+- `libraryKind` nếu thuộc `thu-vien`
+- `toolLv3` nếu thuộc `thu-vien > cong-cu`
 - `tags`
 
 ### Nhóm thời gian
@@ -236,10 +238,35 @@ Hiện tại hệ thống đã sẵn chỗ cho các field này. Khi thêm bài m
    - `huong-dan`
    - `bieu-mau`
    - `cong-cu`
-3. Đặt slug ngắn, sạch, ổn định
-4. Không hardcode header / footer / sidebar riêng trong file bài
-5. Không nhúng riêng block related/latest theo kiểu copy-paste thủ công
-6. Bổ sung metadata vào nguồn build để `data/`, `sitemap.xml`, `robots.txt` tự sinh lại
+3. Nếu là `thu-vien > cong-cu`, gắn tiếp `toolLv3` theo taxonomy level 3 chuẩn:
+   - `htkk-etax-thue-dien-tu`
+     - `cai-dat`
+     - `nang-cap`
+     - `ke-khai`
+     - `nop-to-khai`
+     - `quyet-toan`
+     - `dang-ky-thue`
+     - `hoan-thue`
+     - `tai-ve`
+     - `loi-thuong-gap`
+   - `excel-va-cong-cu-khac`
+     - `ham-excel`
+     - `mau-file`
+     - `thuc-hanh`
+     - `thue`
+     - `tscd-ccdc`
+     - `tien-luong`
+     - `bao-cao`
+   - `fast`
+     - `cai-dat`
+     - `tai-ve`
+     - `su-dung`
+4. Nếu là `thu-vien > bieu-mau`, level 3 không hardcode bằng field riêng; ưu tiên tags hữu ích để `Filters` sinh ra:
+   - ví dụ: `TSCĐ`, `BCTC`, `CCDC`, `Khấu hao`, `Tiền lương`, `GTGT`, `TNCN`, `BHXH`...
+5. Đặt slug ngắn, sạch, ổn định
+6. Không hardcode header / footer / sidebar riêng trong file bài
+7. Không nhúng riêng block related/latest theo kiểu copy-paste thủ công
+8. Bổ sung metadata vào nguồn build để `data/`, `sitemap.xml`, `robots.txt` tự sinh lại
 
 ### Không nên
 - tự tạo nav bài trước/sau bằng tay

@@ -1,6 +1,6 @@
 {
   "currentIndex": 237,
-  "totalCount": 1823,
+  "totalCount": 1835,
   "prev": {
     "id": "thu-vien/cach-hach-toan-mang-tscd-di-gop-von-vao-cong-ty-lien-doanh.html",
     "section": "thu-vien",
@@ -12,7 +12,12 @@
     "excerpt": "Hướng dẫn hạch toán mang TSCĐ đi góp vốn vào công ty liên doanh, liên kết trên Misa Khi phát sinh nghiệp vụ mang TSCĐ đ…",
     "topicLabel": "Tài khoản - Hạch toán",
     "tags": [
-      "TSCĐ"
+      "TSCĐ",
+      "Tài khoản",
+      "Hạch toán",
+      "Kế toán",
+      "MISA",
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach-hach-toan-mang-tscd-di-gop-von-cong-ty-lien-doanh-lien-ket-1(1).png",
     "libraryKindLabel": "Hướng dẫn",
@@ -31,60 +36,80 @@
     "topicLabel": "MISA",
     "tags": [
       "CCDC",
-      "MISA"
+      "MISA",
+      "Phần mềm",
+      "Công cụ",
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach-hach-toan-mua-ccdc-su-dung-ngay-tren-misa-1(1).png",
-    "libraryKindLabel": "Công cụ",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
   "newsLatest": [
     {
-      "id": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
+      "id": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "title": "Mẫu Quyết định chấm dứt hợp đồng lao động",
-      "excerpt": "Khi muốn chấm dứt hợp đồng lao động Doanh nghiệp và người lao động cần hồ sơ gồm: Quyết định chấm dứt…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "section": "ban-tin",
-      "sectionLabel": "Bản tin",
-      "sectionHref": "ban-tin.html",
-      "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
-      "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
-      "topicLabel": "Khác",
-      "tags": [],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "href": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "title": "Thông tư 20/2026/TT-BTC hướng dẫn về Thuế TNDN",
+      "excerpt": "Thông tư 20/2026/TT-BTC của Bộ Tài chính quy định chi tiết một số điều của Luật Thuế thu nhập doanh nghiệp và Nghị định…",
+      "topicLabel": "Thông tư",
+      "tags": [
+        "TNDN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thong-tu-20-2026.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-03-12",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
+      "id": "ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "title": "Mẫu Quyết định giải thể doanh nghiệp công ty",
-      "excerpt": "Mẫu Quyết định giải thể giải thể Doanh nghiệp, giải thể Công ty mới nhất để làm thủ tục giải thể Doanh nghiệp, tải mẫu…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [],
-      "image": "assets/images/content/pic/Service/images/mau-quyet-dinh-giai-the-doanh-nghiep.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "href": "ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "title": "Hộ cá nhân kinh doanh không phải nộp thuế vẫn phải nộp tờ khai",
+      "excerpt": "Quy định về kê khai thuế đối với hộ kinh doanh, cá nhân kinh doanh thuộc đối tượng không chịu thuế giá trị gia tăng, kh…",
+      "topicLabel": "Công văn",
+      "tags": [
+        "Hộ kinh doanh",
+        "Kê khai",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Nộp tờ khai",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/khong-phai-nop-thue-van-phai-nop-to-khai.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-03-05",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "title": "Nghị định 68/2026/NĐ-CP thuế đối với hộ, cá nhân kinh doanh",
+      "excerpt": "Ngày 05/03/2026, Chính phủ đã ban hành Nghị định 68/2026/NĐ-CP quy định về chính sách thuế và quản lý thuế đối với hộ k…",
+      "topicLabel": "Nghị định",
+      "tags": [
+        "Hộ kinh doanh",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/Nghi-dinh-68-2026.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-03-05",
       "modifiedDate": null
     }
   ],
@@ -99,7 +124,11 @@
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
       "topicLabel": "Nghiệp vụ theo phần hành",
-      "tags": [],
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Chi-phi-khong-tuong-ung-voi-doanh-thu.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2027-01-05",
@@ -115,7 +144,12 @@
       "title": "Hạch toán giảm giá hàng bán đối với bên mua, bên bán theo TT 99, TT 133",
       "excerpt": "Hướng dẫn cách hạch toán giảm giá hàng bán đối với bên mua, bên bán theo thông tư 99/2025/TT-BTC và thông tư 133/2016/T…",
       "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [],
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Hoa-don-ban-hang.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-10-08",
@@ -133,7 +167,11 @@
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
-        "TNDN"
+        "TNDN",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Mẫu biểu",
+        "Thủ tục"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -143,55 +181,69 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cach-hach-toan-phan-bo-cong-cu-dung-cu.html",
+      "id": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-phan-bo-cong-cu-dung-cu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-phan-bo-cong-cu-dung-cu.html",
-      "title": "Cách Hạch toán công cụ dụng cụ - phân bổ CCDC",
-      "excerpt": "Hạch toán công cụ dụng cụ khi mua về như thế nào? Khi phân bổ công cụ dụng cụ hạch toán vào đâu? Hạch toán phân bổ công…",
+      "href": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "title": "Cách hạch toán xuất kho hàng hóa, thành phẩm làm TSCĐ trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ xuất kho hàng hóa, thành phẩm làm tài sản cố định trên phần mềm Misa Khi phát…",
       "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "CCDC"
+        "TSCĐ",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "MISA",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/hach-toan-cong-cu-dung-cu.jpg",
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd-tren-misa-1(1).png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-hach-toan-cong-cu-dung-cu-tk-153.html",
+      "id": "thu-vien/cach-hach-toan-ban-hang-co-giam-gia-hang-ban.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-cong-cu-dung-cu-tk-153.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-cong-cu-dung-cu-tk-153.html",
-      "title": "Cách hạch toán công cụ, dụng cụ - Tài khoản 153 theo TT 200",
-      "excerpt": "Cách hạch toán Tài khoản 153 – Công cụ, dụng cụ Theo Thông tư 200/2014/TT-BTC (Có hiệu lực từ ngày 1/1/2015). T…",
+      "href": "thu-vien/cach-hach-toan-ban-hang-co-giam-gia-hang-ban.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-ban-hang-co-giam-gia-hang-ban.html",
+      "title": "Cách hạch toán bán hàng có giảm giá hàng bán trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ bán hàng có giảm giá hàng bán trên phần mềm Misa Khi phát sinh nghiệp vụ giảm…",
       "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "CCDC"
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "MISA",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach%20hach%20toan%20cong%20cu%2C%20dung%20cu%20-%20TK%20153.gif",
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-ban-hang-co-giam-gia-hang-ban-1.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2015-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/hach-toan-tk-153-cong-cu-dung-cu-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-hach-toan-mang-tscd-di-gop-von-vao-cong-ty-lien-doanh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/hach-toan-tk-153-cong-cu-dung-cu-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/hach-toan-tk-153-cong-cu-dung-cu-theo-thong-tu-99.html",
-      "title": "Cách hạch toán Tài khoản 153 - Công cụ, dụng cụ theo Thông tư 99",
-      "excerpt": "Tài khoản 153 - Công cụ, dụng cụ: dùng để phản ánh giá trị hiện có và tình hình biến động tăng, giảm các loại công cụ,…",
+      "href": "thu-vien/cach-hach-toan-mang-tscd-di-gop-von-vao-cong-ty-lien-doanh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-mang-tscd-di-gop-von-vao-cong-ty-lien-doanh.html",
+      "title": "Cách hạch toán mang TSCĐ đi góp vốn vào công ty liên doanh, liên kết trên Misa",
+      "excerpt": "Hướng dẫn hạch toán mang TSCĐ đi góp vốn vào công ty liên doanh, liên kết trên Misa Khi phát sinh nghiệp vụ mang TSCĐ đ…",
       "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "CCDC"
+        "TSCĐ",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "MISA",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-TK153-TT99.png",
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-mang-tscd-di-gop-von-cong-ty-lien-doanh-lien-ket-1(1).png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
@@ -199,19 +251,24 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-hach-toan-phan-bo-cong-cu-dung-cu.html",
+      "id": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-phan-bo-cong-cu-dung-cu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-phan-bo-cong-cu-dung-cu.html",
-      "title": "Cách Hạch toán công cụ dụng cụ - phân bổ CCDC",
-      "excerpt": "Hạch toán công cụ dụng cụ khi mua về như thế nào? Khi phân bổ công cụ dụng cụ hạch toán vào đâu? Hạch toán phân bổ công…",
+      "href": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "title": "Cách hạch toán xuất kho hàng hóa, thành phẩm làm TSCĐ trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ xuất kho hàng hóa, thành phẩm làm tài sản cố định trên phần mềm Misa Khi phát…",
       "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "CCDC"
+        "TSCĐ",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "MISA",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/hach-toan-cong-cu-dung-cu.jpg",
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd-tren-misa-1(1).png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
@@ -226,29 +283,15 @@
       "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
       "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
       "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [],
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
       "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-hach-toan-mua-ccdc-ve-su-dung-ngay-tren-misa.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-mua-ccdc-ve-su-dung-ngay-tren-misa.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-mua-ccdc-ve-su-dung-ngay-tren-misa.html",
-      "title": "Cách hạch toán mua CCDC về đưa vào sử dụng ngay trên Misa",
-      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ mua công cụ dụng cụ về đưa vào sử dụng ngay trên phần mềm Misa Khi phát sinh…",
-      "topicLabel": "MISA",
-      "tags": [
-        "CCDC",
-        "MISA"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-hach-toan-mua-ccdc-su-dung-ngay-tren-misa-1(1).png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
@@ -261,7 +304,12 @@
       "title": "Công văn 2270/TCT-CS tiền thuê nhà của cá nhân là chi phí hợp lý",
       "excerpt": "Ngày 18/06/2014 Bộ tài chính ban hành Công văn CV 2270/TCT-CS theo đó thì tiền thuê nhà của cá nhân dưới 100 tr/năm mà…",
       "topicLabel": "Nghiệp vụ theo phần hành",
-      "tags": [],
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Chính sách",
+        "Công văn"
+      ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-06-18",

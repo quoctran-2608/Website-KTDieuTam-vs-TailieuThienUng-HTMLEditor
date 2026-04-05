@@ -1,6 +1,6 @@
 {
   "currentIndex": 70,
-  "totalCount": 1823,
+  "totalCount": 1835,
   "prev": {
     "id": "thu-vien/bhxh-doi-voi-nguoi-lao-dong-lam-viec-2-noi-hoac-nhieu-noi.html",
     "section": "thu-vien",
@@ -12,7 +12,12 @@
     "excerpt": "Quy định về việc tham gia bảo hiểm bắt buộc (BHXH, BHYT, BHTN, TNLĐ) đối với người lao động ký hợp đồng lao động làm vi…",
     "topicLabel": "BHXH - BHYT - BHTN",
     "tags": [
-      "BHXH"
+      "BHXH",
+      "BHYT",
+      "BHTN",
+      "Lao động",
+      "Bảo hiểm",
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/BHXH-lam-viec-nhieu-noi.png",
     "libraryKindLabel": "Hướng dẫn",
@@ -31,7 +36,11 @@
     "topicLabel": "GTGT - Hóa đơn",
     "tags": [
       "GTGT",
-      "Mã số thuế"
+      "Mã số thuế",
+      "Hóa đơn",
+      "Thuế",
+      "MST",
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/xuat-hoa-don-khi-bi-dong-ma-so-thue.png",
     "libraryKindLabel": "Hướng dẫn",
@@ -40,51 +49,68 @@
   },
   "newsLatest": [
     {
-      "id": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
+      "id": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "title": "Mẫu Quyết định chấm dứt hợp đồng lao động",
-      "excerpt": "Khi muốn chấm dứt hợp đồng lao động Doanh nghiệp và người lao động cần hồ sơ gồm: Quyết định chấm dứt…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "section": "ban-tin",
-      "sectionLabel": "Bản tin",
-      "sectionHref": "ban-tin.html",
-      "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
-      "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
-      "topicLabel": "Khác",
-      "tags": [],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "href": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "title": "Thông tư 20/2026/TT-BTC hướng dẫn về Thuế TNDN",
+      "excerpt": "Thông tư 20/2026/TT-BTC của Bộ Tài chính quy định chi tiết một số điều của Luật Thuế thu nhập doanh nghiệp và Nghị định…",
+      "topicLabel": "Thông tư",
+      "tags": [
+        "TNDN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thong-tu-20-2026.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-03-12",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
+      "id": "ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "title": "Mẫu Quyết định giải thể doanh nghiệp công ty",
-      "excerpt": "Mẫu Quyết định giải thể giải thể Doanh nghiệp, giải thể Công ty mới nhất để làm thủ tục giải thể Doanh nghiệp, tải mẫu…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [],
-      "image": "assets/images/content/pic/Service/images/mau-quyet-dinh-giai-the-doanh-nghiep.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "href": "ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "title": "Hộ cá nhân kinh doanh không phải nộp thuế vẫn phải nộp tờ khai",
+      "excerpt": "Quy định về kê khai thuế đối với hộ kinh doanh, cá nhân kinh doanh thuộc đối tượng không chịu thuế giá trị gia tăng, kh…",
+      "topicLabel": "Công văn",
+      "tags": [
+        "Hộ kinh doanh",
+        "Kê khai",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Nộp tờ khai",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/khong-phai-nop-thue-van-phai-nop-to-khai.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-03-05",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "title": "Nghị định 68/2026/NĐ-CP thuế đối với hộ, cá nhân kinh doanh",
+      "excerpt": "Ngày 05/03/2026, Chính phủ đã ban hành Nghị định 68/2026/NĐ-CP quy định về chính sách thuế và quản lý thuế đối với hộ k…",
+      "topicLabel": "Nghị định",
+      "tags": [
+        "Hộ kinh doanh",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/Nghi-dinh-68-2026.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-03-05",
       "modifiedDate": null
     }
   ],
@@ -99,7 +125,11 @@
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
       "topicLabel": "Nghiệp vụ theo phần hành",
-      "tags": [],
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Chi-phi-khong-tuong-ung-voi-doanh-thu.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2027-01-05",
@@ -115,7 +145,12 @@
       "title": "Hạch toán giảm giá hàng bán đối với bên mua, bên bán theo TT 99, TT 133",
       "excerpt": "Hướng dẫn cách hạch toán giảm giá hàng bán đối với bên mua, bên bán theo thông tư 99/2025/TT-BTC và thông tư 133/2016/T…",
       "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [],
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Hoa-don-ban-hang.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-10-08",
@@ -133,7 +168,11 @@
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
-        "TNDN"
+        "TNDN",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Mẫu biểu",
+        "Thủ tục"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -143,79 +182,97 @@
   ],
   "related": [
     {
-      "id": "thu-vien/bhxh-bat-buoc-doi-voi-chu-ho-kinh-doanh.html",
+      "id": "thu-vien/che-do-doi-voi-nguoi-ld-khong-du-dieu-kien-huong-luong-huu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bhxh-bat-buoc-doi-voi-chu-ho-kinh-doanh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bhxh-bat-buoc-doi-voi-chu-ho-kinh-doanh.html",
-      "title": "BHXH bắt buộc đối với chủ hộ kinh doanh từ ngày 01/7/2025",
-      "excerpt": "Quy định về bảo hiểm xã hội bắt buộc đối với chủ hộ kinh doanh từ ngày 01/07/2025 Theo điểm m khoản 1 điều 2 của Luật B…",
+      "href": "thu-vien/che-do-doi-voi-nguoi-ld-khong-du-dieu-kien-huong-luong-huu.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/che-do-doi-voi-nguoi-ld-khong-du-dieu-kien-huong-luong-huu.html",
+      "title": "Chế độ đối với người lao động không đủ điều kiện hưởng lương hưu và chưa đủ tuổi hưởng trợ cấp hưu trí xã hội",
+      "excerpt": "Chế độ đối với người lao động không đủ điều kiện hưởng lương hưu và chưa đủ tuổi hưởng trợ cấp hưu trí xã hội theo Luật…",
       "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
         "BHXH",
-        "Hộ kinh doanh"
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Tiền lương"
       ],
-      "image": "assets/images/content/pic/Service/images/BHXH-chu-ho-kinh-doanh.png",
+      "image": "assets/images/content/pic/Service/images/che-do-BH-huu-tri-xa-hoi(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-06-25",
+      "publishDate": "2025-07-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/bhxh-doi-voi-nguoi-lao-dong-lam-viec-2-noi-hoac-nhieu-noi.html",
+      "id": "thu-vien/muc-luong-thap-nhat-cao-nhat-de-dong-bhxh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bhxh-doi-voi-nguoi-lao-dong-lam-viec-2-noi-hoac-nhieu-noi.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bhxh-doi-voi-nguoi-lao-dong-lam-viec-2-noi-hoac-nhieu-noi.html",
-      "title": "BHXH đối với người lao động làm việc 2 nơi hoặc nhiều nơi năm 2026",
-      "excerpt": "Quy định về việc tham gia bảo hiểm bắt buộc (BHXH, BHYT, BHTN, TNLĐ) đối với người lao động ký hợp đồng lao động làm vi…",
+      "href": "thu-vien/muc-luong-thap-nhat-cao-nhat-de-dong-bhxh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/muc-luong-thap-nhat-cao-nhat-de-dong-bhxh.html",
+      "title": "Mức lương thấp nhất, cao nhất để đóng BHXH 2026",
+      "excerpt": "Mức lương thấp nhất, cao nhất để đóng bảo hiểm xã hội mới năm 2026 theo quy định tại Luật BHXH, bảo hiểm y tế và bảo hi…",
       "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Tiền lương"
       ],
-      "image": "assets/images/content/pic/Service/images/BHXH-lam-viec-nhieu-noi.png",
+      "image": "assets/images/content/pic/Service/images/muc-luong-dong-bh.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/doi-tuong-khong-phai-tham-gia-dong-bhxh-bat-buoc.html",
+      "id": "thu-vien/dong-bao-hiem-xa-hoi-bao-nhieu-nam-thi-duoc-huong-luong-huu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/doi-tuong-khong-phai-tham-gia-dong-bhxh-bat-buoc.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/doi-tuong-khong-phai-tham-gia-dong-bhxh-bat-buoc.html",
-      "title": "Các đối tượng không phải tham gia đóng BHXH bắt buộc năm 2026",
-      "excerpt": "Tổng hợp các đối tượng không phải tham gia đóng BHXH bắt buộc năm 2026 theo Luật Bảo hiểm xã hội số: 41/2024/QH15 và Ng…",
+      "href": "thu-vien/dong-bao-hiem-xa-hoi-bao-nhieu-nam-thi-duoc-huong-luong-huu.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/dong-bao-hiem-xa-hoi-bao-nhieu-nam-thi-duoc-huong-luong-huu.html",
+      "title": "Đóng bảo hiểm xã hội bao nhiêu năm thì được hưởng lương hưu?",
+      "excerpt": "Bắt đầu từ ngày 01/07/2025, khi nghỉ việc có thời gian đóng bảo hiểm xã hội từ đủ 15 năm trở lên thì được hưởng lương h…",
       "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Tiền lương"
       ],
-      "image": "assets/images/content/pic/Service/images/khong-phai-tham-gia-BHXH(1)(1).png",
+      "image": "assets/images/content/pic/Service/images/dong-bhxh-huong-luong-huu.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "1998-01-23",
+      "publishDate": "2021-01-01",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/bhxh-bat-buoc-doi-voi-chu-ho-kinh-doanh.html",
+      "id": "thu-vien/che-do-doi-voi-nguoi-ld-khong-du-dieu-kien-huong-luong-huu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bhxh-bat-buoc-doi-voi-chu-ho-kinh-doanh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bhxh-bat-buoc-doi-voi-chu-ho-kinh-doanh.html",
-      "title": "BHXH bắt buộc đối với chủ hộ kinh doanh từ ngày 01/7/2025",
-      "excerpt": "Quy định về bảo hiểm xã hội bắt buộc đối với chủ hộ kinh doanh từ ngày 01/07/2025 Theo điểm m khoản 1 điều 2 của Luật B…",
+      "href": "thu-vien/che-do-doi-voi-nguoi-ld-khong-du-dieu-kien-huong-luong-huu.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/che-do-doi-voi-nguoi-ld-khong-du-dieu-kien-huong-luong-huu.html",
+      "title": "Chế độ đối với người lao động không đủ điều kiện hưởng lương hưu và chưa đủ tuổi hưởng trợ cấp hưu trí xã hội",
+      "excerpt": "Chế độ đối với người lao động không đủ điều kiện hưởng lương hưu và chưa đủ tuổi hưởng trợ cấp hưu trí xã hội theo Luật…",
       "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
         "BHXH",
-        "Hộ kinh doanh"
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Tiền lương"
       ],
-      "image": "assets/images/content/pic/Service/images/BHXH-chu-ho-kinh-doanh.png",
+      "image": "assets/images/content/pic/Service/images/che-do-BH-huu-tri-xa-hoi(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-06-25",
+      "publishDate": "2025-07-01",
       "modifiedDate": null
     },
     {
@@ -229,30 +286,16 @@
       "excerpt": "Hiện nay, sổ bảo hiểm xã hội đang được quy định tại điều 25 của Luật Bảo hiểm xã hội số: 41/2024/QH15 có hiệu lực từ ng…",
       "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/SO-BAO-HIEM-XA-HOI.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-c70a-hd-moi-nhat-theo-quyet-dinh-919.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-c70a-hd-moi-nhat-theo-quyet-dinh-919.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-c70a-hd-moi-nhat-theo-quyet-dinh-919.html",
-      "title": "Mẫu C70a-HD Excel theo Quyết định 636/QĐ-BHXH mới nhất 2019",
-      "excerpt": "Mẫu C70a-HD mới nhất năm 2019 Excel theo Quyết định 636/QĐ-BHXH - Danh sách đề nghị giải quyết hưởng chế độ thai sản, ố…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "BHXH",
-        "Excel"
-      ],
-      "image": "assets/images/content/pic/Service/images/mau-c70a-hd-moi-nhat-theo-qd-636.png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2016-04-22",
       "modifiedDate": null
     },
     {
@@ -267,7 +310,11 @@
       "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
         "BHXH",
-        "BHYT"
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Chính sách"
       ],
       "image": "assets/images/content/pic/Service/images/Diem-moi-bhxh.png",
       "libraryKindLabel": "Hướng dẫn",

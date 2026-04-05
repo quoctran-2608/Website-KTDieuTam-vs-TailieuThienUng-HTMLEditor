@@ -103,6 +103,35 @@ Hai file này hiện đã có các lớp bảo vệ:
   - `docs/legacy-mobile-import-audit.md`
   - báo cáo batch import tương ứng
 
+### 4.2a Taxonomy cần giữ đúng khi import
+
+#### `Thư viện` → `Hướng dẫn`
+- level 2 = nhóm nghiệp vụ chính
+- level 3 = nhánh con trong `Filters`
+
+#### `Thư viện` → `Biểu mẫu`
+- level 2:
+  - Mẫu biểu kế toán
+  - Mẫu biểu thuế - hóa đơn
+  - Mẫu biểu doanh nghiệp - thủ tục
+  - Mẫu biểu lao động - bảo hiểm
+- level 3:
+  - lấy từ tags hữu ích của tập bài đang xem
+  - loại bỏ tag quá chung như `Biểu mẫu`, `Mẫu biểu`, `Thủ tục`
+
+#### `Thư viện` → `Công cụ`
+- level 2:
+  - HTKK - eTax - Thuế điện tử
+  - Excel - Công cụ khác
+  - FAST
+- level 3:
+  - không dùng tag thô trực tiếp
+  - ưu tiên `toolLv3Key / toolLv3Label` build ra từ rule chuẩn
+  - các nhóm chính hiện tại:
+    - HTKK/eTax: Cài đặt, Nâng cấp, Kê khai, Nộp tờ khai, Quyết toán, Đăng ký thuế, Hoàn thuế, Tải về, Lỗi thường gặp
+    - Excel: Hàm Excel, Mẫu file, Thực hành, Thuế, TSCĐ / CCDC, Tiền lương, Báo cáo
+    - FAST: Cài đặt, Tải về, Sử dụng
+
 ### 4.3 Failure mode cần theo dõi
 
 - thiếu file nguồn trong catalog

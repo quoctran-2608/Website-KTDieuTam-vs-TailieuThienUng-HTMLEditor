@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1754,
-  "totalCount": 1823,
+  "currentIndex": 1766,
+  "totalCount": 1835,
   "prev": {
     "id": "thu-vien/thue-suat-khi-thanh-ly-tai-san-co-dinh.html",
     "section": "thu-vien",
@@ -13,7 +13,10 @@
     "topicLabel": "GTGT - Hóa đơn",
     "tags": [
       "GTGT",
-      "TSCĐ"
+      "TSCĐ",
+      "Hóa đơn",
+      "Thuế",
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach-viet-hoa-don-thanh-ly-tscd.png",
     "libraryKindLabel": "Hướng dẫn",
@@ -31,7 +34,10 @@
     "excerpt": "Câu hỏi: - Kính gửi quý bộ! Tôi có thắc mắc sau xin nhờ quý bộ giải đáp. Ví dụ 2 tại điểm 1 điều 4 thông tư 219/2013/TT…",
     "topicLabel": "GTGT - Hóa đơn",
     "tags": [
-      "GTGT"
+      "GTGT",
+      "Hóa đơn",
+      "Thuế",
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
     "libraryKindLabel": "Hướng dẫn",
@@ -40,51 +46,68 @@
   },
   "newsLatest": [
     {
-      "id": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
+      "id": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "title": "Mẫu Quyết định chấm dứt hợp đồng lao động",
-      "excerpt": "Khi muốn chấm dứt hợp đồng lao động Doanh nghiệp và người lao động cần hồ sơ gồm: Quyết định chấm dứt…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "section": "ban-tin",
-      "sectionLabel": "Bản tin",
-      "sectionHref": "ban-tin.html",
-      "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
-      "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
-      "topicLabel": "Khác",
-      "tags": [],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "href": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "title": "Thông tư 20/2026/TT-BTC hướng dẫn về Thuế TNDN",
+      "excerpt": "Thông tư 20/2026/TT-BTC của Bộ Tài chính quy định chi tiết một số điều của Luật Thuế thu nhập doanh nghiệp và Nghị định…",
+      "topicLabel": "Thông tư",
+      "tags": [
+        "TNDN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thong-tu-20-2026.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-03-12",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
+      "id": "ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "title": "Mẫu Quyết định giải thể doanh nghiệp công ty",
-      "excerpt": "Mẫu Quyết định giải thể giải thể Doanh nghiệp, giải thể Công ty mới nhất để làm thủ tục giải thể Doanh nghiệp, tải mẫu…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [],
-      "image": "assets/images/content/pic/Service/images/mau-quyet-dinh-giai-the-doanh-nghiep.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "href": "ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "title": "Hộ cá nhân kinh doanh không phải nộp thuế vẫn phải nộp tờ khai",
+      "excerpt": "Quy định về kê khai thuế đối với hộ kinh doanh, cá nhân kinh doanh thuộc đối tượng không chịu thuế giá trị gia tăng, kh…",
+      "topicLabel": "Công văn",
+      "tags": [
+        "Hộ kinh doanh",
+        "Kê khai",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Nộp tờ khai",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/khong-phai-nop-thue-van-phai-nop-to-khai.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-03-05",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "title": "Nghị định 68/2026/NĐ-CP thuế đối với hộ, cá nhân kinh doanh",
+      "excerpt": "Ngày 05/03/2026, Chính phủ đã ban hành Nghị định 68/2026/NĐ-CP quy định về chính sách thuế và quản lý thuế đối với hộ k…",
+      "topicLabel": "Nghị định",
+      "tags": [
+        "Hộ kinh doanh",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/Nghi-dinh-68-2026.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-03-05",
       "modifiedDate": null
     }
   ],
@@ -99,7 +122,11 @@
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
       "topicLabel": "Nghiệp vụ theo phần hành",
-      "tags": [],
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Chi-phi-khong-tuong-ung-voi-doanh-thu.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2027-01-05",
@@ -115,7 +142,12 @@
       "title": "Hạch toán giảm giá hàng bán đối với bên mua, bên bán theo TT 99, TT 133",
       "excerpt": "Hướng dẫn cách hạch toán giảm giá hàng bán đối với bên mua, bên bán theo thông tư 99/2025/TT-BTC và thông tư 133/2016/T…",
       "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [],
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Hoa-don-ban-hang.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-10-08",
@@ -133,7 +165,11 @@
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
-        "TNDN"
+        "TNDN",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Mẫu biểu",
+        "Thủ tục"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -142,6 +178,29 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/phan-mem-ho-tro-ke-khai-thue-3-4-3-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-3-4-3-moi-nhat.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/phan-mem-ho-tro-ke-khai-thue-3-4-3-moi-nhat.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế 3.4.3 mới nhất",
+      "excerpt": "Ngày 05/05/2017 Tổng cục thuế đã thông báo về việc nâng cấp lên Phần mềm HTKK 3.4.3 (Phần mềm hỗ trợ kê khai thuế) và ứ…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Kê khai",
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Thuế"
+      ],
+      "image": "assets/images/content/pic/Service/images/htkk-3_4_3-moi-nhat.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2017-05-05",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
       "section": "thu-vien",
@@ -153,10 +212,63 @@
       "excerpt": "Điều kiện để chi phí mua phần mềm nước ngoài qua mạng vào chi phí được trừ. Mua phần mềm nước ngoài có chịu thuế nhà th…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2017-10-17",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/phan-mem-ho-tro-ke-khai-thue-3-8-1-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-3-8-1-moi-nhat.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/phan-mem-ho-tro-ke-khai-thue-3-8-1-moi-nhat.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế 3.8.1 mới nhất",
+      "excerpt": "Phần mềm HTKK 3.8.1 mới nhất ngày 12/01/2018 của Tổng cục thuế là phần mềm hỗ trợ kê khai thuế mới nhấ…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Kê khai",
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Thuế"
+      ],
+      "image": "assets/images/content/pic/Service/images/phan-mem-ho-tro-ke-khai-thue-3_8_1.png",
       "libraryKindLabel": "Công cụ",
+      "publishDate": "2014-12-31",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
+      "title": "Xử lý Chi phí mua phần mềm nước ngoài qua mạng",
+      "excerpt": "Điều kiện để chi phí mua phần mềm nước ngoài qua mạng vào chi phí được trừ. Mua phần mềm nước ngoài có chịu thuế nhà th…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "GTGT",
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang.jpg",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2017-10-17",
       "modifiedDate": null
     },
@@ -172,85 +284,38 @@
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "GTGT",
-        "Excel"
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Hóa đơn"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-03-nghi-dinh-119-excel-to-khai-du-lieu-hoa-don.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2018-01-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/ke-khai-thue-nha-thau-phan-mem-nhap-khau.html",
+      "id": "thu-vien/phan-mem-ho-tro-ke-khai-thue-3-4-3-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ke-khai-thue-nha-thau-phan-mem-nhap-khau.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/ke-khai-thue-nha-thau-phan-mem-nhap-khau.html",
-      "title": "Cách tính thuế nhà thầu bản quyền phần mềm nước ngoài",
-      "excerpt": "Nhập khẩu phần mềm chịu thuế nhà thầu như thế nào? Cách tính thuế nhà thầu dịch vụ phần mềm, bản quyền phần mềm khi nhậ…",
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-3-4-3-moi-nhat.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/phan-mem-ho-tro-ke-khai-thue-3-4-3-moi-nhat.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế 3.4.3 mới nhất",
+      "excerpt": "Ngày 05/05/2017 Tổng cục thuế đã thông báo về việc nâng cấp lên Phần mềm HTKK 3.4.3 (Phần mềm hỗ trợ kê khai thuế) và ứ…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Nhà thầu"
+        "Kê khai",
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Thuế"
       ],
-      "image": "assets/images/content/pic/Service/images/tinh%20thue%20nha%20thau%20cho%20phan%20mem%20nhap%20khau.png",
+      "image": "assets/images/content/pic/Service/images/htkk-3_4_3-moi-nhat.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2007-05-03",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/doi-tuong-nop-thue-gia-tri-gia-tang.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/doi-tuong-nop-thue-gia-tri-gia-tang.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/doi-tuong-nop-thue-gia-tri-gia-tang.html",
-      "title": "Đối tượng nộp thuế giá trị gia tăng 2026",
-      "excerpt": "Quy định về đối tượng nộp thuế giá trị gia tăng mới nhất năm 2026 theo Luật thuế GTGT số: 48/2024/QH15 và được hư…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT"
-      ],
-      "image": "assets/images/content/pic/Service/images/doi-tuong-nop-thue-gtgt.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/to-khai-thue-gia-tri-gia-tang-gtgt-theo-thong-tu-119.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/to-khai-thue-gia-tri-gia-tang-gtgt-theo-thong-tu-119.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/to-khai-thue-gia-tri-gia-tang-gtgt-theo-thong-tu-119.html",
-      "title": "TỜ KHAI THUẾ GIÁ TRỊ GIA TĂNG mẫu 01/GTGT theo Thông tư 119",
-      "excerpt": "Tờ khai thuế giá trị gia tăng (GTGT) mẫu 01/GTGT Ban hành kèm theo Thông tư số 119/2014/TT-BTC ngày 25/8/2014 của Bộ Tà…",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
-      "tags": [
-        "GTGT"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
-      "title": "Xử lý Chi phí mua phần mềm nước ngoài qua mạng",
-      "excerpt": "Điều kiện để chi phí mua phần mềm nước ngoài qua mạng vào chi phí được trừ. Mua phần mềm nước ngoài có chịu thuế nhà th…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "GTGT"
-      ],
-      "image": "assets/images/content/pic/Service/images/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2017-10-17",
+      "publishDate": "2017-05-05",
       "modifiedDate": null
     },
     {
@@ -263,7 +328,14 @@
       "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
       "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
       "topicLabel": "Excel - Công cụ khác",
-      "tags": [],
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Chính sách",
+        "Excel - Công cụ khác"
+      ],
       "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
       "libraryKindLabel": "Công cụ",
       "publishDate": "2026-01-01",

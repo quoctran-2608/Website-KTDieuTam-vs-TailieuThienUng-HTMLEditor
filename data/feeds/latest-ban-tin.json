@@ -1,44 +1,5 @@
 [
   {
-    "title": "Mẫu Quyết định chấm dứt hợp đồng lao động",
-    "href": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-    "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-    "publishDate": "2026-09-15",
-    "modifiedDate": null,
-    "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-    "badgeLabel": "Nghị quyết - Quyết định",
-    "topicLabel": "Văn bản pháp luật",
-    "libraryKindKey": "bieu-mau",
-    "libraryKindLabel": "Biểu mẫu",
-    "tags": []
-  },
-  {
-    "title": "Mẫu Quyết định giải thể doanh nghiệp công ty",
-    "href": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-    "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-    "publishDate": "2026-04-02",
-    "modifiedDate": null,
-    "image": "assets/images/content/pic/Service/images/mau-quyet-dinh-giai-the-doanh-nghiep.png",
-    "badgeLabel": "Nghị quyết - Quyết định",
-    "topicLabel": "Văn bản pháp luật",
-    "libraryKindKey": "bieu-mau",
-    "libraryKindLabel": "Biểu mẫu",
-    "tags": []
-  },
-  {
-    "title": "Quyết định cử đi công tác trong nước và nước ngoài",
-    "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-    "canonical": "https://ketoandieutam.com/ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-    "publishDate": "2026-04-02",
-    "modifiedDate": null,
-    "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-    "badgeLabel": "Quyết định",
-    "topicLabel": "Học liệu - Tham khảo",
-    "libraryKindKey": "huong-dan",
-    "libraryKindLabel": "Hướng dẫn",
-    "tags": []
-  },
-  {
     "title": "Thông tư 20/2026/TT-BTC hướng dẫn về Thuế TNDN",
     "href": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
     "canonical": "https://ketoandieutam.com/ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
@@ -46,11 +7,16 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/Thong-tu-20-2026.png",
     "badgeLabel": "Thông tư",
-    "topicLabel": "Văn bản pháp luật",
+    "topicLabel": "Thuế thu nhập doanh nghiệp",
     "libraryKindKey": "huong-dan",
     "libraryKindLabel": "Hướng dẫn",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
     "tags": [
-      "TNDN"
+      "TNDN",
+      "Thông tư",
+      "Văn bản pháp luật",
+      "Chính sách"
     ]
   },
   {
@@ -61,11 +27,16 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/Thong-tu-18-2026.png",
     "badgeLabel": "Thông tư",
-    "topicLabel": "Văn bản pháp luật",
+    "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
     "libraryKindKey": "huong-dan",
     "libraryKindLabel": "Hướng dẫn",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
     "tags": [
-      "Hộ kinh doanh"
+      "Hộ kinh doanh",
+      "Thông tư",
+      "Văn bản pháp luật",
+      "Chính sách"
     ]
   },
   {
@@ -76,11 +47,16 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/Nghi-dinh-68-2026.png",
     "badgeLabel": "Nghị định",
-    "topicLabel": "Văn bản pháp luật",
+    "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
     "libraryKindKey": "huong-dan",
     "libraryKindLabel": "Hướng dẫn",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
     "tags": [
-      "Hộ kinh doanh"
+      "Hộ kinh doanh",
+      "Nghị định",
+      "Văn bản pháp luật",
+      "Chính sách"
     ]
   },
   {
@@ -91,12 +67,18 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/khong-phai-nop-thue-van-phai-nop-to-khai.jpg",
     "badgeLabel": "Công văn",
-    "topicLabel": "Văn bản pháp luật",
+    "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
     "libraryKindKey": "huong-dan",
     "libraryKindLabel": "Hướng dẫn",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
     "tags": [
       "Hộ kinh doanh",
-      "Kê khai"
+      "Kê khai",
+      "Công văn",
+      "Văn bản pháp luật",
+      "Nộp tờ khai",
+      "Chính sách"
     ]
   },
   {
@@ -107,26 +89,18 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/service/images/639083062717132283.jpg",
     "badgeLabel": "Công văn",
-    "topicLabel": "Văn bản pháp luật",
+    "topicLabel": "Thuế thu nhập cá nhân",
     "libraryKindKey": "huong-dan",
     "libraryKindLabel": "Hướng dẫn",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
     "tags": [
       "TNCN",
-      "Quyết toán"
+      "Quyết toán",
+      "Công văn",
+      "Văn bản pháp luật",
+      "Chính sách"
     ]
-  },
-  {
-    "title": "Mẫu công văn xin hủy tờ khai thuế cho thuê tài sản mới nhất năm 2026",
-    "href": "ban-tin/cong-van-xin-huy-to-khai-thue-cho-thue-tai-san.html",
-    "canonical": "https://ketoandieutam.com/ban-tin/cong-van-xin-huy-to-khai-thue-cho-thue-tai-san.html",
-    "publishDate": "2026-01-27",
-    "modifiedDate": null,
-    "image": "assets/images/content/pic/Service/images/Cong-van-xin-huy-to-khai-thue-cho-thue-tai-san.png",
-    "badgeLabel": "Công văn",
-    "topicLabel": "Văn bản pháp luật",
-    "libraryKindKey": "bieu-mau",
-    "libraryKindLabel": "Biểu mẫu",
-    "tags": []
   },
   {
     "title": "Nghị định 20/2026/NĐ-CP hướng dẫn Nghị quyết số 198/2025/QH15",
@@ -136,10 +110,16 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/Nghi-dinh-20-2026-ND-CP.png",
     "badgeLabel": "Nghị định",
-    "topicLabel": "Văn bản pháp luật",
+    "topicLabel": "Nghị định",
     "libraryKindKey": "huong-dan",
     "libraryKindLabel": "Hướng dẫn",
-    "tags": []
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Nghị định",
+      "Văn bản pháp luật",
+      "Chính sách"
+    ]
   },
   {
     "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
@@ -149,10 +129,19 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
     "badgeLabel": "Excel - Công cụ khác",
-    "topicLabel": "Phần mềm - Công cụ",
+    "topicLabel": "Excel - Công cụ khác",
     "libraryKindKey": "cong-cu",
     "libraryKindLabel": "Công cụ",
-    "tags": []
+    "toolLv3Key": "thuc-hanh",
+    "toolLv3Label": "Thực hành",
+    "tags": [
+      "Excel",
+      "Công cụ khác",
+      "Phần mềm",
+      "Công cụ",
+      "Chính sách",
+      "Excel - Công cụ khác"
+    ]
   },
   {
     "title": "Luật việc làm 2025 số 74/2025/QH15 có hiệu lực từ 01/01/2026",
@@ -162,9 +151,96 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/Luat-viec-lam.png",
     "badgeLabel": "Luật",
-    "topicLabel": "Văn bản pháp luật",
+    "topicLabel": "Luật - Bộ luật",
     "libraryKindKey": "huong-dan",
     "libraryKindLabel": "Hướng dẫn",
-    "tags": []
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Luật",
+      "Bộ luật",
+      "Văn bản pháp luật",
+      "Chính sách"
+    ]
+  },
+  {
+    "title": "Nghị định 373/2025/NĐ-CP sửa đổi Nghị định 126/2020/NĐ-CP về Quản lý thuế",
+    "href": "ban-tin/nghi-dinh-373-2025-nd-cp-sua-doi-nghi-dinh-126-2020-nd-cp.html",
+    "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-373-2025-nd-cp-sua-doi-nghi-dinh-126-2020-nd-cp.html",
+    "publishDate": "2025-12-31",
+    "modifiedDate": null,
+    "image": "assets/images/content/pic/Service/images/Nghi-dinh-373.png",
+    "badgeLabel": "Nghị định",
+    "topicLabel": "Nghị định",
+    "libraryKindKey": "huong-dan",
+    "libraryKindLabel": "Hướng dẫn",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Nghị định",
+      "Văn bản pháp luật",
+      "Chính sách"
+    ]
+  },
+  {
+    "title": "Nghị định 362/2025/NĐ-CP hướng dẫn thi hành Luật Phí và lệ phí",
+    "href": "ban-tin/nghi-dinh-362-2025-nd-cp-huong-dan-thi-hanh-luat-phi-va-le-phi.html",
+    "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-362-2025-nd-cp-huong-dan-thi-hanh-luat-phi-va-le-phi.html",
+    "publishDate": "2025-12-31",
+    "modifiedDate": null,
+    "image": "assets/images/content/pic/Service/images/Nghi-dinh-362.png",
+    "badgeLabel": "Nghị định",
+    "topicLabel": "Nghị định",
+    "libraryKindKey": "huong-dan",
+    "libraryKindLabel": "Hướng dẫn",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Nghị định",
+      "Văn bản pháp luật",
+      "Chính sách"
+    ]
+  },
+  {
+    "title": "Nghị định 359/2025/NĐ-CP sửa đổi NĐ 181/2025/NĐ-CP về Thuế GTGT",
+    "href": "ban-tin/nghi-dinh-359-2025-nd-cp-sua-doi-nd-181-2025-nd-cp-ve-thue-gtgt.html",
+    "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-359-2025-nd-cp-sua-doi-nd-181-2025-nd-cp-ve-thue-gtgt.html",
+    "publishDate": "2025-12-31",
+    "modifiedDate": null,
+    "image": "assets/images/content/pic/Service/images/Nghi-dinh-359.png",
+    "badgeLabel": "Nghị định",
+    "topicLabel": "GTGT - Hóa đơn",
+    "libraryKindKey": "huong-dan",
+    "libraryKindLabel": "Hướng dẫn",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "GTGT",
+      "Nghị định",
+      "Văn bản pháp luật",
+      "Chính sách"
+    ]
+  },
+  {
+    "title": "Thông tư 152/2025/TT-BTC hướng dẫn kế toán cho hộ kinh doanh, cá nhân kinh doanh",
+    "href": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+    "canonical": "https://ketoandieutam.com/ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+    "publishDate": "2025-12-31",
+    "modifiedDate": null,
+    "image": "assets/images/content/pic/Service/images/Thong-tu-152.png",
+    "badgeLabel": "Thông tư",
+    "topicLabel": "GTGT - Hóa đơn",
+    "libraryKindKey": "huong-dan",
+    "libraryKindLabel": "Hướng dẫn",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Hộ kinh doanh",
+      "Môn bài",
+      "Nhà thầu",
+      "MST",
+      "Thuế",
+      "Hóa đơn"
+    ]
   }
 ]

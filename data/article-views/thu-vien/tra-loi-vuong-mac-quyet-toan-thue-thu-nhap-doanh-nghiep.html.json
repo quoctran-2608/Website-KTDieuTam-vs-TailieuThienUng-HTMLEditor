@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1783,
-  "totalCount": 1823,
+  "currentIndex": 1795,
+  "totalCount": 1835,
   "prev": {
     "id": "thu-vien/tra-cuu-thong-tin-dong-bao-hiem-xa-hoi-bhxh-qua-mang.html",
     "section": "thu-vien",
@@ -12,7 +12,12 @@
     "excerpt": "Hướng dẫn tra cứu Bảo hiểm xã hội: Tra cứu thông tin bảo hiểm xã hội bằng tin nhắn điện thoại; Tra cứu kết quả đóng BHX…",
     "topicLabel": "BHXH - BHYT - BHTN",
     "tags": [
-      "BHXH"
+      "BHXH",
+      "BHYT",
+      "BHTN",
+      "Lao động",
+      "Bảo hiểm",
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/huong-dan-tra-cuu-bao-hiem-xa-hoi(1).png",
     "libraryKindLabel": "Hướng dẫn",
@@ -29,7 +34,12 @@
     "title": "Trả lương chậm cho người lao động có bị phạt không? Mức phạt bao nhiêu?",
     "excerpt": "Người lao động có thể sẽ bị chậm trả lương do kết quả hoạt động sản xuất kinh doanh, do tình hình tài chính của doanh n…",
     "topicLabel": "Lao động - Tiền lương",
-    "tags": [],
+    "tags": [
+      "Lao động",
+      "Tiền lương",
+      "Bảo hiểm",
+      "Hướng dẫn"
+    ],
     "image": "assets/images/content/pic/Service/images/tra-luong-cham.jpg",
     "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
@@ -37,51 +47,68 @@
   },
   "newsLatest": [
     {
-      "id": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
+      "id": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "title": "Mẫu Quyết định chấm dứt hợp đồng lao động",
-      "excerpt": "Khi muốn chấm dứt hợp đồng lao động Doanh nghiệp và người lao động cần hồ sơ gồm: Quyết định chấm dứt…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "section": "ban-tin",
-      "sectionLabel": "Bản tin",
-      "sectionHref": "ban-tin.html",
-      "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
-      "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
-      "topicLabel": "Khác",
-      "tags": [],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "href": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "title": "Thông tư 20/2026/TT-BTC hướng dẫn về Thuế TNDN",
+      "excerpt": "Thông tư 20/2026/TT-BTC của Bộ Tài chính quy định chi tiết một số điều của Luật Thuế thu nhập doanh nghiệp và Nghị định…",
+      "topicLabel": "Thông tư",
+      "tags": [
+        "TNDN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thong-tu-20-2026.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-03-12",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
+      "id": "ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "title": "Mẫu Quyết định giải thể doanh nghiệp công ty",
-      "excerpt": "Mẫu Quyết định giải thể giải thể Doanh nghiệp, giải thể Công ty mới nhất để làm thủ tục giải thể Doanh nghiệp, tải mẫu…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [],
-      "image": "assets/images/content/pic/Service/images/mau-quyet-dinh-giai-the-doanh-nghiep.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "href": "ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "title": "Hộ cá nhân kinh doanh không phải nộp thuế vẫn phải nộp tờ khai",
+      "excerpt": "Quy định về kê khai thuế đối với hộ kinh doanh, cá nhân kinh doanh thuộc đối tượng không chịu thuế giá trị gia tăng, kh…",
+      "topicLabel": "Công văn",
+      "tags": [
+        "Hộ kinh doanh",
+        "Kê khai",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Nộp tờ khai",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/khong-phai-nop-thue-van-phai-nop-to-khai.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-03-05",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "title": "Nghị định 68/2026/NĐ-CP thuế đối với hộ, cá nhân kinh doanh",
+      "excerpt": "Ngày 05/03/2026, Chính phủ đã ban hành Nghị định 68/2026/NĐ-CP quy định về chính sách thuế và quản lý thuế đối với hộ k…",
+      "topicLabel": "Nghị định",
+      "tags": [
+        "Hộ kinh doanh",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/Nghi-dinh-68-2026.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-03-05",
       "modifiedDate": null
     }
   ],
@@ -96,7 +123,11 @@
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
       "topicLabel": "Nghiệp vụ theo phần hành",
-      "tags": [],
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Chi-phi-khong-tuong-ung-voi-doanh-thu.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2027-01-05",
@@ -112,7 +143,12 @@
       "title": "Hạch toán giảm giá hàng bán đối với bên mua, bên bán theo TT 99, TT 133",
       "excerpt": "Hướng dẫn cách hạch toán giảm giá hàng bán đối với bên mua, bên bán theo thông tư 99/2025/TT-BTC và thông tư 133/2016/T…",
       "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [],
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Hoa-don-ban-hang.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-10-08",
@@ -130,7 +166,11 @@
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
-        "TNDN"
+        "TNDN",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Mẫu biểu",
+        "Thủ tục"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -151,7 +191,11 @@
       "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "TNDN",
-        "Quyết toán"
+        "Quyết toán",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Thoi-han-nop-tien-thue-TNDN.png",
       "libraryKindLabel": "Hướng dẫn",
@@ -170,7 +214,11 @@
       "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "TNDN",
-        "Quyết toán"
+        "Quyết toán",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Cach-chuyen-lo.png",
       "libraryKindLabel": "Hướng dẫn",
@@ -188,7 +236,11 @@
       "excerpt": "Doanh nghiệp nhỏ và vừa đăng ký kinh doanh lần đầu sẽ được miễn thuế thu nhập doanh nghiệp trong 03 năm kể từ khi được…",
       "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Mien-thue-TNDN-cho-DN%20moi-thanh-lap.jpg",
       "libraryKindLabel": "Hướng dẫn",
@@ -209,7 +261,11 @@
       "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "TNDN",
-        "Quyết toán"
+        "Quyết toán",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Thoi-han-nop-tien-thue-TNDN.png",
       "libraryKindLabel": "Hướng dẫn",
@@ -229,7 +285,10 @@
       "tags": [
         "GTGT",
         "TNCN",
-        "TNDN"
+        "TNDN",
+        "Hóa đơn",
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -237,23 +296,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/ke-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-tren-htkk.html",
+      "id": "thu-vien/phan-mem-ho-tro-ke-khai-thue-3-4-3-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ke-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-tren-htkk.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/ke-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-tren-htkk.html",
-      "title": "Hướng dẫn quyết toán thuế TNDN năm 2026 trên HTKK",
-      "excerpt": "Hướng dẫn làm quyết toán thuế TNDN trên phần mềm HTKK mới nhất năm 2026 I. Tổng quan về quyết toán thuế thu nhập doanh…",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-3-4-3-moi-nhat.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/phan-mem-ho-tro-ke-khai-thue-3-4-3-moi-nhat.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế 3.4.3 mới nhất",
+      "excerpt": "Ngày 05/05/2017 Tổng cục thuế đã thông báo về việc nâng cấp lên Phần mềm HTKK 3.4.3 (Phần mềm hỗ trợ kê khai thuế) và ứ…",
+      "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "TNDN",
-        "HTKK",
-        "Quyết toán"
+        "Kê khai",
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Thuế"
       ],
-      "image": "assets/images/content/pic/Service/images/Quyet-toan-thue-TNDN.png",
+      "image": "assets/images/content/pic/Service/images/htkk-3_4_3-moi-nhat.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-03-31",
+      "publishDate": "2017-05-05",
       "modifiedDate": null
     },
     {
@@ -267,7 +329,11 @@
       "excerpt": "Các khoản thu nhập chịu thuế TNDN mới nhất hiện nay theo Luật Thuế thu nhập doanh nghiệp số 67/2025/QH15 và Nghị định 3…",
       "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "image": "assets/images/content/pic/Service/images/thu-nhap-chiu-thue-tndn.jpg",
       "libraryKindLabel": "Hướng dẫn",

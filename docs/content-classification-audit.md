@@ -9,8 +9,8 @@
 
 | Menu lớn | Số bài |
 |---|---:|
-| Thư viện | 1823 |
-| Bản tin | 243 |
+| Thư viện | 1835 |
+| Bản tin | 231 |
 
 ## 2) Phân bổ 3 nhóm cũ so với IA mới
 
@@ -18,17 +18,17 @@
 
 | Từ logic cũ | Sang menu mới | Số bài |
 |---|---|---:|
-| Kiến thức | Thư viện | 1147 |
-| Tài liệu | Thư viện | 676 |
-| Bản tin | Bản tin | 243 |
+| Kiến thức | Thư viện | 1149 |
+| Tài liệu | Thư viện | 686 |
+| Bản tin | Bản tin | 231 |
 
 ## 3) Phân loại nội dung bên trong Thư viện
 
 | Loại nội dung | Số bài |
 |---|---:|
-| Hướng dẫn | 1057 |
-| Biểu mẫu | 493 |
-| Công cụ | 273 |
+| Hướng dẫn | 1146 |
+| Biểu mẫu | 523 |
+| Công cụ | 166 |
 
 ### Ví dụ `Thư viện > Hướng dẫn`
 
@@ -58,16 +58,16 @@
 
 ### Ví dụ `Thư viện > Công cụ`
 
-- Cách hạch toán kết chuyển cuối kỳ (Lãi lỗ, Thuế)
 - Các hàm Excel trong kế toán thường dùng
 - Các phím tắt trong Excel kế toán hữu ích
-- Hướng dẫn cài đặt phần mềm kế toán Fast
-- Cách đánh giá lại TSCĐ trên Misa
-- Cách chuyển số thành chữ trong Excel 2010, 2013, 2016, 2019
-- Cách ghi giảm Tài sản cố định trên Misa
-- Cách hạch toán bán hàng có khuyến mại trên Misa
-- Cách hạch toán chuyển TSCĐ thành CCDC trên Misa
-- Cách hạch toán ghi nhận chi phí trả trước trên Misa
+- Trọn bộ mẫu giấy ủy nhiệm chi của các ngân hàng
+- Phần mềm đăng ký MST cá nhân QTTNCN 3.3.2 mới nhất 2019
+- Phần mềm hỗ kê khai thuế HTKK 3.4.5
+- Phần mềm HTKK 3.3.5 mới nhất ngày 19/02/2016
+- Phần mềm hỗ trợ kê khai HTKK 3.2.5
+- Phần mềm hỗ trợ kê khai HTKK 4.0.8 mới nhất 2018
+- Phần mềm hỗ trợ kê khai thuế 3.4.3 mới nhất
+- Phần mềm hỗ trợ kê khai thuế 3.8.1 mới nhất
 
 ## 4) Ví dụ bài cần chú ý khi đổi menu
 
@@ -127,7 +127,6 @@
 | Thuế - Hóa đơn | Thư viện | Thông tư 152/2025/TT-BTC hướng dẫn kế toán cho hộ kinh doanh, cá nhân kinh doanh |
 | Kế toán | Thư viện | Công văn 2270/TCT-CS tiền thuê nhà của cá nhân là chi phí hợp lý |
 | Thuế - Hóa đơn | Thư viện | Điểm mới cần chú ý của Thông tư 96/2015/TT-BTC về thuế TNDN |
-| Lao động - Bảo hiểm | Thư viện | Quyết định 1754/QĐ-TLĐ hướng dẫn nộp kinh phí công đoàn 2025 |
 | Thuế - Hóa đơn | Thư viện | Công văn 2512/TCT-CS - Những nội dung mới của TT 96/2015/TT-BTC về thuế TNDN |
 | Thuế - Hóa đơn | Thư viện | Các khoản thu nhập chịu thuế TNDN theo quy định mới nhất 2026 |
 

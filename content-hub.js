@@ -2,8 +2,22 @@
   var PAGE_SIZE = 12;
 
   function defaultFeatureImage() {
-    var root = (document.body && document.body.dataset && document.body.dataset.root) || '';
-    return root + 'assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg';
+    return sitePath('assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg');
+  }
+
+  function getRootPrefix() {
+    return (document.body && document.body.dataset && document.body.dataset.root) || '';
+  }
+
+  function sitePath(path) {
+    if (!path) return '';
+    if (/^(?:https?:)?\/\//.test(path) || path.indexOf('data:') === 0 || path.indexOf('mailto:') === 0 || path.indexOf('tel:') === 0) {
+      return path;
+    }
+    if (path.indexOf('../') === 0 || path.indexOf('./') === 0 || path.indexOf('/') === 0) {
+      return path;
+    }
+    return getRootPrefix() + path.replace(/^\.\//, '');
   }
 
   function getHubData() {
@@ -17,21 +31,72 @@
     }
   }
 
+  function loadScript(url) {
+    return new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+      script.src = url;
+      script.async = true;
+      script.onload = function () { resolve(); };
+      script.onerror = function () { reject(new Error('Không tải được script data: ' + url)); };
+      document.head.appendChild(script);
+    });
+  }
+
   function loadHubData() {
     var inlineData = getHubData();
     if (!inlineData) return Promise.resolve(null);
     if (!inlineData.dataUrl) return Promise.resolve(inlineData);
+    var mergeRemote = function (remote) {
+      if (!remote) return inlineData;
+      var merged = Object.assign({}, inlineData, remote);
+      if (remote.sectionHref) merged.sectionHref = sitePath(remote.sectionHref);
+      if (remote.sectionRootHref) merged.sectionRootHref = sitePath(remote.sectionRootHref);
+      if (remote.pageMap) {
+        merged.pageMap = {};
+        Object.keys(remote.pageMap).forEach(function (key) {
+          merged.pageMap[key] = sitePath(remote.pageMap[key]);
+        });
+      }
+      if (remote.libraryKinds) {
+        merged.libraryKinds = remote.libraryKinds.map(function (item) {
+          return Object.assign({}, item, { href: sitePath(item.href) });
+        });
+      }
+      if (remote.articles) {
+        merged.articles = remote.articles.map(function (article) {
+          return Object.assign({}, article, {
+            href: sitePath(article.href),
+            image: article.image ? sitePath(article.image) : article.image
+          });
+        });
+      }
+      return merged;
+    };
+    var loadFromScript = function () {
+      var scriptUrl = inlineData.dataUrl.replace(/\.json$/, '.js');
+      return loadScript(scriptUrl).then(function () {
+        var store = window.KetoanDieuTamHubStore || {};
+        return mergeRemote(store[inlineData.section]);
+      });
+    };
+    if (location.protocol === 'file:') {
+      return loadFromScript().catch(function (error) {
+        console.error('Hub data script fallback lỗi', error);
+        return inlineData;
+      });
+    }
     return fetch(inlineData.dataUrl)
       .then(function (response) {
         if (!response.ok) throw new Error('Không tải được hub data');
         return response.json();
       })
-      .then(function (remote) {
-        return Object.assign({}, inlineData, remote);
-      })
+      .then(mergeRemote)
       .catch(function (error) {
-        console.error('Hub data tải lỗi', error);
-        return inlineData;
+        console.error('Hub data tải lỗi, chuyển sang script fallback', error);
+        return loadFromScript().catch(function (fallbackError) {
+          console.error('Hub data script fallback lỗi', fallbackError);
+          return inlineData;
+        });
       });
   }
 
@@ -48,28 +113,32 @@
     return match[3] + '/' + match[2] + '/' + match[1];
   }
 
-	  function readQueryState() {
-	    var params = new URLSearchParams(location.search);
-	    var page = parseInt(params.get('page') || '1', 10);
-	    return {
-	      q: params.get('q') || '',
-	      kind: params.get('kind') || '',
-	      lv1: params.get('lv1') || '',
-	      lv2: params.get('lv2') || '',
-	      page: Number.isFinite(page) && page > 0 ? page : 1
-	    };
-	  }
+		  function readQueryState() {
+		    var params = new URLSearchParams(location.search);
+		    var page = parseInt(params.get('page') || '1', 10);
+		    return {
+		      q: params.get('q') || '',
+		      kind: params.get('kind') || '',
+		      badge: params.get('badge') || '',
+		      tag: params.get('tag') || '',
+		      lv1: params.get('lv1') || '',
+		      lv2: params.get('lv2') || '',
+		      page: Number.isFinite(page) && page > 0 ? page : 1
+		    };
+		  }
 
   function hasExplicitPageParam() {
     return new URLSearchParams(location.search).has('page');
   }
 
-	  function buildSearch(state) {
-	    var params = new URLSearchParams();
-	    if (state.q) params.set('q', state.q);
-	    if (state.kind) params.set('kind', state.kind);
-	    if (state.lv1) params.set('lv1', state.lv1);
-	    if (state.lv2) params.set('lv2', state.lv2);
+		  function buildSearch(state) {
+		    var params = new URLSearchParams();
+		    if (state.q) params.set('q', state.q);
+		    if (state.kind) params.set('kind', state.kind);
+		    if (state.badge) params.set('badge', state.badge);
+		    if (state.tag) params.set('tag', state.tag);
+		    if (state.lv1) params.set('lv1', state.lv1);
+		    if (state.lv2) params.set('lv2', state.lv2);
     if (state.page && state.page > 1) params.set('page', String(state.page));
     var query = params.toString();
     return query ? ('?' + query) : '';
@@ -129,11 +198,12 @@
   }
 
   function normalizeState(state, data) {
-    var next = {
-      q: (state.q || '').trim(),
-      kind: state.kind || '',
-      lv1: state.lv1 || '',
-	      lv2: state.lv2 || '',
+	    var next = {
+	      q: (state.q || '').trim(),
+	      kind: state.kind || '',
+	      lv1: state.lv1 || '',
+	      tag: state.tag || '',
+		      lv2: state.lv2 || '',
 	      page: Math.max(1, Number(state.page || 1))
 	    };
 
@@ -151,12 +221,21 @@
       }));
     }
 
-    var lv1 = scopedTaxonomy.find(function (item) { return item.key === next.lv1; });
-    if (!lv1) {
-      next.lv1 = '';
-      next.lv2 = '';
-      return next;
-    }
+	    var lv1 = scopedTaxonomy.find(function (item) { return item.key === next.lv1; });
+	    if (!lv1) {
+	      if (next.lv2) {
+	        for (var i = 0; i < scopedTaxonomy.length; i += 1) {
+	          var hit = (scopedTaxonomy[i].children || []).find(function (item) { return item.key === next.lv2; });
+	          if (hit) {
+	            next.lv1 = scopedTaxonomy[i].key;
+	            return next;
+	          }
+	        }
+	      }
+	      next.lv1 = '';
+	      next.lv2 = '';
+	      return next;
+	    }
 
     if (next.lv2) {
       var lv2 = (lv1.children || []).find(function (item) { return item.key === next.lv2; });
@@ -366,8 +445,66 @@
 	      return null;
 	    }
 
-    function stateLabel() {
-	      if (state.lv2) {
+	    function deriveToolSubgroup(article) {
+	      var title = String((article && article.title) || '').toLowerCase();
+	      var tagList = (article && article.tags ? article.tags : []);
+	      var tags = tagList.join(' ').toLowerCase();
+	      var text = title + ' ' + tags;
+	      var topicLv2 = String((article && article.topic_lv2_key) || '').toLowerCase();
+
+	      if (topicLv2 === 'htkk-etax-thue-dien-tu') {
+	        if (tagList.indexOf('Quyết toán') !== -1) return 'Quyết toán';
+	        if (tagList.indexOf('Kê khai') !== -1) return 'Kê khai';
+	        if (/đăng ký|dang ky|mst|mã số thuế|ma so thue/.test(text)) return 'Đăng ký thuế';
+	        if (/hoàn thuế|hoan thue/.test(text)) return 'Hoàn thuế';
+	        if (/quyết toán|quyet toan/.test(text)) return 'Quyết toán';
+		        if (/nộp tờ khai|nop to khai|nộp thuế điện tử|nop thue dien tu|gửi tờ khai|gui to khai/.test(text)) return 'Nộp tờ khai';
+		        if (/cài đặt|cai dat/.test(text)) return 'Cài đặt';
+		        if (/nâng cấp|nang cap|phiên bản|phien ban|mới nhất|moi nhat/.test(text)) return 'Nâng cấp';
+		        if (/tải về|tai ve|dùng thử|dung thu|phần mềm|phan mem/.test(text)) return 'Tải về';
+		        if (/kê khai|ke khai|tờ khai|to khai/.test(text)) return 'Kê khai';
+		        if (/\b(htkk|etax)\b|\b\d+\.\d+\.\d+\b/.test(text)) return 'Nâng cấp';
+		        return '';
+		      }
+
+	      if (topicLv2 === 'excel-va-cong-cu-khac') {
+	        if (tagList.indexOf('Biểu mẫu') !== -1) return 'Mẫu file';
+	        if (tagList.indexOf('BCTC') !== -1) return 'Báo cáo';
+	        if (tagList.indexOf('Tiền lương') !== -1) return 'Tiền lương';
+	        if (tagList.indexOf('TSCĐ') !== -1 || tagList.indexOf('CCDC') !== -1 || tagList.indexOf('Khấu hao') !== -1) return 'TSCĐ / CCDC';
+	        if (tagList.indexOf('GTGT') !== -1 || tagList.indexOf('TNCN') !== -1 || tagList.indexOf('TNDN') !== -1 || tagList.indexOf('Thuế') !== -1 || tagList.indexOf('HTKK') !== -1 || tagList.indexOf('Người phụ thuộc') !== -1 || tagList.indexOf('Nhà thầu') !== -1) return 'Thuế';
+	        if (tagList.indexOf('Hướng dẫn') !== -1) return 'Thực hành';
+	        if (/^mẫu| mẫu |trọn bộ mẫu|file excel|trên excel/.test(text)) return 'Mẫu file';
+	        if (/hàm|ham|vlookup|sumif|subtotal/.test(text)) return 'Hàm Excel';
+	        if (/tiền lương|tien luong|lương/.test(text)) return 'Tiền lương';
+	        if (/gtgt|tncn|tndn|thuế|thue|người phụ thuộc|nguoi phu thuoc/.test(text)) return 'Thuế';
+		        if (/tscđ|tscd|khấu hao|khau hao|ccdc/.test(text)) return 'TSCĐ / CCDC';
+		        if (/bctc|báo cáo tài chính|bao cao tai chinh/.test(text)) return 'Báo cáo';
+	        if (/phím tắt|phim tat|thay thế|thay the|đối chiếu|doi chieu|cách|huớng dẫn|hướng dẫn|huong dan|khóa học|khoa hoc|sử dụng|su dung/.test(text)) return 'Thực hành';
+	        return '';
+	      }
+
+	      if (topicLv2 === 'fast') {
+	        if (tagList.indexOf('Cài đặt') !== -1) return 'Cài đặt';
+	        if (tagList.indexOf('Tải về') !== -1) return 'Tải về';
+	        if (tagList.indexOf('Hướng dẫn') !== -1) return 'Sử dụng';
+	        if (/cài đặt|cai dat/.test(text)) return 'Cài đặt';
+	        if (/tải về|tai ve|dùng thử|dung thu/.test(text)) return 'Tải về';
+	        if (/sử dụng|su dung|hướng dẫn|huong dan/.test(text)) return 'Sử dụng';
+	        return '';
+	      }
+
+	      return '';
+	    }
+
+		    function stateLabel() {
+			      if (state.tag) {
+			        return state.tag;
+			      }
+			      if (state.badge) {
+		        return state.badge;
+		      }
+		      if (state.lv2) {
 	        var lv2 = getLv2(state.lv1, state.lv2);
 	        return lv2 ? lv2.label : 'Tất cả bài viết';
 	      }
@@ -382,11 +519,13 @@
 	      return 'Tất cả bài viết';
 	    }
 
-	    function filterArticles() {
-	      var needle = state.q.trim().toLowerCase();
-	      return data.articles.filter(function (article) {
-	        if (state.kind && article.library_kind_key !== state.kind) return false;
-	        if (state.lv1 && article.topic_lv1_key !== state.lv1) return false;
+		    function filterArticles() {
+		      var needle = state.q.trim().toLowerCase();
+				      return data.articles.filter(function (article) {
+			        if (state.kind && article.library_kind_key !== state.kind) return false;
+			        if (state.badge && (article.badge_label || '') !== state.badge) return false;
+			        if (state.tag && !(article.tags || []).includes(state.tag)) return false;
+			        if (state.lv1 && article.topic_lv1_key !== state.lv1) return false;
         if (state.lv2 && article.topic_lv2_key !== state.lv2) return false;
         if (!needle) return true;
 
@@ -400,9 +539,32 @@
 	          (article.tags || []).join(' ')
         ].join(' ').toLowerCase();
 
-        return haystack.indexOf(needle) !== -1;
-      });
-    }
+	        return haystack.indexOf(needle) !== -1;
+	      });
+	    }
+
+	    function getScopeArticles(ignoreTextAndTag) {
+	      var needle = state.q.trim().toLowerCase();
+	      return data.articles.filter(function (article) {
+	        if (state.kind && article.library_kind_key !== state.kind) return false;
+	        if (state.badge && (article.badge_label || '') !== state.badge) return false;
+	        if (state.lv1 && article.topic_lv1_key !== state.lv1) return false;
+	        if (state.lv2 && article.topic_lv2_key !== state.lv2) return false;
+	        if (ignoreTextAndTag) return true;
+	        if (state.tag && !(article.tags || []).includes(state.tag)) return false;
+	        if (!needle) return true;
+	        var haystack = [
+	          article.title,
+	          article.excerpt,
+	          article.badge_label,
+	          article.library_kind_label,
+	          article.topic_lv1_label,
+	          article.topic_lv2_label,
+	          (article.tags || []).join(' ')
+	        ].join(' ').toLowerCase();
+	        return haystack.indexOf(needle) !== -1;
+	      });
+	    }
 
     function saveReturnState() {
       try {
@@ -420,15 +582,15 @@
     }
 
     function buildArticleHref(articleHref) {
-      return appendQueryParam(articleHref, 'from', currentReturnUrl());
+      return appendQueryParam(sitePath(articleHref), 'from', currentReturnUrl());
     }
 
-	    function hasFilters() {
-	      return Boolean(state.q || state.kind || state.lv1 || state.lv2);
-	    }
+		    function hasFilters() {
+		      return Boolean(state.q || state.kind || state.badge || state.tag || state.lv1 || state.lv2);
+		    }
 
-	    function buildStateUrl(nextState) {
-	      var filtered = Boolean(nextState.q || nextState.kind || nextState.lv1 || nextState.lv2);
+		    function buildStateUrl(nextState) {
+		      var filtered = Boolean(nextState.q || nextState.kind || nextState.badge || nextState.tag || nextState.lv1 || nextState.lv2);
 	      if (!filtered) {
 	        return data.pageMap[String(nextState.page)] || data.pageMap['1'] || data.sectionRootHref || location.pathname;
 	      }
@@ -472,10 +634,16 @@
       if (state.q) {
         htmlParts.push('<span class="catalog-chip"><i class="fa-solid fa-magnifying-glass"></i>' + escapeHtml(state.q) + '</span>');
       }
-      if (state.kind) {
-        var kind = getLibraryKind(state.kind);
-        if (kind) htmlParts.push('<span class="catalog-chip"><i class="fa-solid fa-layer-group"></i>' + escapeHtml(kind.label) + '</span>');
-      }
+	      if (state.kind) {
+	        var kind = getLibraryKind(state.kind);
+	        if (kind) htmlParts.push('<span class="catalog-chip"><i class="fa-solid fa-layer-group"></i>' + escapeHtml(kind.label) + '</span>');
+	      }
+	      if (state.badge) {
+	        htmlParts.push('<span class="catalog-chip"><i class="fa-solid fa-bookmark"></i>' + escapeHtml(state.badge) + '</span>');
+	      }
+	      if (state.tag) {
+	        htmlParts.push('<span class="catalog-chip"><i class="fa-solid fa-hashtag"></i>' + escapeHtml(state.tag) + '</span>');
+	      }
 	      if (state.lv1) {
 	        var lv1 = getLv1(state.lv1);
 	        if (lv1) htmlParts.push('<span class="catalog-chip"><i class="fa-solid fa-folder-open"></i>' + escapeHtml(lv1.label) + '</span>');
@@ -548,25 +716,35 @@
 	      }
 
       primaryFilters.innerHTML = htmlParts.join('');
-      primaryFilters.querySelectorAll('.catalog-primary-btn').forEach(function (button) {
-        button.addEventListener('click', function () {
-          if (button.dataset.kindReset) {
-            state.kind = '';
-            state.lv1 = '';
-            state.lv2 = '';
-          } else if (button.dataset.scopeMode === 'lv1') {
-            state.lv1 = button.dataset.scopeKey || '';
-            state.lv2 = '';
-          } else if (button.dataset.scopeMode === 'lv2') {
-            state.lv2 = button.dataset.scopeKey || '';
-          } else if (button.dataset.kind !== undefined) {
-            state.kind = button.dataset.kind || '';
-            state.lv1 = '';
-            state.lv2 = '';
-          } else {
-            state.lv1 = button.dataset.lv1 || '';
-            state.lv2 = '';
-          }
+	      primaryFilters.querySelectorAll('.catalog-primary-btn').forEach(function (button) {
+	        button.addEventListener('click', function () {
+	          if (button.dataset.kindReset) {
+	            state.kind = '';
+	            state.badge = '';
+	            state.tag = '';
+	            state.lv1 = '';
+	            state.lv2 = '';
+	          } else if (button.dataset.scopeMode === 'lv1') {
+	            state.badge = '';
+	            state.tag = '';
+	            state.lv1 = button.dataset.scopeKey || '';
+	            state.lv2 = '';
+	          } else if (button.dataset.scopeMode === 'lv2') {
+	            state.badge = '';
+	            state.tag = '';
+	            state.lv2 = button.dataset.scopeKey || '';
+	          } else if (button.dataset.kind !== undefined) {
+	            state.kind = button.dataset.kind || '';
+	            state.badge = '';
+	            state.tag = '';
+	            state.lv1 = '';
+	            state.lv2 = '';
+	          } else {
+	            state.badge = '';
+	            state.tag = '';
+	            state.lv1 = button.dataset.lv1 || '';
+	            state.lv2 = '';
+	          }
           state.page = 1;
 	          updateUrl(buildStateUrl(state), 'push');
 	          renderAll();
@@ -574,10 +752,93 @@
       });
     }
 
-    function renderAdvancedFilters() {
-      if (!filters) return;
+	    function renderAdvancedFilters() {
+	      if (!filters) return;
 
-      var scopedTaxonomy = getScopedTaxonomy();
+	      if (data.section === 'thu-vien' && state.kind && state.kind !== 'huong-dan' && state.lv2) {
+	        var currentScopeArticles = getScopeArticles(true);
+	        var activeLv2 = getLv2(state.lv1, state.lv2);
+	        var tagItems = [];
+	        if (state.kind === 'cong-cu') {
+	          var subgroupCounts = {};
+	          currentScopeArticles.forEach(function (article) {
+	            var subgroup = article.tool_lv3_label || deriveToolSubgroup(article);
+	            if (!subgroup) return;
+	            subgroupCounts[subgroup] = (subgroupCounts[subgroup] || 0) + 1;
+	          });
+	          tagItems = Object.keys(subgroupCounts).map(function (key) {
+	            return { key: key, count: subgroupCounts[key] };
+	          }).filter(function (item) {
+	            return item.count >= 1;
+	          }).sort(function (a, b) {
+	            return b.count - a.count || a.key.localeCompare(b.key, 'vi');
+	          }).slice(0, 12);
+	        } else {
+	          var tagCounts = {};
+	          var ignore = {};
+	          [
+	            activeLv2 && activeLv2.label,
+	            state.tag,
+	            'Thư viện',
+	            'Biểu mẫu',
+	            'Mẫu biểu',
+	            'Thủ tục',
+	            'Công cụ',
+	            'Công cụ khác',
+	            'Phần mềm',
+	            'Hướng dẫn',
+	            'HTKK',
+	            'eTax',
+	            'Thuế điện tử',
+	            'Excel'
+	          ].forEach(function (value) {
+	            if (value) ignore[String(value).toLowerCase()] = true;
+	          });
+	          currentScopeArticles.forEach(function (article) {
+	            (article.tags || []).forEach(function (tag) {
+	              var key = String(tag || '').trim();
+	              if (!key) return;
+	              if (ignore[key.toLowerCase()]) return;
+	              tagCounts[key] = (tagCounts[key] || 0) + 1;
+	            });
+	          });
+	          tagItems = Object.keys(tagCounts).map(function (key) {
+	            return { key: key, count: tagCounts[key] };
+	          }).filter(function (item) {
+	            return item.count >= 2;
+	          }).sort(function (a, b) {
+	            return b.count - a.count || a.key.localeCompare(b.key, 'vi');
+	          }).slice(0, 18);
+	        }
+	        filters.innerHTML = '' +
+	          '<section class="catalog-filter-group">' +
+	            '<h4>' + escapeHtml(activeLv2 ? activeLv2.label : stateLabel()) + ' <small>' + currentScopeArticles.length + ' bài</small></h4>' +
+	            '<div class="catalog-filter-list">' +
+	              '<button class="catalog-filter-btn' + (!state.tag ? ' is-active' : '') + '" type="button" data-tag="">' +
+	                '<span>Tất cả</span><small>' + currentScopeArticles.length + '</small>' +
+	              '</button>' +
+	              tagItems.map(function (item) {
+	                var active = state.tag === item.key ? ' is-active' : '';
+	                return '' +
+	                  '<button class="catalog-filter-btn' + active + '" type="button" data-tag="' + escapeHtml(item.key) + '">' +
+	                    '<span>' + escapeHtml(item.key) + '</span><small>' + item.count + '</small>' +
+	                  '</button>';
+	              }).join('') +
+	            '</div>' +
+	          '</section>';
+	        filters.querySelectorAll('.catalog-filter-btn').forEach(function (button) {
+	          button.addEventListener('click', function () {
+	            state.tag = button.dataset.tag || '';
+	            state.page = 1;
+	            updateUrl(buildStateUrl(state), 'push');
+	            renderAll();
+	            closeFilterPanel();
+	          });
+	        });
+	        return;
+	      }
+
+	      var scopedTaxonomy = getScopedTaxonomy();
       var groups = state.lv1
         ? scopedTaxonomy.filter(function (item) { return item.key === state.lv1; })
         : scopedTaxonomy;
@@ -604,10 +865,12 @@
           '</section>';
       }).join('');
 
-      filters.querySelectorAll('.catalog-filter-btn').forEach(function (button) {
-        button.addEventListener('click', function () {
-          state.lv1 = button.dataset.lv1 || '';
-          state.lv2 = button.dataset.lv2 || '';
+	      filters.querySelectorAll('.catalog-filter-btn').forEach(function (button) {
+	        button.addEventListener('click', function () {
+	          state.badge = '';
+	          state.tag = '';
+	          state.lv1 = button.dataset.lv1 || '';
+	          state.lv2 = button.dataset.lv2 || '';
           state.page = 1;
           updateUrl(buildStateUrl(state), 'push');
           renderAll();
@@ -620,6 +883,8 @@
 	      return buildStateUrl({
 	        q: state.q,
 	        kind: state.kind,
+	        badge: state.badge,
+	        tag: state.tag,
 	        lv1: state.lv1,
 	        lv2: state.lv2,
 	        page: nextPage
@@ -745,22 +1010,28 @@
 	        var metaHtml = isNews && publishLabel
 	          ? '<div class="catalog-card__meta"><span class="catalog-card__date"><i class="fa-regular fa-clock"></i>' + escapeHtml(publishLabel) + '</span></div>'
 	          : '';
-	        return '' +
-	          '<article class="catalog-card' + (isNews ? ' catalog-card--news' : '') + '">' +
-	            '<a class="catalog-card__media" data-article-link="1" href="' + escapeHtml(articleHref) + '">' +
-	              '<img loading="lazy" decoding="async" src="' + escapeHtml(image) + '" alt="' + escapeHtml(article.title) + '">' +
-	            '</a>' +
-	            '<div class="catalog-card__body">' +
-	              '<span class="catalog-card__badge">' + escapeHtml(badgeLabel) + '</span>' +
-	              '<h3 class="catalog-card__title"><a data-article-link="1" href="' + escapeHtml(articleHref) + '">' + escapeHtml(article.title) + '</a></h3>' +
-	              metaHtml +
-	              '<p class="catalog-card__excerpt">' + escapeHtml(article.excerpt || '') + '</p>' +
-	              '<div class="catalog-card__footer">' +
-	                '<span class="catalog-card__topic">' + escapeHtml(topicLabel) + '</span>' +
-	                '<a class="catalog-card__link" data-article-link="1" href="' + escapeHtml(articleHref) + '">Đọc bài <i class="fa-solid fa-angle-right"></i></a>' +
-	              '</div>' +
-	            '</div>' +
-	          '</article>';
+		        return '' +
+		          '<article class="catalog-card' + (isNews ? ' catalog-card--news' : '') + '">' +
+		            '<a class="catalog-card__media" data-article-link="1" href="' + escapeHtml(articleHref) + '">' +
+		              '<img loading="lazy" decoding="async" src="' + escapeHtml(image) + '" alt="' + escapeHtml(article.title) + '">' +
+		            '</a>' +
+		            '<div class="catalog-card__body">' +
+		              '<button class="catalog-card__badge" type="button" data-card-badge="' + escapeHtml(badgeLabel) + '"' +
+		                (article.library_kind_key ? ' data-card-kind="' + escapeHtml(article.library_kind_key) + '"' : '') + '>' +
+		                escapeHtml(badgeLabel) +
+		              '</button>' +
+		              '<h3 class="catalog-card__title"><a data-article-link="1" href="' + escapeHtml(articleHref) + '">' + escapeHtml(article.title) + '</a></h3>' +
+		              metaHtml +
+		              '<p class="catalog-card__excerpt">' + escapeHtml(article.excerpt || '') + '</p>' +
+		              '<div class="catalog-card__footer">' +
+			                '<button class="catalog-card__topic" type="button"' +
+			                  (article.topic_lv2_key ? ' data-card-lv2="' + escapeHtml(article.topic_lv2_key) + '"' : '') +
+			                  (article.topic_lv1_key ? ' data-card-lv1="' + escapeHtml(article.topic_lv1_key) + '"' : '') +
+			                '>' + escapeHtml(topicLabel) + '</button>' +
+			                '<a class="catalog-card__link" data-article-link="1" href="' + escapeHtml(articleHref) + '">Đọc bài <i class="fa-solid fa-angle-right"></i></a>' +
+			              '</div>' +
+		            '</div>' +
+		          '</article>';
       }).join('') + '</div>';
 
       renderPagination(totalPages, items.length);
@@ -776,11 +1047,13 @@
       renderResults();
     }
 
-	    function resetFilters() {
-	      state.q = '';
-	      state.kind = '';
-	      state.lv1 = '';
-	      state.lv2 = '';
+			    function resetFilters() {
+			      state.q = '';
+			      state.kind = '';
+			      state.badge = '';
+			      state.tag = '';
+			      state.lv1 = '';
+		      state.lv2 = '';
       state.page = 1;
       input.value = '';
       updateUrl(buildStateUrl(state), 'push');
@@ -788,8 +1061,10 @@
       closeFilterPanel();
     }
 
-    input.addEventListener('input', function () {
-      state.q = input.value.trim();
+		    input.addEventListener('input', function () {
+		      state.badge = '';
+		      state.tag = '';
+		      state.q = input.value.trim();
       state.page = 1;
       updateUrl(buildStateUrl(state), 'replace');
       renderChips();
@@ -800,8 +1075,36 @@
       reset.addEventListener('click', resetFilters);
     }
 
-    results.addEventListener('click', function (event) {
-      var target = event.target && event.target.closest ? event.target.closest('a[data-article-link="1"]') : null;
+	    results.addEventListener('click', function (event) {
+	      var badgeFilter = event.target && event.target.closest ? event.target.closest('[data-card-badge]') : null;
+		      if (badgeFilter) {
+		        state.page = 1;
+		        if (badgeFilter.dataset.cardKind) {
+		          state.kind = badgeFilter.dataset.cardKind;
+		          state.badge = '';
+		        } else {
+		          state.badge = badgeFilter.dataset.cardBadge || '';
+		          state.kind = '';
+		        }
+		        state.tag = '';
+		        state.lv1 = '';
+	        state.lv2 = '';
+	        updateUrl(buildStateUrl(state), 'push');
+	        renderAll();
+	        return;
+	      }
+	      var topicFilter = event.target && event.target.closest ? event.target.closest('[data-card-lv1], [data-card-lv2]') : null;
+		      if (topicFilter) {
+		        state.page = 1;
+		        state.badge = '';
+		        state.tag = '';
+		        state.lv1 = topicFilter.dataset.cardLv1 || '';
+	        state.lv2 = topicFilter.dataset.cardLv2 || '';
+	        updateUrl(buildStateUrl(state), 'push');
+	        renderAll();
+	        return;
+	      }
+	      var target = event.target && event.target.closest ? event.target.closest('a[data-article-link="1"]') : null;
       if (!target) return;
       saveReturnState();
     });
@@ -820,11 +1123,11 @@
       if (event.key === 'Escape') closeFilterPanel();
     });
 
-    window.addEventListener('popstate', function () {
-      state = normalizeState(readQueryState(), data);
-	      if (!state.q && !state.kind && !state.lv1 && !state.lv2 && !hasExplicitPageParam()) {
-	        state.page = Math.max(1, Number(data.currentPage || 1));
-	      }
+		    window.addEventListener('popstate', function () {
+		      state = normalizeState(readQueryState(), data);
+			      if (!state.q && !state.kind && !state.badge && !state.tag && !state.lv1 && !state.lv2 && !hasExplicitPageParam()) {
+			        state.page = Math.max(1, Number(data.currentPage || 1));
+			      }
       input.value = state.q;
       renderAll();
     });

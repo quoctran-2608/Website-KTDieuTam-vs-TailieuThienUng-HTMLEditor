@@ -1,6 +1,6 @@
 {
   "currentIndex": 105,
-  "totalCount": 1823,
+  "totalCount": 1835,
   "prev": {
     "id": "thu-vien/cac-hinh-thuc-ghi-so-ke-toan-theo-quyet-dinh-15-va-48.html",
     "section": "thu-vien",
@@ -11,7 +11,13 @@
     "title": "Các hình thức ghi sổ kế toán theo Thông tư 200 và 133",
     "excerpt": "Theo Thông tư 200 có 5 hình thức ghi sổ kế toán, theo Thông tư 133 có 4 hình thức ghi sổ kế toán, Kế toán Diệu Tâm xin…",
     "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
-    "tags": [],
+    "tags": [
+      "Chuẩn mực",
+      "Chế độ",
+      "Nguyên tắc",
+      "Kế toán",
+      "Hướng dẫn"
+    ],
     "image": "assets/images/content/pic/Service/images/cac-hinh-thuc-ghi-so-ke-toan.png",
     "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
@@ -27,7 +33,13 @@
     "title": "Các loại sổ kế toán và hình thức sổ kế toán theo Thông tư 99",
     "excerpt": "Các loại sổ kế toán và hình thức sổ kế toán Chế độ kế toán của Thông tư 99/2025/TT-BTC có hiệu lực từ ngày 01/01/2026 v…",
     "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
-    "tags": [],
+    "tags": [
+      "Chuẩn mực",
+      "Chế độ",
+      "Nguyên tắc",
+      "Kế toán",
+      "Hướng dẫn"
+    ],
     "image": "assets/images/content/pic/Service/images/C%C3%A1c%20lo%E1%BA%A1i%20s%E1%BB%95%20k%E1%BA%BF%20to%C3%A1n%20v%C3%A0%20h%C3%ACnh%20th%E1%BB%A9c%20s%E1%BB%95%20k%E1%BA%BF%20to%C3%A1n%20theo%20Th%C3%B4ng%20t%C6%B0%2099.png",
     "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-01-01",
@@ -35,51 +47,68 @@
   },
   "newsLatest": [
     {
-      "id": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
+      "id": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "title": "Mẫu Quyết định chấm dứt hợp đồng lao động",
-      "excerpt": "Khi muốn chấm dứt hợp đồng lao động Doanh nghiệp và người lao động cần hồ sơ gồm: Quyết định chấm dứt…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "section": "ban-tin",
-      "sectionLabel": "Bản tin",
-      "sectionHref": "ban-tin.html",
-      "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
-      "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
-      "topicLabel": "Khác",
-      "tags": [],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "href": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "title": "Thông tư 20/2026/TT-BTC hướng dẫn về Thuế TNDN",
+      "excerpt": "Thông tư 20/2026/TT-BTC của Bộ Tài chính quy định chi tiết một số điều của Luật Thuế thu nhập doanh nghiệp và Nghị định…",
+      "topicLabel": "Thông tư",
+      "tags": [
+        "TNDN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thong-tu-20-2026.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-03-12",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
+      "id": "ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "title": "Mẫu Quyết định giải thể doanh nghiệp công ty",
-      "excerpt": "Mẫu Quyết định giải thể giải thể Doanh nghiệp, giải thể Công ty mới nhất để làm thủ tục giải thể Doanh nghiệp, tải mẫu…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [],
-      "image": "assets/images/content/pic/Service/images/mau-quyet-dinh-giai-the-doanh-nghiep.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "href": "ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "title": "Hộ cá nhân kinh doanh không phải nộp thuế vẫn phải nộp tờ khai",
+      "excerpt": "Quy định về kê khai thuế đối với hộ kinh doanh, cá nhân kinh doanh thuộc đối tượng không chịu thuế giá trị gia tăng, kh…",
+      "topicLabel": "Công văn",
+      "tags": [
+        "Hộ kinh doanh",
+        "Kê khai",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Nộp tờ khai",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/khong-phai-nop-thue-van-phai-nop-to-khai.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-03-05",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "title": "Nghị định 68/2026/NĐ-CP thuế đối với hộ, cá nhân kinh doanh",
+      "excerpt": "Ngày 05/03/2026, Chính phủ đã ban hành Nghị định 68/2026/NĐ-CP quy định về chính sách thuế và quản lý thuế đối với hộ k…",
+      "topicLabel": "Nghị định",
+      "tags": [
+        "Hộ kinh doanh",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/Nghi-dinh-68-2026.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-03-05",
       "modifiedDate": null
     }
   ],
@@ -94,7 +123,11 @@
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
       "topicLabel": "Nghiệp vụ theo phần hành",
-      "tags": [],
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Chi-phi-khong-tuong-ung-voi-doanh-thu.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2027-01-05",
@@ -110,7 +143,12 @@
       "title": "Hạch toán giảm giá hàng bán đối với bên mua, bên bán theo TT 99, TT 133",
       "excerpt": "Hướng dẫn cách hạch toán giảm giá hàng bán đối với bên mua, bên bán theo thông tư 99/2025/TT-BTC và thông tư 133/2016/T…",
       "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [],
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Hoa-don-ban-hang.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-10-08",
@@ -128,7 +166,11 @@
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
-        "TNDN"
+        "TNDN",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Mẫu biểu",
+        "Thủ tục"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -147,7 +189,11 @@
       "title": "Các hình thức thanh toán không dùng tiền mặt 2026 mới nhất",
       "excerpt": "Quy định về các hình thức thanh toán không dùng tiền mặt mới nhất năm 2026 theo Nghị định 181/2025/NĐ-CP hướng dẫn Luật…",
       "topicLabel": "Khác",
-      "tags": [],
+      "tags": [
+        "Học liệu",
+        "Tham khảo",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/thanh-toan-khong-dung-tien-mat.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2024-05-15",
@@ -163,7 +209,11 @@
       "title": "Quy định về thời hạn nộp thuế 2026 theo Luật quản lý thuế",
       "excerpt": "Quy định về thời hạn nộp tiền thuế mới nhất năm 2026 theo Luật quản lý thuế 38/2019/QH14 và thông tư 80/2021/TT…",
       "topicLabel": "Khác",
-      "tags": [],
+      "tags": [
+        "Học liệu",
+        "Tham khảo",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Thoi-han-nop-thue(1).png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-12-31",
@@ -179,7 +229,11 @@
       "title": "Hạn mức tối đa về giá trị hàng hóa, dịch vụ dùng để khuyến mại",
       "excerpt": "Hạn mức tối đa về giá trị hàng hóa, dịch vụ dùng để khuyến mại mới nhất năm 2025 đang được thực hiện theo quy định tại…",
       "topicLabel": "Khác",
-      "tags": [],
+      "tags": [
+        "Học liệu",
+        "Tham khảo",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/Han-muc-khuyen-mai.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
@@ -197,7 +251,11 @@
       "title": "Các hình thức thanh toán không dùng tiền mặt 2026 mới nhất",
       "excerpt": "Quy định về các hình thức thanh toán không dùng tiền mặt mới nhất năm 2026 theo Nghị định 181/2025/NĐ-CP hướng dẫn Luật…",
       "topicLabel": "Khác",
-      "tags": [],
+      "tags": [
+        "Học liệu",
+        "Tham khảo",
+        "Hướng dẫn"
+      ],
       "image": "assets/images/content/pic/Service/images/thanh-toan-khong-dung-tien-mat.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2024-05-15",
@@ -213,26 +271,35 @@
       "title": "Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp tiền thuế tiền phạt",
       "excerpt": "Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp thuế mới nhất theo Thông tư 156/2013/TT-BTC: Xin gia hạn nộp tiền thuế, tiền ph…",
       "topicLabel": "Khác",
-      "tags": [],
+      "tags": [
+        "Học liệu",
+        "Tham khảo",
+        "Biểu mẫu"
+      ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-09-15",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "id": "ban-tin/nghi-dinh-117-2025-nd-cp-thue-cua-ho-ca-nhan-kd-tren-san-thuong-mai-dien-tu.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html",
-      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
-      "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
-      "topicLabel": "Khác",
-      "tags": [],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "href": "ban-tin/nghi-dinh-117-2025-nd-cp-thue-cua-ho-ca-nhan-kd-tren-san-thuong-mai-dien-tu.html",
+      "canonical": "https://ketoandieutam.com/ban-tin/nghi-dinh-117-2025-nd-cp-thue-cua-ho-ca-nhan-kd-tren-san-thuong-mai-dien-tu.html",
+      "title": "Nghị định 117/2025/NĐ-CP Thuế của hộ, cá nhân kinh doanh trên sàn thương mại điện tử",
+      "excerpt": "Ngày 09/6/2025, Chính phủ bạn hành Nghị định 117/2025/NĐ-CP quy định quản lý thuế đối với hoạt động kinh doanh trên nền…",
+      "topicLabel": "Nghị định",
+      "tags": [
+        "Hộ kinh doanh",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
+      "image": "assets/images/content/pic/Service/images/Nghi-dinh-117-nd-cp.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2025-06-09",
       "modifiedDate": null
     }
   ]

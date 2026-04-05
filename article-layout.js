@@ -62,6 +62,17 @@
     });
   }
 
+  function loadScript(url) {
+    return new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+      script.src = url;
+      script.async = true;
+      script.onload = function () { resolve(); };
+      script.onerror = function () { reject(new Error('Không tải được script data: ' + url)); };
+      document.head.appendChild(script);
+    });
+  }
+
   function upsertMeta(name, content) {
     var meta = document.querySelector('meta[name="' + name + '"]');
     if (!meta) {
@@ -639,12 +650,26 @@
     if (!meta || !meta.id) return Promise.resolve(resolveLegacyData());
     var root = getRootPrefix();
     var viewUrl = root + 'data/article-views/' + meta.id + '.json';
+    var loadFromScript = function () {
+      var scriptUrl = viewUrl.replace(/\.json$/, '.js');
+      return loadScript(scriptUrl).then(function () {
+        var store = window.KetoanDieuTamArticleViewStore || {};
+        return resolveDataFromViewJson(meta, store[meta.id]);
+      });
+    };
+    if (location.protocol === 'file:') {
+      return loadFromScript().catch(function () {
+        return resolveDataFromIndex() || resolveLegacyData();
+      });
+    }
     return fetchJson(viewUrl)
       .then(function (view) {
         return resolveDataFromViewJson(meta, view);
       })
       .catch(function () {
-        return resolveDataFromIndex() || resolveLegacyData();
+        return loadFromScript().catch(function () {
+          return resolveDataFromIndex() || resolveLegacyData();
+        });
       });
   }
 

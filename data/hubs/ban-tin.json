@@ -22,15 +22,14 @@
     "17": "ban-tin/trang/17/index.html",
     "18": "ban-tin/trang/18/index.html",
     "19": "ban-tin/trang/19/index.html",
-    "20": "ban-tin/trang/20/index.html",
-    "21": "ban-tin/trang/21/index.html"
+    "20": "ban-tin/trang/20/index.html"
   },
   "libraryKinds": [],
   "taxonomy": [
     {
       "key": "van-ban-phap-luat",
       "label": "Văn bản pháp luật",
-      "count": 230,
+      "count": 220,
       "children": [
         {
           "key": "nghi-dinh",
@@ -38,14 +37,14 @@
           "count": 67
         },
         {
-          "key": "cong-van",
-          "label": "Công văn",
-          "count": 59
-        },
-        {
           "key": "thong-tu",
           "label": "Thông tư",
           "count": 58
+        },
+        {
+          "key": "cong-van",
+          "label": "Công văn",
+          "count": 56
         },
         {
           "key": "luat-bo-luat",
@@ -55,14 +54,14 @@
         {
           "key": "nghi-quyet-quyet-dinh",
           "label": "Nghị quyết - Quyết định",
-          "count": 23
+          "count": 16
         }
       ]
     },
     {
       "key": "thue",
       "label": "Thuế - Hóa đơn",
-      "count": 7,
+      "count": 8,
       "children": [
         {
           "key": "tndn",
@@ -70,47 +69,18 @@
           "count": 3
         },
         {
+          "key": "gtgt-hoa-don",
+          "label": "GTGT - Hóa đơn",
+          "count": 2
+        },
+        {
           "key": "khac-mon-bai-ho-kinh-doanh-nha-thau",
           "label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
           "count": 2
         },
         {
-          "key": "gtgt-hoa-don",
-          "label": "GTGT - Hóa đơn",
-          "count": 1
-        },
-        {
           "key": "tncn",
           "label": "Thuế thu nhập cá nhân",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "key": "tham-khao-hoc-lieu",
-      "label": "Học liệu - Tham khảo",
-      "count": 2,
-      "children": [
-        {
-          "key": "khac",
-          "label": "Khác",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "key": "lao-dong-bao-hiem",
-      "label": "Lao động - Bảo hiểm",
-      "count": 2,
-      "children": [
-        {
-          "key": "bao-hiem",
-          "label": "BHXH - BHYT - BHTN",
-          "count": 1
-        },
-        {
-          "key": "cong-doan",
-          "label": "Công đoàn",
           "count": 1
         }
       ]
@@ -128,6 +98,18 @@
       ]
     },
     {
+      "key": "lao-dong-bao-hiem",
+      "label": "Lao động - Bảo hiểm",
+      "count": 1,
+      "children": [
+        {
+          "key": "bao-hiem",
+          "label": "BHXH - BHYT - BHTN",
+          "count": 1
+        }
+      ]
+    },
+    {
       "key": "phan-mem-cong-cu",
       "label": "Phần mềm - Công cụ",
       "count": 1,
@@ -140,7 +122,7 @@
       ]
     }
   ],
-  "count": 243,
+  "count": 231,
   "articles": [
     {
       "file": "bai-bo-le-phi-mon-bai-tu-nam-2026.htm",
@@ -150,11 +132,20 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "khac-mon-bai-ho-kinh-doanh-nha-thau",
       "topic_lv2_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
-      "tags": [],
+      "tags": [
+        "Môn bài",
+        "Hộ kinh doanh",
+        "Nhà thầu",
+        "MST",
+        "Thuế",
+        "Hóa đơn"
+      ],
       "badge_label": "Điểm mới",
-      "topic_label": "Thuế - Hóa đơn",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-05-17",
       "image": "assets/images/content/pic/Service/images/Bai-bo-le-phi-mon-bai.png",
       "href": "ban-tin/bai-bo-le-phi-mon-bai-tu-nam-2026.html"
@@ -167,11 +158,19 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
-      "tags": [],
+      "tags": [
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Lao động",
+        "Chính sách"
+      ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Lao động",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2019-11-20",
       "image": "assets/images/content/pic/Service/images/Luat-45-Bo-luat-lao-dong.png",
       "href": "ban-tin/bo-luat-lao-dong-so-45-2019-qh14-cua-quoc-hoi.html"
@@ -186,12 +185,18 @@
       "topic_lv2_label": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
-        "Hóa đơn điện tử"
+        "Hóa đơn điện tử",
+        "Hóa đơn",
+        "Thuế",
+        "Chính sách",
+        "Điểm mới"
       ],
       "badge_label": "Điểm mới",
-      "topic_label": "Thuế - Hóa đơn",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-10-16",
       "image": "assets/images/content/pic/Service/images/Cong-van-ve-hoa-don-dien-tu.png",
       "href": "ban-tin/cac-cong-van-huong-xu-ly-hoa-don-dien-tu-moi-nhat-nam-2025.html"
@@ -206,12 +211,18 @@
       "topic_lv2_label": "BHXH - BHYT - BHTN",
       "tags": [
         "BHXH",
-        "BHYT"
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Chính sách"
       ],
       "badge_label": "Điểm mới",
-      "topic_label": "Lao động - Bảo hiểm",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-06-27",
       "image": "assets/images/content/pic/Service/images/Diem-moi-bhxh.png",
       "href": "ban-tin/cac-diem-moi-ve-doi-tuong-dong-bhxh-bhyt-bat-buoc-ke-tu-1-7-2025.html"
@@ -225,12 +236,19 @@
       "topic_lv2_key": "tncn",
       "topic_lv2_label": "Thuế thu nhập cá nhân",
       "tags": [
-        "TNCN"
+        "TNCN",
+        "Thuế thu nhập cá nhân",
+        "Thuế",
+        "Hóa đơn",
+        "Chính sách",
+        "Công văn"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Thuế - Hóa đơn",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-04-24",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cac-khoan-phu-cap-tro-cap-de-xac-dinh-thu-nhap-chiu-thue-tncn.html"
@@ -244,12 +262,19 @@
       "topic_lv2_key": "khac-mon-bai-ho-kinh-doanh-nha-thau",
       "topic_lv2_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
       "tags": [
-        "Hộ kinh doanh"
+        "Hộ kinh doanh",
+        "Môn bài",
+        "Nhà thầu",
+        "MST",
+        "Thuế",
+        "Hóa đơn"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Thuế - Hóa đơn",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-31",
       "image": "assets/images/content/pic/Service/images/Thong-tu-152.png",
       "href": "ban-tin/che-do-ke-toan-cho-ho-kinh-doanh-ca-nhan-kinh-doanh.html"
@@ -262,11 +287,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-07-25",
       "image": "assets/images/content/pic/Service/images/cong%20van%2010315%20quy%20dinh%20muc%20phat%20cham%20nop%20tien%20thue.png",
       "href": "ban-tin/cong-van-10315-btc-tct-quy-dinh-muc-phat-cham-nop-tien-thue.html"
@@ -280,12 +311,18 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-08-14",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-11352-btc-tchq-vv-hoa-don-hang-xuat-khau.html"
@@ -299,12 +336,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-12-31",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-11819-ct-ttht-chi-phi-duoc-tru-khi-tinh-thue-tndn.html"
@@ -317,11 +359,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-09-09",
       "image": "assets/images/content/pic/Service/images/Cong%20van%2012568_BTC-C%C4%90KT%20giai%20thich%20noi%20dung%20thong%20tu%20200.png",
       "href": "ban-tin/cong-van-12568-btc-cdkt-giai-thich-noi-dung-thong-tu-200.html"
@@ -334,11 +382,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-03-27",
       "image": "assets/images/content/pic/Service/images/Cong-van-1307-gia-han-nop-tien-thue-do-covid.png",
       "href": "ban-tin/cong-van-1307-tct-cs-gia-han-nop-tien-thue-do-covid-19.html"
@@ -352,12 +406,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-04-07",
       "image": "assets/images/content/pic/Service/images/cong%20van%201434_TCT-KK%20ngay%207_4_2016.png",
       "href": "ban-tin/cong-van-1434-tct-kk-gia-han-nop-mau-6-gtgt.html"
@@ -370,11 +429,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-12-01",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-17526-btc-tct-luat-sua-doi-bo-sung-cac-luat-thue.html"
@@ -388,12 +453,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-11-26",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-17709-btc-tct-ap-dung-thue-gtgt-voi-1-so-mat-hang.html"
@@ -407,12 +477,18 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "Mã số thuế"
+        "Mã số thuế",
+        "Công văn",
+        "Văn bản pháp luật",
+        "MST",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-06-26",
       "image": "assets/images/content/pic/Service/images/cong-van-2065.png",
       "href": "ban-tin/cong-van-2065-ct-nvt-su-dung-so-dinh-danh-thay-ma-so-thue.html"
@@ -425,11 +501,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2022-06-17",
       "image": "assets/images/content/pic/Service/images/Cong-van-2086-trien-khai-luong-toi-thieu-vung.jpg",
       "href": "ban-tin/cong-van-2086-bldtbxh-tldldvn-trien-khai-luong-toi-thieu.html"
@@ -444,12 +527,17 @@
       "topic_lv2_label": "Công văn",
       "tags": [
         "BHXH",
-        "BHYT"
+        "BHYT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-10-25",
       "image": "assets/images/content/pic/Service/images/cong%20van%202387_bhxh-qlt%20huong%20dan%20cap%20the%20bhyt%202017.png",
       "href": "ban-tin/cong-van-2387-bhxh-qlt-huong-dan-cap-the-bhht-2017.html"
@@ -463,12 +551,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "TNCN"
+        "TNCN",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-07-01",
       "image": "assets/images/content/pic/Service/images/Cong-van-2393-ngay-1-7-2021-khai-thue-tncn.png",
       "href": "ban-tin/cong-van-2393-tct-dnncn-khai-thue-thu-nhap-ca-nhan.html"
@@ -481,11 +574,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-07-19",
       "image": "assets/images/content/pic/Service/images/Cong-van-2626-tct-diem-moi-cua-thong-tu-40.png",
       "href": "ban-tin/cong-van-2626-tct-dnncn-ngay-19-thang-7-nam-2021.html"
@@ -499,12 +598,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-07-23",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-2785-tct-cs-noi-dung-moi-cua-tt-78-ve-thue-tndn.html"
@@ -518,12 +622,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "TNCN"
+        "TNCN",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-08-02",
       "image": "assets/images/content/pic/Service/images/cong%20van%203437%20thue%20tncn%20tien%20thu%20lao%20tra%20cho%20ca%20nhan.png",
       "href": "ban-tin/cong-van-3437-tct-tncn-thue-tncn-tien-thu-lao-tra-cho-ca-nhan.html"
@@ -536,11 +645,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-03-28",
       "image": "assets/images/content/pic/Service/images/Cong-van-348-CT-CS.png",
       "href": "ban-tin/cong-van-348-ct-cs-gioi-thieu-noi-dung-moi-tai-nd-70-2025.html"
@@ -553,11 +668,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-08-26",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-3609-tct-cs-gioi-hieu-noi-dung-tt-119-2014-tt-btc.html"
@@ -570,11 +691,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-08-17",
       "image": "assets/images/content/pic/Service/images/cong%20van%203706_tct%20gioi%20thieu%20noi%20dung%20moi%20thong%20tu%2095.png",
       "href": "ban-tin/cong-van-3706-tct-kk-gioi-thieu-noi-dung-thong-tu-95.html"
@@ -588,12 +715,18 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-11-05",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-3723-tct-kk-quy-dinh-ve-viec-su-dung-hoa-don-gtgt.html"
@@ -607,12 +740,18 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-11-11",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-3789-tct-cs-xu-phat-lam-mat-hoa-don-theo-hanh-vi.html"
@@ -626,12 +765,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-10-29",
       "image": "assets/images/content/pic/Service/images/Cong-van-4153-huong-dan-viet-hoa-don-giam-30-thue-gtgt.png",
       "href": "ban-tin/cong-van-4153-tct-cs-cach-viet-hoa-don-giam-30-thue-gtgt.html"
@@ -645,12 +789,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-10-31",
       "image": "assets/images/content/pic/Service/images/Cong%20van%204175_BHXH-PC%20huong%20dan%20thuc%20hien%20Q%C4%90%201018.png",
       "href": "ban-tin/cong-van-4175-bhxh-pc-huong-dan-thuc-hien-qd-1018-qd-bhxh.html"
@@ -664,12 +813,18 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-12-10",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-4291-tct-cs-cho-phep-viet-tat-tren-hoa-don-gtgt.html"
@@ -684,12 +839,18 @@
       "topic_lv2_label": "Công văn",
       "tags": [
         "GTGT",
-        "Hóa đơn điện tử"
+        "Hóa đơn điện tử",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2022-01-07",
       "image": "assets/images/content/pic/Service/images/Cong-van-457-xuat-hoa-dien-tu-chiet-khau-thuong-mai.jpg",
       "href": "ban-tin/cong-van-457-cthn-ttht-hoa-don-dien-tu-chiet-khau-thuong-mai.html"
@@ -704,12 +865,18 @@
       "topic_lv2_label": "Công văn",
       "tags": [
         "Hộ kinh doanh",
-        "Kê khai"
+        "Kê khai",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Nộp tờ khai",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2026-03-05",
       "image": "assets/images/content/pic/Service/images/khong-phai-nop-thue-van-phai-nop-to-khai.jpg",
       "href": "ban-tin/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html"
@@ -723,12 +890,18 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-11-12",
       "image": "assets/images/content/pic/Service/images/Cong-van-4818-nhung-diem-moi-xu-phat-vi-pham-ve-hoa-don-thue.png",
       "href": "ban-tin/cong-van-4818-tct-pc-diem-moi-muc-phat-ve-hoa-don-thue.html"
@@ -741,11 +914,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-11-16",
       "image": "assets/images/content/pic/Service/images/Cong-van-4868-nhung-noi-dung-moi-cua-nd-123.png",
       "href": "ban-tin/cong-van-4868-tct-cs-nhung-noi-dung-moi-cua-nghi-dinh-123.html"
@@ -760,12 +939,18 @@
       "topic_lv2_label": "Công văn",
       "tags": [
         "GTGT",
-        "Kê khai"
+        "Kê khai",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-11-23",
       "image": "assets/images/content/pic/Service/images/cong%20van%204943_TCT-KK%20ke%20khai%20bo%20sung%2C%20dieu%20chinh%20thue%20GTGT.png",
       "href": "ban-tin/cong-van-4943-tct-kk-ke-khai-bo-sung-hoa-don-dieu-chinh.html"
@@ -778,11 +963,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-12-07",
       "image": "assets/images/content/pic/Service/images/Cong-van-5189-nhung-noi-dung-moi-nghi-dinh-126.png",
       "href": "ban-tin/cong-van-5189-tct-cs-nhung-noi-dung-moi-cua-nghi-dinh-126.html"
@@ -797,12 +988,17 @@
       "topic_lv2_label": "Công văn",
       "tags": [
         "TNCN",
-        "Quyết toán"
+        "Quyết toán",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2017-02-21",
       "image": "assets/images/content/pic/Service/images/cong%20van%205286%20huong%20dan%20quyet%20toan%20thue%20tncn.png",
       "href": "ban-tin/cong-van-5286-ct-tncn-huong-dan-quyet-toan-thue-tncn-2016.html"
@@ -816,12 +1012,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "Kê khai"
+        "Kê khai",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-04-26",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-5485-btc-tct-dang-ky-ke-khai-thue-theo-pp-khau-tru.html"
@@ -835,35 +1036,21 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2018-02-06",
       "image": "assets/images/content/pic/Service/images/Cong-van-560-Tien-luong-thang-13-khong-phai-dong-bhxh.png",
       "href": "ban-tin/cong-van-560-ldtbxh-bhxh-tien-luong-thang-13-ko-phai-dong-bhxh.html"
-    },
-    {
-      "file": "cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.htm",
-      "title": "Công văn 624/TCT – CS tiếp nhận hồ sơ đăng ký kê khai thuế GTGT theo mẫu số 06/GTGT",
-      "excerpt": "Ngày 28 tháng 2 năm 2014 Tổng cục thuế ban hành Công văn số 624/TCT – CS về việc tiếp nhận hồ sơ đăng ký kê khai thuế G…",
-      "topic_lv1_key": "van-ban-phap-luat",
-      "topic_lv1_label": "Văn bản pháp luật",
-      "topic_lv2_key": "cong-van",
-      "topic_lv2_label": "Công văn",
-      "tags": [
-        "GTGT",
-        "Kê khai"
-      ],
-      "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
-      "library_kind_key": "huong-dan",
-      "library_kind_label": "Hướng dẫn",
-      "publish_date": "2014-02-28",
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "href": "ban-tin/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html"
     },
     {
       "file": "cong-van-7040-ct-tncn-huong-dan-quyet-toan-thue-tncn-2018.htm",
@@ -875,12 +1062,17 @@
       "topic_lv2_label": "Công văn",
       "tags": [
         "TNCN",
-        "Quyết toán"
+        "Quyết toán",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2019-02-22",
       "image": "assets/images/content/pic/Service/images/Cong-van-7040-quyet-toan-thue-tncn-2018.png",
       "href": "ban-tin/cong-van-7040-ct-tncn-huong-dan-quyet-toan-thue-tncn-2018.html"
@@ -893,11 +1085,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-03-05",
       "image": "assets/images/content/pic/Service/images/cong%20van%20767%20cua%20bo%20tai%20chinh.png",
       "href": "ban-tin/cong-van-767-tct-cs-gioi-thieu-noi-dung-moi-thong-tu-26.html"
@@ -910,11 +1108,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-03-01",
       "image": "assets/images/content/pic/Service/images/cong%20van%20786%20ca%20nhan%20gop%20von%20dc%20dung%20tien%20mat.png",
       "href": "ban-tin/cong-van-786-tct-cs-ca-nhan-gop-von-duoc-dung-tien-mat.html"
@@ -929,12 +1133,17 @@
       "topic_lv2_label": "Công văn",
       "tags": [
         "TNCN",
-        "Quyết toán"
+        "Quyết toán",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-03-02",
       "image": "assets/images/content/pic/Service/images/cong%20van%20801_2015%20huong%20dan%20quyet%20toan%20thue%20tncn.png",
       "href": "ban-tin/cong-van-801-tct-tncn-ngay-2-3-2016-huong-dan-quyet-toan-thue-tncn.html"
@@ -948,12 +1157,18 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "HTKK"
+        "HTKK",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Nâng cấp",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2018-03-15",
       "image": "assets/images/content/pic/Service/images/Cong-van-845-cua-tong-cuc-thue-nang-cap-htkk-dap-ung-tt133.png",
       "href": "ban-tin/cong-van-845-tct-cntt-ke-hach-nang-cap-htkk-dap-ung-133.html"
@@ -966,31 +1181,20 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-03-03",
       "image": "assets/images/content/pic/Service/images/cong-van-897-ve-viec-gia-han-nop-thue-do-covid.png",
       "href": "ban-tin/cong-van-897-tct-qln-ve-viec-gia-han-nop-thue-do-covid.html"
-    },
-    {
-      "file": "cong-van-giai-trinh-nop-lai-bao-cao-tai-chinh.htm",
-      "title": "Mẫu Công văn giải trình nộp lại Báo cáo tài chính",
-      "excerpt": "Mẫu công văn xin nộp lại báo cáo tài chính - Biên bản giải trình nộp lại báo cáo tài chính điều chỉnh, bổ sung thay thế…",
-      "topic_lv1_key": "van-ban-phap-luat",
-      "topic_lv1_label": "Văn bản pháp luật",
-      "topic_lv2_key": "cong-van",
-      "topic_lv2_label": "Công văn",
-      "tags": [],
-      "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
-      "library_kind_key": "bieu-mau",
-      "library_kind_label": "Biểu mẫu",
-      "publish_date": "2016-04-11",
-      "image": "assets/images/content/pic/Service/images/cong-van-xin-nop-lai-bao-cao-tai-chinh.png",
-      "href": "ban-tin/cong-van-giai-trinh-nop-lai-bao-cao-tai-chinh.html"
     },
     {
       "file": "cong-van-huong-dan-ke-khai-hoa-don-dieu-chinh-hoa-don-thay-the.htm",
@@ -1002,12 +1206,18 @@
       "topic_lv2_label": "Công văn",
       "tags": [
         "GTGT",
-        "Kê khai"
+        "Kê khai",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2023-06-22",
       "image": "assets/images/content/pic/Service/images/cong-van-2546-TCT-CS.png",
       "href": "ban-tin/cong-van-huong-dan-ke-khai-hoa-don-dieu-chinh-hoa-don-thay-the.html"
@@ -1022,12 +1232,17 @@
       "topic_lv2_label": "Công văn",
       "tags": [
         "TNCN",
-        "Quyết toán"
+        "Quyết toán",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2026-03-04",
       "image": "assets/images/content/pic/service/images/639083062717132283.jpg",
       "href": "ban-tin/cong-van-huong-dan-quyet-toan-thue-tncn-2026.html"
@@ -1042,12 +1257,17 @@
       "topic_lv2_label": "Công văn",
       "tags": [
         "TNCN",
-        "Quyết toán"
+        "Quyết toán",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-03-14",
       "image": "assets/images/content/pic/Service/images/QTT%20TNCN%201.png",
       "href": "ban-tin/cong-van-huong-dan-quyet-toan-thue-tncn.html"
@@ -1061,12 +1281,18 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "TNCN"
+        "TNCN",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách",
+        "Điểm mới"
       ],
       "badge_label": "Điểm mới",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-06-01",
       "image": "assets/images/content/pic/Service/images/Cong-van-thue-TNCN(1).png",
       "href": "ban-tin/cong-van-huong-dan-ve-thue-thu-nhap-ca-nhan.html"
@@ -1079,11 +1305,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2012-05-18",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-so-1685-tct-cs-quy-dinh-phu-cap-tien-dien-thoai-cho-nhan-vien.html"
@@ -1097,12 +1329,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-12-18",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-so-17557-btc-tct-trien-khai-thuc-hien-luat-thue-gtgt.html"
@@ -1115,11 +1352,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Lao động",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Lao động",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-11-06",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-so-17940-sldtbxh-vl-quy-dinh-ve-lao-dong.html"
@@ -1133,12 +1377,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-12-25",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-so-17963-btc-tct-tinh-thue-gtgt-theo-ty-le.html"
@@ -1152,12 +1401,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-12-27",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-so-18128-btc-tct-trien-khai-thuc-hien-luat-thue-gtgt.html"
@@ -1170,11 +1424,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-05-20",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-so-1839-tct-cs-nhung-noi-dung-moi-cua-tt-39.html"
@@ -1190,12 +1450,17 @@
       "tags": [
         "BHXH",
         "BHYT",
-        "BHTN"
+        "BHTN",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-12-17",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-so-4064-bhxh-thu-quy-dinh-ve-bhxh-bhyt-bhtn.html"
@@ -1209,12 +1474,18 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-02-14",
       "image": "assets/images/content/pic/general/images/cong%20van%20431.png",
       "href": "ban-tin/cong-van-so-431-tct-tvqt-quy-dinh-hoa-don-ban-hang.html"
@@ -1227,11 +1498,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-10-24",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-so-4716-tct-cs-gioi-thieu-noi-dung-thong-tu-151-2014-tt-btc.html"
@@ -1245,12 +1522,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-02-27",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-so-586-tct-cs-tuyen-truyen-chinh-sach-thue-gtgt.html"
@@ -1263,11 +1545,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-06-12",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-so-7527-btc-tct-thanh-tra-kiem-tra-thue-cac-dn.html"
@@ -1281,12 +1569,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "Quyết toán"
+        "Quyết toán",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-06-16",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cong-van-so-7924-btc-tchq-lam-thu-tuc-xuat-khau-quyet-toan-thue.html"
@@ -1300,12 +1593,17 @@
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Công văn",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-11-19",
       "image": "assets/images/content/pic/Service/images/9531%201.png",
       "href": "ban-tin/cong-van-so-9531-ct-thnvdt-tinh-thue-gtgt-theo-phuong-phap-truc-tiep.html"
@@ -1318,31 +1616,21 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "tags": [],
+      "tags": [
+        "Công văn",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Công văn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-01-02",
       "image": "assets/images/content/pic/Service/images/mau-cong-van-dang-ky-thang-bang-luong.png",
       "href": "ban-tin/cong-van-xin-dang-ky-thang-bang-luong-gui-phong-lao-dong.html"
-    },
-    {
-      "file": "cong-van-xin-huy-to-khai-thue-cho-thue-tai-san.htm",
-      "title": "Mẫu công văn xin hủy tờ khai thuế cho thuê tài sản mới nhất năm 2026",
-      "excerpt": "Khi doanh nghiệp làm tờ khai thuế cho thuê tài sản thay cho cá nhân có tài sản cho thuê mà doanh nghiệp làm sai nội dun…",
-      "topic_lv1_key": "van-ban-phap-luat",
-      "topic_lv1_label": "Văn bản pháp luật",
-      "topic_lv2_key": "cong-van",
-      "topic_lv2_label": "Công văn",
-      "tags": [],
-      "badge_label": "Công văn",
-      "topic_label": "Văn bản pháp luật",
-      "library_kind_key": "bieu-mau",
-      "library_kind_label": "Biểu mẫu",
-      "publish_date": "2026-01-27",
-      "image": "assets/images/content/pic/Service/images/Cong-van-xin-huy-to-khai-thue-cho-thue-tai-san.png",
-      "href": "ban-tin/cong-van-xin-huy-to-khai-thue-cho-thue-tai-san.html"
     },
     {
       "file": "cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.htm",
@@ -1352,11 +1640,18 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "nghiep-vu-theo-phan-hanh",
       "topic_lv2_label": "Nghiệp vụ theo phần hành",
-      "tags": [],
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Chính sách",
+        "Công văn"
+      ],
       "badge_label": "Công văn",
-      "topic_label": "Kế toán",
+      "topic_label": "Nghiệp vụ theo phần hành",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-06-18",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html"
@@ -1370,51 +1665,22 @@
       "topic_lv2_key": "tndn",
       "topic_lv2_label": "Thuế thu nhập doanh nghiệp",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Chính sách",
+        "Điểm mới"
       ],
       "badge_label": "Điểm mới",
-      "topic_label": "Thuế - Hóa đơn",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-06-24",
       "image": "assets/images/content/pic/Service/images/diem%20moi%20can%20chu%20y%20cua%20thong%20tu%2096%20ve%20thue%20tndn.png",
       "href": "ban-tin/diem-moi-can-chu-y-cua-thong-tu-96-2015-tt-btc-ve-thue-tndn.html"
-    },
-    {
-      "file": "huong-dan-trich-nop-kinh-phi-cong-doan-moi-nhat.htm",
-      "title": "Quyết định 1754/QĐ-TLĐ hướng dẫn nộp kinh phí công đoàn 2025",
-      "excerpt": "Tổng Liên đoàn Lao động Việt Nam đã ban hành Quyết định 1754/QĐ-TLĐ vào ngày 19/09/2024 để Quy định về nguyên tắc…",
-      "topic_lv1_key": "lao-dong-bao-hiem",
-      "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "cong-doan",
-      "topic_lv2_label": "Công đoàn",
-      "tags": [
-        "Công đoàn"
-      ],
-      "badge_label": "Quyết định",
-      "topic_label": "Lao động - Bảo hiểm",
-      "library_kind_key": "huong-dan",
-      "library_kind_label": "Hướng dẫn",
-      "publish_date": "2024-09-19",
-      "image": "assets/images/content/pic/Service/images/quye-dinh-1754-cong-doan.png",
-      "href": "ban-tin/huong-dan-trich-nop-kinh-phi-cong-doan-moi-nhat.html"
-    },
-    {
-      "file": "lenh-dieu-di-cong-tac-cua-cong-ty.htm",
-      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
-      "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
-      "topic_lv1_key": "tham-khao-hoc-lieu",
-      "topic_lv1_label": "Học liệu - Tham khảo",
-      "topic_lv2_key": "khac",
-      "topic_lv2_label": "Khác",
-      "tags": [],
-      "badge_label": "Quyết định",
-      "topic_label": "Học liệu - Tham khảo",
-      "library_kind_key": "huong-dan",
-      "library_kind_label": "Hướng dẫn",
-      "publish_date": "2026-04-02",
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "href": "ban-tin/lenh-dieu-di-cong-tac-cua-cong-ty.html"
     },
     {
       "file": "luat-106-2016-qh13-bo-sung-luat-thue-gtgt-quan-ly-thue-ttdb.htm",
@@ -1425,12 +1691,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-04-06",
       "image": "assets/images/content/pic/Service/images/luat%20106_2016_qh13%20sua%20doi%20luat%20thue%20gtgt%2C%20quan%20ly%20thue.png",
       "href": "ban-tin/luat-106-2016-qh13-bo-sung-luat-thue-gtgt-quan-ly-thue-ttdb.html"
@@ -1443,11 +1715,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
-      "tags": [],
+      "tags": [
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Luật - Bộ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-04-06",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/luat-107-2016-qh13-luat-thue-xuat-nhap-khau.html"
@@ -1461,12 +1740,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-11-20",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/luat-bao-hiem-xa-hoi-luat-so-58-2014-qh13.html"
@@ -1480,12 +1765,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2024-06-29",
       "image": "assets/images/content/pic/Service/images/Luat-bao-hiem-xa-hoi.png",
       "href": "ban-tin/luat-bao-hiem-xa-hoi-moi-nhat.html"
@@ -1499,12 +1790,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "BHYT"
+        "BHYT",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2024-11-27",
       "image": "assets/images/content/pic/Service/images/Luat-bao-hiem-y-te-sua-doi.png",
       "href": "ban-tin/luat-bao-hiem-y-te-sua-doi-moi-nhat-2025-so-51-2024-qh15.html"
@@ -1518,12 +1815,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "Công đoàn"
+        "Công đoàn",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Luật - Bộ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2012-06-20",
       "image": "assets/images/content/pic/Service/images/Luat-cong-doan.jpg",
       "href": "ban-tin/luat-cong-doan-moi-nhat.html"
@@ -1537,12 +1840,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "Công đoàn"
+        "Công đoàn",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Luật - Bộ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2024-11-27",
       "image": "assets/images/content/pic/Service/images/Luat-cong-doan(1).jpg",
       "href": "ban-tin/luat-cong-doan-so-50-2024-qh15.html"
@@ -1555,11 +1864,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
-      "tags": [],
+      "tags": [
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Luật - Bộ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-06-17",
       "image": "assets/images/content/pic/Service/images/Luat-doanh-nghiep-so-59.png",
       "href": "ban-tin/luat-doanh-nghiep-so-59-2020-qh14-ngay-17-06-2020.html"
@@ -1572,11 +1888,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
-      "tags": [],
+      "tags": [
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Luật - Bộ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-11-20",
       "image": "assets/images/content/pic/Service/images/luat%20ke%20toan%20so%2088.png",
       "href": "ban-tin/luat-ke-toan-luat-so-88-2015-qh13.html"
@@ -1589,11 +1912,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
-      "tags": [],
+      "tags": [
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Luật - Bộ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-11-16",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/luat-lam-viec-luat-so-38-2013-qh13.html"
@@ -1606,11 +1936,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
-      "tags": [],
+      "tags": [
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Luật - Bộ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-10",
       "image": "assets/images/content/pic/Service/images/Luat-quan-ly-thue-2026.png",
       "href": "ban-tin/luat-quan-ly-thue-so-108-2025-qh15-hieu-luc-tu-01-07-2026.html"
@@ -1623,11 +1960,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
-      "tags": [],
+      "tags": [
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Luật - Bộ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2019-06-13",
       "image": "assets/images/content/pic/Service/images/Luat-quan-ly-thue-so-38-2019.png",
       "href": "ban-tin/luat-quan-ly-thue-so-38-2019-moi-nhat.html"
@@ -1641,12 +1985,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-06-19",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/luat-so-31-2013-qh13-sua-doi-bo-sung-luat-thue-gtgt.html"
@@ -1660,12 +2010,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "BHYT"
+        "BHYT",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-06-13",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/luat-so-46-2014-qh13-sua-doi-bo-sung-luat-bao-hiem-y-te.html"
@@ -1678,11 +2034,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
-      "tags": [],
+      "tags": [
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Luật - Bộ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-11-26",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/luat-so-68-2014-qh13-luat-doanh-nghiep-2015.html"
@@ -1695,11 +2058,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
-      "tags": [],
+      "tags": [
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Luật - Bộ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-11-26",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/luat-so-71-2014-qh13-sua-doi-bo-sung-cac-luat-ve-thue.html"
@@ -1713,12 +2083,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2008-06-03",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/luat-thue-gia-tri-gia-tang-hop-nhat.html"
@@ -1732,12 +2108,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-11",
       "image": "assets/images/content/pic/Service/images/Luat-thue-GTGT-sua-doi.png",
       "href": "ban-tin/luat-thue-gia-tri-gia-tang-sua-doi-so-149-2025-qh15.html"
@@ -1751,12 +2133,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-07-01",
       "image": "assets/images/content/pic/Service/images/Luat-thue-GTGT-2025.png",
       "href": "ban-tin/luat-thue-gtgt-moi-nhat.html"
@@ -1770,12 +2158,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-06-14",
       "image": "assets/images/content/pic/Service/images/Luat-thue-tndn-2025.png",
       "href": "ban-tin/luat-thue-thu-nhap-doanh-nghiep-so-67-2025-qh15.html"
@@ -1789,12 +2183,18 @@
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
       "tags": [
-        "TNCN"
+        "TNCN",
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-10",
       "image": "assets/images/content/pic/Service/images/Luat-thue-TNCN-2026.png",
       "href": "ban-tin/luat-thue-tncn-so-109-2025-qh15.html"
@@ -1807,11 +2207,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "luat-bo-luat",
       "topic_lv2_label": "Luật - Bộ luật",
-      "tags": [],
+      "tags": [
+        "Luật",
+        "Bộ luật",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Luật",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Luật - Bộ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2026-01-01",
       "image": "assets/images/content/pic/Service/images/Luat-viec-lam.png",
       "href": "ban-tin/luat-viec-lam-so-74-2025-qh15.html"
@@ -1824,11 +2231,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-01-04",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-01-dang-ky-doanh-nghiep.png",
       "href": "ban-tin/nghi-dinh-01-2021-nd-cp-quy-dinh-ve-dang-ky-doanh-nghiep.html"
@@ -1842,12 +2255,18 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-01-17",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/nghi-dinh-04-2014-nd-cp-ve-hoa-don-ban-hang-cung-ung-dich-vu.html"
@@ -1860,11 +2279,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-07-01",
       "image": "assets/images/content/pic/Service/images/nghi%20dinh%20100_2016%20huong%20dan%20luat%20thue%20gtgt.png",
       "href": "ban-tin/nghi-dinh-100-2016-nd-cp-huong-dan-luat-106-2016.html"
@@ -1878,12 +2303,18 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-09-24",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/nghi-dinh-109-2013-nd-cp-xu-phat-vi-pham-ve-hoa-don-phi-le-phi.html"
@@ -1897,12 +2328,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-09-25",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-114-giam-thue-tndn-phai-nop-nam-2020.png",
       "href": "ban-tin/nghi-dinh-114-2020-nd-cp-giam-30-thue-tndn-nam-2020.html"
@@ -1916,12 +2352,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-11-11",
       "image": "assets/images/content/pic/Service/images/nghi%20dinh%20115_2015%20quy%20dinh%20luat%20bao%20hiem%20xa%20hoi.png",
       "href": "ban-tin/nghi-dinh-115-2015-nd-cp-quy-dinh-luat-bao-hiem-xa-hoi.html"
@@ -1935,12 +2376,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "Hộ kinh doanh"
+        "Hộ kinh doanh",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-06-09",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-117-nd-cp.png",
       "href": "ban-tin/nghi-dinh-117-2025-nd-cp-thue-cua-ho-ca-nhan-kd-tren-san-thuong-mai-dien-tu.html"
@@ -1955,12 +2401,18 @@
       "topic_lv2_label": "Nghị định",
       "tags": [
         "GTGT",
-        "Hóa đơn điện tử"
+        "Hóa đơn điện tử",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2018-09-12",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-119-2018-quy-dinh-ve-hoa-don-dien-tu.png",
       "href": "ban-tin/nghi-dinh-119-2018-nd-cp-quy-dinh-ve-hoa-don-dien-tu.html"
@@ -1973,11 +2425,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-11-26",
       "image": "assets/images/content/pic/Service/images/nghi%20dinh%2012_2015%20cua%20chinh%20phu.png",
       "href": "ban-tin/nghi-dinh-12-2015-nd-cp-sua-doi-bo-sung-luat-the.html"
@@ -1992,12 +2450,17 @@
       "topic_lv2_label": "Nghị định",
       "tags": [
         "GTGT",
-        "TNDN"
+        "TNDN",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2023-04-14",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-12-gia-han-nop-thue-tndn-gtgt-2023.jpg",
       "href": "ban-tin/nghi-dinh-12-2023-nd-cp-gia-han-nop-thue-gtgt-tndn-nam-2023.html"
@@ -2011,12 +2474,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-05-26",
       "image": "assets/images/content/pic/Service/images/nghi%20dinh%2012_vbhn-btc%20quy%20dinh%20ve%20thue%20tndn.png",
       "href": "ban-tin/nghi-dinh-12-vbhn-btc-huong-dan-luat-thue-thu-nhap-doanh-nghiep.html"
@@ -2029,11 +2497,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2018-09-13",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-121-quy-dinh-thang-bang-luong.png",
       "href": "ban-tin/nghi-dinh-121-2018-nd-cp-quy-dinh-ve-thang-bang-luong.html"
@@ -2046,11 +2521,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-11-14",
       "image": "assets/images/content/pic/Service/images/nghi%20dinh%20122_2015%20quy%20dinh%20muc%20luong%20toi%20thieu%20vung.png",
       "href": "ban-tin/nghi-dinh-122-2015-quy-dinh-muc-luong-toi-thieu-vung-nam-2016.html"
@@ -2063,11 +2545,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-10-15",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-122-phoi-hop-thu-tuc-thanh-lap-doanh-nghiep.png",
       "href": "ban-tin/nghi-dinh-122-2020-nd-cp-phoi-hop-thu-tuc-thanh-lap-doanh-nghiep.html"
@@ -2082,12 +2570,18 @@
       "topic_lv2_label": "Nghị định",
       "tags": [
         "GTGT",
-        "Hóa đơn điện tử"
+        "Hóa đơn điện tử",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-10-19",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-123-2020-Quy-dinh-ve-hoa-don-dien-tu.png",
       "href": "ban-tin/nghi-dinh-123-2020-nd-cp-quy-dinh-ve-hoa-don-dien-tu.html"
@@ -2101,12 +2595,18 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-10-19",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-125-xu-phat-vi-pham-ve-thue-hoa-don.png",
       "href": "ban-tin/nghi-dinh-125-2020-nd-cp-xu-phat-vi-pham-ve-thue-hoa-don.html"
@@ -2119,11 +2619,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-10-19",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-126-huong-dan-thi-hanh-luat-quan-ly-thue.png",
       "href": "ban-tin/nghi-dinh-126-2020-nd-cp-huong-dan-luat-quan-ly-thue.html"
@@ -2136,11 +2642,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-06-11",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-128-2025-nd-cp.png",
       "href": "ban-tin/nghi-dinh-128-2025-nd-cp-quy-dinh-ve-phan-quyen-phan-cap-trong-quan-ly-nha-nuoc-linh-vuc-noi-vu.html"
@@ -2154,12 +2666,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-05-26",
       "image": "assets/images/content/pic/Service/images/Nghi%20dinh%2013-vbhn-btc%20quy%20dinh%20ve%20luat%20thue%20gtgt.png",
       "href": "ban-tin/nghi-dinh-13-vbhn-btc-quy-dinh-ve-luat-thue-gtgt.html"
@@ -2172,11 +2689,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Môn bài",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-10-04",
       "image": "assets/images/content/pic/Service/images/Nghi%20dinh%20139_2016%20quy%20dinh%20ve%20thue%20mon%20bai.png",
       "href": "ban-tin/nghi-dinh-139-2016-nd-cp-quy-dinh-ve-le-phi-mon-bai.html"
@@ -2189,11 +2713,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2017-12-07",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-141-quy-dinh-muc-luong-toi-thieu-vung-2018.png",
       "href": "ban-tin/nghi-dinh-141-2017-nd-cp-muc-luong-toi-thieu-vung-doi-voi-nld.html"
@@ -2206,11 +2737,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Lao động",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Lao động",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-12-14",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-145-huong-dan-thi-hanh-bo-luat-lao-dong.png",
       "href": "ban-tin/nghi-dinh-145-2020-nd-cp-huong-dan-thi-hanh-luat-lao-dong.html"
@@ -2225,12 +2763,17 @@
       "topic_lv2_label": "Nghị định",
       "tags": [
         "GTGT",
-        "TNDN"
+        "TNDN",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2017-12-15",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-146-2017-sua-doi-ND-100-va-12.png",
       "href": "ban-tin/nghi-dinh-146-2017-nd-cp-sua-doi-bo-sung-thue-gtgt-tndn.html"
@@ -2244,12 +2787,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2022-01-28",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-15-giam-thue-gtgt-tu-10-xuong-8.jpg",
       "href": "ban-tin/nghi-dinh-15-2022-nd-cp-giam-thue-gtgt-tu-10-xuong-8.html"
@@ -2262,11 +2810,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-11-14",
       "image": "assets/images/content/pic/Service/images/nghi%20dinh%20153%20muc%20luong%20toi%20thieu%20vung%202017.png",
       "href": "ban-tin/nghi-dinh-153-2016-nd-cp-muc-luong-toi-thieu-vung-2017.html"
@@ -2279,11 +2834,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2018-11-16",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-157-quy-dinh-muc-luong-toi-thieu-vung-2019.png",
       "href": "ban-tin/nghi-dinh-157-quy-dinh-muc-luong-toi-thieu-vung-2019.html"
@@ -2297,12 +2859,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2024-06-29",
       "image": "assets/images/content/pic/service/images/638866549401355815.jpg",
       "href": "ban-tin/nghi-dinh-158-2025-nd-cp-huong-dan-luat-bhxh.html"
@@ -2315,11 +2882,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-12-30",
       "image": "assets/images/content/pic/Service/images/nghi%20dinh%20174%20quy%20dinh%20ve%20luat%20ke%20toan.png",
       "href": "ban-tin/nghi-dinh-174-2016-nd-cp-quy-dinh-ve-luat-ke-toan.html"
@@ -2333,12 +2906,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-07-01",
       "image": "assets/images/content/pic/service/images/638872192724625166.jpg",
       "href": "ban-tin/nghi-dinh-174-2025-nd-cp-chinh-sach-giam-thue-gtgt.html"
@@ -2352,12 +2930,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-07-01",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-181-2025-ND-CP.png",
       "href": "ban-tin/nghi-dinh-181-2025-nd-cp-huong-dan-luat-thue-gtgt.html"
@@ -2371,12 +2954,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "BHYT"
+        "BHYT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-07-01",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-188-2025-nd-cp.png",
       "href": "ban-tin/nghi-dinh-188-2025-nd-cp-huong-dan-luat-bao-hiem-y-te.html"
@@ -2390,12 +2978,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "Công đoàn"
+        "Công đoàn",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-11-21",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-191-2013-Nd-CP.png",
       "href": "ban-tin/nghi-dinh-191-huong-dan-ve-kinh-phi-cong-doan.html"
@@ -2408,11 +3001,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2026-01-15",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-20-2026-ND-CP.png",
       "href": "ban-tin/nghi-dinh-20-2026-nd-cp-huong-dan-nghi-quyet-so-198-2025-qh15.html"
@@ -2426,12 +3025,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2011-12-27",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/nghi-dinh-209-2013-nd-cp-quy-dinh-huong-dan-luat-thue-gtgt.html"
@@ -2445,12 +3049,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-12-26",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/nghi-dinh-218-2013-nd-cp-huong-dan-thi-hanh-luat-thue-tndn.html"
@@ -2463,11 +3072,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Môn bài",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-02-24",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-22-huong-dan-ve-le-phi-mon-bai.png",
       "href": "ban-tin/nghi-dinh-22-2020-nd-cp-huong-dan-ve-le-phi-mon-bai.html"
@@ -2481,12 +3097,18 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Lao động",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-03-01",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-28-Muc-xu-phat-vi-pham-ve-lao-dong-bhxh.png",
       "href": "ban-tin/nghi-dinh-28-2020-nd-cp-xu-phat-vi-pham-ve-lao-dong-bhxh.html"
@@ -2500,12 +3122,18 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-02",
       "image": "assets/images/content/pic/Service/images/594714280_1408937550768889_8359621698578777171_n.jpg",
       "href": "ban-tin/nghi-dinh-310-2025-nd-cp-sua-doi-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-thue-hoa-don.html"
@@ -2518,11 +3146,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-12",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-318.png",
       "href": "ban-tin/nghi-dinh-318-2025-nd-cp-huong-dan-luat-viec-lam.html"
@@ -2536,12 +3170,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-15",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-320-thue-TNDN.png",
       "href": "ban-tin/nghi-dinh-320-2025-nd-cp-huong-dan-luat-thue-tndn.html"
@@ -2554,11 +3193,19 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Hợp đồng lao động",
+        "Lao động",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Lao động",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-24",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-337.png",
       "href": "ban-tin/nghi-dinh-337-2025-nd-cp-hop-dong-lao-dong-dien-tu.html"
@@ -2573,12 +3220,17 @@
       "topic_lv2_label": "Nghị định",
       "tags": [
         "GTGT",
-        "TNDN"
+        "TNDN",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2022-05-28",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-34-gia-han-nop-thue-tndn-gtgt-2022.jpg",
       "href": "ban-tin/nghi-dinh-34-2022-nd-cp-gia-han-nop-thue-gtgt-tndn-nam-2022.html"
@@ -2592,12 +3244,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-31",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-359.png",
       "href": "ban-tin/nghi-dinh-359-2025-nd-cp-sua-doi-nd-181-2025-nd-cp-ve-thue-gtgt.html"
@@ -2610,11 +3267,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-31",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-362.png",
       "href": "ban-tin/nghi-dinh-362-2025-nd-cp-huong-dan-thi-hanh-luat-phi-va-le-phi.html"
@@ -2627,11 +3290,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-31",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-373.png",
       "href": "ban-tin/nghi-dinh-373-2025-nd-cp-sua-doi-nghi-dinh-126-2020-nd-cp.html"
@@ -2644,11 +3313,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2022-06-12",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-38-2022-muc-luong-toi-thieu-vung.jpg",
       "href": "ban-tin/nghi-dinh-38-2022-nd-cp-quy-dinh-muc-luong-toi-thieu-vung.html"
@@ -2661,11 +3337,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2018-03-11",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-39-quy-dinh-luat-ho-tro-doanh-nghiep-vua-va-nho.png",
       "href": "ban-tin/nghi-dinh-39-2018-nd-cp-quy-dinh-luat-ho-tro-dn-vua-va-nho.html"
@@ -2678,11 +3360,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2018-03-12",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-41-quy-dinh-muc-phat-vi-pham-trong-ke-toan.png",
       "href": "ban-tin/nghi-dinh-41-2018-nd-cp-quy-dinh-muc-phat-vu-pham-ke-toan.html"
@@ -2695,11 +3383,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-04-08",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-41-2020-gia-han-thoi-han-nop-thue-tien-thue-dat.png",
       "href": "ban-tin/nghi-dinh-41-2020-nd-cp-gia-han-thoi-han-nop-thue-va-tien-thue-dat.html"
@@ -2712,11 +3406,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-03-31",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-44-khoan-chi-ho-tro-phong-chong-dich-covid.png",
       "href": "ban-tin/nghi-dinh-44-2021-nd-cp-chi-ho-tro-phong-chong-dich-covid-19.html"
@@ -2730,12 +3430,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2023-06-30",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-44-2023-ND-CP-moi-nhat.png",
       "href": "ban-tin/nghi-dinh-44-2023-nd-cp-quy-dinh-chinh-sach-giam-thue-gtgt-nam-2023.html"
@@ -2748,11 +3453,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-04-01",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-47-huong-dan-luat-doanh-nghiep.png",
       "href": "ban-tin/nghi-dinh-47-2021-nd-cp-huong-dan-luat-doanh-nghiep.html"
@@ -2766,12 +3477,18 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-05-27",
       "image": "assets/images/content/pic/Service/images/nghi%20dinh%2049_2016%20quy%20dinh%20xu%20phat%20ve%20hoa%20don.png",
       "href": "ban-tin/nghi-dinh-49-2016-nd-cp-quy-dinh-xu-phat-ve-hoa-don-le-phi.html"
@@ -2784,11 +3501,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-04-19",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-52-gia-han-thoi-han-nop-thue-thue-dat-2021.png",
       "href": "ban-tin/nghi-dinh-52-2021-gia-han-thoi-han-nop-thue-tien-thue-dat-2021.html"
@@ -2801,11 +3524,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2024-05-15",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-52-2024-ND-CP.png",
       "href": "ban-tin/nghi-dinh-52-2024-nd-cp-quy-dinh-ve-thanh-toan-khong-dung-tien-mat.html"
@@ -2819,12 +3548,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "Hộ kinh doanh"
+        "Hộ kinh doanh",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2026-03-05",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-68-2026.png",
       "href": "ban-tin/nghi-dinh-68-2026-nd-cp-thue-doi-voi-ho-ca-nhan-kinh-doanh.html"
@@ -2839,12 +3573,18 @@
       "topic_lv2_label": "Nghị định",
       "tags": [
         "GTGT",
-        "Hóa đơn điện tử"
+        "Hóa đơn điện tử",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-03-20",
       "image": "assets/images/content/pic/Service/images/ND-70-2025-hoa-don-dien-tu.png",
       "href": "ban-tin/nghi-dinh-70-2025-nd-cp-sua-doi-nghi-dinh-123-ve-hoa-don-dien-tu.html"
@@ -2857,11 +3597,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-06-11",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-74-muc-luong-thoi-thieu-vung-nam-2025.png",
       "href": "ban-tin/nghi-dinh-74-2024-nd-cp-quy-dinh-muc-luong-toi-thieu-vung.html"
@@ -2874,11 +3621,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-08-26",
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-80-2021-huong-dan-luat-ho-tro-doanh-nghiep-nho-va-vua.png",
       "href": "ban-tin/nghi-dinh-80-2021-nd-cp-huong-dan-luat-ho-tro-dn-nho-va-vua.html"
@@ -2892,12 +3645,18 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Lao động",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-10-07",
       "image": "assets/images/content/pic/Service/images/nghi%20dinh%2088%20xu%20phat%20ve%20lao%20dong%2C%20bhxh%2C%20kpcd.png",
       "href": "ban-tin/nghi-dinh-88-2015-nd-cp-xu-phat-ve-lao-dong-bhxh-kpcd.html"
@@ -2910,11 +3669,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2019-11-15",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-90-quy-dinh-muc-luong-toi-thieu-vung-2020.png",
       "href": "ban-tin/nghi-dinh-90-quy-dinh-muc-luong-toi-thieu-vung-2020.html"
@@ -2927,11 +3693,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-10-01",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/nghi-dinh-91-2014-nd-cp-cua-chinh-phu-quy-dinh-ve-thue.html"
@@ -2946,12 +3718,17 @@
       "topic_lv2_label": "Nghị định",
       "tags": [
         "GTGT",
-        "TNDN"
+        "TNDN",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-08-13",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/nghi-dinh-92-2013-nd-cp-sua-doi-bo-sung-luat-thue-tndn-gtgt.html"
@@ -2966,12 +3743,17 @@
       "topic_lv2_label": "Nghị định",
       "tags": [
         "GTGT",
-        "TNDN"
+        "TNDN",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-10-27",
       "image": "assets/images/content/pic/Service/images/nghi-dinh-92-2021-giam-thue-tndn-gtgt-nam-2021.png",
       "href": "ban-tin/nghi-dinh-92-2021-nd-cp-giam-thue-tndn-gtgt-nam-2021.html"
@@ -2984,11 +3766,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-11-11",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/nghi-dinh-so-103-2014-nd-cp-quy-dinh-muc-luong-toi-thieu-vung.html"
@@ -3002,12 +3791,17 @@
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
       "tags": [
-        "BHYT"
+        "BHYT",
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-01-01",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/nghi-dinh-so-105-2014-nd-cp-luat-bao-hiem-y-te-nam-2015.html"
@@ -3020,11 +3814,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-dinh",
       "topic_lv2_label": "Nghị định",
-      "tags": [],
+      "tags": [
+        "Nghị định",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Nghị định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-07-22",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/nghi-dinh-so-83-2013-nd-cp-quy-dinh-luat-quan-ly-thue.html"
@@ -3039,12 +3839,18 @@
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
         "TNCN",
-        "TNDN"
+        "TNDN",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Môn bài"
       ],
       "badge_label": "Nghị quyết",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-05-17",
       "image": "assets/images/content/pic/Service/images/Nghi-quyet-198.png",
       "href": "ban-tin/nghi-quyet-198-2025-qh15-chinh-sach-mien-giam-thue-tndn-tncn-mon-bai.html"
@@ -3058,12 +3864,19 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách",
+        "Điểm mới"
       ],
       "badge_label": "Điểm mới",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-06-17",
       "image": "assets/images/content/pic/Service/images/Nghi-quyet-2024-2025-QH15.png",
       "href": "ban-tin/nghi-quyet-204-2025-qh15-tiep-tuc-giam-thue-gtgt-8.html"
@@ -3077,12 +3890,18 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị quyết",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-10-19",
       "image": "assets/images/content/pic/Service/images/nghi-quyet-406-giam-30-thue-tndn-nam-2021.png",
       "href": "ban-tin/nghi-quyet-406-nq-ubtvqh15-giam-30-thue-tndn-nam-2021.html"
@@ -3096,12 +3915,18 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị quyết",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2022-01-02",
       "image": "assets/images/content/pic/Service/images/nghi-quyet-43-giam-2-thue-suat-thue-gtgt-trong-nam-2022.jpg",
       "href": "ban-tin/nghi-quyet-43-2022-qh15-giam-2-thue-suat-thue-gtgt.html"
@@ -3115,12 +3940,18 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "TNCN"
+        "TNCN",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị quyết",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-06-02",
       "image": "assets/images/content/pic/Service/images/nghi-quyet-954-muc-giam-tru-gia-canh-tinh-thue-tncn.png",
       "href": "ban-tin/nghi-quyet-954-2020-dieu-chinh-muc-giam-tru-gia-canh-thue-tncn.html"
@@ -3134,12 +3965,18 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Nghị quyết",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-06-19",
       "image": "assets/images/content/pic/Service/images/nghi-quyet-116-giam-thue-tndn-phai-nop-nam-2020.png",
       "href": "ban-tin/nghi-quyet-so-116-giam-thue-tndn-phai-nop-nam-2020.html"
@@ -3148,15 +3985,23 @@
       "file": "nhung-diem-moi-cua-thong-tu-119-2014-cua-bo-tai-chinh.htm",
       "title": "Những điểm mới của Thông tư 119/2014/TT-BTC",
       "excerpt": "Ngày 26/8/2014 Bộ tài chính ban hành Công văn 3609/TCT-CS giới thiệu các nội dung mới của Thông tư 119/2014/TT-BTC. Côn…",
-      "topic_lv1_key": "tham-khao-hoc-lieu",
-      "topic_lv1_label": "Học liệu - Tham khảo",
-      "topic_lv2_key": "khac",
-      "topic_lv2_label": "Khác",
-      "tags": [],
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
+      "topic_lv2_key": "gtgt-hoa-don",
+      "topic_lv2_label": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Chính sách",
+        "Điểm mới"
+      ],
       "badge_label": "Điểm mới",
-      "topic_label": "Học liệu - Tham khảo",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-08-26",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/nhung-diem-moi-cua-thong-tu-119-2014-cua-bo-tai-chinh.html"
@@ -3170,12 +4015,19 @@
       "topic_lv2_key": "tndn",
       "topic_lv2_label": "Thuế thu nhập doanh nghiệp",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Chính sách",
+        "Công văn"
       ],
       "badge_label": "Công văn",
-      "topic_label": "Thuế - Hóa đơn",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-06-24",
       "image": "assets/images/content/pic/Service/images/nhung%20diem%20moi%20trong%20thong%20tu%2096%20ve%20thue%20tndn.png",
       "href": "ban-tin/nhung-diem-moi-cua-thong-tu-96-ve-thue-thu-nhap-doanh-nghiep.html"
@@ -3188,11 +4040,20 @@
       "topic_lv1_label": "Phần mềm - Công cụ",
       "topic_lv2_key": "excel-va-cong-cu-khac",
       "topic_lv2_label": "Excel - Công cụ khác",
-      "tags": [],
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Chính sách",
+        "Excel - Công cụ khác"
+      ],
       "badge_label": "Excel - Công cụ khác",
-      "topic_label": "Phần mềm - Công cụ",
+      "topic_label": "Excel - Công cụ khác",
       "library_kind_key": "cong-cu",
       "library_kind_label": "Công cụ",
+      "tool_lv3_key": "thuc-hanh",
+      "tool_lv3_label": "Thực hành",
       "publish_date": "2026-01-01",
       "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
       "href": "ban-tin/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html"
@@ -3207,34 +4068,21 @@
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
         "BHXH",
-        "BHYT"
+        "BHYT",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-10-10",
       "image": "assets/images/content/pic/Service/images/quyet%20dinh%201018_q%C4%91-bhxh%20quy%20dinh%20thu%20chi%20bhxh%2C%20bhyt.png",
       "href": "ban-tin/quyet-dinh-1018-qd-bhxh-quy-dinh-thu-chi-bhxh-bhyt.html"
-    },
-    {
-      "file": "quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.htm",
-      "title": "Quyết định 1040/QĐ-BHXH Mẫu Báo cáo sử dụng lao động tham gia BHXH",
-      "excerpt": "Ngày 18/8/2020 BHXH ban hành Quyết định 1040/QĐ-BHXH quy định Mẫu báo cáo tình hình sử dụng lao động và danh sách tham…",
-      "topic_lv1_key": "van-ban-phap-luat",
-      "topic_lv1_label": "Văn bản pháp luật",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "tags": [
-        "BHXH"
-      ],
-      "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
-      "library_kind_key": "bieu-mau",
-      "library_kind_label": "Biểu mẫu",
-      "publish_date": "2020-08-18",
-      "image": "assets/images/content/pic/Service/images/quyet-dinh-1040-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.png",
-      "href": "ban-tin/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html"
     },
     {
       "file": "quyet-dinh-108-qd-tct-quy-trinh-hoan-thue-tncn-tu-dong.htm",
@@ -3245,12 +4093,18 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "TNCN"
+        "TNCN",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-01-24",
       "image": "assets/images/content/pic/Service/images/Quyet-dinh-108-QD-TCT(1).png",
       "href": "ban-tin/quyet-dinh-108-qd-tct-quy-trinh-hoan-thue-tncn-tu-dong.html"
@@ -3263,33 +4117,22 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
-      "tags": [],
+      "tags": [
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Người phụ thuộc",
+        "Chính sách"
+      ],
       "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-06-13",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/quyet-dinh-1378-qd-btc-thu-tuc-dang-ky-nguoi-phu-thuoc.html"
-    },
-    {
-      "file": "quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.htm",
-      "title": "Quyết định 1408/QĐ-TLĐ Quy định về tài chính công đoàn",
-      "excerpt": "Tổng Liên đoàn Lao động ban hành Quyết định 1408/QĐ-TLĐ năm 2024 về Quy định quản lý tài chính, tài sản công đoàn, thu,…",
-      "topic_lv1_key": "van-ban-phap-luat",
-      "topic_lv1_label": "Văn bản pháp luật",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "tags": [
-        "Công đoàn"
-      ],
-      "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
-      "library_kind_key": "huong-dan",
-      "library_kind_label": "Hướng dẫn",
-      "publish_date": "2024-08-01",
-      "image": "assets/images/content/pic/Service/images/Quyet-dinh-1408-Q%C4%90-TL%C4%90.jpg",
-      "href": "ban-tin/quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.html"
     },
     {
       "file": "quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.htm",
@@ -3300,12 +4143,19 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "BHTN",
+        "Chính sách"
       ],
       "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2019-01-31",
       "image": "assets/images/content/pic/Service/images/quyet-dinh-166-quy-trinh-giai-quyet-che-do-bhxh-bhtn.png",
       "href": "ban-tin/quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.html"
@@ -3319,12 +4169,18 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2017-04-14",
       "image": "assets/images/content/pic/Service/images/1a.png",
       "href": "ban-tin/quyet-dinh-595-qd-bhxh-thay-the-qd-959-cua-bhxh-viet-nam.html"
@@ -3338,12 +4194,19 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "Công đoàn"
+        "Công đoàn",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách",
+        "Nghị quyết - Quyết định"
       ],
       "badge_label": "Nghị quyết - Quyết định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Nghị quyết - Quyết định",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2019-11-20",
       "image": "assets/images/content/pic/Service/images/giam-muc-dong-doan-phi-cong-doan.png",
       "href": "ban-tin/quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.html"
@@ -3357,34 +4220,21 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-04-22",
       "image": "assets/images/content/pic/Service/images/quyet%20dinh%20636%20quy%20dinh%20ve%20che%20do%20bao%20hiem%20xa%20hoi.png",
       "href": "ban-tin/quyet-dinh-636-qd-bhxh-quy-dinh-ve-che-do-bhxh.html"
-    },
-    {
-      "file": "quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.htm",
-      "title": "Quyết định 8086/QĐ-TLĐ hướng dẫn thu đoàn phí công đoàn 2024",
-      "excerpt": "Ngày 10/10/2023, Tổng Liên đoàn Lao động Việt Nam ban hành Quyết định 8086/QĐ-TLĐ quy định về nguyên tắc xây dựng và gi…",
-      "topic_lv1_key": "van-ban-phap-luat",
-      "topic_lv1_label": "Văn bản pháp luật",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "tags": [
-        "Công đoàn"
-      ],
-      "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
-      "library_kind_key": "huong-dan",
-      "library_kind_label": "Hướng dẫn",
-      "publish_date": "2023-10-10",
-      "image": "assets/images/content/pic/Service/images/Quyet-dinh%20so-%208086-Qd-TLd.png",
-      "href": "ban-tin/quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.html"
     },
     {
       "file": "quyet-dinh-919-qd-bhxh-ngay-26-8-2015-cua-bhxh-viet-nam.htm",
@@ -3395,12 +4245,18 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-08-26",
       "image": "assets/images/content/pic/Service/images/quyet%20dinh%20919_Q%C4%90-BHXH%20ngay%2026_8_2015.png",
       "href": "ban-tin/quyet-dinh-919-qd-bhxh-ngay-26-8-2015-cua-bhxh-viet-nam.html"
@@ -3416,83 +4272,20 @@
       "tags": [
         "BHXH",
         "BHYT",
-        "BHTN"
+        "BHTN",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật"
       ],
       "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-09-09",
       "image": "assets/images/content/pic/Service/images/quyet%20dinh%20959_Q%C4%90-BHXH.png",
       "href": "ban-tin/quyet-dinh-959-qd-bhxh-quy-dinh-ve-bhxh-bhyt-bhtn.html"
-    },
-    {
-      "file": "quyet-dinh-ban-hanh-he-thong-thang-bang-luong.htm",
-      "title": "Quyết định ban hành hệ thống thang bảng lương 2025",
-      "excerpt": "Mẫu quyết định ban hành thang bảng lương của doanh nghiệp 2025 mới nhất khi Doanh nghiệp tự xây dựng hệ thống th…",
-      "topic_lv1_key": "van-ban-phap-luat",
-      "topic_lv1_label": "Văn bản pháp luật",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "tags": [],
-      "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
-      "library_kind_key": "huong-dan",
-      "library_kind_label": "Hướng dẫn",
-      "publish_date": "2025-01-02",
-      "image": "assets/images/content/pic/Service/images/quyet-dinh-ban-hanh-he-thong-thang-bang-luong.jpg",
-      "href": "ban-tin/quyet-dinh-ban-hanh-he-thong-thang-bang-luong.html"
-    },
-    {
-      "file": "quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.htm",
-      "title": "Mẫu Quyết định chấm dứt hợp đồng lao động",
-      "excerpt": "Khi muốn chấm dứt hợp đồng lao động Doanh nghiệp và người lao động cần hồ sơ gồm: Quyết định chấm dứt…",
-      "topic_lv1_key": "van-ban-phap-luat",
-      "topic_lv1_label": "Văn bản pháp luật",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "tags": [],
-      "badge_label": "Nghị quyết - Quyết định",
-      "topic_label": "Văn bản pháp luật",
-      "library_kind_key": "bieu-mau",
-      "library_kind_label": "Biểu mẫu",
-      "publish_date": "2026-09-15",
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "href": "ban-tin/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html"
-    },
-    {
-      "file": "quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.htm",
-      "title": "Mẫu quyết định của giám đốc về việc đi nghỉ mát",
-      "excerpt": "Mẫu quyết định của Giám đốc về việc đi nghỉ mát, phê duyệt kinh phí đi nghỉ mát. Để hoàn thiện chứng từ chi phí cho nhâ…",
-      "topic_lv1_key": "van-ban-phap-luat",
-      "topic_lv1_label": "Văn bản pháp luật",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "tags": [],
-      "badge_label": "Nghị quyết - Quyết định",
-      "topic_label": "Văn bản pháp luật",
-      "library_kind_key": "bieu-mau",
-      "library_kind_label": "Biểu mẫu",
-      "publish_date": "2016-06-28",
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "href": "ban-tin/quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.html"
-    },
-    {
-      "file": "quyet-dinh-giai-the-doanh-nghiep-cong-ty.htm",
-      "title": "Mẫu Quyết định giải thể doanh nghiệp công ty",
-      "excerpt": "Mẫu Quyết định giải thể giải thể Doanh nghiệp, giải thể Công ty mới nhất để làm thủ tục giải thể Doanh nghiệp, tải mẫu…",
-      "topic_lv1_key": "van-ban-phap-luat",
-      "topic_lv1_label": "Văn bản pháp luật",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "tags": [],
-      "badge_label": "Nghị quyết - Quyết định",
-      "topic_label": "Văn bản pháp luật",
-      "library_kind_key": "bieu-mau",
-      "library_kind_label": "Biểu mẫu",
-      "publish_date": "2026-04-02",
-      "image": "assets/images/content/pic/Service/images/mau-quyet-dinh-giai-the-doanh-nghiep.png",
-      "href": "ban-tin/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html"
     },
     {
       "file": "quyet-dinh-so-01-qd-bhxh-che-do-bao-hiem-xa-hoi.htm",
@@ -3503,12 +4296,18 @@
       "topic_lv2_key": "nghi-quyet-quyet-dinh",
       "topic_lv2_label": "Nghị quyết - Quyết định",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Nghị quyết",
+        "Quyết định",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Quyết định",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-01-03",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/quyet-dinh-so-01-qd-bhxh-che-do-bao-hiem-xa-hoi.html"
@@ -3521,11 +4320,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-03-16",
       "image": "assets/images/content/pic/Service/images/thong-tu-01-quy-dinh-ve-dang-ky-doanh-nghiep.png",
       "href": "ban-tin/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html"
@@ -3539,12 +4344,18 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-01-23",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-03-2015-tt-bldtbxh-dieu-chinh-tien-luong-da-dong-bhxh.html"
@@ -3558,12 +4369,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "TNCN"
+        "TNCN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-02-05",
       "image": "assets/images/content/pic/Service/images/thong%20tu%2004_vbhn%20ve%20thue%20tncn.png",
       "href": "ban-tin/thong-tu-04-vbhn-btc-van-ban-hop-nhat-ve-thue-tncn.html"
@@ -3576,11 +4392,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2007-07-06",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-07-2007-ttlt-btm-btc-quy-dinh-ve-khuyen-mai-hoi-cho-trien-lam.html"
@@ -3593,11 +4415,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-01-29",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-09-2015-tt-btc-giao-dich-tai-chinh-cua-doanh-nghiep.html"
@@ -3610,11 +4438,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Lao động",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Lao động",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-11-12",
       "image": "assets/images/content/pic/Service/images/thong-tu-10-2020-huong-dan-luat-lao-dong.png",
       "href": "ban-tin/thong-tu-10-2020-tt-bldtbxh-huong-dan-luat-lao-dong.html"
@@ -3627,11 +4462,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-11-15",
       "image": "assets/images/content/pic/Service/images/Thong-tu-100-2021-sua-doi-bo-sung-thong-tu-40.jpg",
       "href": "ban-tin/thong-tu-100-2021-tt-btc-sua-doi-bo-sung-thong-tu-40-2021.html"
@@ -3645,12 +4486,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "Đăng ký thuế"
+        "Đăng ký thuế",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-12-03",
       "image": "assets/images/content/pic/Service/images/thong-tu-105-2020-huong-dan-ve-dang-ky-thue.png",
       "href": "ban-tin/thong-tu-105-2020-tt-btc-huong-dan-ve-dang-ky-thue.html"
@@ -3664,12 +4510,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "TNCN"
+        "TNCN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập cá nhân",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-08-15",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-111-2013-tt-btc-huong-dan-thi-ha-nh-luat-thue-tncn.html"
@@ -3682,11 +4533,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-08-12",
       "image": "assets/images/content/pic/Service/images/thong%20tu%20130_2016_tt-btc%20huong%20dan%20nghi%20dinh%20100%2C%20luat%20106.png",
       "href": "ban-tin/thong-tu-130-2016-tt-btc-huong-dan-nghi-dinh-100-luat-106.html"
@@ -3699,11 +4556,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2018-12-28",
       "image": "assets/images/content/pic/Service/images/Thong-tu-132-che-do-ke-toan-doanh-nghiep-sieu-nho.png",
       "href": "ban-tin/thong-tu-132-2018-tt-btc-che-do-ke-toan-doanh-nghiep-sieu-nho.html"
@@ -3716,11 +4579,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-08-26",
       "image": "assets/images/content/pic/Service/images/thong-tu-133-bo-tai-chinh.png",
       "href": "ban-tin/thong-tu-133-2016-che-do-ke-toan-doanh-nghiep-vua-va-nho.html"
@@ -3735,12 +4604,17 @@
       "topic_lv2_label": "Thông tư",
       "tags": [
         "GTGT",
-        "TNDN"
+        "TNDN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-10-16",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-141-2013-tt-btc-thi-hanh-luat-thue-tndn-va-gtgt.html"
@@ -3753,11 +4627,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-10-10",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-151-2014-tt-btc-huong-dan-thi-hanh-nd-91-quy-dinh-ve-thue.html"
@@ -3771,12 +4651,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-06-17",
       "image": "assets/images/content/pic/Service/images/van%20ban%20hop%20nhat%20ve%20thue%20GTGT.png",
       "href": "ban-tin/thong-tu-16-vbhn-btc-van-ban-hop-nhat-ve-thue-gtgt.html"
@@ -3789,11 +4674,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-11-15",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-166-2013-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-thue.html"
@@ -3807,12 +4698,18 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-06-17",
       "image": "assets/images/content/pic/Service/images/van%20ban%20hop%20nhat%20ve%20hoa%20don.png",
       "href": "ban-tin/thong-tu-17-vbhn-btc-van-ban-hop-nhat-ve-hoa-don.html"
@@ -3825,11 +4722,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-10-28",
       "image": "assets/images/content/pic/Service/images/thong%20tu%20173%20chung%20tu%20thanh%20toan%20qua%20ngan%20hang.png",
       "href": "ban-tin/thong-tu-173-2016-tt-btc-sua-doi-bo-sung-thong-tu-219.html"
@@ -3843,12 +4746,18 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-10-31",
       "image": "assets/images/content/pic/Service/images/thong%20tu%20176_2016_TT-BTC%20xu%20phat%20vi%20pham%20ve%20hoa%20don.png",
       "href": "ban-tin/thong-tu-176-2016-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.html"
@@ -3862,12 +4771,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "Hộ kinh doanh"
+        "Hộ kinh doanh",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2026-03-05",
       "image": "assets/images/content/pic/Service/images/Thong-tu-18-2026.png",
       "href": "ban-tin/thong-tu-18-2026-tt-btc-ve-thue-doi-voi-ho-ca-nhan-kinh-doanh.html"
@@ -3880,11 +4794,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-06-19",
       "image": "assets/images/content/pic/Service/images/thong%20tu%2018_vbhn%20van%20ban%20hop%20nhat%20quan%20ly%20thue.png",
       "href": "ban-tin/thong-tu-18-vbhn-btc-van-ban-hop-nhat-ve-quan-ly-thue.html"
@@ -3898,12 +4818,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2026-03-12",
       "image": "assets/images/content/pic/Service/images/Thong-tu-20-2026.png",
       "href": "ban-tin/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html"
@@ -3916,11 +4841,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-12-22",
       "image": "assets/images/content/pic/Service/images/thong-tu-200-cua-bo-tai-chinh.png",
       "href": "ban-tin/thong-tu-200-2014-tt-btc-che-do-ke-toan-doanh-nghiep.html"
@@ -3933,11 +4864,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "BCTC",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2007-12-31",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-202-2014-tt-btc-huong-dan-lap-bao-cao-tai-chinh-hop-nhat.html"
@@ -3951,12 +4889,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-12-31",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-219-2013-tt-btc-huong-dan-thi-hanh-luat-thue-gtgt.html"
@@ -3969,11 +4912,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Lao động",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Lao động",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-08-29",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-23-2014-tt-bldtbxh-quy-dinh-ve-tuyen-dung-va-bao-cao-su-dung-lao-dong.html"
@@ -3986,11 +4936,19 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Lao động",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Lao động",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-06-23",
       "image": "assets/images/content/pic/Service/images/thong%20tu%2023%20cua%20bo%20lao%20dong.png",
       "href": "ban-tin/thong-tu-23-2015-tt-bldtbxh-quy-dinh-ve-tien-luong.html"
@@ -4003,11 +4961,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2018-03-16",
       "image": "assets/images/content/pic/Service/images/Thong-tu-25-2018-huong-dan-nghi-dinh-146.png",
       "href": "ban-tin/thong-tu-25-2018-tt-btc-huong-dan-nghi-dinh-146-2017-nd-cp.html"
@@ -4021,12 +4985,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-02-27",
       "image": "assets/images/content/pic/Service/images/thong%20tu%2026_2015%20huong%20dan%20thue%20gtgt%20va%20quan%20ly%20thue.jpg",
       "href": "ban-tin/thong-tu-26-2015-tt-btc-huong-dan-thue-gtgt-va-quan-ly-thue.html"
@@ -4040,12 +5009,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-09-14",
       "image": "assets/images/content/pic/Service/images/thong%20tu%2026_vbhn%20thue%20thu%20nhap%20doanh%20nghiep.png",
       "href": "ban-tin/thong-tu-26-vbhn-btc-van-ban-hop-nhat-thue-tndn.html"
@@ -4058,11 +5032,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Môn bài",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-11-15",
       "image": "assets/images/content/pic/Service/images/thong%20tu%20302%20huong%20dan%20le%20phi%20m%C3%B4n%20bai.png",
       "href": "ban-tin/thong-tu-302-2016-tt-btc-huong-dan-ve-le-phi-mon-bai.html"
@@ -4077,12 +5058,18 @@
       "topic_lv2_label": "Thông tư",
       "tags": [
         "GTGT",
-        "Hóa đơn điện tử"
+        "Hóa đơn điện tử",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-05-31",
       "image": "assets/images/content/pic/Service/images/Thong-tu-32-2025-TT-BTC.png",
       "href": "ban-tin/thong-tu-32-2025-tt-btc-hoa-don-dien-tu.html"
@@ -4095,11 +5082,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-06-25",
       "image": "assets/images/content/pic/Service/images/thong-tu-324-he-thong-muc-luc-ngan-sach-nha-nuoc.png",
       "href": "ban-tin/thong-tu-324-2016-tt-btc-he-thong-muc-luc-ngan-sach-nha-nuoc.html"
@@ -4112,11 +5105,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2017-04-27",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-37-2017-tt-btc-sua-doi-bo-sung-thong-tu-39.html"
@@ -4130,12 +5130,18 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2010-09-28",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-39-2014-tt-btc-nhung-quy-dinh-moi-ve-hoa-don.html"
@@ -4148,11 +5154,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-06-22",
       "image": "assets/images/content/pic/Service/images/Thong-tu-39-2025.png",
       "href": "ban-tin/thong-tu-39-2025-tt-bct-quy-dinh-ve-han-muc-khuyen-mai-giam-gia.html"
@@ -4168,12 +5180,17 @@
       "tags": [
         "GTGT",
         "TNCN",
-        "Hộ kinh doanh"
+        "Hộ kinh doanh",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2007-11-21",
       "image": "assets/images/content/pic/Service/images/thong-tu-40-quy-dinh-thue-gtgt-tncn-ca-nhan-ho-kinh-doanh.png",
       "href": "ban-tin/thong-tu-40-2021-tt-btc-quy-dinh-thue-cho-ho-ca-nhan-kinh-doanh.html"
@@ -4186,11 +5203,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Tiền lương",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-11-16",
       "image": "assets/images/content/pic/Service/images/thong%20tu%2047_2015_TT-BL%C4%90TBXH%20quy%20dinh%20ve%20muc%20luong.png",
       "href": "ban-tin/thong-tu-47-2015-tt-bldtbxh-quy-dinh-ve-muc-luong-va-phu-cap-luong.html"
@@ -4204,12 +5228,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-12-29",
       "image": "assets/images/content/pic/Service/images/thong%20tu%2056%20cua%20bhxh.png",
       "href": "ban-tin/thong-tu-59-2015-bldtbxh-huong-dan-luat-bhxh-bat-buoc.html"
@@ -4223,12 +5252,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-05-15",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-64-2013-tt-btc-quy-dinh-ve-hoa-don-gtgt-ban-hang.html"
@@ -4242,12 +5276,18 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-05-08",
       "image": "assets/images/content/pic/Service/images/thong%20tu%2064-2015-TTLT-BTC-BCT-BCA-BQP.png",
       "href": "ban-tin/thong-tu-64-2015-ttlt-btc-bct-bca-bqp-quy-dinh-ve-hoa-don.html"
@@ -4260,11 +5300,18 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Môn bài",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-07-09",
       "image": "assets/images/content/pic/Service/images/thong-tu-65-huong-dan-thue-mon-bai.png",
       "href": "ban-tin/thong-tu-65-2020-tt-btc-quy-dinh-ve-thue-mon-bai.html"
@@ -4279,12 +5326,18 @@
       "topic_lv2_label": "Thông tư",
       "tags": [
         "GTGT",
-        "Hóa đơn điện tử"
+        "Hóa đơn điện tử",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2019-09-30",
       "image": "assets/images/content/pic/Service/images/thong-tu-68-2019-quy-dinh-ve-hoa-don-dien-tu.png",
       "href": "ban-tin/thong-tu-68-2019-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html"
@@ -4298,12 +5351,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-07-01",
       "image": "assets/images/content/pic/Service/images/Thong-tu-69-2025-tt-btc.png",
       "href": "ban-tin/thong-tu-69-2025-tt-btc-huong-dan-ve-thue-gtgt.html"
@@ -4316,11 +5374,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-05-18",
       "image": "assets/images/content/pic/Service/images/Thong%20t%C6%B0%2075%20cua%20Bo%20tai%20chinh.png",
       "href": "ban-tin/thong-tu-75-2015-tt-btc-sua-doi-bo-sung-dieu-128-tt-200.html"
@@ -4334,12 +5398,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-06-18",
       "image": "assets/images/content/pic/Service/images/thong%20tu%2078_2014%20thue%20thu%20nhap%20doanh%20nghiep.png",
       "href": "ban-tin/thong-tu-78-2014-tt-btc-huong-dan-thi-hanh-luat-thue-tndn.html"
@@ -4354,12 +5423,17 @@
       "topic_lv2_label": "Thông tư",
       "tags": [
         "GTGT",
-        "Hóa đơn điện tử"
+        "Hóa đơn điện tử",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-09-17",
       "image": "assets/images/content/pic/Service/images/thong-tu-78-2021-quy-dinh-ve-hoa-don-dien-tu.png",
       "href": "ban-tin/thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html"
@@ -4374,12 +5448,18 @@
       "topic_lv2_label": "Thông tư",
       "tags": [
         "GTGT",
-        "Hóa đơn điện tử"
+        "Hóa đơn điện tử",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2020-10-30",
       "image": "assets/images/content/pic/Service/images/Thong-tu-88-2020-huong-dan-ve-hoa-don-dien-tu.png",
       "href": "ban-tin/thong-tu-88-2020-tt-btc-huong-dan-ve-hoa-don-dien-tu.html"
@@ -4393,12 +5473,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "Hộ kinh doanh"
+        "Hộ kinh doanh",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2021-10-11",
       "image": "assets/images/content/pic/Service/images/thong-tu-88-che-do-ke-toan-cho-ca-nhan-ho-kinh-doanh.jpg",
       "href": "ban-tin/thong-tu-88-che-do-ke-toan-cho-ca-nhan-ho-kinh-doanh.html"
@@ -4413,12 +5498,17 @@
       "topic_lv2_label": "Thông tư",
       "tags": [
         "GTGT",
-        "TNCN"
+        "TNCN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-06-15",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-92-2015-quy-dinh-ve-thue-gtgt-tncn-doi-voi-ca-nhan.html"
@@ -4431,11 +5521,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2017-09-19",
       "image": "assets/images/content/pic/Service/images/thong-tu-93-2017-sua-doi-bo-sung-thong-tu-219-156-119.png",
       "href": "ban-tin/thong-tu-93-2017-tt-btc-sua-doi-bo-sung-tt-156-119-219.html"
@@ -4449,12 +5545,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "Đăng ký thuế"
+        "Đăng ký thuế",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2016-06-28",
       "image": "assets/images/content/pic/Service/images/thong%20tu%2095_2016%20huong%20dan%20dang%20ky%20thue.png",
       "href": "ban-tin/thong-tu-95-2016-tt-btc-huong-dan-dang-ky-thue.html"
@@ -4468,12 +5569,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2015-06-22",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-96-2015-tt-btc-huong-dan-thue-thu-nhap-doanh-nghiep.html"
@@ -4486,11 +5592,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-10-27",
       "image": "assets/images/content/pic/Service/images/Thong-tu-99-2025-TT-BTC.png",
       "href": "ban-tin/thong-tu-99-2025-tt-btc-huong-dan-che-do-ke-toan-dn.html"
@@ -4504,12 +5616,18 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "GTGT"
+        "GTGT",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2014-01-17",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-so-10-2014-tt-btc-xu-phat-vi-pham-ve-hoa-don-gtgt.html"
@@ -4522,11 +5640,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-11-06",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-so-119-2014-tt-btc-ngay-25-8-2014.html"
@@ -4539,11 +5663,17 @@
       "topic_lv1_label": "Văn bản pháp luật",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "tags": [],
+      "tags": [
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
+      ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "Thông tư",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-11-06",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-so-156-2013-tt-btc-huong-dan-thi-hanh-luat-quan-ly-thue.html"
@@ -4557,12 +5687,17 @@
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "tags": [
-        "BHXH"
+        "BHXH",
+        "Thông tư",
+        "Văn bản pháp luật",
+        "Chính sách"
       ],
       "badge_label": "Thông tư",
-      "topic_label": "Văn bản pháp luật",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2013-01-01",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "ban-tin/thong-tu-so-178-tt-btc-ap-dung-bao-hiem-xa-hoi-viet-nam.html"
@@ -4576,12 +5711,18 @@
       "topic_lv2_key": "tndn",
       "topic_lv2_label": "Thuế thu nhập doanh nghiệp",
       "tags": [
-        "TNDN"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Chính sách"
       ],
       "badge_label": "Thuế thu nhập doanh nghiệp",
-      "topic_label": "Thuế - Hóa đơn",
+      "topic_label": "GTGT - Hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
       "publish_date": "2025-12-15",
       "image": "assets/images/content/pic/Service/images/thu-nhap-chiu-thue-tndn.jpg",
       "href": "ban-tin/thu-nhap-chiu-thue-thu-nhap-doanh-nghiep.html"

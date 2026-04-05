@@ -63,6 +63,55 @@ Các nhóm nội bộ hiện tại:
 - **Biểu mẫu**
 - **Công cụ**
 
+### Level 2 và Level 3 đang dùng cho user
+
+#### Hướng dẫn
+- **Level 2**: nhóm nghiệp vụ chính theo `topic_lv1 / topic_lv2`
+- **Level 3**: các nhánh con trong `Filters`
+
+#### Biểu mẫu
+- **Level 2**:
+  - Mẫu biểu kế toán
+  - Mẫu biểu thuế - hóa đơn
+  - Mẫu biểu doanh nghiệp - thủ tục
+  - Mẫu biểu lao động - bảo hiểm
+- **Level 3**:
+  - sinh từ tags hữu ích trong từng nhóm level 2
+  - ví dụ: `TSCĐ`, `BCTC`, `CCDC`, `Khấu hao`, `Tiền lương`, `GTGT`, `TNCN`, `BHXH`...
+- không dùng các tag quá chung làm level 3 như:
+  - `Biểu mẫu`
+  - `Mẫu biểu`
+  - `Thủ tục`
+
+#### Công cụ
+- **Level 2**:
+  - HTKK - eTax - Thuế điện tử
+  - Excel - Công cụ khác
+  - FAST
+- **Level 3** hiện tại:
+  - `HTKK - eTax - Thuế điện tử`
+    - Cài đặt
+    - Nâng cấp
+    - Kê khai
+    - Nộp tờ khai
+    - Quyết toán
+    - Đăng ký thuế
+    - Hoàn thuế
+    - Tải về
+    - Lỗi thường gặp
+  - `Excel - Công cụ khác`
+    - Hàm Excel
+    - Mẫu file
+    - Thực hành
+    - Thuế
+    - TSCĐ / CCDC
+    - Tiền lương
+    - Báo cáo
+  - `FAST`
+    - Cài đặt
+    - Tải về
+    - Sử dụng
+
 ## 4) Rule quyết định rất ngắn
 
 ### Đưa vào `Thư viện` nếu:

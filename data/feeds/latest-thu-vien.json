@@ -7,10 +7,16 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/Chi-phi-khong-tuong-ung-voi-doanh-thu.png",
     "badgeLabel": "Hướng dẫn",
-    "topicLabel": "Kế toán",
+    "topicLabel": "Nghiệp vụ theo phần hành",
     "libraryKindKey": "huong-dan",
     "libraryKindLabel": "Hướng dẫn",
-    "tags": []
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Nghiệp vụ theo phần hành",
+      "Kế toán",
+      "Hướng dẫn"
+    ]
   },
   {
     "title": "Hạch toán giảm giá hàng bán đối với bên mua, bên bán theo TT 99, TT 133",
@@ -20,10 +26,17 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/Hoa-don-ban-hang.png",
     "badgeLabel": "Hướng dẫn",
-    "topicLabel": "Kế toán",
+    "topicLabel": "Tài khoản - Hạch toán",
     "libraryKindKey": "huong-dan",
     "libraryKindLabel": "Hướng dẫn",
-    "tags": []
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Tài khoản",
+      "Hạch toán",
+      "Kế toán",
+      "Hướng dẫn"
+    ]
   },
   {
     "title": "Xử lý sự cố đối với hóa đơn điện tử có mã của cơ quan thuế",
@@ -33,12 +46,17 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/hoa-don-dien-tu-gap-su-co.jpg",
     "badgeLabel": "Hướng dẫn",
-    "topicLabel": "Thuế - Hóa đơn",
+    "topicLabel": "GTGT - Hóa đơn",
     "libraryKindKey": "huong-dan",
     "libraryKindLabel": "Hướng dẫn",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
     "tags": [
       "GTGT",
-      "Hóa đơn điện tử"
+      "Hóa đơn điện tử",
+      "Hóa đơn",
+      "Thuế",
+      "Hướng dẫn"
     ]
   },
   {
@@ -49,10 +67,16 @@
     "modifiedDate": null,
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
     "badgeLabel": "Biểu mẫu",
-    "topicLabel": "Học liệu - Tham khảo",
+    "topicLabel": "Khác",
     "libraryKindKey": "bieu-mau",
     "libraryKindLabel": "Biểu mẫu",
-    "tags": []
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Học liệu",
+      "Tham khảo",
+      "Biểu mẫu"
+    ]
   },
   {
     "title": "TỜ KHAI THUẾ GIÁ TRỊ GIA TĂNG mẫu 01/GTGT theo Thông tư 119",
@@ -62,11 +86,18 @@
     "modifiedDate": null,
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
     "badgeLabel": "Biểu mẫu",
-    "topicLabel": "Mẫu biểu - Thủ tục",
+    "topicLabel": "Mẫu biểu thuế - hóa đơn",
     "libraryKindKey": "bieu-mau",
     "libraryKindLabel": "Biểu mẫu",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
     "tags": [
-      "GTGT"
+      "GTGT",
+      "Mẫu biểu thuế",
+      "hóa đơn",
+      "Mẫu biểu",
+      "Thủ tục",
+      "Biểu mẫu"
     ]
   },
   {
@@ -77,11 +108,18 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/Mau-01-nckd-theo-thong-tu-40.png",
     "badgeLabel": "Biểu mẫu",
-    "topicLabel": "Mẫu biểu - Thủ tục",
+    "topicLabel": "Mẫu biểu thuế - hóa đơn",
     "libraryKindKey": "bieu-mau",
     "libraryKindLabel": "Biểu mẫu",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
     "tags": [
-      "Hộ kinh doanh"
+      "Hộ kinh doanh",
+      "Mẫu biểu thuế",
+      "hóa đơn",
+      "Mẫu biểu",
+      "Thủ tục",
+      "Biểu mẫu"
     ]
   },
   {
@@ -92,12 +130,18 @@
     "modifiedDate": null,
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
     "badgeLabel": "Biểu mẫu",
-    "topicLabel": "Mẫu biểu - Thủ tục",
+    "topicLabel": "Mẫu biểu thuế - hóa đơn",
     "libraryKindKey": "bieu-mau",
     "libraryKindLabel": "Biểu mẫu",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
     "tags": [
       "TNCN",
-      "Quyết toán"
+      "Quyết toán",
+      "Mẫu biểu thuế",
+      "hóa đơn",
+      "Mẫu biểu",
+      "Thủ tục"
     ]
   },
   {
@@ -108,10 +152,17 @@
     "modifiedDate": null,
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
     "badgeLabel": "Biểu mẫu",
-    "topicLabel": "Mẫu biểu - Thủ tục",
+    "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
     "libraryKindKey": "bieu-mau",
     "libraryKindLabel": "Biểu mẫu",
-    "tags": []
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Mẫu biểu doanh nghiệp",
+      "thủ tục",
+      "Mẫu biểu",
+      "Biểu mẫu"
+    ]
   },
   {
     "title": "Thông báo về việc chấm dứt hoạt động chi nhánh/văn phòng đại diện/địa điểm kinh doanh",
@@ -121,10 +172,17 @@
     "modifiedDate": null,
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
     "badgeLabel": "Biểu mẫu",
-    "topicLabel": "Mẫu biểu - Thủ tục",
+    "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
     "libraryKindKey": "bieu-mau",
     "libraryKindLabel": "Biểu mẫu",
-    "tags": []
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Mẫu biểu doanh nghiệp",
+      "thủ tục",
+      "Mẫu biểu",
+      "Biểu mẫu"
+    ]
   },
   {
     "title": "Thông báo về cơ quan thuế quản lý trực tiếp",
@@ -134,10 +192,40 @@
     "modifiedDate": null,
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
     "badgeLabel": "Biểu mẫu",
-    "topicLabel": "Mẫu biểu - Thủ tục",
+    "topicLabel": "Mẫu biểu thuế - hóa đơn",
     "libraryKindKey": "bieu-mau",
     "libraryKindLabel": "Biểu mẫu",
-    "tags": []
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Mẫu biểu thuế",
+      "hóa đơn",
+      "Mẫu biểu",
+      "Thủ tục",
+      "Biểu mẫu"
+    ]
+  },
+  {
+    "title": "Mẫu Quyết định chấm dứt hợp đồng lao động",
+    "href": "thu-vien/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
+    "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
+    "publishDate": "2026-09-15",
+    "modifiedDate": null,
+    "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+    "badgeLabel": "Biểu mẫu",
+    "topicLabel": "Nghị quyết - Quyết định",
+    "libraryKindKey": "bieu-mau",
+    "libraryKindLabel": "Biểu mẫu",
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Nghị quyết",
+      "Quyết định",
+      "Văn bản pháp luật",
+      "Hợp đồng lao động",
+      "Lao động",
+      "Biểu mẫu"
+    ]
   },
   {
     "title": "Mẫu văn bản góp ý của tổ chức đại diện người lao động tại cơ sở",
@@ -147,22 +235,18 @@
     "modifiedDate": null,
     "image": "assets/images/content/pic/Service/images/Van-ban-gop-y-noi-quy-lao-dong.png",
     "badgeLabel": "Biểu mẫu",
-    "topicLabel": "Mẫu biểu - Thủ tục",
+    "topicLabel": "Mẫu biểu lao động - bảo hiểm",
     "libraryKindKey": "bieu-mau",
     "libraryKindLabel": "Biểu mẫu",
-    "tags": []
-  },
-  {
-    "title": "Tờ khai thuế Môn bài năm 2020 theo Nghị định 139",
-    "href": "thu-vien/mau-to-khai-thue-mon-bai-mau-so-01-mbai-theo-tt-156.html",
-    "canonical": "https://ketoandieutam.com/thu-vien/mau-to-khai-thue-mon-bai-mau-so-01-mbai-theo-tt-156.html",
-    "publishDate": "2026-09-15",
-    "modifiedDate": null,
-    "image": "assets/images/content/pic/Service/images/To-khai-le-phi-mon-bai.png",
-    "badgeLabel": "Biểu mẫu",
-    "topicLabel": "Mẫu biểu - Thủ tục",
-    "libraryKindKey": "bieu-mau",
-    "libraryKindLabel": "Biểu mẫu",
-    "tags": []
+    "toolLv3Key": "",
+    "toolLv3Label": "",
+    "tags": [
+      "Mẫu biểu lao động",
+      "bảo hiểm",
+      "Mẫu biểu",
+      "Thủ tục",
+      "Lao động",
+      "Biểu mẫu"
+    ]
   }
 ]

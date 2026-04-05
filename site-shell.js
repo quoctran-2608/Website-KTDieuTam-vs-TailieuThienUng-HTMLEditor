@@ -13,7 +13,6 @@
 		      { key: 'home', label: 'Trang Chủ', href: 'index.html' },
 		      { key: 'gioi-thieu', label: 'Giới Thiệu', href: 'gioi-thieu.html' },
 		      { key: 'giai-phap', label: 'Giải Pháp', href: 'giai-phap.html' },
-		      { key: 'luat-thue', label: 'Luật Thuế Mới', href: 'luat-thue-moi.html' },
 		      { key: 'dao-tao', label: 'Đào Tạo', href: 'dao-tao.html' },
 		      {
 		        key: 'thu-vien',
@@ -108,7 +107,6 @@
               '<ul>' +
                 '<li><a href="' + path(root, 'gioi-thieu.html') + '">Giới Thiệu</a></li>' +
                 '<li><a href="' + path(root, 'giai-phap.html') + '">Giải Pháp</a></li>' +
-                '<li><a href="' + path(root, 'luat-thue-moi.html') + '">Luật Thuế Mới</a></li>' +
                 '<li><a href="' + path(root, 'dao-tao.html') + '">Đào Tạo</a></li>' +
 	                '<li><a href="' + path(root, 'thu-vien.html') + '">Thư Viện</a></li>' +
 	                '<li><a href="' + path(root, 'ban-tin.html') + '">Bản Tin</a></li>' +
