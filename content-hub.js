@@ -24,7 +24,12 @@
     var script = document.getElementById('hub-data');
     if (!script) return null;
     try {
-      return JSON.parse(script.textContent);
+      var inlineData = JSON.parse(script.textContent);
+      var store = window.KetoanDieuTamHubStore || {};
+      if (inlineData && inlineData.section && store[inlineData.section]) {
+        return store[inlineData.section];
+      }
+      return inlineData;
     } catch (error) {
       console.error('Hub data lỗi định dạng', error);
       return null;

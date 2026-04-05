@@ -623,6 +623,24 @@
 
   function resolveDataFromViewJson(meta, view) {
     if (!meta || !view) return null;
+    function normalizeViewItem(item) {
+      if (!item) return null;
+      return {
+        id: item.id,
+        section: item.section,
+        sectionLabel: item.sectionLabel,
+        href: item.href ? sitePath(item.href) : '',
+        hubHref: item.sectionHref ? sitePath(item.sectionHref) : '',
+        title: item.title,
+        excerpt: item.excerpt,
+        topicLabel: item.topicLabel,
+        tags: item.tags || [],
+        image: item.image ? sitePath(item.image) : '',
+        libraryKindLabel: item.libraryKindLabel || '',
+        publishDate: item.publishDate || '',
+        modifiedDate: item.modifiedDate || ''
+      };
+    }
     return {
       articleId: meta.id,
       sectionKey: meta.sectionKey,
@@ -636,18 +654,22 @@
       modifiedDate: meta.modifiedDate || '',
       currentIndex: view.currentIndex,
       totalCount: view.totalCount,
-      newsLatest: view.newsLatest || [],
-      libraryLatest: view.libraryLatest || [],
-      related: view.related || [],
-      latestOther: view.latestOther || [],
-      prev: view.prev || null,
-      next: view.next || null
+      newsLatest: (view.newsLatest || []).map(normalizeViewItem).filter(Boolean),
+      libraryLatest: (view.libraryLatest || []).map(normalizeViewItem).filter(Boolean),
+      related: (view.related || []).map(normalizeViewItem).filter(Boolean),
+      latestOther: (view.latestOther || []).map(normalizeViewItem).filter(Boolean),
+      prev: normalizeViewItem(view.prev),
+      next: normalizeViewItem(view.next)
     };
   }
 
   function loadArticleData() {
     var meta = getArticleMeta();
     if (!meta || !meta.id) return Promise.resolve(resolveLegacyData());
+    var store = window.KetoanDieuTamArticleViewStore || {};
+    if (store[meta.id]) {
+      return Promise.resolve(resolveDataFromViewJson(meta, store[meta.id]));
+    }
     var root = getRootPrefix();
     var viewUrl = root + 'data/article-views/' + meta.id + '.json';
     var loadFromScript = function () {
