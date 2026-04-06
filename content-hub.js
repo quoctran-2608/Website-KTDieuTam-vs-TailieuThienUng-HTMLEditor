@@ -772,12 +772,17 @@
 	      function bindScopeButton(button) {
 	        button.addEventListener('click', function () {
           var isActive = button.classList.contains('is-active');
-	          if (button.dataset.kindReset) {
-	            state.kind = '';
-	            state.badge = '';
-	            state.tag = '';
-		            state.lv1 = '';
-		            state.lv2 = '';
+		          if (button.dataset.kindReset) {
+		            state.kind = '';
+		            state.badge = '';
+		            state.tag = '';
+			            state.lv1 = '';
+			            state.lv2 = '';
+		          } else if (button.dataset.lv2) {
+		            state.badge = '';
+		            state.tag = '';
+		            state.lv1 = button.dataset.lv1 || state.lv1 || '';
+		            state.lv2 = isActive ? '' : (button.dataset.lv2 || '');
 		          } else if (button.dataset.scopeMode === 'lv1') {
 		            state.badge = '';
 		            state.tag = '';
