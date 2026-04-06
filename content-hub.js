@@ -1218,38 +1218,61 @@
         return;
       }
 
-	      results.innerHTML = '<div class="catalog-grid">' + visibleItems.map(function (article) {
-	        var image = article.image || defaultFeatureImage();
-	        var articleHref = buildArticleHref(article.href);
-	        var badgeLabel = article.badge_label || article.library_kind_label || article.topic_lv1_label;
-	        var topicLabel = article.topic_label || article.topic_lv2_label || article.topic_lv1_label;
-	        var isNews = data.section === 'ban-tin';
-	        var publishLabel = formatDateLabel(article.publish_date || article.publishDate || '');
-	        var metaHtml = isNews && publishLabel
-	          ? '<div class="catalog-card__meta"><span class="catalog-card__date"><i class="fa-regular fa-clock"></i>' + escapeHtml(publishLabel) + '</span></div>'
-	          : '';
-		        return '' +
-		          '<article class="catalog-card' + (isNews ? ' catalog-card--news' : '') + '">' +
-		            '<a class="catalog-card__media" data-article-link="1" href="' + escapeHtml(articleHref) + '">' +
-		              '<img loading="lazy" decoding="async" src="' + escapeHtml(image) + '" alt="' + escapeHtml(article.title) + '">' +
-		            '</a>' +
-		            '<div class="catalog-card__body">' +
-		              '<button class="catalog-card__badge" type="button" data-card-badge="' + escapeHtml(badgeLabel) + '"' +
-		                (article.library_kind_key ? ' data-card-kind="' + escapeHtml(article.library_kind_key) + '"' : '') + '>' +
-		                escapeHtml(badgeLabel) +
-		              '</button>' +
-		              '<h3 class="catalog-card__title"><a data-article-link="1" href="' + escapeHtml(articleHref) + '">' + escapeHtml(article.title) + '</a></h3>' +
-		              metaHtml +
-		              '<p class="catalog-card__excerpt">' + escapeHtml(article.excerpt || '') + '</p>' +
-		              '<div class="catalog-card__footer">' +
-			                '<button class="catalog-card__topic" type="button"' +
-			                  (article.topic_lv2_key ? ' data-card-lv2="' + escapeHtml(article.topic_lv2_key) + '"' : '') +
-			                  (article.topic_lv1_key ? ' data-card-lv1="' + escapeHtml(article.topic_lv1_key) + '"' : '') +
-			                '>' + escapeHtml(topicLabel) + '</button>' +
-			                '<a class="catalog-card__link" data-article-link="1" href="' + escapeHtml(articleHref) + '">Đọc bài <i class="fa-solid fa-angle-right"></i></a>' +
-			              '</div>' +
-		            '</div>' +
-		          '</article>';
+		      results.innerHTML = '<div class="catalog-grid">' + visibleItems.map(function (article) {
+		        var image = article.image || defaultFeatureImage();
+		        var articleHref = buildArticleHref(article.href);
+		        var badgeLabel = article.badge_label || article.library_kind_label || article.topic_lv1_label;
+		        var topicLabel = article.topic_label || article.topic_lv2_label || article.topic_lv1_label;
+		        var isNews = data.section === 'ban-tin';
+		        var showBadge = !(data.section === 'thu-vien' && state.kind);
+		        if (isNews && state.lv2 && badgeLabel === topicLabel) {
+		          showBadge = false;
+		        }
+		        if (state.badge && badgeLabel === state.badge) {
+		          showBadge = false;
+		        }
+		        var showTopic = true;
+		        if (topicLabel === badgeLabel) {
+		          showTopic = false;
+		        }
+		        if (state.lv2 && article.topic_lv2_key && state.lv2 === article.topic_lv2_key) {
+		          showTopic = false;
+		        }
+		        if (showTopic && state.lv1 && !state.lv2 && article.topic_lv1_key && state.lv1 === article.topic_lv1_key && !article.topic_lv2_key) {
+		          showTopic = false;
+		        }
+		        var publishLabel = formatDateLabel(article.publish_date || article.publishDate || '');
+		        var metaHtml = isNews && publishLabel
+		          ? '<div class="catalog-card__meta"><span class="catalog-card__date"><i class="fa-regular fa-clock"></i>' + escapeHtml(publishLabel) + '</span></div>'
+		          : '';
+		        var badgeHtml = showBadge
+		          ? '<button class="catalog-card__badge" type="button" data-card-badge="' + escapeHtml(badgeLabel) + '"' +
+		              (data.section === 'thu-vien' && article.library_kind_key ? ' data-card-kind="' + escapeHtml(article.library_kind_key) + '"' : '') + '>' +
+		              escapeHtml(badgeLabel) +
+		            '</button>'
+		          : '';
+		        var topicHtml = showTopic
+		          ? '<button class="catalog-card__topic" type="button"' +
+		              (article.topic_lv2_key ? ' data-card-lv2="' + escapeHtml(article.topic_lv2_key) + '"' : '') +
+		              (article.topic_lv1_key ? ' data-card-lv1="' + escapeHtml(article.topic_lv1_key) + '"' : '') +
+		            '>' + escapeHtml(topicLabel) + '</button>'
+		          : '';
+			        return '' +
+			          '<article class="catalog-card' + (isNews ? ' catalog-card--news' : '') + '">' +
+			            '<a class="catalog-card__media" data-article-link="1" href="' + escapeHtml(articleHref) + '">' +
+			              '<img loading="lazy" decoding="async" src="' + escapeHtml(image) + '" alt="' + escapeHtml(article.title) + '">' +
+			            '</a>' +
+			            '<div class="catalog-card__body">' +
+			              badgeHtml +
+			              '<h3 class="catalog-card__title"><a data-article-link="1" href="' + escapeHtml(articleHref) + '">' + escapeHtml(article.title) + '</a></h3>' +
+			              metaHtml +
+			              '<p class="catalog-card__excerpt">' + escapeHtml(article.excerpt || '') + '</p>' +
+			              '<div class="catalog-card__footer' + (!showTopic ? ' is-link-only' : '') + '">' +
+				                topicHtml +
+				                '<a class="catalog-card__link" data-article-link="1" href="' + escapeHtml(articleHref) + '">Đọc bài <i class="fa-solid fa-angle-right"></i></a>' +
+				              '</div>' +
+			            '</div>' +
+			          '</article>';
       }).join('') + '</div>';
 
       renderPagination(totalPages, items.length);
