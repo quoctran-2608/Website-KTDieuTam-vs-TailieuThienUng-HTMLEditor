@@ -36,18 +36,19 @@ Nói ngắn gọn:
 
 ### Bản tin
 
-Đây là nơi chứa nội dung có giá trị **cập nhật và theo dõi thay đổi**.
+Đây là nơi chứa nội dung có giá trị **thương hiệu, đào tạo và thông báo hoạt động**.
 
 Bao gồm:
 
-- công văn đáng chú ý
-- điểm mới chính sách
-- bài cập nhật thay đổi luật / nghị định / thông tư
-- bài bãi bỏ / tiếp tục giảm / điều chỉnh quy định
+- giới thiệu trung tâm / công ty
+- địa điểm học
+- ưu đãi học phí
+- lịch khai giảng / lớp học / khóa học
+- workshop / seminar / hoạt động thương hiệu
 
 Nói ngắn gọn:
 
-> **Bản tin = nội dung để biết có gì mới, có gì đổi, có gì cần lưu ý**
+> **Bản tin = tin thương hiệu, đào tạo, cơ sở và sự kiện liên quan đến Kế Toán Diệu Tâm**
 
 ## 3) Phân tầng bên trong Thư viện
 
@@ -62,6 +63,7 @@ Các nhóm nội bộ hiện tại:
 - **Hướng dẫn**
 - **Biểu mẫu**
 - **Công cụ**
+- **Văn bản**
 
 ### Level 2 và Level 3 đang dùng cho user
 
@@ -111,6 +113,21 @@ Các nhóm nội bộ hiện tại:
     - Cài đặt
     - Tải về
     - Sử dụng
+
+#### Văn bản
+- **Level 2**: nhóm chủ đề chính
+  - Thuế - Hóa đơn
+  - Lao động - Bảo hiểm
+  - Kế toán
+  - Doanh nghiệp - Thủ tục
+- **Level 3**:
+  - Luật
+  - Nghị định
+  - Thông tư
+  - Công văn
+  - Quyết định
+  - Nghị quyết
+  - Cập nhật
 
 ## 4) Rule quyết định rất ngắn
 
@@ -239,7 +256,7 @@ Khi chỉnh:
 
 Tóm lại:
 
-- **Thư viện** = học / tra cứu / dùng lâu dài
-- **Bản tin** = theo dõi thay đổi / điểm mới / chính sách
+- **Thư viện** = học / tra cứu / dùng lâu dài, gồm cả **Văn bản**
+- **Bản tin** = thương hiệu / đào tạo / cơ sở / sự kiện
 
 Đây là taxonomy public đơn giản hơn cho user, và cũng dễ vận hành hơn khi thêm bài mới.

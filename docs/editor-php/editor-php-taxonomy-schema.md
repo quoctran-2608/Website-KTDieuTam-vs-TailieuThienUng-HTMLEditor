@@ -26,15 +26,16 @@ Tạo một schema **ít field nhưng rõ vai** để editor PHP dễ dùng, ít
 - `huong-dan`
 - `bieu-mau`
 - `cong-cu`
+- `van-ban`
 
 ### Level 2 dưới `ban-tin`
 
-Đi theo chủ đề chính:
+Đi theo tin thương hiệu / đào tạo / cơ sở:
 
-- `thue`
-- `ke-toan`
-- `lao-dong-bao-hiem`
-- `doanh-nghiep-thu-tuc`
+- `gioi-thieu-thuong-hieu`
+- `khoa-hoc-dao-tao`
+- `uu-dai-thong-bao`
+- `co-so-dia-diem`
 
 ---
 
@@ -75,6 +76,7 @@ Editor phải chọn:
    - `huong-dan`
    - `bieu-mau`
    - `cong-cu`
+   - `van-ban`
 3. nhóm nghiệp vụ:
    - tương ứng `topicLv1`
 4. nhóm con chi tiết:
@@ -88,10 +90,13 @@ Editor phải chọn:
 
 1. `primary_category_id`
    - `ban-tin`
-2. nhóm chủ đề:
-   - tương ứng `topicLv1`
+2. nhóm chính:
+   - `gioi-thieu-thuong-hieu`
+   - `khoa-hoc-dao-tao`
+   - `uu-dai-thong-bao`
+   - `co-so-dia-diem`
 3. nhóm chi tiết:
-   - tương ứng `topicLv2`
+   - ví dụ `gioi-thieu`, `khoa-hoc-ke-toan`, `khoa-hoc-thue`, `khoa-hoc-excel`, `khoa-hoc-misa`, `uu-dai-hoc-phi`, `co-so-dao-tao`
 
 ---
 

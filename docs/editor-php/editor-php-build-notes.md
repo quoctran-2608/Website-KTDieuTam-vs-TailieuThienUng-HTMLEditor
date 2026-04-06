@@ -24,6 +24,11 @@ Website HTML hiện đã có:
 - `robots.txt`
 - `sitemap.xml`
 
+Phân bố hiện tại:
+
+- `Thư viện`: **2041** bài
+- `Bản tin`: **25** bài
+
 Đây là bộ artifact để:
 
 - đọc taxonomy

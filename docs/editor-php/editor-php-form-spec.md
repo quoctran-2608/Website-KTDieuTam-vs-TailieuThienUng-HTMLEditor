@@ -26,7 +26,7 @@ Một bài viết nên có tối thiểu các field:
 | `title` | string | Có | tiêu đề bài |
 | `slug` | string | Có | duy nhất |
 | `section` | enum | Có | `thu-vien` / `ban-tin` |
-| `library_kind` | enum/null | Có điều kiện | chỉ có nếu `section=thu-vien` |
+| `library_kind` | enum/null | Có điều kiện | chỉ có nếu `section=thu-vien` (`huong-dan / bieu-mau / cong-cu / van-ban`) |
 | `domain` | string | Có | map từ `topicLv1Key` |
 | `subdomain` | string | Có | map từ `topicLv2Key` |
 | `variant` | string/null | Có điều kiện | hiện dùng cho `cong-cu` |
@@ -72,6 +72,7 @@ Một bài viết nên có tối thiểu các field:
 
 - nếu `section = ban-tin`:
   - ưu tiên `schema_type = NewsArticle`
+  - dùng cho tin thương hiệu / đào tạo / ưu đãi / địa điểm
 - nếu `library_kind = huong-dan`:
   - ưu tiên `schema_type = Article` hoặc `HowTo` khi thật sự là hướng dẫn từng bước
 - nếu `faq_items` có dữ liệu:
@@ -184,7 +185,11 @@ Level 3 sẽ đi qua `tags`.
 
 Không hiện `library_kind`.  
 Chỉ cần:
-- `domain`
+- `domain` thuộc một trong các nhóm:
+  - `gioi-thieu-thuong-hieu`
+  - `khoa-hoc-dao-tao`
+  - `uu-dai-thong-bao`
+  - `co-so-dia-diem`
 - `subdomain`
 
 ---

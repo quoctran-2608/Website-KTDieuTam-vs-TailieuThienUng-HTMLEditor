@@ -122,6 +122,9 @@ Metadata canonical cho toàn bộ bài đã build:
 Tree taxonomy đang dùng ở frontend HTML hiện tại:
 
 - root `Thư viện / Bản tin`
+- trạng thái hiện tại sau chuẩn hóa:
+  - `Thư viện`: 2041 bài
+  - `Bản tin`: 25 bài
 - nhánh `Hướng dẫn / Biểu mẫu / Công cụ`
 - topic lv1 / lv2
 - tool variants cho `Công cụ`

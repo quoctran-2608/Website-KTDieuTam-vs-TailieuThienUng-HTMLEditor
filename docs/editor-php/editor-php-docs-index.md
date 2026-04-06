@@ -25,7 +25,7 @@ Trả lời:
 Trả lời:
 - taxonomy public hiện tại là gì
 - `Thư viện / Bản tin`
-- `Hướng dẫn / Biểu mẫu / Công cụ`
+- `Hướng dẫn / Biểu mẫu / Công cụ / Văn bản`
 
 ### 4. `editor-php-taxonomy-schema.md`
 
@@ -101,6 +101,7 @@ Trả lời:
   - `Hướng dẫn`
   - `Biểu mẫu`
   - `Công cụ`
+  - `Văn bản`
 
 Không đổi taxonomy này nếu chưa có quyết định mới.
 

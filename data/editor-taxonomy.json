@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-06T11:17:57.659723+00:00",
+  "generatedAt": "2026-04-06T15:08:55.277937+00:00",
   "roots": [
     {
       "id": "thu-vien",
@@ -12,103 +12,103 @@
             {
               "key": "ke-toan",
               "label": "Kế toán",
-              "count": 452,
+              "count": 295,
               "children": [
                 {
                   "key": "tai-khoan-hach-toan",
                   "label": "Tài khoản - Hạch toán",
-                  "count": 252
+                  "count": 152
                 },
                 {
                   "key": "chuan-muc-che-do-nguyen-tac",
                   "label": "Chuẩn mực - Chế độ - Nguyên tắc",
-                  "count": 92
+                  "count": 66
                 },
                 {
                   "key": "tai-san-kho-ccdc",
                   "label": "Tài sản - Kho - CCDC",
-                  "count": 36
-                },
-                {
-                  "key": "chung-tu-so-sach",
-                  "label": "Chứng từ - Sổ sách",
-                  "count": 28
+                  "count": 33
                 },
                 {
                   "key": "nghiep-vu-theo-phan-hanh",
                   "label": "Nghiệp vụ theo phần hành",
-                  "count": 23
+                  "count": 19
+                },
+                {
+                  "key": "chung-tu-so-sach",
+                  "label": "Chứng từ - Sổ sách",
+                  "count": 14
                 },
                 {
                   "key": "bao-cao-tai-chinh",
                   "label": "Báo cáo tài chính",
-                  "count": 21
+                  "count": 11
                 }
               ]
             },
             {
               "key": "thue",
               "label": "Thuế - Hóa đơn",
-              "count": 325,
+              "count": 289,
               "children": [
                 {
                   "key": "gtgt-hoa-don",
                   "label": "GTGT - Hóa đơn",
-                  "count": 192
+                  "count": 163
                 },
                 {
                   "key": "tncn",
                   "label": "Thuế thu nhập cá nhân",
-                  "count": 57
+                  "count": 55
                 },
                 {
                   "key": "tndn",
                   "label": "Thuế thu nhập doanh nghiệp",
-                  "count": 44
+                  "count": 42
                 },
                 {
                   "key": "khac-mon-bai-ho-kinh-doanh-nha-thau",
                   "label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
-                  "count": 32
+                  "count": 29
                 }
               ]
             },
             {
               "key": "lao-dong-bao-hiem",
               "label": "Lao động - Bảo hiểm",
-              "count": 150,
+              "count": 139,
               "children": [
                 {
                   "key": "bao-hiem",
                   "label": "BHXH - BHYT - BHTN",
-                  "count": 80
+                  "count": 75
                 },
                 {
                   "key": "lao-dong-tien-luong",
                   "label": "Lao động - Tiền lương",
-                  "count": 63
+                  "count": 59
                 },
                 {
                   "key": "cong-doan",
                   "label": "Công đoàn",
-                  "count": 7
+                  "count": 5
                 }
               ]
             },
             {
               "key": "tham-khao-hoc-lieu",
               "label": "Học liệu - Tham khảo",
-              "count": 132,
+              "count": 108,
               "children": [
                 {
                   "key": "khac",
                   "label": "Khác",
-                  "count": 91
+                  "count": 76
                 },
                 {
                   "key": "kinh-nghiem-hoi-dap-nghe-nghiep",
                   "label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
-                  "count": 32
+                  "count": 23
                 },
                 {
                   "key": "bai-tap-thuc-hanh",
@@ -120,17 +120,17 @@
             {
               "key": "phan-mem-cong-cu",
               "label": "Phần mềm - Công cụ",
-              "count": 85,
+              "count": 71,
               "children": [
                 {
                   "key": "misa",
                   "label": "MISA",
-                  "count": 59
+                  "count": 49
                 },
                 {
                   "key": "excel-va-cong-cu-khac",
                   "label": "Excel - Công cụ khác",
-                  "count": 18
+                  "count": 14
                 },
                 {
                   "key": "htkk-etax-thue-dien-tu",
@@ -147,12 +147,12 @@
             {
               "key": "mau-bieu-thu-tuc",
               "label": "Mẫu biểu - Thủ tục",
-              "count": 2,
+              "count": 1,
               "children": [
                 {
                   "key": "mau-bieu-ke-toan",
                   "label": "Mẫu biểu kế toán",
-                  "count": 2
+                  "count": 1
                 }
               ]
             }
@@ -165,34 +165,34 @@
             {
               "key": "mau-bieu-thu-tuc",
               "label": "Mẫu biểu - Thủ tục",
-              "count": 448,
+              "count": 262,
               "children": [
-                {
-                  "key": "mau-bieu-ke-toan",
-                  "label": "Mẫu biểu kế toán",
-                  "count": 168
-                },
                 {
                   "key": "mau-bieu-thue",
                   "label": "Mẫu biểu thuế - hóa đơn",
-                  "count": 155
+                  "count": 125
                 },
                 {
                   "key": "mau-bieu-doanh-nghiep-thu-tuc",
                   "label": "Mẫu biểu doanh nghiệp - thủ tục",
-                  "count": 75
+                  "count": 57
+                },
+                {
+                  "key": "mau-bieu-ke-toan",
+                  "label": "Mẫu biểu kế toán",
+                  "count": 43
                 },
                 {
                   "key": "mau-bieu-lao-dong-bao-hiem",
                   "label": "Mẫu biểu lao động - bảo hiểm",
-                  "count": 50
+                  "count": 37
                 }
               ]
             },
             {
               "key": "tham-khao-hoc-lieu",
               "label": "Học liệu - Tham khảo",
-              "count": 29,
+              "count": 22,
               "children": [
                 {
                   "key": "bao-cao-thuc-tap",
@@ -202,49 +202,27 @@
                 {
                   "key": "khac",
                   "label": "Khác",
-                  "count": 13
+                  "count": 6
                 }
               ]
             },
             {
               "key": "phan-mem-cong-cu",
               "label": "Phần mềm - Công cụ",
-              "count": 22,
+              "count": 15,
               "children": [
                 {
                   "key": "excel-va-cong-cu-khac",
                   "label": "Excel - Công cụ khác",
-                  "count": 22
-                }
-              ]
-            },
-            {
-              "key": "van-ban-phap-luat",
-              "label": "Văn bản pháp luật",
-              "count": 10,
-              "children": [
-                {
-                  "key": "nghi-quyet-quyet-dinh",
-                  "label": "Nghị quyết - Quyết định",
-                  "count": 7
-                },
-                {
-                  "key": "cong-van",
-                  "label": "Công văn",
-                  "count": 3
+                  "count": 15
                 }
               ]
             },
             {
               "key": "ke-toan",
               "label": "Kế toán",
-              "count": 8,
+              "count": 5,
               "children": [
-                {
-                  "key": "bao-cao-tai-chinh",
-                  "label": "Báo cáo tài chính",
-                  "count": 3
-                },
                 {
                   "key": "chuan-muc-che-do-nguyen-tac",
                   "label": "Chuẩn mực - Chế độ - Nguyên tắc",
@@ -256,21 +234,9 @@
                   "count": 2
                 },
                 {
-                  "key": "tai-khoan-hach-toan",
-                  "label": "Tài khoản - Hạch toán",
+                  "key": "bao-cao-tai-chinh",
+                  "label": "Báo cáo tài chính",
                   "count": 1
-                }
-              ]
-            },
-            {
-              "key": "thue",
-              "label": "Thuế - Hóa đơn",
-              "count": 4,
-              "children": [
-                {
-                  "key": "gtgt-hoa-don",
-                  "label": "GTGT - Hóa đơn",
-                  "count": 4
                 }
               ]
             },
@@ -282,6 +248,18 @@
                 {
                   "key": "bao-hiem",
                   "label": "BHXH - BHYT - BHTN",
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "key": "thue",
+              "label": "Thuế - Hóa đơn",
+              "count": 2,
+              "children": [
+                {
+                  "key": "gtgt-hoa-don",
+                  "label": "GTGT - Hóa đơn",
                   "count": 2
                 }
               ]
@@ -315,6 +293,186 @@
               ]
             }
           ]
+        },
+        {
+          "id": "van-ban",
+          "label": "Văn bản",
+          "children": [
+            {
+              "key": "van-ban-phap-luat",
+              "label": "Văn bản pháp luật",
+              "count": 230,
+              "children": [
+                {
+                  "key": "nghi-dinh",
+                  "label": "Nghị định",
+                  "count": 67
+                },
+                {
+                  "key": "cong-van",
+                  "label": "Công văn",
+                  "count": 59
+                },
+                {
+                  "key": "thong-tu",
+                  "label": "Thông tư",
+                  "count": 58
+                },
+                {
+                  "key": "luat-bo-luat",
+                  "label": "Luật - Bộ luật",
+                  "count": 23
+                },
+                {
+                  "key": "nghi-quyet-quyet-dinh",
+                  "label": "Nghị quyết - Quyết định",
+                  "count": 23
+                }
+              ]
+            },
+            {
+              "key": "mau-bieu-thu-tuc",
+              "label": "Mẫu biểu - Thủ tục",
+              "count": 183,
+              "children": [
+                {
+                  "key": "mau-bieu-ke-toan",
+                  "label": "Mẫu biểu kế toán",
+                  "count": 122
+                },
+                {
+                  "key": "mau-bieu-thue",
+                  "label": "Mẫu biểu thuế - hóa đơn",
+                  "count": 30
+                },
+                {
+                  "key": "mau-bieu-doanh-nghiep-thu-tuc",
+                  "label": "Mẫu biểu doanh nghiệp - thủ tục",
+                  "count": 18
+                },
+                {
+                  "key": "mau-bieu-lao-dong-bao-hiem",
+                  "label": "Mẫu biểu lao động - bảo hiểm",
+                  "count": 13
+                }
+              ]
+            },
+            {
+              "key": "ke-toan",
+              "label": "Kế toán",
+              "count": 152,
+              "children": [
+                {
+                  "key": "tai-khoan-hach-toan",
+                  "label": "Tài khoản - Hạch toán",
+                  "count": 101
+                },
+                {
+                  "key": "chuan-muc-che-do-nguyen-tac",
+                  "label": "Chuẩn mực - Chế độ - Nguyên tắc",
+                  "count": 17
+                },
+                {
+                  "key": "chung-tu-so-sach",
+                  "label": "Chứng từ - Sổ sách",
+                  "count": 14
+                },
+                {
+                  "key": "bao-cao-tai-chinh",
+                  "label": "Báo cáo tài chính",
+                  "count": 12
+                },
+                {
+                  "key": "nghiep-vu-theo-phan-hanh",
+                  "label": "Nghiệp vụ theo phần hành",
+                  "count": 5
+                },
+                {
+                  "key": "tai-san-kho-ccdc",
+                  "label": "Tài sản - Kho - CCDC",
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "key": "thue",
+              "label": "Thuế - Hóa đơn",
+              "count": 46,
+              "children": [
+                {
+                  "key": "gtgt-hoa-don",
+                  "label": "GTGT - Hóa đơn",
+                  "count": 33
+                },
+                {
+                  "key": "khac-mon-bai-ho-kinh-doanh-nha-thau",
+                  "label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+                  "count": 5
+                },
+                {
+                  "key": "tndn",
+                  "label": "Thuế thu nhập doanh nghiệp",
+                  "count": 5
+                },
+                {
+                  "key": "tncn",
+                  "label": "Thuế thu nhập cá nhân",
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "key": "tham-khao-hoc-lieu",
+              "label": "Học liệu - Tham khảo",
+              "count": 21,
+              "children": [
+                {
+                  "key": "khac",
+                  "label": "Khác",
+                  "count": 21
+                }
+              ]
+            },
+            {
+              "key": "phan-mem-cong-cu",
+              "label": "Phần mềm - Công cụ",
+              "count": 20,
+              "children": [
+                {
+                  "key": "excel-va-cong-cu-khac",
+                  "label": "Excel - Công cụ khác",
+                  "count": 11
+                },
+                {
+                  "key": "misa",
+                  "label": "MISA",
+                  "count": 9
+                }
+              ]
+            },
+            {
+              "key": "lao-dong-bao-hiem",
+              "label": "Lao động - Bảo hiểm",
+              "count": 12,
+              "children": [
+                {
+                  "key": "bao-hiem",
+                  "label": "BHXH - BHYT - BHTN",
+                  "count": 6
+                },
+                {
+                  "key": "lao-dong-tien-luong",
+                  "label": "Lao động - Tiền lương",
+                  "count": 4
+                },
+                {
+                  "key": "cong-doan",
+                  "label": "Công đoàn",
+                  "count": 2
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -323,96 +481,64 @@
       "label": "Bản tin",
       "children": [
         {
-          "key": "van-ban-phap-luat",
-          "label": "Văn bản pháp luật",
-          "count": 220,
+          "key": "khoa-hoc-dao-tao",
+          "label": "Khóa học & đào tạo",
+          "count": 15,
           "children": [
             {
-              "key": "nghi-dinh",
-              "label": "Nghị định",
-              "count": 67
+              "key": "khoa-hoc-ke-toan",
+              "label": "Khóa học kế toán",
+              "count": 12
             },
             {
-              "key": "thong-tu",
-              "label": "Thông tư",
-              "count": 58
+              "key": "khoa-hoc-excel",
+              "label": "Khóa học Excel",
+              "count": 1
             },
             {
-              "key": "cong-van",
-              "label": "Công văn",
-              "count": 56
+              "key": "khoa-hoc-misa",
+              "label": "Khóa học MISA",
+              "count": 1
             },
             {
-              "key": "luat-bo-luat",
-              "label": "Luật - Bộ luật",
-              "count": 23
-            },
-            {
-              "key": "nghi-quyet-quyet-dinh",
-              "label": "Nghị quyết - Quyết định",
-              "count": 16
+              "key": "khoa-hoc-thue",
+              "label": "Khóa học thuế",
+              "count": 1
             }
           ]
         },
         {
-          "key": "thue",
-          "label": "Thuế - Hóa đơn",
+          "key": "co-so-dia-diem",
+          "label": "Cơ sở & địa điểm",
           "count": 8,
           "children": [
             {
-              "key": "tndn",
-              "label": "Thuế thu nhập doanh nghiệp",
-              "count": 3
-            },
+              "key": "co-so-dao-tao",
+              "label": "Cơ sở đào tạo",
+              "count": 8
+            }
+          ]
+        },
+        {
+          "key": "gioi-thieu-thuong-hieu",
+          "label": "Giới thiệu & thương hiệu",
+          "count": 1,
+          "children": [
             {
-              "key": "gtgt-hoa-don",
-              "label": "GTGT - Hóa đơn",
-              "count": 2
-            },
-            {
-              "key": "khac-mon-bai-ho-kinh-doanh-nha-thau",
-              "label": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
-              "count": 2
-            },
-            {
-              "key": "tncn",
-              "label": "Thuế thu nhập cá nhân",
+              "key": "gioi-thieu",
+              "label": "Giới thiệu",
               "count": 1
             }
           ]
         },
         {
-          "key": "ke-toan",
-          "label": "Kế toán",
+          "key": "uu-dai-thong-bao",
+          "label": "Ưu đãi & thông báo",
           "count": 1,
           "children": [
             {
-              "key": "nghiep-vu-theo-phan-hanh",
-              "label": "Nghiệp vụ theo phần hành",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "key": "lao-dong-bao-hiem",
-          "label": "Lao động - Bảo hiểm",
-          "count": 1,
-          "children": [
-            {
-              "key": "bao-hiem",
-              "label": "BHXH - BHYT - BHTN",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "key": "phan-mem-cong-cu",
-          "label": "Phần mềm - Công cụ",
-          "count": 1,
-          "children": [
-            {
-              "key": "excel-va-cong-cu-khac",
-              "label": "Excel - Công cụ khác",
+              "key": "uu-dai-hoc-phi",
+              "label": "Ưu đãi học phí",
               "count": 1
             }
           ]

@@ -21,7 +21,8 @@
 		        children: [
 		          { key: 'thu-vien-huong-dan', label: 'Hướng dẫn', href: 'thu-vien.html?kind=huong-dan' },
 		          { key: 'thu-vien-bieu-mau', label: 'Biểu mẫu', href: 'thu-vien.html?kind=bieu-mau' },
-		          { key: 'thu-vien-cong-cu', label: 'Công cụ', href: 'thu-vien.html?kind=cong-cu' }
+		          { key: 'thu-vien-cong-cu', label: 'Công cụ', href: 'thu-vien.html?kind=cong-cu' },
+		          { key: 'thu-vien-van-ban', label: 'Văn bản', href: 'thu-vien.html?kind=van-ban' }
 		        ]
 		      },
 		      { key: 'ban-tin', label: 'Bản Tin', href: 'ban-tin.html' },
@@ -109,7 +110,6 @@
                 '<li><a href="' + path(root, 'giai-phap.html') + '">Giải Pháp</a></li>' +
                 '<li><a href="' + path(root, 'dao-tao.html') + '">Đào Tạo</a></li>' +
 	                '<li><a href="' + path(root, 'thu-vien.html') + '">Thư Viện</a></li>' +
-	                '<li><a href="' + path(root, 'ban-tin.html') + '">Bản Tin</a></li>' +
               '</ul>' +
             '</div>' +
             '<div class="footer-connect">' +
