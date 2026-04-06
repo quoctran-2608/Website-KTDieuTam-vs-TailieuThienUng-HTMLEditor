@@ -687,20 +687,20 @@ body[data-nav="ban-tin"] .catalog-search-input:focus {
 }
 
 .catalog-card__body {
-  padding: 14px;
+  padding: 16px 16px 15px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  min-height: 190px;
+  gap: 10px;
+  min-height: 198px;
 }
 
 .catalog-card__badge {
   display: inline-flex;
   align-self: flex-start;
-  padding: 5px 10px;
+  padding: 4px 10px;
   border-radius: 999px;
-  background: #f6efe2;
-  color: #8d633c;
+  background: #f7f1e6;
+  color: #7d5b31;
   font-size: 11px;
   font-weight: 700;
   border: 0;
@@ -739,7 +739,7 @@ body[data-nav="ban-tin"] .catalog-search-input:focus {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  min-height: 3.2em;
+  min-height: 3.3em;
 }
 
 .catalog-card__meta {
@@ -765,16 +765,20 @@ body[data-nav="ban-tin"] .catalog-search-input:focus {
 
 .catalog-card__footer {
   margin-top: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 10px;
 }
 
 .catalog-card__topic {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
   color: #8b6572;
   font-size: 11px;
   font-weight: 600;
+  line-height: 1.4;
   border: 0;
   background: transparent;
   padding: 0;
@@ -789,8 +793,24 @@ body[data-nav="ban-tin"] .catalog-search-input:focus {
 
 .catalog-card__link {
   color: var(--gold-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  min-width: max-content;
+  white-space: nowrap;
   font-size: 13px;
   font-weight: 700;
+  line-height: 1;
+}
+
+.catalog-card__link i {
+  font-size: 12px;
+  transition: transform 0.22s ease;
+}
+
+.catalog-card:hover .catalog-card__link i {
+  transform: translateX(2px);
 }
 
 .catalog-card--news {
@@ -2304,8 +2324,9 @@ body.is-filter-open .catalog-filter-panel {
   }
 
   .catalog-card__footer {
-    align-items: flex-start;
-    gap: 8px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 10px;
   }
 
   .catalog-card__topic {
@@ -2321,10 +2342,10 @@ body.is-filter-open .catalog-filter-panel {
   .catalog-card__link {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
     font-size: 12px;
     white-space: nowrap;
-    margin-top: 2px;
+    margin-top: 0;
   }
 
   .article-bottom-nav__strip {
