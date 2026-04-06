@@ -1182,6 +1182,10 @@
       pagination.style.display = 'flex';
     }
 
+    function isInitialStaticPageState() {
+      return !hasFilters() && state.page === Math.max(1, Number(data.currentPage || 1));
+    }
+
     function renderResults() {
       var items = filterArticles();
       var totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
@@ -1206,6 +1210,11 @@
           '</div>';
         renderPagination(0, 0);
         updateSeo(0, 0);
+        return;
+      }
+
+      if (isInitialStaticPageState() && results && results.innerHTML.trim()) {
+        updateSeo(totalPages, items.length);
         return;
       }
 
