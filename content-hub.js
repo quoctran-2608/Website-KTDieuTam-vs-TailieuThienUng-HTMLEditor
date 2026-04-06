@@ -322,12 +322,16 @@
     var reset = document.getElementById('hubResetFilters');
     var chips = document.getElementById('hubChips');
     var primaryFilters = document.getElementById('hubPrimaryFilters');
+    var heroContext = document.getElementById('hubHeroContext');
+    var secondaryFilters = document.getElementById('hubSecondaryFilters');
+    var primaryFiltersToggle = document.getElementById('hubPrimaryFiltersToggle');
     var desktopTree = document.getElementById('hubDesktopTree');
     var toggleFilters = document.getElementById('hubToggleFilters');
     var closeFilters = document.getElementById('hubCloseFilters');
     var filterPanel = document.getElementById('hubFilterPanel');
     var filterBackdrop = document.getElementById('hubFilterBackdrop');
     var pagination = document.getElementById('hubPagination');
+    var filterHint = document.querySelector('.catalog-filter-panel__hint');
 
     if (!input || !results) return;
 
@@ -339,9 +343,10 @@
     var baseTitle = document.title;
     var baseDescriptionMeta = document.querySelector('meta[name="description"]');
     var baseDescription = baseDescriptionMeta ? (baseDescriptionMeta.getAttribute('content') || '') : '';
-    var heroKicker = document.querySelector('.catalog-kicker');
-    var heroTitle = document.querySelector('.catalog-title');
-    var heroDescription = document.querySelector('.catalog-description');
+	    var heroKicker = document.querySelector('.catalog-kicker');
+	    var heroTitle = document.querySelector('.catalog-title');
+	    var heroDescription = document.querySelector('.catalog-description');
+      var heroSection = document.querySelector('.catalog-hero');
     var baseHero = {
       kickerHtml: heroKicker ? heroKicker.innerHTML : '',
       title: heroTitle ? heroTitle.textContent : '',
@@ -387,6 +392,10 @@
 
     function updateHeroContext() {
       var hero = getHeroConfig();
+      if (heroSection && heroSection.classList) {
+        heroSection.classList.toggle('catalog-hero--focused', Boolean(state.kind || state.lv1 || state.lv2));
+        heroSection.classList.toggle('catalog-hero--deep', Boolean(state.lv1 || state.lv2));
+      }
       if (heroKicker) heroKicker.innerHTML = hero.kickerHtml;
       if (heroTitle) heroTitle.textContent = hero.title;
       if (heroDescription) heroDescription.textContent = hero.description;
@@ -405,31 +414,20 @@
       return buildTaxonomyFromArticles(getKindScopedArticles());
     }
 
-    function getLibrarySubgroupOptions() {
+    function getLibraryLevel2Options() {
       if (!(data.section === 'thu-vien' && state.kind)) return [];
-      var scopedArticles = getKindScopedArticles();
-      if (state.kind === 'huong-dan') {
-        return getScopedTaxonomy().map(function (lv1) {
-          return { mode: 'lv1', key: lv1.key, label: lv1.label, count: lv1.count };
-        });
-      }
-      var lv2Counts = {};
-      scopedArticles.forEach(function (article) {
-        if (!article.topic_lv2_key) return;
-        if (!lv2Counts[article.topic_lv2_key]) {
-          lv2Counts[article.topic_lv2_key] = {
-            mode: 'lv2',
-            key: article.topic_lv2_key,
-            label: article.topic_lv2_label,
-            count: 0
-          };
-        }
-        lv2Counts[article.topic_lv2_key].count += 1;
+      var scopedTaxonomy = getScopedTaxonomy();
+      return scopedTaxonomy.map(function (lv1) {
+        return { mode: 'lv1', key: lv1.key, label: lv1.label, count: lv1.count };
       });
-      return Object.keys(lv2Counts).map(function (key) {
-        return lv2Counts[key];
-      }).sort(function (a, b) {
-        return b.count - a.count || a.label.localeCompare(b.label, 'vi');
+    }
+
+    function getLibraryLevel3Options() {
+      if (!(data.section === 'thu-vien' && state.kind && state.lv1)) return [];
+      var activeLv1 = getLv1(state.lv1);
+      if (!activeLv1) return [];
+      return (activeLv1.children || []).map(function (lv2) {
+        return { mode: 'lv2', key: lv2.key, label: lv2.label, count: lv2.count };
       });
     }
 
@@ -505,6 +503,10 @@
 
 		    function stateLabel() {
 			      if (state.tag) {
+              if (state.lv2) {
+                var activeLv2 = getLv2(state.lv1, state.lv2);
+                return activeLv2 ? (activeLv2.label + ' · ' + state.tag) : state.tag;
+              }
 			        return state.tag;
 			      }
 			      if (state.badge) {
@@ -667,6 +669,14 @@
 	      if (!primaryFilters) return;
 
 	      primaryFilters.className = 'catalog-primary-row';
+        if (heroContext) {
+          heroContext.innerHTML = '';
+          heroContext.style.display = 'none';
+        }
+        if (secondaryFilters) {
+          secondaryFilters.innerHTML = '';
+          secondaryFilters.style.display = 'none';
+        }
 	      var htmlParts = [];
 	      if (data.section === 'thu-vien' && (data.libraryKinds || []).length) {
 	        if (!state.kind) {
@@ -683,34 +693,42 @@
 	              '</button>'
 	            );
 	          });
-	        } else {
-	          var activeKind = getLibraryKind(state.kind);
-          var subgroups = getLibrarySubgroupOptions();
-          htmlParts.push(
-            '<button class="catalog-primary-btn catalog-primary-btn--back" type="button" data-kind-reset="1">' +
-              '<span><i class="fa-solid fa-arrow-left"></i> Thư viện</span>' +
-            '</button>'
-          );
-          if (activeKind) {
-            htmlParts.push(
-              '<span class="catalog-primary-label">' + escapeHtml(activeKind.label) + '</span>'
-            );
-          }
-          subgroups.forEach(function (item) {
-            var active = (item.mode === 'lv1' && state.lv1 === item.key && !state.lv2) ||
-              (item.mode === 'lv2' && state.lv2 === item.key);
-            htmlParts.push(
-              '<button class="catalog-primary-btn' + (active ? ' is-active' : '') + '" type="button" data-scope-mode="' + item.mode + '" data-scope-key="' + escapeHtml(item.key) + '">' +
-                '<span>' + escapeHtml(item.label) + '</span><small>' + item.count + '</small>' +
-              '</button>'
-            );
-          });
-        }
-      } else {
-        htmlParts.push(
-          '<button class="catalog-primary-btn' + (!state.lv1 ? ' is-active' : '') + '" type="button" data-lv1="">' +
-            '<span>Tất cả</span><small>' + data.articles.length + '</small>' +
-          '</button>'
+		        } else {
+		          var activeKind = getLibraryKind(state.kind);
+              if (heroContext && activeKind) {
+                heroContext.innerHTML =
+                  '<button class="catalog-hero-back" type="button" data-kind-reset="1">' +
+                    '<i class="fa-solid fa-arrow-left"></i><span>Thư viện</span>' +
+                  '</button>';
+                heroContext.style.display = 'flex';
+              }
+            var level2Items = getLibraryLevel2Options();
+	          level2Items.forEach(function (item) {
+	            var active = state.lv1 === item.key;
+	            htmlParts.push(
+	              '<button class="catalog-primary-btn' + (active ? ' is-active' : '') + '" type="button" data-scope-mode="' + item.mode + '" data-scope-key="' + escapeHtml(item.key) + '">' +
+	                '<span>' + escapeHtml(item.label) + '</span><small>' + item.count + '</small>' +
+	              '</button>'
+	            );
+	          });
+
+            if (secondaryFilters) {
+              var level3Items = getLibraryLevel3Options();
+              if (level3Items.length) {
+                secondaryFilters.innerHTML = level3Items.map(function (item) {
+                  return '<button class="catalog-secondary-btn' + (state.lv2 === item.key ? ' is-active' : '') + '" type="button" data-scope-mode="lv2" data-scope-key="' + escapeHtml(item.key) + '">' +
+                    '<span>' + escapeHtml(item.label) + '</span><small>' + item.count + '</small>' +
+                  '</button>';
+                }).join('');
+                secondaryFilters.style.display = 'flex';
+              }
+            }
+	        }
+	      } else {
+	        htmlParts.push(
+	          '<button class="catalog-primary-btn' + (!state.lv1 ? ' is-active' : '') + '" type="button" data-lv1="">' +
+	            '<span>Tất cả</span><small>' + data.articles.length + '</small>' +
+	          '</button>'
 	        );
 	        data.taxonomy.forEach(function (lv1) {
 	          htmlParts.push(
@@ -719,44 +737,126 @@
 	            '</button>'
 	          );
 	        });
+          if (secondaryFilters && state.lv1) {
+            var activeNewsLv1 = getLv1(state.lv1);
+            var newsLevel3 = activeNewsLv1 && activeNewsLv1.children ? activeNewsLv1.children : [];
+            if (newsLevel3.length) {
+              secondaryFilters.innerHTML = newsLevel3.map(function (item) {
+                return '<button class="catalog-secondary-btn' + (state.lv2 === item.key ? ' is-active' : '') + '" type="button" data-lv1="' + escapeHtml(state.lv1) + '" data-lv2="' + escapeHtml(item.key) + '">' +
+                  '<span>' + escapeHtml(item.label) + '</span><small>' + item.count + '</small>' +
+                '</button>';
+              }).join('');
+              secondaryFilters.style.display = 'flex';
+            }
+          }
 	      }
 
-      primaryFilters.innerHTML = htmlParts.join('');
-	      primaryFilters.querySelectorAll('.catalog-primary-btn').forEach(function (button) {
+	      primaryFilters.innerHTML = htmlParts.join('');
+	      primaryFilters.classList.remove('is-collapsed');
+
+	      if (!primaryFiltersToggle && primaryFilters.parentNode) {
+	        primaryFiltersToggle = document.createElement('button');
+	        primaryFiltersToggle.id = 'hubPrimaryFiltersToggle';
+	        primaryFiltersToggle.className = 'catalog-primary-toggle-more';
+	        primaryFiltersToggle.type = 'button';
+	        primaryFilters.parentNode.insertBefore(primaryFiltersToggle, primaryFilters.nextSibling);
+	      }
+
+	      if (primaryFiltersToggle) {
+	        primaryFiltersToggle.hidden = true;
+	        primaryFiltersToggle.textContent = 'Xem thêm';
+	        primaryFiltersToggle.setAttribute('aria-expanded', 'false');
+	        primaryFiltersToggle.onclick = null;
+	      }
+
+	      function bindScopeButton(button) {
 	        button.addEventListener('click', function () {
+          var isActive = button.classList.contains('is-active');
 	          if (button.dataset.kindReset) {
 	            state.kind = '';
 	            state.badge = '';
 	            state.tag = '';
-	            state.lv1 = '';
-	            state.lv2 = '';
-	          } else if (button.dataset.scopeMode === 'lv1') {
-	            state.badge = '';
-	            state.tag = '';
-	            state.lv1 = button.dataset.scopeKey || '';
-	            state.lv2 = '';
-	          } else if (button.dataset.scopeMode === 'lv2') {
-	            state.badge = '';
-	            state.tag = '';
-	            state.lv2 = button.dataset.scopeKey || '';
-	          } else if (button.dataset.kind !== undefined) {
-	            state.kind = button.dataset.kind || '';
-	            state.badge = '';
-	            state.tag = '';
-	            state.lv1 = '';
-	            state.lv2 = '';
-	          } else {
-	            state.badge = '';
-	            state.tag = '';
-	            state.lv1 = button.dataset.lv1 || '';
-	            state.lv2 = '';
-	          }
-          state.page = 1;
+		            state.lv1 = '';
+		            state.lv2 = '';
+		          } else if (button.dataset.scopeMode === 'lv1') {
+		            state.badge = '';
+		            state.tag = '';
+		            state.lv1 = isActive ? '' : (button.dataset.scopeKey || '');
+		            state.lv2 = '';
+		          } else if (button.dataset.scopeMode === 'lv2') {
+		            state.badge = '';
+		            state.tag = '';
+		            state.lv2 = isActive ? '' : (button.dataset.scopeKey || '');
+		          } else if (button.dataset.kind !== undefined) {
+		            state.kind = isActive ? '' : (button.dataset.kind || '');
+		            state.badge = '';
+		            state.tag = '';
+		            state.lv1 = '';
+		            state.lv2 = '';
+		          } else {
+		            state.badge = '';
+		            state.tag = '';
+		            state.lv1 = isActive ? '' : (button.dataset.lv1 || '');
+		            state.lv2 = '';
+		          }
+	          state.page = 1;
 	          updateUrl(buildStateUrl(state), 'push');
 	          renderAll();
+	        });
+        }
+	      if (heroContext) {
+          heroContext.querySelectorAll('button').forEach(bindScopeButton);
+        }
+	      primaryFilters.querySelectorAll('.catalog-primary-btn').forEach(bindScopeButton);
+        if (secondaryFilters) {
+          secondaryFilters.querySelectorAll('.catalog-secondary-btn').forEach(bindScopeButton);
+        }
+
+	      if (primaryFiltersToggle && data.section === 'thu-vien' && !state.kind) {
+	        primaryFiltersToggle.hidden = true;
+        return;
+      }
+
+      window.requestAnimationFrame(function () {
+        if (!primaryFilters || !primaryFiltersToggle) return;
+        primaryFilters.querySelectorAll('.catalog-primary-btn').forEach(function (button) {
+          button.classList.remove('is-overflow-item');
         });
+        if (window.innerWidth <= 767) {
+          primaryFilters.classList.remove('is-collapsed');
+          primaryFiltersToggle.hidden = true;
+          return;
+        }
+        var rowTops = [];
+        primaryFilters.querySelectorAll('.catalog-primary-btn').forEach(function (button) {
+          if (rowTops.indexOf(button.offsetTop) === -1) rowTops.push(button.offsetTop);
+        });
+        rowTops.sort(function (a, b) { return a - b; });
+        var cutoffTop = rowTops.length > 2 ? rowTops[1] : null;
+        if (cutoffTop !== null) {
+          primaryFilters.querySelectorAll('.catalog-primary-btn').forEach(function (button) {
+            if (button.offsetTop > cutoffTop) {
+              button.classList.add('is-overflow-item');
+            }
+          });
+        }
+        var needsClamp = rowTops.length > 2;
+        if (!needsClamp) {
+          primaryFilters.classList.remove('is-collapsed');
+          primaryFiltersToggle.hidden = true;
+          return;
+        }
+        primaryFilters.classList.add('is-collapsed');
+        primaryFiltersToggle.hidden = false;
+        primaryFiltersToggle.textContent = primaryFilters.classList.contains('is-collapsed') ? 'Xem thêm' : 'Thu gọn';
+        primaryFiltersToggle.setAttribute('aria-expanded', primaryFilters.classList.contains('is-collapsed') ? 'false' : 'true');
+        primaryFiltersToggle.onclick = function () {
+          primaryFilters.classList.toggle('is-collapsed');
+          primaryFiltersToggle.textContent = primaryFilters.classList.contains('is-collapsed') ? 'Xem thêm' : 'Thu gọn';
+          primaryFiltersToggle.setAttribute('aria-expanded', primaryFilters.classList.contains('is-collapsed') ? 'false' : 'true');
+        };
       });
-    }
+	    }
 
     function renderDesktopTree() {
       if (!desktopTree) return;
@@ -824,13 +924,14 @@
 
       desktopTree.querySelectorAll('button').forEach(function (button) {
         button.addEventListener('click', function () {
+          var isActive = button.classList.contains('is-active');
           state.badge = '';
           state.tag = '';
           if (button.dataset.kind !== undefined) {
-            state.kind = button.dataset.kind || '';
+            state.kind = isActive ? '' : (button.dataset.kind || '');
           }
-          state.lv1 = button.dataset.lv1 || '';
-          state.lv2 = button.dataset.lv2 || '';
+          state.lv1 = isActive ? '' : (button.dataset.lv1 || '');
+          state.lv2 = isActive ? '' : (button.dataset.lv2 || '');
           state.page = 1;
           updateUrl(buildStateUrl(state), 'push');
           renderAll();
@@ -840,10 +941,16 @@
 
 	    function renderAdvancedFilters() {
 	      if (!filters) return;
+        if (filterHint) {
+          filterHint.textContent = 'Chọn chuyên đề để thu hẹp kết quả.';
+        }
 
 	      if (data.section === 'thu-vien' && state.kind && state.kind !== 'huong-dan' && state.lv2) {
 	        var currentScopeArticles = getScopeArticles(true);
 	        var activeLv2 = getLv2(state.lv1, state.lv2);
+          if (filterHint && activeLv2) {
+            filterHint.textContent = 'Lọc sâu trong ' + activeLv2.label + ' bằng các nhãn con phù hợp.';
+          }
 	        var tagItems = [];
 	        if (state.kind === 'cong-cu') {
 	          var subgroupCounts = {};
@@ -925,6 +1032,17 @@
 	      }
 
 	      var scopedTaxonomy = getScopedTaxonomy();
+        if (filterHint && state.kind && state.kind === 'huong-dan' && state.lv1) {
+          var activeLv1 = getLv1(state.lv1);
+          if (activeLv1) {
+            filterHint.textContent = 'Chọn nhóm con trong ' + activeLv1.label + ' để thu hẹp kết quả.';
+          }
+        } else if (filterHint && data.section === 'ban-tin' && state.lv1) {
+          var newsLv1 = getLv1(state.lv1);
+          if (newsLv1) {
+            filterHint.textContent = 'Chọn nhóm con trong ' + newsLv1.label + ' để thu hẹp kết quả.';
+          }
+        }
       var groups = state.lv1
         ? scopedTaxonomy.filter(function (item) { return item.key === state.lv1; })
         : scopedTaxonomy;
@@ -1162,35 +1280,42 @@
       reset.addEventListener('click', resetFilters);
     }
 
-	    results.addEventListener('click', function (event) {
-	      var badgeFilter = event.target && event.target.closest ? event.target.closest('[data-card-badge]') : null;
-		      if (badgeFilter) {
-		        state.page = 1;
-		        if (badgeFilter.dataset.cardKind) {
-		          state.kind = badgeFilter.dataset.cardKind;
-		          state.badge = '';
-		        } else {
-		          state.badge = badgeFilter.dataset.cardBadge || '';
-		          state.kind = '';
-		        }
-		        state.tag = '';
-		        state.lv1 = '';
-	        state.lv2 = '';
+		    results.addEventListener('click', function (event) {
+		      var badgeFilter = event.target && event.target.closest ? event.target.closest('[data-card-badge]') : null;
+			      if (badgeFilter) {
+            event.preventDefault();
+            var sameBadgeKind = badgeFilter.dataset.cardKind && state.kind === badgeFilter.dataset.cardKind && !state.lv1 && !state.lv2 && !state.tag;
+            var sameBadge = !badgeFilter.dataset.cardKind && state.badge === (badgeFilter.dataset.cardBadge || '') && !state.lv1 && !state.lv2 && !state.tag;
+			        state.page = 1;
+			        if (badgeFilter.dataset.cardKind) {
+			          state.kind = sameBadgeKind ? '' : badgeFilter.dataset.cardKind;
+			          state.badge = '';
+			        } else {
+			          state.badge = sameBadge ? '' : (badgeFilter.dataset.cardBadge || '');
+			          state.kind = '';
+			        }
+			        state.tag = '';
+			        state.lv1 = '';
+		        state.lv2 = '';
 	        updateUrl(buildStateUrl(state), 'push');
 	        renderAll();
 	        return;
-	      }
-	      var topicFilter = event.target && event.target.closest ? event.target.closest('[data-card-lv1], [data-card-lv2]') : null;
-		      if (topicFilter) {
-		        state.page = 1;
-		        state.badge = '';
-		        state.tag = '';
-		        state.lv1 = topicFilter.dataset.cardLv1 || '';
-	        state.lv2 = topicFilter.dataset.cardLv2 || '';
-	        updateUrl(buildStateUrl(state), 'push');
-	        renderAll();
-	        return;
-	      }
+		      }
+		      var topicFilter = event.target && event.target.closest ? event.target.closest('[data-card-lv1], [data-card-lv2]') : null;
+			      if (topicFilter) {
+            event.preventDefault();
+            var nextLv1 = topicFilter.dataset.cardLv1 || '';
+            var nextLv2 = topicFilter.dataset.cardLv2 || '';
+            var sameTopic = state.lv1 === nextLv1 && state.lv2 === nextLv2 && !state.tag;
+			        state.page = 1;
+			        state.badge = '';
+			        state.tag = '';
+			        state.lv1 = sameTopic ? '' : nextLv1;
+		        state.lv2 = sameTopic ? '' : nextLv2;
+		        updateUrl(buildStateUrl(state), 'push');
+		        renderAll();
+		        return;
+		      }
 	      var target = event.target && event.target.closest ? event.target.closest('a[data-article-link="1"]') : null;
       if (!target) return;
       saveReturnState();

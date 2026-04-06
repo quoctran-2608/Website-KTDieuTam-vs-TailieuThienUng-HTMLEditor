@@ -21,7 +21,10 @@
 <section class="catalog-hero">
   <div class="container">
     <span class="catalog-kicker"><i class="fa-solid fa-newspaper"></i> Điểm mới & chính sách</span>
-    <h1 class="catalog-title">Bản tin</h1>
+    <div class="catalog-title-row">
+      <h1 class="catalog-title">Bản tin</h1>
+      <div id="hubHeroContext" class="catalog-hero-context" style="display:none;"></div>
+    </div>
     <p class="catalog-description">Tổng hợp điểm mới, chính sách, công văn, nghị định, thông tư và các thay đổi đáng chú ý liên quan đến thuế, kế toán, lao động.</p>
 
     <div class="catalog-search-inline">
@@ -36,8 +39,9 @@
       </button>
     </div>
 
-    <div id="hubPrimaryFilters" class="catalog-primary-row"></div>
-  </div>
+	    <div id="hubPrimaryFilters" class="catalog-primary-row"></div>
+	    <div id="hubSecondaryFilters" class="catalog-secondary-row" style="display:none;"></div>
+	  </div>
 </section>
 
 <section class="catalog-shell">
