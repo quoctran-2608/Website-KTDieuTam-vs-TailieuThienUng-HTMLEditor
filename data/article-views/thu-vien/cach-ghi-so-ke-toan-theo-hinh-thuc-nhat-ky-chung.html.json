@@ -17,10 +17,10 @@
       "BHTN",
       "Lao động",
       "Bảo hiểm",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach-lap-mau-tk3-ts(3)(1).png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -38,10 +38,10 @@
       "Chứng từ",
       "Sổ sách",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach lap so quy tien mat.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -199,6 +199,27 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/cach-ghi-so-theo-hinh-thuc-nhat-ky-chung-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-ghi-so-theo-hinh-thuc-nhat-ky-chung-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-ghi-so-theo-hinh-thuc-nhat-ky-chung-theo-thong-tu-99.html",
+      "title": "Cách ghi sổ theo hình thức Nhật ký chung theo Thông tư 99",
+      "excerpt": "Hướng dẫn trình tự ghi sổ kế toán theo hình thức kế toán Nhật ký chung được ban hành kèm theo chế độ kế toán của Thông…",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "Chứng từ",
+        "Sổ sách",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Hinh-thuc-ghi-so-nhat-ky-chung(1).png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-chung-tu-ghi-so.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -215,27 +236,6 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/ghi-so-theo-hinh-thuc-chung-tu-ghi-so.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-nhat-ky-so-cai.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-nhat-ky-so-cai.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-nhat-ky-so-cai.html",
-      "title": "Hình thức ghi sổ kế toán Nhật ký - Sổ Cái",
-      "excerpt": "Hướng dẫn hình thức ghi sổ kế toán Nhật ký - Sổ Cái theo Thông tư 200 và 133: Đặc trưng cơ bản, trình tự ghi sổ, nội…",
-      "topicLabel": "Chứng từ - Sổ sách",
-      "tags": [
-        "Chứng từ",
-        "Sổ sách",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/ghi-so-theo-hinh-thuc-nhat-ky-so-cai.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
@@ -264,25 +264,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
+      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-tai-san-co-dinh-huu-hinh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
-      "title": "Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh",
-      "excerpt": "Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh: là một phần của hệ thống sổ kế toán chi tiết phục…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-tai-san-co-dinh-huu-hinh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-tai-san-co-dinh-huu-hinh.html",
+      "title": "Mẫu báo cáo: Hoàn thiện kế toán tài sản cố định hữu hình tại công ty CP bưu chính Viettel",
+      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán Hoàn thiện kế toán tài sản cố định hữu hình tại công…",
+      "topicLabel": "Tài sản - Kho - CCDC",
       "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
+        "TSCĐ",
+        "Tài sản",
+        "Kho",
+        "CCDC",
         "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-10-27",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

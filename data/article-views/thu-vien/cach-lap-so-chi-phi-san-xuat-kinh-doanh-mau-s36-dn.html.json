@@ -15,10 +15,10 @@
       "GTGT",
       "Hóa đơn",
       "Thuế",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Hoa-do-sai-sot-can-thay-the.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2025-06-01",
     "modifiedDate": null
   },
@@ -35,10 +35,10 @@
     "tags": [
       "Nghiệp vụ theo phần hành",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2014-12-22",
     "modifiedDate": null
   },
@@ -187,10 +187,10 @@
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
     },
@@ -207,35 +207,13 @@
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
     },
-    {
-      "id": "thu-vien/ho-tro-chi-phi-mai-tang.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ho-tro-chi-phi-mai-tang.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/ho-tro-chi-phi-mai-tang.html",
-      "title": "Hỗ trợ chi phí mai táng theo Nghị định 176/2025/NĐ-CP",
-      "excerpt": "Hỗ trợ chi phí mai táng theo Nghị định 176/2025/NĐ-CP quy định chi tiết và hướng dẫn thi hành về đối tượng và điều kiện…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
-      "tags": [
-        "Nghiệp vụ theo phần hành",
-        "Kế toán",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/chi-phi-mai-tang.jpg",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2021-03-15",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
     {
       "id": "thu-vien/quy-dinh-ve-thanh-toan-uy-quyen-qua-ben-thu-3.html",
       "section": "thu-vien",
@@ -254,6 +232,28 @@
       "image": "assets/images/content/pic/Service/images/chi-phi-truoc-khi-thanh-lap-doanh-nghiep.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-07-01",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/cach-lap-so-chi-tiet-ban-hang-mau-s35-dn-theo-thong-tu-200.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-so-chi-tiet-ban-hang-mau-s35-dn-theo-thong-tu-200.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-so-chi-tiet-ban-hang-mau-s35-dn-theo-thong-tu-200.html",
+      "title": "Cách lập sổ chi tiết bán hàng Mẫu S35-DN theo Thông tư 200",
+      "excerpt": "Hướng dẫn cách lập sổ chi tiết bán hàng Mẫu S35-DN theo Thông tư 200/2014/TT-BTC , mục đích lập, căn cứ và phương pháp…",
+      "topicLabel": "Nghiệp vụ theo phần hành",
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     },
     {

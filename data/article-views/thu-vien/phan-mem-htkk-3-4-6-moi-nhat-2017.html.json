@@ -17,10 +17,10 @@
       "Thuế điện tử",
       "Phần mềm",
       "Công cụ",
-      "Nâng cấp"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/phan-mem-htkk-3_4_4.png",
-    "libraryKindLabel": "Công cụ",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2017-06-13",
     "modifiedDate": null
   },
@@ -40,10 +40,10 @@
       "Thuế điện tử",
       "Phần mềm",
       "Công cụ",
-      "Nâng cấp"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/htkk-3_8_0(1).png",
-    "libraryKindLabel": "Công cụ",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2016-11-15",
     "modifiedDate": null
   },
@@ -195,10 +195,10 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/htkk-3_8_0(1).png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-11-15",
       "modifiedDate": null
     },
@@ -218,10 +218,10 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/phan mem htkk 3_3_0.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2014-08-25",
       "modifiedDate": null
     },
@@ -241,10 +241,10 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/phan mem htkk 3_3_1.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2014-10-01",
       "modifiedDate": null
     }
@@ -274,28 +274,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-cham-cong-lam-them-gio-excel-2025-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-cham-cong-lam-them-gio-excel-2025-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-cham-cong-lam-them-gio-excel-2025-moi-nhat.html",
-      "title": "Mẫu bảng chấm công làm thêm giờ excel 2025 mới nhất",
-      "excerpt": "Tổng hợp các mẫu bảng chấm công làm thêm giờ mới nhất năm 2025 theo Mẫu số 01b - LĐTL được ban hành theo thông t…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/mau-bang-cham-cong-lam-them-gio-theo-TT133.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/phan-mem-htkk-3-8-0-moi-nhat-ngay-10-11-2017.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -311,11 +289,34 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/htkk-3_8_0(1).png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-11-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "title": "Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK",
+      "excerpt": "Hướng dẫn thủ cắt giảm người phụ thuộc 2025 trên phần mềm HTKK để nộp qua mạng Khi nào thì thực hiện cắt giảm người phụ…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "HTKK",
+        "Người phụ thuộc"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cat-giam-nguoi-phu-thuoc(1).png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2024-12-23",
       "modifiedDate": null
     }
   ]

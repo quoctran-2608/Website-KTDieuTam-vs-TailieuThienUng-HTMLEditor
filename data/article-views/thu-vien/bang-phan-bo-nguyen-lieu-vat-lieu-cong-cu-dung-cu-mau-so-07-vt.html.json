@@ -15,10 +15,10 @@
       "Mẫu biểu kế toán",
       "Mẫu biểu",
       "Thủ tục",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/bang-ke-vang-bac-da-quy.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2016-08-26",
     "modifiedDate": null
   },
@@ -37,10 +37,10 @@
       "Mẫu biểu kế toán",
       "Mẫu biểu",
       "Thủ tục",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Mau-bang-phan-bo-NVL-CCDC-theo-TT99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2025-10-27",
     "modifiedDate": null
   },
@@ -191,10 +191,10 @@
         "Mẫu biểu kế toán",
         "Mẫu biểu",
         "Thủ tục",
-        "Văn bản"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-bang-phan-bo-NVL-CCDC-theo-TT99.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
       "modifiedDate": null
     },
@@ -220,14 +220,14 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-so-chi-tiet-vat-lieu-dung-cu-san-pham-hang-hoa-theo-tt-99.html",
+      "id": "thu-vien/bang-ke-mua-hang-mau-so-06-vt.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-so-chi-tiet-vat-lieu-dung-cu-san-pham-hang-hoa-theo-tt-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-so-chi-tiet-vat-lieu-dung-cu-san-pham-hang-hoa-theo-tt-99.html",
-      "title": "Mẫu Sổ chi tiết vật liệu, dụng cụ (sản phẩm, hàng hóa) theo TT 99",
-      "excerpt": "Mẫu số S10-DN - Sổ chi tiết vật liệu, dụng cụ (sản phẩm, hàng hóa) dùng để theo dõi chi tiết tình hình nhập, xuất và tồ…",
+      "href": "thu-vien/bang-ke-mua-hang-mau-so-06-vt.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-ke-mua-hang-mau-so-06-vt.html",
+      "title": "Mẫu Bảng kê mua hàng 06-VT theo Thông tư 133 và 200",
+      "excerpt": "Hướng dẫn lập Bảng kê mua hàng theo Thông tư 133 và 200 - Mẫu 06-VT, Bảng kê mua hàng do người mua lập 2 liên (đặt giấy…",
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu kế toán",
@@ -235,51 +235,53 @@
         "Thủ tục",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-vat-lieu-dung-cu.png",
+      "image": "assets/images/content/pic/Service/images/bang-ke-mua-hang.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-10-27",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "id": "thu-vien/cach-phan-bo-cong-cu-dung-cu-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
-      "title": "Cách lập báo cáo tính tài chính Mẫu B01b-DNN theo TT 133",
-      "excerpt": "Mẫu Báo cáo tình hình tài chính B01b-DNN theo Thông tư 133, hướng dẫn cách làm Báo cáo tình hình tài chính Mẫu B01b-DNN…",
-      "topicLabel": "Mẫu biểu kế toán",
+      "href": "thu-vien/cach-phan-bo-cong-cu-dung-cu-tren-misa.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-phan-bo-cong-cu-dung-cu-tren-misa.html",
+      "title": "Cách phân bổ công cụ dụng cụ trên Misa",
+      "excerpt": "Hướng dẫn lập chứng từ phân bổ giá trị của CCDC vào chi phí hàng tháng, đồng thời hạch toán chi phí vào các đối tượng p…",
+      "topicLabel": "MISA",
       "tags": [
-        "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
+        "CCDC",
+        "MISA",
+        "Phần mềm",
+        "Công cụ",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-mau-b01b-dnn.png",
+      "image": "assets/images/content/pic/Service/images/cach-phan-bo-cong-cu-dung-cu-tren-misa-1(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-08-26",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-tong-hop-chi-tiet-vat-lieu-dung-cu-san-pham-hang-hoa-theo-tt-99.html",
+      "id": "thu-vien/bang-phan-bo-nguyen-lieu-vat-lieu-cong-cu-dung-cu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-tong-hop-chi-tiet-vat-lieu-dung-cu-san-pham-hang-hoa-theo-tt-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-tong-hop-chi-tiet-vat-lieu-dung-cu-san-pham-hang-hoa-theo-tt-99.html",
-      "title": "Mẫu Bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa theo TT 99",
-      "excerpt": "Bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa dùng để tổng hợp phần giá trị từ các trang sổ, thẻ chi tiế…",
+      "href": "thu-vien/bang-phan-bo-nguyen-lieu-vat-lieu-cong-cu-dung-cu.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-phan-bo-nguyen-lieu-vat-lieu-cong-cu-dung-cu.html",
+      "title": "Mẫu bảng phân bổ nguyên liệu, vật liệu, công cụ, dụng cụ theo thông tư 99",
+      "excerpt": "Mẫu bảng phân bổ nguyên liệu, vật liệu, công cụ, dụng cụ mới nhất năm 2026 là Mẫu số: 07 - VT được ban hành kèm theo Th…",
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
+        "CCDC",
         "Mẫu biểu kế toán",
         "Mẫu biểu",
         "Thủ tục",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-bang-tong-hop-chi-tiet-vat-lieu-dung-cu-san-pham.png",
+      "image": "assets/images/content/pic/Service/images/Mau-bang-phan-bo-NVL-CCDC-theo-TT99.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
       "modifiedDate": null

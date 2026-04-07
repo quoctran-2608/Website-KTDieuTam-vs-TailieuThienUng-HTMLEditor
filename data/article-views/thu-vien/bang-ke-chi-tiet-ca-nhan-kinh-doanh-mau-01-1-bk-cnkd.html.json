@@ -15,10 +15,10 @@
       "Mẫu biểu kế toán",
       "Mẫu biểu",
       "Thủ tục",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/bang-ke-chi-tien.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2016-08-26",
     "modifiedDate": null
   },
@@ -192,76 +192,11 @@
         "Mẫu biểu doanh nghiệp",
         "thủ tục",
         "Mẫu biểu",
-        "Văn bản"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-bang-ke-hang-ton-kho-may-moc-thiet-bi(2).png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-03-05",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-01-tb-ddkd-theo-thong-tu-18-2026-tt-btc.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-01-tb-ddkd-theo-thong-tu-18-2026-tt-btc.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-01-tb-ddkd-theo-thong-tu-18-2026-tt-btc.html",
-      "title": "Mẫu thông báo địa điểm kinh doanh theo Thông tư 18/2026",
-      "excerpt": "Mẫu số: 01/TB-ĐĐKD được ban hành kèm theo Thông tư 18/2026/TT-BTC dùng để t hông báo về việc thành lập/thay đổi thông t…",
-      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
-      "tags": [
-        "Mẫu biểu doanh nghiệp",
-        "thủ tục",
-        "Mẫu biểu",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/mau-thong-bao-thanh-lap-thay-doi-tam-ngung-cham-dut-dia-diem-kinh-doanh.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-03-05",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-dang-ky-tam-ngung-kinh-doanh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-dang-ky-tam-ngung-kinh-doanh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-dang-ky-tam-ngung-kinh-doanh.html",
-      "title": "Mẫu 23/ĐK-TCT theo thông tư 86/2024/TT-BTC",
-      "excerpt": "Mẫu 23/ĐK-TCT theo thông tư 86/2024/TT-BTC là văn bản đăng ký tạm ngừng hoạt động, kinh doanh hoặc tiếp tục hoạt động s…",
-      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
-      "tags": [
-        "Mẫu biểu doanh nghiệp",
-        "thủ tục",
-        "Mẫu biểu",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2024-12-23",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
-      "title": "Cách lập báo cáo tính tài chính Mẫu B01b-DNN theo TT 133",
-      "excerpt": "Mẫu Báo cáo tình hình tài chính B01b-DNN theo Thông tư 133, hướng dẫn cách làm Báo cáo tình hình tài chính Mẫu B01b-DNN…",
-      "topicLabel": "Mẫu biểu kế toán",
-      "tags": [
-        "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-mau-b01b-dnn.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-08-26",
       "modifiedDate": null
     },
     {
@@ -284,6 +219,75 @@
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-to-khai-thue-doi-voi-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-to-khai-thue-doi-voi-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-to-khai-thue-doi-voi-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "title": "Mẫu Tờ khai thuế đối với hộ kinh doanh, cá nhân kinh doanh",
+      "excerpt": "Mẫu Tờ khai thuế đối với hộ kinh doanh, cá nhân kinh doanh mới nhất năm 2026 là Mẫu số: 01/CNKD được ban hành kèm theo…",
+      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
+      "tags": [
+        "Hộ kinh doanh",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Mẫu biểu",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/mau-to-khai-thue-voi-ho-ca-nhan-kinh-doanh.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/cach-tinh-thue-nop-thay-cho-ca-nhan-kinh-doanh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-tinh-thue-nop-thay-cho-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-tinh-thue-nop-thay-cho-ca-nhan-kinh-doanh.html",
+      "title": "Doanh nghiệp nộp thuế thay cho cá nhân kinh doanh",
+      "excerpt": "Hướng dẫn cách tính thuế nộp thay cho cá nhân kinh doanh, hộ kinh doanh khi chi trả các khoản thưởng, hỗ trợ đạt doanh…",
+      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "tags": [
+        "Hộ kinh doanh",
+        "Môn bài",
+        "Nhà thầu",
+        "MST",
+        "Thuế",
+        "Hóa đơn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-tinh-thue-nop-thay-ca-nhan-kinh-doanh.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2020-10-19",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-bang-ke-hang-ton-kho-cua-ho-kinh-doanh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bang-ke-hang-ton-kho-cua-ho-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-ke-hang-ton-kho-cua-ho-kinh-doanh.html",
+      "title": "Mẫu Bảng kê hàng tồn kho của hộ kinh doanh theo Thông tư 18",
+      "excerpt": "Bảng kê hàng tồn kho, máy móc, thiết bị của hộ kinh doanh, cá nhân kinh doanh được ban hành theo Thông tư 18/2026/TT-BT…",
+      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
+      "tags": [
+        "Hộ kinh doanh",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Mẫu biểu",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/mau-bang-ke-hang-ton-kho-may-moc-thiet-bi(2).png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-03-05",
       "modifiedDate": null
     }
   ]

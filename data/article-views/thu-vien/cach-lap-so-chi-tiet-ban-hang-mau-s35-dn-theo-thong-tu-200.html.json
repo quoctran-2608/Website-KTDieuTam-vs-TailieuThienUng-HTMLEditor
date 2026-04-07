@@ -14,10 +14,10 @@
     "tags": [
       "Nghiệp vụ theo phần hành",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2014-12-22",
     "modifiedDate": null
   },
@@ -186,10 +186,10 @@
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
     },
@@ -206,35 +206,13 @@
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
     },
-    {
-      "id": "thu-vien/ho-tro-chi-phi-mai-tang.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ho-tro-chi-phi-mai-tang.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/ho-tro-chi-phi-mai-tang.html",
-      "title": "Hỗ trợ chi phí mai táng theo Nghị định 176/2025/NĐ-CP",
-      "excerpt": "Hỗ trợ chi phí mai táng theo Nghị định 176/2025/NĐ-CP quy định chi tiết và hướng dẫn thi hành về đối tượng và điều kiện…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
-      "tags": [
-        "Nghiệp vụ theo phần hành",
-        "Kế toán",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/chi-phi-mai-tang.jpg",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2021-03-15",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
     {
       "id": "thu-vien/quy-dinh-ve-thanh-toan-uy-quyen-qua-ben-thu-3.html",
       "section": "thu-vien",
@@ -254,24 +232,46 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-07-01",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
-      "id": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
+      "id": "thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh-mau-s36-dn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
-      "title": "Mẫu Báo cáo kết quả hoạt động kinh doanh theo TT 133 - Cách lập",
-      "excerpt": "Cách lập Báo cáo kết quả hoạt động kinh doanh theo Thông tư 133 Mẫu B02 – DNN mới nhất, cơ sở lập và phương pháp lập cá…",
-      "topicLabel": "Báo cáo tài chính",
+      "href": "thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh-mau-s36-dn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh-mau-s36-dn.html",
+      "title": "Cách lập sổ chi phí sản xuất, kinh doanh Mẫu S36-DN theo Thông tư 200",
+      "excerpt": "Hướng dẫn cách lập sổ chi phí sản xuất, kinh doanh Mẫu S36-DN theo Thông tư 200/2014/TT-BTC , mục đích lập, căn cứ và p…",
+      "topicLabel": "Nghiệp vụ theo phần hành",
       "tags": [
-        "Báo cáo tài chính",
+        "Nghiệp vụ theo phần hành",
         "Kế toán",
-        "BCTC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
+      "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.png",
+      "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null

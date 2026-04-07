@@ -37,10 +37,10 @@
       "Chứng từ",
       "Sổ sách",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Hinh-thuc-nhat-ky-chung-tu.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-01-01",
     "modifiedDate": null
   },
@@ -190,10 +190,10 @@
         "Chứng từ",
         "Sổ sách",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Hinh-thuc-nhat-ky-chung-tu.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-01-01",
       "modifiedDate": null
     },
@@ -211,36 +211,13 @@
         "Chứng từ",
         "Sổ sách",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Hinh-thuc-ghi-so-nhat-ky-ky-so-cai.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-01-01",
       "modifiedDate": null
     },
-    {
-      "id": "thu-vien/cach-ghi-so-theo-hinh-thuc-chung-tu-ghi-so-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ghi-so-theo-hinh-thuc-chung-tu-ghi-so-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-ghi-so-theo-hinh-thuc-chung-tu-ghi-so-theo-thong-tu-99.html",
-      "title": "Cách ghi sổ theo hình thức Chứng từ ghi sổ theo Thông tư 99",
-      "excerpt": "Hướng dẫn trình tự ghi sổ kế toán theo hình thức kế toán Chứng từ ghi sổ theo chế độ kế toán của Thông tư 99/2025/TT-BT…",
-      "topicLabel": "Chứng từ - Sổ sách",
-      "tags": [
-        "Chứng từ",
-        "Sổ sách",
-        "Kế toán",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hinh-thuc-chung-tu-ghi-so.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
     {
       "id": "thu-vien/cach-ghi-so-ke-toan-theo-hinh-thuc-nhat-ky-chung.html",
       "section": "thu-vien",
@@ -261,24 +238,47 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
-      "id": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
+      "id": "thu-vien/cach-ghi-so-theo-hinh-thuc-nhat-ky-chung-tu-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
-      "title": "Mẫu Báo cáo kết quả hoạt động kinh doanh theo TT 133 - Cách lập",
-      "excerpt": "Cách lập Báo cáo kết quả hoạt động kinh doanh theo Thông tư 133 Mẫu B02 – DNN mới nhất, cơ sở lập và phương pháp lập cá…",
-      "topicLabel": "Báo cáo tài chính",
+      "href": "thu-vien/cach-ghi-so-theo-hinh-thuc-nhat-ky-chung-tu-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-ghi-so-theo-hinh-thuc-nhat-ky-chung-tu-theo-thong-tu-99.html",
+      "title": "Cách ghi sổ theo hình thức Nhật ký - Chứng từ theo Thông tư 99",
+      "excerpt": "Hướng dẫn trình tự ghi sổ kế toán theo hình thức kế toán Nhật ký - Chứng từ theo chế độ kế toán của Thông tư 99/2025/TT…",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
-        "Báo cáo tài chính",
+        "Chứng từ",
+        "Sổ sách",
         "Kế toán",
-        "BCTC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Hinh-thuc-nhat-ky-chung-tu.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
+      "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.png",
+      "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null

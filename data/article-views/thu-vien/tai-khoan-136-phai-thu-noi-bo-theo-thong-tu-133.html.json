@@ -189,10 +189,10 @@
         "Tài khoản",
         "Hạch toán",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/hach-toan-phai-tra-noi-bo-tk-336-theo-tt133.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
@@ -210,36 +210,13 @@
         "Tài khoản",
         "Hạch toán",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Hach-toan-TK136-TT99.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
-    {
-      "id": "thu-vien/tai-khoan-331-phai-tra-nguoi-ban-theo-thong-tu-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/tai-khoan-331-phai-tra-nguoi-ban-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/tai-khoan-331-phai-tra-nguoi-ban-theo-thong-tu-133.html",
-      "title": "Tài khoản 331 Phải trả người bán theo Thông tư 133",
-      "excerpt": "Hướng dẫn cách hạch toán Tài khoản 331 theo Thông tư 133, cách hạch toán phải trả người bán, hạch toán trả trước tiền h…",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản",
-        "Hạch toán",
-        "Kế toán",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/hach-toan-phai-tra-nguoi-ban-tk-331-theo-tt133.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
     {
       "id": "thu-vien/tai-khoan-138-phai-thu-khac-theo-thong-tu-133.html",
       "section": "thu-vien",
@@ -260,24 +237,47 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
-      "id": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
+      "id": "thu-vien/tai-khoan-336-phai-tra-noi-bo-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
-      "title": "Mẫu Báo cáo kết quả hoạt động kinh doanh theo TT 133 - Cách lập",
-      "excerpt": "Cách lập Báo cáo kết quả hoạt động kinh doanh theo Thông tư 133 Mẫu B02 – DNN mới nhất, cơ sở lập và phương pháp lập cá…",
-      "topicLabel": "Báo cáo tài chính",
+      "href": "thu-vien/tai-khoan-336-phai-tra-noi-bo-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/tai-khoan-336-phai-tra-noi-bo-theo-thong-tu-133.html",
+      "title": "Tài khoản 336 - Phải trả nội bộ theo Thông tư 133",
+      "excerpt": "Hướng dẫn cách hạch toán Tài khoản 336 theo thông tư 133, cách hạch toán chi nhánh phụ thuộc, khi nhận vốn cấp, hàng hó…",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Báo cáo tài chính",
+        "Tài khoản",
+        "Hạch toán",
         "Kế toán",
-        "BCTC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/hach-toan-phai-tra-noi-bo-tk-336-theo-tt133.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
+      "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.png",
+      "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null

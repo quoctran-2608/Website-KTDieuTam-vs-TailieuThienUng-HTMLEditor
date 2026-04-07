@@ -193,61 +193,13 @@
         "BHTN",
         "Lao động",
         "Bảo hiểm",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach-lap-mau-tk3-ts(3)(1).png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
-    {
-      "id": "thu-vien/cac-diem-moi-ve-doi-tuong-dong-bhxh-bhyt-bat-buoc-ke-tu-1-7-2025.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-diem-moi-ve-doi-tuong-dong-bhxh-bhyt-bat-buoc-ke-tu-1-7-2025.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cac-diem-moi-ve-doi-tuong-dong-bhxh-bhyt-bat-buoc-ke-tu-1-7-2025.html",
-      "title": "Các điểm mới về đối tượng đóng BHXH, BHYT bắt buộc từ ngày 1/7/2025",
-      "excerpt": "Ngày 27 tháng 6 năm 2025 Bảo hiểm xã hội Việt Nam đã ban hành Công văn 1363/BHXH-QLT năm 2025 về việc hướng dẫn triển k…",
-      "topicLabel": "BHXH - BHYT - BHTN",
-      "tags": [
-        "BHXH",
-        "BHYT",
-        "BHTN",
-        "Lao động",
-        "Bảo hiểm",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Diem-moi-bhxh.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2025-06-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-che-do-bao-hiem-xa-hoi.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-che-do-bao-hiem-xa-hoi.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cac-che-do-bao-hiem-xa-hoi.html",
-      "title": "Các chế độ bảo hiểm xã hội 2025 mới nhất theo Luật BHXH",
-      "excerpt": "Các chế độ bảo hiểm xã hội mới nhất năm 2025 theo Luật Bảo hiểm xã hội số: 41/2024/QH15 có hiệu lực từ ngày 01/07/2025…",
-      "topicLabel": "BHXH - BHYT - BHTN",
-      "tags": [
-        "BHXH",
-        "BHYT",
-        "BHTN",
-        "Lao động",
-        "Bảo hiểm",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/cac-che-do-bao-hiem-xa-hoi-2025(1).png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2025-07-01",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
     {
       "id": "thu-vien/cach-lap-danh-sach-lao-dong-tham-bhxh-bhtn-mau-d02-ts.html",
       "section": "thu-vien",
@@ -269,6 +221,54 @@
       "image": "assets/images/content/pic/Service/images/Cach-dien-Mau-D02-TS.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2017-04-14",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/doi-tuong-khong-phai-tham-gia-dong-bhxh-bat-buoc.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/doi-tuong-khong-phai-tham-gia-dong-bhxh-bat-buoc.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/doi-tuong-khong-phai-tham-gia-dong-bhxh-bat-buoc.html",
+      "title": "Các đối tượng không phải tham gia đóng BHXH bắt buộc năm 2026",
+      "excerpt": "Tổng hợp các đối tượng không phải tham gia đóng BHXH bắt buộc năm 2026 theo Luật Bảo hiểm xã hội số: 41/2024/QH15 và Ng…",
+      "topicLabel": "BHXH - BHYT - BHTN",
+      "tags": [
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/khong-phai-tham-gia-BHXH(1)(1).png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "1998-01-23",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/cach-ghi-mau-tk3-ts-to-khai-thong-tin-dn-tham-gia-bhxh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-ghi-mau-tk3-ts-to-khai-thong-tin-dn-tham-gia-bhxh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-ghi-mau-tk3-ts-to-khai-thong-tin-dn-tham-gia-bhxh.html",
+      "title": "Cách lập Mẫu TK3-TS theo Quyết định 490/QĐ-BHXH mới nhất năm 2025",
+      "excerpt": "Hướng dẫn viết Mẫu TK3-TS theo Quyết định 490/QĐ-BHXH mới nhất 2025 - Tờ khai đơn vị tham gia BHXH; Cách điền Mẫu TK3…",
+      "topicLabel": "BHXH - BHYT - BHTN",
+      "tags": [
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-lap-mau-tk3-ts(3)(1).png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {

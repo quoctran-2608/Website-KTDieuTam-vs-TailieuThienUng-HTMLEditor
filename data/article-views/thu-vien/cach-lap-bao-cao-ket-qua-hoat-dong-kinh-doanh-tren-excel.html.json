@@ -15,10 +15,10 @@
       "Báo cáo tài chính",
       "Kế toán",
       "BCTC",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach-lap-bao-cao-kq-hoat-dong-kinh-doanh-tt99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2006-03-20",
     "modifiedDate": null
   },
@@ -36,10 +36,10 @@
       "Báo cáo tài chính",
       "Kế toán",
       "BCTC",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2016-08-26",
     "modifiedDate": null
   },
@@ -190,60 +190,13 @@
         "Công cụ khác",
         "Phần mềm",
         "Công cụ",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach lap bang can doi ke toan.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
-    {
-      "id": "thu-vien/mau-bao-cao-tai-chinh-theo-quyet-dinh-48-excel.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bao-cao-tai-chinh-theo-quyet-dinh-48-excel.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-tai-chinh-theo-quyet-dinh-48-excel.html",
-      "title": "Mẫu báo cáo tài chính Excel theo Quyết định 48 và TT 200 mới nhất",
-      "excerpt": "Mẫu báo cáo tài chính mới nhất theo Quyết định 48 và Thông tư 200 trên Excel Dành cho DN nhỏ và vừa và DN lớn (tất cả c…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "BCTC",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-so-nhat-ky-chung-trong-excel-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-so-nhat-ky-chung-trong-excel-ke-toan.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-so-nhat-ky-chung-trong-excel-ke-toan.html",
-      "title": "Cách ghi sổ Nhật ký chung trên Excel theo Thông tư 99, TT 133",
-      "excerpt": "Hướng dẫn cách lập sổ Nhật ký chung trên Excel, cách ghi trên Mẫu sổ Nhật ký chung Excel theo Thông tư 99 và TT 133 dow…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Mau-so-NKC-tren-Excel.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
     {
       "id": "thu-vien/huong-dan-cach-lap-cac-bang-bieu-cuoi-thang-tren-excel.html",
       "section": "thu-vien",
@@ -262,6 +215,52 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach-lap-bang-can-doi-phat-sinh-tren-excel.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lam-so-sach-ke-toan-tren-excel-doanh-nghiep.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lam-so-sach-ke-toan-tren-excel-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lam-so-sach-ke-toan-tren-excel-doanh-nghiep.html",
+      "title": "Hướng dẫn cách làm sổ sách kế toán trên Excel",
+      "excerpt": "Hướng dẫn cách làm sổ sách kế toán trên Excel; Cách sử dụng hàm để hạch toán nghiệp vụ, để làm sổ sách, lập sổ chi tiết…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-lam-so-sach-ke-toan-tren-excel.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/cach-lap-bang-can-doi-ke-toan-tren-excel-theo-qd-48-va-15.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-can-doi-ke-toan-tren-excel-theo-qd-48-va-15.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-can-doi-ke-toan-tren-excel-theo-qd-48-va-15.html",
+      "title": "Hướng dẫn cách lập bảng cân đối kế toán theo Thông tư 200",
+      "excerpt": "Hướng dẫn cách lập bảng cân đối kế toán theo Thông tư 200/2014/TT-BTC chi tiết từng chỉ tiêu trên bảng cân đối kế toán…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach lap bang can doi ke toan.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
@@ -290,25 +289,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
-      "title": "Các hàm Excel trong kế toán thường dùng",
-      "excerpt": "Các hàm Excel thông dụng trong kế toán thường dùng lên sổ sách, tính lương, kho, nhập xuất tồn, công nợ: Hướng dẫn cách…",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
         "Công cụ khác",
         "Phần mềm",
         "Công cụ",
-        "Hàm Excel"
+        "Thực hành"
       ],
-      "image": "assets/images/content/pic/Service/images/cac-ham-excel-thong-dung-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

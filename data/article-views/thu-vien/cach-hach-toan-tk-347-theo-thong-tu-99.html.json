@@ -15,10 +15,10 @@
       "Tài khoản",
       "Hạch toán",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Hach-toan-TK344-TT99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -36,10 +36,10 @@
       "Tài khoản",
       "Hạch toán",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Hach-toan-TK352-TT99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -176,6 +176,27 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cach-tinh-thue-thu-nhap-hoan-lai-phai-tra-tk-347.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-hoan-lai-phai-tra-tk-347.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-tinh-thue-thu-nhap-hoan-lai-phai-tra-tk-347.html",
+      "title": "Cách hạch toán Thuế thu nhập hoãn lại phải trả - Tài khoản 347 theo TT 200",
+      "excerpt": "Cách hạch toán Tài khoản 347 – Thuế thu nhập hoãn lại phải trả Theo Thông tư 200/2014/TT-BTC (Có hiệu lực từ nga…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach hach toan thue thu nhap hoan lai phai tra - TK 347.gif",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2015-01-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/hach-toan-tk-243-tai-san-thue-thu-nhap-hoan-lai-theo-tt99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -189,53 +210,32 @@
         "Tài khoản",
         "Hạch toán",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Hach-toan-TK243-TT99.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-hach-toan-tk-333-thue-phai-nop-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-hach-toan-tai-san-thue-thu-nhap-hoan-lai-tk-243.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-tk-333-thue-phai-nop-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-tk-333-thue-phai-nop-theo-thong-tu-99.html",
-      "title": "Cách hạch toán TK 333 - Thuế và các khoản phải nộp Nhà nước theo Thông tư 99",
-      "excerpt": "Tài khoản 333 theo Thông tư 99/2025/TT-BTC dùng để phản ánh số phải trả và tình hình thanh toán các khoản thuế, phí, lệ…",
+      "href": "thu-vien/cach-hach-toan-tai-san-thue-thu-nhap-hoan-lai-tk-243.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-tai-san-thue-thu-nhap-hoan-lai-tk-243.html",
+      "title": "Cách hạch toán Tài sản thuế thu nhập hoãn lại - Tài khoản 243 theo TT 200",
+      "excerpt": "Cách hạch toán Tài khoản 243 - Tài sản thuế thu nhập hoãn lại Theo Thông tư 200/2014/TT-BTC (Có hiệu lực từ ngà…",
       "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
         "Tài khoản",
         "Hạch toán",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-TK333-TT99.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-hach-toan-tk-335-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-tk-335-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-tk-335-theo-thong-tu-99.html",
-      "title": "Cách hạch toán TK 335 - Chi phí phải trả theo Thông tư 99",
-      "excerpt": "Hướng dẫn cách định khoản hạch toán TK 335 - Chi phí phải trả theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doa…",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản",
-        "Hạch toán",
-        "Kế toán",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-TK335-TT99.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-01-01",
+      "image": "assets/images/content/pic/Service/images/cach hach toan tai san the thu nhap hoan lai - TK 243.gif",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2015-01-01",
       "modifiedDate": null
     }
   ],
@@ -262,22 +262,22 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
+      "id": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
-      "title": "Mẫu Báo cáo kết quả hoạt động kinh doanh theo TT 133 - Cách lập",
-      "excerpt": "Cách lập Báo cáo kết quả hoạt động kinh doanh theo Thông tư 133 Mẫu B02 – DNN mới nhất, cơ sở lập và phương pháp lập cá…",
-      "topicLabel": "Báo cáo tài chính",
+      "href": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
+      "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Báo cáo tài chính",
+        "Tài khoản",
+        "Hạch toán",
         "Kế toán",
-        "BCTC",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.png",
+      "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null

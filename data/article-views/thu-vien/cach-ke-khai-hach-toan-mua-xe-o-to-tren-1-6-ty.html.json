@@ -39,10 +39,10 @@
       "Kê khai",
       "Hóa đơn",
       "Thuế",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Ke-khai-hoa-don-Chiet-khau-thuong-mai(1).png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2025-06-01",
     "modifiedDate": null
   },
@@ -271,48 +271,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
+      "id": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
-      "title": "Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh",
-      "excerpt": "Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh: là một phần của hệ thống sổ kế toán chi tiết phục…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "href": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
+      "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
+        "Tài khoản",
+        "Hạch toán",
         "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.png",
+      "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-10-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/phan-mem-ho-ke-khai-thue-htkk-3-4-5.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-ho-ke-khai-thue-htkk-3-4-5.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/phan-mem-ho-ke-khai-thue-htkk-3-4-5.html",
-      "title": "Phần mềm hỗ kê khai thuế HTKK 3.4.5",
-      "excerpt": "Ngày 26/6/2017 Tổng cục thuế đã nâng cấp Phần mềm HTKK 3.4.5. Phần mềm hỗ kê khai thuế HTKK 3.4.5 và ứng dụng Khai thuế…",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
-      "tags": [
-        "HTKK",
-        "Kê khai",
-        "eTax",
-        "Thuế điện tử",
-        "Phần mềm",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/pic/Service/images/phan-mem-ho-tro-ke-khai-3_4_5.png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2017-06-26",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     }
   ]

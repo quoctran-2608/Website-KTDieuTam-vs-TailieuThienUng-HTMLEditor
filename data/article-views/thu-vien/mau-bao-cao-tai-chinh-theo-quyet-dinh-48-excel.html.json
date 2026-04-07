@@ -17,10 +17,10 @@
       "Phần mềm",
       "Công cụ",
       "BCTC",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -39,10 +39,10 @@
       "Mẫu biểu",
       "Thủ tục",
       "BCTC",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/bao-cao-tai-chinh-theo-thong-tu-133.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -194,34 +194,11 @@
         "Phần mềm",
         "Công cụ",
         "BCTC",
-        "Văn bản"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-c70a-hd-moi-nhat-theo-quyet-dinh-919.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-c70a-hd-moi-nhat-theo-quyet-dinh-919.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-c70a-hd-moi-nhat-theo-quyet-dinh-919.html",
-      "title": "Mẫu C70a-HD Excel theo Quyết định 636/QĐ-BHXH mới nhất 2019",
-      "excerpt": "Mẫu C70a-HD mới nhất năm 2019 Excel theo Quyết định 636/QĐ-BHXH - Danh sách đề nghị giải quyết hưởng chế độ thai sản, ố…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "BHXH",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/mau-c70a-hd-moi-nhat-theo-qd-636.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2016-04-22",
       "modifiedDate": null
     },
     {
@@ -245,42 +222,64 @@
       "image": "assets/images/content/pic/Service/images/mau-thuyet-minh-bao-cao-tai-chinh-Excel.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-theo-qd-15-excel.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-theo-qd-15-excel.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-theo-qd-15-excel.html",
+      "title": "Mẫu Bản Thuyết minh Báo cáo tài chính theo QĐ 15 Excel",
+      "excerpt": "Mẫu Bản Thuyết minh Báo cáo tài chính Excel mới nhất Mẫu số B 09 – DN Ban hành theo Quyết định số 15/2006/QĐ-BTC Ngày 2…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "BCTC",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2006-03-20",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-lap-bang-trich-khau-hao-tscd-tren-excel.html",
+      "id": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bang-trich-khau-hao-tscd-tren-excel.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-trich-khau-hao-tscd-tren-excel.html",
-      "title": "Cách lập bảng trích khấu hao TSCĐ trên Excel",
-      "excerpt": "Hướng dẫn cách lập bảng trích tính khấu hao tài sản cố định hàng tháng trên Excel Các thông tin ban đầu cần khai báo, c…",
+      "href": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-tren-excel.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-tren-excel.html",
+      "title": "Hướng dẫn cách lập báo cáo kết quả kinh doanh theo Thông tư 200",
+      "excerpt": "Hướng dẫn cách lập báo cáo kết quả hoạt động kinh doanh theo Thông tư 200/2014/TT-BTC, nội dung, kết cấu báo cáo, cơ sở…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "TSCĐ",
         "Excel",
         "Công cụ khác",
         "Phần mềm",
         "Công cụ",
-        "Khấu hao"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Bang-tinh-khau0hao-TSCD-tren-Excel.png",
+      "image": "assets/images/content/pic/Service/images/cach lap bao cao ket qua kinh doanh.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2006-03-20",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-excel-theo-qd-48.html",
+      "id": "thu-vien/mau-bao-cao-tai-chinh-theo-quyet-dinh-15-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-excel-theo-qd-48.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-excel-theo-qd-48.html",
-      "title": "Mẫu Thuyết minh Báo cáo tài chính Excel theo TT 200 và 133",
-      "excerpt": "Mẫu Thuyết minh Báo cáo tài chính Excel theo Thông tư 133 và Thông tư 200. Đây là 2 mẫu Thuyết minh báo cáo tài chính m…",
+      "href": "thu-vien/mau-bao-cao-tai-chinh-theo-quyet-dinh-15-excel.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-tai-chinh-theo-quyet-dinh-15-excel.html",
+      "title": "Mẫu báo cáo tài chính theo quyết định 15 Excel",
+      "excerpt": "Mẫu báo cáo tài chính theo quyết định 15 Excel Dành cho tất cả cá DN gồm: Bảng Cân đối kế toán, Báo cáo kết quả hoạt độ…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
@@ -290,32 +289,31 @@
         "BCTC",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-thuyet-minh-bao-cao-tai-chinh-Excel.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-12-22",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-dang-ky-ma-so-thue-ca-nhan-moi-nhat.html",
+      "id": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-dang-ky-ma-so-thue-ca-nhan-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/phan-mem-dang-ky-ma-so-thue-ca-nhan-moi-nhat.html",
-      "title": "Phần mềm đăng ký MST cá nhân QTTNCN 3.3.2 mới nhất 2019",
-      "excerpt": "Phần mềm đăng ký MST cá nhân QTTNCN 3.3.2 mới nhất 2019, thay thế phần mềm đăng ký mã số thuế cá nhân QTTNCN 3.3.1. Tải…",
+      "href": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
+      "title": "Các hàm Excel trong kế toán thường dùng",
+      "excerpt": "Các hàm Excel thông dụng trong kế toán thường dùng lên sổ sách, tính lương, kho, nhập xuất tồn, công nợ: Hướng dẫn cách…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Mã số thuế",
         "Excel",
         "Công cụ khác",
         "Phần mềm",
         "Công cụ",
-        "MST"
+        "Hàm Excel"
       ],
-      "image": "assets/images/content/pic/Service/images/Phan-mem-dang-ky-mst-ca-nhan-qttncn-3_3_2.png",
+      "image": "assets/images/content/pic/Service/images/cac-ham-excel-thong-dung-trong-ke-toan.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-02",
+      "publishDate": "2013-01-01",
       "modifiedDate": null
     },
     {

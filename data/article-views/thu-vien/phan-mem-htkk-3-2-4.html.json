@@ -17,10 +17,10 @@
       "Thuế điện tử",
       "Phần mềm",
       "Công cụ",
-      "Nâng cấp"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/phan mem htkk 3_2_3.png",
-    "libraryKindLabel": "Công cụ",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2014-04-17",
     "modifiedDate": null
   },
@@ -40,10 +40,10 @@
       "Thuế điện tử",
       "Phần mềm",
       "Công cụ",
-      "Nâng cấp"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/phan mem htkk 3_3_0.png",
-    "libraryKindLabel": "Công cụ",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2014-08-25",
     "modifiedDate": null
   },
@@ -195,10 +195,10 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/phan mem htkk 3_3_0.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2014-08-25",
       "modifiedDate": null
     },
@@ -218,10 +218,10 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/phan mem htkk 3_3_1.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2014-10-01",
       "modifiedDate": null
     },
@@ -241,10 +241,10 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/htkk-3_8_0(1).png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-11-15",
       "modifiedDate": null
     }
@@ -274,29 +274,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-03-nghi-dinh-119-excel-to-khai-du-lieu-hoa-don-ban-ra.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-03-nghi-dinh-119-excel-to-khai-du-lieu-hoa-don-ban-ra.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-03-nghi-dinh-119-excel-to-khai-du-lieu-hoa-don-ban-ra.html",
-      "title": "Mẫu 03 Tờ khai dữ liệu hóa đơn bán ra theo NĐ 119",
-      "excerpt": "Tờ khai dữ liệu hóa đơn, chứng từ hàng hóa, dịch vụ bán ra - Mẫu 03 theo Nghị định 119/2018/NĐ-CP; Tải mẫu số 03 file E…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "GTGT",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Hóa đơn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Mau-03-nghi-dinh-119-excel-to-khai-du-lieu-hoa-don.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2018-01-01",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/phan-mem-htkk-3-3-0-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -312,11 +289,34 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/phan mem htkk 3_3_0.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2014-08-25",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "title": "Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK",
+      "excerpt": "Hướng dẫn thủ cắt giảm người phụ thuộc 2025 trên phần mềm HTKK để nộp qua mạng Khi nào thì thực hiện cắt giảm người phụ…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "HTKK",
+        "Người phụ thuộc"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cat-giam-nguoi-phu-thuoc(1).png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2024-12-23",
       "modifiedDate": null
     }
   ]

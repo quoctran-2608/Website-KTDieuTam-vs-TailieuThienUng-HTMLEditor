@@ -15,10 +15,10 @@
       "Mẫu biểu kế toán",
       "Mẫu biểu",
       "Thủ tục",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/mau-so-quy-tien-mat-cach-lap.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2016-08-26",
     "modifiedDate": null
   },
@@ -36,10 +36,10 @@
       "Mẫu biểu kế toán",
       "Mẫu biểu",
       "Thủ tục",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Mẫu S02a -DN chứng từ ghi sổ theo Thông tư 99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2025-10-27",
     "modifiedDate": null
   },
@@ -176,6 +176,28 @@
   ],
   "related": [
     {
+      "id": "thu-vien/giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns-theo-tt-119.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns-theo-tt-119.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns-theo-tt-119.html",
+      "title": "Mẫu giấy nộp tiền vào ngân sách nhà nước 2026 Excel, Word",
+      "excerpt": "Mẫu giấy nộp tiền vào ngân sách nhà nước 2026 mới nhất Mẫu số 02 Ký hiệu: C1-02/NS, được ban hành kèm theo Nghị định số…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/giay-nop-tien-vao-NSNN.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/mau-bang-can-doi-ke-toan-excel-moi-nhat-theo-quyet-dinh-48.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -190,10 +212,10 @@
         "Công cụ khác",
         "Phần mềm",
         "Công cụ",
-        "Văn bản"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-bang-can-doi-ke-toan-excel-theo-thong-tu-200.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2014-12-22",
       "modifiedDate": null
     },
@@ -212,13 +234,15 @@
         "Công cụ khác",
         "Phần mềm",
         "Công cụ",
-        "Văn bản"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-so-sach-ke-toan-tren-excel-theo-thong-tu-133.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-04-02",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/cach-lap-bang-can-doi-ke-toan-tren-excel-theo-qd-48-va-15.html",
       "section": "thu-vien",
@@ -234,36 +258,11 @@
         "Công cụ khác",
         "Phần mềm",
         "Công cụ",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach lap bang can doi ke toan.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
-      "title": "Cách làm bảng tính lương trên Excel hàng tháng năm 2026",
-      "excerpt": "Hướng dẫn cách làm bảng tính lương trên Excel 2026 theo mẫu Bảng thanh toán tiền lương theo Thông tư 99 và TT 133 mới n…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Tiền lương",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Bang-luong-2026.png",
+      "image": "assets/images/content/pic/Service/images/cach lap bang can doi ke toan.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {

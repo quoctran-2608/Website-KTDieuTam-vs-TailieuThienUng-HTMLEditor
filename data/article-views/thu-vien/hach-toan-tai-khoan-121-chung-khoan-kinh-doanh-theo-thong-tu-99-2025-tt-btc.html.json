@@ -15,10 +15,10 @@
       "Tài khoản",
       "Hạch toán",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Hach-toan-TK113-TT99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -36,10 +36,10 @@
       "Tài khoản",
       "Hạch toán",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Hach-toan-TK136-TT99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -176,14 +176,14 @@
   ],
   "related": [
     {
-      "id": "thu-vien/hach-toan-tai-khoan-113-tien-dang-chuyen-theo-thong-tu-99.html",
+      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99-2025-tt-btc.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/hach-toan-tai-khoan-113-tien-dang-chuyen-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/hach-toan-tai-khoan-113-tien-dang-chuyen-theo-thong-tu-99.html",
-      "title": "Hạch toán Tài khoản 113 - Tiền đang chuyển theo Thông tư 99/2025/TT-BTC",
-      "excerpt": "Tài khoản 113 - Tiền đang chuyển: dùng để phản ánh các khoản tiền của doanh nghiệp đã nộp vào ngân hàng, đã gửi bưu điệ…",
+      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99-2025-tt-btc.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99-2025-tt-btc.html",
+      "title": "Bảng danh mục hệ thống tài khoản kế toán theo Thông tư 99/2025/TT-BTC",
+      "excerpt": "Bảng danh mục hệ thống tài khoản kế toán doanh nghiệp được ban hành kèm theo Phụ Lục II của Thông tư 99/2025/TT-BTC có…",
       "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
         "Tài khoản",
@@ -191,51 +191,52 @@
         "Kế toán",
         "Văn bản"
       ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-TK113-TT99.png",
+      "image": "assets/images/content/pic/Service/images/He-thong-tai-khoan-ke-toan-theo-thong-tu-99.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/tai-khoan-511-doanh-thu-ban-hang-dich-vu-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/tai-khoan-511-doanh-thu-ban-hang-dich-vu-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/tai-khoan-511-doanh-thu-ban-hang-dich-vu-theo-thong-tu-133.html",
+      "title": "Tài khoản 511 Doanh thu bán hàng và cung cấp dịch vụ theo Thông tư 133",
+      "excerpt": "Hướng dẫn cách hạch toán Tài khoản 511 theo thông tư 133, Cách hạch toán doanh thu bán hàng, thành phẩm, cung cấp dịch…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/hach-toan-doanh-thu-ban-hang-dich-vu-tk-511-theo-tt133.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-hach-toan-tai-khoan-112-tien-gui-ngan-hang-khong-ky-han-theo-thong-tu-99.html",
+      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-tai-khoan-112-tien-gui-ngan-hang-khong-ky-han-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-tai-khoan-112-tien-gui-ngan-hang-khong-ky-han-theo-thong-tu-99.html",
-      "title": "Cách hạch toán tài khoản 112 - Tiền gửi ngân hàng không kỳ hạn theo Thông tư 99",
-      "excerpt": "Tài khoản 112 - Tiền gửi không kỳ hạn dùng để phản ánh số hiện có và tình hình biến động tăng, giảm các khoản tiền gửi…",
+      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-133.html",
+      "title": "Hệ thống tài khoản kế toán theo Thông tư 133 Excel",
+      "excerpt": "Bảng hệ thống tài khoản kế toán theo Thông tư 133/2016/TT-BTC Excel mới nhất dành cho doanh nghiệp vừa và nhỏ. Tải danh…",
       "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
         "Tài khoản",
         "Hạch toán",
         "Kế toán",
+        "Excel",
         "Văn bản"
       ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-TK112-TT99.png",
+      "image": "assets/images/content/pic/Service/images/org-tai-ve.png",
       "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-hach-toan-tai-khoan-155-san-pham-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-tai-khoan-155-san-pham-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-tai-khoan-155-san-pham-theo-thong-tu-99.html",
-      "title": "Cách hạch toán Tài khoản 155 - Sản phẩm theo Thông tư 99",
-      "excerpt": "Theo Thông tư 99/2025/TT-BTC thì Tài khoản 155 - Sản phẩm dùng để phản ánh giá trị hiện có và tình hình biến động của c…",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản",
-        "Hạch toán",
-        "Kế toán",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-TK155-TT99.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-04-02",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     }
   ],
@@ -262,25 +263,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
+      "id": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
-      "title": "Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh",
-      "excerpt": "Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh: là một phần của hệ thống sổ kế toán chi tiết phục…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "href": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
+      "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
+        "Tài khoản",
+        "Hạch toán",
         "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.png",
+      "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-10-27",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     }
   ]

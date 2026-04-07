@@ -15,10 +15,10 @@
       "Mẫu biểu kế toán",
       "Mẫu biểu",
       "Thủ tục",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Mau-chung-tu-ke-toan-theo-thong-tu-99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2025-10-27",
     "modifiedDate": null
   },
@@ -36,10 +36,10 @@
       "Mẫu biểu kế toán",
       "Mẫu biểu",
       "Thủ tục",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Mau-BK04-ĐK-TCT.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2024-12-23",
     "modifiedDate": null
   },
@@ -194,7 +194,7 @@
         "Lao động"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-thanh-toan-tien-luong.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2014-12-22",
       "modifiedDate": null
     },
@@ -217,54 +217,8 @@
         "Lao động"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-bang-thanh-toan-tien-luong(1).png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-bang-phan-bo-tien-luong-va-cac-khoan-trich-theo-luong.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-phan-bo-tien-luong-va-cac-khoan-trich-theo-luong.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-phan-bo-tien-luong-va-cac-khoan-trich-theo-luong.html",
-      "title": "Bảng phân bổ tiền lương và các khoản trích theo lương theo Thông tư 99",
-      "excerpt": "Bảng phân bổ tiền lương và các khoản trích theo lương dùng để tập hợp và phân bổ tiền lương tiền công thực tế phải trả…",
-      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
-      "tags": [
-        "Mẫu biểu lao động",
-        "bảo hiểm",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Tiền lương",
-        "Lao động"
-      ],
-      "image": "assets/images/content/pic/Service/images/Mau-bang-phan-bo-tien-luong-va-cac-khoan-trich-theo-luong.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2025-10-27",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
-      "title": "Cách lập báo cáo tính tài chính Mẫu B01b-DNN theo TT 133",
-      "excerpt": "Mẫu Báo cáo tình hình tài chính B01b-DNN theo Thông tư 133, hướng dẫn cách làm Báo cáo tình hình tài chính Mẫu B01b-DNN…",
-      "topicLabel": "Mẫu biểu kế toán",
-      "tags": [
-        "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-mau-b01b-dnn.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-08-26",
       "modifiedDate": null
     },
     {
@@ -288,6 +242,52 @@
       "image": "assets/images/content/pic/Service/images/mau-quy-che-luong-thuong(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-01-02",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/quy-dinh-ve-tien-luong-trong-bo-luat-lao-dong-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quy-dinh-ve-tien-luong-trong-bo-luat-lao-dong-moi-nhat.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-tien-luong-trong-bo-luat-lao-dong-moi-nhat.html",
+      "title": "Quy định về tiền lương trong Bộ luật lao động mới nhất 2026",
+      "excerpt": "Tổng hợp các quy định về tiền lương của người lao động năm 2026 theo Bộ luật lao động số: 45/2019/QH14 và các thông tư,…",
+      "topicLabel": "Lao động - Tiền lương",
+      "tags": [
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/quy-dinh-ve-tien-luong.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bang-thanh-toan-tien-luong-mau-so-02-ldtl.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bang-thanh-toan-tien-luong-mau-so-02-ldtl.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-thanh-toan-tien-luong-mau-so-02-ldtl.html",
+      "title": "Mẫu Bảng thanh toán tiền lương theo Thông tư 133 và 200",
+      "excerpt": "Bảng thanh toán tiền lương là chứng từ làm căn cứ để thanh toán tiền lương, phụ cấp, các khoản thu nhập tăng thêm ngoài…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "tags": [
+        "Mẫu biểu lao động",
+        "bảo hiểm",
+        "Mẫu biểu",
+        "Thủ tục",
+        "Tiền lương",
+        "Lao động"
+      ],
+      "image": "assets/images/content/pic/Service/images/Bang-thanh-toan-tien-luong.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ]

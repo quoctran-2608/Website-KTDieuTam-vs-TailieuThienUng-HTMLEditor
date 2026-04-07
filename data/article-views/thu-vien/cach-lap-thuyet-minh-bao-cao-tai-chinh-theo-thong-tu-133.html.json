@@ -14,10 +14,10 @@
     "tags": [
       "Nghiệp vụ theo phần hành",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2014-12-22",
     "modifiedDate": null
   },
@@ -30,15 +30,15 @@
     "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-thuyet-minh-bctc-theo-thong-tu-99.html",
     "title": "Cách lập Thuyết minh BCTC Theo Thông tư 99",
     "excerpt": "Hướng dẫn cách lập và trình bày Thuyết minh BCTC Theo Mẫu số B09 - DN cùa Thông tư 99/2025/TT-BTC Công ty đào tạo Kế To…",
-    "topicLabel": "Khác",
+    "topicLabel": "Báo cáo tài chính",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "Báo cáo tài chính",
+      "Kế toán",
       "BCTC",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Cach-lap-thuyet-minh-bctc-tt99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -175,27 +175,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
-      "title": "Hướng dẫn lập thuyết minh báo cáo tài chính theo Thông tư 200",
-      "excerpt": "Thuyết minh báo cáo tài chính là một bộ phận hợp thành không thể tách rời của BCTC, dùng để phân tích chi tiết các thôn…",
-      "topicLabel": "Báo cáo tài chính",
-      "tags": [
-        "Báo cáo tài chính",
-        "Kế toán",
-        "BCTC",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-lap-thuyet-minh-bao-cao-tai-chinh-theo-thong-tu-200.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -209,55 +188,11 @@
         "Báo cáo tài chính",
         "Kế toán",
         "BCTC",
-        "Văn bản"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/nguyen-tac-lap-va-trinh-bay-bao-cao-tai-chinh-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nguyen-tac-lap-va-trinh-bay-bao-cao-tai-chinh-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/nguyen-tac-lap-va-trinh-bay-bao-cao-tai-chinh-theo-thong-tu-99.html",
-      "title": "Các nguyên tắc lập và trình bày Báo cáo tài chính theo Thông tư 99",
-      "excerpt": "Các nguyên tắc lập và trình bày Báo cáo tài chính theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có…",
-      "topicLabel": "Báo cáo tài chính",
-      "tags": [
-        "Báo cáo tài chính",
-        "Kế toán",
-        "BCTC",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/nguyen-tac-lap-va-trinh-bay-bao-cao-tai-chinh-theo-thong-tu-99.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/bao-cao-tai-chinh-gom-nhung-gi-mau-bieu-bang-nao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bao-cao-tai-chinh-gom-nhung-gi-mau-bieu-bang-nao.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-tai-chinh-gom-nhung-gi-mau-bieu-bang-nao.html",
-      "title": "Báo cáo tài chính theo TT 99 gồm những gì? Mẫu biểu bảng nào?",
-      "excerpt": "Theo điều Điều 17 của Thông tư 99/2025/TT-BTC thì Hệ thống Báo cáo tài chính của doanh nghiệp bao gồm những phần sau: 1…",
-      "topicLabel": "Báo cáo tài chính",
-      "tags": [
-        "Báo cáo tài chính",
-        "Kế toán",
-        "BCTC",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/mau-bang-bieu-bao-cao-tai-chinh.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
@@ -277,6 +212,71 @@
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2016-08-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
+      "title": "Hướng dẫn lập thuyết minh báo cáo tài chính theo Thông tư 200",
+      "excerpt": "Thuyết minh báo cáo tài chính là một bộ phận hợp thành không thể tách rời của BCTC, dùng để phân tích chi tiết các thôn…",
+      "topicLabel": "Báo cáo tài chính",
+      "tags": [
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-lap-thuyet-minh-bao-cao-tai-chinh-theo-thong-tu-200.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
+      "title": "Hướng dẫn lập thuyết minh báo cáo tài chính theo Thông tư 200",
+      "excerpt": "Thuyết minh báo cáo tài chính là một bộ phận hợp thành không thể tách rời của BCTC, dùng để phân tích chi tiết các thôn…",
+      "topicLabel": "Báo cáo tài chính",
+      "tags": [
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-lap-thuyet-minh-bao-cao-tai-chinh-theo-thong-tu-200.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.html",
+      "title": "Mẫu Báo cáo lưu chuyển tiền tệ theo Thông tư 133 - Cách lập",
+      "excerpt": "Cách lập Báo cáo lưu chuyển tiền tệ theo phương pháp trực tiếp và gián tiếp theo Mẫu Báo cáo lưu chuyển tiền tệ theo Th…",
+      "topicLabel": "Báo cáo tài chính",
+      "tags": [
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null

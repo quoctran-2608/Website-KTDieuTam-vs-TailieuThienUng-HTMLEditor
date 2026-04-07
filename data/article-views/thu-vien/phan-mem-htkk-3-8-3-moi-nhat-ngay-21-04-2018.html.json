@@ -17,10 +17,10 @@
       "Thuế điện tử",
       "Phần mềm",
       "Công cụ",
-      "Nâng cấp"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/org-tai-ve.png",
-    "libraryKindLabel": "Công cụ",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2018-03-23",
     "modifiedDate": null
   },
@@ -40,10 +40,10 @@
       "Thuế điện tử",
       "Phần mềm",
       "Công cụ",
-      "Nâng cấp"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/tai-xuong.png",
-    "libraryKindLabel": "Công cụ",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2018-06-25",
     "modifiedDate": null
   },
@@ -195,10 +195,10 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/org-tai-ve.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2018-03-23",
       "modifiedDate": null
     },
@@ -218,10 +218,10 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/tai-xuong.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2018-06-25",
       "modifiedDate": null
     },
@@ -241,10 +241,10 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/tai-xuong.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2018-08-24",
       "modifiedDate": null
     }
@@ -274,28 +274,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-cham-cong-tren-excel-cho-nhan-vien.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-cham-cong-tren-excel-cho-nhan-vien.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-cham-cong-tren-excel-cho-nhan-vien.html",
-      "title": "Mẫu bảng chấm công trên Excel mới nhất năm 2026",
-      "excerpt": "Mẫu bảng chấm công theo Thông tư 99 và Thông tư 133 mới nhất. Đây là mẫu bảng chấm công trên Excel năm 2026 do Kế toán…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/Bang-cham-cong-2026.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/phan-mem-htkk-3-8-2-moi-nhat-ngay-23-3-2018.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -311,11 +289,34 @@
         "Thuế điện tử",
         "Phần mềm",
         "Công cụ",
-        "Nâng cấp"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/org-tai-ve.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2018-03-23",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "title": "Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK",
+      "excerpt": "Hướng dẫn thủ cắt giảm người phụ thuộc 2025 trên phần mềm HTKK để nộp qua mạng Khi nào thì thực hiện cắt giảm người phụ…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "HTKK",
+        "Người phụ thuộc"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cat-giam-nguoi-phu-thuoc(1).png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2024-12-23",
       "modifiedDate": null
     }
   ]

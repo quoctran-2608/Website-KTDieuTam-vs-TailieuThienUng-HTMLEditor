@@ -10,12 +10,12 @@
     "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-nguyen-vat-lieu-cong-cu-dung-cu.html",
     "title": "Mẫu báo cáo: Kế toán nguyên vật liệu - công cụ dụng cụ trong doanh nghiệp” tại Công ty Cổ phần Khoáng sản và công nghiệp Đại Trường Phát",
     "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán nguyên vật liệu - công cụ dụng cụ trong doa…",
-    "topicLabel": "Báo cáo thực tập",
+    "topicLabel": "Tài sản - Kho - CCDC",
     "tags": [
       "CCDC",
-      "Báo cáo thực tập",
-      "Học liệu",
-      "Tham khảo",
+      "Tài sản",
+      "Kho",
+      "Kế toán",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -177,50 +177,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
-      "title": "Mẫu báo cáo: Kế toán nguyên vật liệu công cụ dụng cụ tại Công ty công trình Đường Thủy",
-      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán nguyên vật liệu công cụ dụng cụ tại công ty…",
-      "topicLabel": "Báo cáo thực tập",
-      "tags": [
-        "CCDC",
-        "Báo cáo thực tập",
-        "Học liệu",
-        "Tham khảo",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-nguyen-vat-lieu-cong-cu-dung-cu.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-nguyen-vat-lieu-cong-cu-dung-cu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-nguyen-vat-lieu-cong-cu-dung-cu.html",
-      "title": "Mẫu báo cáo: Kế toán nguyên vật liệu - công cụ dụng cụ trong doanh nghiệp” tại Công ty Cổ phần Khoáng sản và công nghiệp Đại Trường Phát",
-      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán nguyên vật liệu - công cụ dụng cụ trong doa…",
-      "topicLabel": "Báo cáo thực tập",
-      "tags": [
-        "CCDC",
-        "Báo cáo thực tập",
-        "Học liệu",
-        "Tham khảo",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/bao-cao-thuc-tap-ke-toan-nguyen-vat-lieu-tai-ct-quang-trung.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -229,6 +185,48 @@
       "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-nguyen-vat-lieu-tai-ct-quang-trung.html",
       "title": "Mẫu báo cáo: Kế toán nguyên vật liệu tại công ty Cơ Khí Quang Trung",
       "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán nguyên vật liệu tại công ty Cơ Khí Quang Tr…",
+      "topicLabel": "Báo cáo thực tập",
+      "tags": [
+        "Báo cáo thực tập",
+        "Học liệu",
+        "Tham khảo",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-doanh-thu-va-xac-dinh-ket-qua-kd.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-doanh-thu-va-xac-dinh-ket-qua-kd.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-doanh-thu-va-xac-dinh-ket-qua-kd.html",
+      "title": "Mẫu báo cáo: Kế toán doanh thu, xác định kết quả kinh doanh tại Công ty TNHH Tín Nghĩa",
+      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán doanh thu, xác định kết quả kinh doanh tại…",
+      "topicLabel": "Báo cáo thực tập",
+      "tags": [
+        "Báo cáo thực tập",
+        "Học liệu",
+        "Tham khảo",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2010-05-31",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-tong-hop-tai-cty-xay-dung-mai-lam.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-tong-hop-tai-cty-xay-dung-mai-lam.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-tong-hop-tai-cty-xay-dung-mai-lam.html",
+      "title": "Mẫu báo cáo: Báo cáo thực tập tổng hợp tại công ty TNHH xây dựng và thương mại Mai Lâm",
+      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập tổng hợp tại công ty TNHH xây dựng và thương mại Mai Lâm. LỜ…",
       "topicLabel": "Báo cáo thực tập",
       "tags": [
         "Báo cáo thực tập",
@@ -267,17 +265,16 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
+      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-nguyen-vat-lieu-tai-ct-quang-trung.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
-      "title": "Mẫu báo cáo: Kế toán nguyên vật liệu công cụ dụng cụ tại Công ty công trình Đường Thủy",
-      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán nguyên vật liệu công cụ dụng cụ tại công ty…",
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-nguyen-vat-lieu-tai-ct-quang-trung.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-nguyen-vat-lieu-tai-ct-quang-trung.html",
+      "title": "Mẫu báo cáo: Kế toán nguyên vật liệu tại công ty Cơ Khí Quang Trung",
+      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán nguyên vật liệu tại công ty Cơ Khí Quang Tr…",
       "topicLabel": "Báo cáo thực tập",
       "tags": [
-        "CCDC",
         "Báo cáo thực tập",
         "Học liệu",
         "Tham khảo",

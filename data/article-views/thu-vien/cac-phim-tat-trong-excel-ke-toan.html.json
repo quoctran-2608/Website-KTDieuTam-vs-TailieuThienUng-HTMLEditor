@@ -32,10 +32,12 @@
     "canonical": "https://ketoandieutam.com/thu-vien/cac-phuong-phap-tinh-gia-hang-nhap-kho-nvl-thanh-pham.html",
     "title": "Các phương pháp tính giá hàng nhập kho NVL - thành phẩm",
     "excerpt": "Cách tính giá hàng nhập kho hàng hóa, nguyên vật liệu, thành phẩm … như thế nào? Đó là câu hỏi của nhiều bạn kế toán mớ…",
-    "topicLabel": "Khác",
+    "topicLabel": "Tài sản - Kho - CCDC",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "Tài sản",
+      "Kho",
+      "CCDC",
+      "Kế toán",
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach tinh gia hang nhap kho.png",
@@ -176,6 +178,28 @@
   ],
   "related": [
     {
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Thực hành"
+      ],
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -218,28 +242,6 @@
       "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-02",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-su-dung-ham-sumif-trong-excel-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-su-dung-ham-sumif-trong-excel-ke-toan.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-su-dung-ham-sumif-trong-excel-ke-toan.html",
-      "title": "Hướng dẫn dùng hàm Sumif trong Excel kế toán công thức chi tiết",
-      "excerpt": "Hướng dẫn sử dụng hàm Sumif trong Excel kế toán như: Cách dùng hàm Sumif để kết chuyển các bút toán cuối kỳ, tổng hợp s…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-dung-ham-sumif-trong-excel-ke-toan.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
@@ -266,14 +268,14 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-can-doi-ke-toan-theo-quyet-dinh-15-excel-moi-nhat.html",
+      "id": "thu-vien/mau-bang-can-doi-ke-toan-excel-moi-nhat-theo-quyet-dinh-48.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-can-doi-ke-toan-theo-quyet-dinh-15-excel-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-can-doi-ke-toan-theo-quyet-dinh-15-excel-moi-nhat.html",
-      "title": "Mẫu bảng cân đối kế toán trên Excel theo QĐ 15",
-      "excerpt": "Mẫu bảng cân đối kế toán trên Excel mới nhất mẫu số B 01–DN Ban hành theo Quyết định số 15/2006/QĐ-BTC Ngày 20/03/2006…",
+      "href": "thu-vien/mau-bang-can-doi-ke-toan-excel-moi-nhat-theo-quyet-dinh-48.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-can-doi-ke-toan-excel-moi-nhat-theo-quyet-dinh-48.html",
+      "title": "Mẫu bảng cân đối kế toán Excel theo Thông tư 200",
+      "excerpt": "Mẫu bảng cân đối kế toán theo Thông tư 200, đây là Mẫu bảng cân đối kế toán Excel mới nhất hiện nay. Cách lập bảng cân…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
@@ -282,31 +284,31 @@
         "Công cụ",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/mau-bang-can-doi-ke-toan-excel-theo-thong-tu-200.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2006-03-20",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
-      "title": "Các hàm Excel trong kế toán thường dùng",
-      "excerpt": "Các hàm Excel thông dụng trong kế toán thường dùng lên sổ sách, tính lương, kho, nhập xuất tồn, công nợ: Hướng dẫn cách…",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
         "Công cụ khác",
         "Phần mềm",
         "Công cụ",
-        "Hàm Excel"
+        "Thực hành"
       ],
-      "image": "assets/images/content/pic/Service/images/cac-ham-excel-thong-dung-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {

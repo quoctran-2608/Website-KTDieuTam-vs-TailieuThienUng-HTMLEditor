@@ -191,10 +191,10 @@
         "Hóa đơn điện tử",
         "Hóa đơn",
         "Thuế",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Cach-lap-hoa-don-dien-tu.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2020-10-19",
       "modifiedDate": null
     },
@@ -212,46 +212,22 @@
         "GTGT",
         "Hóa đơn",
         "Thuế",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/hoa-don-thay-doi-dia-chi.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2024-08-21",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/uy-nhiem-lap-hoa-don-dien-tu.html",
+      "id": "thu-vien/cach-ke-khai-hoa-don-chiet-khau-thuong-mai.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/uy-nhiem-lap-hoa-don-dien-tu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/uy-nhiem-lap-hoa-don-dien-tu.html",
-      "title": "Ủy nhiệm lập hóa đơn điện tử theo Nghị định 70/2025 và Thông tư 32/2025",
-      "excerpt": "Quy định về việc Ủy nhiệm lập hóa đơn điện tử mới nhất hiện nay đang được hướng dẫn tại điều 4 của Thông tư 32/2025/TT-…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn điện tử",
-        "Hóa đơn",
-        "Thuế",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Uy-nhiem-lap-hoa-don-dien-tu.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2025-06-01",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/cach-ke-khai-hoa-don-dieu-chinh-theo-nghi-dinh-70-2025-nd-cp.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ke-khai-hoa-don-dieu-chinh-theo-nghi-dinh-70-2025-nd-cp.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-ke-khai-hoa-don-dieu-chinh-theo-nghi-dinh-70-2025-nd-cp.html",
-      "title": "Cách kê khai hóa đơn điều chỉnh theo Nghị định 70/2025/NĐ-CP",
-      "excerpt": "Bắt đầu từ ngày 01/06/2025 trở đi, kể từ khi Nghị định 70/2025/NĐ-CP sửa đổi Nghị định 123/2020/NĐ-CP quy định về hóa đ…",
+      "href": "thu-vien/cach-ke-khai-hoa-don-chiet-khau-thuong-mai.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-ke-khai-hoa-don-chiet-khau-thuong-mai.html",
+      "title": "Cách kê khai hóa đơn chiết khấu thương mại theo Nghị định 70/2025",
+      "excerpt": "Hướng dẫn cách kê khai hóa đơn chiết khấu thương mại theo quy định mới nhất năm 2025 tại Nghị định 70/2025/NĐ-CP - Trườ…",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
@@ -260,9 +236,33 @@
         "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Ke-khai-hoa-don-dieu-chinh(1).png",
+      "image": "assets/images/content/pic/Service/images/Ke-khai-hoa-don-Chiet-khau-thuong-mai(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-15",
+      "publishDate": "2025-06-01",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/huong-dan-cach-xuat-hoa-don-dien-tu.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/huong-dan-cach-xuat-hoa-don-dien-tu.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/huong-dan-cach-xuat-hoa-don-dien-tu.html",
+      "title": "Cách xuất hóa đơn điện tử theo nghị định 70/2025, Thông tư 32/2025",
+      "excerpt": "Hướng dẫn lập hóa đơn điện tử mới nhất năm 2025 tại Thông tư 32/2025/TT-BTC và Nghị định 70/2025/NĐ-CP quy định về hóa…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn điện tử",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cach-lap-hoa-don-dien-tu.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2020-10-19",
       "modifiedDate": null
     },
     {

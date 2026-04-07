@@ -36,10 +36,10 @@
       "Chứng từ",
       "Sổ sách",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Hinh-thuc-ghi-so-nhat-ky-chung(1).png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-01-01",
     "modifiedDate": null
   },
@@ -176,6 +176,28 @@
   ],
   "related": [
     {
+      "id": "thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
+      "title": "Cách ghi sổ theo hình thức kế toán trên máy vi tính theo Thông tư 99",
+      "excerpt": "Hướng dẫn trình tự ghi sổ kế toán theo hình thức kế toán trên máy vi tính theo chế độ kế toán của Thông tư 99/2025/TT-B…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Hinh-thuc-ke-toan-tren-may-vi-tinh(1).png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/nguyen-tac-ke-toan-cac-khoan-dau-tu-vao-don-vi-khac-theo-tt99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -194,28 +216,6 @@
       ],
       "image": "assets/images/content/pic/Service/images/nguyen-tac-ke-toan-cac-khoan-dau-tu-vao-don-vi-khac.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
-      "title": "Cách ghi sổ theo hình thức kế toán trên máy vi tính theo Thông tư 99",
-      "excerpt": "Hướng dẫn trình tự ghi sổ kế toán theo hình thức kế toán trên máy vi tính theo chế độ kế toán của Thông tư 99/2025/TT-B…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
-      "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
-        "Kế toán",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hinh-thuc-ke-toan-tren-may-vi-tinh(1).png",
-      "libraryKindLabel": "Văn bản",
       "publishDate": "2026-01-01",
       "modifiedDate": null
     },
@@ -244,14 +244,14 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/nguyen-tac-ke-toan-cac-khoan-dau-tu-vao-don-vi-khac-theo-tt99.html",
+      "id": "thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nguyen-tac-ke-toan-cac-khoan-dau-tu-vao-don-vi-khac-theo-tt99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/nguyen-tac-ke-toan-cac-khoan-dau-tu-vao-don-vi-khac-theo-tt99.html",
-      "title": "Nguyên tắc kế toán các khoản đầu tư vào đơn vị khác theo TT99",
-      "excerpt": "9 Nguyên tắc kế toán các khoản đầu tư vào đơn vị khác theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệ…",
+      "href": "thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
+      "title": "Cách ghi sổ theo hình thức kế toán trên máy vi tính theo Thông tư 99",
+      "excerpt": "Hướng dẫn trình tự ghi sổ kế toán theo hình thức kế toán trên máy vi tính theo chế độ kế toán của Thông tư 99/2025/TT-B…",
       "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "Chuẩn mực",
@@ -260,7 +260,7 @@
         "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/nguyen-tac-ke-toan-cac-khoan-dau-tu-vao-don-vi-khac.png",
+      "image": "assets/images/content/pic/Service/images/Hinh-thuc-ke-toan-tren-may-vi-tinh(1).png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-01-01",
       "modifiedDate": null

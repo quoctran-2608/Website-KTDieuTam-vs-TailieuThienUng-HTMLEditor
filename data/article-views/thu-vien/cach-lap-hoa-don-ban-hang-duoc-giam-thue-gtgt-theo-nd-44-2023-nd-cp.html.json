@@ -36,10 +36,10 @@
       "GTGT",
       "Hóa đơn",
       "Thuế",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Cach-lap-hoa-don-chiet-khau-thuong-mai.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2025-03-20",
     "modifiedDate": null
   },
@@ -197,6 +197,27 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/cach-viet-hoa-don-hang-ban-tra-lai-theo-mau-tai-tt-64.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-viet-hoa-don-hang-ban-tra-lai-theo-mau-tai-tt-64.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-viet-hoa-don-hang-ban-tra-lai-theo-mau-tai-tt-64.html",
+      "title": "Cách lập hóa đơn hàng bán bị trả lại theo nghị định 70/2025",
+      "excerpt": "Hướng dẫn cách xử lý hóa đơn khi phát sinh hàng bán bị trả lại theo quy định mới nhất năm 2025 tại Nghị định 70/2025/NĐ…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cach-lap-hoa-don-hang-ban-bi-tra-lai(2).png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-06-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-xac-dinh-so-thue-gtgt-duoc-hoan-doi-voi-hang-hoa-dich-vu-xuat-khau.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -215,27 +236,6 @@
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-07-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-xuat-hoa-don-giam-gia-hang-ban.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-xuat-hoa-don-giam-gia-hang-ban.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-xuat-hoa-don-giam-gia-hang-ban.html",
-      "title": "Cách xuất hóa đơn giảm giá hàng bán",
-      "excerpt": "Hướng dẫn cách lập hóa đơn giảm giá hàng bán do sản phẩm, hàng hoá kém, mất phẩm chất hay không đúng quy cách thoả thuậ…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hoa-don-giam-gia-hang-ban(1).png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2024-11-05",
       "modifiedDate": null
     }
   ],
@@ -262,14 +262,14 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.html",
+      "id": "thu-vien/so-chi-tiet-thue-gtgt-duoc-mien-giam-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.html",
-      "title": "Quy định về ký hiệu mẫu số hóa đơn Giá trị gia tăng",
-      "excerpt": "Quy định về mẫu số và ký hiệu hóa đơn GTGT, hóa đơn bán hàng, tem vé... Quy định về loại hóa đơn, ký hiệu hóa đơn điện…",
+      "href": "thu-vien/so-chi-tiet-thue-gtgt-duoc-mien-giam-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/so-chi-tiet-thue-gtgt-duoc-mien-giam-theo-thong-tu-99.html",
+      "title": "Sổ chi tiết thuế GTGT được miễn giảm theo Thông tư 99",
+      "excerpt": "Sổ chi tiết thuế GTGT được miễn giảm áp dụng cho các cơ sở kinh doanh thuộc các ngành và các thành phần kinh tế được mi…",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
@@ -277,9 +277,9 @@
         "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/quy-dinh-kho-giay-cua-hoa-don-dat-in.png",
+      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-thue-gtgt-duoc-mien-giam.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-03-31",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     },
     {

@@ -15,10 +15,10 @@
       "Tài khoản",
       "Hạch toán",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Hach-toan-TK131-TT99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-01-01",
     "modifiedDate": null
   },
@@ -36,10 +36,10 @@
       "Tài khoản",
       "Hạch toán",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Hach-toan-TK152-TT99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-01-01",
     "modifiedDate": null
   },
@@ -176,6 +176,48 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cach-hach-toan-thue-gtgt-dau-vao-khong-duoc-khau-tru.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-hach-toan-thue-gtgt-dau-vao-khong-duoc-khau-tru.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-thue-gtgt-dau-vao-khong-duoc-khau-tru.html",
+      "title": "Cách hạch toán thuế GTGT đầu vào không được khấu trừ",
+      "excerpt": "Hướng dẫn cách xử lý và hạch toán số tiền thuế GTGT đầu vào không được khấu trừ 1. Các trường hợp không được khấu trừ t…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/hach-toan-thue-gtgt-khong-duoc-khau-tru.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-07-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/tai-khoan-133-thue-gtgt-duoc-khau-tru-theo-tt-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/tai-khoan-133-thue-gtgt-duoc-khau-tru-theo-tt-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/tai-khoan-133-thue-gtgt-duoc-khau-tru-theo-tt-133.html",
+      "title": "Tài khoản 133 Thuế GTGT được khấu trừ theo TT 133",
+      "excerpt": "Cách hạch Tài khoản 133 theo Thông tư 133, cách hạch toán Thuế GTGT phải nộp (đầu ra), cách hạch toán thuế Giá trị gia…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/hach-toan-thue-gtgt-duoc-khau-tru-tk133-theo-tt133.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-hach-toan-thue-gia-tri-gia-tang-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -189,53 +231,11 @@
         "GTGT",
         "Hóa đơn",
         "Thuế",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Cách hạch toán thuế giá trị gia tăng phải nộp theo Thông tư 99.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/dieu-kien-khau-tru-thue-gtgt-dau-vao-nam-2014-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/dieu-kien-khau-tru-thue-gtgt-dau-vao-nam-2014-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/dieu-kien-khau-tru-thue-gtgt-dau-vao-nam-2014-moi-nhat.html",
-      "title": "Điều kiện khấu trừ thuế GTGT đầu vào 2026 theo Nghị định 181",
-      "excerpt": "Quy định về điều kiện được khấu trừ thuế GTGT mới nhất năm 2026 theo Nghị định 181/2025/NĐ-CP hướng dẫn Luật Thuế giá t…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Dieu-kien-khau-tru-thue-gtgt-dau-vao(1).png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-03-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/nguyen-tac-khau-tru-thue-gia-tri-gia-tang-dau-vao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nguyen-tac-khau-tru-thue-gia-tri-gia-tang-dau-vao.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/nguyen-tac-khau-tru-thue-gia-tri-gia-tang-dau-vao.html",
-      "title": "Nguyên tắc khấu trừ thuế GTGT đầu vào 2026 theo Nghị định 181",
-      "excerpt": "Quy định về các nguyên tắc được khấu trừ thuế GTGT đầu vào theo Nghị định 181/2025/NĐ-CP quy định chi tiết một số điều…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Nguyen-tac-khau-tru-thue-gtgt-dau-vao(1).png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2025-07-01",
       "modifiedDate": null
     }
   ],
@@ -262,26 +262,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "id": "thu-vien/so-chi-tiet-thue-gtgt-duoc-hoan-lai-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "title": "Danh sách mã chương, mã tiểu mục nộp thuế mới nhất năm 2026",
-      "excerpt": "Danh sách mã chương, mã tiểu mục nộp thuế TNCN, thuế GTGT, Thuế TNDN mới nhất năm 2026 theo Thông tư 130/2025/TT-BTC qu…",
+      "href": "thu-vien/so-chi-tiet-thue-gtgt-duoc-hoan-lai-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/so-chi-tiet-thue-gtgt-duoc-hoan-lai-theo-thong-tu-99.html",
+      "title": "Sổ chi tiết thuế GTGT được hoàn lại theo Thông tư 99",
+      "excerpt": "Sổ chi tiết thuế GTGT được hoàn lại áp dụng cho các cơ sở sản xuất, kinh doanh thuộc đối tượng tính thuế theo phương ph…",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
-        "TNCN",
-        "TNDN",
         "Hóa đơn",
         "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
+      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-thue-gtgt-duoc-hoan-lai.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-01-01",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     },
     {

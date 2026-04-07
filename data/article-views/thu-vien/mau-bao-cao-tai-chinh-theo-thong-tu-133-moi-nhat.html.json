@@ -17,10 +17,10 @@
       "Phần mềm",
       "Công cụ",
       "BCTC",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -194,10 +194,10 @@
         "Mẫu biểu",
         "Thủ tục",
         "BCTC",
-        "Văn bản"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-THUYET MINH -bao-cao-tinh-hinh-tai-chinh-tt99.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
       "modifiedDate": null
     },
@@ -216,36 +216,13 @@
         "Mẫu biểu",
         "Thủ tục",
         "BCTC",
-        "Văn bản"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-bao-cao-tai-chinh-giua-nien-do-tt99.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
       "modifiedDate": null
     },
-    {
-      "id": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-99.html",
-      "title": "Mẫu Báo cáo tình hình tài chính theo Thông tư 99",
-      "excerpt": "Báo cáo tình hình tài chính là Báo cáo tài chính tổng hợp, phản ánh tổng quát toàn bộ giá trị tài sản hiện có và nguồn…",
-      "topicLabel": "Mẫu biểu kế toán",
-      "tags": [
-        "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/mau-bao-cao-tinh-hinh-tai-chinh-tt99.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2025-10-27",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
     {
       "id": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
       "section": "thu-vien",
@@ -260,32 +237,57 @@
         "Mẫu biểu kế toán",
         "Mẫu biểu",
         "Thủ tục",
-        "Hướng dẫn"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-mau-b01b-dnn.png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
-      "id": "thu-vien/mau-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-quyet-dinh-48.html",
+      "id": "thu-vien/cach-lap-bao-cao-tai-chinh-theo-thong-tu-133-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-quyet-dinh-48.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-quyet-dinh-48.html",
-      "title": "Mẫu báo cáo kết quả hoạt động kinh doanh theo TT 200 và 133",
-      "excerpt": "Mẫu báo cáo kết quả hoạt động kinh doanh theo Thông tư 200 và 133, chia sẻ là 2 Mẫu báo cáo kết quả kinh doanh Excel mớ…",
+      "href": "thu-vien/cach-lap-bao-cao-tai-chinh-theo-thong-tu-133-tren-misa.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-tai-chinh-theo-thong-tu-133-tren-misa.html",
+      "title": "Cách lập báo cáo tài chính theo thông tư 133 trên Misa",
+      "excerpt": "Hướng dẫn cách cách lập báo cáo tài chính theo thông tư 133 trên phần mềm Misa Đối với những doanh nghiệp áp dụng chế đ…",
+      "topicLabel": "MISA",
+      "tags": [
+        "MISA",
+        "Phần mềm",
+        "Công cụ",
+        "BCTC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-lap-bao-cao-tai-chinh-theo-thong-tu-133-tren-misa-1.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-thuyet-minh-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-thuyet-minh-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-thuyet-minh-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "title": "Mẫu thuyết minh Báo cáo tài chính theo Thông tư 99",
+      "excerpt": "Bản thuyết minh Báo cáo tài chính năm theo Thông tư 99/2025/TT-BTC là Mẫu số B09 - DN và Mẫu số B09 – DNKLT 1. Bản thuy…",
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu kế toán",
         "Mẫu biểu",
         "Thủ tục",
+        "BCTC",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-bao-cao-ket-qua-kinh-doanh-Excel-theo-tt-200-133.png",
+      "image": "assets/images/content/pic/Service/images/mau-THUYET MINH -bao-cao-tinh-hinh-tai-chinh-tt99.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2016-08-26",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     }
   ]

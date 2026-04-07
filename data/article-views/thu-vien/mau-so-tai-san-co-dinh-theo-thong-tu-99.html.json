@@ -16,10 +16,10 @@
       "Mẫu biểu kế toán",
       "Mẫu biểu",
       "Thủ tục",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/mau-so-tai-san-co-dinh.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2016-08-26",
     "modifiedDate": null
   },
@@ -191,10 +191,10 @@
         "Mẫu biểu kế toán",
         "Mẫu biểu",
         "Thủ tục",
-        "Văn bản"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-the-tai-san-co-dinh.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
       "modifiedDate": null
     },
@@ -214,10 +214,10 @@
         "Mẫu biểu",
         "Thủ tục",
         "Khấu hao",
-        "Văn bản"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-bang-tinh-khau-hao-TSCD-tren-Excel.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
       "modifiedDate": null
     },
@@ -236,56 +236,58 @@
         "Mẫu biểu kế toán",
         "Mẫu biểu",
         "Thủ tục",
-        "Văn bản"
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/bien-ban-kiem-ke-tai-san-co-dinh.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "id": "thu-vien/cach-lap-so-tai-san-co-dinh-the-tai-san-co-dinh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
-      "title": "Cách lập báo cáo tính tài chính Mẫu B01b-DNN theo TT 133",
-      "excerpt": "Mẫu Báo cáo tình hình tài chính B01b-DNN theo Thông tư 133, hướng dẫn cách làm Báo cáo tình hình tài chính Mẫu B01b-DNN…",
-      "topicLabel": "Mẫu biểu kế toán",
+      "href": "thu-vien/cach-lap-so-tai-san-co-dinh-the-tai-san-co-dinh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-so-tai-san-co-dinh-the-tai-san-co-dinh.html",
+      "title": "Cách lập sổ tài sản cố định theo Thông tư 200",
+      "excerpt": "Hướng dẫn cách ghi sổ tài sản cố định Mẫu S21- DN theo Thông tư 200/2014/TT-BTC : Mục đích lập, căn cứ và phương pháp g…",
+      "topicLabel": "Tài sản - Kho - CCDC",
       "tags": [
-        "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
+        "TSCĐ",
+        "Tài sản",
+        "Kho",
+        "CCDC",
+        "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-mau-b01b-dnn.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-08-26",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/thong-bao-so-tai-khoan-cua-ho-ca-nhan-kinh-doanh.html",
+      "id": "thu-vien/mau-the-tai-san-co-dinh-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thong-bao-so-tai-khoan-cua-ho-ca-nhan-kinh-doanh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thong-bao-so-tai-khoan-cua-ho-ca-nhan-kinh-doanh.html",
-      "title": "Mẫu thông báo số tài khoản, số hiệu ví điện tử của hộ kinh doanh",
-      "excerpt": "Hộ kinh doanh, cá nhân kinh doanh sẽ sử dụng Mẫu số: 01/BK-STK theo Thông tư 18/2026/TT-BTC để Thông báo về số tài khoả…",
+      "href": "thu-vien/mau-the-tai-san-co-dinh-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-the-tai-san-co-dinh-theo-thong-tu-99.html",
+      "title": "Mẫu Thẻ Tài sản cố định theo Thông tư 99",
+      "excerpt": "Thẻ Tài sản cố định dùng để theo dõi chi tiết từng TSCĐ của doanh nghiệp, tình hình thay đổi nguyên giá và giá trị hao…",
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "Hộ kinh doanh",
+        "TSCĐ",
         "Mẫu biểu kế toán",
         "Mẫu biểu",
         "Thủ tục",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Mau-thong-bao-tai-khoan-ngan-hang-ho-kinh-doanh(1).png",
+      "image": "assets/images/content/pic/Service/images/mau-the-tai-san-co-dinh.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-20",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     }
   ]

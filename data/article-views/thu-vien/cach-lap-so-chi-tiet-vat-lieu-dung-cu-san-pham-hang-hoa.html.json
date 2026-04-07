@@ -14,10 +14,10 @@
     "tags": [
       "Học liệu",
       "Tham khảo",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2014-12-22",
     "modifiedDate": null
   },
@@ -36,10 +36,10 @@
       "Công cụ khác",
       "Phần mềm",
       "Công cụ",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Mau-so-NKC-tren-Excel.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -176,6 +176,26 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
+      "title": "Cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa",
+      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa Mẫu S11- DN theo Thông tư 200/2014/TT-B…",
+      "topicLabel": "Khác",
+      "tags": [
+        "Học liệu",
+        "Tham khảo",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach lap bang tong hop chi tiet hang hoa vat lieu.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -188,10 +208,10 @@
       "tags": [
         "Học liệu",
         "Tham khảo",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach lap so tien gui ngan hang.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
@@ -208,31 +228,11 @@
       "tags": [
         "Học liệu",
         "Tham khảo",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/the-quay-hang-mau-so-02-bh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/the-quay-hang-mau-so-02-bh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/the-quay-hang-mau-so-02-bh.html",
-      "title": "Mẫu thẻ quầy hàng 02-BH theo Thông tư 133 và 200",
-      "excerpt": "Hướng dẫn cách lập Thẻ quầy hàng theo Thông tư 133 và 200 - Mẫu 02–BH, Thẻ này do người bán hàng giữ và ghi hàng ngày (…",
-      "topicLabel": "Khác",
-      "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/mau-the-quay-hang.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2016-08-26",
       "modifiedDate": null
     }
   ],
@@ -258,21 +258,21 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
+      "id": "thu-vien/the-quay-hang-mau-so-02-bh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
-      "title": "Mẫu Sổ chi tiết thanh toán với người mua - bán theo TT 133 và 200",
-      "excerpt": "Hướng dẫn cách lập Sổ chi tiết thanh toán với người mua (người bán) theo Thông tư 133 và 200 – Mẫu S12-DNN…",
+      "href": "thu-vien/the-quay-hang-mau-so-02-bh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/the-quay-hang-mau-so-02-bh.html",
+      "title": "Mẫu thẻ quầy hàng 02-BH theo Thông tư 133 và 200",
+      "excerpt": "Hướng dẫn cách lập Thẻ quầy hàng theo Thông tư 133 và 200 - Mẫu 02–BH, Thẻ này do người bán hàng giữ và ghi hàng ngày (…",
       "topicLabel": "Khác",
       "tags": [
         "Học liệu",
         "Tham khảo",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-thanh-toan-nguoi-mua-ban.png",
+      "image": "assets/images/content/pic/Service/images/mau-the-quay-hang.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null

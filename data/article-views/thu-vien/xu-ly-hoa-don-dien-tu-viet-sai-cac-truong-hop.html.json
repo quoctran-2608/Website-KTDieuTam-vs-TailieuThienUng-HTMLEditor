@@ -16,10 +16,10 @@
       "Hóa đơn điện tử",
       "Hóa đơn",
       "Thuế",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/xu-ly-hoa-don-sai-dia-chi-nguoi-mua.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2020-10-19",
     "modifiedDate": null
   },
@@ -37,10 +37,10 @@
       "GTGT",
       "Hóa đơn",
       "Thuế",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/hoa-don-thay-doi-dia-chi.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2024-08-21",
     "modifiedDate": null
   },
@@ -199,6 +199,28 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/xu-ly-hoa-don-dien-tu-sai-dia-chi-nguoi-mua.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/xu-ly-hoa-don-dien-tu-sai-dia-chi-nguoi-mua.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/xu-ly-hoa-don-dien-tu-sai-dia-chi-nguoi-mua.html",
+      "title": "Xử lý hóa đơn điện tử sai địa chỉ người mua 2026 theo Nghị định 70",
+      "excerpt": "Hướng dẫn cách xử lý hóa đơn điện tử bị sai địa chỉ người mua mới nhất năm 2026 theo quy định tại Nghị định 70/2025/N…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn điện tử",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/xu-ly-hoa-don-sai-dia-chi-nguoi-mua.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2020-10-19",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-tra-cuu-hoa-don-dien-tu-dau-vao-dau-ra-tren-trang-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -218,28 +240,6 @@
       "image": "assets/images/content/pic/Service/images/tra-cuu-hoa-don-dien-tu(3).png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/nguyen-tac-lap-quan-ly-su-dung-hoa-don-dien-tu.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nguyen-tac-lap-quan-ly-su-dung-hoa-don-dien-tu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/nguyen-tac-lap-quan-ly-su-dung-hoa-don-dien-tu.html",
-      "title": "Nguyên tắc lập, quản lý, sử dụng hóa đơn điện tử 2025 mới nhất",
-      "excerpt": "Nguyên tắc lập, quản lý, sử dụng hóa đơn điện tử mới nhất năm 2025 theo quy định tại Nghị định 70/2025/NĐ-CP sửa đổi Ng…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn điện tử",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/nguyen-tac-lap-quan-ly-su-dung-hoa-don-dien-tu.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-06-01",
       "modifiedDate": null
     }
   ],

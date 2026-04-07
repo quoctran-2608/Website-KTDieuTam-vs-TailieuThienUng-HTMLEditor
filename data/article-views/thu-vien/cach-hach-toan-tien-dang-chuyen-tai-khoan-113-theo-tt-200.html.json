@@ -36,10 +36,10 @@
       "Tài khoản",
       "Hạch toán",
       "Kế toán",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach hach toan tien gui ngan han tk 112.gif",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2014-12-22",
     "modifiedDate": null
   },
@@ -189,10 +189,10 @@
         "Tài khoản",
         "Hạch toán",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach hach toan tien gui ngan han tk 112.gif",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
     },
@@ -210,36 +210,13 @@
         "Tài khoản",
         "Hạch toán",
         "Kế toán",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach hach toan tien mat tk 111.gif",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
     },
-    {
-      "id": "thu-vien/hach-toan-tai-khoan-113-tien-dang-chuyen-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/hach-toan-tai-khoan-113-tien-dang-chuyen-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/hach-toan-tai-khoan-113-tien-dang-chuyen-theo-thong-tu-99.html",
-      "title": "Hạch toán Tài khoản 113 - Tiền đang chuyển theo Thông tư 99/2025/TT-BTC",
-      "excerpt": "Tài khoản 113 - Tiền đang chuyển: dùng để phản ánh các khoản tiền của doanh nghiệp đã nộp vào ngân hàng, đã gửi bưu điệ…",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản",
-        "Hạch toán",
-        "Kế toán",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-TK113-TT99.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
     {
       "id": "thu-vien/cach-hach-toan-chung-khoan-kinh-doanh-tai-khoan-121-theo-tt-200.html",
       "section": "thu-vien",
@@ -260,26 +237,47 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
-      "id": "thu-vien/so-theo-doi-tscd-va-ccdc-tai-noi-su-dung-theo-tt-133-va-200.html",
+      "id": "thu-vien/cach-hach-toan-tien-gui-ngan-hang-tai-khoan-112-theo-thong-tu-200.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/so-theo-doi-tscd-va-ccdc-tai-noi-su-dung-theo-tt-133-va-200.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/so-theo-doi-tscd-va-ccdc-tai-noi-su-dung-theo-tt-133-va-200.html",
-      "title": "Mẫu Sổ theo dõi TSCĐ - CCDC tại nơi sử dụng theo TT 133 và 200",
-      "excerpt": "Hướng dẫn cách lập Sổ theo dõi TSCĐ và CCDC tại nơi sử dụng theo Thông tư 133 và 200 – Mẫu S10-DNN (S22-DN)…",
-      "topicLabel": "Tài sản - Kho - CCDC",
+      "href": "thu-vien/cach-hach-toan-tien-gui-ngan-hang-tai-khoan-112-theo-thong-tu-200.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-tien-gui-ngan-hang-tai-khoan-112-theo-thong-tu-200.html",
+      "title": "Cách hạch toán tiền gửi ngân hàng – TK 112 theo Thông tư 200",
+      "excerpt": "CÁCH HẠCH TOÁN TÀI KHOẢN 112 - TIỀN GỬI NGÂN HÀNG Theo Thông tư 200/2014/TT-BTC ngày 22/12/2014 (Có hiệu lực từ…",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "TSCĐ",
-        "CCDC",
-        "Tài sản",
-        "Kho",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach hach toan tien gui ngan han tk 112.gif",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
+      "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
         "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-so-theo-doi-Tai-san-co-dinh-cong-cu-dung-cu tai-noi-su-dung.png",
+      "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null

@@ -15,10 +15,10 @@
       "Báo cáo tài chính",
       "Kế toán",
       "BCTC",
-      "Văn bản"
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Biểu mẫu",
     "publishDate": "2016-08-26",
     "modifiedDate": null
   },
@@ -36,10 +36,10 @@
       "Báo cáo tài chính",
       "Kế toán",
       "BCTC",
-      "Văn bản"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach lap bao cao luu chuyen tien te theo phuong phap truc tiep.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -189,32 +189,11 @@
         "Báo cáo tài chính",
         "Kế toán",
         "BCTC",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach lap bao cao luu chuyen tien te theo phuong phap truc tiep.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.html",
-      "title": "Mẫu Báo cáo lưu chuyển tiền tệ theo Thông tư 133 - Cách lập",
-      "excerpt": "Cách lập Báo cáo lưu chuyển tiền tệ theo phương pháp trực tiếp và gián tiếp theo Mẫu Báo cáo lưu chuyển tiền tệ theo Th…",
-      "topicLabel": "Báo cáo tài chính",
-      "tags": [
-        "Báo cáo tài chính",
-        "Kế toán",
-        "BCTC",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2016-08-26",
       "modifiedDate": null
     },
     {
@@ -231,15 +210,13 @@
         "Báo cáo tài chính",
         "Kế toán",
         "BCTC",
-        "Văn bản"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach-lap-bao-cao-kq-hoat-dong-kinh-doanh-tt99.png",
-      "libraryKindLabel": "Văn bản",
+      "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2006-03-20",
       "modifiedDate": null
-    }
-  ],
-  "latestOther": [
+    },
     {
       "id": "thu-vien/chuan-muc-ke-toan-so-24-bao-cao-luu-chuyen-tien-te.html",
       "section": "thu-vien",
@@ -260,16 +237,39 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2002-12-31",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
-      "id": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
+      "id": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-truc-tiep-va-gian-tiep.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.html",
-      "title": "Mẫu Báo cáo kết quả hoạt động kinh doanh theo TT 133 - Cách lập",
-      "excerpt": "Cách lập Báo cáo kết quả hoạt động kinh doanh theo Thông tư 133 Mẫu B02 – DNN mới nhất, cơ sở lập và phương pháp lập cá…",
+      "href": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-truc-tiep-va-gian-tiep.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-truc-tiep-va-gian-tiep.html",
+      "title": "Hướng dẫn cách lập báo cáo lưu chuyển tiền tệ theo Thông tư 200",
+      "excerpt": "Có 2 phương pháp lập báo cáo lưu chuyển tiền tệ là: Trực tiếp và gián tiếp. Bài viết này Kế toán Diệu Tâm xin hướng dẫn…",
+      "topicLabel": "Báo cáo tài chính",
+      "tags": [
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach lap bao cao luu chuyen tien te theo phuong phap truc tiep.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.html",
+      "title": "Mẫu Báo cáo lưu chuyển tiền tệ theo Thông tư 133 - Cách lập",
+      "excerpt": "Cách lập Báo cáo lưu chuyển tiền tệ theo phương pháp trực tiếp và gián tiếp theo Mẫu Báo cáo lưu chuyển tiền tệ theo Th…",
       "topicLabel": "Báo cáo tài chính",
       "tags": [
         "Báo cáo tài chính",
@@ -277,7 +277,7 @@
         "BCTC",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-thong-tu-133.png",
+      "image": "assets/images/content/pic/Service/images/bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null

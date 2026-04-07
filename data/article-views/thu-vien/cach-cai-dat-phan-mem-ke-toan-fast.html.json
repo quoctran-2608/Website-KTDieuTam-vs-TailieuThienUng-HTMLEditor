@@ -14,10 +14,10 @@
     "tags": [
       "Học liệu",
       "Tham khảo",
-      "Hướng dẫn"
+      "Văn bản"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Văn bản",
     "publishDate": "2013-12-26",
     "modifiedDate": null
   },
@@ -211,10 +211,11 @@
         "FAST",
         "Phần mềm",
         "Công cụ",
-        "Tải về"
+        "Tải về",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/tai-phan-mem-ke-toan-Fast-dung-thu.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
@@ -264,29 +265,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-he-thong-thang-bang-luong-moi-nhat-theo-nd-49.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-he-thong-thang-bang-luong-moi-nhat-theo-nd-49.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-he-thong-thang-bang-luong-moi-nhat-theo-nd-49.html",
-      "title": "Mẫu thang bảng lương 2026 Excel của Cty TNHH, Cổ phần",
-      "excerpt": "Mẫu thang bảng lương năm 2026 mới nhất: Mẫu hệ thống thang bảng lương của Công ty Cổ phần, TNHH; Tải biểu mẫu thang bản…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Tiền lương",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/Thang-bang-luong.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/tai-phan-mem-ke-toan-fast-accounting-mien-phi-dung-thu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -300,11 +278,34 @@
         "FAST",
         "Phần mềm",
         "Công cụ",
-        "Tải về"
+        "Tải về",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/tai-phan-mem-ke-toan-Fast-dung-thu.png",
-      "libraryKindLabel": "Công cụ",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Thực hành"
+      ],
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]
