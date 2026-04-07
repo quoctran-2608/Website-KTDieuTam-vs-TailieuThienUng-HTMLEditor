@@ -1,6 +1,6 @@
 {
   "currentIndex": 771,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/dn-phai-lap-bao-cao-tinh-hinh-su-dung-lao-dong-va-so-quan-ly-lao-dong.html",
     "section": "thu-vien",
@@ -166,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -177,27 +177,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/thu-tuc-lam-ho-so-ke-khai-thue-ban-dau.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thu-tuc-lam-ho-so-ke-khai-thue-ban-dau.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-lam-ho-so-ke-khai-thue-ban-dau.html",
-      "title": "Thủ tục hồ sơ khai thuế ban đầu 2021 Cty mới thành lập",
-      "excerpt": "Doanh nghiệp mới thành lập cần làm những gì? Hồ sơ khai thuế ban đầu 2021, thủ tục đăng ký thuế ban đầu như nào? Kế toá…",
-      "topicLabel": "Khác",
-      "tags": [
-        "Kê khai",
-        "Học liệu",
-        "Tham khảo",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/thu-tuc-khai-thue-ban-dau.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2022-01-30",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/dang-ky-thanh-lap-chi-nhanh-vpdd-dia-diem-kinh-doanh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -206,10 +185,11 @@
       "canonical": "https://ketoandieutam.com/thu-vien/dang-ky-thanh-lap-chi-nhanh-vpdd-dia-diem-kinh-doanh.html",
       "title": "Đăng ký thành lập chi nhánh, văn phòng đại diện, địa điểm kinh doanh",
       "excerpt": "10 biểu mẫu sử dụng trong việc đăng ký thành lập chi nhánh, văn phòng đại diện, lập địa điểm kinh doanh được ban hành k…",
-      "topicLabel": "Khác",
+      "topicLabel": "DN - Thủ tục",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "DN",
+        "Thủ tục",
+        "Doanh nghiệp",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -226,58 +206,81 @@
       "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.html",
       "title": "Thủ tục giải thể doanh nghiệp, công ty mới nhất",
       "excerpt": "Thủ tục giải thể Doanh nghiệp, Công ty mới nhất: Điều kiện, hồ sơ, trình tự thủ tục giải thể Công ty cổ phần, TNHH 1TV,…",
-      "topicLabel": "Khác",
+      "topicLabel": "DN - Thủ tục",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "DN",
+        "Thủ tục",
+        "Doanh nghiệp",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/trinh-tu-giai-the-doanh-nghiep.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-xac-dinh-doanh-nghiep-vua-va-nho-sieu-nho.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-xac-dinh-doanh-nghiep-vua-va-nho-sieu-nho.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-xac-dinh-doanh-nghiep-vua-va-nho-sieu-nho.html",
+      "title": "Cách xác định doanh nghiệp vừa và nhỏ 2026 mới nhất",
+      "excerpt": "Hướng dẫn cách xác định doanh nghiệp vừa và nhỏ theo các tiêu chí được quy định tại Nghị định 80/2021/NĐ-CP quy định ch…",
+      "topicLabel": "DN - Thủ tục",
+      "tags": [
+        "DN",
+        "Thủ tục",
+        "Doanh nghiệp",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cach-xac-dinh-doanh-nghiep-vua-va-nho.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-15",
+      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/thu-tuc-lam-ho-so-ke-khai-thue-ban-dau.html",
+      "id": "thu-vien/dang-ky-thanh-lap-chi-nhanh-vpdd-dia-diem-kinh-doanh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thu-tuc-lam-ho-so-ke-khai-thue-ban-dau.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-lam-ho-so-ke-khai-thue-ban-dau.html",
-      "title": "Thủ tục hồ sơ khai thuế ban đầu 2021 Cty mới thành lập",
-      "excerpt": "Doanh nghiệp mới thành lập cần làm những gì? Hồ sơ khai thuế ban đầu 2021, thủ tục đăng ký thuế ban đầu như nào? Kế toá…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/dang-ky-thanh-lap-chi-nhanh-vpdd-dia-diem-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/dang-ky-thanh-lap-chi-nhanh-vpdd-dia-diem-kinh-doanh.html",
+      "title": "Đăng ký thành lập chi nhánh, văn phòng đại diện, địa điểm kinh doanh",
+      "excerpt": "10 biểu mẫu sử dụng trong việc đăng ký thành lập chi nhánh, văn phòng đại diện, lập địa điểm kinh doanh được ban hành k…",
+      "topicLabel": "DN - Thủ tục",
       "tags": [
-        "Kê khai",
-        "Học liệu",
-        "Tham khảo",
+        "DN",
+        "Thủ tục",
+        "Doanh nghiệp",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/thu-tuc-khai-thue-ban-dau.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2022-01-30",
+      "publishDate": "2026-09-15",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html",
+      "id": "thu-vien/danh-sach-chu-so-huu-huong-loi-cua-doanh-nghiep.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html",
-      "title": "Quy chế dân chủ ở cơ sở tại nơi làm việc",
-      "excerpt": "Quy định về quy chế dân chủ ở cơ sở tại nơi làm việc hiện nay đang được thực hiện theo Nghị định 145/2020/NĐ-CP q…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/danh-sach-chu-so-huu-huong-loi-cua-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/danh-sach-chu-so-huu-huong-loi-cua-doanh-nghiep.html",
+      "title": "Danh sách chủ sở hữu hưởng lợi của doanh nghiệp",
+      "excerpt": "Mẫu Danh sách chủ sở hữu hưởng lợi của doanh nghiệp theo thông tư số 68/2025/TT-BTC Trong bài viết này, Công ty đào đạ…",
+      "topicLabel": "DN - Thủ tục",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "DN",
+        "Thủ tục",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/quy-che-dan-chu.jpg",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-09-15",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
   "currentIndex": 1021,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-24-dk-tct-theo-tt-86-de-nghi-cham-dut-hieu-luc-mst.html",
     "section": "thu-vien",
@@ -13,8 +13,7 @@
     "topicLabel": "Mẫu biểu kế toán",
     "tags": [
       "Mẫu biểu kế toán",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Kế toán",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -34,8 +33,7 @@
     "topicLabel": "Mẫu biểu kế toán",
     "tags": [
       "Mẫu biểu kế toán",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Kế toán",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -165,8 +163,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -175,6 +173,29 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/mau-giay-uy-quyen-quyet-toan-thue-tncn-mau-so-04-2-tncn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-giay-uy-quyen-quyet-toan-thue-tncn-mau-so-04-2-tncn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-giay-uy-quyen-quyet-toan-thue-tncn-mau-so-04-2-tncn.html",
+      "title": "Mẫu giấy ủy quyền quyết toán thuế TNCN 08/UQ-QTT-TNCN năm 2026",
+      "excerpt": "Mẫu giấy ủy quyền quyết toán thuế TNCN mới nhất năm 2026 là Mẫu 08/UQ-QTT-TNCN được ban hành kèm theo thông tư số 80/20…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "TNCN",
+        "Quyết toán",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Giay-uy-quyen-quyet-toan-thue-TNCN.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2021-09-29",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/mau-chung-tu-khau-tru-thue-tncn-dien-tu.html",
       "section": "thu-vien",
@@ -189,8 +210,7 @@
         "TNCN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-chung-tu-khau-tru-thue-TNCN(7).png",
@@ -212,15 +232,16 @@
         "TNCN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-so-06-1-BK-TNCN-bang-ke-chi-tiet-ca-nhan-co-thu-nhap-trong-nam-tinh-thue.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-04-02",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/bang-thue-suat-thue-tncn-theo-bieu-luy-tien-tung-phan.html",
       "section": "thu-vien",
@@ -235,60 +256,35 @@
         "TNCN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/Thue-suat-thue-TNCN.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-nam-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-nam-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-nam-moi-nhat.html",
-      "title": "Cách tính thuế thu nhập cá nhân năm 2026 mới nhất",
-      "excerpt": "Hướng dẫn cách tính thuế thu nhập cá nhân từ tiền lương tiền công theo công thức và ví dụ mới nhất năm 2026 1. Thời điể…",
-      "topicLabel": "Thuế thu nhập cá nhân",
-      "tags": [
-        "TNCN",
-        "Thuế thu nhập cá nhân",
         "Thuế",
-        "Hóa đơn",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Cach-tinh-thue-TNCN.jpg",
+      "image": "assets/images/content/pic/Service/images/Thue-suat-thue-TNCN.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-05",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-chung-tu-khau-tru-thue-tncn-dien-tu.html",
+      "id": "thu-vien/mau-giay-uy-quyen-quyet-toan-thue-tncn-mau-so-04-2-tncn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-chung-tu-khau-tru-thue-tncn-dien-tu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-chung-tu-khau-tru-thue-tncn-dien-tu.html",
-      "title": "Mẫu chứng từ khấu trừ thuế TNCN điện tử 2026 mới nhất",
-      "excerpt": "Chứng từ khấu trừ thuế TNCN là loại chứng từ dùng để ghi nhận thông tin về Khoản thu nhập, thời điểm trả thu nhập, tổng…",
+      "href": "thu-vien/mau-giay-uy-quyen-quyet-toan-thue-tncn-mau-so-04-2-tncn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-giay-uy-quyen-quyet-toan-thue-tncn-mau-so-04-2-tncn.html",
+      "title": "Mẫu giấy ủy quyền quyết toán thuế TNCN 08/UQ-QTT-TNCN năm 2026",
+      "excerpt": "Mẫu giấy ủy quyền quyết toán thuế TNCN mới nhất năm 2026 là Mẫu 08/UQ-QTT-TNCN được ban hành kèm theo thông tư số 80/20…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "TNCN",
+        "Quyết toán",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Mau-chung-tu-khau-tru-thue-TNCN(7).png",
+      "image": "assets/images/content/pic/Service/images/Giay-uy-quyen-quyet-toan-thue-TNCN.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
+      "publishDate": "2021-09-29",
       "modifiedDate": null
     }
   ]

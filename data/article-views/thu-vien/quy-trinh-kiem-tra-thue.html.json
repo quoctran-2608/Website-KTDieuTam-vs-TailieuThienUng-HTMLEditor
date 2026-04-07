@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1727,
-  "totalCount": 2041,
+  "currentIndex": 1725,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/quy-dinh-ve-viec-nop-tien-thue-tndn-tam-tinh-quy-2026.html",
     "section": "thu-vien",
@@ -166,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -185,10 +185,11 @@
       "canonical": "https://ketoandieutam.com/thu-vien/dieu-kien-ap-dung-thue-suat-0.html",
       "title": "Điều kiện áp dụng thuế suất 0% từ ngày 01/07/2025",
       "excerpt": "Từ ngày 01/07/2025, điều kiện áp dụng mức thuế suất thuế GTGT 0% sẽ được thực hiện theo quy định tại Nghị định 181/2025…",
-      "topicLabel": "Khác",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -197,41 +198,45 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-hoan-thue.html",
+      "id": "thu-vien/lap-hoa-don-dien-tu-co-ma-cua-co-quan-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-hoan-thue.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-hoan-thue.html",
-      "title": "Các hành vi bị nghiêm cấm trong khấu trừ, hoàn thuế",
-      "excerpt": "Quy định về các hành vi bị nghiêm cấm trong khấu trừ, hoàn thuế theo Luật Thuế GTGT số: 48/2024/QH15, ban hành ngày 26/…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/lap-hoa-don-dien-tu-co-ma-cua-co-quan-thue.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/lap-hoa-don-dien-tu-co-ma-cua-co-quan-thue.html",
+      "title": "Quy trình lập và cấp mã cho hóa đơn điện tử có mã của cơ quan thuế",
+      "excerpt": "Quy trình lập và cấp mã cho hóa đơn điện tử có mã của cơ quan thuế hiện nay đang được quy định tại điều 17 của Nghị địn…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn điện tử",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/quy-trinh-xuat-hoa-don-dien-tu-co-ma-cqt(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2024-11-26",
+      "publishDate": "2015-11-12",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-hanh-vi-vi-pham-hanh-chinh-ve-thue-moi-nhat.html",
+      "id": "thu-vien/doi-tuong-su-dung-hoa-don-dien-tu-co-ma-cua-co-quan-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-hanh-vi-vi-pham-hanh-chinh-ve-thue-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cac-hanh-vi-vi-pham-hanh-chinh-ve-thue-moi-nhat.html",
-      "title": "Các hành vi vi phạm hành chính về thuế theo TT 166",
-      "excerpt": "Theo Khoản 3 điều 1 Thông tư số 166/2013/TT-BTC của Bộ tài chính quy định: Các hành vi vi phạm hành chính về thuế bao g…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/doi-tuong-su-dung-hoa-don-dien-tu-co-ma-cua-co-quan-thue.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/doi-tuong-su-dung-hoa-don-dien-tu-co-ma-cua-co-quan-thue.html",
+      "title": "Đối tượng sử dụng hóa đơn điện tử có mã của cơ quan thuế",
+      "excerpt": "Đối tượng sử dụng hóa đơn điện tử có mã của cơ quan thuế hiện nay đang được quy định tại điều 91 của Luật Quản lý thuế…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn điện tử",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cac hanh vi vi pham hanh chinh ve thue.jpg",
+      "image": "assets/images/content/pic/Service/images/Doi-tuong-su-dung-hoa-don-co-ma-cua-CQT.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
@@ -247,10 +252,11 @@
       "canonical": "https://ketoandieutam.com/thu-vien/dieu-kien-ap-dung-thue-suat-0.html",
       "title": "Điều kiện áp dụng thuế suất 0% từ ngày 01/07/2025",
       "excerpt": "Từ ngày 01/07/2025, điều kiện áp dụng mức thuế suất thuế GTGT 0% sẽ được thực hiện theo quy định tại Nghị định 181/2025…",
-      "topicLabel": "Khác",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -259,24 +265,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
+      "id": "thu-vien/so-chi-tiet-thue-gtgt-duoc-hoan-lai-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
-      "title": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế",
-      "excerpt": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế trên hệ thống Dịch vụ công hoặc thuế điện tử 1. Các mã thủ tục hàn…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/so-chi-tiet-thue-gtgt-duoc-hoan-lai-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/so-chi-tiet-thue-gtgt-duoc-hoan-lai-theo-thong-tu-99.html",
+      "title": "Sổ chi tiết thuế GTGT được hoàn lại theo Thông tư 99",
+      "excerpt": "Sổ chi tiết thuế GTGT được hoàn lại áp dụng cho các cơ sở sản xuất, kinh doanh thuộc đối tượng tính thuế theo phương ph…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Nộp tờ khai",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Ma-thu-tuc-hanh-chinh-nop-to-khai-thue.png",
+      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-thue-gtgt-duoc-hoan-lai.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2007-07-01",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     }
   ]

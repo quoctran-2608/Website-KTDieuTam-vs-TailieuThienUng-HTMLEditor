@@ -1,6 +1,6 @@
 {
   "currentIndex": 590,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
     "section": "thu-vien",
@@ -166,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -200,6 +200,28 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/uy-quyen-cho-nhan-vien-thanh-toan-tien-mua-hang-hoa-dich-vu.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/uy-quyen-cho-nhan-vien-thanh-toan-tien-mua-hang-hoa-dich-vu.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/uy-quyen-cho-nhan-vien-thanh-toan-tien-mua-hang-hoa-dich-vu.html",
+      "title": "Ủy quyền cho cá nhân, nhân viên thanh toán tiền mua hàng hóa dịch vụ",
+      "excerpt": "Ủy quyền cho cá nhân, nhân viên thanh toán tiền mua hàng hóa dịch vụ là một trong những hình thức thanh toán được luật…",
+      "topicLabel": "Tài sản - Kho - CCDC",
+      "tags": [
+        "Tài sản",
+        "Kho",
+        "CCDC",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/uy-quy-thanh-toan.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-07-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cac-truong-hop-khong-phai-trich-khau-hao-tscd.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -220,28 +242,6 @@
       "image": "assets/images/content/pic/Service/images/Khong-phai-trich-khau-hao-TSCD.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2013-04-25",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/dinh-muc-tieu-hao-nguyen-vat-lieu-nhien-lieu-hang-hoa.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/dinh-muc-tieu-hao-nguyen-vat-lieu-nhien-lieu-hang-hoa.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/dinh-muc-tieu-hao-nguyen-vat-lieu-nhien-lieu-hang-hoa.html",
-      "title": "Quy định về định mức tiêu hao nguyên vật liệu nhiên liệu",
-      "excerpt": "Hướng dẫn cách xác định định mức tiêu hao nguyên vật liệu, nhiên liệu, năng lượng, hàng hóa để đưa vào chi phí theo Thô…",
-      "topicLabel": "Tài sản - Kho - CCDC",
-      "tags": [
-        "Tài sản",
-        "Kho",
-        "CCDC",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/quy dinh ve dinh muc tieu hao nguyen vat lieu.bmp",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2017-09-25",
       "modifiedDate": null
     }
   ],

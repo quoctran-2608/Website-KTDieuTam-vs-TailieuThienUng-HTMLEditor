@@ -1,6 +1,6 @@
 {
   "currentIndex": 557,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/cach-xac-dinh-thu-nhap-tinh-thue-tndn.html",
     "section": "thu-vien",
@@ -166,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -176,6 +176,29 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "title": "Điều kiện và cách tính mức hưởng trợ cấp một lần khi sinh con 2025",
+      "excerpt": "Quy định về điều kiện và cách tính mức hưởng trợ cấp một lần khi sinh con từ ngày 01/07/2025 theo Luật Bảo hiểm xã hội…",
+      "topicLabel": "BHXH - BHYT - BHTN",
+      "tags": [
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/dieu-kien-cach-tinh-tro-cap-mot-lan-khi-sinh.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-07-01",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/cach-ghi-mau-tk3-ts-to-khai-thong-tin-dn-tham-gia-bhxh.html",
       "section": "thu-vien",
@@ -221,41 +244,18 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-07-01",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-tinh-muc-huong-tro-cap-that-nghiep.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-muc-huong-tro-cap-that-nghiep.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-tinh-muc-huong-tro-cap-that-nghiep.html",
-      "title": "Cách tính bảo hiểm thất nghiệp năm 2025",
-      "excerpt": "Hướng dẫn cách tính trợ cấp thất nghiệp 2025: Mức hưởng bảo hiểm thất nghiệp theo Chế độ hưởng Bảo hiểm thất nghiệp the…",
-      "topicLabel": "BHXH - BHYT - BHTN",
-      "tags": [
-        "BHTN",
-        "BHXH",
-        "BHYT",
-        "Lao động",
-        "Bảo hiểm",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-tinh-muc-huong-tro-cap-that-nghiep(1).png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-ghi-mau-tk3-ts-to-khai-thong-tin-dn-tham-gia-bhxh.html",
+      "id": "thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ghi-mau-tk3-ts-to-khai-thong-tin-dn-tham-gia-bhxh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-ghi-mau-tk3-ts-to-khai-thong-tin-dn-tham-gia-bhxh.html",
-      "title": "Cách lập Mẫu TK3-TS theo Quyết định 490/QĐ-BHXH mới nhất năm 2025",
-      "excerpt": "Hướng dẫn viết Mẫu TK3-TS theo Quyết định 490/QĐ-BHXH mới nhất 2025 - Tờ khai đơn vị tham gia BHXH; Cách điền Mẫu TK3…",
+      "href": "thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "title": "Điều kiện và cách tính mức hưởng trợ cấp một lần khi sinh con 2025",
+      "excerpt": "Quy định về điều kiện và cách tính mức hưởng trợ cấp một lần khi sinh con từ ngày 01/07/2025 theo Luật Bảo hiểm xã hội…",
       "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
         "BHXH",
@@ -265,9 +265,9 @@
         "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-lap-mau-tk3-ts(3)(1).png",
+      "image": "assets/images/content/pic/Service/images/dieu-kien-cach-tinh-tro-cap-mot-lan-khi-sinh.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2025-07-01",
       "modifiedDate": null
     },
     {

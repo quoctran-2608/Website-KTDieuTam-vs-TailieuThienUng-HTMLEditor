@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1872,
-  "totalCount": 2041,
+  "currentIndex": 1870,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/thong-tu-10-2020-tt-bldtbxh-huong-dan-luat-lao-dong.html",
     "section": "thu-vien",
@@ -13,8 +13,8 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
       "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/thong-tu-10-2020-huong-dan-luat-lao-dong.png",
@@ -35,7 +35,8 @@
     "tags": [
       "Đăng ký thuế",
       "Thông tư",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/thong-tu-105-2020-huong-dan-ve-dang-ky-thue.png",
@@ -165,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -187,33 +188,13 @@
       "topicLabel": "Thông tư",
       "tags": [
         "Thông tư",
-        "Văn bản pháp luật",
+        "Thuế",
         "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2017-04-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thong-tu-75-2015-tt-btc-sua-doi-bo-sung-dieu-128-tt-200.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thong-tu-75-2015-tt-btc-sua-doi-bo-sung-dieu-128-tt-200.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-75-2015-tt-btc-sua-doi-bo-sung-dieu-128-tt-200.html",
-      "title": "Thông tư 75/2015/TT-BTC sửa đổi, bổ sung điều 128 Thông tư 200/2014/TT-BTC",
-      "excerpt": "Thông tư 75/2015/TT-BTC sửa đổi, bổ sung điều 128 Thông tư 200/2014/TT-BTC ngày 22/12/2014 hướng dẫn chế độ kế toán doa…",
-      "topicLabel": "Thông tư",
-      "tags": [
-        "Thông tư",
-        "Văn bản pháp luật",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Thong tư 75 cua Bo tai chinh.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2015-05-18",
       "modifiedDate": null
     },
     {
@@ -228,57 +209,81 @@
       "topicLabel": "Thông tư",
       "tags": [
         "Thông tư",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/thong tu 173 chung tu thanh toan qua ngan hang.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2016-10-28",
       "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/thong-tu-130-2016-tt-btc-huong-dan-nghi-dinh-100-luat-106.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thong-tu-130-2016-tt-btc-huong-dan-nghi-dinh-100-luat-106.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-130-2016-tt-btc-huong-dan-nghi-dinh-100-luat-106.html",
+      "title": "Thông tư 130/2016/TT-BTC hướng dẫn Nghị định 100, Luật 106/2016/QH13",
+      "excerpt": "Thông tư 130/2016/TT-BTC ngày 12/8/2016 của Bộ tài chính hướng dẫn Nghị định 100/2016/NĐ-CP, Luật 106/2016/QH13: Sửa đổ…",
+      "topicLabel": "Thông tư",
+      "tags": [
+        "Thông tư",
+        "Thuế",
+        "Hóa đơn",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/thong tu 130_2016_tt-btc huong dan nghi dinh 100, luat 106.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2016-08-12",
+      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
+      "id": "thu-vien/cach-ke-khai-thue-tncn-tu-dau-tu-von-theo-thong-tu-80.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
-      "title": "Sửa đổi, bổ sung chế độ kế toán Thông tư 133/2016/TT-BTC",
-      "excerpt": "Ngày 20/6/2025 Bộ trưởng Bộ Tài chính ban hành Thông tư 46/2025/TT-BTC (có hiệu lực từ ngày 01/7/2025) sửa đổi, bổ sung…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "href": "thu-vien/cach-ke-khai-thue-tncn-tu-dau-tu-von-theo-thong-tu-80.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-ke-khai-thue-tncn-tu-dau-tu-von-theo-thong-tu-80.html",
+      "title": "Cách kê khai thuế TNCN từ đầu tư vốn theo thông tư 80/2021/TT-BTC",
+      "excerpt": "Hướng dẫn cách kê khai thuế TNCN từ đầu tư vốn theo thông tư 80/2021/TT-BTC và nghị định 126/2020/NĐ-CP 1. Đô…",
+      "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
-        "Kế toán",
+        "TNCN",
+        "Kê khai",
+        "Thuế thu nhập cá nhân",
+        "Thuế",
+        "Hóa đơn",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Sua-doi-thong-tu-133.png",
+      "image": "assets/images/content/pic/Service/images/ke-khai-thue-TNCN-tu-dau-tu-von.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-08-26",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cong-van-giai-trinh-nop-lai-bao-cao-tai-chinh.html",
+      "id": "thu-vien/mau-don-de-nghi-cap-hoa-don-le-theo-thong-tu-39.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-van-giai-trinh-nop-lai-bao-cao-tai-chinh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-giai-trinh-nop-lai-bao-cao-tai-chinh.html",
-      "title": "Mẫu Công văn giải trình nộp lại Báo cáo tài chính",
-      "excerpt": "Mẫu công văn xin nộp lại báo cáo tài chính - Biên bản giải trình nộp lại báo cáo tài chính điều chỉnh, bổ sung thay thế…",
-      "topicLabel": "Công văn",
+      "href": "thu-vien/mau-don-de-nghi-cap-hoa-don-le-theo-thong-tu-39.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-don-de-nghi-cap-hoa-don-le-theo-thong-tu-39.html",
+      "title": "Mẫu Đơn đề nghị cấp hóa đơn lẻ theo Thông tư 39/2014/TT-BTC",
+      "excerpt": "Mẫu Đơn đề nghị cấp hóa đơn lẻ Ban hành kèm theo Thông tư số 39/2014/TT-BTC ngày 31/3/2014 của Bộ Tài chính CỘNG HOÀ XÃ…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Công văn",
-        "Văn bản pháp luật",
-        "BCTC",
+        "GTGT",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/cong-van-xin-nop-lai-bao-cao-tai-chinh.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2016-04-11",
+      "publishDate": "2014-03-31",
       "modifiedDate": null
     }
   ]

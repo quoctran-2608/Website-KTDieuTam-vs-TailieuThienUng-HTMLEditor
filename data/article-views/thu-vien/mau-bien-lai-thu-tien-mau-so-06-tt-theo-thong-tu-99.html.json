@@ -1,6 +1,6 @@
 {
   "currentIndex": 1097,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-bien-ban-thu-hoi-hoa-don-da-lap-sai-theo-thong-tu-39.html",
     "section": "thu-vien",
@@ -15,8 +15,7 @@
       "GTGT",
       "Mẫu biểu thuế",
       "hóa đơn",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Thuế",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -36,8 +35,7 @@
     "topicLabel": "Mẫu biểu kế toán",
     "tags": [
       "Mẫu biểu kế toán",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Kế toán",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Chung-tu-ke-toan-hang-ton-kho-theo-Thong-tu-99.png",
@@ -167,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -177,6 +175,26 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/bien-lai-thu-tien-mau-so-06-tt.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bien-lai-thu-tien-mau-so-06-tt.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bien-lai-thu-tien-mau-so-06-tt.html",
+      "title": "Mẫu Biên lai thu tiền 06-TT theo Thông tư 133 và 200",
+      "excerpt": "Hướng dẫn cách lập Biên lai thu tiền theo Thông tư 133 và 200 - Mẫu 06-TT, Biên lai thu tiền là giấy biên nhận c…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/bien-lai-thu-tien.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2016-08-26",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/mau-giay-thanh-toan-tien-tam-ung-theo-thong-tu-99.html",
       "section": "thu-vien",
@@ -189,8 +207,7 @@
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Kế toán",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/MAU-GIAY-THANH-TOAN-TIEN-TAM-UNG-TT99.png",
@@ -211,32 +228,10 @@
       "tags": [
         "TSCĐ",
         "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Kế toán",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-bien-ban-thanh-ly-TSCD.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-10-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-so-nhat-ky-chi-tien-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-so-nhat-ky-chi-tien-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-so-nhat-ky-chi-tien-theo-thong-tu-99.html",
-      "title": "Mẫu sổ Nhật ký chi tiền theo Thông tư 99 mới nhất 2026",
-      "excerpt": "Sổ Nhật ký chi tiền Mẫu số S03a2-DN là sổ Nhật ký đặc biệt dùng để ghi chép các nghiệp vụ chi tiền của doanh nghiệp. Mẫ…",
-      "topicLabel": "Mẫu biểu kế toán",
-      "tags": [
-        "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/MẪU SỔ NHẬT KÝ CHI TIỀN -TT99.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
       "modifiedDate": null
@@ -244,24 +239,44 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/mau-giay-thanh-toan-tien-tam-ung-theo-thong-tu-99.html",
+      "id": "thu-vien/mau-giay-uy-nhiem-chi-cua-cac-ngan-hang-bang-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-giay-thanh-toan-tien-tam-ung-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-giay-thanh-toan-tien-tam-ung-theo-thong-tu-99.html",
-      "title": "Mẫu giấy thanh toán tiền tạm ứng theo Thông tư 99",
-      "excerpt": "Giấy thanh toán tiền tạm ứng là bảng liệt kê các khoản tiền đã nhận tạm ứng và các khoản đã chi của người nhận tạm ứng,…",
+      "href": "thu-vien/mau-giay-uy-nhiem-chi-cua-cac-ngan-hang-bang-excel.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-giay-uy-nhiem-chi-cua-cac-ngan-hang-bang-excel.html",
+      "title": "Trọn bộ mẫu giấy ủy nhiệm chi của các ngân hàng",
+      "excerpt": "Tải về trọn bộ mẫu giấy ủy nhiệm chi của ngân hàng: Vietcombank (VCB). Techcombank, MB Bank, BIDV, Agribank, ACB, Vieti…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Excel",
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/mau giay uy nhiem chi cua ngan hang.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bien-lai-thu-tien-mau-so-06-tt.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bien-lai-thu-tien-mau-so-06-tt.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bien-lai-thu-tien-mau-so-06-tt.html",
+      "title": "Mẫu Biên lai thu tiền 06-TT theo Thông tư 133 và 200",
+      "excerpt": "Hướng dẫn cách lập Biên lai thu tiền theo Thông tư 133 và 200 - Mẫu 06-TT, Biên lai thu tiền là giấy biên nhận c…",
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/MAU-GIAY-THANH-TOAN-TIEN-TAM-UNG-TT99.png",
+      "image": "assets/images/content/pic/Service/images/bien-lai-thu-tien.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-10-27",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     }
   ]

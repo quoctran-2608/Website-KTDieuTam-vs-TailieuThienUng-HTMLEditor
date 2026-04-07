@@ -1,6 +1,6 @@
 {
   "currentIndex": 974,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/luat-doanh-nghiep-so-59-2020-qh14-ngay-17-06-2020.html",
     "section": "thu-vien",
@@ -14,7 +14,8 @@
     "tags": [
       "Luật",
       "Bộ luật",
-      "Văn bản pháp luật",
+      "Doanh nghiệp",
+      "Thủ tục",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/Luat-doanh-nghiep-so-59.png",
@@ -35,7 +36,8 @@
     "tags": [
       "Luật",
       "Bộ luật",
-      "Văn bản pháp luật",
+      "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -165,8 +167,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -188,7 +190,8 @@
       "tags": [
         "Luật",
         "Bộ luật",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -210,7 +213,8 @@
         "GTGT",
         "Luật",
         "Bộ luật",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/luat 106_2016_qh13 sua doi luat thue gtgt, quan ly thue.png",
@@ -232,7 +236,8 @@
         "GTGT",
         "Luật",
         "Bộ luật",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -243,25 +248,45 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
+      "id": "thu-vien/cong-ty-tnhh-tu-van-luat-bravo-tuyen-nhan-vien-ke-toan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
-      "title": "Công văn 624/TCT – CS tiếp nhận hồ sơ đăng ký kê khai thuế GTGT theo mẫu số 06/GTGT",
-      "excerpt": "Ngày 28 tháng 2 năm 2014 Tổng cục thuế ban hành Công văn số 624/TCT – CS về việc tiếp nhận hồ sơ đăng ký kê khai thuế G…",
-      "topicLabel": "Công văn",
+      "href": "thu-vien/cong-ty-tnhh-tu-van-luat-bravo-tuyen-nhan-vien-ke-toan.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cong-ty-tnhh-tu-van-luat-bravo-tuyen-nhan-vien-ke-toan.html",
+      "title": "Công ty TNHH Tư vấn Luật Bravo tuyển Nhân viên kế toán",
+      "excerpt": "Công ty TNHH Tư vấn Luật Bravo tuyển Nhân viên kế toán tại Đống Đa, Hà Nội Mô tả công việc: - Lập báo cáo kinh doanh hà…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
-        "GTGT",
-        "Kê khai",
-        "Công văn",
-        "Văn bản pháp luật",
-        "Biểu mẫu"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2010-08-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/don-vi-tien-te-trong-ke-toan.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/don-vi-tien-te-trong-ke-toan.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/don-vi-tien-te-trong-ke-toan.html",
+      "title": "Đơn vị tiền tệ trong kế toán",
+      "excerpt": "Quy định về đơn vị tiền tệ trong kế toán theo Luật kế toán số: 88/2015/QH13, Thông tư 99/2025/TT-BTC và Thông tư 133/20…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Don-vi-tien-te-trong-ke-toan.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-02-28",
+      "publishDate": "2017-01-01",
       "modifiedDate": null
     }
   ]

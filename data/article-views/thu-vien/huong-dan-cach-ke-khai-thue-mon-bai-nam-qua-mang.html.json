@@ -1,6 +1,6 @@
 {
   "currentIndex": 926,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/huong-dan-cach-ke-khai-bo-sung-dieu-chinh-thue-gtgt.html",
     "section": "thu-vien",
@@ -167,8 +167,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -178,28 +178,73 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cach-ke-khai-thue-nha-thau-nuoc-ngoai.html",
+      "id": "thu-vien/cach-lap-to-khai-thue-mon-bai-mau-01-mbai.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ke-khai-thue-nha-thau-nuoc-ngoai.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-ke-khai-thue-nha-thau-nuoc-ngoai.html",
-      "title": "Hướng dẫn cách kê khai thuế nhà thầu nước ngoài qua mạng",
-      "excerpt": "Kê khai thuế nhà thầu như thế nào? Kế toán Diệu Tâm xin hướng dẫn cách kê khai thuế nhà thầu nước ngoài qu…",
-      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "href": "thu-vien/cach-lap-to-khai-thue-mon-bai-mau-01-mbai.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-to-khai-thue-mon-bai-mau-01-mbai.html",
+      "title": "Cách lập tờ khai Lệ phí môn bài 01/LPMB 2026",
+      "excerpt": "Hướng dẫn cách lập tờ khai lệ phí môn bài qua mạng hoặc trên HTKK; Cách lập Tờ khai Lệ phí môn bài lần đầu và cho c…",
+      "topicLabel": "Lệ phí môn bài",
       "tags": [
-        "Nhà thầu",
-        "Kê khai",
+        "Lệ phí môn bài",
+        "Thuế",
+        "Hóa đơn",
         "Môn bài",
-        "Hộ kinh doanh",
-        "MST",
-        "Thuế"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-ke-khai-thue-nha-thau-qua-mang.png",
+      "image": "assets/images/content/pic/Service/images/Ke-khai-le-phi-mon-bai(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2013-11-06",
+      "publishDate": "2026-01-30",
       "modifiedDate": null
     },
+    {
+      "id": "thu-vien/cach-nop-thue-le-phi-mon-bai-qua-mang-dien-tu-bang-ma-id.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-nop-thue-le-phi-mon-bai-qua-mang-dien-tu-bang-ma-id.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-nop-thue-le-phi-mon-bai-qua-mang-dien-tu-bang-ma-id.html",
+      "title": "Cách nộp tiền thuế lệ phí môn bài 2025 qua mạng điện tử",
+      "excerpt": "Hiện nay, hệ thống thuedientu đã cho phép doanh nghiệp thực hiện nộp tiền lệ phí môn bài bằng mã định danh khoản phải n…",
+      "topicLabel": "Lệ phí môn bài",
+      "tags": [
+        "Lệ phí môn bài",
+        "Thuế",
+        "Hóa đơn",
+        "Môn bài",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/nop-thue-mon-bai-qua-mang-thuedientu.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/doi-tuong-phai-nop-thue-le-phi-mon-bai.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/doi-tuong-phai-nop-thue-le-phi-mon-bai.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/doi-tuong-phai-nop-thue-le-phi-mon-bai.html",
+      "title": "Đối tượng phải nộp thuế lệ phí môn bài năm 2025",
+      "excerpt": "Quy định về những đối tượng phải nộp thuế môn bài (lệ phí môn bài) mới nhất năm 2025 hiện nay Theo Thông tư 65/2020/TT-…",
+      "topicLabel": "Lệ phí môn bài",
+      "tags": [
+        "Lệ phí môn bài",
+        "Thuế",
+        "Hóa đơn",
+        "Môn bài",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/nop-le-phi-mon-bai.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2016-10-04",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/cach-lap-to-khai-thue-mon-bai-mau-01-mbai.html",
       "section": "thu-vien",
@@ -209,14 +254,13 @@
       "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-to-khai-thue-mon-bai-mau-01-mbai.html",
       "title": "Cách lập tờ khai Lệ phí môn bài 01/LPMB 2026",
       "excerpt": "Hướng dẫn cách lập tờ khai lệ phí môn bài qua mạng hoặc trên HTKK; Cách lập Tờ khai Lệ phí môn bài lần đầu và cho c…",
-      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "topicLabel": "Lệ phí môn bài",
       "tags": [
-        "Môn bài",
-        "Hộ kinh doanh",
-        "Nhà thầu",
-        "MST",
+        "Lệ phí môn bài",
         "Thuế",
-        "Hóa đơn"
+        "Hóa đơn",
+        "Môn bài",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Ke-khai-le-phi-mon-bai(1).png",
       "libraryKindLabel": "Hướng dẫn",
@@ -224,97 +268,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-tinh-thue-ho-kinh-doanh-theo-phuong-phap-ke-khai.html",
+      "id": "thu-vien/mau-to-khai-le-phi-mon-bai-theo-thong-tu-80.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-thue-ho-kinh-doanh-theo-phuong-phap-ke-khai.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-tinh-thue-ho-kinh-doanh-theo-phuong-phap-ke-khai.html",
-      "title": "Cách tính thuế hộ kinh doanh theo phương pháp kê khai",
-      "excerpt": "Hướng dẫn tính thuế hộ kinh doanh theo phương pháp kê khai: Cách tính thuế hộ kinh doanh phải nộp; Mức thuế suất hộ kin…",
-      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "href": "thu-vien/mau-to-khai-le-phi-mon-bai-theo-thong-tu-80.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-to-khai-le-phi-mon-bai-theo-thong-tu-80.html",
+      "title": "Mẫu tờ khai lệ phí môn bài 2025 theo Thông Tư 80",
+      "excerpt": "Mẫu tờ khai lệ phí môn bài mới nhất năm 2025 là mẫu số: 01/LPMB được ban hành kèm theo Thông tư số 80/2021/TT-BTC Đơn v…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Hộ kinh doanh",
-        "Kê khai",
-        "Môn bài",
-        "Nhà thầu",
-        "MST",
-        "Thuế"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-tinh-thue-ho-kinh-doanh-phuong-phap-ke-khai.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/cach-ke-khai-thue-nha-thau-nuoc-ngoai.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ke-khai-thue-nha-thau-nuoc-ngoai.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-ke-khai-thue-nha-thau-nuoc-ngoai.html",
-      "title": "Hướng dẫn cách kê khai thuế nhà thầu nước ngoài qua mạng",
-      "excerpt": "Kê khai thuế nhà thầu như thế nào? Kế toán Diệu Tâm xin hướng dẫn cách kê khai thuế nhà thầu nước ngoài qu…",
-      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
-      "tags": [
-        "Nhà thầu",
-        "Kê khai",
-        "Môn bài",
-        "Hộ kinh doanh",
-        "MST",
-        "Thuế"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-ke-khai-thue-nha-thau-qua-mang.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2013-11-06",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "title": "Danh sách mã chương, mã tiểu mục nộp thuế mới nhất năm 2026",
-      "excerpt": "Danh sách mã chương, mã tiểu mục nộp thuế TNCN, thuế GTGT, Thuế TNDN mới nhất năm 2026 theo Thông tư 130/2025/TT-BTC qu…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "TNCN",
-        "TNDN",
-        "Hóa đơn",
+        "Mẫu biểu thuế",
+        "hóa đơn",
         "Thuế",
+        "Môn bài",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
+      "image": "assets/images/content/pic/Service/images/Mau-to-khai-le-phi-mon-bai-tt80.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
-      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "GTGT",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Thuế"
-      ],
-      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-09-15",
       "modifiedDate": null
     }
   ]

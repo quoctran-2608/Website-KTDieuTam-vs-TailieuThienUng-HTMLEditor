@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1892,
-  "totalCount": 2041,
+  "currentIndex": 1890,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/thong-tu-23-2014-tt-bldtbxh-quy-dinh-ve-tuyen-dung-va-bao-cao-su-dung-lao-dong.html",
     "section": "thu-vien",
@@ -13,8 +13,8 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
       "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -34,7 +34,8 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/Thong-tu-25-2018-huong-dan-nghi-dinh-146.png",
@@ -164,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -174,6 +175,29 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/thong-tu-03-2015-tt-bldtbxh-dieu-chinh-tien-luong-da-dong-bhxh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thong-tu-03-2015-tt-bldtbxh-dieu-chinh-tien-luong-da-dong-bhxh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-03-2015-tt-bldtbxh-dieu-chinh-tien-luong-da-dong-bhxh.html",
+      "title": "Thông tư 03/2015/TT-BLĐTBXH điều chỉnh tiền lương đã đóng BHXH",
+      "excerpt": "Ngày 23/01/2015 Bộ BLĐTBXH ban hành Thông tư 03/2015/TT-BLĐTBXH, quy định mức điều chỉnh tiền lương, tiền công…",
+      "topicLabel": "Thông tư",
+      "tags": [
+        "BHXH",
+        "Thông tư",
+        "Lao động",
+        "Bảo hiểm",
+        "Tiền lương",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2015-01-23",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/thong-tu-23-2014-tt-bldtbxh-quy-dinh-ve-tuyen-dung-va-bao-cao-su-dung-lao-dong.html",
       "section": "thu-vien",
@@ -186,34 +210,13 @@
       "topicLabel": "Thông tư",
       "tags": [
         "Thông tư",
-        "Văn bản pháp luật",
         "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2014-08-29",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thong-tu-47-2015-tt-bldtbxh-quy-dinh-ve-muc-luong-va-phu-cap-luong.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thong-tu-47-2015-tt-bldtbxh-quy-dinh-ve-muc-luong-va-phu-cap-luong.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-47-2015-tt-bldtbxh-quy-dinh-ve-muc-luong-va-phu-cap-luong.html",
-      "title": "Thông tư 47/2015/TT-BLĐTBXH quy định về mức lương và phụ cấp lương",
-      "excerpt": "Thông tư 47/2015/TT-BLĐTBXH ngày 16/11/2015 của Bộ LĐTBXH Quy định về mức lương, phụ cấp lương và các khoản bổ sung khá…",
-      "topicLabel": "Thông tư",
-      "tags": [
-        "Thông tư",
-        "Văn bản pháp luật",
-        "Tiền lương",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/thong tu 47_2015_TT-BLĐTBXH quy dinh ve muc luong.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2015-11-16",
       "modifiedDate": null
     },
     {
@@ -228,8 +231,8 @@
       "topicLabel": "Thông tư",
       "tags": [
         "Thông tư",
-        "Văn bản pháp luật",
         "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/thong-tu-10-2020-huong-dan-luat-lao-dong.png",
@@ -261,26 +264,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
+      "id": "thu-vien/mau-bang-phan-bo-tien-luong-va-bao-hiem-xa-hoi-11-ldtl.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
-      "title": "Quyết định 1040/QĐ-BHXH Mẫu Báo cáo sử dụng lao động tham gia BHXH",
-      "excerpt": "Ngày 18/8/2020 BHXH ban hành Quyết định 1040/QĐ-BHXH quy định Mẫu báo cáo tình hình sử dụng lao động và danh sách tham…",
-      "topicLabel": "Nghị quyết - Quyết định",
+      "href": "thu-vien/mau-bang-phan-bo-tien-luong-va-bao-hiem-xa-hoi-11-ldtl.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-phan-bo-tien-luong-va-bao-hiem-xa-hoi-11-ldtl.html",
+      "title": "Mẫu bảng phân bổ tiền lương, bảo hiểm xã hội theo Thông tư 133, 200",
+      "excerpt": "Hướng dẫn cách lập Bảng phân bổ tiền lương và Bảo hiểm xã hội theo Thông tư 133 và 200 - Mẫu 11-LĐTL, tập hợp và phân b…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
       "tags": [
         "BHXH",
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
+        "Mẫu biểu lao động",
+        "bảo hiểm",
         "Lao động",
+        "Tiền lương",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/quyet-dinh-1040-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.png",
+      "image": "assets/images/content/pic/Service/images/Phan-bo-luong.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2020-08-18",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ]

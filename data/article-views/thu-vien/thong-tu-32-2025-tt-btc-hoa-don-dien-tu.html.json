@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1897,
-  "totalCount": 2041,
+  "currentIndex": 1895,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/thong-tu-302-2016-tt-btc-huong-dan-ve-le-phi-mon-bai.html",
     "section": "thu-vien",
@@ -13,7 +13,8 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Môn bài",
       "Văn bản"
     ],
@@ -34,7 +35,8 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/thong-tu-324-he-thong-muc-luc-ngan-sach-nha-nuoc.png",
@@ -164,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -174,6 +176,29 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
+      "title": "Thông tư 78/2021/TT-BTC quy định về hoá đơn điện tử",
+      "excerpt": "Thông tư 78/2021/TT-BTC ngày 17/9/2021 của Bộ tài chính hướng dẫn một số nội dung về hóa đơn đơn điện tử gồm: ký hiệu m…",
+      "topicLabel": "Thông tư",
+      "tags": [
+        "GTGT",
+        "Hóa đơn điện tử",
+        "Thông tư",
+        "Thuế",
+        "Hóa đơn",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/thong-tu-78-2021-quy-dinh-ve-hoa-don-dien-tu.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2021-09-17",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/thong-tu-68-2019-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
       "section": "thu-vien",
@@ -188,7 +213,7 @@
         "GTGT",
         "Hóa đơn điện tử",
         "Thông tư",
-        "Văn bản pháp luật",
+        "Thuế",
         "Hóa đơn",
         "Văn bản"
       ],
@@ -211,35 +236,13 @@
         "GTGT",
         "Hóa đơn điện tử",
         "Thông tư",
-        "Văn bản pháp luật",
+        "Thuế",
         "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Thong-tu-88-2020-huong-dan-ve-hoa-don-dien-tu.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2020-10-30",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
-      "title": "Thông tư 78/2021/TT-BTC quy định về hoá đơn điện tử",
-      "excerpt": "Thông tư 78/2021/TT-BTC ngày 17/9/2021 của Bộ tài chính hướng dẫn một số nội dung về hóa đơn đơn điện tử gồm: ký hiệu m…",
-      "topicLabel": "Thông tư",
-      "tags": [
-        "GTGT",
-        "Hóa đơn điện tử",
-        "Thông tư",
-        "Văn bản pháp luật",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/thong-tu-78-2021-quy-dinh-ve-hoa-don-dien-tu.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2021-09-17",
       "modifiedDate": null
     }
   ],
@@ -267,48 +270,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
+      "id": "thu-vien/mau-bien-ban-thay-the-hoa-don-dien-tu-sai-sot.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
-      "title": "Công văn 624/TCT – CS tiếp nhận hồ sơ đăng ký kê khai thuế GTGT theo mẫu số 06/GTGT",
-      "excerpt": "Ngày 28 tháng 2 năm 2014 Tổng cục thuế ban hành Công văn số 624/TCT – CS về việc tiếp nhận hồ sơ đăng ký kê khai thuế G…",
-      "topicLabel": "Công văn",
+      "href": "thu-vien/mau-bien-ban-thay-the-hoa-don-dien-tu-sai-sot.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-bien-ban-thay-the-hoa-don-dien-tu-sai-sot.html",
+      "title": "Mẫu biên bản thay thế hoá đơn điện tử lập sai 2026",
+      "excerpt": "Mẫu biên bản thay thế hóa đơn điện tử lập sai mới nhất năm 2026 theo Nghị định 72/2025/NĐ-CP và Thông tư 32/2025/TT-BTC…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
-        "Kê khai",
-        "Công văn",
-        "Văn bản pháp luật",
+        "Hóa đơn điện tử",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Mau-bien-ban-thay-the-hoa-don(3).png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-02-28",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
-      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "GTGT",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Thuế"
-      ],
-      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-01-25",
       "modifiedDate": null
     }
   ]

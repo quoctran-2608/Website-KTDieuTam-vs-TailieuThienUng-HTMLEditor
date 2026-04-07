@@ -1,0 +1,882 @@
+[
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Tài khoản - Hạch toán",
+    "total": 260,
+    "lv3_nonempty": 260,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Nghiệp vụ đặc thù",
+        49
+      ],
+      [
+        "Hàng tồn kho/Giá thành",
+        45
+      ],
+      [
+        "Công nợ/Thanh toán",
+        41
+      ],
+      [
+        "Doanh thu/Chi phí/KQKD",
+        34
+      ],
+      [
+        "Vốn/Đầu tư",
+        27
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "GTGT - Hóa đơn",
+    "total": 219,
+    "lv3_nonempty": 219,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Lập/Xử lý hóa đơn",
+        98
+      ],
+      [
+        "Hóa đơn điện tử",
+        51
+      ],
+      [
+        "Khấu trừ/Hoàn thuế",
+        25
+      ],
+      [
+        "Kê khai GTGT",
+        25
+      ],
+      [
+        "Thuế suất/Đối tượng chịu thuế",
+        14
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Mẫu biểu kế toán",
+    "total": 170,
+    "lv3_nonempty": 170,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Mẫu hành chính/quản trị khác",
+        42
+      ],
+      [
+        "Mẫu chứng từ tiền/thanh toán",
+        21
+      ],
+      [
+        "Mẫu chứng từ mua bán/hợp đồng",
+        18
+      ],
+      [
+        "Mẫu TSCĐ/khấu hao",
+        17
+      ],
+      [
+        "Mẫu sổ sách kế toán",
+        16
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Mẫu file & kê khai",
+    "topicLv2Label": "HTKK - eTax - Thuế điện tử",
+    "total": 157,
+    "lv3_nonempty": 157,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "HTKK 5.x",
+        50
+      ],
+      [
+        "HTKK 4.0–4.4",
+        43
+      ],
+      [
+        "HTKK 3.x",
+        25
+      ],
+      [
+        "HTKK 4.5–4.7",
+        23
+      ],
+      [
+        "HTKK 4.8–4.9",
+        16
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Mẫu biểu thuế - hóa đơn",
+    "total": 156,
+    "lv3_nonempty": 156,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Mẫu thuế GTGT/Hóa đơn",
+        81
+      ],
+      [
+        "Mẫu thuế TNCN",
+        37
+      ],
+      [
+        "Mẫu thuế TNDN",
+        14
+      ],
+      [
+        "Mẫu thuế nhà thầu",
+        9
+      ],
+      [
+        "Mẫu thuế hộ/cá nhân/môn bài",
+        8
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Chuẩn mực - Chế độ - Nguyên tắc",
+    "total": 89,
+    "lv3_nonempty": 89,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Tuyển dụng/Nghề nghiệp kế toán",
+        43
+      ],
+      [
+        "Chế độ kế toán & thông tư",
+        20
+      ],
+      [
+        "Chuẩn mực kế toán (VAS)",
+        16
+      ],
+      [
+        "Nguyên tắc kế toán",
+        4
+      ],
+      [
+        "Hình thức ghi sổ kế toán",
+        3
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Lao động - Bảo hiểm",
+    "topicLv2Label": "BHXH - BHYT - BHTN",
+    "total": 86,
+    "lv3_nonempty": 86,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Chế độ/Mức hưởng",
+        33
+      ],
+      [
+        "Hồ sơ/Thủ tục",
+        21
+      ],
+      [
+        "Đối tượng/Mức đóng",
+        13
+      ],
+      [
+        "Lương căn cứ/Tỷ lệ đóng",
+        8
+      ],
+      [
+        "Hạch toán/Chi phí bảo hiểm",
+        5
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Lao động - Bảo hiểm",
+    "topicLv2Label": "Lao động - Tiền lương",
+    "total": 84,
+    "lv3_nonempty": 84,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Tiền lương/Thời giờ làm việc",
+        21
+      ],
+      [
+        "Hợp đồng/Quan hệ lao động",
+        20
+      ],
+      [
+        "Hồ sơ/Thủ tục lao động",
+        20
+      ],
+      [
+        "Thuế liên quan lao động",
+        6
+      ],
+      [
+        "Nội quy/Thỏa ước/Kỷ luật",
+        6
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Doanh nghiệp - Thủ tục",
+    "topicLv2Label": "Mẫu biểu doanh nghiệp - thủ tục",
+    "total": 75,
+    "lv3_nonempty": 75,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Mẫu tờ khai thuế TNDN",
+        22
+      ],
+      [
+        "Mẫu đăng ký/thay đổi doanh nghiệp",
+        15
+      ],
+      [
+        "Mẫu đăng ký thuế/MST",
+        13
+      ],
+      [
+        "Mẫu hộ/cá nhân kinh doanh",
+        10
+      ],
+      [
+        "Mẫu khuyến mại/thương mại",
+        7
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Thuế thu nhập cá nhân",
+    "total": 60,
+    "lv3_nonempty": 60,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Tính thuế/Biểu thuế",
+        23
+      ],
+      [
+        "Kê khai/Quyết toán",
+        18
+      ],
+      [
+        "Giảm trừ/Miễn thuế",
+        8
+      ],
+      [
+        "Khấu trừ/Chứng từ",
+        5
+      ],
+      [
+        "Hạch toán TNCN",
+        4
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Phần mềm - Công cụ",
+    "topicLv2Label": "MISA",
+    "total": 58,
+    "lv3_nonempty": 58,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "MISA báo cáo/quyết toán",
+        19
+      ],
+      [
+        "MISA tài sản cố định/CCDC",
+        12
+      ],
+      [
+        "MISA mua hàng/công nợ",
+        12
+      ],
+      [
+        "MISA bán hàng/doanh thu",
+        9
+      ],
+      [
+        "MISA khác",
+        4
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Công văn",
+    "total": 53,
+    "lv3_nonempty": 53,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Công văn GTGT/Hóa đơn",
+        22
+      ],
+      [
+        "Công văn Chính sách chung",
+        11
+      ],
+      [
+        "Công văn TNCN",
+        8
+      ],
+      [
+        "Công văn Kê khai/Quản lý thuế",
+        8
+      ],
+      [
+        "Công văn TNDN",
+        3
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Tài sản - Kho - CCDC",
+    "total": 52,
+    "lv3_nonempty": 52,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "TSCĐ/nguyên giá/khấu hao",
+        29
+      ],
+      [
+        "Hàng tồn kho/giá xuất kho",
+        15
+      ],
+      [
+        "Chuẩn mực TSCĐ/hàng tồn kho",
+        3
+      ],
+      [
+        "Tài sản - Kho - CCDC khác",
+        3
+      ],
+      [
+        "Nghiệp vụ kế toán kho",
+        2
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Nghị định",
+    "total": 51,
+    "lv3_nonempty": 51,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Nghị định GTGT/Hóa đơn",
+        20
+      ],
+      [
+        "Nghị định Chính sách chung",
+        13
+      ],
+      [
+        "Nghị định Quản lý/Xử phạt",
+        7
+      ],
+      [
+        "Nghị định Miễn/Giảm/Gia hạn",
+        5
+      ],
+      [
+        "Nghị định TNDN",
+        4
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Lao động - Bảo hiểm",
+    "topicLv2Label": "Mẫu biểu lao động - bảo hiểm",
+    "total": 50,
+    "lv3_nonempty": 50,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Mẫu BHXH/chế độ",
+        19
+      ],
+      [
+        "Mẫu hợp đồng lao động",
+        13
+      ],
+      [
+        "Mẫu tiền lương/phụ cấp",
+        6
+      ],
+      [
+        "Mẫu báo cáo/đăng ký lao động",
+        5
+      ],
+      [
+        "Mẫu nội quy/thỏa ước lao động",
+        5
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Thuế thu nhập doanh nghiệp",
+    "total": 49,
+    "lv3_nonempty": 49,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Kê khai/Tạm nộp/Quyết toán",
+        12
+      ],
+      [
+        "Thuế suất/Phương pháp tính",
+        9
+      ],
+      [
+        "Chi phí được trừ/không được trừ",
+        8
+      ],
+      [
+        "Doanh thu/Thu nhập tính thuế",
+        6
+      ],
+      [
+        "Hạch toán TNDN",
+        5
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Thông tư",
+    "total": 45,
+    "lv3_nonempty": 45,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Thông tư GTGT/Hóa đơn",
+        22
+      ],
+      [
+        "Thông tư Chính sách chung",
+        10
+      ],
+      [
+        "Thông tư Hộ/Cá nhân kinh doanh",
+        3
+      ],
+      [
+        "Thông tư TNDN",
+        3
+      ],
+      [
+        "Thông tư Kê khai/Quản lý thuế",
+        3
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Chứng từ - Sổ sách",
+    "total": 32,
+    "lv3_nonempty": 32,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Sổ sách tiền/kho/chi tiết",
+        12
+      ],
+      [
+        "Hình thức ghi sổ kế toán",
+        10
+      ],
+      [
+        "Hệ thống chứng từ/mẫu biểu",
+        5
+      ],
+      [
+        "Chứng từ công tác/thanh toán",
+        3
+      ],
+      [
+        "Xử lý sai sót sổ sách",
+        2
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Báo cáo tài chính",
+    "total": 27,
+    "lv3_nonempty": 27,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Lập các báo cáo thành phần",
+        12
+      ],
+      [
+        "Tổng quan/quy định nộp BCTC",
+        5
+      ],
+      [
+        "Vi phạm/điều chỉnh BCTC",
+        4
+      ],
+      [
+        "Chuẩn mực trình bày BCTC",
+        3
+      ],
+      [
+        "Nguyên tắc trình bày BCTC",
+        2
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Mẫu file & kê khai",
+    "topicLv2Label": "Excel - Công cụ khác",
+    "total": 25,
+    "lv3_nonempty": 25,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Excel BCTC/sổ sách kế toán",
+        8
+      ],
+      [
+        "Excel lương/BHXH/nhân sự",
+        6
+      ],
+      [
+        "Excel thuế/hóa đơn",
+        5
+      ],
+      [
+        "Excel kho/TSCĐ/tiền",
+        3
+      ],
+      [
+        "Công cụ hỗ trợ kê khai (cũ)",
+        3
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Nghiệp vụ theo phần hành",
+    "total": 24,
+    "lv3_nonempty": 24,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Chi phí được trừ/không được trừ",
+        19
+      ],
+      [
+        "Sổ sách giá thành/bán hàng",
+        2
+      ],
+      [
+        "Thanh tra/công văn/rủi ro",
+        1
+      ],
+      [
+        "Nghiệp vụ khuyến mại",
+        1
+      ],
+      [
+        "Ghi nhận doanh thu",
+        1
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Học liệu - Tham khảo",
+    "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+    "total": 23,
+    "lv3_nonempty": 23,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Mô tả công việc kế toán",
+        11
+      ],
+      [
+        "Kinh nghiệm/phỏng vấn/xin việc",
+        8
+      ],
+      [
+        "Học và đào tạo kế toán",
+        3
+      ],
+      [
+        "Học nghề và thực tập",
+        1
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Phần mềm - Công cụ",
+    "topicLv2Label": "Excel - Công cụ khác",
+    "total": 17,
+    "lv3_nonempty": 17,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Excel/công cụ khác",
+        15
+      ],
+      [
+        "Excel BCTC/sổ sách kế toán",
+        2
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Excel - Công cụ khác",
+    "total": 2,
+    "lv3_nonempty": 2,
+    "lv3_coverage_pct": 100.0,
+    "top_lv3": [
+      [
+        "Excel/công cụ khác",
+        2
+      ]
+    ]
+  },
+  {
+    "topicLv1Label": "Lao động - Bảo hiểm",
+    "topicLv2Label": "Luật - Bộ luật",
+    "total": 19,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Học liệu - Tham khảo",
+    "topicLv2Label": "Báo cáo thực tập",
+    "total": 16,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Doanh nghiệp - Thủ tục",
+    "topicLv2Label": "DN - Thủ tục",
+    "total": 15,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Lao động - Bảo hiểm",
+    "topicLv2Label": "Nghị quyết - Quyết định",
+    "total": 13,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Lệ phí môn bài",
+    "total": 11,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Mã số thuế - Đăng ký thuế",
+    "total": 11,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Lao động - Bảo hiểm",
+    "topicLv2Label": "Nghị định",
+    "total": 11,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Hộ/Cá nhân kinh doanh",
+    "total": 10,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Học liệu - Tham khảo",
+    "topicLv2Label": "Bài tập - Thực hành",
+    "total": 9,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Nghị quyết - Quyết định",
+    "total": 9,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Lao động - Bảo hiểm",
+    "topicLv2Label": "Công đoàn",
+    "total": 7,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Phần mềm - Công cụ",
+    "topicLv2Label": "HTKK - eTax - Thuế điện tử",
+    "total": 6,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Lao động - Bảo hiểm",
+    "topicLv2Label": "Công văn",
+    "total": 6,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Lao động - Bảo hiểm",
+    "topicLv2Label": "Thông tư",
+    "total": 6,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Thông tư",
+    "total": 5,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Thuế nhà thầu",
+    "total": 4,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Doanh nghiệp - Thủ tục",
+    "topicLv2Label": "Nghị định",
+    "total": 3,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Phần mềm - Công cụ",
+    "topicLv2Label": "FAST",
+    "total": 2,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Doanh nghiệp - Thủ tục",
+    "topicLv2Label": "Luật - Bộ luật",
+    "total": 2,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Nghị định",
+    "total": 2,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Doanh nghiệp - Thủ tục",
+    "topicLv2Label": "Thông tư",
+    "total": 2,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Công văn",
+    "total": 1,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Kế toán",
+    "topicLv2Label": "Luật - Bộ luật",
+    "total": 1,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Luật - Bộ luật",
+    "total": 1,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Doanh nghiệp - Thủ tục",
+    "topicLv2Label": "Nghị quyết - Quyết định",
+    "total": 1,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Thuế - Hóa đơn",
+    "topicLv2Label": "Chứng từ - Sổ sách",
+    "total": 1,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  },
+  {
+    "topicLv1Label": "Mẫu file & kê khai",
+    "topicLv2Label": "FAST",
+    "total": 1,
+    "lv3_nonempty": 0,
+    "lv3_coverage_pct": 0.0,
+    "top_lv3": []
+  }
+]

@@ -1,6 +1,6 @@
 {
   "currentIndex": 973,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/luat-cong-doan-so-50-2024-qh15.html",
     "section": "thu-vien",
@@ -15,7 +15,8 @@
       "Công đoàn",
       "Luật",
       "Bộ luật",
-      "Văn bản pháp luật",
+      "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/Luat-cong-doan(1).jpg",
@@ -36,7 +37,7 @@
     "tags": [
       "Luật",
       "Bộ luật",
-      "Văn bản pháp luật",
+      "Kế toán",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/luat ke toan so 88.png",
@@ -166,8 +167,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -176,6 +177,28 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/luat-so-68-2014-qh13-luat-doanh-nghiep-2015.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/luat-so-68-2014-qh13-luat-doanh-nghiep-2015.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/luat-so-68-2014-qh13-luat-doanh-nghiep-2015.html",
+      "title": "Luật Doanh nghiệp - Luật số 68/2014/QH13",
+      "excerpt": "Luật số 68/2014/QH13 - Luật Doanh nghiệpcủa Quốc hội ban hành ngày 26/11/2014 quy định về việc thành lập, tổ c…",
+      "topicLabel": "Luật - Bộ luật",
+      "tags": [
+        "Luật",
+        "Bộ luật",
+        "Doanh nghiệp",
+        "Thủ tục",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2014-11-26",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/luat-thue-thu-nhap-doanh-nghiep-so-67-2025-qh15.html",
       "section": "thu-vien",
@@ -190,7 +213,8 @@
         "TNDN",
         "Luật",
         "Bộ luật",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Luat-thue-tndn-2025.png",
@@ -211,57 +235,57 @@
       "tags": [
         "Luật",
         "Bộ luật",
-        "Văn bản pháp luật",
         "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Luat-45-Bo-luat-lao-dong.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2019-11-20",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/luat-quan-ly-thue-so-38-2019-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/luat-quan-ly-thue-so-38-2019-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/luat-quan-ly-thue-so-38-2019-moi-nhat.html",
-      "title": "Luật Quản lý thuế số 38/2019/QH14 mới nhất",
-      "excerpt": "Luật quản lý thuế - Luật số 38/2019/QH14 mới nhất, ban hành ngày 13/6/2019 và có hiệu lực từ ngày 01/7/2020. Tải Luật s…",
-      "topicLabel": "Luật - Bộ luật",
-      "tags": [
-        "Luật",
-        "Bộ luật",
-        "Văn bản pháp luật",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Luat-quan-ly-thue-so-38-2019.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2019-06-13",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
+      "id": "thu-vien/cach-xac-dinh-doanh-nghiep-vua-va-nho-sieu-nho.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "title": "Mẫu Quyết định giải thể doanh nghiệp công ty",
-      "excerpt": "Mẫu Quyết định giải thể giải thể Doanh nghiệp, giải thể Công ty mới nhất để làm thủ tục giải thể Doanh nghiệp, tải mẫu…",
-      "topicLabel": "Nghị quyết - Quyết định",
+      "href": "thu-vien/cach-xac-dinh-doanh-nghiep-vua-va-nho-sieu-nho.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-xac-dinh-doanh-nghiep-vua-va-nho-sieu-nho.html",
+      "title": "Cách xác định doanh nghiệp vừa và nhỏ 2026 mới nhất",
+      "excerpt": "Hướng dẫn cách xác định doanh nghiệp vừa và nhỏ theo các tiêu chí được quy định tại Nghị định 80/2021/NĐ-CP quy định ch…",
+      "topicLabel": "DN - Thủ tục",
       "tags": [
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
+        "DN",
+        "Thủ tục",
+        "Doanh nghiệp",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cach-xac-dinh-doanh-nghiep-vua-va-nho.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-giay-de-nghi-dang-ky-doanh-nghiep.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-giay-de-nghi-dang-ky-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-giay-de-nghi-dang-ky-doanh-nghiep.html",
+      "title": "Mẫu giấy đề nghị đăng ký doanh nghiệp 2025",
+      "excerpt": "Ngày 01/7/2025, Bộ trưởng Bộ Tài chính ban hành Thông tư 68/2025/TT-BTC về biểu mẫu sử dụng trong đăng ký doanh nghiệp,…",
+      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
+      "tags": [
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-quyet-dinh-giai-the-doanh-nghiep.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "publishDate": "2025-07-01",
       "modifiedDate": null
     }
   ]

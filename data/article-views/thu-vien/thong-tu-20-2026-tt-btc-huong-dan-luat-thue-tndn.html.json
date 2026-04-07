@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1887,
-  "totalCount": 2041,
+  "currentIndex": 1885,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/thong-tu-18-vbhn-btc-van-ban-hop-nhat-ve-quan-ly-thue.html",
     "section": "thu-vien",
@@ -13,7 +13,8 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/thong tu 18_vbhn van ban hop nhat quan ly thue.png",
@@ -33,7 +34,7 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
+      "Kế toán",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/thong-tu-200-cua-bo-tai-chinh.png",
@@ -163,8 +164,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -186,7 +187,8 @@
       "tags": [
         "TNDN",
         "Thông tư",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -208,7 +210,8 @@
         "GTGT",
         "TNDN",
         "Thông tư",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -229,7 +232,8 @@
       "tags": [
         "TNDN",
         "Thông tư",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/thong tu 78_2014 thue thu nhap doanh nghiep.png",
@@ -240,46 +244,47 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/ke-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-tren-htkk.html",
+      "id": "thu-vien/cac-khoan-thu-nhap-khac-chiu-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ke-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-tren-htkk.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/ke-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-tren-htkk.html",
-      "title": "Hướng dẫn quyết toán thuế TNDN năm 2026 trên HTKK",
-      "excerpt": "Hướng dẫn làm quyết toán thuế TNDN trên phần mềm HTKK mới nhất năm 2026 I. Tổng quan về quyết toán thuế thu nhập doanh…",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/cac-khoan-thu-nhap-khac-chiu-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-khoan-thu-nhap-khac-chiu-thue-tndn.html",
+      "title": "Các khoản thu nhập khác chịu thuế TNDN 2026 mới nhất",
+      "excerpt": "Các khoản thu nhập khác chịu thuế thu nhập doanh nghiệp theo quy định tại Nghị định 320/2025/NĐ-CP hướng dẫn Luật Thuế…",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "TNDN",
-        "HTKK",
-        "Quyết toán",
-        "eTax",
-        "Thuế điện tử",
-        "Phần mềm"
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Quyet-toan-thue-TNDN.png",
+      "image": "assets/images/content/pic/Service/images/Thu-nhap-khac-chiu-thue-TNDN.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-03-31",
+      "publishDate": "2025-12-15",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cong-van-xin-huy-to-khai-thue-cho-thue-tai-san.html",
+      "id": "thu-vien/mau-01-tndn-theo-thong-tu-so-20-2026-bien-ban-xac-nhan-tai-tro.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-van-xin-huy-to-khai-thue-cho-thue-tai-san.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-xin-huy-to-khai-thue-cho-thue-tai-san.html",
-      "title": "Mẫu công văn xin hủy tờ khai thuế cho thuê tài sản mới nhất năm 2026",
-      "excerpt": "Khi doanh nghiệp làm tờ khai thuế cho thuê tài sản thay cho cá nhân có tài sản cho thuê mà doanh nghiệp làm sai nội dun…",
-      "topicLabel": "Công văn",
+      "href": "thu-vien/mau-01-tndn-theo-thong-tu-so-20-2026-bien-ban-xac-nhan-tai-tro.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-01-tndn-theo-thong-tu-so-20-2026-bien-ban-xac-nhan-tai-tro.html",
+      "title": "Mẫu 01/TNDN theo Thông tư số 20/2026 biên bản xác nhận tài trợ",
+      "excerpt": "Mẫu biên bản xác nhận khoản tài trợ mới nhất năm 2026 là Mẫu 01/TNDN được ban hành kèm theo Thông tư 20/2026/TT-BTC (có…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Công văn",
-        "Văn bản pháp luật",
+        "TNDN",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Cong-van-xin-huy-to-khai-thue-cho-thue-tai-san.png",
+      "image": "assets/images/content/pic/Service/images/Mau-01-TNDN-Thong-tu-20-2026.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-01-27",
+      "publishDate": "2026-09-15",
       "modifiedDate": null
     }
   ]

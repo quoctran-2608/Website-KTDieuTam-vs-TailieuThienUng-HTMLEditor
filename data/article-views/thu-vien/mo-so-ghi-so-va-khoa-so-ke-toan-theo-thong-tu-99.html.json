@@ -1,6 +1,6 @@
 {
   "currentIndex": 1359,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mien-thue-tndn-3-nam-cho-doanh-nghiep-moi-thanh-lap.html",
     "section": "thu-vien",
@@ -166,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -199,6 +199,28 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cac-hinh-thuc-ghi-so-ke-toan-theo-quyet-dinh-15-va-48.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -218,28 +240,6 @@
       "image": "assets/images/content/pic/Service/images/cac-hinh-thuc-ghi-so-ke-toan.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/doi-tuong-ap-dung-che-do-ke-toan-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/doi-tuong-ap-dung-che-do-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/doi-tuong-ap-dung-che-do-ke-toan-theo-thong-tu-99.html",
-      "title": "Đối tượng áp dụng chế độ kế toán theo Thông tư 99",
-      "excerpt": "Quy định về các đối tượng doanh nghiệp được áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toá…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
-      "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
-        "Kế toán",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Doi-tuong-ap-dung-thong-tu-99.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ],

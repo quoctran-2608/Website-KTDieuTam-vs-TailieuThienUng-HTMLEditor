@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1736,
-  "totalCount": 2041,
+  "currentIndex": 1734,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
     "section": "thu-vien",
@@ -15,8 +15,8 @@
       "BHXH",
       "Nghị quyết",
       "Quyết định",
-      "Văn bản pháp luật",
       "Lao động",
+      "Bảo hiểm",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/quyet-dinh-1040-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.png",
@@ -37,7 +37,8 @@
     "tags": [
       "Nghị quyết",
       "Quyết định",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Người phụ thuộc",
       "Văn bản"
     ],
@@ -168,8 +169,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -192,35 +193,13 @@
         "TNCN",
         "Nghị quyết",
         "Quyết định",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/nghi-quyet-954-muc-giam-tru-gia-canh-tinh-thue-tncn.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2020-06-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.html",
-      "title": "Quyết định 166/QĐ-BHXH Quy trình giải quyết chế độ BHXH, BHTN",
-      "excerpt": "Ngày 31/01/2019 BHXH Việt Nam ban hành Quyết định 166/QĐ-BHXH quy trình giải quyết hưởng các chế độ BHXH, chi trả các c…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [
-        "BHXH",
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
-        "BHTN",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/quyet-dinh-166-quy-trinh-giai-quyet-che-do-bhxh-bhtn.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2019-01-31",
       "modifiedDate": null
     },
     {
@@ -237,60 +216,83 @@
         "TNDN",
         "Nghị quyết",
         "Quyết định",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/nghi-quyet-116-giam-thue-tndn-phai-nop-nam-2020.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2020-06-19",
       "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/nghi-quyet-406-nq-ubtvqh15-giam-30-thue-tndn-nam-2021.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/nghi-quyet-406-nq-ubtvqh15-giam-30-thue-tndn-nam-2021.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/nghi-quyet-406-nq-ubtvqh15-giam-30-thue-tndn-nam-2021.html",
+      "title": "Nghị quyết 406/NQ-UBTVQH15 giảm 30% thuế TNDN năm 2021",
+      "excerpt": "Nghị quyết 406/NQ-UBTVQH15 ngày 19/10/2021 quy định về việc Giảm 30% thuế thu nhập doanh nghiệp phải nộp của năm 2021;…",
+      "topicLabel": "Nghị quyết - Quyết định",
+      "tags": [
+        "TNDN",
+        "Nghị quyết",
+        "Quyết định",
+        "Thuế",
+        "Hóa đơn",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/nghi-quyet-406-giam-30-thue-tndn-nam-2021.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2021-10-19",
+      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
+      "id": "thu-vien/huong-dan-quyet-toan-thue-thu-nhap-ca-nhan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
-      "title": "Cách hoàn thuế thu nhập cá nhân tự động qua Etax 2025",
-      "excerpt": "Hướng dẫn cách làm hoàn thuế thu nhập cá nhân tự động qua Etax Mobile mới nhất năm 2025 1. Căn cứ hướng dẫn hoàn thuế T…",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/huong-dan-quyet-toan-thue-thu-nhap-ca-nhan.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/huong-dan-quyet-toan-thue-thu-nhap-ca-nhan.html",
+      "title": "Cách quyết toán thuế thu nhập cá nhân 2025 mới nhất",
+      "excerpt": "Cách quyết toán thuế thu nhập cá nhân năm 2025: Thủ tục hồ sơ quyết toán thuế TNCN; Các đối tượng phải – không phải quy…",
+      "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
         "TNCN",
-        "HTKK",
-        "eTax",
-        "Thuế điện tử",
-        "Phần mềm",
-        "Công cụ"
+        "Quyết toán",
+        "Thuế thu nhập cá nhân",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/hoan-thue-TNCN-tu-dong.jpg",
+      "image": "assets/images/content/pic/Service/images/huong-dan-quyet-toan-thue-tncn-2022.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-01-24",
+      "publishDate": "2019-06-13",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
+      "id": "thu-vien/quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
-      "title": "Quyết định 1040/QĐ-BHXH Mẫu Báo cáo sử dụng lao động tham gia BHXH",
-      "excerpt": "Ngày 18/8/2020 BHXH ban hành Quyết định 1040/QĐ-BHXH quy định Mẫu báo cáo tình hình sử dụng lao động và danh sách tham…",
+      "href": "thu-vien/quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.html",
+      "title": "Mẫu quyết định của giám đốc về việc đi nghỉ mát",
+      "excerpt": "Mẫu quyết định của Giám đốc về việc đi nghỉ mát, phê duyệt kinh phí đi nghỉ mát. Để hoàn thiện chứng từ chi phí cho nhâ…",
       "topicLabel": "Nghị quyết - Quyết định",
       "tags": [
-        "BHXH",
         "Nghị quyết",
         "Quyết định",
-        "Văn bản pháp luật",
-        "Lao động",
+        "Thuế",
+        "Hóa đơn",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/quyet-dinh-1040-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2020-08-18",
+      "publishDate": "2016-06-28",
       "modifiedDate": null
     }
   ]

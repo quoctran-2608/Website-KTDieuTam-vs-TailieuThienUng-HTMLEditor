@@ -1,6 +1,6 @@
 {
   "currentIndex": 1501,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/nhung-luu-y-khi-lam-ke-toan-nhap-khau.html",
     "section": "thu-vien",
@@ -32,10 +32,11 @@
     "canonical": "https://ketoandieutam.com/thu-vien/nhung-mat-hang-chiu-thue-suat-10.html",
     "title": "Những mặt hàng chịu thuế suất 10% năm 2026",
     "excerpt": "Quy định về các mặt hàng chịu thuế suất GTGT 10% trong năm 2026 được thực hiện theo Luật thuế GTGT số 48/2024/QH15…",
-    "topicLabel": "Khác",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "GTGT",
+      "Hóa đơn",
+      "Thuế",
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/thue-suat-10.jpg",
@@ -165,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -258,25 +259,23 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
+      "id": "thu-vien/mau-so-chi-phi-dau-tu-xay-dung-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
-      "title": "Mẫu báo cáo: Kế toán nguyên vật liệu công cụ dụng cụ tại Công ty công trình Đường Thủy",
-      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán nguyên vật liệu công cụ dụng cụ tại công ty…",
-      "topicLabel": "Tài sản - Kho - CCDC",
+      "href": "thu-vien/mau-so-chi-phi-dau-tu-xay-dung-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-so-chi-phi-dau-tu-xay-dung-theo-thong-tu-99.html",
+      "title": "Mẫu Sổ chi phí đầu tư xây dựng theo Thông tư 99",
+      "excerpt": "Sổ chi phí đầu tư xây dựng dùng để theo dõi chi phí đầu tư xây dựng tập hợp cho từng dự án, công trình, hạng mục công t…",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "CCDC",
-        "Tài sản",
-        "Kho",
+        "Mẫu biểu kế toán",
         "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/mau-so-chi-phi-dau-tu-xay-dung.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     }
   ]

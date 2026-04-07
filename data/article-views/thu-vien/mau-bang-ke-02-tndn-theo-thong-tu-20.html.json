@@ -1,6 +1,6 @@
 {
   "currentIndex": 1035,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-bang-cham-cong-tren-excel-cho-nhan-vien.html",
     "section": "thu-vien",
@@ -14,8 +14,8 @@
     "tags": [
       "Excel",
       "Công cụ khác",
-      "Phần mềm",
-      "Công cụ",
+      "Mẫu file & kê khai",
+      "Kê khai",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Bang-cham-cong-2026.png",
@@ -35,8 +35,7 @@
     "topicLabel": "Mẫu biểu kế toán",
     "tags": [
       "Mẫu biểu kế toán",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Kế toán",
       "Excel",
       "Biểu mẫu"
     ],
@@ -167,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -177,6 +176,29 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/bang-ke-mua-hang-khong-co-hoa-don-2026-mau-02-tndn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bang-ke-mua-hang-khong-co-hoa-don-2026-mau-02-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-ke-mua-hang-khong-co-hoa-don-2026-mau-02-tndn.html",
+      "title": "Mẫu bảng kê mua hàng hóa dịch vụ không có hóa đơn mới nhất năm 2026",
+      "excerpt": "Mẫu Bảng kê thu mua hàng hóa, dịch vụ không có hóa đơn mới nhất năm 2026 là Mẫu 02/TNDN được ban hành kèm theo…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "GTGT",
+        "TNDN",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/mau-01-tndn-theo-thong-tu-so-20-2026-bien-ban-xac-nhan-tai-tro.html",
       "section": "thu-vien",
@@ -191,8 +213,7 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-01-TNDN-Thong-tu-20-2026.png",
@@ -214,34 +235,10 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-so-03-8-tndn-bang-phan-bo-so-thue-tndn-phai-nop-doi-voi-co-so-san-xuat.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-so-03-2-tndn-phu-luc-chuyen-lo-theo-tt-80-2021.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-so-03-2-tndn-phu-luc-chuyen-lo-theo-tt-80-2021.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-so-03-2-tndn-phu-luc-chuyen-lo-theo-tt-80-2021.html",
-      "title": "Mẫu số 03-2/TNDN Phụ lục chuyển lỗ theo TT 80/2021",
-      "excerpt": "Mẫu Phụ lục chuyển lỗ mới nhất năm 2024 là mẫu số: 03-2/TNDN được ban hành kèm theo Thông tư số 80/2021/TT-BTC. Đây là…",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
-      "tags": [
-        "TNDN",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/Mau-so-03-2-tndn-phu-luc-chuyen-lo.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-09-15",
       "modifiedDate": null
@@ -249,46 +246,46 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cac-khoan-thu-nhap-khac-chiu-thue-tndn.html",
+      "id": "thu-vien/bang-thue-suat-thue-tncn-theo-bieu-luy-tien-tung-phan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-khoan-thu-nhap-khac-chiu-thue-tndn.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cac-khoan-thu-nhap-khac-chiu-thue-tndn.html",
-      "title": "Các khoản thu nhập khác chịu thuế TNDN 2026 mới nhất",
-      "excerpt": "Các khoản thu nhập khác chịu thuế thu nhập doanh nghiệp theo quy định tại Nghị định 320/2025/NĐ-CP hướng dẫn Luật Thuế…",
-      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "href": "thu-vien/bang-thue-suat-thue-tncn-theo-bieu-luy-tien-tung-phan.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-thue-suat-thue-tncn-theo-bieu-luy-tien-tung-phan.html",
+      "title": "Bảng thuế suất thuế TNCN theo biểu lũy tiến 2026 mới nhất",
+      "excerpt": "Thuế suất thuế TNCN từ tiền lương tiền công có 2 loại: + Loại 1 : Thuế suất theo biểu lũy tiền từng phần Áp dụng khi tí…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "TNDN",
-        "Thuế thu nhập doanh nghiệp",
+        "TNCN",
+        "Mẫu biểu thuế",
+        "hóa đơn",
         "Thuế",
-        "Hóa đơn",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Thu-nhap-khac-chiu-thue-TNDN.png",
+      "image": "assets/images/content/pic/Service/images/Thue-suat-thue-TNCN.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-12-15",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-01-tndn-theo-thong-tu-so-20-2026-bien-ban-xac-nhan-tai-tro.html",
+      "id": "thu-vien/bang-ke-mua-hang-khong-co-hoa-don-2026-mau-02-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-01-tndn-theo-thong-tu-so-20-2026-bien-ban-xac-nhan-tai-tro.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-01-tndn-theo-thong-tu-so-20-2026-bien-ban-xac-nhan-tai-tro.html",
-      "title": "Mẫu 01/TNDN theo Thông tư số 20/2026 biên bản xác nhận tài trợ",
-      "excerpt": "Mẫu biên bản xác nhận khoản tài trợ mới nhất năm 2026 là Mẫu 01/TNDN được ban hành kèm theo Thông tư 20/2026/TT-BTC (có…",
+      "href": "thu-vien/bang-ke-mua-hang-khong-co-hoa-don-2026-mau-02-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-ke-mua-hang-khong-co-hoa-don-2026-mau-02-tndn.html",
+      "title": "Mẫu bảng kê mua hàng hóa dịch vụ không có hóa đơn mới nhất năm 2026",
+      "excerpt": "Mẫu Bảng kê thu mua hàng hóa, dịch vụ không có hóa đơn mới nhất năm 2026 là Mẫu 02/TNDN được ban hành kèm theo…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
+        "GTGT",
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Mau-01-TNDN-Thong-tu-20-2026.png",
+      "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-09-15",
       "modifiedDate": null

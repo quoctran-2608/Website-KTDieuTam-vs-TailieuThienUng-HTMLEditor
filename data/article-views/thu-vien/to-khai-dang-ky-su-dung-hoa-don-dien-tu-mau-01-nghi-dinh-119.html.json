@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1985,
-  "totalCount": 2041,
+  "currentIndex": 1983,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/tinh-tiet-giam-nhe-tinh-tiet-tang-nang-vi-pham-hanh-chinh-thue.html",
     "section": "thu-vien",
@@ -10,10 +10,11 @@
     "canonical": "https://ketoandieutam.com/thu-vien/tinh-tiet-giam-nhe-tinh-tiet-tang-nang-vi-pham-hanh-chinh-thue.html",
     "title": "Tình tiết giảm nhẹ - tăng nặng vi phạm hành chính thuế",
     "excerpt": "Quy định về tình tiết Giảm Nhẹ - Tăng Nặng trong xử phạt vi phạm hành chính thuế: Các tình tiết giảm nhẹ khi chậm nộp t…",
-    "topicLabel": "Khác",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "GTGT",
+      "Hóa đơn",
+      "Thuế",
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/tinh-tiet-tang-nang-giam-nhe-vi-pham-hanh-chinh-thue.png",
@@ -35,8 +36,7 @@
       "TNCN",
       "Mẫu biểu thuế",
       "hóa đơn",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Thuế",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/MAU-06-TNCN.png",
@@ -166,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -191,7 +191,7 @@
         "Hóa đơn điện tử",
         "Mẫu biểu doanh nghiệp",
         "thủ tục",
-        "Mẫu biểu",
+        "Doanh nghiệp",
         "Hóa đơn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -200,73 +200,69 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-06-theo-nd-119-de-nghi-cap-hoa-don-dien-tu-ban-le.html",
+      "id": "thu-vien/mau-dang-ky-hinh-thuc-ke-toan-va-su-dung-hoa-don-voi-co-quan-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-06-theo-nd-119-de-nghi-cap-hoa-don-dien-tu-ban-le.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-06-theo-nd-119-de-nghi-cap-hoa-don-dien-tu-ban-le.html",
-      "title": "Mẫu 06/ĐN-PSĐT đơn đề nghị cấp hóa đơn điện tử theo Nghị định 70/2025",
-      "excerpt": "Mẫu 06/ĐN-PSĐT - Đơn đề nghị cấp hóa đơn điện tử có mã của cơ quan thuế theo từng lần phát sinh mới nhất năm 2025 theo…",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "href": "thu-vien/mau-dang-ky-hinh-thuc-ke-toan-va-su-dung-hoa-don-voi-co-quan-thue.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-dang-ky-hinh-thuc-ke-toan-va-su-dung-hoa-don-voi-co-quan-thue.html",
+      "title": "Mẫu Công văn đăng ký chế độ kế toán mới nhất",
+      "excerpt": "Mẫu công văn đăng ký hình thức kế toán mới nhất: Đăng ký chế độ kế toán theo Thông tư 133 hoặc 200, đăng ký hệ thống tà…",
+      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
       "tags": [
         "GTGT",
-        "Hóa đơn điện tử",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/cong-van-dang-ky-hinh-thuc-ke-toan.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-06-01",
+      "publishDate": "2015-12-22",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-so-04-thong-bao-huy-hoa-don-dien-tu-theo-nd-119.html",
+      "id": "thu-vien/mau-to-khai-dang-ky-thay-doi-thong-tin-su-dung-chung-tu-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-so-04-thong-bao-huy-hoa-don-dien-tu-theo-nd-119.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-so-04-thong-bao-huy-hoa-don-dien-tu-theo-nd-119.html",
-      "title": "Thông báo hủy hóa đơn điện tử Mẫu 04 theo NĐ 119",
-      "excerpt": "Mẫu số 04 Thông báo hủy hóa đơn điện tử theo Nghị định 119/2018/NĐ-CP; Quy định về phương pháp hủy hóa đơn điện tử; Tải…",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "href": "thu-vien/mau-to-khai-dang-ky-thay-doi-thong-tin-su-dung-chung-tu-dien-tu.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-to-khai-dang-ky-thay-doi-thong-tin-su-dung-chung-tu-dien-tu.html",
+      "title": "Mẫu tờ khai đăng ký/thay đổi thông tin sử dụng chứng từ điện tử",
+      "excerpt": "Mẫu 01/ĐKTĐ-CTĐT theo Nghị định 70/2025/NĐ-CP là mẫu Tờ khai đăng ký/thay đổi thông tin sử dụng chứng từ điện tử, có hi…",
+      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
       "tags": [
-        "GTGT",
-        "Hóa đơn điện tử",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-04-huy-hoa-don-dien-tu.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2020-10-29",
+      "publishDate": "2025-03-20",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/dang-ky-su-dung-hoa-don-dien-tu-khong-co-ma-cua-co-quan-thue.html",
+      "id": "thu-vien/cach-xac-dinh-doanh-nghiep-vua-va-nho-sieu-nho.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/dang-ky-su-dung-hoa-don-dien-tu-khong-co-ma-cua-co-quan-thue.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/dang-ky-su-dung-hoa-don-dien-tu-khong-co-ma-cua-co-quan-thue.html",
-      "title": "Cách đăng ký sử dụng hóa đơn điện tử không có mã của cơ quan thuế",
-      "excerpt": "Quy định về việc Đăng ký sử dụng hóa đơn điện tử không có mã của cơ quan thuế: Điều kiện, đối tượng sử dụng hóa đơn điệ…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/cach-xac-dinh-doanh-nghiep-vua-va-nho-sieu-nho.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-xac-dinh-doanh-nghiep-vua-va-nho-sieu-nho.html",
+      "title": "Cách xác định doanh nghiệp vừa và nhỏ 2026 mới nhất",
+      "excerpt": "Hướng dẫn cách xác định doanh nghiệp vừa và nhỏ theo các tiêu chí được quy định tại Nghị định 80/2021/NĐ-CP quy định ch…",
+      "topicLabel": "DN - Thủ tục",
       "tags": [
-        "GTGT",
-        "Hóa đơn điện tử",
-        "Hóa đơn",
-        "Thuế",
+        "DN",
+        "Thủ tục",
+        "Doanh nghiệp",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/dang-ky-su-dung-hoa-don-dien-tu-khong-co-ma-cua-co-quan-thue.png",
+      "image": "assets/images/content/pic/Service/images/Cach-xac-dinh-doanh-nghiep-vua-va-nho.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2018-06-07",
+      "publishDate": "2026-01-15",
       "modifiedDate": null
     },
     {
@@ -284,35 +280,12 @@
         "Hóa đơn điện tử",
         "Mẫu biểu doanh nghiệp",
         "thủ tục",
-        "Mẫu biểu",
+        "Doanh nghiệp",
         "Hóa đơn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-06-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
-      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "GTGT",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Thuế"
-      ],
-      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

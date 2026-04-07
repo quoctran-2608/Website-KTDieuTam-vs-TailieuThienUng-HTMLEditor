@@ -1,6 +1,6 @@
 {
   "currentIndex": 456,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/cach-lap-to-khai-thue-nha-thau-mau-01-ntnn.html",
     "section": "thu-vien",
@@ -10,14 +10,14 @@
     "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-to-khai-thue-nha-thau-mau-01-ntnn.html",
     "title": "Cách lập tờ khai thuế nhà thầu mẫu 01/NTNN",
     "excerpt": "Hướng dẫn cách lập tờ khai thuế nhà thầu nước ngoài mẫu 01/NTNN trên phần mềm HTKK (dành cho trường hợp bên…",
-    "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+    "topicLabel": "Thuế nhà thầu",
     "tags": [
       "Nhà thầu",
-      "Môn bài",
-      "Hộ kinh doanh",
-      "MST",
+      "Thuế nhà thầu",
       "Thuế",
-      "Hóa đơn"
+      "Hóa đơn",
+      "HTKK",
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/lap-to-khai-thue-nha-thau.png",
     "libraryKindLabel": "Hướng dẫn",
@@ -168,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -178,52 +178,6 @@
     }
   ],
   "related": [
-    {
-      "id": "thu-vien/mau-bang-tinh-thue-tndn-tren-excel.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-tinh-thue-tndn-tren-excel.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-tinh-thue-tndn-tren-excel.html",
-      "title": "Mẫu bảng tính thuế TNDN 2026 trên Excel",
-      "excerpt": "Mẫu bảng tính thuế thuế thu nhập doanh nghiệp mới nhất năm 2026 trên Excel Để làm được bảng tính thuế TNDN này thì Công…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "TNDN",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/Mau-bang-tinh-thue-TNDN(1).png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-10-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
-      "title": "Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK",
-      "excerpt": "Hướng dẫn thủ cắt giảm người phụ thuộc 2025 trên phần mềm HTKK để nộp qua mạng Khi nào thì thực hiện cắt giảm người phụ…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "HTKK",
-        "Người phụ thuộc"
-      ],
-      "image": "assets/images/content/pic/Service/images/Cat-giam-nguoi-phu-thuoc(1).png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2024-12-23",
-      "modifiedDate": null
-    },
     {
       "id": "thu-vien/ke-khai-thue-nha-thau-phan-mem-nhap-khau.html",
       "section": "thu-vien",
@@ -245,6 +199,52 @@
       "image": "assets/images/content/pic/Service/images/tinh thue nha thau cho phan mem nhap khau.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2007-05-03",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-bang-trich-khau-hao-tscd-tren-excel.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-trich-khau-hao-tscd-tren-excel.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-trich-khau-hao-tscd-tren-excel.html",
+      "title": "Cách lập bảng trích khấu hao TSCĐ trên Excel",
+      "excerpt": "Hướng dẫn cách lập bảng trích tính khấu hao tài sản cố định hàng tháng trên Excel Các thông tin ban đầu cần khai báo, c…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "TSCĐ",
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Khấu hao"
+      ],
+      "image": "assets/images/content/pic/Service/images/Bang-tinh-khau0hao-TSCD-tren-Excel.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
+      "title": "Cách làm bảng tính lương trên Excel hàng tháng năm 2026",
+      "excerpt": "Hướng dẫn cách làm bảng tính lương trên Excel 2026 theo mẫu Bảng thanh toán tiền lương theo Thông tư 99 và TT 133 mới n…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Tiền lương",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Bang-luong-2026.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     }
   ],
@@ -286,36 +286,13 @@
         "TNDN",
         "Excel",
         "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
+        "Mẫu file & kê khai",
+        "Kê khai",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-bang-tinh-thue-TNDN(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
-      "title": "Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK",
-      "excerpt": "Hướng dẫn thủ cắt giảm người phụ thuộc 2025 trên phần mềm HTKK để nộp qua mạng Khi nào thì thực hiện cắt giảm người phụ…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "HTKK",
-        "Người phụ thuộc"
-      ],
-      "image": "assets/images/content/pic/Service/images/Cat-giam-nguoi-phu-thuoc(1).png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2024-12-23",
       "modifiedDate": null
     },
     {

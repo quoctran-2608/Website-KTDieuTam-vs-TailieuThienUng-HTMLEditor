@@ -1,6 +1,6 @@
 {
   "currentIndex": 534,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/cach-viet-giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07-ns.html",
     "section": "thu-vien",
@@ -10,10 +10,11 @@
     "canonical": "https://ketoandieutam.com/thu-vien/cach-viet-giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07-ns.html",
     "title": "Cách ghi mẫu C1-07a/NS giấy đề nghị điều chỉnh thu NSNN",
     "excerpt": "Hướng dẫn cách viết giấy đề nghị điều chỉnh thu NSNN mẫu C1-07a/NS; Cách điền mẫu C1-07a/NS theo thông tư 19/…",
-    "topicLabel": "Khác",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "GTGT",
+      "Hóa đơn",
+      "Thuế",
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach-viet-giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07a-ns.png",
@@ -164,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -175,6 +176,52 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cach-tinh-so-ngay-cham-nop-tien-thue-tncn-gtgt-tndn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-tinh-so-ngay-cham-nop-tien-thue-tncn-gtgt-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-tinh-so-ngay-cham-nop-tien-thue-tncn-gtgt-tndn.html",
+      "title": "Cách tính số ngày chậm nộp tiền thuế TNCN, GTGT, TNDN 2026",
+      "excerpt": "Hướng dẫn cách xác định số ngày chậm nộp tiền thuế TNCN, GTGT, TNDN và lệ phí môn bài theo quy định mới nhất năm 2026 H…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "TNCN",
+        "TNDN",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/So-ngay-cham-nop-thue.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-05-04",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/muc-phat-cham-nop-tien-thue-gtgt-tncn-tndn-mon-bai.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/muc-phat-cham-nop-tien-thue-gtgt-tncn-tndn-mon-bai.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/muc-phat-cham-nop-tien-thue-gtgt-tncn-tndn-mon-bai.html",
+      "title": "Cách tính tiền phạt chậm nộp tiền thuế GTGT, TNCN, TNDN 2026",
+      "excerpt": "Hướng dẫn cách tính tiền phạt chậm nộp tiền thuế GTGT, TNDN, TNCN và lệ phí môn bài theo quy định mới nhất năm 2026 Tổn…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "TNCN",
+        "TNDN",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/muc-phat-cham-nop-thue.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-07-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -183,97 +230,64 @@
       "canonical": "https://ketoandieutam.com/thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
       "title": "Cách đăng ký và nộp Tiền thuế điện tử qua mạng mới nhất.",
       "excerpt": "Hướng dẫn cách Đăng ký nộp thuế điện tử qua mạng -> Cách lấy giấy nộp tiền thuế điện tử -> Cách nộp thuế điện tử trên t…",
-      "topicLabel": "Khác",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach-nop-thue-dien-tu-qua-mang.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200.html",
-      "title": "Hướng dẫn lập sổ tiền gửi ngân hàng Mẫu S08- DN theo Thông tư 200",
-      "excerpt": "Hướng dẫn cách lập sổ tiền gửi ngân hàng Mẫu S08- DN theo Thông tư 200/2014/TT-BTC : Mục đích lập, căn cứ và phương phá…",
-      "topicLabel": "Khác",
-      "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach lap so tien gui ngan hang.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/ma-chuong-ma-noi-dung-kinh-te-tren-giay-nop-tien-vao-ngan-sach.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ma-chuong-ma-noi-dung-kinh-te-tren-giay-nop-tien-vao-ngan-sach.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/ma-chuong-ma-noi-dung-kinh-te-tren-giay-nop-tien-vao-ngan-sach.html",
-      "title": "Cách điền Mã chương nộp thuế, mã Tiểu mục nộp thuế",
-      "excerpt": "Mã chương nộp thuế, mã nội dung kinh tế nộp thuế trên giấy nộp tiền thuế ghi thế nào? H ướng dẫn cách ghi Mã chương, mã…",
-      "topicLabel": "Khác",
-      "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-ghi-ma-chuong-ma-noi-dung-kinh-te-nop-thue.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "id": "thu-vien/cach-tinh-so-ngay-cham-nop-tien-thue-tncn-gtgt-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "title": "Cách đăng ký và nộp Tiền thuế điện tử qua mạng mới nhất.",
-      "excerpt": "Hướng dẫn cách Đăng ký nộp thuế điện tử qua mạng -> Cách lấy giấy nộp tiền thuế điện tử -> Cách nộp thuế điện tử trên t…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/cach-tinh-so-ngay-cham-nop-tien-thue-tncn-gtgt-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-tinh-so-ngay-cham-nop-tien-thue-tncn-gtgt-tndn.html",
+      "title": "Cách tính số ngày chậm nộp tiền thuế TNCN, GTGT, TNDN 2026",
+      "excerpt": "Hướng dẫn cách xác định số ngày chậm nộp tiền thuế TNCN, GTGT, TNDN và lệ phí môn bài theo quy định mới nhất năm 2026 H…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "TNCN",
+        "TNDN",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-nop-thue-dien-tu-qua-mang.png",
+      "image": "assets/images/content/pic/Service/images/So-ngay-cham-nop-thue.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-05-04",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
+      "id": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
-      "title": "Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp tiền thuế tiền phạt",
-      "excerpt": "Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp thuế mới nhất theo Thông tư 156/2013/TT-BTC: Xin gia hạn nộp tiền thuế, tiền ph…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "title": "Danh sách mã chương, mã tiểu mục nộp thuế mới nhất năm 2026",
+      "excerpt": "Danh sách mã chương, mã tiểu mục nộp thuế TNCN, thuế GTGT, Thuế TNDN mới nhất năm 2026 theo Thông tư 130/2025/TT-BTC qu…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "TNCN",
+        "TNDN",
+        "Hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

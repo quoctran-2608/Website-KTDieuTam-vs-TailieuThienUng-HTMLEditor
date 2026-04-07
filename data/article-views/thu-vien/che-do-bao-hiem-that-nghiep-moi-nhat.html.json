@@ -1,6 +1,6 @@
 {
   "currentIndex": 573,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/cau-truc-ma-so-thue.html",
     "section": "thu-vien",
@@ -10,14 +10,14 @@
     "canonical": "https://ketoandieutam.com/thu-vien/cau-truc-ma-so-thue.html",
     "title": "Cấu trúc mã số thuế doanh nghiệp, cá nhân, hộ kinh doanh",
     "excerpt": "Quy định về cấu trúc mã số thuế của doanh nghiệp, tổ chức và mã số thuế dành cho hộ gia đình, hộ kinh doanh, cá nhân…",
-    "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+    "topicLabel": "Mã số thuế - Đăng ký thuế",
     "tags": [
       "Mã số thuế",
-      "Môn bài",
+      "Đăng ký thuế",
+      "Thuế",
+      "Hóa đơn",
       "Hộ kinh doanh",
-      "Nhà thầu",
-      "MST",
-      "Thuế"
+      "MST"
     ],
     "image": "assets/images/content/pic/Service/images/Cau-truc-ma-so-thue(1).png",
     "libraryKindLabel": "Hướng dẫn",
@@ -169,8 +169,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -179,6 +179,29 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "title": "Điều kiện và cách tính mức hưởng trợ cấp một lần khi sinh con 2025",
+      "excerpt": "Quy định về điều kiện và cách tính mức hưởng trợ cấp một lần khi sinh con từ ngày 01/07/2025 theo Luật Bảo hiểm xã hội…",
+      "topicLabel": "BHXH - BHYT - BHTN",
+      "tags": [
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/dieu-kien-cach-tinh-tro-cap-mot-lan-khi-sinh.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-07-01",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/dieu-kien-huong-che-do-thai-san.html",
       "section": "thu-vien",
@@ -224,41 +247,18 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-06-30",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/che-do-om-dau-huong-bhxh-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/che-do-om-dau-huong-bhxh-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/che-do-om-dau-huong-bhxh-moi-nhat.html",
-      "title": "Mức hưởng chế độ ốm đau BHXH 2025 mới nhất",
-      "excerpt": "Mức hưởng chế độ ốm đau BHXH mới nhất năm 2025 theo Luật Bảo hiểm xã hội số: 41/2024/QH15 và Thông tư 12/2025/TT-BNV có…",
-      "topicLabel": "BHXH - BHYT - BHTN",
-      "tags": [
-        "BHXH",
-        "BHYT",
-        "BHTN",
-        "Lao động",
-        "Bảo hiểm",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Che-do-om-dau-huong-bhxh-moi-nhat.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-01-24",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/dieu-kien-huong-che-do-thai-san.html",
+      "id": "thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/dieu-kien-huong-che-do-thai-san.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/dieu-kien-huong-che-do-thai-san.html",
-      "title": "Điều kiện hưởng chế độ thai sản 2025 cho nam, nữ khi sinh con",
-      "excerpt": "Điều kiện hưởng chế độ thai sản từ ngày 01/07/2025 theo Luật Bảo hiểm xã hội số 41/2024/QH15 có hiệu lực thi hành từ ng…",
+      "href": "thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "title": "Điều kiện và cách tính mức hưởng trợ cấp một lần khi sinh con 2025",
+      "excerpt": "Quy định về điều kiện và cách tính mức hưởng trợ cấp một lần khi sinh con từ ngày 01/07/2025 theo Luật Bảo hiểm xã hội…",
       "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
         "BHXH",
@@ -268,9 +268,9 @@
         "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Dieu-kien-huong-che-do-thai-san.jpg",
+      "image": "assets/images/content/pic/Service/images/dieu-kien-cach-tinh-tro-cap-mot-lan-khi-sinh.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-06-30",
+      "publishDate": "2025-07-01",
       "modifiedDate": null
     },
     {

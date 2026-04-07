@@ -1,6 +1,6 @@
 {
   "currentIndex": 441,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/cach-lap-so-tai-san-co-dinh-the-tai-san-co-dinh.html",
     "section": "thu-vien",
@@ -33,10 +33,11 @@
     "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-so-theo-doi-thanh-toan-bang-ngoai-te.html",
     "title": "Cách lập Sổ theo dõi thanh toán bằng ngoại tệ",
     "excerpt": "Hướng dẫn cách lập Sổ theo dõi thanh toán bằng ngoại tệ Mẫu S33- DN theo Thông tư 200/2014/TT-BTC , mục đích lập, căn c…",
-    "topicLabel": "Khác",
+    "topicLabel": "Tài khoản - Hạch toán",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "Tài khoản",
+      "Hạch toán",
+      "Kế toán",
       "Hướng dẫn"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -166,8 +167,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -198,6 +199,27 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200.html",
+      "title": "Hướng dẫn lập sổ tiền gửi ngân hàng Mẫu S08- DN theo Thông tư 200",
+      "excerpt": "Hướng dẫn cách lập sổ tiền gửi ngân hàng Mẫu S08- DN theo Thông tư 200/2014/TT-BTC : Mục đích lập, căn cứ và phương phá…",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "Chứng từ",
+        "Sổ sách",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach lap so tien gui ngan hang.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-ghi-so-theo-hinh-thuc-nhat-ky-so-cai-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -214,27 +236,6 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Hinh-thuc-ghi-so-nhat-ky-ky-so-cai.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-ghi-so-theo-hinh-thuc-chung-tu-ghi-so-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ghi-so-theo-hinh-thuc-chung-tu-ghi-so-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-ghi-so-theo-hinh-thuc-chung-tu-ghi-so-theo-thong-tu-99.html",
-      "title": "Cách ghi sổ theo hình thức Chứng từ ghi sổ theo Thông tư 99",
-      "excerpt": "Hướng dẫn trình tự ghi sổ kế toán theo hình thức kế toán Chứng từ ghi sổ theo chế độ kế toán của Thông tư 99/2025/TT-BT…",
-      "topicLabel": "Chứng từ - Sổ sách",
-      "tags": [
-        "Chứng từ",
-        "Sổ sách",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hinh-thuc-chung-tu-ghi-so.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-01-01",
       "modifiedDate": null
@@ -263,22 +264,22 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "id": "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
-      "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
-      "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "href": "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
+      "title": "Mẫu Sổ chi tiết thanh toán với người mua - bán theo TT 133 và 200",
+      "excerpt": "Hướng dẫn cách lập Sổ chi tiết thanh toán với người mua (người bán) theo Thông tư 133 và 200 – Mẫu S12-DNN…",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
-        "Tài khoản",
-        "Hạch toán",
+        "Chứng từ",
+        "Sổ sách",
         "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
+      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-thanh-toan-nguoi-mua-ban.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1879,
-  "totalCount": 2041,
+  "currentIndex": 1877,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/thong-tu-141-2013-tt-btc-thi-hanh-luat-thue-tndn-va-gtgt.html",
     "section": "thu-vien",
@@ -15,7 +15,8 @@
       "GTGT",
       "TNDN",
       "Thông tư",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -36,7 +37,8 @@
     "tags": [
       "GTGT",
       "Thông tư",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/van ban hop nhat ve thue GTGT.png",
@@ -166,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -189,7 +191,8 @@
       "tags": [
         "GTGT",
         "Thông tư",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/thong tu 26_2015 huong dan thue gtgt va quan ly thue.jpg",
@@ -210,7 +213,8 @@
       "tags": [
         "TNCN",
         "Thông tư",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -231,7 +235,8 @@
       "tags": [
         "TNDN",
         "Thông tư",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/thong tu 78_2014 thue thu nhap doanh nghiep.png",
@@ -242,25 +247,47 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
+      "id": "thu-vien/huong-dan-cach-xuat-hoa-don-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
-      "title": "Công văn 624/TCT – CS tiếp nhận hồ sơ đăng ký kê khai thuế GTGT theo mẫu số 06/GTGT",
-      "excerpt": "Ngày 28 tháng 2 năm 2014 Tổng cục thuế ban hành Công văn số 624/TCT – CS về việc tiếp nhận hồ sơ đăng ký kê khai thuế G…",
-      "topicLabel": "Công văn",
+      "href": "thu-vien/huong-dan-cach-xuat-hoa-don-dien-tu.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/huong-dan-cach-xuat-hoa-don-dien-tu.html",
+      "title": "Cách xuất hóa đơn điện tử theo nghị định 70/2025, Thông tư 32/2025",
+      "excerpt": "Hướng dẫn lập hóa đơn điện tử mới nhất năm 2025 tại Thông tư 32/2025/TT-BTC và Nghị định 70/2025/NĐ-CP quy định về hóa…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
-        "Kê khai",
-        "Công văn",
-        "Văn bản pháp luật",
+        "Hóa đơn điện tử",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cach-lap-hoa-don-dien-tu.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2020-10-19",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-don-de-nghi-cap-hoa-don-le-theo-thong-tu-39.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-don-de-nghi-cap-hoa-don-le-theo-thong-tu-39.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-don-de-nghi-cap-hoa-don-le-theo-thong-tu-39.html",
+      "title": "Mẫu Đơn đề nghị cấp hóa đơn lẻ theo Thông tư 39/2014/TT-BTC",
+      "excerpt": "Mẫu Đơn đề nghị cấp hóa đơn lẻ Ban hành kèm theo Thông tư số 39/2014/TT-BTC ngày 31/3/2014 của Bộ Tài chính CỘNG HOÀ XÃ…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "GTGT",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-02-28",
+      "publishDate": "2014-03-31",
       "modifiedDate": null
     }
   ]

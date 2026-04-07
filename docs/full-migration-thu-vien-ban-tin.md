@@ -1,6 +1,6 @@
 # Danh sách nội dung đã build
 
-- Thư viện: 2041 bài
+- Thư viện: 2039 bài
 - Bản tin: 25 bài
 
 ## Thư viện
@@ -1696,358 +1696,356 @@
 | 1687 | Phương pháp tính thuế thu nhập doanh nghiệp | `phuong-phap-tinh-thue-tndn.htm` | `thu-vien/phuong-phap-tinh-thue-tndn.html` |
 | 1688 | Cách tính khấu hao TSCĐ theo số lượng, khối lượng sản phẩm | `phuong-phap-trich-khau-hao-tscd-theo-san-luong.htm` | `thu-vien/phuong-phap-trich-khau-hao-tscd-theo-san-luong.html` |
 | 1689 | Cách tính khấu hao theo phương pháp số dư giảm dần | `phuong-phap-trich-khau-hao-tscd-theo-so-du-giam-dan.htm` | `thu-vien/phuong-phap-trich-khau-hao-tscd-theo-so-du-giam-dan.html` |
-| 1690 | Popupdetail.aspx | `popupdetail-aspx.html` | `thu-vien/popupdetail-aspx.html` |
-| 1691 | Popupdetail | `popupdetail.aspx` | `thu-vien/popupdetail.html` |
-| 1692 | Quy chế dân chủ ở cơ sở tại nơi làm việc | `quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.htm` | `thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html` |
-| 1693 | Phụ cấp ăn trưa, ăn ca có phải tính thuế TNCN không? Có phải đóng BHXH không? | `quy-dinh-phu-cap-tien-an-giua-ca-moi-nhat.htm` | `thu-vien/quy-dinh-phu-cap-tien-an-giua-ca-moi-nhat.html` |
-| 1694 | Quy định về Bảo hiểm tai nạn lao động, bệnh nghề nghiệp | `quy-dinh-ve-bao-hiem-tai-nan-lao-dong-benh-nghe-nghiep.htm` | `thu-vien/quy-dinh-ve-bao-hiem-tai-nan-lao-dong-benh-nghe-nghiep.html` |
-| 1695 | Quy định về BHXH bắt buộc cho Doanh nghiệp năm 2021 | `quy-dinh-ve-bao-hiem-xh-bhyt-bhtn-moi-nhat-nam.htm` | `thu-vien/quy-dinh-ve-bao-hiem-xh-bhyt-bhtn-moi-nhat-nam.html` |
-| 1696 | Quy định về bảo hiểm y tế năm 2024 đối với DN | `quy-dinh-ve-bao-hiem-y-te-nam-2024-doi-voi-dn.htm` | `thu-vien/quy-dinh-ve-bao-hiem-y-te-nam-2024-doi-voi-dn.html` |
-| 1697 | Các khoản chi có tính chất phúc lợi cho nhân viên hợp lý 2026 | `quy-dinh-ve-chi-phi-cho-nhan-vien-di-nghi-mat-di-lai-ngay-le-tet.htm` | `thu-vien/quy-dinh-ve-chi-phi-cho-nhan-vien-di-nghi-mat-di-lai-ngay-le-tet.html` |
-| 1698 | Quy định về cho thuê lại lao động mới nhất 2025 | `quy-dinh-ve-cho-thue-lai-lao-dong-hop-dong-dieu-kien-cho-thue.htm` | `thu-vien/quy-dinh-ve-cho-thue-lai-lao-dong-hop-dong-dieu-kien-cho-thue.html` |
-| 1699 | Quy định về chữ ký trên hóa đơn GTGT, điện tử, bán hàng | `quy-dinh-ve-chu-ky-tren-hoa-don-gtgt-dien-tu-ban-hang.htm` | `thu-vien/quy-dinh-ve-chu-ky-tren-hoa-don-gtgt-dien-tu-ban-hang.html` |
-| 1700 | Quy định về chứng từ kế toán theo Thông tư 133 | `quy-dinh-ve-chung-tu-ke-toan-theo-thong-tu-133.htm` | `thu-vien/quy-dinh-ve-chung-tu-ke-toan-theo-thong-tu-133.html` |
-| 1701 | Quy định về giao dịch liên kết nghị định 132 | `quy-dinh-ve-giao-dich-lien-ket.htm` | `thu-vien/quy-dinh-ve-giao-dich-lien-ket.html` |
-| 1702 | Quy định về hóa đơn của hàng hóa nhập khẩu lưu thông trên thị trường | `quy-dinh-ve-hang-hoa-nhap-khau-luu-thong-tren-thi-truong.htm` | `thu-vien/quy-dinh-ve-hang-hoa-nhap-khau-luu-thong-tren-thi-truong.html` |
-| 1703 | Hình thức trả lương cho người lao động là tiền mặt hoặc chuyển khoản | `quy-dinh-ve-hinh-thuc-tra-luong-theo-luat-lao-dong.htm` | `thu-vien/quy-dinh-ve-hinh-thuc-tra-luong-theo-luat-lao-dong.html` |
-| 1704 | Quy định về ký hiệu hóa đơn điện tử 2025 theo Thông tư 32/2025 | `quy-dinh-ve-ky-hieu-hoa-don-dien-tu-theo-thong-tu-78.htm` | `thu-vien/quy-dinh-ve-ky-hieu-hoa-don-dien-tu-theo-thong-tu-78.html` |
-| 1705 | Quy định về ký hiệu mẫu số hóa đơn Giá trị gia tăng | `quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.htm` | `thu-vien/quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.html` |
-| 1706 | Kỳ kê khai thuế thu nhập doanh nghiệp | `quy-dinh-ve-ky-ke-khai-thue-thu-nhap-doanh-nghiep.htm` | `thu-vien/quy-dinh-ve-ky-ke-khai-thue-thu-nhap-doanh-nghiep.html` |
-| 1707 | Kỳ tính thuế thu nhập doanh nghiệp | `quy-dinh-ve-ky-tinh-thue-thu-nhap-doanh-nghiep.htm` | `thu-vien/quy-dinh-ve-ky-tinh-thue-thu-nhap-doanh-nghiep.html` |
-| 1708 | Quy định về lao động bán thời gian, làm việc không trọn thời gian | `quy-dinh-ve-lao-dong-ban-thoi-gian-lam-viec-khong-tron-thoi-gian.htm` | `thu-vien/quy-dinh-ve-lao-dong-ban-thoi-gian-lam-viec-khong-tron-thoi-gian.html` |
-| 1709 | Các khoản phụ cấp không phải đóng BHXH năm 2026 | `quy-dinh-ve-muc-luong-phu-cap-luong-va-cac-khoan-bo-sung-khac.htm` | `thu-vien/quy-dinh-ve-muc-luong-phu-cap-luong-va-cac-khoan-bo-sung-khac.html` |
-| 1710 | Quy định về nghỉ phép năm của người lao động theo bộ luật lao động | `quy-dinh-ve-nghi-phep-nam-cua-nguoi-lao-dong.htm` | `thu-vien/quy-dinh-ve-nghi-phep-nam-cua-nguoi-lao-dong.html` |
-| 1711 | Nội quy lao động là gì? có phải đăng ký không? | `quy-dinh-ve-noi-quy-lao-dong.htm` | `thu-vien/quy-dinh-ve-noi-quy-lao-dong.html` |
-| 1712 | Quy định về phụ lục hợp đồng lao động mới nhất năm 2026 | `quy-dinh-ve-phu-luc-hop-dong-lao-dong.htm` | `thu-vien/quy-dinh-ve-phu-luc-hop-dong-lao-dong.html` |
-| 1713 | Quy định về số hóa đơn điện tử | `quy-dinh-ve-so-hoa-don-dien-tu-theo-tt-78-va-nd-123.htm` | `thu-vien/quy-dinh-ve-so-hoa-don-dien-tu-theo-tt-78-va-nd-123.html` |
-| 1714 | Quy định về sổ sách kế toán theo TT 133 và Luật kế toán | `quy-dinh-ve-so-sach-ke-toan-theo-thong-tu-133.htm` | `thu-vien/quy-dinh-ve-so-sach-ke-toan-theo-thong-tu-133.html` |
-| 1715 | Quy định về sử dụng phần mềm kế toán theo Thông tư 99 | `quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.htm` | `thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html` |
-| 1716 | Cách sửa đổi, bổ sung hợp đồng lao động | `quy-dinh-ve-sua-doi-bo-sung-hop-dong-lao-dong.htm` | `thu-vien/quy-dinh-ve-sua-doi-bo-sung-hop-dong-lao-dong.html` |
-| 1717 | Quy định về nguyên tắc quản lý tài sản cố định tại DN | `quy-dinh-ve-tai-san-co-dinh-va-nguyen-tac-quan-ly-tscd.htm` | `thu-vien/quy-dinh-ve-tai-san-co-dinh-va-nguyen-tac-quan-ly-tscd.html` |
-| 1718 | Quy định về tạm hoãn thực hiện hợp đồng lao động 2026 mới nhất | `quy-dinh-ve-tam-hoan-thuc-hien-hop-dong-lao-dong.htm` | `thu-vien/quy-dinh-ve-tam-hoan-thuc-hien-hop-dong-lao-dong.html` |
-| 1719 | Chi phí trước khi thành lập công ty có được trừ 2026 | `quy-dinh-ve-thanh-toan-uy-quyen-qua-ben-thu-3.htm` | `thu-vien/quy-dinh-ve-thanh-toan-uy-quyen-qua-ben-thu-3.html` |
-| 1720 | Quy định về thời gian làm việc hành chính, ca đêm | `quy-dinh-ve-thoi-gian-lam-viec-lam-them-gio-tang-ca.htm` | `thu-vien/quy-dinh-ve-thoi-gian-lam-viec-lam-them-gio-tang-ca.html` |
-| 1721 | Quy định về thời gian nghỉ ngơi trong Bộ luật lao động | `quy-dinh-ve-thoi-gian-nghi-ngoi-trong-bo-luat-lao-dong.htm` | `thu-vien/quy-dinh-ve-thoi-gian-nghi-ngoi-trong-bo-luat-lao-dong.html` |
-| 1722 | Quy định về lao động thử việc: thời gian, lương thử việc, BHXH, thuế TNCN | `quy-dinh-ve-thoi-gian-thu-viec-va-muc-luong-thu-viec.htm` | `thu-vien/quy-dinh-ve-thoi-gian-thu-viec-va-muc-luong-thu-viec.html` |
-| 1723 | Quy định về thời hạn nộp thuế 2026 theo Luật quản lý thuế | `quy-dinh-ve-thoi-han-nop-thue.htm` | `thu-vien/quy-dinh-ve-thoi-han-nop-thue.html` |
-| 1724 | Quy định về tiền lương trong Bộ luật lao động mới nhất 2026 | `quy-dinh-ve-tien-luong-trong-bo-luat-lao-dong-moi-nhat.htm` | `thu-vien/quy-dinh-ve-tien-luong-trong-bo-luat-lao-dong-moi-nhat.html` |
-| 1725 | Quy định về việc kiểm kê tài sản hàng năm | `quy-dinh-ve-viec-kiem-ke-tai-san-hang-nam.htm` | `thu-vien/quy-dinh-ve-viec-kiem-ke-tai-san-hang-nam.html` |
-| 1726 | Quy định về việc tạm nộp thuế TNDN năm 2026 | `quy-dinh-ve-viec-nop-tien-thue-tndn-tam-tinh-quy-2026.htm` | `thu-vien/quy-dinh-ve-viec-nop-tien-thue-tndn-tam-tinh-quy-2026.html` |
-| 1727 | Quy trình kiểm tra thuế áp dụng từ 14/7/2023 | `quy-trinh-kiem-tra-thue.htm` | `thu-vien/quy-trinh-kiem-tra-thue.html` |
-| 1728 | Quy trình luân chuyển và kiểm tra chứng từ kế toán | `quy-trinh-luan-chuyen-chung-tu-ke-toan-moi-nhat.htm` | `thu-vien/quy-trinh-luan-chuyen-chung-tu-ke-toan-moi-nhat.html` |
-| 1729 | Quyền đơn phương chấm dứt, tạm hoãn hợp đồng lao động của lao động nữ mang thai | `quyen-don-phuong-cham-dut-tam-hoan-hop-dong-lao-dong-cua-lao-dong-nu-mang-thai.htm` | `thu-vien/quyen-don-phuong-cham-dut-tam-hoan-hop-dong-lao-dong-cua-lao-dong-nu-mang-thai.html` |
-| 1730 | Các quyền lợi khi đóng bảo hiểm xã hội | `quyen-loi-khi-dong-bao-hiem-xa-hoi.htm` | `thu-vien/quyen-loi-khi-dong-bao-hiem-xa-hoi.html` |
-| 1731 | Quyền và nghĩa vụ của người lao động theo Bộ Luật Lao Động | `quyen-va-nghia-vu-cua-nguoi-lao-dong-theo-bo-luat-lao-dong.htm` | `thu-vien/quyen-va-nghia-vu-cua-nguoi-lao-dong-theo-bo-luat-lao-dong.html` |
-| 1732 | Quyền và nghĩa vụ của người sử dụng lao động theo Bộ Luật Lao Động | `quyen-va-nghia-vu-cua-nguoi-su-dung-lao-dong-theo-bo-luat-lao-dong.htm` | `thu-vien/quyen-va-nghia-vu-cua-nguoi-su-dung-lao-dong-theo-bo-luat-lao-dong.html` |
-| 1733 | Quyền và trách nhiệm của người sử dụng lao động về BHXH | `quyen-va-trach-nhiem-cua-nguoi-su-dung-lao-dong-ve-bhxh.htm` | `thu-vien/quyen-va-trach-nhiem-cua-nguoi-su-dung-lao-dong-ve-bhxh.html` |
-| 1734 | Quyết định 1018/QĐ-BHXH Quy định thu, chi BHXH, BHYT | `quyet-dinh-1018-qd-bhxh-quy-dinh-thu-chi-bhxh-bhyt.htm` | `thu-vien/quyet-dinh-1018-qd-bhxh-quy-dinh-thu-chi-bhxh-bhyt.html` |
-| 1735 | Quyết định 1040/QĐ-BHXH Mẫu Báo cáo sử dụng lao động tham gia BHXH | `quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.htm` | `thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html` |
-| 1736 | Quyết định 108/QĐ-TCT quy trình hoàn thuế thu nhập cá nhân tự động | `quyet-dinh-108-qd-tct-quy-trinh-hoan-thue-tncn-tu-dong.htm` | `thu-vien/quyet-dinh-108-qd-tct-quy-trinh-hoan-thue-tncn-tu-dong.html` |
-| 1737 | Quyết định 1378/QĐ-BTC Thủ tục đăng ký người phụ thuộc | `quyet-dinh-1378-qd-btc-thu-tuc-dang-ky-nguoi-phu-thuoc.htm` | `thu-vien/quyet-dinh-1378-qd-btc-thu-tuc-dang-ky-nguoi-phu-thuoc.html` |
-| 1738 | Quyết định 1408/QĐ-TLĐ Quy định về tài chính công đoàn | `quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.htm` | `thu-vien/quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.html` |
-| 1739 | Quyết định 166/QĐ-BHXH Quy trình giải quyết chế độ BHXH, BHTN | `quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.htm` | `thu-vien/quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.html` |
-| 1740 | Quyết định 595/QĐ-BHXH thay thế QĐ 959/QĐ-BHXH của BHXH Việt Nam | `quyet-dinh-595-qd-bhxh-thay-the-qd-959-cua-bhxh-viet-nam.htm` | `thu-vien/quyet-dinh-595-qd-bhxh-thay-the-qd-959-cua-bhxh-viet-nam.html` |
-| 1741 | Giảm mức đóng đoàn phí công đoàn từ ngày 01/07/2025 | `quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.htm` | `thu-vien/quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.html` |
-| 1742 | Quyết định 636/QĐ-BHXH Quy định về chế độ BHXH | `quyet-dinh-636-qd-bhxh-quy-dinh-ve-che-do-bhxh.htm` | `thu-vien/quyet-dinh-636-qd-bhxh-quy-dinh-ve-che-do-bhxh.html` |
-| 1743 | Quyết định 8086/QĐ-TLĐ hướng dẫn thu đoàn phí công đoàn 2024 | `quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.htm` | `thu-vien/quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.html` |
-| 1744 | Quyết định 919/QĐ-BHXH Sửa đổi bổ sung QĐ 01/QĐ-BHXH | `quyet-dinh-919-qd-bhxh-ngay-26-8-2015-cua-bhxh-viet-nam.htm` | `thu-vien/quyet-dinh-919-qd-bhxh-ngay-26-8-2015-cua-bhxh-viet-nam.html` |
-| 1745 | Quyết định 959/QĐ-BHXH Quy định về BHXH, BHYT, BHTN | `quyet-dinh-959-qd-bhxh-quy-dinh-ve-bhxh-bhyt-bhtn.htm` | `thu-vien/quyet-dinh-959-qd-bhxh-quy-dinh-ve-bhxh-bhyt-bhtn.html` |
-| 1746 | Quyết định ban hành hệ thống thang bảng lương 2025 | `quyet-dinh-ban-hanh-he-thong-thang-bang-luong.htm` | `thu-vien/quyet-dinh-ban-hanh-he-thong-thang-bang-luong.html` |
-| 1747 | Mẫu Quyết định chấm dứt hợp đồng lao động | `quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.htm` | `thu-vien/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html` |
-| 1748 | Mẫu quyết định của giám đốc về việc đi nghỉ mát | `quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.htm` | `thu-vien/quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.html` |
-| 1749 | Mẫu Quyết định giải thể doanh nghiệp công ty | `quyet-dinh-giai-the-doanh-nghiep-cong-ty.htm` | `thu-vien/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html` |
-| 1750 | Quyết định số 01/QĐ-BHXH Chế độ bảo hiểm xã hội | `quyet-dinh-so-01-qd-bhxh-che-do-bao-hiem-xa-hoi.htm` | `thu-vien/quyet-dinh-so-01-qd-bhxh-che-do-bao-hiem-xa-hoi.html` |
-| 1751 | Sổ bảo hiểm xã hội | `so-bao-hiem-xa-hoi.htm` | `thu-vien/so-bao-hiem-xa-hoi.html` |
-| 1752 | Sổ chi tiết cổ phiếu mua lại của chính mình theo Thông tư 99 | `so-chi-tiet-co-phieu-mua-lai-cua-chinh-minh-theo-thong-tu-99.htm` | `thu-vien/so-chi-tiet-co-phieu-mua-lai-cua-chinh-minh-theo-thong-tu-99.html` |
-| 1753 | Mẫu Sổ chi tiết thanh toán với người mua - bán theo TT 133 và 200 | `so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.htm` | `thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html` |
-| 1754 | Sổ chi tiết thuế GTGT được hoàn lại theo Thông tư 99 | `so-chi-tiet-thue-gtgt-duoc-hoan-lai-theo-thong-tu-99.htm` | `thu-vien/so-chi-tiet-thue-gtgt-duoc-hoan-lai-theo-thong-tu-99.html` |
-| 1755 | Sổ chi tiết thuế GTGT được miễn giảm theo Thông tư 99 | `so-chi-tiet-thue-gtgt-duoc-mien-giam-theo-thong-tu-99.htm` | `thu-vien/so-chi-tiet-thue-gtgt-duoc-mien-giam-theo-thong-tu-99.html` |
-| 1756 | Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh | `so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.htm` | `thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html` |
-| 1757 | Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên kết | `so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-ket.htm` | `thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-ket.html` |
-| 1758 | Cách lập sổ quản lý lao động theo nghị định 145 mới nhất năm 2026 | `so-quan-ly-lao-dong-doanh-nghiep-theo-nghi-dinh-145.htm` | `thu-vien/so-quan-ly-lao-dong-doanh-nghiep-theo-nghi-dinh-145.html` |
-| 1759 | So sánh tài khoản kế toán Thông tư 200 và Thông tư 99 | `so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.htm` | `thu-vien/so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.html` |
-| 1760 | Sổ theo dõi chi tiết vốn đầu tư của chủ sở hữu theo Thông tư 99 | `so-theo-doi-chi-tiet-von-dau-tu-cua-chu-so-huu-theo-thong-tu-99.htm` | `thu-vien/so-theo-doi-chi-tiet-von-dau-tu-cua-chu-so-huu-theo-thong-tu-99.html` |
-| 1761 | Sổ theo dõi phân bổ các khoản chênh lệch phát sinh khi mua khoản đầu tư vào công ty liên doanh | `so-theo-doi-phan-bo-cac-khoan-chenh-lech-phat-sinh-khi-mua-khoan-dau-tu-vao-cong-ty-lien-ket.htm` | `thu-vien/so-theo-doi-phan-bo-cac-khoan-chenh-lech-phat-sinh-khi-mua-khoan-dau-tu-vao-cong-ty-lien-ket.html` |
-| 1762 | Sổ theo dõi thanh toán bằng ngoại tệ theo Thông tư 99 | `so-theo-doi-thanh-toan-bang-ngoai-te-theo-thong-tu-99.htm` | `thu-vien/so-theo-doi-thanh-toan-bang-ngoai-te-theo-thong-tu-99.html` |
-| 1763 | Mẫu Sổ theo dõi TSCĐ - CCDC tại nơi sử dụng theo TT 133 và 200 | `so-theo-doi-tscd-va-ccdc-tai-noi-su-dung-theo-tt-133-va-200.htm` | `thu-vien/so-theo-doi-tscd-va-ccdc-tai-noi-su-dung-theo-tt-133-va-200.html` |
-| 1764 | Sổ theo dõi TSCĐ và công cụ, dụng cụ tại nơi sử dụng | `so-theo-doi-tscd-va-cong-cu-dung-cu-tai-noi-su-dung-theo-tt99.htm` | `thu-vien/so-theo-doi-tscd-va-cong-cu-dung-cu-tai-noi-su-dung-theo-tt99.html` |
-| 1765 | Sử dụng bất hợp pháp hóa đơn là gì - Cách xử lý | `su-dung-hoa-don-bat-hop-phap-va-muc-phat.htm` | `thu-vien/su-dung-hoa-don-bat-hop-phap-va-muc-phat.html` |
-| 1766 | Quy định về hóa đơn điện tử có mã và không có mã của cơ quan thuế | `su-dung-hoa-don-dien-tu-co-khong-co-ma-cua-co-quan-thue.htm` | `thu-vien/su-dung-hoa-don-dien-tu-co-khong-co-ma-cua-co-quan-thue.html` |
-| 1767 | Sửa đổi, bổ sung Báo cáo tài chính theo Thông tư 99 | `sua-doi-bo-sung-bao-cao-tai-chinh-theo-thong-tu-99.htm` | `thu-vien/sua-doi-bo-sung-bao-cao-tai-chinh-theo-thong-tu-99.html` |
-| 1768 | Sửa đổi, bổ sung chế độ kế toán Thông tư 133/2016/TT-BTC | `sua-doi-bo-sung-thong-tu-133-2016-tt-btc.htm` | `thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html` |
-| 1769 | Tải khoản 112 Tiền gửi ngân hàng theo Thông tư 133 | `tai-khoan-112-tien-gui-ngan-hang-cach-hach-toan.htm` | `thu-vien/tai-khoan-112-tien-gui-ngan-hang-cach-hach-toan.html` |
-| 1770 | Tài khoản 121 Chứng khoán kinh doanh theo Thông tư 133 | `tai-khoan-121-chung-khoan-kinh-doanh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-121-chung-khoan-kinh-doanh-theo-thong-tu-133.html` |
-| 1771 | Tài khoản 128 Đầu tư nắm giữ đến ngày đáo hạn theo TT 133 | `tai-khoan-128-dau-tu-nam-giu-den-ngay-dao-han-theo-tt-133.htm` | `thu-vien/tai-khoan-128-dau-tu-nam-giu-den-ngay-dao-han-theo-tt-133.html` |
-| 1772 | Tải khoản 131 Phải thu khách hàng theo TT 133 | `tai-khoan-131-phai-thu-cua-khach-hang-theo-tt-133.htm` | `thu-vien/tai-khoan-131-phai-thu-cua-khach-hang-theo-tt-133.html` |
-| 1773 | Tài khoản 133 Thuế GTGT được khấu trừ theo TT 133 | `tai-khoan-133-thue-gtgt-duoc-khau-tru-theo-tt-133.htm` | `thu-vien/tai-khoan-133-thue-gtgt-duoc-khau-tru-theo-tt-133.html` |
-| 1774 | Tài khoản 136 Phải thu nội bộ theo Thông tư 133 | `tai-khoan-136-phai-thu-noi-bo-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-136-phai-thu-noi-bo-theo-thong-tu-133.html` |
-| 1775 | Tài khoản 138 Phải thu khác theo Thông tư 133 | `tai-khoan-138-phai-thu-khac-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-138-phai-thu-khac-theo-thong-tu-133.html` |
-| 1776 | Tài khoản 141 Tạm ứng theo Thông tư 133 | `tai-khoan-141-tam-ung-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-141-tam-ung-theo-thong-tu-133.html` |
-| 1777 | Tài khoản 151 Hàng mua đang đi đường theo Thông tư 133 | `tai-khoan-151-hang-mua-dang-di-duong-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-151-hang-mua-dang-di-duong-theo-thong-tu-133.html` |
-| 1778 | Tài khoản 152 Nguyên vật liệu theo Thông tư 133 | `tai-khoan-152-nguyen-vat-lieu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-152-nguyen-vat-lieu-theo-thong-tu-133.html` |
-| 1779 | Tài khoản 153 Công cụ dụng cụ theo Thông tư 133 | `tai-khoan-153-cong-cu-dung-cu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-153-cong-cu-dung-cu-theo-thong-tu-133.html` |
-| 1780 | Tài khoản 154 Chi phí sản xuất kinh doanh dở dang theo TT 133 | `tai-khoan-154-chi-phi-san-xuat-kinh-doanh-do-dang-theo-tt-133.htm` | `thu-vien/tai-khoan-154-chi-phi-san-xuat-kinh-doanh-do-dang-theo-tt-133.html` |
-| 1781 | Tài khoản 155 Thành phẩm theo Thông tư 133 | `tai-khoan-155-thanh-pham-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-155-thanh-pham-theo-thong-tu-133.html` |
-| 1782 | Tài khoản 156 Hàng hóa theo Thông tư 133 | `tai-khoan-156-hang-hoa-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-156-hang-hoa-theo-thong-tu-133.html` |
-| 1783 | Tài khoản 157 Hàng gửi bán theo Thông tư 133 | `tai-khoan-157-hang-gui-ban-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-157-hang-gui-ban-theo-thong-tu-133.html` |
-| 1784 | Tài khoản 211 Tài sản cố định theo Thông tư 133 | `tai-khoan-211-tai-san-co-dinh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-211-tai-san-co-dinh-theo-thong-tu-133.html` |
-| 1785 | Tài khoản 214 Hao mòn tài sản cố định theo Thông tư 133 | `tai-khoan-214-hao-mon-tai-san-co-dinh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-214-hao-mon-tai-san-co-dinh-theo-thong-tu-133.html` |
-| 1786 | Tài khoản 217 Bất động sản đầu tư theo Thông tư 133 | `tai-khoan-217-bat-dong-san-dau-tu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-217-bat-dong-san-dau-tu-theo-thong-tu-133.html` |
-| 1787 | Tài khoản 228 Đầu tư góp vốn vào đơn vị khác theo TT 133 | `tai-khoan-228-dau-tu-gop-von-vao-don-vi-khac-theo-tt-133.htm` | `thu-vien/tai-khoan-228-dau-tu-gop-von-vao-don-vi-khac-theo-tt-133.html` |
-| 1788 | Tài khoản 229 Dự phòng tổn thất tài sản theo Thông tư 133 | `tai-khoan-229-du-phong-ton-that-tai-san-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-229-du-phong-ton-that-tai-san-theo-thong-tu-133.html` |
-| 1789 | Tài khoản 241 Xây dựng cơ bản dở dang theo Thông tư 133 | `tai-khoan-241-xay-dung-co-ban-do-dang-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-241-xay-dung-co-ban-do-dang-theo-thong-tu-133.html` |
-| 1790 | Tài khoản 242 Chi phí trả trước theo Thông tư 133 | `tai-khoan-242-chi-phi-tra-truoc-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-242-chi-phi-tra-truoc-theo-thong-tu-133.html` |
-| 1791 | Tài khoản 331 Phải trả người bán theo Thông tư 133 | `tai-khoan-331-phai-tra-nguoi-ban-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-331-phai-tra-nguoi-ban-theo-thong-tu-133.html` |
-| 1792 | Tài khoản 333 Thuế và các khoản phải nộp nhà nước theo TT 133 | `tai-khoan-333-thue-va-cac-khoan-phai-nop-nha-nuoc-theo-tt-133.htm` | `thu-vien/tai-khoan-333-thue-va-cac-khoan-phai-nop-nha-nuoc-theo-tt-133.html` |
-| 1793 | Tài khoản 334 Phải trả người lao động theo TT 133 | `tai-khoan-334-phai-tra-nguoi-lao-dong-theo-tt-133.htm` | `thu-vien/tai-khoan-334-phai-tra-nguoi-lao-dong-theo-tt-133.html` |
-| 1794 | Tài khoản 335 Chi phí phải trả theo Thông tư 133 | `tai-khoan-335-chi-phi-phai-tra-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-335-chi-phi-phai-tra-theo-thong-tu-133.html` |
-| 1795 | Tài khoản 336 - Phải trả nội bộ theo Thông tư 133 | `tai-khoan-336-phai-tra-noi-bo-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-336-phai-tra-noi-bo-theo-thong-tu-133.html` |
-| 1796 | Tài khoản 338 Phải trả, phải nộp khác theo Thông tư 133 | `tai-khoan-338-phai-tra-phai-nop-khac-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-338-phai-tra-phai-nop-khac-theo-thong-tu-133.html` |
-| 1797 | Tài khoản 341 Vay và nợ thuê tài chính theo Thông tư 133 | `tai-khoan-341-vay-va-no-thue-tai-chinh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-341-vay-va-no-thue-tai-chinh-theo-thong-tu-133.html` |
-| 1798 | Tài khoản 352 Dự phòng phải trả theo Thông tư 133 | `tai-khoan-352-du-phong-phai-tra-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-352-du-phong-phai-tra-theo-thong-tu-133.html` |
-| 1799 | Tài khoản 353 Quỹ khen thưởng, phúc lợi theo Thông tư 133 | `tai-khoan-353-quy-khen-thuong-phuc-loi-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-353-quy-khen-thuong-phuc-loi-theo-thong-tu-133.html` |
-| 1800 | Tài khoản 356 Quỹ phát triển khoa học và công nghệ theo TT 133 | `tai-khoan-356-quy-phat-trien-khoa-hoc-va-cong-nghe-theo-tt-133.htm` | `thu-vien/tai-khoan-356-quy-phat-trien-khoa-hoc-va-cong-nghe-theo-tt-133.html` |
-| 1801 | Tài khoản 411 Vốn đầu tư của chủ sở hữu theo Thông tư 133 | `tai-khoan-411-von-dau-tu-cua-chu-so-huu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-411-von-dau-tu-cua-chu-so-huu-theo-thong-tu-133.html` |
-| 1802 | Tài khoản 413 - Chênh lệch tỷ giá hối đoái theo Thông tư 133 | `tai-khoan-413-chenh-lech-ty-gia-hoi-doai-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-413-chenh-lech-ty-gia-hoi-doai-theo-thong-tu-133.html` |
-| 1803 | Tài khoản 418 Các quỹ thuộc vốn chủ sở hữu theo Thông tư 133 | `tai-khoan-418-cac-quy-thuoc-von-chu-so-huu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-418-cac-quy-thuoc-von-chu-so-huu-theo-thong-tu-133.html` |
-| 1804 | Tài khoản 419 Cổ phiếu quỹ theo Thông tư 133 | `tai-khoan-419-co-phieu-quy-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-419-co-phieu-quy-theo-thong-tu-133.html` |
-| 1805 | Tài khoản 421 Lợi nhuận sau thuế chưa phân phối theo Thông tư 133 | `tai-khoan-421-loi-nhuan-sau-thue-chua-phan-phoi-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-421-loi-nhuan-sau-thue-chua-phan-phoi-theo-thong-tu-133.html` |
-| 1806 | Tài khoản 511 Doanh thu bán hàng và cung cấp dịch vụ theo Thông tư 133 | `tai-khoan-511-doanh-thu-ban-hang-dich-vu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-511-doanh-thu-ban-hang-dich-vu-theo-thong-tu-133.html` |
-| 1807 | Tài khoản 515 Doanh thu hoạt động tài chính theo Thông tư 133 | `tai-khoan-515-doanh-thu-hoat-dong-tai-chinh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-515-doanh-thu-hoat-dong-tai-chinh-theo-thong-tu-133.html` |
-| 1808 | Tài khoản 611 Mua hàng theo Thông tư 133 | `tai-khoan-611-mua-hang-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-611-mua-hang-theo-thong-tu-133.html` |
-| 1809 | Tài khoản 631 Giá thành sản xuất theo Thông tư 133 | `tai-khoan-631-gia-thanh-san-xuat-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-631-gia-thanh-san-xuat-theo-thong-tu-133.html` |
-| 1810 | Tài khoản 632 Giá vốn hàng bán theo Thông tư 133 | `tai-khoan-632-gia-von-hang-ban-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-632-gia-von-hang-ban-theo-thong-tu-133.html` |
-| 1811 | Tài khoản 635 Chi phí tài chính theo Thông tư 133 | `tai-khoan-635-chi-phi-tai-chinh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-635-chi-phi-tai-chinh-theo-thong-tu-133.html` |
-| 1812 | Tài khoản 642 Chi phí quản lý kinh doanh theo Thông tư 133 | `tai-khoan-642-chi-phi-quan-ly-kinh-doanh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-642-chi-phi-quan-ly-kinh-doanh-theo-thong-tu-133.html` |
-| 1813 | Tài khoản 711 Thu nhập khác theo Thông tư 133 | `tai-khoan-711-thu-nhap-khac-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-711-thu-nhap-khac-theo-thong-tu-133.html` |
-| 1814 | Tài khoản 811 Chi phí khác theo Thông tư 133 | `tai-khoan-811-chi-phi-khac-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-811-chi-phi-khac-theo-thong-tu-133.html` |
-| 1815 | Tài khoản 821 Chi phí thuế thu nhập doanh nghiệp theo TT 133 | `tai-khoan-821-chi-phi-thue-thu-nhap-doanh-nghiep-theo-tt-133.htm` | `thu-vien/tai-khoan-821-chi-phi-thue-thu-nhap-doanh-nghiep-theo-tt-133.html` |
-| 1816 | Tài khoản 911 Xác định kết quả kinh doanh theo Thông tư 133 | `tai-khoan-911-xac-dinh-ket-qua-kinh-doanh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-911-xac-dinh-ket-qua-kinh-doanh-theo-thong-tu-133.html` |
-| 1817 | Tài liệu ôn thi chứng chỉ hành nghề kế toán, kiểm toán 2014 | `tai-lieu-on-thi-chung-chi-hanh-nghe-ke-toan-kiem-toan-2014.htm` | `thu-vien/tai-lieu-on-thi-chung-chi-hanh-nghe-ke-toan-kiem-toan-2014.html` |
-| 1818 | Tải phần mềm kế toán Fast Accounting miễn phí dùng thử | `tai-phan-mem-ke-toan-fast-accounting-mien-phi-dung-thu.htm` | `thu-vien/tai-phan-mem-ke-toan-fast-accounting-mien-phi-dung-thu.html` |
-| 1819 | Tải sản cố định chưa sử dụng có được trích khấu hao? | `tai-san-chua-su-dung-co-duoc-trich-khau-hao.htm` | `thu-vien/tai-san-chua-su-dung-co-duoc-trich-khau-hao.html` |
-| 1820 | Quy định về tài sản cố định hữu hình | `tai-san-co-dinh-huu-hinh.htm` | `thu-vien/tai-san-co-dinh-huu-hinh.html` |
-| 1821 | Tài sản cố định là gì? TSCĐ bao gồm những loại nào? | `tai-san-co-dinh-la-gi.htm` | `thu-vien/tai-san-co-dinh-la-gi.html` |
-| 1822 | Quy định về tài sản cố định thuê tài chính | `tai-san-co-dinh-thue-tai-chinh.htm` | `thu-vien/tai-san-co-dinh-thue-tai-chinh.html` |
-| 1823 | Xử lý Tài sản cố định hình thành tự xây dựng, sản xuất | `tai-san-co-dinh-tu-san-xuat-xay-dung-co-ban.htm` | `thu-vien/tai-san-co-dinh-tu-san-xuat-xay-dung-co-ban.html` |
-| 1824 | Quy định về tài sản cố định vô hình | `tai-san-co-dinh-vo-hinh.htm` | `thu-vien/tai-san-co-dinh-vo-hinh.html` |
-| 1825 | Tạm dừng đóng bảo hiểm xã hội bắt buộc | `tam-dung-dong-bao-hiem-xa-hoi-bat-buoc.htm` | `thu-vien/tam-dung-dong-bao-hiem-xa-hoi-bat-buoc.html` |
-| 1826 | Tạm ngừng kinh doanh có phải nộp thuế môn bài không? | `tam-ngung-kinh-doanh-co-phai-nop-thue-mon-bai-khong.htm` | `thu-vien/tam-ngung-kinh-doanh-co-phai-nop-thue-mon-bai-khong.html` |
-| 1827 | Tặng quà tết cho nhân viên có tính thuế TNCN không? | `tang-qua-tet-cho-nhan-vien-co-tinh-thue-tncn-khong.htm` | `thu-vien/tang-qua-tet-cho-nhan-vien-co-tinh-thue-tncn-khong.html` |
-| 1828 | Tập đoàn tài chính FB Việt Nam Tuyển Nhân viên kế toán | `tap-doan-tai-chinh-fb-viet-nam-tuyen-nhan-vien-ke-toan-tai-dong-anh-ha-noi.htm` | `thu-vien/tap-doan-tai-chinh-fb-viet-nam-tuyen-nhan-vien-ke-toan-tai-dong-anh-ha-noi.html` |
-| 1829 | Tập đoàn Tân Á Đại Thành tuyển Kế toán chi nhánh | `tap-doan-tan-a-dai-thanh-tuyen-ke-toan-chi-nhanh.htm` | `thu-vien/tap-doan-tan-a-dai-thanh-tuyen-ke-toan-chi-nhanh.html` |
-| 1830 | Thẩm quyền giao kết hợp đồng lao động | `tham-quyen-giao-ket-hop-dong-lao-dong.htm` | `thu-vien/tham-quyen-giao-ket-hop-dong-lao-dong.html` |
-| 1831 | Thủ tục thuế khi thay đổi tên công ty, địa điểm kinh doanh | `thay-doi-dia-diem-kinh-doanh-can-lam-thu-tuc-gi.htm` | `thu-vien/thay-doi-dia-diem-kinh-doanh-can-lam-thu-tuc-gi.html` |
-| 1832 | Thay đổi thông tin đăng ký thuế của cá nhân 2026 | `thay-doi-thong-tin-dang-ky-thue-cua-ca-nhan.htm` | `thu-vien/thay-doi-thong-tin-dang-ky-thue-cua-ca-nhan.html` |
-| 1833 | Thay thế, điều chỉnh hóa đơn điện tử theo Nghị định 70/2025/NĐ-CP | `thay-the-dieu-chinh-hoa-don-dien-tu.htm` | `thu-vien/thay-the-dieu-chinh-hoa-don-dien-tu.html` |
-| 1834 | Thẻ quầy hàng - Mẫu số 02-BH theo Thông tư 99 | `the-quay-hang-mau-so-02-bh-theo-thong-tu-99.htm` | `thu-vien/the-quay-hang-mau-so-02-bh-theo-thong-tu-99.html` |
-| 1835 | Mẫu thẻ quầy hàng 02-BH theo Thông tư 133 và 200 | `the-quay-hang-mau-so-02-bh.htm` | `thu-vien/the-quay-hang-mau-so-02-bh.html` |
-| 1836 | Thỏa ước lao động tập thể là gì? có bắt buộc không? Quy định như nào? | `thoa-uoc-lao-dong-tap-the.htm` | `thu-vien/thoa-uoc-lao-dong-tap-the.html` |
-| 1837 | Thời điểm ghi nhận doanh thu cung cấp dịch vụ | `thoi-diem-ghi-nhan-doanh-thu-cung-cap-dich-vu.htm` | `thu-vien/thoi-diem-ghi-nhan-doanh-thu-cung-cap-dich-vu.html` |
-| 1838 | Thời điểm xác định doanh thu tính thuế TNDN 2026 | `thoi-diem-xac-dinh-doanh-thu-tinh-thue-tndn.htm` | `thu-vien/thoi-diem-xac-dinh-doanh-thu-tinh-thue-tndn.html` |
-| 1839 | Thời điểm xác định thuế GTGT đối với hàng hóa, dịch vụ mới nhất 2026 | `thoi-diem-xac-dinh-thue-gtgt-doi-voi-hang-hoa-dich-vu.htm` | `thu-vien/thoi-diem-xac-dinh-thue-gtgt-doi-voi-hang-hoa-dich-vu.html` |
-| 1840 | Thời điểm xuất hoá đơn bán hàng, dịch vụ, xây dựng | `thoi-diem-xuat-hoa-don-dich-vu-xay-dung-ban-hang.htm` | `thu-vien/thoi-diem-xuat-hoa-don-dich-vu-xay-dung-ban-hang.html` |
-| 1841 | Thời điểm xuất hóa đơn dịch vụ theo nghị định 70/2025/NĐ-CP | `thoi-diem-xuat-hoa-don-dich-vu.htm` | `thu-vien/thoi-diem-xuat-hoa-don-dich-vu.html` |
-| 1842 | Thời điểm lập hóa đơn điện tử khi bán hàng, dịch vụ theo NĐ 70/2025 | `thoi-diem-xuat-hoa-don-dien-tu-ban-hang-hoa-dich-vu.htm` | `thu-vien/thoi-diem-xuat-hoa-don-dien-tu-ban-hang-hoa-dich-vu.html` |
-| 1843 | Thời gian hưởng chế độ khi chăm sóc con ốm đau | `thoi-gian-huong-che-do-khi-cham-soc-con-om-dau.htm` | `thu-vien/thoi-gian-huong-che-do-khi-cham-soc-con-om-dau.html` |
-| 1844 | Thời gian hưởng chế độ ốm đau | `thoi-gian-huong-che-do-om-dau-toi-da-theo-luat-bhxh.htm` | `thu-vien/thoi-gian-huong-che-do-om-dau-toi-da-theo-luat-bhxh.html` |
-| 1845 | Thời gian nghỉ việc hưởng chế độ khi thực hiện các biện pháp tránh thai | `thoi-gian-nghi-viec-huong-che-do-khi-thuc-hien-cac-bien-phap-tranh-thai.htm` | `thu-vien/thoi-gian-nghi-viec-huong-che-do-khi-thuc-hien-cac-bien-phap-tranh-thai.html` |
-| 1846 | Thời gian nghỉ việc hưởng chế độ thai sản khi khám thai | `thoi-gian-nghi-viec-huong-che-do-thai-san-khi-kham-thai.htm` | `thu-vien/thoi-gian-nghi-viec-huong-che-do-thai-san-khi-kham-thai.html` |
-| 1847 | Thời gian nghỉ việc hưởng chế độ thai sản khi sảy thai, phá thai | `thoi-gian-nghi-viec-huong-che-do-thai-san-khi-say-thai-pha-thai.htm` | `thu-vien/thoi-gian-nghi-viec-huong-che-do-thai-san-khi-say-thai-pha-thai.html` |
-| 1848 | Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con | `thoi-gian-nghi-viec-huong-che-do-thai-san-khi-sinh-con.htm` | `thu-vien/thoi-gian-nghi-viec-huong-che-do-thai-san-khi-sinh-con.html` |
-| 1849 | Thời gian trích khấu hao của tài sản cố định vô hình mới nhất | `thoi-gian-trich-khau-hao-tai-san-co-dinh-vo-hinh.htm` | `thu-vien/thoi-gian-trich-khau-hao-tai-san-co-dinh-vo-hinh.html` |
-| 1850 | Quy định về thời hạn góp vốn điều lệ công ty TNHH, cổ phần | `thoi-han-gop-von-cua-cong-ty-co-phan-tnhh-1-2-thanh-vien.htm` | `thu-vien/thoi-han-gop-von-cua-cong-ty-co-phan-tnhh-1-2-thanh-vien.html` |
-| 1851 | Thời hạn kê khai thuế GTGT đầu vào - đầu ra | `thoi-han-ke-khai-hoa-don-gtgt-dau-vao.htm` | `thu-vien/thoi-han-ke-khai-hoa-don-gtgt-dau-vao.html` |
-| 1852 | Thời hạn nộp Báo cáo tài chính theo Thông tư 99 | `thoi-han-nop-bao-cao-tai-chinh-theo-thong-tu-99.htm` | `thu-vien/thoi-han-nop-bao-cao-tai-chinh-theo-thong-tu-99.html` |
-| 1853 | Thời hạn nộp mẫu 06/GTGT đăng ký kê khai thuế | `thoi-han-nop-mau-06-gtgt-dang-ky-ke-khai-thue.htm` | `thu-vien/thoi-han-nop-mau-06-gtgt-dang-ky-ke-khai-thue.html` |
-| 1854 | Thời hạn nộp tiền bảo hiểm xã hội hàng tháng từ ngày 01/07/2025 | `thoi-han-nop-tien-bao-hiem-xa-hoi-hang-thang.htm` | `thu-vien/thoi-han-nop-tien-bao-hiem-xa-hoi-hang-thang.html` |
-| 1855 | Thời hạn nộp tiền thuế TNDN tạm tính quý, quyết toán thuế năm 2026 | `thoi-han-nop-tien-thue-tndn-tam-tinh-quyet-toan.htm` | `thu-vien/thoi-han-nop-tien-thue-tndn-tam-tinh-quyet-toan.html` |
-| 1856 | Thời hạn nộp tờ khai báo cáo thuế của hộ kinh doanh 2026 | `thoi-han-nop-to-khai-bao-cao-thue-cua-ho-kinh-doanh.htm` | `thu-vien/thoi-han-nop-to-khai-bao-cao-thue-cua-ho-kinh-doanh.html` |
-| 1857 | Thời hiệu xử phạt vi phạm hành chính về hóa đơn | `thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.htm` | `thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.html` |
-| 1858 | Thời hiệu xử phạt vi phạm hành chính về thuế mới nhất 2025 | `thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-thue.htm` | `thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-thue.html` |
-| 1859 | Thời trang công sở EMSPO tuyển Nhân viên kế toán | `thoi-trang-cong-so-emspo-tuyen-nhan-vien-ke-toan.htm` | `thu-vien/thoi-trang-cong-so-emspo-tuyen-nhan-vien-ke-toan.html` |
-| 1860 | Thông báo chấm dứt hợp đồng lao động | `thong-bao-cham-dut-hop-dong-lao-dong.htm` | `thu-vien/thong-bao-cham-dut-hop-dong-lao-dong.html` |
-| 1861 | Thông báo nộp lệ phí trước bạ nhà đất theo TT 119 | `thong-bao-nop-le-phi-truoc-ba-nha-dat-theo-tt-119.htm` | `thu-vien/thong-bao-nop-le-phi-truoc-ba-nha-dat-theo-tt-119.html` |
-| 1862 | Mẫu thông báo số tài khoản, số hiệu ví điện tử của hộ kinh doanh | `thong-bao-so-tai-khoan-cua-ho-ca-nhan-kinh-doanh.htm` | `thu-vien/thong-bao-so-tai-khoan-cua-ho-ca-nhan-kinh-doanh.html` |
-| 1863 | Thông báo về cơ quan thuế quản lý trực tiếp | `thong-bao-ve-co-quan-thue-quan-ly-truc-tiep.htm` | `thu-vien/thong-bao-ve-co-quan-thue-quan-ly-truc-tiep.html` |
-| 1864 | Thông báo về việc chấm dứt hoạt động chi nhánh/văn phòng đại diện/địa điểm kinh doanh | `thong-bao-ve-viec-cham-dut-hoat-dong-dia-diem-kinh-doanh-cn-vpdd.htm` | `thu-vien/thong-bao-ve-viec-cham-dut-hoat-dong-dia-diem-kinh-doanh-cn-vpdd.html` |
-| 1865 | Thông báo về việc tạm ngừng kinh doanh của DN, CN, VPDD, DDKD | `thong-bao-ve-viec-tam-ngung-kinh-doanh.htm` | `thu-vien/thong-bao-ve-viec-tam-ngung-kinh-doanh.html` |
-| 1866 | Thông tư 01/2021/TT-BKHĐT hướng dẫn về đăng ký doanh nghiệp | `thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.htm` | `thu-vien/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html` |
-| 1867 | Thông tư 03/2015/TT-BLĐTBXH điều chỉnh tiền lương đã đóng BHXH | `thong-tu-03-2015-tt-bldtbxh-dieu-chinh-tien-luong-da-dong-bhxh.htm` | `thu-vien/thong-tu-03-2015-tt-bldtbxh-dieu-chinh-tien-luong-da-dong-bhxh.html` |
-| 1868 | Thông tư 04/VBHN-BTC văn bản hợp nhất về thuế TNCN | `thong-tu-04-vbhn-btc-van-ban-hop-nhat-ve-thue-tncn.htm` | `thu-vien/thong-tu-04-vbhn-btc-van-ban-hop-nhat-ve-thue-tncn.html` |
-| 1869 | Thông tư 07/2007/TTLT-BTM-BTC quy định về khuyến mãi, hội chợ, triển lãm | `thong-tu-07-2007-ttlt-btm-btc-quy-dinh-ve-khuyen-mai-hoi-cho-trien-lam.htm` | `thu-vien/thong-tu-07-2007-ttlt-btm-btc-quy-dinh-ve-khuyen-mai-hoi-cho-trien-lam.html` |
-| 1870 | Thông tư 09/2015/TT-BTC quy định giao dịch tài chính của doanh nghiệp | `thong-tu-09-2015-tt-btc-giao-dich-tai-chinh-cua-doanh-nghiep.htm` | `thu-vien/thong-tu-09-2015-tt-btc-giao-dich-tai-chinh-cua-doanh-nghiep.html` |
-| 1871 | Thông tư 10/2020/TT-BLĐTBXH hướng dẫn Luật lao động | `thong-tu-10-2020-tt-bldtbxh-huong-dan-luat-lao-dong.htm` | `thu-vien/thong-tu-10-2020-tt-bldtbxh-huong-dan-luat-lao-dong.html` |
-| 1872 | Thông tư 100/2021/TT-BTC sửa đổi, bổ sung Thông tư 40/2021 | `thong-tu-100-2021-tt-btc-sua-doi-bo-sung-thong-tu-40-2021.htm` | `thu-vien/thong-tu-100-2021-tt-btc-sua-doi-bo-sung-thong-tu-40-2021.html` |
-| 1873 | Thông tư 105/2020/TT-BTC hướng dẫn về đăng ký thuế | `thong-tu-105-2020-tt-btc-huong-dan-ve-dang-ky-thue.htm` | `thu-vien/thong-tu-105-2020-tt-btc-huong-dan-ve-dang-ky-thue.html` |
-| 1874 | Thông tư 111/2013/TT-BTC hướng dẫn thi hành Luật thuế TNCN | `thong-tu-111-2013-tt-btc-huong-dan-thi-ha-nh-luat-thue-tncn.htm` | `thu-vien/thong-tu-111-2013-tt-btc-huong-dan-thi-ha-nh-luat-thue-tncn.html` |
-| 1875 | Thông tư 130/2016/TT-BTC hướng dẫn Nghị định 100, Luật 106/2016/QH13 | `thong-tu-130-2016-tt-btc-huong-dan-nghi-dinh-100-luat-106.htm` | `thu-vien/thong-tu-130-2016-tt-btc-huong-dan-nghi-dinh-100-luat-106.html` |
-| 1876 | Thông tư 132/2018/TT-BTC Chế độ kế toán Doanh nghiệp siêu nhỏ | `thong-tu-132-2018-tt-btc-che-do-ke-toan-doanh-nghiep-sieu-nho.htm` | `thu-vien/thong-tu-132-2018-tt-btc-che-do-ke-toan-doanh-nghiep-sieu-nho.html` |
-| 1877 | Thông tư 133/2016/TT-BTC Chế độ kế toán Doanh nghiệp vừa và nhỏ | `thong-tu-133-2016-che-do-ke-toan-doanh-nghiep-vua-va-nho.htm` | `thu-vien/thong-tu-133-2016-che-do-ke-toan-doanh-nghiep-vua-va-nho.html` |
-| 1878 | Thông tư 141/2013/TT-BTC hướng dẫn thi hành luật thuế TNDN và GTGT | `thong-tu-141-2013-tt-btc-thi-hanh-luat-thue-tndn-va-gtgt.htm` | `thu-vien/thong-tu-141-2013-tt-btc-thi-hanh-luat-thue-tndn-va-gtgt.html` |
-| 1879 | Thông tư 151/2014/TT-BTC hướng dẫn thi hành NĐ 91 quy định về thuế | `thong-tu-151-2014-tt-btc-huong-dan-thi-hanh-nd-91-quy-dinh-ve-thue.htm` | `thu-vien/thong-tu-151-2014-tt-btc-huong-dan-thi-hanh-nd-91-quy-dinh-ve-thue.html` |
-| 1880 | Thông tư 16/VBHN-BTC Văn bản hợp nhất về thuế GTGT | `thong-tu-16-vbhn-btc-van-ban-hop-nhat-ve-thue-gtgt.htm` | `thu-vien/thong-tu-16-vbhn-btc-van-ban-hop-nhat-ve-thue-gtgt.html` |
-| 1881 | Thông tư 166/2013/TT-BTC xử phạt vi phạm hành chính về Thuế | `thong-tu-166-2013-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-thue.htm` | `thu-vien/thong-tu-166-2013-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-thue.html` |
-| 1882 | Thông tư 17/VBHN-BTC Văn bản hợp nhất về hóa đơn | `thong-tu-17-vbhn-btc-van-ban-hop-nhat-ve-hoa-don.htm` | `thu-vien/thong-tu-17-vbhn-btc-van-ban-hop-nhat-ve-hoa-don.html` |
-| 1883 | Thông tư 173 /2016/TT-BTC sửa đổi, bổ sung Thông tư 219 | `thong-tu-173-2016-tt-btc-sua-doi-bo-sung-thong-tu-219.htm` | `thu-vien/thong-tu-173-2016-tt-btc-sua-doi-bo-sung-thong-tu-219.html` |
-| 1884 | Thông tư 176/2016/TT-BTC Xử phạt vi phạm hành chính về hóa đơn | `thong-tu-176-2016-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.htm` | `thu-vien/thong-tu-176-2016-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.html` |
-| 1885 | Thông tư 18/2026/TT-BTC quy định về thuế đối với hộ, cá nhân kinh doanh | `thong-tu-18-2026-tt-btc-ve-thue-doi-voi-ho-ca-nhan-kinh-doanh.htm` | `thu-vien/thong-tu-18-2026-tt-btc-ve-thue-doi-voi-ho-ca-nhan-kinh-doanh.html` |
-| 1886 | Thông tư 18/VBHN-BTC văn bản hợp nhất về quản lý thuế | `thong-tu-18-vbhn-btc-van-ban-hop-nhat-ve-quan-ly-thue.htm` | `thu-vien/thong-tu-18-vbhn-btc-van-ban-hop-nhat-ve-quan-ly-thue.html` |
-| 1887 | Thông tư 20/2026/TT-BTC hướng dẫn về Thuế TNDN | `thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.htm` | `thu-vien/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html` |
-| 1888 | Thông tư 200/2014/TT-BTC Chế độ kế toán Doanh nghiệp | `thong-tu-200-2014-tt-btc-che-do-ke-toan-doanh-nghiep.htm` | `thu-vien/thong-tu-200-2014-tt-btc-che-do-ke-toan-doanh-nghiep.html` |
-| 1889 | Thông tư 202/2014/TT-BTC Hướng dẫn lập và trình bày BCTC hợp nhất | `thong-tu-202-2014-tt-btc-huong-dan-lap-bao-cao-tai-chinh-hop-nhat.htm` | `thu-vien/thong-tu-202-2014-tt-btc-huong-dan-lap-bao-cao-tai-chinh-hop-nhat.html` |
-| 1890 | Thông tư 219/2013/TT-BTC hướng dẫn thi hành luật thuế GTGT | `thong-tu-219-2013-tt-btc-huong-dan-thi-hanh-luat-thue-gtgt.htm` | `thu-vien/thong-tu-219-2013-tt-btc-huong-dan-thi-hanh-luat-thue-gtgt.html` |
-| 1891 | Thông tư 23/2014/TT-BLĐTBXH Quy định về tuyển dụng và báo cáo sử dụng lao động | `thong-tu-23-2014-tt-bldtbxh-quy-dinh-ve-tuyen-dung-va-bao-cao-su-dung-lao-dong.htm` | `thu-vien/thong-tu-23-2014-tt-bldtbxh-quy-dinh-ve-tuyen-dung-va-bao-cao-su-dung-lao-dong.html` |
-| 1892 | Thông tư 23/2015/TT-BLĐTBXH quy định về cách tính lương cho người lao động | `thong-tu-23-2015-tt-bldtbxh-quy-dinh-ve-tien-luong.htm` | `thu-vien/thong-tu-23-2015-tt-bldtbxh-quy-dinh-ve-tien-luong.html` |
-| 1893 | Thông tư 25/2018/TT-BTC hướng dẫn Nghị định 146/2017/NĐ-CP | `thong-tu-25-2018-tt-btc-huong-dan-nghi-dinh-146-2017-nd-cp.htm` | `thu-vien/thong-tu-25-2018-tt-btc-huong-dan-nghi-dinh-146-2017-nd-cp.html` |
-| 1894 | Thông tư 26/2015/TT-BTC hướng dẫn về thuế GTGT và quản lý thuế | `thong-tu-26-2015-tt-btc-huong-dan-thue-gtgt-va-quan-ly-thue.htm` | `thu-vien/thong-tu-26-2015-tt-btc-huong-dan-thue-gtgt-va-quan-ly-thue.html` |
-| 1895 | Thông tư 26/VBHN –BTC văn bản hợp nhất thuế TNDN | `thong-tu-26-vbhn-btc-van-ban-hop-nhat-thue-tndn.htm` | `thu-vien/thong-tu-26-vbhn-btc-van-ban-hop-nhat-thue-tndn.html` |
-| 1896 | Thông tư 302/2016/TT-BTC Hướng dẫn về lệ phí môn bài | `thong-tu-302-2016-tt-btc-huong-dan-ve-le-phi-mon-bai.htm` | `thu-vien/thong-tu-302-2016-tt-btc-huong-dan-ve-le-phi-mon-bai.html` |
-| 1897 | Thông tư 32/2025/TT-BTC thay thế Thông tư 78/2021 về hóa đơn điện tử | `thong-tu-32-2025-tt-btc-hoa-don-dien-tu.htm` | `thu-vien/thong-tu-32-2025-tt-btc-hoa-don-dien-tu.html` |
-| 1898 | Thông tư 324/2016/TT-BTC Quy định mục lục ngân sách nhà nước. | `thong-tu-324-2016-tt-btc-he-thong-muc-luc-ngan-sach-nha-nuoc.htm` | `thu-vien/thong-tu-324-2016-tt-btc-he-thong-muc-luc-ngan-sach-nha-nuoc.html` |
-| 1899 | Thông tư 37/2017/TT-BTC sửa đổi, bổ sung Thông tư 39 về hóa đơn | `thong-tu-37-2017-tt-btc-sua-doi-bo-sung-thong-tu-39.htm` | `thu-vien/thong-tu-37-2017-tt-btc-sua-doi-bo-sung-thong-tu-39.html` |
-| 1900 | Thông tư 39/2014/TT-BTC Những quy định mới về hóa đơn | `thong-tu-39-2014-tt-btc-nhung-quy-dinh-moi-ve-hoa-don.htm` | `thu-vien/thong-tu-39-2014-tt-btc-nhung-quy-dinh-moi-ve-hoa-don.html` |
-| 1901 | Thông tư 39/2025/TT-BCT quy định về hạn mức khuyến mại giảm giá | `thong-tu-39-2025-tt-bct-quy-dinh-ve-han-muc-khuyen-mai-giam-gia.htm` | `thu-vien/thong-tu-39-2025-tt-bct-quy-dinh-ve-han-muc-khuyen-mai-giam-gia.html` |
-| 1902 | Thông tư 40/2021/TT-BTC quy định thuế GTGT, TNCN cho cá nhân, hộ kinh doanh | `thong-tu-40-2021-tt-btc-quy-dinh-thue-cho-ho-ca-nhan-kinh-doanh.htm` | `thu-vien/thong-tu-40-2021-tt-btc-quy-dinh-thue-cho-ho-ca-nhan-kinh-doanh.html` |
-| 1903 | Thông tư 47/2015/TT-BLĐTBXH quy định về mức lương và phụ cấp lương | `thong-tu-47-2015-tt-bldtbxh-quy-dinh-ve-muc-luong-va-phu-cap-luong.htm` | `thu-vien/thong-tu-47-2015-tt-bldtbxh-quy-dinh-ve-muc-luong-va-phu-cap-luong.html` |
-| 1904 | Thông tư 59/2015/TT-BLĐTBXH hướng dẫn Luật BHXH bắt buộc | `thong-tu-59-2015-bldtbxh-huong-dan-luat-bhxh-bat-buoc.htm` | `thu-vien/thong-tu-59-2015-bldtbxh-huong-dan-luat-bhxh-bat-buoc.html` |
-| 1905 | Thông tư 64/2013/TT-BTC hướng dẫn thi hành Nghị định số 51/2010/NĐ-CP | `thong-tu-64-2013-tt-btc-quy-dinh-ve-hoa-don-gtgt-ban-hang.htm` | `thu-vien/thong-tu-64-2013-tt-btc-quy-dinh-ve-hoa-don-gtgt-ban-hang.html` |
-| 1906 | Thông tư 64/2015/TTLT-BTC-BCT-BCA-BQP quy định về hóa đơn hàng nhập khẩu | `thong-tu-64-2015-ttlt-btc-bct-bca-bqp-quy-dinh-ve-hoa-don.htm` | `thu-vien/thong-tu-64-2015-ttlt-btc-bct-bca-bqp-quy-dinh-ve-hoa-don.html` |
-| 1907 | Thông tư 65/2020/TT-BTC quy định về thuế môn bài | `thong-tu-65-2020-tt-btc-quy-dinh-ve-thue-mon-bai.htm` | `thu-vien/thong-tu-65-2020-tt-btc-quy-dinh-ve-thue-mon-bai.html` |
-| 1908 | Thông tư 68/2019/TT-BTC quy định về hóa đơn điện tử | `thong-tu-68-2019-tt-btc-quy-dinh-ve-hoa-don-dien-tu.htm` | `thu-vien/thong-tu-68-2019-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html` |
-| 1909 | Thông tư 69/2025/TT-BTC Hướng dẫn về thuế GTGT từ ngày 01/07/2025 | `thong-tu-69-2025-tt-btc-huong-dan-ve-thue-gtgt.htm` | `thu-vien/thong-tu-69-2025-tt-btc-huong-dan-ve-thue-gtgt.html` |
-| 1910 | Thông tư 75/2015/TT-BTC sửa đổi, bổ sung điều 128 Thông tư 200/2014/TT-BTC | `thong-tu-75-2015-tt-btc-sua-doi-bo-sung-dieu-128-tt-200.htm` | `thu-vien/thong-tu-75-2015-tt-btc-sua-doi-bo-sung-dieu-128-tt-200.html` |
-| 1911 | Thông tư 78/2014/TT-BTC hướng dẫn thi hành luật thuế TNDN | `thong-tu-78-2014-tt-btc-huong-dan-thi-hanh-luat-thue-tndn.htm` | `thu-vien/thong-tu-78-2014-tt-btc-huong-dan-thi-hanh-luat-thue-tndn.html` |
-| 1912 | Thông tư 78/2021/TT-BTC quy định về hoá đơn điện tử | `thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.htm` | `thu-vien/thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html` |
-| 1913 | Thông tư 88/2020/TT-BTC hướng dẫn về hóa đơn điện tử | `thong-tu-88-2020-tt-btc-huong-dan-ve-hoa-don-dien-tu.htm` | `thu-vien/thong-tu-88-2020-tt-btc-huong-dan-ve-hoa-don-dien-tu.html` |
-| 1914 | Thông tư 88/2021/TT-BTC chế độ kế toán cho cá nhân, hộ kinh doanh | `thong-tu-88-che-do-ke-toan-cho-ca-nhan-ho-kinh-doanh.htm` | `thu-vien/thong-tu-88-che-do-ke-toan-cho-ca-nhan-ho-kinh-doanh.html` |
-| 1915 | Thông tư 92/2015/TT-BTC quy định về thuế GTGT, TNCN đối với cá nhân | `thong-tu-92-2015-quy-dinh-ve-thue-gtgt-tncn-doi-voi-ca-nhan.htm` | `thu-vien/thong-tu-92-2015-quy-dinh-ve-thue-gtgt-tncn-doi-voi-ca-nhan.html` |
-| 1916 | Thông tư 93/2017/TT-BTC Sửa đổi, bổ sung TT 219, 119, 156 | `thong-tu-93-2017-tt-btc-sua-doi-bo-sung-tt-156-119-219.htm` | `thu-vien/thong-tu-93-2017-tt-btc-sua-doi-bo-sung-tt-156-119-219.html` |
-| 1917 | Thông tư 95/2016/TT- BTC Hướng dẫn đăng ký Thuế | `thong-tu-95-2016-tt-btc-huong-dan-dang-ky-thue.htm` | `thu-vien/thong-tu-95-2016-tt-btc-huong-dan-dang-ky-thue.html` |
-| 1918 | Thông tư 96/2015/TT-BTC Hướng dẫn Luật thuế TNDN năm 2015 | `thong-tu-96-2015-tt-btc-huong-dan-thue-thu-nhap-doanh-nghiep.htm` | `thu-vien/thong-tu-96-2015-tt-btc-huong-dan-thue-thu-nhap-doanh-nghiep.html` |
-| 1919 | Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp | `thong-tu-99-2025-tt-btc-huong-dan-che-do-ke-toan-dn.htm` | `thu-vien/thong-tu-99-2025-tt-btc-huong-dan-che-do-ke-toan-dn.html` |
-| 1920 | Thông tư số 10/2014/TT-BTC quy định xử phạt vi phạm hành chính về hóa đơn | `thong-tu-so-10-2014-tt-btc-xu-phat-vi-pham-ve-hoa-don-gtgt.htm` | `thu-vien/thong-tu-so-10-2014-tt-btc-xu-phat-vi-pham-ve-hoa-don-gtgt.html` |
-| 1921 | THÔNG TƯ Số 119/2014/TT- BTC Bỏ mức 1 tỷ áp dụng phương pháp khấu trừ thuế | `thong-tu-so-119-2014-tt-btc-ngay-25-8-2014.htm` | `thu-vien/thong-tu-so-119-2014-tt-btc-ngay-25-8-2014.html` |
-| 1922 | Thông tư Số 156/2013/TT-BTC hướng dẫn thi hành luật quản lý Thuế | `thong-tu-so-156-2013-tt-btc-huong-dan-thi-hanh-luat-quan-ly-thue.htm` | `thu-vien/thong-tu-so-156-2013-tt-btc-huong-dan-thi-hanh-luat-quan-ly-thue.html` |
-| 1923 | Thông tư số 178/TT-BTC áp dụng bảo hiểm xã hội việt Nam | `thong-tu-so-178-tt-btc-ap-dung-bao-hiem-xa-hoi-viet-nam.htm` | `thu-vien/thong-tu-so-178-tt-btc-ap-dung-bao-hiem-xa-hoi-viet-nam.html` |
-| 1924 | Thu hộ chi hộ có phải xuất hóa đơn không? | `thu-ho-chi-ho-co-phai-xuat-hoa-don-khong.htm` | `thu-vien/thu-ho-chi-ho-co-phai-xuat-hoa-don-khong.html` |
-| 1925 | Các khoản thu nhập chịu thuế TNDN theo quy định mới nhất 2026 | `thu-nhap-chiu-thue-thu-nhap-doanh-nghiep.htm` | `thu-vien/thu-nhap-chiu-thue-thu-nhap-doanh-nghiep.html` |
-| 1926 | Các khoản thu nhập được miễn thuế thu nhập doanh nghiệp 2026 | `thu-nhap-duoc-mien-thue-tndn.htm` | `thu-vien/thu-nhap-duoc-mien-thue-tndn.html` |
-| 1927 | Thủ thuật kiểm tra báo cáo tài chính nhanh và chính xác | `thu-thuat-doc-va-phan-tich-bao-cao-tai-chinh-doanh-nghiep.htm` | `thu-vien/thu-thuat-doc-va-phan-tich-bao-cao-tai-chinh-doanh-nghiep.html` |
-| 1928 | Thư tra soát C1-11/NS theo Thông tư 84 | `thu-tra-soat-c1-11ns-theo-thong-tu-84.htm` | `thu-vien/thu-tra-soat-c1-11ns-theo-thong-tu-84.html` |
-| 1929 | Thủ tục Cấp Giấy phép hoạt động cho thuê lại lao động | `thu-tuc-cap-giay-phep-hoat-dong-cho-thue-lai-lao-dong.htm` | `thu-vien/thu-tuc-cap-giay-phep-hoat-dong-cho-thue-lai-lao-dong.html` |
-| 1930 | Thủ tục cấp giấy phép lao động cho người nước ngoài 2025 | `thu-tuc-cap-giay-phep-lao-dong-cho-nld-nuoc-ngoai-lam-viec-tai-viet-nam.htm` | `thu-vien/thu-tuc-cap-giay-phep-lao-dong-cho-nld-nuoc-ngoai-lam-viec-tai-viet-nam.html` |
-| 1931 | Thủ tục Cấp lại Giấy phép hoạt động cho thuê lại lao động | `thu-tuc-cap-lai-giay-phep-hoat-dong-cho-thue-lai-lao-dong.htm` | `thu-vien/thu-tuc-cap-lai-giay-phep-hoat-dong-cho-thue-lai-lao-dong.html` |
-| 1932 | Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK | `thu-tuc-cat-giam-nguoi-phu-thuoc.htm` | `thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html` |
-| 1933 | Thủ tục chấm dứt hưởng trợ cấp thất nghiệp 2025 | `thu-tuc-cham-dut-huong-tro-cap-that-nghiep.htm` | `thu-vien/thu-tuc-cham-dut-huong-tro-cap-that-nghiep.html` |
-| 1934 | Thủ tục chuyển nơi hưởng trợ cấp thất nghiệp (chuyển đi, chuyển đến) 2025 | `thu-tuc-chuyen-noi-huong-tro-cap-that-nghiep.htm` | `thu-vien/thu-tuc-chuyen-noi-huong-tro-cap-that-nghiep.html` |
-| 1935 | Thủ tục đăng ký chương trình khuyến mại mới nhất theo NĐ 128 | `thu-tuc-dang-ky-chuong-trinh-ban-hang-khuyen-mai.htm` | `thu-vien/thu-tuc-dang-ky-chuong-trinh-ban-hang-khuyen-mai.html` |
-| 1936 | Thủ tục đăng ký tổ chức, tham gia hội chợ, triển lãm thương mại | `thu-tuc-dang-ky-hoi-cho-trien-lam-thuong-mai.htm` | `thu-vien/thu-tuc-dang-ky-hoi-cho-trien-lam-thuong-mai.html` |
-| 1937 | Thủ tục đăng ký mã số thuế cá nhân 2026 cho người lao động | `thu-tuc-dang-ky-ma-so-thue-ca-nhan-2026-cho-nguoi-lao-dong.htm` | `thu-vien/thu-tuc-dang-ky-ma-so-thue-ca-nhan-2026-cho-nguoi-lao-dong.html` |
-| 1938 | Thủ tục đăng ký mã số thuế cá nhân cho thuê tài sản 2026 | `thu-tuc-dang-ky-ma-so-thue-ca-nhan-cho-thue-tai-san.htm` | `thu-vien/thu-tuc-dang-ky-ma-so-thue-ca-nhan-cho-thue-tai-san.html` |
-| 1939 | Cách đăng ký Mã số thuế cá nhân quan mạng trên trang Dịch Vụ Công | `thu-tuc-dang-ky-ma-so-thue-thu-nhap-ca-nhan-moi-nhat.htm` | `thu-vien/thu-tuc-dang-ky-ma-so-thue-thu-nhap-ca-nhan-moi-nhat.html` |
-| 1940 | Thủ tục đăng ký giảm trừ gia cảnh người phụ thuộc qua mạng | `thu-tuc-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh-2024-moi-nhat.htm` | `thu-vien/thu-tuc-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh-2024-moi-nhat.html` |
-| 1941 | Thủ tục đăng ký nội quy lao động 2026 mới nhất | `thu-tuc-dang-ky-noi-quy-lao-dong-cua-doanh-nghiep.htm` | `thu-vien/thu-tuc-dang-ky-noi-quy-lao-dong-cua-doanh-nghiep.html` |
-| 1942 | Thủ tục đăng ký thuế nhà thầu nước ngoài | `thu-tuc-dang-ky-thue-nha-thau-nha-thau-phu-nuoc-ngoai.htm` | `thu-vien/thu-tuc-dang-ky-thue-nha-thau-nha-thau-phu-nuoc-ngoai.html` |
-| 1943 | Thủ tục đặt in hóa đơn GTGT lần đầu năm 2018 | `thu-tuc-dat-in-hoa-don-gtgt-lan-dau.htm` | `thu-vien/thu-tuc-dat-in-hoa-don-gtgt-lan-dau.html` |
-| 1944 | Thủ tục Gia hạn Giấy phép hoạt động cho thuê lại lao động | `thu-tuc-gia-han-giay-phep-hoat-dong-cho-thue-lai-lao-dong.htm` | `thu-vien/thu-tuc-gia-han-giay-phep-hoat-dong-cho-thue-lai-lao-dong.html` |
-| 1945 | Thủ tục gia hạn giấy phép lao động cho người nước ngoài | `thu-tuc-gia-han-giay-phep-lao-dong-cho-nguoi-nuoc-ngoai.htm` | `thu-vien/thu-tuc-gia-han-giay-phep-lao-dong-cho-nguoi-nuoc-ngoai.html` |
-| 1946 | Thủ tục giải thể doanh nghiệp, công ty mới nhất | `thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.htm` | `thu-vien/thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.html` |
-| 1947 | Chế độ ốm đau 2021 - Mức hưởng chế độ ốm đau BHXH | `thu-tuc-ho-so-huong-che-do-om-dau-bhxh-2021-moi-nhat.htm` | `thu-vien/thu-tuc-ho-so-huong-che-do-om-dau-bhxh-2021-moi-nhat.html` |
-| 1948 | Hồ sơ và Thủ tục hoàn thuế giá trị gia tăng mới nhất năm 2025 | `thu-tuc-hoan-thue-gia-tri-gia-tang-moi-nhat.htm` | `thu-vien/thu-tuc-hoan-thue-gia-tri-gia-tang-moi-nhat.html` |
-| 1949 | Cách hoàn thuế thu nhập cá nhân online mới nhất 2025 | `thu-tuc-hoan-thue-thu-nhap-ca-nhan-online-moi-nhat-2025.htm` | `thu-vien/thu-tuc-hoan-thue-thu-nhap-ca-nhan-online-moi-nhat-2025.html` |
-| 1950 | Thủ tục hưởng chế độ dưỡng sức sau sinh, sau ốm đau 2025 | `thu-tuc-huong-che-do-duong-suc-sau-sinh-om-dau.htm` | `thu-vien/thu-tuc-huong-che-do-duong-suc-sau-sinh-om-dau.html` |
-| 1951 | Thủ tục hưởng chế độ ốm đau BHXH mới nhất năm 2025 | `thu-tuc-huong-che-do-om-dau.htm` | `thu-vien/thu-tuc-huong-che-do-om-dau.html` |
-| 1952 | Thủ tục hưởng chế độ tai nạn lao động, bệnh nghề nghiệp mới nhất năm 2025 | `thu-tuc-huong-che-do-tai-nan-lao-dong-benh-nghe-nghiep.htm` | `thu-vien/thu-tuc-huong-che-do-tai-nan-lao-dong-benh-nghe-nghiep.html` |
-| 1953 | Hồ sơ, Thủ tục hưởng trợ cấp thất nghiệp mới nhất năm 2025 | `thu-tuc-huong-tro-cap-that-nghiep.htm` | `thu-vien/thu-tuc-huong-tro-cap-that-nghiep.html` |
-| 1954 | Hồ sơ hủy hóa đơn giấy chuyển sang hóa đơn điện tử | `thu-tuc-huy-hoa-don-gia-tri-gia-tang.htm` | `thu-vien/thu-tuc-huy-hoa-don-gia-tri-gia-tang.html` |
-| 1955 | Hồ sơ thủ tục hưởng chế độ thai sản 2026 mới nhất | `thu-tuc-lam-ho-so-huong-che-do-thai-san.htm` | `thu-vien/thu-tuc-lam-ho-so-huong-che-do-thai-san.html` |
-| 1956 | Thủ tục hồ sơ khai thuế ban đầu 2021 Cty mới thành lập | `thu-tuc-lam-ho-so-ke-khai-thue-ban-dau.htm` | `thu-vien/thu-tuc-lam-ho-so-ke-khai-thue-ban-dau.html` |
-| 1957 | Thủ tục phát hành hóa đơn điện tử lần đầu qua mạng | `thu-tuc-phat-hanh-hoa-don-dien-tu-lan-dau-qua-mang.htm` | `thu-vien/thu-tuc-phat-hanh-hoa-don-dien-tu-lan-dau-qua-mang.html` |
-| 1958 | Thủ tục Rút tiền ký quỹ của doanh nghiệp cho thuê lại lao động | `thu-tuc-rut-tien-ky-quy-cua-doanh-nghiep-cho-thue-lai-lao-dong.htm` | `thu-vien/thu-tuc-rut-tien-ky-quy-cua-doanh-nghiep-cho-thue-lai-lao-dong.html` |
-| 1959 | Thủ tục tạm dừng hưởng trợ cấp thất nghiệp mới nhất 2025 | `thu-tuc-tam-dung-huong-tro-cap-that-nghiep-moi-nhat.htm` | `thu-vien/thu-tuc-tam-dung-huong-tro-cap-that-nghiep-moi-nhat.html` |
-| 1960 | Thủ tục tham gia bảo hiểm thất nghiệp mới nhất năm 2025 | `thu-tuc-tham-gia-bao-hiem-that-nghiep-moi-nhat-nam-2024.htm` | `thu-vien/thu-tuc-tham-gia-bao-hiem-that-nghiep-moi-nhat-nam-2024.html` |
-| 1961 | Thủ tục Thành lập Hội đồng thương lượng tập thể 2025 | `thu-tuc-thanh-lap-hoi-dong-thuong-luong-tap-the.htm` | `thu-vien/thu-tuc-thanh-lap-hoi-dong-thuong-luong-tap-the.html` |
-| 1962 | Thủ tục thanh lý TSCĐ - Cách hạch toán thanh lý TSCĐ | `thu-tuc-thanh-ly-tai-san-co-dinh-da-va-chua-het-khau-hao.htm` | `thu-vien/thu-tuc-thanh-ly-tai-san-co-dinh-da-va-chua-het-khau-hao.html` |
-| 1963 | Thủ tục Thay đổi Chủ tịch Hội đồng thương lượng tập thể | `thu-tuc-thay-doi-chu-tich-hoi-dong-thuong-luong-tap-the.htm` | `thu-vien/thu-tuc-thay-doi-chu-tich-hoi-dong-thuong-luong-tap-the.html` |
-| 1964 | Thủ tục thông báo khuyến mại với Sở Công Thương về chương trình hoạt động khuyến mại | `thu-tuc-thong-bao-khuyen-mai-so-cong-thuong.htm` | `thu-vien/thu-tuc-thong-bao-khuyen-mai-so-cong-thuong.html` |
-| 1965 | Thủ tục thông báo ngừng sử dụng hóa đơn điện tử 2025 mới nhất | `thu-tuc-thong-bao-ngung-su-dung-hoa-don-dien-tu.htm` | `thu-vien/thu-tuc-thong-bao-ngung-su-dung-hoa-don-dien-tu.html` |
-| 1966 | Thủ tục thông báo phát hành hóa đơn lần đầu năm 2018 | `thu-tuc-thong-bao-phat-hanh-hoa-don-lan-dau.htm` | `thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-lan-dau.html` |
-| 1967 | Thủ tục Thu hồi Giấy phép hoạt động cho thuê lại lao động | `thu-tuc-thu-hoi-giay-phep-hoat-dong-cho-thue-lai-lao-dong.htm` | `thu-vien/thu-tuc-thu-hoi-giay-phep-hoat-dong-cho-thue-lai-lao-dong.html` |
-| 1968 | Thủ tục Tiếp tục hưởng trợ cấp thất nghiệp 2025 | `thu-tuc-tiep-tuc-huong-tro-cap-that-nghiep.htm` | `thu-vien/thu-tuc-tiep-tuc-huong-tro-cap-that-nghiep.html` |
-| 1969 | Thuế GTGT đối với tổ chức, cá nhân nước ngoài kinh doanh tại Việt Nam | `thue-gtgt-doi-voi-to-chuc-ca-nhan-nuoc-ngoai-kinh-doanh-tai-viet-nam.htm` | `thu-vien/thue-gtgt-doi-voi-to-chuc-ca-nhan-nuoc-ngoai-kinh-doanh-tai-viet-nam.html` |
-| 1970 | Lao động nghỉ hưu có phải đóng bảo hiểm xã hội và thuế TNCN | `thue-lao-dong-nghi-huu-co-phai-dong-bao-hiem-xa-hoi.htm` | `thu-vien/thue-lao-dong-nghi-huu-co-phai-dong-bao-hiem-xa-hoi.html` |
-| 1971 | Thuế môn bài của hộ kinh doanh năm 2026 | `thue-mon-bai-cua-ho-ca-nhan-kinh-doanh.htm` | `thu-vien/thue-mon-bai-cua-ho-ca-nhan-kinh-doanh.html` |
-| 1972 | Thanh lý Tài sản cố định có phải xuất hóa đơn, thuế suất? | `thue-suat-khi-thanh-ly-tai-san-co-dinh.htm` | `thu-vien/thue-suat-khi-thanh-ly-tai-san-co-dinh.html` |
-| 1973 | Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào | `thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.htm` | `thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html` |
-| 1974 | Thuế suất thuế GTGT đối với sản phẩm tự sản xuất hoặc thương mại | `thue-suat-thue-gtgt-doi-voi-san-pham-tu-san-xuat-hoac-thuong-mai.htm` | `thu-vien/thue-suat-thue-gtgt-doi-voi-san-pham-tu-san-xuat-hoac-thuong-mai.html` |
-| 1975 | Thương lượng tập thể là gì? có bắt buộc không? Quy trình thương lượng tập thể tại DN | `thuong-luong-tap-the-la-gi-co-bat-buoc-khong-quy-trinh-thuong-luong.htm` | `thu-vien/thuong-luong-tap-the-la-gi-co-bat-buoc-khong-quy-trinh-thuong-luong.html` |
-| 1976 | Tiền hỗ trợ vận chuyển có xuất hóa đơn, tính vào chi phí được trừ không? | `tien-ho-tro-van-chuyen-co-xuat-hoa-don-chi-phi-duoc-tru-khong.htm` | `thu-vien/tien-ho-tro-van-chuyen-co-xuat-hoa-don-chi-phi-duoc-tru-khong.html` |
-| 1977 | Tiền lãi vay có phải nộp thuế TNCN, có chịu thuế GTGT? | `tien-lai-chi-vay-co-chiu-thue-gtgt-co-phai-nop-thue-tncn.htm` | `thu-vien/tien-lai-chi-vay-co-chiu-thue-gtgt-co-phai-nop-thue-tncn.html` |
-| 1978 | Quy định về tiền lương của giám đốc Công ty TNHH 1TV, DNTN | `tien-luong-cua-giam-doc-cong-ty-tnhh-mtv-co-duoc-tinh-vao-chi-phi.htm` | `thu-vien/tien-luong-cua-giam-doc-cong-ty-tnhh-mtv-co-duoc-tinh-vao-chi-phi.html` |
-| 1979 | Tiền thưởng lương tháng 13 có tính thuế TNCN, đưa vào chi phí? | `tien-luong-thang-13-co-duoc-dua-vao-chi-phi-co-tinh-thue-tncn.htm` | `thu-vien/tien-luong-thang-13-co-duoc-dua-vao-chi-phi-co-tinh-thue-tncn.html` |
-| 1980 | Tiền phạt vi phạm hợp đồng có tính vào chi phí? | `tien-phat-vi-pham-hop-dong-kinh-te-co-duoc-cho-vao-chi-phi.htm` | `thu-vien/tien-phat-vi-pham-hop-dong-kinh-te-co-duoc-cho-vao-chi-phi.html` |
-| 1981 | Tiền thuê nhà có tính thuế TNCN không? chịu thuế theo mức nào? | `tien-thue-nha-co-tinh-thue-tncn-khong-chiu-thue-theo-muc-nao.htm` | `thu-vien/tien-thue-nha-co-tinh-thue-tncn-khong-chiu-thue-theo-muc-nao.html` |
-| 1982 | Tiền thưởng, phụ cấp có tính thuế TNCN - Tính chi phí hợp lý | `tien-thuong-phu-cap-co-tinh-thue-tncn-co-dua-vao-chi-phi-hop-ly.htm` | `thu-vien/tien-thuong-phu-cap-co-tinh-thue-tncn-co-dua-vao-chi-phi-hop-ly.html` |
-| 1983 | Tính thuế GTGT cho Công ty kê khai theo phương pháp trực tiếp như thế nào | `tinh-thue-gtgt-cho-cong-ty-ke-khai-theo-phuong-phap-truc-tiep.htm` | `thu-vien/tinh-thue-gtgt-cho-cong-ty-ke-khai-theo-phuong-phap-truc-tiep.html` |
-| 1984 | Tình tiết giảm nhẹ - tăng nặng vi phạm hành chính thuế | `tinh-tiet-giam-nhe-tinh-tiet-tang-nang-vi-pham-hanh-chinh-thue.htm` | `thu-vien/tinh-tiet-giam-nhe-tinh-tiet-tang-nang-vi-pham-hanh-chinh-thue.html` |
-| 1985 | Mẫu 01 Nghị định 119 Tờ khai đăng ký sử dụng hóa đơn điện tử | `to-khai-dang-ky-su-dung-hoa-don-dien-tu-mau-01-nghi-dinh-119.htm` | `thu-vien/to-khai-dang-ky-su-dung-hoa-don-dien-tu-mau-01-nghi-dinh-119.html` |
-| 1986 | Mẫu 06/TNCN Tờ khai thuế TNCN từ chuyển nhượng vốn | `to-khai-khau-tru-thue-thu-nhap-ca-nhan-mau-06-tncn.htm` | `thu-vien/to-khai-khau-tru-thue-thu-nhap-ca-nhan-mau-06-tncn.html` |
-| 1987 | Tờ khai quyết toán thuế thu nhập cá nhân Mẫu 02/QTT-TNCN | `to-khai-quyet-toan-thue-thu-nhap-ca-nhan-mau-02-qt-tncn.htm` | `thu-vien/to-khai-quyet-toan-thue-thu-nhap-ca-nhan-mau-02-qt-tncn.html` |
-| 1988 | Mẫu tờ khai quyết toán thuế TNCN dành cho hộ, cá nhân kinh doanh | `to-khai-quyet-toan-thue-tncn-danh-cho-ho-ca-nhan-kinh-doanh.htm` | `thu-vien/to-khai-quyet-toan-thue-tncn-danh-cho-ho-ca-nhan-kinh-doanh.html` |
-| 1989 | Mẫu TK1-TS Tờ khai tham gia BHXH theo Quyết định 490/QĐ-BHXH | `to-khai-tham-gia-bhxh-bhyt-bhtn-mau-so-tk1-ts.htm` | `thu-vien/to-khai-tham-gia-bhxh-bhyt-bhtn-mau-so-tk1-ts.html` |
-| 1990 | Mẫu TK3-TS mới nhất 2025 theo Quyết định 490/QĐ-BHXH | `to-khai-thong-tin-don-vi-tham-gia-bhxh-bhyt-mau-tk3-ts.htm` | `thu-vien/to-khai-thong-tin-don-vi-tham-gia-bhxh-bhyt-mau-tk3-ts.html` |
-| 1991 | Mẫu 01/TTS Tờ khai thuế cho thuê tài sản theo TT 40/2021/TT-BTC | `to-khai-thue-cho-thue-tai-san-mau-01-kk-tts.htm` | `thu-vien/to-khai-thue-cho-thue-tai-san-mau-01-kk-tts.html` |
-| 1992 | Tờ khai thuế cá nhân kinh doanh Mẫu 01/CNKD Thông tư 40 | `to-khai-thue-doi-voi-ca-nhan-kinh-doanh-mau-01-cnkd.htm` | `thu-vien/to-khai-thue-doi-voi-ca-nhan-kinh-doanh-mau-01-cnkd.html` |
-| 1993 | TỜ KHAI THUẾ GIÁ TRỊ GIA TĂNG mẫu 01/GTGT theo Thông tư 119 | `to-khai-thue-gia-tri-gia-tang-gtgt-theo-thong-tu-119.htm` | `thu-vien/to-khai-thue-gia-tri-gia-tang-gtgt-theo-thong-tu-119.html` |
-| 1994 | Tờ khai thuế GTGT mẫu 01/GTGT theo Thông tư 26 | `to-khai-thue-gtgt-mau-01-gtgt-theo-thong-tu-26.htm` | `thu-vien/to-khai-thue-gtgt-mau-01-gtgt-theo-thong-tu-26.html` |
-| 1995 | Tờ khai thuế GTGT trực tiếp trên GTGT theo TT 119 | `to-khai-thue-gtgt-truc-tiep-tren-gtgt-theo-tt-119.htm` | `thu-vien/to-khai-thue-gtgt-truc-tiep-tren-gtgt-theo-tt-119.html` |
-| 1996 | Tờ khai thuế nhà thầu nước ngoài mẫu 01/NTNN theo TT 80 | `to-khai-thue-nha-thau-nuoc-ngoai-mau-01-ntnn.htm` | `thu-vien/to-khai-thue-nha-thau-nuoc-ngoai-mau-01-ntnn.html` |
-| 1997 | Tờ khai thuế thu nhập cá nhân 11/KK-TNCN theo TT 119 | `to-khai-thue-thu-nhap-ca-nhan-theo-tt-119.htm` | `thu-vien/to-khai-thue-thu-nhap-ca-nhan-theo-tt-119.html` |
-| 1998 | Tờ khai thuế thu nhập doanh nghiệp mẫu 08/TNDN | `to-khai-thue-thu-nhap-doanh-nghiep-mau-08-tndn.htm` | `thu-vien/to-khai-thue-thu-nhap-doanh-nghiep-mau-08-tndn.html` |
-| 1999 | Tờ khai thuế TNCN Mẫu 01/XSBHĐC theo Thông tư 18 | `to-khai-thue-tncn-mau-01-xsbhdc-theo-thong-tu-18.htm` | `thu-vien/to-khai-thue-tncn-mau-01-xsbhdc-theo-thong-tu-18.html` |
-| 2000 | Tổng hợp các chính sách Thuế năm 2014 do Tổng Cục Thuế biên soạn | `tong-hop-cac-chinh-sach-thue-nam-2014-do-tong-cuc-thue-bien-soan.htm` | `thu-vien/tong-hop-cac-chinh-sach-thue-nam-2014-do-tong-cuc-thue-bien-soan.html` |
-| 2001 | Tra cứu thông tin bảo hiểm xã hội bằng tin nhắn, qua mạng | `tra-cuu-thong-tin-dong-bao-hiem-xa-hoi-bhxh-qua-mang.htm` | `thu-vien/tra-cuu-thong-tin-dong-bao-hiem-xa-hoi-bhxh-qua-mang.html` |
-| 2002 | Trả lời vướng mắc Quyết toán thuế TNDN năm 2020 | `tra-loi-vuong-mac-quyet-toan-thue-thu-nhap-doanh-nghiep.htm` | `thu-vien/tra-loi-vuong-mac-quyet-toan-thue-thu-nhap-doanh-nghiep.html` |
-| 2003 | Trả lương chậm cho người lao động có bị phạt không? Mức phạt bao nhiêu? | `tra-luong-cham-cho-nguoi-lao-dong-co-bi-phat-khong.htm` | `thu-vien/tra-luong-cham-cho-nguoi-lao-dong-co-bi-phat-khong.html` |
-| 2004 | Trả lương trên 5 triệu phải chuyển khoản mới được trừ khi tính thuế TNDN | `tra-luong-tren-5-trieu-phai-chuyen-khoan.htm` | `thu-vien/tra-luong-tren-5-trieu-phai-chuyen-khoan.html` |
-| 2005 | Điều kiện trích lập dự phòng nợ phải thu khó đòi, bảo hành sản phẩm | `trich-lap-du-phong-no-phai-thu-kho-doi-giam-gia-hang-ton-kho.htm` | `thu-vien/trich-lap-du-phong-no-phai-thu-kho-doi-giam-gia-hang-ton-kho.html` |
-| 2006 | Trích lập Quỹ phát triển khoa học và công nghệ của doanh nghiệp 2026 | `trich-lap-quy-phat-trien-khoa-hoc-va-cong-nghe-cua-dn.htm` | `thu-vien/trich-lap-quy-phat-trien-khoa-hoc-va-cong-nghe-cua-dn.html` |
-| 2007 | Quy trình ghi sổ kế toán chi tiết theo Thông tư 200 | `trinh-tu-ghi-so-ke-toan-chi-tiet-tu-mo-so-den-in-so.htm` | `thu-vien/trinh-tu-ghi-so-ke-toan-chi-tiet-tu-mo-so-den-in-so.html` |
-| 2008 | Trợ cấp mất việc làm có tính thuế TNCN không? Chịu thuế hay không? | `tro-cap-mat-viec-lam-co-tinh-thue-tncn-khong.htm` | `thu-vien/tro-cap-mat-viec-lam-co-tinh-thue-tncn-khong.html` |
-| 2009 | Trợ cấp mất việc làm: điều kiện hưởng, cách tính mức hưởng 2026 | `tro-cap-mat-viec-lam-dieu-kien-huong-cach-tinh-muc-huong.htm` | `thu-vien/tro-cap-mat-viec-lam-dieu-kien-huong-cach-tinh-muc-huong.html` |
-| 2010 | Trợ cấp thất nghiệp có bị tính thuế TNCN không? Có chịu thuế hay không? | `tro-cap-that-nghiep-co-bi-tinh-thue-tncn-khong-co-chiu-thue-khong.htm` | `thu-vien/tro-cap-that-nghiep-co-bi-tinh-thue-tncn-khong-co-chiu-thue-khong.html` |
-| 2011 | Trợ cấp thôi việc có bị tính thuế TNCN không? | `tro-cap-thoi-viec-co-bi-tinh-thue-tncn-khong-co-chiu-hay-khong.htm` | `thu-vien/tro-cap-thoi-viec-co-bi-tinh-thue-tncn-khong-co-chiu-hay-khong.html` |
-| 2012 | Trung tâm đào tạo kế toán thực hành thực tế tốt nhất Hà Nội | `trung-tam-dao-tao-ke-toan-thuc-hanh-thuc-te-tot-nhat.htm` | `thu-vien/trung-tam-dao-tao-ke-toan-thuc-hanh-thuc-te-tot-nhat.html` |
-| 2013 | Trung tâm dạy thực hành kế toán tổng hợp tốt nhất Hà Nội | `trung-tam-day-thuc-hanh-ke-toan-tong-hop-tot-nhat.htm` | `thu-vien/trung-tam-day-thuc-hanh-ke-toan-tong-hop-tot-nhat.html` |
-| 2014 | Trung tâm mua sắm Nguyễn Kim Ba Đình tuyển Kế toán quầy | `trung-tam-mua-sam-nguyen-kim-ba-dinh-tuyen-ke-toan-quay.htm` | `thu-vien/trung-tam-mua-sam-nguyen-kim-ba-dinh-tuyen-ke-toan-quay.html` |
-| 2015 | Trung tâm Quảng cáo thương hiệu sản phẩm tuyển Kế toán tổng hợp kiêm văn phòng | `trung-tam-quang-cao-thuong-hieu-san-pham-tuyen-ke-toan-tong-hop-kiem-van-phong.htm` | `thu-vien/trung-tam-quang-cao-thuong-hieu-san-pham-tuyen-ke-toan-tong-hop-kiem-van-phong.html` |
-| 2016 | Trường mầm non Thành Đông Tuyển kế toán viên | `truong-mam-non-thanh-dong-tuyen-ke-toan-vien.htm` | `thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html` |
-| 2017 | Tuổi nghỉ hưu của nữ, nam giới năm 2026 mới nhất | `tuoi-nghi-huu-cua-nu-nam-gioi-nam-2024-moi-nhat.htm` | `thu-vien/tuoi-nghi-huu-cua-nu-nam-gioi-nam-2024-moi-nhat.html` |
-| 2018 | Tỷ giá ghi trên hóa đơn GTGT năm 2016 theo TT 26 | `ty-gia-ghi-tren-hoa-don-khi-xuat-trong-khu-che-xuat.htm` | `thu-vien/ty-gia-ghi-tren-hoa-don-khi-xuat-trong-khu-che-xuat.html` |
-| 2019 | Tỷ giá tính thuế thu nhập cá nhân có thu nhập bằng ngoại tệ | `ty-gia-tinh-thue-thu-nhap-ca-nhan-co-thu-nhap-ngoai-te.htm` | `thu-vien/ty-gia-tinh-thue-thu-nhap-ca-nhan-co-thu-nhap-ngoai-te.html` |
-| 2020 | Mức lương đóng Bảo hiểm xã hội năm 2026 mới nhất hiện nay | `ty-le-dong-bao-hiem-xh-bhyt-bh-that-nghiep-moi-nhat.htm` | `thu-vien/ty-le-dong-bao-hiem-xh-bhyt-bh-that-nghiep-moi-nhat.html` |
-| 2021 | Tỷ lệ trích BHXH, BHYT, BHTN, KPCĐ năm 2026 mới nhất | `ty-le-trich-cac-khoan-theo-luong-moi-nhat.htm` | `thu-vien/ty-le-trich-cac-khoan-theo-luong-moi-nhat.html` |
-| 2022 | Tỷ lệ trích nộp kinh phí công đoàn 2026 lên cấp trên | `ty-le-trich-nop-kinh-phi-cong-doan-len-cap-tren.htm` | `thu-vien/ty-le-trich-nop-kinh-phi-cong-doan-len-cap-tren.html` |
-| 2023 | Ủy nhiệm lập hóa đơn điện tử theo Nghị định 70/2025 và Thông tư 32/2025 | `uy-nhiem-lap-hoa-don-dien-tu.htm` | `thu-vien/uy-nhiem-lap-hoa-don-dien-tu.html` |
-| 2024 | Ủy quyền cho cá nhân, nhân viên thanh toán tiền mua hàng hóa dịch vụ | `uy-quyen-cho-nhan-vien-thanh-toan-tien-mua-hang-hoa-dich-vu.htm` | `thu-vien/uy-quyen-cho-nhan-vien-thanh-toan-tien-mua-hang-hoa-dich-vu.html` |
-| 2025 | Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp tiền thuế tiền phạt | `van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.htm` | `thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html` |
-| 2026 | Văn bản đề nghị giải quyết chế độ tai nạn lao động mẫu 05A-HSB | `van-ban-de-nghi-giai-quyet-che-do-tai-nan-lao-dong-mau-05a-hsb.htm` | `thu-vien/van-ban-de-nghi-giai-quyet-che-do-tai-nan-lao-dong-mau-05a-hsb.html` |
-| 2027 | Vé cước phí đường bộ có được khấu trừ thuế GTGT không? | `ve-cuoc-duong-bo-co-duoc-khau-tru-thue-hach-toan.htm` | `thu-vien/ve-cuoc-duong-bo-co-duoc-khau-tru-thue-hach-toan.html` |
-| 2028 | Chi phí mua hàng dịch vụ của cá nhân không có hoá đơn | `xu-ly-chi-phi-mua-hang-khong-co-hoa-don-gtgt-dau-vao.htm` | `thu-vien/xu-ly-chi-phi-mua-hang-khong-co-hoa-don-gtgt-dau-vao.html` |
-| 2029 | Cách xử lý hóa đơn công ty bỏ trốn, ngừng hoạt động | `xu-ly-hoa-don-dau-vao-cua-cong-ty-bo-tron-ngung-hoat-dong.htm` | `thu-vien/xu-ly-hoa-don-dau-vao-cua-cong-ty-bo-tron-ngung-hoat-dong.html` |
-| 2030 | Xử lý khi lập sai hóa đơn điện tử KHÔNG có mã của CQT 2025 mới nhất | `xu-ly-hoa-don-dien-tu-khong-co-ma-lap-sai-sot.htm` | `thu-vien/xu-ly-hoa-don-dien-tu-khong-co-ma-lap-sai-sot.html` |
-| 2031 | Xử lý hóa đơn điện tử sai địa chỉ người mua 2026 theo Nghị định 70 | `xu-ly-hoa-don-dien-tu-sai-dia-chi-nguoi-mua.htm` | `thu-vien/xu-ly-hoa-don-dien-tu-sai-dia-chi-nguoi-mua.html` |
-| 2032 | Cách xử lý hóa đơn điện tử có sai sót mới nhất năm 2026 | `xu-ly-hoa-don-dien-tu-viet-sai-cac-truong-hop.htm` | `thu-vien/xu-ly-hoa-don-dien-tu-viet-sai-cac-truong-hop.html` |
-| 2033 | Xử lý hóa đơn khi thay đổi địa chỉ công ty theo Nghị định 70/2025 | `xu-ly-hoa-don-khi-thay-doi-dia-chi-cong-ty.htm` | `thu-vien/xu-ly-hoa-don-khi-thay-doi-dia-chi-cong-ty.html` |
-| 2034 | Xử lý hóa đơn khi thay đổi địa chỉ, tên công ty | `xu-ly-hoa-don-khi-thay-doi-dia-chi-ten-cong-ty-ma-so-thue.htm` | `thu-vien/xu-ly-hoa-don-khi-thay-doi-dia-chi-ten-cong-ty-ma-so-thue.html` |
-| 2035 | Hóa đơn ghi sai MST, tên hàng hóa, tên Cty, địa chỉ - Cách xử lý | `xu-ly-hoa-don-viet-sai-dia-chi-ma-so-thue-ten-nguoi-mua.htm` | `thu-vien/xu-ly-hoa-don-viet-sai-dia-chi-ma-so-thue-ten-nguoi-mua.html` |
-| 2036 | Hóa đơn ghi sai thuế suất, tiền thuế, đơn giá, thành tiền... | `xu-ly-hoa-don-viet-sai-so-tien-bang-chu-tien-thue.htm` | `thu-vien/xu-ly-hoa-don-viet-sai-so-tien-bang-chu-tien-thue.html` |
-| 2037 | Xử lý khoản chi phí tổ chức hội thảo quảng bá khuyến mãi | `xu-ly-khoan-chi-phi-to-chuc-hoi-thao-quang-ba-khuyen-mai.htm` | `thu-vien/xu-ly-khoan-chi-phi-to-chuc-hoi-thao-quang-ba-khuyen-mai.html` |
-| 2038 | Xử lý sự cố đối với hóa đơn điện tử có mã của cơ quan thuế | `xu-ly-su-co-doi-voi-hoa-don-dien-tu-co-ma-cua-co-quan-thue.htm` | `thu-vien/xu-ly-su-co-doi-voi-hoa-don-dien-tu-co-ma-cua-co-quan-thue.html` |
-| 2039 | Làm sai sổ sách kế toán? Không nộp hồ sơ khai thuế sử phạt thế nào? | `xu-phat-khi-lam-sai-so-sach-ke-toan-khong-nop-ho-so-khai-thue.htm` | `thu-vien/xu-phat-khi-lam-sai-so-sach-ke-toan-khong-nop-ho-so-khai-thue.html` |
-| 2040 | Xuất hóa đơn cho khách lẻ, cá nhân, người mua không lấy hóa đơn | `xuat-hoa-don-cho-khach-le-ca-nhan-nguoi-mua-khong-lay-hoa-don.htm` | `thu-vien/xuat-hoa-don-cho-khach-le-ca-nhan-nguoi-mua-khong-lay-hoa-don.html` |
-| 2041 | Yêu cầu đối với thông tin trình bày trên Báo cáo tài chính theo Thông tư 99 | `yeu-cau-doi-voi-thong-tin-trinh-bay-tren-bctc-theo-thong-tu-99.htm` | `thu-vien/yeu-cau-doi-voi-thong-tin-trinh-bay-tren-bctc-theo-thong-tu-99.html` |
+| 1690 | Quy chế dân chủ ở cơ sở tại nơi làm việc | `quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.htm` | `thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html` |
+| 1691 | Phụ cấp ăn trưa, ăn ca có phải tính thuế TNCN không? Có phải đóng BHXH không? | `quy-dinh-phu-cap-tien-an-giua-ca-moi-nhat.htm` | `thu-vien/quy-dinh-phu-cap-tien-an-giua-ca-moi-nhat.html` |
+| 1692 | Quy định về Bảo hiểm tai nạn lao động, bệnh nghề nghiệp | `quy-dinh-ve-bao-hiem-tai-nan-lao-dong-benh-nghe-nghiep.htm` | `thu-vien/quy-dinh-ve-bao-hiem-tai-nan-lao-dong-benh-nghe-nghiep.html` |
+| 1693 | Quy định về BHXH bắt buộc cho Doanh nghiệp năm 2021 | `quy-dinh-ve-bao-hiem-xh-bhyt-bhtn-moi-nhat-nam.htm` | `thu-vien/quy-dinh-ve-bao-hiem-xh-bhyt-bhtn-moi-nhat-nam.html` |
+| 1694 | Quy định về bảo hiểm y tế năm 2024 đối với DN | `quy-dinh-ve-bao-hiem-y-te-nam-2024-doi-voi-dn.htm` | `thu-vien/quy-dinh-ve-bao-hiem-y-te-nam-2024-doi-voi-dn.html` |
+| 1695 | Các khoản chi có tính chất phúc lợi cho nhân viên hợp lý 2026 | `quy-dinh-ve-chi-phi-cho-nhan-vien-di-nghi-mat-di-lai-ngay-le-tet.htm` | `thu-vien/quy-dinh-ve-chi-phi-cho-nhan-vien-di-nghi-mat-di-lai-ngay-le-tet.html` |
+| 1696 | Quy định về cho thuê lại lao động mới nhất 2025 | `quy-dinh-ve-cho-thue-lai-lao-dong-hop-dong-dieu-kien-cho-thue.htm` | `thu-vien/quy-dinh-ve-cho-thue-lai-lao-dong-hop-dong-dieu-kien-cho-thue.html` |
+| 1697 | Quy định về chữ ký trên hóa đơn GTGT, điện tử, bán hàng | `quy-dinh-ve-chu-ky-tren-hoa-don-gtgt-dien-tu-ban-hang.htm` | `thu-vien/quy-dinh-ve-chu-ky-tren-hoa-don-gtgt-dien-tu-ban-hang.html` |
+| 1698 | Quy định về chứng từ kế toán theo Thông tư 133 | `quy-dinh-ve-chung-tu-ke-toan-theo-thong-tu-133.htm` | `thu-vien/quy-dinh-ve-chung-tu-ke-toan-theo-thong-tu-133.html` |
+| 1699 | Quy định về giao dịch liên kết nghị định 132 | `quy-dinh-ve-giao-dich-lien-ket.htm` | `thu-vien/quy-dinh-ve-giao-dich-lien-ket.html` |
+| 1700 | Quy định về hóa đơn của hàng hóa nhập khẩu lưu thông trên thị trường | `quy-dinh-ve-hang-hoa-nhap-khau-luu-thong-tren-thi-truong.htm` | `thu-vien/quy-dinh-ve-hang-hoa-nhap-khau-luu-thong-tren-thi-truong.html` |
+| 1701 | Hình thức trả lương cho người lao động là tiền mặt hoặc chuyển khoản | `quy-dinh-ve-hinh-thuc-tra-luong-theo-luat-lao-dong.htm` | `thu-vien/quy-dinh-ve-hinh-thuc-tra-luong-theo-luat-lao-dong.html` |
+| 1702 | Quy định về ký hiệu hóa đơn điện tử 2025 theo Thông tư 32/2025 | `quy-dinh-ve-ky-hieu-hoa-don-dien-tu-theo-thong-tu-78.htm` | `thu-vien/quy-dinh-ve-ky-hieu-hoa-don-dien-tu-theo-thong-tu-78.html` |
+| 1703 | Quy định về ký hiệu mẫu số hóa đơn Giá trị gia tăng | `quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.htm` | `thu-vien/quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.html` |
+| 1704 | Kỳ kê khai thuế thu nhập doanh nghiệp | `quy-dinh-ve-ky-ke-khai-thue-thu-nhap-doanh-nghiep.htm` | `thu-vien/quy-dinh-ve-ky-ke-khai-thue-thu-nhap-doanh-nghiep.html` |
+| 1705 | Kỳ tính thuế thu nhập doanh nghiệp | `quy-dinh-ve-ky-tinh-thue-thu-nhap-doanh-nghiep.htm` | `thu-vien/quy-dinh-ve-ky-tinh-thue-thu-nhap-doanh-nghiep.html` |
+| 1706 | Quy định về lao động bán thời gian, làm việc không trọn thời gian | `quy-dinh-ve-lao-dong-ban-thoi-gian-lam-viec-khong-tron-thoi-gian.htm` | `thu-vien/quy-dinh-ve-lao-dong-ban-thoi-gian-lam-viec-khong-tron-thoi-gian.html` |
+| 1707 | Các khoản phụ cấp không phải đóng BHXH năm 2026 | `quy-dinh-ve-muc-luong-phu-cap-luong-va-cac-khoan-bo-sung-khac.htm` | `thu-vien/quy-dinh-ve-muc-luong-phu-cap-luong-va-cac-khoan-bo-sung-khac.html` |
+| 1708 | Quy định về nghỉ phép năm của người lao động theo bộ luật lao động | `quy-dinh-ve-nghi-phep-nam-cua-nguoi-lao-dong.htm` | `thu-vien/quy-dinh-ve-nghi-phep-nam-cua-nguoi-lao-dong.html` |
+| 1709 | Nội quy lao động là gì? có phải đăng ký không? | `quy-dinh-ve-noi-quy-lao-dong.htm` | `thu-vien/quy-dinh-ve-noi-quy-lao-dong.html` |
+| 1710 | Quy định về phụ lục hợp đồng lao động mới nhất năm 2026 | `quy-dinh-ve-phu-luc-hop-dong-lao-dong.htm` | `thu-vien/quy-dinh-ve-phu-luc-hop-dong-lao-dong.html` |
+| 1711 | Quy định về số hóa đơn điện tử | `quy-dinh-ve-so-hoa-don-dien-tu-theo-tt-78-va-nd-123.htm` | `thu-vien/quy-dinh-ve-so-hoa-don-dien-tu-theo-tt-78-va-nd-123.html` |
+| 1712 | Quy định về sổ sách kế toán theo TT 133 và Luật kế toán | `quy-dinh-ve-so-sach-ke-toan-theo-thong-tu-133.htm` | `thu-vien/quy-dinh-ve-so-sach-ke-toan-theo-thong-tu-133.html` |
+| 1713 | Quy định về sử dụng phần mềm kế toán theo Thông tư 99 | `quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.htm` | `thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html` |
+| 1714 | Cách sửa đổi, bổ sung hợp đồng lao động | `quy-dinh-ve-sua-doi-bo-sung-hop-dong-lao-dong.htm` | `thu-vien/quy-dinh-ve-sua-doi-bo-sung-hop-dong-lao-dong.html` |
+| 1715 | Quy định về nguyên tắc quản lý tài sản cố định tại DN | `quy-dinh-ve-tai-san-co-dinh-va-nguyen-tac-quan-ly-tscd.htm` | `thu-vien/quy-dinh-ve-tai-san-co-dinh-va-nguyen-tac-quan-ly-tscd.html` |
+| 1716 | Quy định về tạm hoãn thực hiện hợp đồng lao động 2026 mới nhất | `quy-dinh-ve-tam-hoan-thuc-hien-hop-dong-lao-dong.htm` | `thu-vien/quy-dinh-ve-tam-hoan-thuc-hien-hop-dong-lao-dong.html` |
+| 1717 | Chi phí trước khi thành lập công ty có được trừ 2026 | `quy-dinh-ve-thanh-toan-uy-quyen-qua-ben-thu-3.htm` | `thu-vien/quy-dinh-ve-thanh-toan-uy-quyen-qua-ben-thu-3.html` |
+| 1718 | Quy định về thời gian làm việc hành chính, ca đêm | `quy-dinh-ve-thoi-gian-lam-viec-lam-them-gio-tang-ca.htm` | `thu-vien/quy-dinh-ve-thoi-gian-lam-viec-lam-them-gio-tang-ca.html` |
+| 1719 | Quy định về thời gian nghỉ ngơi trong Bộ luật lao động | `quy-dinh-ve-thoi-gian-nghi-ngoi-trong-bo-luat-lao-dong.htm` | `thu-vien/quy-dinh-ve-thoi-gian-nghi-ngoi-trong-bo-luat-lao-dong.html` |
+| 1720 | Quy định về lao động thử việc: thời gian, lương thử việc, BHXH, thuế TNCN | `quy-dinh-ve-thoi-gian-thu-viec-va-muc-luong-thu-viec.htm` | `thu-vien/quy-dinh-ve-thoi-gian-thu-viec-va-muc-luong-thu-viec.html` |
+| 1721 | Quy định về thời hạn nộp thuế 2026 theo Luật quản lý thuế | `quy-dinh-ve-thoi-han-nop-thue.htm` | `thu-vien/quy-dinh-ve-thoi-han-nop-thue.html` |
+| 1722 | Quy định về tiền lương trong Bộ luật lao động mới nhất 2026 | `quy-dinh-ve-tien-luong-trong-bo-luat-lao-dong-moi-nhat.htm` | `thu-vien/quy-dinh-ve-tien-luong-trong-bo-luat-lao-dong-moi-nhat.html` |
+| 1723 | Quy định về việc kiểm kê tài sản hàng năm | `quy-dinh-ve-viec-kiem-ke-tai-san-hang-nam.htm` | `thu-vien/quy-dinh-ve-viec-kiem-ke-tai-san-hang-nam.html` |
+| 1724 | Quy định về việc tạm nộp thuế TNDN năm 2026 | `quy-dinh-ve-viec-nop-tien-thue-tndn-tam-tinh-quy-2026.htm` | `thu-vien/quy-dinh-ve-viec-nop-tien-thue-tndn-tam-tinh-quy-2026.html` |
+| 1725 | Quy trình kiểm tra thuế áp dụng từ 14/7/2023 | `quy-trinh-kiem-tra-thue.htm` | `thu-vien/quy-trinh-kiem-tra-thue.html` |
+| 1726 | Quy trình luân chuyển và kiểm tra chứng từ kế toán | `quy-trinh-luan-chuyen-chung-tu-ke-toan-moi-nhat.htm` | `thu-vien/quy-trinh-luan-chuyen-chung-tu-ke-toan-moi-nhat.html` |
+| 1727 | Quyền đơn phương chấm dứt, tạm hoãn hợp đồng lao động của lao động nữ mang thai | `quyen-don-phuong-cham-dut-tam-hoan-hop-dong-lao-dong-cua-lao-dong-nu-mang-thai.htm` | `thu-vien/quyen-don-phuong-cham-dut-tam-hoan-hop-dong-lao-dong-cua-lao-dong-nu-mang-thai.html` |
+| 1728 | Các quyền lợi khi đóng bảo hiểm xã hội | `quyen-loi-khi-dong-bao-hiem-xa-hoi.htm` | `thu-vien/quyen-loi-khi-dong-bao-hiem-xa-hoi.html` |
+| 1729 | Quyền và nghĩa vụ của người lao động theo Bộ Luật Lao Động | `quyen-va-nghia-vu-cua-nguoi-lao-dong-theo-bo-luat-lao-dong.htm` | `thu-vien/quyen-va-nghia-vu-cua-nguoi-lao-dong-theo-bo-luat-lao-dong.html` |
+| 1730 | Quyền và nghĩa vụ của người sử dụng lao động theo Bộ Luật Lao Động | `quyen-va-nghia-vu-cua-nguoi-su-dung-lao-dong-theo-bo-luat-lao-dong.htm` | `thu-vien/quyen-va-nghia-vu-cua-nguoi-su-dung-lao-dong-theo-bo-luat-lao-dong.html` |
+| 1731 | Quyền và trách nhiệm của người sử dụng lao động về BHXH | `quyen-va-trach-nhiem-cua-nguoi-su-dung-lao-dong-ve-bhxh.htm` | `thu-vien/quyen-va-trach-nhiem-cua-nguoi-su-dung-lao-dong-ve-bhxh.html` |
+| 1732 | Quyết định 1018/QĐ-BHXH Quy định thu, chi BHXH, BHYT | `quyet-dinh-1018-qd-bhxh-quy-dinh-thu-chi-bhxh-bhyt.htm` | `thu-vien/quyet-dinh-1018-qd-bhxh-quy-dinh-thu-chi-bhxh-bhyt.html` |
+| 1733 | Quyết định 1040/QĐ-BHXH Mẫu Báo cáo sử dụng lao động tham gia BHXH | `quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.htm` | `thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html` |
+| 1734 | Quyết định 108/QĐ-TCT quy trình hoàn thuế thu nhập cá nhân tự động | `quyet-dinh-108-qd-tct-quy-trinh-hoan-thue-tncn-tu-dong.htm` | `thu-vien/quyet-dinh-108-qd-tct-quy-trinh-hoan-thue-tncn-tu-dong.html` |
+| 1735 | Quyết định 1378/QĐ-BTC Thủ tục đăng ký người phụ thuộc | `quyet-dinh-1378-qd-btc-thu-tuc-dang-ky-nguoi-phu-thuoc.htm` | `thu-vien/quyet-dinh-1378-qd-btc-thu-tuc-dang-ky-nguoi-phu-thuoc.html` |
+| 1736 | Quyết định 1408/QĐ-TLĐ Quy định về tài chính công đoàn | `quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.htm` | `thu-vien/quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.html` |
+| 1737 | Quyết định 166/QĐ-BHXH Quy trình giải quyết chế độ BHXH, BHTN | `quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.htm` | `thu-vien/quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.html` |
+| 1738 | Quyết định 595/QĐ-BHXH thay thế QĐ 959/QĐ-BHXH của BHXH Việt Nam | `quyet-dinh-595-qd-bhxh-thay-the-qd-959-cua-bhxh-viet-nam.htm` | `thu-vien/quyet-dinh-595-qd-bhxh-thay-the-qd-959-cua-bhxh-viet-nam.html` |
+| 1739 | Giảm mức đóng đoàn phí công đoàn từ ngày 01/07/2025 | `quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.htm` | `thu-vien/quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.html` |
+| 1740 | Quyết định 636/QĐ-BHXH Quy định về chế độ BHXH | `quyet-dinh-636-qd-bhxh-quy-dinh-ve-che-do-bhxh.htm` | `thu-vien/quyet-dinh-636-qd-bhxh-quy-dinh-ve-che-do-bhxh.html` |
+| 1741 | Quyết định 8086/QĐ-TLĐ hướng dẫn thu đoàn phí công đoàn 2024 | `quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.htm` | `thu-vien/quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.html` |
+| 1742 | Quyết định 919/QĐ-BHXH Sửa đổi bổ sung QĐ 01/QĐ-BHXH | `quyet-dinh-919-qd-bhxh-ngay-26-8-2015-cua-bhxh-viet-nam.htm` | `thu-vien/quyet-dinh-919-qd-bhxh-ngay-26-8-2015-cua-bhxh-viet-nam.html` |
+| 1743 | Quyết định 959/QĐ-BHXH Quy định về BHXH, BHYT, BHTN | `quyet-dinh-959-qd-bhxh-quy-dinh-ve-bhxh-bhyt-bhtn.htm` | `thu-vien/quyet-dinh-959-qd-bhxh-quy-dinh-ve-bhxh-bhyt-bhtn.html` |
+| 1744 | Quyết định ban hành hệ thống thang bảng lương 2025 | `quyet-dinh-ban-hanh-he-thong-thang-bang-luong.htm` | `thu-vien/quyet-dinh-ban-hanh-he-thong-thang-bang-luong.html` |
+| 1745 | Mẫu Quyết định chấm dứt hợp đồng lao động | `quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.htm` | `thu-vien/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html` |
+| 1746 | Mẫu quyết định của giám đốc về việc đi nghỉ mát | `quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.htm` | `thu-vien/quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.html` |
+| 1747 | Mẫu Quyết định giải thể doanh nghiệp công ty | `quyet-dinh-giai-the-doanh-nghiep-cong-ty.htm` | `thu-vien/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html` |
+| 1748 | Quyết định số 01/QĐ-BHXH Chế độ bảo hiểm xã hội | `quyet-dinh-so-01-qd-bhxh-che-do-bao-hiem-xa-hoi.htm` | `thu-vien/quyet-dinh-so-01-qd-bhxh-che-do-bao-hiem-xa-hoi.html` |
+| 1749 | Sổ bảo hiểm xã hội | `so-bao-hiem-xa-hoi.htm` | `thu-vien/so-bao-hiem-xa-hoi.html` |
+| 1750 | Sổ chi tiết cổ phiếu mua lại của chính mình theo Thông tư 99 | `so-chi-tiet-co-phieu-mua-lai-cua-chinh-minh-theo-thong-tu-99.htm` | `thu-vien/so-chi-tiet-co-phieu-mua-lai-cua-chinh-minh-theo-thong-tu-99.html` |
+| 1751 | Mẫu Sổ chi tiết thanh toán với người mua - bán theo TT 133 và 200 | `so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.htm` | `thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html` |
+| 1752 | Sổ chi tiết thuế GTGT được hoàn lại theo Thông tư 99 | `so-chi-tiet-thue-gtgt-duoc-hoan-lai-theo-thong-tu-99.htm` | `thu-vien/so-chi-tiet-thue-gtgt-duoc-hoan-lai-theo-thong-tu-99.html` |
+| 1753 | Sổ chi tiết thuế GTGT được miễn giảm theo Thông tư 99 | `so-chi-tiet-thue-gtgt-duoc-mien-giam-theo-thong-tu-99.htm` | `thu-vien/so-chi-tiet-thue-gtgt-duoc-mien-giam-theo-thong-tu-99.html` |
+| 1754 | Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh | `so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.htm` | `thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html` |
+| 1755 | Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên kết | `so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-ket.htm` | `thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-ket.html` |
+| 1756 | Cách lập sổ quản lý lao động theo nghị định 145 mới nhất năm 2026 | `so-quan-ly-lao-dong-doanh-nghiep-theo-nghi-dinh-145.htm` | `thu-vien/so-quan-ly-lao-dong-doanh-nghiep-theo-nghi-dinh-145.html` |
+| 1757 | So sánh tài khoản kế toán Thông tư 200 và Thông tư 99 | `so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.htm` | `thu-vien/so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.html` |
+| 1758 | Sổ theo dõi chi tiết vốn đầu tư của chủ sở hữu theo Thông tư 99 | `so-theo-doi-chi-tiet-von-dau-tu-cua-chu-so-huu-theo-thong-tu-99.htm` | `thu-vien/so-theo-doi-chi-tiet-von-dau-tu-cua-chu-so-huu-theo-thong-tu-99.html` |
+| 1759 | Sổ theo dõi phân bổ các khoản chênh lệch phát sinh khi mua khoản đầu tư vào công ty liên doanh | `so-theo-doi-phan-bo-cac-khoan-chenh-lech-phat-sinh-khi-mua-khoan-dau-tu-vao-cong-ty-lien-ket.htm` | `thu-vien/so-theo-doi-phan-bo-cac-khoan-chenh-lech-phat-sinh-khi-mua-khoan-dau-tu-vao-cong-ty-lien-ket.html` |
+| 1760 | Sổ theo dõi thanh toán bằng ngoại tệ theo Thông tư 99 | `so-theo-doi-thanh-toan-bang-ngoai-te-theo-thong-tu-99.htm` | `thu-vien/so-theo-doi-thanh-toan-bang-ngoai-te-theo-thong-tu-99.html` |
+| 1761 | Mẫu Sổ theo dõi TSCĐ - CCDC tại nơi sử dụng theo TT 133 và 200 | `so-theo-doi-tscd-va-ccdc-tai-noi-su-dung-theo-tt-133-va-200.htm` | `thu-vien/so-theo-doi-tscd-va-ccdc-tai-noi-su-dung-theo-tt-133-va-200.html` |
+| 1762 | Sổ theo dõi TSCĐ và công cụ, dụng cụ tại nơi sử dụng | `so-theo-doi-tscd-va-cong-cu-dung-cu-tai-noi-su-dung-theo-tt99.htm` | `thu-vien/so-theo-doi-tscd-va-cong-cu-dung-cu-tai-noi-su-dung-theo-tt99.html` |
+| 1763 | Sử dụng bất hợp pháp hóa đơn là gì - Cách xử lý | `su-dung-hoa-don-bat-hop-phap-va-muc-phat.htm` | `thu-vien/su-dung-hoa-don-bat-hop-phap-va-muc-phat.html` |
+| 1764 | Quy định về hóa đơn điện tử có mã và không có mã của cơ quan thuế | `su-dung-hoa-don-dien-tu-co-khong-co-ma-cua-co-quan-thue.htm` | `thu-vien/su-dung-hoa-don-dien-tu-co-khong-co-ma-cua-co-quan-thue.html` |
+| 1765 | Sửa đổi, bổ sung Báo cáo tài chính theo Thông tư 99 | `sua-doi-bo-sung-bao-cao-tai-chinh-theo-thong-tu-99.htm` | `thu-vien/sua-doi-bo-sung-bao-cao-tai-chinh-theo-thong-tu-99.html` |
+| 1766 | Sửa đổi, bổ sung chế độ kế toán Thông tư 133/2016/TT-BTC | `sua-doi-bo-sung-thong-tu-133-2016-tt-btc.htm` | `thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html` |
+| 1767 | Tải khoản 112 Tiền gửi ngân hàng theo Thông tư 133 | `tai-khoan-112-tien-gui-ngan-hang-cach-hach-toan.htm` | `thu-vien/tai-khoan-112-tien-gui-ngan-hang-cach-hach-toan.html` |
+| 1768 | Tài khoản 121 Chứng khoán kinh doanh theo Thông tư 133 | `tai-khoan-121-chung-khoan-kinh-doanh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-121-chung-khoan-kinh-doanh-theo-thong-tu-133.html` |
+| 1769 | Tài khoản 128 Đầu tư nắm giữ đến ngày đáo hạn theo TT 133 | `tai-khoan-128-dau-tu-nam-giu-den-ngay-dao-han-theo-tt-133.htm` | `thu-vien/tai-khoan-128-dau-tu-nam-giu-den-ngay-dao-han-theo-tt-133.html` |
+| 1770 | Tải khoản 131 Phải thu khách hàng theo TT 133 | `tai-khoan-131-phai-thu-cua-khach-hang-theo-tt-133.htm` | `thu-vien/tai-khoan-131-phai-thu-cua-khach-hang-theo-tt-133.html` |
+| 1771 | Tài khoản 133 Thuế GTGT được khấu trừ theo TT 133 | `tai-khoan-133-thue-gtgt-duoc-khau-tru-theo-tt-133.htm` | `thu-vien/tai-khoan-133-thue-gtgt-duoc-khau-tru-theo-tt-133.html` |
+| 1772 | Tài khoản 136 Phải thu nội bộ theo Thông tư 133 | `tai-khoan-136-phai-thu-noi-bo-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-136-phai-thu-noi-bo-theo-thong-tu-133.html` |
+| 1773 | Tài khoản 138 Phải thu khác theo Thông tư 133 | `tai-khoan-138-phai-thu-khac-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-138-phai-thu-khac-theo-thong-tu-133.html` |
+| 1774 | Tài khoản 141 Tạm ứng theo Thông tư 133 | `tai-khoan-141-tam-ung-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-141-tam-ung-theo-thong-tu-133.html` |
+| 1775 | Tài khoản 151 Hàng mua đang đi đường theo Thông tư 133 | `tai-khoan-151-hang-mua-dang-di-duong-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-151-hang-mua-dang-di-duong-theo-thong-tu-133.html` |
+| 1776 | Tài khoản 152 Nguyên vật liệu theo Thông tư 133 | `tai-khoan-152-nguyen-vat-lieu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-152-nguyen-vat-lieu-theo-thong-tu-133.html` |
+| 1777 | Tài khoản 153 Công cụ dụng cụ theo Thông tư 133 | `tai-khoan-153-cong-cu-dung-cu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-153-cong-cu-dung-cu-theo-thong-tu-133.html` |
+| 1778 | Tài khoản 154 Chi phí sản xuất kinh doanh dở dang theo TT 133 | `tai-khoan-154-chi-phi-san-xuat-kinh-doanh-do-dang-theo-tt-133.htm` | `thu-vien/tai-khoan-154-chi-phi-san-xuat-kinh-doanh-do-dang-theo-tt-133.html` |
+| 1779 | Tài khoản 155 Thành phẩm theo Thông tư 133 | `tai-khoan-155-thanh-pham-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-155-thanh-pham-theo-thong-tu-133.html` |
+| 1780 | Tài khoản 156 Hàng hóa theo Thông tư 133 | `tai-khoan-156-hang-hoa-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-156-hang-hoa-theo-thong-tu-133.html` |
+| 1781 | Tài khoản 157 Hàng gửi bán theo Thông tư 133 | `tai-khoan-157-hang-gui-ban-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-157-hang-gui-ban-theo-thong-tu-133.html` |
+| 1782 | Tài khoản 211 Tài sản cố định theo Thông tư 133 | `tai-khoan-211-tai-san-co-dinh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-211-tai-san-co-dinh-theo-thong-tu-133.html` |
+| 1783 | Tài khoản 214 Hao mòn tài sản cố định theo Thông tư 133 | `tai-khoan-214-hao-mon-tai-san-co-dinh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-214-hao-mon-tai-san-co-dinh-theo-thong-tu-133.html` |
+| 1784 | Tài khoản 217 Bất động sản đầu tư theo Thông tư 133 | `tai-khoan-217-bat-dong-san-dau-tu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-217-bat-dong-san-dau-tu-theo-thong-tu-133.html` |
+| 1785 | Tài khoản 228 Đầu tư góp vốn vào đơn vị khác theo TT 133 | `tai-khoan-228-dau-tu-gop-von-vao-don-vi-khac-theo-tt-133.htm` | `thu-vien/tai-khoan-228-dau-tu-gop-von-vao-don-vi-khac-theo-tt-133.html` |
+| 1786 | Tài khoản 229 Dự phòng tổn thất tài sản theo Thông tư 133 | `tai-khoan-229-du-phong-ton-that-tai-san-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-229-du-phong-ton-that-tai-san-theo-thong-tu-133.html` |
+| 1787 | Tài khoản 241 Xây dựng cơ bản dở dang theo Thông tư 133 | `tai-khoan-241-xay-dung-co-ban-do-dang-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-241-xay-dung-co-ban-do-dang-theo-thong-tu-133.html` |
+| 1788 | Tài khoản 242 Chi phí trả trước theo Thông tư 133 | `tai-khoan-242-chi-phi-tra-truoc-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-242-chi-phi-tra-truoc-theo-thong-tu-133.html` |
+| 1789 | Tài khoản 331 Phải trả người bán theo Thông tư 133 | `tai-khoan-331-phai-tra-nguoi-ban-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-331-phai-tra-nguoi-ban-theo-thong-tu-133.html` |
+| 1790 | Tài khoản 333 Thuế và các khoản phải nộp nhà nước theo TT 133 | `tai-khoan-333-thue-va-cac-khoan-phai-nop-nha-nuoc-theo-tt-133.htm` | `thu-vien/tai-khoan-333-thue-va-cac-khoan-phai-nop-nha-nuoc-theo-tt-133.html` |
+| 1791 | Tài khoản 334 Phải trả người lao động theo TT 133 | `tai-khoan-334-phai-tra-nguoi-lao-dong-theo-tt-133.htm` | `thu-vien/tai-khoan-334-phai-tra-nguoi-lao-dong-theo-tt-133.html` |
+| 1792 | Tài khoản 335 Chi phí phải trả theo Thông tư 133 | `tai-khoan-335-chi-phi-phai-tra-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-335-chi-phi-phai-tra-theo-thong-tu-133.html` |
+| 1793 | Tài khoản 336 - Phải trả nội bộ theo Thông tư 133 | `tai-khoan-336-phai-tra-noi-bo-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-336-phai-tra-noi-bo-theo-thong-tu-133.html` |
+| 1794 | Tài khoản 338 Phải trả, phải nộp khác theo Thông tư 133 | `tai-khoan-338-phai-tra-phai-nop-khac-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-338-phai-tra-phai-nop-khac-theo-thong-tu-133.html` |
+| 1795 | Tài khoản 341 Vay và nợ thuê tài chính theo Thông tư 133 | `tai-khoan-341-vay-va-no-thue-tai-chinh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-341-vay-va-no-thue-tai-chinh-theo-thong-tu-133.html` |
+| 1796 | Tài khoản 352 Dự phòng phải trả theo Thông tư 133 | `tai-khoan-352-du-phong-phai-tra-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-352-du-phong-phai-tra-theo-thong-tu-133.html` |
+| 1797 | Tài khoản 353 Quỹ khen thưởng, phúc lợi theo Thông tư 133 | `tai-khoan-353-quy-khen-thuong-phuc-loi-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-353-quy-khen-thuong-phuc-loi-theo-thong-tu-133.html` |
+| 1798 | Tài khoản 356 Quỹ phát triển khoa học và công nghệ theo TT 133 | `tai-khoan-356-quy-phat-trien-khoa-hoc-va-cong-nghe-theo-tt-133.htm` | `thu-vien/tai-khoan-356-quy-phat-trien-khoa-hoc-va-cong-nghe-theo-tt-133.html` |
+| 1799 | Tài khoản 411 Vốn đầu tư của chủ sở hữu theo Thông tư 133 | `tai-khoan-411-von-dau-tu-cua-chu-so-huu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-411-von-dau-tu-cua-chu-so-huu-theo-thong-tu-133.html` |
+| 1800 | Tài khoản 413 - Chênh lệch tỷ giá hối đoái theo Thông tư 133 | `tai-khoan-413-chenh-lech-ty-gia-hoi-doai-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-413-chenh-lech-ty-gia-hoi-doai-theo-thong-tu-133.html` |
+| 1801 | Tài khoản 418 Các quỹ thuộc vốn chủ sở hữu theo Thông tư 133 | `tai-khoan-418-cac-quy-thuoc-von-chu-so-huu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-418-cac-quy-thuoc-von-chu-so-huu-theo-thong-tu-133.html` |
+| 1802 | Tài khoản 419 Cổ phiếu quỹ theo Thông tư 133 | `tai-khoan-419-co-phieu-quy-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-419-co-phieu-quy-theo-thong-tu-133.html` |
+| 1803 | Tài khoản 421 Lợi nhuận sau thuế chưa phân phối theo Thông tư 133 | `tai-khoan-421-loi-nhuan-sau-thue-chua-phan-phoi-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-421-loi-nhuan-sau-thue-chua-phan-phoi-theo-thong-tu-133.html` |
+| 1804 | Tài khoản 511 Doanh thu bán hàng và cung cấp dịch vụ theo Thông tư 133 | `tai-khoan-511-doanh-thu-ban-hang-dich-vu-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-511-doanh-thu-ban-hang-dich-vu-theo-thong-tu-133.html` |
+| 1805 | Tài khoản 515 Doanh thu hoạt động tài chính theo Thông tư 133 | `tai-khoan-515-doanh-thu-hoat-dong-tai-chinh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-515-doanh-thu-hoat-dong-tai-chinh-theo-thong-tu-133.html` |
+| 1806 | Tài khoản 611 Mua hàng theo Thông tư 133 | `tai-khoan-611-mua-hang-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-611-mua-hang-theo-thong-tu-133.html` |
+| 1807 | Tài khoản 631 Giá thành sản xuất theo Thông tư 133 | `tai-khoan-631-gia-thanh-san-xuat-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-631-gia-thanh-san-xuat-theo-thong-tu-133.html` |
+| 1808 | Tài khoản 632 Giá vốn hàng bán theo Thông tư 133 | `tai-khoan-632-gia-von-hang-ban-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-632-gia-von-hang-ban-theo-thong-tu-133.html` |
+| 1809 | Tài khoản 635 Chi phí tài chính theo Thông tư 133 | `tai-khoan-635-chi-phi-tai-chinh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-635-chi-phi-tai-chinh-theo-thong-tu-133.html` |
+| 1810 | Tài khoản 642 Chi phí quản lý kinh doanh theo Thông tư 133 | `tai-khoan-642-chi-phi-quan-ly-kinh-doanh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-642-chi-phi-quan-ly-kinh-doanh-theo-thong-tu-133.html` |
+| 1811 | Tài khoản 711 Thu nhập khác theo Thông tư 133 | `tai-khoan-711-thu-nhap-khac-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-711-thu-nhap-khac-theo-thong-tu-133.html` |
+| 1812 | Tài khoản 811 Chi phí khác theo Thông tư 133 | `tai-khoan-811-chi-phi-khac-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-811-chi-phi-khac-theo-thong-tu-133.html` |
+| 1813 | Tài khoản 821 Chi phí thuế thu nhập doanh nghiệp theo TT 133 | `tai-khoan-821-chi-phi-thue-thu-nhap-doanh-nghiep-theo-tt-133.htm` | `thu-vien/tai-khoan-821-chi-phi-thue-thu-nhap-doanh-nghiep-theo-tt-133.html` |
+| 1814 | Tài khoản 911 Xác định kết quả kinh doanh theo Thông tư 133 | `tai-khoan-911-xac-dinh-ket-qua-kinh-doanh-theo-thong-tu-133.htm` | `thu-vien/tai-khoan-911-xac-dinh-ket-qua-kinh-doanh-theo-thong-tu-133.html` |
+| 1815 | Tài liệu ôn thi chứng chỉ hành nghề kế toán, kiểm toán 2014 | `tai-lieu-on-thi-chung-chi-hanh-nghe-ke-toan-kiem-toan-2014.htm` | `thu-vien/tai-lieu-on-thi-chung-chi-hanh-nghe-ke-toan-kiem-toan-2014.html` |
+| 1816 | Tải phần mềm kế toán Fast Accounting miễn phí dùng thử | `tai-phan-mem-ke-toan-fast-accounting-mien-phi-dung-thu.htm` | `thu-vien/tai-phan-mem-ke-toan-fast-accounting-mien-phi-dung-thu.html` |
+| 1817 | Tải sản cố định chưa sử dụng có được trích khấu hao? | `tai-san-chua-su-dung-co-duoc-trich-khau-hao.htm` | `thu-vien/tai-san-chua-su-dung-co-duoc-trich-khau-hao.html` |
+| 1818 | Quy định về tài sản cố định hữu hình | `tai-san-co-dinh-huu-hinh.htm` | `thu-vien/tai-san-co-dinh-huu-hinh.html` |
+| 1819 | Tài sản cố định là gì? TSCĐ bao gồm những loại nào? | `tai-san-co-dinh-la-gi.htm` | `thu-vien/tai-san-co-dinh-la-gi.html` |
+| 1820 | Quy định về tài sản cố định thuê tài chính | `tai-san-co-dinh-thue-tai-chinh.htm` | `thu-vien/tai-san-co-dinh-thue-tai-chinh.html` |
+| 1821 | Xử lý Tài sản cố định hình thành tự xây dựng, sản xuất | `tai-san-co-dinh-tu-san-xuat-xay-dung-co-ban.htm` | `thu-vien/tai-san-co-dinh-tu-san-xuat-xay-dung-co-ban.html` |
+| 1822 | Quy định về tài sản cố định vô hình | `tai-san-co-dinh-vo-hinh.htm` | `thu-vien/tai-san-co-dinh-vo-hinh.html` |
+| 1823 | Tạm dừng đóng bảo hiểm xã hội bắt buộc | `tam-dung-dong-bao-hiem-xa-hoi-bat-buoc.htm` | `thu-vien/tam-dung-dong-bao-hiem-xa-hoi-bat-buoc.html` |
+| 1824 | Tạm ngừng kinh doanh có phải nộp thuế môn bài không? | `tam-ngung-kinh-doanh-co-phai-nop-thue-mon-bai-khong.htm` | `thu-vien/tam-ngung-kinh-doanh-co-phai-nop-thue-mon-bai-khong.html` |
+| 1825 | Tặng quà tết cho nhân viên có tính thuế TNCN không? | `tang-qua-tet-cho-nhan-vien-co-tinh-thue-tncn-khong.htm` | `thu-vien/tang-qua-tet-cho-nhan-vien-co-tinh-thue-tncn-khong.html` |
+| 1826 | Tập đoàn tài chính FB Việt Nam Tuyển Nhân viên kế toán | `tap-doan-tai-chinh-fb-viet-nam-tuyen-nhan-vien-ke-toan-tai-dong-anh-ha-noi.htm` | `thu-vien/tap-doan-tai-chinh-fb-viet-nam-tuyen-nhan-vien-ke-toan-tai-dong-anh-ha-noi.html` |
+| 1827 | Tập đoàn Tân Á Đại Thành tuyển Kế toán chi nhánh | `tap-doan-tan-a-dai-thanh-tuyen-ke-toan-chi-nhanh.htm` | `thu-vien/tap-doan-tan-a-dai-thanh-tuyen-ke-toan-chi-nhanh.html` |
+| 1828 | Thẩm quyền giao kết hợp đồng lao động | `tham-quyen-giao-ket-hop-dong-lao-dong.htm` | `thu-vien/tham-quyen-giao-ket-hop-dong-lao-dong.html` |
+| 1829 | Thủ tục thuế khi thay đổi tên công ty, địa điểm kinh doanh | `thay-doi-dia-diem-kinh-doanh-can-lam-thu-tuc-gi.htm` | `thu-vien/thay-doi-dia-diem-kinh-doanh-can-lam-thu-tuc-gi.html` |
+| 1830 | Thay đổi thông tin đăng ký thuế của cá nhân 2026 | `thay-doi-thong-tin-dang-ky-thue-cua-ca-nhan.htm` | `thu-vien/thay-doi-thong-tin-dang-ky-thue-cua-ca-nhan.html` |
+| 1831 | Thay thế, điều chỉnh hóa đơn điện tử theo Nghị định 70/2025/NĐ-CP | `thay-the-dieu-chinh-hoa-don-dien-tu.htm` | `thu-vien/thay-the-dieu-chinh-hoa-don-dien-tu.html` |
+| 1832 | Thẻ quầy hàng - Mẫu số 02-BH theo Thông tư 99 | `the-quay-hang-mau-so-02-bh-theo-thong-tu-99.htm` | `thu-vien/the-quay-hang-mau-so-02-bh-theo-thong-tu-99.html` |
+| 1833 | Mẫu thẻ quầy hàng 02-BH theo Thông tư 133 và 200 | `the-quay-hang-mau-so-02-bh.htm` | `thu-vien/the-quay-hang-mau-so-02-bh.html` |
+| 1834 | Thỏa ước lao động tập thể là gì? có bắt buộc không? Quy định như nào? | `thoa-uoc-lao-dong-tap-the.htm` | `thu-vien/thoa-uoc-lao-dong-tap-the.html` |
+| 1835 | Thời điểm ghi nhận doanh thu cung cấp dịch vụ | `thoi-diem-ghi-nhan-doanh-thu-cung-cap-dich-vu.htm` | `thu-vien/thoi-diem-ghi-nhan-doanh-thu-cung-cap-dich-vu.html` |
+| 1836 | Thời điểm xác định doanh thu tính thuế TNDN 2026 | `thoi-diem-xac-dinh-doanh-thu-tinh-thue-tndn.htm` | `thu-vien/thoi-diem-xac-dinh-doanh-thu-tinh-thue-tndn.html` |
+| 1837 | Thời điểm xác định thuế GTGT đối với hàng hóa, dịch vụ mới nhất 2026 | `thoi-diem-xac-dinh-thue-gtgt-doi-voi-hang-hoa-dich-vu.htm` | `thu-vien/thoi-diem-xac-dinh-thue-gtgt-doi-voi-hang-hoa-dich-vu.html` |
+| 1838 | Thời điểm xuất hoá đơn bán hàng, dịch vụ, xây dựng | `thoi-diem-xuat-hoa-don-dich-vu-xay-dung-ban-hang.htm` | `thu-vien/thoi-diem-xuat-hoa-don-dich-vu-xay-dung-ban-hang.html` |
+| 1839 | Thời điểm xuất hóa đơn dịch vụ theo nghị định 70/2025/NĐ-CP | `thoi-diem-xuat-hoa-don-dich-vu.htm` | `thu-vien/thoi-diem-xuat-hoa-don-dich-vu.html` |
+| 1840 | Thời điểm lập hóa đơn điện tử khi bán hàng, dịch vụ theo NĐ 70/2025 | `thoi-diem-xuat-hoa-don-dien-tu-ban-hang-hoa-dich-vu.htm` | `thu-vien/thoi-diem-xuat-hoa-don-dien-tu-ban-hang-hoa-dich-vu.html` |
+| 1841 | Thời gian hưởng chế độ khi chăm sóc con ốm đau | `thoi-gian-huong-che-do-khi-cham-soc-con-om-dau.htm` | `thu-vien/thoi-gian-huong-che-do-khi-cham-soc-con-om-dau.html` |
+| 1842 | Thời gian hưởng chế độ ốm đau | `thoi-gian-huong-che-do-om-dau-toi-da-theo-luat-bhxh.htm` | `thu-vien/thoi-gian-huong-che-do-om-dau-toi-da-theo-luat-bhxh.html` |
+| 1843 | Thời gian nghỉ việc hưởng chế độ khi thực hiện các biện pháp tránh thai | `thoi-gian-nghi-viec-huong-che-do-khi-thuc-hien-cac-bien-phap-tranh-thai.htm` | `thu-vien/thoi-gian-nghi-viec-huong-che-do-khi-thuc-hien-cac-bien-phap-tranh-thai.html` |
+| 1844 | Thời gian nghỉ việc hưởng chế độ thai sản khi khám thai | `thoi-gian-nghi-viec-huong-che-do-thai-san-khi-kham-thai.htm` | `thu-vien/thoi-gian-nghi-viec-huong-che-do-thai-san-khi-kham-thai.html` |
+| 1845 | Thời gian nghỉ việc hưởng chế độ thai sản khi sảy thai, phá thai | `thoi-gian-nghi-viec-huong-che-do-thai-san-khi-say-thai-pha-thai.htm` | `thu-vien/thoi-gian-nghi-viec-huong-che-do-thai-san-khi-say-thai-pha-thai.html` |
+| 1846 | Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con | `thoi-gian-nghi-viec-huong-che-do-thai-san-khi-sinh-con.htm` | `thu-vien/thoi-gian-nghi-viec-huong-che-do-thai-san-khi-sinh-con.html` |
+| 1847 | Thời gian trích khấu hao của tài sản cố định vô hình mới nhất | `thoi-gian-trich-khau-hao-tai-san-co-dinh-vo-hinh.htm` | `thu-vien/thoi-gian-trich-khau-hao-tai-san-co-dinh-vo-hinh.html` |
+| 1848 | Quy định về thời hạn góp vốn điều lệ công ty TNHH, cổ phần | `thoi-han-gop-von-cua-cong-ty-co-phan-tnhh-1-2-thanh-vien.htm` | `thu-vien/thoi-han-gop-von-cua-cong-ty-co-phan-tnhh-1-2-thanh-vien.html` |
+| 1849 | Thời hạn kê khai thuế GTGT đầu vào - đầu ra | `thoi-han-ke-khai-hoa-don-gtgt-dau-vao.htm` | `thu-vien/thoi-han-ke-khai-hoa-don-gtgt-dau-vao.html` |
+| 1850 | Thời hạn nộp Báo cáo tài chính theo Thông tư 99 | `thoi-han-nop-bao-cao-tai-chinh-theo-thong-tu-99.htm` | `thu-vien/thoi-han-nop-bao-cao-tai-chinh-theo-thong-tu-99.html` |
+| 1851 | Thời hạn nộp mẫu 06/GTGT đăng ký kê khai thuế | `thoi-han-nop-mau-06-gtgt-dang-ky-ke-khai-thue.htm` | `thu-vien/thoi-han-nop-mau-06-gtgt-dang-ky-ke-khai-thue.html` |
+| 1852 | Thời hạn nộp tiền bảo hiểm xã hội hàng tháng từ ngày 01/07/2025 | `thoi-han-nop-tien-bao-hiem-xa-hoi-hang-thang.htm` | `thu-vien/thoi-han-nop-tien-bao-hiem-xa-hoi-hang-thang.html` |
+| 1853 | Thời hạn nộp tiền thuế TNDN tạm tính quý, quyết toán thuế năm 2026 | `thoi-han-nop-tien-thue-tndn-tam-tinh-quyet-toan.htm` | `thu-vien/thoi-han-nop-tien-thue-tndn-tam-tinh-quyet-toan.html` |
+| 1854 | Thời hạn nộp tờ khai báo cáo thuế của hộ kinh doanh 2026 | `thoi-han-nop-to-khai-bao-cao-thue-cua-ho-kinh-doanh.htm` | `thu-vien/thoi-han-nop-to-khai-bao-cao-thue-cua-ho-kinh-doanh.html` |
+| 1855 | Thời hiệu xử phạt vi phạm hành chính về hóa đơn | `thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.htm` | `thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.html` |
+| 1856 | Thời hiệu xử phạt vi phạm hành chính về thuế mới nhất 2025 | `thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-thue.htm` | `thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-thue.html` |
+| 1857 | Thời trang công sở EMSPO tuyển Nhân viên kế toán | `thoi-trang-cong-so-emspo-tuyen-nhan-vien-ke-toan.htm` | `thu-vien/thoi-trang-cong-so-emspo-tuyen-nhan-vien-ke-toan.html` |
+| 1858 | Thông báo chấm dứt hợp đồng lao động | `thong-bao-cham-dut-hop-dong-lao-dong.htm` | `thu-vien/thong-bao-cham-dut-hop-dong-lao-dong.html` |
+| 1859 | Thông báo nộp lệ phí trước bạ nhà đất theo TT 119 | `thong-bao-nop-le-phi-truoc-ba-nha-dat-theo-tt-119.htm` | `thu-vien/thong-bao-nop-le-phi-truoc-ba-nha-dat-theo-tt-119.html` |
+| 1860 | Mẫu thông báo số tài khoản, số hiệu ví điện tử của hộ kinh doanh | `thong-bao-so-tai-khoan-cua-ho-ca-nhan-kinh-doanh.htm` | `thu-vien/thong-bao-so-tai-khoan-cua-ho-ca-nhan-kinh-doanh.html` |
+| 1861 | Thông báo về cơ quan thuế quản lý trực tiếp | `thong-bao-ve-co-quan-thue-quan-ly-truc-tiep.htm` | `thu-vien/thong-bao-ve-co-quan-thue-quan-ly-truc-tiep.html` |
+| 1862 | Thông báo về việc chấm dứt hoạt động chi nhánh/văn phòng đại diện/địa điểm kinh doanh | `thong-bao-ve-viec-cham-dut-hoat-dong-dia-diem-kinh-doanh-cn-vpdd.htm` | `thu-vien/thong-bao-ve-viec-cham-dut-hoat-dong-dia-diem-kinh-doanh-cn-vpdd.html` |
+| 1863 | Thông báo về việc tạm ngừng kinh doanh của DN, CN, VPDD, DDKD | `thong-bao-ve-viec-tam-ngung-kinh-doanh.htm` | `thu-vien/thong-bao-ve-viec-tam-ngung-kinh-doanh.html` |
+| 1864 | Thông tư 01/2021/TT-BKHĐT hướng dẫn về đăng ký doanh nghiệp | `thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.htm` | `thu-vien/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html` |
+| 1865 | Thông tư 03/2015/TT-BLĐTBXH điều chỉnh tiền lương đã đóng BHXH | `thong-tu-03-2015-tt-bldtbxh-dieu-chinh-tien-luong-da-dong-bhxh.htm` | `thu-vien/thong-tu-03-2015-tt-bldtbxh-dieu-chinh-tien-luong-da-dong-bhxh.html` |
+| 1866 | Thông tư 04/VBHN-BTC văn bản hợp nhất về thuế TNCN | `thong-tu-04-vbhn-btc-van-ban-hop-nhat-ve-thue-tncn.htm` | `thu-vien/thong-tu-04-vbhn-btc-van-ban-hop-nhat-ve-thue-tncn.html` |
+| 1867 | Thông tư 07/2007/TTLT-BTM-BTC quy định về khuyến mãi, hội chợ, triển lãm | `thong-tu-07-2007-ttlt-btm-btc-quy-dinh-ve-khuyen-mai-hoi-cho-trien-lam.htm` | `thu-vien/thong-tu-07-2007-ttlt-btm-btc-quy-dinh-ve-khuyen-mai-hoi-cho-trien-lam.html` |
+| 1868 | Thông tư 09/2015/TT-BTC quy định giao dịch tài chính của doanh nghiệp | `thong-tu-09-2015-tt-btc-giao-dich-tai-chinh-cua-doanh-nghiep.htm` | `thu-vien/thong-tu-09-2015-tt-btc-giao-dich-tai-chinh-cua-doanh-nghiep.html` |
+| 1869 | Thông tư 10/2020/TT-BLĐTBXH hướng dẫn Luật lao động | `thong-tu-10-2020-tt-bldtbxh-huong-dan-luat-lao-dong.htm` | `thu-vien/thong-tu-10-2020-tt-bldtbxh-huong-dan-luat-lao-dong.html` |
+| 1870 | Thông tư 100/2021/TT-BTC sửa đổi, bổ sung Thông tư 40/2021 | `thong-tu-100-2021-tt-btc-sua-doi-bo-sung-thong-tu-40-2021.htm` | `thu-vien/thong-tu-100-2021-tt-btc-sua-doi-bo-sung-thong-tu-40-2021.html` |
+| 1871 | Thông tư 105/2020/TT-BTC hướng dẫn về đăng ký thuế | `thong-tu-105-2020-tt-btc-huong-dan-ve-dang-ky-thue.htm` | `thu-vien/thong-tu-105-2020-tt-btc-huong-dan-ve-dang-ky-thue.html` |
+| 1872 | Thông tư 111/2013/TT-BTC hướng dẫn thi hành Luật thuế TNCN | `thong-tu-111-2013-tt-btc-huong-dan-thi-ha-nh-luat-thue-tncn.htm` | `thu-vien/thong-tu-111-2013-tt-btc-huong-dan-thi-ha-nh-luat-thue-tncn.html` |
+| 1873 | Thông tư 130/2016/TT-BTC hướng dẫn Nghị định 100, Luật 106/2016/QH13 | `thong-tu-130-2016-tt-btc-huong-dan-nghi-dinh-100-luat-106.htm` | `thu-vien/thong-tu-130-2016-tt-btc-huong-dan-nghi-dinh-100-luat-106.html` |
+| 1874 | Thông tư 132/2018/TT-BTC Chế độ kế toán Doanh nghiệp siêu nhỏ | `thong-tu-132-2018-tt-btc-che-do-ke-toan-doanh-nghiep-sieu-nho.htm` | `thu-vien/thong-tu-132-2018-tt-btc-che-do-ke-toan-doanh-nghiep-sieu-nho.html` |
+| 1875 | Thông tư 133/2016/TT-BTC Chế độ kế toán Doanh nghiệp vừa và nhỏ | `thong-tu-133-2016-che-do-ke-toan-doanh-nghiep-vua-va-nho.htm` | `thu-vien/thong-tu-133-2016-che-do-ke-toan-doanh-nghiep-vua-va-nho.html` |
+| 1876 | Thông tư 141/2013/TT-BTC hướng dẫn thi hành luật thuế TNDN và GTGT | `thong-tu-141-2013-tt-btc-thi-hanh-luat-thue-tndn-va-gtgt.htm` | `thu-vien/thong-tu-141-2013-tt-btc-thi-hanh-luat-thue-tndn-va-gtgt.html` |
+| 1877 | Thông tư 151/2014/TT-BTC hướng dẫn thi hành NĐ 91 quy định về thuế | `thong-tu-151-2014-tt-btc-huong-dan-thi-hanh-nd-91-quy-dinh-ve-thue.htm` | `thu-vien/thong-tu-151-2014-tt-btc-huong-dan-thi-hanh-nd-91-quy-dinh-ve-thue.html` |
+| 1878 | Thông tư 16/VBHN-BTC Văn bản hợp nhất về thuế GTGT | `thong-tu-16-vbhn-btc-van-ban-hop-nhat-ve-thue-gtgt.htm` | `thu-vien/thong-tu-16-vbhn-btc-van-ban-hop-nhat-ve-thue-gtgt.html` |
+| 1879 | Thông tư 166/2013/TT-BTC xử phạt vi phạm hành chính về Thuế | `thong-tu-166-2013-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-thue.htm` | `thu-vien/thong-tu-166-2013-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-thue.html` |
+| 1880 | Thông tư 17/VBHN-BTC Văn bản hợp nhất về hóa đơn | `thong-tu-17-vbhn-btc-van-ban-hop-nhat-ve-hoa-don.htm` | `thu-vien/thong-tu-17-vbhn-btc-van-ban-hop-nhat-ve-hoa-don.html` |
+| 1881 | Thông tư 173 /2016/TT-BTC sửa đổi, bổ sung Thông tư 219 | `thong-tu-173-2016-tt-btc-sua-doi-bo-sung-thong-tu-219.htm` | `thu-vien/thong-tu-173-2016-tt-btc-sua-doi-bo-sung-thong-tu-219.html` |
+| 1882 | Thông tư 176/2016/TT-BTC Xử phạt vi phạm hành chính về hóa đơn | `thong-tu-176-2016-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.htm` | `thu-vien/thong-tu-176-2016-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.html` |
+| 1883 | Thông tư 18/2026/TT-BTC quy định về thuế đối với hộ, cá nhân kinh doanh | `thong-tu-18-2026-tt-btc-ve-thue-doi-voi-ho-ca-nhan-kinh-doanh.htm` | `thu-vien/thong-tu-18-2026-tt-btc-ve-thue-doi-voi-ho-ca-nhan-kinh-doanh.html` |
+| 1884 | Thông tư 18/VBHN-BTC văn bản hợp nhất về quản lý thuế | `thong-tu-18-vbhn-btc-van-ban-hop-nhat-ve-quan-ly-thue.htm` | `thu-vien/thong-tu-18-vbhn-btc-van-ban-hop-nhat-ve-quan-ly-thue.html` |
+| 1885 | Thông tư 20/2026/TT-BTC hướng dẫn về Thuế TNDN | `thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.htm` | `thu-vien/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html` |
+| 1886 | Thông tư 200/2014/TT-BTC Chế độ kế toán Doanh nghiệp | `thong-tu-200-2014-tt-btc-che-do-ke-toan-doanh-nghiep.htm` | `thu-vien/thong-tu-200-2014-tt-btc-che-do-ke-toan-doanh-nghiep.html` |
+| 1887 | Thông tư 202/2014/TT-BTC Hướng dẫn lập và trình bày BCTC hợp nhất | `thong-tu-202-2014-tt-btc-huong-dan-lap-bao-cao-tai-chinh-hop-nhat.htm` | `thu-vien/thong-tu-202-2014-tt-btc-huong-dan-lap-bao-cao-tai-chinh-hop-nhat.html` |
+| 1888 | Thông tư 219/2013/TT-BTC hướng dẫn thi hành luật thuế GTGT | `thong-tu-219-2013-tt-btc-huong-dan-thi-hanh-luat-thue-gtgt.htm` | `thu-vien/thong-tu-219-2013-tt-btc-huong-dan-thi-hanh-luat-thue-gtgt.html` |
+| 1889 | Thông tư 23/2014/TT-BLĐTBXH Quy định về tuyển dụng và báo cáo sử dụng lao động | `thong-tu-23-2014-tt-bldtbxh-quy-dinh-ve-tuyen-dung-va-bao-cao-su-dung-lao-dong.htm` | `thu-vien/thong-tu-23-2014-tt-bldtbxh-quy-dinh-ve-tuyen-dung-va-bao-cao-su-dung-lao-dong.html` |
+| 1890 | Thông tư 23/2015/TT-BLĐTBXH quy định về cách tính lương cho người lao động | `thong-tu-23-2015-tt-bldtbxh-quy-dinh-ve-tien-luong.htm` | `thu-vien/thong-tu-23-2015-tt-bldtbxh-quy-dinh-ve-tien-luong.html` |
+| 1891 | Thông tư 25/2018/TT-BTC hướng dẫn Nghị định 146/2017/NĐ-CP | `thong-tu-25-2018-tt-btc-huong-dan-nghi-dinh-146-2017-nd-cp.htm` | `thu-vien/thong-tu-25-2018-tt-btc-huong-dan-nghi-dinh-146-2017-nd-cp.html` |
+| 1892 | Thông tư 26/2015/TT-BTC hướng dẫn về thuế GTGT và quản lý thuế | `thong-tu-26-2015-tt-btc-huong-dan-thue-gtgt-va-quan-ly-thue.htm` | `thu-vien/thong-tu-26-2015-tt-btc-huong-dan-thue-gtgt-va-quan-ly-thue.html` |
+| 1893 | Thông tư 26/VBHN –BTC văn bản hợp nhất thuế TNDN | `thong-tu-26-vbhn-btc-van-ban-hop-nhat-thue-tndn.htm` | `thu-vien/thong-tu-26-vbhn-btc-van-ban-hop-nhat-thue-tndn.html` |
+| 1894 | Thông tư 302/2016/TT-BTC Hướng dẫn về lệ phí môn bài | `thong-tu-302-2016-tt-btc-huong-dan-ve-le-phi-mon-bai.htm` | `thu-vien/thong-tu-302-2016-tt-btc-huong-dan-ve-le-phi-mon-bai.html` |
+| 1895 | Thông tư 32/2025/TT-BTC thay thế Thông tư 78/2021 về hóa đơn điện tử | `thong-tu-32-2025-tt-btc-hoa-don-dien-tu.htm` | `thu-vien/thong-tu-32-2025-tt-btc-hoa-don-dien-tu.html` |
+| 1896 | Thông tư 324/2016/TT-BTC Quy định mục lục ngân sách nhà nước. | `thong-tu-324-2016-tt-btc-he-thong-muc-luc-ngan-sach-nha-nuoc.htm` | `thu-vien/thong-tu-324-2016-tt-btc-he-thong-muc-luc-ngan-sach-nha-nuoc.html` |
+| 1897 | Thông tư 37/2017/TT-BTC sửa đổi, bổ sung Thông tư 39 về hóa đơn | `thong-tu-37-2017-tt-btc-sua-doi-bo-sung-thong-tu-39.htm` | `thu-vien/thong-tu-37-2017-tt-btc-sua-doi-bo-sung-thong-tu-39.html` |
+| 1898 | Thông tư 39/2014/TT-BTC Những quy định mới về hóa đơn | `thong-tu-39-2014-tt-btc-nhung-quy-dinh-moi-ve-hoa-don.htm` | `thu-vien/thong-tu-39-2014-tt-btc-nhung-quy-dinh-moi-ve-hoa-don.html` |
+| 1899 | Thông tư 39/2025/TT-BCT quy định về hạn mức khuyến mại giảm giá | `thong-tu-39-2025-tt-bct-quy-dinh-ve-han-muc-khuyen-mai-giam-gia.htm` | `thu-vien/thong-tu-39-2025-tt-bct-quy-dinh-ve-han-muc-khuyen-mai-giam-gia.html` |
+| 1900 | Thông tư 40/2021/TT-BTC quy định thuế GTGT, TNCN cho cá nhân, hộ kinh doanh | `thong-tu-40-2021-tt-btc-quy-dinh-thue-cho-ho-ca-nhan-kinh-doanh.htm` | `thu-vien/thong-tu-40-2021-tt-btc-quy-dinh-thue-cho-ho-ca-nhan-kinh-doanh.html` |
+| 1901 | Thông tư 47/2015/TT-BLĐTBXH quy định về mức lương và phụ cấp lương | `thong-tu-47-2015-tt-bldtbxh-quy-dinh-ve-muc-luong-va-phu-cap-luong.htm` | `thu-vien/thong-tu-47-2015-tt-bldtbxh-quy-dinh-ve-muc-luong-va-phu-cap-luong.html` |
+| 1902 | Thông tư 59/2015/TT-BLĐTBXH hướng dẫn Luật BHXH bắt buộc | `thong-tu-59-2015-bldtbxh-huong-dan-luat-bhxh-bat-buoc.htm` | `thu-vien/thong-tu-59-2015-bldtbxh-huong-dan-luat-bhxh-bat-buoc.html` |
+| 1903 | Thông tư 64/2013/TT-BTC hướng dẫn thi hành Nghị định số 51/2010/NĐ-CP | `thong-tu-64-2013-tt-btc-quy-dinh-ve-hoa-don-gtgt-ban-hang.htm` | `thu-vien/thong-tu-64-2013-tt-btc-quy-dinh-ve-hoa-don-gtgt-ban-hang.html` |
+| 1904 | Thông tư 64/2015/TTLT-BTC-BCT-BCA-BQP quy định về hóa đơn hàng nhập khẩu | `thong-tu-64-2015-ttlt-btc-bct-bca-bqp-quy-dinh-ve-hoa-don.htm` | `thu-vien/thong-tu-64-2015-ttlt-btc-bct-bca-bqp-quy-dinh-ve-hoa-don.html` |
+| 1905 | Thông tư 65/2020/TT-BTC quy định về thuế môn bài | `thong-tu-65-2020-tt-btc-quy-dinh-ve-thue-mon-bai.htm` | `thu-vien/thong-tu-65-2020-tt-btc-quy-dinh-ve-thue-mon-bai.html` |
+| 1906 | Thông tư 68/2019/TT-BTC quy định về hóa đơn điện tử | `thong-tu-68-2019-tt-btc-quy-dinh-ve-hoa-don-dien-tu.htm` | `thu-vien/thong-tu-68-2019-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html` |
+| 1907 | Thông tư 69/2025/TT-BTC Hướng dẫn về thuế GTGT từ ngày 01/07/2025 | `thong-tu-69-2025-tt-btc-huong-dan-ve-thue-gtgt.htm` | `thu-vien/thong-tu-69-2025-tt-btc-huong-dan-ve-thue-gtgt.html` |
+| 1908 | Thông tư 75/2015/TT-BTC sửa đổi, bổ sung điều 128 Thông tư 200/2014/TT-BTC | `thong-tu-75-2015-tt-btc-sua-doi-bo-sung-dieu-128-tt-200.htm` | `thu-vien/thong-tu-75-2015-tt-btc-sua-doi-bo-sung-dieu-128-tt-200.html` |
+| 1909 | Thông tư 78/2014/TT-BTC hướng dẫn thi hành luật thuế TNDN | `thong-tu-78-2014-tt-btc-huong-dan-thi-hanh-luat-thue-tndn.htm` | `thu-vien/thong-tu-78-2014-tt-btc-huong-dan-thi-hanh-luat-thue-tndn.html` |
+| 1910 | Thông tư 78/2021/TT-BTC quy định về hoá đơn điện tử | `thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.htm` | `thu-vien/thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html` |
+| 1911 | Thông tư 88/2020/TT-BTC hướng dẫn về hóa đơn điện tử | `thong-tu-88-2020-tt-btc-huong-dan-ve-hoa-don-dien-tu.htm` | `thu-vien/thong-tu-88-2020-tt-btc-huong-dan-ve-hoa-don-dien-tu.html` |
+| 1912 | Thông tư 88/2021/TT-BTC chế độ kế toán cho cá nhân, hộ kinh doanh | `thong-tu-88-che-do-ke-toan-cho-ca-nhan-ho-kinh-doanh.htm` | `thu-vien/thong-tu-88-che-do-ke-toan-cho-ca-nhan-ho-kinh-doanh.html` |
+| 1913 | Thông tư 92/2015/TT-BTC quy định về thuế GTGT, TNCN đối với cá nhân | `thong-tu-92-2015-quy-dinh-ve-thue-gtgt-tncn-doi-voi-ca-nhan.htm` | `thu-vien/thong-tu-92-2015-quy-dinh-ve-thue-gtgt-tncn-doi-voi-ca-nhan.html` |
+| 1914 | Thông tư 93/2017/TT-BTC Sửa đổi, bổ sung TT 219, 119, 156 | `thong-tu-93-2017-tt-btc-sua-doi-bo-sung-tt-156-119-219.htm` | `thu-vien/thong-tu-93-2017-tt-btc-sua-doi-bo-sung-tt-156-119-219.html` |
+| 1915 | Thông tư 95/2016/TT- BTC Hướng dẫn đăng ký Thuế | `thong-tu-95-2016-tt-btc-huong-dan-dang-ky-thue.htm` | `thu-vien/thong-tu-95-2016-tt-btc-huong-dan-dang-ky-thue.html` |
+| 1916 | Thông tư 96/2015/TT-BTC Hướng dẫn Luật thuế TNDN năm 2015 | `thong-tu-96-2015-tt-btc-huong-dan-thue-thu-nhap-doanh-nghiep.htm` | `thu-vien/thong-tu-96-2015-tt-btc-huong-dan-thue-thu-nhap-doanh-nghiep.html` |
+| 1917 | Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp | `thong-tu-99-2025-tt-btc-huong-dan-che-do-ke-toan-dn.htm` | `thu-vien/thong-tu-99-2025-tt-btc-huong-dan-che-do-ke-toan-dn.html` |
+| 1918 | Thông tư số 10/2014/TT-BTC quy định xử phạt vi phạm hành chính về hóa đơn | `thong-tu-so-10-2014-tt-btc-xu-phat-vi-pham-ve-hoa-don-gtgt.htm` | `thu-vien/thong-tu-so-10-2014-tt-btc-xu-phat-vi-pham-ve-hoa-don-gtgt.html` |
+| 1919 | THÔNG TƯ Số 119/2014/TT- BTC Bỏ mức 1 tỷ áp dụng phương pháp khấu trừ thuế | `thong-tu-so-119-2014-tt-btc-ngay-25-8-2014.htm` | `thu-vien/thong-tu-so-119-2014-tt-btc-ngay-25-8-2014.html` |
+| 1920 | Thông tư Số 156/2013/TT-BTC hướng dẫn thi hành luật quản lý Thuế | `thong-tu-so-156-2013-tt-btc-huong-dan-thi-hanh-luat-quan-ly-thue.htm` | `thu-vien/thong-tu-so-156-2013-tt-btc-huong-dan-thi-hanh-luat-quan-ly-thue.html` |
+| 1921 | Thông tư số 178/TT-BTC áp dụng bảo hiểm xã hội việt Nam | `thong-tu-so-178-tt-btc-ap-dung-bao-hiem-xa-hoi-viet-nam.htm` | `thu-vien/thong-tu-so-178-tt-btc-ap-dung-bao-hiem-xa-hoi-viet-nam.html` |
+| 1922 | Thu hộ chi hộ có phải xuất hóa đơn không? | `thu-ho-chi-ho-co-phai-xuat-hoa-don-khong.htm` | `thu-vien/thu-ho-chi-ho-co-phai-xuat-hoa-don-khong.html` |
+| 1923 | Các khoản thu nhập chịu thuế TNDN theo quy định mới nhất 2026 | `thu-nhap-chiu-thue-thu-nhap-doanh-nghiep.htm` | `thu-vien/thu-nhap-chiu-thue-thu-nhap-doanh-nghiep.html` |
+| 1924 | Các khoản thu nhập được miễn thuế thu nhập doanh nghiệp 2026 | `thu-nhap-duoc-mien-thue-tndn.htm` | `thu-vien/thu-nhap-duoc-mien-thue-tndn.html` |
+| 1925 | Thủ thuật kiểm tra báo cáo tài chính nhanh và chính xác | `thu-thuat-doc-va-phan-tich-bao-cao-tai-chinh-doanh-nghiep.htm` | `thu-vien/thu-thuat-doc-va-phan-tich-bao-cao-tai-chinh-doanh-nghiep.html` |
+| 1926 | Thư tra soát C1-11/NS theo Thông tư 84 | `thu-tra-soat-c1-11ns-theo-thong-tu-84.htm` | `thu-vien/thu-tra-soat-c1-11ns-theo-thong-tu-84.html` |
+| 1927 | Thủ tục Cấp Giấy phép hoạt động cho thuê lại lao động | `thu-tuc-cap-giay-phep-hoat-dong-cho-thue-lai-lao-dong.htm` | `thu-vien/thu-tuc-cap-giay-phep-hoat-dong-cho-thue-lai-lao-dong.html` |
+| 1928 | Thủ tục cấp giấy phép lao động cho người nước ngoài 2025 | `thu-tuc-cap-giay-phep-lao-dong-cho-nld-nuoc-ngoai-lam-viec-tai-viet-nam.htm` | `thu-vien/thu-tuc-cap-giay-phep-lao-dong-cho-nld-nuoc-ngoai-lam-viec-tai-viet-nam.html` |
+| 1929 | Thủ tục Cấp lại Giấy phép hoạt động cho thuê lại lao động | `thu-tuc-cap-lai-giay-phep-hoat-dong-cho-thue-lai-lao-dong.htm` | `thu-vien/thu-tuc-cap-lai-giay-phep-hoat-dong-cho-thue-lai-lao-dong.html` |
+| 1930 | Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK | `thu-tuc-cat-giam-nguoi-phu-thuoc.htm` | `thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html` |
+| 1931 | Thủ tục chấm dứt hưởng trợ cấp thất nghiệp 2025 | `thu-tuc-cham-dut-huong-tro-cap-that-nghiep.htm` | `thu-vien/thu-tuc-cham-dut-huong-tro-cap-that-nghiep.html` |
+| 1932 | Thủ tục chuyển nơi hưởng trợ cấp thất nghiệp (chuyển đi, chuyển đến) 2025 | `thu-tuc-chuyen-noi-huong-tro-cap-that-nghiep.htm` | `thu-vien/thu-tuc-chuyen-noi-huong-tro-cap-that-nghiep.html` |
+| 1933 | Thủ tục đăng ký chương trình khuyến mại mới nhất theo NĐ 128 | `thu-tuc-dang-ky-chuong-trinh-ban-hang-khuyen-mai.htm` | `thu-vien/thu-tuc-dang-ky-chuong-trinh-ban-hang-khuyen-mai.html` |
+| 1934 | Thủ tục đăng ký tổ chức, tham gia hội chợ, triển lãm thương mại | `thu-tuc-dang-ky-hoi-cho-trien-lam-thuong-mai.htm` | `thu-vien/thu-tuc-dang-ky-hoi-cho-trien-lam-thuong-mai.html` |
+| 1935 | Thủ tục đăng ký mã số thuế cá nhân 2026 cho người lao động | `thu-tuc-dang-ky-ma-so-thue-ca-nhan-2026-cho-nguoi-lao-dong.htm` | `thu-vien/thu-tuc-dang-ky-ma-so-thue-ca-nhan-2026-cho-nguoi-lao-dong.html` |
+| 1936 | Thủ tục đăng ký mã số thuế cá nhân cho thuê tài sản 2026 | `thu-tuc-dang-ky-ma-so-thue-ca-nhan-cho-thue-tai-san.htm` | `thu-vien/thu-tuc-dang-ky-ma-so-thue-ca-nhan-cho-thue-tai-san.html` |
+| 1937 | Cách đăng ký Mã số thuế cá nhân quan mạng trên trang Dịch Vụ Công | `thu-tuc-dang-ky-ma-so-thue-thu-nhap-ca-nhan-moi-nhat.htm` | `thu-vien/thu-tuc-dang-ky-ma-so-thue-thu-nhap-ca-nhan-moi-nhat.html` |
+| 1938 | Thủ tục đăng ký giảm trừ gia cảnh người phụ thuộc qua mạng | `thu-tuc-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh-2024-moi-nhat.htm` | `thu-vien/thu-tuc-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh-2024-moi-nhat.html` |
+| 1939 | Thủ tục đăng ký nội quy lao động 2026 mới nhất | `thu-tuc-dang-ky-noi-quy-lao-dong-cua-doanh-nghiep.htm` | `thu-vien/thu-tuc-dang-ky-noi-quy-lao-dong-cua-doanh-nghiep.html` |
+| 1940 | Thủ tục đăng ký thuế nhà thầu nước ngoài | `thu-tuc-dang-ky-thue-nha-thau-nha-thau-phu-nuoc-ngoai.htm` | `thu-vien/thu-tuc-dang-ky-thue-nha-thau-nha-thau-phu-nuoc-ngoai.html` |
+| 1941 | Thủ tục đặt in hóa đơn GTGT lần đầu năm 2018 | `thu-tuc-dat-in-hoa-don-gtgt-lan-dau.htm` | `thu-vien/thu-tuc-dat-in-hoa-don-gtgt-lan-dau.html` |
+| 1942 | Thủ tục Gia hạn Giấy phép hoạt động cho thuê lại lao động | `thu-tuc-gia-han-giay-phep-hoat-dong-cho-thue-lai-lao-dong.htm` | `thu-vien/thu-tuc-gia-han-giay-phep-hoat-dong-cho-thue-lai-lao-dong.html` |
+| 1943 | Thủ tục gia hạn giấy phép lao động cho người nước ngoài | `thu-tuc-gia-han-giay-phep-lao-dong-cho-nguoi-nuoc-ngoai.htm` | `thu-vien/thu-tuc-gia-han-giay-phep-lao-dong-cho-nguoi-nuoc-ngoai.html` |
+| 1944 | Thủ tục giải thể doanh nghiệp, công ty mới nhất | `thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.htm` | `thu-vien/thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.html` |
+| 1945 | Chế độ ốm đau 2021 - Mức hưởng chế độ ốm đau BHXH | `thu-tuc-ho-so-huong-che-do-om-dau-bhxh-2021-moi-nhat.htm` | `thu-vien/thu-tuc-ho-so-huong-che-do-om-dau-bhxh-2021-moi-nhat.html` |
+| 1946 | Hồ sơ và Thủ tục hoàn thuế giá trị gia tăng mới nhất năm 2025 | `thu-tuc-hoan-thue-gia-tri-gia-tang-moi-nhat.htm` | `thu-vien/thu-tuc-hoan-thue-gia-tri-gia-tang-moi-nhat.html` |
+| 1947 | Cách hoàn thuế thu nhập cá nhân online mới nhất 2025 | `thu-tuc-hoan-thue-thu-nhap-ca-nhan-online-moi-nhat-2025.htm` | `thu-vien/thu-tuc-hoan-thue-thu-nhap-ca-nhan-online-moi-nhat-2025.html` |
+| 1948 | Thủ tục hưởng chế độ dưỡng sức sau sinh, sau ốm đau 2025 | `thu-tuc-huong-che-do-duong-suc-sau-sinh-om-dau.htm` | `thu-vien/thu-tuc-huong-che-do-duong-suc-sau-sinh-om-dau.html` |
+| 1949 | Thủ tục hưởng chế độ ốm đau BHXH mới nhất năm 2025 | `thu-tuc-huong-che-do-om-dau.htm` | `thu-vien/thu-tuc-huong-che-do-om-dau.html` |
+| 1950 | Thủ tục hưởng chế độ tai nạn lao động, bệnh nghề nghiệp mới nhất năm 2025 | `thu-tuc-huong-che-do-tai-nan-lao-dong-benh-nghe-nghiep.htm` | `thu-vien/thu-tuc-huong-che-do-tai-nan-lao-dong-benh-nghe-nghiep.html` |
+| 1951 | Hồ sơ, Thủ tục hưởng trợ cấp thất nghiệp mới nhất năm 2025 | `thu-tuc-huong-tro-cap-that-nghiep.htm` | `thu-vien/thu-tuc-huong-tro-cap-that-nghiep.html` |
+| 1952 | Hồ sơ hủy hóa đơn giấy chuyển sang hóa đơn điện tử | `thu-tuc-huy-hoa-don-gia-tri-gia-tang.htm` | `thu-vien/thu-tuc-huy-hoa-don-gia-tri-gia-tang.html` |
+| 1953 | Hồ sơ thủ tục hưởng chế độ thai sản 2026 mới nhất | `thu-tuc-lam-ho-so-huong-che-do-thai-san.htm` | `thu-vien/thu-tuc-lam-ho-so-huong-che-do-thai-san.html` |
+| 1954 | Thủ tục hồ sơ khai thuế ban đầu 2021 Cty mới thành lập | `thu-tuc-lam-ho-so-ke-khai-thue-ban-dau.htm` | `thu-vien/thu-tuc-lam-ho-so-ke-khai-thue-ban-dau.html` |
+| 1955 | Thủ tục phát hành hóa đơn điện tử lần đầu qua mạng | `thu-tuc-phat-hanh-hoa-don-dien-tu-lan-dau-qua-mang.htm` | `thu-vien/thu-tuc-phat-hanh-hoa-don-dien-tu-lan-dau-qua-mang.html` |
+| 1956 | Thủ tục Rút tiền ký quỹ của doanh nghiệp cho thuê lại lao động | `thu-tuc-rut-tien-ky-quy-cua-doanh-nghiep-cho-thue-lai-lao-dong.htm` | `thu-vien/thu-tuc-rut-tien-ky-quy-cua-doanh-nghiep-cho-thue-lai-lao-dong.html` |
+| 1957 | Thủ tục tạm dừng hưởng trợ cấp thất nghiệp mới nhất 2025 | `thu-tuc-tam-dung-huong-tro-cap-that-nghiep-moi-nhat.htm` | `thu-vien/thu-tuc-tam-dung-huong-tro-cap-that-nghiep-moi-nhat.html` |
+| 1958 | Thủ tục tham gia bảo hiểm thất nghiệp mới nhất năm 2025 | `thu-tuc-tham-gia-bao-hiem-that-nghiep-moi-nhat-nam-2024.htm` | `thu-vien/thu-tuc-tham-gia-bao-hiem-that-nghiep-moi-nhat-nam-2024.html` |
+| 1959 | Thủ tục Thành lập Hội đồng thương lượng tập thể 2025 | `thu-tuc-thanh-lap-hoi-dong-thuong-luong-tap-the.htm` | `thu-vien/thu-tuc-thanh-lap-hoi-dong-thuong-luong-tap-the.html` |
+| 1960 | Thủ tục thanh lý TSCĐ - Cách hạch toán thanh lý TSCĐ | `thu-tuc-thanh-ly-tai-san-co-dinh-da-va-chua-het-khau-hao.htm` | `thu-vien/thu-tuc-thanh-ly-tai-san-co-dinh-da-va-chua-het-khau-hao.html` |
+| 1961 | Thủ tục Thay đổi Chủ tịch Hội đồng thương lượng tập thể | `thu-tuc-thay-doi-chu-tich-hoi-dong-thuong-luong-tap-the.htm` | `thu-vien/thu-tuc-thay-doi-chu-tich-hoi-dong-thuong-luong-tap-the.html` |
+| 1962 | Thủ tục thông báo khuyến mại với Sở Công Thương về chương trình hoạt động khuyến mại | `thu-tuc-thong-bao-khuyen-mai-so-cong-thuong.htm` | `thu-vien/thu-tuc-thong-bao-khuyen-mai-so-cong-thuong.html` |
+| 1963 | Thủ tục thông báo ngừng sử dụng hóa đơn điện tử 2025 mới nhất | `thu-tuc-thong-bao-ngung-su-dung-hoa-don-dien-tu.htm` | `thu-vien/thu-tuc-thong-bao-ngung-su-dung-hoa-don-dien-tu.html` |
+| 1964 | Thủ tục thông báo phát hành hóa đơn lần đầu năm 2018 | `thu-tuc-thong-bao-phat-hanh-hoa-don-lan-dau.htm` | `thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-lan-dau.html` |
+| 1965 | Thủ tục Thu hồi Giấy phép hoạt động cho thuê lại lao động | `thu-tuc-thu-hoi-giay-phep-hoat-dong-cho-thue-lai-lao-dong.htm` | `thu-vien/thu-tuc-thu-hoi-giay-phep-hoat-dong-cho-thue-lai-lao-dong.html` |
+| 1966 | Thủ tục Tiếp tục hưởng trợ cấp thất nghiệp 2025 | `thu-tuc-tiep-tuc-huong-tro-cap-that-nghiep.htm` | `thu-vien/thu-tuc-tiep-tuc-huong-tro-cap-that-nghiep.html` |
+| 1967 | Thuế GTGT đối với tổ chức, cá nhân nước ngoài kinh doanh tại Việt Nam | `thue-gtgt-doi-voi-to-chuc-ca-nhan-nuoc-ngoai-kinh-doanh-tai-viet-nam.htm` | `thu-vien/thue-gtgt-doi-voi-to-chuc-ca-nhan-nuoc-ngoai-kinh-doanh-tai-viet-nam.html` |
+| 1968 | Lao động nghỉ hưu có phải đóng bảo hiểm xã hội và thuế TNCN | `thue-lao-dong-nghi-huu-co-phai-dong-bao-hiem-xa-hoi.htm` | `thu-vien/thue-lao-dong-nghi-huu-co-phai-dong-bao-hiem-xa-hoi.html` |
+| 1969 | Thuế môn bài của hộ kinh doanh năm 2026 | `thue-mon-bai-cua-ho-ca-nhan-kinh-doanh.htm` | `thu-vien/thue-mon-bai-cua-ho-ca-nhan-kinh-doanh.html` |
+| 1970 | Thanh lý Tài sản cố định có phải xuất hóa đơn, thuế suất? | `thue-suat-khi-thanh-ly-tai-san-co-dinh.htm` | `thu-vien/thue-suat-khi-thanh-ly-tai-san-co-dinh.html` |
+| 1971 | Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào | `thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.htm` | `thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html` |
+| 1972 | Thuế suất thuế GTGT đối với sản phẩm tự sản xuất hoặc thương mại | `thue-suat-thue-gtgt-doi-voi-san-pham-tu-san-xuat-hoac-thuong-mai.htm` | `thu-vien/thue-suat-thue-gtgt-doi-voi-san-pham-tu-san-xuat-hoac-thuong-mai.html` |
+| 1973 | Thương lượng tập thể là gì? có bắt buộc không? Quy trình thương lượng tập thể tại DN | `thuong-luong-tap-the-la-gi-co-bat-buoc-khong-quy-trinh-thuong-luong.htm` | `thu-vien/thuong-luong-tap-the-la-gi-co-bat-buoc-khong-quy-trinh-thuong-luong.html` |
+| 1974 | Tiền hỗ trợ vận chuyển có xuất hóa đơn, tính vào chi phí được trừ không? | `tien-ho-tro-van-chuyen-co-xuat-hoa-don-chi-phi-duoc-tru-khong.htm` | `thu-vien/tien-ho-tro-van-chuyen-co-xuat-hoa-don-chi-phi-duoc-tru-khong.html` |
+| 1975 | Tiền lãi vay có phải nộp thuế TNCN, có chịu thuế GTGT? | `tien-lai-chi-vay-co-chiu-thue-gtgt-co-phai-nop-thue-tncn.htm` | `thu-vien/tien-lai-chi-vay-co-chiu-thue-gtgt-co-phai-nop-thue-tncn.html` |
+| 1976 | Quy định về tiền lương của giám đốc Công ty TNHH 1TV, DNTN | `tien-luong-cua-giam-doc-cong-ty-tnhh-mtv-co-duoc-tinh-vao-chi-phi.htm` | `thu-vien/tien-luong-cua-giam-doc-cong-ty-tnhh-mtv-co-duoc-tinh-vao-chi-phi.html` |
+| 1977 | Tiền thưởng lương tháng 13 có tính thuế TNCN, đưa vào chi phí? | `tien-luong-thang-13-co-duoc-dua-vao-chi-phi-co-tinh-thue-tncn.htm` | `thu-vien/tien-luong-thang-13-co-duoc-dua-vao-chi-phi-co-tinh-thue-tncn.html` |
+| 1978 | Tiền phạt vi phạm hợp đồng có tính vào chi phí? | `tien-phat-vi-pham-hop-dong-kinh-te-co-duoc-cho-vao-chi-phi.htm` | `thu-vien/tien-phat-vi-pham-hop-dong-kinh-te-co-duoc-cho-vao-chi-phi.html` |
+| 1979 | Tiền thuê nhà có tính thuế TNCN không? chịu thuế theo mức nào? | `tien-thue-nha-co-tinh-thue-tncn-khong-chiu-thue-theo-muc-nao.htm` | `thu-vien/tien-thue-nha-co-tinh-thue-tncn-khong-chiu-thue-theo-muc-nao.html` |
+| 1980 | Tiền thưởng, phụ cấp có tính thuế TNCN - Tính chi phí hợp lý | `tien-thuong-phu-cap-co-tinh-thue-tncn-co-dua-vao-chi-phi-hop-ly.htm` | `thu-vien/tien-thuong-phu-cap-co-tinh-thue-tncn-co-dua-vao-chi-phi-hop-ly.html` |
+| 1981 | Tính thuế GTGT cho Công ty kê khai theo phương pháp trực tiếp như thế nào | `tinh-thue-gtgt-cho-cong-ty-ke-khai-theo-phuong-phap-truc-tiep.htm` | `thu-vien/tinh-thue-gtgt-cho-cong-ty-ke-khai-theo-phuong-phap-truc-tiep.html` |
+| 1982 | Tình tiết giảm nhẹ - tăng nặng vi phạm hành chính thuế | `tinh-tiet-giam-nhe-tinh-tiet-tang-nang-vi-pham-hanh-chinh-thue.htm` | `thu-vien/tinh-tiet-giam-nhe-tinh-tiet-tang-nang-vi-pham-hanh-chinh-thue.html` |
+| 1983 | Mẫu 01 Nghị định 119 Tờ khai đăng ký sử dụng hóa đơn điện tử | `to-khai-dang-ky-su-dung-hoa-don-dien-tu-mau-01-nghi-dinh-119.htm` | `thu-vien/to-khai-dang-ky-su-dung-hoa-don-dien-tu-mau-01-nghi-dinh-119.html` |
+| 1984 | Mẫu 06/TNCN Tờ khai thuế TNCN từ chuyển nhượng vốn | `to-khai-khau-tru-thue-thu-nhap-ca-nhan-mau-06-tncn.htm` | `thu-vien/to-khai-khau-tru-thue-thu-nhap-ca-nhan-mau-06-tncn.html` |
+| 1985 | Tờ khai quyết toán thuế thu nhập cá nhân Mẫu 02/QTT-TNCN | `to-khai-quyet-toan-thue-thu-nhap-ca-nhan-mau-02-qt-tncn.htm` | `thu-vien/to-khai-quyet-toan-thue-thu-nhap-ca-nhan-mau-02-qt-tncn.html` |
+| 1986 | Mẫu tờ khai quyết toán thuế TNCN dành cho hộ, cá nhân kinh doanh | `to-khai-quyet-toan-thue-tncn-danh-cho-ho-ca-nhan-kinh-doanh.htm` | `thu-vien/to-khai-quyet-toan-thue-tncn-danh-cho-ho-ca-nhan-kinh-doanh.html` |
+| 1987 | Mẫu TK1-TS Tờ khai tham gia BHXH theo Quyết định 490/QĐ-BHXH | `to-khai-tham-gia-bhxh-bhyt-bhtn-mau-so-tk1-ts.htm` | `thu-vien/to-khai-tham-gia-bhxh-bhyt-bhtn-mau-so-tk1-ts.html` |
+| 1988 | Mẫu TK3-TS mới nhất 2025 theo Quyết định 490/QĐ-BHXH | `to-khai-thong-tin-don-vi-tham-gia-bhxh-bhyt-mau-tk3-ts.htm` | `thu-vien/to-khai-thong-tin-don-vi-tham-gia-bhxh-bhyt-mau-tk3-ts.html` |
+| 1989 | Mẫu 01/TTS Tờ khai thuế cho thuê tài sản theo TT 40/2021/TT-BTC | `to-khai-thue-cho-thue-tai-san-mau-01-kk-tts.htm` | `thu-vien/to-khai-thue-cho-thue-tai-san-mau-01-kk-tts.html` |
+| 1990 | Tờ khai thuế cá nhân kinh doanh Mẫu 01/CNKD Thông tư 40 | `to-khai-thue-doi-voi-ca-nhan-kinh-doanh-mau-01-cnkd.htm` | `thu-vien/to-khai-thue-doi-voi-ca-nhan-kinh-doanh-mau-01-cnkd.html` |
+| 1991 | TỜ KHAI THUẾ GIÁ TRỊ GIA TĂNG mẫu 01/GTGT theo Thông tư 119 | `to-khai-thue-gia-tri-gia-tang-gtgt-theo-thong-tu-119.htm` | `thu-vien/to-khai-thue-gia-tri-gia-tang-gtgt-theo-thong-tu-119.html` |
+| 1992 | Tờ khai thuế GTGT mẫu 01/GTGT theo Thông tư 26 | `to-khai-thue-gtgt-mau-01-gtgt-theo-thong-tu-26.htm` | `thu-vien/to-khai-thue-gtgt-mau-01-gtgt-theo-thong-tu-26.html` |
+| 1993 | Tờ khai thuế GTGT trực tiếp trên GTGT theo TT 119 | `to-khai-thue-gtgt-truc-tiep-tren-gtgt-theo-tt-119.htm` | `thu-vien/to-khai-thue-gtgt-truc-tiep-tren-gtgt-theo-tt-119.html` |
+| 1994 | Tờ khai thuế nhà thầu nước ngoài mẫu 01/NTNN theo TT 80 | `to-khai-thue-nha-thau-nuoc-ngoai-mau-01-ntnn.htm` | `thu-vien/to-khai-thue-nha-thau-nuoc-ngoai-mau-01-ntnn.html` |
+| 1995 | Tờ khai thuế thu nhập cá nhân 11/KK-TNCN theo TT 119 | `to-khai-thue-thu-nhap-ca-nhan-theo-tt-119.htm` | `thu-vien/to-khai-thue-thu-nhap-ca-nhan-theo-tt-119.html` |
+| 1996 | Tờ khai thuế thu nhập doanh nghiệp mẫu 08/TNDN | `to-khai-thue-thu-nhap-doanh-nghiep-mau-08-tndn.htm` | `thu-vien/to-khai-thue-thu-nhap-doanh-nghiep-mau-08-tndn.html` |
+| 1997 | Tờ khai thuế TNCN Mẫu 01/XSBHĐC theo Thông tư 18 | `to-khai-thue-tncn-mau-01-xsbhdc-theo-thong-tu-18.htm` | `thu-vien/to-khai-thue-tncn-mau-01-xsbhdc-theo-thong-tu-18.html` |
+| 1998 | Tổng hợp các chính sách Thuế năm 2014 do Tổng Cục Thuế biên soạn | `tong-hop-cac-chinh-sach-thue-nam-2014-do-tong-cuc-thue-bien-soan.htm` | `thu-vien/tong-hop-cac-chinh-sach-thue-nam-2014-do-tong-cuc-thue-bien-soan.html` |
+| 1999 | Tra cứu thông tin bảo hiểm xã hội bằng tin nhắn, qua mạng | `tra-cuu-thong-tin-dong-bao-hiem-xa-hoi-bhxh-qua-mang.htm` | `thu-vien/tra-cuu-thong-tin-dong-bao-hiem-xa-hoi-bhxh-qua-mang.html` |
+| 2000 | Trả lời vướng mắc Quyết toán thuế TNDN năm 2020 | `tra-loi-vuong-mac-quyet-toan-thue-thu-nhap-doanh-nghiep.htm` | `thu-vien/tra-loi-vuong-mac-quyet-toan-thue-thu-nhap-doanh-nghiep.html` |
+| 2001 | Trả lương chậm cho người lao động có bị phạt không? Mức phạt bao nhiêu? | `tra-luong-cham-cho-nguoi-lao-dong-co-bi-phat-khong.htm` | `thu-vien/tra-luong-cham-cho-nguoi-lao-dong-co-bi-phat-khong.html` |
+| 2002 | Trả lương trên 5 triệu phải chuyển khoản mới được trừ khi tính thuế TNDN | `tra-luong-tren-5-trieu-phai-chuyen-khoan.htm` | `thu-vien/tra-luong-tren-5-trieu-phai-chuyen-khoan.html` |
+| 2003 | Điều kiện trích lập dự phòng nợ phải thu khó đòi, bảo hành sản phẩm | `trich-lap-du-phong-no-phai-thu-kho-doi-giam-gia-hang-ton-kho.htm` | `thu-vien/trich-lap-du-phong-no-phai-thu-kho-doi-giam-gia-hang-ton-kho.html` |
+| 2004 | Trích lập Quỹ phát triển khoa học và công nghệ của doanh nghiệp 2026 | `trich-lap-quy-phat-trien-khoa-hoc-va-cong-nghe-cua-dn.htm` | `thu-vien/trich-lap-quy-phat-trien-khoa-hoc-va-cong-nghe-cua-dn.html` |
+| 2005 | Quy trình ghi sổ kế toán chi tiết theo Thông tư 200 | `trinh-tu-ghi-so-ke-toan-chi-tiet-tu-mo-so-den-in-so.htm` | `thu-vien/trinh-tu-ghi-so-ke-toan-chi-tiet-tu-mo-so-den-in-so.html` |
+| 2006 | Trợ cấp mất việc làm có tính thuế TNCN không? Chịu thuế hay không? | `tro-cap-mat-viec-lam-co-tinh-thue-tncn-khong.htm` | `thu-vien/tro-cap-mat-viec-lam-co-tinh-thue-tncn-khong.html` |
+| 2007 | Trợ cấp mất việc làm: điều kiện hưởng, cách tính mức hưởng 2026 | `tro-cap-mat-viec-lam-dieu-kien-huong-cach-tinh-muc-huong.htm` | `thu-vien/tro-cap-mat-viec-lam-dieu-kien-huong-cach-tinh-muc-huong.html` |
+| 2008 | Trợ cấp thất nghiệp có bị tính thuế TNCN không? Có chịu thuế hay không? | `tro-cap-that-nghiep-co-bi-tinh-thue-tncn-khong-co-chiu-thue-khong.htm` | `thu-vien/tro-cap-that-nghiep-co-bi-tinh-thue-tncn-khong-co-chiu-thue-khong.html` |
+| 2009 | Trợ cấp thôi việc có bị tính thuế TNCN không? | `tro-cap-thoi-viec-co-bi-tinh-thue-tncn-khong-co-chiu-hay-khong.htm` | `thu-vien/tro-cap-thoi-viec-co-bi-tinh-thue-tncn-khong-co-chiu-hay-khong.html` |
+| 2010 | Trung tâm đào tạo kế toán thực hành thực tế tốt nhất Hà Nội | `trung-tam-dao-tao-ke-toan-thuc-hanh-thuc-te-tot-nhat.htm` | `thu-vien/trung-tam-dao-tao-ke-toan-thuc-hanh-thuc-te-tot-nhat.html` |
+| 2011 | Trung tâm dạy thực hành kế toán tổng hợp tốt nhất Hà Nội | `trung-tam-day-thuc-hanh-ke-toan-tong-hop-tot-nhat.htm` | `thu-vien/trung-tam-day-thuc-hanh-ke-toan-tong-hop-tot-nhat.html` |
+| 2012 | Trung tâm mua sắm Nguyễn Kim Ba Đình tuyển Kế toán quầy | `trung-tam-mua-sam-nguyen-kim-ba-dinh-tuyen-ke-toan-quay.htm` | `thu-vien/trung-tam-mua-sam-nguyen-kim-ba-dinh-tuyen-ke-toan-quay.html` |
+| 2013 | Trung tâm Quảng cáo thương hiệu sản phẩm tuyển Kế toán tổng hợp kiêm văn phòng | `trung-tam-quang-cao-thuong-hieu-san-pham-tuyen-ke-toan-tong-hop-kiem-van-phong.htm` | `thu-vien/trung-tam-quang-cao-thuong-hieu-san-pham-tuyen-ke-toan-tong-hop-kiem-van-phong.html` |
+| 2014 | Trường mầm non Thành Đông Tuyển kế toán viên | `truong-mam-non-thanh-dong-tuyen-ke-toan-vien.htm` | `thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html` |
+| 2015 | Tuổi nghỉ hưu của nữ, nam giới năm 2026 mới nhất | `tuoi-nghi-huu-cua-nu-nam-gioi-nam-2024-moi-nhat.htm` | `thu-vien/tuoi-nghi-huu-cua-nu-nam-gioi-nam-2024-moi-nhat.html` |
+| 2016 | Tỷ giá ghi trên hóa đơn GTGT năm 2016 theo TT 26 | `ty-gia-ghi-tren-hoa-don-khi-xuat-trong-khu-che-xuat.htm` | `thu-vien/ty-gia-ghi-tren-hoa-don-khi-xuat-trong-khu-che-xuat.html` |
+| 2017 | Tỷ giá tính thuế thu nhập cá nhân có thu nhập bằng ngoại tệ | `ty-gia-tinh-thue-thu-nhap-ca-nhan-co-thu-nhap-ngoai-te.htm` | `thu-vien/ty-gia-tinh-thue-thu-nhap-ca-nhan-co-thu-nhap-ngoai-te.html` |
+| 2018 | Mức lương đóng Bảo hiểm xã hội năm 2026 mới nhất hiện nay | `ty-le-dong-bao-hiem-xh-bhyt-bh-that-nghiep-moi-nhat.htm` | `thu-vien/ty-le-dong-bao-hiem-xh-bhyt-bh-that-nghiep-moi-nhat.html` |
+| 2019 | Tỷ lệ trích BHXH, BHYT, BHTN, KPCĐ năm 2026 mới nhất | `ty-le-trich-cac-khoan-theo-luong-moi-nhat.htm` | `thu-vien/ty-le-trich-cac-khoan-theo-luong-moi-nhat.html` |
+| 2020 | Tỷ lệ trích nộp kinh phí công đoàn 2026 lên cấp trên | `ty-le-trich-nop-kinh-phi-cong-doan-len-cap-tren.htm` | `thu-vien/ty-le-trich-nop-kinh-phi-cong-doan-len-cap-tren.html` |
+| 2021 | Ủy nhiệm lập hóa đơn điện tử theo Nghị định 70/2025 và Thông tư 32/2025 | `uy-nhiem-lap-hoa-don-dien-tu.htm` | `thu-vien/uy-nhiem-lap-hoa-don-dien-tu.html` |
+| 2022 | Ủy quyền cho cá nhân, nhân viên thanh toán tiền mua hàng hóa dịch vụ | `uy-quyen-cho-nhan-vien-thanh-toan-tien-mua-hang-hoa-dich-vu.htm` | `thu-vien/uy-quyen-cho-nhan-vien-thanh-toan-tien-mua-hang-hoa-dich-vu.html` |
+| 2023 | Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp tiền thuế tiền phạt | `van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.htm` | `thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html` |
+| 2024 | Văn bản đề nghị giải quyết chế độ tai nạn lao động mẫu 05A-HSB | `van-ban-de-nghi-giai-quyet-che-do-tai-nan-lao-dong-mau-05a-hsb.htm` | `thu-vien/van-ban-de-nghi-giai-quyet-che-do-tai-nan-lao-dong-mau-05a-hsb.html` |
+| 2025 | Vé cước phí đường bộ có được khấu trừ thuế GTGT không? | `ve-cuoc-duong-bo-co-duoc-khau-tru-thue-hach-toan.htm` | `thu-vien/ve-cuoc-duong-bo-co-duoc-khau-tru-thue-hach-toan.html` |
+| 2026 | Chi phí mua hàng dịch vụ của cá nhân không có hoá đơn | `xu-ly-chi-phi-mua-hang-khong-co-hoa-don-gtgt-dau-vao.htm` | `thu-vien/xu-ly-chi-phi-mua-hang-khong-co-hoa-don-gtgt-dau-vao.html` |
+| 2027 | Cách xử lý hóa đơn công ty bỏ trốn, ngừng hoạt động | `xu-ly-hoa-don-dau-vao-cua-cong-ty-bo-tron-ngung-hoat-dong.htm` | `thu-vien/xu-ly-hoa-don-dau-vao-cua-cong-ty-bo-tron-ngung-hoat-dong.html` |
+| 2028 | Xử lý khi lập sai hóa đơn điện tử KHÔNG có mã của CQT 2025 mới nhất | `xu-ly-hoa-don-dien-tu-khong-co-ma-lap-sai-sot.htm` | `thu-vien/xu-ly-hoa-don-dien-tu-khong-co-ma-lap-sai-sot.html` |
+| 2029 | Xử lý hóa đơn điện tử sai địa chỉ người mua 2026 theo Nghị định 70 | `xu-ly-hoa-don-dien-tu-sai-dia-chi-nguoi-mua.htm` | `thu-vien/xu-ly-hoa-don-dien-tu-sai-dia-chi-nguoi-mua.html` |
+| 2030 | Cách xử lý hóa đơn điện tử có sai sót mới nhất năm 2026 | `xu-ly-hoa-don-dien-tu-viet-sai-cac-truong-hop.htm` | `thu-vien/xu-ly-hoa-don-dien-tu-viet-sai-cac-truong-hop.html` |
+| 2031 | Xử lý hóa đơn khi thay đổi địa chỉ công ty theo Nghị định 70/2025 | `xu-ly-hoa-don-khi-thay-doi-dia-chi-cong-ty.htm` | `thu-vien/xu-ly-hoa-don-khi-thay-doi-dia-chi-cong-ty.html` |
+| 2032 | Xử lý hóa đơn khi thay đổi địa chỉ, tên công ty | `xu-ly-hoa-don-khi-thay-doi-dia-chi-ten-cong-ty-ma-so-thue.htm` | `thu-vien/xu-ly-hoa-don-khi-thay-doi-dia-chi-ten-cong-ty-ma-so-thue.html` |
+| 2033 | Hóa đơn ghi sai MST, tên hàng hóa, tên Cty, địa chỉ - Cách xử lý | `xu-ly-hoa-don-viet-sai-dia-chi-ma-so-thue-ten-nguoi-mua.htm` | `thu-vien/xu-ly-hoa-don-viet-sai-dia-chi-ma-so-thue-ten-nguoi-mua.html` |
+| 2034 | Hóa đơn ghi sai thuế suất, tiền thuế, đơn giá, thành tiền... | `xu-ly-hoa-don-viet-sai-so-tien-bang-chu-tien-thue.htm` | `thu-vien/xu-ly-hoa-don-viet-sai-so-tien-bang-chu-tien-thue.html` |
+| 2035 | Xử lý khoản chi phí tổ chức hội thảo quảng bá khuyến mãi | `xu-ly-khoan-chi-phi-to-chuc-hoi-thao-quang-ba-khuyen-mai.htm` | `thu-vien/xu-ly-khoan-chi-phi-to-chuc-hoi-thao-quang-ba-khuyen-mai.html` |
+| 2036 | Xử lý sự cố đối với hóa đơn điện tử có mã của cơ quan thuế | `xu-ly-su-co-doi-voi-hoa-don-dien-tu-co-ma-cua-co-quan-thue.htm` | `thu-vien/xu-ly-su-co-doi-voi-hoa-don-dien-tu-co-ma-cua-co-quan-thue.html` |
+| 2037 | Làm sai sổ sách kế toán? Không nộp hồ sơ khai thuế sử phạt thế nào? | `xu-phat-khi-lam-sai-so-sach-ke-toan-khong-nop-ho-so-khai-thue.htm` | `thu-vien/xu-phat-khi-lam-sai-so-sach-ke-toan-khong-nop-ho-so-khai-thue.html` |
+| 2038 | Xuất hóa đơn cho khách lẻ, cá nhân, người mua không lấy hóa đơn | `xuat-hoa-don-cho-khach-le-ca-nhan-nguoi-mua-khong-lay-hoa-don.htm` | `thu-vien/xuat-hoa-don-cho-khach-le-ca-nhan-nguoi-mua-khong-lay-hoa-don.html` |
+| 2039 | Yêu cầu đối với thông tin trình bày trên Báo cáo tài chính theo Thông tư 99 | `yeu-cau-doi-voi-thong-tin-trinh-bay-tren-bctc-theo-thong-tu-99.htm` | `thu-vien/yeu-cau-doi-voi-thong-tin-trinh-bay-tren-bctc-theo-thong-tu-99.html` |
 
 ## Bản tin
 

@@ -1,6 +1,6 @@
 {
   "currentIndex": 1121,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-danh-sach-ca-nhan-nhan-thu-nhap-mau-25-ds-tncn.html",
     "section": "thu-vien",
@@ -15,8 +15,7 @@
       "TNCN",
       "Mẫu biểu thuế",
       "hóa đơn",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Thuế",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -39,8 +38,8 @@
       "BHYT",
       "Mẫu biểu lao động",
       "bảo hiểm",
-      "Mẫu biểu",
-      "Thủ tục"
+      "Lao động",
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/mau-d02-ts-danh-sach-tham-gia-bhxh-595.png",
     "libraryKindLabel": "Biểu mẫu",
@@ -169,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -192,7 +191,7 @@
       "tags": [
         "Mẫu biểu doanh nghiệp",
         "thủ tục",
-        "Mẫu biểu",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-30-thong-bao-ve-viec-giai-the-doanh-nghiep-tt-68.png",
@@ -213,7 +212,7 @@
       "tags": [
         "Mẫu biểu doanh nghiệp",
         "thủ tục",
-        "Mẫu biểu",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -234,7 +233,7 @@
       "tags": [
         "Mẫu biểu doanh nghiệp",
         "thủ tục",
-        "Mẫu biểu",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -244,6 +243,27 @@
     }
   ],
   "latestOther": [
+    {
+      "id": "thu-vien/thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.html",
+      "title": "Thủ tục giải thể doanh nghiệp, công ty mới nhất",
+      "excerpt": "Thủ tục giải thể Doanh nghiệp, Công ty mới nhất: Điều kiện, hồ sơ, trình tự thủ tục giải thể Công ty cổ phần, TNHH 1TV,…",
+      "topicLabel": "DN - Thủ tục",
+      "tags": [
+        "DN",
+        "Thủ tục",
+        "Doanh nghiệp",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/trinh-tu-giai-the-doanh-nghiep.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/mau-thong-bao-ve-viec-giai-the-doanh-nghiep-cong-ty.html",
       "section": "thu-vien",
@@ -257,7 +277,7 @@
       "tags": [
         "Mẫu biểu doanh nghiệp",
         "thủ tục",
-        "Mẫu biểu",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-30-thong-bao-ve-viec-giai-the-doanh-nghiep-tt-68.png",

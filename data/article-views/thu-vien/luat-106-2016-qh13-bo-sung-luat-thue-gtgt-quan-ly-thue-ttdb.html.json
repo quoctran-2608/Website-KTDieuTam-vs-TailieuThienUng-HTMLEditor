@@ -1,6 +1,6 @@
 {
   "currentIndex": 966,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
     "section": "thu-vien",
@@ -10,10 +10,11 @@
     "canonical": "https://ketoandieutam.com/thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
     "title": "Lịch nộp các loại báo cáo thuế năm 2026 mới nhất",
     "excerpt": "Thời hạn nộp các loại báo cáo thuế năm 2026 cụ thể: Hạn nộp thuế GTGT, thuế TNCN, thuế TNDN, Báo cáo tài chính, Tờ khai…",
-    "topicLabel": "Khác",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "GTGT",
+      "Hóa đơn",
+      "Thuế",
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Lich-nop-bao-cao-thue-2026.png",
@@ -34,7 +35,8 @@
     "tags": [
       "Luật",
       "Bộ luật",
-      "Văn bản pháp luật",
+      "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -164,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -188,7 +190,8 @@
         "GTGT",
         "Luật",
         "Bộ luật",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -210,7 +213,8 @@
         "GTGT",
         "Luật",
         "Bộ luật",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Luat-thue-GTGT-sua-doi.png",
@@ -232,7 +236,8 @@
         "GTGT",
         "Luật",
         "Bộ luật",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -243,70 +248,46 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/huong-dan-cach-ke-khai-bo-sung-dieu-chinh-thue-gtgt.html",
+      "id": "thu-vien/quy-dinh-ve-sua-doi-bo-sung-hop-dong-lao-dong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-ke-khai-bo-sung-dieu-chinh-thue-gtgt.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/huong-dan-cach-ke-khai-bo-sung-dieu-chinh-thue-gtgt.html",
-      "title": "Hướng dẫn kê khai bổ sung điều chỉnh thuế GTGT mới nhất 2026",
-      "excerpt": "Hướng dẫn cách kê khai bổ sung thuế GTGT chi tiết: Cách kê khai điều chỉnh Tăng - Giảm thuế GTGT, điều chỉnh Đầu ra - Đ…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/quy-dinh-ve-sua-doi-bo-sung-hop-dong-lao-dong.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-sua-doi-bo-sung-hop-dong-lao-dong.html",
+      "title": "Cách sửa đổi, bổ sung hợp đồng lao động",
+      "excerpt": "Cách sửa đổi, bổ sung hợp đồng lao động đang được quy định tại điều 33 của Bộ Luật lao động số 45/2019/QH14 Cụ thể như…",
+      "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "GTGT",
-        "Kê khai",
-        "Hóa đơn",
-        "Thuế",
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
+        "Hợp đồng lao động",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Ke-khai-bo-sung-thue-GTGT(1).png",
+      "image": "assets/images/content/pic/Service/images/sua-doi-bo-sung-hdld(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-07-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
+      "id": "thu-vien/mau-hop-dong-thu-viec-moi-nhat-dung-chuan-bo-luat-lao-dong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
-      "title": "Công văn 624/TCT – CS tiếp nhận hồ sơ đăng ký kê khai thuế GTGT theo mẫu số 06/GTGT",
-      "excerpt": "Ngày 28 tháng 2 năm 2014 Tổng cục thuế ban hành Công văn số 624/TCT – CS về việc tiếp nhận hồ sơ đăng ký kê khai thuế G…",
-      "topicLabel": "Công văn",
+      "href": "thu-vien/mau-hop-dong-thu-viec-moi-nhat-dung-chuan-bo-luat-lao-dong.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-hop-dong-thu-viec-moi-nhat-dung-chuan-bo-luat-lao-dong.html",
+      "title": "Mẫu hợp đồng thử việc mới nhất 2026 theo đúng quy định tại Bộ luật Lao động",
+      "excerpt": "Theo quy định tại khoản 1 điều 24 của Bộ luật Lao động số: 45/2019/QH14 thì: Người sử dụng lao động và người lao động c…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
       "tags": [
-        "GTGT",
-        "Kê khai",
-        "Công văn",
-        "Văn bản pháp luật",
+        "Mẫu biểu lao động",
+        "bảo hiểm",
+        "Lao động",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/mau-hop-dong-thu-viec.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-02-28",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
-      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "GTGT",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Thuế"
-      ],
-      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-02",
+      "publishDate": "2019-11-20",
       "modifiedDate": null
     }
   ]

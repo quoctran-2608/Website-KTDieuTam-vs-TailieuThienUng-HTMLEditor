@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1876,
-  "totalCount": 2041,
+  "currentIndex": 1874,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/thong-tu-130-2016-tt-btc-huong-dan-nghi-dinh-100-luat-106.html",
     "section": "thu-vien",
@@ -13,7 +13,8 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/thong tu 130_2016_tt-btc huong dan nghi dinh 100, luat 106.png",
@@ -30,10 +31,11 @@
     "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-133-2016-che-do-ke-toan-doanh-nghiep-vua-va-nho.html",
     "title": "Thông tư 133/2016/TT-BTC Chế độ kế toán Doanh nghiệp vừa và nhỏ",
     "excerpt": "Thông tư 133/2016/TT-BTC của Bộ tài chính hướng dẫn Chế độ kế toán doanh nghiệp vừa và nhỏ; Tải Thông tư 133 file Word…",
-    "topicLabel": "Thông tư",
+    "topicLabel": "DN - Thủ tục",
     "tags": [
-      "Thông tư",
-      "Văn bản pháp luật",
+      "DN",
+      "Thủ tục",
+      "Doanh nghiệp",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/thong-tu-133-bo-tai-chinh.png",
@@ -163,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -173,26 +175,6 @@
     }
   ],
   "related": [
-    {
-      "id": "thu-vien/thong-tu-133-2016-che-do-ke-toan-doanh-nghiep-vua-va-nho.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thong-tu-133-2016-che-do-ke-toan-doanh-nghiep-vua-va-nho.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-133-2016-che-do-ke-toan-doanh-nghiep-vua-va-nho.html",
-      "title": "Thông tư 133/2016/TT-BTC Chế độ kế toán Doanh nghiệp vừa và nhỏ",
-      "excerpt": "Thông tư 133/2016/TT-BTC của Bộ tài chính hướng dẫn Chế độ kế toán doanh nghiệp vừa và nhỏ; Tải Thông tư 133 file Word…",
-      "topicLabel": "Thông tư",
-      "tags": [
-        "Thông tư",
-        "Văn bản pháp luật",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/thong-tu-133-bo-tai-chinh.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2016-08-26",
-      "modifiedDate": null
-    },
     {
       "id": "thu-vien/thong-tu-99-2025-tt-btc-huong-dan-che-do-ke-toan-dn.html",
       "section": "thu-vien",
@@ -205,7 +187,7 @@
       "topicLabel": "Thông tư",
       "tags": [
         "Thông tư",
-        "Văn bản pháp luật",
+        "Kế toán",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Thong-tu-99-2025-TT-BTC.png",
@@ -226,12 +208,32 @@
       "tags": [
         "Hộ kinh doanh",
         "Thông tư",
-        "Văn bản pháp luật",
+        "Kế toán",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/thong-tu-88-che-do-ke-toan-cho-ca-nhan-ho-kinh-doanh.jpg",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2021-10-11",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/thong-tu-200-2014-tt-btc-che-do-ke-toan-doanh-nghiep.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thong-tu-200-2014-tt-btc-che-do-ke-toan-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-200-2014-tt-btc-che-do-ke-toan-doanh-nghiep.html",
+      "title": "Thông tư 200/2014/TT-BTC Chế độ kế toán Doanh nghiệp",
+      "excerpt": "Thông tư 200/2014/TT-BTC của Bộ tài chính hướng dẫn chế độ kế toán doanh nghiệp; Tải Thông tư 200 PDF - WORD gồm…",
+      "topicLabel": "Thông tư",
+      "tags": [
+        "Thông tư",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/thong-tu-200-cua-bo-tai-chinh.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ],
@@ -258,24 +260,23 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
+      "id": "thu-vien/mau-bieu-chung-tu-ke-toan-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
-      "title": "Mẫu Quyết định giải thể doanh nghiệp công ty",
-      "excerpt": "Mẫu Quyết định giải thể giải thể Doanh nghiệp, giải thể Công ty mới nhất để làm thủ tục giải thể Doanh nghiệp, tải mẫu…",
-      "topicLabel": "Nghị quyết - Quyết định",
+      "href": "thu-vien/mau-bieu-chung-tu-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-bieu-chung-tu-ke-toan-theo-thong-tu-99.html",
+      "title": "Mẫu biểu chứng từ kế toán theo Thông tư 99",
+      "excerpt": "Danh mục mẫu biểu chứng từ kế toán ban hành kèm theo Phụ lục I của Thông tư 99/2025/TT-BTC hiệu lực thi hành kể từ ngày…",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
+        "Mẫu biểu kế toán",
+        "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-quyet-dinh-giai-the-doanh-nghiep.png",
+      "image": "assets/images/content/pic/Service/images/Mau-chung-tu-ke-toan-theo-thong-tu-99.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     }
   ]

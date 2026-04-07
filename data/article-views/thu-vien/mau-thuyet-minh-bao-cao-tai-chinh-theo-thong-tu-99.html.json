@@ -1,6 +1,6 @@
 {
   "currentIndex": 1327,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-thu-xac-nhan-thu-nhap-de-quyet-toan-thue-tncn.html",
     "section": "thu-vien",
@@ -16,8 +16,8 @@
       "Quyết toán",
       "Mẫu biểu thuế",
       "hóa đơn",
-      "Mẫu biểu",
-      "Thủ tục"
+      "Thuế",
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Mau-thu-xac-minh-thu-nhap(1)(1).png",
     "libraryKindLabel": "Biểu mẫu",
@@ -37,7 +37,7 @@
     "tags": [
       "Mẫu biểu doanh nghiệp",
       "thủ tục",
-      "Mẫu biểu",
+      "Doanh nghiệp",
       "Người phụ thuộc",
       "Biểu mẫu"
     ],
@@ -168,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -190,36 +190,13 @@
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Kế toán",
         "BCTC",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-bao-cao-tai-chinh-giua-nien-do-tt99.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-bao-cao-tai-chinh-theo-thong-tu-133-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bao-cao-tai-chinh-theo-thong-tu-133-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-tai-chinh-theo-thong-tu-133-moi-nhat.html",
-      "title": "Cách làm báo cáo tài chính theo Thông tư 133 mới nhất",
-      "excerpt": "Mẫu Báo cáo tài chính theo Thông tư 133 mới nhất, Hướng dẫn cách làm Báo cáo tài chính theo Thông tư 133 gồm: Báo cáo t…",
-      "topicLabel": "Mẫu biểu kế toán",
-      "tags": [
-        "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
-        "BCTC",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-tai-chinh-theo-thong-tu-133.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
@@ -234,11 +211,30 @@
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Kế toán",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-bao-cao-tinh-hinh-tai-chinh-tt99.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2025-10-27",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-bao-cao-luu-chuyen-tien-te-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bao-cao-luu-chuyen-tien-te-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-luu-chuyen-tien-te-theo-thong-tu-99.html",
+      "title": "Mẫu Báo cáo lưu chuyển tiền tệ theo Thông tư 99",
+      "excerpt": "Mẫu Báo cáo lưu chuyển tiền tệ theo Thông tư 99/2025/TT-BTC 1. Mẫu Báo cáo lưu chuyển tiền tệ năm theo phương pháp trực…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/mau-bao-cao-luu-chuyen-tien-te-tt99.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
       "modifiedDate": null
@@ -246,22 +242,22 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
+      "id": "thu-vien/mau-bao-cao-tai-chinh-theo-thong-tu-133-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-ban-thuyet-minh-bao-cao-tai-chinh.html",
-      "title": "Hướng dẫn lập thuyết minh báo cáo tài chính theo Thông tư 200",
-      "excerpt": "Thuyết minh báo cáo tài chính là một bộ phận hợp thành không thể tách rời của BCTC, dùng để phân tích chi tiết các thôn…",
-      "topicLabel": "Báo cáo tài chính",
+      "href": "thu-vien/mau-bao-cao-tai-chinh-theo-thong-tu-133-moi-nhat.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-tai-chinh-theo-thong-tu-133-moi-nhat.html",
+      "title": "Cách làm báo cáo tài chính theo Thông tư 133 mới nhất",
+      "excerpt": "Mẫu Báo cáo tài chính theo Thông tư 133 mới nhất, Hướng dẫn cách làm Báo cáo tài chính theo Thông tư 133 gồm: Báo cáo t…",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "Báo cáo tài chính",
+        "Mẫu biểu kế toán",
         "Kế toán",
         "BCTC",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-lap-thuyet-minh-bao-cao-tai-chinh-theo-thong-tu-200.png",
+      "image": "assets/images/content/pic/Service/images/bao-cao-tai-chinh-theo-thong-tu-133.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
@@ -278,8 +274,7 @@
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Kế toán",
         "BCTC",
         "Biểu mẫu"
       ],

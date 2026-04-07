@@ -1,6 +1,6 @@
 {
   "currentIndex": 1081,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-bao-cao-tai-chinh-theo-quyet-dinh-48-excel.html",
     "section": "thu-vien",
@@ -14,9 +14,9 @@
     "tags": [
       "Excel",
       "Công cụ khác",
-      "Phần mềm",
-      "Công cụ",
+      "Mẫu file & kê khai",
       "BCTC",
+      "Kê khai",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -38,8 +38,7 @@
       "GTGT",
       "Mẫu biểu thuế",
       "hóa đơn",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Thuế",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/mau bao cao tinh hinh su dung hoa don.png",
@@ -169,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -179,6 +178,26 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "title": "Cách lập báo cáo tính tài chính Mẫu B01b-DNN theo TT 133",
+      "excerpt": "Mẫu Báo cáo tình hình tài chính B01b-DNN theo Thông tư 133, hướng dẫn cách làm Báo cáo tình hình tài chính Mẫu B01b-DNN…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-mau-b01b-dnn.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2016-08-26",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/mau-thuyet-minh-bao-cao-tai-chinh-theo-thong-tu-99.html",
       "section": "thu-vien",
@@ -191,8 +210,7 @@
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Kế toán",
         "BCTC",
         "Biểu mẫu"
       ],
@@ -213,8 +231,7 @@
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Kế toán",
         "BCTC",
         "Biểu mẫu"
       ],
@@ -222,7 +239,9 @@
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
       "section": "thu-vien",
@@ -235,37 +254,12 @@
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-mau-b01b-dnn.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2016-08-26",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/cach-lap-bao-cao-tai-chinh-theo-thong-tu-133-tren-misa.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bao-cao-tai-chinh-theo-thong-tu-133-tren-misa.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-tai-chinh-theo-thong-tu-133-tren-misa.html",
-      "title": "Cách lập báo cáo tài chính theo thông tư 133 trên Misa",
-      "excerpt": "Hướng dẫn cách cách lập báo cáo tài chính theo thông tư 133 trên phần mềm Misa Đối với những doanh nghiệp áp dụng chế đ…",
-      "topicLabel": "MISA",
-      "tags": [
-        "MISA",
-        "Phần mềm",
-        "Công cụ",
-        "BCTC",
+        "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-lap-bao-cao-tai-chinh-theo-thong-tu-133-tren-misa-1.jpg",
+      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-mau-b01b-dnn.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     },
     {
@@ -280,8 +274,7 @@
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu kế toán",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Kế toán",
         "BCTC",
         "Biểu mẫu"
       ],

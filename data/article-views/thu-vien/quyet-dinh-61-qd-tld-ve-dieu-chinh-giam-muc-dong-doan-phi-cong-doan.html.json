@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1741,
-  "totalCount": 2041,
+  "currentIndex": 1739,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/quyet-dinh-595-qd-bhxh-thay-the-qd-959-cua-bhxh-viet-nam.html",
     "section": "thu-vien",
@@ -15,7 +15,8 @@
       "BHXH",
       "Nghị quyết",
       "Quyết định",
-      "Văn bản pháp luật",
+      "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/1a.png",
@@ -37,7 +38,8 @@
       "BHXH",
       "Nghị quyết",
       "Quyết định",
-      "Văn bản pháp luật",
+      "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/quyet dinh 636 quy dinh ve che do bao hiem xa hoi.png",
@@ -167,8 +169,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -177,50 +179,6 @@
     }
   ],
   "related": [
-    {
-      "id": "thu-vien/nghi-quyet-954-2020-dieu-chinh-muc-giam-tru-gia-canh-thue-tncn.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-quyet-954-2020-dieu-chinh-muc-giam-tru-gia-canh-thue-tncn.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/nghi-quyet-954-2020-dieu-chinh-muc-giam-tru-gia-canh-thue-tncn.html",
-      "title": "Nghị quyết 954/2020 điều chỉnh mức giảm trừ gia cảnh thuế TNCN",
-      "excerpt": "Nghị quyết số 954/2020/UBTVQH14 ngày 2/6/2020 của Ủy ban thường vụ Quốc hội quy định về việc điều chỉnh mức giảm trừ gi…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [
-        "TNCN",
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/nghi-quyet-954-muc-giam-tru-gia-canh-tinh-thue-tncn.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2020-06-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/nghi-quyet-204-2025-qh15-tiep-tuc-giam-thue-gtgt-8.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-quyet-204-2025-qh15-tiep-tuc-giam-thue-gtgt-8.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/nghi-quyet-204-2025-qh15-tiep-tuc-giam-thue-gtgt-8.html",
-      "title": "Tiếp tục giảm thuế GTGT 8% từ ngày 01/7/2025 đến hết ngày 31/12/2026",
-      "excerpt": "Ngày 17/6/2025, Quốc hội đã thông qua Nghị quyết 204/2025/QH15 về việc tiếp tục giảm thuế GTGT từ 10% xuống 8% từ ngày…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [
-        "GTGT",
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Nghi-quyet-2024-2025-QH15.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2025-06-17",
-      "modifiedDate": null
-    },
     {
       "id": "thu-vien/quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.html",
       "section": "thu-vien",
@@ -235,12 +193,59 @@
         "Công đoàn",
         "Nghị quyết",
         "Quyết định",
-        "Văn bản pháp luật",
-        "Biểu mẫu"
+        "Lao động",
+        "Bảo hiểm",
+        "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Quyet-dinh so- 8086-Qd-TLd.png",
-      "libraryKindLabel": "Biểu mẫu",
+      "libraryKindLabel": "Văn bản",
       "publishDate": "2023-10-10",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.html",
+      "title": "Quyết định 1408/QĐ-TLĐ Quy định về tài chính công đoàn",
+      "excerpt": "Tổng Liên đoàn Lao động ban hành Quyết định 1408/QĐ-TLĐ năm 2024 về Quy định quản lý tài chính, tài sản công đoàn, thu,…",
+      "topicLabel": "Nghị quyết - Quyết định",
+      "tags": [
+        "Công đoàn",
+        "Nghị quyết",
+        "Quyết định",
+        "Lao động",
+        "Bảo hiểm",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Quyet-dinh-1408-QĐ-TLĐ.jpg",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2024-08-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
+      "title": "Quyết định 1040/QĐ-BHXH Mẫu Báo cáo sử dụng lao động tham gia BHXH",
+      "excerpt": "Ngày 18/8/2020 BHXH ban hành Quyết định 1040/QĐ-BHXH quy định Mẫu báo cáo tình hình sử dụng lao động và danh sách tham…",
+      "topicLabel": "Nghị quyết - Quyết định",
+      "tags": [
+        "BHXH",
+        "Nghị quyết",
+        "Quyết định",
+        "Lao động",
+        "Bảo hiểm",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/quyet-dinh-1040-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2020-08-18",
       "modifiedDate": null
     }
   ],
@@ -267,25 +272,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.html",
+      "id": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.html",
-      "title": "Quyết định 8086/QĐ-TLĐ hướng dẫn thu đoàn phí công đoàn 2024",
-      "excerpt": "Ngày 10/10/2023, Tổng Liên đoàn Lao động Việt Nam ban hành Quyết định 8086/QĐ-TLĐ quy định về nguyên tắc xây dựng và gi…",
+      "href": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
+      "title": "Quyết định 1040/QĐ-BHXH Mẫu Báo cáo sử dụng lao động tham gia BHXH",
+      "excerpt": "Ngày 18/8/2020 BHXH ban hành Quyết định 1040/QĐ-BHXH quy định Mẫu báo cáo tình hình sử dụng lao động và danh sách tham…",
       "topicLabel": "Nghị quyết - Quyết định",
       "tags": [
-        "Công đoàn",
+        "BHXH",
         "Nghị quyết",
         "Quyết định",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Quyet-dinh so- 8086-Qd-TLd.png",
+      "image": "assets/images/content/pic/Service/images/quyet-dinh-1040-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2023-10-10",
+      "publishDate": "2020-08-18",
       "modifiedDate": null
     }
   ]

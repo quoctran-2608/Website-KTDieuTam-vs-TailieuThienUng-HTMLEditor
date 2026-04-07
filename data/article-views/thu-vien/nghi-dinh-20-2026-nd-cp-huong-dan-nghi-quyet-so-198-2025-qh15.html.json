@@ -1,6 +1,6 @@
 {
   "currentIndex": 1427,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/nghi-dinh-191-huong-dan-ve-kinh-phi-cong-doan.html",
     "section": "thu-vien",
@@ -14,7 +14,8 @@
     "tags": [
       "Công đoàn",
       "Nghị định",
-      "Văn bản pháp luật",
+      "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/Nghi-dinh-191-2013-Nd-CP.png",
@@ -35,7 +36,8 @@
     "tags": [
       "GTGT",
       "Nghị định",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -165,8 +167,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -175,27 +177,6 @@
     }
   ],
   "related": [
-    {
-      "id": "thu-vien/nghi-dinh-158-2025-nd-cp-huong-dan-luat-bhxh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-158-2025-nd-cp-huong-dan-luat-bhxh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/nghi-dinh-158-2025-nd-cp-huong-dan-luat-bhxh.html",
-      "title": "Nghị định 158/2025/NĐ-CP hướng dẫn Luật BHXH từ ngày 01/07/2025",
-      "excerpt": "Ngày 25/6/2025, Chính phủ ban hành Nghị định 158/2025/NĐ-CP quy định chi tiết và hướng dẫn thi hành một số điều của Luậ…",
-      "topicLabel": "Nghị định",
-      "tags": [
-        "BHXH",
-        "Nghị định",
-        "Văn bản pháp luật",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/service/images/638866549401355815.jpg",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2024-06-29",
-      "modifiedDate": null
-    },
     {
       "id": "thu-vien/nghi-dinh-181-2025-nd-cp-huong-dan-luat-thue-gtgt.html",
       "section": "thu-vien",
@@ -209,7 +190,8 @@
       "tags": [
         "GTGT",
         "Nghị định",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-181-2025-ND-CP.png",
@@ -218,24 +200,46 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/nghi-dinh-188-2025-nd-cp-huong-dan-luat-bao-hiem-y-te.html",
+      "id": "thu-vien/nghi-dinh-320-2025-nd-cp-huong-dan-luat-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-188-2025-nd-cp-huong-dan-luat-bao-hiem-y-te.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/nghi-dinh-188-2025-nd-cp-huong-dan-luat-bao-hiem-y-te.html",
-      "title": "Nghị định 188/2025/NĐ-CP hướng dẫn Luật Bảo hiểm y tế",
-      "excerpt": "Ngày 01/7/2025, Chính phủ ban hành Nghị định 188/2025/NĐ-CP hướng dẫn Luật Bảo hiểm y tế, trong đó có hướng dẫn mức đón…",
+      "href": "thu-vien/nghi-dinh-320-2025-nd-cp-huong-dan-luat-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/nghi-dinh-320-2025-nd-cp-huong-dan-luat-thue-tndn.html",
+      "title": "Nghị định 320/2025/NĐ-CP hướng dẫn Luật Thuế TNDN",
+      "excerpt": "Ngày 15/12/2025, Chính phủ ban hành Nghị định 320/2025/NĐ-CP hướng dẫn Luật Thuế thu nhập doanh nghiệp. Nghị định 320/2…",
       "topicLabel": "Nghị định",
       "tags": [
-        "BHYT",
+        "TNDN",
         "Nghị định",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
-      "image": "assets/images/content/pic/Service/images/Nghi-dinh-188-2025-nd-cp.png",
+      "image": "assets/images/content/pic/Service/images/Nghi-dinh-320-thue-TNDN.png",
       "libraryKindLabel": "Văn bản",
-      "publishDate": "2025-07-01",
+      "publishDate": "2025-12-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/nghi-dinh-362-2025-nd-cp-huong-dan-thi-hanh-luat-phi-va-le-phi.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/nghi-dinh-362-2025-nd-cp-huong-dan-thi-hanh-luat-phi-va-le-phi.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/nghi-dinh-362-2025-nd-cp-huong-dan-thi-hanh-luat-phi-va-le-phi.html",
+      "title": "Nghị định 362/2025/NĐ-CP hướng dẫn thi hành Luật Phí và lệ phí",
+      "excerpt": "Nghị định 362/2025/NĐ-CP ngày 31/12/2025 hướng dẫn và biện pháp để tổ chức, hướng dẫn thi hành Luật Phí và lệ phí CHÍNH…",
+      "topicLabel": "Nghị định",
+      "tags": [
+        "Nghị định",
+        "Thuế",
+        "Hóa đơn",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Nghi-dinh-362.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2025-12-31",
       "modifiedDate": null
     }
   ],
@@ -264,25 +268,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.html",
+      "id": "thu-vien/mau-phu-luc-giam-thue-gtgt-theo-nghi-quyet-174.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.html",
-      "title": "Quyết định 8086/QĐ-TLĐ hướng dẫn thu đoàn phí công đoàn 2024",
-      "excerpt": "Ngày 10/10/2023, Tổng Liên đoàn Lao động Việt Nam ban hành Quyết định 8086/QĐ-TLĐ quy định về nguyên tắc xây dựng và gi…",
-      "topicLabel": "Nghị quyết - Quyết định",
+      "href": "thu-vien/mau-phu-luc-giam-thue-gtgt-theo-nghi-quyet-174.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-phu-luc-giam-thue-gtgt-theo-nghi-quyet-174.html",
+      "title": "Mẫu phụ lục giảm thuế GTGT 2026 theo Nghị quyết 174/2024/QH15",
+      "excerpt": "Mẫu phụ lục giảm thuế GTGT 2026 theo Nghị định 180/2024/NĐ-CP quy định chính sách giảm thuế giá trị gia tăng theo Nghị…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Công đoàn",
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
+        "GTGT",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Quyet-dinh so- 8086-Qd-TLd.png",
+      "image": "assets/images/content/pic/Service/images/Mau-phu-luc-giam-thue-GTGT-2026.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2023-10-10",
+      "publishDate": "2024-12-31",
       "modifiedDate": null
     }
   ]

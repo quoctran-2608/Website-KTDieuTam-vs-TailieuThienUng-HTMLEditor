@@ -1,6 +1,6 @@
 {
   "currentIndex": 1401,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/nghi-dinh-115-2015-nd-cp-quy-dinh-luat-bao-hiem-xa-hoi.html",
     "section": "thu-vien",
@@ -14,11 +14,12 @@
     "tags": [
       "BHXH",
       "Nghị định",
-      "Văn bản pháp luật",
-      "Văn bản"
+      "Lao động",
+      "Bảo hiểm",
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/nghi dinh 115_2015 quy dinh luat bao hiem xa hoi.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2015-11-11",
     "modifiedDate": null
   },
@@ -36,7 +37,7 @@
       "GTGT",
       "Hóa đơn điện tử",
       "Nghị định",
-      "Văn bản pháp luật",
+      "Thuế",
       "Hóa đơn",
       "Văn bản"
     ],
@@ -167,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -190,7 +191,8 @@
       "tags": [
         "Hộ kinh doanh",
         "Nghị định",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-68-2026.png",
@@ -211,7 +213,8 @@
       "tags": [
         "GTGT",
         "Nghị định",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/service/images/638872192724625166.jpg",
@@ -232,7 +235,8 @@
       "tags": [
         "GTGT",
         "Nghị định",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Nghi-dinh-181-2025-ND-CP.png",
@@ -243,47 +247,49 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-tinh-thue-gtgt-cua-ho-kinh-doanh.html",
+      "id": "thu-vien/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-thue-gtgt-cua-ho-kinh-doanh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-tinh-thue-gtgt-cua-ho-kinh-doanh.html",
-      "title": "Cách tính thuế GTGT của hộ kinh doanh năm 2026",
-      "excerpt": "Hướng dẫn cách tính thuế giá trị gia tăng cho hộ kinh doanh năm 2026 theo quy định tại Nghị định 68/2026/NĐ-CP và Thông…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "title": "Hộ cá nhân kinh doanh không phải nộp thuế vẫn phải nộp tờ khai",
+      "excerpt": "Quy định về kê khai thuế đối với hộ kinh doanh, cá nhân kinh doanh thuộc đối tượng không chịu thuế giá trị gia tăng, kh…",
+      "topicLabel": "Công văn",
       "tags": [
-        "GTGT",
         "Hộ kinh doanh",
-        "Hóa đơn",
+        "Kê khai",
+        "Công văn",
         "Thuế",
-        "Hướng dẫn"
+        "Hóa đơn",
+        "Nộp tờ khai"
       ],
-      "image": "assets/images/content/pic/Service/images/Thue-GTGT-ho-kinh-doanh.jpg",
+      "image": "assets/images/content/pic/Service/images/khong-phai-nop-thue-van-phai-nop-to-khai.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
+      "publishDate": "2026-03-05",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quyet-dinh-ban-hanh-he-thong-thang-bang-luong.html",
+      "id": "thu-vien/to-khai-quyet-toan-thue-tncn-danh-cho-ho-ca-nhan-kinh-doanh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-ban-hanh-he-thong-thang-bang-luong.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-ban-hanh-he-thong-thang-bang-luong.html",
-      "title": "Quyết định ban hành hệ thống thang bảng lương 2025",
-      "excerpt": "Mẫu quyết định ban hành thang bảng lương của doanh nghiệp 2025 mới nhất khi Doanh nghiệp tự xây dựng hệ thống th…",
-      "topicLabel": "Nghị quyết - Quyết định",
+      "href": "thu-vien/to-khai-quyet-toan-thue-tncn-danh-cho-ho-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/to-khai-quyet-toan-thue-tncn-danh-cho-ho-ca-nhan-kinh-doanh.html",
+      "title": "Mẫu tờ khai quyết toán thuế TNCN dành cho hộ, cá nhân kinh doanh",
+      "excerpt": "Tờ khai quyết toán thuế thu nhập cá nhân Áp dụng cho hộ kinh doanh, cá nhân kinh doanh thực hiện nộp thuế TNCN trên thu…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
-        "Tiền lương",
-        "Biểu mẫu"
+        "TNCN",
+        "Hộ kinh doanh",
+        "Quyết toán",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế"
       ],
-      "image": "assets/images/content/pic/Service/images/quyet-dinh-ban-hanh-he-thong-thang-bang-luong.jpg",
+      "image": "assets/images/content/pic/Service/images/mau-to-khai-quyet-toan-tncn-cho-hkd.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-01-02",
+      "publishDate": "2026-03-05",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1720,
-  "totalCount": 2041,
+  "currentIndex": 1718,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/quy-dinh-ve-thanh-toan-uy-quyen-qua-ben-thu-3.html",
     "section": "thu-vien",
@@ -164,8 +164,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -175,61 +175,64 @@
   ],
   "related": [
     {
-      "id": "thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-thue.html",
+      "id": "thu-vien/quy-dinh-ve-lao-dong-ban-thoi-gian-lam-viec-khong-tron-thoi-gian.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-thue.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-thue.html",
-      "title": "Thời hiệu xử phạt vi phạm hành chính về thuế mới nhất 2025",
-      "excerpt": "Quy định về Thời hiệu xử phạt vi phạm hành chính về thuế mới nhất năm 2025 theo Nghị định 125/2020/NĐ-CP và được sửa đổ…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/quy-dinh-ve-lao-dong-ban-thoi-gian-lam-viec-khong-tron-thoi-gian.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-lao-dong-ban-thoi-gian-lam-viec-khong-tron-thoi-gian.html",
+      "title": "Quy định về lao động bán thời gian, làm việc không trọn thời gian",
+      "excerpt": "Người lao động làm việc không trọn thời gian là người lao động có thời gian làm việc ngắn hơn so với thời gian làm việc…",
+      "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Thoi-hieu-phat-vi-pham-ve-thue.jpg",
+      "image": "assets/images/content/pic/Service/images/lao-dong-ban-thoi-gian.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2020-02-10",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/quy-dinh-ve-thoi-gian-nghi-ngoi-trong-bo-luat-lao-dong.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quy-dinh-ve-thoi-gian-nghi-ngoi-trong-bo-luat-lao-dong.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-thoi-gian-nghi-ngoi-trong-bo-luat-lao-dong.html",
+      "title": "Quy định về thời gian nghỉ ngơi trong Bộ luật lao động",
+      "excerpt": "Tổng hợp các quy định về thời gian nghỉ ngơi của người lao động như nghỉ trong giờ làm việc, nghỉ chuyển ca, nghỉ hằng…",
+      "topicLabel": "Lao động - Tiền lương",
+      "tags": [
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/thoi-gian-nghi-ngoi.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/doi-thoai-tai-noi-lam-viec-la-gi-co-bat-buoc-khong-cach-to-chuc.html",
+      "id": "thu-vien/muc-phat-vi-pham-quy-dinh-ve-thu-viec.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/doi-thoai-tai-noi-lam-viec-la-gi-co-bat-buoc-khong-cach-to-chuc.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/doi-thoai-tai-noi-lam-viec-la-gi-co-bat-buoc-khong-cach-to-chuc.html",
-      "title": "Đối thoại tại nơi làm việc là gì? có bắt buộc không? Cách tổ chức đối thoại tại nơi làm việc",
-      "excerpt": "Việc tổ chức đối thoại tại nơi làm việc đang được quy định tại điều 63 của Bộ luật Lao động số 45/2019/QH14 và…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/muc-phat-vi-pham-quy-dinh-ve-thu-viec.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/muc-phat-vi-pham-quy-dinh-ve-thu-viec.html",
+      "title": "Mức phạt vi phạm hợp đồng thử việc: thời gian, lương, số lần thử việc",
+      "excerpt": "Tổng hợp các hành vi vi phạm quy định về thử việc tại Bộ luật Lao động và mức phạt vi phạm tại Nghị định 12/2022/NĐ-CP…",
+      "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/doi-thoai-tai-noi-lam-viec.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/quy-dinh-ve-viec-kiem-ke-tai-san-hang-nam.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quy-dinh-ve-viec-kiem-ke-tai-san-hang-nam.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-viec-kiem-ke-tai-san-hang-nam.html",
-      "title": "Quy định về việc kiểm kê tài sản hàng năm",
-      "excerpt": "Quy định về việc kiểm kê tài sản hàng năm theo Luật kế toán số 88/2015/QH13 và Nghị định 41/2018/NĐ-CP về xử phạt vi ph…",
-      "topicLabel": "Khác",
-      "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Kiem-ke-tai-san-co dinh(1).png",
+      "image": "assets/images/content/pic/Service/images/muc-xu-phat-vi-pham-thu-viec.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
@@ -237,23 +240,24 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-thue.html",
+      "id": "thu-vien/quy-dinh-ve-lao-dong-ban-thoi-gian-lam-viec-khong-tron-thoi-gian.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-thue.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-thue.html",
-      "title": "Thời hiệu xử phạt vi phạm hành chính về thuế mới nhất 2025",
-      "excerpt": "Quy định về Thời hiệu xử phạt vi phạm hành chính về thuế mới nhất năm 2025 theo Nghị định 125/2020/NĐ-CP và được sửa đổ…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/quy-dinh-ve-lao-dong-ban-thoi-gian-lam-viec-khong-tron-thoi-gian.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-lao-dong-ban-thoi-gian-lam-viec-khong-tron-thoi-gian.html",
+      "title": "Quy định về lao động bán thời gian, làm việc không trọn thời gian",
+      "excerpt": "Người lao động làm việc không trọn thời gian là người lao động có thời gian làm việc ngắn hơn so với thời gian làm việc…",
+      "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Thoi-hieu-phat-vi-pham-ve-thue.jpg",
+      "image": "assets/images/content/pic/Service/images/lao-dong-ban-thoi-gian.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2020-02-10",
       "modifiedDate": null
     },
     {
@@ -265,10 +269,11 @@
       "canonical": "https://ketoandieutam.com/thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html",
       "title": "Quy chế dân chủ ở cơ sở tại nơi làm việc",
       "excerpt": "Quy định về quy chế dân chủ ở cơ sở tại nơi làm việc hiện nay đang được thực hiện theo Nghị định 145/2020/NĐ-CP q…",
-      "topicLabel": "Khác",
+      "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/quy-che-dan-chu.jpg",

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1832,
-  "totalCount": 2041,
+  "currentIndex": 1830,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/thay-doi-dia-diem-kinh-doanh-can-lam-thu-tuc-gi.html",
     "section": "thu-vien",
@@ -10,10 +10,11 @@
     "canonical": "https://ketoandieutam.com/thu-vien/thay-doi-dia-diem-kinh-doanh-can-lam-thu-tuc-gi.html",
     "title": "Thủ tục thuế khi thay đổi tên công ty, địa điểm kinh doanh",
     "excerpt": "Thay đổi tên, địa chỉ Công ty cần thủ tục gì, có phải nộp mẫu 08? Thủ tục thay đổi tên công ty, thay đổi địa chỉ kinh d…",
-    "topicLabel": "Khác",
+    "topicLabel": "DN - Thủ tục",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "DN",
+      "Thủ tục",
+      "Doanh nghiệp",
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/thu-tuc-thay-doi-ten-dia-chi-cong-ty.png",
@@ -165,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -184,14 +185,14 @@
       "canonical": "https://ketoandieutam.com/thu-vien/muc-phat-cham-nop-ho-so-dang-ky-thue-moi-nhat.html",
       "title": "Mức phạt chậm nộp hồ sơ đăng ký thuế, thay đổi thông tin thuế",
       "excerpt": "Quy định về mức phạt chậm nộp hồ sơ đăng ký thuế, chậm nộp thông báo thay đổi thông tin trong đăng ký thuế; Chậm nộp th…",
-      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "topicLabel": "Mã số thuế - Đăng ký thuế",
       "tags": [
         "Đăng ký thuế",
-        "Môn bài",
-        "Hộ kinh doanh",
-        "Nhà thầu",
+        "Mã số thuế",
+        "Thuế",
+        "Hóa đơn",
         "MST",
-        "Thuế"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/muc-phat-cham-nop-ho-so-dang-ky-thue.png",
       "libraryKindLabel": "Hướng dẫn",
@@ -199,47 +200,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/thu-tuc-dang-ky-thue-nha-thau-nha-thau-phu-nuoc-ngoai.html",
+      "id": "thu-vien/thu-tuc-dang-ky-ma-so-thue-ca-nhan-cho-thue-tai-san.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thu-tuc-dang-ky-thue-nha-thau-nha-thau-phu-nuoc-ngoai.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-dang-ky-thue-nha-thau-nha-thau-phu-nuoc-ngoai.html",
-      "title": "Thủ tục đăng ký thuế nhà thầu nước ngoài",
-      "excerpt": "Hướng dẫn làm hồ sơ, thủ tục đăng ký thuế đối với người nộp thuế là nhà thầu, nhà thầu phụ nước ngoài trực tiếp kê khai…",
-      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "href": "thu-vien/thu-tuc-dang-ky-ma-so-thue-ca-nhan-cho-thue-tai-san.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-dang-ky-ma-so-thue-ca-nhan-cho-thue-tai-san.html",
+      "title": "Thủ tục đăng ký mã số thuế cá nhân cho thuê tài sản 2026",
+      "excerpt": "Hướng dẫn làm hồ sơ, thủ tục đăng ký mã số thuế cá nhân cho thuê tài sản theo quy định mới nhất năm 2026 tại thông tư 8…",
+      "topicLabel": "Mã số thuế - Đăng ký thuế",
       "tags": [
-        "Nhà thầu",
+        "Mã số thuế",
         "Đăng ký thuế",
-        "Môn bài",
-        "Hộ kinh doanh",
+        "Thuế",
+        "Hóa đơn",
         "MST",
-        "Thuế"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Dang-ky-thue-nha-thau.jpg",
+      "image": "assets/images/content/pic/Service/images/Dang-ky-thue-cho-thue-tai-san.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-01-24",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/dang-ky-thue-lan-dau-cua-ca-nhan-ho-kinh-doanh-2025-theo-tt86.html",
+      "id": "thu-vien/cach-tra-cuu-ma-so-thue-ca-nhan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/dang-ky-thue-lan-dau-cua-ca-nhan-ho-kinh-doanh-2025-theo-tt86.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/dang-ky-thue-lan-dau-cua-ca-nhan-ho-kinh-doanh-2025-theo-tt86.html",
-      "title": "Đăng ký thuế lần đầu của cá nhân, hộ kinh doanh mới nhất năm 2025",
-      "excerpt": "Hồ sơ thủ tục đăng ký thuế lần đầu cuả cá nhân, hộ kinh doanh đang được quy định tại Thông tư 86/2024/TT-B…",
-      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "href": "thu-vien/cach-tra-cuu-ma-so-thue-ca-nhan.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-tra-cuu-ma-so-thue-ca-nhan.html",
+      "title": "Cách tra cứu mã số thuế cá nhân bằng CCCD, CMND, MST",
+      "excerpt": "Hướng dẫn cách tra cứu mã số thuế thu nhập cá nhân trên hệ thống thuế điện tử mới nhất hiện nay + Trước ngày 01/07/2025…",
+      "topicLabel": "Mã số thuế - Đăng ký thuế",
       "tags": [
-        "Hộ kinh doanh",
+        "Mã số thuế",
         "Đăng ký thuế",
-        "Môn bài",
-        "Nhà thầu",
+        "Thuế",
+        "Hóa đơn",
         "MST",
-        "Thuế"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Ca-nhan-ho-kinh-doanh-dang-ky-thue-lan-dau.png",
+      "image": "assets/images/content/pic/Service/images/Tra-cuu-MST-TNCN(3).png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-07-01",
       "modifiedDate": null
@@ -255,14 +256,14 @@
       "canonical": "https://ketoandieutam.com/thu-vien/muc-phat-cham-nop-ho-so-dang-ky-thue-moi-nhat.html",
       "title": "Mức phạt chậm nộp hồ sơ đăng ký thuế, thay đổi thông tin thuế",
       "excerpt": "Quy định về mức phạt chậm nộp hồ sơ đăng ký thuế, chậm nộp thông báo thay đổi thông tin trong đăng ký thuế; Chậm nộp th…",
-      "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+      "topicLabel": "Mã số thuế - Đăng ký thuế",
       "tags": [
         "Đăng ký thuế",
-        "Môn bài",
-        "Hộ kinh doanh",
-        "Nhà thầu",
+        "Mã số thuế",
+        "Thuế",
+        "Hóa đơn",
         "MST",
-        "Thuế"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/muc-phat-cham-nop-ho-so-dang-ky-thue.png",
       "libraryKindLabel": "Hướng dẫn",
@@ -270,49 +271,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "id": "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "title": "Danh sách mã chương, mã tiểu mục nộp thuế mới nhất năm 2026",
-      "excerpt": "Danh sách mã chương, mã tiểu mục nộp thuế TNCN, thuế GTGT, Thuế TNDN mới nhất năm 2026 theo Thông tư 130/2025/TT-BTC qu…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
+      "title": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế",
+      "excerpt": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế trên hệ thống Dịch vụ công hoặc thuế điện tử 1. Các mã thủ tục hàn…",
+      "topicLabel": "Mã số thuế - Đăng ký thuế",
       "tags": [
-        "GTGT",
-        "TNCN",
-        "TNDN",
-        "Hóa đơn",
+        "Mã số thuế",
+        "Đăng ký thuế",
         "Thuế",
-        "Biểu mẫu"
+        "Hóa đơn",
+        "MST",
+        "Nộp tờ khai"
       ],
-      "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
+      "image": "assets/images/content/pic/Service/images/Ma-thu-tuc-hanh-chinh-nop-to-khai-thue.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
-      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "GTGT",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Thuế"
-      ],
-      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-02",
+      "publishDate": "2007-07-01",
       "modifiedDate": null
     }
   ]

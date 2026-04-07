@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1871,
-  "totalCount": 2041,
+  "currentIndex": 1869,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/thong-tu-09-2015-tt-btc-giao-dich-tai-chinh-cua-doanh-nghiep.html",
     "section": "thu-vien",
@@ -13,7 +13,8 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
+      "Doanh nghiệp",
+      "Thủ tục",
       "Văn bản"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -33,7 +34,8 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/Thong-tu-100-2021-sua-doi-bo-sung-thong-tu-40.jpg",
@@ -163,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -173,6 +175,28 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/thong-tu-59-2015-bldtbxh-huong-dan-luat-bhxh-bat-buoc.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thong-tu-59-2015-bldtbxh-huong-dan-luat-bhxh-bat-buoc.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-59-2015-bldtbxh-huong-dan-luat-bhxh-bat-buoc.html",
+      "title": "Thông tư 59/2015/TT-BLĐTBXH hướng dẫn Luật BHXH bắt buộc",
+      "excerpt": "Thông tư 59/2015/TT-BLĐTBXH ngày 29/12/2015 của Bộ lao động thương binh và Xã hội: Quy định chi tiết và hướng dẫn thi h…",
+      "topicLabel": "Thông tư",
+      "tags": [
+        "BHXH",
+        "Thông tư",
+        "Lao động",
+        "Bảo hiểm",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/thong tu 56 cua bhxh.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2015-12-29",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/thong-tu-23-2014-tt-bldtbxh-quy-dinh-ve-tuyen-dung-va-bao-cao-su-dung-lao-dong.html",
       "section": "thu-vien",
@@ -185,8 +209,8 @@
       "topicLabel": "Thông tư",
       "tags": [
         "Thông tư",
-        "Văn bản pháp luật",
         "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -206,35 +230,14 @@
       "topicLabel": "Thông tư",
       "tags": [
         "Thông tư",
-        "Văn bản pháp luật",
-        "Tiền lương",
         "Lao động",
+        "Bảo hiểm",
+        "Tiền lương",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/thong tu 23 cua bo lao dong.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2015-06-23",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thong-tu-59-2015-bldtbxh-huong-dan-luat-bhxh-bat-buoc.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thong-tu-59-2015-bldtbxh-huong-dan-luat-bhxh-bat-buoc.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-59-2015-bldtbxh-huong-dan-luat-bhxh-bat-buoc.html",
-      "title": "Thông tư 59/2015/TT-BLĐTBXH hướng dẫn Luật BHXH bắt buộc",
-      "excerpt": "Thông tư 59/2015/TT-BLĐTBXH ngày 29/12/2015 của Bộ lao động thương binh và Xã hội: Quy định chi tiết và hướng dẫn thi h…",
-      "topicLabel": "Thông tư",
-      "tags": [
-        "BHXH",
-        "Thông tư",
-        "Văn bản pháp luật",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/thong tu 56 cua bhxh.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2015-12-29",
       "modifiedDate": null
     }
   ],
@@ -261,26 +264,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
+      "id": "thu-vien/mau-phieu-dang-ky-du-tuyen-lao-dong-theo-thong-tu-23.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
-      "title": "Quyết định 1040/QĐ-BHXH Mẫu Báo cáo sử dụng lao động tham gia BHXH",
-      "excerpt": "Ngày 18/8/2020 BHXH ban hành Quyết định 1040/QĐ-BHXH quy định Mẫu báo cáo tình hình sử dụng lao động và danh sách tham…",
-      "topicLabel": "Nghị quyết - Quyết định",
+      "href": "thu-vien/mau-phieu-dang-ky-du-tuyen-lao-dong-theo-thong-tu-23.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-phieu-dang-ky-du-tuyen-lao-dong-theo-thong-tu-23.html",
+      "title": "Mẫu phiếu đăng ký dự tuyển lao động theo Thông tư 23",
+      "excerpt": "Mẫu phiếu đăng ký dự tuyển lao động Mẫu số 04 Ban hành kèm theo Thông tư 23/2014/TT-BLĐTBXH ngày 29 tháng 8 năm 2014 củ…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
       "tags": [
-        "BHXH",
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
+        "Mẫu biểu lao động",
+        "bảo hiểm",
         "Lao động",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/quyet-dinh-1040-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2020-08-18",
+      "publishDate": "2014-08-29",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
   "currentIndex": 1499,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/nhung-diem-moi-cua-thong-tu-96-ve-thue-thu-nhap-doanh-nghiep.html",
     "section": "thu-vien",
@@ -167,8 +167,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -178,6 +178,27 @@
   ],
   "related": [
     {
+      "id": "thu-vien/nhung-noi-dung-moi-cua-thong-tu-26-ve-thue-gtgt-quan-ly-thue.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/nhung-noi-dung-moi-cua-thong-tu-26-ve-thue-gtgt-quan-ly-thue.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/nhung-noi-dung-moi-cua-thong-tu-26-ve-thue-gtgt-quan-ly-thue.html",
+      "title": "Những nội dung mới của Thông tư 26 về thuế GTGT, quản lý thuế và hóa đơn",
+      "excerpt": "Tổng hợp những điểm mới của Thông tư 26/2015/TT-BTC ngày 27/2/2015 về thuế GTGT, quản lý thuế và hóa đơn, có hiê…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/nhung noi dung moi cua thong tu 26.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2015-02-27",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/tong-hop-cac-chinh-sach-thue-nam-2014-do-tong-cuc-thue-bien-soan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -186,10 +207,11 @@
       "canonical": "https://ketoandieutam.com/thu-vien/tong-hop-cac-chinh-sach-thue-nam-2014-do-tong-cuc-thue-bien-soan.html",
       "title": "Tổng hợp các chính sách Thuế năm 2014 do Tổng Cục Thuế biên soạn",
       "excerpt": "Tổng hợp các chính sách về Thuế năm 2014 mới nhất do Tổng Cục Thuế biên soạn - Đây là kết quả của cuộc hô…",
-      "topicLabel": "Khác",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/tong hop chinh sach thue moi 2014.jpg",
@@ -198,85 +220,70 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/nhung-mat-hang-chiu-thue-suat-10.html",
+      "id": "thu-vien/dieu-kien-khau-tru-thue-gtgt-hang-xuat-khau.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nhung-mat-hang-chiu-thue-suat-10.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/nhung-mat-hang-chiu-thue-suat-10.html",
-      "title": "Những mặt hàng chịu thuế suất 10% năm 2026",
-      "excerpt": "Quy định về các mặt hàng chịu thuế suất GTGT 10% trong năm 2026 được thực hiện theo Luật thuế GTGT số 48/2024/QH15…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/dieu-kien-khau-tru-thue-gtgt-hang-xuat-khau.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/dieu-kien-khau-tru-thue-gtgt-hang-xuat-khau.html",
+      "title": "Điều kiện khấu trừ thuế GTGT hàng xuất khẩu năm 2017 theo TT 219",
+      "excerpt": "Theo Điều 16 Thông tư 219/2013/TT- BTC ngày 31/12/2013 của Bộ tài chính: Quy định về điều kiện khấu trừ, hoàn thuế đầu…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/thue-suat-10.jpg",
+      "image": "assets/images/content/pic/Service/images/dieu kien khau tru thue gtgt hang xuat khau.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-06-30",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
-      "title": "Lịch nộp các loại báo cáo thuế năm 2026 mới nhất",
-      "excerpt": "Thời hạn nộp các loại báo cáo thuế năm 2026 cụ thể: Hạn nộp thuế GTGT, thuế TNCN, thuế TNDN, Báo cáo tài chính, Tờ khai…",
-      "topicLabel": "Khác",
-      "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Lich-nop-bao-cao-thue-2026.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-03-31",
+      "publishDate": "2013-12-31",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/tong-hop-cac-chinh-sach-thue-nam-2014-do-tong-cuc-thue-bien-soan.html",
+      "id": "thu-vien/nhung-noi-dung-moi-cua-thong-tu-26-ve-thue-gtgt-quan-ly-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/tong-hop-cac-chinh-sach-thue-nam-2014-do-tong-cuc-thue-bien-soan.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/tong-hop-cac-chinh-sach-thue-nam-2014-do-tong-cuc-thue-bien-soan.html",
-      "title": "Tổng hợp các chính sách Thuế năm 2014 do Tổng Cục Thuế biên soạn",
-      "excerpt": "Tổng hợp các chính sách về Thuế năm 2014 mới nhất do Tổng Cục Thuế biên soạn - Đây là kết quả của cuộc hô…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/nhung-noi-dung-moi-cua-thong-tu-26-ve-thue-gtgt-quan-ly-thue.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/nhung-noi-dung-moi-cua-thong-tu-26-ve-thue-gtgt-quan-ly-thue.html",
+      "title": "Những nội dung mới của Thông tư 26 về thuế GTGT, quản lý thuế và hóa đơn",
+      "excerpt": "Tổng hợp những điểm mới của Thông tư 26/2015/TT-BTC ngày 27/2/2015 về thuế GTGT, quản lý thuế và hóa đơn, có hiê…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/tong hop chinh sach thue moi 2014.jpg",
+      "image": "assets/images/content/pic/Service/images/nhung noi dung moi cua thong tu 26.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-10-30",
+      "publishDate": "2015-02-27",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html",
+      "id": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html",
-      "title": "Quy chế dân chủ ở cơ sở tại nơi làm việc",
-      "excerpt": "Quy định về quy chế dân chủ ở cơ sở tại nơi làm việc hiện nay đang được thực hiện theo Nghị định 145/2020/NĐ-CP q…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "title": "Danh sách mã chương, mã tiểu mục nộp thuế mới nhất năm 2026",
+      "excerpt": "Danh sách mã chương, mã tiểu mục nộp thuế TNCN, thuế GTGT, Thuế TNDN mới nhất năm 2026 theo Thông tư 130/2025/TT-BTC qu…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "TNCN",
+        "TNDN",
+        "Hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/quy-che-dan-chu.jpg",
+      "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

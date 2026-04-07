@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2000,
-  "totalCount": 2041,
+  "currentIndex": 1998,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/to-khai-thue-tncn-mau-01-xsbhdc-theo-thong-tu-18.html",
     "section": "thu-vien",
@@ -15,8 +15,7 @@
       "TNCN",
       "Mẫu biểu thuế",
       "hóa đơn",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Thuế",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Mau-so-01-BK-XSBHĐC.png",
@@ -169,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -180,6 +179,49 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cac-truong-hop-khong-phai-ke-khai-nop-thue-gtgt.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-truong-hop-khong-phai-ke-khai-nop-thue-gtgt.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-truong-hop-khong-phai-ke-khai-nop-thue-gtgt.html",
+      "title": "Các trường hợp không tính thuế GTGT năm 2026 mới nhất",
+      "excerpt": "Các trường hợp không phải tính thuế GTGT mới nhất năm 2026 theo Nghị định 181/2025/NĐ-CP hướng dẫn Luật thuế GTGT Trước…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Kê khai",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/hoa-don-xuat-tieu-dung-noi-bo.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-07-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/doi-tuong-chiu-thue-gtgt-thue-suat-0-theo-tt-219.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/doi-tuong-chiu-thue-gtgt-thue-suat-0-theo-tt-219.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/doi-tuong-chiu-thue-gtgt-thue-suat-0-theo-tt-219.html",
+      "title": "Các mặt hàng chịu thuế suất GTGT 0% năm 2026 mới nhất",
+      "excerpt": "Quy định về các đối tượng, các mặt hàng, các sản phẩm, hàng hóa, dịch vụ được áp dụng mức thuế suất 0% mới nhất năm 202…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/doi-tuong-chiu-thue-gtgt-0.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2016-07-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -188,98 +230,63 @@
       "canonical": "https://ketoandieutam.com/thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
       "title": "Lịch nộp các loại báo cáo thuế năm 2026 mới nhất",
       "excerpt": "Thời hạn nộp các loại báo cáo thuế năm 2026 cụ thể: Hạn nộp thuế GTGT, thuế TNCN, thuế TNDN, Báo cáo tài chính, Tờ khai…",
-      "topicLabel": "Khác",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/Lich-nop-bao-cao-thue-2026.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-03-31",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-hanh-vi-vi-pham-hanh-chinh-ve-thue-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-hanh-vi-vi-pham-hanh-chinh-ve-thue-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cac-hanh-vi-vi-pham-hanh-chinh-ve-thue-moi-nhat.html",
-      "title": "Các hành vi vi phạm hành chính về thuế theo TT 166",
-      "excerpt": "Theo Khoản 3 điều 1 Thông tư số 166/2013/TT-BTC của Bộ tài chính quy định: Các hành vi vi phạm hành chính về thuế bao g…",
-      "topicLabel": "Khác",
-      "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cac hanh vi vi pham hanh chinh ve thue.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/nhung-mat-hang-chiu-thue-suat-10.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nhung-mat-hang-chiu-thue-suat-10.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/nhung-mat-hang-chiu-thue-suat-10.html",
-      "title": "Những mặt hàng chịu thuế suất 10% năm 2026",
-      "excerpt": "Quy định về các mặt hàng chịu thuế suất GTGT 10% trong năm 2026 được thực hiện theo Luật thuế GTGT số 48/2024/QH15…",
-      "topicLabel": "Khác",
-      "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/thue-suat-10.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-06-30",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
+      "id": "thu-vien/cac-truong-hop-khong-phai-ke-khai-nop-thue-gtgt.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
-      "title": "Lịch nộp các loại báo cáo thuế năm 2026 mới nhất",
-      "excerpt": "Thời hạn nộp các loại báo cáo thuế năm 2026 cụ thể: Hạn nộp thuế GTGT, thuế TNCN, thuế TNDN, Báo cáo tài chính, Tờ khai…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/cac-truong-hop-khong-phai-ke-khai-nop-thue-gtgt.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-truong-hop-khong-phai-ke-khai-nop-thue-gtgt.html",
+      "title": "Các trường hợp không tính thuế GTGT năm 2026 mới nhất",
+      "excerpt": "Các trường hợp không phải tính thuế GTGT mới nhất năm 2026 theo Nghị định 181/2025/NĐ-CP hướng dẫn Luật thuế GTGT Trước…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Kê khai",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Lich-nop-bao-cao-thue-2026.png",
+      "image": "assets/images/content/pic/Service/images/hoa-don-xuat-tieu-dung-noi-bo.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-03-31",
+      "publishDate": "2025-07-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
+      "id": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
-      "title": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế",
-      "excerpt": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế trên hệ thống Dịch vụ công hoặc thuế điện tử 1. Các mã thủ tục hàn…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "title": "Danh sách mã chương, mã tiểu mục nộp thuế mới nhất năm 2026",
+      "excerpt": "Danh sách mã chương, mã tiểu mục nộp thuế TNCN, thuế GTGT, Thuế TNDN mới nhất năm 2026 theo Thông tư 130/2025/TT-BTC qu…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Nộp tờ khai",
+        "GTGT",
+        "TNCN",
+        "TNDN",
+        "Hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Ma-thu-tuc-hanh-chinh-nop-to-khai-thue.png",
+      "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2007-07-01",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

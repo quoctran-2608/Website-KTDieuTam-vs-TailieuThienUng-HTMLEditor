@@ -1,6 +1,6 @@
 {
   "currentIndex": 1185,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-ket-qua-hoat-dong-san-xuat-kinh-doanh-03-1a-tndn.html",
     "section": "thu-vien",
@@ -15,8 +15,7 @@
       "TNDN",
       "Mẫu biểu thuế",
       "hóa đơn",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Thuế",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -37,8 +36,6 @@
     "tags": [
       "Mẫu biểu lao động",
       "bảo hiểm",
-      "Mẫu biểu",
-      "Thủ tục",
       "Lao động",
       "Biểu mẫu"
     ],
@@ -169,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -179,6 +176,28 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/mau-hop-dong-lao-dong-ban-thoi-gian-lam-viec-part-time.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-hop-dong-lao-dong-ban-thoi-gian-lam-viec-part-time.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-hop-dong-lao-dong-ban-thoi-gian-lam-viec-part-time.html",
+      "title": "Mẫu hợp đồng lao động bán thời gian, làm việc Part Time 2026 mới nhất",
+      "excerpt": "Người lao động làm việc bán thời gian là người lao động có thời gian làm việc ngắn hơn so với thời gian làm việc bình t…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "tags": [
+        "Mẫu biểu lao động",
+        "bảo hiểm",
+        "Lao động",
+        "Hợp đồng lao động",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Hop-dong-lao-dong-ban-thoi-gian(1).png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2019-11-20",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/mau-hop-dong-thu-viec-moi-nhat-dung-chuan-bo-luat-lao-dong.html",
       "section": "thu-vien",
@@ -192,8 +211,6 @@
       "tags": [
         "Mẫu biểu lao động",
         "bảo hiểm",
-        "Mẫu biểu",
-        "Thủ tục",
         "Lao động",
         "Biểu mẫu"
       ],
@@ -215,37 +232,12 @@
       "tags": [
         "Mẫu biểu lao động",
         "bảo hiểm",
-        "Mẫu biểu",
-        "Thủ tục",
         "Lao động",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2021-02-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-phieu-dang-ky-du-tuyen-lao-dong-theo-thong-tu-23.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-phieu-dang-ky-du-tuyen-lao-dong-theo-thong-tu-23.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-phieu-dang-ky-du-tuyen-lao-dong-theo-thong-tu-23.html",
-      "title": "Mẫu phiếu đăng ký dự tuyển lao động theo Thông tư 23",
-      "excerpt": "Mẫu phiếu đăng ký dự tuyển lao động Mẫu số 04 Ban hành kèm theo Thông tư 23/2014/TT-BLĐTBXH ngày 29 tháng 8 năm 2014 củ…",
-      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
-      "tags": [
-        "Mẫu biểu lao động",
-        "bảo hiểm",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Lao động",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-08-29",
       "modifiedDate": null
     }
   ],
@@ -272,24 +264,23 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-hop-dong-thu-viec-moi-nhat-dung-chuan-bo-luat-lao-dong.html",
+      "id": "thu-vien/mau-hop-dong-lao-dong-ban-thoi-gian-lam-viec-part-time.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-hop-dong-thu-viec-moi-nhat-dung-chuan-bo-luat-lao-dong.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-hop-dong-thu-viec-moi-nhat-dung-chuan-bo-luat-lao-dong.html",
-      "title": "Mẫu hợp đồng thử việc mới nhất 2026 theo đúng quy định tại Bộ luật Lao động",
-      "excerpt": "Theo quy định tại khoản 1 điều 24 của Bộ luật Lao động số: 45/2019/QH14 thì: Người sử dụng lao động và người lao động c…",
+      "href": "thu-vien/mau-hop-dong-lao-dong-ban-thoi-gian-lam-viec-part-time.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-hop-dong-lao-dong-ban-thoi-gian-lam-viec-part-time.html",
+      "title": "Mẫu hợp đồng lao động bán thời gian, làm việc Part Time 2026 mới nhất",
+      "excerpt": "Người lao động làm việc bán thời gian là người lao động có thời gian làm việc ngắn hơn so với thời gian làm việc bình t…",
       "topicLabel": "Mẫu biểu lao động - bảo hiểm",
       "tags": [
         "Mẫu biểu lao động",
         "bảo hiểm",
-        "Mẫu biểu",
-        "Thủ tục",
         "Lao động",
+        "Hợp đồng lao động",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-hop-dong-thu-viec.png",
+      "image": "assets/images/content/pic/Service/images/Hop-dong-lao-dong-ban-thoi-gian(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2019-11-20",
       "modifiedDate": null

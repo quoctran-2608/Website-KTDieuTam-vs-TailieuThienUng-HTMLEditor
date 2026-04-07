@@ -1,6 +1,6 @@
 {
   "currentIndex": 755,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/day-thuc-hanh-ke-toan-thue-tong-hop-thuc-te-tai-ha-noi.html",
     "section": "thu-vien",
@@ -33,14 +33,14 @@
     "canonical": "https://ketoandieutam.com/thu-vien/dia-diem-noi-nop-to-khai-tien-thue-cua-ho-kinh-doanh.html",
     "title": "Địa điểm, nơi nộp tờ khai, tiền thuế của hộ kinh doanh",
     "excerpt": "Quy định về nơi nộp tờ khai báo cáo thuế và tiền thuế của hộ kinh doanh, cá nhân kinh doanh theo Nghị định số 68/2026/N…",
-    "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+    "topicLabel": "Hộ/Cá nhân kinh doanh",
     "tags": [
       "Hộ kinh doanh",
-      "Môn bài",
-      "Nhà thầu",
-      "MST",
+      "Hộ",
+      "Cá nhân kinh doanh",
       "Thuế",
-      "Hóa đơn"
+      "Hóa đơn",
+      "Nộp tờ khai"
     ],
     "image": "assets/images/content/pic/Service/images/Dia-diem-nop-thue-ho-kd.jpg",
     "libraryKindLabel": "Hướng dẫn",
@@ -169,8 +169,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -287,29 +287,6 @@
       "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-thue-gtgt-duoc-hoan-lai.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
-      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "GTGT",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Thuế"
-      ],
-      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

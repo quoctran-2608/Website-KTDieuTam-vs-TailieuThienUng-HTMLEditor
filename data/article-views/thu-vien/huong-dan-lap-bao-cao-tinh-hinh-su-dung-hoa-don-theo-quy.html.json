@@ -1,6 +1,6 @@
 {
   "currentIndex": 934,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/huong-dan-ke-khai-thue-tieu-thu-dac-biet.html",
     "section": "thu-vien",
@@ -10,11 +10,12 @@
     "canonical": "https://ketoandieutam.com/thu-vien/huong-dan-ke-khai-thue-tieu-thu-dac-biet.html",
     "title": "Hướng dẫn kê khai thuế tiêu thụ đặc biệt",
     "excerpt": "Hướng dẫn cách kê khai thuế tiêu thụ đặc biệt, hồ sơ khai thuế tiêu thụ đặc biệt theo Thông tư số 156/2013/TT-BTC ngày…",
-    "topicLabel": "Khác",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
       "Kê khai",
-      "Học liệu",
-      "Tham khảo",
+      "GTGT",
+      "Hóa đơn",
+      "Thuế",
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/huong dan ke khai thue tieu thu dac biet.png",
@@ -167,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -264,48 +265,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
+      "id": "thu-vien/quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
-      "title": "Mẫu báo cáo: Kế toán thanh toán thuế GTGT và thuế TNDN tại Công ty Cổ phần Dịch vụ Thương mại Đồng Tâm",
-      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán thanh toán thuế GTGT và thuế TNDN tại Công…",
+      "href": "thu-vien/quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.html",
+      "title": "Quy định về ký hiệu mẫu số hóa đơn Giá trị gia tăng",
+      "excerpt": "Quy định về mẫu số và ký hiệu hóa đơn GTGT, hóa đơn bán hàng, tem vé... Quy định về loại hóa đơn, ký hiệu hóa đơn điện…",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
-        "TNDN",
         "Hóa đơn",
         "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/quy-dinh-kho-giay-cua-hoa-don-dat-in.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
-      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "GTGT",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Thuế"
-      ],
-      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-02",
+      "publishDate": "2014-03-31",
       "modifiedDate": null
     }
   ]

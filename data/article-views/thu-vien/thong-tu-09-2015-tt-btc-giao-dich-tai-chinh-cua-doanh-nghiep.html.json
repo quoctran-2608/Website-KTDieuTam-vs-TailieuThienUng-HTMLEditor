@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1870,
-  "totalCount": 2041,
+  "currentIndex": 1868,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/thong-tu-07-2007-ttlt-btm-btc-quy-dinh-ve-khuyen-mai-hoi-cho-trien-lam.html",
     "section": "thu-vien",
@@ -13,7 +13,8 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -33,8 +34,8 @@
     "topicLabel": "Thông tư",
     "tags": [
       "Thông tư",
-      "Văn bản pháp luật",
       "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/thong-tu-10-2020-huong-dan-luat-lao-dong.png",
@@ -164,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -174,6 +175,27 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-01-2021-tt-bkhdt-huong-dan-ve-dang-ky-doanh-nghiep.html",
+      "title": "Thông tư 01/2021/TT-BKHĐT hướng dẫn về đăng ký doanh nghiệp",
+      "excerpt": "Thông tư 01/2021/TT-BKHĐT ngày 16/3/2021 của Bộ kế hoạch đầu tư: Hướng dẫn về đăng ký doanh nghiệp; Biểu mẫu sử dụng tr…",
+      "topicLabel": "Thông tư",
+      "tags": [
+        "Thông tư",
+        "Doanh nghiệp",
+        "Thủ tục",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/thong-tu-01-quy-dinh-ve-dang-ky-doanh-nghiep.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2021-03-16",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/thong-tu-200-2014-tt-btc-che-do-ke-toan-doanh-nghiep.html",
       "section": "thu-vien",
@@ -186,7 +208,7 @@
       "topicLabel": "Thông tư",
       "tags": [
         "Thông tư",
-        "Văn bản pháp luật",
+        "Kế toán",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/thong-tu-200-cua-bo-tai-chinh.png",
@@ -207,59 +229,58 @@
       "tags": [
         "GTGT",
         "Thông tư",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/thong tu 26_2015 huong dan thue gtgt va quan ly thue.jpg",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2015-02-27",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thong-tu-64-2015-ttlt-btc-bct-bca-bqp-quy-dinh-ve-hoa-don.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thong-tu-64-2015-ttlt-btc-bct-bca-bqp-quy-dinh-ve-hoa-don.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thong-tu-64-2015-ttlt-btc-bct-bca-bqp-quy-dinh-ve-hoa-don.html",
-      "title": "Thông tư 64/2015/TTLT-BTC-BCT-BCA-BQP quy định về hóa đơn hàng nhập khẩu",
-      "excerpt": "Thông tư liên tịch 64/2015/TTLT-BTC-BCT-BCA-BQP ngày 08/05/2015 Quy định về chế độ hóa đơn, chứng từ đối với hàng hóa n…",
-      "topicLabel": "Thông tư",
-      "tags": [
-        "GTGT",
-        "Thông tư",
-        "Văn bản pháp luật",
-        "Hóa đơn",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/thong tu 64-2015-TTLT-BTC-BCT-BCA-BQP.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2015-05-08",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
+      "id": "thu-vien/ho-so-thu-tuc-vay-tien-cua-ca-nhan-va-cong-ty.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
-      "title": "Mẫu Quyết định chấm dứt hợp đồng lao động",
-      "excerpt": "Khi muốn chấm dứt hợp đồng lao động Doanh nghiệp và người lao động cần hồ sơ gồm: Quyết định chấm dứt…",
-      "topicLabel": "Nghị quyết - Quyết định",
+      "href": "thu-vien/ho-so-thu-tuc-vay-tien-cua-ca-nhan-va-cong-ty.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/ho-so-thu-tuc-vay-tien-cua-ca-nhan-va-cong-ty.html",
+      "title": "Hồ sơ thủ tục vay tiền cá nhân và Doanh nghiệp khác",
+      "excerpt": "Hướng dẫn làm thủ tục hồ sơ vay tiền cá nhân, Công ty khác. Công ty vay tiền cá nhân không lãi suất, vay tiền giám đốc;…",
+      "topicLabel": "DN - Thủ tục",
       "tags": [
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
-        "Hợp đồng lao động",
-        "Lao động",
+        "DN",
+        "Thủ tục",
+        "Doanh nghiệp",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/ho-so-vay-tien-ca-nhan-khong-lai-suat.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2016-03-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-mau-02-tndn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-mau-02-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-mau-02-tndn.html",
+      "title": "Mẫu Tờ khai thuế thu nhập doanh nghiệp Mẫu 02/TNDN theo TT 151",
+      "excerpt": "Mẫu Tờ khai thuế thu nhập doanh nghiệp Mẫu 02/TNDN Dùng cho DN kê khai thuế TNDN từ chuyển nhượng bất động sản th…",
+      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
+      "tags": [
+        "TNDN",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
+      "publishDate": "2014-11-15",
       "modifiedDate": null
     }
   ]

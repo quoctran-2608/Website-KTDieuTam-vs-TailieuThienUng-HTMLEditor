@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1749,
-  "totalCount": 2041,
+  "currentIndex": 1747,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.html",
     "section": "thu-vien",
@@ -14,7 +14,8 @@
     "tags": [
       "Nghị quyết",
       "Quyết định",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -36,7 +37,8 @@
       "BHXH",
       "Nghị quyết",
       "Quyết định",
-      "Văn bản pháp luật",
+      "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -166,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -190,35 +192,13 @@
         "BHXH",
         "Nghị quyết",
         "Quyết định",
-        "Văn bản pháp luật",
         "Lao động",
+        "Bảo hiểm",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/quyet-dinh-1040-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2020-08-18",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-1408-qd-tld-quy-dinh-ve-tai-chinh-cong-doan.html",
-      "title": "Quyết định 1408/QĐ-TLĐ Quy định về tài chính công đoàn",
-      "excerpt": "Tổng Liên đoàn Lao động ban hành Quyết định 1408/QĐ-TLĐ năm 2024 về Quy định quản lý tài chính, tài sản công đoàn, thu,…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [
-        "Công đoàn",
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/Quyet-dinh-1408-QĐ-TLĐ.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2024-08-01",
       "modifiedDate": null
     },
     {
@@ -234,34 +214,59 @@
       "tags": [
         "Nghị quyết",
         "Quyết định",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-06-28",
       "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-thong-bao-ve-viec-giai-the-doanh-nghiep-cong-ty.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-thong-bao-ve-viec-giai-the-doanh-nghiep-cong-ty.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-thong-bao-ve-viec-giai-the-doanh-nghiep-cong-ty.html",
+      "title": "Mẫu thông báo về việc giải thể doanh nghiệp công ty",
+      "excerpt": "Mẫu thông báo về việc giải thể doanh nghiệp, giải thể công ty cổ phần, TNHH 1TV, 2TV, Doanh nghiệp tư nhân ... Mẫu Phụ…",
+      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
+      "tags": [
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Mau-30-thong-bao-ve-viec-giai-the-doanh-nghiep-tt-68.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.html",
+      "id": "thu-vien/quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.html",
-      "title": "Thủ tục giải thể doanh nghiệp, công ty mới nhất",
-      "excerpt": "Thủ tục giải thể Doanh nghiệp, Công ty mới nhất: Điều kiện, hồ sơ, trình tự thủ tục giải thể Công ty cổ phần, TNHH 1TV,…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.html",
+      "title": "Giảm mức đóng đoàn phí công đoàn từ ngày 01/07/2025",
+      "excerpt": "Ngày 29/7/2025, Tổng Liên đoàn Lao động Việt Nam đã ban hành Quyết định 61/QĐ-TLĐ về điều chỉnh giảm mức đóng đoàn phí…",
+      "topicLabel": "Nghị quyết - Quyết định",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Công đoàn",
+        "Nghị quyết",
+        "Quyết định",
+        "Lao động",
+        "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/trinh-tu-giai-the-doanh-nghiep.png",
+      "image": "assets/images/content/pic/Service/images/giam-muc-dong-doan-phi-cong-doan.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2019-11-20",
       "modifiedDate": null
     },
     {
@@ -278,8 +283,8 @@
         "BHXH",
         "Nghị quyết",
         "Quyết định",
-        "Văn bản pháp luật",
         "Lao động",
+        "Bảo hiểm",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/quyet-dinh-1040-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.png",

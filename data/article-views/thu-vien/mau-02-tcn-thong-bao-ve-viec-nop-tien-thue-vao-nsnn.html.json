@@ -1,6 +1,6 @@
 {
   "currentIndex": 1003,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-02-tb-ddkd-theo-thong-tu-so-18-2026-tt-btc.html",
     "section": "thu-vien",
@@ -13,8 +13,7 @@
     "topicLabel": "Mẫu biểu kế toán",
     "tags": [
       "Mẫu biểu kế toán",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Kế toán",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/mau-thong-bao-cap-nhat-dia-diem-kinh-doanh.png",
@@ -36,7 +35,7 @@
       "Đăng ký thuế",
       "Mẫu biểu doanh nghiệp",
       "thủ tục",
-      "Mẫu biểu",
+      "Doanh nghiệp",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Mau-03-dk-tct.png",
@@ -166,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -176,6 +175,27 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
+      "title": "Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp tiền thuế tiền phạt",
+      "excerpt": "Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp thuế mới nhất theo Thông tư 156/2013/TT-BTC: Xin gia hạn nộp tiền thuế, tiền ph…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/bang-ke-nop-thue-mau-01-bknt-theo-tt-119.html",
       "section": "thu-vien",
@@ -189,8 +209,7 @@
       "tags": [
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -212,81 +231,56 @@
         "GTGT",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2014-03-31",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
-      "id": "thu-vien/to-khai-thue-gia-tri-gia-tang-gtgt-theo-thong-tu-119.html",
+      "id": "thu-vien/mau-01-dnxlnt-van-ban-de-nghi-xu-ly-so-tien-thue-nop-thua.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/to-khai-thue-gia-tri-gia-tang-gtgt-theo-thong-tu-119.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/to-khai-thue-gia-tri-gia-tang-gtgt-theo-thong-tu-119.html",
-      "title": "TỜ KHAI THUẾ GIÁ TRỊ GIA TĂNG mẫu 01/GTGT theo Thông tư 119",
-      "excerpt": "Tờ khai thuế giá trị gia tăng (GTGT) mẫu 01/GTGT Ban hành kèm theo Thông tư số 119/2014/TT-BTC ngày 25/8/2014 của Bộ Tà…",
+      "href": "thu-vien/mau-01-dnxlnt-van-ban-de-nghi-xu-ly-so-tien-thue-nop-thua.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-01-dnxlnt-van-ban-de-nghi-xu-ly-so-tien-thue-nop-thua.html",
+      "title": "Văn bản đề nghị xử lý số tiền thuế, tiền chậm nộp, tiền phạt nộp thừa",
+      "excerpt": "Văn bản đề nghị xử lý số tiền thuế, tiền chậm nộp, tiền phạt nộp thừa Mẫu 01/DNXLNT theo Thông tư 80/2021/TT-BTC - Văn…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "GTGT",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Mau-01-DNXLNT-van-ban-de-nghi-hoan-thue-theo-tt-80.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2021-09-29",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
+      "title": "Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp tiền thuế tiền phạt",
+      "excerpt": "Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp thuế mới nhất theo Thông tư 156/2013/TT-BTC: Xin gia hạn nộp tiền thuế, tiền ph…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-09-15",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/cach-hach-toan-thue-gia-tri-gia-tang-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-thue-gia-tri-gia-tang-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-hach-toan-thue-gia-tri-gia-tang-theo-thong-tu-99.html",
-      "title": "Cách hạch toán thuế giá trị gia tăng phải nộp theo Thông tư 99",
-      "excerpt": "Hướng dẫn cách hạch toán thuế GTGT đầu ra phải nộp theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp á…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Cách hạch toán thuế giá trị gia tăng phải nộp theo Thông tư 99.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/bang-ke-nop-thue-mau-01-bknt-theo-tt-119.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bang-ke-nop-thue-mau-01-bknt-theo-tt-119.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bang-ke-nop-thue-mau-01-bknt-theo-tt-119.html",
-      "title": "Bảng kê nộp thuế mẫu 01/BKNT theo TT 119",
-      "excerpt": "Mẫu bảng kê nộp thuế mẫu 01/BKNT (Ban hành kèm theo Thông tư số 119/2014/TT-BTC ngày 25/8/2014 của Bộ Tài chính). BẢNG…",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
-      "tags": [
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-08-25",
       "modifiedDate": null
     }
   ]

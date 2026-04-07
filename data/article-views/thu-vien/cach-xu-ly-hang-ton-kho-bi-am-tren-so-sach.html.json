@@ -1,6 +1,6 @@
 {
   "currentIndex": 564,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/cach-xu-ly-hang-hoa-het-han-su-dung-hu-hong.html",
     "section": "thu-vien",
@@ -166,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -176,6 +176,27 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/chi-phi-di-cong-tac-hop-ly-duoc-tru.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/chi-phi-di-cong-tac-hop-ly-duoc-tru.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/chi-phi-di-cong-tac-hop-ly-duoc-tru.html",
+      "title": "Quy định công tác phí hợp lý của Công ty mới nhất",
+      "excerpt": "Chi phí công tác phí hợp lệ thì cần chứng từ gì? Chi phí công tác có tính thuế TNCN không? Quy định công tác p…",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "Chứng từ",
+        "Sổ sách",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/quy-dinh-cong-tac-phi.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-09-16",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/cach-lap-so-the-kho-chi-tiet-theo-tt-200.html",
       "section": "thu-vien",
@@ -217,40 +238,18 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-12-31",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-xu-ly-ghi-tang-ccdc-khong-chon-duoc-chung-tu-nguon-goc.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-xu-ly-ghi-tang-ccdc-khong-chon-duoc-chung-tu-nguon-goc.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-xu-ly-ghi-tang-ccdc-khong-chon-duoc-chung-tu-nguon-goc.html",
-      "title": "Cách xử lý ghi tăng CCDC không chọn được chứng từ nguồn gốc hình thành",
-      "excerpt": "Hướng dẫn các phương án xử lý khi ghi tăng CCDC không chọn được chứng từ nguồn gốc hình thành vào tab Nguồn gốc hình th…",
-      "topicLabel": "Chứng từ - Sổ sách",
-      "tags": [
-        "CCDC",
-        "Chứng từ",
-        "Sổ sách",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-xu-ly-ghi-tang-ccdc-khong-chon-duoc-nguon-goc-hinh-thanh-1.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-lap-so-the-kho-chi-tiet-theo-tt-200.html",
+      "id": "thu-vien/chi-phi-di-cong-tac-hop-ly-duoc-tru.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-so-the-kho-chi-tiet-theo-tt-200.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-so-the-kho-chi-tiet-theo-tt-200.html",
-      "title": "Cách lập thẻ kho (sổ kho) theo Thông tư 200",
-      "excerpt": "Hướng dẫn cách lập thẻ kho (sổ kho) Mẫu S12- DN theo Thông tư 200/2014/TT-BTC : Mục đích lập, căn cứ và phương pháp ghi…",
+      "href": "thu-vien/chi-phi-di-cong-tac-hop-ly-duoc-tru.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/chi-phi-di-cong-tac-hop-ly-duoc-tru.html",
+      "title": "Quy định công tác phí hợp lý của Công ty mới nhất",
+      "excerpt": "Chi phí công tác phí hợp lệ thì cần chứng từ gì? Chi phí công tác có tính thuế TNCN không? Quy định công tác p…",
       "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "Chứng từ",
@@ -258,30 +257,28 @@
         "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach lap so the kho.png",
+      "image": "assets/images/content/pic/Service/images/quy-dinh-cong-tac-phi.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2014-09-16",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/so-theo-doi-tscd-va-ccdc-tai-noi-su-dung-theo-tt-133-va-200.html",
+      "id": "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/so-theo-doi-tscd-va-ccdc-tai-noi-su-dung-theo-tt-133-va-200.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/so-theo-doi-tscd-va-ccdc-tai-noi-su-dung-theo-tt-133-va-200.html",
-      "title": "Mẫu Sổ theo dõi TSCĐ - CCDC tại nơi sử dụng theo TT 133 và 200",
-      "excerpt": "Hướng dẫn cách lập Sổ theo dõi TSCĐ và CCDC tại nơi sử dụng theo Thông tư 133 và 200 – Mẫu S10-DNN (S22-DN)…",
-      "topicLabel": "Tài sản - Kho - CCDC",
+      "href": "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
+      "title": "Mẫu Sổ chi tiết thanh toán với người mua - bán theo TT 133 và 200",
+      "excerpt": "Hướng dẫn cách lập Sổ chi tiết thanh toán với người mua (người bán) theo Thông tư 133 và 200 – Mẫu S12-DNN…",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
-        "TSCĐ",
-        "CCDC",
-        "Tài sản",
-        "Kho",
+        "Chứng từ",
+        "Sổ sách",
         "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-so-theo-doi-Tai-san-co-dinh-cong-cu-dung-cu tai-noi-su-dung.png",
+      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-thanh-toan-nguoi-mua-ban.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
       "modifiedDate": null

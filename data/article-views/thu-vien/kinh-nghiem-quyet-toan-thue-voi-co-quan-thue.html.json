@@ -1,6 +1,6 @@
 {
   "currentIndex": 958,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/kinh-nghiem-lam-ke-toan-cong-ty-xay-dung.html",
     "section": "thu-vien",
@@ -168,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -273,23 +273,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
+      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
-      "title": "Mẫu Sổ chi tiết thanh toán với người mua - bán theo TT 133 và 200",
-      "excerpt": "Hướng dẫn cách lập Sổ chi tiết thanh toán với người mua (người bán) theo Thông tư 133 và 200 – Mẫu S12-DNN…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
+      "title": "Mẫu báo cáo: Kế toán thanh toán thuế GTGT và thuế TNDN tại Công ty Cổ phần Dịch vụ Thương mại Đồng Tâm",
+      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán thanh toán thuế GTGT và thuế TNDN tại Công…",
+      "topicLabel": "Báo cáo thực tập",
       "tags": [
+        "GTGT",
+        "TNDN",
+        "Báo cáo thực tập",
         "Học liệu",
         "Tham khảo",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-thanh-toan-nguoi-mua-ban.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2016-08-26",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

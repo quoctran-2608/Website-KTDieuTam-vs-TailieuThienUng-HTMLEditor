@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1975,
-  "totalCount": 2041,
+  "currentIndex": 1973,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/thue-suat-thue-gtgt-doi-voi-san-pham-tu-san-xuat-hoac-thuong-mai.html",
     "section": "thu-vien",
@@ -165,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -176,6 +176,27 @@
   ],
   "related": [
     {
+      "id": "thu-vien/thoa-uoc-lao-dong-tap-the.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thoa-uoc-lao-dong-tap-the.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thoa-uoc-lao-dong-tap-the.html",
+      "title": "Thỏa ước lao động tập thể là gì? có bắt buộc không? Quy định như nào?",
+      "excerpt": "Quy định về thỏa ước lao động tập thể mới nhất năm 2025 theo Bộ luật Lao động số 45/2019/QH14. 1. Thỏa ước la…",
+      "topicLabel": "Lao động - Tiền lương",
+      "tags": [
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/thoa-uoc-lao-dong-tap-the.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/doi-thoai-tai-noi-lam-viec-la-gi-co-bat-buoc-khong-cach-to-chuc.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -184,10 +205,11 @@
       "canonical": "https://ketoandieutam.com/thu-vien/doi-thoai-tai-noi-lam-viec-la-gi-co-bat-buoc-khong-cach-to-chuc.html",
       "title": "Đối thoại tại nơi làm việc là gì? có bắt buộc không? Cách tổ chức đối thoại tại nơi làm việc",
       "excerpt": "Việc tổ chức đối thoại tại nơi làm việc đang được quy định tại điều 63 của Bộ luật Lao động số 45/2019/QH14 và…",
-      "topicLabel": "Khác",
+      "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/doi-thoai-tai-noi-lam-viec.jpg",
@@ -204,78 +226,60 @@
       "canonical": "https://ketoandieutam.com/thu-vien/thu-tuc-thay-doi-chu-tich-hoi-dong-thuong-luong-tap-the.html",
       "title": "Thủ tục Thay đổi Chủ tịch Hội đồng thương lượng tập thể",
       "excerpt": "Thủ tục “Thay đổi Chủ tịch Hội đồng thương lượng tập thể, đại diện Ủy ban nhân dân cấp tỉnh, chức năng, nhiệm vụ, kế ho…",
-      "topicLabel": "Khác",
+      "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-04-08",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/hoi-dong-thuong-luong-tap-the-thanh-lap-chuc-nang-nhiem-vu.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/hoi-dong-thuong-luong-tap-the-thanh-lap-chuc-nang-nhiem-vu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/hoi-dong-thuong-luong-tap-the-thanh-lap-chuc-nang-nhiem-vu.html",
-      "title": "Hội đồng thương lượng tập thể: thành lập, chức năng, nhiệm vụ",
-      "excerpt": "Quy định về Thành lập Hội đồng thương lượng tập thể, chức năng, nhiệm vụ, hoạt động của Hội đồng thương lượng tập thể…",
-      "topicLabel": "Khác",
-      "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/hoi-dong-thuong-luong-tap-the.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/doi-thoai-tai-noi-lam-viec-la-gi-co-bat-buoc-khong-cach-to-chuc.html",
+      "id": "thu-vien/thoa-uoc-lao-dong-tap-the.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/doi-thoai-tai-noi-lam-viec-la-gi-co-bat-buoc-khong-cach-to-chuc.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/doi-thoai-tai-noi-lam-viec-la-gi-co-bat-buoc-khong-cach-to-chuc.html",
-      "title": "Đối thoại tại nơi làm việc là gì? có bắt buộc không? Cách tổ chức đối thoại tại nơi làm việc",
-      "excerpt": "Việc tổ chức đối thoại tại nơi làm việc đang được quy định tại điều 63 của Bộ luật Lao động số 45/2019/QH14 và…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/thoa-uoc-lao-dong-tap-the.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/thoa-uoc-lao-dong-tap-the.html",
+      "title": "Thỏa ước lao động tập thể là gì? có bắt buộc không? Quy định như nào?",
+      "excerpt": "Quy định về thỏa ước lao động tập thể mới nhất năm 2025 theo Bộ luật Lao động số 45/2019/QH14. 1. Thỏa ước la…",
+      "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/doi-thoai-tai-noi-lam-viec.jpg",
+      "image": "assets/images/content/pic/Service/images/thoa-uoc-lao-dong-tap-the.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
+      "id": "thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
-      "title": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế",
-      "excerpt": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế trên hệ thống Dịch vụ công hoặc thuế điện tử 1. Các mã thủ tục hàn…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html",
+      "title": "Quy chế dân chủ ở cơ sở tại nơi làm việc",
+      "excerpt": "Quy định về quy chế dân chủ ở cơ sở tại nơi làm việc hiện nay đang được thực hiện theo Nghị định 145/2020/NĐ-CP q…",
+      "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Nộp tờ khai",
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Ma-thu-tuc-hanh-chinh-nop-to-khai-thue.png",
+      "image": "assets/images/content/pic/Service/images/quy-che-dan-chu.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2007-07-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

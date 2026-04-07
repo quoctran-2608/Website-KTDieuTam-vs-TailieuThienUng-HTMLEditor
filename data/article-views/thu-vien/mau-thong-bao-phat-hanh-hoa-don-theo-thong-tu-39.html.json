@@ -1,6 +1,6 @@
 {
   "currentIndex": 1321,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-thong-bao-phat-hanh-hoa-don-moi-nhat.html",
     "section": "thu-vien",
@@ -15,8 +15,7 @@
       "GTGT",
       "Mẫu biểu thuế",
       "hóa đơn",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Thuế",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -37,7 +36,7 @@
     "tags": [
       "Mẫu biểu doanh nghiệp",
       "thủ tục",
-      "Mẫu biểu",
+      "Doanh nghiệp",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Khoan-phuc-loi-chiu-thue-TNCN(1).png",
@@ -167,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -177,6 +176,29 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/mau-04-ss-hddt-thong-bao-hoa-don-dien-tu-co-sai-sot.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-04-ss-hddt-thong-bao-hoa-don-dien-tu-co-sai-sot.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-04-ss-hddt-thong-bao-hoa-don-dien-tu-co-sai-sot.html",
+      "title": "Mẫu 04/SS-HĐĐT thông báo hóa đơn điện tử có sai sót 2026 mới nhất",
+      "excerpt": "Mẫu 04/SS-HĐĐT thông báo hóa đơn điện tử đã lập có sai sót mới nhất năm 2025 theo Nghị định 70/2025/NĐ-CP sửa đổi Nghị…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn điện tử",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Mau-thong-bao-hoa-don-co-sai-sot.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2025-06-01",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/mau-bao-cao-tinh-hinh-su-dung-hoa-don-theo-thong-tu-39.html",
       "section": "thu-vien",
@@ -191,8 +213,7 @@
         "GTGT",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau bao cao tinh hinh su dung hoa don.png",
@@ -214,105 +235,59 @@
         "GTGT",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2010-05-14",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-hoa-don-ban-hang-moi-nhat-2014-theo-tt-39.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-hoa-don-ban-hang-moi-nhat-2014-theo-tt-39.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-hoa-don-ban-hang-moi-nhat-2014-theo-tt-39.html",
-      "title": "Mẫu Hóa đơn bán hàng mới nhất 2014 theo Thông tư 39",
-      "excerpt": "Mẫu Hóa đơn bán hàng mới nhất năm 2014 Ban hành kèm theo Thông tư số 39/2014/TT-BTC ngày 31/3/2014 của Bộ Tài chính. Mẫ…",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
-      "tags": [
-        "GTGT",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-03-31",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/hoa-don-chua-thong-bao-phat-hanh-da-su-dung.html",
+      "id": "thu-vien/bang-phan-bo-so-thue-gtgt-phai-nop-mau-01-7-gtgt.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/hoa-don-chua-thong-bao-phat-hanh-da-su-dung.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/hoa-don-chua-thong-bao-phat-hanh-da-su-dung.html",
-      "title": "Hóa đơn chưa thông báo phát hành đã sử dụng",
-      "excerpt": "Sử dụng hóa đơn chưa thông báo phát hành có bị phạt? Cách xử lý hóa đơn chưa thông báo phát hành đã sử dụng? Hóa đơn đầ…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/su-dung-hoa-don-chua-thong-bao-phat-hanh.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2018-12-23",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-bao-cao-tinh-hinh-su-dung-hoa-don-theo-thong-tu-39.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bao-cao-tinh-hinh-su-dung-hoa-don-theo-thong-tu-39.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bao-cao-tinh-hinh-su-dung-hoa-don-theo-thong-tu-39.html",
-      "title": "Mẫu Báo cáo tình hình sử dụng hóa đơn mới nhất theo TT 39",
-      "excerpt": "Mẫu Báo cáo tình hình sử dụng hóa đơn mới nhất Ban hành kèm theo Thông tư số 39/2014/TT-BTC ngày 31/3/2014 của Bộ Tài c…",
+      "href": "thu-vien/bang-phan-bo-so-thue-gtgt-phai-nop-mau-01-7-gtgt.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-phan-bo-so-thue-gtgt-phai-nop-mau-01-7-gtgt.html",
+      "title": "Bảng phân bổ số thuế GTGT phải nộp mẫu 01-7/GTGT",
+      "excerpt": "Mẫu 01-7/GTGT Bảng phân bổ số thuế GTGT phải nộp cho các địa phương nơi có công trình xây dựng, lắp đặt li…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Biểu mẫu"
+        "Thuế",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/mau bao cao tinh hinh su dung hoa don.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-03-31",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2015-02-27",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
+      "id": "thu-vien/mau-04-ss-hddt-thong-bao-hoa-don-dien-tu-co-sai-sot.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
-      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/mau-04-ss-hddt-thong-bao-hoa-don-dien-tu-co-sai-sot.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-04-ss-hddt-thong-bao-hoa-don-dien-tu-co-sai-sot.html",
+      "title": "Mẫu 04/SS-HĐĐT thông báo hóa đơn điện tử có sai sót 2026 mới nhất",
+      "excerpt": "Mẫu 04/SS-HĐĐT thông báo hóa đơn điện tử đã lập có sai sót mới nhất năm 2025 theo Nghị định 70/2025/NĐ-CP sửa đổi Nghị…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Thuế"
+        "Hóa đơn điện tử",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-02",
+      "image": "assets/images/content/pic/Service/images/Mau-thong-bao-hoa-don-co-sai-sot.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2025-06-01",
       "modifiedDate": null
     }
   ]

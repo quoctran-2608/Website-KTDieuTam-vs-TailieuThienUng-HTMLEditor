@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1833,
-  "totalCount": 2041,
+  "currentIndex": 1831,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/thay-doi-thong-tin-dang-ky-thue-cua-ca-nhan.html",
     "section": "thu-vien",
@@ -10,14 +10,14 @@
     "canonical": "https://ketoandieutam.com/thu-vien/thay-doi-thong-tin-dang-ky-thue-cua-ca-nhan.html",
     "title": "Thay đổi thông tin đăng ký thuế của cá nhân 2026",
     "excerpt": "Hướng dẫn làm hồ sơ, thủ tục thay đổi thông tin đăng ký thuế theo quy định mới nhất năm 2026 tại Thông tư 86/2024/TT-BT…",
-    "topicLabel": "Môn bài - Hộ kinh doanh - Nhà thầu - MST",
+    "topicLabel": "Mã số thuế - Đăng ký thuế",
     "tags": [
       "Đăng ký thuế",
-      "Môn bài",
-      "Hộ kinh doanh",
-      "Nhà thầu",
+      "Mã số thuế",
+      "Thuế",
+      "Hóa đơn",
       "MST",
-      "Thuế"
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Thay-doi-thong-tn-dang-ky-thue.png",
     "libraryKindLabel": "Hướng dẫn",
@@ -33,10 +33,10 @@
     "canonical": "https://ketoandieutam.com/thu-vien/the-quay-hang-mau-so-02-bh-theo-thong-tu-99.html",
     "title": "Thẻ quầy hàng - Mẫu số 02-BH theo Thông tư 99",
     "excerpt": "Mẫu thẻ quầy hàng mới nhất năm 2026 là Mẫu số 02-BH được ban hàng kèm theo Thông tư số 99/2025/TT-BTC (Thay thế mẫu 02-…",
-    "topicLabel": "Khác",
+    "topicLabel": "Mẫu biểu kế toán",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "Mẫu biểu kế toán",
+      "Kế toán",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/The-quay-hang-mau02-bh-tt99.png",
@@ -166,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -267,47 +267,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.html",
+      "id": "thu-vien/mau-06-theo-nd-119-de-nghi-cap-hoa-don-dien-tu-ban-le.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-ky-hieu-mau-so-hoa-don-gia-tri-gia-tang.html",
-      "title": "Quy định về ký hiệu mẫu số hóa đơn Giá trị gia tăng",
-      "excerpt": "Quy định về mẫu số và ký hiệu hóa đơn GTGT, hóa đơn bán hàng, tem vé... Quy định về loại hóa đơn, ký hiệu hóa đơn điện…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/mau-06-theo-nd-119-de-nghi-cap-hoa-don-dien-tu-ban-le.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-06-theo-nd-119-de-nghi-cap-hoa-don-dien-tu-ban-le.html",
+      "title": "Mẫu 06/ĐN-PSĐT đơn đề nghị cấp hóa đơn điện tử theo Nghị định 70/2025",
+      "excerpt": "Mẫu 06/ĐN-PSĐT - Đơn đề nghị cấp hóa đơn điện tử có mã của cơ quan thuế theo từng lần phát sinh mới nhất năm 2025 theo…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
-        "Hóa đơn",
+        "Hóa đơn điện tử",
+        "Mẫu biểu thuế",
+        "hóa đơn",
         "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/quy-dinh-kho-giay-cua-hoa-don-dat-in.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-03-31",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
-      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
-      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "GTGT",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Thuế"
-      ],
-      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-02",
+      "publishDate": "2025-06-01",
       "modifiedDate": null
     }
   ]

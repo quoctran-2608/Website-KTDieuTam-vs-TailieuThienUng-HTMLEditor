@@ -1,6 +1,6 @@
 {
   "currentIndex": 1113,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-cong-van-dang-ky-thoi-gian-bat-dau-mien-thue-tndn.html",
     "section": "thu-vien",
@@ -15,7 +15,7 @@
       "TNDN",
       "Mẫu biểu doanh nghiệp",
       "thủ tục",
-      "Mẫu biểu",
+      "Doanh nghiệp",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Dang-ky-thoi-gian-mien-thue-TNDN.png",
@@ -35,8 +35,7 @@
     "topicLabel": "Mẫu biểu kế toán",
     "tags": [
       "Mẫu biểu kế toán",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Kế toán",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/mau CV xin viec ke toan.jpg",
@@ -166,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -189,13 +188,35 @@
       "tags": [
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-hop-dong-thue-nha(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-04-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-hoa-don-dien-tu-co-ma-co-quan-thue.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-hoa-don-dien-tu-co-ma-co-quan-thue.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-hoa-don-dien-tu-co-ma-co-quan-thue.html",
+      "title": "Mẫu hóa đơn điện tử có mã cơ quan thuế 2025 mới nhất",
+      "excerpt": "Hóa đơn điện tử có mã của cơ quan thuế là hóa đơn điện tử được cơ quan thuế cấp mã trước khi tổ chức, cá nhân bán hàng…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn điện tử",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Hoa-don-GTGT-co-ma-cua-CQT(1).png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
@@ -211,59 +232,35 @@
       "tags": [
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-giay-uy-quyen-nop-thue-thay-chu-nha.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "1967-02-05",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-giay-de-nghi-hoan-thue-gtgt-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-giay-de-nghi-hoan-thue-gtgt-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-giay-de-nghi-hoan-thue-gtgt-moi-nhat.html",
-      "title": "Mẫu Giấy Đề Nghị Hoàn Thuế Giá Trị Gia Tăng - GTGT Mới Nhất",
-      "excerpt": "Mẫu số 01/HT - GIẤY ĐỀ NGHỊ HOÀN THUẾ GIÁ TRỊ GIA TĂNG - GTGT theo Thông tư số 80/2021/TT-BTC 1. Các trường hợp được ho…",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
-      "tags": [
-        "GTGT",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/thoi-diem-xac-dinh-thue-gtgt-doi-voi-hang-hoa-dich-vu.html",
+      "id": "thu-vien/mau-01-dk-tdktt-van-ban-de-nghi-thay-doi-ky-tinh-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thoi-diem-xac-dinh-thue-gtgt-doi-voi-hang-hoa-dich-vu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/thoi-diem-xac-dinh-thue-gtgt-doi-voi-hang-hoa-dich-vu.html",
-      "title": "Thời điểm xác định thuế GTGT đối với hàng hóa, dịch vụ mới nhất 2026",
-      "excerpt": "Quy định về thời điểm xác định thuế GTGT đối với hàng hóa, dịch vụ mới nhất năm 2026 hiện nay theo Luật thuế GTGT số:…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/mau-01-dk-tdktt-van-ban-de-nghi-thay-doi-ky-tinh-thue.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-01-dk-tdktt-van-ban-de-nghi-thay-doi-ky-tinh-thue.html",
+      "title": "Văn bản đề nghị thay đổi kỳ tính thuế từ tháng sang quý Mẫu 01/DK-TĐKTT",
+      "excerpt": "Mẫu 01/DK-TĐKTT Văn bản đề nghị thay đổi kỳ tính thuế từ tháng sang quý; Mẫu 01/DK-TĐKTT theo Thông tư 80/2021/TT-BTC s…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "GTGT",
-        "Hóa đơn",
+        "Mẫu biểu thuế",
+        "hóa đơn",
         "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/thoi-diem-tinh-thue-GTGT.png",
+      "image": "assets/images/content/pic/Service/images/Mau-01dk-tdktt-van-ban-de-nghi-thay-doi-ky-tinh-thue.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2024-11-26",
+      "publishDate": "2021-09-29",
       "modifiedDate": null
     },
     {
@@ -279,8 +276,7 @@
       "tags": [
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-hop-dong-thue-nha(1).png",

@@ -1,6 +1,6 @@
 {
   "currentIndex": 687,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/cong-van-348-ct-cs-gioi-thieu-noi-dung-moi-tai-nd-70-2025.html",
     "section": "thu-vien",
@@ -13,7 +13,8 @@
     "topicLabel": "Công văn",
     "tags": [
       "Công văn",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/Cong-van-348-CT-CS.png",
@@ -33,7 +34,8 @@
     "topicLabel": "Công văn",
     "tags": [
       "Công văn",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/cong van 3706_tct gioi thieu noi dung moi thong tu 95.png",
@@ -163,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -173,26 +175,6 @@
     }
   ],
   "related": [
-    {
-      "id": "thu-vien/cong-van-12568-btc-cdkt-giai-thich-noi-dung-thong-tu-200.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-van-12568-btc-cdkt-giai-thich-noi-dung-thong-tu-200.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-12568-btc-cdkt-giai-thich-noi-dung-thong-tu-200.html",
-      "title": "Công văn 12568/BTC-CĐKT Giải thích nội dung Thông tư 200/2014/TT-BTC",
-      "excerpt": "Công văn 12568/BTC-CĐKT ngày 09/09/2015 của Bộ tài chính gửi Công ty Kiểm toán Giải thích nội dung Thông tư 200/2014/TT…",
-      "topicLabel": "Công văn",
-      "tags": [
-        "Công văn",
-        "Văn bản pháp luật",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Cong van 12568_BTC-CĐKT giai thich noi dung thong tu 200.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2015-09-09",
-      "modifiedDate": null
-    },
     {
       "id": "thu-vien/cong-van-3706-tct-kk-gioi-thieu-noi-dung-thong-tu-95.html",
       "section": "thu-vien",
@@ -205,7 +187,8 @@
       "topicLabel": "Công văn",
       "tags": [
         "Công văn",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/cong van 3706_tct gioi thieu noi dung moi thong tu 95.png",
@@ -225,16 +208,60 @@
       "topicLabel": "Công văn",
       "tags": [
         "Công văn",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2014-10-24",
       "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-van-2785-tct-cs-noi-dung-moi-cua-tt-78-ve-thue-tndn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cong-van-2785-tct-cs-noi-dung-moi-cua-tt-78-ve-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-2785-tct-cs-noi-dung-moi-cua-tt-78-ve-thue-tndn.html",
+      "title": "Công văn 2785/TCT-CS nội dung mới của TT 78/2014/TT-BTC về thuế TNDN",
+      "excerpt": "Công văn Số 2785/TCT-CS ngày 23/7/2014 giới thiệu nội dung mới của Thông tư số 78/2014/TT-BTC về thuế TNDN. BỘ TÀ…",
+      "topicLabel": "Công văn",
+      "tags": [
+        "TNDN",
+        "Công văn",
+        "Thuế",
+        "Hóa đơn",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2014-07-23",
+      "modifiedDate": null
     }
   ],
   "latestOther": [
+    {
+      "id": "thu-vien/cac-van-ban-phap-luat-thue-moi-nhat-nam-2015.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-van-ban-phap-luat-thue-moi-nhat-nam-2015.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-van-ban-phap-luat-thue-moi-nhat-nam-2015.html",
+      "title": "Các văn bản pháp luật thuế mới nhất năm 2015",
+      "excerpt": "Với mục tiêu hỗ trợ các bạn kịp thời cập nhật các văn bản luật thuế mới nhất hiện hành. Công ty kế to…",
+      "topicLabel": "Công văn",
+      "tags": [
+        "Công văn",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2013-12-26",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
       "section": "thu-vien",
@@ -249,7 +276,8 @@
         "GTGT",
         "Kê khai",
         "Công văn",
-        "Văn bản pháp luật",
+        "Thuế",
+        "Hóa đơn",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",

@@ -1,6 +1,6 @@
 {
   "currentIndex": 246,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/cach-hach-toan-mua-hang-ban-thang-khong-qua-kho-tren-misa.html",
     "section": "thu-vien",
@@ -165,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -262,47 +262,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
+      "id": "thu-vien/mau-bang-ke-hoa-don-chiet-khau-thuong-mai.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
-      "title": "Mẫu bảng kê mua vào bán ra trên File Excel 2026 mới nhất",
-      "excerpt": "Bảng kê mua vào bán ra dùng để kê khai hóa đơn đầu ra và hóa đơn đầu vào khi làm tờ khai thuế GTGT Kế Toán Diệu Tâm có…",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/mau-bang-ke-hoa-don-chiet-khau-thuong-mai.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-ke-hoa-don-chiet-khau-thuong-mai.html",
+      "title": "Mẫu bảng kê hóa đơn chiết khấu thương mại theo Nghị Định 70/2025",
+      "excerpt": "Mẫu bảng kê hóa đơn cần điều chỉnh để thực hiện chiết khấu thương mại theo quy định tại Nghị Định 70/2025/NĐ-CP Theo Kh…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
+        "GTGT",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Mau-bang-ke-mua-vao(3).png",
+      "image": "assets/images/content/pic/Service/images/Bang-ke-hoa-don-CKTM.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-08-25",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
-      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
-      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Thực hành"
-      ],
-      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-01-01",
+      "publishDate": "2025-06-10",
       "modifiedDate": null
     },
     {

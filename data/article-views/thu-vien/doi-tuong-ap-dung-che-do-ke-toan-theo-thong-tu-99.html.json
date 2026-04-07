@@ -1,6 +1,6 @@
 {
   "currentIndex": 775,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/doi-thoai-tai-noi-lam-viec-la-gi-co-bat-buoc-khong-cach-to-chuc.html",
     "section": "thu-vien",
@@ -10,10 +10,11 @@
     "canonical": "https://ketoandieutam.com/thu-vien/doi-thoai-tai-noi-lam-viec-la-gi-co-bat-buoc-khong-cach-to-chuc.html",
     "title": "Đối thoại tại nơi làm việc là gì? có bắt buộc không? Cách tổ chức đối thoại tại nơi làm việc",
     "excerpt": "Việc tổ chức đối thoại tại nơi làm việc đang được quy định tại điều 63 của Bộ luật Lao động số 45/2019/QH14 và…",
-    "topicLabel": "Khác",
+    "topicLabel": "Lao động - Tiền lương",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "Lao động",
+      "Tiền lương",
+      "Bảo hiểm",
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/doi-thoai-tai-noi-lam-viec.jpg",
@@ -164,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -174,6 +175,28 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/ke-toan-giao-dich-hop-dong-hop-tac-kinh-doanh-theo-thong-tu-99.html",
       "section": "thu-vien",
@@ -214,28 +237,6 @@
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/nguyen-tac-ke-toan-cac-khoan-chi-phi.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/nguyen-tac-ke-toan-cac-khoan-doanh-thu-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nguyen-tac-ke-toan-cac-khoan-doanh-thu-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/nguyen-tac-ke-toan-cac-khoan-doanh-thu-theo-thong-tu-99.html",
-      "title": "Nguyên tắc kế toán các khoản doanh thu theo Thông tư 99",
-      "excerpt": "Tổng hợp 7 Nguyên tắc kế toán các khoản doanh thu theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp (á…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
-      "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
-        "Kế toán",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/nguyen-tac-ke-toan-cac-khoan-doanh-thu.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2026-01-01",
       "modifiedDate": null
@@ -284,28 +285,6 @@
       "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
-      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
-      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Thực hành"
-      ],
-      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

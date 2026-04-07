@@ -1,6 +1,6 @@
 {
   "currentIndex": 1151,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-giay-uy-quyen-ky-hoa-don-gtgt-thay-giam-doc.html",
     "section": "thu-vien",
@@ -15,8 +15,7 @@
       "GTGT",
       "Mẫu biểu thuế",
       "hóa đơn",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Thuế",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/quy-dinh-ve-dong-dau-tren-hoa-don.png",
@@ -39,8 +38,8 @@
       "Quyết toán",
       "Mẫu biểu thuế",
       "hóa đơn",
-      "Mẫu biểu",
-      "Thủ tục"
+      "Thuế",
+      "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Giay-uy-quyen-quyet-toan-thue-TNCN.png",
     "libraryKindLabel": "Biểu mẫu",
@@ -169,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -192,13 +191,35 @@
       "tags": [
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-hop-dong-thue-nha(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-04-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-thu-xac-nhan-thu-nhap-de-quyet-toan-thue-tncn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-thu-xac-nhan-thu-nhap-de-quyet-toan-thue-tncn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-thu-xac-nhan-thu-nhap-de-quyet-toan-thue-tncn.html",
+      "title": "Mẫu thư xác nhận thu nhập để quyết toán thuế TNCN 2026 mới nhất",
+      "excerpt": "Khi cá nhân tự làm quyết toán thuế thu nhập cá nhân thì cần các hồ sơ chứng từ để xác định, chứng minh thu nhập: + Nếu…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "TNCN",
+        "Quyết toán",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Mau-thu-xac-minh-thu-nhap(1)(1).png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-09-15",
       "modifiedDate": null
     },
     {
@@ -214,8 +235,7 @@
       "tags": [
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Kê khai",
         "Biểu mẫu"
       ],
@@ -223,52 +243,29 @@
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-03-05",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-giay-de-nghi-hoan-thue-gtgt-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-giay-de-nghi-hoan-thue-gtgt-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-giay-de-nghi-hoan-thue-gtgt-moi-nhat.html",
-      "title": "Mẫu Giấy Đề Nghị Hoàn Thuế Giá Trị Gia Tăng - GTGT Mới Nhất",
-      "excerpt": "Mẫu số 01/HT - GIẤY ĐỀ NGHỊ HOÀN THUẾ GIÁ TRỊ GIA TĂNG - GTGT theo Thông tư số 80/2021/TT-BTC 1. Các trường hợp được ho…",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
-      "tags": [
-        "GTGT",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
+      "id": "thu-vien/bang-thue-suat-thue-tncn-theo-bieu-luy-tien-tung-phan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
-      "title": "Các loại thuế phải nộp khi cá nhân cho thuê nhà 2026",
-      "excerpt": "Hướng dẫn cách tính các loại thuế cho thuê nhà, cho thuê tài sản như thuế thu nhập cá nhân, thuế giá trị gia tăng theo…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/bang-thue-suat-thue-tncn-theo-bieu-luy-tien-tung-phan.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bang-thue-suat-thue-tncn-theo-bieu-luy-tien-tung-phan.html",
+      "title": "Bảng thuế suất thuế TNCN theo biểu lũy tiến 2026 mới nhất",
+      "excerpt": "Thuế suất thuế TNCN từ tiền lương tiền công có 2 loại: + Loại 1 : Thuế suất theo biểu lũy tiền từng phần Áp dụng khi tí…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "GTGT",
         "TNCN",
-        "Hóa đơn",
+        "Mẫu biểu thuế",
+        "hóa đơn",
         "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Thue-cho-thue-nha.png",
+      "image": "assets/images/content/pic/Service/images/Thue-suat-thue-TNCN.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {
@@ -284,8 +281,7 @@
       "tags": [
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-hop-dong-thue-nha(1).png",

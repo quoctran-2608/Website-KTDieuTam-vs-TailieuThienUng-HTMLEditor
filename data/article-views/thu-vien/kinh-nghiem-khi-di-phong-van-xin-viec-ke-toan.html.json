@@ -1,6 +1,6 @@
 {
   "currentIndex": 955,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/khung-thoi-gian-trich-khau-hao-cac-loai-tai-san-co-dinh.html",
     "section": "thu-vien",
@@ -169,8 +169,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -203,6 +203,29 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/nhung-cau-hoi-phong-van-thuong-gap-va-cach-tra-loi.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/nhung-cau-hoi-phong-van-thuong-gap-va-cach-tra-loi.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/nhung-cau-hoi-phong-van-thuong-gap-va-cach-tra-loi.html",
+      "title": "Những câu hỏi phỏng vấn thường gặp khi đi xin việc và cách trả lời",
+      "excerpt": "Ở phần trước các bạn đã được chia sẻ những kinh nghiệm phỏng vấn xin việc kế toán , phần này kế toán Diệu Tâm xin chia…",
+      "topicLabel": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "tags": [
+        "Kinh nghiệm",
+        "Hỏi đáp",
+        "Nghề nghiệp",
+        "Học liệu",
+        "Tham khảo",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/nhung cau phong van thuong gap.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/kinh-nghiem-lam-ke-toan-cong-ty-xay-dung.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -223,29 +246,6 @@
       "image": "assets/images/content/pic/Service/images/kinh nghiem lam ke toan xay dung.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-03-31",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cong-viec-cua-ke-toan-thue-trong-doanh-nghiep-phai-lam.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-viec-cua-ke-toan-thue-trong-doanh-nghiep-phai-lam.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cong-viec-cua-ke-toan-thue-trong-doanh-nghiep-phai-lam.html",
-      "title": "Mô tả các công việc của người kế toán thuế phải làm trong doanh nghiệp",
-      "excerpt": "Kế toán thuế là 1 vị trí công việc không thể thiếu trong bất kỳ 1 DN nào, nhưng đại đa số các bạn sinh viên kế toán mới…",
-      "topicLabel": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
-      "tags": [
-        "Kinh nghiệm",
-        "Hỏi đáp",
-        "Nghề nghiệp",
-        "Học liệu",
-        "Tham khảo",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cong viec cua ke toan thue.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-01-01",
       "modifiedDate": null
     }
   ],

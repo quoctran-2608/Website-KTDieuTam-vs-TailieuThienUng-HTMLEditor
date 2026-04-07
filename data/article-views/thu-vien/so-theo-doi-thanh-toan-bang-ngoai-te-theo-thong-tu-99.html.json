@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1762,
-  "totalCount": 2041,
+  "currentIndex": 1760,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/so-theo-doi-phan-bo-cac-khoan-chenh-lech-phat-sinh-khi-mua-khoan-dau-tu-vao-cong-ty-lien-ket.html",
     "section": "thu-vien",
@@ -168,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -187,15 +187,37 @@
       "canonical": "https://ketoandieutam.com/thu-vien/so-theo-doi-chi-tiet-von-dau-tu-cua-chu-so-huu-theo-thong-tu-99.html",
       "title": "Sổ theo dõi chi tiết vốn đầu tư của chủ sở hữu theo Thông tư 99",
       "excerpt": "Sổ theo dõi chi tiết nguồn vốn kinh doanh dùng để ghi chép số hiện có và tình hình tăng, giảm nguồn vốn kinh doanh của…",
-      "topicLabel": "Khác",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-so-theo doi-chi-tiet-von-dau-tu-cua-chu-so-huu.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
+      "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     },
     {
@@ -207,35 +229,16 @@
       "canonical": "https://ketoandieutam.com/thu-vien/so-chi-tiet-co-phieu-mua-lai-cua-chinh-minh-theo-thong-tu-99.html",
       "title": "Sổ chi tiết cổ phiếu mua lại của chính mình theo Thông tư 99",
       "excerpt": "Sổ chi tiết cổ phiếu mua lại của chính mình dùng để theo dõi chi tiết số cổ phiếu doanh nghiệp mua lại của chính doanh…",
-      "topicLabel": "Khác",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-co-phieu-mua-lai-cua-chinh-minh.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.html",
-      "title": "Mẫu Báo cáo tình hình tài chính theo Thông tư 133 – Cách lập",
-      "excerpt": "Hướng dẫn cách lập Báo cáo tình hình tài chính Mẫu B01a – DNN theo Mẫu Báo cáo tình hình tài chính theo Thông tư 133 mớ…",
-      "topicLabel": "Khác",
-      "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2016-08-26",
       "modifiedDate": null
     }
   ],
@@ -249,10 +252,11 @@
       "canonical": "https://ketoandieutam.com/thu-vien/cach-lap-so-theo-doi-thanh-toan-bang-ngoai-te.html",
       "title": "Cách lập Sổ theo dõi thanh toán bằng ngoại tệ",
       "excerpt": "Hướng dẫn cách lập Sổ theo dõi thanh toán bằng ngoại tệ Mẫu S33- DN theo Thông tư 200/2014/TT-BTC , mục đích lập, căn c…",
-      "topicLabel": "Khác",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -269,10 +273,11 @@
       "canonical": "https://ketoandieutam.com/thu-vien/so-theo-doi-chi-tiet-von-dau-tu-cua-chu-so-huu-theo-thong-tu-99.html",
       "title": "Sổ theo dõi chi tiết vốn đầu tư của chủ sở hữu theo Thông tư 99",
       "excerpt": "Sổ theo dõi chi tiết nguồn vốn kinh doanh dùng để ghi chép số hiện có và tình hình tăng, giảm nguồn vốn kinh doanh của…",
-      "topicLabel": "Khác",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-so-theo doi-chi-tiet-von-dau-tu-cua-chu-so-huu.png",

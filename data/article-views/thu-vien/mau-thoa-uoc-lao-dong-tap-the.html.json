@@ -1,6 +1,6 @@
 {
   "currentIndex": 1313,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/mau-the-tinh-gia-thanh-san-pham-dich-vu-theo-tt-133-va-200.html",
     "section": "thu-vien",
@@ -13,8 +13,7 @@
     "topicLabel": "Mẫu biểu kế toán",
     "tags": [
       "Mẫu biểu kế toán",
-      "Mẫu biểu",
-      "Thủ tục",
+      "Kế toán",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/mau-the-tinh-gia-thanh-san-pham-dich-vu.png",
@@ -35,7 +34,7 @@
     "tags": [
       "Mẫu biểu doanh nghiệp",
       "thủ tục",
-      "Mẫu biểu",
+      "Doanh nghiệp",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Thong-bao-sua-doi-chuong-trinh-khuyen-mai.png",
@@ -165,8 +164,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -188,14 +187,34 @@
       "tags": [
         "Mẫu biểu lao động",
         "bảo hiểm",
-        "Mẫu biểu",
-        "Thủ tục",
         "Lao động",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-noi-quy-lao-dong(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2019-11-20",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-phu-luc-hop-dong-lao-dong-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-phu-luc-hop-dong-lao-dong-moi-nhat.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-phu-luc-hop-dong-lao-dong-moi-nhat.html",
+      "title": "Mẫu phụ lục hợp đồng lao động mới nhất năm 2026",
+      "excerpt": "Phụ lục hợp đồng lao động được lập, ký kết và sử dụng để quy định chi tiết hợp đồng lao động, hoặc để sửa đổi, bổ sung…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "tags": [
+        "Mẫu biểu lao động",
+        "bảo hiểm",
+        "Lao động",
+        "Hợp đồng lao động",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/mau-phu-luc-hop-dong-lao-dong(2).png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-01-02",
       "modifiedDate": null
     },
     {
@@ -211,37 +230,12 @@
       "tags": [
         "Mẫu biểu lao động",
         "bảo hiểm",
-        "Mẫu biểu",
-        "Thủ tục",
         "Lao động",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/de-nghi-dang-ky-noi-quy-lao-dong.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2019-11-20",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-doanh-sach-nguoi-lao-dong-de-giai-the-doanh-nghiep.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-doanh-sach-nguoi-lao-dong-de-giai-the-doanh-nghiep.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/mau-doanh-sach-nguoi-lao-dong-de-giai-the-doanh-nghiep.html",
-      "title": "Mẫu danh sách người lao động để giải thể Doanh nghiệp",
-      "excerpt": "Mẫu danh sách người lao động giải thể Doanh nghiệp, giải thể Công ty. Tải Mẫu danh sách người lao động miễn phí về tại…",
-      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
-      "tags": [
-        "Mẫu biểu lao động",
-        "bảo hiểm",
-        "Mẫu biểu",
-        "Thủ tục",
-        "Lao động",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
       "modifiedDate": null
     }
   ],
@@ -280,8 +274,6 @@
       "tags": [
         "Mẫu biểu lao động",
         "bảo hiểm",
-        "Mẫu biểu",
-        "Thủ tục",
         "Lao động",
         "Biểu mẫu"
       ],

@@ -1,6 +1,6 @@
 {
   "currentIndex": 965,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/lenh-dieu-di-cong-tac-cua-cong-ty.html",
     "section": "thu-vien",
@@ -10,10 +10,11 @@
     "canonical": "https://ketoandieutam.com/thu-vien/lenh-dieu-di-cong-tac-cua-cong-ty.html",
     "title": "Quyết định cử đi công tác trong nước và nước ngoài",
     "excerpt": "Mẫu quyết định cử đi công tác trong nước và nước ngoài của công ty, đầy là 1 trong những giấy tờ quan tr…",
-    "topicLabel": "Khác",
+    "topicLabel": "Chứng từ - Sổ sách",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "Chứng từ",
+      "Sổ sách",
+      "Kế toán",
       "Văn bản"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -35,7 +36,8 @@
       "GTGT",
       "Luật",
       "Bộ luật",
-      "Văn bản pháp luật",
+      "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/luat 106_2016_qh13 sua doi luat thue gtgt, quan ly thue.png",
@@ -165,8 +167,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -184,10 +186,11 @@
       "canonical": "https://ketoandieutam.com/thu-vien/cac-loai-bao-cao-thue-phai-nop-hang-thang-va-quy.html",
       "title": "Các loại báo cáo thuế phải nộp hàng Tháng và Quý",
       "excerpt": "Báo cáo thuế theo Qúy, Tháng gồm những gì? Các tờ khai thuế phải nộp hàng Qúy, Tháng cho cơ quan thuế? Kế toán Diệu Tâm…",
-      "topicLabel": "Khác",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/bao-cao-thue-quy-gom-nhung-gi.png",
@@ -196,43 +199,46 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-hinh-thuc-thanh-toan-khong-dung-tien-mat.html",
+      "id": "thu-vien/cac-truong-hop-khong-phai-ke-khai-nop-thue-gtgt.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-hinh-thuc-thanh-toan-khong-dung-tien-mat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cac-hinh-thuc-thanh-toan-khong-dung-tien-mat.html",
-      "title": "Các hình thức thanh toán không dùng tiền mặt 2026 mới nhất",
-      "excerpt": "Quy định về các hình thức thanh toán không dùng tiền mặt mới nhất năm 2026 theo Nghị định 181/2025/NĐ-CP hướng dẫn Luật…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/cac-truong-hop-khong-phai-ke-khai-nop-thue-gtgt.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cac-truong-hop-khong-phai-ke-khai-nop-thue-gtgt.html",
+      "title": "Các trường hợp không tính thuế GTGT năm 2026 mới nhất",
+      "excerpt": "Các trường hợp không phải tính thuế GTGT mới nhất năm 2026 theo Nghị định 181/2025/NĐ-CP hướng dẫn Luật thuế GTGT Trước…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Kê khai",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/thanh-toan-khong-dung-tien-mat.jpg",
+      "image": "assets/images/content/pic/Service/images/hoa-don-xuat-tieu-dung-noi-bo.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2024-05-15",
+      "publishDate": "2025-07-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "id": "thu-vien/doi-tuong-chiu-thue-gtgt-thue-suat-0-theo-tt-219.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "title": "Cách đăng ký và nộp Tiền thuế điện tử qua mạng mới nhất.",
-      "excerpt": "Hướng dẫn cách Đăng ký nộp thuế điện tử qua mạng -> Cách lấy giấy nộp tiền thuế điện tử -> Cách nộp thuế điện tử trên t…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/doi-tuong-chiu-thue-gtgt-thue-suat-0-theo-tt-219.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/doi-tuong-chiu-thue-gtgt-thue-suat-0-theo-tt-219.html",
+      "title": "Các mặt hàng chịu thuế suất GTGT 0% năm 2026 mới nhất",
+      "excerpt": "Quy định về các đối tượng, các mặt hàng, các sản phẩm, hàng hóa, dịch vụ được áp dụng mức thuế suất 0% mới nhất năm 202…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-nop-thue-dien-tu-qua-mang.png",
+      "image": "assets/images/content/pic/Service/images/doi-tuong-chiu-thue-gtgt-0.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2016-07-01",
       "modifiedDate": null
     }
   ],
@@ -246,10 +252,11 @@
       "canonical": "https://ketoandieutam.com/thu-vien/cac-loai-bao-cao-thue-phai-nop-hang-thang-va-quy.html",
       "title": "Các loại báo cáo thuế phải nộp hàng Tháng và Quý",
       "excerpt": "Báo cáo thuế theo Qúy, Tháng gồm những gì? Các tờ khai thuế phải nộp hàng Qúy, Tháng cho cơ quan thuế? Kế toán Diệu Tâm…",
-      "topicLabel": "Khác",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/bao-cao-thue-quy-gom-nhung-gi.png",
@@ -258,24 +265,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
+      "id": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
-      "title": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế",
-      "excerpt": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế trên hệ thống Dịch vụ công hoặc thuế điện tử 1. Các mã thủ tục hàn…",
-      "topicLabel": "Khác",
+      "href": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "title": "Danh sách mã chương, mã tiểu mục nộp thuế mới nhất năm 2026",
+      "excerpt": "Danh sách mã chương, mã tiểu mục nộp thuế TNCN, thuế GTGT, Thuế TNDN mới nhất năm 2026 theo Thông tư 130/2025/TT-BTC qu…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Học liệu",
-        "Tham khảo",
-        "Nộp tờ khai",
+        "GTGT",
+        "TNCN",
+        "TNDN",
+        "Hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Ma-thu-tuc-hanh-chinh-nop-to-khai-thue.png",
+      "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2007-07-01",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

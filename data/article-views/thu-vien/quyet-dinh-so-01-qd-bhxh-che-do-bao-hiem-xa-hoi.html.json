@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1750,
-  "totalCount": 2041,
+  "currentIndex": 1748,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
     "section": "thu-vien",
@@ -14,7 +14,8 @@
     "tags": [
       "Nghị quyết",
       "Quyết định",
-      "Văn bản pháp luật",
+      "Doanh nghiệp",
+      "Thủ tục",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/mau-quyet-dinh-giai-the-doanh-nghiep.png",
@@ -167,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -177,29 +178,6 @@
     }
   ],
   "related": [
-    {
-      "id": "thu-vien/quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-166-qd-bhxh-quy-trinh-giai-quyet-che-do-bhxh.html",
-      "title": "Quyết định 166/QĐ-BHXH Quy trình giải quyết chế độ BHXH, BHTN",
-      "excerpt": "Ngày 31/01/2019 BHXH Việt Nam ban hành Quyết định 166/QĐ-BHXH quy trình giải quyết hưởng các chế độ BHXH, chi trả các c…",
-      "topicLabel": "Nghị quyết - Quyết định",
-      "tags": [
-        "BHXH",
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
-        "BHTN",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/quyet-dinh-166-quy-trinh-giai-quyet-che-do-bhxh-bhtn.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2019-01-31",
-      "modifiedDate": null
-    },
     {
       "id": "thu-vien/quyet-dinh-595-qd-bhxh-thay-the-qd-959-cua-bhxh-viet-nam.html",
       "section": "thu-vien",
@@ -214,7 +192,8 @@
         "BHXH",
         "Nghị quyết",
         "Quyết định",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/1a.png",
@@ -236,37 +215,61 @@
         "BHXH",
         "Nghị quyết",
         "Quyết định",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/quyet dinh 636 quy dinh ve che do bao hiem xa hoi.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2016-04-22",
       "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/quyet-dinh-919-qd-bhxh-ngay-26-8-2015-cua-bhxh-viet-nam.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quyet-dinh-919-qd-bhxh-ngay-26-8-2015-cua-bhxh-viet-nam.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-919-qd-bhxh-ngay-26-8-2015-cua-bhxh-viet-nam.html",
+      "title": "Quyết định 919/QĐ-BHXH Sửa đổi bổ sung QĐ 01/QĐ-BHXH",
+      "excerpt": "Quyết định 919/QĐ-BHXH ngày 26/8/2015 của Bảo hiểm xã hội Việt Nam: Sửa đổi, bổ sung một số điều của Quyết định 01/QĐ-B…",
+      "topicLabel": "Nghị quyết - Quyết định",
+      "tags": [
+        "BHXH",
+        "Nghị quyết",
+        "Quyết định",
+        "Lao động",
+        "Bảo hiểm",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/quyet dinh 919_QĐ-BHXH ngay 26_8_2015.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2015-08-26",
+      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/che-do-bao-hiem-that-nghiep-moi-nhat.html",
+      "id": "thu-vien/quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/che-do-bao-hiem-that-nghiep-moi-nhat.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/che-do-bao-hiem-that-nghiep-moi-nhat.html",
-      "title": "Chế độ Bảo hiểm thất nghiệp 2025 - Điều kiện hưởng, mức hưởng",
-      "excerpt": "Quy định về Chế độ bảo hiểm thất nghiệp 2025: Điều kiện hưởng bảo hiểm thất nghiệp, mức hưởng, thủ tục làm hồ sơ hưởng…",
-      "topicLabel": "BHXH - BHYT - BHTN",
+      "href": "thu-vien/quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.html",
+      "title": "Giảm mức đóng đoàn phí công đoàn từ ngày 01/07/2025",
+      "excerpt": "Ngày 29/7/2025, Tổng Liên đoàn Lao động Việt Nam đã ban hành Quyết định 61/QĐ-TLĐ về điều chỉnh giảm mức đóng đoàn phí…",
+      "topicLabel": "Nghị quyết - Quyết định",
       "tags": [
-        "BHTN",
-        "BHXH",
-        "BHYT",
+        "Công đoàn",
+        "Nghị quyết",
+        "Quyết định",
         "Lao động",
         "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/dieu-kien-huong-bao-hiem-that-nghiep.png",
+      "image": "assets/images/content/pic/Service/images/giam-muc-dong-doan-phi-cong-doan.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2019-11-20",
       "modifiedDate": null
     },
     {
@@ -283,8 +286,8 @@
         "BHXH",
         "Nghị quyết",
         "Quyết định",
-        "Văn bản pháp luật",
         "Lao động",
+        "Bảo hiểm",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/quyet-dinh-1040-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.png",

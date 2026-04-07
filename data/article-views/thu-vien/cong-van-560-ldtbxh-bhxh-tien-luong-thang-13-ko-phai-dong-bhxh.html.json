@@ -1,6 +1,6 @@
 {
   "currentIndex": 702,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/cong-van-5485-btc-tct-dang-ky-ke-khai-thue-theo-pp-khau-tru.html",
     "section": "thu-vien",
@@ -14,7 +14,8 @@
     "tags": [
       "Kê khai",
       "Công văn",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Văn bản"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -36,7 +37,8 @@
       "GTGT",
       "Kê khai",
       "Công văn",
-      "Văn bản pháp luật",
+      "Thuế",
+      "Hóa đơn",
       "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -166,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -176,27 +178,6 @@
     }
   ],
   "related": [
-    {
-      "id": "thu-vien/cong-van-2086-bldtbxh-tldldvn-trien-khai-luong-toi-thieu.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-van-2086-bldtbxh-tldldvn-trien-khai-luong-toi-thieu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-2086-bldtbxh-tldldvn-trien-khai-luong-toi-thieu.html",
-      "title": "Công văn 2086/BLĐTBXH-TLĐLĐVN triển khai lương tối thiểu 2022",
-      "excerpt": "Công văn 2086/BLĐTBXH-TLĐLĐVN ngày 17/6/2022 của Bộ Lao động Thương binh và Xã hội chỉ đạo triển khai Nghị định 38/2022…",
-      "topicLabel": "Công văn",
-      "tags": [
-        "Công văn",
-        "Văn bản pháp luật",
-        "Tiền lương",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Cong-van-2086-trien-khai-luong-toi-thieu-vung.jpg",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2022-06-17",
-      "modifiedDate": null
-    },
     {
       "id": "thu-vien/cong-van-4175-bhxh-pc-huong-dan-thuc-hien-qd-1018-qd-bhxh.html",
       "section": "thu-vien",
@@ -210,7 +191,8 @@
       "tags": [
         "BHXH",
         "Công văn",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Cong van 4175_BHXH-PC huong dan thuc hien QĐ 1018.png",
@@ -232,12 +214,35 @@
         "BHXH",
         "BHYT",
         "Công văn",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/cong van 2387_bhxh-qlt huong dan cap the bhyt 2017.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2016-10-25",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-van-xin-dang-ky-thang-bang-luong-gui-phong-lao-dong.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cong-van-xin-dang-ky-thang-bang-luong-gui-phong-lao-dong.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-xin-dang-ky-thang-bang-luong-gui-phong-lao-dong.html",
+      "title": "Công văn đăng ký Thang bảng lương mới nhất",
+      "excerpt": "Mẫu công văn đăng ký hệ thống thang bảng lương mới nhất gửi Phòng LĐ TBXH để làm hồ sơ đăng ký hệ thống than…",
+      "topicLabel": "Công văn",
+      "tags": [
+        "Công văn",
+        "Lao động",
+        "Bảo hiểm",
+        "Tiền lương",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/mau-cong-van-dang-ky-thang-bang-luong.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2020-01-02",
       "modifiedDate": null
     }
   ],
@@ -266,25 +271,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
+      "id": "thu-vien/mau-bang-phan-bo-tien-luong-va-bao-hiem-xa-hoi-11-ldtl.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
-      "title": "Công văn 624/TCT – CS tiếp nhận hồ sơ đăng ký kê khai thuế GTGT theo mẫu số 06/GTGT",
-      "excerpt": "Ngày 28 tháng 2 năm 2014 Tổng cục thuế ban hành Công văn số 624/TCT – CS về việc tiếp nhận hồ sơ đăng ký kê khai thuế G…",
-      "topicLabel": "Công văn",
+      "href": "thu-vien/mau-bang-phan-bo-tien-luong-va-bao-hiem-xa-hoi-11-ldtl.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-bang-phan-bo-tien-luong-va-bao-hiem-xa-hoi-11-ldtl.html",
+      "title": "Mẫu bảng phân bổ tiền lương, bảo hiểm xã hội theo Thông tư 133, 200",
+      "excerpt": "Hướng dẫn cách lập Bảng phân bổ tiền lương và Bảo hiểm xã hội theo Thông tư 133 và 200 - Mẫu 11-LĐTL, tập hợp và phân b…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
       "tags": [
-        "GTGT",
-        "Kê khai",
-        "Công văn",
-        "Văn bản pháp luật",
+        "BHXH",
+        "Mẫu biểu lao động",
+        "bảo hiểm",
+        "Lao động",
+        "Tiền lương",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Phan-bo-luong.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-02-28",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ]

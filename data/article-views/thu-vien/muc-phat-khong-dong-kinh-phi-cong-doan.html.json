@@ -1,6 +1,6 @@
 {
   "currentIndex": 1381,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/muc-phat-khi-lam-mat-hoa-don-gtgt.html",
     "section": "thu-vien",
@@ -166,8 +166,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -265,24 +265,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-tien-luong-va-cac-khoan-trich-theo-luong.html",
+      "id": "thu-vien/hop-dong-thu-viec-co-phai-dong-bhxh-khong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-tien-luong-va-cac-khoan-trich-theo-luong.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-tien-luong-va-cac-khoan-trich-theo-luong.html",
-      "title": "Mẫu báo cáo: Kế toán tiền lương và các khoản trích theo lương tại Công ty cổ phần Đầu tư và Phát triển nhà Hà Nội số 27",
-      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán tiền lương và các khoản trích theo lương tạ…",
-      "topicLabel": "Lao động - Tiền lương",
+      "href": "thu-vien/hop-dong-thu-viec-co-phai-dong-bhxh-khong.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/hop-dong-thu-viec-co-phai-dong-bhxh-khong.html",
+      "title": "Hợp đồng thử việc có phải đóng BHXH không?",
+      "excerpt": "Hợp đồng thử việc có phải đóng bảo hiểm bắt buộc không? là câu hỏi được rất nhiều bạn quan tâm. Trong bài viết này Công…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
       "tags": [
+        "BHXH",
+        "Mẫu biểu lao động",
+        "bảo hiểm",
         "Lao động",
-        "Tiền lương",
-        "Bảo hiểm",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/BHXH-thu-viec.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "publishDate": "2022-07-20",
       "modifiedDate": null
     }
   ]

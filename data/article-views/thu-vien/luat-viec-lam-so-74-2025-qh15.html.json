@@ -1,6 +1,6 @@
 {
   "currentIndex": 987,
-  "totalCount": 2041,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/luat-thue-tncn-so-109-2025-qh15.html",
     "section": "thu-vien",
@@ -15,7 +15,8 @@
       "TNCN",
       "Luật",
       "Bộ luật",
-      "Văn bản pháp luật",
+      "Lao động",
+      "Bảo hiểm",
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/Luat-thue-TNCN-2026.png",
@@ -167,8 +168,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -190,34 +191,13 @@
       "tags": [
         "Luật",
         "Bộ luật",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Luat-quan-ly-thue-2026.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2025-12-10",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/luat-thue-thu-nhap-doanh-nghiep-so-67-2025-qh15.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/luat-thue-thu-nhap-doanh-nghiep-so-67-2025-qh15.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/luat-thue-thu-nhap-doanh-nghiep-so-67-2025-qh15.html",
-      "title": "Luật Thuế thu nhập doanh nghiệp 2025 có hiệu lực từ 01/10/2025",
-      "excerpt": "Ngày 14/6/2025, Quốc hội thông qua Luật Thuế thu nhập doanh nghiệp số 67/2025/QH15. Luật này có hiệu lực thi hành từ ng…",
-      "topicLabel": "Luật - Bộ luật",
-      "tags": [
-        "TNDN",
-        "Luật",
-        "Bộ luật",
-        "Văn bản pháp luật",
-        "Văn bản"
-      ],
-      "image": "assets/images/content/pic/Service/images/Luat-thue-tndn-2025.png",
-      "libraryKindLabel": "Văn bản",
-      "publishDate": "2025-06-14",
       "modifiedDate": null
     },
     {
@@ -234,35 +214,83 @@
         "TNCN",
         "Luật",
         "Bộ luật",
-        "Văn bản pháp luật",
+        "Lao động",
+        "Bảo hiểm",
         "Văn bản"
       ],
       "image": "assets/images/content/pic/Service/images/Luat-thue-TNCN-2026.png",
       "libraryKindLabel": "Văn bản",
       "publishDate": "2025-12-10",
       "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/luat-bao-hiem-y-te-sua-doi-moi-nhat-2025-so-51-2024-qh15.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/luat-bao-hiem-y-te-sua-doi-moi-nhat-2025-so-51-2024-qh15.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/luat-bao-hiem-y-te-sua-doi-moi-nhat-2025-so-51-2024-qh15.html",
+      "title": "Luật bảo hiểm y tế sửa đổi mới nhất 2025 số 51/2024/QH15",
+      "excerpt": "Ngày 27/11/2024, Quốc hội đã biểu quyết thông qua Luật Bảo hiểm y tế sửa đổi số 51/2024/QH15 sửa đổi, bổ sung một số đ…",
+      "topicLabel": "Luật - Bộ luật",
+      "tags": [
+        "BHYT",
+        "Luật",
+        "Bộ luật",
+        "Lao động",
+        "Bảo hiểm",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Luat-bao-hiem-y-te-sua-doi.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2024-11-27",
+      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.html",
+      "id": "thu-vien/bhxh-doi-voi-nguoi-lao-dong-lam-viec-2-noi-hoac-nhieu-noi.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.html",
-      "title": "Mẫu quyết định của giám đốc về việc đi nghỉ mát",
-      "excerpt": "Mẫu quyết định của Giám đốc về việc đi nghỉ mát, phê duyệt kinh phí đi nghỉ mát. Để hoàn thiện chứng từ chi phí cho nhâ…",
-      "topicLabel": "Nghị quyết - Quyết định",
+      "href": "thu-vien/bhxh-doi-voi-nguoi-lao-dong-lam-viec-2-noi-hoac-nhieu-noi.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/bhxh-doi-voi-nguoi-lao-dong-lam-viec-2-noi-hoac-nhieu-noi.html",
+      "title": "BHXH đối với người lao động làm việc 2 nơi hoặc nhiều nơi năm 2026",
+      "excerpt": "Quy định về việc tham gia bảo hiểm bắt buộc (BHXH, BHYT, BHTN, TNLĐ) đối với người lao động ký hợp đồng lao động làm vi…",
+      "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
-        "Nghị quyết",
-        "Quyết định",
-        "Văn bản pháp luật",
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/BHXH-lam-viec-nhieu-noi.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-hop-dong-lao-dong-ban-thoi-gian-lam-viec-part-time.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-hop-dong-lao-dong-ban-thoi-gian-lam-viec-part-time.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/mau-hop-dong-lao-dong-ban-thoi-gian-lam-viec-part-time.html",
+      "title": "Mẫu hợp đồng lao động bán thời gian, làm việc Part Time 2026 mới nhất",
+      "excerpt": "Người lao động làm việc bán thời gian là người lao động có thời gian làm việc ngắn hơn so với thời gian làm việc bình t…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "tags": [
+        "Mẫu biểu lao động",
+        "bảo hiểm",
+        "Lao động",
+        "Hợp đồng lao động",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Hop-dong-lao-dong-ban-thoi-gian(1).png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2016-06-28",
+      "publishDate": "2019-11-20",
       "modifiedDate": null
     }
   ]

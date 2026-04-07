@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1728,
-  "totalCount": 2041,
+  "currentIndex": 1726,
+  "totalCount": 2039,
   "prev": {
     "id": "thu-vien/quy-trinh-kiem-tra-thue.html",
     "section": "thu-vien",
@@ -10,10 +10,11 @@
     "canonical": "https://ketoandieutam.com/thu-vien/quy-trinh-kiem-tra-thue.html",
     "title": "Quy trình kiểm tra thuế áp dụng từ 14/7/2023",
     "excerpt": "Từ ngày 14/7/2023, Quy trình kiểm tra thuế sẽ được thực hiện theo Quyết định 970/QĐ-TCT của Tổng cục Thuế, trong đó có…",
-    "topicLabel": "Khác",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
-      "Học liệu",
-      "Tham khảo",
+      "GTGT",
+      "Hóa đơn",
+      "Thuế",
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/kiem-tra-thue.png",
@@ -164,8 +165,8 @@
         "TNDN",
         "Mẫu biểu thuế",
         "hóa đơn",
-        "Mẫu biểu",
-        "Thủ tục"
+        "Thuế",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-ke-mua-hang-khong-co-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -261,25 +262,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
+      "id": "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
-      "canonical": "https://ketoandieutam.com/thu-vien/bao-cao-thuc-tap-ke-toan-cong-cu-dung-cu-nguyen-vat-lieu.html",
-      "title": "Mẫu báo cáo: Kế toán nguyên vật liệu công cụ dụng cụ tại Công ty công trình Đường Thủy",
-      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán nguyên vật liệu công cụ dụng cụ tại công ty…",
-      "topicLabel": "Tài sản - Kho - CCDC",
+      "href": "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
+      "canonical": "https://ketoandieutam.com/thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
+      "title": "Mẫu Sổ chi tiết thanh toán với người mua - bán theo TT 133 và 200",
+      "excerpt": "Hướng dẫn cách lập Sổ chi tiết thanh toán với người mua (người bán) theo Thông tư 133 và 200 – Mẫu S12-DNN…",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
-        "CCDC",
-        "Tài sản",
-        "Kho",
+        "Chứng từ",
+        "Sổ sách",
         "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-thanh-toan-nguoi-mua-ban.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-02",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     }
   ]
