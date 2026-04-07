@@ -287,11 +287,42 @@ Riêng bucket “Môn bài - Hộ KD - Nhà thầu - MST” đang trộn:
     - [x] Batch 5.22a: hoàn thiện 15/15 (1 batch)
   - [x] Batch 5.23: hoàn thiện lv3 cho `Học liệu - Tham khảo > Bài tập - Thực hành` (9/9)
     - [x] Batch 5.23a: hoàn thiện 9/9 (1 batch)
+  - [x] Batch 5.24: hoàn thiện lv3 cho `Thuế - Hóa đơn > Mã số thuế - Đăng ký thuế` (11/11)
+    - [x] Batch 5.24a: hoàn thiện 11/11 (1 batch)
+  - [x] Batch 5.25: hoàn thiện lv3 cho `Thuế - Hóa đơn > Lệ phí môn bài` (11/11)
+    - [x] Batch 5.25a: hoàn thiện 11/11 (1 batch)
+  - [x] Batch 5.26: hoàn thiện lv3 cho `Thuế - Hóa đơn > Hộ/Cá nhân kinh doanh` (10/10)
+    - [x] Batch 5.26a: hoàn thiện 10/10 (1 batch)
+  - [x] Batch 5.27: hoàn thiện lv3 cho `Thuế - Hóa đơn > Thuế nhà thầu` (4/4)
+    - [x] Batch 5.27a: hoàn thiện 4/4 (1 batch)
+  - [x] Batch 5.28: hoàn thiện lv3 cho `Lao động - Bảo hiểm > Công đoàn` (7/7)
+    - [x] Batch 5.28a: hoàn thiện 7/7 (1 batch)
+  - [x] Batch 5.29: hoàn thiện lv3 cho node `FAST` (3/3)
+    - [x] Batch 5.29a: hoàn thiện 3/3 (1 batch)
+  - [x] Batch 5.30: hoàn thiện lv3 cho guide subset `HTKK - eTax - Thuế điện tử` (6/6)
+    - [x] Batch 5.30a: hoàn thiện 6/6 (1 batch)
+  - [x] Batch 5.30b (micro): hoàn thiện singleton `Thuế > Chứng từ - Sổ sách` (1/1)
+  - [x] Batch 5.31: mở rộng pháp lý theo domain cụ thể `Lao động - Bảo hiểm > Luật - Bộ luật` (19/19)
+    - [x] Batch 5.31a: hoàn thiện 19/19 (1 batch)
+  - [x] Batch 5.32: mở rộng pháp lý theo domain cụ thể `Lao động - Bảo hiểm > Nghị định` (11/11)
+    - [x] Batch 5.32a: hoàn thiện 11/11 (1 batch)
+  - [x] Batch 5.33: mở rộng pháp lý theo domain cụ thể `Lao động - Bảo hiểm > Nghị quyết - Quyết định` (13/13)
+    - [x] Batch 5.33a: hoàn thiện 13/13 (1 batch)
+  - [x] Batch 5.34: mở rộng pháp lý theo domain cụ thể `Thuế - Hóa đơn > Nghị quyết - Quyết định` (9/9)
+    - [x] Batch 5.34a: hoàn thiện 9/9 (1 batch)
+  - [x] Batch 5.35: mở rộng pháp lý theo domain cụ thể `Lao động - Bảo hiểm > Thông tư` (6/6)
+    - [x] Batch 5.35a: hoàn thiện 6/6 (1 batch)
+  - [x] Batch 5.36: mở rộng pháp lý theo domain cụ thể `Lao động - Bảo hiểm > Công văn` (6/6)
+    - [x] Batch 5.36a: hoàn thiện 6/6 (1 batch)
+  - [x] Batch 5.37: hoàn thiện lv3 cho cụm pháp lý `Kế toán > Thông tư/Nghị định/Công văn/Luật - Bộ luật` (9/9)
+    - [x] Batch 5.37a: hoàn thiện 9/9 (1 batch)
+  - [x] Batch 5.38: hoàn thiện lv3 cho cụm pháp lý `Doanh nghiệp - Thủ tục + Thuế > (Nghị định/Thông tư/Luật - Bộ luật/NQ-QĐ)` (9/9)
+    - [x] Batch 5.38a: hoàn thiện 9/9 (1 batch)
 
 ## Giai đoạn 6 — QA + review thủ công
 - [x] Rà queue biên giới 50 bài (đã review + xuất kết quả)
 - [x] Kiểm tra phân phối sau tái phân loại (đã xuất snapshot)
-- [~] Chốt taxonomy và freeze rule (đã có proposal, chờ chốt chính sách)
+- [x] Chốt taxonomy và freeze rule (đã lock ở 95.98%)
 
 ---
 
@@ -1284,6 +1315,31 @@ Riêng bucket “Môn bài - Hộ KD - Nhà thầu - MST” đang trộn:
     - Policy A (giữ trống lv3 có chủ đích) cho node pháp lý/tra cứu.
     - Policy B (tiếp tục mở rộng lv3) cho node học liệu/nghiệp vụ có giá trị biên tập.
     - Đề xuất bắt đầu ngay 5.21a với node `Báo cáo thực tập` (16 bài).
+- 2026-04-07 (Phase 6 - Final lock):
+  - Quyết định chốt:
+    - Lock ruleset sau khi hoàn tất các node phi pháp lý ưu tiên (đến batch 5.30b).
+    - Giữ trống lv3 có chủ đích cho phần còn lại thuộc node pháp lý (Luật/NĐ/TT/CV/NQ).
+  - Final metrics:
+    - Coverage lv3 toàn thư viện: **1957/2039 (95.98%)**.
+    - Remaining no-lv3: **82 bài / 15 node**.
+    - Remaining non-legal node: **0**.
+  - Artifact:
+    - Final report: `.m/reclass/final-lock-report.md`.
+    - Freeze policy: `.m/reclass/phase6-freeze-policy.md`.
+    - QA summary: `.m/reclass/phase6-qa-summary.md`.
+- 2026-04-07 (Post-lock maintenance QA):
+  - Hành động:
+    - Chạy kiểm tra hậu khóa cho dữ liệu `data/articles.json`.
+    - Kiểm tra consistency `topicLv3Key/topicLv3Label`, duplicate `href`, và residual non-legal nodes.
+  - Kết quả:
+    - Coverage giữ ổn định: **1957/2039 (95.98%)**.
+    - Remaining no-lv3: **82 bài / 15 node**.
+    - Remaining non-legal nodes: **0**.
+    - Lỗi `topicLv3Key/topicLv3Label`: **0**.
+    - Lỗi duplicate `href`: **0**.
+  - Artifact:
+    - `.m/reclass/post-lock-maintenance-qa.md`
+    - `.m/reclass/post-lock-maintenance-qa.json`
 - 2026-04-07 (Phase 5 - Batch 5.21a):
   - Phạm vi:
     - Node `Học liệu - Tham khảo > Báo cáo thực tập` (16 bài).
@@ -1334,14 +1390,442 @@ Riêng bucket “Môn bài - Hộ KD - Nhà thầu - MST” đang trộn:
     - Input: `.m/reclass/batch-05-23a-input.csv`
     - Output: `.m/reclass/batch-05-23a-output.csv`
     - Notes: `.m/reclass/batch-05-23a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.24a):
+  - Phạm vi:
+    - Node `Thuế - Hóa đơn > Mã số thuế - Đăng ký thuế` (11 bài).
+    - Rollout 1 batch duy nhất.
+  - Hành động:
+    - Thêm classifier `classify_mst_dang_ky_thue_level3`.
+    - Thêm map label lv3 cho node `ma-so-thue-dang-ky-thue`.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **11/11**
+    - Coverage node `Mã số thuế - Đăng ký thuế`: **11/11**
+    - Coverage lv3 toàn thư viện: **1915/2039 (93.92%)**
+  - Artifact:
+    - Input: `.m/reclass/batch-05-24a-input.csv`
+    - Output: `.m/reclass/batch-05-24a-output.csv`
+    - Notes: `.m/reclass/batch-05-24a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.25a):
+  - Phạm vi:
+    - Node `Thuế - Hóa đơn > Lệ phí môn bài` (11 bài).
+    - Rollout 1 batch duy nhất.
+  - Hành động:
+    - Thêm classifier `classify_le_phi_mon_bai_level3`.
+    - Thêm map label lv3 cho node `le-phi-mon-bai`.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **11/11**
+    - Coverage node `Lệ phí môn bài`: **11/11**
+    - Coverage lv3 toàn thư viện: **1926/2039 (94.46%)**
+  - Artifact:
+    - Input: `.m/reclass/batch-05-25a-input.csv`
+    - Output: `.m/reclass/batch-05-25a-output.csv`
+    - Notes: `.m/reclass/batch-05-25a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.26a):
+  - Phạm vi:
+    - Node `Thuế - Hóa đơn > Hộ/Cá nhân kinh doanh` (10 bài).
+    - Rollout 1 batch duy nhất.
+  - Hành động:
+    - Thêm classifier `classify_ho_ca_nhan_kinh_doanh_level3`.
+    - Thêm map label lv3 cho node `ho-ca-nhan-kinh-doanh`.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **10/10**
+    - Coverage node `Hộ/Cá nhân kinh doanh`: **10/10**
+    - Coverage lv3 toàn thư viện: **1936/2039 (94.95%)**
+  - Artifact:
+    - Input: `.m/reclass/batch-05-26a-input.csv`
+    - Output: `.m/reclass/batch-05-26a-output.csv`
+    - Notes: `.m/reclass/batch-05-26a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.27a):
+  - Phạm vi:
+    - Node `Thuế - Hóa đơn > Thuế nhà thầu` (4 bài).
+    - Rollout 1 batch duy nhất.
+  - Hành động:
+    - Thêm classifier `classify_thue_nha_thau_level3`.
+    - Thêm map label lv3 cho node `thue-nha-thau`.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **4/4**
+    - Coverage node `Thuế nhà thầu`: **4/4**
+    - Coverage lv3 toàn thư viện: **1940/2039 (95.14%)**
+  - Artifact:
+    - Input: `.m/reclass/batch-05-27a-input.csv`
+    - Output: `.m/reclass/batch-05-27a-output.csv`
+    - Notes: `.m/reclass/batch-05-27a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.28a):
+  - Phạm vi:
+    - Node `Lao động - Bảo hiểm > Công đoàn` (7 bài).
+    - Rollout 1 batch duy nhất.
+  - Hành động:
+    - Thêm classifier `classify_cong_doan_level3`.
+    - Thêm map label lv3 cho node `cong-doan`.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **7/7**
+    - Coverage node `Công đoàn`: **7/7**
+    - Coverage lv3 toàn thư viện: **1947/2039 (95.49%)**
+  - Artifact:
+    - Input: `.m/reclass/batch-05-28a-input.csv`
+    - Output: `.m/reclass/batch-05-28a-output.csv`
+    - Notes: `.m/reclass/batch-05-28a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.29a):
+  - Phạm vi:
+    - Node `Phần mềm - Công cụ > FAST` (2 bài) và `Mẫu file & kê khai > FAST` (1 bài).
+    - Rollout 1 batch (3 bài).
+  - Hành động:
+    - Thêm classifier `classify_fast_level3`.
+    - Thêm map label lv3 cho node `fast`.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **3/3**
+    - Coverage node FAST: **3/3**
+    - Coverage lv3 toàn thư viện: **1950/2039 (95.64%)**
+  - Artifact:
+    - Input: `.m/reclass/batch-05-29a-input.csv`
+    - Output: `.m/reclass/batch-05-29a-output.csv`
+    - Notes: `.m/reclass/batch-05-29a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.30a):
+  - Phạm vi:
+    - Guide subset của node `Phần mềm - Công cụ > HTKK - eTax - Thuế điện tử` (6 bài, không gồm release `phan-mem*`).
+  - Hành động:
+    - Thêm classifier `classify_htkk_guide_level3`.
+    - Thêm map label lv3 cho guide subset HTKK.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **6/6**
+    - Coverage guide subset HTKK: **6/6**
+    - Coverage lv3 toàn thư viện: **1956/2039 (95.93%)**
+  - Artifact:
+    - Input: `.m/reclass/batch-05-30a-input.csv`
+    - Output: `.m/reclass/batch-05-30a-output.csv`
+    - Notes: `.m/reclass/batch-05-30a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.30b micro):
+  - Phạm vi:
+    - 1 bài singleton trong node `Thuế > Chứng từ - Sổ sách`: `Thư tra soát C1-11/NS`.
+  - Hành động:
+    - Thêm classifier `classify_thue_chung_tu_so_sach_level3` cho slug đơn lẻ.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **1/1**
+    - Coverage singleton node: **1/1**
+    - Coverage lv3 toàn thư viện: **1957/2039 (95.98%)**
+    - Remaining no-lv3: **82 bài / 15 node** (100% là node pháp lý).
+  - Artifact:
+    - Input: `.m/reclass/batch-05-30b-input.csv`
+    - Output: `.m/reclass/batch-05-30b-output.csv`
+    - Notes: `.m/reclass/batch-05-30b-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.31a):
+  - Phạm vi:
+    - Node pháp lý `Lao động - Bảo hiểm > Luật - Bộ luật` (19 bài).
+    - Rollout 1 batch theo domain cụ thể (theo yêu cầu mở lại pháp lý).
+  - Hành động:
+    - Thêm classifier `classify_luat_bo_luat_lao_dong_level3`.
+    - Thêm map label lv3 cho nhóm luật: Lao động, BHXH, BHYT, Công đoàn, Việc làm, QLT, GTGT, XNK, TNCN.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **19/19**
+    - Coverage node `Lao động > Luật - Bộ luật`: **19/19**
+    - Coverage lv3 toàn thư viện: **1976/2039 (96.91%)**
+    - Remaining no-lv3: **63 bài / 14 node**.
+  - Artifact:
+    - Input: `.m/reclass/batch-05-31a-input.csv`
+    - Output: `.m/reclass/batch-05-31a-output.csv`
+    - Notes: `.m/reclass/batch-05-31a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.32a):
+  - Phạm vi:
+    - Node pháp lý `Lao động - Bảo hiểm > Nghị định` (11 bài).
+    - Rollout 1 batch theo domain cụ thể.
+  - Hành động:
+    - Thêm classifier `classify_nghi_dinh_lao_dong_level3`.
+    - Thêm map label lv3 cho nhóm Nghị định: BHXH, BHYT, Công đoàn/KPCĐ, xử phạt, việc làm, HĐLĐ, thang bảng lương, hướng dẫn Luật LĐ.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **11/11**
+    - Coverage node `Lao động > Nghị định`: **11/11**
+    - Coverage lv3 toàn thư viện: **1987/2039 (97.45%)**
+    - Remaining no-lv3: **52 bài / 13 node**.
+  - Artifact:
+    - Input: `.m/reclass/batch-05-32a-input.csv`
+    - Output: `.m/reclass/batch-05-32a-output.csv`
+    - Notes: `.m/reclass/batch-05-32a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.33a):
+  - Phạm vi:
+    - Node pháp lý `Lao động - Bảo hiểm > Nghị quyết - Quyết định` (13 bài).
+    - Rollout 1 batch theo domain cụ thể.
+  - Hành động:
+    - Thêm classifier `classify_quyet_dinh_lao_dong_level3`.
+    - Thêm map label lv3 cho nhóm quyết định/nghị quyết (BHXH/BHYT/BHTN, công đoàn/đoàn phí, thang lương, chấm dứt HĐLĐ).
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **13/13**
+    - Coverage node `Lao động > Nghị quyết - Quyết định`: **13/13**
+    - Coverage lv3 toàn thư viện: **2000/2039 (98.09%)**
+    - Remaining no-lv3: **39 bài / 12 node**.
+  - Artifact:
+    - Input: `.m/reclass/batch-05-33a-input.csv`
+    - Output: `.m/reclass/batch-05-33a-output.csv`
+    - Notes: `.m/reclass/batch-05-33a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.34a):
+  - Phạm vi:
+    - Node pháp lý `Thuế - Hóa đơn > Nghị quyết - Quyết định` (9 bài).
+    - Rollout 1 batch theo domain cụ thể.
+  - Hành động:
+    - Thêm classifier `classify_nghi_quyet_thue_level3`.
+    - Thêm map label lv3 cho nhóm NQ/QĐ thuế (GTGT, TNDN, TNCN, nội bộ DN).
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **9/9**
+    - Coverage node `Thuế > Nghị quyết - Quyết định`: **9/9**
+    - Coverage lv3 toàn thư viện: **2009/2039 (98.53%)**
+    - Remaining no-lv3: **30 bài / 11 node**.
+  - Artifact:
+    - Input: `.m/reclass/batch-05-34a-input.csv`
+    - Output: `.m/reclass/batch-05-34a-output.csv`
+    - Notes: `.m/reclass/batch-05-34a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.35a):
+  - Phạm vi:
+    - Node pháp lý `Lao động - Bảo hiểm > Thông tư` (6 bài).
+    - Rollout 1 batch theo domain cụ thể.
+  - Hành động:
+    - Thêm classifier `classify_thong_tu_lao_dong_level3`.
+    - Thêm map label lv3 cho nhóm thông tư lao động/BHXH.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **6/6**
+    - Coverage node `Lao động > Thông tư`: **6/6**
+    - Coverage lv3 toàn thư viện: **2015/2039 (98.82%)**
+    - Remaining no-lv3: **24 bài / 10 node**.
+  - Artifact:
+    - Input: `.m/reclass/batch-05-35a-input.csv`
+    - Output: `.m/reclass/batch-05-35a-output.csv`
+    - Notes: `.m/reclass/batch-05-35a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.36a):
+  - Phạm vi:
+    - Node pháp lý `Lao động - Bảo hiểm > Công văn` (6 bài).
+    - Rollout 1 batch theo domain cụ thể.
+  - Hành động:
+    - Thêm classifier `classify_cong_van_lao_dong_level3`.
+    - Thêm map label lv3 cho nhóm công văn lao động/BHXH.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **6/6**
+    - Coverage node `Lao động > Công văn`: **6/6**
+    - Coverage lv3 toàn thư viện: **2021/2039 (99.12%)**
+    - Remaining no-lv3: **18 bài / 9 node**.
+  - Artifact:
+    - Input: `.m/reclass/batch-05-36a-input.csv`
+    - Output: `.m/reclass/batch-05-36a-output.csv`
+    - Notes: `.m/reclass/batch-05-36a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.37a):
+  - Phạm vi:
+    - Cụm pháp lý `Kế toán > Thông tư/Nghị định/Công văn/Luật - Bộ luật` (9 bài).
+  - Hành động:
+    - Thêm classifier `classify_ke_toan_phap_ly_level3`.
+    - Thêm map label lv3 cho cụm pháp lý kế toán.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **9/9**
+    - Coverage cụm kế toán pháp lý: **9/9**
+    - Coverage lv3 toàn thư viện: **2039/2039 (100.0%)**
+    - Remaining no-lv3: **0 bài / 0 node**.
+  - Artifact:
+    - Input: `.m/reclass/batch-05-37a-input.csv`
+    - Output: `.m/reclass/batch-05-37a-output.csv`
+    - Notes: `.m/reclass/batch-05-37a-notes.md`
+- 2026-04-07 (Phase 5 - Batch 5.38a):
+  - Phạm vi:
+    - Cụm pháp lý `Doanh nghiệp - Thủ tục + Thuế > (Nghị định/Thông tư/Luật - Bộ luật/NQ-QĐ)` (9 bài).
+  - Hành động:
+    - Thêm classifier `classify_doanh_nghiep_thue_phap_ly_level3`.
+    - Thêm map label lv3 cho cụm pháp lý DN/Thuế.
+  - Rebuild full: `python3 ../.m/build_sample_sections.py --mode full` (thành công).
+  - Kết quả:
+    - Match theo plan: **9/9**
+    - Coverage cụm DN/Thuế pháp lý: **9/9**
+    - Coverage lv3 toàn thư viện: **2039/2039 (100.0%)**
+    - Remaining no-lv3: **0 bài / 0 node**.
+  - Artifact:
+    - Input: `.m/reclass/batch-05-38a-input.csv`
+    - Output: `.m/reclass/batch-05-38a-output.csv`
+    - Notes: `.m/reclass/batch-05-38a-notes.md`
+    - Final snapshot: `.m/reclass/final-lv3-coverage-snapshot.json`, `.m/reclass/final-lv3-coverage-snapshot.md`
+- 2026-04-07 (Post-completion maintenance + freeze v2):
+  - Chạy QA hậu hoàn tất:
+    - Artifact: `.m/reclass/final-post-completion-qa.json`, `.m/reclass/final-post-completion-qa.md`
+    - Kết quả: **PASS** (missing=0, node gap=0, duplicate href=0, key-label inconsistency=0).
+  - Chốt chính sách vận hành sau rollout:
+    - Cập nhật `.m/reclass/phase6-freeze-policy.md` lên **freeze policy v2**.
+    - Cập nhật `.m/reclass/final-lock-report.md` lên mốc **LOCK v2** với coverage **2039/2039 (100%)**.
+  - Chế độ vận hành mới:
+    - Maintenance + incremental ingestion.
+    - Mọi thay đổi lớn yêu cầu RFC + batch artifact + rebuild + QA.
+- 2026-04-08 (Post-lock enablement — runbook + one-command maintenance):
+  - Tạo công cụ vận hành:
+    - `tools/run_lv3_maintenance.py`
+  - Tạo tài liệu vận hành:
+    - `docs/lv3-maintenance-runbook.md`
+  - Contract thực thi:
+    - 1 lệnh chuẩn: `python3 tools/run_lv3_maintenance.py --mode full`
+    - Hỗ trợ chế độ QA-only: `--skip-build`
+    - Xuất artifact định danh theo tag vào `.m/reclass/maintenance-*`
+  - Kiểm thử:
+    - `python3 tools/run_lv3_maintenance.py --skip-build --tag smoke-skip` → PASS
+    - `python3 tools/run_lv3_maintenance.py --mode full --tag smoke-full` → PASS
+  - Artifact smoke:
+    - `.m/reclass/maintenance-qa-smoke-skip.json/.md`
+    - `.m/reclass/maintenance-qa-smoke-full.json/.md`
+    - `.m/reclass/maintenance-build-smoke-full.log`
+- 2026-04-08 (Post-lock automation — cron wrapper + runlog append):
+  - Cập nhật công cụ `tools/run_lv3_maintenance.py`:
+    - thêm `--append-runlog`
+    - thêm `--runlog-path` (default: `.m/reclass/maintenance-runlog.jsonl`)
+  - Thêm wrapper cron-friendly:
+    - `tools/run_lv3_maintenance_daily.sh`
+  - Cập nhật tài liệu:
+    - `docs/lv3-maintenance-runbook.md` (phần runlog + daily wrapper)
+  - Kiểm thử:
+    - `python3 tools/run_lv3_maintenance.py --skip-build --tag smoke-runlog --append-runlog` → PASS
+  - Artifact:
+    - `.m/reclass/maintenance-qa-smoke-runlog.json/.md`
+    - `.m/reclass/maintenance-runlog.jsonl` (đã append dòng run mới)
+- 2026-04-08 (Post-lock hardening — runlog rotation + cron template):
+  - Cập nhật `tools/run_lv3_maintenance.py`:
+    - thêm rotation policy cho runlog:
+      - `--runlog-retention-days` (default 90)
+      - `--runlog-max-lines` (default 5000)
+      - `--skip-runlog-rotate`
+    - stdout bổ sung telemetry `runlog_rotation=...`
+  - Cập nhật wrapper `tools/run_lv3_maintenance_daily.sh`:
+    - bật retention 90 ngày, cap 5000 dòng.
+  - Cập nhật `docs/lv3-maintenance-runbook.md`:
+    - thêm mẫu cron entry Linux/WSL
+    - thêm policy xoay vòng runlog.
+  - Kiểm thử:
+    - `python3 tools/run_lv3_maintenance.py --skip-build --tag smoke-rotate --append-runlog --runlog-retention-days 90 --runlog-max-lines 5000` → PASS
+    - telemetry: `runlog_rotation=input:2,output:2,age_removed:0,cap_removed:0,invalid_kept:0`
+  - Artifact:
+    - `.m/reclass/maintenance-qa-smoke-rotate.json/.md`
+    - `.m/reclass/maintenance-runlog.jsonl` (đã append + rotate)
+- 2026-04-08 (Post-lock observability — health check + dashboard):
+  - Thêm công cụ health:
+    - `tools/maintenance_health_check.py`
+    - Rule: fail nếu run gần nhất quá ngưỡng tuổi (`--max-age-hours`) hoặc latest không PASS (`--require-latest-pass`).
+  - Thêm công cụ dashboard:
+    - `tools/render_maintenance_dashboard.py`
+    - Output markdown: `.m/reclass/maintenance-dashboard.md`
+  - Cập nhật wrapper daily:
+    - `tools/run_lv3_maintenance_daily.sh` gọi thêm:
+      - health check
+      - dashboard render
+  - Cập nhật runbook:
+    - `docs/lv3-maintenance-runbook.md` thêm section Health check + Dashboard.
+  - Kiểm thử:
+    - `python3 tools/maintenance_health_check.py --max-age-hours 24 --require-latest-pass` → PASS
+    - `python3 tools/render_maintenance_dashboard.py --out-md .m/reclass/maintenance-dashboard.md` → OK
+  - Artifact:
+    - `.m/reclass/maintenance-dashboard.md`
+- 2026-04-08 (Post-lock observability hardening — alert template + CSV export):
+  - Cập nhật `tools/maintenance_health_check.py`:
+    - thêm `--alert-prefix`
+    - thêm `--emit-pass-alert`
+    - stdout phát hành một dòng `alert=...` để cron/grep bắt tín hiệu.
+  - Cập nhật `tools/render_maintenance_dashboard.py`:
+    - thêm output CSV `--out-csv`
+    - file mặc định: `.m/reclass/maintenance-dashboard.csv`
+  - Cập nhật wrapper daily:
+    - health check dùng `--emit-pass-alert`
+    - dashboard render cả `.md` và `.csv`
+  - Cập nhật runbook:
+    - thêm hướng dẫn alert line và CSV export.
+  - Kiểm thử:
+    - `python3 tools/maintenance_health_check.py --max-age-hours 24 --require-latest-pass --emit-pass-alert` → PASS + có `alert=...`
+    - `python3 tools/render_maintenance_dashboard.py --out-md .m/reclass/maintenance-dashboard.md --out-csv .m/reclass/maintenance-dashboard.csv` → OK
+  - Artifact:
+    - `.m/reclass/maintenance-dashboard.md`
+    - `.m/reclass/maintenance-dashboard.csv`
+- 2026-04-08 (Post-lock guardrail — coverage drift threshold):
+  - Cập nhật `tools/maintenance_health_check.py`:
+    - thêm `--min-coverage-ratio`
+    - fail với reason `coverage_below_threshold` nếu ratio thực tế thấp hơn ngưỡng.
+  - Cập nhật wrapper daily:
+    - health check thêm `--min-coverage-ratio 1.0` (guard drift coverage).
+  - Cập nhật runbook:
+    - thêm hướng dẫn coverage guard command.
+  - Kiểm thử:
+    - `--min-coverage-ratio 1.0` → PASS (exit 0)
+    - `--min-coverage-ratio 1.1` → FAIL (exit 2, reason=coverage_below_threshold)
+- 2026-04-08 (Post-lock guardrail hardening — zero-critical defensive check):
+  - Cập nhật `tools/maintenance_health_check.py`:
+    - thêm `--require-zero-critical`
+    - fail với reason `critical_issues_detected` nếu tổng `criticalIssues` của run mới nhất > 0 (dù status run là PASS).
+  - Cập nhật `tools/run_lv3_maintenance_daily.sh`:
+    - health check thêm `--require-zero-critical`.
+  - Cập nhật `tools/render_maintenance_dashboard.py`:
+    - CSV thêm cột `coverageRatio`.
+  - Cập nhật `docs/lv3-maintenance-runbook.md`:
+    - bổ sung flag health check + ghi chú CSV `coverageRatio`.
+  - Kiểm thử:
+    - real runlog: `--require-zero-critical --min-coverage-ratio 1.0` → PASS
+    - synthetic runlog (latest PASS nhưng missingLv3=1): → FAIL `critical_issues_detected` (exit 2)
+  - Artifact:
+    - `.m/reclass/maintenance-dashboard.csv` (có cột `coverageRatio`)
+    - `.m/reclass/maintenance-runlog-synth.jsonl` (test synthetic)
+- 2026-04-08 (Post-lock guardrail hardening — clock skew detection):
+  - Cập nhật `tools/maintenance_health_check.py`:
+    - thêm `--max-future-skew-seconds` (default 300)
+    - fail với reason `future_timestamp_skew` nếu latest timestamp nằm tương lai vượt ngưỡng.
+  - Cập nhật `tools/run_lv3_maintenance_daily.sh`:
+    - bật `--max-future-skew-seconds 300` trong health check mặc định.
+  - Cập nhật runbook:
+    - thêm hướng dẫn guard clock skew.
+  - Kiểm thử:
+    - runlog thực: PASS (future skew = 0)
+    - synthetic runlog latest year 2099: FAIL reason `future_timestamp_skew` (exit 2)
+  - Artifact:
+    - `.m/reclass/maintenance-runlog-future.jsonl` (test synthetic)
+- 2026-04-08 (Post-lock observability hardening — skew alias + anomaly panel):
+  - Cập nhật `tools/maintenance_health_check.py`:
+    - thêm alias `--max-negative-age-seconds` (tương đương ngưỡng future skew).
+  - Cập nhật `tools/render_maintenance_dashboard.py`:
+    - markdown thêm panel `Time anomalies` (record có `age_seconds < 0`).
+    - CSV thêm cột `ageSeconds`, `futureTimestamp`.
+  - Cập nhật runbook:
+    - thêm command dùng alias negative-age
+    - cập nhật mô tả output dashboard CSV/markdown.
+  - Kiểm thử:
+    - real runlog + alias 300s → PASS
+    - synthetic future runlog + alias 300s → FAIL `future_timestamp_skew` (exit 2)
+    - dashboard trên synthetic runlog hiển thị đúng panel anomaly + cột CSV mới.
+  - Artifact:
+    - `.m/reclass/maintenance-dashboard-future.md`
+    - `.m/reclass/maintenance-dashboard-future.csv`
+- 2026-04-08 (Post-lock observability hardening — severity levels):
+  - Cập nhật `tools/run_lv3_maintenance.py`:
+    - snapshot và runlog record thêm `severity` + `criticalTotal`.
+  - Cập nhật `tools/maintenance_health_check.py`:
+    - in `severity=INFO|WARN|CRIT`
+    - alert line bổ sung `severity`, `latest_future_skew_seconds`, `latest_critical_total`.
+  - Cập nhật `tools/render_maintenance_dashboard.py`:
+    - thêm `Severity distribution`
+    - CSV thêm cột `severity`
+    - hiển thị số record thiếu `severity` (cho record cũ).
+  - Cập nhật runbook:
+    - bổ sung quy ước severity và lưu ý `UNKNOWN` cho dữ liệu lịch sử.
+  - Kiểm thử:
+    - `run_lv3_maintenance.py --skip-build --append-runlog --tag smoke-severity` → PASS, `severity=INFO`
+    - health check emit PASS alert có `severity=INFO`
+    - dashboard hiển thị phân phối severity + record cũ `UNKNOWN`.
 
 ---
 
 ## 8) Next action khi user nói “Ok continue”
 
-Thực thi **Giai đoạn 5** theo đúng thứ tự:
+Trạng thái hiện tại: **Phase 5 complete — Lv3 coverage 100% (2039/2039)**.
 
-1) Chốt policy freeze (A/B hybrid) theo file `.m/reclass/phase6-freeze-policy.md`  
-2) Quyết định có mở rộng tiếp các node thuế nghiệp vụ còn trống lv3: `MST`, `Lệ phí môn bài`, `Hộ/CNKD`, `Thuế nhà thầu`  
-3) Nếu mở rộng: tạo Phase 5.24a+ theo từng node nhỏ (10–11 bài/node)  
-4) Nếu không mở rộng: lock rule set + tổng kết cuối kỳ
+Nếu user vẫn muốn “continue”, các hướng kế tiếp:
+
+1) Chạy **maintenance QA định kỳ** (drift/consistency/dup check) và lưu snapshot theo mốc thời gian.  
+2) Nếu có bài mới: chạy **incremental ingestion** (classify bài mới + rebuild + QA tối thiểu).  
+3) Nếu cần đổi taxonomy/rule lớn: mở **RFC thay đổi** trước khi động vào mapping đã lock.

@@ -361,3 +361,304 @@
 {"ts": 1775581520.60692, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 1409}}
 {"ts": 1775583784.1686954, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
 {"ts": 1775583800.8280125, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 2742}}
+{"ts": 1775584188.054636, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 231521, "source": "usage.input_tokens"}}
+{"ts": 1775584188.0613847, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 231521, "source": "usage.input_tokens"}}
+{"ts": 1775584200.0587096, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 232305, "source": "usage.input_tokens"}}
+{"ts": 1775584200.0673597, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 232305, "source": "usage.input_tokens"}}
+{"ts": 1775584200.3665965, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775584213.689573, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 2422}}
+{"ts": 1775584248.2012153, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 230033, "source": "usage.input_tokens"}}
+{"ts": 1775584248.207168, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 230033, "source": "usage.input_tokens"}}
+{"ts": 1775584256.397038, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 231237, "source": "usage.input_tokens"}}
+{"ts": 1775584256.4167135, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 231237, "source": "usage.input_tokens"}}
+{"ts": 1775584270.7493484, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 231519, "source": "usage.input_tokens"}}
+{"ts": 1775584270.758338, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 231519, "source": "usage.input_tokens"}}
+{"ts": 1775584278.594558, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 232069, "source": "usage.input_tokens"}}
+{"ts": 1775584278.6007712, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 232069, "source": "usage.input_tokens"}}
+{"ts": 1775584291.156821, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 232400, "source": "usage.input_tokens"}}
+{"ts": 1775584291.174768, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 232400, "source": "usage.input_tokens"}}
+{"ts": 1775584584.5457985, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 233221, "source": "usage.input_tokens"}}
+{"ts": 1775584584.5594292, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 233221, "source": "usage.input_tokens"}}
+{"ts": 1775584602.0557044, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 234983, "source": "usage.input_tokens"}}
+{"ts": 1775584602.0638938, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 234983, "source": "usage.input_tokens"}}
+{"ts": 1775584611.8991628, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 235733, "source": "usage.input_tokens"}}
+{"ts": 1775584611.9047956, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 235733, "source": "usage.input_tokens"}}
+{"ts": 1775584612.2002332, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775584628.9503934, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 1292}}
+{"ts": 1775584637.215896, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 234482, "source": "usage.input_tokens"}}
+{"ts": 1775584637.2240984, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 234482, "source": "usage.input_tokens"}}
+{"ts": 1775584655.734952, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 235187, "source": "usage.input_tokens"}}
+{"ts": 1775584655.7485695, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 235187, "source": "usage.input_tokens"}}
+{"ts": 1775584665.447525, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 236250, "source": "usage.input_tokens"}}
+{"ts": 1775584665.4611154, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 236250, "source": "usage.input_tokens"}}
+{"ts": 1775584682.6273706, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 236489, "source": "usage.input_tokens"}}
+{"ts": 1775584682.635637, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 236489, "source": "usage.input_tokens"}}
+{"ts": 1775584690.6265948, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237406, "source": "usage.input_tokens"}}
+{"ts": 1775584690.6320517, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237406, "source": "usage.input_tokens"}}
+{"ts": 1775584704.9882653, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237650, "source": "usage.input_tokens"}}
+{"ts": 1775584704.9997437, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237650, "source": "usage.input_tokens"}}
+{"ts": 1775584713.2911131, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238138, "source": "usage.input_tokens"}}
+{"ts": 1775584713.299085, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238138, "source": "usage.input_tokens"}}
+{"ts": 1775584725.8882017, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238471, "source": "usage.input_tokens"}}
+{"ts": 1775584725.8952186, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238471, "source": "usage.input_tokens"}}
+{"ts": 1775585012.2359278, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239265, "source": "usage.input_tokens"}}
+{"ts": 1775585012.2469356, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239265, "source": "usage.input_tokens"}}
+{"ts": 1775585031.1568694, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240994, "source": "usage.input_tokens"}}
+{"ts": 1775585031.1669755, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240994, "source": "usage.input_tokens"}}
+{"ts": 1775585039.2258446, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 241745, "source": "usage.input_tokens"}}
+{"ts": 1775585039.2309916, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 241745, "source": "usage.input_tokens"}}
+{"ts": 1775585039.5041409, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775585053.186126, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 3425}}
+{"ts": 1775585068.4732697, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237463, "source": "usage.input_tokens"}}
+{"ts": 1775585068.4786317, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237463, "source": "usage.input_tokens"}}
+{"ts": 1775585084.0210066, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237938, "source": "usage.input_tokens"}}
+{"ts": 1775585084.0373642, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237938, "source": "usage.input_tokens"}}
+{"ts": 1775585093.6960416, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238783, "source": "usage.input_tokens"}}
+{"ts": 1775585093.7059395, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238783, "source": "usage.input_tokens"}}
+{"ts": 1775585103.2753825, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238991, "source": "usage.input_tokens"}}
+{"ts": 1775585103.2815237, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238991, "source": "usage.input_tokens"}}
+{"ts": 1775585112.865339, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239389, "source": "usage.input_tokens"}}
+{"ts": 1775585112.8780904, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239389, "source": "usage.input_tokens"}}
+{"ts": 1775585129.2249563, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239721, "source": "usage.input_tokens"}}
+{"ts": 1775585129.2343054, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239721, "source": "usage.input_tokens"}}
+{"ts": 1775585402.1391327, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240507, "source": "usage.input_tokens"}}
+{"ts": 1775585402.1508248, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240507, "source": "usage.input_tokens"}}
+{"ts": 1775585422.0112329, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242206, "source": "usage.input_tokens"}}
+{"ts": 1775585422.0204337, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242206, "source": "usage.input_tokens"}}
+{"ts": 1775585434.4961488, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242938, "source": "usage.input_tokens"}}
+{"ts": 1775585434.501308, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242938, "source": "usage.input_tokens"}}
+{"ts": 1775585434.7863152, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775585447.9565616, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 2562}}
+{"ts": 1775585469.8441124, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239738, "source": "usage.input_tokens"}}
+{"ts": 1775585469.8499687, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239738, "source": "usage.input_tokens"}}
+{"ts": 1775585479.1617455, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240719, "source": "usage.input_tokens"}}
+{"ts": 1775585479.1680024, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240719, "source": "usage.input_tokens"}}
+{"ts": 1775585500.4423466, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 241341, "source": "usage.input_tokens"}}
+{"ts": 1775585500.44786, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 241341, "source": "usage.input_tokens"}}
+{"ts": 1775585507.6973417, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242284, "source": "usage.input_tokens"}}
+{"ts": 1775585507.7033808, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242284, "source": "usage.input_tokens"}}
+{"ts": 1775585518.79844, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242534, "source": "usage.input_tokens"}}
+{"ts": 1775585518.8079035, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242534, "source": "usage.input_tokens"}}
+{"ts": 1775585530.2913494, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 243000, "source": "usage.input_tokens"}}
+{"ts": 1775585530.2974386, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 243000, "source": "usage.input_tokens"}}
+{"ts": 1775585542.8208337, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 243311, "source": "usage.input_tokens"}}
+{"ts": 1775585542.8298569, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 243311, "source": "usage.input_tokens"}}
+{"ts": 1775585819.975943, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 244116, "source": "usage.input_tokens"}}
+{"ts": 1775585819.983613, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 244116, "source": "usage.input_tokens"}}
+{"ts": 1775585833.874458, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 245828, "source": "usage.input_tokens"}}
+{"ts": 1775585833.883785, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 245828, "source": "usage.input_tokens"}}
+{"ts": 1775585842.2743416, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 246555, "source": "usage.input_tokens"}}
+{"ts": 1775585842.2862463, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 246555, "source": "usage.input_tokens"}}
+{"ts": 1775585842.5877733, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775585859.226215, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 7040}}
+{"ts": 1775585869.1950543, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 236789, "source": "usage.input_tokens"}}
+{"ts": 1775585869.2065523, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 236789, "source": "usage.input_tokens"}}
+{"ts": 1775585888.8357472, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237251, "source": "usage.input_tokens"}}
+{"ts": 1775585888.8529093, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237251, "source": "usage.input_tokens"}}
+{"ts": 1775585897.1588953, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238082, "source": "usage.input_tokens"}}
+{"ts": 1775585897.1647706, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238082, "source": "usage.input_tokens"}}
+{"ts": 1775585905.3448462, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238263, "source": "usage.input_tokens"}}
+{"ts": 1775585905.3528388, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238263, "source": "usage.input_tokens"}}
+{"ts": 1775585913.2420857, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238654, "source": "usage.input_tokens"}}
+{"ts": 1775585913.2484083, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238654, "source": "usage.input_tokens"}}
+{"ts": 1775585931.2698298, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238938, "source": "usage.input_tokens"}}
+{"ts": 1775585931.2761045, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238938, "source": "usage.input_tokens"}}
+{"ts": 1775586208.5616837, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239696, "source": "usage.input_tokens"}}
+{"ts": 1775586208.569555, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239696, "source": "usage.input_tokens"}}
+{"ts": 1775586223.2208745, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 241375, "source": "usage.input_tokens"}}
+{"ts": 1775586223.2289724, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 241375, "source": "usage.input_tokens"}}
+{"ts": 1775586232.257525, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242098, "source": "usage.input_tokens"}}
+{"ts": 1775586232.2624905, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242098, "source": "usage.input_tokens"}}
+{"ts": 1775586232.5485876, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775586249.005654, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 5614}}
+{"ts": 1775586261.181899, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 234096, "source": "usage.input_tokens"}}
+{"ts": 1775586261.1963096, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 234096, "source": "usage.input_tokens"}}
+{"ts": 1775586283.4533691, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 234691, "source": "usage.input_tokens"}}
+{"ts": 1775586283.4596798, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 234691, "source": "usage.input_tokens"}}
+{"ts": 1775586291.3784423, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 235537, "source": "usage.input_tokens"}}
+{"ts": 1775586291.3845494, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 235537, "source": "usage.input_tokens"}}
+{"ts": 1775586299.9484606, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 235718, "source": "usage.input_tokens"}}
+{"ts": 1775586299.9549325, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 235718, "source": "usage.input_tokens"}}
+{"ts": 1775586307.1894372, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 236124, "source": "usage.input_tokens"}}
+{"ts": 1775586307.2047575, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 236124, "source": "usage.input_tokens"}}
+{"ts": 1775586323.586632, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 236401, "source": "usage.input_tokens"}}
+{"ts": 1775586323.5976658, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 236401, "source": "usage.input_tokens"}}
+{"ts": 1775586603.2907917, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237183, "source": "usage.input_tokens"}}
+{"ts": 1775586603.3017108, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237183, "source": "usage.input_tokens"}}
+{"ts": 1775586617.8019228, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238928, "source": "usage.input_tokens"}}
+{"ts": 1775586617.811962, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238928, "source": "usage.input_tokens"}}
+{"ts": 1775586626.9175086, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239667, "source": "usage.input_tokens"}}
+{"ts": 1775586626.9327738, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239667, "source": "usage.input_tokens"}}
+{"ts": 1775586627.2209613, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775586643.7914588, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 4134}}
+{"ts": 1775586657.2704818, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 234183, "source": "usage.input_tokens"}}
+{"ts": 1775586657.2786357, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 234183, "source": "usage.input_tokens"}}
+{"ts": 1775586664.039029, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237250, "source": "usage.input_tokens"}}
+{"ts": 1775586664.0519102, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 237250, "source": "usage.input_tokens"}}
+{"ts": 1775586685.471039, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238398, "source": "usage.input_tokens"}}
+{"ts": 1775586685.479912, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238398, "source": "usage.input_tokens"}}
+{"ts": 1775586693.2249875, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239487, "source": "usage.input_tokens"}}
+{"ts": 1775586693.2311625, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239487, "source": "usage.input_tokens"}}
+{"ts": 1775586704.6402218, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239776, "source": "usage.input_tokens"}}
+{"ts": 1775586704.646314, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239776, "source": "usage.input_tokens"}}
+{"ts": 1775586719.6778893, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240231, "source": "usage.input_tokens"}}
+{"ts": 1775586719.6838782, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240231, "source": "usage.input_tokens"}}
+{"ts": 1775586726.9266453, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240386, "source": "usage.input_tokens"}}
+{"ts": 1775586726.933404, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240386, "source": "usage.input_tokens"}}
+{"ts": 1775586734.6641328, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240658, "source": "usage.input_tokens"}}
+{"ts": 1775586734.6766102, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240658, "source": "usage.input_tokens"}}
+{"ts": 1775586753.9526277, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240968, "source": "usage.input_tokens"}}
+{"ts": 1775586753.9635963, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240968, "source": "usage.input_tokens"}}
+{"ts": 1775587027.5978885, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 241838, "source": "usage.input_tokens"}}
+{"ts": 1775587027.605282, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 241838, "source": "usage.input_tokens"}}
+{"ts": 1775587047.8407235, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 243350, "source": "usage.input_tokens"}}
+{"ts": 1775587047.8474238, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 243350, "source": "usage.input_tokens"}}
+{"ts": 1775587056.975918, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 244083, "source": "usage.input_tokens"}}
+{"ts": 1775587056.9816637, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 244083, "source": "usage.input_tokens"}}
+{"ts": 1775587057.2483792, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775587073.6347625, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 2459}}
+{"ts": 1775587090.0677612, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 241108, "source": "usage.input_tokens"}}
+{"ts": 1775587090.0765731, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 241108, "source": "usage.input_tokens"}}
+{"ts": 1775587112.3867812, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242071, "source": "usage.input_tokens"}}
+{"ts": 1775587112.393142, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242071, "source": "usage.input_tokens"}}
+{"ts": 1775587121.3675761, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 243764, "source": "usage.input_tokens"}}
+{"ts": 1775587121.3732467, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 243764, "source": "usage.input_tokens"}}
+{"ts": 1775587135.4417586, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 244151, "source": "usage.input_tokens"}}
+{"ts": 1775587135.4473603, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 244151, "source": "usage.input_tokens"}}
+{"ts": 1775587147.5731528, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 244896, "source": "usage.input_tokens"}}
+{"ts": 1775587147.5796878, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 244896, "source": "usage.input_tokens"}}
+{"ts": 1775587152.456242, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247303, "source": "usage.input_tokens"}}
+{"ts": 1775587152.4780085, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247303, "source": "usage.input_tokens"}}
+{"ts": 1775587163.0764656, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247482, "source": "usage.input_tokens"}}
+{"ts": 1775587163.0840712, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247482, "source": "usage.input_tokens"}}
+{"ts": 1775587169.7351217, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247894, "source": "usage.input_tokens"}}
+{"ts": 1775587169.742934, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247894, "source": "usage.input_tokens"}}
+{"ts": 1775587183.1141512, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 248182, "source": "usage.input_tokens"}}
+{"ts": 1775587183.1206505, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 248182, "source": "usage.input_tokens"}}
+{"ts": 1775587183.3898542, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775587196.347231, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 1135}}
+{"ts": 1775587230.0734413, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247120, "source": "usage.input_tokens"}}
+{"ts": 1775587230.079719, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247120, "source": "usage.input_tokens"}}
+{"ts": 1775587238.7897682, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 248998, "source": "usage.input_tokens"}}
+{"ts": 1775587238.8009512, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 248998, "source": "usage.input_tokens"}}
+{"ts": 1775587245.8858004, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 249345, "source": "usage.input_tokens"}}
+{"ts": 1775587245.8932436, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 249345, "source": "usage.input_tokens"}}
+{"ts": 1775587260.2653098, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 251653, "source": "usage.input_tokens"}}
+{"ts": 1775587260.2778904, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 251653, "source": "usage.input_tokens"}}
+{"ts": 1775587267.443155, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 251998, "source": "usage.input_tokens"}}
+{"ts": 1775587267.4482946, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 251998, "source": "usage.input_tokens"}}
+{"ts": 1775587267.7218475, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775587280.7566674, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 364}}
+{"ts": 1775587298.285186, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 251867, "source": "usage.input_tokens"}}
+{"ts": 1775587298.2916312, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 251867, "source": "usage.input_tokens"}}
+{"ts": 1775587327.0221949, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 253070, "source": "usage.input_tokens"}}
+{"ts": 1775587327.0326238, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 253070, "source": "usage.input_tokens"}}
+{"ts": 1775587336.358383, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 254443, "source": "usage.input_tokens"}}
+{"ts": 1775587336.3734832, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 254443, "source": "usage.input_tokens"}}
+{"ts": 1775587351.3144786, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 254769, "source": "usage.input_tokens"}}
+{"ts": 1775587351.3216467, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 254769, "source": "usage.input_tokens"}}
+{"ts": 1775587363.246089, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 255448, "source": "usage.input_tokens"}}
+{"ts": 1775587363.2545173, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 255448, "source": "usage.input_tokens"}}
+{"ts": 1775587378.3223946, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 255790, "source": "usage.input_tokens"}}
+{"ts": 1775587378.329414, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 255790, "source": "usage.input_tokens"}}
+{"ts": 1775587657.619329, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 256906, "source": "usage.input_tokens"}}
+{"ts": 1775587657.6398616, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 256906, "source": "usage.input_tokens"}}
+{"ts": 1775587668.257215, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 258697, "source": "usage.input_tokens"}}
+{"ts": 1775587668.2730968, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 258697, "source": "usage.input_tokens"}}
+{"ts": 1775587675.9115965, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 259024, "source": "usage.input_tokens"}}
+{"ts": 1775587675.9191954, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 259024, "source": "usage.input_tokens"}}
+{"ts": 1775587691.1834884, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 259259, "source": "usage.input_tokens"}}
+{"ts": 1775587691.1900861, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 259259, "source": "usage.input_tokens"}}
+{"ts": 1775587699.4156477, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 259736, "source": "usage.input_tokens"}}
+{"ts": 1775587699.424507, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 259736, "source": "usage.input_tokens"}}
+{"ts": 1775587709.4008334, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 260007, "source": "usage.input_tokens"}}
+{"ts": 1775587709.4124157, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 260007, "source": "usage.input_tokens"}}
+{"ts": 1775587709.6921484, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775587726.2324812, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 2689}}
+{"ts": 1775587737.9476519, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 256787, "source": "usage.input_tokens"}}
+{"ts": 1775587737.9599683, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 256787, "source": "usage.input_tokens"}}
+{"ts": 1775587764.227649, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 257637, "source": "usage.input_tokens"}}
+{"ts": 1775587764.2379181, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 257637, "source": "usage.input_tokens"}}
+{"ts": 1775587772.1715481, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 258784, "source": "usage.input_tokens"}}
+{"ts": 1775587772.178544, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 258784, "source": "usage.input_tokens"}}
+{"ts": 1775587790.1167338, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 259102, "source": "usage.input_tokens"}}
+{"ts": 1775587790.124229, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 259102, "source": "usage.input_tokens"}}
+{"ts": 1775587799.43654, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 259729, "source": "usage.input_tokens"}}
+{"ts": 1775587799.4476066, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 259729, "source": "usage.input_tokens"}}
+{"ts": 1775587814.9076328, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 260084, "source": "usage.input_tokens"}}
+{"ts": 1775587814.9153688, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 260084, "source": "usage.input_tokens"}}
+{"ts": 1775588092.7283976, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 261186, "source": "usage.input_tokens"}}
+{"ts": 1775588092.7346966, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 261186, "source": "usage.input_tokens"}}
+{"ts": 1775588097.458478, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 262947, "source": "usage.input_tokens"}}
+{"ts": 1775588097.470008, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 262947, "source": "usage.input_tokens"}}
+{"ts": 1775588103.5451677, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 263229, "source": "usage.input_tokens"}}
+{"ts": 1775588103.5573134, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 263229, "source": "usage.input_tokens"}}
+{"ts": 1775588118.8265476, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 263432, "source": "usage.input_tokens"}}
+{"ts": 1775588118.8357143, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 263432, "source": "usage.input_tokens"}}
+{"ts": 1775588126.7749975, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 263904, "source": "usage.input_tokens"}}
+{"ts": 1775588126.7851307, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 263904, "source": "usage.input_tokens"}}
+{"ts": 1775588140.7179217, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 264163, "source": "usage.input_tokens"}}
+{"ts": 1775588140.728654, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 264163, "source": "usage.input_tokens"}}
+{"ts": 1775588141.0153458, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775588157.6809118, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 1746}}
+{"ts": 1775588168.85166, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 262409, "source": "usage.input_tokens"}}
+{"ts": 1775588168.8668642, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 262409, "source": "usage.input_tokens"}}
+{"ts": 1775588190.153622, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 263368, "source": "usage.input_tokens"}}
+{"ts": 1775588190.16734, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 263368, "source": "usage.input_tokens"}}
+{"ts": 1775588200.5011497, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 264328, "source": "usage.input_tokens"}}
+{"ts": 1775588200.5159264, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 264328, "source": "usage.input_tokens"}}
+{"ts": 1775588210.321689, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 264586, "source": "usage.input_tokens"}}
+{"ts": 1775588210.3300338, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 264586, "source": "usage.input_tokens"}}
+{"ts": 1775588223.4248884, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 265074, "source": "usage.input_tokens"}}
+{"ts": 1775588223.4314585, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 265074, "source": "usage.input_tokens"}}
+{"ts": 1775588238.33811, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 265438, "source": "usage.input_tokens"}}
+{"ts": 1775588238.3456185, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 265438, "source": "usage.input_tokens"}}
+{"ts": 1775588514.609902, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 266520, "source": "usage.input_tokens"}}
+{"ts": 1775588514.6202383, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 266520, "source": "usage.input_tokens"}}
+{"ts": 1775588521.8841093, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 268272, "source": "usage.input_tokens"}}
+{"ts": 1775588521.899263, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 268272, "source": "usage.input_tokens"}}
+{"ts": 1775588530.4099414, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 268538, "source": "usage.input_tokens"}}
+{"ts": 1775588530.4197776, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 268538, "source": "usage.input_tokens"}}
+{"ts": 1775588545.5677974, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 268743, "source": "usage.input_tokens"}}
+{"ts": 1775588545.574062, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 268743, "source": "usage.input_tokens"}}
+{"ts": 1775588558.1404867, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 269221, "source": "usage.input_tokens"}}
+{"ts": 1775588558.1515813, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 269221, "source": "usage.input_tokens"}}
+{"ts": 1775588558.4167671, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775588571.270297, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 1480}}
+{"ts": 1775588585.5412636, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 267752, "source": "usage.input_tokens"}}
+{"ts": 1775588585.548157, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 267752, "source": "usage.input_tokens"}}
+{"ts": 1775588603.0860658, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 268531, "source": "usage.input_tokens"}}
+{"ts": 1775588603.092148, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 268531, "source": "usage.input_tokens"}}
+{"ts": 1775588610.884647, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 269532, "source": "usage.input_tokens"}}
+{"ts": 1775588610.8911912, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 269532, "source": "usage.input_tokens"}}
+{"ts": 1775588626.1322217, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 269819, "source": "usage.input_tokens"}}
+{"ts": 1775588626.143562, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 269819, "source": "usage.input_tokens"}}
+{"ts": 1775588635.6143358, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 270334, "source": "usage.input_tokens"}}
+{"ts": 1775588635.6220176, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 270334, "source": "usage.input_tokens"}}
+{"ts": 1775588654.431833, "message": "response incomplete (max_output_tokens)", "extra": {"reason": "max_output_tokens"}}
+{"ts": 1775588654.4419434, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 270681, "source": "usage.input_tokens"}}
+{"ts": 1775588654.4553032, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 270681, "source": "usage.input_tokens"}}
+{"ts": 1775588657.72881, "message": "micro-compact running (context_length_exceeded)", "extra": {"stage": "micro"}}
+{"ts": 1775588657.738986, "message": "auto-compact running (context_length_exceeded)", "extra": {"stage": "auto"}}
+{"ts": 1775588706.2260768, "message": "auto-compact triggered (context_length_exceeded)", "extra": {"stage": "auto"}}
+{"ts": 1775590317.836583, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775590465.425597, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775590921.2057865, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775590934.1998222, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 679}}
+{"ts": 1775591070.219133, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775591083.1913726, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 863}}
+{"ts": 1775591212.5517018, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775591225.4287994, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 968}}
+{"ts": 1775591335.0994873, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775591351.654825, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 1925}}
+{"ts": 1775591466.8409693, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775591480.035354, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 2545}}
+{"ts": 1775591482.1338506, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775591589.500273, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775591605.9859295, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 3223}}
+{"ts": 1775591721.9377713, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775591738.4692948, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 3419}}
+{"ts": 1775591815.9598331, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775591829.0252612, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 1433}}
+{"ts": 1775591947.8942552, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775591964.4652271, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 2198}}
