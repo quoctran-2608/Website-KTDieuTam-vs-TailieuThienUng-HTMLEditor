@@ -56,6 +56,18 @@ Trả lời:
 - DB và static build liên hệ thế nào
 - export pipeline phải chạy ra sao
 
+### 8. `editor-php-tuyen-dung-form-spec.md`
+
+Trả lời:
+- schema form cho job public của khu Tuyển dụng
+- field nào editor PHP cần quản trên `.md`
+
+### 9. `editor-php-tuyen-dung-brief-queue-spec.md`
+
+Trả lời:
+- queue brief tuyển dụng cho doanh nghiệp
+- moderation flow trước khi tạo job public
+
 ---
 
 ## 2) Artifact JSON quan trọng
@@ -77,6 +89,15 @@ Trả lời:
 
 ### `data/article-views/*.json`
 - prev/next/related/latest của từng bài
+
+### `data/jobs.json`
+- metadata public của khu Tuyển dụng
+
+### `data/employer-requests.json`
+- queue brief tuyển dụng nội bộ
+
+### `content/tuyen-dung/*.md`
+- source of truth hiện tại cho job public trước khi có DB/editor hoàn chỉnh
 
 ---
 

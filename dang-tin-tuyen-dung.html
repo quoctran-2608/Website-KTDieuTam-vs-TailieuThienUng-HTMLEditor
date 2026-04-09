@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhu cầu tuyển dụng | Kế Toán Diệu Tâm</title>
+  <meta name="description" content="Gửi nhu cầu tuyển dụng kế toán, thuế, tài chính và HCNS để Diệu Tâm hỗ trợ biên tập nội dung và đăng tin rõ ràng hơn.">
+  <link rel="canonical" href="https://ketoandieutam.com/dang-tin-tuyen-dung.html">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/jobs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="jobs-page employer-request-page" data-root="" data-nav="tuyen-dung">
+  <div id="siteHeader"></div>
+  <main>
+    <section class="jobs-hero">
+      <div class="container">
+        <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Trang chủ</a>
+          <span>/</span>
+          <a href="tuyen-dung.html">Tuyển dụng</a>
+          <span>/</span>
+          <span>Đăng nhu cầu tuyển dụng</span>
+        </nav>
+        <div class="jobs-hero-grid">
+          <div>
+            <span class="jobs-kicker">Cho nhà tuyển dụng</span>
+            <h1>Đăng nhu cầu tuyển dụng kế toán / tài chính / HCNS</h1>
+            <p class="jobs-hero-text">Điền nhanh thông tin vị trí đang cần tuyển, hệ thống sẽ tạo sẵn nội dung để bạn gửi qua Zalo hoặc lưu lại thành file. Sau đó Diệu Tâm sẽ rà soát, biên tập và hỗ trợ đăng tin rõ ràng hơn trên khu Tuyển dụng.</p>
+            <div class="jobs-hero-actions">
+              <a href="#employerRequestForm" class="btn-primary-orange">Điền thông tin ngay</a>
+              <a href="tuyen-dung.html" class="btn-outline-brown">Xem việc làm đang tuyển</a>
+            </div>
+            <ul class="jobs-highlight-list">
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Điền nhanh trong vài phút</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Gửi qua Zalo hoặc lưu file</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Được rà soát trước khi đăng</li>
+            </ul>
+          </div>
+          <div class="jobs-hero-stats">
+            <article class="jobs-stat-card"><strong>1 vị trí</strong><span>Mỗi form nên dùng cho một vị trí để thông tin rõ ràng hơn</span></article>
+            <article class="jobs-stat-card"><strong>Zalo / file</strong><span>Thuận tiện cho HR gửi nhanh và lưu nội bộ</span></article>
+            <article class="jobs-stat-card"><strong>Rà soát</strong><span>Diệu Tâm kiểm tra lại nội dung trước khi đăng</span></article>
+            <article class="jobs-stat-card"><strong>24 vị trí</strong><span>Khu Tuyển dụng đã có sẵn danh sách việc làm để tham khảo</span></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="jobs-section section-padding jobs-section-soft">
+      <div class="container">
+        <div class="job-detail-grid">
+          <article class="employer-request-form" id="employerRequestForm">
+            <h2>Thông tin vị trí cần tuyển</h2>
+            <p class="employer-request-form-intro">Chỉ cần điền những thông tin quan trọng nhất. Trang sẽ tạo sẵn nội dung để bạn gửi nhanh cho Diệu Tâm.</p>
+            <form id="recruitmentLeadForm">
+              <div class="employer-request-form-grid">
+                <label class="jobs-filter-field">
+                  <span>Tên công ty</span>
+                  <input type="text" id="companyName" required placeholder="Ví dụ: Công ty TNHH ABC">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Người liên hệ</span>
+                  <input type="text" id="contactName" required placeholder="Nguyễn Văn A">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Số điện thoại / Zalo</span>
+                  <input type="tel" id="contactPhone" required placeholder="09xx xxx xxx">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Email</span>
+                  <input type="email" id="contactEmail" placeholder="hr@congty.com">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Vị trí cần tuyển</span>
+                  <input type="text" id="jobTitle" required placeholder="Kế toán tổng hợp / Kế toán thuế / HCNS...">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Khu vực làm việc</span>
+                  <input type="text" id="jobLocation" required placeholder="TP.HCM / Hà Nội / Hybrid...">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Số lượng</span>
+                  <input type="number" id="jobQuantity" min="1" value="1">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Hạn nhận hồ sơ</span>
+                  <input type="date" id="jobDeadline">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Hình thức</span>
+                  <select id="employmentType">
+                    <option value="Toàn thời gian">Toàn thời gian</option>
+                    <option value="Bán thời gian">Bán thời gian</option>
+                    <option value="Thực tập">Thực tập</option>
+                    <option value="Hợp đồng">Hợp đồng</option>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Cách làm việc</span>
+                  <select id="workMode">
+                    <option value="Làm việc tại văn phòng">Làm việc tại văn phòng</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Remote">Remote</option>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Mức lương tham khảo</span>
+                  <input type="text" id="salaryLabel" placeholder="Ví dụ: 12 - 18 triệu / Thỏa thuận">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Mức kinh nghiệm</span>
+                  <input type="text" id="experienceLevel" placeholder="Ví dụ: 2 năm / Senior / Không yêu cầu">
+                </label>
+                <label class="jobs-filter-field full">
+                  <span>Mô tả ngắn / yêu cầu nổi bật</span>
+                  <textarea id="jobNotes" placeholder="Ghi ngắn các ý chính: mô tả công việc, yêu cầu, quyền lợi, lưu ý đặc biệt..."></textarea>
+                </label>
+              </div>
+              <div class="employer-request-actions">
+                <button type="submit" class="btn-primary-orange">Tạo nội dung & mở Zalo</button>
+                <button type="button" id="downloadBriefBtn" class="btn-outline-brown">Lưu thông tin .json</button>
+                <a href="https://zalo.me/0777315188" target="_blank" rel="noopener" class="btn-outline-brown">Mở Zalo trực tiếp</a>
+              </div>
+              <p class="employer-request-note"><strong>Lưu ý:</strong> sau khi bấm tạo nội dung, trang sẽ mở Zalo trong tab mới. Nếu trình duyệt cho phép, nội dung cũng sẽ được copy sẵn để bạn gửi nhanh. Nếu cần lưu hồ sơ nội bộ, bạn có thể bấm <strong>Lưu thông tin .json</strong>.</p>
+            </form>
+
+            <div class="employer-request-result" id="requestResult" hidden>
+              <h3>Nội dung đã sẵn sàng để gửi</h3>
+              <p class="employer-request-note">Mã yêu cầu: <strong class="employer-request-code" id="requestIdText"></strong></p>
+              <pre id="requestPreview"></pre>
+            </div>
+          </article>
+
+          <aside>
+            <div class="employer-request-box">
+              <h2>Thông tin nên chuẩn bị</h2>
+              <ul>
+                <li>Tên công ty, vị trí, địa điểm và đầu mối liên hệ rõ ràng.</li>
+                <li>Ít nhất một mô tả ngắn về công việc hoặc yêu cầu ứng viên.</li>
+                <li>Hạn nhận hồ sơ hoặc mốc thời gian dự kiến.</li>
+                <li>Thông tin lương / quyền lợi nếu doanh nghiệp sẵn sàng công khai.</li>
+              </ul>
+            </div>
+
+            <div class="employer-request-box">
+              <h2>Diệu Tâm hỗ trợ đăng tin như thế nào?</h2>
+              <ul>
+                <li>Bạn điền thông tin vị trí tại trang này và gửi qua Zalo hoặc file.</li>
+                <li>Diệu Tâm rà lại tiêu đề, mô tả, đầu mối liên hệ và cách trình bày.</li>
+                <li>Khi nội dung đã rõ ràng, tin sẽ được đăng lên khu Tuyển dụng.</li>
+              </ul>
+              <p>Nếu cần đăng nhiều vị trí cùng lúc, bạn có thể tạo nhiều form hoặc gửi danh sách qua Zalo/email để Diệu Tâm hỗ trợ sắp xếp.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="siteFooter"></div>
+  <script src="site-shell.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('recruitmentLeadForm');
+      var preview = document.getElementById('requestPreview');
+      var result = document.getElementById('requestResult');
+      var requestIdText = document.getElementById('requestIdText');
+      var downloadBtn = document.getElementById('downloadBriefBtn');
+      var zaloUrl = 'https://zalo.me/0777315188';
+      var lastPayload = null;
+
+      function value(id) {
+        var el = document.getElementById(id);
+        return el ? String(el.value || '').trim() : '';
+      }
+
+      function buildPayload() {
+        var timestamp = new Date();
+        var createdAt = timestamp.toISOString().slice(0, 19);
+        var requestId = 'brief-' + createdAt.replace(/[:T]/g, '-');
+        return {
+          requestId: requestId,
+          companyName: value('companyName'),
+          contactName: value('contactName'),
+          contactPhone: value('contactPhone'),
+          contactEmail: value('contactEmail'),
+          jobTitle: value('jobTitle'),
+          jobLocation: value('jobLocation'),
+          jobQuantity: value('jobQuantity') || '1',
+          jobDeadline: value('jobDeadline'),
+          employmentType: value('employmentType'),
+          workMode: value('workMode'),
+          salaryLabel: value('salaryLabel'),
+          experienceLevel: value('experienceLevel'),
+          jobNotes: value('jobNotes'),
+          sourcePage: 'dang-tin-tuyen-dung.html',
+          sourceChannel: 'website-brief-json',
+          createdAt: createdAt
+        };
+      }
+
+      function formatRequestCode(requestId) {
+        return String(requestId || '').replace(/^brief-/, 'YC-');
+      }
+
+      function buildDownloadName(requestId) {
+        return 'yeu-cau-tuyen-dung-' + formatRequestCode(requestId).toLowerCase() + '.json';
+      }
+
+      function buildBrief(payload) {
+        return [
+          '[Thông tin tuyển dụng từ website KetoanDieuTam.com]',
+          'Mã yêu cầu: ' + formatRequestCode(payload.requestId),
+          'Công ty: ' + payload.companyName,
+          'Người liên hệ: ' + payload.contactName,
+          'SĐT/Zalo: ' + payload.contactPhone,
+          'Email: ' + (payload.contactEmail || 'Chưa cung cấp'),
+          'Vị trí cần tuyển: ' + payload.jobTitle,
+          'Khu vực làm việc: ' + payload.jobLocation,
+          'Số lượng: ' + (payload.jobQuantity || '1'),
+          'Hạn nhận hồ sơ: ' + (payload.jobDeadline || 'Chưa chốt'),
+          'Hình thức: ' + payload.employmentType,
+          'Cách làm việc: ' + payload.workMode,
+          'Lương tham khảo: ' + (payload.salaryLabel || 'Chưa công khai'),
+          'Mức kinh nghiệm: ' + (payload.experienceLevel || 'Chưa ghi rõ'),
+          'Ghi chú thêm: ' + (payload.jobNotes || 'Không có ghi chú thêm')
+        ].join('\\n');
+      }
+
+      function downloadBrief(payload) {
+        var blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+        var href = URL.createObjectURL(blob);
+        var anchor = document.createElement('a');
+        anchor.href = href;
+        anchor.download = buildDownloadName(payload.requestId);
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        URL.revokeObjectURL(href);
+      }
+
+      function submitBrief(event) {
+        event.preventDefault();
+        var payload = buildPayload();
+        var brief = buildBrief(payload);
+        lastPayload = payload;
+        preview.textContent = brief;
+        if (requestIdText) {
+          requestIdText.textContent = formatRequestCode(payload.requestId);
+        }
+        result.hidden = false;
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(brief).catch(function () {});
+        }
+
+        window.open(zaloUrl, '_blank', 'noopener');
+      }
+
+      function handleDownload() {
+        var payload = lastPayload || buildPayload();
+        downloadBrief(payload);
+        if (requestIdText) {
+          requestIdText.textContent = formatRequestCode(payload.requestId);
+        }
+        preview.textContent = buildBrief(payload);
+        result.hidden = false;
+      }
+
+      if (form) {
+        form.addEventListener('submit', submitBrief);
+      }
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', handleDownload);
+      }
+    })();
+  </script>
+</body>
+</html>

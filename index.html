@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/jobs.css">
 </head>
 <body>
 
@@ -44,10 +45,11 @@
     <ul id="mainMenu">
       <li><a href="index.html" class="active">Trang Chủ</a></li>
       <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
-      <li><a href="giai-phap.html">Giải Pháp</a></li>
-      <li><a href="dao-tao.html">Đào Tạo</a></li>
-      <li class="has-submenu">
-        <a href="thu-vien.html"><span>Thư Viện</span><i class="fa-solid fa-angle-down nav-caret" aria-hidden="true"></i></a>
+	      <li><a href="giai-phap.html">Giải Pháp</a></li>
+	      <li><a href="dao-tao.html">Đào Tạo</a></li>
+	      <li><a href="tuyen-dung.html">Tuyển Dụng</a></li>
+	      <li class="has-submenu">
+	        <a href="thu-vien.html"><span>Thư Viện</span><i class="fa-solid fa-angle-down nav-caret" aria-hidden="true"></i></a>
         <ul class="nav-submenu">
           <li><a href="thu-vien.html?kind=huong-dan">Hướng dẫn</a></li>
           <li><a href="thu-vien.html?kind=bieu-mau">Biểu mẫu</a></li>
@@ -259,9 +261,119 @@
   </div>
 </section>
 
+<section class="home-recruitment section-padding" id="recruitment">
+  <div class="container">
+    <div class="recruitment-panel">
+      <div class="recruitment-head" data-aos="fade-up">
+        <div class="recruitment-copy">
+          <div class="section-label"><span>TUYỂN DỤNG</span></div>
+          <h2>Việc làm kế toán, thuế & HCNS</h2>
+          <p>Trang tuyển dụng dành cho người tìm việc kế toán và doanh nghiệp đang cần tìm ứng viên phù hợp.</p>
+        </div>
+        <div class="jobs-home-actions">
+          <a href="tuyen-dung.html" class="btn-primary-orange">Xem tất cả việc làm</a>
+          <a href="dang-tin-tuyen-dung.html" class="btn-outline-brown">Gửi nhu cầu tuyển dụng</a>
+        </div>
+      </div>
+
+      <div class="jobs-grid jobs-home-grid" id="homeRecruitmentList" data-aos="fade-up" data-aos-delay="100">
+        <div class="jobs-home-empty">Đang tải danh sách việc làm mới nhất...</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script id="homeRecruitmentFallbackData" type="application/json">
+<!-- HOME_RECRUITMENT_FALLBACK_START -->
+[
+  {
+    "id": "job/ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam",
+    "slug": "ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam",
+    "title": "Tuyển dụng Kế toán tổng hợp",
+    "companyName": "CÔNG TY TNHH THIẾT BỊ CÔNG NGHIỆP ICHI VIỆT NAM",
+    "location": "Lô C15/D21 khu ĐTM Cầu Giấy, Phường Cầu Giấy, TP. Hà Nội, Việt Nam",
+    "locationGroupKey": "ha-noi",
+    "locationGroupLabel": "Hà Nội",
+    "roleGroupKey": "ke-toan-tong-hop",
+    "roleGroupLabel": "Kế toán tổng hợp",
+    "salaryLabel": "18 -25 triệu",
+    "employmentType": "full-time",
+    "employmentTypeLabel": "Toàn thời gian",
+    "workMode": "onsite",
+    "workModeLabel": "Làm việc tại văn phòng",
+    "experienceLevel": "2-nam",
+    "experienceLevelLabel": "2 năm",
+    "deadline": "2026-04-09",
+    "publishDate": "2026-04-09",
+    "status": "active",
+    "featured": true,
+    "urgent": false,
+    "summary": "Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán, theo dõi chứng từ và phối hợp lập báo cáo định kỳ cho doanh nghiệp.",
+    "href": "tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam.html",
+    "sourceSite": "sanketoan.vn",
+    "sourceUrl": "https://sanketoan.vn/cong-viec/tuyen-dungke-toan-tong-hop-36261"
+  },
+  {
+    "id": "job/ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax",
+    "slug": "ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax",
+    "title": "Tuyển dụng Kế toán tổng hợp",
+    "companyName": "CÔNG TY TNHH DỊCH VỤ KẾ TOÁN & TƯ VẤN THUẾ EASYTAX",
+    "location": "Tầng 12, Toà nhà Viettel Tower, 285 Cách mạng Tháng Tám, Phường Hoà Hưng, Thành phố Hồ Chí Minh",
+    "locationGroupKey": "tp-hcm",
+    "locationGroupLabel": "TP.HCM",
+    "roleGroupKey": "ke-toan-tong-hop",
+    "roleGroupLabel": "Kế toán tổng hợp",
+    "salaryLabel": "15 - 18 triệu",
+    "employmentType": "full-time",
+    "employmentTypeLabel": "Toàn thời gian",
+    "workMode": "onsite",
+    "workModeLabel": "Làm việc tại văn phòng",
+    "experienceLevel": "3-nam",
+    "experienceLevelLabel": "3 năm",
+    "deadline": "2026-04-20",
+    "publishDate": "2026-04-09",
+    "status": "active",
+    "featured": true,
+    "urgent": false,
+    "summary": "Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán và quen với môi trường dịch vụ kế toán - tư vấn thuế.",
+    "href": "tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.html",
+    "sourceSite": "sanketoan.vn",
+    "sourceUrl": "https://sanketoan.vn/cong-viec/tuyen-dung-ke-toan-tong-hop-36476"
+  },
+  {
+    "id": "job/ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-gia-khanh",
+    "slug": "ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-gia-khanh",
+    "title": "Tuyển dụng Kế toán tổng hợp",
+    "companyName": "Công ty TNHH Thực Phẩm Gia Khánh",
+    "location": "69 Đường Láng, Đống Đa, Hà Nội",
+    "locationGroupKey": "ha-noi",
+    "locationGroupLabel": "Hà Nội",
+    "roleGroupKey": "ke-toan-tong-hop",
+    "roleGroupLabel": "Kế toán tổng hợp",
+    "salaryLabel": "18 - 25 triệu",
+    "employmentType": "full-time",
+    "employmentTypeLabel": "Toàn thời gian",
+    "workMode": "onsite",
+    "workModeLabel": "Làm việc tại văn phòng",
+    "experienceLevel": "5-nam",
+    "experienceLevelLabel": "5 năm",
+    "deadline": "2026-04-25",
+    "publishDate": "2026-04-09",
+    "status": "active",
+    "featured": true,
+    "urgent": false,
+    "summary": "Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán, kiểm soát chứng từ và xử lý báo cáo ở mức độ sâu hơn.",
+    "href": "tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-gia-khanh.html",
+    "sourceSite": "sanketoan.vn",
+    "sourceUrl": "https://sanketoan.vn/cong-viec/tuyen-dungke-toan-tong-hop-36520"
+  }
+]
+<!-- HOME_RECRUITMENT_FALLBACK_END -->
+</script>
+
 <section class="home-insights section-padding" id="insights">
   <div class="container">
-	<div class="section-intro center" data-aos="fade-up">
+		<div class="section-intro center" data-aos="fade-up">
       <div class="section-label center"><span>CHUYÊN MÔN & THỰC CHIẾN</span></div>
       <h2>Thư viện chuyên môn & bản tin chính sách</h2>
       </div>
@@ -646,6 +758,7 @@
           <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
           <li><a href="giai-phap.html">Giải Pháp</a></li>
           <li><a href="dao-tao.html">Đào Tạo</a></li>
+          <li><a href="tuyen-dung.html">Tuyển Dụng</a></li>
           <li><a href="thu-vien.html">Thư Viện</a></li>
         </ul>
       </div>
@@ -718,10 +831,110 @@
       if (!wasOpen) item.classList.add('is-open');
     });
   });
-// --- Hiệu ứng nút Về Top & Làm mờ khi cuộn ---
+	// --- Hiệu ứng nút Về Top & Làm mờ khi cuộn ---
   const backToTopBtn = document.getElementById('backToTop');
   const contactBar = document.getElementById('contactBar');
   let scrollTimeout;
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function formatDateVi(value) {
+    if (!value) return '';
+    const parts = value.split('-');
+    if (parts.length !== 3) return value;
+    return parts[2] + '/' + parts[1] + '/' + parts[0];
+  }
+
+  function getRecruitmentFallbackJobs() {
+    const node = document.getElementById('homeRecruitmentFallbackData');
+    if (!node) return [];
+    try {
+      const raw = String(node.textContent || '')
+        .replace(/<!--\s*HOME_RECRUITMENT_FALLBACK_START\s*-->/g, '')
+        .replace(/<!--\s*HOME_RECRUITMENT_FALLBACK_END\s*-->/g, '')
+        .trim();
+      const parsed = JSON.parse(raw || '[]');
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function renderRecruitmentCards(host, jobs) {
+    host.innerHTML = jobs.map(function(job) {
+      const badges = [];
+      const metaItems = [];
+      const locationLabel = job.locationGroupLabel || job.location || '';
+
+      if (job.roleGroupLabel) badges.push('<span class="job-badge neutral">' + escapeHtml(job.roleGroupLabel) + '</span>');
+      if (job.urgent) badges.push('<span class="job-badge urgent">Tuyển gấp</span>');
+      if (locationLabel) metaItems.push('<span class="job-card-meta-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>' + escapeHtml(locationLabel) + '</span>');
+
+      return [
+        '<article class="job-card" data-status="' + escapeHtml(job.status || '') + '">',
+          '<div class="job-card-head">',
+            '<div class="job-card-badges">' + badges.join('') + '</div>',
+            '<span class="job-card-company">' + escapeHtml(job.companyName) + '</span>',
+          '</div>',
+          '<h3><a href="' + escapeHtml(job.href) + '">' + escapeHtml(job.title) + '</a></h3>',
+          '<p class="job-card-summary">' + escapeHtml(job.summary || '') + '</p>',
+          '<div class="job-card-meta">' + metaItems.join('') + '</div>',
+          '<div class="job-card-footer">',
+            '<strong>' + escapeHtml(job.salaryLabel || 'Liên hệ') + '</strong>',
+            '<span class="job-card-deadline"><i class="fa-regular fa-calendar" aria-hidden="true"></i>Đến ' + escapeHtml(formatDateVi(job.deadline)) + '</span>',
+          '</div>',
+        '</article>'
+      ].join('');
+    }).join('');
+
+    if (window.AOS && typeof window.AOS.refreshHard === 'function') {
+      window.AOS.refreshHard();
+    }
+  }
+
+  function renderRecruitmentEmpty(host) {
+    host.innerHTML = '<div class="jobs-home-empty">Hiện chưa có vị trí phù hợp để hiển thị. Bạn có thể mở trang <a href="tuyen-dung.html">Tuyển dụng</a> để xem toàn bộ danh sách.</div>';
+  }
+
+  function renderRecruitmentTeaser() {
+    const host = document.getElementById('homeRecruitmentList');
+    if (!host) return;
+    const fallbackJobs = getRecruitmentFallbackJobs().slice(0, 3);
+
+    fetch('data/feeds/tuyen-dung.json', { cache: 'no-store' })
+      .then(function(response) {
+        if (!response.ok) throw new Error('feed-unavailable');
+        return response.json();
+      })
+      .then(function(items) {
+        const jobs = Array.isArray(items) ? items.slice(0, 3) : [];
+        if (jobs.length) {
+          renderRecruitmentCards(host, jobs);
+          return;
+        }
+        if (fallbackJobs.length) {
+          renderRecruitmentCards(host, fallbackJobs);
+          return;
+        }
+        renderRecruitmentEmpty(host);
+      })
+      .catch(function() {
+        if (fallbackJobs.length) {
+          renderRecruitmentCards(host, fallbackJobs);
+          return;
+        }
+        renderRecruitmentEmpty(host);
+      });
+  }
+
+  renderRecruitmentTeaser();
 
   window.addEventListener('scroll', () => {
     // Hiện/Ẩn nút Về Top

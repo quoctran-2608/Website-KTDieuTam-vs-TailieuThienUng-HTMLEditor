@@ -11,11 +11,12 @@
     },
 		    nav: [
 		      { key: 'home', label: 'Trang Chủ', href: 'index.html' },
-		      { key: 'gioi-thieu', label: 'Giới Thiệu', href: 'gioi-thieu.html' },
-		      { key: 'giai-phap', label: 'Giải Pháp', href: 'giai-phap.html' },
-		      { key: 'dao-tao', label: 'Đào Tạo', href: 'dao-tao.html' },
-		      {
-		        key: 'thu-vien',
+			      { key: 'gioi-thieu', label: 'Giới Thiệu', href: 'gioi-thieu.html' },
+			      { key: 'giai-phap', label: 'Giải Pháp', href: 'giai-phap.html' },
+			      { key: 'dao-tao', label: 'Đào Tạo', href: 'dao-tao.html' },
+			      { key: 'tuyen-dung', label: 'Tuyển Dụng', href: 'tuyen-dung.html' },
+			      {
+			        key: 'thu-vien',
 		        label: 'Thư Viện',
 		        href: 'thu-vien.html',
 		        children: [
@@ -103,15 +104,16 @@
               '<p class="footer-tagline">' + config.brand.tagline + '</p>' +
               '<p class="footer-desc">Đơn vị tư vấn quản trị doanh nghiệp và đào tạo Kế toán – HCNS thực chiến dành cho doanh nghiệp nhỏ và vừa tại Việt Nam.</p>' +
             '</div>' +
-            '<div class="footer-links">' +
-              '<h4>Liên kết</h4>' +
-              '<ul>' +
-                '<li><a href="' + path(root, 'gioi-thieu.html') + '">Giới Thiệu</a></li>' +
-                '<li><a href="' + path(root, 'giai-phap.html') + '">Giải Pháp</a></li>' +
-                '<li><a href="' + path(root, 'dao-tao.html') + '">Đào Tạo</a></li>' +
-	                '<li><a href="' + path(root, 'thu-vien.html') + '">Thư Viện</a></li>' +
-              '</ul>' +
-            '</div>' +
+	            '<div class="footer-links">' +
+	              '<h4>Liên kết</h4>' +
+	              '<ul>' +
+	                '<li><a href="' + path(root, 'gioi-thieu.html') + '">Giới Thiệu</a></li>' +
+	                '<li><a href="' + path(root, 'giai-phap.html') + '">Giải Pháp</a></li>' +
+	                '<li><a href="' + path(root, 'dao-tao.html') + '">Đào Tạo</a></li>' +
+	                '<li><a href="' + path(root, 'tuyen-dung.html') + '">Tuyển Dụng</a></li>' +
+		                '<li><a href="' + path(root, 'thu-vien.html') + '">Thư Viện</a></li>' +
+	              '</ul>' +
+	            '</div>' +
             '<div class="footer-connect">' +
               '<h4>Kết nối</h4>' +
               '<ul>' +
