@@ -306,6 +306,24 @@ def format_date_vi(value: date) -> str:
     return value.strftime("%d/%m/%Y")
 
 
+def format_relative_publish(today: date, publish_date: date) -> str:
+    delta = (today - publish_date).days
+    if delta <= 0:
+        return "Hôm nay"
+    if delta == 1:
+        return "1 ngày trước"
+    if delta < 7:
+        return f"{delta} ngày trước"
+    if delta < 30:
+        weeks = max(1, delta // 7)
+        return f"{weeks} tuần trước"
+    if delta < 365:
+        months = max(1, delta // 30)
+        return f"{months} tháng trước"
+    years = max(1, delta // 365)
+    return f"{years} năm trước"
+
+
 def display_employment(value: str) -> str:
     return EMPLOYMENT_LABELS.get(value, value)
 
@@ -329,7 +347,7 @@ def badge_html(job: Job) -> str:
     return "".join(badges)
 
 
-def job_card(job: Job, *, show_employment: bool = True, show_work_mode: bool = True) -> str:
+def job_card(job: Job, today: date, *, show_employment: bool = True, show_work_mode: bool = True) -> str:
     meta = job.meta
     search_blob = " ".join(
         [
@@ -341,8 +359,12 @@ def job_card(job: Job, *, show_employment: bool = True, show_work_mode: bool = T
         ]
     )
     location_label = clean_text(meta.get("locationGroupLabel")) or meta["location"]
+    salary_label = clean_text(meta.get("salaryLabel")) or "Liên hệ"
+    publish_label = format_relative_publish(today, job.publish_date)
     meta_rows = [
         f'<span class="job-card-meta-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{escape(location_label)}</span>',
+        f'<span><i class="fa-regular fa-clock" aria-hidden="true"></i>{escape(publish_label)}</span>',
+        f'<span><i class="fa-regular fa-calendar-check" aria-hidden="true"></i>Hạn: {escape(format_date_vi(job.deadline))}</span>',
     ]
     if show_employment:
         meta_rows.append(
@@ -359,21 +381,21 @@ def job_card(job: Job, *, show_employment: bool = True, show_work_mode: bool = T
     return f"""
       <article class="job-card" data-status="{escape(job.effective_status)}" data-search="{escape(fold_text(search_blob))}" data-location-group="{escape(meta['locationGroupKey'])}" data-role-group="{escape(meta['roleGroupKey'])}" data-employment="{escape(meta['employmentType'])}" data-work-mode="{escape(meta['workMode'])}" data-experience="{escape(meta['experienceLevel'])}" data-featured="{1 if meta.get('featured') else 0}" data-publish-date="{escape(meta['publishDate'])}" data-deadline="{escape(meta['deadline'])}" data-salary-max="{int(meta.get('salaryMax') or 0)}">
         <div class="job-card-head">
+          <div class="job-card-company-row">
+            <span class="job-card-company-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
+            <span class="job-card-company">{escape(meta['companyName'])}</span>
+          </div>
           <div class="job-card-badges">{badge_html(job)}</div>
-          <span class="job-card-company">{escape(meta['companyName'])}</span>
         </div>
         <h3><a href="{escape(meta['href'])}">{escape(meta['title'])}</a></h3>
+        <div class="job-card-salary"><i class="fa-solid fa-dollar-sign" aria-hidden="true"></i><span>{escape(salary_label)}</span></div>
         <p class="job-card-summary">{escape(meta['summary'])}</p>
         <div class="job-card-meta">
 {meta_html}
         </div>
-        <div class="job-card-footer">
-          <strong>{escape(meta.get('salaryLabel') or 'Liên hệ')}</strong>
-          <span>Hạn nộp: {escape(format_date_vi(job.deadline))}</span>
-        </div>
         <div class="job-card-actions">
           <a href="ung-tuyen.html" class="btn-primary-orange">Ứng tuyển nhanh</a>
-          <a href="viec-lam-da-luu.html" class="btn-outline-brown">Lưu việc làm</a>
+          <a href="viec-lam-da-luu.html" class="job-card-save-link">Lưu việc làm</a>
         </div>
       </article>
     """.strip()
@@ -457,6 +479,8 @@ def render_jobs_filter_script() -> str:
 
         var filterShell = document.getElementById('jobsFilterShell');
         var filterToggle = document.getElementById('jobsFilterToggle');
+        var discoveryBar = document.getElementById('jobsDiscoveryBar');
+        var discoverySentinel = document.getElementById('jobsDiscoverySentinel');
         var mobileQuery = window.matchMedia('(max-width: 767px)');
         var cards = Array.prototype.slice.call(grid.querySelectorAll('.job-card'));
         var resultCount = document.getElementById('jobsFilterCount');
@@ -478,6 +502,16 @@ def render_jobs_filter_script() -> str:
         var currentPage = 1;
         var pageSize = 9;
         var totalPages = 1;
+
+        function syncDiscoverySticky() {
+          if (!discoveryBar || !discoverySentinel) return;
+          if (!mobileQuery.matches) {
+            discoveryBar.classList.remove('is-sticky');
+            return;
+          }
+          var rect = discoverySentinel.getBoundingClientRect();
+          discoveryBar.classList.toggle('is-sticky', rect.top <= 0);
+        }
 
         function setFilterShellOpen(open) {
           if (!filterShell || !filterToggle) return;
@@ -722,6 +756,10 @@ def render_jobs_filter_script() -> str:
           }
         }
 
+        syncDiscoverySticky();
+        window.addEventListener('scroll', syncDiscoverySticky, { passive: true });
+        window.addEventListener('resize', syncDiscoverySticky);
+
         if (resetBtn) {
           resetBtn.addEventListener('click', function () {
             form.reset();
@@ -897,8 +935,6 @@ def ensure_jobs_sitemap_in_robots() -> None:
 
 def render_list_page(jobs: list[Job], today: date) -> str:
     active_jobs = [job for job in jobs if job.effective_status == "active"]
-    featured_jobs = [job for job in active_jobs if job.meta.get("featured")][:3]
-    latest_jobs = sorted(active_jobs, key=lambda item: (item.publish_date, item.deadline), reverse=True)[:6]
     roles = len(role_options := sorted({(job.meta["roleGroupKey"], job.meta["roleGroupLabel"]) for job in active_jobs}, key=lambda item: item[1]))
     latest_publish = max((job.publish_date for job in active_jobs), default=today)
     location_options = sorted({(job.meta["locationGroupKey"], job.meta["locationGroupLabel"]) for job in active_jobs}, key=lambda item: item[1])
@@ -912,16 +948,8 @@ def render_list_page(jobs: list[Job], today: date) -> str:
     show_employment = len(employment_options) > 1
     show_work_mode = len(work_mode_options) > 1
     all_jobs = "\n".join(
-        job_card(job, show_employment=show_employment, show_work_mode=show_work_mode) for job in active_jobs
+        job_card(job, today, show_employment=show_employment, show_work_mode=show_work_mode) for job in active_jobs
     )
-    if featured_jobs:
-        featured_html = "\n".join(
-            job_card(job, show_employment=show_employment, show_work_mode=show_work_mode) for job in featured_jobs
-        )
-    else:
-        featured_html = "\n".join(
-            job_card(job, show_employment=show_employment, show_work_mode=show_work_mode) for job in latest_jobs[:3]
-        )
     filter_focus_parts = ["khu vực", "vai trò", "kinh nghiệm"]
     if show_employment:
         filter_focus_parts.append("hình thức")
@@ -964,138 +992,91 @@ def render_list_page(jobs: list[Job], today: date) -> str:
 <body class="jobs-page" data-root="" data-nav="tuyen-dung">
   <div id="siteHeader"></div>
   <main>
-    <section class="jobs-hero">
+    <section class="jobs-hero jobs-hero-compact">
       <div class="container">
         <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
           <a href="index.html">Trang chủ</a>
           <span>/</span>
           <span>Tuyển dụng</span>
         </nav>
-        <div class="jobs-hero-grid">
+        <div class="jobs-hero-compact-head">
           <div>
             <span class="jobs-kicker">Cơ hội nghề nghiệp</span>
-            <h1>Việc làm kế toán, thuế & HCNS</h1>
-            <p class="jobs-hero-text">Tổng hợp vị trí đang tuyển cho người làm kế toán, thuế và HCNS. Dùng bộ lọc để tìm việc phù hợp theo khu vực, vai trò và kinh nghiệm.</p>
+            <h1>Tìm việc kế toán phù hợp thật nhanh</h1>
+            <p class="jobs-hero-text">Không gian tuyển dụng dành riêng cho ngành kế toán – Nơi mọi nhu cầu tìm người và tìm việc được khớp nối nhanh và rõ ràng nhất.</p>
             <div class="jobs-hero-actions">
-              <a href="#job-list" class="btn-primary-orange">Xem việc làm</a>
-              <a href="dang-tin-viec-lam.html" class="btn-outline-brown">Đăng tin việc làm</a>
+              <a href="#job-list" class="btn-primary-orange">Xem danh sách việc làm</a>
+              <a href="dang-tin-viec-lam.html" class="btn-outline-brown">Nhà tuyển dụng đăng tin</a>
             </div>
-            <ul class="jobs-highlight-list">
-              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Rõ vai trò và kinh nghiệm</li>
-              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Dễ lọc theo khu vực</li>
-            </ul>
           </div>
-          <div class="jobs-hero-stats">
-            <article class="jobs-stat-card"><strong>{len(active_jobs)}</strong><span>Vị trí đang tuyển</span></article>
-            <article class="jobs-stat-card"><strong>{len(featured_jobs) if featured_jobs else min(3, len(active_jobs))}</strong><span>Vị trí đáng chú ý</span></article>
-            <article class="jobs-stat-card"><strong>{roles}</strong><span>Vai trò tuyển dụng</span></article>
-            <article class="jobs-stat-card"><strong>{latest_publish.strftime("%d/%m/%Y")}</strong><span>Cập nhật gần nhất</span></article>
+          <div class="jobs-hero-inline-stats">
+            <article><strong>{len(active_jobs)}</strong><span>vị trí đang tuyển</span></article>
+            <article><strong>{roles}</strong><span>vai trò tuyển dụng</span></article>
+            <article><strong>{len(location_options)}</strong><span>khu vực</span></article>
+            <article><strong>{latest_publish.strftime("%d/%m/%Y")}</strong><span>cập nhật gần nhất</span></article>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="jobs-section section-padding">
-      <div class="container">
-        <div class="section-label center"><span>LỐI VÀO NHANH</span></div>
-        <h2 class="jobs-section-title">Bạn đang tìm việc hay đang tuyển người?</h2>
-        <p class="jobs-section-subtitle">Chọn đúng khu chức năng theo vai trò của bạn để thao tác nhanh hơn.</p>
-        <div class="jobs-portal-grid">
-          <article class="jobs-portal-card">
-            <span class="jobs-kicker">Cho ứng viên</span>
-            <h3>Tài khoản ứng viên</h3>
-            <p>Tạo hồ sơ, lưu việc làm, theo dõi vị trí đã ứng tuyển và xem gợi ý phù hợp theo chuyên môn.</p>
-            <ul>
-              <li>Hồ sơ nghề nghiệp và CV</li>
-              <li>Việc làm đã lưu, đã ứng tuyển</li>
-            </ul>
-            <div class="jobs-portal-actions">
-              <a href="tai-khoan-ung-vien.html" class="btn-primary-orange">Vào khu ứng viên</a>
-              <a href="dang-nhap-tuyen-dung.html" class="btn-outline-brown">Đăng nhập</a>
-            </div>
-          </article>
-          <article class="jobs-portal-card">
-            <span class="jobs-kicker">Cho nhà tuyển dụng</span>
-            <h3>Khu nhà tuyển dụng</h3>
-            <p>Đăng nhập, quản lý tin tuyển dụng, theo dõi ứng viên quan tâm và chuẩn bị luồng đăng tin hoàn chỉnh.</p>
-            <ul>
-              <li>Tạo và quản lý tin tuyển dụng</li>
-              <li>Quản lý danh sách ứng viên</li>
-            </ul>
-            <div class="jobs-portal-actions">
-              <a href="nha-tuyen-dung.html" class="btn-primary-orange">Vào khu nhà tuyển dụng</a>
-              <a href="dang-tin-viec-lam.html" class="btn-outline-brown">Đăng tin nhanh</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="jobs-section section-padding">
-      <div class="container">
-        <div class="section-label center"><span>TIN NỔI BẬT</span></div>
-        <h2 class="jobs-section-title">Một vài vị trí đáng chú ý hôm nay</h2>
-        <p class="jobs-section-subtitle">Các tin được ưu tiên theo mức độ nổi bật và thời điểm cập nhật.</p>
-        <div class="jobs-grid featured-grid">
-{featured_html}
         </div>
       </div>
     </section>
 
     <section class="jobs-section section-padding jobs-section-soft" id="job-list">
       <div class="container">
-        <div class="section-label center"><span>DANH SÁCH VIỆC LÀM</span></div>
-        <h2 class="jobs-section-title">Danh sách việc làm mới nhất</h2>
-        <p class="jobs-section-subtitle">Dùng bộ lọc bên dưới để tìm việc theo {filter_focus_text} phù hợp với bạn.</p>
-        <div class="jobs-quick-filters" aria-label="Lọc nhanh theo vai trò">
-          <span class="jobs-quick-filters-label">Lọc nhanh theo vai trò</span>
-{render_quick_role_filters(role_counts, role_options)}
+        <div class="jobs-list-head">
+          <h2>Việc làm kế toán mới nhất</h2>
+          <p>Dùng bộ lọc bên dưới để tìm việc theo {filter_focus_text} phù hợp với bạn.</p>
         </div>
-        <div class="jobs-filter-shell" id="jobsFilterShell">
-          <button type="button" class="jobs-filter-mobile-toggle" id="jobsFilterToggle" aria-expanded="false" aria-controls="jobsFilterForm">
-            <i class="fa-solid fa-sliders" aria-hidden="true"></i><span>Mở bộ lọc</span>
-          </button>
-          <form class="jobs-filter-bar" id="jobsFilterForm">
-            <div class="jobs-filter-grid">
-              <label class="jobs-filter-field">
-                <span>Tìm nhanh</span>
-                <input type="search" id="jobsFilterSearch" placeholder="Tên vị trí, công ty, khu vực...">
-              </label>
-              <label class="jobs-filter-field">
-                <span>Khu vực</span>
-                <select id="jobsFilterLocation">
+        <div id="jobsDiscoverySentinel" aria-hidden="true"></div>
+        <div class="jobs-discovery-bar" id="jobsDiscoveryBar">
+          <div class="jobs-quick-filters" aria-label="Lọc nhanh theo vai trò">
+            <span class="jobs-quick-filters-label">Lọc nhanh theo vai trò</span>
+{render_quick_role_filters(role_counts, role_options)}
+          </div>
+          <div class="jobs-filter-shell" id="jobsFilterShell">
+            <button type="button" class="jobs-filter-mobile-toggle" id="jobsFilterToggle" aria-expanded="false" aria-controls="jobsFilterForm">
+              <i class="fa-solid fa-sliders" aria-hidden="true"></i><span>Mở bộ lọc</span>
+            </button>
+            <form class="jobs-filter-bar" id="jobsFilterForm">
+              <div class="jobs-filter-grid">
+                <label class="jobs-filter-field">
+                  <span>Tìm nhanh</span>
+                  <input type="search" id="jobsFilterSearch" placeholder="Tên vị trí, công ty, khu vực...">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Khu vực</span>
+                  <select id="jobsFilterLocation">
 {render_select_options(location_options, 'Tất cả khu vực')}
-                </select>
-              </label>
-              <label class="jobs-filter-field">
-                <span>Vai trò</span>
-                <select id="jobsFilterRole">
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Vai trò</span>
+                  <select id="jobsFilterRole">
 {render_select_options(role_options, 'Tất cả vai trò')}
-                </select>
-              </label>
+                  </select>
+                </label>
 {employment_field}
 {work_mode_field}
-              <label class="jobs-filter-field">
-                <span>Kinh nghiệm</span>
-                <select id="jobsFilterExperience">
+                <label class="jobs-filter-field">
+                  <span>Kinh nghiệm</span>
+                  <select id="jobsFilterExperience">
 {render_select_options(experience_options, 'Tất cả mức kinh nghiệm')}
-                </select>
-              </label>
-              <label class="jobs-filter-field">
-                <span>Sắp xếp</span>
-                <select id="jobsSortOrder">
-                  <option value="publish-desc">Mới nhất</option>
-                  <option value="deadline-asc">Gần hết hạn</option>
-                  <option value="salary-desc">Lương cao</option>
-                  <option value="featured-first">Nổi bật trước</option>
-                </select>
-              </label>
-            </div>
-            <div class="jobs-filter-meta">
-              <strong id="jobsFilterCount">{len(active_jobs)} vị trí phù hợp</strong>
-              <button type="button" class="jobs-filter-reset" id="jobsFilterReset">Xóa lọc</button>
-            </div>
-          </form>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Sắp xếp</span>
+                  <select id="jobsSortOrder">
+                    <option value="publish-desc">Mới nhất</option>
+                    <option value="deadline-asc">Gần hết hạn</option>
+                    <option value="salary-desc">Lương cao</option>
+                    <option value="featured-first">Nổi bật trước</option>
+                  </select>
+                </label>
+              </div>
+              <div class="jobs-filter-meta">
+                <strong id="jobsFilterCount">{len(active_jobs)} vị trí phù hợp</strong>
+                <button type="button" class="jobs-filter-reset" id="jobsFilterReset">Xóa lọc</button>
+              </div>
+            </form>
+          </div>
         </div>
         <div class="jobs-active-filters" id="jobsActiveFilters" hidden></div>
         <div class="jobs-grid jobs-list-grid" id="jobsListGrid">
@@ -1106,6 +1087,34 @@ def render_list_page(jobs: list[Job], today: date) -> str:
           <button type="button" class="jobs-pagination-btn" data-page-action="prev">Trang trước</button>
           <div class="jobs-pagination-pages" id="jobsPaginationPages"></div>
           <button type="button" class="jobs-pagination-btn" data-page-action="next">Trang sau</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="jobs-section section-padding">
+      <div class="container">
+        <div class="section-label center"><span>LỐI VÀO NHANH</span></div>
+        <h2 class="jobs-section-title">Bạn là ứng viên hay nhà tuyển dụng?</h2>
+        <p class="jobs-section-subtitle">Chọn đúng khu chức năng để thao tác nhanh hơn theo vai trò của bạn.</p>
+        <div class="jobs-portal-grid">
+          <article class="jobs-portal-card">
+            <span class="jobs-kicker">Cho ứng viên</span>
+            <h3>Tài khoản ứng viên</h3>
+            <p>Tạo hồ sơ, lưu việc làm, theo dõi đơn đã nộp và trạng thái phản hồi.</p>
+            <div class="jobs-portal-actions">
+              <a href="tai-khoan-ung-vien.html" class="btn-primary-orange">Vào khu ứng viên</a>
+              <a href="dang-nhap-tuyen-dung.html" class="btn-outline-brown">Đăng nhập</a>
+            </div>
+          </article>
+          <article class="jobs-portal-card">
+            <span class="jobs-kicker">Cho nhà tuyển dụng</span>
+            <h3>Khu nhà tuyển dụng</h3>
+            <p>Đăng tin mới, quản lý tin đang chạy và theo dõi danh sách ứng viên quan tâm.</p>
+            <div class="jobs-portal-actions">
+              <a href="nha-tuyen-dung.html" class="btn-primary-orange">Vào khu nhà tuyển dụng</a>
+              <a href="dang-tin-viec-lam.html" class="btn-outline-brown">Đăng tin nhanh</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
