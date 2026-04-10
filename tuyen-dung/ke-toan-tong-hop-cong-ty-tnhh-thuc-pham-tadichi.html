@@ -22,6 +22,7 @@
           <span>/</span>
           <span>Tuyển dụng Kế toán tổng hợp</span>
         </nav>
+        <a href="../tuyen-dung.html#job-list" class="job-detail-back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Về danh sách việc làm</a>
         <div class="job-detail-top">
           <div class="job-detail-main-head">
             <div class="job-card-badges"><span class="job-badge neutral">Kế toán tổng hợp</span></div>
@@ -33,8 +34,9 @@
             </ul>
           </div>
           <div class="job-detail-actions">
-            <a href="https://sanketoan.vn/cong-viec/tuyen-dungke-toan-tong-hop-36544" target="_blank" rel="noopener" class="btn-primary-orange">Mở trang ứng tuyển</a>
-            <a href="../tuyen-dung.html" class="btn-outline-brown">Xem thêm việc làm khác</a>
+            <a href="../ung-tuyen.html" class="btn-primary-orange">Ứng tuyển nhanh</a>
+            <a href="../viec-lam-da-luu.html" class="btn-outline-brown">Lưu việc làm</a>
+            <a href="https://sanketoan.vn/cong-viec/tuyen-dungke-toan-tong-hop-36544" target="_blank" rel="noopener" class="job-source-link">Mở link ứng tuyển gốc</a>
           </div>
         </div>
       </div>
@@ -72,6 +74,41 @@
 <li>Truy cập tin gốc qua <code>sourceUrl</code> để theo dõi chi tiết và nộp hồ sơ.</li>
 </ul>
           </div>
+          <section class="jobs-related-section">
+            <div class="jobs-dashboard-panel-head">
+              <h2>Việc làm liên quan</h2>
+            </div>
+            <div class="jobs-related-grid">
+<article class="jobs-related-card">
+                <span class="job-card-company">CÔNG TY TNHH DỊCH VỤ KẾ TOÁN &amp; TƯ VẤN THUẾ EASYTAX</span>
+                <h3><a href="../tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.html">Tuyển dụng Kế toán tổng hợp</a></h3>
+                <p>Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán và quen với môi trường dịch vụ kế toán - tư vấn thuế.</p>
+                <div class="jobs-related-meta">
+                  <span>TP.HCM</span>
+                  <span>15 - 18 triệu</span>
+                </div>
+              </article>
+<article class="jobs-related-card">
+                <span class="job-card-company">Công ty TNHH TM DV XD Tràng An</span>
+                <h3><a href="../tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-tm-dv-xd-trang-an.html">Tuyển dụng Kế toán tổng hợp</a></h3>
+                <p>Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán, kiểm soát chứng từ và phối hợp báo cáo trong doanh nghiệp xây dựng - thương mại - dịch vụ.</p>
+                <div class="jobs-related-meta">
+                  <span>TP.HCM</span>
+                  <span>13 - 15 triệu</span>
+                </div>
+              </article>
+<article class="jobs-related-card">
+                <span class="job-card-company">Công ty TNHH DP Nhất Nam Long</span>
+                <h3><a href="../tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-dp-nhat-nam-long.html">Tuyển dụng Kế toán tổng hợp</a></h3>
+                <p>Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán, theo dõi chứng từ và phối hợp lập báo cáo định kỳ cho doanh nghiệp.</p>
+                <div class="jobs-related-meta">
+                  <span>TP.HCM</span>
+                  <span>13 - 15 triệu</span>
+                </div>
+              </article>
+            </div>
+            <a href="../tuyen-dung.html#job-list" class="job-source-link">Xem toàn bộ việc làm</a>
+          </section>
         </article>
         <aside class="job-detail-side">
           <div class="job-detail-box">
@@ -94,8 +131,116 @@
         </aside>
       </div>
     </section>
+    <div class="job-detail-mobile-bar" aria-label="Tác vụ nhanh">
+      <a href="../ung-tuyen.html" class="btn-primary-orange">Ứng tuyển nhanh</a>
+      <a href="../viec-lam-da-luu.html" class="btn-outline-brown">Lưu việc làm</a>
+    </div>
   </main>
   <div id="siteFooter"></div>
   <script src="../site-shell.js"></script>
+  <script>
+    (function () {
+      function initJobDetailMobileBar() {
+        var bar = document.querySelector('.job-detail-mobile-bar');
+        var primaryActions = document.querySelector('.job-detail-actions');
+        if (!bar || !primaryActions) return;
+
+        var mobileQuery = window.matchMedia('(max-width: 767px)');
+        var observer = null;
+        var fallbackListening = false;
+        var resizeTimer = null;
+        var scrollTimer = null;
+        var currentVisible = false;
+
+        function setBarVisible(nextVisible) {
+          var shouldShow = !!nextVisible;
+          if (currentVisible === shouldShow) return;
+          currentVisible = shouldShow;
+          bar.classList.toggle('is-visible', shouldShow);
+        }
+
+        function syncFallbackVisibility() {
+          if (!mobileQuery.matches) {
+            setBarVisible(false);
+            return;
+          }
+          var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+          var rect = primaryActions.getBoundingClientRect();
+          var topSafe = 16;
+          var bottomSafe = 56;
+          var actionsInView = rect.bottom > topSafe && rect.top < (viewportHeight - bottomSafe);
+          setBarVisible(!actionsInView);
+        }
+
+        function removeFallbackListener() {
+          if (!fallbackListening) return;
+          window.removeEventListener('scroll', scheduleFallbackSync);
+          if (scrollTimer) {
+            window.clearTimeout(scrollTimer);
+            scrollTimer = null;
+          }
+          fallbackListening = false;
+        }
+
+        function setupBarObserver() {
+          bar.classList.add('is-managed');
+          if (observer) {
+            observer.disconnect();
+            observer = null;
+          }
+
+          if (!mobileQuery.matches) {
+            setBarVisible(false);
+            removeFallbackListener();
+            return;
+          }
+
+          if ('IntersectionObserver' in window) {
+            observer = new IntersectionObserver(function (entries) {
+              var entry = entries[0];
+              var ratio = entry && typeof entry.intersectionRatio === 'number' ? entry.intersectionRatio : 0;
+              var shouldShow = !entry || !entry.isIntersecting || ratio < 0.16;
+              setBarVisible(shouldShow);
+            }, { threshold: [0, 0.16, 0.32], rootMargin: '-6% 0px -18% 0px' });
+            observer.observe(primaryActions);
+            removeFallbackListener();
+            return;
+          }
+
+          syncFallbackVisibility();
+          if (!fallbackListening) {
+            window.addEventListener('scroll', scheduleFallbackSync, { passive: true });
+            fallbackListening = true;
+          }
+        }
+
+        function scheduleSetup() {
+          if (resizeTimer) {
+            window.clearTimeout(resizeTimer);
+          }
+          resizeTimer = window.setTimeout(setupBarObserver, 120);
+        }
+
+        function scheduleFallbackSync() {
+          if (!fallbackListening) return;
+          if (scrollTimer) return;
+          scrollTimer = window.setTimeout(function () {
+            scrollTimer = null;
+            syncFallbackVisibility();
+          }, 80);
+        }
+
+        setupBarObserver();
+        if (mobileQuery.addEventListener) {
+          mobileQuery.addEventListener('change', scheduleSetup);
+        } else if (mobileQuery.addListener) {
+          mobileQuery.addListener(scheduleSetup);
+        }
+        window.addEventListener('resize', scheduleSetup);
+      }
+
+      document.addEventListener('DOMContentLoaded', initJobDetailMobileBar);
+    })();
+  </script>
 </body>
 </html>

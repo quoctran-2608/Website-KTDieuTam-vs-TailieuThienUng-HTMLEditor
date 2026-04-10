@@ -18,6 +18,19 @@ DATA_DIR = ROOT / "data"
 FEED_DIR = DATA_DIR / "feeds"
 LIST_PAGE = ROOT / "tuyen-dung.html"
 EMPLOYER_PAGE = ROOT / "dang-tin-tuyen-dung.html"
+RECRUITMENT_PORTAL_PAGES = [
+    ROOT / "dang-nhap-tuyen-dung.html",
+    ROOT / "tai-khoan-ung-vien.html",
+    ROOT / "ho-so-ung-vien.html",
+    ROOT / "viec-lam-da-luu.html",
+    ROOT / "don-ung-tuyen.html",
+    ROOT / "ung-tuyen.html",
+    ROOT / "nha-tuyen-dung.html",
+    ROOT / "dang-tin-viec-lam.html",
+    ROOT / "quan-ly-tin-tuyen-dung.html",
+    ROOT / "chi-tiet-tin-tuyen-dung.html",
+    ROOT / "ung-vien-tuyen-dung.html",
+]
 DATA_FILE = DATA_DIR / "jobs.json"
 FEED_FILE = FEED_DIR / "tuyen-dung.json"
 JOBS_SITEMAP_FILE = ROOT / "sitemap-jobs.xml"
@@ -316,7 +329,7 @@ def badge_html(job: Job) -> str:
     return "".join(badges)
 
 
-def job_card(job: Job) -> str:
+def job_card(job: Job, *, show_employment: bool = True, show_work_mode: bool = True) -> str:
     meta = job.meta
     search_blob = " ".join(
         [
@@ -327,6 +340,22 @@ def job_card(job: Job) -> str:
             meta.get("experienceLevel", ""),
         ]
     )
+    location_label = clean_text(meta.get("locationGroupLabel")) or meta["location"]
+    meta_rows = [
+        f'<span class="job-card-meta-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{escape(location_label)}</span>',
+    ]
+    if show_employment:
+        meta_rows.append(
+            f'<span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>{escape(display_employment(meta["employmentType"]))}</span>'
+        )
+    if show_work_mode:
+        meta_rows.append(
+            f'<span><i class="fa-solid fa-laptop-house" aria-hidden="true"></i>{escape(display_work_mode(meta["workMode"]))}</span>'
+        )
+    meta_rows.append(
+        f'<span><i class="fa-solid fa-user-clock" aria-hidden="true"></i>{escape(display_experience(meta["experienceLevel"]))}</span>'
+    )
+    meta_html = "\n".join(meta_rows)
     return f"""
       <article class="job-card" data-status="{escape(job.effective_status)}" data-search="{escape(fold_text(search_blob))}" data-location-group="{escape(meta['locationGroupKey'])}" data-role-group="{escape(meta['roleGroupKey'])}" data-employment="{escape(meta['employmentType'])}" data-work-mode="{escape(meta['workMode'])}" data-experience="{escape(meta['experienceLevel'])}" data-featured="{1 if meta.get('featured') else 0}" data-publish-date="{escape(meta['publishDate'])}" data-deadline="{escape(meta['deadline'])}" data-salary-max="{int(meta.get('salaryMax') or 0)}">
         <div class="job-card-head">
@@ -336,17 +365,55 @@ def job_card(job: Job) -> str:
         <h3><a href="{escape(meta['href'])}">{escape(meta['title'])}</a></h3>
         <p class="job-card-summary">{escape(meta['summary'])}</p>
         <div class="job-card-meta">
-          <span class="job-card-meta-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{escape(meta['location'])}</span>
-          <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>{escape(display_employment(meta['employmentType']))}</span>
-          <span><i class="fa-solid fa-laptop-house" aria-hidden="true"></i>{escape(display_work_mode(meta['workMode']))}</span>
-          <span><i class="fa-solid fa-user-clock" aria-hidden="true"></i>{escape(display_experience(meta['experienceLevel']))}</span>
+{meta_html}
         </div>
         <div class="job-card-footer">
           <strong>{escape(meta.get('salaryLabel') or 'Liên hệ')}</strong>
           <span>Hạn nộp: {escape(format_date_vi(job.deadline))}</span>
         </div>
+        <div class="job-card-actions">
+          <a href="ung-tuyen.html" class="btn-primary-orange">Ứng tuyển nhanh</a>
+          <a href="viec-lam-da-luu.html" class="btn-outline-brown">Lưu việc làm</a>
+        </div>
       </article>
     """.strip()
+
+
+def select_related_jobs(current_job: Job, jobs: list[Job], limit: int = 3) -> list[Job]:
+    current_slug = clean_text(current_job.meta.get("slug"))
+    current_role = clean_text(current_job.meta.get("roleGroupKey"))
+    current_location = clean_text(current_job.meta.get("locationGroupKey"))
+    ranked: list[tuple[int, int, int, int, Job]] = []
+
+    for candidate in jobs:
+        if candidate.effective_status != "active":
+            continue
+        if clean_text(candidate.meta.get("slug")) == current_slug:
+            continue
+
+        score = 0
+        if clean_text(candidate.meta.get("roleGroupKey")) == current_role:
+            score += 4
+        if clean_text(candidate.meta.get("locationGroupKey")) == current_location:
+            score += 2
+        if candidate.meta.get("featured"):
+            score += 1
+
+        publish_rank = int(candidate.publish_date.strftime("%Y%m%d"))
+        salary_rank = int(candidate.meta.get("salaryMax") or 0)
+        deadline_rank = int(candidate.deadline.strftime("%Y%m%d"))
+        ranked.append((score, publish_rank, salary_rank, deadline_rank, candidate))
+
+    ranked.sort(
+        key=lambda item: (
+            -item[0],
+            -item[1],
+            -item[2],
+            item[3],
+            item[4].meta["title"],
+        )
+    )
+    return [item[4] for item in ranked[:limit]]
 
 
 def render_select_options(options: list[tuple[str, str]], placeholder: str) -> str:
@@ -388,6 +455,9 @@ def render_jobs_filter_script() -> str:
         var grid = document.getElementById('jobsListGrid');
         if (!form || !grid) return;
 
+        var filterShell = document.getElementById('jobsFilterShell');
+        var filterToggle = document.getElementById('jobsFilterToggle');
+        var mobileQuery = window.matchMedia('(max-width: 767px)');
         var cards = Array.prototype.slice.call(grid.querySelectorAll('.job-card'));
         var resultCount = document.getElementById('jobsFilterCount');
         var emptyState = document.getElementById('jobsEmptyState');
@@ -401,6 +471,35 @@ def render_jobs_filter_script() -> str:
         var resetBtn = document.getElementById('jobsFilterReset');
         var activeFilters = document.getElementById('jobsActiveFilters');
         var quickRoleButtons = Array.prototype.slice.call(document.querySelectorAll('.jobs-quick-chip[data-role-value]'));
+        var pagination = document.getElementById('jobsPagination');
+        var paginationPages = document.getElementById('jobsPaginationPages');
+        var paginationPrev = pagination ? pagination.querySelector('[data-page-action="prev"]') : null;
+        var paginationNext = pagination ? pagination.querySelector('[data-page-action="next"]') : null;
+        var currentPage = 1;
+        var pageSize = 9;
+        var totalPages = 1;
+
+        function setFilterShellOpen(open) {
+          if (!filterShell || !filterToggle) return;
+          var isOpen = !!open;
+          filterShell.classList.toggle('is-open', isOpen);
+          filterToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          var toggleLabel = filterToggle.querySelector('span');
+          if (toggleLabel) {
+            toggleLabel.textContent = isOpen ? 'Đóng bộ lọc' : 'Mở bộ lọc';
+          }
+        }
+
+        function syncFilterShellByViewport() {
+          if (!filterShell || !filterToggle) return;
+          if (mobileQuery.matches) {
+            if (!filterShell.classList.contains('is-open')) {
+              setFilterShellOpen(false);
+            }
+            return;
+          }
+          setFilterShellOpen(true);
+        }
 
         function getSelectedLabel(select) {
           if (!select || !select.options || select.selectedIndex < 0) return '';
@@ -450,7 +549,43 @@ def render_jobs_filter_script() -> str:
           return bPublish - aPublish || aDeadline - bDeadline;
         }
 
-        function applyFilters() {
+        function applyPagination(visibleCards) {
+          totalPages = Math.max(1, Math.ceil(visibleCards.length / pageSize));
+          if (currentPage > totalPages) {
+            currentPage = totalPages;
+          }
+
+          var start = (currentPage - 1) * pageSize;
+          var end = start + pageSize;
+          visibleCards.forEach(function (card, index) {
+            var inPage = index >= start && index < end;
+            card.classList.toggle('is-page-hidden', !inPage);
+          });
+
+          if (!pagination) return;
+
+          if (visibleCards.length <= pageSize) {
+            pagination.hidden = true;
+            if (paginationPages) paginationPages.innerHTML = '';
+            if (paginationPrev) paginationPrev.disabled = true;
+            if (paginationNext) paginationNext.disabled = true;
+            return;
+          }
+
+          pagination.hidden = false;
+          if (paginationPages) {
+            var buttons = [];
+            for (var page = 1; page <= totalPages; page += 1) {
+              buttons.push('<button type="button" class="jobs-pagination-page' + (page === currentPage ? ' is-active' : '') + '" data-page-number="' + page + '">' + page + '</button>');
+            }
+            paginationPages.innerHTML = buttons.join('');
+          }
+          if (paginationPrev) paginationPrev.disabled = currentPage <= 1;
+          if (paginationNext) paginationNext.disabled = currentPage >= totalPages;
+        }
+
+        function applyFilters(options) {
+          var keepPage = options && options.keepPage;
           var searchValue = normalizeText(searchInput ? searchInput.value : '');
           var locationValue = locationSelect ? locationSelect.value : '';
           var roleValue = roleSelect ? roleSelect.value : '';
@@ -471,6 +606,7 @@ def render_jobs_filter_script() -> str:
 
             var show = matchesSearch && matchesLocation && matchesRole && matchesEmployment && matchesWorkMode && matchesExperience;
             card.classList.toggle('is-hidden', !show);
+            card.classList.remove('is-page-hidden');
             if (show) {
               visible += 1;
               visibleCards.push(card);
@@ -501,6 +637,11 @@ def render_jobs_filter_script() -> str:
           }
           renderActiveFilters(filters);
           syncQuickRoleButtons();
+
+          if (!keepPage) {
+            currentPage = 1;
+          }
+          applyPagination(visibleCards);
         }
 
         form.addEventListener('input', applyFilters);
@@ -536,6 +677,51 @@ def render_jobs_filter_script() -> str:
           });
         }
 
+        if (paginationPages) {
+          paginationPages.addEventListener('click', function (event) {
+            var button = event.target.closest('[data-page-number]');
+            if (!button) return;
+            var nextPage = Number(button.dataset.pageNumber || '1');
+            if (!nextPage || nextPage === currentPage) return;
+            currentPage = nextPage;
+            applyFilters({ keepPage: true });
+          });
+        }
+
+        if (paginationPrev) {
+          paginationPrev.addEventListener('click', function () {
+            if (currentPage <= 1) return;
+            currentPage -= 1;
+            applyFilters({ keepPage: true });
+          });
+        }
+
+        if (paginationNext) {
+          paginationNext.addEventListener('click', function () {
+            if (currentPage >= totalPages) return;
+            currentPage += 1;
+            applyFilters({ keepPage: true });
+          });
+        }
+
+        if (filterToggle && filterShell) {
+          setFilterShellOpen(!mobileQuery.matches);
+          filterToggle.addEventListener('click', function () {
+            setFilterShellOpen(!filterShell.classList.contains('is-open'));
+          });
+          if (mobileQuery.addEventListener) {
+            mobileQuery.addEventListener('change', function () {
+              syncFilterShellByViewport();
+              applyFilters();
+            });
+          } else if (mobileQuery.addListener) {
+            mobileQuery.addListener(function () {
+              syncFilterShellByViewport();
+              applyFilters();
+            });
+          }
+        }
+
         if (resetBtn) {
           resetBtn.addEventListener('click', function () {
             form.reset();
@@ -552,6 +738,115 @@ def render_jobs_filter_script() -> str:
 """.strip()
 
 
+def render_detail_mobile_bar_script() -> str:
+    return """
+  <script>
+    (function () {
+      function initJobDetailMobileBar() {
+        var bar = document.querySelector('.job-detail-mobile-bar');
+        var primaryActions = document.querySelector('.job-detail-actions');
+        if (!bar || !primaryActions) return;
+
+        var mobileQuery = window.matchMedia('(max-width: 767px)');
+        var observer = null;
+        var fallbackListening = false;
+        var resizeTimer = null;
+        var scrollTimer = null;
+        var currentVisible = false;
+
+        function setBarVisible(nextVisible) {
+          var shouldShow = !!nextVisible;
+          if (currentVisible === shouldShow) return;
+          currentVisible = shouldShow;
+          bar.classList.toggle('is-visible', shouldShow);
+        }
+
+        function syncFallbackVisibility() {
+          if (!mobileQuery.matches) {
+            setBarVisible(false);
+            return;
+          }
+          var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+          var rect = primaryActions.getBoundingClientRect();
+          var topSafe = 16;
+          var bottomSafe = 56;
+          var actionsInView = rect.bottom > topSafe && rect.top < (viewportHeight - bottomSafe);
+          setBarVisible(!actionsInView);
+        }
+
+        function removeFallbackListener() {
+          if (!fallbackListening) return;
+          window.removeEventListener('scroll', scheduleFallbackSync);
+          if (scrollTimer) {
+            window.clearTimeout(scrollTimer);
+            scrollTimer = null;
+          }
+          fallbackListening = false;
+        }
+
+        function setupBarObserver() {
+          bar.classList.add('is-managed');
+          if (observer) {
+            observer.disconnect();
+            observer = null;
+          }
+
+          if (!mobileQuery.matches) {
+            setBarVisible(false);
+            removeFallbackListener();
+            return;
+          }
+
+          if ('IntersectionObserver' in window) {
+            observer = new IntersectionObserver(function (entries) {
+              var entry = entries[0];
+              var ratio = entry && typeof entry.intersectionRatio === 'number' ? entry.intersectionRatio : 0;
+              var shouldShow = !entry || !entry.isIntersecting || ratio < 0.16;
+              setBarVisible(shouldShow);
+            }, { threshold: [0, 0.16, 0.32], rootMargin: '-6% 0px -18% 0px' });
+            observer.observe(primaryActions);
+            removeFallbackListener();
+            return;
+          }
+
+          syncFallbackVisibility();
+          if (!fallbackListening) {
+            window.addEventListener('scroll', scheduleFallbackSync, { passive: true });
+            fallbackListening = true;
+          }
+        }
+
+        function scheduleSetup() {
+          if (resizeTimer) {
+            window.clearTimeout(resizeTimer);
+          }
+          resizeTimer = window.setTimeout(setupBarObserver, 120);
+        }
+
+        function scheduleFallbackSync() {
+          if (!fallbackListening) return;
+          if (scrollTimer) return;
+          scrollTimer = window.setTimeout(function () {
+            scrollTimer = null;
+            syncFallbackVisibility();
+          }, 80);
+        }
+
+        setupBarObserver();
+        if (mobileQuery.addEventListener) {
+          mobileQuery.addEventListener('change', scheduleSetup);
+        } else if (mobileQuery.addListener) {
+          mobileQuery.addListener(scheduleSetup);
+        }
+        window.addEventListener('resize', scheduleSetup);
+      }
+
+      document.addEventListener('DOMContentLoaded', initJobDetailMobileBar);
+    })();
+  </script>
+""".strip()
+
+
 def render_jobs_sitemap(jobs: list[Job]) -> str:
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -560,6 +855,9 @@ def render_jobs_sitemap(jobs: list[Job]) -> str:
     ]
     if EMPLOYER_PAGE.exists():
         lines.append(f"  <url><loc>{SITE_URL}/dang-tin-tuyen-dung.html</loc><lastmod>{date.today().isoformat()}</lastmod></url>")
+    for page in RECRUITMENT_PORTAL_PAGES:
+        if page.exists():
+            lines.append(f"  <url><loc>{SITE_URL}/{page.name}</loc><lastmod>{date.today().isoformat()}</lastmod></url>")
     for job in jobs:
         lastmod = clean_text(job.meta.get("lastReviewedDate") or job.meta.get("publishDate") or date.today().isoformat())
         lines.append(f"  <url><loc>{SITE_URL}/{job.href}</loc><lastmod>{lastmod}</lastmod></url>")
@@ -601,12 +899,9 @@ def render_list_page(jobs: list[Job], today: date) -> str:
     active_jobs = [job for job in jobs if job.effective_status == "active"]
     featured_jobs = [job for job in active_jobs if job.meta.get("featured")][:3]
     latest_jobs = sorted(active_jobs, key=lambda item: (item.publish_date, item.deadline), reverse=True)[:6]
-    all_jobs = "\n".join(job_card(job) for job in active_jobs)
-    featured_html = "\n".join(job_card(job) for job in featured_jobs) if featured_jobs else "\n".join(job_card(job) for job in latest_jobs[:3])
-    locations = len({job.meta["locationGroupKey"] for job in active_jobs})
+    roles = len(role_options := sorted({(job.meta["roleGroupKey"], job.meta["roleGroupLabel"]) for job in active_jobs}, key=lambda item: item[1]))
     latest_publish = max((job.publish_date for job in active_jobs), default=today)
     location_options = sorted({(job.meta["locationGroupKey"], job.meta["locationGroupLabel"]) for job in active_jobs}, key=lambda item: item[1])
-    role_options = sorted({(job.meta["roleGroupKey"], job.meta["roleGroupLabel"]) for job in active_jobs}, key=lambda item: item[1])
     role_counts: dict[str, int] = {}
     for job in active_jobs:
         role_key = job.meta["roleGroupKey"]
@@ -614,6 +909,45 @@ def render_list_page(jobs: list[Job], today: date) -> str:
     employment_options = sorted({(job.meta["employmentType"], display_employment(job.meta["employmentType"])) for job in active_jobs}, key=lambda item: item[1])
     work_mode_options = sorted({(job.meta["workMode"], display_work_mode(job.meta["workMode"])) for job in active_jobs}, key=lambda item: item[1])
     experience_options = sorted({(job.meta["experienceLevel"], display_experience(job.meta["experienceLevel"])) for job in active_jobs}, key=lambda item: item[1])
+    show_employment = len(employment_options) > 1
+    show_work_mode = len(work_mode_options) > 1
+    all_jobs = "\n".join(
+        job_card(job, show_employment=show_employment, show_work_mode=show_work_mode) for job in active_jobs
+    )
+    if featured_jobs:
+        featured_html = "\n".join(
+            job_card(job, show_employment=show_employment, show_work_mode=show_work_mode) for job in featured_jobs
+        )
+    else:
+        featured_html = "\n".join(
+            job_card(job, show_employment=show_employment, show_work_mode=show_work_mode) for job in latest_jobs[:3]
+        )
+    filter_focus_parts = ["khu vực", "vai trò", "kinh nghiệm"]
+    if show_employment:
+        filter_focus_parts.append("hình thức")
+    if show_work_mode:
+        filter_focus_parts.append("cách làm việc")
+    filter_focus_text = ", ".join(filter_focus_parts[:-1]) + f" và {filter_focus_parts[-1]}" if len(filter_focus_parts) > 1 else filter_focus_parts[0]
+    employment_field = ""
+    if show_employment:
+        employment_field = f"""
+              <label class="jobs-filter-field">
+                <span>Hình thức</span>
+                <select id="jobsFilterEmployment">
+{render_select_options(employment_options, 'Tất cả hình thức')}
+                </select>
+              </label>
+        """.rstrip()
+    work_mode_field = ""
+    if show_work_mode:
+        work_mode_field = f"""
+              <label class="jobs-filter-field">
+                <span>Cách làm việc</span>
+                <select id="jobsFilterWorkMode">
+{render_select_options(work_mode_options, 'Tất cả cách làm việc')}
+                </select>
+              </label>
+        """.rstrip()
 
     return f"""<!DOCTYPE html>
 <html lang="vi">
@@ -641,21 +975,20 @@ def render_list_page(jobs: list[Job], today: date) -> str:
           <div>
             <span class="jobs-kicker">Cơ hội nghề nghiệp</span>
             <h1>Việc làm kế toán, thuế & HCNS</h1>
-            <p class="jobs-hero-text">Tổng hợp các vị trí đang tuyển cho người làm kế toán, thuế, nội bộ và HCNS tại doanh nghiệp vừa và nhỏ. Bạn có thể lọc nhanh theo khu vực, vai trò, cách làm việc và mức kinh nghiệm để tìm công việc phù hợp hơn.</p>
+            <p class="jobs-hero-text">Tổng hợp vị trí đang tuyển cho người làm kế toán, thuế và HCNS. Dùng bộ lọc để tìm việc phù hợp theo khu vực, vai trò và kinh nghiệm.</p>
             <div class="jobs-hero-actions">
-              <a href="#job-list" class="btn-primary-orange">Xem việc làm hiện có</a>
-              <a href="dang-tin-tuyen-dung.html" class="btn-outline-brown">Gửi nhu cầu tuyển dụng</a>
+              <a href="#job-list" class="btn-primary-orange">Xem việc làm</a>
+              <a href="dang-tin-viec-lam.html" class="btn-outline-brown">Đăng tin việc làm</a>
             </div>
             <ul class="jobs-highlight-list">
               <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Rõ vai trò và kinh nghiệm</li>
               <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Dễ lọc theo khu vực</li>
-              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Ưu tiên tin đang tuyển</li>
             </ul>
           </div>
           <div class="jobs-hero-stats">
             <article class="jobs-stat-card"><strong>{len(active_jobs)}</strong><span>Vị trí đang tuyển</span></article>
             <article class="jobs-stat-card"><strong>{len(featured_jobs) if featured_jobs else min(3, len(active_jobs))}</strong><span>Vị trí đáng chú ý</span></article>
-            <article class="jobs-stat-card"><strong>{locations}</strong><span>Khu vực có tin</span></article>
+            <article class="jobs-stat-card"><strong>{roles}</strong><span>Vai trò tuyển dụng</span></article>
             <article class="jobs-stat-card"><strong>{latest_publish.strftime("%d/%m/%Y")}</strong><span>Cập nhật gần nhất</span></article>
           </div>
         </div>
@@ -664,8 +997,45 @@ def render_list_page(jobs: list[Job], today: date) -> str:
 
     <section class="jobs-section section-padding">
       <div class="container">
+        <div class="section-label center"><span>LỐI VÀO NHANH</span></div>
+        <h2 class="jobs-section-title">Bạn đang tìm việc hay đang tuyển người?</h2>
+        <p class="jobs-section-subtitle">Chọn đúng khu chức năng theo vai trò của bạn để thao tác nhanh hơn.</p>
+        <div class="jobs-portal-grid">
+          <article class="jobs-portal-card">
+            <span class="jobs-kicker">Cho ứng viên</span>
+            <h3>Tài khoản ứng viên</h3>
+            <p>Tạo hồ sơ, lưu việc làm, theo dõi vị trí đã ứng tuyển và xem gợi ý phù hợp theo chuyên môn.</p>
+            <ul>
+              <li>Hồ sơ nghề nghiệp và CV</li>
+              <li>Việc làm đã lưu, đã ứng tuyển</li>
+            </ul>
+            <div class="jobs-portal-actions">
+              <a href="tai-khoan-ung-vien.html" class="btn-primary-orange">Vào khu ứng viên</a>
+              <a href="dang-nhap-tuyen-dung.html" class="btn-outline-brown">Đăng nhập</a>
+            </div>
+          </article>
+          <article class="jobs-portal-card">
+            <span class="jobs-kicker">Cho nhà tuyển dụng</span>
+            <h3>Khu nhà tuyển dụng</h3>
+            <p>Đăng nhập, quản lý tin tuyển dụng, theo dõi ứng viên quan tâm và chuẩn bị luồng đăng tin hoàn chỉnh.</p>
+            <ul>
+              <li>Tạo và quản lý tin tuyển dụng</li>
+              <li>Quản lý danh sách ứng viên</li>
+            </ul>
+            <div class="jobs-portal-actions">
+              <a href="nha-tuyen-dung.html" class="btn-primary-orange">Vào khu nhà tuyển dụng</a>
+              <a href="dang-tin-viec-lam.html" class="btn-outline-brown">Đăng tin nhanh</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="jobs-section section-padding">
+      <div class="container">
         <div class="section-label center"><span>TIN NỔI BẬT</span></div>
         <h2 class="jobs-section-title">Một vài vị trí đáng chú ý hôm nay</h2>
+        <p class="jobs-section-subtitle">Các tin được ưu tiên theo mức độ nổi bật và thời điểm cập nhật.</p>
         <div class="jobs-grid featured-grid">
 {featured_html}
         </div>
@@ -676,79 +1046,66 @@ def render_list_page(jobs: list[Job], today: date) -> str:
       <div class="container">
         <div class="section-label center"><span>DANH SÁCH VIỆC LÀM</span></div>
         <h2 class="jobs-section-title">Danh sách việc làm mới nhất</h2>
-        <p class="jobs-section-subtitle">Dùng bộ lọc bên dưới để tìm việc theo khu vực, vai trò, hình thức làm việc và mức kinh nghiệm phù hợp với bạn.</p>
+        <p class="jobs-section-subtitle">Dùng bộ lọc bên dưới để tìm việc theo {filter_focus_text} phù hợp với bạn.</p>
         <div class="jobs-quick-filters" aria-label="Lọc nhanh theo vai trò">
           <span class="jobs-quick-filters-label">Lọc nhanh theo vai trò</span>
 {render_quick_role_filters(role_counts, role_options)}
         </div>
-        <form class="jobs-filter-bar" id="jobsFilterForm">
-          <div class="jobs-filter-grid">
-            <label class="jobs-filter-field">
-              <span>Tìm nhanh</span>
-              <input type="search" id="jobsFilterSearch" placeholder="Tên vị trí, công ty, khu vực...">
-            </label>
-            <label class="jobs-filter-field">
-              <span>Khu vực</span>
-              <select id="jobsFilterLocation">
+        <div class="jobs-filter-shell" id="jobsFilterShell">
+          <button type="button" class="jobs-filter-mobile-toggle" id="jobsFilterToggle" aria-expanded="false" aria-controls="jobsFilterForm">
+            <i class="fa-solid fa-sliders" aria-hidden="true"></i><span>Mở bộ lọc</span>
+          </button>
+          <form class="jobs-filter-bar" id="jobsFilterForm">
+            <div class="jobs-filter-grid">
+              <label class="jobs-filter-field">
+                <span>Tìm nhanh</span>
+                <input type="search" id="jobsFilterSearch" placeholder="Tên vị trí, công ty, khu vực...">
+              </label>
+              <label class="jobs-filter-field">
+                <span>Khu vực</span>
+                <select id="jobsFilterLocation">
 {render_select_options(location_options, 'Tất cả khu vực')}
-              </select>
-            </label>
-            <label class="jobs-filter-field">
-              <span>Vai trò</span>
-              <select id="jobsFilterRole">
+                </select>
+              </label>
+              <label class="jobs-filter-field">
+                <span>Vai trò</span>
+                <select id="jobsFilterRole">
 {render_select_options(role_options, 'Tất cả vai trò')}
-              </select>
-            </label>
-            <label class="jobs-filter-field">
-              <span>Hình thức</span>
-              <select id="jobsFilterEmployment">
-{render_select_options(employment_options, 'Tất cả hình thức')}
-              </select>
-            </label>
-            <label class="jobs-filter-field">
-              <span>Cách làm việc</span>
-              <select id="jobsFilterWorkMode">
-{render_select_options(work_mode_options, 'Tất cả cách làm việc')}
-              </select>
-            </label>
-            <label class="jobs-filter-field">
-              <span>Kinh nghiệm</span>
-              <select id="jobsFilterExperience">
+                </select>
+              </label>
+{employment_field}
+{work_mode_field}
+              <label class="jobs-filter-field">
+                <span>Kinh nghiệm</span>
+                <select id="jobsFilterExperience">
 {render_select_options(experience_options, 'Tất cả mức kinh nghiệm')}
-              </select>
-            </label>
-            <label class="jobs-filter-field">
-              <span>Sắp xếp</span>
-              <select id="jobsSortOrder">
-                <option value="publish-desc">Mới nhất</option>
-                <option value="deadline-asc">Gần hết hạn</option>
-                <option value="salary-desc">Lương cao</option>
-                <option value="featured-first">Nổi bật trước</option>
-              </select>
-            </label>
-          </div>
-          <div class="jobs-filter-meta">
-            <strong id="jobsFilterCount">{len(active_jobs)} vị trí phù hợp</strong>
-            <button type="button" class="jobs-filter-reset" id="jobsFilterReset">Xóa lọc</button>
-          </div>
-        </form>
+                </select>
+              </label>
+              <label class="jobs-filter-field">
+                <span>Sắp xếp</span>
+                <select id="jobsSortOrder">
+                  <option value="publish-desc">Mới nhất</option>
+                  <option value="deadline-asc">Gần hết hạn</option>
+                  <option value="salary-desc">Lương cao</option>
+                  <option value="featured-first">Nổi bật trước</option>
+                </select>
+              </label>
+            </div>
+            <div class="jobs-filter-meta">
+              <strong id="jobsFilterCount">{len(active_jobs)} vị trí phù hợp</strong>
+              <button type="button" class="jobs-filter-reset" id="jobsFilterReset">Xóa lọc</button>
+            </div>
+          </form>
+        </div>
         <div class="jobs-active-filters" id="jobsActiveFilters" hidden></div>
         <div class="jobs-grid jobs-list-grid" id="jobsListGrid">
 {all_jobs}
         </div>
         <div class="jobs-empty-state" id="jobsEmptyState" hidden>Chưa có tin tuyển dụng phù hợp với bộ lọc hiện tại.</div>
-      </div>
-    </section>
-
-    <section class="jobs-employer-cta">
-      <div class="container">
-        <div class="jobs-employer-card">
-          <div>
-            <span class="jobs-kicker">Cho nhà tuyển dụng</span>
-            <h2>Doanh nghiệp cần đăng tuyển kế toán?</h2>
-            <p>Gửi thông tin vị trí đang cần tuyển, Diệu Tâm sẽ rà soát nội dung, chuẩn lại cách trình bày và hỗ trợ đưa tin lên trang Tuyển dụng nhanh hơn.</p>
-          </div>
-          <a href="dang-tin-tuyen-dung.html" class="btn-primary-orange">Gửi nhu cầu tuyển dụng</a>
+        <div class="jobs-pagination" id="jobsPagination" hidden>
+          <button type="button" class="jobs-pagination-btn" data-page-action="prev">Trang trước</button>
+          <div class="jobs-pagination-pages" id="jobsPaginationPages"></div>
+          <button type="button" class="jobs-pagination-btn" data-page-action="next">Trang sau</button>
         </div>
       </div>
     </section>
@@ -761,7 +1118,7 @@ def render_list_page(jobs: list[Job], today: date) -> str:
 """
 
 
-def render_detail_page(job: Job) -> str:
+def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
     meta = job.meta
     role_label = clean_text(meta.get("roleGroupLabel")) or "Kế toán"
     location_group_label = clean_text(meta.get("locationGroupLabel")) or "Đang cập nhật"
@@ -805,13 +1162,13 @@ def render_detail_page(job: Job) -> str:
         apply_href = "mailto:ketoandieutam@gmail.com"
 
     if re.match(r"^https?://", apply_href, re.I):
-        apply_cta = f'<a href="{escape(apply_href)}" target="_blank" rel="noopener" class="btn-primary-orange">Mở trang ứng tuyển</a>'
+        direct_apply_link = f'<a href="{escape(apply_href)}" target="_blank" rel="noopener" class="job-source-link">Mở link ứng tuyển gốc</a>'
     elif re.match(r"^mailto:", apply_href, re.I):
-        apply_cta = f'<a href="{escape(apply_href)}" class="btn-primary-orange">Gửi email ứng tuyển</a>'
+        direct_apply_link = f'<a href="{escape(apply_href)}" class="job-source-link">Gửi email ứng tuyển trực tiếp</a>'
     elif re.match(r"^tel:", apply_href, re.I):
-        apply_cta = f'<a href="{escape(apply_href)}" class="btn-primary-orange">Gọi để ứng tuyển</a>'
+        direct_apply_link = f'<a href="{escape(apply_href)}" class="job-source-link">Gọi ứng tuyển trực tiếp</a>'
     else:
-        apply_cta = '<a href="../dang-tin-tuyen-dung.html" class="btn-primary-orange">Liên hệ tuyển dụng</a>'
+        direct_apply_link = '<a href="mailto:ketoandieutam@gmail.com" class="job-source-link">Liên hệ tuyển dụng</a>'
 
     support_box = (
         '<div class="job-detail-box job-detail-support">'
@@ -843,6 +1200,36 @@ def render_detail_page(job: Job) -> str:
             '</div>'
         )
 
+    related_section = ""
+    if related_jobs:
+        related_cards = []
+        for related in related_jobs:
+            related_cards.append(
+                f"""
+              <article class="jobs-related-card">
+                <span class="job-card-company">{escape(related.meta['companyName'])}</span>
+                <h3><a href="../{escape(related.href)}">{escape(related.meta['title'])}</a></h3>
+                <p>{escape(related.meta['summary'])}</p>
+                <div class="jobs-related-meta">
+                  <span>{escape(related.meta.get('locationGroupLabel') or related.meta.get('location') or 'Đang cập nhật')}</span>
+                  <span>{escape(related.meta.get('salaryLabel') or 'Liên hệ')}</span>
+                </div>
+              </article>
+                """.strip()
+            )
+        related_html = "\n".join(related_cards)
+        related_section = f"""
+          <section class="jobs-related-section">
+            <div class="jobs-dashboard-panel-head">
+              <h2>Việc làm liên quan</h2>
+            </div>
+            <div class="jobs-related-grid">
+{related_html}
+            </div>
+            <a href="../tuyen-dung.html#job-list" class="job-source-link">Xem toàn bộ việc làm</a>
+          </section>
+        """.strip()
+
     return f"""<!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -867,6 +1254,7 @@ def render_detail_page(job: Job) -> str:
           <span>/</span>
           <span>{escape(meta['title'])}</span>
         </nav>
+        <a href="../tuyen-dung.html#job-list" class="job-detail-back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Về danh sách việc làm</a>
         <div class="job-detail-top">
           <div class="job-detail-main-head">
             <div class="job-card-badges"><span class="job-badge neutral">{escape(role_label)}</span>{badge_html(job)}</div>
@@ -878,8 +1266,9 @@ def render_detail_page(job: Job) -> str:
             </ul>
           </div>
           <div class="job-detail-actions">
-            {apply_cta}
-            <a href="../tuyen-dung.html" class="btn-outline-brown">Xem thêm việc làm khác</a>
+            <a href="../ung-tuyen.html" class="btn-primary-orange">Ứng tuyển nhanh</a>
+            <a href="../viec-lam-da-luu.html" class="btn-outline-brown">Lưu việc làm</a>
+            {direct_apply_link}
           </div>
         </div>
       </div>
@@ -891,6 +1280,7 @@ def render_detail_page(job: Job) -> str:
           <div class="job-detail-prose">
 {job.body_html}
           </div>
+          {related_section}
         </article>
         <aside class="job-detail-side">
           <div class="job-detail-box">
@@ -904,9 +1294,14 @@ def render_detail_page(job: Job) -> str:
         </aside>
       </div>
     </section>
+    <div class="job-detail-mobile-bar" aria-label="Tác vụ nhanh">
+      <a href="../ung-tuyen.html" class="btn-primary-orange">Ứng tuyển nhanh</a>
+      <a href="../viec-lam-da-luu.html" class="btn-outline-brown">Lưu việc làm</a>
+    </div>
   </main>
   <div id="siteFooter"></div>
   <script src="../site-shell.js"></script>
+  {render_detail_mobile_bar_script()}
 </body>
 </html>
 """
@@ -996,7 +1391,8 @@ def main() -> None:
     cleanup_stale_detail_pages(public_jobs)
 
     for job in public_jobs:
-        job.detail_path.write_text(render_detail_page(job), encoding="utf-8")
+        related_jobs = select_related_jobs(job, public_jobs, limit=3)
+        job.detail_path.write_text(render_detail_page(job, related_jobs), encoding="utf-8")
 
     payload = build_json_payload(public_jobs)
     DATA_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")

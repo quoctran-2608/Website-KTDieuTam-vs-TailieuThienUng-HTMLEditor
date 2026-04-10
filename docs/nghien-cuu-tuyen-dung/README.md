@@ -15,6 +15,7 @@ Thư mục này gom toàn bộ tài liệu liên quan đến:
 ## Nên đọc theo thứ tự
 
 ### 1) Định hướng & kiến trúc
+- `roadmap-html-marketplace-to-php.md`
 - `nghien-cuu-ke-hoach-bo-sung-tuyen-dung.md`
 - `ke-hoach-design-tinh-nang-tuyen-dung.md`
 - `roadmap-trien-khai-tinh-nang-tuyen-dung-theo-phase.md`
@@ -47,6 +48,17 @@ Thư mục này gom toàn bộ tài liệu liên quan đến:
 ### Job public build ra
 - `tuyen-dung.html`
 - `tuyen-dung/*.html`
+- `dang-nhap-tuyen-dung.html`
+- `tai-khoan-ung-vien.html`
+- `ho-so-ung-vien.html`
+- `viec-lam-da-luu.html`
+- `don-ung-tuyen.html`
+- `ung-tuyen.html`
+- `nha-tuyen-dung.html`
+- `dang-tin-viec-lam.html`
+- `quan-ly-tin-tuyen-dung.html`
+- `chi-tiet-tin-tuyen-dung.html`
+- `ung-vien-tuyen-dung.html`
 - `data/jobs.json`
 - `data/feeds/tuyen-dung.json`
 

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ứng viên tuyển dụng | Kế Toán Diệu Tâm</title>
+  <meta name="description" content="Trang ứng viên dành cho nhà tuyển dụng: xem hồ sơ quan tâm và cập nhật trạng thái xử lý.">
+  <link rel="canonical" href="https://ketoandieutam.com/ung-vien-tuyen-dung.html">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/jobs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="jobs-page jobs-dashboard-page" data-root="" data-nav="tuyen-dung">
+  <div id="siteHeader"></div>
+  <main>
+    <section class="jobs-hero">
+      <div class="container">
+        <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Trang chủ</a>
+          <span>/</span>
+          <a href="tuyen-dung.html">Tuyển dụng</a>
+          <span>/</span>
+          <a href="nha-tuyen-dung.html">Khu nhà tuyển dụng</a>
+          <span>/</span>
+          <span>Ứng viên tuyển dụng</span>
+        </nav>
+        <div class="jobs-hero-grid">
+          <div>
+            <span class="jobs-kicker">Ứng viên quan tâm</span>
+            <h1>Danh sách hồ sơ ứng viên theo từng trạng thái</h1>
+            <p class="jobs-hero-text">Theo dõi ai vừa nộp hồ sơ, ai phù hợp để mời trao đổi và ai cần thêm thông tin để quyết định nhanh hơn.</p>
+            <div class="jobs-hero-actions">
+              <a href="quan-ly-tin-tuyen-dung.html" class="btn-outline-brown">Quay lại quản lý tin</a>
+              <a href="chi-tiet-tin-tuyen-dung.html" class="btn-primary-orange">Mở chi tiết tin</a>
+            </div>
+          </div>
+          <div class="jobs-hero-stats">
+            <article class="jobs-stat-card"><strong>8</strong><span>Ứng viên mới tuần này</span></article>
+            <article class="jobs-stat-card"><strong>3</strong><span>Đang xem hồ sơ</span></article>
+            <article class="jobs-stat-card"><strong>2</strong><span>Đề nghị liên hệ</span></article>
+            <article class="jobs-stat-card"><strong>3</strong><span>Chờ phản hồi thêm</span></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="jobs-section section-padding jobs-section-soft">
+      <div class="container jobs-dashboard-shell">
+        <aside class="jobs-dashboard-sidebar">
+          <div class="jobs-dashboard-menu">
+            <a href="nha-tuyen-dung.html">Tổng quan</a>
+            <a href="dang-tin-viec-lam.html">Đăng tin mới</a>
+            <a href="quan-ly-tin-tuyen-dung.html">Quản lý tin</a>
+            <a href="ung-vien-tuyen-dung.html" class="is-active">Ứng viên</a>
+          </div>
+        </aside>
+
+        <div class="jobs-dashboard-main">
+          <section class="jobs-dashboard-panel">
+            <div class="jobs-dashboard-panel-head">
+              <h2>Danh sách ứng viên</h2>
+            </div>
+            <div class="jobs-dashboard-table-wrap">
+              <table class="jobs-dashboard-table">
+                <thead>
+                  <tr>
+                    <th>Ứng viên</th>
+                    <th>Vị trí quan tâm</th>
+                    <th>Kinh nghiệm</th>
+                    <th>Trạng thái</th>
+                    <th>Hành động</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Nguyễn Minh Anh</td>
+                    <td>Kế toán tổng hợp</td>
+                    <td>3 năm</td>
+                    <td><span class="jobs-status-pill is-reviewing">Đang xem hồ sơ</span></td>
+                    <td><a href="#" class="job-source-link">Xem CV</a></td>
+                  </tr>
+                  <tr>
+                    <td>Trần Bảo Vy</td>
+                    <td>Kế toán thuế</td>
+                    <td>2 năm</td>
+                    <td><span class="jobs-status-pill is-active">Mời trao đổi</span></td>
+                    <td><a href="#" class="job-source-link">Liên hệ</a></td>
+                  </tr>
+                  <tr>
+                    <td>Lê Quốc Hưng</td>
+                    <td>Nhân viên kế toán</td>
+                    <td>1 năm</td>
+                    <td><span class="jobs-status-pill is-muted">Chờ bổ sung</span></td>
+                    <td><a href="#" class="job-source-link">Yêu cầu cập nhật</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="siteFooter"></div>
+  <script src="site-shell.js"></script>
+</body>
+</html>
