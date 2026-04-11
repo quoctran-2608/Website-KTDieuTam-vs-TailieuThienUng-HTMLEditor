@@ -449,10 +449,11 @@ def render_quick_role_filters(role_counts: dict[str, int], role_options: list[tu
     html_parts = []
     for value, label in role_options:
         count = role_counts.get(value, 0)
+        count_label = f"{count} việc làm"
         html_parts.append(
-            f'<button type="button" class="jobs-quick-chip" data-role-value="{escape(value)}">'
+            f'<button type="button" class="jobs-quick-chip" data-role-value="{escape(value)}" aria-label="{escape(label)} - {escape(count_label)}">'
             f"{escape(label)}"
-            f'<span>{count}</span>'
+            f'<span class="jobs-quick-chip-count">{escape(count_label)}</span>'
             "</button>"
         )
     return "\n".join(html_parts)
@@ -1028,7 +1029,6 @@ def render_list_page(jobs: list[Job], today: date) -> str:
         <div id="jobsDiscoverySentinel" aria-hidden="true"></div>
         <div class="jobs-discovery-bar" id="jobsDiscoveryBar">
           <div class="jobs-quick-filters" aria-label="Lọc nhanh theo vai trò">
-            <span class="jobs-quick-filters-label">Lọc nhanh theo vai trò</span>
 {render_quick_role_filters(role_counts, role_options)}
           </div>
           <div class="jobs-filter-shell" id="jobsFilterShell">

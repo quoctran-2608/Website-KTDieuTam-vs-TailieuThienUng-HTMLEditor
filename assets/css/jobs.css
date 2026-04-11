@@ -232,15 +232,9 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin: 0 0 16px;
-}
-
-.jobs-quick-filters-label {
-  margin-right: 4px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--jobs-accent-strong);
+  padding: 6px 0 2px;
 }
 
 .jobs-quick-chip,
@@ -248,48 +242,53 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 38px;
-  padding: 0 14px;
+  min-height: 42px;
+  padding: 0 16px;
   border: 1px solid var(--jobs-border-strong);
-  border-radius: 999px;
-  background: var(--jobs-surface);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #fff8ea 100%);
   color: var(--jobs-accent-strong);
   font: inherit;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.jobs-quick-chip span {
+.jobs-quick-chip-count {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 24px;
-  min-height: 24px;
-  padding: 0 7px;
+  min-height: 28px;
+  padding: 0 10px;
   border-radius: 999px;
-  background: rgba(195, 160, 93, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(195, 160, 93, 0.24);
   color: var(--jobs-accent-strong);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .jobs-quick-chip:hover,
 .jobs-active-chip:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   border-color: var(--jobs-accent);
-  box-shadow: 0 6px 14px rgba(195, 160, 93, 0.12);
+  box-shadow: 0 12px 22px rgba(195, 160, 93, 0.16);
 }
 
 .jobs-quick-chip.is-active {
   background: linear-gradient(135deg, #d8bb7f 0%, #bd9750 100%);
   color: #fff;
   border-color: #bd9750;
+  box-shadow: 0 12px 24px rgba(189, 151, 80, 0.28);
 }
 
-.jobs-quick-chip.is-active span {
-  background: rgba(255, 255, 255, 0.18);
+.jobs-quick-chip.is-active .jobs-quick-chip-count {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.16);
   color: #fff;
 }
 
@@ -1902,9 +1901,20 @@
     gap: 8px;
   }
 
-  .jobs-quick-filters-label {
-    width: 100%;
-    margin-right: 0;
+  .jobs-quick-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 0 -4px 14px;
+    padding: 2px 4px 6px;
+    scrollbar-width: none;
+  }
+
+  .jobs-quick-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .jobs-quick-chip {
+    flex: 0 0 auto;
   }
 
   .employer-request-actions > * {
