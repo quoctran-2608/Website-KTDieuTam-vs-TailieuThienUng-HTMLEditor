@@ -1837,3 +1837,15 @@
 {"ts":1775835006.3431435,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":244543,"source":"usage.input_tokens"}}
 {"ts":1775835022.9376986,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":244964,"source":"usage.input_tokens"}}
 {"ts":1775835022.9430134,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":244964,"source":"usage.input_tokens"}}
+{"ts": 1775873258.1095405, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1775873272.4094005, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 3831}}
+{"ts": 1775873298.6273966, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238762, "source": "usage.input_tokens"}}
+{"ts": 1775873298.6330714, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 238762, "source": "usage.input_tokens"}}
+{"ts": 1775873306.7993708, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239589, "source": "usage.input_tokens"}}
+{"ts": 1775873306.8043675, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239589, "source": "usage.input_tokens"}}
+{"ts": 1775873332.3502436, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240078, "source": "usage.input_tokens"}}
+{"ts": 1775873332.3555403, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240078, "source": "usage.input_tokens"}}
+{"ts": 1775873356.2190237, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240557, "source": "usage.input_tokens"}}
+{"ts": 1775873356.2235844, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 240557, "source": "usage.input_tokens"}}
+{"ts": 1775873374.4937942, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242180, "source": "usage.input_tokens"}}
+{"ts": 1775873374.4979148, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 242180, "source": "usage.input_tokens"}}
