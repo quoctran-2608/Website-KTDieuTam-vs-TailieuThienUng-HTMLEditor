@@ -936,8 +936,7 @@ def ensure_jobs_sitemap_in_robots() -> None:
 
 def render_list_page(jobs: list[Job], today: date) -> str:
     active_jobs = [job for job in jobs if job.effective_status == "active"]
-    roles = len(role_options := sorted({(job.meta["roleGroupKey"], job.meta["roleGroupLabel"]) for job in active_jobs}, key=lambda item: item[1]))
-    latest_publish = max((job.publish_date for job in active_jobs), default=today)
+    role_options = sorted({(job.meta["roleGroupKey"], job.meta["roleGroupLabel"]) for job in active_jobs}, key=lambda item: item[1])
     location_options = sorted({(job.meta["locationGroupKey"], job.meta["locationGroupLabel"]) for job in active_jobs}, key=lambda item: item[1])
     role_counts: dict[str, int] = {}
     for job in active_jobs:
@@ -951,12 +950,6 @@ def render_list_page(jobs: list[Job], today: date) -> str:
     all_jobs = "\n".join(
         job_card(job, today, show_employment=show_employment, show_work_mode=show_work_mode) for job in active_jobs
     )
-    filter_focus_parts = ["khu vực", "vai trò", "kinh nghiệm"]
-    if show_employment:
-        filter_focus_parts.append("hình thức")
-    if show_work_mode:
-        filter_focus_parts.append("cách làm việc")
-    filter_focus_text = ", ".join(filter_focus_parts[:-1]) + f" và {filter_focus_parts[-1]}" if len(filter_focus_parts) > 1 else filter_focus_parts[0]
     employment_field = ""
     if show_employment:
         employment_field = f"""
@@ -1000,32 +993,15 @@ def render_list_page(jobs: list[Job], today: date) -> str:
           <span>/</span>
           <span>Tuyển dụng</span>
         </nav>
-        <div class="jobs-hero-compact-head">
-          <div>
-            <span class="jobs-kicker">Cơ hội nghề nghiệp</span>
-            <h1>Tìm việc kế toán phù hợp thật nhanh</h1>
-            <p class="jobs-hero-text">Không gian tuyển dụng dành riêng cho ngành kế toán – Nơi mọi nhu cầu tìm người và tìm việc được khớp nối nhanh và rõ ràng nhất.</p>
-            <div class="jobs-hero-actions">
-              <a href="#job-list" class="btn-primary-orange">Xem danh sách việc làm</a>
-              <a href="dang-tin-viec-lam.html" class="btn-outline-brown">Nhà tuyển dụng đăng tin</a>
-            </div>
-          </div>
-          <div class="jobs-hero-inline-stats">
-            <article><strong>{len(active_jobs)}</strong><span>vị trí đang tuyển</span></article>
-            <article><strong>{roles}</strong><span>vai trò tuyển dụng</span></article>
-            <article><strong>{len(location_options)}</strong><span>khu vực</span></article>
-            <article><strong>{latest_publish.strftime("%d/%m/%Y")}</strong><span>cập nhật gần nhất</span></article>
-          </div>
+        <div class="jobs-hero-compact-head jobs-hero-minimal-head">
+          <h1>Tuyển dụng kế toán</h1>
+          <p class="jobs-hero-text">Không gian tuyển dụng dành riêng cho ngành kế toán – Nơi mọi nhu cầu tìm người và tìm việc được khớp nối nhanh và rõ ràng nhất.</p>
         </div>
       </div>
     </section>
 
-    <section class="jobs-section section-padding jobs-section-soft" id="job-list">
+    <section class="jobs-section section-padding jobs-section-soft jobs-list-core" id="job-list">
       <div class="container">
-        <div class="jobs-list-head">
-          <h2>Việc làm kế toán mới nhất</h2>
-          <p>Dùng bộ lọc bên dưới để tìm việc theo {filter_focus_text} phù hợp với bạn.</p>
-        </div>
         <div id="jobsDiscoverySentinel" aria-hidden="true"></div>
         <div class="jobs-discovery-bar" id="jobsDiscoveryBar">
           <div class="jobs-quick-filters" aria-label="Lọc nhanh theo vai trò">
