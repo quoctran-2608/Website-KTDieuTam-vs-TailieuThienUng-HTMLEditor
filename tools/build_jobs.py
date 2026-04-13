@@ -1002,7 +1002,7 @@ def render_list_page(jobs: list[Job], today: date) -> str:
       <div class="container">
         <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
           <a href="index.html">Trang chủ</a>
-          <span>/</span>
+          <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
           <span>Tuyển dụng</span>
         </nav>
         <div class="jobs-hero-compact-head jobs-hero-minimal-head">
@@ -1246,9 +1246,9 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
       <div class="container">
         <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
           <a href="../index.html">Trang chủ</a>
-          <span>/</span>
+          <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
           <a href="../tuyen-dung.html">Tuyển dụng</a>
-          <span>/</span>
+          <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
           <span>{escape(meta['title'])}</span>
         </nav>
         <a href="../tuyen-dung.html#job-list" class="job-detail-back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Về danh sách việc làm</a>

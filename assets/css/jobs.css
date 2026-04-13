@@ -23,10 +23,22 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-start;
   gap: 8px;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
   font-size: 14px;
+  font-weight: 500;
   color: var(--jobs-muted);
+}
+
+.jobs-breadcrumbs i {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.jobs-breadcrumbs span:last-child {
+  color: var(--dark);
+  font-weight: 700;
 }
 
 .jobs-breadcrumbs a:hover {
@@ -213,9 +225,8 @@
    Scoped to avoid affecting other recruitment pages.
    ========================================================================== */
 .jobs-list-page .jobs-breadcrumbs {
-  margin-bottom: 8px;
-  font-size: 13px;
-  font-weight: 500;
+  margin-bottom: 16px;
+  font-size: 14px;
 }
 
 .jobs-list-page .jobs-hero {
@@ -2558,7 +2569,7 @@
   }
 
   .jobs-list-page .jobs-breadcrumbs {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 12px;
   }
 
