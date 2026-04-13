@@ -347,6 +347,19 @@ def badge_html(job: Job) -> str:
     return "".join(badges)
 
 
+def list_card_badge_html(job: Job, today: date) -> str:
+    badges: list[str] = []
+    delta = max(0, (today - job.publish_date).days)
+    if delta <= 7:
+        fresh_label = "Mới hôm nay" if delta == 0 else f"Mới {delta} ngày"
+        badges.append(f'<span class="job-badge fresh">{escape(fresh_label)}</span>')
+    if job.meta.get("featured"):
+        badges.append('<span class="job-badge featured">Nổi bật</span>')
+    if job.meta.get("urgent"):
+        badges.append('<span class="job-badge urgent">Tuyển gấp</span>')
+    return "".join(badges)
+
+
 def job_card(job: Job, today: date, *, show_employment: bool = True, show_work_mode: bool = True) -> str:
     meta = job.meta
     search_blob = " ".join(
@@ -360,42 +373,41 @@ def job_card(job: Job, today: date, *, show_employment: bool = True, show_work_m
     )
     location_label = clean_text(meta.get("locationGroupLabel")) or meta["location"]
     salary_label = clean_text(meta.get("salaryLabel")) or "Liên hệ"
-    publish_label = format_relative_publish(today, job.publish_date)
-    meta_rows = [
-        f'<span class="job-card-meta-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{escape(location_label)}</span>',
-        f'<span><i class="fa-regular fa-clock" aria-hidden="true"></i>{escape(publish_label)}</span>',
-        f'<span><i class="fa-regular fa-calendar-check" aria-hidden="true"></i>Hạn: {escape(format_date_vi(job.deadline))}</span>',
-    ]
-    if show_employment:
-        meta_rows.append(
-            f'<span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>{escape(display_employment(meta["employmentType"]))}</span>'
-        )
-    if show_work_mode:
-        meta_rows.append(
-            f'<span><i class="fa-solid fa-laptop-house" aria-hidden="true"></i>{escape(display_work_mode(meta["workMode"]))}</span>'
-        )
-    meta_rows.append(
-        f'<span><i class="fa-solid fa-user-clock" aria-hidden="true"></i>{escape(display_experience(meta["experienceLevel"]))}</span>'
-    )
-    meta_html = "\n".join(meta_rows)
+    experience_label = display_experience(meta["experienceLevel"])
+    deadline_label = format_date_vi(job.deadline)
+    badges_html = list_card_badge_html(job, today)
+    save_label = f"Lưu việc làm: {meta['title']}"
     return f"""
       <article class="job-card" data-status="{escape(job.effective_status)}" data-search="{escape(fold_text(search_blob))}" data-location-group="{escape(meta['locationGroupKey'])}" data-role-group="{escape(meta['roleGroupKey'])}" data-employment="{escape(meta['employmentType'])}" data-work-mode="{escape(meta['workMode'])}" data-experience="{escape(meta['experienceLevel'])}" data-featured="{1 if meta.get('featured') else 0}" data-publish-date="{escape(meta['publishDate'])}" data-deadline="{escape(meta['deadline'])}" data-salary-max="{int(meta.get('salaryMax') or 0)}">
-        <div class="job-card-head">
-          <div class="job-card-company-row">
-            <span class="job-card-company-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
-            <span class="job-card-company">{escape(meta['companyName'])}</span>
+        <div class="job-card-top">
+          <div class="job-card-badges">
+            {badges_html}
           </div>
-          <div class="job-card-badges">{badge_html(job)}</div>
+          <button type="button" class="job-card-save-btn" aria-label="{escape(save_label)}" title="Lưu việc làm">
+            <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+          </button>
         </div>
-        <h3><a href="{escape(meta['href'])}">{escape(meta['title'])}</a></h3>
-        <div class="job-card-salary"><i class="fa-solid fa-dollar-sign" aria-hidden="true"></i><span>{escape(salary_label)}</span></div>
+        <div class="job-card-main">
+          <h3><a href="{escape(meta['href'])}" class="job-card-stretched-link">{escape(meta['title'])}</a></h3>
+          <div class="job-card-salary">
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+            <span>Lương: {escape(salary_label)}</span>
+          </div>
+        </div>
+        <div class="job-card-context">
+          <div class="company-full-name">
+            <i class="fa-regular fa-building" aria-hidden="true"></i>
+            <span>{escape(meta['companyName'])}</span>
+          </div>
+          <div class="job-location">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span>{escape(location_label)}</span>
+          </div>
+        </div>
         <p class="job-card-summary">{escape(meta['summary'])}</p>
-        <div class="job-card-meta">
-{meta_html}
-        </div>
-        <div class="job-card-actions">
-          <a href="ung-tuyen.html" class="btn-primary-orange">Ứng tuyển nhanh</a>
-          <a href="viec-lam-da-luu.html" class="job-card-save-link">Lưu việc làm</a>
+        <div class="job-card-footer">
+          <span class="fact-item"><i class="fa-solid fa-briefcase" aria-hidden="true"></i>{escape(experience_label)}</span>
+          <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: {escape(deadline_label)}</span>
         </div>
       </article>
     """.strip()
@@ -983,7 +995,7 @@ def render_list_page(jobs: list[Job], today: date) -> str:
   <link rel="stylesheet" href="assets/css/jobs.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body class="jobs-page" data-root="" data-nav="tuyen-dung">
+<body class="jobs-page jobs-list-page" data-root="" data-nav="tuyen-dung">
   <div id="siteHeader"></div>
   <main>
     <section class="jobs-hero jobs-hero-compact">

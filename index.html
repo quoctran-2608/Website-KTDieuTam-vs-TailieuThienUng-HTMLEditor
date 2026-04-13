@@ -272,7 +272,7 @@
         </div>
         <div class="jobs-home-actions">
           <a href="tuyen-dung.html" class="btn-primary-orange">Xem tất cả việc làm</a>
-          <a href="dang-tin-tuyen-dung.html" class="btn-outline-brown">Gửi nhu cầu tuyển dụng</a>
+          <a href="dang-tin-viec-lam.html" class="btn-outline-brown">Đăng tin việc làm</a>
         </div>
       </div>
 
@@ -852,6 +852,18 @@
     return parts[2] + '/' + parts[1] + '/' + parts[0];
   }
 
+  function formatFreshLabel(value) {
+    if (!value) return '';
+    const publishDate = new Date(value + 'T00:00:00');
+    if (Number.isNaN(publishDate.getTime())) return '';
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const diff = Math.max(0, Math.round((today - publishDate) / 86400000));
+    if (diff > 7) return '';
+    if (diff === 0) return 'Mới hôm nay';
+    return 'Mới ' + diff + ' ngày';
+  }
+
   function getRecruitmentFallbackJobs() {
     const node = document.getElementById('homeRecruitmentFallbackData');
     if (!node) return [];
@@ -870,25 +882,34 @@
   function renderRecruitmentCards(host, jobs) {
     host.innerHTML = jobs.map(function(job) {
       const badges = [];
-      const metaItems = [];
       const locationLabel = job.locationGroupLabel || job.location || '';
+      const freshLabel = formatFreshLabel(job.publishDate);
+      const experienceLabel = job.experienceLevelLabel || job.experienceLevel || 'Đang cập nhật';
 
-      if (job.roleGroupLabel) badges.push('<span class="job-badge neutral">' + escapeHtml(job.roleGroupLabel) + '</span>');
+      if (freshLabel) badges.push('<span class="job-badge fresh">' + escapeHtml(freshLabel) + '</span>');
+      if (job.featured) badges.push('<span class="job-badge featured">Nổi bật</span>');
       if (job.urgent) badges.push('<span class="job-badge urgent">Tuyển gấp</span>');
-      if (locationLabel) metaItems.push('<span class="job-card-meta-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>' + escapeHtml(locationLabel) + '</span>');
 
       return [
         '<article class="job-card" data-status="' + escapeHtml(job.status || '') + '">',
-          '<div class="job-card-head">',
+          '<div class="job-card-top">',
             '<div class="job-card-badges">' + badges.join('') + '</div>',
-            '<span class="job-card-company">' + escapeHtml(job.companyName) + '</span>',
+            '<button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: ' + escapeHtml(job.title || '') + '" title="Lưu việc làm">',
+              '<i class="fa-regular fa-bookmark" aria-hidden="true"></i>',
+            '</button>',
           '</div>',
-          '<h3><a href="' + escapeHtml(job.href) + '">' + escapeHtml(job.title) + '</a></h3>',
+          '<div class="job-card-main">',
+            '<h3><a href="' + escapeHtml(job.href) + '" class="job-card-stretched-link">' + escapeHtml(job.title) + '</a></h3>',
+            '<div class="job-card-salary"><i class="fa-solid fa-dollar-sign" aria-hidden="true"></i><span>Lương: ' + escapeHtml(job.salaryLabel || 'Liên hệ') + '</span></div>',
+          '</div>',
+          '<div class="job-card-context">',
+            '<div class="company-full-name"><i class="fa-regular fa-building" aria-hidden="true"></i><span>' + escapeHtml(job.companyName || '') + '</span></div>',
+            '<div class="job-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>' + escapeHtml(locationLabel) + '</span></div>',
+          '</div>',
           '<p class="job-card-summary">' + escapeHtml(job.summary || '') + '</p>',
-          '<div class="job-card-meta">' + metaItems.join('') + '</div>',
           '<div class="job-card-footer">',
-            '<strong>' + escapeHtml(job.salaryLabel || 'Liên hệ') + '</strong>',
-            '<span class="job-card-deadline"><i class="fa-regular fa-calendar" aria-hidden="true"></i>Đến ' + escapeHtml(formatDateVi(job.deadline)) + '</span>',
+            '<span class="fact-item"><i class="fa-solid fa-briefcase" aria-hidden="true"></i>' + escapeHtml(experienceLabel) + '</span>',
+            '<span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: ' + escapeHtml(formatDateVi(job.deadline)) + '</span>',
           '</div>',
         '</article>'
       ].join('');

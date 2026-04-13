@@ -1900,3 +1900,177 @@
 {"ts": 1775921208.0332658, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
 {"ts": 1775921358.8526254, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
 {"ts": 1775921375.0434823, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 2077}}
+{"ts":1776051035.2823315,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1776051067.0573945,"message":"micro-compact triggered (startup)","extra":{"min_saved":0,"saved_tokens":5490}}
+{"ts":1776051464.8434386,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1776051493.4840727,"message":"micro-compact triggered (startup)","extra":{"min_saved":0,"saved_tokens":3699}}
+{"ts":1776052046.1825225,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1776052296.942735,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18312834618758797,"terminal_event":"stream_end","last_event_type":"response.reasoning_summary_text.delta"}}
+{"ts":1776052344.2152581,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":237276,"source":"usage.input_tokens"}}
+{"ts":1776052376.9177556,"message":"micro-compact triggered (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":237276,"saved_tokens":24158,"source":"usage.input_tokens"}}
+{"ts":1776052519.0719302,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18406795039962415,"terminal_event":"stream_end","last_event_type":"response.reasoning_summary_text.delta"}}
+{"ts":1776052641.0836251,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20421293291459464,"terminal_event":"stream_end","last_event_type":"response.reasoning_summary_text.delta"}}
+{"ts":1776052980.6366177,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19604864814134718,"terminal_event":"stream_end","last_event_type":"response.reasoning_summary_text.delta"}}
+{"ts":1776053099.77145,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19534503186836141,"terminal_event":"stream_end","last_event_type":"keepalive"}}
+{"ts":1776053323.17449,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20243438533620647,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776053442.300525,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18316441401986611,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776053583.1483417,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19423917664878032,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776053702.2263079,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19931174219553904,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776053824.2643661,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19786310485464664,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776053943.350863,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20533211379560273,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776054065.3768518,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19460772906178969,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776054184.4786201,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18194559585393666,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776054303.5576179,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18389225119906116,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776054425.5977864,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21652149775834822,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776054544.7274928,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18790813979129686,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776054666.7783978,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20052897113399998,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776054785.8927896,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21898816144046754,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776054905.0236592,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18851593783521836,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776055027.0313804,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19641766137276667,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776055146.102772,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20734052268198716,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776055422.8712549,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20996545414904386,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776055542.0321393,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21480711370464745,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776055664.0943904,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18757359225655607,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776055783.1943245,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19938837791764569,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776055905.2406673,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19812960735435114,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776056024.3452973,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18705737324760172,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776056143.440021,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19738733335276476,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776056233.2177632,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":253185,"source":"usage.input_tokens"}}
+{"ts":1776056264.2293386,"message":"micro-compact triggered (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":253185,"saved_tokens":21255,"source":"usage.input_tokens"}}
+{"ts":1776056383.1482143,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18302860533959633,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776056502.2403514,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20407264230031177,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776056624.2997828,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19166994529388376,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776056743.3626528,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18212963253358827,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776056865.4080448,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20639924456663394,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776056984.5297041,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18715924211179802,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776057103.6389682,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20695477548379207,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776057236.4009941,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20906845442441685,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776057358.4757826,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20773464237699968,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776057477.6074598,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20181289716708142,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776057596.7246487,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20029066653004413,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776057681.8698826,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18506290149179422,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776057800.9776092,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.1832087790980976,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776057922.9964769,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.181778684166157,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776058040.5163951,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18837331744300823,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776058159.6825993,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18500568779418508,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776058283.1115658,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20053030843871195,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776058402.204232,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.1890266360384536,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776058524.2867477,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21163018092123334,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776058643.4044707,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19998101673088084,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776058762.4957967,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18228054680036407,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776058884.5327878,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19417883646403386,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776059003.6383054,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21196327941117959,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776059125.7168193,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21964308261854718,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776059244.8231404,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21856470931254546,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776059364.0066638,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21867321271387544,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776059414.8565669,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":231468,"source":"usage.input_tokens"}}
+{"ts":1776059414.8614202,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":231468,"source":"usage.input_tokens"}}
+{"ts":1776059538.1109347,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18491570746755026,"terminal_event":"stream_end","last_event_type":"response.reasoning_summary_text.delta"}}
+{"ts":1776059658.5562019,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21167364701240959,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776059770.2394567,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":233277,"source":"usage.input_tokens"}}
+{"ts":1776059770.2445583,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":233277,"source":"usage.input_tokens"}}
+{"ts":1776059871.6142294,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":235499,"source":"usage.input_tokens"}}
+{"ts":1776059871.6197886,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":235499,"source":"usage.input_tokens"}}
+{"ts":1776059913.2830882,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":237570,"source":"usage.input_tokens"}}
+{"ts":1776059913.2880361,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":237570,"source":"usage.input_tokens"}}
+{"ts":1776059938.8036611,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":238404,"source":"usage.input_tokens"}}
+{"ts":1776059938.808728,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":238404,"source":"usage.input_tokens"}}
+{"ts":1776059995.7362883,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":239472,"source":"usage.input_tokens"}}
+{"ts":1776059995.7409351,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":239472,"source":"usage.input_tokens"}}
+{"ts":1776060072.5705836,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":240641,"source":"usage.input_tokens"}}
+{"ts":1776060072.5758767,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":240641,"source":"usage.input_tokens"}}
+{"ts":1776060086.7544355,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":242106,"source":"usage.input_tokens"}}
+{"ts":1776060086.7596829,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":242106,"source":"usage.input_tokens"}}
+{"ts":1776060171.0765438,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":242261,"source":"usage.input_tokens"}}
+{"ts":1776060171.0820985,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":242261,"source":"usage.input_tokens"}}
+{"ts":1776060213.944519,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":246482,"source":"usage.input_tokens"}}
+{"ts":1776060213.9504974,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":246482,"source":"usage.input_tokens"}}
+{"ts":1776060232.0338252,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":249014,"source":"usage.input_tokens"}}
+{"ts":1776060232.0399544,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":249014,"source":"usage.input_tokens"}}
+{"ts":1776060282.1785014,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":249547,"source":"usage.input_tokens"}}
+{"ts":1776060282.184068,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":249547,"source":"usage.input_tokens"}}
+{"ts": 1776064508.774142, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1776064521.7643127, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 13945}}
+{"ts":1776068129.4896002,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1776068162.2098341,"message":"micro-compact triggered (startup)","extra":{"min_saved":0,"saved_tokens":3411}}
+{"ts":1776068552.4237778,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1776068687.471385,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":241637,"source":"usage.input_tokens"}}
+{"ts":1776068687.4761295,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":241637,"source":"usage.input_tokens"}}
+{"ts":1776068722.5277252,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":248495,"source":"usage.input_tokens"}}
+{"ts":1776068722.5369644,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":248495,"source":"usage.input_tokens"}}
+{"ts":1776068750.5611622,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":250605,"source":"usage.input_tokens"}}
+{"ts":1776068750.5667021,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":250605,"source":"usage.input_tokens"}}
+{"ts":1776068767.7373385,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":253784,"source":"usage.input_tokens"}}
+{"ts":1776068767.7420549,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":253784,"source":"usage.input_tokens"}}
+{"ts":1776068812.4673533,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":254201,"source":"usage.input_tokens"}}
+{"ts":1776068812.4718034,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":254201,"source":"usage.input_tokens"}}
+{"ts":1776068925.408772,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":258356,"source":"usage.input_tokens"}}
+{"ts":1776068925.4137783,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":258356,"source":"usage.input_tokens"}}
+{"ts":1776069047.4134557,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18312834618758797,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776069066.1605554,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":260825,"source":"usage.input_tokens"}}
+{"ts":1776069099.6725903,"message":"micro-compact triggered (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":260825,"saved_tokens":15507,"source":"usage.input_tokens"}}
+{"ts":1776069116.8383489,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":238982,"source":"usage.input_tokens"}}
+{"ts":1776069116.8428199,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":238982,"source":"usage.input_tokens"}}
+{"ts":1776069182.687412,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":240028,"source":"usage.input_tokens"}}
+{"ts":1776069182.6934073,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":240028,"source":"usage.input_tokens"}}
+{"ts":1776069193.6431119,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":241402,"source":"usage.input_tokens"}}
+{"ts":1776069193.6475606,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":241402,"source":"usage.input_tokens"}}
+{"ts":1776069312.5033505,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18406795039962415,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776069434.4713442,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20421293291459464,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776069520.3942204,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":241573,"source":"usage.input_tokens"}}
+{"ts":1776069520.4007802,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":241573,"source":"usage.input_tokens"}}
+{"ts":1776069642.3497269,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19604864814134718,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776069761.3999212,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19534503186836141,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776069883.3727207,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20243438533620647,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776070002.4249802,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18316441401986611,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776070121.4760594,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19423917664878032,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776070243.4662077,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19931174219553904,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776070362.5112596,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19786310485464664,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776070484.5050812,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20533211379560273,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776070603.5828712,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19460772906178969,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776070722.6220384,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18194559585393666,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776070844.5874639,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18389225119906116,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776070963.65641,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21652149775834822,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776071085.6767299,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18790813979129686,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776071204.7216215,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20052897113399998,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776071326.7035689,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21898816144046754,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776071445.7721136,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18851593783521836,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776071564.8146265,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19641766137276667,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776071686.78847,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20734052268198716,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776071805.8657792,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20996545414904386,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776071927.8986766,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21480711370464745,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776072046.9646595,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18757359225655607,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776072165.9907868,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19938837791764569,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776072287.9670167,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19812960735435114,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776072406.9966719,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18705737324760172,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776072528.9641089,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19738733335276476,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776072648.0179253,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18302860533959633,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776072770.0084054,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20407264230031177,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776072889.0606976,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19166994529388376,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776073008.1269529,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18212963253358827,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776073130.1043298,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20639924456663394,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776073249.1631479,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18715924211179802,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776073365.3567469,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20695477548379207,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1776073375.6328573,"message":"retryable error; retrying","extra":{"attempt":2,"max_retries":9,"delay":0.4181369088488337,"terminal_event":"transport_error"}}
+{"ts":1776073386.1271281,"message":"retryable error; retrying","extra":{"attempt":3,"max_retries":9,"delay":0.83093856950799871,"terminal_event":"transport_error"}}
+{"ts":1776073397.0254321,"message":"retryable error; retrying","extra":{"attempt":4,"max_retries":9,"delay":1.6145031773366514,"terminal_event":"transport_error"}}
+{"ts":1776073408.6987243,"message":"retryable error; retrying","extra":{"attempt":5,"max_retries":9,"delay":3.204650664480706,"terminal_event":"transport_error"}}
+{"ts":1776073421.9640198,"message":"retryable error; retrying","extra":{"attempt":6,"max_retries":9,"delay":5.922012847737415,"terminal_event":"transport_error"}}
+{"ts":1776073437.9290662,"message":"retryable error; retrying","extra":{"attempt":7,"max_retries":9,"delay":11.725361862278247,"terminal_event":"transport_error"}}
+{"ts":1776073459.6956074,"message":"retryable error; retrying","extra":{"attempt":8,"max_retries":9,"delay":23.267671573268096,"terminal_event":"transport_error"}}
+{"ts": 1776073590.1714587, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1776073606.793261, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 2229}}
+{"ts": 1776074060.8912876, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 231303, "source": "usage.input_tokens"}}
+{"ts": 1776074060.904988, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 231303, "source": "usage.input_tokens"}}
+{"ts": 1776074079.1644707, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239039, "source": "usage.input_tokens"}}
+{"ts": 1776074079.1757653, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239039, "source": "usage.input_tokens"}}
+{"ts": 1776074480.2707438, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239442, "source": "usage.input_tokens"}}
+{"ts": 1776074480.2825801, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 239442, "source": "usage.input_tokens"}}
+{"ts": 1776074503.8640985, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247321, "source": "usage.input_tokens"}}
+{"ts": 1776074503.8696842, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247321, "source": "usage.input_tokens"}}
+{"ts": 1776074543.0382025, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247906, "source": "usage.input_tokens"}}
+{"ts": 1776074543.049808, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 247906, "source": "usage.input_tokens"}}
+{"ts": 1776074572.4665072, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 266322, "source": "usage.input_tokens"}}
+{"ts": 1776074572.473966, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 266322, "source": "usage.input_tokens"}}
+{"ts": 1776074608.1979706, "message": "micro-compact running (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 266544, "source": "usage.input_tokens"}}
+{"ts": 1776074608.204552, "message": "micro-compact skipped (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 266544, "source": "usage.input_tokens"}}
