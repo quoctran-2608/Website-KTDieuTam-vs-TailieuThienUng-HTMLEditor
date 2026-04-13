@@ -347,15 +347,34 @@
 	    var heroTitle = document.querySelector('.catalog-title');
 	    var heroDescription = document.querySelector('.catalog-description');
       var heroSection = document.querySelector('.catalog-hero');
-    var baseHero = {
-      kickerHtml: heroKicker ? heroKicker.innerHTML : '',
-      title: heroTitle ? heroTitle.textContent : '',
-      description: heroDescription ? heroDescription.textContent : '',
-      searchPlaceholder: input.getAttribute('placeholder') || ''
-    };
+	    var baseHero = {
+	      kickerHtml: heroKicker ? heroKicker.innerHTML : '',
+	      title: heroTitle ? heroTitle.textContent : '',
+	      description: heroDescription ? heroDescription.textContent : '',
+	      searchPlaceholder: input.getAttribute('placeholder') || ''
+	    };
 
-    var returnStorageKey = 'kdt:return:' + data.section;
-    var restoreFlagKey = returnStorageKey + ':restore';
+	    function ensureCatalogBreadcrumb() {
+	      if (!heroSection) return;
+	      var heroContainer = heroSection.querySelector('.container');
+	      if (!heroContainer) return;
+	      if (heroContainer.querySelector('.catalog-breadcrumbs')) return;
+	      var root = (document.body && document.body.dataset.root) || '';
+	      var currentLabel = baseHero.title || (data.section === 'thu-vien' ? 'Thư viện' : 'Bản tin');
+	      var breadcrumb = document.createElement('nav');
+	      breadcrumb.className = 'catalog-breadcrumbs';
+	      breadcrumb.setAttribute('aria-label', 'Breadcrumb');
+	      breadcrumb.innerHTML =
+	        '<a href="' + escapeHtml(root + 'index.html') + '">Trang chủ</a>' +
+	        '<i class="fa-solid fa-angle-right" aria-hidden="true"></i>' +
+	        '<span>' + escapeHtml(currentLabel) + '</span>';
+	      heroContainer.insertBefore(breadcrumb, heroContainer.firstChild);
+	    }
+
+	    ensureCatalogBreadcrumb();
+
+	    var returnStorageKey = 'kdt:return:' + data.section;
+	    var restoreFlagKey = returnStorageKey + ':restore';
 
     function getLibraryKind(key) {
       return (data.libraryKinds || []).find(function (item) { return item.key === key; }) || null;
