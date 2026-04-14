@@ -2587,6 +2587,9 @@
     padding: 4px 20px;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 20px;
+    overscroll-behavior-x: contain;
     gap: 8px;
   }
 
@@ -2595,21 +2598,51 @@
   }
 
   .jobs-list-page .jobs-quick-chip {
-    flex: 0 0 auto;
-    min-height: 34px;
-    padding: 0 14px;
+    flex: 0 0 clamp(132px, calc(50vw - 30px), 170px);
+    min-height: 52px;
+    padding: 8px 12px;
     font-size: 13px;
+    line-height: 1.25;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3px;
+    text-align: left;
+    white-space: normal;
+    border-radius: 12px;
+    scroll-snap-align: start;
+    box-sizing: border-box;
   }
 
   .jobs-list-page .jobs-quick-chip::before {
-    font-size: 12px;
+    display: none;
   }
 
   .jobs-list-page .jobs-quick-chip-count {
-    height: 20px;
-    min-width: 20px;
-    font-size: 11px;
-    padding: 0 6px;
+    display: block;
+    height: auto;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 10.5px;
+    line-height: 1.2;
+    white-space: normal;
+    color: #a3824f;
+  }
+
+  .jobs-list-page .jobs-quick-chip-count::before {
+    content: '(';
+  }
+
+  .jobs-list-page .jobs-quick-chip-count::after {
+    content: ')';
+  }
+
+  .jobs-list-page .jobs-quick-chip.is-active .jobs-quick-chip-count {
+    background: transparent;
+    color: #ffffff;
   }
 
   .jobs-list-page .jobs-filter-shell {
