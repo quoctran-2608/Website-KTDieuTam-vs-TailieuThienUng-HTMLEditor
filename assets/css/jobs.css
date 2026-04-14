@@ -2553,7 +2553,8 @@
 
 @media (max-width: 767px) {
   .jobs-list-page .jobs-hero {
-    padding: 64px 0 12px;
+    margin-top: 63px;
+    padding: 24px 0 12px;
   }
 
   .jobs-list-page .jobs-hero-minimal-head h1 {
