@@ -31,7 +31,11 @@
       <div class="container">
         <div id="jobsDiscoverySentinel" aria-hidden="true"></div>
         <div class="jobs-discovery-bar" id="jobsDiscoveryBar">
-          <div class="jobs-quick-filters" aria-label="Lọc nhanh theo vai trò">
+          <div class="jobs-quick-filters-scroll" id="jobsQuickRoleScroll">
+            <button type="button" class="jobs-quick-filters-nav jobs-quick-filters-nav--prev" data-jobs-quick-nav="prev" aria-label="Xem nhóm vai trò trước đó" hidden>
+              <i class="fa-solid fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <div class="jobs-quick-filters" id="jobsQuickFilters" aria-label="Lọc nhanh theo vai trò">
 <button type="button" class="jobs-quick-chip" data-role-value="hanh-chinh-nhan-su" aria-label="Hành chính nhân sự - 1 việc làm">Hành chính nhân sự<span class="jobs-quick-chip-count">1 việc làm</span></button>
 <button type="button" class="jobs-quick-chip" data-role-value="ke-toan-ban-hang" aria-label="Kế toán bán hàng - 1 việc làm">Kế toán bán hàng<span class="jobs-quick-chip-count">1 việc làm</span></button>
 <button type="button" class="jobs-quick-chip" data-role-value="ke-toan-noi-bo" aria-label="Kế toán nội bộ - 5 việc làm">Kế toán nội bộ<span class="jobs-quick-chip-count">5 việc làm</span></button>
@@ -39,6 +43,10 @@
 <button type="button" class="jobs-quick-chip" data-role-value="ke-toan-truong" aria-label="Kế toán trưởng - 1 việc làm">Kế toán trưởng<span class="jobs-quick-chip-count">1 việc làm</span></button>
 <button type="button" class="jobs-quick-chip" data-role-value="ke-toan-tong-hop" aria-label="Kế toán tổng hợp - 8 việc làm">Kế toán tổng hợp<span class="jobs-quick-chip-count">8 việc làm</span></button>
 <button type="button" class="jobs-quick-chip" data-role-value="nhan-vien-ke-toan" aria-label="Nhân viên kế toán - 2 việc làm">Nhân viên kế toán<span class="jobs-quick-chip-count">2 việc làm</span></button>
+            </div>
+            <button type="button" class="jobs-quick-filters-nav jobs-quick-filters-nav--next" data-jobs-quick-nav="next" aria-label="Xem nhóm vai trò tiếp theo" hidden>
+              <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="jobs-filter-shell" id="jobsFilterShell">
             <button type="button" class="jobs-filter-mobile-toggle" id="jobsFilterToggle" aria-expanded="false" aria-controls="jobsFilterForm">
@@ -108,7 +116,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh dich vu ke toan &amp; tu van thue easytax vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan va quen voi moi truong dich vu ke toan - tu van thue. tang 12, toa nha viettel tower, 285 cach mang thang tam, phuong hoa hung, thanh pho ho chi minh 3-nam" data-location-group="tp-hcm" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="3-nam" data-featured="1" data-publish-date="2026-04-09" data-deadline="2026-04-20" data-salary-max="18000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span><span class="job-badge featured">Nổi bật</span>
+            <span class="job-badge fresh">Mới 5 ngày</span><span class="job-badge featured">Nổi bật</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán tổng hợp" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -140,7 +148,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh thuc pham gia khanh vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, kiem soat chung tu va xu ly bao cao o muc do sau hon. 69 duong lang, dong da, ha noi 5-nam" data-location-group="ha-noi" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="5-nam" data-featured="1" data-publish-date="2026-04-09" data-deadline="2026-04-25" data-salary-max="25000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span><span class="job-badge featured">Nổi bật</span>
+            <span class="job-badge fresh">Mới 5 ngày</span><span class="job-badge featured">Nổi bật</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán tổng hợp" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -172,7 +180,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh cong nghiep sigma viet nam vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. kcn giao long 2-nam" data-location-group="ben-tre" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="1" data-publish-date="2026-04-09" data-deadline="2026-05-02" data-salary-max="25000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span><span class="job-badge featured">Nổi bật</span>
+            <span class="job-badge fresh">Mới 5 ngày</span><span class="job-badge featured">Nổi bật</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán tổng hợp" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -204,7 +212,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan truong cong ty tnhh elitez a chau viet nam vi tri phu hop voi ung vien co kinh nghiem quan ly he thong ke toan, kiem soat bao cao va tham muu tai chinh o cap do quan tri. ba dinh 5-nam" data-location-group="ha-noi" data-role-group="ke-toan-truong" data-employment="full-time" data-work-mode="onsite" data-experience="5-nam" data-featured="1" data-publish-date="2026-04-09" data-deadline="2026-05-08" data-salary-max="40000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span><span class="job-badge featured">Nổi bật</span>
+            <span class="job-badge fresh">Mới 5 ngày</span><span class="job-badge featured">Nổi bật</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán trưởng" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -236,7 +244,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan noi bo cong ty tnhh tm dv tin hoc nhat tin vi tri phu hop voi ung vien co kinh nghiem theo doi chung tu noi bo, thu chi va phoi hop kiem soat so lieu van hanh. 18 le thanh nghi - bach mai - ha noi hoac 7b trung kinh – yen hoa – ha noi 1-nam" data-location-group="ha-noi" data-role-group="ke-toan-noi-bo" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-15" data-salary-max="11000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán nội bộ" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -268,7 +276,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung nhan vien ke toan cong ty xay dung dat viet vi tri phu hop voi ung vien da co kinh nghiem ke toan co ban, theo doi chung tu va ho tro bao cao noi bo. 620 pham van chieu 1-nam" data-location-group="tp-hcm" data-role-group="nhan-vien-ke-toan" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-15" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Nhân viên kế toán" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -300,7 +308,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan noi bo cong ty co phan du an ha my vi tri phu hop voi ung vien co kinh nghiem theo doi chung tu noi bo, thu chi va phoi hop kiem soat so lieu van hanh. 28 louis ii, khu do thi louis city hoang mai, tan mai, hoang mai, ha noi 3-nam" data-location-group="ha-noi" data-role-group="ke-toan-noi-bo" data-employment="full-time" data-work-mode="onsite" data-experience="3-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-19" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán nội bộ" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -332,7 +340,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty tnhh dich vu ke toan &amp; tu van thue easytax vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. tang 12, toa nha viettel tower, 285 cach mang thang tam, phuong hoa hung, thanh pho ho chi minh 2-nam" data-location-group="tp-hcm" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-20" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán thuế" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -364,7 +372,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh thuc pham tadichi vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. so 08, duong so 1 - mh4, xa xuan thoi son, thanh pho ho chi minh 2-nam" data-location-group="tp-hcm" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-25" data-salary-max="15000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán tổng hợp" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -396,7 +404,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan ban hang cong ty tnhh thaco auto tp.hcm vi tri phu hop voi ung vien co kinh nghiem xu ly doanh thu, hoa don va doi chieu cong no ban hang. 314 nguyen van linh, phuong binh thuan 1-nam" data-location-group="tp-hcm" data-role-group="ke-toan-ban-hang" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-27" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán bán hàng" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -428,7 +436,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan noi bo cong ty tnhh tm xnk nong san nguyet que vi tri phu hop voi ung vien muon theo doi chung tu noi bo, thu chi va hoc viec thuc te trong moi truong doanh nghiep. toa h2 masteri, vinhomes ocean park, gia lam, ha noi fresher" data-location-group="ha-noi" data-role-group="ke-toan-noi-bo" data-employment="full-time" data-work-mode="onsite" data-experience="fresher" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-30" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán nội bộ" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -460,7 +468,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty tnhh dich vu tu van thue hinh lam vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. so 2 do quang, trung hoa, cau giay, ha noi 1-nam" data-location-group="ha-noi" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-30" data-salary-max="15000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán thuế" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -492,7 +500,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh tm dv xd trang an vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, kiem soat chung tu va phoi hop bao cao trong doanh nghiep xay dung - thuong mai - dich vu. so 109 duong 66 phuong cat lai 3-nam" data-location-group="tp-hcm" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="3-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-30" data-salary-max="15000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán tổng hợp" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -524,7 +532,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung nhan vien ke toan cong ty tnhh thaco auto tp.hcm vi tri phu hop voi ung vien da co kinh nghiem ke toan co ban, theo doi chung tu va ho tro bao cao noi bo. so 56/9 dai lo binh duong, kp binh giao 1-nam" data-location-group="binh-duong" data-role-group="nhan-vien-ke-toan" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-03" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Nhân viên kế toán" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -556,7 +564,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung hanh chinh nhan su cong ty cp xay dụng và dàu tu thùy anh vi tri phu hop voi ung vien co kinh nghiem hanh chinh - nhan su, tuyen dung, ho so lao dong va phoi hop van hanh noi bo. ngõ 275 au co, tay hò, hà nọi 1-nam" data-location-group="ha-noi" data-role-group="hanh-chinh-nhan-su" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-08" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Hành chính nhân sự" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -588,7 +596,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty viet luat vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. 2 hoa phuong, phuong 2, phu nhuan fresher" data-location-group="tp-hcm" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="fresher" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-08" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán thuế" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -620,7 +628,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan noi bo cong ty cp dt sx - xnk hung thinh vi tri phu hop voi ung vien co kinh nghiem theo doi chung tu noi bo, thu chi va phoi hop kiem soat so lieu van hanh. 19 duong 18b, phuong binh hung hoa a, quan binh tan, tp. hcm fresher" data-location-group="tp-hcm" data-role-group="ke-toan-noi-bo" data-employment="full-time" data-work-mode="onsite" data-experience="fresher" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán nội bộ" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -652,7 +660,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan noi bo cong ty tnhh phuc giang (pgi) vi tri phu hop voi ung vien co kinh nghiem theo doi chung tu noi bo, thu chi va phoi hop kiem soat so lieu van hanh. so 5-7 duong d52, phuong 12 2-nam" data-location-group="tp-hcm" data-role-group="ke-toan-noi-bo" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán nội bộ" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -684,7 +692,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty cp winitex viet nam vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. cum cn huynh cung-tam hiep-thanh tri-hn 1-nam" data-location-group="ha-noi" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán thuế" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -716,7 +724,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty tnhh luat va ke toan viet my - chi nhanh thu do vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. 71 nguyen chi thanh - dong da - ha noi 1-nam" data-location-group="ha-noi" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán thuế" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -748,7 +756,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty co phan quan ly diem den chau a vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. so 47 phan chu trinh 3-nam" data-location-group="ha-noi" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="3-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán tổng hợp" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -780,7 +788,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cty tthh nhan hoang ngan tam vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. 252/62/14, duong pham van chieu, phuong thong tay hoi 3-nam" data-location-group="tp-hcm" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="3-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán tổng hợp" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -812,7 +820,7 @@
 <article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh dp nhat nam long vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. 24 duong so 10, kdc duong hong, ap 19, xa binh hung 2-nam" data-location-group="tp-hcm" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-06-07" data-salary-max="15000000">
         <div class="job-card-top">
           <div class="job-card-badges">
-            <span class="job-badge fresh">Mới 4 ngày</span>
+            <span class="job-badge fresh">Mới 5 ngày</span>
           </div>
           <button type="button" class="job-card-save-btn" aria-label="Lưu việc làm: Tuyển dụng Kế toán tổng hợp" title="Lưu việc làm">
             <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
@@ -916,6 +924,10 @@
         var resetBtn = document.getElementById('jobsFilterReset');
         var activeFilters = document.getElementById('jobsActiveFilters');
         var quickRoleButtons = Array.prototype.slice.call(document.querySelectorAll('.jobs-quick-chip[data-role-value]'));
+        var quickFilters = document.getElementById('jobsQuickFilters');
+        var quickScrollWrap = document.getElementById('jobsQuickRoleScroll');
+        var quickNavPrev = document.querySelector('[data-jobs-quick-nav="prev"]');
+        var quickNavNext = document.querySelector('[data-jobs-quick-nav="next"]');
         var pagination = document.getElementById('jobsPagination');
         var paginationPages = document.getElementById('jobsPaginationPages');
         var paginationPrev = pagination ? pagination.querySelector('[data-page-action="prev"]') : null;
@@ -966,6 +978,42 @@
           quickRoleButtons.forEach(function (button) {
             button.classList.toggle('is-active', (button.dataset.roleValue || '') === selectedRole);
           });
+        }
+
+        function syncQuickFilterNav() {
+          if (!quickFilters || !quickScrollWrap || !quickNavPrev || !quickNavNext) return;
+
+          if (!mobileQuery.matches) {
+            quickScrollWrap.classList.remove('is-scrollable');
+            quickNavPrev.hidden = true;
+            quickNavNext.hidden = true;
+            quickNavPrev.disabled = true;
+            quickNavNext.disabled = true;
+            return;
+          }
+
+          var maxScroll = Math.max(0, quickFilters.scrollWidth - quickFilters.clientWidth);
+          var hasOverflow = maxScroll > 6;
+          quickScrollWrap.classList.toggle('is-scrollable', hasOverflow);
+          quickNavPrev.hidden = !hasOverflow;
+          quickNavNext.hidden = !hasOverflow;
+
+          if (!hasOverflow) {
+            quickNavPrev.disabled = true;
+            quickNavNext.disabled = true;
+            return;
+          }
+
+          var currentScroll = quickFilters.scrollLeft;
+          quickNavPrev.disabled = currentScroll <= 4;
+          quickNavNext.disabled = currentScroll >= maxScroll - 4;
+        }
+
+        function scrollQuickFilters(direction) {
+          if (!quickFilters) return;
+          var distance = Math.max(120, Math.round(quickFilters.clientWidth * 0.78));
+          var delta = direction === 'next' ? distance : -distance;
+          quickFilters.scrollBy({ left: delta, behavior: 'smooth' });
         }
 
         function renderActiveFilters(filters) {
@@ -1092,6 +1140,7 @@
           }
           renderActiveFilters(filters);
           syncQuickRoleButtons();
+          syncQuickFilterNav();
 
           if (!keepPage) {
             currentPage = 1;
@@ -1110,6 +1159,20 @@
             applyFilters();
           });
         });
+
+        if (quickFilters) {
+          quickFilters.addEventListener('scroll', syncQuickFilterNav, { passive: true });
+        }
+        if (quickNavPrev) {
+          quickNavPrev.addEventListener('click', function () {
+            scrollQuickFilters('prev');
+          });
+        }
+        if (quickNavNext) {
+          quickNavNext.addEventListener('click', function () {
+            scrollQuickFilters('next');
+          });
+        }
 
         if (activeFilters) {
           activeFilters.addEventListener('click', function (event) {
@@ -1168,18 +1231,22 @@
             mobileQuery.addEventListener('change', function () {
               syncFilterShellByViewport();
               applyFilters();
+              syncQuickFilterNav();
             });
           } else if (mobileQuery.addListener) {
             mobileQuery.addListener(function () {
               syncFilterShellByViewport();
               applyFilters();
+              syncQuickFilterNav();
             });
           }
         }
 
         syncDiscoverySticky();
+        syncQuickFilterNav();
         window.addEventListener('scroll', syncDiscoverySticky, { passive: true });
         window.addEventListener('resize', syncDiscoverySticky);
+        window.addEventListener('resize', syncQuickFilterNav);
 
         if (resetBtn) {
           resetBtn.addEventListener('click', function () {
@@ -1189,6 +1256,7 @@
         }
 
         applyFilters();
+        window.setTimeout(syncQuickFilterNav, 120);
       }
 
       document.addEventListener('DOMContentLoaded', initJobsFilter);

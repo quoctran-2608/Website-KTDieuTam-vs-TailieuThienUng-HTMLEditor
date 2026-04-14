@@ -508,6 +508,10 @@ def render_jobs_filter_script() -> str:
         var resetBtn = document.getElementById('jobsFilterReset');
         var activeFilters = document.getElementById('jobsActiveFilters');
         var quickRoleButtons = Array.prototype.slice.call(document.querySelectorAll('.jobs-quick-chip[data-role-value]'));
+        var quickFilters = document.getElementById('jobsQuickFilters');
+        var quickScrollWrap = document.getElementById('jobsQuickRoleScroll');
+        var quickNavPrev = document.querySelector('[data-jobs-quick-nav="prev"]');
+        var quickNavNext = document.querySelector('[data-jobs-quick-nav="next"]');
         var pagination = document.getElementById('jobsPagination');
         var paginationPages = document.getElementById('jobsPaginationPages');
         var paginationPrev = pagination ? pagination.querySelector('[data-page-action="prev"]') : null;
@@ -558,6 +562,42 @@ def render_jobs_filter_script() -> str:
           quickRoleButtons.forEach(function (button) {
             button.classList.toggle('is-active', (button.dataset.roleValue || '') === selectedRole);
           });
+        }
+
+        function syncQuickFilterNav() {
+          if (!quickFilters || !quickScrollWrap || !quickNavPrev || !quickNavNext) return;
+
+          if (!mobileQuery.matches) {
+            quickScrollWrap.classList.remove('is-scrollable');
+            quickNavPrev.hidden = true;
+            quickNavNext.hidden = true;
+            quickNavPrev.disabled = true;
+            quickNavNext.disabled = true;
+            return;
+          }
+
+          var maxScroll = Math.max(0, quickFilters.scrollWidth - quickFilters.clientWidth);
+          var hasOverflow = maxScroll > 6;
+          quickScrollWrap.classList.toggle('is-scrollable', hasOverflow);
+          quickNavPrev.hidden = !hasOverflow;
+          quickNavNext.hidden = !hasOverflow;
+
+          if (!hasOverflow) {
+            quickNavPrev.disabled = true;
+            quickNavNext.disabled = true;
+            return;
+          }
+
+          var currentScroll = quickFilters.scrollLeft;
+          quickNavPrev.disabled = currentScroll <= 4;
+          quickNavNext.disabled = currentScroll >= maxScroll - 4;
+        }
+
+        function scrollQuickFilters(direction) {
+          if (!quickFilters) return;
+          var distance = Math.max(120, Math.round(quickFilters.clientWidth * 0.78));
+          var delta = direction === 'next' ? distance : -distance;
+          quickFilters.scrollBy({ left: delta, behavior: 'smooth' });
         }
 
         function renderActiveFilters(filters) {
@@ -684,6 +724,7 @@ def render_jobs_filter_script() -> str:
           }
           renderActiveFilters(filters);
           syncQuickRoleButtons();
+          syncQuickFilterNav();
 
           if (!keepPage) {
             currentPage = 1;
@@ -702,6 +743,20 @@ def render_jobs_filter_script() -> str:
             applyFilters();
           });
         });
+
+        if (quickFilters) {
+          quickFilters.addEventListener('scroll', syncQuickFilterNav, { passive: true });
+        }
+        if (quickNavPrev) {
+          quickNavPrev.addEventListener('click', function () {
+            scrollQuickFilters('prev');
+          });
+        }
+        if (quickNavNext) {
+          quickNavNext.addEventListener('click', function () {
+            scrollQuickFilters('next');
+          });
+        }
 
         if (activeFilters) {
           activeFilters.addEventListener('click', function (event) {
@@ -760,18 +815,22 @@ def render_jobs_filter_script() -> str:
             mobileQuery.addEventListener('change', function () {
               syncFilterShellByViewport();
               applyFilters();
+              syncQuickFilterNav();
             });
           } else if (mobileQuery.addListener) {
             mobileQuery.addListener(function () {
               syncFilterShellByViewport();
               applyFilters();
+              syncQuickFilterNav();
             });
           }
         }
 
         syncDiscoverySticky();
+        syncQuickFilterNav();
         window.addEventListener('scroll', syncDiscoverySticky, { passive: true });
         window.addEventListener('resize', syncDiscoverySticky);
+        window.addEventListener('resize', syncQuickFilterNav);
 
         if (resetBtn) {
           resetBtn.addEventListener('click', function () {
@@ -781,6 +840,7 @@ def render_jobs_filter_script() -> str:
         }
 
         applyFilters();
+        window.setTimeout(syncQuickFilterNav, 120);
       }
 
       document.addEventListener('DOMContentLoaded', initJobsFilter);
@@ -1016,8 +1076,16 @@ def render_list_page(jobs: list[Job], today: date) -> str:
       <div class="container">
         <div id="jobsDiscoverySentinel" aria-hidden="true"></div>
         <div class="jobs-discovery-bar" id="jobsDiscoveryBar">
-          <div class="jobs-quick-filters" aria-label="Lọc nhanh theo vai trò">
+          <div class="jobs-quick-filters-scroll" id="jobsQuickRoleScroll">
+            <button type="button" class="jobs-quick-filters-nav jobs-quick-filters-nav--prev" data-jobs-quick-nav="prev" aria-label="Xem nhóm vai trò trước đó" hidden>
+              <i class="fa-solid fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <div class="jobs-quick-filters" id="jobsQuickFilters" aria-label="Lọc nhanh theo vai trò">
 {render_quick_role_filters(role_counts, role_options)}
+            </div>
+            <button type="button" class="jobs-quick-filters-nav jobs-quick-filters-nav--next" data-jobs-quick-nav="next" aria-label="Xem nhóm vai trò tiếp theo" hidden>
+              <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="jobs-filter-shell" id="jobsFilterShell">
             <button type="button" class="jobs-filter-mobile-toggle" id="jobsFilterToggle" aria-expanded="false" aria-controls="jobsFilterForm">

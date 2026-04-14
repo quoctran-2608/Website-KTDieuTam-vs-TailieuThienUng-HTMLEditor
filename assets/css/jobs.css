@@ -284,6 +284,14 @@
   padding: 4px 0;
 }
 
+.jobs-list-page .jobs-quick-filters-scroll {
+  position: relative;
+}
+
+.jobs-list-page .jobs-quick-filters-nav {
+  display: none;
+}
+
 .jobs-list-page .jobs-quick-chip {
   min-height: 38px;
   padding: 0 16px;
@@ -2592,6 +2600,59 @@
     scroll-padding-left: 20px;
     overscroll-behavior-x: contain;
     gap: 8px;
+  }
+
+  .jobs-list-page .jobs-quick-filters-scroll {
+    display: block;
+    padding: 0 34px;
+    margin: 0 -6px 10px;
+  }
+
+  .jobs-list-page .jobs-quick-filters {
+    margin: 0;
+    padding: 4px 0;
+  }
+
+  .jobs-list-page .jobs-quick-filters-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 44px;
+    border: 1px solid rgba(195, 160, 93, 0.35);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #8d6730;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s ease, background 0.22s ease, color 0.22s ease;
+  }
+
+  .jobs-list-page .jobs-quick-filters-scroll.is-scrollable .jobs-quick-filters-nav {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .jobs-list-page .jobs-quick-filters-nav--prev {
+    left: 0;
+  }
+
+  .jobs-list-page .jobs-quick-filters-nav--next {
+    right: 0;
+  }
+
+  .jobs-list-page .jobs-quick-filters-nav i {
+    font-size: 13px;
+  }
+
+  .jobs-list-page .jobs-quick-filters-nav:disabled {
+    opacity: 0.28 !important;
+    pointer-events: none;
   }
 
   .jobs-list-page .jobs-quick-filters::-webkit-scrollbar {
