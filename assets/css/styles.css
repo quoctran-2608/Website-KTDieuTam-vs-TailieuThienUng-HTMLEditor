@@ -66,7 +66,13 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
 .top-header { background: #FFF; padding: 16px 0; position: relative; z-index: 101; }
 .header-row { display: flex; align-items: center; justify-content: space-between; }
 .brand-block { display: flex; align-items: center; gap: 24px; }
-.brand-logo img { height: 90px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
+.brand-logo img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: normal;
+  isolation: isolate;
+}
 .brand-text h1 { font-family: var(--font-heading); font-size: 24px; font-weight: 800; color: #6A4421; line-height: 1.1; letter-spacing: 0.05em; text-transform: uppercase; }
 .brand-text p { font-family: var(--font-body); font-size: 14px; font-weight: 600; font-style: italic; color: #BC903D; margin-top: 4px; }
 .header-contact { display: flex; align-items: center; gap: 32px; }
