@@ -1,7 +1,7 @@
 (function () {
   var config = {
     brand: {
-      logo: 'assets/images/site/logo.jpg',
+      logo: 'assets/images/site/logo.png',
       name: 'KẾ TOÁN DIỆU TÂM',
       tagline: 'Minh bạch tài chính – Vững nền tương lai',
       hotline: '0777 315 188',
