@@ -2940,3 +2940,59 @@
     margin-bottom: 16px;
   }
 }
+
+/* =========================================================
+   TỐI ƯU UX/UI CHI TIẾT TRÊN THIẾT BỊ DI ĐỘNG & TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  /* 1. Đảo Sidebar lên trên cùng để ứng viên thấy Mức lương/Hạn nộp đầu tiên */
+  .job-detail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .job-detail-side {
+    order: -1; /* Phép thuật đẩy Sidebar lên trên khối Main */
+    width: 100%;
+  }
+  .job-detail-main {
+    order: 2;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  /* 2. Sửa lỗi Header cố định che khuất phần đầu trang chi tiết */
+  .job-detail-hero {
+    margin-top: 63px; /* Đẩy xuống một khoảng bằng độ dày của Header */
+    padding: 24px 0 32px; /* Thu gọn khoảng trắng thừa */
+  }
+
+  /* 3. Tối ưu không gian (Whitespace) cho các hộp thông tin */
+  .job-detail-box {
+    padding: 20px 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+  .job-detail-box h2 {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  /* 4. Giảm padding khối văn bản chính để chữ tràn viền đẹp hơn */
+  .job-detail-prose {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+  .job-detail-prose h2 {
+    font-size: 20px;
+    margin: 24px 0 12px;
+  }
+  
+  /* 5. Căn chỉnh lại Font size của Breadcrumb trên Mobile */
+  .job-detail-hero .jobs-breadcrumbs {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+}
