@@ -193,6 +193,60 @@
     }
   }
 
+  function normalizeFlatBreadcrumb(container) {
+    if (!container) return;
+
+    var nodes = Array.prototype.slice.call(container.childNodes || []);
+    var items = [];
+
+    nodes.forEach(function (node) {
+      if (node.nodeType === 3) {
+        var text = (node.textContent || '').trim();
+        if (!text) return;
+        if (/^[\/>]+$/.test(text)) return;
+        items.push(node.cloneNode(true));
+        return;
+      }
+
+      if (node.nodeType !== 1) return;
+
+      var tagName = (node.tagName || '').toLowerCase();
+      var textContent = (node.textContent || '').trim();
+      var classList = node.classList || { contains: function () { return false; } };
+
+      if (tagName === 'i' && classList.contains('fa-angle-right')) return;
+      if ((tagName === 'span' || tagName === 'li') && /^[\/>]+$/.test(textContent)) return;
+
+      items.push(node.cloneNode(true));
+    });
+
+    if (items.length < 2) return;
+
+    container.innerHTML = '';
+    items.forEach(function (item, index) {
+      container.appendChild(item);
+      if (index >= items.length - 1) return;
+      var separator = document.createElement('i');
+      separator.className = 'fa-solid fa-angle-right';
+      separator.setAttribute('aria-hidden', 'true');
+      container.appendChild(separator);
+    });
+  }
+
+  function normalizeBreadcrumbs(scope) {
+    var root = scope || document;
+    var selectors = [
+      '.about-breadcrumbs',
+      '.jobs-breadcrumbs',
+      '.catalog-breadcrumbs',
+      '.article-breadcrumbs'
+    ];
+    selectors.forEach(function (selector) {
+      var list = root.querySelectorAll(selector);
+      list.forEach(normalizeFlatBreadcrumb);
+    });
+  }
+
   function renderShell() {
     var body = document.body;
     if (!body) return;
@@ -206,6 +260,8 @@
     if (footerHost) footerHost.innerHTML = renderFooter(root);
 
     initInteractions();
+    normalizeBreadcrumbs(document);
+    window.setTimeout(function () { normalizeBreadcrumbs(document); }, 80);
     document.dispatchEvent(new CustomEvent('site-shell-ready'));
   }
 

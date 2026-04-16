@@ -37,8 +37,8 @@
 }
 
 .jobs-breadcrumbs span:last-child {
-  color: var(--dark);
-  font-weight: 700;
+  color: inherit;
+  font-weight: inherit;
 }
 
 .jobs-breadcrumbs a:hover {
