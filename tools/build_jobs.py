@@ -1218,22 +1218,13 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
         ("Ngày đăng", publish_label),
         ("Hạn nộp", deadline_label),
     ]
-    info_html = "\n".join(
-        f'<div class="job-detail-fact"><span>{escape(label)}</span><strong>{escape(value)}</strong></div>'
-        for label, value in info_rows
-    )
-    apply_href = clean_text(meta.get("applyUrl"))
-    if not apply_href:
-        apply_href = "mailto:ketoandieutam@gmail.com"
-
-    if re.match(r"^https?://", apply_href, re.I):
-        direct_apply_link = f'<a href="{escape(apply_href)}" target="_blank" rel="noopener" class="job-source-link">Mở link ứng tuyển gốc</a>'
-    elif re.match(r"^mailto:", apply_href, re.I):
-        direct_apply_link = f'<a href="{escape(apply_href)}" class="job-source-link">Gửi email ứng tuyển trực tiếp</a>'
-    elif re.match(r"^tel:", apply_href, re.I):
-        direct_apply_link = f'<a href="{escape(apply_href)}" class="job-source-link">Gọi ứng tuyển trực tiếp</a>'
-    else:
-        direct_apply_link = '<a href="mailto:ketoandieutam@gmail.com" class="job-source-link">Liên hệ tuyển dụng</a>'
+    info_html_parts = []
+    for label, value in info_rows:
+        salary_class = ' class="salary-highlight"' if label == "Mức lương" else ""
+        info_html_parts.append(
+            f'<div class="job-detail-fact"><span>{escape(label)}</span><strong{salary_class}>{escape(value)}</strong></div>'
+        )
+    info_html = "\n".join(info_html_parts)
 
     support_box = (
         '<div class="job-detail-box job-detail-support">'
@@ -1245,25 +1236,6 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
         '</div>'
         '</div>'
     )
-
-    source_url = clean_text(meta.get("sourceUrl"))
-    source_site = clean_text(meta.get("sourceSite"))
-    if source_site == "employer-brief" or source_url.startswith("lead/"):
-        source_box = (
-            '<div class="job-detail-box job-detail-source-box">'
-            '<h2>Nguồn tham chiếu</h2>'
-            '<p>Tin này được đăng từ nhu cầu tuyển dụng do doanh nghiệp gửi qua website và đã được Diệu Tâm rà soát trước khi hiển thị.</p>'
-            f'<p><strong>Mã tham chiếu:</strong> <code>{escape(source_url or "N/A")}</code></p>'
-            '</div>'
-        )
-    else:
-        source_box = (
-            '<div class="job-detail-box job-detail-source-box">'
-            '<h2>Nguồn tham chiếu</h2>'
-            f'<p>Thông tin được tham khảo từ <strong>{escape(source_site)}</strong> và đã được biên tập lại phần tóm tắt để người đọc theo dõi dễ hơn.</p>'
-            f'<a href="{escape(source_url)}" target="_blank" rel="noopener" class="job-source-link">Mở tin gốc</a>'
-            '</div>'
-        )
 
     related_section = ""
     if related_jobs:
@@ -1295,6 +1267,16 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
           </section>
         """.strip()
 
+    apply_bottom_block = (
+        '<div class="job-apply-bottom">'
+        '<p>Bạn đã sẵn sàng đồng hành cùng Kế Toán Diệu Tâm?</p>'
+        '<div class="job-apply-bottom-actions">'
+        '<a href="../ung-tuyen.html" class="btn-primary-orange">Ứng tuyển ngay</a>'
+        '<a href="https://zalo.me/0777315188" target="_blank" class="btn-outline-brown">Hỏi thêm về vị trí</a>'
+        '</div>'
+        '</div>'
+    )
+
     return f"""<!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -1312,18 +1294,26 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
   <main>
     <section class="job-detail-hero">
       <div class="container">
-        <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
-          <a href="../index.html">Trang chủ</a>
-          <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
-          <a href="../tuyen-dung.html">Tuyển dụng</a>
-          <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
-          <span>{escape(meta['title'])}</span>
-        </nav>
-        <a href="../tuyen-dung.html#job-list" class="job-detail-back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Về danh sách việc làm</a>
+        
+        <div class="job-detail-hero-nav">
+          <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
+            <a href="../index.html">Trang chủ</a>
+            <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+            <a href="../tuyen-dung.html">Tuyển dụng</a>
+            <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+            <span>{escape(meta['title'])}</span>
+          </nav>
+          <a href="../tuyen-dung.html#job-list" class="job-detail-back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Về danh sách việc làm</a>
+        </div>
+
         <div class="job-detail-top">
           <div class="job-detail-main-head">
-            <div class="job-card-badges"><span class="job-badge neutral">{escape(role_label)}</span>{badge_html(job)}</div>
-            <span class="job-detail-company">{escape(meta['companyName'])}</span>
+            
+            <div class="job-detail-eyebrow">
+              <div class="job-card-badges"><span class="job-badge neutral">{escape(role_label)}</span>{badge_html(job)}</div>
+              <span class="job-detail-company">{escape(meta['companyName'])}</span>
+            </div>
+            
             <h1>{escape(meta['title'])}</h1>
             <p class="job-detail-summary">{escape(meta['summary'])}</p>
             <ul class="job-detail-highlights">
@@ -1333,7 +1323,6 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
           <div class="job-detail-actions">
             <a href="../ung-tuyen.html" class="btn-primary-orange">Ứng tuyển nhanh</a>
             <a href="../viec-lam-da-luu.html" class="btn-outline-brown">Lưu việc làm</a>
-            {direct_apply_link}
           </div>
         </div>
       </div>
@@ -1346,6 +1335,7 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
 {job.body_html}
           </div>
           {related_section}
+          {apply_bottom_block}
         </article>
         <aside class="job-detail-side">
           <div class="job-detail-box">
@@ -1355,7 +1345,6 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
             </div>
           </div>
           {support_box}
-          {source_box}
         </aside>
       </div>
     </section>
