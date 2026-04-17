@@ -192,11 +192,23 @@
           if (!isMobileMenuMode()) return;
           event.preventDefault();
           var submenu = item.querySelector('.nav-submenu');
+          var submenuLinks = submenu ? Array.prototype.slice.call(submenu.querySelectorAll('a')) : [];
           var willExpand = !item.classList.contains('is-expanded');
           collapseAllSubmenus();
           if (willExpand) {
             item.classList.add('is-expanded');
-            if (submenu) submenu.style.display = 'block';
+            if (submenu) {
+              submenu.style.display = 'block';
+              submenu.style.opacity = '1';
+              submenu.style.visibility = 'visible';
+            }
+            submenuLinks.forEach(function (link) {
+              link.style.display = 'block';
+              link.style.visibility = 'visible';
+              link.style.opacity = '1';
+              link.style.color = '#ffffff';
+              link.style.webkitTextFillColor = '#ffffff';
+            });
           }
         });
       });
