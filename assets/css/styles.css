@@ -94,11 +94,22 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
 .nav-caret { font-size: 11px; opacity: 0.78; transition: transform 0.22s ease; }
 #mainMenu > li.has-submenu:hover > a .nav-caret,
 #mainMenu > li.has-submenu:focus-within > a .nav-caret { transform: rotate(180deg); }
+
+/* Hover bridge: lấp vùng ranh giới để rê chuột xuống submenu không bị rơi hover */
+#mainMenu > li.has-submenu::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 14px;
+}
+
 .nav-submenu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 4px);
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
+  transform: translateX(-50%) translateY(8px);
   min-width: 240px;
   padding: 36px 10px 10px;
   border-radius: 18px;
@@ -127,7 +138,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
 #mainMenu > li.has-submenu > .nav-submenu::after {
   content: '';
   position: absolute;
-  top: -6px;
+  top: -4px;
   left: 50%;
   width: 12px;
   height: 12px;
@@ -741,6 +752,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
   #mainMenu > li { width: 100%; height: auto; display: block; }
   #mainMenu > li > a { height: auto; padding: 16px 24px; font-size: 15px; justify-content: flex-start; }
   #mainMenu > li > a::after { display: none; }
+  #mainMenu > li.has-submenu::after { display: none; }
   .nav-submenu {
     position: static;
     transform: none;
