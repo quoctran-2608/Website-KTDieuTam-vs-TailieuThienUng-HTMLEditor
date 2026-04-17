@@ -190,6 +190,7 @@
         trigger.addEventListener('click', function (event) {
           if (!isMobileMenuMode()) return;
           event.preventDefault();
+          event.stopPropagation();
           var willExpand = !item.classList.contains('submenu-open');
           collapseAllSubmenus();
           if (willExpand) {

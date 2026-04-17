@@ -798,47 +798,42 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
   }
   .nav-submenu li a {
     min-height: 0;
-    display: block;
+    display: flex;
+    align-items: center;
     margin: 0;
     padding: 6px 20px 6px 34px;
-    color: transparent !important;
-    -webkit-text-fill-color: transparent !important;
-    font-size: 0;
+    color: #fff7ea !important;
+    -webkit-text-fill-color: #fff7ea !important;
+    font-size: 12px;
     font-weight: 600;
-    line-height: 1;
+    line-height: 1.45;
     border-radius: 0;
     background: transparent !important;
     border: 0 !important;
     text-shadow: none;
   }
-  .nav-submenu li a::before {
-    content: attr(data-label);
-    display: block;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.45;
-    color: #fff7ea;
-    -webkit-text-fill-color: #fff7ea;
-  }
   .nav-submenu li a .nav-submenu-label {
-    display: none !important;
-  }
-  #mainMenu > li.has-submenu.submenu-open > .nav-submenu > li > a {
-    display: block !important;
+    display: inline !important;
     visibility: visible !important;
     opacity: 1 !important;
-    color: transparent !important;
-    -webkit-text-fill-color: transparent !important;
+    color: inherit !important;
+    -webkit-text-fill-color: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
+  #mainMenu > li.has-submenu.submenu-open > .nav-submenu > li > a {
+    display: flex !important;
+    align-items: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #fff7ea !important;
+    -webkit-text-fill-color: #fff7ea !important;
   }
   .nav-submenu li a:hover,
   .nav-submenu li a.active {
     background: transparent !important;
-    color: transparent !important;
-  }
-  .nav-submenu li a:hover::before,
-  .nav-submenu li a.active::before {
-    color: #ffffff;
-    -webkit-text-fill-color: #ffffff;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
   }
   
   .hero-banner { background-position: center right 30%; }
@@ -908,8 +903,6 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
   #mainMenu > li > a { min-height: 36px; padding: 7px 18px; font-size: 13px; }
   .nav-submenu li a {
     padding: 5px 18px 5px 28px;
-  }
-  .nav-submenu li a::before {
     font-size: 11px;
   }
 

@@ -836,6 +836,7 @@
       thưViệnLink.addEventListener('click', function(event) {
         if (window.innerWidth > 991) return;
         event.preventDefault();
+        event.stopPropagation();
         const willOpen = !thưViệnItem.classList.contains('submenu-open');
         menu.querySelectorAll('li.has-submenu').forEach(function(item) {
           item.classList.remove('submenu-open');
