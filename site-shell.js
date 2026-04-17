@@ -174,6 +174,10 @@
       submenuParents.forEach(function (item) {
         item.classList.remove('is-expanded');
         item.classList.remove('submenu-open');
+        var submenu = item.querySelector('.nav-submenu');
+        if (submenu) {
+          submenu.style.display = 'none';
+        }
       });
     }
     function setupMobileSubmenuToggle() {
@@ -195,6 +199,10 @@
           collapseAllSubmenus();
           if (willExpand) {
             item.classList.add('submenu-open');
+            var submenu = item.querySelector('.nav-submenu');
+            if (submenu) {
+              submenu.style.display = 'block';
+            }
           }
         });
       });

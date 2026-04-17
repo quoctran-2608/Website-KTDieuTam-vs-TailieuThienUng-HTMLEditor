@@ -749,7 +749,9 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
   #mainMenu {
     display: none; position: absolute; top: 0; left: 0; right: 0;
     flex-direction: column; height: auto; padding: 10px 0;
-    background: rgba(196, 154, 84, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    background: #c49a54;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     max-height: calc(100vh - 84px);
     overflow-y: auto;
@@ -803,7 +805,6 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
     margin: 0;
     padding: 6px 20px 6px 34px;
     color: #fff7ea !important;
-    -webkit-text-fill-color: #fff7ea !important;
     font-size: 12px;
     font-weight: 600;
     line-height: 1.45;
@@ -817,7 +818,6 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
     visibility: visible !important;
     opacity: 1 !important;
     color: inherit !important;
-    -webkit-text-fill-color: inherit !important;
     font-size: inherit !important;
     line-height: inherit !important;
   }
@@ -827,13 +827,11 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
     visibility: visible !important;
     opacity: 1 !important;
     color: #fff7ea !important;
-    -webkit-text-fill-color: #fff7ea !important;
   }
   .nav-submenu li a:hover,
   .nav-submenu li a.active {
     background: transparent !important;
     color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
   }
   
   .hero-banner { background-position: center right 30%; }

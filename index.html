@@ -840,9 +840,13 @@
         const willOpen = !thưViệnItem.classList.contains('submenu-open');
         menu.querySelectorAll('li.has-submenu').forEach(function(item) {
           item.classList.remove('submenu-open');
+          const submenu = item.querySelector('.nav-submenu');
+          if (submenu) submenu.style.display = 'none';
         });
         if (willOpen) {
           thưViệnItem.classList.add('submenu-open');
+          const submenu = thưViệnItem.querySelector('.nav-submenu');
+          if (submenu) submenu.style.display = 'block';
         }
       });
     }
