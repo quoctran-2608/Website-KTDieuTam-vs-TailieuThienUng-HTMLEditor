@@ -206,8 +206,10 @@
               link.style.display = 'block';
               link.style.visibility = 'visible';
               link.style.opacity = '1';
-              link.style.color = '#5b381f';
-              link.style.webkitTextFillColor = '#5b381f';
+              link.style.color = '#ffffff';
+              link.style.webkitTextFillColor = '#ffffff';
+              link.style.background = 'rgba(109, 71, 40, 0.92)';
+              link.style.borderLeft = '3px solid rgba(240, 215, 168, 0.9)';
             });
           }
         });
