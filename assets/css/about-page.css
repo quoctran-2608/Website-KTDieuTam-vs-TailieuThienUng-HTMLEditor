@@ -720,7 +720,7 @@
 
 @media (max-width: 767px) {
   .about-page .hero-split-section {
-    margin-top: 63px;
+    margin-top: var(--mobile-header-offset, 63px);
     padding: 28px 0 40px;
   }
 

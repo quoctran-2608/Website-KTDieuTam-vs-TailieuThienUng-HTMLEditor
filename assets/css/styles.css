@@ -872,9 +872,10 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
 
 @media (max-width: 767px) {
 	.container { padding: 0 20px; }
-	
+		
   /* Ép mỏng khoảng cách giữa các khối lớn */
   .section-padding { padding: 40px 0; }
+  body.mobile-header-compact { --mobile-header-offset: 43px; }
 
 /* 1. HEADER TỐI ƯU MOBILE (Dùng Fixed để luôn nổi trên cùng) */
   .top-header { 
@@ -885,8 +886,10 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
     left: 0;
     width: 100%;
     background: #FFFFFF; 
-    border-bottom: 3px solid #C49A54; 
+    border-bottom: 3px solid #C49A54;
+    transition: padding 0.22s ease, box-shadow 0.22s ease;
   }
+  body.mobile-header-compact .top-header { padding: 0; }
   .header-row { flex-direction: row; justify-content: space-between; align-items: center; }
   
   .brand-block { flex-direction: row; gap: 0px; align-items: center; }
@@ -898,14 +901,15 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
   /* Cố định thanh Menu vàng thả xuống ngay dưới Header */
   .main-nav {
     position: fixed !important;
-    top: 63px !important; /* Neo ngay dưới mép của Header */
+    top: var(--mobile-header-offset, 63px) !important; /* Neo ngay dưới mép của Header */
     width: 100%;
     z-index: 1000;
+    transition: top 0.22s ease;
   }
   #mainMenu { top: 0; padding: 8px 0; }
   #mainMenu {
-    max-height: calc(100vh - 63px);
-    max-height: calc(100dvh - 63px);
+    max-height: calc(100vh - var(--mobile-header-offset, 63px));
+    max-height: calc(100dvh - var(--mobile-header-offset, 63px));
     padding-bottom: max(8px, env(safe-area-inset-bottom));
   }
   #mainMenu > li > a { min-height: 36px; padding: 7px 18px; font-size: 13px; }
@@ -919,7 +923,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
     background-image: url('../images/site/banner-mobile.jpg') !important; 
     min-height: auto; 
     padding: 15px 0 40px 0;
-    margin-top: 63px; /* Bù lại khoảng không gian 63px của Header đang bị fixed */
+    margin-top: var(--mobile-header-offset, 63px); /* Bù lại khoảng không gian Header fixed */
   }
   .hero-content {
     padding: 0; margin: 0;

@@ -2171,7 +2171,7 @@ body.is-filter-open .catalog-filter-panel {
 @media (max-width: 768px) {
   .catalog-hero,
   .article-hero {
-    margin-top: 63px;
+    margin-top: var(--mobile-header-offset, 63px);
   }
 
   .catalog-hero {

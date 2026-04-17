@@ -2344,7 +2344,7 @@
 
 @media (max-width: 767px) {
   .jobs-list-page .jobs-hero {
-    margin-top: 63px;
+    margin-top: var(--mobile-header-offset, 63px);
     padding: 24px 0 12px;
   }
 
@@ -2366,7 +2366,7 @@
   }
 
   .jobs-list-page .jobs-discovery-bar.is-sticky {
-    top: 63px !important;
+    top: var(--mobile-header-offset, 63px) !important;
     padding: 10px 0 !important;
     margin: 0 -20px 10px !important;
     background: rgba(255, 255, 255, 0.98) !important;
@@ -2623,7 +2623,7 @@
 @media (max-width: 767px) {
   /* 2. Sửa lỗi Header cố định che khuất phần đầu trang chi tiết */
   .job-detail-hero {
-    margin-top: 63px; /* Đẩy xuống một khoảng bằng độ dày của Header */
+    margin-top: var(--mobile-header-offset, 63px); /* Đẩy xuống theo độ dày Header */
     padding: 24px 0 32px; /* Thu gọn khoảng trắng thừa */
   }
 
