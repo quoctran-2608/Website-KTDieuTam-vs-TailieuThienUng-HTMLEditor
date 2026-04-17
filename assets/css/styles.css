@@ -19,6 +19,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body.menu-open {
+  overflow: hidden;
+}
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 ul { list-style: none; }
@@ -747,7 +751,16 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
     flex-direction: column; height: auto; padding: 16px 0;
     background: rgba(196, 154, 84, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    max-height: calc(100vh - 84px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
   }
+  #mainMenu::-webkit-scrollbar { width: 5px; }
+  #mainMenu::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.34); border-radius: 999px; }
+  #mainMenu::-webkit-scrollbar-track { background: transparent; }
   #mainMenu.open { display: flex; }
   #mainMenu > li { width: 100%; height: auto; display: block; }
   #mainMenu > li > a { height: auto; padding: 16px 24px; font-size: 15px; justify-content: flex-start; }
@@ -844,6 +857,11 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
     z-index: 1000;
   }
   #mainMenu { top: 0; padding: 8px 0; }
+  #mainMenu {
+    max-height: calc(100vh - 63px);
+    max-height: calc(100dvh - 63px);
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
   #mainMenu > li > a { padding: 10px 20px; font-size: 13px; }
   .nav-submenu li a { padding-left: 36px; font-size: 12px; }
 

@@ -161,11 +161,24 @@
 
     var hamburger = document.getElementById('hamburgerBtn');
     var menu = document.getElementById('mainMenu');
+    function syncBodyMenuState() {
+      if (!menu) return;
+      document.body.classList.toggle('menu-open', menu.classList.contains('open'));
+    }
     if (hamburger && menu) {
       hamburger.addEventListener('click', function () {
         menu.classList.toggle('open');
+        syncBodyMenuState();
       });
     }
+
+    window.addEventListener('resize', function () {
+      if (!menu) return;
+      if (window.innerWidth > 991 && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+      }
+      syncBodyMenuState();
+    });
 
     var backToTopBtn = document.getElementById('backToTop');
     var contactBar = document.getElementById('contactBar');
@@ -191,6 +204,8 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+
+    syncBodyMenuState();
   }
 
   function normalizeFlatBreadcrumb(container) {
