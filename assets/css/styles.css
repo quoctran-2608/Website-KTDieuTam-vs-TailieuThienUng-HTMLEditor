@@ -768,7 +768,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
   #mainMenu > li.has-submenu::after { display: none; }
   #mainMenu > li.has-submenu > a { justify-content: space-between; }
   #mainMenu > li.has-submenu > a .nav-caret { opacity: 0.92; transition: transform 0.2s ease; }
-  #mainMenu > li.has-submenu.is-expanded > a .nav-caret { transform: rotate(180deg); }
+  #mainMenu > li.has-submenu.submenu-open > a .nav-caret { transform: rotate(180deg); }
   .nav-submenu {
     position: static;
     transform: none;
@@ -784,7 +784,12 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
     display: none;
     margin-top: 0;
   }
-  #mainMenu > li.has-submenu.is-expanded > .nav-submenu { display: block; }
+  #mainMenu > li.has-submenu.submenu-open > .nav-submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
   .nav-submenu::before,
   .nav-submenu::after { display: none; }
   .nav-submenu li {
@@ -807,10 +812,21 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
     border-left: 3px solid rgba(240, 215, 168, 0.9);
     text-shadow: 0 1px 1px rgba(20, 10, 2, 0.35);
   }
-  #mainMenu > li.has-submenu.is-expanded > .nav-submenu > li > a {
+  .nav-submenu li a .nav-submenu-label {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+  #mainMenu > li.has-submenu.submenu-open > .nav-submenu > li > a {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+  #mainMenu > li.has-submenu.submenu-open > .nav-submenu > li > a .nav-submenu-label {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
   }

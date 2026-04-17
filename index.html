@@ -51,10 +51,10 @@
 	      <li class="has-submenu">
 	        <a href="thu-vien.html"><span>Thư Viện</span><i class="fa-solid fa-angle-down nav-caret" aria-hidden="true"></i></a>
         <ul class="nav-submenu">
-          <li><a href="thu-vien.html?kind=huong-dan">Hướng dẫn</a></li>
-          <li><a href="thu-vien.html?kind=bieu-mau">Biểu mẫu</a></li>
-          <li><a href="thu-vien.html?kind=cong-cu">Công cụ</a></li>
-          <li><a href="thu-vien.html?kind=van-ban">Văn bản</a></li>
+          <li><a href="thu-vien.html?kind=huong-dan"><span class="nav-submenu-label">Hướng dẫn</span></a></li>
+          <li><a href="thu-vien.html?kind=bieu-mau"><span class="nav-submenu-label">Biểu mẫu</span></a></li>
+          <li><a href="thu-vien.html?kind=cong-cu"><span class="nav-submenu-label">Công cụ</span></a></li>
+          <li><a href="thu-vien.html?kind=van-ban"><span class="nav-submenu-label">Văn bản</span></a></li>
         </ul>
       </li>
       <li><a href="ban-tin.html">Bản Tin</a></li>
@@ -819,9 +819,33 @@
     }
   });
 
+  const menu = document.getElementById('mainMenu');
   document.getElementById('hamburgerBtn').addEventListener('click', function() {
-    document.getElementById('mainMenu').classList.toggle('open');
+    menu.classList.toggle('open');
   });
+
+  const thưViệnItem = menu.querySelector('li.has-submenu');
+  if (thưViệnItem) {
+    let thưViệnLink = null;
+    if (thưViệnItem.firstElementChild && thưViệnItem.firstElementChild.tagName.toLowerCase() === 'a') {
+      thưViệnLink = thưViệnItem.firstElementChild;
+    } else {
+      thưViệnLink = thưViệnItem.querySelector('a');
+    }
+    if (thưViệnLink) {
+      thưViệnLink.addEventListener('click', function(event) {
+        if (window.innerWidth > 991) return;
+        event.preventDefault();
+        const willOpen = !thưViệnItem.classList.contains('submenu-open');
+        menu.querySelectorAll('li.has-submenu').forEach(function(item) {
+          item.classList.remove('submenu-open');
+        });
+        if (willOpen) {
+          thưViệnItem.classList.add('submenu-open');
+        }
+      });
+    }
+  }
 
   document.querySelectorAll('.faq-question').forEach(function(btn) {
     btn.addEventListener('click', function() {

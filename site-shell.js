@@ -46,10 +46,10 @@
 	    }
 	    var navItems = config.nav.map(function (item) {
 	      var childItems = (item.children || []).map(function (child) {
-	        var childActive = child.href.indexOf('kind=') !== -1 && currentKind
-	          ? child.href.indexOf('kind=' + currentKind) !== -1
-	          : false;
-	        return '<li><a href="' + path(root, child.href) + '" class="' + (childActive ? 'active' : '') + '">' + child.label + '</a></li>';
+		        var childActive = child.href.indexOf('kind=') !== -1 && currentKind
+		          ? child.href.indexOf('kind=' + currentKind) !== -1
+		          : false;
+		        return '<li><a href="' + path(root, child.href) + '" class="' + (childActive ? 'active' : '') + '"><span class="nav-submenu-label">' + child.label + '</span></a></li>';
 	      }).join('');
 	      var active = (item.key === activeKey || childItems.indexOf('class="active"') !== -1) ? 'active' : '';
 	      return '' +
@@ -173,8 +173,7 @@
     function collapseAllSubmenus() {
       submenuParents.forEach(function (item) {
         item.classList.remove('is-expanded');
-        var submenu = item.querySelector('.nav-submenu');
-        if (submenu) submenu.style.display = 'none';
+        item.classList.remove('submenu-open');
       });
     }
     function setupMobileSubmenuToggle() {
@@ -191,26 +190,10 @@
         trigger.addEventListener('click', function (event) {
           if (!isMobileMenuMode()) return;
           event.preventDefault();
-          var submenu = item.querySelector('.nav-submenu');
-          var submenuLinks = submenu ? Array.prototype.slice.call(submenu.querySelectorAll('a')) : [];
-          var willExpand = !item.classList.contains('is-expanded');
+          var willExpand = !item.classList.contains('submenu-open');
           collapseAllSubmenus();
           if (willExpand) {
-            item.classList.add('is-expanded');
-            if (submenu) {
-              submenu.style.display = 'block';
-              submenu.style.opacity = '1';
-              submenu.style.visibility = 'visible';
-            }
-            submenuLinks.forEach(function (link) {
-              link.style.display = 'block';
-              link.style.visibility = 'visible';
-              link.style.opacity = '1';
-              link.style.color = '#ffffff';
-              link.style.webkitTextFillColor = '#ffffff';
-              link.style.background = 'rgba(109, 71, 40, 0.92)';
-              link.style.borderLeft = '3px solid rgba(240, 215, 168, 0.9)';
-            });
+            item.classList.add('submenu-open');
           }
         });
       });
@@ -241,12 +224,14 @@
       }
       if (!isMobileMenuMode()) {
         collapseAllSubmenus();
-        submenuParents.forEach(function (item) {
-          var submenu = item.querySelector('.nav-submenu');
-          if (submenu) submenu.style.display = '';
-        });
       }
       syncBodyMenuState();
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!menu || !menu.contains(event.target)) {
+        collapseAllSubmenus();
+      }
     });
 
     var backToTopBtn = document.getElementById('backToTop');
