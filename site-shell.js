@@ -161,7 +161,12 @@
 
     var hamburger = document.getElementById('hamburgerBtn');
     var menu = document.getElementById('mainMenu');
-    var submenuParents = menu ? Array.prototype.slice.call(menu.querySelectorAll(':scope > li.has-submenu')) : [];
+    var submenuParents = [];
+    if (menu && menu.children) {
+      submenuParents = Array.prototype.filter.call(menu.children, function (item) {
+        return item && item.classList && item.classList.contains('has-submenu');
+      });
+    }
     function isMobileMenuMode() {
       return window.innerWidth <= 991;
     }
@@ -172,7 +177,12 @@
     }
     function setupMobileSubmenuToggle() {
       submenuParents.forEach(function (item) {
-        var trigger = item.querySelector(':scope > a');
+        var trigger = null;
+        if (item && item.firstElementChild && item.firstElementChild.tagName.toLowerCase() === 'a') {
+          trigger = item.firstElementChild;
+        } else if (item) {
+          trigger = item.querySelector('a');
+        }
         if (!trigger) return;
         if (trigger.dataset.mobileSubmenuBound === '1') return;
         trigger.dataset.mobileSubmenuBound = '1';
