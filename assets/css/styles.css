@@ -790,12 +790,15 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
   .nav-submenu::after { display: none; }
   .nav-submenu li a {
     min-height: 0;
+    display: block;
     padding: 7px 20px 7px 34px;
-    color: #fff7ea;
+    color: #ffffff !important;
     font-size: 12px;
+    font-weight: 600;
     line-height: 1.35;
     border-radius: 0;
-    border-left: 2px solid rgba(255,255,255,0.14);
+    border-left: 2px solid rgba(255,255,255,0.28);
+    text-shadow: 0 1px 1px rgba(40, 24, 11, 0.25);
   }
   .nav-submenu li a:hover,
   .nav-submenu li a.active {
@@ -838,7 +841,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
 
 /* 1. HEADER TỐI ƯU MOBILE (Dùng Fixed để luôn nổi trên cùng) */
   .top-header { 
-    padding: 0; 
+    padding: 10px 0; 
     z-index: 1001; /* Đẩy lớp hiển thị lên cao nhất */
     position: fixed; /* Chuyển từ sticky sang fixed */
     top: 0; 

@@ -173,6 +173,8 @@
     function collapseAllSubmenus() {
       submenuParents.forEach(function (item) {
         item.classList.remove('is-expanded');
+        var submenu = item.querySelector('.nav-submenu');
+        if (submenu) submenu.style.display = 'none';
       });
     }
     function setupMobileSubmenuToggle() {
@@ -189,10 +191,12 @@
         trigger.addEventListener('click', function (event) {
           if (!isMobileMenuMode()) return;
           event.preventDefault();
+          var submenu = item.querySelector('.nav-submenu');
           var willExpand = !item.classList.contains('is-expanded');
           collapseAllSubmenus();
           if (willExpand) {
             item.classList.add('is-expanded');
+            if (submenu) submenu.style.display = 'block';
           }
         });
       });
@@ -223,6 +227,10 @@
       }
       if (!isMobileMenuMode()) {
         collapseAllSubmenus();
+        submenuParents.forEach(function (item) {
+          var submenu = item.querySelector('.nav-submenu');
+          if (submenu) submenu.style.display = '';
+        });
       }
       syncBodyMenuState();
     });
