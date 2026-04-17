@@ -49,7 +49,7 @@
 		        var childActive = child.href.indexOf('kind=') !== -1 && currentKind
 		          ? child.href.indexOf('kind=' + currentKind) !== -1
 		          : false;
-		        return '<li><a href="' + path(root, child.href) + '" class="' + (childActive ? 'active' : '') + '"><span class="nav-submenu-label">' + child.label + '</span></a></li>';
+		        return '<li><a href="' + path(root, child.href) + '" data-label="' + child.label + '" class="' + (childActive ? 'active' : '') + '"><span class="nav-submenu-label">' + child.label + '</span></a></li>';
 	      }).join('');
 	      var active = (item.key === activeKey || childItems.indexOf('class="active"') !== -1) ? 'active' : '';
 	      return '' +
