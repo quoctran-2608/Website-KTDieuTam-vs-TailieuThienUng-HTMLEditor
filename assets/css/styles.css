@@ -96,17 +96,19 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
 #mainMenu > li > a:hover, #mainMenu > li > a.active { color: #FFFDF8; }
 #mainMenu > li > a:hover::after, #mainMenu > li > a.active::after { width: calc(100% - 40px); }
 .nav-caret { font-size: 11px; opacity: 0.78; transition: transform 0.22s ease; }
-#mainMenu > li.has-submenu:hover > a .nav-caret,
-#mainMenu > li.has-submenu:focus-within > a .nav-caret { transform: rotate(180deg); }
+@media (min-width: 992px) {
+  #mainMenu > li.has-submenu:hover > a .nav-caret,
+  #mainMenu > li.has-submenu:focus-within > a .nav-caret { transform: rotate(180deg); }
 
-/* Hover bridge: lấp vùng ranh giới để rê chuột xuống submenu không bị rơi hover */
-#mainMenu > li.has-submenu::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  height: 14px;
+  /* Hover bridge: lấp vùng ranh giới để rê chuột xuống submenu không bị rơi hover */
+  #mainMenu > li.has-submenu::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 14px;
+  }
 }
 
 .nav-submenu {
@@ -152,12 +154,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
   transform: translateX(-50%) rotate(45deg);
 }
 
-#mainMenu > li.has-submenu:hover > .nav-submenu,
-#mainMenu > li.has-submenu:focus-within > .nav-submenu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+@media (min-width: 992px) {
+  #mainMenu > li.has-submenu:hover > .nav-submenu,
+  #mainMenu > li.has-submenu:focus-within > .nav-submenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 .nav-submenu li { width: 100%; }
 .nav-submenu li a {
@@ -785,12 +789,18 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
     pointer-events: auto;
     display: none;
     margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.24s ease;
   }
   #mainMenu > li.has-submenu.submenu-open > .nav-submenu {
     display: block;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+  }
+  #mainMenu > li.has-submenu.submenu-open.submenu-hydrated > .nav-submenu {
+    overflow: visible;
   }
   .nav-submenu::before,
   .nav-submenu::after { display: none; }

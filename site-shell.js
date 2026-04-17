@@ -174,9 +174,15 @@
       submenuParents.forEach(function (item) {
         item.classList.remove('is-expanded');
         item.classList.remove('submenu-open');
+        item.classList.remove('submenu-hydrated');
         var submenu = item.querySelector('.nav-submenu');
         if (submenu) {
-          submenu.style.display = 'none';
+          submenu.style.maxHeight = '';
+          submenu.style.display = '';
+          if (isMobileMenuMode()) {
+            submenu.style.maxHeight = '0px';
+            submenu.style.display = 'none';
+          }
         }
       });
     }
@@ -195,13 +201,16 @@
           if (!isMobileMenuMode()) return;
           event.preventDefault();
           event.stopPropagation();
+          var submenu = item.querySelector('.nav-submenu');
           var willExpand = !item.classList.contains('submenu-open');
           collapseAllSubmenus();
           if (willExpand) {
             item.classList.add('submenu-open');
-            var submenu = item.querySelector('.nav-submenu');
             if (submenu) {
+              item.classList.add('submenu-hydrated');
               submenu.style.display = 'block';
+              var targetHeight = submenu.scrollHeight || 0;
+              submenu.style.maxHeight = (targetHeight ? targetHeight : 1000) + 'px';
             }
           }
         });

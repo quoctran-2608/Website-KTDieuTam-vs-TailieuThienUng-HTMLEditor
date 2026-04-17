@@ -820,37 +820,97 @@
   });
 
   const menu = document.getElementById('mainMenu');
-  document.getElementById('hamburgerBtn').addEventListener('click', function() {
-    menu.classList.toggle('open');
-  });
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const submenuParents = menu
+    ? Array.from(menu.children).filter(function(item) {
+      return item && item.classList && item.classList.contains('has-submenu');
+    })
+    : [];
 
-  const thưViệnItem = menu.querySelector('li.has-submenu');
-  if (thưViệnItem) {
-    let thưViệnLink = null;
-    if (thưViệnItem.firstElementChild && thưViệnItem.firstElementChild.tagName.toLowerCase() === 'a') {
-      thưViệnLink = thưViệnItem.firstElementChild;
-    } else {
-      thưViệnLink = thưViệnItem.querySelector('a');
-    }
-    if (thưViệnLink) {
-      thưViệnLink.addEventListener('click', function(event) {
-        if (window.innerWidth > 991) return;
-        event.preventDefault();
-        event.stopPropagation();
-        const willOpen = !thưViệnItem.classList.contains('submenu-open');
-        menu.querySelectorAll('li.has-submenu').forEach(function(item) {
-          item.classList.remove('submenu-open');
-          const submenu = item.querySelector('.nav-submenu');
-          if (submenu) submenu.style.display = 'none';
-        });
-        if (willOpen) {
-          thưViệnItem.classList.add('submenu-open');
-          const submenu = thưViệnItem.querySelector('.nav-submenu');
-          if (submenu) submenu.style.display = 'block';
+  function isMobileMenuMode() {
+    return window.innerWidth <= 991;
+  }
+
+  function collapseAllSubmenus() {
+    submenuParents.forEach(function(item) {
+      item.classList.remove('submenu-open');
+      item.classList.remove('submenu-hydrated');
+      const submenu = item.querySelector('.nav-submenu');
+      if (submenu) {
+        submenu.style.maxHeight = '';
+        submenu.style.display = '';
+        if (isMobileMenuMode()) {
+          submenu.style.maxHeight = '0px';
+          submenu.style.display = 'none';
         }
-      });
+      }
+    });
+  }
+
+  function syncBodyMenuState() {
+    if (!menu) return;
+    document.body.classList.toggle('menu-open', menu.classList.contains('open'));
+    if (!menu.classList.contains('open')) {
+      collapseAllSubmenus();
     }
   }
+
+  if (hamburgerBtn && menu) {
+    hamburgerBtn.addEventListener('click', function() {
+      if (!menu.classList.contains('open')) {
+        collapseAllSubmenus();
+      }
+      menu.classList.toggle('open');
+      syncBodyMenuState();
+    });
+  }
+
+  submenuParents.forEach(function(item) {
+    let trigger = null;
+    if (item.firstElementChild && item.firstElementChild.tagName.toLowerCase() === 'a') {
+      trigger = item.firstElementChild;
+    } else {
+      trigger = item.querySelector('a');
+    }
+    if (!trigger) return;
+
+    trigger.addEventListener('click', function(event) {
+      if (!isMobileMenuMode()) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const submenu = item.querySelector('.nav-submenu');
+      const willExpand = !item.classList.contains('submenu-open');
+      collapseAllSubmenus();
+      if (willExpand) {
+        item.classList.add('submenu-open');
+        if (submenu) {
+          item.classList.add('submenu-hydrated');
+          submenu.style.display = 'block';
+          const targetHeight = submenu.scrollHeight || 0;
+          submenu.style.maxHeight = (targetHeight ? targetHeight : 1000) + 'px';
+        }
+      }
+    });
+  });
+
+  window.addEventListener('resize', function() {
+    if (!menu) return;
+    if (window.innerWidth > 991 && menu.classList.contains('open')) {
+      menu.classList.remove('open');
+    }
+    if (!isMobileMenuMode()) {
+      collapseAllSubmenus();
+    }
+    syncBodyMenuState();
+  });
+
+  document.addEventListener('click', function(event) {
+    if (!menu || !menu.contains(event.target)) {
+      collapseAllSubmenus();
+    }
+  });
+
+  syncBodyMenuState();
 
   document.querySelectorAll('.faq-question').forEach(function(btn) {
     btn.addEventListener('click', function() {
