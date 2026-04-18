@@ -63,6 +63,13 @@ $checks[] = [
   'detail' => 'reason=' . (string) ($sync['reason'] ?? 'unknown') . ', count=' . (string) ($sync['count'] ?? 0),
 ];
 
+$audit = run_parser_audit(false);
+$checks[] = [
+  'label' => 'parser audit ready',
+  'ok' => isset($audit['meta']) && is_array($audit['meta']) && isset($audit['meta']['safe_rate_percent']),
+  'detail' => 'safe=' . (string) ($audit['meta']['safe_count'] ?? 0) . '/' . (string) ($audit['meta']['total_count'] ?? 0),
+];
+
 $allOk = true;
 foreach ($checks as $check) {
   $ok = (bool) $check['ok'];
@@ -77,5 +84,5 @@ if (!$allOk) {
 }
 
 echo PHP_EOL;
-echo "Phase 2 healthcheck passed." . PHP_EOL;
+echo "Phase 3 healthcheck passed." . PHP_EOL;
 echo "Default dev login: admin / admin123" . PHP_EOL;

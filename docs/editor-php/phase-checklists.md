@@ -70,15 +70,15 @@
 - đảm bảo parse/ghi bài an toàn trước khi cho sửa
 
 ## Checklist thực thi
-- [ ] hiển thị metadata hiện tại
-- [ ] hiển thị block `.article-prose`
-- [ ] hiển thị payload `article-meta`
-- [ ] parser detect được vùng editable
-- [ ] đánh dấu bài parse fail để xử lý ngoại lệ
+- [x] hiển thị metadata hiện tại
+- [x] hiển thị block `.article-prose`
+- [x] hiển thị payload `article-meta`
+- [x] parser detect được vùng editable
+- [x] đánh dấu bài parse fail để xử lý ngoại lệ
 
 ## Nghiệm thu phase
-- [ ] tỷ lệ parse-safe đạt ngưỡng đã chốt (khuyến nghị >= 98%)
-- [ ] có report bài ngoại lệ
+- [x] tỷ lệ parse-safe đạt ngưỡng đã chốt (khuyến nghị >= 98%)
+- [x] có report bài ngoại lệ
 
 ---
 

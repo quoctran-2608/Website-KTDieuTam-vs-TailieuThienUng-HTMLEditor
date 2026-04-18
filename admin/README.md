@@ -9,7 +9,7 @@ Thư mục này chứa code admin panel cho luồng:
 
 ## Trạng thái hiện tại
 
-Đang ở **Phase 2**:
+Đang ở **Phase 3**:
 
 - đã hoàn thiện auth shell:
   - `admin/login.php`
@@ -19,7 +19,10 @@ Thư mục này chứa code admin panel cho luồng:
 - đã mở module list bài:
   - `admin/articles.php`
   - `admin/includes/article_index.php`
-  - `admin/article.php` (entry point chi tiết cho Phase 3)
+  - `admin/article.php`
+- đã có parser-safe module:
+  - `admin/includes/article_parser.php`
+  - parser audit toàn kho + parser detail từng bài tại `admin/article.php`
 - UI admin đẹp, responsive, tối ưu trải nghiệm lọc và rà soát bài
 - đã chốt scope + checklist ở:
   - `docs/editor-php/mvp-scope-v1.md`
@@ -46,6 +49,7 @@ admin/
     storage.php
     auth.php
     article_index.php
+    article_parser.php
     layout.php
     healthcheck.php
   storage/
@@ -62,7 +66,7 @@ Truy cập:
 - `http://127.0.0.1:8080/admin/`
 - login mặc định dev: `admin / admin123`
 
-## Healthcheck Phase 2
+## Healthcheck Phase 3
 
 ```bash
 php admin/includes/healthcheck.php
@@ -75,7 +79,8 @@ Script này kiểm tra:
 - auth helper load
 - source `data/articles.json`
 - trạng thái index cache bài viết
-- trạng thái cơ bản để bắt đầu Phase 3
+- parser audit safe/fail
+- trạng thái cơ bản để bắt đầu Phase 4
 
 ## Ghi chú môi trường hiện tại
 
