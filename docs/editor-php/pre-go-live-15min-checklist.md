@@ -10,6 +10,12 @@ Checklist siêu ngắn để team nội bộ chạy trước khi mở vận hàn
 ./tools/admin_phase6_pre_go_live.sh
 ```
 
+Windows:
+
+```bat
+tools\admin_phase6_pre_go_live.bat
+```
+
 Pass khi:
 
 - bước `[1/4]` báo `Pre-go-live: READY`
@@ -50,3 +56,8 @@ Kiểm tra:
 - Nếu bất kỳ bước nào fail -> **không go-live**, xử lý lỗi trước.
 - Chỉ go-live khi cả 4 bước pass.
 
+## Sign-off
+
+Sau khi pass checklist, điền và lưu mẫu:
+
+- `docs/editor-php/pre-go-live-signoff-template.md`

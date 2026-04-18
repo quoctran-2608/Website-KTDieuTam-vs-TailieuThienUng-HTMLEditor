@@ -104,6 +104,8 @@ Script này kiểm tra:
 
 - `docs/editor-php/pre-go-live-15min-checklist.md`
 - script runner: `./tools/admin_phase6_pre_go_live.sh`
+- Windows runner: `tools\admin_phase6_pre_go_live.bat`
+- sign-off mẫu: `docs/editor-php/pre-go-live-signoff-template.md`
 
 ## Ghi chú môi trường hiện tại
 
