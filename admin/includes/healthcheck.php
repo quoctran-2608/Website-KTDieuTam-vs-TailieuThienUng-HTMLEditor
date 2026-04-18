@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 /**
- * Lightweight CLI healthcheck for Phase 1 auth shell.
+ * Lightweight CLI healthcheck for admin shell + article list index.
  *
  * Usage:
  *   php admin/includes/healthcheck.php
@@ -36,6 +36,11 @@ $checks[] = [
   'ok' => file_exists(ADMIN_LOG_PATH),
   'detail' => ADMIN_LOG_PATH,
 ];
+$checks[] = [
+  'label' => 'articles source exists',
+  'ok' => file_exists(ADMIN_ARTICLES_SOURCE_PATH),
+  'detail' => ADMIN_ARTICLES_SOURCE_PATH,
+];
 
 $data = storage_read();
 $hasUsers = isset($data['users']) && is_array($data['users']) && count($data['users']) > 0;
@@ -49,6 +54,13 @@ $hasAuthFns = function_exists('attempt_login') && function_exists('is_authentica
 $checks[] = [
   'label' => 'auth helpers loaded',
   'ok' => $hasAuthFns,
+];
+
+$sync = sync_articles_index(false);
+$checks[] = [
+  'label' => 'articles index cache ready',
+  'ok' => !empty($sync['synced']),
+  'detail' => 'reason=' . (string) ($sync['reason'] ?? 'unknown') . ', count=' . (string) ($sync['count'] ?? 0),
 ];
 
 $allOk = true;
@@ -65,6 +77,5 @@ if (!$allOk) {
 }
 
 echo PHP_EOL;
-echo "Phase 1 healthcheck passed." . PHP_EOL;
+echo "Phase 2 healthcheck passed." . PHP_EOL;
 echo "Default dev login: admin / admin123" . PHP_EOL;
-

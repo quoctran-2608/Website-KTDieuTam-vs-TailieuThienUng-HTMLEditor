@@ -50,17 +50,17 @@
 - tìm bài nhanh như trải nghiệm hub hiện tại
 
 ## Checklist thực thi
-- [ ] đồng bộ index từ `data/articles.json` vào DB index table
-- [ ] search theo `title/id/href`
-- [ ] filter: `section`, `libraryKindKey`, `topicLv1Key`, `topicLv2Key`, date range
-- [ ] sort + pagination
-- [ ] filter chips + clear filters
-- [ ] trạng thái loading/empty/error rõ ràng
+- [x] đồng bộ index từ `data/articles.json` vào DB index table
+- [x] search theo `title/id/href`
+- [x] filter: `section`, `libraryKindKey`, `topicLv1Key`, `topicLv2Key`, date range
+- [x] sort + pagination
+- [x] filter chips + clear filters
+- [x] trạng thái loading/empty/error rõ ràng
 
 ## Nghiệm thu phase
-- [ ] lọc `thu-vien`/`ban-tin` ra đúng tập bài
-- [ ] query phổ biến phản hồi nhanh, không lag UI
-- [ ] mở được trang chi tiết bài từ list
+- [x] lọc `thu-vien`/`ban-tin` ra đúng tập bài
+- [x] query phổ biến phản hồi nhanh, không lag UI
+- [x] mở được trang chi tiết bài từ list
 
 ---
 

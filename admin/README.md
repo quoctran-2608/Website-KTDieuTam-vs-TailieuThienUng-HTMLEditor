@@ -9,14 +9,18 @@ Thư mục này chứa code admin panel cho luồng:
 
 ## Trạng thái hiện tại
 
-Đang ở **Phase 1**:
+Đang ở **Phase 2**:
 
 - đã hoàn thiện auth shell:
   - `admin/login.php`
   - `admin/dashboard.php`
   - `admin/logout.php`
   - `admin/includes/*`
-- đã có UI admin đẹp, responsive, tập trung UX cho vận hành nội bộ
+- đã mở module list bài:
+  - `admin/articles.php`
+  - `admin/includes/article_index.php`
+  - `admin/article.php` (entry point chi tiết cho Phase 3)
+- UI admin đẹp, responsive, tối ưu trải nghiệm lọc và rà soát bài
 - đã chốt scope + checklist ở:
   - `docs/editor-php/mvp-scope-v1.md`
   - `docs/editor-php/phase-checklists.md`
@@ -29,6 +33,8 @@ admin/
   login.php
   dashboard.php
   logout.php
+  articles.php
+  article.php
   assets/
     css/
       admin.css
@@ -39,6 +45,7 @@ admin/
     helpers.php
     storage.php
     auth.php
+    article_index.php
     layout.php
     healthcheck.php
   storage/
@@ -55,7 +62,7 @@ Truy cập:
 - `http://127.0.0.1:8080/admin/`
 - login mặc định dev: `admin / admin123`
 
-## Healthcheck Phase 1
+## Healthcheck Phase 2
 
 ```bash
 php admin/includes/healthcheck.php
@@ -66,7 +73,9 @@ Script này kiểm tra:
 - storage init
 - seed user
 - auth helper load
-- trạng thái cơ bản để bắt đầu Phase 2
+- source `data/articles.json`
+- trạng thái index cache bài viết
+- trạng thái cơ bản để bắt đầu Phase 3
 
 ## Ghi chú môi trường hiện tại
 

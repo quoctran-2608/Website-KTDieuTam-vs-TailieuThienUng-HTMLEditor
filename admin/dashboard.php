@@ -12,6 +12,8 @@ $loginAttempts = $data['login_attempts'];
 $auditLogs = array_reverse(array_slice($data['audit_logs'], -12));
 $users = $data['users'];
 $current = current_user();
+$cache = read_articles_index_cache();
+$articleIndexCount = (int) ($cache['meta']['count'] ?? 0);
 
 $activeUsers = 0;
 foreach ($users as $user) {
@@ -24,6 +26,7 @@ admin_layout_header([
   'title' => 'Tổng quan hệ thống',
   'active' => 'dashboard',
   'description' => 'Theo dõi trạng thái đăng nhập, bảo mật phiên và nhật ký truy cập của admin panel.',
+  'phase_label' => 'Phase 1 — Auth shell',
 ]);
 ?>
 
@@ -57,6 +60,14 @@ admin_layout_header([
     <div class="metric-body">
       <h3><?= h((string) ($current['role'] ?? '')) ?></h3>
       <p>Vai trò phiên hiện tại</p>
+    </div>
+  </article>
+
+  <article class="metric-card">
+    <span class="metric-icon info"><i class="fa-solid fa-file-lines"></i></span>
+    <div class="metric-body">
+      <h3><?= h(number_format($articleIndexCount, 0, ',', '.')) ?></h3>
+      <p>Bài đã index cho module filter</p>
     </div>
   </article>
 </section>
@@ -125,16 +136,21 @@ admin_layout_header([
 <section class="admin-panel">
   <div class="panel-head">
     <h2>Kế tiếp</h2>
-    <p>Phase 2 sẽ mở module list bài với filter trực quan bám taxonomy hiện có.</p>
+    <p>Phase 2 đã mở module list bài và filter. Mời bạn trải nghiệm trực tiếp.</p>
   </div>
   <div class="next-phase-banner">
     <i class="fa-solid fa-arrow-right-long"></i>
     <div>
-      <strong>Phase 2: Article list + filter hub-style</strong>
-      <p>Search title/id/href, filter section/library/topic/date, sort + pagination + chip clear.</p>
+      <strong>Đi đến danh sách bài viết</strong>
+      <p>Search title/id/href, filter section/library/topic/date, sort + pagination + chip clear đã sẵn sàng.</p>
     </div>
   </div>
+  <p style="margin-top:12px;">
+    <a class="clear-filter-btn inline" href="<?= h(admin_url('articles.php')) ?>">
+      <i class="fa-solid fa-arrow-right"></i>
+      <span>Mở module Bài viết</span>
+    </a>
+  </p>
 </section>
 
 <?php admin_layout_footer(); ?>
-

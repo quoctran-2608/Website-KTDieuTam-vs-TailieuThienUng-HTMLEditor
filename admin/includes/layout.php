@@ -12,6 +12,14 @@ function admin_layout_header(array $options = []): void
   $active = $options['active'] ?? '';
   $description = $options['description'] ?? '';
   $user = current_user();
+  $sidebarPhase = $options['phase_label'] ?? 'Phase 2 — Article list & filter';
+  $articleCount = null;
+  if (function_exists('read_articles_index_cache')) {
+    $cache = read_articles_index_cache();
+    if (isset($cache['meta']['count'])) {
+      $articleCount = (int) $cache['meta']['count'];
+    }
+  }
 
   $menu = [
     [
@@ -25,7 +33,7 @@ function admin_layout_header(array $options = []): void
       'label' => 'Bài viết',
       'href' => admin_url('articles.php'),
       'icon' => 'fa-solid fa-file-lines',
-      'disabled' => true,
+      'badge' => $articleCount !== null ? number_format($articleCount, 0, ',', '.') : null,
     ],
   ];
   ?>
@@ -66,7 +74,9 @@ function admin_layout_header(array $options = []): void
             >
               <i class="<?= h($item['icon']) ?>"></i>
               <span><?= h($item['label']) ?></span>
-              <?php if ($disabled): ?>
+              <?php if (!empty($item['badge'])): ?>
+                <small><?= h((string) $item['badge']) ?></small>
+              <?php elseif ($disabled): ?>
                 <small>Phase sau</small>
               <?php endif; ?>
             </a>
@@ -74,7 +84,7 @@ function admin_layout_header(array $options = []): void
         </nav>
         <div class="admin-sidebar-foot">
           <p>Phiên bản <strong>MVP v1</strong></p>
-          <p>Phase 1 — Auth shell</p>
+          <p><?= h($sidebarPhase) ?></p>
         </div>
       </aside>
 
@@ -124,4 +134,3 @@ function admin_layout_footer(): void
   </html>
   <?php
 }
-
