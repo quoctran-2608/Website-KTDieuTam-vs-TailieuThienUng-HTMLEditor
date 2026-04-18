@@ -100,6 +100,11 @@ Script này kiểm tra:
 - trace hash integrity cho publish record
 - trạng thái cơ bản cho go-live nội bộ
 
+## Checklist go-live nhanh (15 phút)
+
+- `docs/editor-php/pre-go-live-15min-checklist.md`
+- script runner: `./tools/admin_phase6_pre_go_live.sh`
+
 ## Ghi chú môi trường hiện tại
 
 - Workspace hiện tại chưa có `php` CLI, nên chưa chạy được lint/runtime trực tiếp tại đây.
