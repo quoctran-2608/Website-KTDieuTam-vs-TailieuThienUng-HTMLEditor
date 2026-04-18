@@ -1066,6 +1066,7 @@ a {
   align-items: center;
   gap: 10px;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .editor-preview-grid {
@@ -1108,6 +1109,46 @@ a {
 
 .preview-host p {
   line-height: 1.65;
+}
+
+.publish-btn,
+.rollback-btn {
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.publish-btn {
+  border: 1px solid rgba(22, 101, 52, 0.35);
+  color: #fff;
+  background: linear-gradient(135deg, #166534, #15803d);
+}
+
+.rollback-btn {
+  border: 1px solid rgba(185, 28, 28, 0.35);
+  color: #fff;
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+}
+
+.publish-status-grid {
+  margin-top: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.publish-status-grid p {
+  margin: 0;
+  color: #374151;
 }
 
 .json-preview {
@@ -1262,7 +1303,9 @@ a {
   }
 
   .editor-actions .filter-submit-btn,
-  .editor-actions .clear-filter-btn.inline {
+  .editor-actions .clear-filter-btn.inline,
+  .editor-actions .publish-btn.inline,
+  .editor-actions .rollback-btn.inline {
     width: 100%;
     justify-content: center;
   }

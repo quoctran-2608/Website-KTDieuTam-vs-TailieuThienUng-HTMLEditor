@@ -83,6 +83,25 @@ $checks[] = [
   'detail' => 'count=' . (string) count(is_array($draftPayload['drafts'] ?? null) ? $draftPayload['drafts'] : []),
 ];
 
+$checks[] = [
+  'label' => 'backup directory exists',
+  'ok' => is_dir(ADMIN_BACKUPS_DIR),
+  'detail' => ADMIN_BACKUPS_DIR,
+];
+
+$checks[] = [
+  'label' => 'publish history exists',
+  'ok' => file_exists(ADMIN_PUBLISH_HISTORY_PATH),
+  'detail' => ADMIN_PUBLISH_HISTORY_PATH,
+];
+
+$publishHistory = read_publish_history();
+$checks[] = [
+  'label' => 'publish history readable',
+  'ok' => isset($publishHistory['records']) && is_array($publishHistory['records']),
+  'detail' => 'count=' . (string) count(is_array($publishHistory['records'] ?? null) ? $publishHistory['records'] : []),
+];
+
 $allOk = true;
 foreach ($checks as $check) {
   $ok = (bool) $check['ok'];
@@ -97,5 +116,5 @@ if (!$allOk) {
 }
 
 echo PHP_EOL;
-echo "Phase 4 healthcheck passed." . PHP_EOL;
+echo "Phase 5 healthcheck passed." . PHP_EOL;
 echo "Default dev login: admin / admin123" . PHP_EOL;

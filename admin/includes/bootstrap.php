@@ -33,6 +33,14 @@ if (!defined('ADMIN_DRAFTS_PATH')) {
   define('ADMIN_DRAFTS_PATH', ADMIN_STORAGE_PATH . '/article-drafts.json');
 }
 
+if (!defined('ADMIN_BACKUPS_DIR')) {
+  define('ADMIN_BACKUPS_DIR', ADMIN_STORAGE_PATH . '/backups');
+}
+
+if (!defined('ADMIN_PUBLISH_HISTORY_PATH')) {
+  define('ADMIN_PUBLISH_HISTORY_PATH', ADMIN_STORAGE_PATH . '/publish-history.json');
+}
+
 if (!defined('ADMIN_SESSION_TTL')) {
   define('ADMIN_SESSION_TTL', 60 * 60 * 8);
 }
@@ -51,9 +59,11 @@ require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/article_index.php';
 require_once __DIR__ . '/article_parser.php';
 require_once __DIR__ . '/article_draft.php';
+require_once __DIR__ . '/article_publish.php';
 
 bootstrap_storage();
 bootstrap_session();
 ensure_default_admin_user();
 bootstrap_draft_storage();
+bootstrap_publish_storage();
 sync_articles_index(false);

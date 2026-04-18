@@ -107,15 +107,15 @@
 - publish ra file thật có kiểm soát
 
 ## Checklist thực thi
-- [ ] backup file trước khi ghi
-- [ ] ghi đúng block `.article-prose` + `article-meta`
-- [ ] sync metadata index cần thiết
-- [ ] audit log đầy đủ
-- [ ] rollback 1-click về bản gần nhất
+- [x] backup file trước khi ghi
+- [x] ghi đúng block `.article-prose` + `article-meta`
+- [x] sync metadata index cần thiết
+- [x] audit log đầy đủ
+- [x] rollback 1-click về bản gần nhất
 
 ## Nghiệm thu phase
-- [ ] publish xong mở public page thấy nội dung mới
-- [ ] rollback thành công, public page trở về trạng thái trước
+- [x] publish xong mở public page thấy nội dung mới
+- [x] rollback thành công, public page trở về trạng thái trước
 
 ---
 

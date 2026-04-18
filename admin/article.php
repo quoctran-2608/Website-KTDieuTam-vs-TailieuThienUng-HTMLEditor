@@ -193,6 +193,8 @@ $diffRows = [];
 $status = null;
 $previewHtml = '';
 $previewMeta = [];
+$publishStatus = null;
+$latestPublish = null;
 
 if ($article !== null) {
   $path = resolve_article_file_path($article);
@@ -224,49 +226,116 @@ if ($article !== null) {
     if (is_post_request()) {
       enforce_post_csrf_or_reject();
       $intent = trim((string) ($_POST['_intent'] ?? 'save_draft'));
-      $posted = [
-        'title' => (string) ($_POST['title'] ?? ''),
-        'excerpt' => (string) ($_POST['excerpt'] ?? ''),
-        'publish_date' => (string) ($_POST['publish_date'] ?? ''),
-        'modified_date' => (string) ($_POST['modified_date'] ?? ''),
-        'tags_text' => (string) ($_POST['tags_text'] ?? ''),
-        'prose_html' => (string) ($_POST['prose_html'] ?? ''),
-      ];
-      $validated = validate_draft_payload($posted);
-      $form = array_merge($form, $posted);
-
-      if (!empty($validated['ok'])) {
-        $clean = is_array($validated['data'] ?? null) ? $validated['data'] : [];
-        $saved = save_article_draft((string) ($article['id'] ?? ''), $clean, $currentUser);
-        $draftCurrent = $saved;
-        $form = array_merge($form, $clean);
-        $diffRows = build_diff_rows($baseEditable, $clean);
-        $previewHtml = (string) ($clean['prose_html'] ?? '');
-        $previewMeta = [
-          'title' => (string) ($clean['title'] ?? ''),
-          'excerpt' => (string) ($clean['excerpt'] ?? ''),
-          'publishDate' => (string) ($clean['publish_date'] ?? ''),
-          'modifiedDate' => (string) ($clean['modified_date'] ?? ''),
-          'tags' => is_array($clean['tags'] ?? null) ? $clean['tags'] : [],
-        ];
-
-        if ($intent === 'save_draft') {
+      if ($intent === 'rollback_latest') {
+        $result = rollback_latest_publish($article, $currentUser);
+        if (!empty($result['ok'])) {
           $status = [
             'type' => 'success',
-            'message' => 'Đã lưu draft thành công.',
+            'message' => 'Rollback thành công từ backup gần nhất.',
           ];
-        } elseif ($intent === 'preview_only') {
+          $publishStatus = $result;
+        } else {
           $status = [
-            'type' => 'success',
-            'message' => 'Đã tạo preview từ dữ liệu draft mới nhất.',
+            'type' => 'danger',
+            'message' => 'Rollback thất bại: ' . (string) ($result['message'] ?? 'unknown'),
           ];
+          $publishStatus = $result;
+        }
+
+        $parseResult = parse_article_file($path);
+        if (is_array($parseResult) && !empty($parseResult['ok'])) {
+          $metaPayloadAfterRollback = is_array($parseResult['meta_payload'] ?? null) ? $parseResult['meta_payload'] : [];
+          $summaryAfterRollback = trim((string) ($parseResult['summary_text'] ?? ''));
+          $baseEditable = [
+            'title' => (string) ($metaPayloadAfterRollback['title'] ?? ($article['title'] ?? '')),
+            'excerpt' => (string) ($summaryAfterRollback !== '' ? $summaryAfterRollback : ($article['card_badge_label'] ?? '')),
+            'publish_date' => (string) ($metaPayloadAfterRollback['publishDate'] ?? ''),
+            'modified_date' => (string) (($metaPayloadAfterRollback['modifiedDate'] ?? '') ?: ''),
+            'tags' => is_array($metaPayloadAfterRollback['tags'] ?? null) ? array_values(array_filter(array_map('strval', $metaPayloadAfterRollback['tags']))) : [],
+            'tags_text' => is_array($metaPayloadAfterRollback['tags'] ?? null) ? implode(', ', array_values(array_filter(array_map('strval', $metaPayloadAfterRollback['tags'])))) : '',
+            'prose_html' => (string) (($parseResult['prose']['inner'] ?? '') ?: ''),
+          ];
+          if ($baseEditable['excerpt'] === '') {
+            $baseEditable['excerpt'] = (string) ($metaPayloadAfterRollback['excerpt'] ?? ($metaPayloadAfterRollback['description'] ?? ''));
+          }
+
+          $form = $baseEditable;
+          $previewHtml = (string) ($baseEditable['prose_html'] ?? '');
+          $previewMeta = [
+            'title' => (string) ($baseEditable['title'] ?? ''),
+            'excerpt' => (string) ($baseEditable['excerpt'] ?? ''),
+            'publishDate' => (string) ($baseEditable['publish_date'] ?? ''),
+            'modifiedDate' => (string) ($baseEditable['modified_date'] ?? ''),
+            'tags' => is_array($baseEditable['tags'] ?? null) ? $baseEditable['tags'] : [],
+          ];
+          $diffRows = build_diff_rows($baseEditable, $baseEditable);
         }
       } else {
-        $validationErrors = is_array($validated['errors'] ?? null) ? $validated['errors'] : [];
-        $status = [
-          'type' => 'danger',
-          'message' => 'Dữ liệu chưa hợp lệ. Vui lòng kiểm tra các trường được đánh dấu.',
+        $posted = [
+          'title' => (string) ($_POST['title'] ?? ''),
+          'excerpt' => (string) ($_POST['excerpt'] ?? ''),
+          'publish_date' => (string) ($_POST['publish_date'] ?? ''),
+          'modified_date' => (string) ($_POST['modified_date'] ?? ''),
+          'tags_text' => (string) ($_POST['tags_text'] ?? ''),
+          'prose_html' => (string) ($_POST['prose_html'] ?? ''),
         ];
+        $validated = validate_draft_payload($posted);
+        $form = array_merge($form, $posted);
+
+        if (!empty($validated['ok'])) {
+          $clean = is_array($validated['data'] ?? null) ? $validated['data'] : [];
+          if ($intent === 'publish_now') {
+            $result = publish_article_draft($article, $clean, $currentUser);
+            if (!empty($result['ok'])) {
+              // Keep draft snapshot for traceability after publish
+              $saved = save_article_draft((string) ($article['id'] ?? ''), $clean, $currentUser);
+              $draftCurrent = $saved;
+              $form = array_merge($form, $clean);
+              $status = [
+                'type' => 'success',
+                'message' => 'Publish thành công và đã sync dữ liệu index.',
+              ];
+              $publishStatus = $result;
+            } else {
+              $status = [
+                'type' => 'danger',
+                'message' => 'Publish thất bại: ' . (string) ($result['message'] ?? 'unknown'),
+              ];
+              $publishStatus = $result;
+            }
+          } else {
+            $saved = save_article_draft((string) ($article['id'] ?? ''), $clean, $currentUser);
+            $draftCurrent = $saved;
+            $form = array_merge($form, $clean);
+            $diffRows = build_diff_rows($baseEditable, $clean);
+            $previewHtml = (string) ($clean['prose_html'] ?? '');
+            $previewMeta = [
+              'title' => (string) ($clean['title'] ?? ''),
+              'excerpt' => (string) ($clean['excerpt'] ?? ''),
+              'publishDate' => (string) ($clean['publish_date'] ?? ''),
+              'modifiedDate' => (string) ($clean['modified_date'] ?? ''),
+              'tags' => is_array($clean['tags'] ?? null) ? $clean['tags'] : [],
+            ];
+
+            if ($intent === 'save_draft') {
+              $status = [
+                'type' => 'success',
+                'message' => 'Đã lưu draft thành công.',
+              ];
+            } elseif ($intent === 'preview_only') {
+              $status = [
+                'type' => 'success',
+                'message' => 'Đã tạo preview từ dữ liệu draft mới nhất.',
+              ];
+            }
+          }
+        } else {
+          $validationErrors = is_array($validated['errors'] ?? null) ? $validated['errors'] : [];
+          $status = [
+            'type' => 'danger',
+            'message' => 'Dữ liệu chưa hợp lệ. Vui lòng kiểm tra các trường được đánh dấu.',
+          ];
+        }
       }
     } else {
       if (is_array($draftCurrent) && is_array($draftCurrent['data'] ?? null)) {
@@ -291,6 +360,7 @@ if ($article !== null) {
         ];
       }
     }
+    $latestPublish = find_latest_publish_record((string) ($article['id'] ?? ''));
   }
 }
 
@@ -317,7 +387,7 @@ admin_layout_header([
   'title' => 'Chi tiết bài & parser safety',
   'active' => 'articles',
   'description' => 'Phase 4: Form edit + draft + before/after diff + preview render.',
-  'phase_label' => 'Phase 4 — Draft & preview',
+  'phase_label' => 'Phase 5 — Publish & rollback',
   'inner_script' => $innerScript,
 ]);
 ?>
@@ -512,8 +582,39 @@ admin_layout_header([
           <i class="fa-solid fa-eye"></i>
           <span>Cập nhật Preview</span>
         </button>
+        <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận publish bài này? Hệ thống sẽ backup trước khi ghi file thật.');">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>Publish</span>
+        </button>
+        <button type="submit" class="rollback-btn inline" onclick="document.getElementById('articleIntent').value='rollback_latest'; return confirm('Xác nhận rollback về backup gần nhất?');">
+          <i class="fa-solid fa-rotate-left"></i>
+          <span>Rollback gần nhất</span>
+        </button>
       </div>
     </form>
+
+    <article class="admin-panel">
+      <div class="panel-head">
+        <h2>Publish / Rollback status</h2>
+        <p>Theo dõi record mới nhất để đảm bảo có thể truy vết và phục hồi.</p>
+      </div>
+      <?php if (is_array($publishStatus) && !empty($publishStatus)): ?>
+        <div class="json-preview" style="margin-top:10px;"><?= h(pretty_json(is_array($publishStatus['record'] ?? null) ? $publishStatus['record'] : $publishStatus)) ?></div>
+      <?php endif; ?>
+      <?php if (is_array($latestPublish)): ?>
+        <div class="publish-status-grid">
+          <p><strong>Latest event:</strong> <?= h((string) ($latestPublish['event'] ?? '')) ?></p>
+          <p><strong>Time:</strong> <?= h(format_admin_datetime((string) ($latestPublish['published_at'] ?? $latestPublish['rolled_back_at'] ?? ''))) ?></p>
+          <p><strong>Backup:</strong> <code><?= h((string) ($latestPublish['backup_path'] ?? $latestPublish['restored_from'] ?? '')) ?></code></p>
+          <p><strong>Target:</strong> <code><?= h((string) ($latestPublish['target_path'] ?? '')) ?></code></p>
+        </div>
+      <?php else: ?>
+        <div class="empty-state">
+          <i class="fa-regular fa-folder-open"></i>
+          <p>Chưa có publish record cho bài này.</p>
+        </div>
+      <?php endif; ?>
+    </article>
 
     <div class="editor-preview-grid">
       <article class="admin-panel">
@@ -573,6 +674,14 @@ admin_layout_header([
         <span>Mở bài viết public</span>
       </a>
     </p>
+
+    <div class="next-phase-banner">
+      <i class="fa-solid fa-shield-heart"></i>
+      <div>
+        <strong>Phase 5 đã bật publish + rollback an toàn</strong>
+        <p>Backup trước khi ghi file thật, có publish history và audit log để replay toàn bộ thao tác.</p>
+      </div>
+    </div>
   <?php endif; ?>
 </section>
 
