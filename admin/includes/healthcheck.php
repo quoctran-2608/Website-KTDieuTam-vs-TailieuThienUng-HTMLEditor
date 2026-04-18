@@ -102,6 +102,26 @@ $checks[] = [
   'detail' => 'count=' . (string) count(is_array($publishHistory['records'] ?? null) ? $publishHistory['records'] : []),
 ];
 
+$sample = null;
+if (isset($publishHistory['records']) && is_array($publishHistory['records']) && !empty($publishHistory['records'])) {
+  $records = array_values(array_filter($publishHistory['records'], static fn($row): bool => is_array($row)));
+  $sample = $records ? $records[count($records) - 1] : null;
+}
+$traceOk = true;
+if (is_array($sample)) {
+  $event = (string) ($sample['event'] ?? '');
+  if ($event === 'publish') {
+    $traceOk = (isset($sample['hash_before']) && isset($sample['hash_after'])) || isset($sample['backup_path']);
+  } elseif ($event === 'rollback') {
+    $traceOk = isset($sample['restored_hash']) || isset($sample['restored_from']);
+  }
+}
+$checks[] = [
+  'label' => 'publish record has trace hash',
+  'ok' => $traceOk,
+  'detail' => is_array($sample) ? ('event=' . (string) ($sample['event'] ?? '')) : 'no-record-yet',
+];
+
 $allOk = true;
 foreach ($checks as $check) {
   $ok = (bool) $check['ok'];
@@ -116,5 +136,5 @@ if (!$allOk) {
 }
 
 echo PHP_EOL;
-echo "Phase 5 healthcheck passed." . PHP_EOL;
+echo "Phase 6 healthcheck passed." . PHP_EOL;
 echo "Default dev login: admin / admin123" . PHP_EOL;

@@ -127,6 +127,34 @@ function find_latest_publish_record(string $articleId): ?array
 }
 
 /**
+ * @return array<int,array<string,mixed>>
+ */
+function list_recent_publish_records(string $articleId, int $limit = 10): array
+{
+  $articleId = trim($articleId);
+  if ($articleId === '') {
+    return [];
+  }
+
+  $payload = read_publish_history();
+  $records = array_reverse($payload['records']);
+  $rows = [];
+  foreach ($records as $record) {
+    if (!is_array($record)) {
+      continue;
+    }
+    if ((string) ($record['article_id'] ?? '') !== $articleId) {
+      continue;
+    }
+    $rows[] = $record;
+    if (count($rows) >= max(1, $limit)) {
+      break;
+    }
+  }
+  return $rows;
+}
+
+/**
  * Build backup file path for article.
  */
 function build_backup_file_path(string $articleId): string
@@ -187,6 +215,14 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
   $newPublish = (string) ($draftData['publish_date'] ?? '');
   $newModified = (string) ($draftData['modified_date'] ?? '');
   $newTags = is_array($draftData['tags'] ?? null) ? array_values(array_map('strval', $draftData['tags'])) : [];
+
+  if (!is_writable(dirname($path)) || !is_writable($path)) {
+    return [
+      'ok' => false,
+      'code' => 'target_not_writable',
+      'message' => 'File đích không có quyền ghi.',
+    ];
+  }
 
   $metaPayload['title'] = $newTitle;
   $metaPayload['publishDate'] = $newPublish;
@@ -251,6 +287,8 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
   $summaryEscaped = htmlspecialchars($newExcerpt, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
   $htmlNew = preg_replace('/(<p\b[^>]*class=(["\'])(?:(?!\2).)*\barticle-summary\b(?:(?!\2).)*\2[^>]*>).*?(<\/p>)/is', '$1' . $summaryEscaped . '$3', $htmlNew, 1) ?? $htmlNew;
 
+  $contentHashBefore = hash('sha256', $html);
+
   // Backup current file before write
   $backupPath = build_backup_file_path($articleId);
   if (!copy($path, $backupPath)) {
@@ -271,6 +309,8 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
     ];
   }
 
+  $contentHashAfter = hash('sha256', $htmlNew);
+
   $record = [
     'id' => 'pub-' . date('YmdHis') . '-' . substr(md5($articleId . microtime(true)), 0, 8),
     'event' => 'publish',
@@ -279,6 +319,8 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
     'target_path' => $path,
     'backup_path' => $backupPath,
     'bytes_written' => $bytes,
+    'hash_before' => $contentHashBefore,
+    'hash_after' => $contentHashAfter,
     'published_at' => date('c'),
     'actor' => [
       'user_id' => (string) (($actor['user_id'] ?? '') ?: ''),
@@ -299,18 +341,28 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
   ]);
 
   // Keep article index in sync for card-like fields
-  sync_article_index_entry($articleId, [
+  $indexSynced = sync_article_index_entry($articleId, [
     'title' => $newTitle,
     'publishDate' => $newPublish,
     'modifiedDate' => $newModified,
     'cardBadgeLabel' => $newExcerpt,
   ]);
 
+  if (!$indexSynced) {
+    append_audit_log([
+      'event' => 'article.publish.index_sync_failed',
+      'article_id' => $articleId,
+      'username' => (string) (($actor['username'] ?? '') ?: ''),
+      'role' => (string) (($actor['role'] ?? '') ?: ''),
+    ]);
+  }
+
   return [
     'ok' => true,
     'code' => 'ok',
     'message' => 'Publish thành công.',
     'record' => $record,
+    'index_synced' => $indexSynced,
   ];
 }
 
@@ -351,9 +403,23 @@ function rollback_latest_publish(array $article, ?array $actor = null): array
     ];
   }
 
+  if (!is_writable(dirname($targetPath)) || !is_writable($targetPath)) {
+    return [
+      'ok' => false,
+      'code' => 'target_not_writable',
+      'message' => 'File đích không có quyền ghi để rollback.',
+    ];
+  }
+
   // Backup current target before restoring
   $rollbackBackupPath = build_backup_file_path($articleId . '-rollback-src');
-  copy($targetPath, $rollbackBackupPath);
+  if (!copy($targetPath, $rollbackBackupPath)) {
+    return [
+      'ok' => false,
+      'code' => 'rollback_backup_failed',
+      'message' => 'Không tạo được backup trạng thái hiện tại trước rollback.',
+    ];
+  }
 
   if (!copy($backupPath, $targetPath)) {
     return [
@@ -363,6 +429,9 @@ function rollback_latest_publish(array $article, ?array $actor = null): array
     ];
   }
 
+  $restoredHtml = file_get_contents($targetPath);
+  $restoredHash = $restoredHtml !== false ? hash('sha256', $restoredHtml) : '';
+
   $record = [
     'id' => 'rb-' . date('YmdHis') . '-' . substr(md5($articleId . microtime(true)), 0, 8),
     'event' => 'rollback',
@@ -371,6 +440,7 @@ function rollback_latest_publish(array $article, ?array $actor = null): array
     'restored_from' => $backupPath,
     'current_backup_before_restore' => $rollbackBackupPath,
     'rolled_back_at' => date('c'),
+    'restored_hash' => $restoredHash,
     'actor' => [
       'user_id' => (string) (($actor['user_id'] ?? '') ?: ''),
       'username' => (string) (($actor['username'] ?? '') ?: ''),
@@ -402,20 +472,20 @@ function rollback_latest_publish(array $article, ?array $actor = null): array
  *
  * @param array<string,mixed> $updates
  */
-function sync_article_index_entry(string $articleId, array $updates): void
+function sync_article_index_entry(string $articleId, array $updates): bool
 {
   $articleId = trim($articleId);
   if ($articleId === '' || !file_exists(ADMIN_ARTICLES_SOURCE_PATH)) {
-    return;
+    return false;
   }
 
   $raw = file_get_contents(ADMIN_ARTICLES_SOURCE_PATH);
   if ($raw === false || trim($raw) === '') {
-    return;
+    return false;
   }
   $items = json_decode($raw, true);
   if (!is_array($items)) {
-    return;
+    return false;
   }
 
   $changed = false;
@@ -434,14 +504,17 @@ function sync_article_index_entry(string $articleId, array $updates): void
   }
 
   if (!$changed) {
-    return;
+    return false;
   }
 
   $json = json_encode($items, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
   if ($json === false) {
-    return;
+    return false;
   }
-  file_put_contents(ADMIN_ARTICLES_SOURCE_PATH, $json . PHP_EOL);
+  $bytes = file_put_contents(ADMIN_ARTICLES_SOURCE_PATH, $json . PHP_EOL);
+  if ($bytes === false) {
+    return false;
+  }
   sync_articles_index(true);
+  return true;
 }
-

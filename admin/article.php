@@ -195,6 +195,7 @@ $previewHtml = '';
 $previewMeta = [];
 $publishStatus = null;
 $latestPublish = null;
+$recentHistory = [];
 
 if ($article !== null) {
   $path = resolve_article_file_path($article);
@@ -228,12 +229,12 @@ if ($article !== null) {
       $intent = trim((string) ($_POST['_intent'] ?? 'save_draft'));
       if ($intent === 'rollback_latest') {
         $result = rollback_latest_publish($article, $currentUser);
-        if (!empty($result['ok'])) {
-          $status = [
-            'type' => 'success',
-            'message' => 'Rollback thành công từ backup gần nhất.',
-          ];
-          $publishStatus = $result;
+          if (!empty($result['ok'])) {
+            $status = [
+              'type' => 'success',
+              'message' => 'Rollback thành công từ backup gần nhất.',
+            ];
+            $publishStatus = $result;
         } else {
           $status = [
             'type' => 'danger',
@@ -268,7 +269,7 @@ if ($article !== null) {
             'modifiedDate' => (string) ($baseEditable['modified_date'] ?? ''),
             'tags' => is_array($baseEditable['tags'] ?? null) ? $baseEditable['tags'] : [],
           ];
-          $diffRows = build_diff_rows($baseEditable, $baseEditable);
+          $diffRows = [];
         }
       } else {
         $posted = [
@@ -361,6 +362,7 @@ if ($article !== null) {
       }
     }
     $latestPublish = find_latest_publish_record((string) ($article['id'] ?? ''));
+    $recentHistory = list_recent_publish_records((string) ($article['id'] ?? ''), 8);
   }
 }
 
@@ -386,8 +388,8 @@ JS;
 admin_layout_header([
   'title' => 'Chi tiết bài & parser safety',
   'active' => 'articles',
-  'description' => 'Phase 4: Form edit + draft + before/after diff + preview render.',
-  'phase_label' => 'Phase 5 — Publish & rollback',
+  'description' => 'Phase 5: Form edit + publish + rollback + backup/history.',
+  'phase_label' => 'Phase 6 — Hardening & runbook',
   'inner_script' => $innerScript,
 ]);
 ?>
@@ -607,11 +609,41 @@ admin_layout_header([
           <p><strong>Time:</strong> <?= h(format_admin_datetime((string) ($latestPublish['published_at'] ?? $latestPublish['rolled_back_at'] ?? ''))) ?></p>
           <p><strong>Backup:</strong> <code><?= h((string) ($latestPublish['backup_path'] ?? $latestPublish['restored_from'] ?? '')) ?></code></p>
           <p><strong>Target:</strong> <code><?= h((string) ($latestPublish['target_path'] ?? '')) ?></code></p>
+          <?php if (isset($latestPublish['hash_before'], $latestPublish['hash_after'])): ?>
+            <p><strong>Hash before:</strong> <code><?= h((string) $latestPublish['hash_before']) ?></code></p>
+            <p><strong>Hash after:</strong> <code><?= h((string) $latestPublish['hash_after']) ?></code></p>
+          <?php endif; ?>
         </div>
       <?php else: ?>
         <div class="empty-state">
           <i class="fa-regular fa-folder-open"></i>
           <p>Chưa có publish record cho bài này.</p>
+        </div>
+      <?php endif; ?>
+
+      <?php if (!empty($recentHistory)): ?>
+        <div class="table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Event</th>
+                <th>Actor</th>
+                <th>Backup/Restore</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($recentHistory as $row): ?>
+                <?php if (!is_array($row)) continue; ?>
+                <tr>
+                  <td><?= h(format_admin_datetime((string) ($row['published_at'] ?? $row['rolled_back_at'] ?? ''))) ?></td>
+                  <td><span class="event-pill"><?= h((string) ($row['event'] ?? '')) ?></span></td>
+                  <td><?= h((string) (($row['actor']['username'] ?? '') ?: '—')) ?></td>
+                  <td><code><?= h((string) ($row['backup_path'] ?? $row['restored_from'] ?? '')) ?></code></td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
         </div>
       <?php endif; ?>
     </article>
@@ -678,8 +710,8 @@ admin_layout_header([
     <div class="next-phase-banner">
       <i class="fa-solid fa-shield-heart"></i>
       <div>
-        <strong>Phase 5 đã bật publish + rollback an toàn</strong>
-        <p>Backup trước khi ghi file thật, có publish history và audit log để replay toàn bộ thao tác.</p>
+        <strong>Phase 6 hardening: thêm hash, history và guardrails vận hành</strong>
+        <p>Workflow publish/rollback đã có trace đầy đủ để smoke/regression và bàn giao nội bộ.</p>
       </div>
     </div>
   <?php endif; ?>

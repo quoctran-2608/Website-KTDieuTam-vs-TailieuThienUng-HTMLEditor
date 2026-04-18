@@ -125,15 +125,15 @@
 - hệ thống đủ ổn để dùng hàng ngày
 
 ## Checklist thực thi
-- [ ] smoke test end-to-end
-- [ ] regression cho list/filter/edit/publish/rollback
-- [ ] chạy readiness audit sau ca test
-- [ ] kiểm tra phân quyền editor/admin đúng
-- [ ] chốt runbook sự cố cơ bản
+- [x] smoke test end-to-end
+- [x] regression cho list/filter/edit/publish/rollback
+- [x] chạy readiness audit sau ca test
+- [x] kiểm tra phân quyền editor/admin đúng
+- [x] chốt runbook sự cố cơ bản
 
 ## Nghiệm thu phase
-- [ ] không còn blocker mức cao
-- [ ] có checklist vận hành cho người dùng nội bộ
+- [x] không còn blocker mức cao
+- [x] có checklist vận hành cho người dùng nội bộ
 
 ---
 

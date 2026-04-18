@@ -9,7 +9,7 @@ Thư mục này chứa code admin panel cho luồng:
 
 ## Trạng thái hiện tại
 
-Đang ở **Phase 5**:
+Đang ở **Phase 6**:
 
 - đã hoàn thiện auth shell:
   - `admin/login.php`
@@ -32,6 +32,10 @@ Thư mục này chứa code admin panel cho luồng:
   - backup trước khi ghi file thật
   - rollback từ backup gần nhất
   - publish history + audit log
+- đã hardening vận hành:
+  - publish/rollback hash trace
+  - recent publish history per article
+  - healthcheck mở rộng cho trace integrity
 - UI admin đẹp, responsive, tối ưu trải nghiệm lọc và rà soát bài
 - đã chốt scope + checklist ở:
   - `docs/editor-php/mvp-scope-v1.md`
@@ -77,7 +81,7 @@ Truy cập:
 - `http://127.0.0.1:8080/admin/`
 - login mặc định dev: `admin / admin123`
 
-## Healthcheck Phase 5
+## Healthcheck Phase 6
 
 ```bash
 php admin/includes/healthcheck.php
@@ -93,7 +97,8 @@ Script này kiểm tra:
 - parser audit safe/fail
 - draft storage + draft payload
 - backup dir + publish history
-- trạng thái cơ bản để bắt đầu Phase 6
+- trace hash integrity cho publish record
+- trạng thái cơ bản cho go-live nội bộ
 
 ## Ghi chú môi trường hiện tại
 
