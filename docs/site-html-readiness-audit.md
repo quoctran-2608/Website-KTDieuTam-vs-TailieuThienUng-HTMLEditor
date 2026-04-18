@@ -14,7 +14,7 @@
 
 - Article HTML có `publishDate + authorName`: **2064 / 2064**
 - Missing/invalid article-meta: **0**
-- Đã kiểm tra internal refs: **1422**
+- Đã kiểm tra internal refs: **1430**
 - Internal refs lỗi (mẫu kiểm): **0**
 
 ## Preview article-meta lỗi
