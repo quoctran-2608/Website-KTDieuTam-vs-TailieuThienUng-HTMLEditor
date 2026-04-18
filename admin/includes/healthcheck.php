@@ -70,6 +70,19 @@ $checks[] = [
   'detail' => 'safe=' . (string) ($audit['meta']['safe_count'] ?? 0) . '/' . (string) ($audit['meta']['total_count'] ?? 0),
 ];
 
+$checks[] = [
+  'label' => 'draft storage exists',
+  'ok' => file_exists(ADMIN_DRAFTS_PATH),
+  'detail' => ADMIN_DRAFTS_PATH,
+];
+
+$draftPayload = read_drafts_payload();
+$checks[] = [
+  'label' => 'draft payload readable',
+  'ok' => isset($draftPayload['drafts']) && is_array($draftPayload['drafts']),
+  'detail' => 'count=' . (string) count(is_array($draftPayload['drafts'] ?? null) ? $draftPayload['drafts'] : []),
+];
+
 $allOk = true;
 foreach ($checks as $check) {
   $ok = (bool) $check['ok'];
@@ -84,5 +97,5 @@ if (!$allOk) {
 }
 
 echo PHP_EOL;
-echo "Phase 3 healthcheck passed." . PHP_EOL;
+echo "Phase 4 healthcheck passed." . PHP_EOL;
 echo "Default dev login: admin / admin123" . PHP_EOL;

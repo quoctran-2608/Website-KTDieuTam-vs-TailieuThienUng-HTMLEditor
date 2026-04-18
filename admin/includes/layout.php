@@ -12,7 +12,7 @@ function admin_layout_header(array $options = []): void
   $active = $options['active'] ?? '';
   $description = $options['description'] ?? '';
   $user = current_user();
-  $sidebarPhase = $options['phase_label'] ?? 'Phase 2 — Article list & filter';
+  $sidebarPhase = $options['phase_label'] ?? 'Phase 4 — Draft & preview';
   $articleCount = null;
   if (function_exists('read_articles_index_cache')) {
     $cache = read_articles_index_cache();
@@ -36,6 +36,9 @@ function admin_layout_header(array $options = []): void
       'badge' => $articleCount !== null ? number_format($articleCount, 0, ',', '.') : null,
     ],
   ];
+
+  $innerScript = $options['inner_script'] ?? '';
+  $GLOBALS['admin_inner_script'] = is_string($innerScript) ? $innerScript : '';
   ?>
   <!DOCTYPE html>
   <html lang="vi">
@@ -125,10 +128,16 @@ function admin_layout_header(array $options = []): void
  */
 function admin_layout_footer(): void
 {
+  $innerScript = (string) ($GLOBALS['admin_inner_script'] ?? '');
   ?>
         </main>
       </div>
     </div>
+    <?php if (is_string($innerScript) && trim($innerScript) !== ''): ?>
+      <script>
+<?= $innerScript . PHP_EOL ?>
+      </script>
+    <?php endif; ?>
     <script src="<?= h(admin_url('assets/js/admin.js')) ?>"></script>
   </body>
   </html>

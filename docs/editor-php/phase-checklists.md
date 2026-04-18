@@ -88,16 +88,16 @@
 - editor sửa từng bài và lưu draft an toàn
 
 ## Checklist thực thi
-- [ ] form edit theo contract v1
-- [ ] save draft
-- [ ] before/after diff (metadata + prose)
-- [ ] preview render
-- [ ] validation bắt buộc
-- [ ] thông báo lỗi theo field, không mơ hồ
+- [x] form edit theo contract v1
+- [x] save draft
+- [x] before/after diff (metadata + prose)
+- [x] preview render
+- [x] validation bắt buộc
+- [x] thông báo lỗi theo field, không mơ hồ
 
 ## Nghiệm thu phase
-- [ ] save draft/reopen draft không mất dữ liệu
-- [ ] preview phản ánh đúng nội dung sẽ publish
+- [x] save draft/reopen draft không mất dữ liệu
+- [x] preview phản ánh đúng nội dung sẽ publish
 
 ---
 

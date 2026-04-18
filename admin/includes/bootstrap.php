@@ -29,6 +29,10 @@ if (!defined('ADMIN_PARSER_AUDIT_PATH')) {
   define('ADMIN_PARSER_AUDIT_PATH', ADMIN_STORAGE_PATH . '/parser-audit.json');
 }
 
+if (!defined('ADMIN_DRAFTS_PATH')) {
+  define('ADMIN_DRAFTS_PATH', ADMIN_STORAGE_PATH . '/article-drafts.json');
+}
+
 if (!defined('ADMIN_SESSION_TTL')) {
   define('ADMIN_SESSION_TTL', 60 * 60 * 8);
 }
@@ -46,8 +50,10 @@ require_once __DIR__ . '/helpers.php';
 require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/article_index.php';
 require_once __DIR__ . '/article_parser.php';
+require_once __DIR__ . '/article_draft.php';
 
 bootstrap_storage();
 bootstrap_session();
 ensure_default_admin_user();
+bootstrap_draft_storage();
 sync_articles_index(false);

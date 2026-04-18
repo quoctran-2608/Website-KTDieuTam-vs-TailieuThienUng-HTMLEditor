@@ -84,6 +84,7 @@ function parse_article_file(string $path): array
     'prose' => $proseRegion,
     'meta' => $metaRegion,
     'meta_payload' => $metaDecoded,
+    'summary_text' => extract_article_summary_text($html),
   ];
 }
 
@@ -222,6 +223,20 @@ function extract_article_meta_region(string $html): array
     'inner' => trim($inner),
     'inner_length' => strlen(trim($inner)),
   ];
+}
+
+/**
+ * Extract summary from `<p class="article-summary">`.
+ */
+function extract_article_summary_text(string $html): string
+{
+  if (!preg_match('/<p\b[^>]*class=(["\'])(?:(?!\1).)*\barticle-summary\b(?:(?!\1).)*\1[^>]*>(.*?)<\/p>/is', $html, $match)) {
+    return '';
+  }
+  $inner = trim((string) ($match[2] ?? ''));
+  $plain = trim(strip_tags($inner));
+  $plain = html_entity_decode($plain, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+  return trim((string) preg_replace('/\s+/', ' ', $plain));
 }
 
 /**
@@ -367,4 +382,3 @@ function pretty_json(array $payload): string
   $json = json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
   return $json === false ? '{}' : $json;
 }
-
