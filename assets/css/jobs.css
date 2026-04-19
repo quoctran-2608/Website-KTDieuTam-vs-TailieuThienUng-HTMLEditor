@@ -720,7 +720,7 @@
   color: #b45309;
 }
 
-@keyframes pulse-ring {
+@keyframes jobs-pulse-ring {
   0% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.5); }
   70% { box-shadow: 0 0 0 6px rgba(234, 179, 8, 0); }
   100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); }
@@ -744,7 +744,7 @@
   height: 8px;
   background-color: #eab308;
   border-radius: 50%;
-  animation: pulse-ring 2s infinite;
+  animation: jobs-pulse-ring 2s infinite;
 }
 
 .job-card-save-btn {
