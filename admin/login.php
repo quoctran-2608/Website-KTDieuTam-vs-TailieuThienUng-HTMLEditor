@@ -94,6 +94,8 @@ if (isset($_GET['debug']) && (string) $_GET['debug'] === '1') {
             csrf_session=<?= h((string) (isset($_SESSION['_csrf_token']) ? 'yes' : 'no')) ?> |
             method=<?= h((string) ($_SERVER['REQUEST_METHOD'] ?? '')) ?> |
             cookie_path=<?= h((string) (session_get_cookie_params()['path'] ?? '')) ?> |
+            admin_base=<?= h(admin_base_path_uri()) ?> |
+            site_base=<?= h(site_base_path_uri()) ?> |
             session_id_len=<?= h((string) strlen((string) session_id())) ?>
           </div>
         <?php endif; ?>

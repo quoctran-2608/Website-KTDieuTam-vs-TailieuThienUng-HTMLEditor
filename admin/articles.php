@@ -70,18 +70,7 @@ function build_articles_query(array $params): string
  */
 function article_public_url(array $article): string
 {
-  $canonical = trim((string) ($article['canonical'] ?? ''));
-  if ($canonical !== '') {
-    return $canonical;
-  }
-  $href = trim((string) ($article['href'] ?? ''));
-  if ($href === '') {
-    return '#';
-  }
-  if (preg_match('/^(https?:)?\/\//i', $href) === 1) {
-    return $href;
-  }
-  return '../' . ltrim($href, '/');
+  return public_article_url($article);
 }
 ?>
 

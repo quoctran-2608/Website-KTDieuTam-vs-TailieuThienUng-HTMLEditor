@@ -2,6 +2,46 @@
 declare(strict_types=1);
 
 /**
+ * Resolve admin base path from current request (supports subfolder deploy).
+ * Example:
+ * - /admin/login.php -> /admin
+ * - /Ketoandieutam.com/admin/login.php -> /Ketoandieutam.com/admin
+ */
+function admin_base_path_uri(): string
+{
+  $scriptName = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? '/admin/index.php'));
+  $dir = dirname($scriptName);
+  if ($dir === '' || $dir === '.') {
+    $dir = '/admin';
+  }
+  $dir = '/' . trim($dir, '/');
+  return $dir === '//' ? '/' : $dir;
+}
+
+/**
+ * Resolve site base path from admin base path.
+ * Example:
+ * - /admin -> '' (site at root)
+ * - /Ketoandieutam.com/admin -> /Ketoandieutam.com
+ */
+function site_base_path_uri(): string
+{
+  $adminBase = admin_base_path_uri();
+  $normalized = rtrim($adminBase, '/');
+  if ($normalized === '/admin') {
+    return '';
+  }
+  if (str_ends_with($normalized, '/admin')) {
+    $site = substr($normalized, 0, -strlen('/admin'));
+    if ($site === '' || $site === '/') {
+      return '';
+    }
+    return $site;
+  }
+  return '';
+}
+
+/**
  * Start secure session for admin module.
  */
 function bootstrap_session(): void
@@ -15,15 +55,7 @@ function bootstrap_session(): void
   // Do not hardcode '/admin' because this project can run under a subfolder
   // (e.g. /Ketoandieutam.com/admin). Hardcoding breaks session cookie scope
   // and causes silent CSRF/login loops.
-  $scriptName = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? '/admin/index.php'));
-  $cookiePath = dirname($scriptName);
-  if ($cookiePath === '' || $cookiePath === '.') {
-    $cookiePath = '/admin';
-  }
-  $cookiePath = '/' . trim($cookiePath, '/');
-  if ($cookiePath === '//') {
-    $cookiePath = '/';
-  }
+  $cookiePath = admin_base_path_uri();
   session_set_cookie_params([
     'lifetime' => 0,
     'path' => $cookiePath,
@@ -49,8 +81,54 @@ function h(?string $value): string
  */
 function admin_url(string $path = ''): string
 {
+  $base = admin_base_path_uri();
   $path = ltrim($path, '/');
-  return $path === '' ? './' : './' . $path;
+  if ($path === '') {
+    return rtrim($base, '/') . '/';
+  }
+  return rtrim($base, '/') . '/' . $path;
+}
+
+/**
+ * Build public site URL from path/href, aware of subfolder deployment.
+ */
+function site_url(string $path = ''): string
+{
+  $path = trim($path);
+  if ($path === '') {
+    $base = site_base_path_uri();
+    return $base === '' ? '/' : (rtrim($base, '/') . '/');
+  }
+  if (preg_match('/^(https?:)?\/\//i', $path) === 1) {
+    return $path;
+  }
+
+  $base = site_base_path_uri();
+  $clean = ltrim($path, '/');
+  if ($base === '') {
+    return '/' . $clean;
+  }
+  return rtrim($base, '/') . '/' . $clean;
+}
+
+/**
+ * Resolve article public URL.
+ *
+ * Prefer local href (subfolder-safe), fallback to canonical.
+ *
+ * @param array<string,mixed> $article
+ */
+function public_article_url(array $article): string
+{
+  $href = trim((string) ($article['href'] ?? ''));
+  if ($href !== '') {
+    return site_url($href);
+  }
+  $canonical = trim((string) ($article['canonical'] ?? ''));
+  if ($canonical !== '') {
+    return $canonical;
+  }
+  return '#';
 }
 
 /**
@@ -90,7 +168,7 @@ function client_ip(): string
  */
 function current_request_uri(): string
 {
-  return (string) ($_SERVER['REQUEST_URI'] ?? '/admin/');
+  return (string) ($_SERVER['REQUEST_URI'] ?? (admin_url('')));
 }
 
 /**
