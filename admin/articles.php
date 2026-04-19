@@ -119,17 +119,6 @@ function node_label(array $node): string
 $activeSectionNode = $sectionTreeMap[$activeSection] ?? null;
 $sectionChildren = is_array($activeSectionNode['children'] ?? null) ? $activeSectionNode['children'] : [];
 
-$sectionCountMap = [];
-foreach (($facets['sections'] ?? []) as $entry) {
-  if (!is_array($entry)) {
-    continue;
-  }
-  $key = (string) ($entry['key'] ?? '');
-  if ($key !== '') {
-    $sectionCountMap[$key] = (int) ($entry['count'] ?? 0);
-  }
-}
-
 $kindNodes = [];
 $topicLv1Nodes = [];
 $topicLv2Nodes = [];
@@ -237,7 +226,6 @@ if ($activeSection === 'thu-vien') {
 $query = query_articles_index($filters);
 $items = $query['items'];
 $meta = $query['meta'];
-$applied = $query['filters'];
 $activeSectionLabel = $activeSection === 'ban-tin' ? 'Bản tin' : 'Thư viện';
 $contextParts = [$activeSectionLabel];
 if ($activeKindLabel !== '') {
@@ -278,7 +266,6 @@ if ($sidebarTreeMode === 'library') {
           }
           $childEntries[] = [
             'label' => node_label($lv2Node),
-            'count' => (int) ($lv2Node['count'] ?? 0),
             'active' => $activeTopicLv2Key === $lv2Key,
             'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
               'section' => 'thu-vien',
@@ -291,7 +278,6 @@ if ($sidebarTreeMode === 'library') {
       }
       $groupEntries[] = [
         'label' => node_label($lv1Node),
-        'count' => (int) ($lv1Node['count'] ?? 0),
         'active' => $lv1Active,
         'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
           'section' => 'thu-vien',
@@ -304,7 +290,6 @@ if ($sidebarTreeMode === 'library') {
 
     $sidebarTreeRoots[] = [
       'label' => node_label($kindNode),
-      'count' => (int) ($kindNode['count'] ?? 0),
       'active' => $kindActive,
       'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
         'section' => 'thu-vien',
@@ -328,7 +313,6 @@ if ($sidebarTreeMode === 'library') {
         }
         $childEntries[] = [
           'label' => node_label($lv2Node),
-          'count' => (int) ($lv2Node['count'] ?? 0),
           'active' => $activeTopicLv2Key === $lv2Key,
           'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
             'section' => 'ban-tin',
@@ -340,7 +324,6 @@ if ($sidebarTreeMode === 'library') {
     }
     $sidebarTreeRoots[] = [
       'label' => node_label($lv1Node),
-      'count' => (int) ($lv1Node['count'] ?? 0),
       'active' => $lv1Active,
       'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
         'section' => 'ban-tin',
@@ -357,19 +340,12 @@ ob_start();
   <h3 class="sidebar-tree-title">Cây mục bài viết</h3>
   <div class="sidebar-section-switch">
     <a class="sidebar-section-btn <?= $activeSection === 'thu-vien' ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($scopeParams + ['section' => 'thu-vien']))) ?>">
-      <i class="fa-solid fa-book-open"></i>
       <span>Thư viện</span>
-      <small><?= h((string) ($sectionCountMap['thu-vien'] ?? 0)) ?></small>
     </a>
     <a class="sidebar-section-btn <?= $activeSection === 'ban-tin' ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($scopeParams + ['section' => 'ban-tin']))) ?>">
-      <i class="fa-solid fa-newspaper"></i>
       <span>Bản tin</span>
-      <small><?= h((string) ($sectionCountMap['ban-tin'] ?? 0)) ?></small>
     </a>
   </div>
-  <a class="sidebar-tree-reset" href="<?= h(admin_url('articles.php' . build_articles_query($scopeParams + ['section' => $activeSection]))) ?>">
-    Tất cả trong <?= h($activeSectionLabel) ?>
-  </a>
 
   <div class="sidebar-tree-area">
     <?php foreach ($sidebarTreeRoots as $root): ?>
@@ -378,7 +354,6 @@ ob_start();
         continue;
       }
       $rootLabel = (string) ($root['label'] ?? '');
-      $rootCount = (int) ($root['count'] ?? 0);
       $rootHref = (string) ($root['href'] ?? '#');
       $rootActive = !empty($root['active']);
       if ($rootLabel === '') {
@@ -388,9 +363,6 @@ ob_start();
       <section class="sidebar-tree-node <?= $rootActive ? 'is-active' : '' ?>">
         <a class="sidebar-tree-root <?= $rootActive ? 'is-active' : '' ?>" href="<?= h($rootHref) ?>">
           <span><?= h($rootLabel) ?></span>
-          <?php if ($rootCount > 0): ?>
-            <small><?= h((string) $rootCount) ?></small>
-          <?php endif; ?>
         </a>
 
         <?php if ($sidebarTreeMode === 'library'): ?>
@@ -405,7 +377,6 @@ ob_start();
                   continue;
                 }
                 $groupLabel = (string) ($group['label'] ?? '');
-                $groupCount = (int) ($group['count'] ?? 0);
                 $groupHref = (string) ($group['href'] ?? '#');
                 $groupActive = !empty($group['active']);
                 $childEntries = is_array($group['children'] ?? null) ? $group['children'] : [];
@@ -416,9 +387,6 @@ ob_start();
                 <div class="sidebar-tree-group-wrap">
                   <a class="sidebar-tree-group <?= $groupActive ? 'is-active' : '' ?>" href="<?= h($groupHref) ?>">
                     <span><?= h($groupLabel) ?></span>
-                    <?php if ($groupCount > 0): ?>
-                      <small><?= h((string) $groupCount) ?></small>
-                    <?php endif; ?>
                   </a>
 
                   <?php if ($groupActive && !empty($childEntries)): ?>
@@ -429,7 +397,6 @@ ob_start();
                           continue;
                         }
                         $childLabel = (string) ($child['label'] ?? '');
-                        $childCount = (int) ($child['count'] ?? 0);
                         $childHref = (string) ($child['href'] ?? '#');
                         $childActive = !empty($child['active']);
                         if ($childLabel === '') {
@@ -438,9 +405,6 @@ ob_start();
                         ?>
                         <a class="sidebar-tree-child <?= $childActive ? 'is-active' : '' ?>" href="<?= h($childHref) ?>">
                           <span><?= h($childLabel) ?></span>
-                          <?php if ($childCount > 0): ?>
-                            <small><?= h((string) $childCount) ?></small>
-                          <?php endif; ?>
                         </a>
                       <?php endforeach; ?>
                     </div>
@@ -461,7 +425,6 @@ ob_start();
                   continue;
                 }
                 $childLabel = (string) ($child['label'] ?? '');
-                $childCount = (int) ($child['count'] ?? 0);
                 $childHref = (string) ($child['href'] ?? '#');
                 $childActive = !empty($child['active']);
                 if ($childLabel === '') {
@@ -470,9 +433,6 @@ ob_start();
                 ?>
                 <a class="sidebar-tree-child <?= $childActive ? 'is-active' : '' ?>" href="<?= h($childHref) ?>">
                   <span><?= h($childLabel) ?></span>
-                  <?php if ($childCount > 0): ?>
-                    <small><?= h((string) $childCount) ?></small>
-                  <?php endif; ?>
                 </a>
               <?php endforeach; ?>
             </div>
@@ -501,14 +461,12 @@ admin_layout_header([
     <div>
       <h2>Danh sách bài</h2>
       <p>
-        Ngữ cảnh: <?= h($contextSummary) ?> ·
-        Trang <?= h((string) $meta['page']) ?>/<?= h((string) $meta['total_pages']) ?> ·
-        Đang hiển thị <?= h((string) count($items)) ?> / <?= h((string) $meta['total']) ?> bài.
+        <?= h($contextSummary) ?> · <?= h((string) $meta['total']) ?> bài
       </p>
     </div>
     <a class="clear-filter-btn" href="<?= h(admin_url('articles.php' . build_articles_query(['section' => $activeSection]))) ?>">
       <i class="fa-solid fa-filter-circle-xmark"></i>
-      <span>Đặt lại ngữ cảnh</span>
+      <span>Đặt lại</span>
     </a>
   </div>
 
@@ -517,52 +475,43 @@ admin_layout_header([
     <input type="hidden" name="library_kind_key" value="<?= h((string) $filters['library_kind_key']) ?>">
     <input type="hidden" name="topic_lv1_key" value="<?= h((string) $filters['topic_lv1_key']) ?>">
     <input type="hidden" name="topic_lv2_key" value="<?= h((string) $filters['topic_lv2_key']) ?>">
-    <div class="filter-grid compact">
-      <label class="filter-field span-2">
-        <span>Tìm nhanh</span>
-        <input
-          type="text"
-          name="q"
-          value="<?= h((string) $filters['q']) ?>"
-          placeholder="Tìm theo tiêu đề, mã bài, đường dẫn..."
-        >
-      </label>
+    <div class="editor-toolbar-row">
+      <input
+        class="toolbar-search"
+        type="text"
+        name="q"
+        value="<?= h((string) $filters['q']) ?>"
+        placeholder="Tìm tiêu đề, mã bài..."
+        aria-label="Tìm nhanh"
+      >
 
-      <label class="filter-field">
-        <span>Sắp xếp</span>
-        <select name="sort">
-          <?php
-          $sortOptions = [
-            'latest' => 'Mới nhất',
-            'oldest' => 'Cũ nhất',
-            'title_asc' => 'Tiêu đề A đến Z',
-            'title_desc' => 'Tiêu đề Z đến A',
-          ];
-          foreach ($sortOptions as $value => $label):
-          ?>
-            <option value="<?= h($value) ?>" <?= $filters['sort'] === $value ? 'selected' : '' ?>>
-              <?= h($label) ?>
-            </option>
-          <?php endforeach; ?>
-        </select>
-      </label>
+      <select class="toolbar-select" name="sort" aria-label="Sắp xếp">
+        <?php
+        $sortOptions = [
+          'latest' => 'Mới nhất',
+          'oldest' => 'Cũ nhất',
+          'title_asc' => 'A-Z',
+          'title_desc' => 'Z-A',
+        ];
+        foreach ($sortOptions as $value => $label):
+        ?>
+          <option value="<?= h($value) ?>" <?= $filters['sort'] === $value ? 'selected' : '' ?>>
+            <?= h($label) ?>
+          </option>
+        <?php endforeach; ?>
+      </select>
 
-      <label class="filter-field">
-        <span>Mỗi trang</span>
-        <select name="per_page">
-          <?php foreach ([20, 30, 50, 100] as $size): ?>
-            <option value="<?= h((string) $size) ?>" <?= (int) $filters['per_page'] === $size ? 'selected' : '' ?>>
-              <?= h((string) $size) ?>
-            </option>
-          <?php endforeach; ?>
-        </select>
-      </label>
-    </div>
+      <select class="toolbar-select slim" name="per_page" aria-label="Mỗi trang">
+        <?php foreach ([20, 30, 50, 100] as $size): ?>
+          <option value="<?= h((string) $size) ?>" <?= (int) $filters['per_page'] === $size ? 'selected' : '' ?>>
+            <?= h((string) $size) ?>/tr
+          </option>
+        <?php endforeach; ?>
+      </select>
 
-    <div class="filter-actions">
       <button class="filter-submit-btn" type="submit">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <span>Tìm</span>
+        <span>Lọc</span>
       </button>
     </div>
   </form>
@@ -578,11 +527,9 @@ admin_layout_header([
         <thead>
           <tr>
             <th>Tiêu đề</th>
-            <th>Mục</th>
-            <th>Chủ đề</th>
-            <th>Ngày</th>
-            <th>Tác giả</th>
-            <th>Hành động</th>
+            <th>Ngữ cảnh</th>
+            <th>Cập nhật</th>
+            <th>Tác vụ</th>
           </tr>
         </thead>
         <tbody>
@@ -594,6 +541,9 @@ admin_layout_header([
                   <strong><?= h((string) ($article['title'] ?? '')) ?></strong>
                   <div class="article-subline">
                     <code><?= h((string) ($article['id'] ?? '')) ?></code>
+                    <?php if (!empty($article['path'])): ?>
+                      <small><?= h((string) $article['path']) ?></small>
+                    <?php endif; ?>
                   </div>
                 </div>
               </td>
@@ -603,29 +553,30 @@ admin_layout_header([
                 if ($sectionLabel === '') {
                   $sectionLabel = (string) ($article['section'] ?? '');
                 }
+                $contextTokens = [];
+                if (!empty($article['library_kind_label'])) {
+                  $contextTokens[] = (string) $article['library_kind_label'];
+                }
+                if (!empty($article['topic_lv1_label'])) {
+                  $contextTokens[] = (string) $article['topic_lv1_label'];
+                }
+                if (!empty($article['topic_lv2_label'])) {
+                  $contextTokens[] = (string) $article['topic_lv2_label'];
+                }
+                $contextText = implode(' › ', $contextTokens);
                 ?>
-                <span class="event-pill"><?= h($sectionLabel) ?></span>
-              </td>
-              <td>
                 <div class="taxonomy-stack">
-                  <?php if (!empty($article['library_kind_label'])): ?>
-                    <span><?= h((string) $article['library_kind_label']) ?></span>
-                  <?php endif; ?>
-                  <?php if (!empty($article['topic_lv1_label'])): ?>
-                    <small><?= h((string) $article['topic_lv1_label']) ?></small>
-                  <?php endif; ?>
-                  <?php if (!empty($article['topic_lv2_label'])): ?>
-                    <small><?= h((string) $article['topic_lv2_label']) ?></small>
+                  <span><?= h($sectionLabel) ?></span>
+                  <?php if ($contextText !== ''): ?>
+                    <small><?= h($contextText) ?></small>
                   <?php endif; ?>
                 </div>
               </td>
               <td>
                 <div class="date-stack">
-                  <span>Đăng: <?= h((string) ($article['publish_date'] ?: '—')) ?></span>
-                  <small>Sửa: <?= h((string) ($article['modified_date'] ?: '—')) ?></small>
+                  <span><?= h((string) ($article['modified_date'] ?: $article['publish_date'] ?: '—')) ?></span>
                 </div>
               </td>
-              <td><?= h((string) ($article['author_name'] ?: '—')) ?></td>
               <td>
                 <div class="table-action-row">
                   <a class="table-action-link" href="<?= h(article_public_url($article)) ?>" target="_blank" rel="noopener">
