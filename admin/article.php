@@ -135,7 +135,7 @@ function build_diff_rows(array $before, array $after): array
     'excerpt' => 'Mô tả ngắn',
     'publish_date' => 'Ngày đăng',
     'modified_date' => 'Ngày sửa',
-    'tags_text' => 'Tags',
+    'tags_text' => 'Thẻ',
   ];
 
   foreach ($fields as $key => $label) {
@@ -221,13 +221,13 @@ if ($article !== null) {
           if (!empty($result['ok'])) {
             $status = [
               'type' => 'success',
-              'message' => 'Rollback thành công từ backup gần nhất.',
+              'message' => 'Đã khôi phục thành công từ bản sao lưu gần nhất.',
             ];
             $publishStatus = $result;
         } else {
           $status = [
             'type' => 'danger',
-            'message' => 'Rollback thất bại: ' . (string) ($result['message'] ?? 'unknown'),
+            'message' => 'Khôi phục thất bại: ' . (string) ($result['message'] ?? 'không rõ lỗi'),
           ];
           $publishStatus = $result;
         }
@@ -283,13 +283,13 @@ if ($article !== null) {
               $form = array_merge($form, $clean);
               $status = [
                 'type' => 'success',
-                'message' => 'Publish thành công và đã sync dữ liệu index.',
+                'message' => 'Đã cập nhật bài viết ra trang.',
               ];
               $publishStatus = $result;
             } else {
               $status = [
                 'type' => 'danger',
-                'message' => 'Publish thất bại: ' . (string) ($result['message'] ?? 'unknown'),
+                'message' => 'Cập nhật thất bại: ' . (string) ($result['message'] ?? 'không rõ lỗi'),
               ];
               $publishStatus = $result;
             }
@@ -431,18 +431,18 @@ $innerScript = <<<'JS'
 JS;
 
 admin_layout_header([
-  'title' => 'Editor bài viết',
+  'title' => 'Sửa bài viết',
   'active' => 'articles',
-  'description' => 'Editor tập trung thao tác chính như trang mẫu: soạn thảo, preview, publish. Dữ liệu kỹ thuật được đẩy sang mục nâng cao.',
-  'phase_label' => 'Editor UX v4 — reference-inspired',
+  'description' => 'Sửa nội dung bài viết, xem trước và cập nhật ra trang thật.',
+  'sidebar_note' => 'Khu vực quản trị nội dung',
   'inner_script' => $innerScript,
 ]);
 ?>
 
 <section class="admin-panel">
   <div class="panel-head">
-    <h2>Editor bài viết</h2>
-    <p>Bố cục 2 cột ưu tiên trải nghiệm biên tập: trái để soạn thảo, phải để theo dõi trạng thái và lịch sử.</p>
+    <h2>Trang sửa bài viết</h2>
+    <p>Bên trái để sửa nội dung, bên phải để theo dõi trạng thái và lịch sử thao tác.</p>
   </div>
 
   <?php if ($id === ''): ?>
@@ -467,8 +467,8 @@ admin_layout_header([
     <div class="parse-fail-banner">
       <i class="fa-solid fa-triangle-exclamation"></i>
       <div>
-        <strong>Parser lỗi: <?= h((string) ($parseResult['code'] ?? 'unknown')) ?></strong>
-        <p><?= h((string) ($parseResult['message'] ?? 'Không xác định được lỗi parse.')) ?></p>
+        <strong>Lỗi xử lý nội dung: <?= h((string) ($parseResult['code'] ?? 'không rõ lỗi')) ?></strong>
+        <p><?= h((string) ($parseResult['message'] ?? 'Không xác định được lỗi xử lý nội dung.')) ?></p>
       </div>
     </div>
   <?php else: ?>
@@ -485,7 +485,7 @@ admin_layout_header([
     <?php
     $draftUpdatedAt = is_array($draftCurrent) ? format_admin_datetime((string) ($draftCurrent['updated_at'] ?? '')) : '';
     if ($draftUpdatedAt === '') {
-      $draftUpdatedAt = 'Chưa có draft';
+      $draftUpdatedAt = 'Chưa có bản nháp';
     }
     $draftUpdatedBy = '—';
     if (is_array($draftCurrent)) {
@@ -497,9 +497,9 @@ admin_layout_header([
 
     $latestEventRaw = (string) ($latestPublish['event'] ?? '');
     if ($latestEventRaw === 'publish') {
-      $latestEventLabel = 'Publish';
+      $latestEventLabel = 'Cập nhật ra trang';
     } elseif ($latestEventRaw === 'rollback') {
-      $latestEventLabel = 'Rollback';
+      $latestEventLabel = 'Khôi phục';
     } elseif ($latestEventRaw !== '') {
       $latestEventLabel = ucfirst($latestEventRaw);
     } else {
@@ -518,8 +518,8 @@ admin_layout_header([
     <div class="parse-ok-banner">
       <i class="fa-solid fa-circle-check"></i>
       <div>
-        <strong>Bài này đã parse-safe</strong>
-        <p>Có thể biên tập trực tiếp trong editor rich text và publish an toàn.</p>
+        <strong>Bài viết sẵn sàng để chỉnh sửa</strong>
+        <p>Bạn có thể sửa trực tiếp, xem trước và cập nhật ra trang.</p>
       </div>
     </div>
 
@@ -536,10 +536,10 @@ admin_layout_header([
       </div>
       <div class="editor-pill-row">
         <span class="editor-pill"><strong>ID:</strong> <code><?= h((string) ($article['id'] ?? '')) ?></code></span>
-        <span class="editor-pill"><strong>Section:</strong> <?= h($sectionLabel) ?></span>
-        <span class="editor-pill"><strong>Draft:</strong> <?= h($draftUpdatedAt) ?></span>
-        <span class="editor-pill"><strong>By:</strong> <?= h($draftUpdatedBy) ?></span>
-        <span class="editor-pill"><strong>Event gần nhất:</strong> <?= h($latestEventLabel) ?> · <?= h($latestEventAt) ?></span>
+        <span class="editor-pill"><strong>Mục:</strong> <?= h($sectionLabel) ?></span>
+        <span class="editor-pill"><strong>Bản nháp:</strong> <?= h($draftUpdatedAt) ?></span>
+        <span class="editor-pill"><strong>Người sửa:</strong> <?= h($draftUpdatedBy) ?></span>
+        <span class="editor-pill"><strong>Lần thao tác gần nhất:</strong> <?= h($latestEventLabel) ?> · <?= h($latestEventAt) ?></span>
       </div>
     </div>
 
@@ -554,7 +554,7 @@ admin_layout_header([
         <article class="admin-panel">
           <div class="panel-head">
             <h2>Soạn thảo nội dung</h2>
-            <p>Ctrl/Cmd + S để lưu draft nhanh. Có thể tiếp tục dùng nút Publish/Rollback ngay trên thanh tác vụ.</p>
+            <p>Nhấn tổ hợp phím lưu nhanh để lưu bản nháp. Các nút cập nhật và khôi phục nằm ngay phía trên.</p>
           </div>
 
           <form method="post" class="article-editor-form editor-v4-form" id="articleEditorForm" novalidate>
@@ -564,21 +564,21 @@ admin_layout_header([
             <div class="editor-action-bar">
               <button type="submit" class="filter-submit-btn" onclick="document.getElementById('articleIntent').value='save_draft'">
                 <i class="fa-solid fa-floppy-disk"></i>
-                <span>Lưu Draft</span>
+                <span>Lưu bản nháp</span>
               </button>
               <button type="submit" class="clear-filter-btn inline" onclick="document.getElementById('articleIntent').value='preview_only'">
                 <i class="fa-solid fa-eye"></i>
-                <span>Lưu + Preview</span>
+                <span>Lưu và xem trước</span>
               </button>
-              <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận publish bài này? Hệ thống sẽ backup trước khi ghi file thật.');">
+              <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận cập nhật bài này ra trang? Hệ thống sẽ sao lưu trước khi ghi file thật.');">
                 <i class="fa-solid fa-paper-plane"></i>
-                <span>Publish</span>
+                <span>Cập nhật ra trang</span>
               </button>
-              <button type="submit" class="rollback-btn inline" onclick="document.getElementById('articleIntent').value='rollback_latest'; return confirm('Xác nhận rollback về backup gần nhất?');">
+              <button type="submit" class="rollback-btn inline" onclick="document.getElementById('articleIntent').value='rollback_latest'; return confirm('Xác nhận khôi phục từ bản sao lưu gần nhất?');">
                 <i class="fa-solid fa-rotate-left"></i>
-                <span>Rollback gần nhất</span>
+                <span>Khôi phục gần nhất</span>
               </button>
-              <span class="editor-shortcut-hint">Mẹo: dùng Ctrl/Cmd + S để lưu draft.</span>
+              <span class="editor-shortcut-hint">Mẹo: bấm tổ hợp phím lưu để lưu nhanh bản nháp.</span>
             </div>
 
             <div class="editor-meta-grid">
@@ -607,7 +607,7 @@ admin_layout_header([
               </label>
 
               <label class="filter-field span-2">
-                <span>Tags (3-7 tag, ngăn cách bằng dấu phẩy) *</span>
+                <span>Thẻ (3-7 thẻ, ngăn cách bằng dấu phẩy) *</span>
                 <input type="text" name="tags_text" value="<?= h((string) ($form['tags_text'] ?? '')) ?>" required>
                 <?php if (!empty($validationErrors['tags_text'])): ?><small class="field-error"><?= h((string) $validationErrors['tags_text']) ?></small><?php endif; ?>
               </label>
@@ -623,14 +623,14 @@ admin_layout_header([
 
         <article class="admin-panel preview-panel-v4">
           <div class="panel-head">
-            <h2>Preview render</h2>
-            <p>Xem ngay kết quả nội dung bạn đang chỉnh trước khi publish.</p>
+            <h2>Xem trước nội dung</h2>
+            <p>Xem nhanh kết quả hiển thị trước khi cập nhật ra trang.</p>
           </div>
           <div class="preview-meta">
-            <p><strong>Title:</strong> <?= h((string) ($previewMeta['title'] ?? '')) ?></p>
-            <p><strong>Excerpt:</strong> <?= h((string) ($previewMeta['excerpt'] ?? '')) ?></p>
-            <p><strong>Publish:</strong> <?= h((string) ($previewMeta['publishDate'] ?? '')) ?> · <strong>Modified:</strong> <?= h((string) ($previewMeta['modifiedDate'] ?? '')) ?></p>
-            <p><strong>Tags:</strong> <?= h(implode(', ', is_array($previewMeta['tags'] ?? null) ? array_map('strval', $previewMeta['tags']) : [])) ?></p>
+            <p><strong>Tiêu đề:</strong> <?= h((string) ($previewMeta['title'] ?? '')) ?></p>
+            <p><strong>Mô tả ngắn:</strong> <?= h((string) ($previewMeta['excerpt'] ?? '')) ?></p>
+            <p><strong>Ngày đăng:</strong> <?= h((string) ($previewMeta['publishDate'] ?? '')) ?> · <strong>Ngày sửa:</strong> <?= h((string) ($previewMeta['modifiedDate'] ?? '')) ?></p>
+            <p><strong>Thẻ:</strong> <?= h(implode(', ', is_array($previewMeta['tags'] ?? null) ? array_map('strval', $previewMeta['tags']) : [])) ?></p>
           </div>
           <div class="preview-host" id="previewHost">
             <?= $previewHtml !== '' ? $previewHtml : '<p><em>Chưa có nội dung preview.</em></p>' ?>
@@ -638,7 +638,7 @@ admin_layout_header([
         </article>
 
         <details class="advanced-section">
-          <summary><i class="fa-regular fa-clone"></i> Xem diff thay đổi (before / after)</summary>
+          <summary><i class="fa-regular fa-clone"></i> Xem nội dung đã đổi</summary>
           <?php if (empty($diffRows)): ?>
             <div class="empty-state">
               <i class="fa-regular fa-clone"></i>
@@ -649,9 +649,9 @@ admin_layout_header([
               <table class="admin-table">
                 <thead>
                   <tr>
-                    <th>Field</th>
-                    <th>Before</th>
-                    <th>After</th>
+                    <th>Mục</th>
+                    <th>Trước khi sửa</th>
+                    <th>Sau khi sửa</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -681,11 +681,11 @@ admin_layout_header([
               <p><?= h((string) ($article['title'] ?? '')) ?></p>
             </div>
             <div>
-              <strong>Href</strong>
+              <strong>Đường dẫn</strong>
               <code><?= h((string) ($article['href'] ?? '')) ?></code>
             </div>
             <div>
-              <strong>Draft gần nhất</strong>
+              <strong>Bản nháp gần nhất</strong>
               <p><?= h($draftUpdatedAt) ?> · <?= h($draftUpdatedBy) ?></p>
             </div>
             <div>
@@ -693,7 +693,7 @@ admin_layout_header([
               <p><?= h($latestEventLabel) ?> · <?= h($latestEventAt) ?> · <?= h($latestEventBy) ?></p>
             </div>
             <div>
-              <strong>Publish date / Modified date</strong>
+              <strong>Ngày đăng / Ngày sửa</strong>
               <p><?= h((string) ($article['publish_date'] ?? '—')) ?> / <?= h((string) ($article['modified_date'] ?? '—')) ?></p>
             </div>
           </div>
@@ -701,13 +701,13 @@ admin_layout_header([
 
         <article class="admin-panel editor-side-card">
           <div class="panel-head">
-            <h2>Lịch sử publish gần đây</h2>
-            <p>Timeline ngắn để kiểm tra nhanh thao tác publish/rollback.</p>
+            <h2>Lịch sử cập nhật gần đây</h2>
+            <p>Danh sách lần cập nhật và khôi phục gần nhất.</p>
           </div>
           <?php if (empty($recentHistory)): ?>
             <div class="empty-state">
               <i class="fa-regular fa-folder-open"></i>
-              <p>Chưa có lịch sử publish/rollback cho bài này.</p>
+              <p>Chưa có lịch sử cập nhật cho bài này.</p>
             </div>
           <?php else: ?>
             <div class="editor-history-list">
@@ -718,13 +718,13 @@ admin_layout_header([
                 }
                 $rowEvent = (string) ($row['event'] ?? '');
                 if ($rowEvent === 'publish') {
-                  $rowEventLabel = 'Publish';
+                  $rowEventLabel = 'Cập nhật ra trang';
                 } elseif ($rowEvent === 'rollback') {
-                  $rowEventLabel = 'Rollback';
+                  $rowEventLabel = 'Khôi phục';
                 } elseif ($rowEvent !== '') {
                   $rowEventLabel = ucfirst($rowEvent);
                 } else {
-                  $rowEventLabel = 'N/A';
+                  $rowEventLabel = 'Không rõ';
                 }
                 $rowTime = format_admin_datetime((string) ($row['published_at'] ?? $row['rolled_back_at'] ?? ''));
                 if ($rowTime === '') {
@@ -755,21 +755,21 @@ admin_layout_header([
               <span class="metric-icon success"><i class="fa-solid fa-shield-check"></i></span>
               <div class="metric-body">
                 <h3><?= h((string) ($auditMeta['safe_count'] ?? 0)) ?></h3>
-                <p>Bài parse-safe</p>
+                <p>Bài xử lý đúng</p>
               </div>
             </article>
             <article class="metric-card">
               <span class="metric-icon warning"><i class="fa-solid fa-bug"></i></span>
               <div class="metric-body">
                 <h3><?= h((string) ($auditMeta['fail_count'] ?? 0)) ?></h3>
-                <p>Bài lỗi parse</p>
+                <p>Bài xử lý lỗi</p>
               </div>
             </article>
             <article class="metric-card">
               <span class="metric-icon info"><i class="fa-solid fa-percent"></i></span>
               <div class="metric-body">
                 <h3><?= h(number_format($auditSafeRate, 2, ',', '.')) ?>%</h3>
-                <p>Tỷ lệ parse-safe</p>
+                <p>Tỷ lệ xử lý đúng</p>
               </div>
             </article>
             <article class="metric-card">
@@ -784,7 +784,7 @@ admin_layout_header([
           <p style="margin-top:12px;">
             <a class="clear-filter-btn inline" href="<?= h(admin_url('article.php' . build_article_query(['id' => $id, 'audit' => 1]))) ?>">
               <i class="fa-solid fa-arrows-rotate"></i>
-              <span>Chạy lại parser audit</span>
+              <span>Chạy kiểm tra lại</span>
             </a>
           </p>
 
@@ -792,26 +792,26 @@ admin_layout_header([
             <article class="parser-detail-card">
               <h4>Vùng .article-prose</h4>
               <ul>
-                <li>Start: <code><?= h((string) ($prose['start'] ?? '')) ?></code></li>
-                <li>OpenEnd: <code><?= h((string) ($prose['open_tag_end'] ?? '')) ?></code></li>
-                <li>CloseStart: <code><?= h((string) ($prose['close_tag_start'] ?? '')) ?></code></li>
-                <li>End: <code><?= h((string) ($prose['end'] ?? '')) ?></code></li>
-                <li>Inner length: <code><?= h((string) ($prose['inner_length'] ?? '')) ?></code></li>
+                <li>Vị trí bắt đầu: <code><?= h((string) ($prose['start'] ?? '')) ?></code></li>
+                <li>Cuối thẻ mở: <code><?= h((string) ($prose['open_tag_end'] ?? '')) ?></code></li>
+                <li>Đầu thẻ đóng: <code><?= h((string) ($prose['close_tag_start'] ?? '')) ?></code></li>
+                <li>Vị trí kết thúc: <code><?= h((string) ($prose['end'] ?? '')) ?></code></li>
+                <li>Độ dài nội dung: <code><?= h((string) ($prose['inner_length'] ?? '')) ?></code></li>
               </ul>
-              <p><strong>Preview:</strong> <?= h(preview_text((string) ($prose['inner'] ?? ''))) ?></p>
+              <p><strong>Xem nhanh:</strong> <?= h(preview_text((string) ($prose['inner'] ?? ''))) ?></p>
             </article>
 
             <article class="parser-detail-card">
               <h4>Vùng article-meta</h4>
               <ul>
-                <li>Start: <code><?= h((string) ($meta['start'] ?? '')) ?></code></li>
-                <li>OpenEnd: <code><?= h((string) ($meta['open_tag_end'] ?? '')) ?></code></li>
-                <li>CloseStart: <code><?= h((string) ($meta['close_tag_start'] ?? '')) ?></code></li>
-                <li>End: <code><?= h((string) ($meta['end'] ?? '')) ?></code></li>
-                <li>Inner length: <code><?= h((string) ($meta['inner_length'] ?? '')) ?></code></li>
+                <li>Vị trí bắt đầu: <code><?= h((string) ($meta['start'] ?? '')) ?></code></li>
+                <li>Cuối thẻ mở: <code><?= h((string) ($meta['open_tag_end'] ?? '')) ?></code></li>
+                <li>Đầu thẻ đóng: <code><?= h((string) ($meta['close_tag_start'] ?? '')) ?></code></li>
+                <li>Vị trí kết thúc: <code><?= h((string) ($meta['end'] ?? '')) ?></code></li>
+                <li>Độ dài nội dung: <code><?= h((string) ($meta['inner_length'] ?? '')) ?></code></li>
               </ul>
               <details>
-                <summary>Xem JSON article-meta hiện tại</summary>
+                <summary>Xem dữ liệu article-meta hiện tại</summary>
                 <pre class="json-preview"><?= h(pretty_json($metaPayload)) ?></pre>
               </details>
             </article>
@@ -819,27 +819,27 @@ admin_layout_header([
 
           <article class="admin-panel" style="margin-top:12px;">
             <div class="panel-head">
-              <h2>Publish / Rollback status</h2>
-              <p>Theo dõi record đầy đủ (hash, backup path, actor).</p>
+              <h2>Thông tin cập nhật và khôi phục</h2>
+              <p>Theo dõi chi tiết lần thao tác gần nhất.</p>
             </div>
             <?php if (is_array($publishStatus) && !empty($publishStatus)): ?>
               <div class="json-preview" style="margin-top:10px;"><?= h(pretty_json(is_array($publishStatus['record'] ?? null) ? $publishStatus['record'] : $publishStatus)) ?></div>
             <?php endif; ?>
             <?php if (is_array($latestPublish)): ?>
               <div class="publish-status-grid">
-                <p><strong>Latest event:</strong> <?= h((string) ($latestPublish['event'] ?? '')) ?></p>
-                <p><strong>Time:</strong> <?= h(format_admin_datetime((string) ($latestPublish['published_at'] ?? $latestPublish['rolled_back_at'] ?? ''))) ?></p>
-                <p><strong>Backup:</strong> <code><?= h((string) ($latestPublish['backup_path'] ?? $latestPublish['restored_from'] ?? '')) ?></code></p>
-                <p><strong>Target:</strong> <code><?= h((string) ($latestPublish['target_path'] ?? '')) ?></code></p>
+                <p><strong>Lần thao tác gần nhất:</strong> <?= h((string) ($latestPublish['event'] ?? '')) ?></p>
+                <p><strong>Thời gian:</strong> <?= h(format_admin_datetime((string) ($latestPublish['published_at'] ?? $latestPublish['rolled_back_at'] ?? ''))) ?></p>
+                <p><strong>Bản sao lưu:</strong> <code><?= h((string) ($latestPublish['backup_path'] ?? $latestPublish['restored_from'] ?? '')) ?></code></p>
+                <p><strong>Tệp đích:</strong> <code><?= h((string) ($latestPublish['target_path'] ?? '')) ?></code></p>
                 <?php if (isset($latestPublish['hash_before'], $latestPublish['hash_after'])): ?>
-                  <p><strong>Hash before:</strong> <code><?= h((string) $latestPublish['hash_before']) ?></code></p>
-                  <p><strong>Hash after:</strong> <code><?= h((string) $latestPublish['hash_after']) ?></code></p>
+                  <p><strong>Mã kiểm tra trước:</strong> <code><?= h((string) $latestPublish['hash_before']) ?></code></p>
+                  <p><strong>Mã kiểm tra sau:</strong> <code><?= h((string) $latestPublish['hash_after']) ?></code></p>
                 <?php endif; ?>
               </div>
             <?php else: ?>
               <div class="empty-state">
                 <i class="fa-regular fa-folder-open"></i>
-                <p>Chưa có publish record cho bài này.</p>
+                <p>Chưa có dữ liệu cập nhật cho bài này.</p>
               </div>
             <?php endif; ?>
 
@@ -848,10 +848,10 @@ admin_layout_header([
                 <table class="admin-table">
                   <thead>
                     <tr>
-                      <th>Time</th>
-                      <th>Event</th>
-                      <th>Actor</th>
-                      <th>Backup/Restore</th>
+                      <th>Thời gian</th>
+                      <th>Sự kiện</th>
+                      <th>Người thao tác</th>
+                      <th>Bản sao lưu/khôi phục</th>
                     </tr>
                   </thead>
                   <tbody>

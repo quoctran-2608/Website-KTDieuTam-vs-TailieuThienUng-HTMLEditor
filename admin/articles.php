@@ -9,7 +9,14 @@ require_role(['admin', 'editor']);
 
 $syncResult = sync_articles_index(false);
 if (!$syncResult['synced']) {
-  flash_set('warning', 'Không thể đồng bộ articles index: ' . (string) $syncResult['reason']);
+  $reasonMap = [
+    'source_missing' => 'không tìm thấy tệp dữ liệu bài viết',
+    'source_empty' => 'tệp dữ liệu đang rỗng',
+    'source_invalid_json' => 'tệp dữ liệu không đúng định dạng',
+  ];
+  $reasonCode = (string) ($syncResult['reason'] ?? '');
+  $reasonText = $reasonMap[$reasonCode] ?? ('mã lỗi: ' . $reasonCode);
+  flash_set('warning', 'Không thể cập nhật danh sách bài: ' . $reasonText . '.');
 }
 
 $cache = read_articles_index_cache();
@@ -242,15 +249,15 @@ if ($activeTopicLv2Label !== '') {
 admin_layout_header([
   'title' => 'Bài viết',
   'active' => 'articles',
-  'description' => 'Tách bạch Thư viện/Bản tin bằng tab, điều hướng theo ngữ cảnh để tìm và sửa bài nhanh hơn.',
-  'phase_label' => 'UX v2 — Tabs + contextual navigation',
+  'description' => 'Tìm bài theo mục và chủ đề, sau đó mở bài để chỉnh sửa.',
+  'sidebar_note' => 'Khu vực quản trị nội dung',
 ]);
 ?>
 
 <section class="admin-panel article-panel">
   <div class="panel-head">
-    <h2>Khu vực nội dung</h2>
-    <p>Chọn tab để làm việc đúng ngữ cảnh. Không gộp Thư viện và Bản tin để tránh rối.</p>
+    <h2>Chọn khu vực nội dung</h2>
+    <p>Chọn đúng mục trước khi tìm và sửa bài.</p>
   </div>
 
   <?php
@@ -295,7 +302,7 @@ admin_layout_header([
     <?php endif; ?>
 
     <div class="context-group">
-      <h3><?= $activeSection === 'thu-vien' ? 'Nhóm chủ đề' : 'Nhóm chủ đề Bản tin' ?></h3>
+      <h3><?= $activeSection === 'thu-vien' ? 'Nhóm chủ đề' : 'Nhóm chủ đề bản tin' ?></h3>
       <div class="context-chip-row">
         <?php
         $baseLv1Params = $baseTabParams + ['section' => $activeSection];
@@ -340,7 +347,7 @@ admin_layout_header([
       <h2>Danh sách bài</h2>
       <p>
         Trang <?= h((string) $meta['page']) ?>/<?= h((string) $meta['total_pages']) ?> ·
-        Hiển thị <?= h((string) count($items)) ?> / <?= h((string) $meta['total']) ?> bài.
+        Đang hiển thị <?= h((string) count($items)) ?> / <?= h((string) $meta['total']) ?> bài.
       </p>
     </div>
     <a class="clear-filter-btn" href="<?= h(admin_url('articles.php' . build_articles_query(['section' => $activeSection]))) ?>">
@@ -356,12 +363,12 @@ admin_layout_header([
     <input type="hidden" name="topic_lv2_key" value="<?= h((string) $filters['topic_lv2_key']) ?>">
     <div class="filter-grid compact">
       <label class="filter-field span-2">
-        <span>Tìm nhanh trong ngữ cảnh hiện tại</span>
+        <span>Tìm trong khu vực đang chọn</span>
         <input
           type="text"
           name="q"
           value="<?= h((string) $filters['q']) ?>"
-          placeholder="Tiêu đề, id, href..."
+          placeholder="Tiêu đề, mã bài, đường dẫn..."
         >
       </label>
 
@@ -372,8 +379,8 @@ admin_layout_header([
           $sortOptions = [
             'latest' => 'Mới nhất',
             'oldest' => 'Cũ nhất',
-            'title_asc' => 'Tiêu đề A -> Z',
-            'title_desc' => 'Tiêu đề Z -> A',
+            'title_asc' => 'Tiêu đề A đến Z',
+            'title_desc' => 'Tiêu đề Z đến A',
           ];
           foreach ($sortOptions as $value => $label):
           ?>
@@ -407,7 +414,7 @@ admin_layout_header([
   <?php if (empty($items)): ?>
     <div class="empty-state roomy">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <p>Không có bài nào khớp ngữ cảnh + từ khóa hiện tại.</p>
+      <p>Không có bài nào khớp điều kiện đang chọn.</p>
     </div>
   <?php else: ?>
     <div class="table-wrap">
@@ -415,8 +422,8 @@ admin_layout_header([
         <thead>
           <tr>
             <th>Tiêu đề</th>
-            <th>Section</th>
-            <th>Taxonomy</th>
+            <th>Mục</th>
+            <th>Chủ đề</th>
             <th>Ngày</th>
             <th>Tác giả</th>
             <th>Hành động</th>
@@ -518,4 +525,3 @@ admin_layout_header([
 </section>
 
 <?php admin_layout_footer(); ?>
-

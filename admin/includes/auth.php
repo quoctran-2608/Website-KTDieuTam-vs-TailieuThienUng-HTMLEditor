@@ -21,7 +21,7 @@ function ensure_default_admin_user(): void
   $data['users'][] = [
     'id' => 'u-admin-001',
     'username' => 'admin',
-    'display_name' => 'Super Admin',
+    'display_name' => 'Quản trị viên',
     'role' => 'admin',
     'password_hash' => password_hash('admin123', PASSWORD_DEFAULT),
     'is_active' => true,
@@ -332,7 +332,7 @@ function require_role(array $roles): void
     'uri' => current_request_uri(),
   ]);
   http_response_code(403);
-  echo '403 Forbidden';
+  echo '403 Không có quyền truy cập';
   exit;
 }
 

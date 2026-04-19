@@ -8,6 +8,5 @@ if (is_authenticated()) {
 }
 
 bootstrap_session();
-flash_set('success', 'Bạn đã đăng xuất khỏi admin panel.');
+flash_set('success', 'Bạn đã đăng xuất khỏi trang quản trị.');
 redirect_to(admin_url('login.php'));
-

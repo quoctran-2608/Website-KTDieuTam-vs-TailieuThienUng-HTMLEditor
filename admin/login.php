@@ -55,7 +55,7 @@ if (isset($_GET['debug']) && (string) $_GET['debug'] === '1') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng nhập admin | Kế Toán Diệu Tâm</title>
+  <title>Đăng nhập quản trị | Kế Toán Diệu Tâm</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -65,13 +65,13 @@ if (isset($_GET['debug']) && (string) $_GET['debug'] === '1') {
 <body class="auth-body">
   <main class="auth-shell">
     <section class="auth-hero">
-      <span class="auth-kicker"><i class="fa-solid fa-lock"></i> Admin secure area</span>
+      <span class="auth-kicker"><i class="fa-solid fa-lock"></i> Khu vực bảo mật</span>
       <h1>Đăng nhập quản trị nội dung</h1>
-      <p>Truy cập hệ thống biên tập nội bộ để quản lý bài viết Thư viện và Bản tin an toàn, có nhật ký thao tác đầy đủ.</p>
+      <p>Đăng nhập để quản lý bài viết trong Thư viện và Bản tin.</p>
       <ul class="auth-feature-list">
-        <li><i class="fa-solid fa-shield-heart"></i> Session bảo mật và CSRF protection</li>
-        <li><i class="fa-solid fa-filter-circle-dollar"></i> Sẵn sàng cho workflow lọc và sửa bài trực quan</li>
-        <li><i class="fa-solid fa-clipboard-check"></i> Audit log cho mọi thao tác đăng nhập</li>
+        <li><i class="fa-solid fa-shield-heart"></i> Phiên đăng nhập được bảo vệ an toàn</li>
+        <li><i class="fa-solid fa-filter-circle-dollar"></i> Mỗi biểu mẫu đều có mã xác thực hợp lệ</li>
+        <li><i class="fa-solid fa-clipboard-check"></i> Lưu lịch sử khi đăng nhập và đăng xuất</li>
       </ul>
     </section>
 
@@ -90,13 +90,13 @@ if (isset($_GET['debug']) && (string) $_GET['debug'] === '1') {
 
         <?php if ($debugAuth): ?>
           <div class="flash flash-warning">
-            <strong>Auth debug:</strong>
-            csrf_session=<?= h((string) (isset($_SESSION['_csrf_token']) ? 'yes' : 'no')) ?> |
-            method=<?= h((string) ($_SERVER['REQUEST_METHOD'] ?? '')) ?> |
-            cookie_path=<?= h((string) (session_get_cookie_params()['path'] ?? '')) ?> |
-            admin_base=<?= h(admin_base_path_uri()) ?> |
-            site_base=<?= h(site_base_path_uri()) ?> |
-            session_id_len=<?= h((string) strlen((string) session_id())) ?>
+            <strong>Thông tin kiểm tra đăng nhập:</strong>
+            có mã phiên=<?= h((string) (isset($_SESSION['_csrf_token']) ? 'có' : 'không')) ?> |
+            phương thức=<?= h((string) ($_SERVER['REQUEST_METHOD'] ?? '')) ?> |
+            đường dẫn cookie=<?= h((string) (session_get_cookie_params()['path'] ?? '')) ?> |
+            đường dẫn quản trị=<?= h(admin_base_path_uri()) ?> |
+            đường dẫn trang=<?= h(site_base_path_uri()) ?> |
+            độ dài mã phiên=<?= h((string) strlen((string) session_id())) ?>
           </div>
         <?php endif; ?>
 
@@ -154,7 +154,7 @@ if (isset($_GET['debug']) && (string) $_GET['debug'] === '1') {
         </form>
 
         <div class="auth-help">
-          <p><strong>Tài khoản mặc định (dev):</strong> admin / admin123</p>
+          <p><strong>Tài khoản mặc định để thử:</strong> admin / admin123</p>
           <p>Đổi mật khẩu ngay sau khi triển khai môi trường thật.</p>
         </div>
       </div>

@@ -8,11 +8,11 @@ declare(strict_types=1);
  */
 function admin_layout_header(array $options = []): void
 {
-  $title = $options['title'] ?? 'Admin Editor';
+  $title = $options['title'] ?? 'Quản trị nội dung';
   $active = $options['active'] ?? '';
   $description = $options['description'] ?? '';
   $user = current_user();
-  $sidebarPhase = $options['phase_label'] ?? 'Phase 4 — Draft & preview';
+  $sidebarNote = (string) ($options['sidebar_note'] ?? ($options['phase_label'] ?? 'Khu vực quản trị nội dung'));
   $articleCount = null;
   if (function_exists('read_articles_index_cache')) {
     $cache = read_articles_index_cache();
@@ -45,7 +45,7 @@ function admin_layout_header(array $options = []): void
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= h($title) ?> | Admin Editor</title>
+    <title><?= h($title) ?> | Quản trị nội dung</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -56,15 +56,15 @@ function admin_layout_header(array $options = []): void
     <div class="admin-shell">
       <aside class="admin-sidebar">
         <div class="admin-brand">
-          <a href="<?= h(admin_url('dashboard.php')) ?>" class="admin-brand-logo" aria-label="Admin Home">
+          <a href="<?= h(admin_url('dashboard.php')) ?>" class="admin-brand-logo" aria-label="Trang chính quản trị">
             <i class="fa-solid fa-shield-halved"></i>
           </a>
           <div class="admin-brand-text">
-            <strong>Admin Editor</strong>
+            <strong>Quản trị nội dung</strong>
             <span>Kế Toán Diệu Tâm</span>
           </div>
         </div>
-        <nav class="admin-nav" aria-label="Điều hướng admin">
+        <nav class="admin-nav" aria-label="Điều hướng quản trị">
           <?php foreach ($menu as $item): ?>
             <?php
             $isActive = $active === $item['key'];
@@ -80,14 +80,14 @@ function admin_layout_header(array $options = []): void
               <?php if (!empty($item['badge'])): ?>
                 <small><?= h((string) $item['badge']) ?></small>
               <?php elseif ($disabled): ?>
-                <small>Phase sau</small>
+                <small>Sắp mở</small>
               <?php endif; ?>
             </a>
           <?php endforeach; ?>
         </nav>
         <div class="admin-sidebar-foot">
-          <p>Phiên bản <strong>MVP v1</strong></p>
-          <p><?= h($sidebarPhase) ?></p>
+          <p><strong>Kế Toán Diệu Tâm</strong></p>
+          <p><?= h($sidebarNote) ?></p>
         </div>
       </aside>
 
@@ -103,7 +103,7 @@ function admin_layout_header(array $options = []): void
             <div class="admin-user-chip">
               <i class="fa-solid fa-user-shield"></i>
               <div>
-                <strong><?= h((string) ($user['display_name'] ?? 'N/A')) ?></strong>
+                <strong><?= h((string) ($user['display_name'] ?? 'Không rõ')) ?></strong>
                 <span><?= h((string) ($user['role'] ?? '')) ?></span>
               </div>
             </div>
