@@ -1,10 +1,10 @@
 :root {
-  --admin-bg: #f5f7fb;
-  --admin-text: #1f2937;
-  --admin-muted: #6b7280;
+  --admin-bg: #eef3f9;
+  --admin-text: #0f172a;
+  --admin-muted: #475569;
   --admin-card: #ffffff;
-  --admin-border: #e5e7eb;
-  --admin-shadow: 0 18px 36px rgba(17, 24, 39, 0.08);
+  --admin-border: #d8e0ea;
+  --admin-shadow: 0 22px 44px rgba(15, 23, 42, 0.08);
   --admin-primary: #b68d40;
   --admin-primary-deep: #6a4421;
   --admin-primary-soft: rgba(182, 141, 64, 0.14);
@@ -33,7 +33,9 @@ body {
 body {
   font-family: 'Be Vietnam Pro', Arial, sans-serif;
   color: var(--admin-text);
-  background: linear-gradient(180deg, #f9fafb 0%, var(--admin-bg) 100%);
+  background: linear-gradient(180deg, #f8fbff 0%, var(--admin-bg) 100%);
+  font-size: 15px;
+  line-height: 1.55;
   min-height: 100vh;
 }
 
@@ -306,7 +308,7 @@ a {
    ADMIN SHELL
    =============================== */
 .admin-body {
-  background: #f3f4f6;
+  background: #edf2f8;
 }
 
 .admin-shell {
@@ -316,13 +318,13 @@ a {
 }
 
 .admin-sidebar {
-  background: linear-gradient(180deg, #1f2937, #111827);
+  background: linear-gradient(180deg, #1b2638, #111b2d);
   color: #e5e7eb;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
-  padding: 22px 18px;
-  gap: 22px;
+  padding: 24px 18px;
+  gap: 24px;
 }
 
 .admin-brand {
@@ -345,14 +347,14 @@ a {
 
 .admin-brand-text strong {
   display: block;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .admin-brand-text span {
   display: block;
   margin-top: 2px;
   color: #cbd5e1;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .admin-nav {
@@ -365,16 +367,16 @@ a {
   grid-template-columns: 20px 1fr auto;
   align-items: center;
   gap: 11px;
-  min-height: 44px;
-  padding: 0 12px;
+  min-height: 46px;
+  padding: 0 13px;
   border-radius: 11px;
   color: #d1d5db;
-  font-size: 14px;
+  font-size: 15px;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .admin-nav-link small {
-  font-size: 11px;
+  font-size: 12px;
   color: #94a3b8;
 }
 
@@ -398,7 +400,7 @@ a {
   margin-top: auto;
   border-top: 1px dashed rgba(255, 255, 255, 0.2);
   padding-top: 12px;
-  font-size: 12px;
+  font-size: 13px;
   color: #9ca3af;
 }
 
@@ -412,8 +414,8 @@ a {
 }
 
 .admin-page-articles .admin-sidebar {
-  padding: 18px 14px 16px;
-  gap: 14px;
+  padding: 20px 15px 18px;
+  gap: 16px;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -425,9 +427,9 @@ a {
 }
 
 .admin-page-articles .admin-nav-link {
-  min-height: 40px;
-  padding: 0 10px;
-  font-size: 13px;
+  min-height: 42px;
+  padding: 0 11px;
+  font-size: 14px;
 }
 
 .sidebar-tree {
@@ -437,7 +439,7 @@ a {
 
 .sidebar-tree-title {
   margin: 0;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -451,20 +453,20 @@ a {
 }
 
 .sidebar-section-btn {
-  min-height: 38px;
+  min-height: 44px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 10px;
   color: #d1d5db;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
   align-items: center;
   align-content: center;
-  gap: 1px;
+  gap: 2px;
   background: rgba(255, 255, 255, 0.03);
-  padding: 4px 6px;
+  padding: 6px 8px;
   white-space: nowrap;
 }
 
@@ -473,11 +475,11 @@ a {
 }
 
 .sidebar-section-btn small {
-  min-width: 20px;
+  min-width: 24px;
   border-radius: 999px;
-  padding: 1px 5px;
+  padding: 1px 6px;
   text-align: center;
-  font-size: 9px;
+  font-size: 11px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #94a3b8;
   line-height: 1.1;
@@ -516,15 +518,15 @@ a {
 }
 
 .sidebar-tree-root {
-  min-height: 32px;
+  min-height: 38px;
   border-radius: 8px;
-  padding: 0 8px;
+  padding: 0 10px;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   color: #d1d5db;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -542,23 +544,23 @@ a {
 }
 
 .sidebar-tree-groups {
-  margin-top: 6px;
+  margin-top: 8px;
   display: grid;
-  gap: 4px;
-  padding-left: 10px;
+  gap: 5px;
+  padding-left: 12px;
   border-left: 1px dashed rgba(196, 154, 84, 0.3);
 }
 
 .sidebar-tree-group {
-  min-height: 28px;
+  min-height: 34px;
   border-radius: 8px;
-  padding: 0 8px;
+  padding: 0 10px;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   color: #c7d2e0;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -570,21 +572,21 @@ a {
 
 .sidebar-tree-children {
   display: grid;
-  gap: 2px;
-  padding-left: 10px;
+  gap: 4px;
+  padding-left: 12px;
   border-left: 1px solid rgba(196, 154, 84, 0.24);
 }
 
 .sidebar-tree-child {
-  min-height: 24px;
+  min-height: 30px;
   border-radius: 6px;
-  padding: 0 7px;
+  padding: 0 8px;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   color: #b8c4d6;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -597,11 +599,11 @@ a {
 .sidebar-tree-root small,
 .sidebar-tree-group small,
 .sidebar-tree-child small {
-  min-width: 20px;
+  min-width: 24px;
   border-radius: 999px;
-  padding: 1px 5px;
+  padding: 1px 6px;
   text-align: center;
-  font-size: 9px;
+  font-size: 10px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #94a3b8;
   line-height: 1.1;
@@ -616,7 +618,7 @@ a {
 
 .sidebar-tree-empty {
   margin: 0;
-  font-size: 11px;
+  font-size: 13px;
   color: #9ca3af;
 }
 
@@ -645,7 +647,7 @@ a {
 .admin-topbar {
   background: #fff;
   border-bottom: 1px solid #e5e7eb;
-  padding: 20px 24px;
+  padding: 22px 26px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -655,14 +657,14 @@ a {
 .admin-topbar-text h1 {
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
-  font-size: clamp(22px, 2vw, 28px);
+  font-size: clamp(24px, 2vw, 30px);
   color: #111827;
 }
 
 .admin-topbar-text p {
   margin: 4px 0 0;
   color: var(--admin-muted);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .admin-topbar-actions {
@@ -687,18 +689,18 @@ a {
 
 .admin-user-chip strong {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.2;
 }
 
 .admin-user-chip span {
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   color: #6b7280;
 }
 
 .admin-logout-btn {
-  height: 38px;
+  height: 40px;
   padding: 0 14px;
   border-radius: 10px;
   border: 1px solid #d1d5db;
@@ -706,7 +708,7 @@ a {
   align-items: center;
   gap: 8px;
   color: #374151;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   background: #fff;
 }
@@ -717,17 +719,17 @@ a {
 }
 
 .admin-content {
-  padding: 22px 24px 30px;
+  padding: 24px 26px 32px;
   display: grid;
-  gap: 16px;
+  gap: 18px;
 }
 
 .admin-page-articles .admin-topbar {
-  padding: 10px 16px;
+  padding: 14px 18px;
 }
 
 .admin-page-articles .admin-topbar-text h1 {
-  font-size: clamp(20px, 1.8vw, 24px);
+  font-size: clamp(23px, 1.9vw, 27px);
 }
 
 .admin-page-articles .admin-topbar-text p {
@@ -735,8 +737,8 @@ a {
 }
 
 .admin-page-articles .admin-content {
-  padding: 10px 14px 14px;
-  gap: 8px;
+  padding: 14px 16px 18px;
+  gap: 12px;
 }
 
 .admin-grid-cards {
@@ -753,7 +755,7 @@ a {
   background: var(--admin-card);
   border: 1px solid var(--admin-border);
   border-radius: 14px;
-  padding: 14px;
+  padding: 16px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -794,26 +796,26 @@ a {
 .metric-body p {
   margin: 3px 0 0;
   color: var(--admin-muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .admin-panel {
   background: var(--admin-card);
   border: 1px solid var(--admin-border);
   border-radius: 14px;
-  padding: 16px;
+  padding: 18px;
 }
 
 .panel-head h2 {
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 18px;
+  font-size: 21px;
 }
 
 .panel-head p {
   margin: 6px 0 0;
   color: var(--admin-muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .status-list {
@@ -825,7 +827,7 @@ a {
 }
 
 .status-list li {
-  font-size: 14px;
+  font-size: 15px;
   color: #374151;
   display: flex;
   align-items: center;
@@ -847,7 +849,7 @@ a {
   width: 100%;
   min-width: 860px;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .admin-table thead {
@@ -856,14 +858,14 @@ a {
 
 .admin-table th,
 .admin-table td {
-  padding: 11px 12px;
+  padding: 13px 14px;
   border-bottom: 1px solid #eef2f7;
   text-align: left;
   vertical-align: top;
 }
 
 .admin-table th {
-  font-size: 12px;
+  font-size: 12.5px;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: #4b5563;
@@ -900,7 +902,7 @@ a {
 
 .empty-state p {
   margin: 10px 0 0;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .next-phase-banner {
@@ -941,7 +943,7 @@ a {
 }
 
 .admin-page-articles .article-panel {
-  padding: 10px;
+  padding: 14px;
 }
 
 .section-tabs {
@@ -1050,7 +1052,7 @@ a {
 
 .admin-page-articles .panel-head p {
   margin-top: 3px;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .admin-page-articles .panel-head-inline {
@@ -1058,16 +1060,16 @@ a {
 }
 
 .clear-filter-btn {
-  height: 30px;
+  height: 38px;
   border: 1px solid #d1d5db;
-  border-radius: 8px;
-  padding: 0 10px;
+  border-radius: 10px;
+  padding: 0 12px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   background: #fff;
   color: #374151;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -1088,7 +1090,7 @@ a {
 .article-filter-form.compact {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  padding: 6px;
+  padding: 8px;
   background: #fafbfc;
 }
 
@@ -1113,7 +1115,7 @@ a {
 }
 
 .filter-field span {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: #374151;
   letter-spacing: 0.01em;
@@ -1121,11 +1123,11 @@ a {
 
 .filter-field input,
 .filter-field select {
-  height: 36px;
+  height: 40px;
   border-radius: 10px;
   border: 1px solid #d1d5db;
   padding: 0 11px;
-  font-size: 12px;
+  font-size: 13px;
   color: #111827;
   outline: none;
   background: #fff;
@@ -1149,7 +1151,7 @@ a {
 }
 
 .filter-submit-btn {
-  height: 36px;
+  height: 40px;
   border: 0;
   border-radius: 10px;
   padding: 0 14px;
@@ -1158,7 +1160,7 @@ a {
   gap: 8px;
   color: #fff;
   background: linear-gradient(135deg, #c49a54, #a57a3a);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
 }
@@ -1204,12 +1206,12 @@ a {
 
 .article-title-cell strong {
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   color: #111827;
 }
 
 .article-subline code {
-  font-size: 11px;
+  font-size: 12px;
   color: #6b7280;
 }
 
@@ -1219,14 +1221,14 @@ a {
 }
 
 .taxonomy-stack span {
-  font-size: 12px;
+  font-size: 13px;
   color: #1f2937;
   font-weight: 600;
 }
 
 .taxonomy-stack small {
   color: #6b7280;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .date-stack {
@@ -1235,7 +1237,7 @@ a {
 }
 
 .date-stack span {
-  font-size: 12px;
+  font-size: 13px;
   color: #374151;
 }
 
@@ -1250,14 +1252,14 @@ a {
 }
 
 .table-action-link {
-  height: 30px;
-  padding: 0 10px;
+  height: 34px;
+  padding: 0 12px;
   border-radius: 8px;
   border: 1px solid #d1d5db;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 11px;
+  font-size: 12px;
   color: #374151;
   background: #fff;
 }
@@ -1268,18 +1270,18 @@ a {
 
 .editor-toolbar-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 132px 96px;
-  gap: 6px;
+  grid-template-columns: minmax(0, 1fr) 156px 120px;
+  gap: 8px;
   align-items: center;
 }
 
 .toolbar-search,
 .toolbar-select {
-  height: 32px;
+  height: 38px;
   border-radius: 8px;
   border: 1px solid #d1d5db;
-  padding: 0 10px;
-  font-size: 12px;
+  padding: 0 12px;
+  font-size: 13px;
   color: #111827;
   background: #fff;
   outline: none;
@@ -1303,7 +1305,7 @@ a {
 }
 
 .article-subline small {
-  font-size: 10px;
+  font-size: 11px;
   color: #9ca3af;
   max-width: 100%;
   overflow: hidden;
@@ -1316,15 +1318,15 @@ a {
 }
 
 .taxonomy-stack span {
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .taxonomy-stack small {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .date-stack span {
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .date-stack small {
@@ -1350,14 +1352,14 @@ a {
 }
 
 .pager-btn {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   border-radius: 9px;
   border: 1px solid #d1d5db;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 12px;
   color: #374151;
   background: #fff;
 }
@@ -1824,7 +1826,7 @@ a {
   }
 
   .editor-toolbar-row {
-    grid-template-columns: minmax(0, 1fr) 120px 96px;
+    grid-template-columns: minmax(0, 1fr) 148px 112px;
   }
 }
 
@@ -1887,7 +1889,7 @@ a {
   }
 
   .editor-toolbar-row {
-    grid-template-columns: minmax(0, 1fr) 110px 90px;
+    grid-template-columns: minmax(0, 1fr) 132px 104px;
   }
 }
 
