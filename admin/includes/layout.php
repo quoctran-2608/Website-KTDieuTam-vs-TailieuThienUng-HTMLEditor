@@ -9,7 +9,8 @@ declare(strict_types=1);
  *   active?:string,
  *   description?:string,
  *   sidebar_note?:string,
- *   sidebar_extra_html?:string
+ *   sidebar_extra_html?:string,
+ *   body_class?:string
  * } $options
  */
 function admin_layout_header(array $options = []): void
@@ -20,6 +21,7 @@ function admin_layout_header(array $options = []): void
   $user = current_user();
   $sidebarNote = (string) ($options['sidebar_note'] ?? ($options['phase_label'] ?? 'Khu vực quản trị nội dung'));
   $sidebarExtraHtml = (string) ($options['sidebar_extra_html'] ?? '');
+  $bodyClass = trim((string) ($options['body_class'] ?? ''));
   $articleCount = null;
   if (function_exists('read_articles_index_cache')) {
     $cache = read_articles_index_cache();
@@ -59,7 +61,7 @@ function admin_layout_header(array $options = []): void
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="<?= h(admin_url('assets/css/admin.css')) ?>">
   </head>
-  <body class="admin-body admin-page-<?= h($active) ?>">
+  <body class="admin-body admin-page-<?= h($active) ?><?= $bodyClass !== '' ? (' ' . h($bodyClass)) : '' ?>">
     <div class="admin-shell">
       <aside class="admin-sidebar">
         <div class="admin-brand">

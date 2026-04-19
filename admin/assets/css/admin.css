@@ -1676,6 +1676,79 @@ a {
   padding-left: 8px;
 }
 
+.admin-mode-simple-editor .admin-topbar {
+  padding: 12px 18px;
+}
+
+.admin-mode-simple-editor .admin-topbar-text p {
+  display: none;
+}
+
+.admin-mode-simple-editor .admin-content {
+  padding-top: 12px;
+  gap: 10px;
+}
+
+.admin-mode-simple-editor .admin-sidebar-extra,
+.admin-mode-simple-editor .admin-sidebar-foot {
+  display: none;
+}
+
+.admin-mode-simple-editor .admin-nav-link {
+  min-height: 40px;
+}
+
+.admin-mode-simple-editor .admin-panel {
+  padding: 14px;
+}
+
+.admin-mode-simple-editor .editor-top-actions {
+  margin-top: 0;
+}
+
+.admin-mode-simple-editor .editor-workspace {
+  margin-top: 8px;
+  gap: 10px;
+}
+
+.admin-mode-simple-editor .editor-workspace-main {
+  gap: 10px;
+}
+
+.admin-mode-simple-editor .editor-workspace-side {
+  gap: 10px;
+}
+
+.admin-mode-simple-editor .editor-side-card {
+  padding: 12px;
+}
+
+.admin-mode-simple-editor .panel-head p {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.admin-mode-simple-editor .editor-meta-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.admin-mode-simple-editor .editor-action-bar {
+  padding: 8px;
+}
+
+.admin-mode-simple-editor .editor-action-bar .filter-submit-btn,
+.admin-mode-simple-editor .editor-action-bar .clear-filter-btn.inline,
+.admin-mode-simple-editor .editor-action-bar .publish-btn.inline,
+.admin-mode-simple-editor .editor-action-bar .rollback-btn.inline,
+.admin-mode-simple-editor .editor-action-bar .mark-unreviewed-btn.inline {
+  flex: 0 0 auto;
+}
+
+.admin-mode-simple-editor .preview-meta {
+  display: none;
+}
+
 .editor-meta-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
