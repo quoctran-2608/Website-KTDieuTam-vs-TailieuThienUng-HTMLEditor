@@ -11,9 +11,22 @@ function bootstrap_session(): void
   }
 
   $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+  // IMPORTANT:
+  // Do not hardcode '/admin' because this project can run under a subfolder
+  // (e.g. /Ketoandieutam.com/admin). Hardcoding breaks session cookie scope
+  // and causes silent CSRF/login loops.
+  $scriptName = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? '/admin/index.php'));
+  $cookiePath = dirname($scriptName);
+  if ($cookiePath === '' || $cookiePath === '.') {
+    $cookiePath = '/admin';
+  }
+  $cookiePath = '/' . trim($cookiePath, '/');
+  if ($cookiePath === '//') {
+    $cookiePath = '/';
+  }
   session_set_cookie_params([
     'lifetime' => 0,
-    'path' => '/admin',
+    'path' => $cookiePath,
     'domain' => '',
     'secure' => $isHttps,
     'httponly' => true,
@@ -174,4 +187,3 @@ function human_seconds(int $seconds): string
   }
   return floor($seconds / 3600) . ' giờ';
 }
-

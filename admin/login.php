@@ -34,17 +34,21 @@ if (is_post_request()) {
 
     $status = [
       'type' => 'danger',
-      'message' => $attempt['message'],
+      'message' => (string) ($attempt['message'] ?? 'Đăng nhập thất bại.'),
     ];
     append_audit_log([
       'event' => 'auth.login.failed',
       'username' => $usernameInput,
-      'reason' => $attempt['code'],
+      'reason' => (string) ($attempt['code'] ?? 'unknown'),
     ]);
   }
 }
 
 $lockInfo = lock_status($usernameInput);
+$debugAuth = false;
+if (isset($_GET['debug']) && (string) $_GET['debug'] === '1') {
+  $debugAuth = true;
+}
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -81,6 +85,16 @@ $lockInfo = lock_status($usernameInput);
         <?php if ($status !== null): ?>
           <div class="flash flash-<?= h($status['type']) ?>">
             <?= h($status['message']) ?>
+          </div>
+        <?php endif; ?>
+
+        <?php if ($debugAuth): ?>
+          <div class="flash flash-warning">
+            <strong>Auth debug:</strong>
+            csrf_session=<?= h((string) (isset($_SESSION['_csrf_token']) ? 'yes' : 'no')) ?> |
+            method=<?= h((string) ($_SERVER['REQUEST_METHOD'] ?? '')) ?> |
+            cookie_path=<?= h((string) (session_get_cookie_params()['path'] ?? '')) ?> |
+            session_id_len=<?= h((string) strlen((string) session_id())) ?>
           </div>
         <?php endif; ?>
 
@@ -146,4 +160,3 @@ $lockInfo = lock_status($usernameInput);
   </main>
 </body>
 </html>
-
