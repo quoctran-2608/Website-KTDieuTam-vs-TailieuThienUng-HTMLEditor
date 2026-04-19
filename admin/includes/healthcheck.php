@@ -95,6 +95,18 @@ $checks[] = [
   'detail' => ADMIN_PUBLISH_HISTORY_PATH,
 ];
 
+$checks[] = [
+  'label' => 'uploads directory exists',
+  'ok' => is_dir(ADMIN_UPLOADS_DIR),
+  'detail' => ADMIN_UPLOADS_DIR,
+];
+
+$checks[] = [
+  'label' => 'draft revisions directory exists',
+  'ok' => is_dir(ADMIN_DRAFT_REVISIONS_DIR),
+  'detail' => ADMIN_DRAFT_REVISIONS_DIR,
+];
+
 $publishHistory = read_publish_history();
 $checks[] = [
   'label' => 'publish history readable',

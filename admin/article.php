@@ -98,11 +98,44 @@ function validate_draft_payload(array $payload): array
   }
   $clean['prose_html'] = $proseHtml;
 
+  $featuredImage = trim((string) ($payload['featured_image'] ?? ''));
+  $clean['featured_image'] = $featuredImage;
+
   return [
     'ok' => empty($errors),
     'errors' => $errors,
     'data' => $clean,
   ];
+}
+
+/**
+ * Build editable payload from parser output + article index defaults.
+ *
+ * @param array<string,mixed> $article
+ * @param array<string,mixed> $parseResult
+ * @return array<string,mixed>
+ */
+function build_editable_payload(array $article, array $parseResult): array
+{
+  $metaPayload = is_array($parseResult['meta_payload'] ?? null) ? $parseResult['meta_payload'] : [];
+  $summaryFromHtml = trim((string) ($parseResult['summary_text'] ?? ''));
+
+  $row = [
+    'title' => (string) ($metaPayload['title'] ?? ($article['title'] ?? '')),
+    'excerpt' => (string) ($summaryFromHtml !== '' ? $summaryFromHtml : ($article['card_badge_label'] ?? '')),
+    'publish_date' => (string) ($metaPayload['publishDate'] ?? ''),
+    'modified_date' => (string) (($metaPayload['modifiedDate'] ?? '') ?: ''),
+    'tags' => is_array($metaPayload['tags'] ?? null) ? array_values(array_filter(array_map('strval', $metaPayload['tags']))) : [],
+    'tags_text' => is_array($metaPayload['tags'] ?? null) ? implode(', ', array_values(array_filter(array_map('strval', $metaPayload['tags'])))) : '',
+    'prose_html' => (string) (($parseResult['prose']['inner'] ?? '') ?: ''),
+    'featured_image' => trim((string) ($metaPayload['image'] ?? ($article['image'] ?? ''))),
+  ];
+
+  if ($row['excerpt'] === '') {
+    $row['excerpt'] = (string) ($metaPayload['excerpt'] ?? ($metaPayload['description'] ?? ''));
+  }
+
+  return $row;
 }
 
 $id = trim((string) ($_GET['id'] ?? ''));
@@ -118,26 +151,16 @@ $status = null;
 $previewHtml = '';
 $previewMeta = [];
 $latestPublish = null;
+$recentPublishRecords = [];
 $reviewRow = null;
+$uploads = [];
+$revisions = [];
 
 if ($article !== null) {
   $path = resolve_article_file_path($article);
   $parseResult = parse_article_file($path);
   if (is_array($parseResult) && !empty($parseResult['ok'])) {
-    $metaPayload = is_array($parseResult['meta_payload'] ?? null) ? $parseResult['meta_payload'] : [];
-    $summaryFromHtml = trim((string) ($parseResult['summary_text'] ?? ''));
-    $baseEditable = [
-      'title' => (string) ($metaPayload['title'] ?? ($article['title'] ?? '')),
-      'excerpt' => (string) ($summaryFromHtml !== '' ? $summaryFromHtml : ($article['card_badge_label'] ?? '')),
-      'publish_date' => (string) ($metaPayload['publishDate'] ?? ''),
-      'modified_date' => (string) (($metaPayload['modifiedDate'] ?? '') ?: ''),
-      'tags' => is_array($metaPayload['tags'] ?? null) ? array_values(array_filter(array_map('strval', $metaPayload['tags']))) : [],
-      'tags_text' => is_array($metaPayload['tags'] ?? null) ? implode(', ', array_values(array_filter(array_map('strval', $metaPayload['tags'])))) : '',
-      'prose_html' => (string) (($parseResult['prose']['inner'] ?? '') ?: ''),
-    ];
-    if ($baseEditable['excerpt'] === '') {
-      $baseEditable['excerpt'] = (string) ($metaPayload['excerpt'] ?? ($metaPayload['description'] ?? ''));
-    }
+    $baseEditable = build_editable_payload($article, $parseResult);
 
     $draftCurrent = read_article_draft((string) ($article['id'] ?? ''));
     $reviewRow = read_article_review_status((string) ($article['id'] ?? ''));
@@ -167,20 +190,7 @@ if ($article !== null) {
 
         $parseResult = parse_article_file($path);
         if (is_array($parseResult) && !empty($parseResult['ok'])) {
-          $metaPayloadAfterRollback = is_array($parseResult['meta_payload'] ?? null) ? $parseResult['meta_payload'] : [];
-          $summaryAfterRollback = trim((string) ($parseResult['summary_text'] ?? ''));
-          $baseEditable = [
-            'title' => (string) ($metaPayloadAfterRollback['title'] ?? ($article['title'] ?? '')),
-            'excerpt' => (string) ($summaryAfterRollback !== '' ? $summaryAfterRollback : ($article['card_badge_label'] ?? '')),
-            'publish_date' => (string) ($metaPayloadAfterRollback['publishDate'] ?? ''),
-            'modified_date' => (string) (($metaPayloadAfterRollback['modifiedDate'] ?? '') ?: ''),
-            'tags' => is_array($metaPayloadAfterRollback['tags'] ?? null) ? array_values(array_filter(array_map('strval', $metaPayloadAfterRollback['tags']))) : [],
-            'tags_text' => is_array($metaPayloadAfterRollback['tags'] ?? null) ? implode(', ', array_values(array_filter(array_map('strval', $metaPayloadAfterRollback['tags'])))) : '',
-            'prose_html' => (string) (($parseResult['prose']['inner'] ?? '') ?: ''),
-          ];
-          if ($baseEditable['excerpt'] === '') {
-            $baseEditable['excerpt'] = (string) ($metaPayloadAfterRollback['excerpt'] ?? ($metaPayloadAfterRollback['description'] ?? ''));
-          }
+          $baseEditable = build_editable_payload($article, $parseResult);
 
           $form = $baseEditable;
           $previewHtml = (string) ($baseEditable['prose_html'] ?? '');
@@ -190,6 +200,7 @@ if ($article !== null) {
             'publishDate' => (string) ($baseEditable['publish_date'] ?? ''),
             'modifiedDate' => (string) ($baseEditable['modified_date'] ?? ''),
             'tags' => is_array($baseEditable['tags'] ?? null) ? $baseEditable['tags'] : [],
+            'featuredImage' => (string) ($baseEditable['featured_image'] ?? ''),
           ];
         }
       } elseif ($intent === 'mark_unreviewed') {
@@ -214,12 +225,27 @@ if ($article !== null) {
           'modified_date' => (string) ($_POST['modified_date'] ?? ''),
           'tags_text' => (string) ($_POST['tags_text'] ?? ''),
           'prose_html' => (string) ($_POST['prose_html'] ?? ''),
+          'featured_image' => (string) ($_POST['featured_image'] ?? ''),
         ];
         $validated = validate_draft_payload($posted);
         $form = array_merge($form, $posted);
 
         if (!empty($validated['ok'])) {
           $clean = is_array($validated['data'] ?? null) ? $validated['data'] : [];
+          $currentHtmlForRevision = file_get_contents($path);
+          if (is_string($currentHtmlForRevision) && trim($currentHtmlForRevision) !== '') {
+            // Backup current HTML before any publish/preview/restore draft mutation.
+            try {
+              save_article_revision_snapshot((string) ($article['id'] ?? ''), $currentHtmlForRevision);
+            } catch (Throwable $revisionError) {
+              append_audit_log([
+                'event' => 'article.revision.snapshot_failed',
+                'article_id' => (string) ($article['id'] ?? ''),
+                'reason' => $revisionError->getMessage(),
+                'username' => (string) (($currentUser['username'] ?? '') ?: ''),
+              ]);
+            }
+          }
           if ($intent === 'publish_now') {
             $result = publish_article_draft($article, $clean, $currentUser);
             if (!empty($result['ok'])) {
@@ -238,7 +264,7 @@ if ($article !== null) {
                 'message' => 'Cập nhật thất bại: ' . (string) ($result['message'] ?? 'không rõ lỗi'),
               ];
             }
-          } else {
+          } elseif ($intent === 'save_draft' || $intent === 'preview_only') {
             $saved = save_article_draft((string) ($article['id'] ?? ''), $clean, $currentUser);
             $draftCurrent = $saved;
             $reviewRow = mark_article_reviewed((string) ($article['id'] ?? ''), $currentUser, $intent);
@@ -250,19 +276,25 @@ if ($article !== null) {
               'publishDate' => (string) ($clean['publish_date'] ?? ''),
               'modifiedDate' => (string) ($clean['modified_date'] ?? ''),
               'tags' => is_array($clean['tags'] ?? null) ? $clean['tags'] : [],
+              'featuredImage' => (string) ($clean['featured_image'] ?? ''),
             ];
 
             if ($intent === 'save_draft') {
               $status = [
                 'type' => 'success',
-                'message' => 'Đã lưu draft thành công.',
+                'message' => 'Đã lưu nháp.',
               ];
             } elseif ($intent === 'preview_only') {
               $status = [
                 'type' => 'success',
-                'message' => 'Đã tạo preview từ dữ liệu draft mới nhất.',
+                'message' => 'Đã lưu nháp.',
               ];
             }
+          } else {
+            $status = [
+              'type' => 'warning',
+              'message' => 'Không xác định được thao tác lưu.',
+            ];
           }
         } else {
           $validationErrors = is_array($validated['errors'] ?? null) ? $validated['errors'] : [];
@@ -282,6 +314,7 @@ if ($article !== null) {
           'publishDate' => (string) ($cleanDraft['publish_date'] ?? ''),
           'modifiedDate' => (string) ($cleanDraft['modified_date'] ?? ''),
           'tags' => is_array($cleanDraft['tags'] ?? null) ? $cleanDraft['tags'] : [],
+          'featuredImage' => (string) ($cleanDraft['featured_image'] ?? ''),
         ];
       } else {
         $previewHtml = (string) ($baseEditable['prose_html'] ?? '');
@@ -291,13 +324,18 @@ if ($article !== null) {
           'publishDate' => (string) ($baseEditable['publish_date'] ?? ''),
           'modifiedDate' => (string) ($baseEditable['modified_date'] ?? ''),
           'tags' => is_array($baseEditable['tags'] ?? null) ? $baseEditable['tags'] : [],
+          'featuredImage' => (string) ($baseEditable['featured_image'] ?? ''),
         ];
       }
     }
+    $form['featured_image'] = trim((string) ($form['featured_image'] ?? ($baseEditable['featured_image'] ?? '')));
     if ($reviewRow === null) {
       $reviewRow = read_article_review_status((string) ($article['id'] ?? ''));
     }
     $latestPublish = find_latest_publish_record((string) ($article['id'] ?? ''));
+    $recentPublishRecords = list_recent_publish_records((string) ($article['id'] ?? ''), 8);
+    $uploads = list_article_uploaded_images((string) ($article['id'] ?? ''));
+    $revisions = list_article_revisions((string) ($article['id'] ?? ''));
   }
 }
 
@@ -306,6 +344,7 @@ $innerScript = <<<'JS'
   const form = document.getElementById('articleEditorForm');
   const intent = document.getElementById('articleIntent');
   const editor = document.getElementById('proseEditor');
+  const featuredImageInput = document.getElementById('featuredImageInput');
   const host = document.getElementById('previewHost');
   if (!editor) return;
 
@@ -358,12 +397,40 @@ $innerScript = <<<'JS'
       menubar: true,
       height: 620,
       branding: false,
+      images_file_types: 'jpg,jpeg,png,gif,webp',
       relative_urls: false,
       remove_script_host: false,
       convert_urls: false,
       plugins: 'advlist autolink lists link image table code charmap preview searchreplace visualblocks wordcount paste',
       toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table link image | removeformat code preview',
       content_style: 'body { font-family: Arial, sans-serif; font-size: 16px; line-height: 1.65; padding: 14px; } img { max-width: 100%; height: auto; }',
+      images_upload_handler: async (blobInfo, progress) => {
+        const articleIdInput = document.getElementById('articleIdInput');
+        const csrfInput = form ? form.querySelector('input[name="_csrf_token"]') : null;
+        const articleId = articleIdInput ? articleIdInput.value : '';
+        const csrfToken = csrfInput ? csrfInput.value : '';
+
+        if (!articleId || !csrfToken) {
+          throw new Error('Thiếu thông tin phiên để upload ảnh.');
+        }
+
+        const payload = new FormData();
+        payload.append('_csrf_token', csrfToken);
+        payload.append('article_id', articleId);
+        payload.append('image', blobInfo.blob(), blobInfo.filename());
+
+        const response = await fetch('upload.php', {
+          method: 'POST',
+          body: payload,
+          credentials: 'same-origin',
+        });
+        const json = await response.json();
+        if (!response.ok || !json.location) {
+          throw new Error(json.error || 'Upload ảnh thất bại.');
+        }
+        progress(100);
+        return json.location;
+      },
       setup: (instance) => {
         instance.on('input change keyup setcontent', () => {
           if (window.__previewTimer) window.clearTimeout(window.__previewTimer);
@@ -372,6 +439,14 @@ $innerScript = <<<'JS'
       }
     });
   }
+
+  document.querySelectorAll('[data-upload-select]').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!featuredImageInput) return;
+      const next = button.getAttribute('data-upload-select') || '';
+      featuredImageInput.value = next;
+    });
+  });
 
   syncPreview();
 })();
@@ -383,7 +458,7 @@ admin_layout_header([
   'description' => 'Sửa nội dung bài viết, xem trước và cập nhật ra trang thật.',
   'sidebar_note' => 'Khu vực quản trị nội dung',
   'inner_script' => $innerScript,
-  'body_class' => 'admin-mode-simple-editor admin-editor-no-sidebar',
+  'body_class' => 'admin-mode-simple-editor admin-editor-hide-left-sidebar',
 ]);
 ?>
 
@@ -426,12 +501,14 @@ admin_layout_header([
       $latestEventLabel = 'Cập nhật ra trang';
     } elseif ($latestEventRaw === 'rollback') {
       $latestEventLabel = 'Khôi phục';
+    } elseif ($latestEventRaw === 'revision_restore') {
+      $latestEventLabel = 'Khôi phục revision';
     } elseif ($latestEventRaw !== '') {
       $latestEventLabel = ucfirst($latestEventRaw);
     } else {
       $latestEventLabel = 'Chưa có';
     }
-    $latestEventAt = format_admin_datetime((string) ($latestPublish['published_at'] ?? $latestPublish['rolled_back_at'] ?? ''));
+    $latestEventAt = format_admin_datetime((string) ($latestPublish['published_at'] ?? $latestPublish['rolled_back_at'] ?? $latestPublish['restored_at'] ?? ''));
     if ($latestEventAt === '') {
       $latestEventAt = '—';
     }
@@ -481,95 +558,221 @@ admin_layout_header([
       || !empty($validationErrors['modified_date'])
       || !empty($validationErrors['tags_text']);
     ?>
-    <article class="admin-panel">
-      <div class="panel-head">
-        <h2>Soạn thảo nội dung</h2>
-        <p>Giữ 2 thao tác chính ở trên cùng để biên tập nhanh.</p>
-      </div>
-
-      <form method="post" class="article-editor-form editor-v4-form" id="articleEditorForm" novalidate>
-        <?= csrf_input_html() ?>
-        <input type="hidden" name="_intent" value="save_draft" id="articleIntent">
-
-        <div class="editor-action-bar">
-          <button type="submit" class="filter-submit-btn" onclick="document.getElementById('articleIntent').value='save_draft'">
-            <i class="fa-solid fa-floppy-disk"></i>
-            <span>Lưu</span>
-          </button>
-          <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận cập nhật bài này ra trang? Hệ thống sẽ sao lưu trước khi ghi file thật.');">
-            <i class="fa-solid fa-paper-plane"></i>
-            <span>Cập nhật ra trang</span>
-          </button>
-          <span class="editor-shortcut-hint">Ctrl+S để lưu nhanh.</span>
+    <div class="editor-workspace">
+      <article class="admin-panel">
+        <div class="panel-head">
+          <h2>Soạn thảo nội dung</h2>
+          <p>Sửa nội dung rồi lưu nháp hoặc cập nhật ra trang.</p>
         </div>
+        <form method="post" class="article-editor-form editor-v4-form" id="articleEditorForm" novalidate>
+          <?= csrf_input_html() ?>
+          <input type="hidden" name="_intent" value="save_draft" id="articleIntent">
+          <input type="hidden" name="article_id" value="<?= h((string) ($article['id'] ?? '')) ?>" id="articleIdInput">
 
-        <label class="filter-field">
-          <span>Tiêu đề *</span>
-          <input type="text" name="title" value="<?= h((string) ($form['title'] ?? '')) ?>" required>
-          <?php if (!empty($validationErrors['title'])): ?><small class="field-error"><?= h((string) $validationErrors['title']) ?></small><?php endif; ?>
-        </label>
-
-        <label class="filter-field">
-          <span>Nội dung chính (.article-prose) *</span>
-          <textarea id="proseEditor" name="prose_html" rows="20" class="prose-textarea" required><?= h((string) ($form['prose_html'] ?? '')) ?></textarea>
-          <?php if (!empty($validationErrors['prose_html'])): ?><small class="field-error"><?= h((string) $validationErrors['prose_html']) ?></small><?php endif; ?>
-        </label>
-
-        <details class="editor-info-panel" <?= $infoPanelOpen ? 'open' : '' ?>>
-          <summary>
-            <i class="fa-solid fa-circle-info"></i>
-            <span>Thông tin bài & tác vụ phụ</span>
-          </summary>
-
-          <div class="editor-meta-grid">
-            <label class="filter-field span-2">
-              <span>Mô tả ngắn *</span>
-              <input type="text" name="excerpt" value="<?= h((string) ($form['excerpt'] ?? '')) ?>" required>
-              <?php if (!empty($validationErrors['excerpt'])): ?><small class="field-error"><?= h((string) $validationErrors['excerpt']) ?></small><?php endif; ?>
-            </label>
-
-            <label class="filter-field">
-              <span>Ngày đăng *</span>
-              <input type="date" name="publish_date" value="<?= h((string) ($form['publish_date'] ?? '')) ?>" required>
-              <?php if (!empty($validationErrors['publish_date'])): ?><small class="field-error"><?= h((string) $validationErrors['publish_date']) ?></small><?php endif; ?>
-            </label>
-
-            <label class="filter-field">
-              <span>Ngày sửa</span>
-              <input type="date" name="modified_date" value="<?= h((string) ($form['modified_date'] ?? '')) ?>">
-              <?php if (!empty($validationErrors['modified_date'])): ?><small class="field-error"><?= h((string) $validationErrors['modified_date']) ?></small><?php endif; ?>
-            </label>
-
-            <label class="filter-field span-2">
-              <span>Thẻ (3-7 thẻ, ngăn cách bằng dấu phẩy) *</span>
-              <input type="text" name="tags_text" value="<?= h((string) ($form['tags_text'] ?? '')) ?>" required>
-              <?php if (!empty($validationErrors['tags_text'])): ?><small class="field-error"><?= h((string) $validationErrors['tags_text']) ?></small><?php endif; ?>
-            </label>
+          <div class="editor-action-bar">
+            <button type="submit" class="filter-submit-btn" onclick="document.getElementById('articleIntent').value='save_draft'">
+              <i class="fa-solid fa-floppy-disk"></i>
+              <span>Lưu nháp</span>
+            </button>
+            <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận cập nhật bài này ra trang? Hệ thống sẽ sao lưu trước khi ghi file thật.');">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Đăng ngay</span>
+            </button>
+            <span class="editor-shortcut-hint">Ctrl+S để lưu nháp nhanh.</span>
           </div>
 
-          <div class="editor-rare-actions">
-            <button type="submit" class="clear-filter-btn inline" onclick="document.getElementById('articleIntent').value='preview_only'">
-              <i class="fa-solid fa-eye"></i>
-              <span>Lưu và xem trước</span>
+          <label class="filter-field">
+            <span>Tiêu đề *</span>
+            <input type="text" name="title" value="<?= h((string) ($form['title'] ?? '')) ?>" required>
+            <?php if (!empty($validationErrors['title'])): ?><small class="field-error"><?= h((string) $validationErrors['title']) ?></small><?php endif; ?>
+          </label>
+
+          <label class="filter-field">
+            <span>Nội dung bài viết *</span>
+            <textarea id="proseEditor" name="prose_html" rows="20" class="prose-textarea" required><?= h((string) ($form['prose_html'] ?? '')) ?></textarea>
+            <?php if (!empty($validationErrors['prose_html'])): ?><small class="field-error"><?= h((string) $validationErrors['prose_html']) ?></small><?php endif; ?>
+          </label>
+
+          <details class="editor-info-panel" <?= $infoPanelOpen ? 'open' : '' ?>>
+            <summary>
+              <i class="fa-solid fa-circle-info"></i>
+              <span>Thông tin bài & tác vụ phụ</span>
+            </summary>
+
+            <div class="editor-meta-grid">
+              <label class="filter-field span-2">
+                <span>Mô tả ngắn *</span>
+                <input type="text" name="excerpt" value="<?= h((string) ($form['excerpt'] ?? '')) ?>" required>
+                <?php if (!empty($validationErrors['excerpt'])): ?><small class="field-error"><?= h((string) $validationErrors['excerpt']) ?></small><?php endif; ?>
+              </label>
+
+              <label class="filter-field">
+                <span>Ngày đăng *</span>
+                <input type="date" name="publish_date" value="<?= h((string) ($form['publish_date'] ?? '')) ?>" required>
+                <?php if (!empty($validationErrors['publish_date'])): ?><small class="field-error"><?= h((string) $validationErrors['publish_date']) ?></small><?php endif; ?>
+              </label>
+
+              <label class="filter-field">
+                <span>Ngày sửa</span>
+                <input type="date" name="modified_date" value="<?= h((string) ($form['modified_date'] ?? '')) ?>">
+                <?php if (!empty($validationErrors['modified_date'])): ?><small class="field-error"><?= h((string) $validationErrors['modified_date']) ?></small><?php endif; ?>
+              </label>
+
+              <label class="filter-field span-2">
+                <span>Thẻ (3-7 thẻ, ngăn cách bằng dấu phẩy) *</span>
+                <input type="text" name="tags_text" value="<?= h((string) ($form['tags_text'] ?? '')) ?>" required>
+                <?php if (!empty($validationErrors['tags_text'])): ?><small class="field-error"><?= h((string) $validationErrors['tags_text']) ?></small><?php endif; ?>
+              </label>
+
+              <label class="filter-field span-2">
+                <span>Ảnh đại diện (Featured image)</span>
+                <input type="text" name="featured_image" id="featuredImageInput" value="<?= h((string) ($form['featured_image'] ?? '')) ?>" placeholder="VD: assets/images/content/abc.jpg hoặc /Ketoandieutam.com/uploads/articles/...">
+                <small>Có thể nhập thủ công, hoặc bấm “Dùng làm ảnh đại diện” từ danh sách ảnh upload mới ở sidebar.</small>
+              </label>
+            </div>
+
+            <div class="editor-status-inline">
+              <p><strong>Trạng thái:</strong> <?= h($reviewStatusLabel) ?><?= $reviewIsEdited ? (' · ' . h($reviewStatusAt) . ' · ' . h($reviewStatusBy)) : '' ?></p>
+              <p><strong>Lần thao tác gần nhất:</strong> <?= h($latestEventLabel) ?> · <?= h($latestEventAt) ?> · <?= h($latestEventBy) ?></p>
+              <p><strong>Đường dẫn:</strong> <code><?= h((string) ($article['href'] ?? '')) ?></code></p>
+            </div>
+          </details>
+
+          <div class="editor-bottom-actions">
+            <button type="submit" class="filter-submit-btn" onclick="document.getElementById('articleIntent').value='save_draft'">
+              <i class="fa-solid fa-floppy-disk"></i>
+              <span>Lưu nháp</span>
             </button>
-            <button type="submit" class="rollback-btn inline" onclick="document.getElementById('articleIntent').value='rollback_latest'; return confirm('Xác nhận khôi phục từ bản sao lưu gần nhất?');">
-              <i class="fa-solid fa-rotate-left"></i>
-              <span>Khôi phục gần nhất</span>
+            <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận cập nhật bài này ra trang? Hệ thống sẽ sao lưu trước khi ghi file thật.');">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Đăng ngay</span>
             </button>
-            <button type="submit" class="mark-unreviewed-btn inline" onclick="document.getElementById('articleIntent').value='mark_unreviewed'; return confirm('Đánh dấu bài này là Chưa sửa?');">
+          </div>
+        </form>
+      </article>
+
+      <aside class="editor-workspace-side">
+        <section class="admin-panel editor-side-card">
+          <div class="panel-head">
+            <h3>Trạng thái bài viết</h3>
+            <p>Theo dõi nhanh tình trạng biên tập hiện tại.</p>
+          </div>
+          <div class="editor-status-inline">
+            <p><strong>Review:</strong> <?= h($reviewStatusLabel) ?><?= $reviewIsEdited ? (' · ' . h($reviewStatusAt) . ' · ' . h($reviewStatusBy)) : '' ?></p>
+            <p><strong>Tác vụ gần nhất:</strong> <?= h($latestEventLabel) ?> · <?= h($latestEventAt) ?> · <?= h($latestEventBy) ?></p>
+            <p><strong>ID:</strong> <code><?= h((string) ($article['id'] ?? '')) ?></code></p>
+            <p><strong>Đường dẫn:</strong> <code><?= h((string) ($article['href'] ?? '')) ?></code></p>
+            <p><strong>Số ảnh upload riêng:</strong> <?= number_format(count($uploads), 0, ',', '.') ?></p>
+            <p><strong>Số revision draft:</strong> <?= number_format(count($revisions), 0, ',', '.') ?></p>
+          </div>
+          <div class="editor-side-actions">
+            <button type="submit" form="articleEditorForm" class="mark-unreviewed-btn inline" onclick="document.getElementById('articleIntent').value='mark_unreviewed'; return confirm('Đánh dấu bài này là Chưa sửa?');">
               <i class="fa-solid fa-rotate-left"></i>
               <span>Đánh dấu chưa sửa</span>
             </button>
           </div>
+        </section>
 
-          <div class="editor-status-inline">
-            <p><strong>Trạng thái:</strong> <?= h($reviewStatusLabel) ?><?= $reviewIsEdited ? (' · ' . h($reviewStatusAt) . ' · ' . h($reviewStatusBy)) : '' ?></p>
-            <p><strong>Lần thao tác gần nhất:</strong> <?= h($latestEventLabel) ?> · <?= h($latestEventAt) ?> · <?= h($latestEventBy) ?></p>
-            <p><strong>Đường dẫn:</strong> <code><?= h((string) ($article['href'] ?? '')) ?></code></p>
+        <section class="admin-panel editor-side-card">
+          <div class="panel-head">
+            <h3>Ảnh upload mới</h3>
+            <p>Dùng nút chèn ảnh trong editor để upload. Ảnh thuộc riêng bài này.</p>
           </div>
-        </details>
-      </form>
-    </article>
+          <?php if (empty($uploads)): ?>
+            <div class="empty-state">
+              <p>Chưa có ảnh upload riêng.</p>
+            </div>
+          <?php else: ?>
+            <div class="editor-upload-list">
+              <?php foreach ($uploads as $upload): ?>
+                <div class="editor-upload-item">
+                  <img class="editor-upload-thumb" src="<?= h((string) ($upload['url'] ?? '')) ?>" alt="">
+                  <div class="editor-upload-meta">
+                    <strong><?= h((string) ($upload['name'] ?? '')) ?></strong>
+                    <small><?= number_format(((int) ($upload['size'] ?? 0)) / 1024, 1) ?> KB</small>
+                  </div>
+                  <div class="editor-upload-actions">
+                    <button type="button" class="clear-filter-btn inline" data-upload-select="<?= h((string) ($upload['public_path'] ?? '')) ?>">
+                      Dùng làm ảnh đại diện
+                    </button>
+                    <form method="post" action="<?= h(admin_url('delete_upload.php')) ?>" class="inline-action-form" onsubmit="return confirm('Xóa file ảnh này khỏi uploads?');">
+                      <?= csrf_input_html() ?>
+                      <input type="hidden" name="article_id" value="<?= h((string) ($article['id'] ?? '')) ?>">
+                      <input type="hidden" name="upload_name" value="<?= h((string) ($upload['name'] ?? '')) ?>">
+                      <button type="submit" class="rollback-btn inline">Xóa</button>
+                    </form>
+                  </div>
+                </div>
+              <?php endforeach; ?>
+            </div>
+          <?php endif; ?>
+        </section>
+
+        <section class="admin-panel editor-side-card">
+          <div class="panel-head">
+            <h3>Lịch sử chỉnh sửa</h3>
+            <p>Mỗi lần publish/restore hệ thống đều backup trước khi ghi file.</p>
+          </div>
+          <div class="editor-history-actions">
+            <button type="submit" form="articleEditorForm" class="rollback-btn inline" onclick="document.getElementById('articleIntent').value='rollback_latest'; return confirm('Xác nhận khôi phục từ bản sao lưu gần nhất?');">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span>Khôi phục gần nhất</span>
+            </button>
+          </div>
+          <?php if (empty($recentPublishRecords) && empty($revisions)): ?>
+            <div class="empty-state">
+              <p>Chưa có lịch sử gần đây.</p>
+            </div>
+          <?php else: ?>
+            <?php if (!empty($recentPublishRecords)): ?>
+              <div class="editor-history-list">
+                <?php foreach ($recentPublishRecords as $record): ?>
+                  <?php
+                  $event = trim((string) ($record['event'] ?? ''));
+                  $eventLabel = $event === 'publish'
+                    ? 'Publish'
+                    : ($event === 'rollback'
+                      ? 'Rollback'
+                      : ($event === 'revision_restore' ? 'Restore revision' : ucfirst($event)));
+                  $eventAt = format_admin_datetime((string) ($record['published_at'] ?? $record['rolled_back_at'] ?? $record['restored_at'] ?? ''));
+                  $eventBy = (string) (($record['actor']['username'] ?? '') ?: ($record['actor']['display_name'] ?? ''));
+                  if ($eventBy === '') {
+                    $eventBy = '—';
+                  }
+                  ?>
+                  <article class="editor-history-item">
+                    <div class="editor-history-head">
+                      <strong><?= h($eventLabel) ?></strong>
+                      <span><?= h($eventAt) ?></span>
+                    </div>
+                    <p>Người thao tác: <?= h($eventBy) ?></p>
+                  </article>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
+
+            <?php if (!empty($revisions)): ?>
+              <div class="editor-revision-list">
+                <?php foreach ($revisions as $revision): ?>
+                  <div class="editor-revision-item">
+                    <div>
+                      <strong><?= h((string) ($revision['display'] ?? '')) ?></strong>
+                      <small><?= h((string) ($revision['name'] ?? '')) ?> · <?= number_format(((int) ($revision['size'] ?? 0)) / 1024, 1) ?> KB</small>
+                    </div>
+                    <form method="post" action="<?= h(admin_url('restore_revision.php')) ?>" onsubmit="return confirm('Khôi phục revision này? Bản hiện tại sẽ được backup trước.');">
+                      <?= csrf_input_html() ?>
+                      <input type="hidden" name="article_id" value="<?= h((string) ($article['id'] ?? '')) ?>">
+                      <input type="hidden" name="revision_name" value="<?= h((string) ($revision['name'] ?? '')) ?>">
+                      <button class="clear-filter-btn inline" type="submit">Khôi phục</button>
+                    </form>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
+          <?php endif; ?>
+        </section>
+      </aside>
+    </div>
   <?php endif; ?>
 </section>
 

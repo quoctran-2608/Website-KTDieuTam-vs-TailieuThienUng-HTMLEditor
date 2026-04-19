@@ -215,6 +215,10 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
   $newPublish = (string) ($draftData['publish_date'] ?? '');
   $newModified = (string) ($draftData['modified_date'] ?? '');
   $newTags = is_array($draftData['tags'] ?? null) ? array_values(array_map('strval', $draftData['tags'])) : [];
+  $newImage = trim((string) ($draftData['featured_image'] ?? ''));
+  if ($newImage === '') {
+    $newImage = trim((string) ($article['image'] ?? ''));
+  }
 
   if (!is_writable(dirname($path)) || !is_writable($path)) {
     return [
@@ -229,6 +233,7 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
   $metaPayload['modifiedDate'] = $newModified !== '' ? $newModified : null;
   $metaPayload['tags'] = $newTags;
   $metaPayload['excerpt'] = $newExcerpt;
+  $metaPayload['image'] = $newImage;
 
   $newMetaJson = json_encode($metaPayload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
   if ($newMetaJson === false) {
@@ -346,6 +351,7 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
     'publishDate' => $newPublish,
     'modifiedDate' => $newModified,
     'cardBadgeLabel' => $newExcerpt,
+    'image' => $newImage,
   ]);
 
   if (!$indexSynced) {

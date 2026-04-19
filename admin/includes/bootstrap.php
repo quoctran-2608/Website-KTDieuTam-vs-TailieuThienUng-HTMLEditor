@@ -45,6 +45,14 @@ if (!defined('ADMIN_PUBLISH_HISTORY_PATH')) {
   define('ADMIN_PUBLISH_HISTORY_PATH', ADMIN_STORAGE_PATH . '/publish-history.json');
 }
 
+if (!defined('ADMIN_UPLOADS_DIR')) {
+  define('ADMIN_UPLOADS_DIR', dirname(ADMIN_BASE_PATH) . '/uploads');
+}
+
+if (!defined('ADMIN_DRAFT_REVISIONS_DIR')) {
+  define('ADMIN_DRAFT_REVISIONS_DIR', ADMIN_STORAGE_PATH . '/draft-revisions');
+}
+
 if (!defined('ADMIN_SESSION_TTL')) {
   define('ADMIN_SESSION_TTL', 60 * 60 * 8);
 }
@@ -63,6 +71,8 @@ require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/article_index.php';
 require_once __DIR__ . '/article_parser.php';
 require_once __DIR__ . '/article_draft.php';
+require_once __DIR__ . '/article_media.php';
+require_once __DIR__ . '/article_revision.php';
 require_once __DIR__ . '/article_review.php';
 require_once __DIR__ . '/article_publish.php';
 
@@ -71,6 +81,8 @@ bootstrap_storage();
 bootstrap_session();
 ensure_default_admin_user();
 bootstrap_draft_storage();
+bootstrap_article_media_storage();
+bootstrap_article_revision_storage();
 bootstrap_review_status_storage();
 bootstrap_publish_storage();
 sync_articles_index(false);
