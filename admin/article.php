@@ -280,6 +280,7 @@ if ($article !== null) {
               // Keep draft snapshot for traceability after publish
               $saved = save_article_draft((string) ($article['id'] ?? ''), $clean, $currentUser);
               $draftCurrent = $saved;
+              mark_article_reviewed((string) ($article['id'] ?? ''), $currentUser, 'publish_now');
               $form = array_merge($form, $clean);
               $status = [
                 'type' => 'success',
@@ -296,6 +297,7 @@ if ($article !== null) {
           } else {
             $saved = save_article_draft((string) ($article['id'] ?? ''), $clean, $currentUser);
             $draftCurrent = $saved;
+            mark_article_reviewed((string) ($article['id'] ?? ''), $currentUser, $intent);
             $form = array_merge($form, $clean);
             $diffRows = build_diff_rows($baseEditable, $clean);
             $previewHtml = (string) ($clean['prose_html'] ?? '');

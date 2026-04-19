@@ -9,6 +9,7 @@
   var searchInput = instantForm.querySelector('input[name="q"]');
   var sortSelect = instantForm.querySelector('select[name="sort"]');
   var perPageSelect = instantForm.querySelector('select[name="per_page"]');
+  var reviewStatusSelect = instantForm.querySelector('select[name="review_status"]');
   var debounceTimer = null;
 
   function submitInstantForm() {
@@ -49,7 +50,7 @@
     });
   }
 
-  [sortSelect, perPageSelect].forEach(function (selectNode) {
+  [sortSelect, perPageSelect, reviewStatusSelect].forEach(function (selectNode) {
     if (!selectNode) return;
     selectNode.addEventListener('change', function () {
       if (debounceTimer) {

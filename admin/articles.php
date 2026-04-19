@@ -39,6 +39,7 @@ $filters = [
   'library_kind_key' => (string) ($_GET['library_kind_key'] ?? ''),
   'topic_lv1_key' => (string) ($_GET['topic_lv1_key'] ?? ''),
   'topic_lv2_key' => (string) ($_GET['topic_lv2_key'] ?? ''),
+  'review_status' => (string) ($_GET['review_status'] ?? ''),
   'tree_node_type' => (string) ($_GET['tree_node_type'] ?? ''), // backward compatibility
   'tree_node_key' => (string) ($_GET['tree_node_key'] ?? ''), // backward compatibility
   'date_from' => '',
@@ -77,6 +78,7 @@ if (!in_array($activeSection, ['thu-vien', 'ban-tin'], true)) {
 $filters['section'] = $activeSection;
 $scopeParams = [
   'q' => (string) $filters['q'],
+  'review_status' => (string) $filters['review_status'],
   'sort' => (string) $filters['sort'],
   'per_page' => (int) $filters['per_page'],
 ];
@@ -487,7 +489,9 @@ admin_layout_header([
     <div>
       <h2>Danh sách bài</h2>
       <p>
-        <?= h($contextSummary) ?> · <?= h((string) $meta['total']) ?> bài
+        <?= h($contextSummary) ?> ·
+        Tiến độ: <?= h((string) ($meta['total_edited'] ?? 0)) ?>/<?= h((string) (($meta['total_edited'] ?? 0) + ($meta['total_unreviewed'] ?? 0))) ?> bài đã sửa ·
+        Hiển thị: <?= h((string) $meta['total']) ?> bài
       </p>
     </div>
     <a class="clear-filter-btn" href="<?= h(admin_url('articles.php' . build_articles_query(['section' => $activeSection]))) ?>">
@@ -535,6 +539,21 @@ admin_layout_header([
         <?php endforeach; ?>
       </select>
 
+      <select class="toolbar-select" name="review_status" aria-label="Trạng thái biên tập">
+        <?php
+        $reviewOptions = [
+          '' => 'Tất cả',
+          'unreviewed' => 'Chưa sửa',
+          'edited' => 'Đã sửa',
+        ];
+        foreach ($reviewOptions as $value => $label):
+        ?>
+          <option value="<?= h($value) ?>" <?= (string) ($filters['review_status'] ?? '') === $value ? 'selected' : '' ?>>
+            <?= h($label) ?>
+          </option>
+        <?php endforeach; ?>
+      </select>
+
     </div>
   </form>
 
@@ -549,7 +568,7 @@ admin_layout_header([
         <thead>
           <tr>
             <th>Tiêu đề</th>
-            <th>Ngữ cảnh</th>
+            <th>Trạng thái</th>
             <th>Cập nhật</th>
             <th>Tác vụ</th>
           </tr>
@@ -563,6 +582,22 @@ admin_layout_header([
                   <strong><?= h((string) ($article['title'] ?? '')) ?></strong>
                   <div class="article-subline">
                     <code><?= h((string) ($article['id'] ?? '')) ?></code>
+                    <?php
+                    $contextTokens = [];
+                    if (!empty($article['library_kind_label'])) {
+                      $contextTokens[] = (string) $article['library_kind_label'];
+                    }
+                    if (!empty($article['topic_lv1_label'])) {
+                      $contextTokens[] = (string) $article['topic_lv1_label'];
+                    }
+                    if (!empty($article['topic_lv2_label'])) {
+                      $contextTokens[] = (string) $article['topic_lv2_label'];
+                    }
+                    $contextText = implode(' › ', $contextTokens);
+                    ?>
+                    <?php if ($contextText !== ''): ?>
+                      <small><?= h($contextText) ?></small>
+                    <?php endif; ?>
                     <?php if (!empty($article['path'])): ?>
                       <small><?= h((string) $article['path']) ?></small>
                     <?php endif; ?>
@@ -571,26 +606,26 @@ admin_layout_header([
               </td>
               <td>
                 <?php
-                $sectionLabel = trim((string) ($article['section_label'] ?? ''));
-                if ($sectionLabel === '') {
-                  $sectionLabel = (string) ($article['section'] ?? '');
+                $reviewStatus = (string) ($article['review_status'] ?? 'unreviewed');
+                $isEdited = $reviewStatus === 'edited';
+                $reviewLabel = (string) ($article['review_status_label'] ?? ($isEdited ? 'Đã sửa' : 'Chưa sửa'));
+                $reviewAt = (string) ($article['review_edited_at_label'] ?? '');
+                if ($reviewAt === '') {
+                  $reviewAt = '—';
                 }
-                $contextTokens = [];
-                if (!empty($article['library_kind_label'])) {
-                  $contextTokens[] = (string) $article['library_kind_label'];
+                $reviewBy = trim((string) ($article['review_edited_by'] ?? ''));
+                if ($reviewBy === '') {
+                  $reviewBy = '—';
                 }
-                if (!empty($article['topic_lv1_label'])) {
-                  $contextTokens[] = (string) $article['topic_lv1_label'];
-                }
-                if (!empty($article['topic_lv2_label'])) {
-                  $contextTokens[] = (string) $article['topic_lv2_label'];
-                }
-                $contextText = implode(' › ', $contextTokens);
                 ?>
-                <div class="taxonomy-stack">
-                  <span><?= h($sectionLabel) ?></span>
-                  <?php if ($contextText !== ''): ?>
-                    <small><?= h($contextText) ?></small>
+                <div class="review-state-stack">
+                  <span class="review-state-badge <?= $isEdited ? 'is-edited' : 'is-unreviewed' ?>">
+                    <?= h($reviewLabel) ?>
+                  </span>
+                  <?php if ($isEdited): ?>
+                    <small><?= h($reviewAt) ?> · <?= h($reviewBy) ?></small>
+                  <?php else: ?>
+                    <small>Cần biên tập</small>
                   <?php endif; ?>
                 </div>
               </td>
@@ -628,6 +663,7 @@ admin_layout_header([
         'library_kind_key' => (string) $filters['library_kind_key'],
         'topic_lv1_key' => (string) $filters['topic_lv1_key'],
         'topic_lv2_key' => (string) $filters['topic_lv2_key'],
+        'review_status' => (string) $filters['review_status'],
         'q' => (string) $filters['q'],
         'sort' => (string) $filters['sort'],
         'per_page' => (int) $filters['per_page'],

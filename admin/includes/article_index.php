@@ -262,6 +262,24 @@ function normalize_article_index_item(array $item): ?array
 }
 
 /**
+ * Build compact actor text from review status row.
+ *
+ * @param array<string,mixed> $row
+ */
+function review_status_actor_text(array $row): string
+{
+  $username = trim((string) ($row['edited_by']['username'] ?? ''));
+  if ($username !== '') {
+    return $username;
+  }
+  $displayName = trim((string) ($row['edited_by']['display_name'] ?? ''));
+  if ($displayName !== '') {
+    return $displayName;
+  }
+  return '';
+}
+
+/**
  * Normalize date to YYYY-MM-DD.
  */
 function normalize_date_ymd(string $value): string
@@ -499,6 +517,13 @@ function query_articles_index(array $filters): array
 {
   $cache = read_articles_index_cache();
   $items = is_array($cache['items']) ? $cache['items'] : [];
+  $reviewRows = review_status_map();
+  $editedCount = 0;
+  foreach ($reviewRows as $row) {
+    if (is_array($row) && (string) ($row['status'] ?? '') === 'edited') {
+      $editedCount++;
+    }
+  }
 
   $searchRaw = trim((string) ($filters['q'] ?? ''));
   $search = strtolower($searchRaw);
@@ -511,6 +536,10 @@ function query_articles_index(array $filters): array
   $treeNodeKey = trim((string) ($filters['tree_node_key'] ?? ''));
   $dateFrom = normalize_date_ymd((string) ($filters['date_from'] ?? ''));
   $dateTo = normalize_date_ymd((string) ($filters['date_to'] ?? ''));
+  $reviewStatus = trim((string) ($filters['review_status'] ?? ''));
+  if (!in_array($reviewStatus, ['', 'unreviewed', 'edited'], true)) {
+    $reviewStatus = '';
+  }
   $sort = (string) ($filters['sort'] ?? 'latest');
   $page = max(1, (int) ($filters['page'] ?? 1));
   $perPage = (int) ($filters['per_page'] ?? 20);
@@ -521,7 +550,7 @@ function query_articles_index(array $filters): array
     $perPage = 100;
   }
 
-  $filtered = array_values(array_filter($items, static function ($item) use ($search, $section, $libraryKind, $topicLv1, $topicLv2, $treeNodeType, $treeNodeKey, $dateFrom, $dateTo): bool {
+  $filtered = array_values(array_filter($items, static function ($item) use ($search, $section, $libraryKind, $topicLv1, $topicLv2, $treeNodeType, $treeNodeKey, $dateFrom, $dateTo, $reviewStatus, $reviewRows): bool {
     if (!is_array($item)) {
       return false;
     }
@@ -564,8 +593,37 @@ function query_articles_index(array $filters): array
       return false;
     }
 
+    if ($reviewStatus !== '') {
+      $articleId = trim((string) ($item['id'] ?? ''));
+      $row = $articleId !== '' ? ($reviewRows[$articleId] ?? null) : null;
+      $isEdited = is_array($row) && (string) ($row['status'] ?? '') === 'edited';
+      if ($reviewStatus === 'edited' && !$isEdited) {
+        return false;
+      }
+      if ($reviewStatus === 'unreviewed' && $isEdited) {
+        return false;
+      }
+    }
+
     return true;
   }));
+
+  foreach ($filtered as &$item) {
+    if (!is_array($item)) {
+      continue;
+    }
+    $articleId = trim((string) ($item['id'] ?? ''));
+    $row = $articleId !== '' ? ($reviewRows[$articleId] ?? null) : null;
+    $isEdited = is_array($row) && (string) ($row['status'] ?? '') === 'edited';
+    $editedAtRaw = $isEdited ? trim((string) ($row['edited_at'] ?? '')) : '';
+    $item['review_status'] = $isEdited ? 'edited' : 'unreviewed';
+    $item['review_status_label'] = $isEdited ? 'Đã sửa' : 'Chưa sửa';
+    $item['review_status_color'] = $isEdited ? 'success' : 'danger';
+    $item['review_edited_at'] = $editedAtRaw;
+    $item['review_edited_at_label'] = format_admin_datetime($editedAtRaw);
+    $item['review_edited_by'] = is_array($row) ? review_status_actor_text($row) : '';
+  }
+  unset($item);
 
   usort($filtered, static function (array $a, array $b) use ($sort): int {
     if ($sort === 'oldest') {
@@ -592,6 +650,8 @@ function query_articles_index(array $filters): array
     'items' => $pageItems,
     'meta' => [
       'total' => $total,
+      'total_edited' => $editedCount,
+      'total_unreviewed' => max(0, count($items) - $editedCount),
       'page' => $page,
       'per_page' => $perPage,
       'total_pages' => $totalPages,
@@ -607,6 +667,7 @@ function query_articles_index(array $filters): array
       'tree_node_key' => $treeNodeKey,
       'date_from' => $dateFrom,
       'date_to' => $dateTo,
+      'review_status' => $reviewStatus,
       'sort' => $sort,
     ],
     'facets' => is_array($cache['facets']) ? $cache['facets'] : default_articles_facets(),

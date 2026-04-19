@@ -1270,7 +1270,7 @@ a {
 
 .editor-toolbar-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 156px 120px;
+  grid-template-columns: minmax(0, 1fr) 156px 120px 148px;
   gap: 8px;
   align-items: center;
 }
@@ -1331,6 +1331,40 @@ a {
 
 .date-stack small {
   display: none;
+}
+
+.review-state-stack {
+  display: grid;
+  gap: 4px;
+}
+
+.review-state-badge {
+  width: fit-content;
+  min-height: 26px;
+  border-radius: 999px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.review-state-badge.is-unreviewed {
+  background: #fef2f2;
+  border-color: rgba(220, 38, 38, 0.25);
+  color: #b91c1c;
+}
+
+.review-state-badge.is-edited {
+  background: #ecfdf3;
+  border-color: rgba(22, 163, 74, 0.28);
+  color: #166534;
+}
+
+.review-state-stack small {
+  font-size: 12px;
+  color: #6b7280;
 }
 
 .table-action-link.primary {
@@ -1826,7 +1860,7 @@ a {
   }
 
   .editor-toolbar-row {
-    grid-template-columns: minmax(0, 1fr) 148px 112px;
+    grid-template-columns: minmax(0, 1fr) 140px 106px 136px;
   }
 }
 
@@ -1889,7 +1923,7 @@ a {
   }
 
   .editor-toolbar-row {
-    grid-template-columns: minmax(0, 1fr) 132px 104px;
+    grid-template-columns: minmax(0, 1fr) 128px 100px 124px;
   }
 }
 
