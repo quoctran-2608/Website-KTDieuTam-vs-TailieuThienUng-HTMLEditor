@@ -686,7 +686,7 @@ admin_layout_header([
                       <input type="hidden" name="per_page" value="<?= h((string) $filters['per_page']) ?>">
                       <input type="hidden" name="page" value="<?= h((string) $meta['page']) ?>">
                       <button type="submit" class="table-action-link warning">
-                        <i class="fa-regular fa-circle-xmark"></i>
+                        <i class="fa-solid fa-rotate-left"></i>
                         <span>Chưa sửa</span>
                       </button>
                     </form>

@@ -616,7 +616,7 @@ admin_layout_header([
                 <span>Khôi phục gần nhất</span>
               </button>
               <button type="submit" class="mark-unreviewed-btn inline" onclick="document.getElementById('articleIntent').value='mark_unreviewed'; return confirm('Đánh dấu bài này là Chưa sửa?');">
-                <i class="fa-regular fa-circle-xmark"></i>
+                <i class="fa-solid fa-rotate-left"></i>
                 <span>Đánh dấu chưa sửa</span>
               </button>
               <span class="editor-shortcut-hint">Mẹo: bấm tổ hợp phím lưu để lưu nhanh bản nháp.</span>
