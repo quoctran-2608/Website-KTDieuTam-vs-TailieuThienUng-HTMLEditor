@@ -61,6 +61,7 @@ require_once __DIR__ . '/article_parser.php';
 require_once __DIR__ . '/article_draft.php';
 require_once __DIR__ . '/article_publish.php';
 
+enforce_admin_request_context_or_reject();
 bootstrap_storage();
 bootstrap_session();
 ensure_default_admin_user();

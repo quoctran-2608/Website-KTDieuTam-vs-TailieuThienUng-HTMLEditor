@@ -375,63 +375,18 @@ $innerScript = <<<'JS'
 JS;
 
 admin_layout_header([
-  'title' => 'Chi tiết bài & parser safety',
+  'title' => 'Editor bài viết',
   'active' => 'articles',
-  'description' => 'Phase 5: Form edit + publish + rollback + backup/history.',
-  'phase_label' => 'Phase 6 — Hardening & runbook',
+  'description' => 'Trải nghiệm tối giản: tập trung sửa bài, preview và publish. Block kỹ thuật được gom vào mục nâng cao.',
+  'phase_label' => 'Editor UX v3 — focused workflow',
   'inner_script' => $innerScript,
 ]);
 ?>
 
 <section class="admin-panel">
   <div class="panel-head">
-    <h2>Parser audit toàn kho</h2>
-    <p>Đánh giá mức độ an toàn parse cho toàn bộ bài đã index để chuẩn bị phase chỉnh sửa.</p>
-  </div>
-
-  <div class="parser-audit-grid">
-    <article class="metric-card">
-      <span class="metric-icon success"><i class="fa-solid fa-shield-check"></i></span>
-      <div class="metric-body">
-        <h3><?= h((string) ($auditMeta['safe_count'] ?? 0)) ?></h3>
-        <p>Bài parse-safe</p>
-      </div>
-    </article>
-    <article class="metric-card">
-      <span class="metric-icon warning"><i class="fa-solid fa-bug"></i></span>
-      <div class="metric-body">
-        <h3><?= h((string) ($auditMeta['fail_count'] ?? 0)) ?></h3>
-        <p>Bài lỗi parse</p>
-      </div>
-    </article>
-    <article class="metric-card">
-      <span class="metric-icon info"><i class="fa-solid fa-percent"></i></span>
-      <div class="metric-body">
-        <h3><?= h(number_format($auditSafeRate, 2, ',', '.')) ?>%</h3>
-        <p>Tỷ lệ parse-safe</p>
-      </div>
-    </article>
-    <article class="metric-card">
-      <span class="metric-icon"><i class="fa-solid fa-arrows-rotate"></i></span>
-      <div class="metric-body">
-        <h3><?= h((string) format_admin_datetime((string) ($auditMeta['generated_at'] ?? ''))) ?></h3>
-        <p>Thời điểm audit</p>
-      </div>
-    </article>
-  </div>
-
-  <p style="margin-top:12px;">
-    <a class="clear-filter-btn inline" href="<?= h(admin_url('article.php' . build_article_query(['id' => $id, 'audit' => 1]))) ?>">
-      <i class="fa-solid fa-arrows-rotate"></i>
-      <span>Chạy lại parser audit</span>
-    </a>
-  </p>
-</section>
-
-<section class="admin-panel">
-  <div class="panel-head">
-    <h2>Chi tiết bài theo ID</h2>
-    <p>Hiển thị parser detail và form draft theo contract v1.</p>
+    <h2>Editor bài theo ID</h2>
+    <p>Luồng chính: nhập nội dung → preview → lưu draft/publish. Thông tin kỹ thuật chuyển xuống mục nâng cao.</p>
   </div>
 
   <?php if ($id === ''): ?>
@@ -488,38 +443,9 @@ admin_layout_header([
     <div class="parse-ok-banner">
       <i class="fa-solid fa-circle-check"></i>
       <div>
-        <strong>Parser-safe</strong>
-        <p>Bài này đủ điều kiện parse để đi tiếp luồng draft/preview.</p>
+        <strong>Sẵn sàng chỉnh sửa</strong>
+        <p>Bài này đạt điều kiện kỹ thuật để editor thao tác an toàn.</p>
       </div>
-    </div>
-
-    <div class="parser-detail-grid">
-      <article class="parser-detail-card">
-        <h4>Vùng .article-prose</h4>
-        <ul>
-          <li>Start: <code><?= h((string) ($prose['start'] ?? '')) ?></code></li>
-          <li>OpenEnd: <code><?= h((string) ($prose['open_tag_end'] ?? '')) ?></code></li>
-          <li>CloseStart: <code><?= h((string) ($prose['close_tag_start'] ?? '')) ?></code></li>
-          <li>End: <code><?= h((string) ($prose['end'] ?? '')) ?></code></li>
-          <li>Inner length: <code><?= h((string) ($prose['inner_length'] ?? '')) ?></code></li>
-        </ul>
-        <p><strong>Preview:</strong> <?= h(preview_text((string) ($prose['inner'] ?? ''))) ?></p>
-      </article>
-
-      <article class="parser-detail-card">
-        <h4>Vùng article-meta</h4>
-        <ul>
-          <li>Start: <code><?= h((string) ($meta['start'] ?? '')) ?></code></li>
-          <li>OpenEnd: <code><?= h((string) ($meta['open_tag_end'] ?? '')) ?></code></li>
-          <li>CloseStart: <code><?= h((string) ($meta['close_tag_start'] ?? '')) ?></code></li>
-          <li>End: <code><?= h((string) ($meta['end'] ?? '')) ?></code></li>
-          <li>Inner length: <code><?= h((string) ($meta['inner_length'] ?? '')) ?></code></li>
-        </ul>
-        <details>
-          <summary>Xem JSON article-meta hiện tại</summary>
-          <pre class="json-preview"><?= h(pretty_json($metaPayload)) ?></pre>
-        </details>
-      </article>
     </div>
 
     <form method="post" class="article-editor-form" novalidate>
@@ -586,59 +512,23 @@ admin_layout_header([
 
     <article class="admin-panel">
       <div class="panel-head">
-        <h2>Publish / Rollback status</h2>
-        <p>Theo dõi record mới nhất để đảm bảo có thể truy vết và phục hồi.</p>
+        <h2>Preview render</h2>
+        <p>Render nhanh nội dung prose từ draft hiện tại để rà soát bố cục.</p>
       </div>
-      <?php if (is_array($publishStatus) && !empty($publishStatus)): ?>
-        <div class="json-preview" style="margin-top:10px;"><?= h(pretty_json(is_array($publishStatus['record'] ?? null) ? $publishStatus['record'] : $publishStatus)) ?></div>
-      <?php endif; ?>
-      <?php if (is_array($latestPublish)): ?>
-        <div class="publish-status-grid">
-          <p><strong>Latest event:</strong> <?= h((string) ($latestPublish['event'] ?? '')) ?></p>
-          <p><strong>Time:</strong> <?= h(format_admin_datetime((string) ($latestPublish['published_at'] ?? $latestPublish['rolled_back_at'] ?? ''))) ?></p>
-          <p><strong>Backup:</strong> <code><?= h((string) ($latestPublish['backup_path'] ?? $latestPublish['restored_from'] ?? '')) ?></code></p>
-          <p><strong>Target:</strong> <code><?= h((string) ($latestPublish['target_path'] ?? '')) ?></code></p>
-          <?php if (isset($latestPublish['hash_before'], $latestPublish['hash_after'])): ?>
-            <p><strong>Hash before:</strong> <code><?= h((string) $latestPublish['hash_before']) ?></code></p>
-            <p><strong>Hash after:</strong> <code><?= h((string) $latestPublish['hash_after']) ?></code></p>
-          <?php endif; ?>
-        </div>
-      <?php else: ?>
-        <div class="empty-state">
-          <i class="fa-regular fa-folder-open"></i>
-          <p>Chưa có publish record cho bài này.</p>
-        </div>
-      <?php endif; ?>
-
-      <?php if (!empty($recentHistory)): ?>
-        <div class="table-wrap">
-          <table class="admin-table">
-            <thead>
-              <tr>
-                <th>Time</th>
-                <th>Event</th>
-                <th>Actor</th>
-                <th>Backup/Restore</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($recentHistory as $row): ?>
-                <?php if (!is_array($row)) continue; ?>
-                <tr>
-                  <td><?= h(format_admin_datetime((string) ($row['published_at'] ?? $row['rolled_back_at'] ?? ''))) ?></td>
-                  <td><span class="event-pill"><?= h((string) ($row['event'] ?? '')) ?></span></td>
-                  <td><?= h((string) (($row['actor']['username'] ?? '') ?: '—')) ?></td>
-                  <td><code><?= h((string) ($row['backup_path'] ?? $row['restored_from'] ?? '')) ?></code></td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
-        </div>
-      <?php endif; ?>
+      <div class="preview-meta">
+        <p><strong>Title:</strong> <?= h((string) ($previewMeta['title'] ?? '')) ?></p>
+        <p><strong>Excerpt:</strong> <?= h((string) ($previewMeta['excerpt'] ?? '')) ?></p>
+        <p><strong>Publish:</strong> <?= h((string) ($previewMeta['publishDate'] ?? '')) ?> · <strong>Modified:</strong> <?= h((string) ($previewMeta['modifiedDate'] ?? '')) ?></p>
+        <p><strong>Tags:</strong> <?= h(implode(', ', is_array($previewMeta['tags'] ?? null) ? array_map('strval', $previewMeta['tags']) : [])) ?></p>
+      </div>
+      <div class="preview-host" id="previewHost">
+        <?= $previewHtml !== '' ? $previewHtml : '<p><em>Chưa có nội dung preview.</em></p>' ?>
+      </div>
     </article>
 
-    <div class="editor-preview-grid">
-      <article class="admin-panel">
+    <details class="advanced-section">
+      <summary><i class="fa-regular fa-clone"></i> Xem diff thay đổi (trước/sau)</summary>
+      <article class="admin-panel" style="margin-top:10px;">
         <div class="panel-head">
           <h2>Before / After diff</h2>
           <p>Hiển thị field thay đổi giữa bản gốc parse và draft hiện tại.</p>
@@ -671,23 +561,131 @@ admin_layout_header([
           </div>
         <?php endif; ?>
       </article>
+    </details>
 
-      <article class="admin-panel">
+    <details class="advanced-section">
+      <summary><i class="fa-solid fa-screwdriver-wrench"></i> Thông tin kỹ thuật nâng cao (parser / publish history / audit)</summary>
+
+      <div class="parser-audit-grid">
+        <article class="metric-card">
+          <span class="metric-icon success"><i class="fa-solid fa-shield-check"></i></span>
+          <div class="metric-body">
+            <h3><?= h((string) ($auditMeta['safe_count'] ?? 0)) ?></h3>
+            <p>Bài parse-safe</p>
+          </div>
+        </article>
+        <article class="metric-card">
+          <span class="metric-icon warning"><i class="fa-solid fa-bug"></i></span>
+          <div class="metric-body">
+            <h3><?= h((string) ($auditMeta['fail_count'] ?? 0)) ?></h3>
+            <p>Bài lỗi parse</p>
+          </div>
+        </article>
+        <article class="metric-card">
+          <span class="metric-icon info"><i class="fa-solid fa-percent"></i></span>
+          <div class="metric-body">
+            <h3><?= h(number_format($auditSafeRate, 2, ',', '.')) ?>%</h3>
+            <p>Tỷ lệ parse-safe</p>
+          </div>
+        </article>
+        <article class="metric-card">
+          <span class="metric-icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+          <div class="metric-body">
+            <h3><?= h((string) format_admin_datetime((string) ($auditMeta['generated_at'] ?? ''))) ?></h3>
+            <p>Thời điểm audit</p>
+          </div>
+        </article>
+      </div>
+
+      <p style="margin-top:12px;">
+        <a class="clear-filter-btn inline" href="<?= h(admin_url('article.php' . build_article_query(['id' => $id, 'audit' => 1]))) ?>">
+          <i class="fa-solid fa-arrows-rotate"></i>
+          <span>Chạy lại parser audit</span>
+        </a>
+      </p>
+
+      <div class="parser-detail-grid">
+        <article class="parser-detail-card">
+          <h4>Vùng .article-prose</h4>
+          <ul>
+            <li>Start: <code><?= h((string) ($prose['start'] ?? '')) ?></code></li>
+            <li>OpenEnd: <code><?= h((string) ($prose['open_tag_end'] ?? '')) ?></code></li>
+            <li>CloseStart: <code><?= h((string) ($prose['close_tag_start'] ?? '')) ?></code></li>
+            <li>End: <code><?= h((string) ($prose['end'] ?? '')) ?></code></li>
+            <li>Inner length: <code><?= h((string) ($prose['inner_length'] ?? '')) ?></code></li>
+          </ul>
+          <p><strong>Preview:</strong> <?= h(preview_text((string) ($prose['inner'] ?? ''))) ?></p>
+        </article>
+
+        <article class="parser-detail-card">
+          <h4>Vùng article-meta</h4>
+          <ul>
+            <li>Start: <code><?= h((string) ($meta['start'] ?? '')) ?></code></li>
+            <li>OpenEnd: <code><?= h((string) ($meta['open_tag_end'] ?? '')) ?></code></li>
+            <li>CloseStart: <code><?= h((string) ($meta['close_tag_start'] ?? '')) ?></code></li>
+            <li>End: <code><?= h((string) ($meta['end'] ?? '')) ?></code></li>
+            <li>Inner length: <code><?= h((string) ($meta['inner_length'] ?? '')) ?></code></li>
+          </ul>
+          <details>
+            <summary>Xem JSON article-meta hiện tại</summary>
+            <pre class="json-preview"><?= h(pretty_json($metaPayload)) ?></pre>
+          </details>
+        </article>
+      </div>
+
+      <article class="admin-panel" style="margin-top:12px;">
         <div class="panel-head">
-          <h2>Preview render</h2>
-          <p>Render nhanh nội dung prose từ draft hiện tại để rà soát bố cục.</p>
+          <h2>Publish / Rollback status</h2>
+          <p>Theo dõi record mới nhất để đảm bảo có thể truy vết và phục hồi.</p>
         </div>
-        <div class="preview-meta">
-          <p><strong>Title:</strong> <?= h((string) ($previewMeta['title'] ?? '')) ?></p>
-          <p><strong>Excerpt:</strong> <?= h((string) ($previewMeta['excerpt'] ?? '')) ?></p>
-          <p><strong>Publish:</strong> <?= h((string) ($previewMeta['publishDate'] ?? '')) ?> · <strong>Modified:</strong> <?= h((string) ($previewMeta['modifiedDate'] ?? '')) ?></p>
-          <p><strong>Tags:</strong> <?= h(implode(', ', is_array($previewMeta['tags'] ?? null) ? array_map('strval', $previewMeta['tags']) : [])) ?></p>
-        </div>
-        <div class="preview-host" id="previewHost">
-          <?= $previewHtml !== '' ? $previewHtml : '<p><em>Chưa có nội dung preview.</em></p>' ?>
-        </div>
+        <?php if (is_array($publishStatus) && !empty($publishStatus)): ?>
+          <div class="json-preview" style="margin-top:10px;"><?= h(pretty_json(is_array($publishStatus['record'] ?? null) ? $publishStatus['record'] : $publishStatus)) ?></div>
+        <?php endif; ?>
+        <?php if (is_array($latestPublish)): ?>
+          <div class="publish-status-grid">
+            <p><strong>Latest event:</strong> <?= h((string) ($latestPublish['event'] ?? '')) ?></p>
+            <p><strong>Time:</strong> <?= h(format_admin_datetime((string) ($latestPublish['published_at'] ?? $latestPublish['rolled_back_at'] ?? ''))) ?></p>
+            <p><strong>Backup:</strong> <code><?= h((string) ($latestPublish['backup_path'] ?? $latestPublish['restored_from'] ?? '')) ?></code></p>
+            <p><strong>Target:</strong> <code><?= h((string) ($latestPublish['target_path'] ?? '')) ?></code></p>
+            <?php if (isset($latestPublish['hash_before'], $latestPublish['hash_after'])): ?>
+              <p><strong>Hash before:</strong> <code><?= h((string) $latestPublish['hash_before']) ?></code></p>
+              <p><strong>Hash after:</strong> <code><?= h((string) $latestPublish['hash_after']) ?></code></p>
+            <?php endif; ?>
+          </div>
+        <?php else: ?>
+          <div class="empty-state">
+            <i class="fa-regular fa-folder-open"></i>
+            <p>Chưa có publish record cho bài này.</p>
+          </div>
+        <?php endif; ?>
+
+        <?php if (!empty($recentHistory)): ?>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Event</th>
+                  <th>Actor</th>
+                  <th>Backup/Restore</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($recentHistory as $row): ?>
+                  <?php if (!is_array($row)) continue; ?>
+                  <tr>
+                    <td><?= h(format_admin_datetime((string) ($row['published_at'] ?? $row['rolled_back_at'] ?? ''))) ?></td>
+                    <td><span class="event-pill"><?= h((string) ($row['event'] ?? '')) ?></span></td>
+                    <td><?= h((string) (($row['actor']['username'] ?? '') ?: '—')) ?></td>
+                    <td><code><?= h((string) ($row['backup_path'] ?? $row['restored_from'] ?? '')) ?></code></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+        <?php endif; ?>
       </article>
-    </div>
+    </details>
 
     <p style="margin-top:12px;">
       <a class="clear-filter-btn inline" href="<?= h(article_public_url_detail($article)) ?>" target="_blank" rel="noopener">
@@ -699,8 +697,8 @@ admin_layout_header([
     <div class="next-phase-banner">
       <i class="fa-solid fa-shield-heart"></i>
       <div>
-        <strong>Phase 6 hardening: thêm hash, history và guardrails vận hành</strong>
-        <p>Workflow publish/rollback đã có trace đầy đủ để smoke/regression và bàn giao nội bộ.</p>
+        <strong>Editor ưu tiên trải nghiệm: nhập nhanh, preview nhanh, publish an toàn</strong>
+        <p>Chi tiết kỹ thuật vẫn có đủ nhưng được gom vào mục nâng cao để giảm nhiễu cho người biên tập.</p>
       </div>
     </div>
   <?php endif; ?>

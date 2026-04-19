@@ -19,6 +19,35 @@ function admin_base_path_uri(): string
 }
 
 /**
+ * Validate this request is really under /admin path.
+ * Prevent accidental redirects to admin login from non-admin URLs.
+ */
+function is_admin_request_context(): bool
+{
+  if (PHP_SAPI === 'cli') {
+    return true;
+  }
+  $scriptName = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? ''));
+  if ($scriptName === '') {
+    return false;
+  }
+  return str_contains($scriptName, '/admin/') || str_ends_with($scriptName, '/admin');
+}
+
+/**
+ * Reject non-admin context requests.
+ */
+function enforce_admin_request_context_or_reject(): void
+{
+  if (is_admin_request_context()) {
+    return;
+  }
+  http_response_code(404);
+  echo '404 Not Found';
+  exit;
+}
+
+/**
  * Resolve site base path from admin base path.
  * Example:
  * - /admin -> '' (site at root)

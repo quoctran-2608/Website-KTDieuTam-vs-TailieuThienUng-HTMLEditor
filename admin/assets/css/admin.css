@@ -1184,6 +1184,33 @@ a {
   gap: 12px;
 }
 
+.advanced-section {
+  margin-top: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px 12px;
+}
+
+.advanced-section > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.advanced-section > summary::-webkit-details-marker {
+  display: none;
+}
+
+.advanced-section > summary i {
+  color: #6b7280;
+}
+
 .preview-meta {
   margin-top: 10px;
   border: 1px solid #e5e7eb;
