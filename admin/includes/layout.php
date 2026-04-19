@@ -4,7 +4,13 @@ declare(strict_types=1);
 /**
  * Render admin page header and shell opener.
  *
- * @param array{title?:string,active?:string,description?:string} $options
+ * @param array{
+ *   title?:string,
+ *   active?:string,
+ *   description?:string,
+ *   sidebar_note?:string,
+ *   sidebar_extra_html?:string
+ * } $options
  */
 function admin_layout_header(array $options = []): void
 {
@@ -13,6 +19,7 @@ function admin_layout_header(array $options = []): void
   $description = $options['description'] ?? '';
   $user = current_user();
   $sidebarNote = (string) ($options['sidebar_note'] ?? ($options['phase_label'] ?? 'Khu vực quản trị nội dung'));
+  $sidebarExtraHtml = (string) ($options['sidebar_extra_html'] ?? '');
   $articleCount = null;
   if (function_exists('read_articles_index_cache')) {
     $cache = read_articles_index_cache();
@@ -52,7 +59,7 @@ function admin_layout_header(array $options = []): void
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="<?= h(admin_url('assets/css/admin.css')) ?>">
   </head>
-  <body class="admin-body">
+  <body class="admin-body admin-page-<?= h($active) ?>">
     <div class="admin-shell">
       <aside class="admin-sidebar">
         <div class="admin-brand">
@@ -85,6 +92,11 @@ function admin_layout_header(array $options = []): void
             </a>
           <?php endforeach; ?>
         </nav>
+        <?php if ($sidebarExtraHtml !== ''): ?>
+          <div class="admin-sidebar-extra">
+            <?= $sidebarExtraHtml ?>
+          </div>
+        <?php endif; ?>
         <div class="admin-sidebar-foot">
           <p><strong>Kế Toán Diệu Tâm</strong></p>
           <p><?= h($sidebarNote) ?></p>

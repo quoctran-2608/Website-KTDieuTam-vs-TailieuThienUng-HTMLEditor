@@ -75,6 +75,11 @@ if (!in_array($activeSection, ['thu-vien', 'ban-tin'], true)) {
   $activeSection = 'thu-vien';
 }
 $filters['section'] = $activeSection;
+$scopeParams = [
+  'q' => (string) $filters['q'],
+  'sort' => (string) $filters['sort'],
+  'per_page' => (int) $filters['per_page'],
+];
 
 /**
  * @param array<string,mixed> $params
@@ -233,119 +238,171 @@ $query = query_articles_index($filters);
 $items = $query['items'];
 $meta = $query['meta'];
 $applied = $query['filters'];
-
 $activeSectionLabel = $activeSection === 'ban-tin' ? 'Bản tin' : 'Thư viện';
-$breadcrumb = [$activeSectionLabel];
+$contextParts = [$activeSectionLabel];
 if ($activeKindLabel !== '') {
-  $breadcrumb[] = $activeKindLabel;
+  $contextParts[] = $activeKindLabel;
 }
 if ($activeTopicLv1Label !== '') {
-  $breadcrumb[] = $activeTopicLv1Label;
+  $contextParts[] = $activeTopicLv1Label;
 }
 if ($activeTopicLv2Label !== '') {
-  $breadcrumb[] = $activeTopicLv2Label;
+  $contextParts[] = $activeTopicLv2Label;
+}
+$contextSummary = implode(' › ', $contextParts);
+
+$sidebarTreeGroups = [];
+if ($activeSection === 'thu-vien') {
+  $kindEntries = [];
+  foreach ($kindNodes as $key => $node) {
+    $count = (int) ($node['count'] ?? 0);
+    $kindEntries[] = [
+      'label' => node_label($node),
+      'href' => admin_url('articles.php' . build_articles_query($scopeParams + ['section' => 'thu-vien', 'library_kind_key' => $key])),
+      'active' => $activeKindKey === $key,
+      'count' => $count,
+    ];
+  }
+  $sidebarTreeGroups[] = [
+    'title' => 'Loại thư viện',
+    'items' => array_merge([
+      [
+        'label' => 'Tất cả',
+        'href' => admin_url('articles.php' . build_articles_query($scopeParams + ['section' => 'thu-vien'])),
+        'active' => $activeKindKey === '',
+        'count' => (int) ($sectionCountMap['thu-vien'] ?? 0),
+      ],
+    ], $kindEntries),
+  ];
 }
 
-admin_layout_header([
-  'title' => 'Bài viết',
-  'active' => 'articles',
-  'description' => 'Tìm bài theo mục và chủ đề, sau đó mở bài để chỉnh sửa.',
-  'sidebar_note' => 'Khu vực quản trị nội dung',
-]);
-?>
-
-<section class="admin-panel article-panel">
-  <div class="panel-head">
-    <h2>Chọn khu vực nội dung</h2>
-    <p>Chọn đúng mục trước khi tìm và sửa bài.</p>
-  </div>
-
-  <?php
-  $baseTabParams = [
-    'q' => (string) $filters['q'],
-    'sort' => (string) $filters['sort'],
-    'per_page' => (int) $filters['per_page'],
+$baseLv1SidebarParams = $scopeParams + ['section' => $activeSection];
+if ($activeSection === 'thu-vien' && $activeKindKey !== '') {
+  $baseLv1SidebarParams['library_kind_key'] = $activeKindKey;
+}
+$lv1Entries = [];
+foreach ($topicLv1Nodes as $key => $node) {
+  $count = (int) ($node['count'] ?? 0);
+  $lv1Entries[] = [
+    'label' => node_label($node),
+    'href' => admin_url('articles.php' . build_articles_query($baseLv1SidebarParams + ['topic_lv1_key' => $key])),
+    'active' => $activeTopicLv1Key === $key,
+    'count' => $count,
   ];
-  ?>
-  <div class="section-tabs">
-    <a class="section-tab <?= $activeSection === 'thu-vien' ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($baseTabParams + ['section' => 'thu-vien']))) ?>">
+}
+$sidebarTreeGroups[] = [
+  'title' => 'Nhóm chủ đề',
+  'items' => array_merge([
+    [
+      'label' => 'Tất cả',
+      'href' => admin_url('articles.php' . build_articles_query($baseLv1SidebarParams)),
+      'active' => $activeTopicLv1Key === '',
+      'count' => 0,
+    ],
+  ], $lv1Entries),
+];
+
+$baseLv2SidebarParams = $baseLv1SidebarParams;
+if ($activeTopicLv1Key !== '') {
+  $baseLv2SidebarParams['topic_lv1_key'] = $activeTopicLv1Key;
+}
+$lv2Entries = [];
+foreach ($topicLv2Nodes as $key => $node) {
+  $count = (int) ($node['count'] ?? 0);
+  $lv2Entries[] = [
+    'label' => node_label($node),
+    'href' => admin_url('articles.php' . build_articles_query($baseLv2SidebarParams + ['topic_lv2_key' => $key])),
+    'active' => $activeTopicLv2Key === $key,
+    'count' => $count,
+  ];
+}
+$sidebarTreeGroups[] = [
+  'title' => 'Chủ đề con',
+  'items' => array_merge([
+    [
+      'label' => 'Tất cả',
+      'href' => admin_url('articles.php' . build_articles_query($baseLv2SidebarParams)),
+      'active' => $activeTopicLv2Key === '',
+      'count' => 0,
+    ],
+  ], $lv2Entries),
+];
+
+ob_start();
+?>
+<section class="sidebar-tree">
+  <h3 class="sidebar-tree-title">Cây mục bài viết</h3>
+  <div class="sidebar-section-switch">
+    <a class="sidebar-section-btn <?= $activeSection === 'thu-vien' ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($scopeParams + ['section' => 'thu-vien']))) ?>">
       <i class="fa-solid fa-book-open"></i>
       <span>Thư viện</span>
       <small><?= h((string) ($sectionCountMap['thu-vien'] ?? 0)) ?></small>
     </a>
-    <a class="section-tab <?= $activeSection === 'ban-tin' ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($baseTabParams + ['section' => 'ban-tin']))) ?>">
+    <a class="sidebar-section-btn <?= $activeSection === 'ban-tin' ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($scopeParams + ['section' => 'ban-tin']))) ?>">
       <i class="fa-solid fa-newspaper"></i>
       <span>Bản tin</span>
       <small><?= h((string) ($sectionCountMap['ban-tin'] ?? 0)) ?></small>
     </a>
   </div>
 
-  <div class="context-breadcrumb">
-    <i class="fa-solid fa-location-dot"></i>
-    <span><?= h(implode(' › ', $breadcrumb)) ?></span>
-  </div>
-
-  <div class="context-groups">
-    <?php if ($activeSection === 'thu-vien'): ?>
-      <div class="context-group">
-        <h3>Loại Thư viện</h3>
-        <div class="context-chip-row">
-          <a class="context-chip <?= $activeKindKey === '' ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($baseTabParams + ['section' => 'thu-vien']))) ?>">Tất cả</a>
-          <?php foreach ($kindNodes as $key => $node): ?>
-            <?php $nodeCount = (int) ($node['count'] ?? 0); ?>
-            <a class="context-chip <?= $activeKindKey === $key ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($baseTabParams + ['section' => 'thu-vien', 'library_kind_key' => $key]))) ?>">
-              <?= h(node_label($node)) ?> <small>(<?= h((string) $nodeCount) ?>)</small>
-            </a>
-          <?php endforeach; ?>
-        </div>
-      </div>
-    <?php endif; ?>
-
-    <div class="context-group">
-      <h3><?= $activeSection === 'thu-vien' ? 'Nhóm chủ đề' : 'Nhóm chủ đề bản tin' ?></h3>
-      <div class="context-chip-row">
-        <?php
-        $baseLv1Params = $baseTabParams + ['section' => $activeSection];
-        if ($activeSection === 'thu-vien' && $activeKindKey !== '') {
-          $baseLv1Params['library_kind_key'] = $activeKindKey;
-        }
-        ?>
-        <a class="context-chip <?= $activeTopicLv1Key === '' ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($baseLv1Params))) ?>">Tất cả</a>
-        <?php foreach ($topicLv1Nodes as $key => $node): ?>
-          <?php $nodeCount = (int) ($node['count'] ?? 0); ?>
-          <a class="context-chip <?= $activeTopicLv1Key === $key ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($baseLv1Params + ['topic_lv1_key' => $key]))) ?>">
-            <?= h(node_label($node)) ?> <small>(<?= h((string) $nodeCount) ?>)</small>
+  <?php foreach ($sidebarTreeGroups as $group): ?>
+    <?php
+    $groupTitle = (string) ($group['title'] ?? '');
+    $groupItems = is_array($group['items'] ?? null) ? $group['items'] : [];
+    if ($groupTitle === '' || empty($groupItems)) {
+      continue;
+    }
+    ?>
+    <?php
+    $groupHasActive = false;
+    foreach ($groupItems as $it) {
+      if (is_array($it) && !empty($it['active'])) {
+        $groupHasActive = true;
+        break;
+      }
+    }
+    ?>
+    <details class="sidebar-tree-group" <?= $groupHasActive ? 'open' : '' ?>>
+      <summary><?= h($groupTitle) ?></summary>
+      <div class="sidebar-tree-links">
+        <?php foreach ($groupItems as $item): ?>
+          <?php
+          if (!is_array($item)) {
+            continue;
+          }
+          $itemLabel = (string) ($item['label'] ?? '');
+          $itemHref = (string) ($item['href'] ?? '#');
+          $itemActive = !empty($item['active']);
+          $itemCount = (int) ($item['count'] ?? 0);
+          ?>
+          <a class="sidebar-tree-link <?= $itemActive ? 'is-active' : '' ?>" href="<?= h($itemHref) ?>">
+            <span><?= h($itemLabel) ?></span>
+            <?php if ($itemCount > 0): ?>
+              <small><?= h((string) $itemCount) ?></small>
+            <?php endif; ?>
           </a>
         <?php endforeach; ?>
       </div>
-    </div>
-
-    <div class="context-group">
-      <h3>Chủ đề con</h3>
-      <div class="context-chip-row">
-        <?php
-        $baseLv2Params = $baseLv1Params;
-        if ($activeTopicLv1Key !== '') {
-          $baseLv2Params['topic_lv1_key'] = $activeTopicLv1Key;
-        }
-        ?>
-        <a class="context-chip <?= $activeTopicLv2Key === '' ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($baseLv2Params))) ?>">Tất cả</a>
-        <?php foreach ($topicLv2Nodes as $key => $node): ?>
-          <?php $nodeCount = (int) ($node['count'] ?? 0); ?>
-          <a class="context-chip <?= $activeTopicLv2Key === $key ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($baseLv2Params + ['topic_lv2_key' => $key]))) ?>">
-            <?= h(node_label($node)) ?> <small>(<?= h((string) $nodeCount) ?>)</small>
-          </a>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </div>
+    </details>
+  <?php endforeach; ?>
 </section>
+<?php
+$sidebarExtraHtml = (string) ob_get_clean();
+
+admin_layout_header([
+  'title' => 'Bài viết',
+  'active' => 'articles',
+  'sidebar_note' => 'Khu vực quản trị nội dung',
+  'sidebar_extra_html' => $sidebarExtraHtml,
+]);
+?>
 
 <section class="admin-panel article-panel">
   <div class="panel-head panel-head-inline">
     <div>
       <h2>Danh sách bài</h2>
       <p>
+        Ngữ cảnh: <?= h($contextSummary) ?> ·
         Trang <?= h((string) $meta['page']) ?>/<?= h((string) $meta['total_pages']) ?> ·
         Đang hiển thị <?= h((string) count($items)) ?> / <?= h((string) $meta['total']) ?> bài.
       </p>
@@ -363,7 +420,7 @@ admin_layout_header([
     <input type="hidden" name="topic_lv2_key" value="<?= h((string) $filters['topic_lv2_key']) ?>">
     <div class="filter-grid compact">
       <label class="filter-field span-2">
-        <span>Tìm trong khu vực đang chọn</span>
+        <span>Tìm nhanh</span>
         <input
           type="text"
           name="q"
