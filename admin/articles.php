@@ -49,6 +49,38 @@ $filters = [
   'per_page' => (int) ($_GET['per_page'] ?? 20),
 ];
 
+$currentUser = current_user();
+if (is_post_request()) {
+  enforce_post_csrf_or_reject();
+  $intent = trim((string) ($_POST['_intent'] ?? ''));
+  if ($intent === 'mark_unreviewed_quick') {
+    $articleId = trim((string) ($_POST['article_id'] ?? ''));
+    if ($articleId === '') {
+      flash_set('warning', 'Thiếu mã bài để cập nhật trạng thái.');
+    } else {
+      $marked = mark_article_unreviewed($articleId, $currentUser, 'quick_list_reset');
+      if ($marked) {
+        flash_set('success', 'Đã đánh dấu bài về trạng thái Chưa sửa.');
+      } else {
+        flash_set('warning', 'Bài đang ở trạng thái Chưa sửa.');
+      }
+    }
+  }
+
+  $redirectParams = [
+    'section' => (string) ($_POST['section'] ?? ''),
+    'library_kind_key' => (string) ($_POST['library_kind_key'] ?? ''),
+    'topic_lv1_key' => (string) ($_POST['topic_lv1_key'] ?? ''),
+    'topic_lv2_key' => (string) ($_POST['topic_lv2_key'] ?? ''),
+    'review_status' => (string) ($_POST['review_status'] ?? ''),
+    'q' => (string) ($_POST['q'] ?? ''),
+    'sort' => (string) ($_POST['sort'] ?? ''),
+    'per_page' => (int) ($_POST['per_page'] ?? 20),
+    'page' => (int) ($_POST['page'] ?? 1),
+  ];
+  redirect_to(admin_url('articles.php' . build_articles_query($redirectParams)));
+}
+
 // Backward compatibility: map old tree-node URLs to new section/kind/topic filters.
 if ($filters['tree_node_type'] !== '' && $filters['tree_node_key'] !== '') {
   if ($filters['tree_node_type'] === 'section') {
@@ -639,6 +671,26 @@ admin_layout_header([
               </td>
               <td>
                 <div class="table-action-row">
+                  <?php if ($isEdited): ?>
+                    <form method="post" class="inline-action-form" onsubmit="return confirm('Đánh dấu bài này là Chưa sửa?');">
+                      <?= csrf_input_html() ?>
+                      <input type="hidden" name="_intent" value="mark_unreviewed_quick">
+                      <input type="hidden" name="article_id" value="<?= h((string) ($article['id'] ?? '')) ?>">
+                      <input type="hidden" name="section" value="<?= h($activeSection) ?>">
+                      <input type="hidden" name="library_kind_key" value="<?= h((string) $filters['library_kind_key']) ?>">
+                      <input type="hidden" name="topic_lv1_key" value="<?= h((string) $filters['topic_lv1_key']) ?>">
+                      <input type="hidden" name="topic_lv2_key" value="<?= h((string) $filters['topic_lv2_key']) ?>">
+                      <input type="hidden" name="review_status" value="<?= h((string) $filters['review_status']) ?>">
+                      <input type="hidden" name="q" value="<?= h((string) $filters['q']) ?>">
+                      <input type="hidden" name="sort" value="<?= h((string) $filters['sort']) ?>">
+                      <input type="hidden" name="per_page" value="<?= h((string) $filters['per_page']) ?>">
+                      <input type="hidden" name="page" value="<?= h((string) $meta['page']) ?>">
+                      <button type="submit" class="table-action-link warning">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                        <span>Chưa sửa</span>
+                      </button>
+                    </form>
+                  <?php endif; ?>
                   <a class="table-action-link" href="<?= h(article_public_url($article)) ?>" target="_blank" rel="noopener">
                     <i class="fa-solid fa-up-right-from-square"></i>
                     <span>Xem</span>

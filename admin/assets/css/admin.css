@@ -1248,7 +1248,13 @@ a {
 
 .table-action-row {
   display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
+}
+
+.inline-action-form {
+  margin: 0;
 }
 
 .table-action-link {
@@ -1262,6 +1268,7 @@ a {
   font-size: 12px;
   color: #374151;
   background: #fff;
+  cursor: pointer;
 }
 
 .admin-page-articles .table-wrap {
@@ -1395,6 +1402,12 @@ a {
   border-color: rgba(182, 141, 64, 0.5);
   background: #fff9ec;
   color: #6a4421;
+}
+
+.table-action-link.warning {
+  border-color: rgba(220, 38, 38, 0.35);
+  background: #fff1f2;
+  color: #b91c1c;
 }
 
 .table-action-link:hover {
