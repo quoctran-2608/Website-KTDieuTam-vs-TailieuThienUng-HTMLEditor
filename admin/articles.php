@@ -119,6 +119,17 @@ function node_label(array $node): string
 $activeSectionNode = $sectionTreeMap[$activeSection] ?? null;
 $sectionChildren = is_array($activeSectionNode['children'] ?? null) ? $activeSectionNode['children'] : [];
 
+$sectionCountMap = [];
+foreach (($facets['sections'] ?? []) as $entry) {
+  if (!is_array($entry)) {
+    continue;
+  }
+  $key = (string) ($entry['key'] ?? '');
+  if ($key !== '') {
+    $sectionCountMap[$key] = (int) ($entry['count'] ?? 0);
+  }
+}
+
 $kindNodes = [];
 $topicLv1Nodes = [];
 $topicLv2Nodes = [];
@@ -266,6 +277,7 @@ if ($sidebarTreeMode === 'library') {
           }
           $childEntries[] = [
             'label' => node_label($lv2Node),
+            'count' => (int) ($lv2Node['count'] ?? 0),
             'active' => $activeTopicLv2Key === $lv2Key,
             'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
               'section' => 'thu-vien',
@@ -278,6 +290,7 @@ if ($sidebarTreeMode === 'library') {
       }
       $groupEntries[] = [
         'label' => node_label($lv1Node),
+        'count' => (int) ($lv1Node['count'] ?? 0),
         'active' => $lv1Active,
         'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
           'section' => 'thu-vien',
@@ -290,6 +303,7 @@ if ($sidebarTreeMode === 'library') {
 
     $sidebarTreeRoots[] = [
       'label' => node_label($kindNode),
+      'count' => (int) ($kindNode['count'] ?? 0),
       'active' => $kindActive,
       'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
         'section' => 'thu-vien',
@@ -313,6 +327,7 @@ if ($sidebarTreeMode === 'library') {
         }
         $childEntries[] = [
           'label' => node_label($lv2Node),
+          'count' => (int) ($lv2Node['count'] ?? 0),
           'active' => $activeTopicLv2Key === $lv2Key,
           'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
             'section' => 'ban-tin',
@@ -324,6 +339,7 @@ if ($sidebarTreeMode === 'library') {
     }
     $sidebarTreeRoots[] = [
       'label' => node_label($lv1Node),
+      'count' => (int) ($lv1Node['count'] ?? 0),
       'active' => $lv1Active,
       'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
         'section' => 'ban-tin',
@@ -341,9 +357,11 @@ ob_start();
   <div class="sidebar-section-switch">
     <a class="sidebar-section-btn <?= $activeSection === 'thu-vien' ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($scopeParams + ['section' => 'thu-vien']))) ?>">
       <span>Thư viện</span>
+      <small><?= h((string) ($sectionCountMap['thu-vien'] ?? 0)) ?></small>
     </a>
     <a class="sidebar-section-btn <?= $activeSection === 'ban-tin' ? 'is-active' : '' ?>" href="<?= h(admin_url('articles.php' . build_articles_query($scopeParams + ['section' => 'ban-tin']))) ?>">
       <span>Bản tin</span>
+      <small><?= h((string) ($sectionCountMap['ban-tin'] ?? 0)) ?></small>
     </a>
   </div>
 
@@ -354,6 +372,7 @@ ob_start();
         continue;
       }
       $rootLabel = (string) ($root['label'] ?? '');
+      $rootCount = (int) ($root['count'] ?? 0);
       $rootHref = (string) ($root['href'] ?? '#');
       $rootActive = !empty($root['active']);
       if ($rootLabel === '') {
@@ -363,6 +382,7 @@ ob_start();
       <section class="sidebar-tree-node <?= $rootActive ? 'is-active' : '' ?>">
         <a class="sidebar-tree-root <?= $rootActive ? 'is-active' : '' ?>" href="<?= h($rootHref) ?>">
           <span><?= h($rootLabel) ?></span>
+          <small><?= h((string) $rootCount) ?></small>
         </a>
 
         <?php if ($sidebarTreeMode === 'library'): ?>
@@ -377,6 +397,7 @@ ob_start();
                   continue;
                 }
                 $groupLabel = (string) ($group['label'] ?? '');
+                $groupCount = (int) ($group['count'] ?? 0);
                 $groupHref = (string) ($group['href'] ?? '#');
                 $groupActive = !empty($group['active']);
                 $childEntries = is_array($group['children'] ?? null) ? $group['children'] : [];
@@ -387,6 +408,7 @@ ob_start();
                 <div class="sidebar-tree-group-wrap">
                   <a class="sidebar-tree-group <?= $groupActive ? 'is-active' : '' ?>" href="<?= h($groupHref) ?>">
                     <span><?= h($groupLabel) ?></span>
+                    <small><?= h((string) $groupCount) ?></small>
                   </a>
 
                   <?php if ($groupActive && !empty($childEntries)): ?>
@@ -397,6 +419,7 @@ ob_start();
                           continue;
                         }
                         $childLabel = (string) ($child['label'] ?? '');
+                        $childCount = (int) ($child['count'] ?? 0);
                         $childHref = (string) ($child['href'] ?? '#');
                         $childActive = !empty($child['active']);
                         if ($childLabel === '') {
@@ -405,6 +428,7 @@ ob_start();
                         ?>
                         <a class="sidebar-tree-child <?= $childActive ? 'is-active' : '' ?>" href="<?= h($childHref) ?>">
                           <span><?= h($childLabel) ?></span>
+                          <small><?= h((string) $childCount) ?></small>
                         </a>
                       <?php endforeach; ?>
                     </div>
@@ -425,6 +449,7 @@ ob_start();
                   continue;
                 }
                 $childLabel = (string) ($child['label'] ?? '');
+                $childCount = (int) ($child['count'] ?? 0);
                 $childHref = (string) ($child['href'] ?? '#');
                 $childActive = !empty($child['active']);
                 if ($childLabel === '') {
@@ -433,6 +458,7 @@ ob_start();
                 ?>
                 <a class="sidebar-tree-child <?= $childActive ? 'is-active' : '' ?>" href="<?= h($childHref) ?>">
                   <span><?= h($childLabel) ?></span>
+                  <small><?= h((string) $childCount) ?></small>
                 </a>
               <?php endforeach; ?>
             </div>
@@ -470,7 +496,7 @@ admin_layout_header([
     </a>
   </div>
 
-  <form method="get" class="article-filter-form compact single-row" novalidate>
+  <form method="get" class="article-filter-form compact single-row" novalidate data-instant-filter="1">
     <input type="hidden" name="section" value="<?= h($activeSection) ?>">
     <input type="hidden" name="library_kind_key" value="<?= h((string) $filters['library_kind_key']) ?>">
     <input type="hidden" name="topic_lv1_key" value="<?= h((string) $filters['topic_lv1_key']) ?>">
@@ -509,10 +535,6 @@ admin_layout_header([
         <?php endforeach; ?>
       </select>
 
-      <button class="filter-submit-btn" type="submit">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <span>Lọc</span>
-      </button>
     </div>
   </form>
 
