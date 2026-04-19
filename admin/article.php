@@ -307,7 +307,6 @@ $innerScript = <<<'JS'
   const intent = document.getElementById('articleIntent');
   const editor = document.getElementById('proseEditor');
   const host = document.getElementById('previewHost');
-  const focusToggleBtn = document.getElementById('editorFocusToggle');
   if (!editor || !host) return;
 
   const getEditorHtml = () => {
@@ -373,42 +372,6 @@ $innerScript = <<<'JS'
     });
   }
 
-  const focusClass = 'admin-editor-focus';
-  const focusStorageKey = 'admin_editor_focus_mode';
-  const applyFocusMode = (enabled) => {
-    document.body.classList.toggle(focusClass, enabled);
-    if (!focusToggleBtn) return;
-    focusToggleBtn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
-    const icon = focusToggleBtn.querySelector('i');
-    const text = focusToggleBtn.querySelector('span');
-    if (icon) {
-      icon.className = enabled ? 'fa-solid fa-compress' : 'fa-solid fa-expand';
-    }
-    if (text) {
-      text.textContent = enabled ? 'Thoát siêu gọn' : 'Chế độ siêu gọn';
-    }
-  };
-
-  if (focusToggleBtn) {
-    let initialFocus = false;
-    try {
-      initialFocus = window.localStorage.getItem(focusStorageKey) === '1';
-    } catch (error) {
-      initialFocus = false;
-    }
-    applyFocusMode(initialFocus);
-
-    focusToggleBtn.addEventListener('click', () => {
-      const nextMode = !document.body.classList.contains(focusClass);
-      applyFocusMode(nextMode);
-      try {
-        window.localStorage.setItem(focusStorageKey, nextMode ? '1' : '0');
-      } catch (error) {
-        // ignore persistence errors (private mode, disabled storage...)
-      }
-    });
-  }
-
   syncPreview();
 })();
 JS;
@@ -419,14 +382,14 @@ admin_layout_header([
   'description' => 'Sửa nội dung bài viết, xem trước và cập nhật ra trang thật.',
   'sidebar_note' => 'Khu vực quản trị nội dung',
   'inner_script' => $innerScript,
-  'body_class' => 'admin-mode-simple-editor',
+  'body_class' => 'admin-mode-simple-editor admin-editor-no-sidebar',
 ]);
 ?>
 
 <section class="admin-panel">
   <div class="panel-head">
     <h2>Trang sửa bài viết</h2>
-    <p>Bên trái để sửa nội dung, bên phải để theo dõi trạng thái và lịch sử thao tác.</p>
+    <p>Giữ luồng biên tập đơn giản: sửa nội dung, lưu, và cập nhật ra trang.</p>
   </div>
 
   <?php if ($id === ''): ?>
@@ -502,10 +465,6 @@ admin_layout_header([
           <i class="fa-solid fa-up-right-from-square"></i>
           <span>Mở bài public</span>
         </a>
-        <button type="button" class="clear-filter-btn inline focus-toggle-btn" id="editorFocusToggle" aria-pressed="false">
-          <i class="fa-solid fa-expand"></i>
-          <span>Chế độ siêu gọn</span>
-        </button>
       </div>
     </div>
 
@@ -530,25 +489,33 @@ admin_layout_header([
             <div class="editor-action-bar">
               <button type="submit" class="filter-submit-btn" onclick="document.getElementById('articleIntent').value='save_draft'">
                 <i class="fa-solid fa-floppy-disk"></i>
-                <span>Lưu bản nháp</span>
-              </button>
-              <button type="submit" class="clear-filter-btn inline" onclick="document.getElementById('articleIntent').value='preview_only'">
-                <i class="fa-solid fa-eye"></i>
-                <span>Lưu và xem trước</span>
+                <span>Lưu</span>
               </button>
               <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận cập nhật bài này ra trang? Hệ thống sẽ sao lưu trước khi ghi file thật.');">
                 <i class="fa-solid fa-paper-plane"></i>
                 <span>Cập nhật ra trang</span>
               </button>
-              <button type="submit" class="rollback-btn inline" onclick="document.getElementById('articleIntent').value='rollback_latest'; return confirm('Xác nhận khôi phục từ bản sao lưu gần nhất?');">
-                <i class="fa-solid fa-rotate-left"></i>
-                <span>Khôi phục gần nhất</span>
-              </button>
-              <button type="submit" class="mark-unreviewed-btn inline" onclick="document.getElementById('articleIntent').value='mark_unreviewed'; return confirm('Đánh dấu bài này là Chưa sửa?');">
-                <i class="fa-solid fa-rotate-left"></i>
-                <span>Đánh dấu chưa sửa</span>
-              </button>
-              <span class="editor-shortcut-hint">Mẹo: bấm tổ hợp phím lưu để lưu nhanh bản nháp.</span>
+              <details class="editor-more-actions">
+                <summary>
+                  <i class="fa-solid fa-ellipsis"></i>
+                  <span>Tác vụ khác</span>
+                </summary>
+                <div class="editor-more-actions-menu">
+                  <button type="submit" class="clear-filter-btn inline" onclick="document.getElementById('articleIntent').value='preview_only'">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>Lưu và xem trước</span>
+                  </button>
+                  <button type="submit" class="rollback-btn inline" onclick="document.getElementById('articleIntent').value='rollback_latest'; return confirm('Xác nhận khôi phục từ bản sao lưu gần nhất?');">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span>Khôi phục gần nhất</span>
+                  </button>
+                  <button type="submit" class="mark-unreviewed-btn inline" onclick="document.getElementById('articleIntent').value='mark_unreviewed'; return confirm('Đánh dấu bài này là Chưa sửa?');">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span>Đánh dấu chưa sửa</span>
+                  </button>
+                </div>
+              </details>
+              <span class="editor-shortcut-hint">Ctrl+S để lưu nhanh.</span>
             </div>
 
             <div class="editor-meta-grid">
