@@ -1313,6 +1313,30 @@ a {
   white-space: nowrap;
 }
 
+.article-subline .article-path {
+  max-width: 100%;
+}
+
+.article-context-badges {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.article-context-badge {
+  min-height: 24px;
+  border-radius: 999px;
+  border: 1px solid #dbe3ed;
+  background: #f8fafc;
+  color: #475569;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 .taxonomy-stack {
   gap: 3px;
 }
@@ -1752,7 +1776,8 @@ a {
 }
 
 .publish-btn,
-.rollback-btn {
+.rollback-btn,
+.mark-unreviewed-btn {
   height: 40px;
   border-radius: 10px;
   padding: 0 14px;
@@ -1774,6 +1799,17 @@ a {
   border: 1px solid rgba(185, 28, 28, 0.35);
   color: #fff;
   background: linear-gradient(135deg, #b91c1c, #991b1b);
+}
+
+.mark-unreviewed-btn {
+  border: 1px solid #d1d5db;
+  color: #374151;
+  background: #fff;
+}
+
+.mark-unreviewed-btn:hover {
+  border-color: #9ca3af;
+  color: #111827;
 }
 
 .publish-status-grid {
@@ -2022,7 +2058,8 @@ a {
   .editor-action-bar .filter-submit-btn,
   .editor-action-bar .clear-filter-btn.inline,
   .editor-action-bar .publish-btn.inline,
-  .editor-action-bar .rollback-btn.inline {
+  .editor-action-bar .rollback-btn.inline,
+  .editor-action-bar .mark-unreviewed-btn.inline {
     width: 100%;
     justify-content: center;
   }

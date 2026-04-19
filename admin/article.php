@@ -185,6 +185,7 @@ $previewMeta = [];
 $publishStatus = null;
 $latestPublish = null;
 $recentHistory = [];
+$reviewRow = null;
 
 if ($article !== null) {
   $path = resolve_article_file_path($article);
@@ -206,6 +207,7 @@ if ($article !== null) {
     }
 
     $draftCurrent = read_article_draft((string) ($article['id'] ?? ''));
+    $reviewRow = read_article_review_status((string) ($article['id'] ?? ''));
     if (is_array($draftCurrent) && is_array($draftCurrent['data'] ?? null)) {
       $form = array_merge($baseEditable, $draftCurrent['data']);
       $form['tags_text'] = implode(', ', array_values(array_filter(array_map('strval', is_array($form['tags'] ?? null) ? $form['tags'] : []))));
@@ -260,6 +262,20 @@ if ($article !== null) {
           ];
           $diffRows = [];
         }
+      } elseif ($intent === 'mark_unreviewed') {
+        $marked = mark_article_unreviewed((string) ($article['id'] ?? ''), $currentUser, 'manual_reset');
+        $reviewRow = read_article_review_status((string) ($article['id'] ?? ''));
+        if ($marked) {
+          $status = [
+            'type' => 'success',
+            'message' => 'Đã chuyển trạng thái bài về Chưa sửa.',
+          ];
+        } else {
+          $status = [
+            'type' => 'warning',
+            'message' => 'Bài đang ở trạng thái Chưa sửa.',
+          ];
+        }
       } else {
         $posted = [
           'title' => (string) ($_POST['title'] ?? ''),
@@ -280,7 +296,7 @@ if ($article !== null) {
               // Keep draft snapshot for traceability after publish
               $saved = save_article_draft((string) ($article['id'] ?? ''), $clean, $currentUser);
               $draftCurrent = $saved;
-              mark_article_reviewed((string) ($article['id'] ?? ''), $currentUser, 'publish_now');
+              $reviewRow = mark_article_reviewed((string) ($article['id'] ?? ''), $currentUser, 'publish_now');
               $form = array_merge($form, $clean);
               $status = [
                 'type' => 'success',
@@ -297,7 +313,7 @@ if ($article !== null) {
           } else {
             $saved = save_article_draft((string) ($article['id'] ?? ''), $clean, $currentUser);
             $draftCurrent = $saved;
-            mark_article_reviewed((string) ($article['id'] ?? ''), $currentUser, $intent);
+            $reviewRow = mark_article_reviewed((string) ($article['id'] ?? ''), $currentUser, $intent);
             $form = array_merge($form, $clean);
             $diffRows = build_diff_rows($baseEditable, $clean);
             $previewHtml = (string) ($clean['prose_html'] ?? '');
@@ -351,6 +367,9 @@ if ($article !== null) {
           'tags' => is_array($baseEditable['tags'] ?? null) ? $baseEditable['tags'] : [],
         ];
       }
+    }
+    if ($reviewRow === null) {
+      $reviewRow = read_article_review_status((string) ($article['id'] ?? ''));
     }
     $latestPublish = find_latest_publish_record((string) ($article['id'] ?? ''));
     $recentHistory = list_recent_publish_records((string) ($article['id'] ?? ''), 8);
@@ -515,6 +534,21 @@ admin_layout_header([
     if ($latestEventBy === '') {
       $latestEventBy = '—';
     }
+
+    $reviewIsEdited = is_array($reviewRow) && (string) ($reviewRow['status'] ?? '') === 'edited';
+    $reviewStatusLabel = $reviewIsEdited ? 'Đã sửa' : 'Chưa sửa';
+    $reviewStatusAt = $reviewIsEdited
+      ? format_admin_datetime((string) ($reviewRow['edited_at'] ?? ''))
+      : '—';
+    if ($reviewStatusAt === '') {
+      $reviewStatusAt = '—';
+    }
+    $reviewStatusBy = $reviewIsEdited
+      ? (string) (($reviewRow['edited_by']['username'] ?? '') ?: ($reviewRow['edited_by']['display_name'] ?? ''))
+      : '';
+    if ($reviewStatusBy === '') {
+      $reviewStatusBy = '—';
+    }
     ?>
 
     <div class="parse-ok-banner">
@@ -541,6 +575,7 @@ admin_layout_header([
         <span class="editor-pill"><strong>Mục:</strong> <?= h($sectionLabel) ?></span>
         <span class="editor-pill"><strong>Bản nháp:</strong> <?= h($draftUpdatedAt) ?></span>
         <span class="editor-pill"><strong>Người sửa:</strong> <?= h($draftUpdatedBy) ?></span>
+        <span class="editor-pill"><strong>Trạng thái:</strong> <?= h($reviewStatusLabel) ?><?= $reviewIsEdited ? (' · ' . h($reviewStatusAt)) : '' ?></span>
         <span class="editor-pill"><strong>Lần thao tác gần nhất:</strong> <?= h($latestEventLabel) ?> · <?= h($latestEventAt) ?></span>
       </div>
     </div>
@@ -579,6 +614,10 @@ admin_layout_header([
               <button type="submit" class="rollback-btn inline" onclick="document.getElementById('articleIntent').value='rollback_latest'; return confirm('Xác nhận khôi phục từ bản sao lưu gần nhất?');">
                 <i class="fa-solid fa-rotate-left"></i>
                 <span>Khôi phục gần nhất</span>
+              </button>
+              <button type="submit" class="mark-unreviewed-btn inline" onclick="document.getElementById('articleIntent').value='mark_unreviewed'; return confirm('Đánh dấu bài này là Chưa sửa?');">
+                <i class="fa-regular fa-circle-xmark"></i>
+                <span>Đánh dấu chưa sửa</span>
               </button>
               <span class="editor-shortcut-hint">Mẹo: bấm tổ hợp phím lưu để lưu nhanh bản nháp.</span>
             </div>
@@ -687,8 +726,8 @@ admin_layout_header([
               <code><?= h((string) ($article['href'] ?? '')) ?></code>
             </div>
             <div>
-              <strong>Bản nháp gần nhất</strong>
-              <p><?= h($draftUpdatedAt) ?> · <?= h($draftUpdatedBy) ?></p>
+              <strong>Trạng thái biên tập</strong>
+              <p><?= h($reviewStatusLabel) ?><?= $reviewIsEdited ? (' · ' . h($reviewStatusAt) . ' · ' . h($reviewStatusBy)) : '' ?></p>
             </div>
             <div>
               <strong>Sự kiện gần nhất</strong>

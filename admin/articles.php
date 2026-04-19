@@ -542,7 +542,7 @@ admin_layout_header([
       <select class="toolbar-select" name="review_status" aria-label="Trạng thái biên tập">
         <?php
         $reviewOptions = [
-          '' => 'Tất cả',
+          '' => 'Tất cả trạng thái',
           'unreviewed' => 'Chưa sửa',
           'edited' => 'Đã sửa',
         ];
@@ -582,26 +582,29 @@ admin_layout_header([
                   <strong><?= h((string) ($article['title'] ?? '')) ?></strong>
                   <div class="article-subline">
                     <code><?= h((string) ($article['id'] ?? '')) ?></code>
-                    <?php
-                    $contextTokens = [];
-                    if (!empty($article['library_kind_label'])) {
-                      $contextTokens[] = (string) $article['library_kind_label'];
-                    }
-                    if (!empty($article['topic_lv1_label'])) {
-                      $contextTokens[] = (string) $article['topic_lv1_label'];
-                    }
-                    if (!empty($article['topic_lv2_label'])) {
-                      $contextTokens[] = (string) $article['topic_lv2_label'];
-                    }
-                    $contextText = implode(' › ', $contextTokens);
-                    ?>
-                    <?php if ($contextText !== ''): ?>
-                      <small><?= h($contextText) ?></small>
-                    <?php endif; ?>
                     <?php if (!empty($article['path'])): ?>
-                      <small><?= h((string) $article['path']) ?></small>
+                      <small class="article-path"><?= h((string) $article['path']) ?></small>
                     <?php endif; ?>
                   </div>
+                  <?php
+                  $contextTokens = [];
+                  if (!empty($article['library_kind_label'])) {
+                    $contextTokens[] = (string) $article['library_kind_label'];
+                  }
+                  if (!empty($article['topic_lv1_label'])) {
+                    $contextTokens[] = (string) $article['topic_lv1_label'];
+                  }
+                  if (!empty($article['topic_lv2_label'])) {
+                    $contextTokens[] = (string) $article['topic_lv2_label'];
+                  }
+                  ?>
+                  <?php if (!empty($contextTokens)): ?>
+                    <div class="article-context-badges">
+                      <?php foreach ($contextTokens as $token): ?>
+                        <span class="article-context-badge"><?= h($token) ?></span>
+                      <?php endforeach; ?>
+                    </div>
+                  <?php endif; ?>
                 </div>
               </td>
               <td>
