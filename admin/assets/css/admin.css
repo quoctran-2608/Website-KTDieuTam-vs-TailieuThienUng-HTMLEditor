@@ -693,6 +693,86 @@ a {
   gap: 14px;
 }
 
+.tree-layout {
+  grid-template-columns: 320px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.tree-sidebar {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fcfcfd;
+  display: grid;
+  gap: 12px;
+  position: sticky;
+  top: 18px;
+}
+
+.tree-main {
+  display: grid;
+  gap: 14px;
+}
+
+.tree-root-list,
+.tree-node-children {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tree-node {
+  margin: 2px 0;
+}
+
+.tree-node-children {
+  margin-top: 4px;
+  padding-left: 14px;
+  border-left: 1px dashed #d6dde8;
+}
+
+.tree-node-link {
+  min-height: 34px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 10px;
+  color: #374151;
+  font-size: 13px;
+  background: #fff;
+}
+
+.tree-node.has-children > .tree-node-link {
+  font-weight: 600;
+}
+
+.tree-node.is-active > .tree-node-link {
+  border-color: rgba(182, 141, 64, 0.45);
+  background: #fff7ea;
+  color: #6a4421;
+}
+
+.tree-node-link:hover {
+  border-color: #d1d5db;
+}
+
+.tree-node-count {
+  display: inline-flex;
+  min-width: 26px;
+  height: 20px;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
 .panel-head-inline {
   display: flex;
   align-items: flex-start;
@@ -728,10 +808,21 @@ a {
   gap: 13px;
 }
 
+.article-filter-form.compact {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fafbfc;
+}
+
 .filter-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
+}
+
+.filter-grid.compact {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .filter-field {
@@ -1200,6 +1291,14 @@ a {
 
   .filter-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tree-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tree-sidebar {
+    position: static;
   }
 
   .filter-field.span-2 {

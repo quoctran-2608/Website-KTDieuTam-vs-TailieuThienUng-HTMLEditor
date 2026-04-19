@@ -21,8 +21,17 @@ function sync_articles_index(bool $force = false): array
   $sourceMTime = (int) (filemtime(ADMIN_ARTICLES_SOURCE_PATH) ?: 0);
   $cache = read_articles_index_cache();
   $cacheMTime = (int) ($cache['meta']['source_mtime'] ?? 0);
+  $cacheVersion = (int) ($cache['meta']['version'] ?? 0);
+  $hasTree = isset($cache['facets']['tree']) && is_array($cache['facets']['tree'])
+    && isset($cache['facets']['tree']['sections']) && is_array($cache['facets']['tree']['sections']);
 
-  if (!$force && !empty($cache['items']) && $cacheMTime === $sourceMTime) {
+  if (
+    !$force
+    && !empty($cache['items'])
+    && $cacheMTime === $sourceMTime
+    && $cacheVersion >= 2
+    && $hasTree
+  ) {
     return [
       'synced' => true,
       'reason' => 'cache_fresh',
@@ -71,7 +80,7 @@ function sync_articles_index(bool $force = false): array
       'source_mtime' => $sourceMTime,
       'synced_at' => date('c'),
       'count' => count($items),
-      'version' => 1,
+      'version' => 2,
     ],
     'items' => $items,
     'facets' => build_articles_facets($items),
@@ -138,6 +147,24 @@ function read_articles_index_cache(): array
   if (!isset($decoded['facets']) || !is_array($decoded['facets'])) {
     $decoded['facets'] = default_articles_facets();
   }
+  if (!isset($decoded['facets']['sections']) || !is_array($decoded['facets']['sections'])) {
+    $decoded['facets']['sections'] = [];
+  }
+  if (!isset($decoded['facets']['library_kinds']) || !is_array($decoded['facets']['library_kinds'])) {
+    $decoded['facets']['library_kinds'] = [];
+  }
+  if (!isset($decoded['facets']['topic_lv1']) || !is_array($decoded['facets']['topic_lv1'])) {
+    $decoded['facets']['topic_lv1'] = [];
+  }
+  if (!isset($decoded['facets']['topic_lv2']) || !is_array($decoded['facets']['topic_lv2'])) {
+    $decoded['facets']['topic_lv2'] = [];
+  }
+  if (!isset($decoded['facets']['tree']) || !is_array($decoded['facets']['tree'])) {
+    $decoded['facets']['tree'] = ['sections' => []];
+  }
+  if (!isset($decoded['facets']['tree']['sections']) || !is_array($decoded['facets']['tree']['sections'])) {
+    $decoded['facets']['tree']['sections'] = [];
+  }
 
   return $decoded;
 }
@@ -168,6 +195,9 @@ function default_articles_facets(): array
     'library_kinds' => [],
     'topic_lv1' => [],
     'topic_lv2' => [],
+    'tree' => [
+      'sections' => [],
+    ],
   ];
 }
 
@@ -201,6 +231,7 @@ function normalize_article_index_item(array $item): ?array
     (string) ($item['topicLv2Label'] ?? ''),
     (string) ($item['cardTopicLabel'] ?? ''),
     (string) ($item['sectionLabel'] ?? ''),
+    (string) ($item['libraryKindLabel'] ?? ''),
   ]);
 
   $sortDate = $modifiedDate !== '' ? $modifiedDate : $publishDate;
@@ -264,7 +295,30 @@ function build_article_search_index(array $parts): string
 }
 
 /**
- * Build facets for fast filter select options.
+ * Normalize tree nodes: value array + label sort + recursive children normalize.
+ *
+ * @param array<int|string,array<string,mixed>> $nodes
+ * @return array<int,array<string,mixed>>
+ */
+function normalize_tree_nodes(array $nodes): array
+{
+  $list = array_values($nodes);
+  usort($list, static function (array $a, array $b): int {
+    return strcmp((string) ($a['label'] ?? ''), (string) ($b['label'] ?? ''));
+  });
+
+  foreach ($list as &$node) {
+    if (isset($node['children']) && is_array($node['children'])) {
+      /** @var array<int|string,array<string,mixed>> $children */
+      $children = $node['children'];
+      $node['children'] = normalize_tree_nodes($children);
+    }
+  }
+  return $list;
+}
+
+/**
+ * Build facets + navigation tree for intuitive admin browsing.
  *
  * @param array<int,array<string,mixed>> $items
  * @return array<string,mixed>
@@ -275,59 +329,141 @@ function build_articles_facets(array $items): array
   $libraryKinds = [];
   $topicLv1 = [];
   $topicLv2 = [];
+  $treeSections = [];
 
   foreach ($items as $item) {
     $sectionKey = (string) ($item['section'] ?? '');
+    $sectionLabel = (string) ($item['section_label'] ?? $sectionKey);
+    $kindKey = (string) ($item['library_kind_key'] ?? '');
+    $kindLabel = (string) ($item['library_kind_label'] ?? $kindKey);
+    $lv1Key = (string) ($item['topic_lv1_key'] ?? '');
+    $lv1Label = (string) ($item['topic_lv1_label'] ?? $lv1Key);
+    $lv2Key = (string) ($item['topic_lv2_key'] ?? '');
+    $lv2Label = (string) ($item['topic_lv2_label'] ?? $lv2Key);
+
     if ($sectionKey !== '') {
       if (!isset($sections[$sectionKey])) {
         $sections[$sectionKey] = [
           'key' => $sectionKey,
-          'label' => (string) ($item['section_label'] ?? $sectionKey),
+          'label' => $sectionLabel,
           'count' => 0,
         ];
       }
       $sections[$sectionKey]['count']++;
+
+      if (!isset($treeSections[$sectionKey])) {
+        $treeSections[$sectionKey] = [
+          'key' => $sectionKey,
+          'label' => $sectionLabel,
+          'type' => 'section',
+          'count' => 0,
+          'children' => [],
+        ];
+      }
+      $treeSections[$sectionKey]['count']++;
     }
 
-    $kindKey = (string) ($item['library_kind_key'] ?? '');
     if ($kindKey !== '') {
       if (!isset($libraryKinds[$kindKey])) {
         $libraryKinds[$kindKey] = [
           'key' => $kindKey,
-          'label' => (string) ($item['library_kind_label'] ?? $kindKey),
+          'label' => $kindLabel !== '' ? $kindLabel : $kindKey,
           'count' => 0,
         ];
       }
       $libraryKinds[$kindKey]['count']++;
     }
 
-    $lv1Key = (string) ($item['topic_lv1_key'] ?? '');
     if ($lv1Key !== '') {
       if (!isset($topicLv1[$lv1Key])) {
         $topicLv1[$lv1Key] = [
           'key' => $lv1Key,
-          'label' => (string) ($item['topic_lv1_label'] ?? $lv1Key),
+          'label' => $lv1Label !== '' ? $lv1Label : $lv1Key,
           'count' => 0,
         ];
       }
       $topicLv1[$lv1Key]['count']++;
     }
 
-    $lv2Key = (string) ($item['topic_lv2_key'] ?? '');
     if ($lv2Key !== '') {
       if (!isset($topicLv2[$lv2Key])) {
         $topicLv2[$lv2Key] = [
           'key' => $lv2Key,
-          'label' => (string) ($item['topic_lv2_label'] ?? $lv2Key),
+          'label' => $lv2Label !== '' ? $lv2Label : $lv2Key,
           'count' => 0,
         ];
       }
       $topicLv2[$lv2Key]['count']++;
     }
+
+    if ($sectionKey === 'thu-vien') {
+      $kindNodeKey = $kindKey !== '' ? $kindKey : '__khac';
+      $kindNodeLabel = $kindLabel !== '' ? $kindLabel : 'Khác';
+      if (!isset($treeSections[$sectionKey]['children'][$kindNodeKey])) {
+        $treeSections[$sectionKey]['children'][$kindNodeKey] = [
+          'key' => $kindNodeKey,
+          'label' => $kindNodeLabel,
+          'type' => 'library_kind',
+          'count' => 0,
+          'children' => [],
+        ];
+      }
+      $treeSections[$sectionKey]['children'][$kindNodeKey]['count']++;
+
+      $lv1NodeKey = $lv1Key !== '' ? $lv1Key : '__khac';
+      $lv1NodeLabel = $lv1Label !== '' ? $lv1Label : 'Khác';
+      if (!isset($treeSections[$sectionKey]['children'][$kindNodeKey]['children'][$lv1NodeKey])) {
+        $treeSections[$sectionKey]['children'][$kindNodeKey]['children'][$lv1NodeKey] = [
+          'key' => $lv1NodeKey,
+          'label' => $lv1NodeLabel,
+          'type' => 'topic_lv1',
+          'count' => 0,
+          'children' => [],
+        ];
+      }
+      $treeSections[$sectionKey]['children'][$kindNodeKey]['children'][$lv1NodeKey]['count']++;
+
+      if ($lv2Key !== '') {
+        if (!isset($treeSections[$sectionKey]['children'][$kindNodeKey]['children'][$lv1NodeKey]['children'][$lv2Key])) {
+          $treeSections[$sectionKey]['children'][$kindNodeKey]['children'][$lv1NodeKey]['children'][$lv2Key] = [
+            'key' => $lv2Key,
+            'label' => $lv2Label !== '' ? $lv2Label : $lv2Key,
+            'type' => 'topic_lv2',
+            'count' => 0,
+          ];
+        }
+        $treeSections[$sectionKey]['children'][$kindNodeKey]['children'][$lv1NodeKey]['children'][$lv2Key]['count']++;
+      }
+    } elseif ($sectionKey === 'ban-tin') {
+      $lv1NodeKey = $lv1Key !== '' ? $lv1Key : '__khac';
+      $lv1NodeLabel = $lv1Label !== '' ? $lv1Label : 'Khác';
+      if (!isset($treeSections[$sectionKey]['children'][$lv1NodeKey])) {
+        $treeSections[$sectionKey]['children'][$lv1NodeKey] = [
+          'key' => $lv1NodeKey,
+          'label' => $lv1NodeLabel,
+          'type' => 'topic_lv1',
+          'count' => 0,
+          'children' => [],
+        ];
+      }
+      $treeSections[$sectionKey]['children'][$lv1NodeKey]['count']++;
+
+      if ($lv2Key !== '') {
+        if (!isset($treeSections[$sectionKey]['children'][$lv1NodeKey]['children'][$lv2Key])) {
+          $treeSections[$sectionKey]['children'][$lv1NodeKey]['children'][$lv2Key] = [
+            'key' => $lv2Key,
+            'label' => $lv2Label !== '' ? $lv2Label : $lv2Key,
+            'type' => 'topic_lv2',
+            'count' => 0,
+          ];
+        }
+        $treeSections[$sectionKey]['children'][$lv1NodeKey]['children'][$lv2Key]['count']++;
+      }
+    }
   }
 
-  $sortFacet = static function (array &$items): void {
-    usort($items, static function (array $a, array $b): int {
+  $sortFacet = static function (array &$rows): void {
+    usort($rows, static function (array $a, array $b): int {
       return strcmp((string) ($a['label'] ?? ''), (string) ($b['label'] ?? ''));
     });
   };
@@ -347,6 +483,9 @@ function build_articles_facets(array $items): array
     'library_kinds' => $libraryKinds,
     'topic_lv1' => $topicLv1,
     'topic_lv2' => $topicLv2,
+    'tree' => [
+      'sections' => normalize_tree_nodes($treeSections),
+    ],
   ];
 }
 
@@ -368,6 +507,8 @@ function query_articles_index(array $filters): array
   $libraryKind = trim((string) ($filters['library_kind_key'] ?? ''));
   $topicLv1 = trim((string) ($filters['topic_lv1_key'] ?? ''));
   $topicLv2 = trim((string) ($filters['topic_lv2_key'] ?? ''));
+  $treeNodeType = trim((string) ($filters['tree_node_type'] ?? ''));
+  $treeNodeKey = trim((string) ($filters['tree_node_key'] ?? ''));
   $dateFrom = normalize_date_ymd((string) ($filters['date_from'] ?? ''));
   $dateTo = normalize_date_ymd((string) ($filters['date_to'] ?? ''));
   $sort = (string) ($filters['sort'] ?? 'latest');
@@ -380,7 +521,7 @@ function query_articles_index(array $filters): array
     $perPage = 100;
   }
 
-  $filtered = array_values(array_filter($items, static function ($item) use ($search, $section, $libraryKind, $topicLv1, $topicLv2, $dateFrom, $dateTo): bool {
+  $filtered = array_values(array_filter($items, static function ($item) use ($search, $section, $libraryKind, $topicLv1, $topicLv2, $treeNodeType, $treeNodeKey, $dateFrom, $dateTo): bool {
     if (!is_array($item)) {
       return false;
     }
@@ -398,6 +539,21 @@ function query_articles_index(array $filters): array
     }
     if ($topicLv2 !== '' && (string) ($item['topic_lv2_key'] ?? '') !== $topicLv2) {
       return false;
+    }
+
+    if ($treeNodeType !== '' && $treeNodeKey !== '') {
+      if ($treeNodeType === 'section' && (string) ($item['section'] ?? '') !== $treeNodeKey) {
+        return false;
+      }
+      if ($treeNodeType === 'library_kind' && (string) ($item['library_kind_key'] ?? '') !== $treeNodeKey) {
+        return false;
+      }
+      if ($treeNodeType === 'topic_lv1' && (string) ($item['topic_lv1_key'] ?? '') !== $treeNodeKey) {
+        return false;
+      }
+      if ($treeNodeType === 'topic_lv2' && (string) ($item['topic_lv2_key'] ?? '') !== $treeNodeKey) {
+        return false;
+      }
     }
 
     $publishDate = (string) ($item['publish_date'] ?? '');
@@ -447,6 +603,8 @@ function query_articles_index(array $filters): array
       'library_kind_key' => $libraryKind,
       'topic_lv1_key' => $topicLv1,
       'topic_lv2_key' => $topicLv2,
+      'tree_node_type' => $treeNodeType,
+      'tree_node_key' => $treeNodeKey,
       'date_from' => $dateFrom,
       'date_to' => $dateTo,
       'sort' => $sort,
