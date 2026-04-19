@@ -307,6 +307,7 @@ $innerScript = <<<'JS'
   const intent = document.getElementById('articleIntent');
   const editor = document.getElementById('proseEditor');
   const host = document.getElementById('previewHost');
+  const focusToggleBtn = document.getElementById('editorFocusToggle');
   if (!editor || !host) return;
 
   const getEditorHtml = () => {
@@ -368,6 +369,42 @@ $innerScript = <<<'JS'
           if (window.__previewTimer) window.clearTimeout(window.__previewTimer);
           window.__previewTimer = window.setTimeout(syncPreview, 100);
         });
+      }
+    });
+  }
+
+  const focusClass = 'admin-editor-focus';
+  const focusStorageKey = 'admin_editor_focus_mode';
+  const applyFocusMode = (enabled) => {
+    document.body.classList.toggle(focusClass, enabled);
+    if (!focusToggleBtn) return;
+    focusToggleBtn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+    const icon = focusToggleBtn.querySelector('i');
+    const text = focusToggleBtn.querySelector('span');
+    if (icon) {
+      icon.className = enabled ? 'fa-solid fa-compress' : 'fa-solid fa-expand';
+    }
+    if (text) {
+      text.textContent = enabled ? 'Thoát siêu gọn' : 'Chế độ siêu gọn';
+    }
+  };
+
+  if (focusToggleBtn) {
+    let initialFocus = false;
+    try {
+      initialFocus = window.localStorage.getItem(focusStorageKey) === '1';
+    } catch (error) {
+      initialFocus = false;
+    }
+    applyFocusMode(initialFocus);
+
+    focusToggleBtn.addEventListener('click', () => {
+      const nextMode = !document.body.classList.contains(focusClass);
+      applyFocusMode(nextMode);
+      try {
+        window.localStorage.setItem(focusStorageKey, nextMode ? '1' : '0');
+      } catch (error) {
+        // ignore persistence errors (private mode, disabled storage...)
       }
     });
   }
@@ -465,6 +502,10 @@ admin_layout_header([
           <i class="fa-solid fa-up-right-from-square"></i>
           <span>Mở bài public</span>
         </a>
+        <button type="button" class="clear-filter-btn inline focus-toggle-btn" id="editorFocusToggle" aria-pressed="false">
+          <i class="fa-solid fa-expand"></i>
+          <span>Chế độ siêu gọn</span>
+        </button>
       </div>
     </div>
 

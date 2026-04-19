@@ -1749,6 +1749,38 @@ a {
   display: none;
 }
 
+.focus-toggle-btn {
+  margin-left: auto;
+}
+
+.admin-mode-simple-editor.admin-editor-focus .editor-workspace {
+  grid-template-columns: 1fr;
+}
+
+.admin-mode-simple-editor.admin-editor-focus .editor-workspace-side,
+.admin-mode-simple-editor.admin-editor-focus .preview-panel-v4,
+.admin-mode-simple-editor.admin-editor-focus .editor-shortcut-hint,
+.admin-mode-simple-editor.admin-editor-focus .admin-sidebar,
+.admin-mode-simple-editor.admin-editor-focus .admin-topbar {
+  display: none !important;
+}
+
+.admin-mode-simple-editor.admin-editor-focus .admin-shell {
+  grid-template-columns: 1fr;
+}
+
+.admin-mode-simple-editor.admin-editor-focus .admin-content {
+  padding: 10px 16px 16px;
+}
+
+.admin-mode-simple-editor.admin-editor-focus .admin-panel {
+  border-radius: 10px;
+}
+
+.admin-mode-simple-editor.admin-editor-focus .editor-top-actions {
+  margin-bottom: 6px;
+}
+
 .editor-meta-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
