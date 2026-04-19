@@ -307,7 +307,7 @@ $innerScript = <<<'JS'
   const intent = document.getElementById('articleIntent');
   const editor = document.getElementById('proseEditor');
   const host = document.getElementById('previewHost');
-  if (!editor || !host) return;
+  if (!editor) return;
 
   const getEditorHtml = () => {
     if (window.tinymce && typeof window.tinymce.get === 'function') {
@@ -320,6 +320,7 @@ $innerScript = <<<'JS'
   };
 
   const syncPreview = () => {
+    if (!host) return;
     const html = getEditorHtml().trim();
     host.innerHTML = html !== '' ? html : '<p><em>Chưa có nội dung preview.</em></p>';
   };
@@ -389,7 +390,7 @@ admin_layout_header([
 <section class="admin-panel">
   <div class="panel-head">
     <h2>Trang sửa bài viết</h2>
-    <p>Giữ luồng biên tập đơn giản: sửa nội dung, lưu, và cập nhật ra trang.</p>
+    <p>Tập trung vào phần quan trọng: tiêu đề, nội dung, lưu và cập nhật.</p>
   </div>
 
   <?php if ($id === ''): ?>
@@ -474,138 +475,101 @@ admin_layout_header([
       </div>
     <?php endif; ?>
 
-    <div class="editor-workspace">
-      <section class="editor-workspace-main">
-        <article class="admin-panel">
-          <div class="panel-head">
-            <h2>Soạn thảo nội dung</h2>
-            <p>Nhấn tổ hợp phím lưu nhanh để lưu bản nháp. Các nút cập nhật và khôi phục nằm ngay phía trên.</p>
-          </div>
+    <?php
+    $infoPanelOpen = !empty($validationErrors['excerpt'])
+      || !empty($validationErrors['publish_date'])
+      || !empty($validationErrors['modified_date'])
+      || !empty($validationErrors['tags_text']);
+    ?>
+    <article class="admin-panel">
+      <div class="panel-head">
+        <h2>Soạn thảo nội dung</h2>
+        <p>Giữ 2 thao tác chính ở trên cùng để biên tập nhanh.</p>
+      </div>
 
-          <form method="post" class="article-editor-form editor-v4-form" id="articleEditorForm" novalidate>
-            <?= csrf_input_html() ?>
-            <input type="hidden" name="_intent" value="save_draft" id="articleIntent">
+      <form method="post" class="article-editor-form editor-v4-form" id="articleEditorForm" novalidate>
+        <?= csrf_input_html() ?>
+        <input type="hidden" name="_intent" value="save_draft" id="articleIntent">
 
-            <div class="editor-action-bar">
-              <button type="submit" class="filter-submit-btn" onclick="document.getElementById('articleIntent').value='save_draft'">
-                <i class="fa-solid fa-floppy-disk"></i>
-                <span>Lưu</span>
-              </button>
-              <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận cập nhật bài này ra trang? Hệ thống sẽ sao lưu trước khi ghi file thật.');">
-                <i class="fa-solid fa-paper-plane"></i>
-                <span>Cập nhật ra trang</span>
-              </button>
-              <details class="editor-more-actions">
-                <summary>
-                  <i class="fa-solid fa-ellipsis"></i>
-                  <span>Tác vụ khác</span>
-                </summary>
-                <div class="editor-more-actions-menu">
-                  <button type="submit" class="clear-filter-btn inline" onclick="document.getElementById('articleIntent').value='preview_only'">
-                    <i class="fa-solid fa-eye"></i>
-                    <span>Lưu và xem trước</span>
-                  </button>
-                  <button type="submit" class="rollback-btn inline" onclick="document.getElementById('articleIntent').value='rollback_latest'; return confirm('Xác nhận khôi phục từ bản sao lưu gần nhất?');">
-                    <i class="fa-solid fa-rotate-left"></i>
-                    <span>Khôi phục gần nhất</span>
-                  </button>
-                  <button type="submit" class="mark-unreviewed-btn inline" onclick="document.getElementById('articleIntent').value='mark_unreviewed'; return confirm('Đánh dấu bài này là Chưa sửa?');">
-                    <i class="fa-solid fa-rotate-left"></i>
-                    <span>Đánh dấu chưa sửa</span>
-                  </button>
-                </div>
-              </details>
-              <span class="editor-shortcut-hint">Ctrl+S để lưu nhanh.</span>
-            </div>
+        <div class="editor-action-bar">
+          <button type="submit" class="filter-submit-btn" onclick="document.getElementById('articleIntent').value='save_draft'">
+            <i class="fa-solid fa-floppy-disk"></i>
+            <span>Lưu</span>
+          </button>
+          <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận cập nhật bài này ra trang? Hệ thống sẽ sao lưu trước khi ghi file thật.');">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Cập nhật ra trang</span>
+          </button>
+          <span class="editor-shortcut-hint">Ctrl+S để lưu nhanh.</span>
+        </div>
 
-            <div class="editor-meta-grid">
-              <label class="filter-field span-2">
-                <span>Tiêu đề *</span>
-                <input type="text" name="title" value="<?= h((string) ($form['title'] ?? '')) ?>" required>
-                <?php if (!empty($validationErrors['title'])): ?><small class="field-error"><?= h((string) $validationErrors['title']) ?></small><?php endif; ?>
-              </label>
+        <label class="filter-field">
+          <span>Tiêu đề *</span>
+          <input type="text" name="title" value="<?= h((string) ($form['title'] ?? '')) ?>" required>
+          <?php if (!empty($validationErrors['title'])): ?><small class="field-error"><?= h((string) $validationErrors['title']) ?></small><?php endif; ?>
+        </label>
 
-              <label class="filter-field span-2">
-                <span>Mô tả ngắn *</span>
-                <input type="text" name="excerpt" value="<?= h((string) ($form['excerpt'] ?? '')) ?>" required>
-                <?php if (!empty($validationErrors['excerpt'])): ?><small class="field-error"><?= h((string) $validationErrors['excerpt']) ?></small><?php endif; ?>
-              </label>
+        <label class="filter-field">
+          <span>Nội dung chính (.article-prose) *</span>
+          <textarea id="proseEditor" name="prose_html" rows="20" class="prose-textarea" required><?= h((string) ($form['prose_html'] ?? '')) ?></textarea>
+          <?php if (!empty($validationErrors['prose_html'])): ?><small class="field-error"><?= h((string) $validationErrors['prose_html']) ?></small><?php endif; ?>
+        </label>
 
-              <label class="filter-field">
-                <span>Ngày đăng *</span>
-                <input type="date" name="publish_date" value="<?= h((string) ($form['publish_date'] ?? '')) ?>" required>
-                <?php if (!empty($validationErrors['publish_date'])): ?><small class="field-error"><?= h((string) $validationErrors['publish_date']) ?></small><?php endif; ?>
-              </label>
+        <details class="editor-info-panel" <?= $infoPanelOpen ? 'open' : '' ?>>
+          <summary>
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Thông tin bài & tác vụ phụ</span>
+          </summary>
 
-              <label class="filter-field">
-                <span>Ngày sửa</span>
-                <input type="date" name="modified_date" value="<?= h((string) ($form['modified_date'] ?? '')) ?>">
-                <?php if (!empty($validationErrors['modified_date'])): ?><small class="field-error"><?= h((string) $validationErrors['modified_date']) ?></small><?php endif; ?>
-              </label>
-
-              <label class="filter-field span-2">
-                <span>Thẻ (3-7 thẻ, ngăn cách bằng dấu phẩy) *</span>
-                <input type="text" name="tags_text" value="<?= h((string) ($form['tags_text'] ?? '')) ?>" required>
-                <?php if (!empty($validationErrors['tags_text'])): ?><small class="field-error"><?= h((string) $validationErrors['tags_text']) ?></small><?php endif; ?>
-              </label>
-            </div>
+          <div class="editor-meta-grid">
+            <label class="filter-field span-2">
+              <span>Mô tả ngắn *</span>
+              <input type="text" name="excerpt" value="<?= h((string) ($form['excerpt'] ?? '')) ?>" required>
+              <?php if (!empty($validationErrors['excerpt'])): ?><small class="field-error"><?= h((string) $validationErrors['excerpt']) ?></small><?php endif; ?>
+            </label>
 
             <label class="filter-field">
-              <span>Nội dung chính (.article-prose) *</span>
-              <textarea id="proseEditor" name="prose_html" rows="20" class="prose-textarea" required><?= h((string) ($form['prose_html'] ?? '')) ?></textarea>
-              <?php if (!empty($validationErrors['prose_html'])): ?><small class="field-error"><?= h((string) $validationErrors['prose_html']) ?></small><?php endif; ?>
+              <span>Ngày đăng *</span>
+              <input type="date" name="publish_date" value="<?= h((string) ($form['publish_date'] ?? '')) ?>" required>
+              <?php if (!empty($validationErrors['publish_date'])): ?><small class="field-error"><?= h((string) $validationErrors['publish_date']) ?></small><?php endif; ?>
             </label>
-          </form>
-        </article>
 
-        <article class="admin-panel preview-panel-v4">
-          <div class="panel-head">
-            <h2>Xem trước nội dung</h2>
-            <p>Xem nhanh kết quả hiển thị trước khi cập nhật ra trang.</p>
-          </div>
-          <div class="preview-meta">
-            <p><strong>Tiêu đề:</strong> <?= h((string) ($previewMeta['title'] ?? '')) ?></p>
-            <p><strong>Mô tả ngắn:</strong> <?= h((string) ($previewMeta['excerpt'] ?? '')) ?></p>
-            <p><strong>Ngày đăng:</strong> <?= h((string) ($previewMeta['publishDate'] ?? '')) ?> · <strong>Ngày sửa:</strong> <?= h((string) ($previewMeta['modifiedDate'] ?? '')) ?></p>
-            <p><strong>Thẻ:</strong> <?= h(implode(', ', is_array($previewMeta['tags'] ?? null) ? array_map('strval', $previewMeta['tags']) : [])) ?></p>
-          </div>
-          <div class="preview-host" id="previewHost">
-            <?= $previewHtml !== '' ? $previewHtml : '<p><em>Chưa có nội dung preview.</em></p>' ?>
-          </div>
-        </article>
-      </section>
+            <label class="filter-field">
+              <span>Ngày sửa</span>
+              <input type="date" name="modified_date" value="<?= h((string) ($form['modified_date'] ?? '')) ?>">
+              <?php if (!empty($validationErrors['modified_date'])): ?><small class="field-error"><?= h((string) $validationErrors['modified_date']) ?></small><?php endif; ?>
+            </label>
 
-      <aside class="editor-workspace-side">
-        <article class="admin-panel editor-side-card editor-side-sticky">
-          <div class="panel-head">
-            <h2>Trạng thái biên tập</h2>
-            <p>Thông tin nhanh của bài hiện tại.</p>
+            <label class="filter-field span-2">
+              <span>Thẻ (3-7 thẻ, ngăn cách bằng dấu phẩy) *</span>
+              <input type="text" name="tags_text" value="<?= h((string) ($form['tags_text'] ?? '')) ?>" required>
+              <?php if (!empty($validationErrors['tags_text'])): ?><small class="field-error"><?= h((string) $validationErrors['tags_text']) ?></small><?php endif; ?>
+            </label>
           </div>
-          <div class="editor-fact-list">
-            <div>
-              <strong>Tiêu đề</strong>
-              <p><?= h((string) ($article['title'] ?? '')) ?></p>
-            </div>
-            <div>
-              <strong>Đường dẫn</strong>
-              <code><?= h((string) ($article['href'] ?? '')) ?></code>
-            </div>
-            <div>
-              <strong>Trạng thái biên tập</strong>
-              <p><?= h($reviewStatusLabel) ?><?= $reviewIsEdited ? (' · ' . h($reviewStatusAt) . ' · ' . h($reviewStatusBy)) : '' ?></p>
-            </div>
-            <div>
-              <strong>Sự kiện gần nhất</strong>
-              <p><?= h($latestEventLabel) ?> · <?= h($latestEventAt) ?> · <?= h($latestEventBy) ?></p>
-            </div>
-            <div>
-              <strong>Ngày đăng / Ngày sửa</strong>
-              <p><?= h((string) ($article['publish_date'] ?? '—')) ?> / <?= h((string) ($article['modified_date'] ?? '—')) ?></p>
-            </div>
+
+          <div class="editor-rare-actions">
+            <button type="submit" class="clear-filter-btn inline" onclick="document.getElementById('articleIntent').value='preview_only'">
+              <i class="fa-solid fa-eye"></i>
+              <span>Lưu và xem trước</span>
+            </button>
+            <button type="submit" class="rollback-btn inline" onclick="document.getElementById('articleIntent').value='rollback_latest'; return confirm('Xác nhận khôi phục từ bản sao lưu gần nhất?');">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span>Khôi phục gần nhất</span>
+            </button>
+            <button type="submit" class="mark-unreviewed-btn inline" onclick="document.getElementById('articleIntent').value='mark_unreviewed'; return confirm('Đánh dấu bài này là Chưa sửa?');">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span>Đánh dấu chưa sửa</span>
+            </button>
           </div>
-        </article>
-      </aside>
-    </div>
+
+          <div class="editor-status-inline">
+            <p><strong>Trạng thái:</strong> <?= h($reviewStatusLabel) ?><?= $reviewIsEdited ? (' · ' . h($reviewStatusAt) . ' · ' . h($reviewStatusBy)) : '' ?></p>
+            <p><strong>Lần thao tác gần nhất:</strong> <?= h($latestEventLabel) ?> · <?= h($latestEventAt) ?> · <?= h($latestEventBy) ?></p>
+            <p><strong>Đường dẫn:</strong> <code><?= h((string) ($article['href'] ?? '')) ?></code></p>
+          </div>
+        </details>
+      </form>
+    </article>
   <?php endif; ?>
 </section>
 

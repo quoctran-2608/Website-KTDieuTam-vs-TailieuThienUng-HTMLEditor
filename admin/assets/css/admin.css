@@ -1768,62 +1768,69 @@ a {
   border-radius: 10px;
 }
 
-.editor-more-actions {
-  margin-left: auto;
-  position: relative;
-}
-
-.editor-more-actions > summary {
-  list-style: none;
-  height: 40px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  padding: 0 12px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  background: #fff;
-  color: #374151;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.editor-more-actions > summary::-webkit-details-marker {
-  display: none;
-}
-
-.editor-more-actions[open] > summary {
-  border-color: #b68d40;
-  box-shadow: 0 0 0 2px rgba(182, 141, 64, 0.15);
-}
-
-.editor-more-actions-menu {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 6px);
-  min-width: 230px;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  background: #fff;
-  padding: 8px;
-  display: grid;
-  gap: 6px;
-  z-index: 5;
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
-}
-
-.editor-more-actions-menu .clear-filter-btn.inline,
-.editor-more-actions-menu .rollback-btn.inline,
-.editor-more-actions-menu .mark-unreviewed-btn.inline {
-  width: 100%;
-  justify-content: flex-start;
-}
-
 .editor-meta-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
+}
+
+.admin-editor-no-sidebar .editor-meta-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.editor-info-panel {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fafafa;
+  padding: 10px;
+}
+
+.editor-info-panel > summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.editor-info-panel > summary::-webkit-details-marker {
+  display: none;
+}
+
+.editor-info-panel > summary i {
+  color: #6b7280;
+}
+
+.editor-info-panel .editor-meta-grid {
+  margin-top: 10px;
+}
+
+.editor-rare-actions {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.editor-status-inline {
+  margin-top: 10px;
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.editor-status-inline p {
+  margin: 0;
+}
+
+.editor-status-inline code {
+  font-size: 11px;
+  color: #6b7280;
+  word-break: break-all;
 }
 
 .prose-textarea {
@@ -2221,21 +2228,19 @@ a {
     justify-content: center;
   }
 
-  .editor-more-actions {
-    width: 100%;
-    margin-left: 0;
+  .admin-editor-no-sidebar .editor-meta-grid {
+    grid-template-columns: 1fr;
   }
 
-  .editor-more-actions > summary {
+  .editor-rare-actions {
+    flex-direction: column;
+  }
+
+  .editor-rare-actions .clear-filter-btn.inline,
+  .editor-rare-actions .rollback-btn.inline,
+  .editor-rare-actions .mark-unreviewed-btn.inline {
     width: 100%;
     justify-content: center;
-  }
-
-  .editor-more-actions-menu {
-    position: static;
-    margin-top: 6px;
-    width: 100%;
-    min-width: 0;
   }
 
   .editor-top-actions-row {
