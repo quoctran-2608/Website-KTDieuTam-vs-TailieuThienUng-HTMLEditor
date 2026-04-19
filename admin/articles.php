@@ -251,82 +251,105 @@ if ($activeTopicLv2Label !== '') {
 }
 $contextSummary = implode(' › ', $contextParts);
 
-$sidebarTreeGroups = [];
-if ($activeSection === 'thu-vien') {
-  $kindEntries = [];
-  foreach ($kindNodes as $key => $node) {
-    $count = (int) ($node['count'] ?? 0);
-    $kindEntries[] = [
-      'label' => node_label($node),
-      'href' => admin_url('articles.php' . build_articles_query($scopeParams + ['section' => 'thu-vien', 'library_kind_key' => $key])),
-      'active' => $activeKindKey === $key,
-      'count' => $count,
+$sidebarTreeMode = $activeSection === 'thu-vien' ? 'library' : 'news';
+$sidebarTreeRoots = [];
+if ($sidebarTreeMode === 'library') {
+  foreach ($kindNodes as $kindKey => $kindNode) {
+    $kindActive = $activeKindKey === $kindKey;
+    $groupEntries = [];
+    foreach (($kindNode['children'] ?? []) as $lv1Node) {
+      if (!is_array($lv1Node)) {
+        continue;
+      }
+      $lv1Key = (string) ($lv1Node['key'] ?? '');
+      if ($lv1Key === '') {
+        continue;
+      }
+      $lv1Active = $kindActive && $activeTopicLv1Key === $lv1Key;
+      $childEntries = [];
+      if ($lv1Active) {
+        foreach (($lv1Node['children'] ?? []) as $lv2Node) {
+          if (!is_array($lv2Node)) {
+            continue;
+          }
+          $lv2Key = (string) ($lv2Node['key'] ?? '');
+          if ($lv2Key === '') {
+            continue;
+          }
+          $childEntries[] = [
+            'label' => node_label($lv2Node),
+            'count' => (int) ($lv2Node['count'] ?? 0),
+            'active' => $activeTopicLv2Key === $lv2Key,
+            'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
+              'section' => 'thu-vien',
+              'library_kind_key' => $kindKey,
+              'topic_lv1_key' => $lv1Key,
+              'topic_lv2_key' => $lv2Key,
+            ])),
+          ];
+        }
+      }
+      $groupEntries[] = [
+        'label' => node_label($lv1Node),
+        'count' => (int) ($lv1Node['count'] ?? 0),
+        'active' => $lv1Active,
+        'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
+          'section' => 'thu-vien',
+          'library_kind_key' => $kindKey,
+          'topic_lv1_key' => $lv1Key,
+        ])),
+        'children' => $childEntries,
+      ];
+    }
+
+    $sidebarTreeRoots[] = [
+      'label' => node_label($kindNode),
+      'count' => (int) ($kindNode['count'] ?? 0),
+      'active' => $kindActive,
+      'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
+        'section' => 'thu-vien',
+        'library_kind_key' => $kindKey,
+      ])),
+      'groups' => $groupEntries,
     ];
   }
-  $sidebarTreeGroups[] = [
-    'title' => 'Loại thư viện',
-    'items' => array_merge([
-      [
-        'label' => 'Tất cả',
-        'href' => admin_url('articles.php' . build_articles_query($scopeParams + ['section' => 'thu-vien'])),
-        'active' => $activeKindKey === '',
-        'count' => (int) ($sectionCountMap['thu-vien'] ?? 0),
-      ],
-    ], $kindEntries),
-  ];
+} else {
+  foreach ($topicLv1Nodes as $lv1Key => $lv1Node) {
+    $lv1Active = $activeTopicLv1Key === $lv1Key;
+    $childEntries = [];
+    if ($lv1Active) {
+      foreach (($lv1Node['children'] ?? []) as $lv2Node) {
+        if (!is_array($lv2Node)) {
+          continue;
+        }
+        $lv2Key = (string) ($lv2Node['key'] ?? '');
+        if ($lv2Key === '') {
+          continue;
+        }
+        $childEntries[] = [
+          'label' => node_label($lv2Node),
+          'count' => (int) ($lv2Node['count'] ?? 0),
+          'active' => $activeTopicLv2Key === $lv2Key,
+          'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
+            'section' => 'ban-tin',
+            'topic_lv1_key' => $lv1Key,
+            'topic_lv2_key' => $lv2Key,
+          ])),
+        ];
+      }
+    }
+    $sidebarTreeRoots[] = [
+      'label' => node_label($lv1Node),
+      'count' => (int) ($lv1Node['count'] ?? 0),
+      'active' => $lv1Active,
+      'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
+        'section' => 'ban-tin',
+        'topic_lv1_key' => $lv1Key,
+      ])),
+      'children' => $childEntries,
+    ];
+  }
 }
-
-$baseLv1SidebarParams = $scopeParams + ['section' => $activeSection];
-if ($activeSection === 'thu-vien' && $activeKindKey !== '') {
-  $baseLv1SidebarParams['library_kind_key'] = $activeKindKey;
-}
-$lv1Entries = [];
-foreach ($topicLv1Nodes as $key => $node) {
-  $count = (int) ($node['count'] ?? 0);
-  $lv1Entries[] = [
-    'label' => node_label($node),
-    'href' => admin_url('articles.php' . build_articles_query($baseLv1SidebarParams + ['topic_lv1_key' => $key])),
-    'active' => $activeTopicLv1Key === $key,
-    'count' => $count,
-  ];
-}
-$sidebarTreeGroups[] = [
-  'title' => 'Nhóm chủ đề',
-  'items' => array_merge([
-    [
-      'label' => 'Tất cả',
-      'href' => admin_url('articles.php' . build_articles_query($baseLv1SidebarParams)),
-      'active' => $activeTopicLv1Key === '',
-      'count' => 0,
-    ],
-  ], $lv1Entries),
-];
-
-$baseLv2SidebarParams = $baseLv1SidebarParams;
-if ($activeTopicLv1Key !== '') {
-  $baseLv2SidebarParams['topic_lv1_key'] = $activeTopicLv1Key;
-}
-$lv2Entries = [];
-foreach ($topicLv2Nodes as $key => $node) {
-  $count = (int) ($node['count'] ?? 0);
-  $lv2Entries[] = [
-    'label' => node_label($node),
-    'href' => admin_url('articles.php' . build_articles_query($baseLv2SidebarParams + ['topic_lv2_key' => $key])),
-    'active' => $activeTopicLv2Key === $key,
-    'count' => $count,
-  ];
-}
-$sidebarTreeGroups[] = [
-  'title' => 'Chủ đề con',
-  'items' => array_merge([
-    [
-      'label' => 'Tất cả',
-      'href' => admin_url('articles.php' . build_articles_query($baseLv2SidebarParams)),
-      'active' => $activeTopicLv2Key === '',
-      'count' => 0,
-    ],
-  ], $lv2Entries),
-];
 
 ob_start();
 ?>
@@ -344,47 +367,123 @@ ob_start();
       <small><?= h((string) ($sectionCountMap['ban-tin'] ?? 0)) ?></small>
     </a>
   </div>
+  <a class="sidebar-tree-reset" href="<?= h(admin_url('articles.php' . build_articles_query($scopeParams + ['section' => $activeSection]))) ?>">
+    Tất cả trong <?= h($activeSectionLabel) ?>
+  </a>
 
-  <?php foreach ($sidebarTreeGroups as $group): ?>
-    <?php
-    $groupTitle = (string) ($group['title'] ?? '');
-    $groupItems = is_array($group['items'] ?? null) ? $group['items'] : [];
-    if ($groupTitle === '' || empty($groupItems)) {
-      continue;
-    }
-    ?>
-    <?php
-    $groupHasActive = false;
-    foreach ($groupItems as $it) {
-      if (is_array($it) && !empty($it['active'])) {
-        $groupHasActive = true;
-        break;
+  <div class="sidebar-tree-area">
+    <?php foreach ($sidebarTreeRoots as $root): ?>
+      <?php
+      if (!is_array($root)) {
+        continue;
       }
-    }
-    ?>
-    <details class="sidebar-tree-group" <?= $groupHasActive ? 'open' : '' ?>>
-      <summary><?= h($groupTitle) ?></summary>
-      <div class="sidebar-tree-links">
-        <?php foreach ($groupItems as $item): ?>
+      $rootLabel = (string) ($root['label'] ?? '');
+      $rootCount = (int) ($root['count'] ?? 0);
+      $rootHref = (string) ($root['href'] ?? '#');
+      $rootActive = !empty($root['active']);
+      if ($rootLabel === '') {
+        continue;
+      }
+      ?>
+      <section class="sidebar-tree-node <?= $rootActive ? 'is-active' : '' ?>">
+        <a class="sidebar-tree-root <?= $rootActive ? 'is-active' : '' ?>" href="<?= h($rootHref) ?>">
+          <span><?= h($rootLabel) ?></span>
+          <?php if ($rootCount > 0): ?>
+            <small><?= h((string) $rootCount) ?></small>
+          <?php endif; ?>
+        </a>
+
+        <?php if ($sidebarTreeMode === 'library'): ?>
           <?php
-          if (!is_array($item)) {
-            continue;
-          }
-          $itemLabel = (string) ($item['label'] ?? '');
-          $itemHref = (string) ($item['href'] ?? '#');
-          $itemActive = !empty($item['active']);
-          $itemCount = (int) ($item['count'] ?? 0);
+          $groupEntries = is_array($root['groups'] ?? null) ? $root['groups'] : [];
           ?>
-          <a class="sidebar-tree-link <?= $itemActive ? 'is-active' : '' ?>" href="<?= h($itemHref) ?>">
-            <span><?= h($itemLabel) ?></span>
-            <?php if ($itemCount > 0): ?>
-              <small><?= h((string) $itemCount) ?></small>
-            <?php endif; ?>
-          </a>
-        <?php endforeach; ?>
-      </div>
-    </details>
-  <?php endforeach; ?>
+          <?php if ($rootActive && !empty($groupEntries)): ?>
+            <div class="sidebar-tree-groups">
+              <?php foreach ($groupEntries as $group): ?>
+                <?php
+                if (!is_array($group)) {
+                  continue;
+                }
+                $groupLabel = (string) ($group['label'] ?? '');
+                $groupCount = (int) ($group['count'] ?? 0);
+                $groupHref = (string) ($group['href'] ?? '#');
+                $groupActive = !empty($group['active']);
+                $childEntries = is_array($group['children'] ?? null) ? $group['children'] : [];
+                if ($groupLabel === '') {
+                  continue;
+                }
+                ?>
+                <div class="sidebar-tree-group-wrap">
+                  <a class="sidebar-tree-group <?= $groupActive ? 'is-active' : '' ?>" href="<?= h($groupHref) ?>">
+                    <span><?= h($groupLabel) ?></span>
+                    <?php if ($groupCount > 0): ?>
+                      <small><?= h((string) $groupCount) ?></small>
+                    <?php endif; ?>
+                  </a>
+
+                  <?php if ($groupActive && !empty($childEntries)): ?>
+                    <div class="sidebar-tree-children">
+                      <?php foreach ($childEntries as $child): ?>
+                        <?php
+                        if (!is_array($child)) {
+                          continue;
+                        }
+                        $childLabel = (string) ($child['label'] ?? '');
+                        $childCount = (int) ($child['count'] ?? 0);
+                        $childHref = (string) ($child['href'] ?? '#');
+                        $childActive = !empty($child['active']);
+                        if ($childLabel === '') {
+                          continue;
+                        }
+                        ?>
+                        <a class="sidebar-tree-child <?= $childActive ? 'is-active' : '' ?>" href="<?= h($childHref) ?>">
+                          <span><?= h($childLabel) ?></span>
+                          <?php if ($childCount > 0): ?>
+                            <small><?= h((string) $childCount) ?></small>
+                          <?php endif; ?>
+                        </a>
+                      <?php endforeach; ?>
+                    </div>
+                  <?php endif; ?>
+                </div>
+              <?php endforeach; ?>
+            </div>
+          <?php endif; ?>
+        <?php else: ?>
+          <?php
+          $childEntries = is_array($root['children'] ?? null) ? $root['children'] : [];
+          ?>
+          <?php if ($rootActive && !empty($childEntries)): ?>
+            <div class="sidebar-tree-children">
+              <?php foreach ($childEntries as $child): ?>
+                <?php
+                if (!is_array($child)) {
+                  continue;
+                }
+                $childLabel = (string) ($child['label'] ?? '');
+                $childCount = (int) ($child['count'] ?? 0);
+                $childHref = (string) ($child['href'] ?? '#');
+                $childActive = !empty($child['active']);
+                if ($childLabel === '') {
+                  continue;
+                }
+                ?>
+                <a class="sidebar-tree-child <?= $childActive ? 'is-active' : '' ?>" href="<?= h($childHref) ?>">
+                  <span><?= h($childLabel) ?></span>
+                  <?php if ($childCount > 0): ?>
+                    <small><?= h((string) $childCount) ?></small>
+                  <?php endif; ?>
+                </a>
+              <?php endforeach; ?>
+            </div>
+          <?php endif; ?>
+        <?php endif; ?>
+      </section>
+    <?php endforeach; ?>
+    <?php if (empty($sidebarTreeRoots)): ?>
+      <p class="sidebar-tree-empty">Chưa có dữ liệu cây mục.</p>
+    <?php endif; ?>
+  </div>
 </section>
 <?php
 $sidebarExtraHtml = (string) ob_get_clean();
@@ -413,7 +512,7 @@ admin_layout_header([
     </a>
   </div>
 
-  <form method="get" class="article-filter-form compact" novalidate>
+  <form method="get" class="article-filter-form compact single-row" novalidate>
     <input type="hidden" name="section" value="<?= h($activeSection) ?>">
     <input type="hidden" name="library_kind_key" value="<?= h((string) $filters['library_kind_key']) ?>">
     <input type="hidden" name="topic_lv1_key" value="<?= h((string) $filters['topic_lv1_key']) ?>">
@@ -425,7 +524,7 @@ admin_layout_header([
           type="text"
           name="q"
           value="<?= h((string) $filters['q']) ?>"
-          placeholder="Tiêu đề, mã bài, đường dẫn..."
+          placeholder="Tìm theo tiêu đề, mã bài, đường dẫn..."
         >
       </label>
 
