@@ -199,3 +199,52 @@ function restore_article_revision(array $article, string $revisionName, ?array $
   ];
 }
 
+/**
+ * Purge all draft revision snapshots for one article.
+ *
+ * @return array<string,mixed>
+ */
+function purge_article_revisions(string $articleId): array
+{
+  $articleId = trim($articleId);
+  if ($articleId === '') {
+    return [
+      'removed_files' => 0,
+      'failed_files' => [],
+      'dir_removed' => false,
+    ];
+  }
+
+  $dir = article_revision_dir($articleId);
+  if (!is_dir($dir)) {
+    return [
+      'removed_files' => 0,
+      'failed_files' => [],
+      'dir_removed' => false,
+    ];
+  }
+
+  $removed = 0;
+  $failed = [];
+  foreach (glob($dir . '/*.html') ?: [] as $path) {
+    if (!is_file($path)) {
+      continue;
+    }
+    if (@unlink($path)) {
+      $removed++;
+    } else {
+      $failed[] = $path;
+    }
+  }
+
+  $dirRemoved = false;
+  if (count($failed) === 0 && count(scandir($dir) ?: []) <= 2) {
+    $dirRemoved = @rmdir($dir);
+  }
+
+  return [
+    'removed_files' => $removed,
+    'failed_files' => $failed,
+    'dir_removed' => $dirRemoved,
+  ];
+}

@@ -271,6 +271,43 @@ if ($activeSection === 'thu-vien') {
 $query = query_articles_index($filters);
 $items = $query['items'];
 $meta = $query['meta'];
+$focusArticleId = trim((string) ($_GET['focus_article_id'] ?? ''));
+$focusInjected = false;
+if ($focusArticleId !== '') {
+  $foundOnPage = false;
+  foreach ($items as $row) {
+    if (!is_array($row)) {
+      continue;
+    }
+    if ((string) ($row['id'] ?? '') === $focusArticleId) {
+      $foundOnPage = true;
+      break;
+    }
+  }
+  if (!$foundOnPage) {
+    $focusArticle = find_article_index_item($focusArticleId);
+    if (is_array($focusArticle)) {
+      $reviewRow = read_article_review_status($focusArticleId);
+      $rowStatus = is_array($reviewRow) ? normalize_article_review_status((string) ($reviewRow['status'] ?? 'unreviewed')) : 'unreviewed';
+      $editedAtRaw = $rowStatus !== 'unreviewed' ? trim((string) ($reviewRow['edited_at'] ?? '')) : '';
+      $focusArticle['review_status'] = $rowStatus;
+      if ($rowStatus === 'edited') {
+        $focusArticle['review_status_label'] = 'Đã sửa';
+      } elseif ($rowStatus === 'draft_saved') {
+        $focusArticle['review_status_label'] = 'Lưu nháp';
+      } else {
+        $focusArticle['review_status_label'] = 'Chưa sửa';
+      }
+      $focusArticle['review_edited_at'] = $editedAtRaw;
+      $focusArticle['review_edited_at_label'] = format_admin_datetime($editedAtRaw);
+      $focusArticle['review_edited_by'] = is_array($reviewRow) ? review_status_actor_text($reviewRow) : '';
+
+      // Pin một dòng ở đầu list để tránh cảm giác "bài bị mất" sau save/publish.
+      array_unshift($items, $focusArticle);
+      $focusInjected = true;
+    }
+  }
+}
 $activeSectionLabel = $activeSection === 'ban-tin' ? 'Bản tin' : 'Thư viện';
 $contextParts = [$activeSectionLabel];
 if ($activeKindLabel !== '') {
@@ -576,6 +613,7 @@ admin_layout_header([
         $reviewOptions = [
           '' => 'Tất cả trạng thái',
           'unreviewed' => 'Chưa sửa',
+          'draft_saved' => 'Lưu nháp',
           'edited' => 'Đã sửa',
         ];
         foreach ($reviewOptions as $value => $label):
@@ -595,6 +633,11 @@ admin_layout_header([
       <p>Không có bài nào khớp điều kiện đang chọn.</p>
     </div>
   <?php else: ?>
+    <?php if ($focusInjected): ?>
+      <div class="flash flash-warning">
+        Đang hiển thị thêm bài bạn vừa thao tác để tiện quay lại ngay. Bài này có thể không khớp bộ lọc/trang hiện tại.
+      </div>
+    <?php endif; ?>
     <div class="table-wrap">
       <table class="admin-table articles-table">
         <thead>
@@ -643,7 +686,7 @@ admin_layout_header([
                 <?php
                 $reviewStatus = (string) ($article['review_status'] ?? 'unreviewed');
                 $isEdited = $reviewStatus === 'edited';
-                $reviewLabel = (string) ($article['review_status_label'] ?? ($isEdited ? 'Đã sửa' : 'Chưa sửa'));
+                $reviewLabel = (string) ($article['review_status_label'] ?? ($isEdited ? 'Đã sửa' : ($reviewStatus === 'draft_saved' ? 'Lưu nháp' : 'Chưa sửa')));
                 $reviewAt = (string) ($article['review_edited_at_label'] ?? '');
                 if ($reviewAt === '') {
                   $reviewAt = '—';
@@ -654,10 +697,10 @@ admin_layout_header([
                 }
                 ?>
                 <div class="review-state-stack">
-                  <span class="review-state-badge <?= $isEdited ? 'is-edited' : 'is-unreviewed' ?>">
+                  <span class="review-state-badge <?= $reviewStatus === 'edited' ? 'is-edited' : ($reviewStatus === 'draft_saved' ? 'is-draft' : 'is-unreviewed') ?>">
                     <?= h($reviewLabel) ?>
                   </span>
-                  <?php if ($isEdited): ?>
+                  <?php if ($reviewStatus !== 'unreviewed'): ?>
                     <small><?= h($reviewAt) ?> · <?= h($reviewBy) ?></small>
                   <?php else: ?>
                     <small>Cần biên tập</small>
@@ -695,10 +738,41 @@ admin_layout_header([
                     <i class="fa-solid fa-up-right-from-square"></i>
                     <span>Xem</span>
                   </a>
-                  <a class="table-action-link primary" href="<?= h(admin_url('article.php' . build_articles_query(['id' => (string) ($article['id'] ?? '')]))) ?>">
+                  <a class="table-action-link primary js-open-article-editor" data-article-id="<?= h((string) ($article['id'] ?? '')) ?>" href="<?= h(admin_url('article.php' . build_articles_query([
+                    'id' => (string) ($article['id'] ?? ''),
+                    'section' => $activeSection,
+                    'library_kind_key' => (string) $filters['library_kind_key'],
+                    'topic_lv1_key' => (string) $filters['topic_lv1_key'],
+                    'topic_lv2_key' => (string) $filters['topic_lv2_key'],
+                    'review_status' => (string) $filters['review_status'],
+                    'q' => (string) $filters['q'],
+                    'sort' => (string) $filters['sort'],
+                    'per_page' => (int) $filters['per_page'],
+                    'page' => (int) $meta['page'],
+                    'from_edit' => 1,
+                  ]))) ?>">
                     <i class="fa-solid fa-pen-to-square"></i>
                     <span>Sửa</span>
                   </a>
+                  <?php if (($currentUser['role'] ?? '') === 'admin'): ?>
+                    <form method="post" action="<?= h(admin_url('delete_article.php')) ?>" class="inline-action-form" onsubmit="return confirm('Xác nhận xóa bài này?\\n- Bài viết HTML sẽ bị xóa\\n- Ảnh upload liên quan cũng sẽ bị xóa\\n- Hành động này không hoàn tác tự động.');">
+                      <?= csrf_input_html() ?>
+                      <input type="hidden" name="article_id" value="<?= h((string) ($article['id'] ?? '')) ?>">
+                      <input type="hidden" name="section" value="<?= h($activeSection) ?>">
+                      <input type="hidden" name="library_kind_key" value="<?= h((string) $filters['library_kind_key']) ?>">
+                      <input type="hidden" name="topic_lv1_key" value="<?= h((string) $filters['topic_lv1_key']) ?>">
+                      <input type="hidden" name="topic_lv2_key" value="<?= h((string) $filters['topic_lv2_key']) ?>">
+                      <input type="hidden" name="review_status" value="<?= h((string) $filters['review_status']) ?>">
+                      <input type="hidden" name="q" value="<?= h((string) $filters['q']) ?>">
+                      <input type="hidden" name="sort" value="<?= h((string) $filters['sort']) ?>">
+                      <input type="hidden" name="per_page" value="<?= h((string) $filters['per_page']) ?>">
+                      <input type="hidden" name="page" value="<?= h((string) $meta['page']) ?>">
+                      <button type="submit" class="table-action-link danger">
+                        <i class="fa-solid fa-trash-can"></i>
+                        <span>Xóa</span>
+                      </button>
+                    </form>
+                  <?php endif; ?>
                 </div>
               </td>
             </tr>

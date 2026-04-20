@@ -377,7 +377,98 @@ function delete_article_uploaded_image(string $articleId, string $uploadName, st
   }
 
   remove_article_media_item_by_id((string) ($targetItem['id'] ?? ''));
+  cleanup_article_upload_empty_dirs((string) ($targetItem['year'] ?? ''), (string) ($targetItem['month'] ?? ''));
   return true;
+}
+
+/**
+ * Delete all uploaded images linked to one article.
+ *
+ * @return array<string,mixed>
+ */
+function purge_article_uploaded_images(string $articleId): array
+{
+  $articleId = trim($articleId);
+  if ($articleId === '') {
+    return [
+      'removed_items' => 0,
+      'removed_files' => 0,
+      'missing_files' => 0,
+      'failed_files' => [],
+    ];
+  }
+
+  $payload = read_article_media_index();
+  $items = is_array($payload['items'] ?? null) ? $payload['items'] : [];
+  $keep = [];
+  $removedItems = 0;
+  $removedFiles = 0;
+  $missingFiles = 0;
+  $failedFiles = [];
+
+  foreach ($items as $row) {
+    if (!is_array($row)) {
+      continue;
+    }
+    if ((string) ($row['article_id'] ?? '') !== $articleId) {
+      $keep[] = $row;
+      continue;
+    }
+
+    $diskPath = (string) ($row['disk_path'] ?? '');
+    $year = (string) ($row['year'] ?? '');
+    $month = (string) ($row['month'] ?? '');
+
+    if ($diskPath !== '' && is_file($diskPath)) {
+      if (@unlink($diskPath)) {
+        $removedFiles++;
+        cleanup_article_upload_empty_dirs($year, $month);
+      } else {
+        $failedFiles[] = $diskPath;
+        $keep[] = $row;
+        continue;
+      }
+    } else {
+      $missingFiles++;
+    }
+
+    $removedItems++;
+  }
+
+  if ($removedItems > 0 || count($failedFiles) > 0) {
+    $payload['items'] = $keep;
+    write_article_media_index($payload);
+  }
+
+  return [
+    'removed_items' => $removedItems,
+    'removed_files' => $removedFiles,
+    'missing_files' => $missingFiles,
+    'failed_files' => $failedFiles,
+  ];
+}
+
+/**
+ * Try removing empty month/year upload folders after file deletion.
+ */
+function cleanup_article_upload_empty_dirs(string $year, string $month): void
+{
+  $year = trim($year);
+  $month = trim($month);
+  if (!preg_match('/^\d{4}$/', $year) || !preg_match('/^\d{2}$/', $month)) {
+    return;
+  }
+
+  $root = rtrim(ADMIN_UPLOADS_DIR, '/') . '/articles';
+  $monthDir = $root . '/' . $year . '/' . $month;
+  if (is_dir($monthDir) && count(scandir($monthDir) ?: []) <= 2) {
+    @rmdir($monthDir);
+  }
+
+  $yearDir = $root . '/' . $year;
+  if (is_dir($yearDir) && count(scandir($yearDir) ?: []) <= 2) {
+    @rmdir($yearDir);
+  }
 }
 
 /**

@@ -79,6 +79,7 @@ require_once __DIR__ . '/article_media.php';
 require_once __DIR__ . '/article_revision.php';
 require_once __DIR__ . '/article_review.php';
 require_once __DIR__ . '/article_publish.php';
+require_once __DIR__ . '/article_delete.php';
 
 enforce_admin_request_context_or_reject();
 bootstrap_storage();

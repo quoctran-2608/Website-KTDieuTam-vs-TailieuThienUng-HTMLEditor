@@ -180,3 +180,20 @@ function delete_article_draft(string $articleId, ?array $actor = null): bool
   return true;
 }
 
+/**
+ * Purge draft data without audit log (used in destructive full-delete flow).
+ */
+function purge_article_draft_silent(string $articleId): bool
+{
+  $articleId = trim($articleId);
+  if ($articleId === '') {
+    return false;
+  }
+  $payload = read_drafts_payload();
+  if (!isset($payload['drafts'][$articleId])) {
+    return false;
+  }
+  unset($payload['drafts'][$articleId]);
+  write_drafts_payload($payload);
+  return true;
+}

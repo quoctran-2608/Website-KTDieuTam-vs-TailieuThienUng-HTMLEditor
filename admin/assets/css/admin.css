@@ -875,6 +875,11 @@ a {
   background: #fafaf8;
 }
 
+.articles-table tbody tr.is-return-focus {
+  background: #fff7d6;
+  box-shadow: inset 3px 0 0 #c49a54;
+}
+
 .event-pill {
   display: inline-flex;
   align-items: center;
@@ -1393,6 +1398,12 @@ a {
   color: #166534;
 }
 
+.review-state-badge.is-draft {
+  background: #fffbeb;
+  border-color: rgba(202, 138, 4, 0.35);
+  color: #92400e;
+}
+
 .review-state-stack small {
   font-size: 12px;
   color: #6b7280;
@@ -1408,6 +1419,12 @@ a {
   border-color: rgba(220, 38, 38, 0.35);
   background: #fff1f2;
   color: #b91c1c;
+}
+
+.table-action-link.danger {
+  border-color: rgba(185, 28, 28, 0.42);
+  background: #fee2e2;
+  color: #991b1b;
 }
 
 .table-action-link:hover {
@@ -1530,6 +1547,10 @@ a {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.editor-top-actions-row .inline-action-form {
+  margin: 0;
 }
 
 .editor-pill-row {
@@ -1955,6 +1976,11 @@ a {
 }
 
 .editor-history-actions .rollback-btn.inline {
+  width: 100%;
+  justify-content: center;
+}
+
+.editor-side-back-btn {
   width: 100%;
   justify-content: center;
 }
@@ -2402,7 +2428,8 @@ a {
     align-items: stretch;
   }
 
-  .editor-top-actions-row .clear-filter-btn.inline {
+  .editor-top-actions-row .clear-filter-btn.inline,
+  .editor-top-actions-row .rollback-btn.inline {
     width: 100%;
     justify-content: center;
   }

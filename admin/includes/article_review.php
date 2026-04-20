@@ -67,17 +67,14 @@ function read_review_status_payload(): array
     if ($articleId === '') {
       continue;
     }
-    $status = trim((string) ($row['status'] ?? 'unreviewed'));
-    if ($status !== 'edited') {
-      $status = 'unreviewed';
-    }
+    $status = normalize_article_review_status((string) ($row['status'] ?? 'unreviewed'));
 
     $editedAt = trim((string) ($row['edited_at'] ?? ''));
     $updatedAt = trim((string) ($row['updated_at'] ?? ''));
     if ($updatedAt === '') {
       $updatedAt = date('c');
     }
-    if ($status === 'edited' && $editedAt === '') {
+    if (($status === 'edited' || $status === 'draft_saved') && $editedAt === '') {
       $editedAt = $updatedAt;
     }
 
@@ -106,6 +103,9 @@ function read_review_status_payload(): array
   $decoded['meta']['edited_count'] = count(array_filter($normalizedItems, static function (array $row): bool {
     return (string) ($row['status'] ?? '') === 'edited';
   }));
+  $decoded['meta']['draft_saved_count'] = count(array_filter($normalizedItems, static function (array $row): bool {
+    return (string) ($row['status'] ?? '') === 'draft_saved';
+  }));
 
   return $decoded;
 }
@@ -133,16 +133,13 @@ function write_review_status_payload(array $payload): void
     if ($articleId === '') {
       continue;
     }
-    $status = trim((string) ($row['status'] ?? 'unreviewed'));
-    if ($status !== 'edited') {
-      $status = 'unreviewed';
-    }
+    $status = normalize_article_review_status((string) ($row['status'] ?? 'unreviewed'));
     $editedAt = trim((string) ($row['edited_at'] ?? ''));
     $updatedAt = trim((string) ($row['updated_at'] ?? ''));
     if ($updatedAt === '') {
       $updatedAt = date('c');
     }
-    if ($status === 'edited' && $editedAt === '') {
+    if (($status === 'edited' || $status === 'draft_saved') && $editedAt === '') {
       $editedAt = $updatedAt;
     }
 
@@ -167,6 +164,9 @@ function write_review_status_payload(array $payload): void
   $payload['meta']['updated_at'] = date('c');
   $payload['meta']['edited_count'] = count(array_filter($normalizedItems, static function (array $row): bool {
     return (string) ($row['status'] ?? '') === 'edited';
+  }));
+  $payload['meta']['draft_saved_count'] = count(array_filter($normalizedItems, static function (array $row): bool {
+    return (string) ($row['status'] ?? '') === 'draft_saved';
   }));
   $payload['items'] = $normalizedItems;
 
@@ -218,11 +218,12 @@ function mark_article_reviewed(string $articleId, ?array $actor = null, string $
     throw new InvalidArgumentException('Article id is required for review status.');
   }
 
+  $status = review_status_from_source($source);
   $payload = read_review_status_payload();
   $now = date('c');
   $row = [
     'article_id' => $articleId,
-    'status' => 'edited',
+    'status' => $status,
     'edited_at' => $now,
     'edited_by' => [
       'user_id' => (string) (($actor['user_id'] ?? '') ?: ''),
@@ -237,14 +238,42 @@ function mark_article_reviewed(string $articleId, ?array $actor = null, string $
   write_review_status_payload($payload);
 
   append_audit_log([
-    'event' => 'article.review.marked_edited',
+    'event' => 'article.review.marked',
     'article_id' => $articleId,
+    'status' => $status,
     'source' => $source,
     'username' => (string) ($row['edited_by']['username'] ?? ''),
     'role' => (string) ($row['edited_by']['role'] ?? ''),
   ]);
 
   return $row;
+}
+
+/**
+ * Normalize status from raw value into canonical enum.
+ */
+function normalize_article_review_status(string $status): string
+{
+  $status = trim(strtolower($status));
+  if ($status === 'edited' || $status === 'draft_saved' || $status === 'unreviewed') {
+    return $status;
+  }
+  return 'unreviewed';
+}
+
+/**
+ * Map action source => review status.
+ */
+function review_status_from_source(string $source): string
+{
+  $source = trim(strtolower($source));
+  if ($source === 'publish_now') {
+    return 'edited';
+  }
+  if ($source === 'save_draft' || $source === 'preview_only') {
+    return 'draft_saved';
+  }
+  return 'edited';
 }
 
 /**
@@ -277,3 +306,22 @@ function mark_article_unreviewed(string $articleId, ?array $actor = null, string
   return true;
 }
 
+/**
+ * Purge review status row without audit log (used in destructive full-delete flow).
+ */
+function purge_article_review_status_silent(string $articleId): bool
+{
+  $articleId = trim($articleId);
+  if ($articleId === '') {
+    return false;
+  }
+
+  $payload = read_review_status_payload();
+  if (!isset($payload['items'][$articleId])) {
+    return false;
+  }
+
+  unset($payload['items'][$articleId]);
+  write_review_status_payload($payload);
+  return true;
+}

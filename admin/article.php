@@ -140,6 +140,26 @@ function build_editable_payload(array $article, array $parseResult): array
 
 $id = trim((string) ($_GET['id'] ?? ''));
 $article = find_article_index_item($id);
+$listContext = [
+  'section' => trim((string) ($_GET['section'] ?? '')),
+  'library_kind_key' => trim((string) ($_GET['library_kind_key'] ?? '')),
+  'topic_lv1_key' => trim((string) ($_GET['topic_lv1_key'] ?? '')),
+  'topic_lv2_key' => trim((string) ($_GET['topic_lv2_key'] ?? '')),
+  'review_status' => trim((string) ($_GET['review_status'] ?? '')),
+  'q' => trim((string) ($_GET['q'] ?? '')),
+  'sort' => trim((string) ($_GET['sort'] ?? '')),
+  'per_page' => (int) ($_GET['per_page'] ?? 20),
+  'page' => (int) ($_GET['page'] ?? 1),
+  'from_edit' => 1,
+];
+$listReturnArticleId = trim((string) ($_GET['list_article_id'] ?? ''));
+if ($listReturnArticleId === '') {
+  $listReturnArticleId = $id;
+}
+$listContext['list_article_id'] = $listReturnArticleId;
+$forceTopOnReturn = false;
+$listContext['return_mode'] = 'exact';
+$listReturnUrl = admin_url('articles.php' . build_article_query($listContext));
 
 $currentUser = current_user();
 $parseResult = null;
@@ -254,6 +274,7 @@ if ($article !== null) {
               $draftCurrent = $saved;
               $reviewRow = mark_article_reviewed((string) ($article['id'] ?? ''), $currentUser, 'publish_now');
               $form = array_merge($form, $clean);
+              $forceTopOnReturn = true;
               $status = [
                 'type' => 'success',
                 'message' => 'Đã cập nhật bài viết ra trang.',
@@ -269,6 +290,7 @@ if ($article !== null) {
             $draftCurrent = $saved;
             $reviewRow = mark_article_reviewed((string) ($article['id'] ?? ''), $currentUser, $intent);
             $form = array_merge($form, $clean);
+            $forceTopOnReturn = true;
             $previewHtml = (string) ($clean['prose_html'] ?? '');
             $previewMeta = [
               'title' => (string) ($clean['title'] ?? ''),
@@ -332,6 +354,13 @@ if ($article !== null) {
     if ($reviewRow === null) {
       $reviewRow = read_article_review_status((string) ($article['id'] ?? ''));
     }
+    if ($forceTopOnReturn) {
+      $listContext['review_status'] = '';
+      $listContext['q'] = '';
+      $listContext['focus_article_id'] = (string) ($listContext['list_article_id'] ?? '');
+      $listContext['return_mode'] = 'fresh';
+    }
+    $listReturnUrl = admin_url('articles.php' . build_article_query($listContext));
     $latestPublish = find_latest_publish_record((string) ($article['id'] ?? ''));
     $recentPublishRecords = list_recent_publish_records((string) ($article['id'] ?? ''), 8);
     $uploads = list_article_uploaded_images((string) ($article['id'] ?? ''));
@@ -517,15 +546,22 @@ admin_layout_header([
       $latestEventBy = '—';
     }
 
-    $reviewIsEdited = is_array($reviewRow) && (string) ($reviewRow['status'] ?? '') === 'edited';
-    $reviewStatusLabel = $reviewIsEdited ? 'Đã sửa' : 'Chưa sửa';
-    $reviewStatusAt = $reviewIsEdited
+    $reviewStatusKey = is_array($reviewRow) ? normalize_article_review_status((string) ($reviewRow['status'] ?? 'unreviewed')) : 'unreviewed';
+    $reviewHasActor = $reviewStatusKey !== 'unreviewed';
+    if ($reviewStatusKey === 'edited') {
+      $reviewStatusLabel = 'Đã sửa';
+    } elseif ($reviewStatusKey === 'draft_saved') {
+      $reviewStatusLabel = 'Lưu nháp';
+    } else {
+      $reviewStatusLabel = 'Chưa sửa';
+    }
+    $reviewStatusAt = $reviewHasActor
       ? format_admin_datetime((string) ($reviewRow['edited_at'] ?? ''))
       : '—';
     if ($reviewStatusAt === '') {
       $reviewStatusAt = '—';
     }
-    $reviewStatusBy = $reviewIsEdited
+    $reviewStatusBy = $reviewHasActor
       ? (string) (($reviewRow['edited_by']['username'] ?? '') ?: ($reviewRow['edited_by']['display_name'] ?? ''))
       : '';
     if ($reviewStatusBy === '') {
@@ -535,10 +571,30 @@ admin_layout_header([
 
     <div class="editor-top-actions">
       <div class="editor-top-actions-row">
-        <a class="clear-filter-btn inline" href="<?= h(admin_url('articles.php')) ?>">
+        <a class="clear-filter-btn inline" href="<?= h($listReturnUrl) ?>">
           <i class="fa-solid fa-arrow-left"></i>
           <span>Về danh sách bài</span>
         </a>
+        <?php if ((string) ($currentUser['role'] ?? '') === 'admin'): ?>
+          <form method="post" action="<?= h(admin_url('delete_article.php')) ?>" class="inline-action-form" onsubmit="return confirm('Xác nhận xóa bài này?\\n- Bài viết HTML sẽ bị xóa\\n- Ảnh upload liên quan cũng sẽ bị xóa\\n- Hành động này không hoàn tác tự động.');">
+            <?= csrf_input_html() ?>
+            <input type="hidden" name="article_id" value="<?= h((string) ($article['id'] ?? '')) ?>">
+            <input type="hidden" name="section" value="<?= h((string) ($listContext['section'] ?? '')) ?>">
+            <input type="hidden" name="library_kind_key" value="<?= h((string) ($listContext['library_kind_key'] ?? '')) ?>">
+            <input type="hidden" name="topic_lv1_key" value="<?= h((string) ($listContext['topic_lv1_key'] ?? '')) ?>">
+            <input type="hidden" name="topic_lv2_key" value="<?= h((string) ($listContext['topic_lv2_key'] ?? '')) ?>">
+            <input type="hidden" name="review_status" value="<?= h((string) ($listContext['review_status'] ?? '')) ?>">
+            <input type="hidden" name="q" value="<?= h((string) ($listContext['q'] ?? '')) ?>">
+            <input type="hidden" name="sort" value="<?= h((string) ($listContext['sort'] ?? '')) ?>">
+            <input type="hidden" name="per_page" value="<?= h((string) ($listContext['per_page'] ?? 20)) ?>">
+            <input type="hidden" name="page" value="<?= h((string) ($listContext['page'] ?? 1)) ?>">
+            <input type="hidden" name="list_article_id" value="<?= h((string) ($listContext['list_article_id'] ?? '')) ?>">
+            <button type="submit" class="rollback-btn inline">
+              <i class="fa-solid fa-trash-can"></i>
+              <span>Xóa bài</span>
+            </button>
+          </form>
+        <?php endif; ?>
       </div>
     </div>
 
@@ -632,7 +688,7 @@ admin_layout_header([
             </div>
 
             <div class="editor-status-inline">
-              <p><strong>Trạng thái:</strong> <?= h($reviewStatusLabel) ?><?= $reviewIsEdited ? (' · ' . h($reviewStatusAt) . ' · ' . h($reviewStatusBy)) : '' ?></p>
+              <p><strong>Trạng thái:</strong> <?= h($reviewStatusLabel) ?><?= $reviewHasActor ? (' · ' . h($reviewStatusAt) . ' · ' . h($reviewStatusBy)) : '' ?></p>
               <p><strong>Lần thao tác gần nhất:</strong> <?= h($latestEventLabel) ?> · <?= h($latestEventAt) ?> · <?= h($latestEventBy) ?></p>
               <p><strong>Đường dẫn:</strong> <code><?= h((string) ($article['href'] ?? '')) ?></code></p>
             </div>
@@ -662,7 +718,7 @@ admin_layout_header([
             <p>Theo dõi nhanh tình trạng biên tập hiện tại.</p>
           </div>
           <div class="editor-status-inline">
-            <p><strong>Review:</strong> <?= h($reviewStatusLabel) ?><?= $reviewIsEdited ? (' · ' . h($reviewStatusAt) . ' · ' . h($reviewStatusBy)) : '' ?></p>
+            <p><strong>Review:</strong> <?= h($reviewStatusLabel) ?><?= $reviewHasActor ? (' · ' . h($reviewStatusAt) . ' · ' . h($reviewStatusBy)) : '' ?></p>
             <p><strong>Tác vụ gần nhất:</strong> <?= h($latestEventLabel) ?> · <?= h($latestEventAt) ?> · <?= h($latestEventBy) ?></p>
             <p><strong>ID:</strong> <code><?= h((string) ($article['id'] ?? '')) ?></code></p>
             <p><strong>Đường dẫn:</strong> <code><?= h((string) ($article['href'] ?? '')) ?></code></p>
@@ -777,6 +833,13 @@ admin_layout_header([
               </div>
             <?php endif; ?>
           <?php endif; ?>
+        </section>
+
+        <section class="admin-panel editor-side-card">
+          <a class="clear-filter-btn inline editor-side-back-btn" href="<?= h($listReturnUrl) ?>">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Về danh sách bài</span>
+          </a>
         </section>
       </aside>
     </div>

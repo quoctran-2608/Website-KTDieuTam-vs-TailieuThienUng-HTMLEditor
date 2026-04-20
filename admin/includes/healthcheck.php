@@ -113,6 +113,12 @@ $checks[] = [
   'detail' => ADMIN_MEDIA_INDEX_PATH,
 ];
 
+$checks[] = [
+  'label' => 'article delete helper loaded',
+  'ok' => function_exists('delete_article_with_assets'),
+  'detail' => 'delete_article_with_assets()',
+];
+
 $publishHistory = read_publish_history();
 $checks[] = [
   'label' => 'publish history readable',

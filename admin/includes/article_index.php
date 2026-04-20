@@ -537,7 +537,7 @@ function query_articles_index(array $filters): array
   $dateFrom = normalize_date_ymd((string) ($filters['date_from'] ?? ''));
   $dateTo = normalize_date_ymd((string) ($filters['date_to'] ?? ''));
   $reviewStatus = trim((string) ($filters['review_status'] ?? ''));
-  if (!in_array($reviewStatus, ['', 'unreviewed', 'edited'], true)) {
+  if (!in_array($reviewStatus, ['', 'unreviewed', 'draft_saved', 'edited'], true)) {
     $reviewStatus = '';
   }
   $sort = (string) ($filters['sort'] ?? 'latest');
@@ -596,11 +596,14 @@ function query_articles_index(array $filters): array
     if ($reviewStatus !== '') {
       $articleId = trim((string) ($item['id'] ?? ''));
       $row = $articleId !== '' ? ($reviewRows[$articleId] ?? null) : null;
-      $isEdited = is_array($row) && (string) ($row['status'] ?? '') === 'edited';
-      if ($reviewStatus === 'edited' && !$isEdited) {
+      $rowStatus = is_array($row) ? normalize_article_review_status((string) ($row['status'] ?? 'unreviewed')) : 'unreviewed';
+      if ($reviewStatus === 'edited' && $rowStatus !== 'edited') {
         return false;
       }
-      if ($reviewStatus === 'unreviewed' && $isEdited) {
+      if ($reviewStatus === 'draft_saved' && $rowStatus !== 'draft_saved') {
+        return false;
+      }
+      if ($reviewStatus === 'unreviewed' && $rowStatus !== 'unreviewed') {
         return false;
       }
     }
@@ -614,14 +617,36 @@ function query_articles_index(array $filters): array
     }
     $articleId = trim((string) ($item['id'] ?? ''));
     $row = $articleId !== '' ? ($reviewRows[$articleId] ?? null) : null;
-    $isEdited = is_array($row) && (string) ($row['status'] ?? '') === 'edited';
-    $editedAtRaw = $isEdited ? trim((string) ($row['edited_at'] ?? '')) : '';
-    $item['review_status'] = $isEdited ? 'edited' : 'unreviewed';
-    $item['review_status_label'] = $isEdited ? 'Đã sửa' : 'Chưa sửa';
-    $item['review_status_color'] = $isEdited ? 'success' : 'danger';
+    $rowStatus = is_array($row) ? normalize_article_review_status((string) ($row['status'] ?? 'unreviewed')) : 'unreviewed';
+    $editedAtRaw = $rowStatus !== 'unreviewed' ? trim((string) ($row['edited_at'] ?? '')) : '';
+    $item['review_status'] = $rowStatus;
+    if ($rowStatus === 'edited') {
+      $item['review_status_label'] = 'Đã sửa';
+      $item['review_status_color'] = 'success';
+    } elseif ($rowStatus === 'draft_saved') {
+      $item['review_status_label'] = 'Lưu nháp';
+      $item['review_status_color'] = 'warning';
+    } else {
+      $item['review_status_label'] = 'Chưa sửa';
+      $item['review_status_color'] = 'danger';
+    }
     $item['review_edited_at'] = $editedAtRaw;
     $item['review_edited_at_label'] = format_admin_datetime($editedAtRaw);
     $item['review_edited_by'] = is_array($row) ? review_status_actor_text($row) : '';
+    // Stable latest-order key: prefer review edited_at (includes publish/save actions),
+    // fallback to modified/publish sort_date, then deterministic id tie-break.
+    $latestSortAt = $editedAtRaw;
+    if ($latestSortAt === '') {
+      $latestSortAt = (string) ($item['sort_date'] ?? '');
+    }
+    if ($latestSortAt === '') {
+      $latestSortAt = '1900-01-01';
+    }
+    $latestSortAt = str_replace(' ', 'T', $latestSortAt);
+    if (strlen($latestSortAt) === 10) {
+      $latestSortAt .= 'T00:00:00';
+    }
+    $item['latest_sort_at'] = $latestSortAt;
   }
   unset($item);
 
@@ -635,7 +660,11 @@ function query_articles_index(array $filters): array
     if ($sort === 'title_desc') {
       return strcmp((string) ($b['title'] ?? ''), (string) ($a['title'] ?? ''));
     }
-    return strcmp((string) ($b['sort_date'] ?? ''), (string) ($a['sort_date'] ?? ''));
+    $dateCmp = strcmp((string) ($b['latest_sort_at'] ?? ''), (string) ($a['latest_sort_at'] ?? ''));
+    if ($dateCmp !== 0) {
+      return $dateCmp;
+    }
+    return strcmp((string) ($a['id'] ?? ''), (string) ($b['id'] ?? ''));
   });
 
   $total = count($filtered);
