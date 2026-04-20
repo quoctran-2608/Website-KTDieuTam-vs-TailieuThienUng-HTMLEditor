@@ -539,10 +539,6 @@ admin_layout_header([
           <i class="fa-solid fa-arrow-left"></i>
           <span>Về danh sách bài</span>
         </a>
-        <a class="clear-filter-btn inline" href="<?= h(article_public_url_detail($article)) ?>" target="_blank" rel="noopener">
-          <i class="fa-solid fa-up-right-from-square"></i>
-          <span>Mở bài public</span>
-        </a>
       </div>
     </div>
 
@@ -578,6 +574,10 @@ admin_layout_header([
               <i class="fa-solid fa-paper-plane"></i>
               <span>Đăng ngay</span>
             </button>
+            <a class="clear-filter-btn inline" href="<?= h(article_public_url_detail($article)) ?>" target="_blank" rel="noopener">
+              <i class="fa-solid fa-up-right-from-square"></i>
+              <span>Xem bài</span>
+            </a>
             <span class="editor-shortcut-hint">Ctrl+S để lưu nháp nhanh.</span>
           </div>
 
@@ -626,7 +626,7 @@ admin_layout_header([
 
               <label class="filter-field span-2">
                 <span>Ảnh đại diện (Featured image)</span>
-                <input type="text" name="featured_image" id="featuredImageInput" value="<?= h((string) ($form['featured_image'] ?? '')) ?>" placeholder="VD: assets/images/content/abc.jpg hoặc /Ketoandieutam.com/uploads/articles/...">
+                <input type="text" name="featured_image" id="featuredImageInput" value="<?= h((string) ($form['featured_image'] ?? '')) ?>" placeholder="VD: assets/images/content/abc.jpg hoặc uploads/articles/2026/04/anh.jpg">
                 <small>Có thể nhập thủ công, hoặc bấm “Dùng làm ảnh đại diện” từ danh sách ảnh upload mới ở sidebar.</small>
               </label>
             </div>
@@ -647,6 +647,10 @@ admin_layout_header([
               <i class="fa-solid fa-paper-plane"></i>
               <span>Đăng ngay</span>
             </button>
+            <a class="clear-filter-btn inline" href="<?= h(article_public_url_detail($article)) ?>" target="_blank" rel="noopener">
+              <i class="fa-solid fa-up-right-from-square"></i>
+              <span>Xem bài</span>
+            </a>
           </div>
         </form>
       </article>
@@ -698,7 +702,10 @@ admin_layout_header([
                     <form method="post" action="<?= h(admin_url('delete_upload.php')) ?>" class="inline-action-form" onsubmit="return confirm('Xóa file ảnh này khỏi uploads?');">
                       <?= csrf_input_html() ?>
                       <input type="hidden" name="article_id" value="<?= h((string) ($article['id'] ?? '')) ?>">
+                      <input type="hidden" name="upload_id" value="<?= h((string) ($upload['id'] ?? '')) ?>">
                       <input type="hidden" name="upload_name" value="<?= h((string) ($upload['name'] ?? '')) ?>">
+                      <input type="hidden" name="upload_year" value="<?= h((string) ($upload['year'] ?? '')) ?>">
+                      <input type="hidden" name="upload_month" value="<?= h((string) ($upload['month'] ?? '')) ?>">
                       <button type="submit" class="rollback-btn inline">Xóa</button>
                     </form>
                   </div>

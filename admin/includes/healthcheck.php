@@ -107,6 +107,12 @@ $checks[] = [
   'detail' => ADMIN_DRAFT_REVISIONS_DIR,
 ];
 
+$checks[] = [
+  'label' => 'media index exists',
+  'ok' => file_exists(ADMIN_MEDIA_INDEX_PATH),
+  'detail' => ADMIN_MEDIA_INDEX_PATH,
+];
+
 $publishHistory = read_publish_history();
 $checks[] = [
   'label' => 'publish history readable',

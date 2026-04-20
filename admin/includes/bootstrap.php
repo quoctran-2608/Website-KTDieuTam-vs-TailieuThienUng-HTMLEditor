@@ -53,6 +53,10 @@ if (!defined('ADMIN_DRAFT_REVISIONS_DIR')) {
   define('ADMIN_DRAFT_REVISIONS_DIR', ADMIN_STORAGE_PATH . '/draft-revisions');
 }
 
+if (!defined('ADMIN_MEDIA_INDEX_PATH')) {
+  define('ADMIN_MEDIA_INDEX_PATH', ADMIN_STORAGE_PATH . '/article-media-index.json');
+}
+
 if (!defined('ADMIN_SESSION_TTL')) {
   define('ADMIN_SESSION_TTL', 60 * 60 * 8);
 }

@@ -1,0 +1,27 @@
+{
+  "name": "ketoandieutam.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "article-layout.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quoctran-2608/Website-KeToanDieuTam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/quoctran-2608/Website-KeToanDieuTam/issues"
+  },
+  "homepage": "https://github.com/quoctran-2608/Website-KeToanDieuTam#readme",
+  "dependencies": {
+    "playwright": "^1.53.0"
+  }
+}

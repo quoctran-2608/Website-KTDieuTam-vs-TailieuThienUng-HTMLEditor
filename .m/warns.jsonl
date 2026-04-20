@@ -2713,3 +2713,14 @@
 {"ts": 1776616891.848015, "message": "micro-compact triggered (input_tokens threshold)", "extra": {"threshold": 230000, "input_tokens": 230536, "source": "usage.input_tokens", "saved_tokens": 15591}}
 {"ts": 1776617026.3550682, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
 {"ts": 1776617040.0012, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 15375}}
+{"ts": 1776617444.243698, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1776617457.7674434, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 5056}}
+{"ts": 1776652380.9225965, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1776652397.9800205, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 7473}}
+{"ts": 1776653534.2772868, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1776653550.83156, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 32282}}
+{"ts": 1776654487.1447854, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1776654500.4453824, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 1417}}
+{"ts": 1776655419.2357688, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1776655435.5741856, "message": "micro-compact triggered (startup)", "extra": {"min_saved": 0, "saved_tokens": 9204}}
+{"ts": 1776655479.2663329, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}

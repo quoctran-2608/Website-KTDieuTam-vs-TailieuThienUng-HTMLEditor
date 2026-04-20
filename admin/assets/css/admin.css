@@ -1943,7 +1943,8 @@ a {
 }
 
 .editor-bottom-actions .filter-submit-btn,
-.editor-bottom-actions .publish-btn.inline {
+.editor-bottom-actions .publish-btn.inline,
+.editor-bottom-actions .clear-filter-btn.inline {
   min-width: 180px;
   justify-content: center;
 }
@@ -2376,7 +2377,8 @@ a {
   }
 
   .editor-bottom-actions .filter-submit-btn,
-  .editor-bottom-actions .publish-btn.inline {
+  .editor-bottom-actions .publish-btn.inline,
+  .editor-bottom-actions .clear-filter-btn.inline {
     width: 100%;
   }
 
