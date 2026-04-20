@@ -651,12 +651,32 @@ admin_layout_header([
         <tbody>
           <?php foreach ($items as $article): ?>
             <?php if (!is_array($article)) continue; ?>
+            <?php
+            $articleId = (string) ($article['id'] ?? '');
+            $editorUrl = admin_url('article.php' . build_articles_query([
+              'id' => $articleId,
+              'section' => $activeSection,
+              'library_kind_key' => (string) $filters['library_kind_key'],
+              'topic_lv1_key' => (string) $filters['topic_lv1_key'],
+              'topic_lv2_key' => (string) $filters['topic_lv2_key'],
+              'review_status' => (string) $filters['review_status'],
+              'q' => (string) $filters['q'],
+              'sort' => (string) $filters['sort'],
+              'per_page' => (int) $filters['per_page'],
+              'page' => (int) $meta['page'],
+              'from_edit' => 1,
+            ]));
+            ?>
             <tr>
               <td>
                 <div class="article-title-cell">
-                  <strong><?= h((string) ($article['title'] ?? '')) ?></strong>
+                  <strong>
+                    <a class="article-title-link js-open-article-editor" data-article-id="<?= h($articleId) ?>" href="<?= h($editorUrl) ?>">
+                      <?= h((string) ($article['title'] ?? '')) ?>
+                    </a>
+                  </strong>
                   <div class="article-subline">
-                    <code><?= h((string) ($article['id'] ?? '')) ?></code>
+                    <code><?= h($articleId) ?></code>
                     <?php if (!empty($article['path'])): ?>
                       <small class="article-path"><?= h((string) $article['path']) ?></small>
                     <?php endif; ?>
@@ -738,19 +758,7 @@ admin_layout_header([
                     <i class="fa-solid fa-up-right-from-square"></i>
                     <span>Xem</span>
                   </a>
-                  <a class="table-action-link primary js-open-article-editor" data-article-id="<?= h((string) ($article['id'] ?? '')) ?>" href="<?= h(admin_url('article.php' . build_articles_query([
-                    'id' => (string) ($article['id'] ?? ''),
-                    'section' => $activeSection,
-                    'library_kind_key' => (string) $filters['library_kind_key'],
-                    'topic_lv1_key' => (string) $filters['topic_lv1_key'],
-                    'topic_lv2_key' => (string) $filters['topic_lv2_key'],
-                    'review_status' => (string) $filters['review_status'],
-                    'q' => (string) $filters['q'],
-                    'sort' => (string) $filters['sort'],
-                    'per_page' => (int) $filters['per_page'],
-                    'page' => (int) $meta['page'],
-                    'from_edit' => 1,
-                  ]))) ?>">
+                  <a class="table-action-link primary js-open-article-editor" data-article-id="<?= h($articleId) ?>" href="<?= h($editorUrl) ?>">
                     <i class="fa-solid fa-pen-to-square"></i>
                     <span>Sửa</span>
                   </a>
