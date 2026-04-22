@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ứng viên tuyển dụng | Kế Toán Diệu Tâm</title>
-  <meta name="description" content="Trang ứng viên dành cho nhà tuyển dụng: xem hồ sơ quan tâm và cập nhật trạng thái xử lý.">
+  <meta name="description" content="Trang ứng viên dành cho nhà tuyển dụng: theo dõi hồ sơ theo vị trí quan tâm, trạng thái xử lý và mức kinh nghiệm.">
   <link rel="canonical" href="https://ketoandieutam.com/ung-vien-tuyen-dung.html">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/jobs.css">
@@ -27,18 +27,18 @@
         <div class="jobs-hero-grid">
           <div>
             <span class="jobs-kicker">Ứng viên quan tâm</span>
-            <h1>Danh sách hồ sơ ứng viên theo từng trạng thái</h1>
-            <p class="jobs-hero-text">Theo dõi ai vừa nộp hồ sơ, ai phù hợp để mời trao đổi và ai cần thêm thông tin để quyết định nhanh hơn.</p>
+            <h1>Danh sách hồ sơ ứng viên theo trạng thái xử lý</h1>
+            <p class="jobs-hero-text">Theo dõi hồ sơ mới, hồ sơ đang xem và hồ sơ đã mời phỏng vấn trên một màn hình tổng hợp rõ ràng.</p>
             <div class="jobs-hero-actions">
               <a href="quan-ly-tin-tuyen-dung.html" class="btn-outline-brown">Quay lại quản lý tin</a>
-              <a href="chi-tiet-tin-tuyen-dung.html" class="btn-primary-orange">Mở chi tiết tin</a>
+              <a href="danh-sach-ung-vien.html" class="btn-primary-orange">Mở danh sách ứng viên công khai</a>
             </div>
           </div>
           <div class="jobs-hero-stats">
-            <article class="jobs-stat-card"><strong>8</strong><span>Ứng viên mới tuần này</span></article>
-            <article class="jobs-stat-card"><strong>3</strong><span>Đang xem hồ sơ</span></article>
-            <article class="jobs-stat-card"><strong>2</strong><span>Đề nghị liên hệ</span></article>
-            <article class="jobs-stat-card"><strong>3</strong><span>Chờ phản hồi thêm</span></article>
+            <article class="jobs-stat-card"><strong>9</strong><span>Tổng hồ sơ đang theo dõi</span></article>
+            <article class="jobs-stat-card"><strong>2</strong><span>Hồ sơ mới cần xem</span></article>
+            <article class="jobs-stat-card"><strong>2</strong><span>Đang ở vòng đánh giá</span></article>
+            <article class="jobs-stat-card"><strong>1</strong><span>Đã mời phỏng vấn</span></article>
           </div>
         </div>
       </div>
@@ -58,43 +58,415 @@
         <div class="jobs-dashboard-main">
           <section class="jobs-dashboard-panel">
             <div class="jobs-dashboard-panel-head">
+              <h2>Bộ lọc hồ sơ ứng viên</h2>
+              <span class="jobs-dashboard-note" id="recruiterCandidateCount">9 hồ sơ phù hợp</span>
+            </div>
+            <form class="jobs-filter-bar jobs-candidate-filter-bar" id="recruiterCandidateFilterForm">
+              <div class="jobs-filter-grid jobs-recruiter-filter-grid">
+                <label class="jobs-filter-field">
+                  <span>Tìm hồ sơ</span>
+                  <input type="search" id="recruiterCandidateSearch" placeholder="Tên ứng viên, vị trí quan tâm, kỹ năng...">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Vị trí quan tâm</span>
+                  <select id="recruiterCandidateRole">
+<option value="">Tất cả vị trí quan tâm</option>
+<option value="Hành chính nhân sự">Hành chính nhân sự</option>
+<option value="Kế toán bán hàng">Kế toán bán hàng</option>
+<option value="Kế toán nội bộ">Kế toán nội bộ</option>
+<option value="Kế toán thuế">Kế toán thuế</option>
+<option value="Kế toán tổng hợp">Kế toán tổng hợp</option>
+<option value="Nhân viên kế toán">Nhân viên kế toán</option>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Kinh nghiệm</span>
+                  <select id="recruiterCandidateExperience">
+<option value="">Tất cả mức kinh nghiệm</option>
+<option value="1 năm kinh nghiệm">1 năm kinh nghiệm</option>
+<option value="2 năm kinh nghiệm">2 năm kinh nghiệm</option>
+<option value="3 năm kinh nghiệm">3 năm kinh nghiệm</option>
+<option value="5 năm kinh nghiệm">5 năm kinh nghiệm</option>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Trạng thái</span>
+                  <select id="recruiterCandidateStatus">
+<option value="">Tất cả trạng thái</option>
+<option value="contacted">Đã liên hệ</option>
+<option value="interview">Đề nghị phỏng vấn</option>
+<option value="need-update">Cần bổ sung thông tin</option>
+<option value="new">Hồ sơ mới</option>
+<option value="reviewing">Đang xem hồ sơ</option>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Sắp xếp</span>
+                  <select id="recruiterCandidateSort">
+                    <option value="updated-desc">Mới cập nhật</option>
+                    <option value="name-asc">Tên A → Z</option>
+                  </select>
+                </label>
+              </div>
+              <div class="jobs-filter-meta">
+                <strong>Ưu tiên hồ sơ đã cập nhật gần đây để tăng tỷ lệ phản hồi</strong>
+                <button type="button" class="jobs-filter-reset" id="recruiterCandidateReset">Xóa lọc</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="jobs-dashboard-panel">
+            <div class="jobs-dashboard-panel-head">
               <h2>Danh sách ứng viên</h2>
             </div>
             <div class="jobs-dashboard-table-wrap">
-              <table class="jobs-dashboard-table">
+              <table class="jobs-dashboard-table jobs-recruiter-candidate-table" id="recruiterCandidateTable">
                 <thead>
                   <tr>
                     <th>Ứng viên</th>
                     <th>Vị trí quan tâm</th>
                     <th>Kinh nghiệm</th>
                     <th>Trạng thái</th>
+                    <th>Cập nhật</th>
                     <th>Hành động</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Nguyễn Minh Anh</td>
+<tr class="jobs-recruiter-candidate-row" data-candidate-id="candidate/do-thuy-linh" data-candidate-name="Đỗ Thùy Linh" data-candidate-role="Kế toán tổng hợp" data-candidate-profile="ung-vien/do-thuy-linh.html" data-search="do thuy linh ke toan tong hop · 5 nam kinh nghiem co kinh nghiem van hanh ke toan tong hop cho doanh nghiep thuong mai va dich vu, manh ve bao cao quan tri va kiem soat dong tien. ha noi · hybrid 5 nam kinh nghiem bao cao quan tri kiem soat dong tien misa power bi" data-role="Kế toán tổng hợp" data-experience="5 năm kinh nghiệm" data-status="reviewing" data-updated-date="2026-04-22">
+                    <td>
+                      <div class="jobs-recruiter-candidate-name">
+                        <strong>Đỗ Thùy Linh</strong>
+                        <span>Hà Nội · Hybrid</span>
+                      </div>
+                    </td>
                     <td>Kế toán tổng hợp</td>
-                    <td>3 năm</td>
-                    <td><span class="jobs-status-pill is-reviewing">Đang xem hồ sơ</span></td>
-                    <td><a href="#" class="job-source-link">Xem CV</a></td>
+                    <td>5 năm kinh nghiệm</td>
+                    <td>
+                      <span class="jobs-status-pill is-reviewing">Đang xem hồ sơ</span>
+                      <label class="jobs-recruiter-status-control">
+                        <span>Cập nhật trạng thái</span>
+                        <select class="jobs-recruiter-status-select" data-candidate-id="candidate/do-thuy-linh">
+<option value="new">Hồ sơ mới</option><option value="reviewing" selected>Đang xem hồ sơ</option><option value="interview">Đề nghị phỏng vấn</option><option value="contacted">Đã liên hệ</option><option value="need-update">Cần bổ sung thông tin</option>
+                        </select>
+                      </label>
+                    </td>
+                    <td>Cập nhật 22/04/2026</td>
+                    <td>
+                      <div class="jobs-recruiter-actions-inline">
+                        <a href="ung-vien/do-thuy-linh.html" class="job-source-link">Mở hồ sơ</a>
+                        <button type="button" class="jobs-recruiter-shortlist-btn" data-candidate-id="candidate/do-thuy-linh" aria-pressed="false">
+                          <i class="fa-regular fa-star" aria-hidden="true"></i>
+                          <span>Lưu shortlist</span>
+                        </button>
+                        <button type="button" class="jobs-recruiter-note-btn" data-candidate-id="candidate/do-thuy-linh" data-candidate-name="Đỗ Thùy Linh">
+                          <i class="fa-regular fa-note-sticky" aria-hidden="true"></i>
+                          <span>Ghi chú</span>
+                        </button>
+                      </div>
+                      <p class="jobs-recruiter-action-tip">Đặt lịch trao đổi nhanh nếu hồ sơ phù hợp tiêu chí.</p>
+                    </td>
                   </tr>
-                  <tr>
-                    <td>Trần Bảo Vy</td>
+<tr class="jobs-recruiter-candidate-row" data-candidate-id="candidate/nguyen-hoang-yen" data-candidate-name="Nguyễn Hoàng Yến" data-candidate-role="Hành chính nhân sự" data-candidate-profile="ung-vien/nguyen-hoang-yen.html" data-search="nguyen hoang yen hanh chinh nhan su · 3 nam kinh nghiem da phu trach tuyen dung, quan ly ho so lao dong, cham cong va phoi hop cung ke toan tien luong trong doanh nghiep dich vu. ha noi · hybrid 3 nam kinh nghiem tuyen dung ho so lao dong cham cong tien luong quy trinh nhan su" data-role="Hành chính nhân sự" data-experience="3 năm kinh nghiệm" data-status="contacted" data-updated-date="2026-04-21">
+                    <td>
+                      <div class="jobs-recruiter-candidate-name">
+                        <strong>Nguyễn Hoàng Yến</strong>
+                        <span>Hà Nội · Hybrid</span>
+                      </div>
+                    </td>
+                    <td>Hành chính nhân sự</td>
+                    <td>3 năm kinh nghiệm</td>
+                    <td>
+                      <span class="jobs-status-pill is-active">Đã liên hệ</span>
+                      <label class="jobs-recruiter-status-control">
+                        <span>Cập nhật trạng thái</span>
+                        <select class="jobs-recruiter-status-select" data-candidate-id="candidate/nguyen-hoang-yen">
+<option value="new">Hồ sơ mới</option><option value="reviewing">Đang xem hồ sơ</option><option value="interview">Đề nghị phỏng vấn</option><option value="contacted" selected>Đã liên hệ</option><option value="need-update">Cần bổ sung thông tin</option>
+                        </select>
+                      </label>
+                    </td>
+                    <td>Cập nhật 21/04/2026</td>
+                    <td>
+                      <div class="jobs-recruiter-actions-inline">
+                        <a href="ung-vien/nguyen-hoang-yen.html" class="job-source-link">Mở hồ sơ</a>
+                        <button type="button" class="jobs-recruiter-shortlist-btn" data-candidate-id="candidate/nguyen-hoang-yen" aria-pressed="false">
+                          <i class="fa-regular fa-star" aria-hidden="true"></i>
+                          <span>Lưu shortlist</span>
+                        </button>
+                        <button type="button" class="jobs-recruiter-note-btn" data-candidate-id="candidate/nguyen-hoang-yen" data-candidate-name="Nguyễn Hoàng Yến">
+                          <i class="fa-regular fa-note-sticky" aria-hidden="true"></i>
+                          <span>Ghi chú</span>
+                        </button>
+                      </div>
+                      <p class="jobs-recruiter-action-tip">Theo dõi phản hồi và hẹn bước tiếp theo.</p>
+                    </td>
+                  </tr>
+<tr class="jobs-recruiter-candidate-row" data-candidate-id="candidate/nguyen-minh-anh" data-candidate-name="Nguyễn Minh Anh" data-candidate-role="Kế toán tổng hợp" data-candidate-profile="ung-vien/nguyen-minh-anh.html" data-search="nguyen minh anh ke toan tong hop · 3 nam kinh nghiem da phu trach tong hop so lieu, kiem soat chung tu va lap bao cao quan tri theo thang cho doanh nghiep dich vu. tp.hcm · hybrid 3 nam kinh nghiem excel nang cao misa sme bao cao quan tri ke khai thue" data-role="Kế toán tổng hợp" data-experience="3 năm kinh nghiệm" data-status="reviewing" data-updated-date="2026-04-20">
+                    <td>
+                      <div class="jobs-recruiter-candidate-name">
+                        <strong>Nguyễn Minh Anh</strong>
+                        <span>TP.HCM · Hybrid</span>
+                      </div>
+                    </td>
+                    <td>Kế toán tổng hợp</td>
+                    <td>3 năm kinh nghiệm</td>
+                    <td>
+                      <span class="jobs-status-pill is-reviewing">Đang xem hồ sơ</span>
+                      <label class="jobs-recruiter-status-control">
+                        <span>Cập nhật trạng thái</span>
+                        <select class="jobs-recruiter-status-select" data-candidate-id="candidate/nguyen-minh-anh">
+<option value="new">Hồ sơ mới</option><option value="reviewing" selected>Đang xem hồ sơ</option><option value="interview">Đề nghị phỏng vấn</option><option value="contacted">Đã liên hệ</option><option value="need-update">Cần bổ sung thông tin</option>
+                        </select>
+                      </label>
+                    </td>
+                    <td>Cập nhật 20/04/2026</td>
+                    <td>
+                      <div class="jobs-recruiter-actions-inline">
+                        <a href="ung-vien/nguyen-minh-anh.html" class="job-source-link">Mở hồ sơ</a>
+                        <button type="button" class="jobs-recruiter-shortlist-btn" data-candidate-id="candidate/nguyen-minh-anh" aria-pressed="false">
+                          <i class="fa-regular fa-star" aria-hidden="true"></i>
+                          <span>Lưu shortlist</span>
+                        </button>
+                        <button type="button" class="jobs-recruiter-note-btn" data-candidate-id="candidate/nguyen-minh-anh" data-candidate-name="Nguyễn Minh Anh">
+                          <i class="fa-regular fa-note-sticky" aria-hidden="true"></i>
+                          <span>Ghi chú</span>
+                        </button>
+                      </div>
+                      <p class="jobs-recruiter-action-tip">Đặt lịch trao đổi nhanh nếu hồ sơ phù hợp tiêu chí.</p>
+                    </td>
+                  </tr>
+<tr class="jobs-recruiter-candidate-row" data-candidate-id="candidate/tran-bao-vy" data-candidate-name="Trần Bảo Vy" data-candidate-role="Kế toán thuế" data-candidate-profile="ung-vien/tran-bao-vy.html" data-search="tran bao vy ke toan thue · 2 nam kinh nghiem co kinh nghiem ke khai thue gtgt, tncn, quyet toan cuoi nam va phoi hop xu ly ho so hoan thue cho doanh nghiep thuong mai. ha noi · onsite 2 nam kinh nghiem ke khai thue quyet toan thue fast accounting kiem soat hoa don" data-role="Kế toán thuế" data-experience="2 năm kinh nghiệm" data-status="interview" data-updated-date="2026-04-18">
+                    <td>
+                      <div class="jobs-recruiter-candidate-name">
+                        <strong>Trần Bảo Vy</strong>
+                        <span>Hà Nội · Onsite</span>
+                      </div>
+                    </td>
                     <td>Kế toán thuế</td>
-                    <td>2 năm</td>
-                    <td><span class="jobs-status-pill is-active">Mời trao đổi</span></td>
-                    <td><a href="#" class="job-source-link">Liên hệ</a></td>
+                    <td>2 năm kinh nghiệm</td>
+                    <td>
+                      <span class="jobs-status-pill is-active">Đề nghị phỏng vấn</span>
+                      <label class="jobs-recruiter-status-control">
+                        <span>Cập nhật trạng thái</span>
+                        <select class="jobs-recruiter-status-select" data-candidate-id="candidate/tran-bao-vy">
+<option value="new">Hồ sơ mới</option><option value="reviewing">Đang xem hồ sơ</option><option value="interview" selected>Đề nghị phỏng vấn</option><option value="contacted">Đã liên hệ</option><option value="need-update">Cần bổ sung thông tin</option>
+                        </select>
+                      </label>
+                    </td>
+                    <td>Cập nhật 18/04/2026</td>
+                    <td>
+                      <div class="jobs-recruiter-actions-inline">
+                        <a href="ung-vien/tran-bao-vy.html" class="job-source-link">Mở hồ sơ</a>
+                        <button type="button" class="jobs-recruiter-shortlist-btn" data-candidate-id="candidate/tran-bao-vy" aria-pressed="false">
+                          <i class="fa-regular fa-star" aria-hidden="true"></i>
+                          <span>Lưu shortlist</span>
+                        </button>
+                        <button type="button" class="jobs-recruiter-note-btn" data-candidate-id="candidate/tran-bao-vy" data-candidate-name="Trần Bảo Vy">
+                          <i class="fa-regular fa-note-sticky" aria-hidden="true"></i>
+                          <span>Ghi chú</span>
+                        </button>
+                      </div>
+                      <p class="jobs-recruiter-action-tip">Xác nhận lịch phỏng vấn và gửi tài liệu chuẩn bị.</p>
+                    </td>
                   </tr>
-                  <tr>
-                    <td>Lê Quốc Hưng</td>
+<tr class="jobs-recruiter-candidate-row" data-candidate-id="candidate/le-quoc-hung" data-candidate-name="Lê Quốc Hưng" data-candidate-role="Nhân viên kế toán" data-candidate-profile="ung-vien/le-quoc-hung.html" data-search="le quoc hung nhan vien ke toan · 1 nam kinh nghiem da thuc hien doi chieu cong no, nhap lieu hoa don dau vao - dau ra va ho tro kiem ke ton kho dinh ky tai doanh nghiep san xuat. binh duong · onsite 1 nam kinh nghiem nhap lieu chung tu doi chieu cong no excel quan ly ton kho" data-role="Nhân viên kế toán" data-experience="1 năm kinh nghiệm" data-status="need-update" data-updated-date="2026-04-19">
+                    <td>
+                      <div class="jobs-recruiter-candidate-name">
+                        <strong>Lê Quốc Hưng</strong>
+                        <span>Bình Dương · Onsite</span>
+                      </div>
+                    </td>
                     <td>Nhân viên kế toán</td>
-                    <td>1 năm</td>
-                    <td><span class="jobs-status-pill is-muted">Chờ bổ sung</span></td>
-                    <td><a href="#" class="job-source-link">Yêu cầu cập nhật</a></td>
+                    <td>1 năm kinh nghiệm</td>
+                    <td>
+                      <span class="jobs-status-pill is-muted">Cần bổ sung thông tin</span>
+                      <label class="jobs-recruiter-status-control">
+                        <span>Cập nhật trạng thái</span>
+                        <select class="jobs-recruiter-status-select" data-candidate-id="candidate/le-quoc-hung">
+<option value="new">Hồ sơ mới</option><option value="reviewing">Đang xem hồ sơ</option><option value="interview">Đề nghị phỏng vấn</option><option value="contacted">Đã liên hệ</option><option value="need-update" selected>Cần bổ sung thông tin</option>
+                        </select>
+                      </label>
+                    </td>
+                    <td>Cập nhật 19/04/2026</td>
+                    <td>
+                      <div class="jobs-recruiter-actions-inline">
+                        <a href="ung-vien/le-quoc-hung.html" class="job-source-link">Mở hồ sơ</a>
+                        <button type="button" class="jobs-recruiter-shortlist-btn" data-candidate-id="candidate/le-quoc-hung" aria-pressed="false">
+                          <i class="fa-regular fa-star" aria-hidden="true"></i>
+                          <span>Lưu shortlist</span>
+                        </button>
+                        <button type="button" class="jobs-recruiter-note-btn" data-candidate-id="candidate/le-quoc-hung" data-candidate-name="Lê Quốc Hưng">
+                          <i class="fa-regular fa-note-sticky" aria-hidden="true"></i>
+                          <span>Ghi chú</span>
+                        </button>
+                      </div>
+                      <p class="jobs-recruiter-action-tip">Gửi yêu cầu bổ sung thông tin trước khi quyết định.</p>
+                    </td>
+                  </tr>
+<tr class="jobs-recruiter-candidate-row" data-candidate-id="candidate/pham-thu-ha" data-candidate-name="Phạm Thu Hà" data-candidate-role="Kế toán nội bộ" data-candidate-profile="ung-vien/pham-thu-ha.html" data-search="pham thu ha ke toan noi bo · 2 nam kinh nghiem phu trach thu chi noi bo, quan ly ho so thanh toan va phoi hop voi bo phan mua hang de kiem soat chi phi van hanh hang thang. tp.hcm · onsite 2 nam kinh nghiem thu chi noi bo kiem soat thanh toan misa theo doi chi phi" data-role="Kế toán nội bộ" data-experience="2 năm kinh nghiệm" data-status="new" data-updated-date="2026-04-17">
+                    <td>
+                      <div class="jobs-recruiter-candidate-name">
+                        <strong>Phạm Thu Hà</strong>
+                        <span>TP.HCM · Onsite</span>
+                      </div>
+                    </td>
+                    <td>Kế toán nội bộ</td>
+                    <td>2 năm kinh nghiệm</td>
+                    <td>
+                      <span class="jobs-status-pill is-saved">Hồ sơ mới</span>
+                      <label class="jobs-recruiter-status-control">
+                        <span>Cập nhật trạng thái</span>
+                        <select class="jobs-recruiter-status-select" data-candidate-id="candidate/pham-thu-ha">
+<option value="new" selected>Hồ sơ mới</option><option value="reviewing">Đang xem hồ sơ</option><option value="interview">Đề nghị phỏng vấn</option><option value="contacted">Đã liên hệ</option><option value="need-update">Cần bổ sung thông tin</option>
+                        </select>
+                      </label>
+                    </td>
+                    <td>Cập nhật 17/04/2026</td>
+                    <td>
+                      <div class="jobs-recruiter-actions-inline">
+                        <a href="ung-vien/pham-thu-ha.html" class="job-source-link">Mở hồ sơ</a>
+                        <button type="button" class="jobs-recruiter-shortlist-btn" data-candidate-id="candidate/pham-thu-ha" aria-pressed="false">
+                          <i class="fa-regular fa-star" aria-hidden="true"></i>
+                          <span>Lưu shortlist</span>
+                        </button>
+                        <button type="button" class="jobs-recruiter-note-btn" data-candidate-id="candidate/pham-thu-ha" data-candidate-name="Phạm Thu Hà">
+                          <i class="fa-regular fa-note-sticky" aria-hidden="true"></i>
+                          <span>Ghi chú</span>
+                        </button>
+                      </div>
+                      <p class="jobs-recruiter-action-tip">Ưu tiên xem trong 24h để giữ tốc độ tuyển dụng.</p>
+                    </td>
+                  </tr>
+<tr class="jobs-recruiter-candidate-row" data-candidate-id="candidate/vo-thanh-trung" data-candidate-name="Võ Thành Trung" data-candidate-role="Kế toán bán hàng" data-candidate-profile="ung-vien/vo-thanh-trung.html" data-search="vo thanh trung ke toan ban hang · 1 nam kinh nghiem co kinh nghiem theo doi doanh thu ban hang, xuat hoa don, doi chieu du lieu ban hang da kenh va cham soc bao cao cuoi ngay. tp.hcm · onsite 1 nam kinh nghiem hoa don dien tu doi soat doanh thu excel bao cao ban hang" data-role="Kế toán bán hàng" data-experience="1 năm kinh nghiệm" data-status="new" data-updated-date="2026-04-16">
+                    <td>
+                      <div class="jobs-recruiter-candidate-name">
+                        <strong>Võ Thành Trung</strong>
+                        <span>TP.HCM · Onsite</span>
+                      </div>
+                    </td>
+                    <td>Kế toán bán hàng</td>
+                    <td>1 năm kinh nghiệm</td>
+                    <td>
+                      <span class="jobs-status-pill is-saved">Hồ sơ mới</span>
+                      <label class="jobs-recruiter-status-control">
+                        <span>Cập nhật trạng thái</span>
+                        <select class="jobs-recruiter-status-select" data-candidate-id="candidate/vo-thanh-trung">
+<option value="new" selected>Hồ sơ mới</option><option value="reviewing">Đang xem hồ sơ</option><option value="interview">Đề nghị phỏng vấn</option><option value="contacted">Đã liên hệ</option><option value="need-update">Cần bổ sung thông tin</option>
+                        </select>
+                      </label>
+                    </td>
+                    <td>Cập nhật 16/04/2026</td>
+                    <td>
+                      <div class="jobs-recruiter-actions-inline">
+                        <a href="ung-vien/vo-thanh-trung.html" class="job-source-link">Mở hồ sơ</a>
+                        <button type="button" class="jobs-recruiter-shortlist-btn" data-candidate-id="candidate/vo-thanh-trung" aria-pressed="false">
+                          <i class="fa-regular fa-star" aria-hidden="true"></i>
+                          <span>Lưu shortlist</span>
+                        </button>
+                        <button type="button" class="jobs-recruiter-note-btn" data-candidate-id="candidate/vo-thanh-trung" data-candidate-name="Võ Thành Trung">
+                          <i class="fa-regular fa-note-sticky" aria-hidden="true"></i>
+                          <span>Ghi chú</span>
+                        </button>
+                      </div>
+                      <p class="jobs-recruiter-action-tip">Ưu tiên xem trong 24h để giữ tốc độ tuyển dụng.</p>
+                    </td>
+                  </tr>
+<tr class="jobs-recruiter-candidate-row" data-candidate-id="candidate/bui-thanh-dat" data-candidate-name="Bùi Thành Đạt" data-candidate-role="Kế toán thuế" data-candidate-profile="ung-vien/bui-thanh-dat.html" data-search="bui thanh dat ke toan thue · 3 nam kinh nghiem thanh thao ke khai, quyet toan thue va chuan bi ho so thanh tra thue cho doanh nghiep vua va nho. tp.hcm · onsite 3 nam kinh nghiem quyet toan thue ho so thanh tra thue hoa don dien tu fast accounting" data-role="Kế toán thuế" data-experience="3 năm kinh nghiệm" data-status="contacted" data-updated-date="2026-04-15">
+                    <td>
+                      <div class="jobs-recruiter-candidate-name">
+                        <strong>Bùi Thành Đạt</strong>
+                        <span>TP.HCM · Onsite</span>
+                      </div>
+                    </td>
+                    <td>Kế toán thuế</td>
+                    <td>3 năm kinh nghiệm</td>
+                    <td>
+                      <span class="jobs-status-pill is-active">Đã liên hệ</span>
+                      <label class="jobs-recruiter-status-control">
+                        <span>Cập nhật trạng thái</span>
+                        <select class="jobs-recruiter-status-select" data-candidate-id="candidate/bui-thanh-dat">
+<option value="new">Hồ sơ mới</option><option value="reviewing">Đang xem hồ sơ</option><option value="interview">Đề nghị phỏng vấn</option><option value="contacted" selected>Đã liên hệ</option><option value="need-update">Cần bổ sung thông tin</option>
+                        </select>
+                      </label>
+                    </td>
+                    <td>Cập nhật 15/04/2026</td>
+                    <td>
+                      <div class="jobs-recruiter-actions-inline">
+                        <a href="ung-vien/bui-thanh-dat.html" class="job-source-link">Mở hồ sơ</a>
+                        <button type="button" class="jobs-recruiter-shortlist-btn" data-candidate-id="candidate/bui-thanh-dat" aria-pressed="false">
+                          <i class="fa-regular fa-star" aria-hidden="true"></i>
+                          <span>Lưu shortlist</span>
+                        </button>
+                        <button type="button" class="jobs-recruiter-note-btn" data-candidate-id="candidate/bui-thanh-dat" data-candidate-name="Bùi Thành Đạt">
+                          <i class="fa-regular fa-note-sticky" aria-hidden="true"></i>
+                          <span>Ghi chú</span>
+                        </button>
+                      </div>
+                      <p class="jobs-recruiter-action-tip">Theo dõi phản hồi và hẹn bước tiếp theo.</p>
+                    </td>
+                  </tr>
+<tr class="jobs-recruiter-candidate-row" data-candidate-id="candidate/phan-ngoc-khanh" data-candidate-name="Phan Ngọc Khánh" data-candidate-role="Kế toán nội bộ" data-candidate-profile="ung-vien/phan-ngoc-khanh.html" data-search="phan ngoc khanh ke toan noi bo · 1 nam kinh nghiem da co kinh nghiem theo doi chung tu thu chi, cong no noi bo va doi soat so lieu kho tai doanh nghiep san xuat. ben tre · onsite 1 nam kinh nghiem theo doi cong no doi soat kho excel misa" data-role="Kế toán nội bộ" data-experience="1 năm kinh nghiệm" data-status="need-update" data-updated-date="2026-04-14">
+                    <td>
+                      <div class="jobs-recruiter-candidate-name">
+                        <strong>Phan Ngọc Khánh</strong>
+                        <span>Bến Tre · Onsite</span>
+                      </div>
+                    </td>
+                    <td>Kế toán nội bộ</td>
+                    <td>1 năm kinh nghiệm</td>
+                    <td>
+                      <span class="jobs-status-pill is-muted">Cần bổ sung thông tin</span>
+                      <label class="jobs-recruiter-status-control">
+                        <span>Cập nhật trạng thái</span>
+                        <select class="jobs-recruiter-status-select" data-candidate-id="candidate/phan-ngoc-khanh">
+<option value="new">Hồ sơ mới</option><option value="reviewing">Đang xem hồ sơ</option><option value="interview">Đề nghị phỏng vấn</option><option value="contacted">Đã liên hệ</option><option value="need-update" selected>Cần bổ sung thông tin</option>
+                        </select>
+                      </label>
+                    </td>
+                    <td>Cập nhật 14/04/2026</td>
+                    <td>
+                      <div class="jobs-recruiter-actions-inline">
+                        <a href="ung-vien/phan-ngoc-khanh.html" class="job-source-link">Mở hồ sơ</a>
+                        <button type="button" class="jobs-recruiter-shortlist-btn" data-candidate-id="candidate/phan-ngoc-khanh" aria-pressed="false">
+                          <i class="fa-regular fa-star" aria-hidden="true"></i>
+                          <span>Lưu shortlist</span>
+                        </button>
+                        <button type="button" class="jobs-recruiter-note-btn" data-candidate-id="candidate/phan-ngoc-khanh" data-candidate-name="Phan Ngọc Khánh">
+                          <i class="fa-regular fa-note-sticky" aria-hidden="true"></i>
+                          <span>Ghi chú</span>
+                        </button>
+                      </div>
+                      <p class="jobs-recruiter-action-tip">Gửi yêu cầu bổ sung thông tin trước khi quyết định.</p>
+                    </td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <div class="jobs-empty-state" id="recruiterCandidateEmpty" hidden>Chưa có hồ sơ phù hợp với bộ lọc hiện tại.</div>
+          </section>
+
+          <section class="jobs-dashboard-panel jobs-recruiter-ops-panel">
+            <div class="jobs-dashboard-panel-head">
+              <h2>Bảng điều phối nội bộ</h2>
+            </div>
+            <div class="jobs-recruiter-ops-grid">
+              <article class="jobs-recruiter-ops-card">
+                <div class="jobs-recruiter-ops-head">
+                  <h3>Shortlist đang theo dõi</h3>
+                  <span class="jobs-status-pill is-saved"><strong id="recruiterShortlistCount">0</strong> hồ sơ</span>
+                </div>
+                <ul class="jobs-recruiter-shortlist-list" id="recruiterShortlistList">
+                  <li class="jobs-recruiter-empty-note">Chưa có ứng viên nào trong shortlist.</li>
+                </ul>
+              </article>
+
+              <article class="jobs-recruiter-ops-card">
+                <div class="jobs-recruiter-ops-head">
+                  <h3>Nhật ký thao tác gần đây</h3>
+                </div>
+                <ul class="jobs-recruiter-activity-feed" id="recruiterActivityFeed">
+                  <li>Bạn có thể lưu shortlist, cập nhật trạng thái hoặc thêm ghi chú cho từng hồ sơ ngay tại bảng danh sách.</li>
+                </ul>
+              </article>
             </div>
           </section>
         </div>
@@ -102,6 +474,283 @@
     </section>
   </main>
   <div id="siteFooter"></div>
+  <div class="jobs-note-dialog" id="recruiterNoteDialog" hidden>
+    <div class="jobs-note-dialog-backdrop" data-note-dismiss="backdrop"></div>
+    <div class="jobs-note-dialog-card" role="dialog" aria-modal="true" aria-labelledby="recruiterNoteTitle">
+      <h3 id="recruiterNoteTitle">Ghi chú nội bộ</h3>
+      <p>Ghi chú này chỉ phục vụ điều phối nội bộ cho nhà tuyển dụng.</p>
+      <label class="jobs-filter-field">
+        <span>Nội dung ghi chú</span>
+        <textarea id="recruiterNoteInput" rows="5" placeholder="Ví dụ: Phù hợp vị trí kế toán tổng hợp, ưu tiên mời phỏng vấn chiều thứ 4..."></textarea>
+      </label>
+      <div class="jobs-note-dialog-actions">
+        <button type="button" class="btn-outline-brown" id="recruiterNoteCancel">Hủy</button>
+        <button type="button" class="btn-primary-orange" id="recruiterNoteSave">Lưu ghi chú</button>
+      </div>
+    </div>
+  </div>
   <script src="site-shell.js"></script>
+<script>
+    (function () {
+      var STATUS_LABELS = {
+        'new': 'Hồ sơ mới',
+        'reviewing': 'Đang xem hồ sơ',
+        'interview': 'Đề nghị phỏng vấn',
+        'contacted': 'Đã liên hệ',
+        'need-update': 'Cần bổ sung thông tin'
+      };
+
+      var STATUS_PILLS = {
+        'new': 'is-saved',
+        'reviewing': 'is-reviewing',
+        'interview': 'is-active',
+        'contacted': 'is-active',
+        'need-update': 'is-muted'
+      };
+
+      function normalizeText(value) {
+        return String(value || '')
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/đ/g, 'd')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+
+      function initRecruiterCandidateFilter() {
+        var form = document.getElementById('recruiterCandidateFilterForm');
+        var table = document.getElementById('recruiterCandidateTable');
+        if (!form || !table) return;
+
+        var rows = Array.prototype.slice.call(table.querySelectorAll('.jobs-recruiter-candidate-row'));
+        var searchInput = document.getElementById('recruiterCandidateSearch');
+        var roleSelect = document.getElementById('recruiterCandidateRole');
+        var experienceSelect = document.getElementById('recruiterCandidateExperience');
+        var statusSelect = document.getElementById('recruiterCandidateStatus');
+        var sortSelect = document.getElementById('recruiterCandidateSort');
+        var resetBtn = document.getElementById('recruiterCandidateReset');
+        var countLabel = document.getElementById('recruiterCandidateCount');
+        var emptyState = document.getElementById('recruiterCandidateEmpty');
+        var shortlistCount = document.getElementById('recruiterShortlistCount');
+        var shortlistList = document.getElementById('recruiterShortlistList');
+        var activityFeed = document.getElementById('recruiterActivityFeed');
+        var noteDialog = document.getElementById('recruiterNoteDialog');
+        var noteTitle = document.getElementById('recruiterNoteTitle');
+        var noteInput = document.getElementById('recruiterNoteInput');
+        var noteSave = document.getElementById('recruiterNoteSave');
+        var noteCancel = document.getElementById('recruiterNoteCancel');
+
+        var shortlistStore = new Set();
+        var noteStore = {};
+        var currentNoteCandidateId = null;
+
+        function compareRows(a, b, sortValue) {
+          var aUpdated = Date.parse(a.dataset.updatedDate || '') || 0;
+          var bUpdated = Date.parse(b.dataset.updatedDate || '') || 0;
+          var aName = normalizeText((a.querySelector('.jobs-recruiter-candidate-name strong') || {}).textContent || '');
+          var bName = normalizeText((b.querySelector('.jobs-recruiter-candidate-name strong') || {}).textContent || '');
+          if (sortValue === 'name-asc') {
+            return aName.localeCompare(bName, 'vi');
+          }
+          return bUpdated - aUpdated || aName.localeCompare(bName, 'vi');
+        }
+
+        function pushActivity(message) {
+          if (!activityFeed) return;
+          var item = document.createElement('li');
+          item.textContent = message;
+          activityFeed.prepend(item);
+          var items = activityFeed.querySelectorAll('li');
+          if (items.length > 8) {
+            items[items.length - 1].remove();
+          }
+        }
+
+        function syncShortlistPanel() {
+          if (!shortlistCount || !shortlistList) return;
+          shortlistCount.textContent = String(shortlistStore.size);
+
+          if (!shortlistStore.size) {
+            shortlistList.innerHTML = '<li class="jobs-recruiter-empty-note">Chưa có ứng viên nào trong shortlist.</li>';
+            return;
+          }
+
+          var items = [];
+          rows.forEach(function (row) {
+            var candidateId = row.dataset.candidateId || '';
+            if (!shortlistStore.has(candidateId)) return;
+            var name = (row.querySelector('.jobs-recruiter-candidate-name strong') || {}).textContent || '';
+            var role = row.dataset.candidateRole || '';
+            var profile = row.dataset.candidateProfile || '#';
+            items.push('<li><a href="' + profile + '">' + name + '</a><span>' + role + '</span></li>');
+          });
+          shortlistList.innerHTML = items.join('');
+        }
+
+        function openNoteDialog(candidateId, candidateName) {
+          if (!noteDialog || !noteInput || !noteTitle) return;
+          currentNoteCandidateId = candidateId;
+          noteTitle.textContent = 'Ghi chú nội bộ: ' + candidateName;
+          noteInput.value = noteStore[candidateId] || '';
+          noteDialog.hidden = false;
+          document.body.classList.add('is-note-dialog-open');
+          window.setTimeout(function () { noteInput.focus(); }, 10);
+        }
+
+        function closeNoteDialog() {
+          if (!noteDialog) return;
+          noteDialog.hidden = true;
+          document.body.classList.remove('is-note-dialog-open');
+          currentNoteCandidateId = null;
+        }
+
+        function updateStatusPill(row, statusKey) {
+          var pill = row.querySelector('.jobs-status-pill');
+          if (!pill) return;
+          pill.classList.remove('is-active', 'is-saved', 'is-reviewing', 'is-muted');
+          pill.classList.add(STATUS_PILLS[statusKey] || 'is-reviewing');
+          pill.textContent = STATUS_LABELS[statusKey] || 'Đang xem hồ sơ';
+          row.dataset.status = statusKey;
+        }
+
+        function applyFilters() {
+          var query = normalizeText(searchInput ? searchInput.value : '');
+          var role = normalizeText(roleSelect ? roleSelect.value : '');
+          var experience = normalizeText(experienceSelect ? experienceSelect.value : '');
+          var status = normalizeText(statusSelect ? statusSelect.value : '');
+          var sortValue = sortSelect ? sortSelect.value : 'updated-desc';
+
+          var matched = rows.filter(function (row) {
+            var searchBlob = normalizeText(row.dataset.search || row.textContent || '');
+            var rowRole = normalizeText(row.dataset.role || '');
+            var rowExperience = normalizeText(row.dataset.experience || '');
+            var rowStatus = normalizeText(row.dataset.status || '');
+            var matchesQuery = !query || searchBlob.indexOf(query) !== -1;
+            var matchesRole = !role || rowRole === role;
+            var matchesExperience = !experience || rowExperience === experience;
+            var matchesStatus = !status || rowStatus === status;
+            return matchesQuery && matchesRole && matchesExperience && matchesStatus;
+          });
+
+          matched.sort(function (a, b) { return compareRows(a, b, sortValue); });
+
+          rows.forEach(function (row) { row.hidden = true; });
+          matched.forEach(function (row) {
+            row.hidden = false;
+            row.parentElement.appendChild(row);
+          });
+
+          if (countLabel) {
+            countLabel.textContent = matched.length + ' hồ sơ phù hợp';
+          }
+          if (emptyState) {
+            emptyState.hidden = matched.length !== 0;
+          }
+        }
+
+        if (form) {
+          form.addEventListener('input', applyFilters);
+          form.addEventListener('change', applyFilters);
+        }
+
+        if (resetBtn) {
+          resetBtn.addEventListener('click', function () {
+            form.reset();
+            applyFilters();
+          });
+        }
+
+        rows.forEach(function (row) {
+          var shortlistBtn = row.querySelector('.jobs-recruiter-shortlist-btn');
+          var noteBtn = row.querySelector('.jobs-recruiter-note-btn');
+          var statusControl = row.querySelector('.jobs-recruiter-status-select');
+          var candidateId = row.dataset.candidateId || '';
+          var candidateName = row.dataset.candidateName || 'Ứng viên';
+
+          if (shortlistBtn) {
+            shortlistBtn.addEventListener('click', function () {
+              var active = shortlistStore.has(candidateId);
+              if (active) {
+                shortlistStore.delete(candidateId);
+                shortlistBtn.classList.remove('is-active');
+                shortlistBtn.setAttribute('aria-pressed', 'false');
+                shortlistBtn.querySelector('span').textContent = 'Lưu shortlist';
+                pushActivity('Đã bỏ ' + candidateName + ' khỏi shortlist.');
+              } else {
+                shortlistStore.add(candidateId);
+                shortlistBtn.classList.add('is-active');
+                shortlistBtn.setAttribute('aria-pressed', 'true');
+                shortlistBtn.querySelector('span').textContent = 'Đã lưu shortlist';
+                pushActivity('Đã thêm ' + candidateName + ' vào shortlist.');
+              }
+              syncShortlistPanel();
+            });
+          }
+
+          if (noteBtn) {
+            noteBtn.addEventListener('click', function () {
+              openNoteDialog(candidateId, candidateName);
+            });
+          }
+
+          if (statusControl) {
+            statusControl.addEventListener('change', function () {
+              var nextStatus = statusControl.value || 'reviewing';
+              updateStatusPill(row, nextStatus);
+              pushActivity('Đã cập nhật trạng thái hồ sơ ' + candidateName + ' thành ' + (STATUS_LABELS[nextStatus] || 'Đang xem hồ sơ') + '.');
+              applyFilters();
+            });
+          }
+        });
+
+        if (noteSave && noteInput) {
+          noteSave.addEventListener('click', function () {
+            if (!currentNoteCandidateId) return;
+            var value = noteInput.value.trim();
+            if (!value) {
+              delete noteStore[currentNoteCandidateId];
+            } else {
+              noteStore[currentNoteCandidateId] = value;
+            }
+            var row = rows.find(function (item) { return (item.dataset.candidateId || '') === currentNoteCandidateId; });
+            if (row) {
+              var button = row.querySelector('.jobs-recruiter-note-btn');
+              if (button) {
+                button.classList.toggle('is-active', !!value);
+              }
+              var candidateName = row.dataset.candidateName || 'Ứng viên';
+              pushActivity(value ? ('Đã lưu ghi chú nội bộ cho ' + candidateName + '.') : ('Đã xóa ghi chú nội bộ của ' + candidateName + '.'));
+            }
+            closeNoteDialog();
+          });
+        }
+
+        if (noteCancel) {
+          noteCancel.addEventListener('click', closeNoteDialog);
+        }
+
+        if (noteDialog) {
+          noteDialog.addEventListener('click', function (event) {
+            var dismissTarget = event.target.closest('[data-note-dismiss="backdrop"]');
+            if (dismissTarget) {
+              closeNoteDialog();
+            }
+          });
+        }
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && noteDialog && !noteDialog.hidden) {
+            closeNoteDialog();
+          }
+        });
+
+        syncShortlistPanel();
+        applyFilters();
+      }
+
+      document.addEventListener('DOMContentLoaded', initRecruiterCandidateFilter);
+    })();
+  </script>
 </body>
 </html>

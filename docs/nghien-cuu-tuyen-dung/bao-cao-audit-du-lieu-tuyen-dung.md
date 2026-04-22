@@ -1,8 +1,8 @@
 # Báo cáo audit dữ liệu tuyển dụng
 
-- Ngày chạy: 2026-04-09
+- Ngày chạy: 2026-04-22
 - Tổng file job source: 24
-- Tổng issue: 0
+- Tổng issue: 6
 
 ## Thống kê trạng thái
 
@@ -27,4 +27,9 @@
 
 ## Danh sách issue
 
-- Không phát hiện issue dữ liệu ở batch hiện tại.
+- `ke-toan-noi-bo-cong-ty-co-phan-du-an-ha-my.md`: Job quá hạn nhưng status vẫn là active
+- `ke-toan-noi-bo-cong-ty-tnhh-tm-dv-tin-hoc-nhat-tin.md`: Job quá hạn nhưng status vẫn là active
+- `ke-toan-thue-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.md`: Job quá hạn nhưng status vẫn là active
+- `ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.md`: Job quá hạn nhưng status vẫn là active
+- `ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam.md`: Job quá hạn nhưng status vẫn là active
+- `nhan-vien-ke-toan-cong-ty-xay-dung-dat-viet.md`: Job quá hạn nhưng status vẫn là active
