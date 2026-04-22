@@ -551,10 +551,13 @@ def build_candidate_avatar_data_uri(full_name: str, slug: str) -> str:
     return f"data:image/svg+xml;charset=UTF-8,{quote(svg, safe='')}"
 
 
-def render_candidate_avatar_thumb(candidate: dict[str, Any], variant: str = "card") -> str:
+def render_candidate_avatar_thumb(candidate: dict[str, Any], variant: str = "card", path_prefix: str = "") -> str:
+    avatar_src = clean_text(candidate.get("avatarSrc"))
+    if path_prefix and avatar_src and not avatar_src.startswith(("http://", "https://", "data:", "/", "../")):
+        avatar_src = f"{path_prefix}{avatar_src}"
     return (
         f'<span class="jobs-candidate-avatar-thumb jobs-candidate-avatar-thumb--{escape(variant)}">'
-        f'<img src="{escape(candidate["avatarSrc"])}" alt="Ảnh đại diện của {escape(candidate["fullName"])}" loading="lazy" decoding="async">'
+        f'<img src="{escape(avatar_src or candidate["avatarSrc"])}" alt="Ảnh đại diện của {escape(candidate["fullName"])}" loading="lazy" decoding="async">'
         "</span>"
     )
 
@@ -568,6 +571,30 @@ def format_candidate_updated_label(value: str) -> str:
     except ValueError:
         return "Cập nhật gần đây"
     return f"Cập nhật {format_date_vi(updated)}"
+
+
+def mask_email(value: str) -> str:
+    email = clean_text(value)
+    if not email or "@" not in email:
+        return "********@*****.***"
+    local, domain = email.split("@", 1)
+    local_visible = local[:2] if len(local) >= 2 else local[:1]
+    domain_parts = domain.split(".")
+    domain_name = domain_parts[0] if domain_parts else domain
+    domain_ext = ".".join(domain_parts[1:]) if len(domain_parts) > 1 else ""
+    domain_visible = domain_name[:2] if len(domain_name) >= 2 else domain_name[:1]
+    local_mask = local_visible + "*" * max(4, len(local) - len(local_visible))
+    domain_mask = domain_visible + "*" * max(4, len(domain_name) - len(domain_visible))
+    if domain_ext:
+        return f"{local_mask}@{domain_mask}.{domain_ext}"
+    return f"{local_mask}@{domain_mask}"
+
+
+def mask_phone(value: str) -> str:
+    digits = "".join(ch for ch in clean_text(value) if ch.isdigit())
+    if len(digits) < 7:
+        return "*** *** ***"
+    return f"{digits[:3]} *** **{digits[-2:]}"
 
 
 def load_featured_candidates(limit: int = 6) -> list[dict[str, Any]]:
@@ -672,6 +699,12 @@ def map_candidate_payload(row: dict[str, Any]) -> dict[str, Any] | None:
     contact_phone = clean_text(row.get("contactPhone"))
     profile_summary = clean_text(row.get("profileSummary")) or intro
     avatar_image = clean_text(row.get("avatarImage"))
+    education_level = clean_text(row.get("educationLevel"))
+    major_label = clean_text(row.get("majorLabel"))
+    school_name = clean_text(row.get("schoolName"))
+    graduation_year = clean_text(row.get("graduationYear"))
+    work_mode_preference = clean_text(row.get("workModePreference"))
+    address_public = clean_text(row.get("addressPublic"))
     profile_highlights: list[str] = []
     for item in row.get("highlights") or []:
         text = clean_text(item)
@@ -699,6 +732,12 @@ def map_candidate_payload(row: dict[str, Any]) -> dict[str, Any] | None:
         "availabilityLabel": clean_text(row.get("availabilityLabel")) or "Sẵn sàng trao đổi",
         "updatedDate": clean_text(row.get("updatedDate")),
         "updatedLabel": format_candidate_updated_label(clean_text(row.get("updatedDate"))),
+        "educationLevel": education_level,
+        "majorLabel": major_label,
+        "schoolName": school_name,
+        "graduationYear": graduation_year,
+        "workModePreference": work_mode_preference,
+        "addressPublic": address_public,
         "skills": skills,
         "profilePath": f"ung-vien/{slug}.html",
         "profileUrl": clean_text(row.get("profileUrl")) or f"ung-vien/{slug}.html",
@@ -711,7 +750,9 @@ def map_candidate_payload(row: dict[str, Any]) -> dict[str, Any] | None:
         "locationKey": fold_text(location_label),
         "contactEmail": contact_email,
         "contactPhone": contact_phone,
-        "contactPolicyNote": clean_text(row.get("contactPolicyNote")) or "Thông tin liên hệ chi tiết được chia sẻ khi hai bên xác nhận nhu cầu phù hợp.",
+        "maskedEmail": mask_email(contact_email),
+        "maskedPhone": mask_phone(contact_phone),
+        "contactPolicyNote": clean_text(row.get("contactPolicyNote")) or "Email và số điện thoại chỉ hiển thị đầy đủ khi nhà tuyển dụng đăng nhập và xác thực nhu cầu phù hợp.",
         "searchText": fold_text(" ".join([full_name, headline, intro, location_label, experience_label, " ".join(skills)])),
     }
 
@@ -1581,15 +1622,38 @@ def render_candidate_detail_page(candidate: dict[str, Any], related_candidates: 
     highlights_html = "".join(
         f'<li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>{escape(item)}</span></li>' for item in highlights
     )
+    detail_facts: list[tuple[str, str, bool]] = [
+        ("Họ tên", clean_text(candidate.get("fullName")), False),
+        ("Vị trí mục tiêu", clean_text(candidate.get("targetRole")), False),
+        ("Kinh nghiệm", clean_text(candidate.get("experienceLabel")), False),
+        ("Trình độ", clean_text(candidate.get("educationLevel")), False),
+        ("Chuyên ngành", clean_text(candidate.get("majorLabel")), False),
+        ("Trường tốt nghiệp", clean_text(candidate.get("schoolName")), False),
+        ("Năm tốt nghiệp", clean_text(candidate.get("graduationYear")), False),
+        ("Nơi ở hiện tại", clean_text(candidate.get("addressPublic")), False),
+        ("Hình thức làm việc mong muốn", clean_text(candidate.get("workModePreference")), False),
+        ("Khu vực làm việc mong muốn", clean_text(candidate.get("locationLabel")), False),
+        ("Mức lương mong muốn", clean_text(candidate.get("salaryExpectation")), True),
+    ]
+    detail_fact_parts: list[str] = []
+    for label, value, is_highlight in detail_facts:
+        if not value:
+            continue
+        strong_class = ' class="salary-highlight"' if is_highlight else ""
+        detail_fact_parts.append(
+            f'<div class="job-detail-fact"><span>{escape(label)}</span><strong{strong_class}>{escape(value)}</strong></div>'
+        )
+    detail_facts_html = "".join(detail_fact_parts)
 
     related_html = ""
     if related_candidates:
         cards = []
         for related in related_candidates[:3]:
+            avatar_thumb = render_candidate_avatar_thumb(related, "mini", "../")
             cards.append(
                 f"""
               <article class="jobs-candidate-mini-card">
-                <span class="jobs-candidate-avatar" aria-hidden="true">{escape(related['initials'])}</span>
+                {avatar_thumb}
                 <div class="jobs-candidate-mini-copy">
                   <h3><a href="../{escape(related['profilePath'])}">{escape(related['fullName'])}</a></h3>
                   <p>{escape(related['headline'])}</p>
@@ -1650,7 +1714,7 @@ def render_candidate_detail_page(candidate: dict[str, Any], related_candidates: 
             <h1>{escape(candidate['fullName'])}</h1>
             <p class="job-detail-summary">{escape(candidate['headline'])}</p>
             <ul class="job-detail-highlights">
-              <li><i class="fa-solid fa-user-clock" aria-hidden="true"></i><span>{escape(candidate['availabilityLabel'])}</span></li>
+              <li><i class="fa-solid fa-user-graduate" aria-hidden="true"></i><span>{escape(candidate.get('educationLevel') or 'Ứng viên kế toán')}</span></li>
               <li><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i><span>{escape(candidate['salaryExpectation'])}</span></li>
               <li><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i><span>{escape(candidate['updatedLabel'])}</span></li>
             </ul>
@@ -1685,12 +1749,7 @@ def render_candidate_detail_page(candidate: dict[str, Any], related_candidates: 
           <div class="job-detail-box">
             <h2>Thông tin hồ sơ</h2>
             <div class="job-detail-facts">
-              <div class="job-detail-fact"><span>Họ tên</span><strong>{escape(candidate['fullName'])}</strong></div>
-              <div class="job-detail-fact"><span>Vị trí mục tiêu</span><strong>{escape(candidate['headline'])}</strong></div>
-              <div class="job-detail-fact"><span>Kinh nghiệm</span><strong>{escape(candidate['experienceLabel'])}</strong></div>
-              <div class="job-detail-fact"><span>Khu vực</span><strong>{escape(candidate['locationLabel'])}</strong></div>
-              <div class="job-detail-fact"><span>Mức lương mong muốn</span><strong class="salary-highlight">{escape(candidate['salaryExpectation'])}</strong></div>
-              <div class="job-detail-fact"><span>Sẵn sàng làm việc</span><strong>{escape(candidate['availabilityLabel'])}</strong></div>
+{detail_facts_html}
             </div>
           </div>
 
@@ -1702,8 +1761,9 @@ def render_candidate_detail_page(candidate: dict[str, Any], related_candidates: 
               <a href="../ung-vien-tuyen-dung.html" class="btn-outline-brown">Yêu cầu kết nối ứng viên</a>
             </div>
             <ul class="jobs-candidate-contact-preview">
-              <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>{escape(candidate['contactEmail'] or '********@*****.***')}</span></li>
-              <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span>{escape(candidate['contactPhone'] or '*** *** ***')}</span></li>
+              <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>{escape(candidate.get('maskedEmail') or '********@*****.***')}</span></li>
+              <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span>{escape(candidate.get('maskedPhone') or '*** *** ***')}</span></li>
+              <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{escape(candidate.get('addressPublic') or candidate['locationLabel'])}</span></li>
             </ul>
           </div>
         </aside>

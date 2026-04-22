@@ -1128,6 +1128,13 @@
   border-radius: 34px;
 }
 
+.jobs-candidate-avatar-thumb--mini {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(160, 120, 61, 0.12);
+}
+
 .jobs-candidate-card-media--list {
   display: flex;
   align-items: center;
@@ -1405,11 +1412,25 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  position: static;
+  padding-left: 12px;
   padding: 11px 12px;
+  margin-bottom: 0;
   background: #faf7f1;
   border: 1px solid rgba(182, 141, 64, 0.14);
   border-radius: 12px;
   color: #4f5c6b;
+}
+
+.jobs-candidate-prose .jobs-candidate-highlight-list li::before,
+.jobs-candidate-prose .jobs-candidate-skill-list li::before {
+  content: none;
+}
+
+.jobs-candidate-prose .jobs-candidate-skill-list li {
+  position: static;
+  padding-left: 11px;
+  margin-bottom: 0;
 }
 
 .jobs-candidate-highlight-list i {
