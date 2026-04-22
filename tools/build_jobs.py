@@ -597,6 +597,20 @@ def mask_phone(value: str) -> str:
     return f"{digits[:3]} *** **{digits[-2:]}"
 
 
+def compact_salary_label(value: str) -> str:
+    salary = clean_text(value)
+    if not salary:
+        return "Theo thỏa thuận"
+    return re.sub(r"^Mong muốn\s*", "", salary, flags=re.IGNORECASE)
+
+
+def salary_preference_text(value: str) -> str:
+    salary = compact_salary_label(value)
+    if not salary or salary.lower() == "theo thỏa thuận":
+        return "Theo thỏa thuận"
+    return f"Mong muốn {salary}"
+
+
 def load_featured_candidates(limit: int = 6) -> list[dict[str, Any]]:
     if not CANDIDATE_FEED_FILE.exists():
         return []
@@ -637,7 +651,7 @@ def load_featured_candidates(limit: int = 6) -> list[dict[str, Any]]:
                 "intro": intro,
                 "experienceLabel": experience_label,
                 "locationLabel": location_label,
-                "salaryExpectation": clean_text(row.get("salaryExpectation")) or "Theo thỏa thuận",
+                "salaryExpectation": compact_salary_label(clean_text(row.get("salaryExpectation")) or "Theo thỏa thuận"),
                 "availabilityLabel": clean_text(row.get("availabilityLabel")) or "Sẵn sàng trao đổi",
                 "updatedLabel": format_candidate_updated_label(clean_text(row.get("updatedDate"))),
                 "skills": skills,
@@ -705,6 +719,9 @@ def map_candidate_payload(row: dict[str, Any]) -> dict[str, Any] | None:
     graduation_year = clean_text(row.get("graduationYear"))
     work_mode_preference = clean_text(row.get("workModePreference"))
     address_public = clean_text(row.get("addressPublic"))
+    desired_work_area = clean_text(row.get("desiredWorkArea"))
+    if not desired_work_area:
+        desired_work_area = address_public or clean_text(location_label.split("·")[0])
     profile_highlights: list[str] = []
     for item in row.get("highlights") or []:
         text = clean_text(item)
@@ -728,7 +745,7 @@ def map_candidate_payload(row: dict[str, Any]) -> dict[str, Any] | None:
         "locationLabel": location_label,
         "avatarDataUri": build_candidate_avatar_data_uri(full_name, slug),
         "avatarSrc": avatar_image or build_candidate_avatar_data_uri(full_name, slug),
-        "salaryExpectation": clean_text(row.get("salaryExpectation")) or "Theo thỏa thuận",
+        "salaryExpectation": compact_salary_label(clean_text(row.get("salaryExpectation")) or "Theo thỏa thuận"),
         "availabilityLabel": clean_text(row.get("availabilityLabel")) or "Sẵn sàng trao đổi",
         "updatedDate": clean_text(row.get("updatedDate")),
         "updatedLabel": format_candidate_updated_label(clean_text(row.get("updatedDate"))),
@@ -738,6 +755,7 @@ def map_candidate_payload(row: dict[str, Any]) -> dict[str, Any] | None:
         "graduationYear": graduation_year,
         "workModePreference": work_mode_preference,
         "addressPublic": address_public,
+        "desiredWorkArea": desired_work_area,
         "skills": skills,
         "profilePath": f"ung-vien/{slug}.html",
         "profileUrl": clean_text(row.get("profileUrl")) or f"ung-vien/{slug}.html",
@@ -814,7 +832,7 @@ def candidate_list_card(candidate: dict[str, Any]) -> str:
           <div class="jobs-candidate-facts">
             <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>{escape(candidate['experienceLabel'])}</span>
             <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{escape(candidate['locationLabel'])}</span>
-            <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>{escape(candidate['salaryExpectation'])}</span>
+            <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>{escape(salary_preference_text(candidate['salaryExpectation']))}</span>
           </div>
           <p class="jobs-candidate-intro">{escape(candidate['intro'])}</p>
           {skill_list}
@@ -1632,7 +1650,7 @@ def render_candidate_detail_page(candidate: dict[str, Any], related_candidates: 
         ("Năm tốt nghiệp", clean_text(candidate.get("graduationYear")), False),
         ("Nơi ở hiện tại", clean_text(candidate.get("addressPublic")), False),
         ("Hình thức làm việc mong muốn", clean_text(candidate.get("workModePreference")), False),
-        ("Khu vực làm việc mong muốn", clean_text(candidate.get("locationLabel")), False),
+        ("Khu vực làm việc mong muốn", clean_text(candidate.get("desiredWorkArea")), False),
         ("Mức lương mong muốn", clean_text(candidate.get("salaryExpectation")), True),
     ]
     detail_fact_parts: list[str] = []
@@ -1650,14 +1668,21 @@ def render_candidate_detail_page(candidate: dict[str, Any], related_candidates: 
         cards = []
         for related in related_candidates[:3]:
             avatar_thumb = render_candidate_avatar_thumb(related, "mini", "../")
+            related_area = clean_text(related.get("desiredWorkArea")) or clean_text(related.get("addressPublic")) or clean_text(related.get("locationLabel"))
             cards.append(
                 f"""
               <article class="jobs-candidate-mini-card">
-                {avatar_thumb}
-                <div class="jobs-candidate-mini-copy">
-                  <h3><a href="../{escape(related['profilePath'])}">{escape(related['fullName'])}</a></h3>
-                  <p>{escape(related['headline'])}</p>
-                </div>
+                <a href="../{escape(related['profilePath'])}" class="jobs-candidate-mini-link" aria-label="Xem chi tiết hồ sơ {escape(related['fullName'])}">
+                  {avatar_thumb}
+                  <div class="jobs-candidate-mini-copy">
+                    <h3>{escape(related['fullName'])}</h3>
+                    <p>{escape(related['headline'])}</p>
+                    <div class="jobs-candidate-mini-meta">
+                      <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{escape(related_area)}</span>
+                    </div>
+                    <div class="jobs-candidate-mini-salary"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i><span>{escape(salary_preference_text(related['salaryExpectation']))}</span></div>
+                  </div>
+                </a>
               </article>
                 """.strip()
             )
@@ -1829,7 +1854,7 @@ def render_featured_candidates_section(candidates: list[dict[str, Any]]) -> str:
               <div class="jobs-candidate-facts">
                 <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>{escape(candidate["experienceLabel"])}</span>
                 <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{escape(candidate["locationLabel"])}</span>
-                <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>{escape(candidate["salaryExpectation"])}</span>
+                <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>{escape(salary_preference_text(candidate["salaryExpectation"]))}</span>
               </div>
               <p class="jobs-candidate-intro">{escape(candidate["intro"])}</p>
               {skill_list}
