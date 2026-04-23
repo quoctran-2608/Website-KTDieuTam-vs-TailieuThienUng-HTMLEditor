@@ -1,6 +1,6 @@
 # Báo cáo audit dữ liệu tuyển dụng
 
-- Ngày chạy: 2026-04-22
+- Ngày chạy: 2026-04-23
 - Tổng file job source: 24
 - Tổng issue: 6
 

@@ -1636,32 +1636,86 @@ def render_recruiter_candidate_page(candidates: list[dict[str, Any]]) -> str:
 def render_candidate_detail_page(candidate: dict[str, Any], related_candidates: list[dict[str, Any]]) -> str:
     skills = candidate.get("skills") or []
     highlights = candidate.get("profileHighlights") or []
+    candidate_area_label = clean_text(candidate.get("desiredWorkArea")) or clean_text(candidate.get("addressPublic")) or clean_text(candidate.get("locationLabel"))
+    detail_avatar_thumb = render_candidate_avatar_thumb(candidate, "detail", "../")
+    featured_badge_html = '<span class="job-badge featured">Nổi bật</span>' if candidate.get("featured") else ""
     skills_html = "".join(f"<li>{escape(skill)}</li>" for skill in skills)
     highlights_html = "".join(
         f'<li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>{escape(item)}</span></li>' for item in highlights
     )
-    detail_facts: list[tuple[str, str, bool]] = [
-        ("Họ tên", clean_text(candidate.get("fullName")), False),
+    hero_facts: list[tuple[str, str]] = [
+        ("Mức lương mong muốn", clean_text(candidate.get("salaryExpectation"))),
+        ("Sẵn sàng nhận việc", clean_text(candidate.get("availabilityLabel")) or "Sẵn sàng trao đổi"),
+        ("Hình thức làm việc", clean_text(candidate.get("workModePreference")) or "Trao đổi thêm"),
+    ]
+    updated_note = clean_text(candidate.get("updatedLabel")) or "Hồ sơ mới"
+    hero_facts_html = "".join(
+        f'<li><span>{escape(label)}</span><strong>{escape(value)}</strong></li>'
+        for label, value in hero_facts
+        if value
+    )
+    primary_facts: list[tuple[str, str, bool]] = [
         ("Vị trí mục tiêu", clean_text(candidate.get("targetRole")), False),
         ("Kinh nghiệm", clean_text(candidate.get("experienceLabel")), False),
+        ("Hình thức làm việc", clean_text(candidate.get("workModePreference")), False),
+        ("Nơi ở hiện tại", clean_text(candidate.get("addressPublic")), False),
+        ("Khu vực mong muốn", clean_text(candidate.get("desiredWorkArea")), False),
+        ("Sẵn sàng nhận việc", clean_text(candidate.get("availabilityLabel")), False),
+    ]
+    education_facts: list[tuple[str, str, bool]] = [
         ("Trình độ", clean_text(candidate.get("educationLevel")), False),
         ("Chuyên ngành", clean_text(candidate.get("majorLabel")), False),
         ("Trường tốt nghiệp", clean_text(candidate.get("schoolName")), False),
         ("Năm tốt nghiệp", clean_text(candidate.get("graduationYear")), False),
-        ("Nơi ở hiện tại", clean_text(candidate.get("addressPublic")), False),
-        ("Hình thức làm việc mong muốn", clean_text(candidate.get("workModePreference")), False),
-        ("Khu vực làm việc mong muốn", clean_text(candidate.get("desiredWorkArea")), False),
-        ("Mức lương mong muốn", clean_text(candidate.get("salaryExpectation")), True),
     ]
-    detail_fact_parts: list[str] = []
-    for label, value, is_highlight in detail_facts:
-        if not value:
+
+    def render_fact_group(facts: list[tuple[str, str, bool]]) -> str:
+        fact_parts: list[str] = []
+        for label, value, is_highlight in facts:
+            if not value:
+                continue
+            strong_class = ' class="salary-highlight"' if is_highlight else ""
+            fact_parts.append(
+                f'<div class="job-detail-fact"><span>{escape(label)}</span><strong{strong_class}>{escape(value)}</strong></div>'
+            )
+        return "".join(fact_parts)
+
+    primary_facts_html = render_fact_group(primary_facts)
+    education_facts_html = render_fact_group(education_facts)
+
+    about_paragraphs: list[str] = []
+    seen_about: set[str] = set()
+    for text in [clean_text(candidate.get("intro")), clean_text(candidate.get("profileSummary"))]:
+        if not text:
             continue
-        strong_class = ' class="salary-highlight"' if is_highlight else ""
-        detail_fact_parts.append(
-            f'<div class="job-detail-fact"><span>{escape(label)}</span><strong{strong_class}>{escape(value)}</strong></div>'
-        )
-    detail_facts_html = "".join(detail_fact_parts)
+        normalized = fold_text(text)
+        if normalized in seen_about:
+            continue
+        seen_about.add(normalized)
+        about_paragraphs.append(f"<p>{escape(text)}</p>")
+    about_html = "".join(about_paragraphs)
+
+    primary_box_html = ""
+    if primary_facts_html:
+        primary_box_html = f"""
+          <div class="job-detail-box jobs-candidate-facts-box">
+            <h2>Thông tin nhanh</h2>
+            <div class="job-detail-facts">
+{primary_facts_html}
+            </div>
+          </div>
+        """.strip()
+
+    education_box_html = ""
+    if education_facts_html:
+        education_box_html = f"""
+          <div class="job-detail-box jobs-candidate-facts-box jobs-candidate-facts-box--secondary">
+            <h2>Học vấn</h2>
+            <div class="job-detail-facts">
+{education_facts_html}
+            </div>
+          </div>
+        """.strip()
 
     related_html = ""
     if related_candidates:
@@ -1687,14 +1741,14 @@ def render_candidate_detail_page(candidate: dict[str, Any], related_candidates: 
                 """.strip()
             )
         related_html = f"""
-          <section class="jobs-related-candidate-section">
-            <div class="jobs-dashboard-panel-head">
-              <h2>Hồ sơ liên quan</h2>
-            </div>
-            <div class="jobs-related-candidate-grid">
+        <section class="jobs-related-candidate-section">
+          <div class="jobs-dashboard-panel-head">
+            <h2>Hồ sơ liên quan</h2>
+          </div>
+          <div class="jobs-related-candidate-grid">
 {chr(10).join(cards)}
-            </div>
-          </section>
+          </div>
+        </section>
         """.strip()
 
     return f"""<!DOCTYPE html>
@@ -1727,76 +1781,104 @@ def render_candidate_detail_page(candidate: dict[str, Any], related_candidates: 
           <a href="../danh-sach-ung-vien.html" class="job-detail-back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Về danh sách ứng viên</a>
         </div>
 
-        <div class="job-detail-top jobs-candidate-detail-top">
-          <div class="job-detail-main-head">
-            <div class="job-detail-eyebrow">
-              <div class="job-card-badges">
-                <span class="job-badge neutral">{escape(candidate['experienceLabel'])}</span>
-                {'<span class="job-badge featured">Nổi bật</span>' if candidate.get('featured') else ''}
+        <div class="jobs-candidate-hero-card">
+          <div class="job-detail-top jobs-candidate-detail-top">
+            <div class="jobs-candidate-detail-main">
+              <div class="jobs-candidate-detail-avatar-wrap">
+                {detail_avatar_thumb}
               </div>
-              <span class="job-detail-company">{escape(candidate['locationLabel'])}</span>
+              <div class="jobs-candidate-detail-main-copy">
+                <div class="job-detail-eyebrow">
+                  <div class="job-card-badges">
+                    <span class="job-badge neutral">{escape(candidate['experienceLabel'])}</span>{featured_badge_html}
+                  </div>
+                  <span class="job-detail-company">{escape(candidate_area_label)}</span>
+                </div>
+                <h1>{escape(candidate['fullName'])}</h1>
+                <p class="job-detail-summary">{escape(candidate['headline'])}</p>
+                <p class="jobs-candidate-updated-note"><i class="fa-regular fa-clock" aria-hidden="true"></i><span>{escape(updated_note)}</span></p>
+                <ul class="jobs-candidate-hero-facts">
+{hero_facts_html}
+                </ul>
+              </div>
             </div>
-            <h1>{escape(candidate['fullName'])}</h1>
-            <p class="job-detail-summary">{escape(candidate['headline'])}</p>
-            <ul class="job-detail-highlights">
-              <li><i class="fa-solid fa-user-graduate" aria-hidden="true"></i><span>{escape(candidate.get('educationLevel') or 'Ứng viên kế toán')}</span></li>
-              <li><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i><span>{escape(candidate['salaryExpectation'])}</span></li>
-              <li><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i><span>{escape(candidate['updatedLabel'])}</span></li>
-            </ul>
-          </div>
-          <div class="job-detail-actions">
-            <a href="../dang-nhap-tuyen-dung.html" class="btn-primary-orange">Đăng nhập để xem liên hệ</a>
-            <a href="../ung-vien-tuyen-dung.html" class="btn-outline-brown">Lưu vào danh sách quan tâm</a>
           </div>
         </div>
       </div>
     </section>
 
     <section class="job-detail-section section-padding">
-      <div class="container job-detail-grid jobs-candidate-detail-grid">
-        <article class="job-detail-main">
-          <div class="job-detail-prose jobs-candidate-prose">
-            <h2>Giới thiệu chuyên môn</h2>
-            <p>{escape(candidate['profileSummary'])}</p>
-            <h2>Điểm nổi bật</h2>
-            <ul class="jobs-candidate-highlight-list">
-              {highlights_html}
-            </ul>
-            <h2>Kỹ năng nổi bật</h2>
-            <ul class="jobs-candidate-skill-list jobs-candidate-skill-list--detail">
-              {skills_html}
-            </ul>
-          </div>
-          {related_html}
-        </article>
+      <div class="container">
+        <div class="job-detail-grid jobs-candidate-detail-grid">
+          <article class="job-detail-main">
+            <section class="job-detail-prose jobs-candidate-prose jobs-candidate-about-section" id="gioi-thieu-ung-vien">
+              <h2>Giới thiệu bản thân</h2>
+              {about_html}
+            </section>
+            <section class="job-detail-prose jobs-candidate-prose" id="diem-noi-bat-ung-vien">
+              <h2>Điểm nổi bật</h2>
+              <ul class="jobs-candidate-highlight-list">
+                {highlights_html}
+              </ul>
+            </section>
+            <section class="job-detail-prose jobs-candidate-prose" id="ky-nang-ung-vien">
+              <h2>Kỹ năng nổi bật</h2>
+              <ul class="jobs-candidate-skill-list jobs-candidate-skill-list--detail">
+                {skills_html}
+              </ul>
+            </section>
+            {education_box_html}
+          </article>
 
-        <aside class="job-detail-side">
-          <div class="job-detail-box">
-            <h2>Thông tin hồ sơ</h2>
-            <div class="job-detail-facts">
-{detail_facts_html}
+          <aside class="job-detail-side">
+            {primary_box_html}
+            <div class="job-detail-box job-detail-support jobs-candidate-contact-lock" id="lien-he-ung-vien">
+              <h2>Thông tin liên hệ</h2>
+              <p>{escape(candidate['contactPolicyNote'])}</p>
+              <div class="job-detail-support-actions">
+                <a href="../dang-nhap-tuyen-dung.html" class="btn-primary-orange">Đăng nhập nhà tuyển dụng</a>
+                <a href="../ung-vien-tuyen-dung.html" class="btn-outline-brown" data-candidate-request-open>Yêu cầu kết nối ứng viên</a>
+              </div>
+              <ul class="jobs-candidate-contact-preview">
+                <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>{escape(candidate.get('maskedEmail') or '********@*****.***')}</span></li>
+                <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span>{escape(candidate.get('maskedPhone') or '*** *** ***')}</span></li>
+                <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{escape(candidate.get('addressPublic') or candidate['locationLabel'])}</span></li>
+              </ul>
             </div>
-          </div>
-
-          <div class="job-detail-box job-detail-support jobs-candidate-contact-lock">
-            <h2>Thông tin liên hệ</h2>
-            <p>{escape(candidate['contactPolicyNote'])}</p>
-            <div class="job-detail-support-actions">
-              <a href="../dang-nhap-tuyen-dung.html" class="btn-primary-orange">Đăng nhập nhà tuyển dụng</a>
-              <a href="../ung-vien-tuyen-dung.html" class="btn-outline-brown">Yêu cầu kết nối ứng viên</a>
-            </div>
-            <ul class="jobs-candidate-contact-preview">
-              <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>{escape(candidate.get('maskedEmail') or '********@*****.***')}</span></li>
-              <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span>{escape(candidate.get('maskedPhone') or '*** *** ***')}</span></li>
-              <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{escape(candidate.get('addressPublic') or candidate['locationLabel'])}</span></li>
-            </ul>
-          </div>
-        </aside>
+          </aside>
+        </div>
+        {related_html}
       </div>
     </section>
+
+    <div class="job-detail-mobile-bar jobs-candidate-detail-mobile-bar" aria-label="Tác vụ nhanh">
+      <a href="../dang-nhap-tuyen-dung.html" class="btn-primary-orange">Xem liên hệ</a>
+      <a href="../ung-vien-tuyen-dung.html" class="btn-outline-brown" data-candidate-request-open>Yêu cầu kết nối</a>
+    </div>
   </main>
   <div id="siteFooter"></div>
+  <div class="jobs-request-dialog" id="candidateRequestDialog" hidden>
+    <button type="button" class="jobs-request-dialog-backdrop" data-candidate-request-close aria-label="Đóng cửa sổ"></button>
+    <div class="jobs-request-dialog-card" role="dialog" aria-modal="true" aria-labelledby="candidateRequestTitle">
+      <button type="button" class="jobs-request-dialog-close" data-candidate-request-close aria-label="Đóng">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <h3 id="candidateRequestTitle">Kết nối với {escape(candidate['fullName'])}</h3>
+      <p>Thông tin liên hệ đầy đủ chỉ mở cho nhà tuyển dụng đã đăng nhập. Bạn có thể đăng nhập để gửi yêu cầu cho đúng hồ sơ này hoặc mở trang ứng viên tuyển dụng để xem thêm.</p>
+      <ul class="jobs-request-dialog-list">
+        <li>Xem đầy đủ email và số điện thoại của ứng viên.</li>
+        <li>Gửi yêu cầu kết nối đúng hồ sơ bạn đang quan tâm.</li>
+        <li>Quản lý shortlist và ghi chú nội bộ tập trung.</li>
+      </ul>
+      <div class="jobs-request-dialog-actions">
+        <a href="../dang-nhap-tuyen-dung.html" class="btn-primary-orange">Đăng nhập để kết nối</a>
+        <a href="../ung-vien-tuyen-dung.html" class="btn-outline-brown">Mở trang ứng viên tuyển dụng</a>
+      </div>
+    </div>
+  </div>
   <script src="../site-shell.js"></script>
+  {render_detail_mobile_bar_script()}
+  {render_candidate_request_dialog_script()}
 </body>
 </html>
 """
@@ -2280,7 +2362,7 @@ def render_detail_mobile_bar_script() -> str:
     (function () {
       function initJobDetailMobileBar() {
         var bar = document.querySelector('.job-detail-mobile-bar');
-        var primaryActions = document.querySelector('.job-detail-actions');
+        var primaryActions = document.querySelector('.job-detail-actions, .jobs-candidate-hero-card, .job-detail-hero');
         if (!bar || !primaryActions) return;
 
         var mobileQuery = window.matchMedia('(max-width: 767px)');
@@ -2378,6 +2460,72 @@ def render_detail_mobile_bar_script() -> str:
       }
 
       document.addEventListener('DOMContentLoaded', initJobDetailMobileBar);
+    })();
+  </script>
+""".strip()
+
+
+def render_candidate_request_dialog_script() -> str:
+    return """
+  <script>
+    (function () {
+      function initCandidateRequestDialog() {
+        var dialog = document.getElementById('candidateRequestDialog');
+        var triggers = Array.prototype.slice.call(document.querySelectorAll('[data-candidate-request-open]'));
+        if (!dialog || !triggers.length) return;
+
+        var dialogCard = dialog.querySelector('.jobs-request-dialog-card');
+        var closeButton = dialog.querySelector('.jobs-request-dialog-close');
+        var closeTargets = Array.prototype.slice.call(dialog.querySelectorAll('[data-candidate-request-close]'));
+
+        function openDialog() {
+          dialog.hidden = false;
+          document.body.classList.add('is-request-dialog-open');
+          if (closeButton) {
+            window.setTimeout(function () { closeButton.focus(); }, 10);
+          }
+        }
+
+        function closeDialog() {
+          if (dialog.hidden) return;
+          dialog.hidden = true;
+          document.body.classList.remove('is-request-dialog-open');
+        }
+
+        triggers.forEach(function (trigger) {
+          trigger.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            openDialog();
+          });
+        });
+
+        closeTargets.forEach(function (target) {
+          target.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            closeDialog();
+          });
+        });
+
+        dialog.addEventListener('click', function () {
+          closeDialog();
+        });
+
+        if (dialogCard) {
+          dialogCard.addEventListener('click', function (event) {
+            event.stopPropagation();
+          });
+        }
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && !dialog.hidden) {
+            closeDialog();
+          }
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', initCandidateRequestDialog);
     })();
   </script>
 """.strip()
