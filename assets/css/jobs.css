@@ -994,6 +994,18 @@
   margin-top: 28px;
 }
 
+.jobs-auth-page .jobs-hero {
+  padding: 40px 0 26px;
+}
+
+.jobs-auth-page .jobs-section.section-padding {
+  padding: 30px 0 78px;
+}
+
+.jobs-auth-page .jobs-auth-grid {
+  margin-top: 0;
+}
+
 .jobs-candidate-showcase {
   background:
     radial-gradient(circle at top left, rgba(255, 248, 232, 0.96), rgba(255, 255, 255, 0.82) 58%),
@@ -3202,6 +3214,14 @@ body.is-request-dialog-open {
 }
 
 @media (max-width: 767px) {
+  .jobs-auth-page .jobs-hero {
+    padding: 84px 0 18px;
+  }
+
+  .jobs-auth-page .jobs-section.section-padding {
+    padding: 24px 0 44px;
+  }
+
   .jobs-list-page .jobs-pagination {
     gap: 8px;
     margin-top: 12px;

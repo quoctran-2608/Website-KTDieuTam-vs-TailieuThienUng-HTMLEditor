@@ -22,22 +22,14 @@
           <span>/</span>
           <span>Đăng nhập tuyển dụng</span>
         </nav>
-        <div class="jobs-hero-grid">
-          <div>
-            <span class="jobs-kicker">Tài khoản tuyển dụng</span>
-            <h1>Đăng nhập dành cho ứng viên và nhà tuyển dụng</h1>
-            <p class="jobs-hero-text">Đăng nhập để đi vào đúng khu dành cho ứng viên hoặc nhà tuyển dụng, sau đó quản lý toàn bộ công việc trên một luồng thống nhất.</p>
-            <div class="jobs-hero-actions">
-              <a href="tai-khoan-ung-vien.html" class="btn-primary-orange">Vào khu ứng viên</a>
-              <a href="nha-tuyen-dung.html" class="btn-outline-brown">Vào khu nhà tuyển dụng</a>
-            </div>
-          </div>
-          <div class="jobs-hero-stats">
-            <article class="jobs-stat-card"><strong>2 vai trò</strong><span>Ứng viên và nhà tuyển dụng</span></article>
-            <article class="jobs-stat-card"><strong>1 luồng</strong><span>Đăng nhập rồi đi tiếp đến đúng dashboard</span></article>
-            <article class="jobs-stat-card"><strong>Truy cập nhanh</strong><span>Đi thẳng vào đúng dashboard theo vai trò</span></article>
-            <article class="jobs-stat-card"><strong>Liền mạch</strong><span>Dễ nối vào auth và session thật sau này</span></article>
-          </div>
+        <span class="jobs-kicker">Tài khoản tuyển dụng</span>
+        <div class="jobs-hero-compact-head jobs-hero-minimal-head">
+          <h1>Đăng nhập dành cho ứng viên và nhà tuyển dụng</h1>
+          <p class="jobs-hero-text">Chọn đúng mục để đăng nhập và xem lại hồ sơ, việc đã lưu hoặc tin tuyển dụng bạn đang theo dõi.</p>
+        </div>
+        <div class="jobs-hero-actions">
+          <a href="#dang-nhap-ung-vien" class="btn-primary-orange">Đăng nhập ứng viên</a>
+          <a href="#dang-nhap-nha-tuyen-dung" class="btn-outline-brown">Đăng nhập nhà tuyển&nbsp;dụng</a>
         </div>
       </div>
     </section>
@@ -45,10 +37,10 @@
     <section class="jobs-section section-padding jobs-section-soft">
       <div class="container">
         <div class="jobs-auth-grid">
-          <article class="jobs-auth-card">
+          <article class="jobs-auth-card" id="dang-nhap-ung-vien">
             <span class="jobs-kicker">Ứng viên</span>
             <h2>Đăng nhập ứng viên</h2>
-            <p>Quản lý hồ sơ, lưu việc làm, theo dõi các vị trí đã ứng tuyển và xem gợi ý phù hợp.</p>
+            <p>Đăng nhập để xem hồ sơ, việc đã lưu và tình trạng ứng tuyển của bạn.</p>
             <div class="jobs-auth-fields">
               <label class="jobs-filter-field">
                 <span>Email</span>
@@ -61,19 +53,19 @@
             </div>
             <div class="jobs-auth-actions">
               <a href="tai-khoan-ung-vien.html" class="btn-primary-orange">Đăng nhập ứng viên</a>
-              <a href="tai-khoan-ung-vien.html" class="btn-outline-brown">Tạo tài khoản mới</a>
+              <a href="tai-khoan-ung-vien.html" class="btn-outline-brown">Tạo tài khoản ứng viên</a>
             </div>
             <ul class="jobs-auth-list">
-              <li>Lưu việc làm và theo dõi hồ sơ đã nộp</li>
-              <li>Cập nhật CV và thông tin nghề nghiệp</li>
-              <li>Nhận gợi ý việc làm phù hợp hơn</li>
+              <li>Xem lại các việc làm bạn đã lưu</li>
+              <li>Cập nhật CV và thông tin liên hệ</li>
+              <li>Theo dõi phản hồi từ nhà tuyển dụng</li>
             </ul>
           </article>
 
-          <article class="jobs-auth-card">
+          <article class="jobs-auth-card" id="dang-nhap-nha-tuyen-dung">
             <span class="jobs-kicker">Nhà tuyển dụng</span>
             <h2>Đăng nhập nhà tuyển dụng</h2>
-            <p>Quản lý tin tuyển dụng, theo dõi ứng viên và xử lý đầy đủ luồng đăng tin theo nhu cầu doanh nghiệp.</p>
+            <p>Đăng nhập để xem tin đang tuyển, hồ sơ ứng viên quan tâm và tiến độ xử lý.</p>
             <div class="jobs-auth-fields">
               <label class="jobs-filter-field">
                 <span>Email công ty</span>
@@ -85,13 +77,13 @@
               </label>
             </div>
             <div class="jobs-auth-actions">
-              <a href="nha-tuyen-dung.html" class="btn-primary-orange">Đăng nhập nhà tuyển dụng</a>
-              <a href="dang-tin-viec-lam.html" class="btn-outline-brown">Đăng tin việc làm</a>
+              <a href="nha-tuyen-dung.html" class="btn-primary-orange">Đăng nhập nhà tuyển&nbsp;dụng</a>
+              <a href="dang-tin-tuyen-dung.html" class="btn-outline-brown">Gửi nhu cầu tuyển dụng</a>
             </div>
             <ul class="jobs-auth-list">
-              <li>Tạo, sửa và đóng tin tuyển dụng</li>
-              <li>Nhìn nhanh ứng viên quan tâm</li>
-              <li>Theo dõi hiệu quả từng tin đăng</li>
+              <li>Xem lại các tin tuyển dụng đang mở</li>
+              <li>Theo dõi hồ sơ ứng viên quan tâm</li>
+              <li>Cập nhật trạng thái xử lý hồ sơ</li>
             </ul>
           </article>
         </div>

@@ -26,7 +26,7 @@
           <div>
             <span class="jobs-kicker">Cho nhà tuyển dụng</span>
             <h1>Đăng nhu cầu tuyển dụng kế toán / tài chính / HCNS</h1>
-            <p class="jobs-hero-text">Điền nhanh thông tin vị trí đang cần tuyển, hệ thống sẽ tạo sẵn nội dung để bạn gửi qua Zalo hoặc lưu lại thành file. Sau đó Diệu Tâm sẽ rà soát, biên tập và hỗ trợ đăng tin rõ ràng hơn trên khu Tuyển dụng.</p>
+            <p class="jobs-hero-text">Điền nhanh thông tin vị trí đang cần tuyển để Diệu Tâm soạn sẵn nội dung, hỗ trợ bạn gửi qua Zalo hoặc lưu lại thành file dễ dùng.</p>
             <div class="jobs-hero-actions">
               <a href="#employerRequestForm" class="btn-primary-orange">Điền thông tin ngay</a>
               <a href="tuyen-dung.html" class="btn-outline-brown">Xem việc làm đang tuyển</a>
@@ -52,7 +52,7 @@
         <div class="job-detail-grid">
           <article class="employer-request-form" id="employerRequestForm">
             <h2>Thông tin vị trí cần tuyển</h2>
-            <p class="employer-request-form-intro">Chỉ cần điền những thông tin quan trọng nhất. Trang sẽ tạo sẵn nội dung để bạn gửi nhanh cho Diệu Tâm.</p>
+            <p class="employer-request-form-intro">Chỉ cần điền những thông tin quan trọng nhất. Trang sẽ soạn sẵn nội dung để bạn gửi nhanh cho Diệu Tâm.</p>
             <form id="recruitmentLeadForm">
               <div class="employer-request-form-grid">
                 <label class="jobs-filter-field">
@@ -118,16 +118,16 @@
                 </label>
               </div>
               <div class="employer-request-actions">
-                <button type="submit" class="btn-primary-orange">Tạo nội dung & mở Zalo</button>
-                <button type="button" id="downloadBriefBtn" class="btn-outline-brown">Lưu thông tin .json</button>
+                <button type="submit" class="btn-primary-orange">Soạn nội dung gửi Zalo</button>
+                <button type="button" id="downloadBriefBtn" class="btn-outline-brown">Tải file nội dung</button>
                 <a href="https://zalo.me/0777315188" target="_blank" rel="noopener" class="btn-outline-brown">Mở Zalo trực tiếp</a>
               </div>
-              <p class="employer-request-note"><strong>Lưu ý:</strong> sau khi bấm tạo nội dung, trang sẽ mở Zalo trong tab mới. Nếu trình duyệt cho phép, nội dung cũng sẽ được copy sẵn để bạn gửi nhanh. Nếu cần lưu hồ sơ nội bộ, bạn có thể bấm <strong>Lưu thông tin .json</strong>.</p>
+              <p class="employer-request-note"><strong>Lưu ý:</strong> sau khi bấm soạn nội dung, trang sẽ mở Zalo để bạn gửi nhanh. Nếu cần lưu lại để trao đổi nội bộ, bạn có thể bấm <strong>Tải file nội dung</strong>.</p>
             </form>
 
             <div class="employer-request-result" id="requestResult" hidden>
               <h3>Nội dung đã sẵn sàng để gửi</h3>
-              <p class="employer-request-note">Mã yêu cầu: <strong class="employer-request-code" id="requestIdText"></strong></p>
+              <p class="employer-request-note">Mã tham chiếu: <strong class="employer-request-code" id="requestIdText"></strong></p>
               <pre id="requestPreview"></pre>
             </div>
           </article>
@@ -204,13 +204,13 @@
       }
 
       function buildDownloadName(requestId) {
-        return 'yeu-cau-tuyen-dung-' + formatRequestCode(requestId).toLowerCase() + '.json';
+        return 'yeu-cau-tuyen-dung-' + formatRequestCode(requestId).toLowerCase() + '.txt';
       }
 
       function buildBrief(payload) {
         return [
-          '[Thông tin tuyển dụng từ website KetoanDieuTam.com]',
-          'Mã yêu cầu: ' + formatRequestCode(payload.requestId),
+          'Thông tin tuyển dụng gửi Diệu Tâm',
+          'Mã tham chiếu: ' + formatRequestCode(payload.requestId),
           'Công ty: ' + payload.companyName,
           'Người liên hệ: ' + payload.contactName,
           'SĐT/Zalo: ' + payload.contactPhone,
@@ -228,7 +228,7 @@
       }
 
       function downloadBrief(payload) {
-        var blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+        var blob = new Blob([buildBrief(payload)], { type: 'text/plain;charset=utf-8' });
         var href = URL.createObjectURL(blob);
         var anchor = document.createElement('a');
         anchor.href = href;
