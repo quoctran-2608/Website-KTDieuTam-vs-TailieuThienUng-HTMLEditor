@@ -18,26 +18,26 @@
         <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
           <a href="index.html">Trang chủ</a>
           <span>/</span>
-          <a href="tuyen-dung.html">Tuyển dụng</a>
+          <a href="tuyen-dung.html#job-list">Tuyển dụng</a>
           <span>/</span>
-          <a href="nha-tuyen-dung.html">Khu nhà tuyển dụng</a>
+          <a href="nha-tuyen-dung.html?from=dang-tin-viec-lam">Trang nhà tuyển dụng</a>
           <span>/</span>
           <span>Đăng tin việc làm</span>
         </nav>
         <div class="jobs-hero-grid">
           <div>
             <span class="jobs-kicker">Đăng tin tuyển dụng</span>
-            <h1>Tạo tin tuyển dụng đầy đủ trong một màn hình</h1>
-            <p class="jobs-hero-text">Điền thông tin vị trí, mức lương, yêu cầu và cách nhận hồ sơ để tin đăng rõ ràng, dễ tiếp cận đúng ứng viên mục tiêu.</p>
+            <h1>Soạn và cập nhật tin tuyển dụng trong một màn hình</h1>
+            <p class="jobs-hero-text">Điền đầy đủ thông tin vị trí, yêu cầu và kênh nhận hồ sơ để tin đăng rõ ràng và dễ theo dõi theo từng trạng thái.</p>
             <div class="jobs-hero-actions">
-              <a href="quan-ly-tin-tuyen-dung.html" class="btn-outline-brown">Xem danh sách tin</a>
-              <a href="nha-tuyen-dung.html" class="btn-primary-orange">Về trang nhà tuyển dụng</a>
+              <a href="quan-ly-tin-tuyen-dung.html?tab=tat-ca" class="btn-outline-brown">Xem danh sách tin</a>
+              <a href="nha-tuyen-dung.html?from=dang-tin-viec-lam" class="btn-primary-orange">Về trang nhà tuyển dụng</a>
             </div>
           </div>
           <div class="jobs-hero-stats">
             <article class="jobs-stat-card"><strong>5 phút</strong><span>Thời gian tạo một tin chuẩn</span></article>
             <article class="jobs-stat-card"><strong>1 biểu mẫu</strong><span>Quản lý toàn bộ thông tin tuyển dụng</span></article>
-            <article class="jobs-stat-card"><strong>2 trạng thái</strong><span>Lưu nháp hoặc gửi duyệt</span></article>
+            <article class="jobs-stat-card"><strong>4 trạng thái</strong><span>Nháp, đang tuyển, tạm dừng, đã đóng</span></article>
             <article class="jobs-stat-card"><strong>Rõ ràng</strong><span>Dễ rà soát trước khi đăng</span></article>
           </div>
         </div>
@@ -48,10 +48,10 @@
       <div class="container jobs-dashboard-shell">
         <aside class="jobs-dashboard-sidebar">
           <div class="jobs-dashboard-menu">
-            <a href="nha-tuyen-dung.html">Tổng quan</a>
-            <a href="dang-tin-viec-lam.html" class="is-active">Đăng tin mới</a>
-            <a href="quan-ly-tin-tuyen-dung.html">Quản lý tin</a>
-            <a href="ung-vien-tuyen-dung.html">Ứng viên</a>
+            <a href="nha-tuyen-dung.html?from=dang-tin-viec-lam">Tổng quan</a>
+            <a href="dang-tin-viec-lam.html?mode=tao-moi" class="is-active">Đăng tin mới</a>
+            <a href="quan-ly-tin-tuyen-dung.html?tab=tat-ca">Quản lý tin</a>
+            <a href="ung-vien-tuyen-dung.html?view=theo-tin">Đơn ứng tuyển</a>
           </div>
         </aside>
 
@@ -59,52 +59,73 @@
           <section class="jobs-dashboard-panel">
             <div class="jobs-dashboard-panel-head">
               <h2>Biểu mẫu đăng tin</h2>
+              <span class="jobs-dashboard-note">Khi mở từ một tin đã có, biểu mẫu sẽ ở chế độ cập nhật nội dung tin đó.</span>
             </div>
-            <form class="jobs-form-grid">
+            <form class="jobs-form-grid" id="employerJobForm" action="quan-ly-tin-tuyen-dung.html?tab=tat-ca" method="post">
+              <input type="hidden" name="job_id" value="ke-toan-tong-hop-cong-ty-tnhh-abc">
+              <input type="hidden" name="formMode" value="sua">
               <label class="jobs-filter-field full">
                 <span>Tiêu đề tuyển dụng</span>
-                <input type="text" value="Tuyển dụng Kế toán tổng hợp">
+                <input type="text" id="jobPostTitle" name="title" required maxlength="120" value="Tuyển dụng Kế toán tổng hợp">
               </label>
               <label class="jobs-filter-field">
                 <span>Tên doanh nghiệp</span>
-                <input type="text" value="Công ty TNHH ABC">
+                <input type="text" id="jobPostCompanyName" name="companyName" required maxlength="120" value="Công ty TNHH ABC">
               </label>
               <label class="jobs-filter-field">
                 <span>Khu vực làm việc</span>
-                <input type="text" value="Quận 7, TP.HCM">
+                <input type="text" id="jobPostLocation" name="location" required maxlength="160" value="Quận 7, TP.HCM">
               </label>
               <label class="jobs-filter-field">
                 <span>Mức lương</span>
-                <input type="text" value="15 - 18 triệu">
+                <input type="text" id="jobPostSalaryLabel" name="salaryLabel" maxlength="60" value="15 - 18 triệu">
               </label>
               <label class="jobs-filter-field">
                 <span>Hạn nộp hồ sơ</span>
-                <input type="text" value="25/04/2026">
+                <input type="date" id="jobPostDeadline" name="deadline" value="2026-04-25">
               </label>
               <label class="jobs-filter-field">
                 <span>Hình thức</span>
-                <input type="text" value="Toàn thời gian">
+                <select id="jobPostEmploymentType" name="employmentType">
+                  <option value="full-time" selected>Toàn thời gian</option>
+                  <option value="part-time">Bán thời gian</option>
+                  <option value="internship">Thực tập</option>
+                  <option value="contract">Hợp đồng</option>
+                </select>
+              </label>
+              <label class="jobs-filter-field">
+                <span>Trạng thái tin</span>
+                <select id="jobPostStatus" name="status">
+                  <option value="nhap" selected>Nháp</option>
+                  <option value="dang_tuyen">Đang tuyển</option>
+                  <option value="tam_dung">Tạm dừng</option>
+                  <option value="da_dong">Đã đóng</option>
+                </select>
               </label>
               <label class="jobs-filter-field">
                 <span>Cách làm việc</span>
-                <input type="text" value="Làm việc tại văn phòng">
+                <select id="jobPostWorkMode" name="workMode">
+                  <option value="onsite" selected>Làm việc tại văn phòng</option>
+                  <option value="hybrid">Làm việc kết hợp</option>
+                  <option value="remote">Làm việc từ xa</option>
+                </select>
               </label>
               <label class="jobs-filter-field full">
                 <span>Mô tả công việc</span>
-                <textarea rows="5">Theo dõi chứng từ, tổng hợp số liệu, lập báo cáo kế toán định kỳ và phối hợp với các bộ phận liên quan.</textarea>
+                <textarea id="jobPostDescription" name="description" rows="5" required maxlength="5000">Theo dõi chứng từ, tổng hợp số liệu, lập báo cáo kế toán định kỳ và phối hợp với các bộ phận liên quan.</textarea>
               </label>
               <label class="jobs-filter-field full">
                 <span>Yêu cầu ứng viên</span>
-                <textarea rows="4">Tối thiểu 2 năm kinh nghiệm, dùng tốt Excel và phần mềm kế toán, chủ động trong công việc.</textarea>
+                <textarea id="jobPostRequirements" name="requirements" rows="4" required maxlength="3000">Tối thiểu 2 năm kinh nghiệm, dùng tốt Excel và phần mềm kế toán, chủ động trong công việc.</textarea>
               </label>
               <label class="jobs-filter-field full">
                 <span>Đầu mối nhận hồ sơ</span>
-                <input type="text" value="hr@congtyabc.vn">
+                <input type="email" id="jobPostContactEmail" name="contactEmail" required autocomplete="email" value="hr@congtyabc.vn">
               </label>
             </form>
             <div class="jobs-portal-actions">
-              <a href="quan-ly-tin-tuyen-dung.html" class="btn-primary-orange">Lưu nháp</a>
-              <a href="quan-ly-tin-tuyen-dung.html" class="btn-outline-brown">Gửi duyệt tin</a>
+              <button type="submit" form="employerJobForm" class="btn-primary-orange" name="submitAction" value="luu-nhap">Lưu nháp</button>
+              <button type="submit" form="employerJobForm" class="btn-outline-brown" name="submitAction" value="dang-tin">Đăng tin</button>
             </div>
           </section>
         </div>

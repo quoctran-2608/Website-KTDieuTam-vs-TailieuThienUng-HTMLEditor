@@ -334,6 +334,197 @@
     });
   }
 
+  function getJobSlugFromLocation() {
+    var pathname = window.location.pathname || '';
+    var match = pathname.match(/(?:^|\/)tuyen-dung\/([^/?#]+)\.html$/i);
+    if (match && match[1]) {
+      return decodeURIComponent(match[1]);
+    }
+
+    var canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical && canonical.href) {
+      var canonicalMatch = canonical.href.match(/(?:^|\/)tuyen-dung\/([^/?#]+)\.html$/i);
+      if (canonicalMatch && canonicalMatch[1]) {
+        return decodeURIComponent(canonicalMatch[1]);
+      }
+    }
+
+    var href = window.location.href || '';
+    var hrefMatch = href.match(/(?:^|\/)tuyen-dung\/([^/?#]+)\.html/i);
+    if (hrefMatch && hrefMatch[1]) {
+      return decodeURIComponent(hrefMatch[1]);
+    }
+
+    return '';
+  }
+
+  function buildUrlWithQuery(root, targetPath, query, hash) {
+    var href = path(root, targetPath);
+    var parts = [];
+    Object.keys(query || {}).forEach(function (key) {
+      var value = query[key];
+      if (value === undefined || value === null || value === '') return;
+      parts.push(encodeURIComponent(key) + '=' + encodeURIComponent(String(value)));
+    });
+    if (parts.length) {
+      href += (href.indexOf('?') === -1 ? '?' : '&') + parts.join('&');
+    }
+    if (hash) {
+      href += hash.charAt(0) === '#' ? hash : ('#' + hash);
+    }
+    return href;
+  }
+
+  function hydrateJobDetailActions() {
+    var body = document.body;
+    if (!body || !body.classList.contains('job-detail-page')) return;
+
+    var root = body.dataset.root || '';
+    var slug = body.dataset.jobId || body.dataset.jobIdSlug || getJobSlugFromLocation();
+    if (!slug) return;
+    body.dataset.jobIdSlug = slug;
+
+    var isExpired = !!document.querySelector('.job-badge.expired');
+    var applyTargets = document.querySelectorAll('.job-detail-actions .btn-primary-orange, .job-apply-bottom-actions .btn-primary-orange, .job-detail-mobile-bar .btn-primary-orange');
+    var saveTargets = document.querySelectorAll('.job-detail-actions .btn-outline-brown, .job-detail-mobile-bar .btn-outline-brown');
+
+    Array.prototype.forEach.call(applyTargets, function (anchor) {
+      if (!anchor || !anchor.getAttribute) return;
+      if (isExpired) {
+        anchor.setAttribute('href', buildUrlWithQuery(root, 'tuyen-dung.html', {}, 'job-list'));
+        anchor.textContent = 'Xem tin tương tự';
+        return;
+      }
+      anchor.setAttribute('href', buildUrlWithQuery(root, 'ung-tuyen.html', {
+        job_id: slug,
+        mode: 'nop-moi',
+        from: 'chi-tiet-tin'
+      }));
+    });
+
+    Array.prototype.forEach.call(saveTargets, function (anchor) {
+      if (!anchor || !anchor.getAttribute) return;
+      var label = (anchor.textContent || '').toLowerCase();
+      if (label.indexOf('lưu việc làm') === -1 && label.indexOf('luu viec lam') === -1) return;
+      anchor.setAttribute('href', buildUrlWithQuery(root, 'viec-lam-da-luu.html', {
+        action: 'luu-viec',
+        job_id: slug,
+        from: 'chi-tiet-tin'
+      }));
+    });
+
+    if (!isExpired) return;
+
+    var hintTargets = [
+      document.querySelector('.job-detail-actions'),
+      document.querySelector('.job-apply-bottom')
+    ];
+      hintTargets.forEach(function (target) {
+        if (!target || target.querySelector('.jobs-expired-hint')) return;
+        var hint = document.createElement('p');
+        hint.className = 'jobs-dashboard-note jobs-expired-hint';
+        hint.textContent = 'Tin này đã hết hạn nhận hồ sơ. Bạn có thể xem các tin còn đang tuyển.';
+        target.appendChild(hint);
+      });
+  }
+
+  function hydrateCandidatePublicProfileActions() {
+    var body = document.body;
+    if (!body) return;
+
+    var pathname = window.location.pathname || '';
+    var match = pathname.match(/(?:^|\/)ung-vien\/([^/?#]+)\.html$/i);
+    if (!match || !match[1]) return;
+
+    var root = body.dataset.root || '';
+    var candidateSlug = decodeURIComponent(match[1]);
+    var requestParams = {
+      view: 'ho-so-phu-hop',
+      candidate_id: 'candidate/' + candidateSlug,
+      from: 'ho-so-cong-khai'
+    };
+    var loginParams = {
+      from: 'ho-so-cong-khai',
+      candidate_id: 'candidate/' + candidateSlug
+    };
+
+    var recruiterLinks = document.querySelectorAll('a[data-candidate-request-open], a[href$=\"ung-vien-tuyen-dung.html\"], a[href^=\"../ung-vien-tuyen-dung.html\"]');
+    Array.prototype.forEach.call(recruiterLinks, function (anchor) {
+      if (!anchor || !anchor.getAttribute) return;
+      anchor.setAttribute('href', buildUrlWithQuery(root, 'ung-vien-tuyen-dung.html', requestParams));
+      var linkText = (anchor.textContent || '').trim().toLowerCase();
+      if (linkText.indexOf('mở trang ứng viên tuyển dụng') !== -1) {
+        anchor.textContent = 'Xem đơn ứng tuyển theo hồ sơ';
+      } else if (linkText.indexOf('yêu cầu kết nối') !== -1) {
+        anchor.textContent = 'Gửi yêu cầu mở liên hệ';
+      }
+    });
+
+    var loginLinks = document.querySelectorAll('a[href$=\"dang-nhap-tuyen-dung.html\"], a[href^=\"../dang-nhap-tuyen-dung.html\"]');
+    Array.prototype.forEach.call(loginLinks, function (anchor) {
+      if (!anchor || !anchor.getAttribute) return;
+      anchor.setAttribute('href', buildUrlWithQuery(root, 'dang-nhap-tuyen-dung.html', loginParams));
+      var loginText = (anchor.textContent || '').trim().toLowerCase();
+      if (loginText.indexOf('xem liên hệ') !== -1) {
+        anchor.textContent = 'Đăng nhập để xem liên hệ';
+      }
+    });
+  }
+
+  function hydrateJobsListSaveActions() {
+    var body = document.body;
+    if (!body || !body.classList.contains('jobs-list-page')) return;
+
+    var root = body.dataset.root || '';
+    var cards = document.querySelectorAll('.job-card');
+    if (!cards || !cards.length) return;
+
+    function getJobSlugFromCard(card) {
+      if (!card) return '';
+      var link = card.querySelector('.job-card-stretched-link');
+      if (!link) return '';
+      var href = link.getAttribute('href') || '';
+      var match = href.match(/(?:^|\/)tuyen-dung\/([^/?#]+)\.html/i);
+      return match && match[1] ? decodeURIComponent(match[1]) : '';
+    }
+
+    Array.prototype.forEach.call(cards, function (card) {
+      var saveBtn = card.querySelector('.job-card-save-btn');
+      if (!saveBtn) return;
+
+      var slug = getJobSlugFromCard(card);
+      if (!slug) return;
+      var titleEl = card.querySelector('.job-card-stretched-link');
+      var title = titleEl ? (titleEl.textContent || '').trim() : 'tin tuyển dụng';
+
+      saveBtn.setAttribute('aria-pressed', 'false');
+      saveBtn.setAttribute('data-job-id', slug);
+      saveBtn.title = 'Lưu việc làm';
+
+      saveBtn.addEventListener('click', function () {
+        var pressed = saveBtn.getAttribute('aria-pressed') === 'true';
+        if (pressed) {
+          saveBtn.setAttribute('aria-pressed', 'false');
+          saveBtn.title = 'Lưu việc làm';
+          saveBtn.innerHTML = '<i class=\"fa-regular fa-bookmark\" aria-hidden=\"true\"></i>';
+          return;
+        }
+
+        saveBtn.setAttribute('aria-pressed', 'true');
+        saveBtn.title = 'Đã lưu việc làm';
+        saveBtn.innerHTML = '<i class=\"fa-solid fa-bookmark\" aria-hidden=\"true\"></i>';
+        window.setTimeout(function () {
+          window.location.href = buildUrlWithQuery(root, 'viec-lam-da-luu.html', {
+            action: 'luu-viec',
+            job_id: slug,
+            from: 'danh-sach-viec-lam',
+            title: title
+          });
+        }, 80);
+      });
+    });
+  }
+
   function renderShell() {
     var body = document.body;
     if (!body) return;
@@ -349,6 +540,9 @@
     initInteractions();
     normalizeBreadcrumbs(document);
     window.setTimeout(function () { normalizeBreadcrumbs(document); }, 80);
+    hydrateJobDetailActions();
+    hydrateCandidatePublicProfileActions();
+    hydrateJobsListSaveActions();
     document.dispatchEvent(new CustomEvent('site-shell-ready'));
   }
 

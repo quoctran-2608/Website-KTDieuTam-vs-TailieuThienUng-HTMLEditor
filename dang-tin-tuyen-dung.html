@@ -18,18 +18,18 @@
         <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
           <a href="index.html">Trang chủ</a>
           <span>/</span>
-          <a href="tuyen-dung.html">Tuyển dụng</a>
+          <a href="tuyen-dung.html#job-list">Tuyển dụng</a>
           <span>/</span>
           <span>Đăng nhu cầu tuyển dụng</span>
         </nav>
         <div class="jobs-hero-grid">
           <div>
             <span class="jobs-kicker">Cho nhà tuyển dụng</span>
-            <h1>Đăng nhu cầu tuyển dụng kế toán / tài chính / HCNS</h1>
-            <p class="jobs-hero-text">Điền nhanh thông tin vị trí đang cần tuyển để Diệu Tâm soạn sẵn nội dung, hỗ trợ bạn gửi qua Zalo hoặc lưu lại thành file dễ dùng.</p>
+            <h1>Gửi nhu cầu tuyển dụng kế toán, tài chính, nhân sự</h1>
+            <p class="jobs-hero-text">Điền thông tin vị trí đang cần tuyển để gửi yêu cầu cho Diệu Tâm qua Zalo hoặc tải file lưu nội bộ.</p>
             <div class="jobs-hero-actions">
               <a href="#employerRequestForm" class="btn-primary-orange">Điền thông tin ngay</a>
-              <a href="tuyen-dung.html" class="btn-outline-brown">Xem việc làm đang tuyển</a>
+              <a href="tuyen-dung.html#job-list" class="btn-outline-brown">Xem việc làm đang tuyển</a>
             </div>
             <ul class="jobs-highlight-list">
               <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Điền nhanh trong vài phút</li>
@@ -41,7 +41,7 @@
             <article class="jobs-stat-card"><strong>1 vị trí</strong><span>Mỗi form nên dùng cho một vị trí để thông tin rõ ràng hơn</span></article>
             <article class="jobs-stat-card"><strong>Zalo / file</strong><span>Thuận tiện cho HR gửi nhanh và lưu nội bộ</span></article>
             <article class="jobs-stat-card"><strong>Rà soát</strong><span>Diệu Tâm kiểm tra lại nội dung trước khi đăng</span></article>
-            <article class="jobs-stat-card"><strong>24 vị trí</strong><span>Khu Tuyển dụng đã có sẵn danh sách việc làm để tham khảo</span></article>
+            <article class="jobs-stat-card"><strong>24 vị trí</strong><span>Trang tuyển dụng đã có sẵn danh sách việc làm để tham khảo</span></article>
           </div>
         </div>
       </div>
@@ -52,44 +52,44 @@
         <div class="job-detail-grid">
           <article class="employer-request-form" id="employerRequestForm">
             <h2>Thông tin vị trí cần tuyển</h2>
-            <p class="employer-request-form-intro">Chỉ cần điền những thông tin quan trọng nhất. Trang sẽ soạn sẵn nội dung để bạn gửi nhanh cho Diệu Tâm.</p>
-            <form id="recruitmentLeadForm">
+            <p class="employer-request-form-intro">Chỉ cần điền thông tin quan trọng. Hệ thống sẽ tạo nội dung để bạn gửi nhanh cho Diệu Tâm.</p>
+            <form id="recruitmentLeadForm" action="dang-tin-tuyen-dung.html" method="post">
               <div class="employer-request-form-grid">
                 <label class="jobs-filter-field">
                   <span>Tên công ty</span>
-                  <input type="text" id="companyName" required placeholder="Ví dụ: Công ty TNHH ABC">
+                  <input type="text" id="companyName" name="companyName" required maxlength="120" autocomplete="organization" placeholder="Ví dụ: Công ty TNHH ABC">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Người liên hệ</span>
-                  <input type="text" id="contactName" required placeholder="Nguyễn Văn A">
+                  <input type="text" id="contactName" name="contactName" required maxlength="80" autocomplete="name" placeholder="Nguyễn Văn A">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Số điện thoại / Zalo</span>
-                  <input type="tel" id="contactPhone" required placeholder="09xx xxx xxx">
+                  <input type="tel" id="contactPhone" name="contactPhone" required inputmode="tel" autocomplete="tel" pattern="^[0-9+\\s.-]{8,20}$" placeholder="09xx xxx xxx">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Email</span>
-                  <input type="email" id="contactEmail" placeholder="hr@congty.com">
+                  <input type="email" id="contactEmail" name="contactEmail" autocomplete="email" placeholder="hr@congty.com">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Vị trí cần tuyển</span>
-                  <input type="text" id="jobTitle" required placeholder="Kế toán tổng hợp / Kế toán thuế / HCNS...">
+                  <input type="text" id="jobTitle" name="jobTitle" required maxlength="120" placeholder="Kế toán tổng hợp / Kế toán thuế / HCNS...">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Khu vực làm việc</span>
-                  <input type="text" id="jobLocation" required placeholder="Quận 7, TP.HCM / Cầu Giấy, Hà Nội...">
+                  <input type="text" id="jobLocation" name="jobLocation" required maxlength="160" placeholder="Quận 7, TP.HCM / Cầu Giấy, Hà Nội...">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Số lượng</span>
-                  <input type="number" id="jobQuantity" min="1" value="1">
+                  <input type="number" id="jobQuantity" name="jobQuantity" min="1" max="99" step="1" value="1">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Hạn nhận hồ sơ</span>
-                  <input type="date" id="jobDeadline">
+                  <input type="date" id="jobDeadline" name="jobDeadline">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Hình thức</span>
-                  <select id="employmentType">
+                  <select id="employmentType" name="employmentType">
                     <option value="Toàn thời gian">Toàn thời gian</option>
                     <option value="Bán thời gian">Bán thời gian</option>
                     <option value="Thực tập">Thực tập</option>
@@ -98,7 +98,7 @@
                 </label>
                 <label class="jobs-filter-field">
                   <span>Cách làm việc</span>
-                  <select id="workMode">
+                  <select id="workMode" name="workMode">
                     <option value="Làm việc tại văn phòng">Làm việc tại văn phòng</option>
                     <option value="Làm việc kết hợp">Làm việc kết hợp</option>
                     <option value="Làm việc từ xa">Làm việc từ xa</option>
@@ -106,27 +106,27 @@
                 </label>
                 <label class="jobs-filter-field">
                   <span>Mức lương tham khảo</span>
-                  <input type="text" id="salaryLabel" placeholder="Ví dụ: 12 - 18 triệu / Thỏa thuận">
+                  <input type="text" id="salaryLabel" name="salaryLabel" maxlength="60" placeholder="Ví dụ: 12 - 18 triệu / Thỏa thuận">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Mức kinh nghiệm</span>
-                  <input type="text" id="experienceLevel" placeholder="Ví dụ: 2 năm / Senior / Không yêu cầu">
+                  <input type="text" id="experienceLevel" name="experienceLevel" maxlength="60" placeholder="Ví dụ: 2 năm / Chuyên viên / Không yêu cầu">
                 </label>
                 <label class="jobs-filter-field full">
                   <span>Mô tả ngắn / yêu cầu nổi bật</span>
-                  <textarea id="jobNotes" placeholder="Ghi ngắn các ý chính: mô tả công việc, yêu cầu, quyền lợi, lưu ý đặc biệt..."></textarea>
+                  <textarea id="jobNotes" name="jobNotes" rows="5" maxlength="1200" placeholder="Ghi ngắn các ý chính: mô tả công việc, yêu cầu, quyền lợi, lưu ý đặc biệt..."></textarea>
                 </label>
               </div>
               <div class="employer-request-actions">
-                <button type="submit" class="btn-primary-orange">Soạn nội dung gửi Zalo</button>
-                <button type="button" id="downloadBriefBtn" class="btn-outline-brown">Tải file nội dung</button>
+                <button type="submit" class="btn-primary-orange">Tạo nội dung gửi Zalo</button>
+                <button type="button" id="downloadBriefBtn" class="btn-outline-brown">Tải nội dung tuyển dụng</button>
                 <a href="https://zalo.me/0777315188" target="_blank" rel="noopener" class="btn-outline-brown">Mở Zalo trực tiếp</a>
               </div>
-              <p class="employer-request-note"><strong>Lưu ý:</strong> sau khi bấm soạn nội dung, trang sẽ mở Zalo để bạn gửi nhanh. Nếu cần lưu lại để trao đổi nội bộ, bạn có thể bấm <strong>Tải file nội dung</strong>.</p>
+              <p class="employer-request-note"><strong>Lưu ý:</strong> sau khi bấm tạo nội dung, trang sẽ mở Zalo để bạn gửi nhanh. Nếu cần lưu lại để trao đổi nội bộ, bạn có thể bấm <strong>Tải nội dung tuyển dụng</strong>.</p>
             </form>
 
             <div class="employer-request-result" id="requestResult" hidden>
-              <h3>Nội dung đã sẵn sàng để gửi</h3>
+              <h3>Nội dung tuyển dụng đã tạo</h3>
               <p class="employer-request-note">Mã tham chiếu: <strong class="employer-request-code" id="requestIdText"></strong></p>
               <pre id="requestPreview"></pre>
             </div>

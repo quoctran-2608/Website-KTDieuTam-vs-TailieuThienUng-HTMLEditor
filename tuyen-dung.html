@@ -52,15 +52,15 @@
             <button type="button" class="jobs-filter-mobile-toggle" id="jobsFilterToggle" aria-expanded="false" aria-controls="jobsFilterForm">
               <i class="fa-solid fa-sliders" aria-hidden="true"></i><span>Mở bộ lọc</span>
             </button>
-            <form class="jobs-filter-bar" id="jobsFilterForm">
+            <form class="jobs-filter-bar" id="jobsFilterForm" action="tuyen-dung.html#job-list" method="get">
               <div class="jobs-filter-grid">
                 <label class="jobs-filter-field">
                   <span>Tìm nhanh</span>
-                  <input type="search" id="jobsFilterSearch" placeholder="Tên vị trí, công ty, khu vực...">
+                  <input type="search" id="jobsFilterSearch" name="q" placeholder="Tên vị trí, công ty, khu vực..." autocomplete="off">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Thành phố / tỉnh</span>
-                  <select id="jobsFilterLocation">
+                  <select id="jobsFilterLocation" name="location">
 <option value="">Tất cả khu vực</option>
 <option value="binh-duong">Bình Dương</option>
 <option value="ben-tre">Bến Tre</option>
@@ -70,7 +70,7 @@
                 </label>
                 <label class="jobs-filter-field">
                   <span>Vị trí</span>
-                  <select id="jobsFilterRole">
+                  <select id="jobsFilterRole" name="role">
 <option value="">Tất cả vị trí</option>
 <option value="hanh-chinh-nhan-su">Hành chính nhân sự</option>
 <option value="ke-toan-ban-hang">Kế toán bán hàng</option>
@@ -81,11 +81,30 @@
 <option value="nhan-vien-ke-toan">Nhân viên kế toán</option>
                   </select>
                 </label>
+                <label class="jobs-filter-field">
+                  <span>Hình thức</span>
+                  <select id="jobsFilterEmployment" name="employmentType">
+<option value="">Tất cả hình thức</option>
+<option value="full-time">Toàn thời gian</option>
+<option value="part-time">Bán thời gian</option>
+<option value="internship">Thực tập</option>
+<option value="contract">Hợp đồng</option>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Cách làm việc</span>
+                  <select id="jobsFilterWorkMode" name="workMode">
+<option value="">Tất cả cách làm việc</option>
+<option value="onsite">Làm việc tại văn phòng</option>
+<option value="hybrid">Làm việc kết hợp</option>
+<option value="remote">Làm việc từ xa</option>
+                  </select>
+                </label>
 
 
                 <label class="jobs-filter-field">
                   <span>Kinh nghiệm</span>
-                  <select id="jobsFilterExperience">
+                  <select id="jobsFilterExperience" name="experience">
 <option value="">Tất cả mức kinh nghiệm</option>
 <option value="1-nam">1 năm</option>
 <option value="2-nam">2 năm</option>
@@ -96,7 +115,7 @@
                 </label>
                 <label class="jobs-filter-field">
                   <span>Sắp xếp</span>
-                  <select id="jobsSortOrder">
+                  <select id="jobsSortOrder" name="sort">
                     <option value="publish-desc">Mới nhất</option>
                     <option value="deadline-asc">Gần hết hạn</option>
                     <option value="salary-desc">Lương cao</option>
@@ -878,7 +897,7 @@
         </div>
         <div class="jobs-candidate-actions">
           <a href="danh-sach-ung-vien.html" class="btn-outline-brown">Xem danh sách hồ sơ ứng viên</a>
-          <a href="dang-nhap-tuyen-dung.html" class="btn-primary-orange">Đăng nhập nhà tuyển dụng để liên hệ</a>
+          <a href="dang-nhap-tuyen-dung.html#dang-nhap-nha-tuyen-dung" class="btn-primary-orange">Đăng nhập để xem thông tin liên hệ</a>
         </div>
       </div>
     </section>
@@ -894,17 +913,17 @@
             <h3>Tài khoản ứng viên</h3>
             <p>Tạo hồ sơ, lưu việc làm, theo dõi đơn đã nộp và trạng thái phản hồi.</p>
             <div class="jobs-portal-actions">
-              <a href="tai-khoan-ung-vien.html" class="btn-primary-orange">Vào khu ứng viên</a>
-              <a href="dang-nhap-tuyen-dung.html" class="btn-outline-brown">Đăng nhập</a>
+              <a href="dang-nhap-tuyen-dung.html#dang-nhap-ung-vien" class="btn-primary-orange">Đăng nhập ứng viên</a>
+              <a href="ho-so-ung-vien.html" class="btn-outline-brown">Tạo hồ sơ ứng viên</a>
             </div>
           </article>
           <article class="jobs-portal-card">
             <span class="jobs-kicker">Cho nhà tuyển dụng</span>
-            <h3>Khu nhà tuyển dụng</h3>
-            <p>Đăng tin mới, quản lý tin đang chạy và theo dõi danh sách ứng viên quan tâm.</p>
+            <h3>Trang nhà tuyển dụng</h3>
+            <p>Đăng tin mới, quản lý tin đang chạy và theo dõi danh sách đơn ứng tuyển theo từng tin.</p>
             <div class="jobs-portal-actions">
-              <a href="nha-tuyen-dung.html" class="btn-primary-orange">Vào khu nhà tuyển dụng</a>
-              <a href="dang-tin-viec-lam.html" class="btn-outline-brown">Đăng tin nhanh</a>
+              <a href="dang-nhap-tuyen-dung.html#dang-nhap-nha-tuyen-dung" class="btn-primary-orange">Đăng nhập nhà tuyển dụng</a>
+              <a href="dang-tin-tuyen-dung.html" class="btn-outline-brown">Gửi nhu cầu tuyển dụng</a>
             </div>
           </article>
         </div>

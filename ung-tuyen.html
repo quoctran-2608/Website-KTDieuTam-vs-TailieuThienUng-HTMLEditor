@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ứng tuyển nhanh | Kế Toán Diệu Tâm</title>
+  <title>Đơn ứng tuyển | Kế Toán Diệu Tâm</title>
   <meta name="description" content="Form ứng tuyển nhanh: nộp hồ sơ cho vị trí tuyển dụng và theo dõi trạng thái sau khi gửi.">
   <link rel="canonical" href="https://ketoandieutam.com/ung-tuyen.html">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -20,23 +20,23 @@
           <span>/</span>
           <a href="tuyen-dung.html">Tuyển dụng</a>
           <span>/</span>
-          <span>Ứng tuyển nhanh</span>
+          <span>Đơn ứng tuyển</span>
         </nav>
         <div class="jobs-hero-grid">
           <div>
-            <span class="jobs-kicker">Ứng tuyển nhanh</span>
+            <span class="jobs-kicker">Đơn ứng tuyển</span>
             <h1>Gửi hồ sơ cho vị trí bạn quan tâm</h1>
-            <p class="jobs-hero-text">Điền thông tin cơ bản, đính kèm CV và gửi đơn ứng tuyển ngay trong một bước ngắn gọn.</p>
+            <p class="jobs-hero-text">Điền thông tin cơ bản, đính kèm CV và gửi đơn ứng tuyển theo đúng vị trí bạn đã chọn.</p>
             <div class="jobs-hero-actions">
-              <a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.html" class="btn-outline-brown">Xem lại tin tuyển dụng</a>
-              <a href="don-ung-tuyen.html" class="btn-primary-orange">Xem đơn đã ứng tuyển</a>
+              <a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.html?from=ung-tuyen&job_id=ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax" class="btn-outline-brown" id="applicationBackToJobLink">Xem lại tin tuyển dụng</a>
+              <a href="don-ung-tuyen.html?view=tat-ca&from=ung-tuyen" class="btn-primary-orange" id="applicationViewApplicationsLink">Xem đơn đã ứng tuyển</a>
             </div>
           </div>
           <div class="jobs-hero-stats">
-            <article class="jobs-stat-card"><strong>Vị trí</strong><span>Kế toán tổng hợp — EasyTax</span></article>
-            <article class="jobs-stat-card"><strong>Khu vực</strong><span>Phường Hòa Hưng, TP.HCM · Toàn thời gian</span></article>
-            <article class="jobs-stat-card"><strong>Mức lương</strong><span>15 - 18 triệu</span></article>
-            <article class="jobs-stat-card"><strong>Hạn nộp</strong><span>20/04/2026</span></article>
+            <article class="jobs-stat-card"><strong>Vị trí</strong><span id="applicationJobTitleStat">Kế toán tổng hợp — EasyTax</span></article>
+            <article class="jobs-stat-card"><strong>Khu vực</strong><span id="applicationJobLocationStat">Phường Hòa Hưng, TP.HCM · Toàn thời gian</span></article>
+            <article class="jobs-stat-card"><strong>Mức lương</strong><span id="applicationJobSalaryStat">15 - 18 triệu</span></article>
+            <article class="jobs-stat-card"><strong>Trạng thái tin</strong><span id="applicationJobStatusStat">Đã hết hạn · Bạn chỉ có thể xem lại hồ sơ đã nộp</span></article>
           </div>
         </div>
       </div>
@@ -48,35 +48,38 @@
           <span class="jobs-kicker">Mẫu đơn ứng tuyển</span>
           <h2>Thông tin ứng tuyển</h2>
           <p>Hãy dùng email và số điện thoại bạn thường xuyên sử dụng để nhà tuyển dụng liên hệ nhanh hơn.</p>
-          <form class="jobs-form-grid">
+          <p class="jobs-dashboard-note" id="applicationModeNote">Bạn đang ở chế độ nộp đơn mới cho vị trí đã chọn.</p>
+          <form class="jobs-form-grid" id="jobApplicationForm" action="don-ung-tuyen.html" method="post">
             <label class="jobs-filter-field">
               <span>Họ và tên</span>
-              <input type="text" value="Nguyễn Minh Anh">
+              <input type="text" id="applicationFullName" name="fullName" required maxlength="80" autocomplete="name" value="Nguyễn Minh Anh">
             </label>
             <label class="jobs-filter-field">
               <span>Email</span>
-              <input type="email" value="minhanh@email.com">
+              <input type="email" id="applicationEmail" name="email" required autocomplete="email" value="minhanh@email.com">
             </label>
             <label class="jobs-filter-field">
               <span>Số điện thoại</span>
-              <input type="tel" value="09xx xxx xxx">
+              <input type="tel" id="applicationPhone" name="phone" required inputmode="tel" autocomplete="tel" pattern="^[0-9+\\s.-]{8,20}$" value="09xx xxx xxx">
             </label>
             <label class="jobs-filter-field">
               <span>Kinh nghiệm liên quan</span>
-              <input type="text" value="3 năm kế toán tổng hợp">
+              <input type="text" id="applicationExperience" name="experience" required maxlength="100" value="3 năm kế toán tổng hợp">
             </label>
             <label class="jobs-filter-field full">
               <span>Thư giới thiệu ngắn</span>
-              <textarea rows="6">Em có kinh nghiệm tổng hợp số liệu kế toán, phối hợp kê khai thuế và lập báo cáo định kỳ. Em mong muốn được trao đổi thêm về vị trí để hiểu rõ kỳ vọng công việc.</textarea>
+              <textarea id="applicationCoverLetter" name="coverLetter" rows="6" maxlength="2000">Em có kinh nghiệm tổng hợp số liệu kế toán, phối hợp kê khai thuế và lập báo cáo định kỳ. Em mong muốn được trao đổi thêm về vị trí để hiểu rõ kỳ vọng công việc.</textarea>
             </label>
             <label class="jobs-filter-field full">
               <span>CV đính kèm</span>
-              <input type="text" value="CV-NguyenMinhAnh-KeToanTongHop.pdf">
-            </label>
-          </form>
+                <input type="text" id="applicationCvFileName" name="cvFileName" required maxlength="150" value="CV-NguyenMinhAnh-KeToanTongHop.pdf">
+              </label>
+              <input type="hidden" id="applicationJobIdInput" name="job_id" value="ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax">
+              <input type="hidden" id="applicationIdInput" name="application_id" value="app-mau-ung-tuyen-20260423">
+            </form>
           <div class="jobs-auth-actions">
-            <a href="don-ung-tuyen.html" class="btn-primary-orange">Gửi hồ sơ</a>
-            <a href="ho-so-ung-vien.html" class="btn-outline-brown">Cập nhật hồ sơ trước khi gửi</a>
+            <button type="submit" form="jobApplicationForm" class="btn-primary-orange" id="applicationSubmitBtn">Gửi hồ sơ</button>
+            <a href="ho-so-ung-vien.html?from=ung-tuyen&job_id=ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax" class="btn-outline-brown">Cập nhật hồ sơ trước khi gửi</a>
           </div>
         </article>
       </div>
@@ -84,5 +87,170 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script>
+    (function () {
+      function readParam(name) {
+        var params = new URLSearchParams(window.location.search || '');
+        return String(params.get(name) || '').trim();
+      }
+
+      function setFormEditable(form, editable) {
+        if (!form) return;
+        var controls = form.querySelectorAll('input:not([type="hidden"]), textarea, select');
+        Array.prototype.forEach.call(controls, function (control) {
+          var tag = (control.tagName || '').toLowerCase();
+          if (tag === 'select') {
+            control.disabled = !editable;
+            return;
+          }
+          if (control.type === 'checkbox' || control.type === 'radio') {
+            control.disabled = !editable;
+            return;
+          }
+          control.readOnly = !editable;
+          control.disabled = !editable;
+        });
+      }
+
+      function initApplicationMode() {
+        var form = document.getElementById('jobApplicationForm');
+        var submitBtn = document.getElementById('applicationSubmitBtn');
+        var modeNote = document.getElementById('applicationModeNote');
+        var statusStat = document.getElementById('applicationJobStatusStat');
+        var titleStat = document.getElementById('applicationJobTitleStat');
+        var locationStat = document.getElementById('applicationJobLocationStat');
+        var salaryStat = document.getElementById('applicationJobSalaryStat');
+        var backToJobLink = document.getElementById('applicationBackToJobLink');
+        var applicationsLink = document.getElementById('applicationViewApplicationsLink');
+        var jobIdInput = document.getElementById('applicationJobIdInput');
+        var applicationIdInput = document.getElementById('applicationIdInput');
+
+        if (!form || !submitBtn || !modeNote || !statusStat || !jobIdInput || !applicationIdInput) return;
+
+        var mode = readParam('mode') || 'nop-moi';
+        var jobId = readParam('job_id') || jobIdInput.value;
+        var applicationId = readParam('application_id') || applicationIdInput.value;
+
+        var knownJobs = {
+          'ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax': {
+            title: 'Kế toán tổng hợp — EasyTax',
+            location: 'Phường Hòa Hưng, TP.HCM · Toàn thời gian',
+            salary: '15 - 18 triệu',
+            expired: true
+          },
+          'ke-toan-thue-cong-ty-cp-winitex-viet-nam': {
+            title: 'Kế toán thuế — Winitex Việt Nam',
+            location: 'Tam Hiệp, Thanh Trì, Hà Nội · Toàn thời gian',
+            salary: 'Thỏa thuận',
+            expired: false
+          },
+          'ke-toan-thue-cong-ty-viet-luat': {
+            title: 'Kế toán thuế — Việt Luật',
+            location: 'Phường 2, Phú Nhuận, TP.HCM · Toàn thời gian',
+            salary: 'Thỏa thuận',
+            expired: false
+          },
+          'ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam': {
+            title: 'Kế toán tổng hợp — Ichi Việt Nam',
+            location: 'Mỹ Phước, Bến Cát, Bình Dương · Toàn thời gian',
+            salary: '13 - 15 triệu',
+            expired: true
+          },
+          'nhan-vien-ke-toan-cong-ty-xay-dung-dat-viet': {
+            title: 'Nhân viên kế toán — Xây dựng Đất Việt',
+            location: 'Gò Vấp, TP.HCM · Toàn thời gian',
+            salary: 'Thỏa thuận',
+            expired: true
+          }
+        };
+
+        var jobContext = knownJobs[jobId] || null;
+        var isExpired = jobContext ? !!jobContext.expired : false;
+        if (!jobContext && mode === 'nop-moi') {
+          isExpired = false;
+        }
+
+        if (jobContext) {
+          titleStat.textContent = jobContext.title;
+          locationStat.textContent = jobContext.location;
+          salaryStat.textContent = jobContext.salary;
+        }
+
+        if (jobId) {
+          jobIdInput.value = jobId;
+          if (backToJobLink) {
+            var detailHref = 'tuyen-dung/' + encodeURIComponent(jobId) + '.html?from=ung-tuyen&job_id=' + encodeURIComponent(jobId);
+            if (applicationId) {
+              detailHref += '&application_id=' + encodeURIComponent(applicationId);
+            }
+            backToJobLink.setAttribute('href', detailHref);
+          }
+        }
+
+        if (applicationId) {
+          applicationIdInput.value = applicationId;
+        }
+
+        if (applicationsLink) {
+          var applicationsHref = 'don-ung-tuyen.html?view=tat-ca&from=ung-tuyen';
+          if (jobId) {
+            applicationsHref += '&job_id=' + encodeURIComponent(jobId);
+          }
+          if (applicationId) {
+            applicationsHref += '&focus_application_id=' + encodeURIComponent(applicationId);
+          }
+          applicationsLink.setAttribute('href', applicationsHref);
+        }
+
+        if (mode === 'xem-ho-so') {
+          setFormEditable(form, false);
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Bạn đang xem hồ sơ đã nộp';
+          statusStat.textContent = isExpired
+            ? 'Đã hết hạn · Bạn chỉ có thể xem lại hồ sơ đã nộp'
+            : 'Đã nộp · Bạn đang xem lại hồ sơ đã gửi';
+          modeNote.textContent = applicationId
+            ? ('Mã đơn: ' + applicationId + '. Chế độ hiện tại chỉ cho phép xem lại thông tin đã nộp.')
+            : 'Chế độ hiện tại chỉ cho phép xem lại thông tin đã nộp.';
+          return;
+        }
+
+        if (mode === 'nop-lai') {
+          if (isExpired) {
+            setFormEditable(form, false);
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Tin đã hết hạn, chưa thể nộp lại';
+            statusStat.textContent = 'Đã hết hạn · Bạn chỉ có thể xem lại hồ sơ đã nộp';
+            modeNote.textContent = 'Tin tuyển dụng đã hết hạn nên hiện chưa thể nộp lại hồ sơ.';
+            return;
+          }
+
+          setFormEditable(form, true);
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Nộp lại hồ sơ';
+          statusStat.textContent = 'Đang tuyển · Bạn có thể nộp lại hồ sơ';
+          modeNote.textContent = 'Bạn đang ở chế độ nộp lại hồ sơ theo yêu cầu cập nhật từ nhà tuyển dụng.';
+          return;
+        }
+
+        if (isExpired) {
+          setFormEditable(form, false);
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Tin đã hết hạn, chưa thể gửi mới';
+          statusStat.textContent = 'Đã hết hạn · Bạn chỉ có thể xem lại hồ sơ đã nộp';
+          modeNote.textContent = 'Tin đã hết hạn nên không nhận hồ sơ mới. Bạn có thể quay lại để chọn tin còn đang tuyển.';
+          return;
+        }
+
+        setFormEditable(form, true);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Gửi hồ sơ';
+        statusStat.textContent = 'Đang tuyển · Bạn có thể nộp hồ sơ ngay';
+        modeNote.textContent = 'Bạn đang ở chế độ nộp đơn mới cho vị trí đã chọn.';
+      }
+
+      document.addEventListener('DOMContentLoaded', initApplicationMode);
+    })();
+  </script>
 </body>
 </html>

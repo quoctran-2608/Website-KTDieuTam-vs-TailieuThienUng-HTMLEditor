@@ -42,15 +42,15 @@
           </div>
         </div>
 
-        <form class="jobs-filter-bar jobs-candidate-filter-bar" id="candidateFilterForm">
+        <form class="jobs-filter-bar jobs-candidate-filter-bar" id="candidateFilterForm" action="danh-sach-ung-vien.html" method="get">
           <div class="jobs-filter-grid jobs-candidate-filter-grid">
             <label class="jobs-filter-field">
               <span>Tìm hồ sơ</span>
-              <input type="search" id="candidateFilterSearch" placeholder="Tên ứng viên, vị trí, kỹ năng...">
+              <input type="search" id="candidateFilterSearch" name="q" placeholder="Tên ứng viên, vị trí, kỹ năng..." autocomplete="off">
             </label>
             <label class="jobs-filter-field">
               <span>Khu vực / cách làm việc</span>
-              <select id="candidateFilterLocation">
+              <select id="candidateFilterLocation" name="location">
 <option value="">Tất cả khu vực</option>
 <option value="Thanh Xuân, Cầu Giấy (Hà Nội) · Làm việc kết hợp">Thanh Xuân, Cầu Giấy (Hà Nội) · Làm việc kết hợp</option>
 <option value="Nam Từ Liêm, Cầu Giấy (Hà Nội) · Làm việc kết hợp">Nam Từ Liêm, Cầu Giấy (Hà Nội) · Làm việc kết hợp</option>
@@ -65,7 +65,7 @@
             </label>
             <label class="jobs-filter-field">
               <span>Kinh nghiệm</span>
-              <select id="candidateFilterExperience">
+              <select id="candidateFilterExperience" name="experience">
 <option value="">Tất cả mức kinh nghiệm</option>
 <option value="1 năm kinh nghiệm">1 năm kinh nghiệm</option>
 <option value="2 năm kinh nghiệm">2 năm kinh nghiệm</option>
@@ -75,7 +75,7 @@
             </label>
             <label class="jobs-filter-field">
               <span>Sắp xếp</span>
-              <select id="candidateSortOrder">
+              <select id="candidateSortOrder" name="sort">
                 <option value="updated-desc">Mới cập nhật</option>
                 <option value="featured-first">Nổi bật trước</option>
                 <option value="name-asc">Tên A → Z</option>

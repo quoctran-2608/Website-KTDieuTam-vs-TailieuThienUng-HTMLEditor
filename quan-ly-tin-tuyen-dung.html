@@ -18,27 +18,27 @@
         <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
           <a href="index.html">Trang chủ</a>
           <span>/</span>
-          <a href="tuyen-dung.html">Tuyển dụng</a>
+          <a href="tuyen-dung.html#job-list">Tuyển dụng</a>
           <span>/</span>
-          <a href="nha-tuyen-dung.html">Khu nhà tuyển dụng</a>
+          <a href="nha-tuyen-dung.html?from=quan-ly-tin">Trang nhà tuyển dụng</a>
           <span>/</span>
           <span>Quản lý tin tuyển dụng</span>
         </nav>
         <div class="jobs-hero-grid">
           <div>
             <span class="jobs-kicker">Quản lý tin</span>
-            <h1>Theo dõi toàn bộ tin đăng theo trạng thái</h1>
-            <p class="jobs-hero-text">Nhìn nhanh tin đang tuyển, tin nháp và tin sắp hết hạn để chủ động xử lý trước khi ảnh hưởng chất lượng tuyển dụng.</p>
+            <h1>Theo dõi toàn bộ tin đăng theo trạng thái thực tế</h1>
+            <p class="jobs-hero-text">Kiểm soát tin nháp, tin đang tuyển, tin đã hết hạn và tin đã đóng để điều phối tuyển dụng nhất quán với dữ liệu thật.</p>
             <div class="jobs-hero-actions">
-              <a href="dang-tin-viec-lam.html" class="btn-primary-orange">Đăng tin mới</a>
-              <a href="ung-vien-tuyen-dung.html" class="btn-outline-brown">Xem ứng viên</a>
+              <a href="dang-tin-viec-lam.html?mode=tao-moi" class="btn-primary-orange">Đăng tin mới</a>
+              <a href="ung-vien-tuyen-dung.html?view=theo-tin" class="btn-outline-brown">Xem đơn ứng tuyển</a>
             </div>
           </div>
           <div class="jobs-hero-stats">
-            <article class="jobs-stat-card"><strong>4</strong><span>Tin đang tuyển</span></article>
+            <article class="jobs-stat-card"><strong>3</strong><span>Tin đang tuyển</span></article>
             <article class="jobs-stat-card"><strong>2</strong><span>Tin nháp</span></article>
-            <article class="jobs-stat-card"><strong>1</strong><span>Tin sắp hết hạn</span></article>
-            <article class="jobs-stat-card"><strong>12</strong><span>Tổng hồ sơ quan tâm</span></article>
+            <article class="jobs-stat-card"><strong>1</strong><span>Tin đã hết hạn</span></article>
+            <article class="jobs-stat-card"><strong>12</strong><span>Tổng đơn ứng tuyển</span></article>
           </div>
         </div>
       </div>
@@ -48,10 +48,10 @@
       <div class="container jobs-dashboard-shell">
         <aside class="jobs-dashboard-sidebar">
           <div class="jobs-dashboard-menu">
-            <a href="nha-tuyen-dung.html">Tổng quan</a>
-            <a href="dang-tin-viec-lam.html">Đăng tin mới</a>
-            <a href="quan-ly-tin-tuyen-dung.html" class="is-active">Quản lý tin</a>
-            <a href="ung-vien-tuyen-dung.html">Ứng viên</a>
+            <a href="nha-tuyen-dung.html?from=quan-ly-tin">Tổng quan</a>
+            <a href="dang-tin-viec-lam.html?mode=tao-moi">Đăng tin mới</a>
+            <a href="quan-ly-tin-tuyen-dung.html?tab=tat-ca" class="is-active">Quản lý tin</a>
+            <a href="ung-vien-tuyen-dung.html?view=theo-tin">Đơn ứng tuyển</a>
           </div>
         </aside>
 
@@ -67,7 +67,7 @@
                     <th>Vị trí</th>
                     <th>Trạng thái</th>
                     <th>Hạn nộp</th>
-                    <th>Ứng viên</th>
+                    <th>Đơn ứng tuyển</th>
                     <th>Hành động</th>
                   </tr>
                 </thead>
@@ -76,22 +76,41 @@
                     <td>Kế toán tổng hợp</td>
                     <td><span class="jobs-status-pill is-active">Đang tuyển</span></td>
                     <td>25/04/2026</td>
-                    <td>6 hồ sơ</td>
-                    <td><a href="chi-tiet-tin-tuyen-dung.html" class="job-source-link">Xem chi tiết</a></td>
+                    <td>6 đơn</td>
+                    <td>
+                      <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&mode=xem" class="job-source-link">Xem chi tiết</a>
+                      ·
+                      <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link">Xem đơn</a>
+                    </td>
                   </tr>
                   <tr>
                     <td>Kế toán thuế</td>
                     <td><span class="jobs-status-pill is-reviewing">Nháp</span></td>
                     <td>Chưa đặt</td>
-                    <td>0 hồ sơ</td>
-                    <td><a href="chi-tiet-tin-tuyen-dung.html" class="job-source-link">Sửa tin</a></td>
+                    <td>0 đơn</td>
+                    <td><a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-thue-cong-ty-tnhh-abc&mode=sua" class="job-source-link">Sửa tin</a></td>
                   </tr>
                   <tr>
                     <td>Hành chính nhân sự</td>
-                    <td><span class="jobs-status-pill is-muted">Sắp hết hạn</span></td>
+                    <td><span class="jobs-status-pill is-muted">Đã hết hạn</span></td>
                     <td>12/04/2026</td>
-                    <td>3 hồ sơ</td>
-                    <td><a href="chi-tiet-tin-tuyen-dung.html" class="job-source-link">Gia hạn</a></td>
+                    <td>3 đơn</td>
+                    <td>
+                      <a href="chi-tiet-tin-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc&action=gia-han" class="job-source-link">Gia hạn</a>
+                      ·
+                      <a href="chi-tiet-tin-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc&action=dong-tin" class="job-source-link">Đóng tin</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Kế toán nội bộ</td>
+                    <td><span class="jobs-status-pill is-muted">Đã đóng</span></td>
+                    <td>10/04/2026</td>
+                    <td>5 đơn</td>
+                    <td>
+                      <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-noi-bo-cong-ty-tnhh-abc&mode=xem" class="job-source-link">Xem chi tiết</a>
+                      ·
+                      <a href="dang-tin-viec-lam.html?job_id=ke-toan-noi-bo-cong-ty-tnhh-abc&mode=nhan-ban" class="job-source-link">Đăng lại</a>
+                    </td>
                   </tr>
                 </tbody>
               </table>

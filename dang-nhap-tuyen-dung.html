@@ -22,10 +22,10 @@
           <span>/</span>
           <span>Đăng nhập tuyển dụng</span>
         </nav>
-        <span class="jobs-kicker">Tài khoản tuyển dụng</span>
+        <span class="jobs-kicker">Tài khoản việc làm</span>
         <div class="jobs-hero-compact-head jobs-hero-minimal-head">
-          <h1>Đăng nhập dành cho ứng viên và nhà tuyển dụng</h1>
-          <p class="jobs-hero-text">Chọn đúng mục để đăng nhập và xem lại hồ sơ, việc đã lưu hoặc tin tuyển dụng bạn đang theo dõi.</p>
+          <h1>Đăng nhập cho ứng viên và nhà tuyển dụng</h1>
+          <p class="jobs-hero-text">Chọn đúng vai trò để quản lý hồ sơ ứng tuyển hoặc theo dõi tin tuyển dụng của doanh nghiệp.</p>
         </div>
         <div class="jobs-hero-actions">
           <a href="#dang-nhap-ung-vien" class="btn-primary-orange">Đăng nhập ứng viên</a>
@@ -41,19 +41,19 @@
             <span class="jobs-kicker">Ứng viên</span>
             <h2>Đăng nhập ứng viên</h2>
             <p>Đăng nhập để xem hồ sơ, việc đã lưu và tình trạng ứng tuyển của bạn.</p>
-            <div class="jobs-auth-fields">
+            <form class="jobs-auth-fields" id="candidateLoginForm" action="tai-khoan-ung-vien.html?from=dang-nhap-ung-vien" method="post" novalidate>
               <label class="jobs-filter-field">
                 <span>Email</span>
-                <input type="email" placeholder="ungvien@email.com">
+                <input type="email" id="candidateLoginEmail" name="email" required autocomplete="email" placeholder="ungvien@email.com">
               </label>
               <label class="jobs-filter-field">
                 <span>Mật khẩu</span>
-                <input type="password" placeholder="••••••••">
+                <input type="password" id="candidateLoginPassword" name="password" required minlength="8" autocomplete="current-password" placeholder="••••••••">
               </label>
-            </div>
+            </form>
             <div class="jobs-auth-actions">
-              <a href="tai-khoan-ung-vien.html" class="btn-primary-orange">Đăng nhập ứng viên</a>
-              <a href="tai-khoan-ung-vien.html" class="btn-outline-brown">Tạo tài khoản ứng viên</a>
+              <button type="submit" form="candidateLoginForm" class="btn-primary-orange">Đăng nhập ứng viên</button>
+              <a href="ho-so-ung-vien.html?from=dang-nhap-ung-vien" class="btn-outline-brown">Tạo hồ sơ ứng viên</a>
             </div>
             <ul class="jobs-auth-list">
               <li>Xem lại các việc làm bạn đã lưu</li>
@@ -65,24 +65,24 @@
           <article class="jobs-auth-card" id="dang-nhap-nha-tuyen-dung">
             <span class="jobs-kicker">Nhà tuyển dụng</span>
             <h2>Đăng nhập nhà tuyển dụng</h2>
-            <p>Đăng nhập để xem tin đang tuyển, hồ sơ ứng viên quan tâm và tiến độ xử lý.</p>
-            <div class="jobs-auth-fields">
+            <p>Đăng nhập để xem tin đang tuyển, đơn ứng tuyển theo từng tin và tiến độ xử lý.</p>
+            <form class="jobs-auth-fields" id="employerLoginForm" action="nha-tuyen-dung.html?from=dang-nhap-nha-tuyen-dung" method="post" novalidate>
               <label class="jobs-filter-field">
                 <span>Email công ty</span>
-                <input type="email" placeholder="hr@congty.com">
+                <input type="email" id="employerLoginEmail" name="email" required autocomplete="email" placeholder="hr@congty.com">
               </label>
               <label class="jobs-filter-field">
                 <span>Mật khẩu</span>
-                <input type="password" placeholder="••••••••">
+                <input type="password" id="employerLoginPassword" name="password" required minlength="8" autocomplete="current-password" placeholder="••••••••">
               </label>
-            </div>
+            </form>
             <div class="jobs-auth-actions">
-              <a href="nha-tuyen-dung.html" class="btn-primary-orange">Đăng nhập nhà tuyển&nbsp;dụng</a>
+              <button type="submit" form="employerLoginForm" class="btn-primary-orange">Đăng nhập nhà tuyển&nbsp;dụng</button>
               <a href="dang-tin-tuyen-dung.html" class="btn-outline-brown">Gửi nhu cầu tuyển dụng</a>
             </div>
             <ul class="jobs-auth-list">
               <li>Xem lại các tin tuyển dụng đang mở</li>
-              <li>Theo dõi hồ sơ ứng viên quan tâm</li>
+              <li>Theo dõi đơn ứng tuyển theo từng tin</li>
               <li>Cập nhật trạng thái xử lý hồ sơ</li>
             </ul>
           </article>

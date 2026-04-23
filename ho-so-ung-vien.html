@@ -18,7 +18,7 @@
         <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
           <a href="index.html">Trang chủ</a>
           <span>/</span>
-          <a href="tuyen-dung.html">Tuyển dụng</a>
+          <a href="tuyen-dung.html#job-list">Tuyển dụng</a>
           <span>/</span>
           <a href="tai-khoan-ung-vien.html">Tài khoản ứng viên</a>
           <span>/</span>
@@ -30,8 +30,8 @@
             <h1>Cập nhật hồ sơ ứng viên</h1>
             <p class="jobs-hero-text">Hoàn thiện hồ sơ để tăng chất lượng gợi ý việc làm và giúp nhà tuyển dụng nhìn rõ năng lực của bạn ngay từ lần đầu xem.</p>
             <div class="jobs-hero-actions">
-              <a href="tai-khoan-ung-vien.html" class="btn-outline-brown">Về tổng quan ứng viên</a>
-              <a href="tuyen-dung.html" class="btn-primary-orange">Tìm việc ngay</a>
+              <a href="tai-khoan-ung-vien.html?from=ho-so-ung-vien" class="btn-outline-brown">Về tổng quan ứng viên</a>
+              <a href="tuyen-dung.html#job-list" class="btn-primary-orange">Tìm việc ngay</a>
             </div>
           </div>
           <div class="jobs-hero-stats">
@@ -61,43 +61,44 @@
               <h2>Thông tin cơ bản</h2>
               <span class="jobs-dashboard-note">Cập nhật trực tiếp thông tin nghề nghiệp của bạn</span>
             </div>
-            <form class="jobs-form-grid">
+            <form class="jobs-form-grid" id="candidateProfileForm" action="tai-khoan-ung-vien.html" method="post">
+              <input type="hidden" name="profile_id" value="ho-so-nguyen-minh-anh">
               <label class="jobs-filter-field">
                 <span>Họ và tên</span>
-                <input type="text" value="Nguyễn Minh Anh">
+                <input type="text" id="candidateFullName" name="fullName" required maxlength="80" autocomplete="name" value="Nguyễn Minh Anh">
               </label>
               <label class="jobs-filter-field">
                 <span>Email</span>
-                <input type="email" value="minhanh@email.com">
+                <input type="email" id="candidateEmail" name="email" required autocomplete="email" value="minhanh@email.com">
               </label>
               <label class="jobs-filter-field">
                 <span>Số điện thoại</span>
-                <input type="tel" value="09xx xxx xxx">
+                <input type="tel" id="candidatePhone" name="phone" required inputmode="tel" autocomplete="tel" pattern="^[0-9+\\s.-]{8,20}$" value="09xx xxx xxx">
               </label>
               <label class="jobs-filter-field">
                 <span>Vị trí mục tiêu</span>
-                <input type="text" value="Kế toán tổng hợp">
+                <input type="text" id="candidateTargetRole" name="targetRole" required maxlength="120" value="Kế toán tổng hợp">
               </label>
               <label class="jobs-filter-field">
                 <span>Kinh nghiệm</span>
-                <input type="text" value="3 năm">
+                <input type="text" id="candidateExperience" name="experience" required maxlength="60" value="3 năm">
               </label>
               <label class="jobs-filter-field">
                 <span>Khu vực ưu tiên</span>
-                <input type="text" value="Thủ Đức, TP.HCM · Làm việc kết hợp">
+                <input type="text" id="candidatePreferredLocation" name="preferredLocation" required maxlength="160" value="Thủ Đức, TP.HCM · Làm việc kết hợp">
               </label>
               <label class="jobs-filter-field full">
                 <span>Giới thiệu ngắn</span>
-                <textarea rows="5">Kinh nghiệm tổng hợp số liệu kế toán, theo dõi công nợ, hỗ trợ kê khai thuế và lập báo cáo quản trị định kỳ.</textarea>
+                <textarea id="candidateSummary" name="summary" rows="5" maxlength="1200">Kinh nghiệm tổng hợp số liệu kế toán, theo dõi công nợ, hỗ trợ kê khai thuế và lập báo cáo quản trị định kỳ.</textarea>
               </label>
               <label class="jobs-filter-field full">
                 <span>Kỹ năng chính</span>
-                <input type="text" value="Excel, MISA, Báo cáo thuế, Báo cáo quản trị, Kiểm soát chứng từ">
+                <input type="text" id="candidateSkills" name="skills" maxlength="300" value="Excel, MISA, Báo cáo thuế, Báo cáo quản trị, Kiểm soát chứng từ">
               </label>
             </form>
             <div class="jobs-portal-actions">
-              <a href="tai-khoan-ung-vien.html" class="btn-primary-orange">Lưu hồ sơ</a>
-              <a href="ung-tuyen.html" class="btn-outline-brown">Dùng hồ sơ để ứng tuyển</a>
+              <button type="submit" form="candidateProfileForm" class="btn-primary-orange">Lưu hồ sơ</button>
+              <a href="tuyen-dung.html#job-list" class="btn-outline-brown">Chọn việc phù hợp để ứng tuyển</a>
             </div>
           </section>
 
@@ -112,7 +113,7 @@
               </article>
             </div>
             <div class="jobs-portal-actions" style="margin-top:12px;">
-              <a href="#" class="btn-outline-brown">Tải CV mới</a>
+              <a href="ho-so-ung-vien.html?mode=tai-cv-moi&profile_id=ho-so-nguyen-minh-anh" class="btn-outline-brown">Tải CV mới</a>
             </div>
           </section>
         </div>

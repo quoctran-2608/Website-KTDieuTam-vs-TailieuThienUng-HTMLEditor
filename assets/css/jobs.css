@@ -1731,11 +1731,22 @@
 }
 
 .jobs-recruiter-filter-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .jobs-recruiter-candidate-table td {
   vertical-align: top;
+}
+
+.jobs-empty-state {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px dashed rgba(182, 141, 64, 0.34);
+  background: #fffaf3;
+  color: #7a5a2a;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .jobs-recruiter-candidate-name {
