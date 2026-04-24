@@ -96,12 +96,20 @@
                 <button type="button" class="jobs-filter-reset" id="recruiterCandidateReset">Xóa lọc</button>
               </div>
             </form>
+	          </section>
+
+          <section class="jobs-dashboard-panel jobs-recruiter-ops-compact" id="recruiterOpsCompactBar">
+            <div class="jobs-recruiter-ops-compact-summary" aria-live="polite">
+              <span class="jobs-recruiter-ops-chip"><strong id="recruiterOpsCompactShortlist">0</strong> đơn ưu tiên</span>
+              <span class="jobs-recruiter-ops-chip"><strong id="recruiterOpsCompactActivity">0</strong> mục gần đây</span>
+            </div>
+            <button type="button" class="btn-outline-brown" id="recruiterOpsOpen" aria-haspopup="dialog" aria-expanded="false">Mở theo dõi</button>
           </section>
 
-	          <section class="jobs-dashboard-panel jobs-recruiter-list-panel">
-	            <div class="jobs-dashboard-panel-head">
-	              <h2>Danh sách đơn</h2>
-	              <span class="jobs-dashboard-note">Lọc nhanh, mở hồ sơ và xử lý ngay theo từng đơn ứng tuyển.</span>
+		          <section class="jobs-dashboard-panel jobs-recruiter-list-panel">
+		            <div class="jobs-dashboard-panel-head">
+		              <h2>Danh sách đơn</h2>
+		              <span class="jobs-dashboard-note">Lọc nhanh, mở hồ sơ và xử lý ngay theo từng đơn ứng tuyển.</span>
 	            </div>
             <div class="jobs-recruiter-application-list" id="recruiterCandidateList"></div>
             <div class="jobs-dashboard-table-wrap" hidden>
@@ -491,12 +499,15 @@
 	            </article>
 	          </section>
 
-          <section class="jobs-dashboard-panel jobs-recruiter-ops-panel" id="recruiterOpsPanel" aria-label="Theo dõi tuyển dụng">
+          <section class="jobs-dashboard-panel jobs-recruiter-ops-panel" id="recruiterOpsPanel" aria-label="Theo dõi tuyển dụng" hidden>
             <div class="jobs-dashboard-panel-head">
               <div>
                 <h2>Theo dõi tuyển dụng</h2>
                 <span class="jobs-dashboard-note">Xem danh sách đơn ưu tiên và lịch sử thao tác gần đây.</span>
               </div>
+              <button type="button" class="jobs-recruiter-ops-close" id="recruiterOpsClose" aria-label="Đóng theo dõi tuyển dụng">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
             </div>
             <div class="jobs-recruiter-ops-grid">
               <article class="jobs-recruiter-ops-card">
@@ -522,10 +533,11 @@
 	          </section>
         </div>
       </div>
-    </section>
-  </main>
-  <div class="jobs-recruiter-focus-backdrop" id="recruiterFocusBackdrop" hidden></div>
-  <div id="siteFooter"></div>
+	    </section>
+	  </main>
+	  <div class="jobs-recruiter-focus-backdrop" id="recruiterFocusBackdrop" hidden></div>
+  <div class="jobs-recruiter-ops-backdrop" id="recruiterOpsBackdrop" hidden></div>
+	  <div id="siteFooter"></div>
   <div class="jobs-note-dialog" id="recruiterNoteDialog" hidden>
     <div class="jobs-note-dialog-backdrop" data-note-dismiss="backdrop"></div>
     <div class="jobs-note-dialog-card" role="dialog" aria-modal="true" aria-labelledby="recruiterNoteTitle">
@@ -592,6 +604,13 @@
         var shortlistList = document.getElementById('recruiterShortlistList');
         var activityFeed = document.getElementById('recruiterActivityFeed');
         var activityCount = document.getElementById('recruiterActivityCount');
+        var opsCompactBar = document.getElementById('recruiterOpsCompactBar');
+        var opsCompactShortlist = document.getElementById('recruiterOpsCompactShortlist');
+        var opsCompactActivity = document.getElementById('recruiterOpsCompactActivity');
+        var opsPanel = document.getElementById('recruiterOpsPanel');
+        var opsOpen = document.getElementById('recruiterOpsOpen');
+        var opsClose = document.getElementById('recruiterOpsClose');
+        var opsBackdrop = document.getElementById('recruiterOpsBackdrop');
         var noteDialog = document.getElementById('recruiterNoteDialog');
         var noteTitle = document.getElementById('recruiterNoteTitle');
         var noteInput = document.getElementById('recruiterNoteInput');
@@ -728,15 +747,16 @@
 	          return mediaQueryList ? mediaQueryList.matches : window.innerWidth <= 1100;
 	        }
 
-	        function openFocusPanel() {
-	          if (!focusPanel) return;
-	          focusPanel.hidden = false;
-	          focusPanel.classList.add('is-open');
-	          if (focusBackdrop) {
-	            focusBackdrop.hidden = false;
-	          }
-	          document.body.classList.add('is-recruiter-focus-open');
-	        }
+			        function openFocusPanel() {
+			          if (!focusPanel) return;
+          closeOpsPanel();
+			          focusPanel.hidden = false;
+			          focusPanel.classList.add('is-open');
+			          if (focusBackdrop) {
+			            focusBackdrop.hidden = false;
+			          }
+		          document.body.classList.add('is-recruiter-focus-open');
+		        }
 
 	        function closeFocusPanel() {
 	          if (!focusPanel) return;
@@ -745,12 +765,57 @@
 	          if (focusBackdrop) {
 	            focusBackdrop.hidden = true;
 	          }
-	          document.body.classList.remove('is-recruiter-focus-open');
-	        }
+		          document.body.classList.remove('is-recruiter-focus-open');
+		        }
 
-	        function scrollFocusCardIntoView() {
-	          if (!focusCard) return;
-	          openFocusPanel();
+        function isCompactOpsMode() {
+          return mediaQueryList ? !mediaQueryList.matches : window.innerWidth > 1100;
+        }
+
+        function openOpsPanel() {
+          if (!opsPanel || !isCompactOpsMode()) return;
+          closeFocusPanel();
+          opsPanel.hidden = false;
+          opsPanel.classList.add('is-open');
+          if (opsBackdrop) {
+            opsBackdrop.hidden = false;
+          }
+          if (opsOpen) {
+            opsOpen.setAttribute('aria-expanded', 'true');
+          }
+          document.body.classList.add('is-recruiter-ops-open');
+        }
+
+        function closeOpsPanel() {
+          if (!opsPanel) return;
+          opsPanel.hidden = true;
+          opsPanel.classList.remove('is-open');
+          if (opsBackdrop) {
+            opsBackdrop.hidden = true;
+          }
+          if (opsOpen) {
+            opsOpen.setAttribute('aria-expanded', 'false');
+          }
+          document.body.classList.remove('is-recruiter-ops-open');
+        }
+
+        function syncOpsLayout() {
+          if (!opsPanel || !opsCompactBar) return;
+          var compact = isCompactOpsMode();
+          opsCompactBar.hidden = !compact;
+          if (compact) {
+            if (!opsPanel.classList.contains('is-open')) {
+              opsPanel.hidden = true;
+            }
+            return;
+          }
+          closeOpsPanel();
+          opsPanel.hidden = false;
+        }
+
+		        function scrollFocusCardIntoView() {
+		          if (!focusCard) return;
+		          openFocusPanel();
 	          if (shouldScrollToFocus() && typeof focusCard.scrollIntoView === 'function') {
 	            focusCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	          }
@@ -780,8 +845,8 @@
 	          window.history.replaceState(null, '', nextUrl);
 	        }
 
-	        function pushActivity(message) {
-	          if (!activityFeed) return;
+		        function pushActivity(message) {
+		          if (!activityFeed) return;
           var emptyItem = activityFeed.querySelector('.jobs-recruiter-empty-note');
           if (emptyItem) {
             emptyItem.remove();
@@ -796,11 +861,17 @@
           if (activityCount) {
             activityCount.textContent = String(items.length);
           }
+          if (opsCompactActivity) {
+            opsCompactActivity.textContent = String(items.length);
+          }
         }
 
         function syncShortlistPanel() {
           if (!shortlistCount || !shortlistList) return;
           shortlistCount.textContent = String(shortlistStore.size);
+          if (opsCompactShortlist) {
+            opsCompactShortlist.textContent = String(shortlistStore.size);
+          }
 
           if (!shortlistStore.size) {
             shortlistList.innerHTML = '<li class="jobs-recruiter-empty-note">Chưa có đơn nào trong danh sách ưu tiên.</li>';
@@ -1155,23 +1226,47 @@
           });
         }
 
-	        document.addEventListener('keydown', function (event) {
-	          if (event.key === 'Escape' && noteDialog && !noteDialog.hidden) {
-	            closeNoteDialog();
-	            return;
-	          }
-	          if (event.key === 'Escape' && focusPanel && !focusPanel.hidden) {
-	            closeFocusPanel();
-	          }
-	        });
+		        document.addEventListener('keydown', function (event) {
+		          if (event.key === 'Escape' && noteDialog && !noteDialog.hidden) {
+		            closeNoteDialog();
+		            return;
+		          }
+          if (event.key === 'Escape' && opsPanel && !opsPanel.hidden && opsPanel.classList.contains('is-open')) {
+            closeOpsPanel();
+            return;
+          }
+		          if (event.key === 'Escape' && focusPanel && !focusPanel.hidden) {
+		            closeFocusPanel();
+		          }
+		        });
 
 	        if (focusClose) {
 	          focusClose.addEventListener('click', closeFocusPanel);
 	        }
 
-	        if (focusBackdrop) {
-	          focusBackdrop.addEventListener('click', closeFocusPanel);
-	        }
+		        if (focusBackdrop) {
+		          focusBackdrop.addEventListener('click', closeFocusPanel);
+		        }
+
+        if (opsOpen) {
+          opsOpen.addEventListener('click', openOpsPanel);
+        }
+
+        if (opsClose) {
+          opsClose.addEventListener('click', closeOpsPanel);
+        }
+
+        if (opsBackdrop) {
+          opsBackdrop.addEventListener('click', closeOpsPanel);
+        }
+
+        if (mediaQueryList) {
+          if (typeof mediaQueryList.addEventListener === 'function') {
+            mediaQueryList.addEventListener('change', syncOpsLayout);
+          } else if (typeof mediaQueryList.addListener === 'function') {
+            mediaQueryList.addListener(syncOpsLayout);
+          }
+        }
 
 	        if (focusProfileLink) {
 	          focusProfileLink.addEventListener('click', function (event) {
@@ -1181,12 +1276,17 @@
 	          });
 	        }
 
-		        hydrateFiltersFromUrl();
-		        syncShortlistPanel();
-		        if (activityCount && activityFeed) {
-		          activityCount.textContent = String(activityFeed.querySelectorAll('li:not(.jobs-recruiter-empty-note)').length);
-		        }
-		        applyFilters();
+			        hydrateFiltersFromUrl();
+			        syncShortlistPanel();
+			        if (activityCount && activityFeed) {
+			          var initialActivityCount = activityFeed.querySelectorAll('li:not(.jobs-recruiter-empty-note)').length;
+			          activityCount.textContent = String(initialActivityCount);
+            if (opsCompactActivity) {
+              opsCompactActivity.textContent = String(initialActivityCount);
+            }
+			        }
+			        syncOpsLayout();
+			        applyFilters();
 		      }
 
       document.addEventListener('DOMContentLoaded', initRecruiterCandidateFilter);
