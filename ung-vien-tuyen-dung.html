@@ -98,11 +98,11 @@
             </form>
           </section>
 
-          <section class="jobs-dashboard-panel jobs-recruiter-list-panel">
-            <div class="jobs-dashboard-panel-head">
-              <h2>Danh sách đơn</h2>
-              <span class="jobs-dashboard-note">Giữ thẻ ngắn gọn để lọc nhanh, mở bảng xử lý khi cần thao tác sâu.</span>
-            </div>
+	          <section class="jobs-dashboard-panel jobs-recruiter-list-panel">
+	            <div class="jobs-dashboard-panel-head">
+	              <h2>Danh sách đơn</h2>
+	              <span class="jobs-dashboard-note">Lọc nhanh, mở hồ sơ và xử lý ngay theo từng đơn ứng tuyển.</span>
+	            </div>
             <div class="jobs-recruiter-application-list" id="recruiterCandidateList"></div>
             <div class="jobs-dashboard-table-wrap" hidden>
               <table class="jobs-dashboard-table jobs-recruiter-candidate-table" id="recruiterCandidateTable">
@@ -449,38 +449,12 @@
             <div class="jobs-empty-state" id="recruiterCandidateEmpty" hidden>Chưa có đơn phù hợp với bộ lọc hiện tại. Hãy xóa bớt điều kiện hoặc đổi trạng thái để xem thêm hồ sơ.</div>
           </section>
 
-          <section class="jobs-dashboard-panel jobs-recruiter-ops-panel">
-            <div class="jobs-dashboard-panel-head">
-              <h2>Theo dõi nội bộ</h2>
-            </div>
-            <div class="jobs-recruiter-ops-grid">
-              <article class="jobs-recruiter-ops-card">
-                <div class="jobs-recruiter-ops-head">
-                  <h3>Đơn cần ưu tiên</h3>
-                  <span class="jobs-status-pill is-saved"><strong id="recruiterShortlistCount">0</strong> đơn</span>
-                </div>
-                <ul class="jobs-recruiter-shortlist-list" id="recruiterShortlistList">
-                  <li class="jobs-recruiter-empty-note">Chưa có đơn nào trong danh sách ưu tiên.</li>
-                </ul>
-              </article>
-
-              <article class="jobs-recruiter-ops-card">
-                <div class="jobs-recruiter-ops-head">
-                  <h3>Nhật ký thao tác gần đây</h3>
-                </div>
-                <ul class="jobs-recruiter-activity-feed" id="recruiterActivityFeed">
-                  <li class="jobs-recruiter-empty-note">Bạn có thể chọn một đơn, cập nhật trạng thái hoặc thêm ghi chú ngay tại khối xử lý.</li>
-                </ul>
-              </article>
-            </div>
-          </section>
-
-          <section class="jobs-dashboard-panel jobs-recruiter-focus-panel" id="recruiterFocusPanel" hidden>
-            <div class="jobs-dashboard-panel-head">
-              <div>
-                <h2>Xử lý đơn đang chọn</h2>
-                <span class="jobs-dashboard-note" id="recruiterFocusHint" aria-live="polite">Chọn một đơn trong danh sách để xử lý nhanh tại khối này.</span>
-              </div>
+	          <section class="jobs-dashboard-panel jobs-recruiter-focus-panel" id="recruiterFocusPanel" hidden>
+	            <div class="jobs-dashboard-panel-head">
+	              <div>
+	                <h2>Xử lý đơn đang chọn</h2>
+	                <span class="jobs-dashboard-note" id="recruiterFocusHint" aria-live="polite">Chọn một đơn trong danh sách để bắt đầu xử lý.</span>
+	              </div>
               <button type="button" class="jobs-recruiter-focus-close" id="recruiterFocusClose" aria-label="Đóng bảng xử lý">
                 <i class="fa-solid fa-xmark" aria-hidden="true"></i>
               </button>
@@ -508,14 +482,44 @@
                     <option value="trung_tuyen">Trúng tuyển</option>
                   </select>
                 </label>
-                <div class="jobs-recruiter-focus-actions">
-                  <button type="button" class="btn-outline-brown" id="recruiterFocusShortlistBtn" aria-pressed="false">Đánh dấu ưu tiên</button>
-                  <button type="button" class="btn-outline-brown" id="recruiterFocusNoteBtn">Ghi chú nội bộ</button>
-                </div>
+	                <div class="jobs-recruiter-focus-actions">
+	                  <button type="button" class="btn-outline-brown" id="recruiterFocusShortlistBtn" aria-pressed="false">Đánh dấu ưu tiên</button>
+	                  <button type="button" class="btn-outline-brown" id="recruiterFocusNoteBtn">Ghi chú tuyển dụng</button>
+	                </div>
+	              </div>
+	              <p class="jobs-recruiter-action-tip" id="recruiterFocusTip">Đặt lịch trao đổi nhanh cho đơn này nếu hồ sơ phù hợp tiêu chí.</p>
+	            </article>
+	          </section>
+
+          <section class="jobs-dashboard-panel jobs-recruiter-ops-panel" id="recruiterOpsPanel" aria-label="Theo dõi tuyển dụng">
+            <div class="jobs-dashboard-panel-head">
+              <div>
+                <h2>Theo dõi tuyển dụng</h2>
+                <span class="jobs-dashboard-note">Xem danh sách đơn ưu tiên và lịch sử thao tác gần đây.</span>
               </div>
-              <p class="jobs-recruiter-action-tip" id="recruiterFocusTip">Đặt lịch trao đổi nhanh cho đơn này nếu hồ sơ phù hợp tiêu chí.</p>
-            </article>
-          </section>
+            </div>
+            <div class="jobs-recruiter-ops-grid">
+              <article class="jobs-recruiter-ops-card">
+                <div class="jobs-recruiter-ops-head">
+                  <h3>Đơn cần ưu tiên</h3>
+                  <span class="jobs-status-pill is-saved"><strong id="recruiterShortlistCount">0</strong> đơn</span>
+                </div>
+                <ul class="jobs-recruiter-shortlist-list" id="recruiterShortlistList">
+                  <li class="jobs-recruiter-empty-note">Chưa có đơn nào trong danh sách ưu tiên.</li>
+                </ul>
+              </article>
+
+	              <article class="jobs-recruiter-ops-card">
+	                <div class="jobs-recruiter-ops-head">
+	                  <h3>Nhật ký thao tác gần đây</h3>
+	                  <span class="jobs-status-pill is-reviewing"><strong id="recruiterActivityCount">0</strong> mục</span>
+	                </div>
+	                <ul class="jobs-recruiter-activity-feed" id="recruiterActivityFeed">
+	                  <li class="jobs-recruiter-empty-note">Chưa có thao tác nào gần đây.</li>
+	                </ul>
+	              </article>
+	            </div>
+	          </section>
         </div>
       </div>
     </section>
@@ -525,8 +529,8 @@
   <div class="jobs-note-dialog" id="recruiterNoteDialog" hidden>
     <div class="jobs-note-dialog-backdrop" data-note-dismiss="backdrop"></div>
     <div class="jobs-note-dialog-card" role="dialog" aria-modal="true" aria-labelledby="recruiterNoteTitle">
-      <h3 id="recruiterNoteTitle">Ghi chú nội bộ</h3>
-      <p>Ghi chú này chỉ phục vụ điều phối nội bộ cho nhà tuyển dụng.</p>
+      <h3 id="recruiterNoteTitle">Ghi chú tuyển dụng</h3>
+      <p>Chỉ tài khoản tuyển dụng của doanh nghiệp mới xem được ghi chú này.</p>
       <label class="jobs-filter-field">
         <span>Nội dung ghi chú</span>
         <textarea id="recruiterNoteInput" rows="5" placeholder="Ví dụ: Phù hợp vị trí kế toán tổng hợp, ưu tiên mời phỏng vấn chiều thứ 4..."></textarea>
@@ -587,6 +591,7 @@
         var shortlistCount = document.getElementById('recruiterShortlistCount');
         var shortlistList = document.getElementById('recruiterShortlistList');
         var activityFeed = document.getElementById('recruiterActivityFeed');
+        var activityCount = document.getElementById('recruiterActivityCount');
         var noteDialog = document.getElementById('recruiterNoteDialog');
         var noteTitle = document.getElementById('recruiterNoteTitle');
         var noteInput = document.getElementById('recruiterNoteInput');
@@ -777,12 +782,19 @@
 
 	        function pushActivity(message) {
 	          if (!activityFeed) return;
+          var emptyItem = activityFeed.querySelector('.jobs-recruiter-empty-note');
+          if (emptyItem) {
+            emptyItem.remove();
+          }
           var item = document.createElement('li');
           item.textContent = message;
           activityFeed.prepend(item);
           var items = activityFeed.querySelectorAll('li');
           if (items.length > 8) {
             items[items.length - 1].remove();
+          }
+          if (activityCount) {
+            activityCount.textContent = String(items.length);
           }
         }
 
@@ -847,7 +859,7 @@
         function openNoteDialog(applicationId, candidateName) {
           if (!noteDialog || !noteInput || !noteTitle) return;
           currentNoteApplicationId = applicationId;
-          noteTitle.textContent = 'Ghi chú nội bộ: ' + candidateName + ' · ' + applicationId;
+          noteTitle.textContent = 'Ghi chú tuyển dụng: ' + candidateName + ' · ' + applicationId;
           noteInput.value = noteStore[applicationId] || '';
           noteDialog.hidden = false;
           document.body.classList.add('is-note-dialog-open');
@@ -902,7 +914,7 @@
             +     '<span>' + getRowLocation(row) + '</span>'
             +   '</div>'
             +   '<div class="jobs-recruiter-application-job">'
-            +     '<span class="jobs-dashboard-note">Tin tuyển dụng</span>'
+            +     '<span class="jobs-dashboard-note">Tin tuyển dụng:</span>'
             +     '<a href="' + getRowJobHref(row) + '" class="job-source-link">' + getRowJobText(row) + '</a>'
             +   '</div>'
             + '</div>'
@@ -912,11 +924,10 @@
             + '</div>'
             + '<p class="jobs-recruiter-action-tip">' + getRowTip(row) + '</p>';
 
-	          card.addEventListener('click', function (event) {
-	            if (event.target.closest('a, button')) return;
-	            setFocusRow(row, { reveal: true });
-	            scrollFocusCardIntoView();
-	          });
+          card.addEventListener('click', function (event) {
+            if (event.target.closest('a, button')) return;
+            setFocusRow(row, { reveal: focusPanel && !focusPanel.hidden });
+          });
 
 	          var manageBtn = card.querySelector('.jobs-recruiter-manage-btn');
 	          if (manageBtn) {
@@ -948,26 +959,26 @@
 	          list.querySelectorAll('.jobs-recruiter-application-card').forEach(function (card) {
 	            card.classList.remove('is-selected');
 	          });
-	          if (focusHint) focusHint.textContent = 'Chọn một đơn trong danh sách để cập nhật nhanh.';
+		          if (focusHint) focusHint.textContent = 'Chọn một đơn trong danh sách để cập nhật nhanh.';
 	          if (focusApplicationId) focusApplicationId.textContent = 'Chưa chọn đơn';
 	          if (focusName) focusName.textContent = 'Chưa có đơn được chọn';
-	          if (focusMeta) focusMeta.textContent = 'Danh sách đang không có đơn khả dụng hoặc bạn chưa chọn hồ sơ nào.';
+		          if (focusMeta) focusMeta.textContent = 'Không có đơn phù hợp hoặc bạn chưa chọn hồ sơ nào.';
 	          if (focusJob) focusJob.textContent = 'Tin tuyển dụng: Chưa chọn';
 	          if (focusProfileLink) focusProfileLink.setAttribute('href', '#');
-	          if (focusTip) focusTip.textContent = 'Khối này sẽ sáng lên ngay khi có một đơn phù hợp trong danh sách.';
+			          if (focusTip) focusTip.textContent = 'Chọn một đơn để cập nhật trạng thái hoặc thêm ghi chú.';
 	          if (focusStatus) focusStatus.value = 'dang_xem';
-	          if (focusShortlistBtn) {
-	            focusShortlistBtn.classList.remove('is-active');
+		          if (focusShortlistBtn) {
+		            focusShortlistBtn.classList.remove('is-active');
             focusShortlistBtn.setAttribute('aria-pressed', 'false');
             focusShortlistBtn.textContent = 'Đánh dấu ưu tiên';
           }
 	          if (focusNoteBtn) {
 	            focusNoteBtn.classList.remove('is-active');
 	          }
-	          setFocusAvailability(false);
-	          updateUrlState();
-	          closeFocusPanel();
-	        }
+		          setFocusAvailability(false);
+		          updateUrlState();
+		          closeFocusPanel();
+		        }
 
 	        function setFocusRow(row, options) {
 	          var revealPanel = !!(options && options.reveal);
@@ -985,24 +996,24 @@
 	          });
 
 	          setFocusAvailability(true);
-	          if (focusHint) focusHint.textContent = 'Đang xử lý ' + (row.dataset.applicationId || 'đơn đã chọn') + '.';
+		          if (focusHint) focusHint.textContent = 'Đang xử lý ' + (row.dataset.applicationId || 'đơn đã chọn') + '.';
 	          if (focusApplicationId) focusApplicationId.textContent = row.dataset.applicationId || '';
 	          if (focusName) focusName.textContent = getRowName(row);
           if (focusMeta) focusMeta.textContent = getRowRole(row) + ' · ' + getRowExperience(row) + ' · ' + getRowLocation(row);
           if (focusJob) focusJob.textContent = 'Tin tuyển dụng: ' + getRowJobText(row);
           if (focusProfileLink) focusProfileLink.setAttribute('href', getRowProfileHref(row));
           if (focusStatus) focusStatus.value = getRowStatusKey(row);
-          if (focusTip) focusTip.textContent = getRowTip(row);
+		          if (focusTip) focusTip.textContent = getRowTip(row);
 	          if (focusNoteBtn) {
 	            focusNoteBtn.classList.toggle('is-active', !!noteStore[row.dataset.applicationId || '']);
 	          }
 
 	          syncFocusShortlistState();
 	          updateUrlState();
-	          if (revealPanel) {
-	            openFocusPanel();
-	          }
-	        }
+		          if (revealPanel) {
+		            openFocusPanel();
+		          }
+		        }
 
         function applyFilters() {
           var query = normalizeText(searchInput ? searchInput.value : '');
@@ -1024,7 +1035,7 @@
           renderCards(matched);
 
           if (countLabel) {
-            countLabel.textContent = matched.length + ' đơn phù hợp';
+            countLabel.textContent = matched.length + ' đơn đang hiển thị';
           }
           if (emptyState) {
             emptyState.hidden = matched.length !== 0;
@@ -1073,22 +1084,22 @@
 	          });
 	        }
 
-        if (focusShortlistBtn) {
-          focusShortlistBtn.addEventListener('click', function () {
-            if (!currentFocusedRow) return;
-            var candidateName = currentFocusedRow.dataset.candidateName || 'Ứng viên';
-            var applicationId = currentFocusedRow.dataset.applicationId || '';
-            if (shortlistStore.has(applicationId)) {
-              shortlistStore.delete(applicationId);
-              pushActivity('Đã bỏ ưu tiên cho đơn ' + applicationId + ' của ' + candidateName + '.');
-            } else {
-              shortlistStore.add(applicationId);
-              pushActivity('Đã thêm đơn ' + applicationId + ' của ' + candidateName + ' vào danh sách ưu tiên.');
-            }
-            syncShortlistPanel();
-            syncFocusShortlistState();
-          });
-        }
+	        if (focusShortlistBtn) {
+	          focusShortlistBtn.addEventListener('click', function () {
+	            if (!currentFocusedRow) return;
+	            var candidateName = currentFocusedRow.dataset.candidateName || 'Ứng viên';
+	            var applicationId = currentFocusedRow.dataset.applicationId || '';
+	            if (shortlistStore.has(applicationId)) {
+	              shortlistStore.delete(applicationId);
+	              pushActivity('Bỏ ưu tiên: ' + applicationId + ' · ' + candidateName + '.');
+	            } else {
+	              shortlistStore.add(applicationId);
+	              pushActivity('Ưu tiên: ' + applicationId + ' · ' + candidateName + '.');
+	            }
+	            syncShortlistPanel();
+	            syncFocusShortlistState();
+	          });
+	        }
 
         if (focusNoteBtn) {
           focusNoteBtn.addEventListener('click', function () {
@@ -1097,17 +1108,17 @@
           });
         }
 
-        if (focusStatus) {
-          focusStatus.addEventListener('change', function () {
-            if (!currentFocusedRow) return;
-            var nextStatus = focusStatus.value || 'dang_xem';
-            var applicationId = currentFocusedRow.dataset.applicationId || '';
-            var candidateName = currentFocusedRow.dataset.candidateName || 'Ứng viên';
-            updateStatusPill(currentFocusedRow, nextStatus);
-            pushActivity('Đã cập nhật trạng thái đơn ' + applicationId + ' của ' + candidateName + ' thành ' + (STATUS_LABELS[nextStatus] || 'Đang xem hồ sơ') + '.');
-            applyFilters();
-          });
-        }
+	        if (focusStatus) {
+	          focusStatus.addEventListener('change', function () {
+	            if (!currentFocusedRow) return;
+	            var nextStatus = focusStatus.value || 'dang_xem';
+	            var applicationId = currentFocusedRow.dataset.applicationId || '';
+	            var candidateName = currentFocusedRow.dataset.candidateName || 'Ứng viên';
+	            updateStatusPill(currentFocusedRow, nextStatus);
+	            pushActivity('Trạng thái: ' + applicationId + ' · ' + candidateName + ' → ' + (STATUS_LABELS[nextStatus] || 'Đang xem hồ sơ') + '.');
+	            applyFilters();
+	          });
+	        }
 
         if (noteSave && noteInput) {
           noteSave.addEventListener('click', function () {
@@ -1119,17 +1130,17 @@
               noteStore[currentNoteApplicationId] = value;
             }
 
-            var row = rows.find(function (item) { return (item.dataset.applicationId || '') === currentNoteApplicationId; });
-            if (row) {
-              var candidateName = row.dataset.candidateName || 'Ứng viên';
-              pushActivity(value ? ('Đã lưu ghi chú nội bộ cho ' + candidateName + '.') : ('Đã xóa ghi chú nội bộ của ' + candidateName + '.'));
-              if (currentFocusedRow && currentFocusedRow.dataset.applicationId === currentNoteApplicationId && focusNoteBtn) {
-                focusNoteBtn.classList.toggle('is-active', !!value);
-              }
-            }
-            closeNoteDialog();
-          });
-        }
+	            var row = rows.find(function (item) { return (item.dataset.applicationId || '') === currentNoteApplicationId; });
+	            if (row) {
+	              var candidateName = row.dataset.candidateName || 'Ứng viên';
+	              pushActivity(value ? ('Ghi chú: đã lưu cho ' + candidateName + '.') : ('Ghi chú: đã xóa của ' + candidateName + '.'));
+	              if (currentFocusedRow && currentFocusedRow.dataset.applicationId === currentNoteApplicationId && focusNoteBtn) {
+	                focusNoteBtn.classList.toggle('is-active', !!value);
+	              }
+	            }
+	            closeNoteDialog();
+	          });
+	        }
 
         if (noteCancel) {
           noteCancel.addEventListener('click', closeNoteDialog);
@@ -1170,10 +1181,13 @@
 	          });
 	        }
 
-	        hydrateFiltersFromUrl();
-	        syncShortlistPanel();
-	        applyFilters();
-	      }
+		        hydrateFiltersFromUrl();
+		        syncShortlistPanel();
+		        if (activityCount && activityFeed) {
+		          activityCount.textContent = String(activityFeed.querySelectorAll('li:not(.jobs-recruiter-empty-note)').length);
+		        }
+		        applyFilters();
+		      }
 
       document.addEventListener('DOMContentLoaded', initRecruiterCandidateFilter);
     })();

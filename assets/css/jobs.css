@@ -1884,6 +1884,11 @@
   font-weight: 700;
 }
 
+.jobs-recruiter-application-job .jobs-dashboard-note {
+  display: block;
+  margin-bottom: 4px;
+}
+
 .jobs-recruiter-candidate-name {
   display: grid;
   gap: 6px;
@@ -2111,6 +2116,11 @@
 .jobs-recruiter-ops-head h3 {
   margin: 0;
   font-size: 18px;
+}
+
+.jobs-recruiter-ops-head h4 {
+  margin: 0;
+  font-size: 16px;
 }
 
 .jobs-recruiter-shortlist-list,
@@ -2477,8 +2487,7 @@ body.is-recruiter-focus-open {
   gap: 6px;
 }
 
-.recruiter-applications-page .jobs-recruiter-focus-panel .jobs-dashboard-panel-head,
-.recruiter-applications-page .jobs-recruiter-ops-panel .jobs-dashboard-panel-head {
+.recruiter-applications-page .jobs-recruiter-focus-panel .jobs-dashboard-panel-head {
   margin-bottom: 14px;
 }
 
@@ -2489,14 +2498,34 @@ body.is-recruiter-focus-open {
 
 .recruiter-applications-page .jobs-recruiter-focus-panel {
   position: fixed;
-  top: 110px;
-  right: max(24px, calc((100vw - 1320px) / 2 + 24px));
-  width: min(440px, calc(100vw - 72px));
-  max-height: calc(100vh - 134px);
+  top: 50%;
+  left: 50%;
+  right: auto;
+  width: min(960px, calc(100vw - 64px));
+  max-height: calc(100vh - 64px);
   overflow: auto;
   margin: 0;
   z-index: 1260;
+  transform: translate(-50%, -50%);
   box-shadow: 0 24px 56px rgba(15, 23, 42, 0.18);
+}
+
+.recruiter-applications-page .jobs-recruiter-focus-controls {
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+}
+
+.recruiter-applications-page .jobs-recruiter-focus-actions {
+  justify-content: flex-end;
+}
+
+.recruiter-applications-page .jobs-recruiter-focus-actions .btn-outline-brown {
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.recruiter-applications-page .jobs-recruiter-ops-panel .jobs-recruiter-ops-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .recruiter-applications-page .jobs-recruiter-focus-panel[hidden] {
@@ -3769,6 +3798,7 @@ body.is-recruiter-focus-open {
     bottom: calc(16px + env(safe-area-inset-bottom));
     width: auto;
     max-height: calc(100vh - 96px);
+    transform: none;
   }
 
   .employer-request-form-grid {
@@ -4135,6 +4165,7 @@ body.is-recruiter-focus-open {
     right: 12px;
     bottom: calc(12px + env(safe-area-inset-bottom));
     max-height: calc(100vh - 84px);
+    transform: none;
   }
 
   .jobs-note-dialog-card {

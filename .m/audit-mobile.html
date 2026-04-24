@@ -1,0 +1,58 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>audit mobile</title>
+<style>body{margin:0;font:14px system-ui;background:#fff}iframe{display:block;border:0;width:390px;height:8000px;margin:0 auto}</style>
+</head><body>
+<iframe id="f" src="file:///D:/WORKING/KetoanThienUng/Ketoandieutam.com/ung-vien-tuyen-dung.html"></iframe>
+<pre id="out">waiting</pre>
+<script>
+(function(){
+  var iframe=document.getElementById('f');
+  function rect(el){if(!el)return null; var r=el.getBoundingClientRect(); return {x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom};}
+  function style(el, props){if(!el)return null; var cs=iframe.contentWindow.getComputedStyle(el), o={}; props.forEach(function(p){o[p]=cs[p];}); return o;}
+  function collect(){
+    var doc=iframe.contentDocument, win=iframe.contentWindow;
+    var shell=doc.querySelector('.jobs-dashboard-shell');
+    var sidebar=doc.querySelector('.jobs-dashboard-sidebar');
+    var main=doc.querySelector('.jobs-dashboard-main');
+    var filterGrid=doc.querySelector('.jobs-recruiter-filter-grid');
+    var focusCard=doc.getElementById('recruiterFocusCard');
+    var list=doc.getElementById('recruiterCandidateList');
+    var firstCard=doc.querySelector('.jobs-recruiter-application-card');
+    var firstManage=doc.querySelector('.jobs-recruiter-manage-btn');
+    var initial={
+      viewport: {w: win.innerWidth, h: win.innerHeight},
+      title: doc.title,
+      scroll: {docW: doc.documentElement.scrollWidth, clientW: doc.documentElement.clientWidth, overflowX: doc.documentElement.scrollWidth-doc.documentElement.clientWidth, scrollY: win.scrollY},
+      shellRect: rect(shell),
+      shellStyle: style(shell,['display','gridTemplateColumns','gap']),
+      sidebarRect: rect(sidebar),
+      sidebarStyle: style(sidebar,['position','top']),
+      mainRect: rect(main),
+      filterGridRect: rect(filterGrid),
+      filterGridStyle: style(filterGrid,['display','gridTemplateColumns','gap']),
+      filterFields: filterGrid ? Array.prototype.map.call(filterGrid.children,function(el){ return {label:(el.querySelector('span')||{}).textContent||'', rect:rect(el)}; }) : [],
+      listRect: rect(list),
+      firstCardRect: rect(firstCard),
+      focusCardRect: rect(focusCard),
+      cards: doc.querySelectorAll('.jobs-recruiter-application-card').length,
+      menuLinks: Array.prototype.map.call(doc.querySelectorAll('.jobs-dashboard-menu a'), function(a){ return (a.textContent||'').trim(); }),
+      emptyHidden: doc.getElementById('recruiterCandidateEmpty') ? doc.getElementById('recruiterCandidateEmpty').hidden : null,
+      countText: doc.getElementById('recruiterCandidateCount') ? doc.getElementById('recruiterCandidateCount').textContent.trim() : ''
+    };
+    if (firstManage) firstManage.click();
+    setTimeout(function(){
+      var after={
+        scrollY: win.scrollY,
+        focusCardRect: rect(focusCard),
+        focusHint: doc.getElementById('recruiterFocusHint') ? doc.getElementById('recruiterFocusHint').textContent.trim() : '',
+        focusName: doc.getElementById('recruiterFocusName') ? doc.getElementById('recruiterFocusName').textContent.trim() : '',
+        focusStatus: doc.getElementById('recruiterFocusStatus') ? doc.getElementById('recruiterFocusStatus').value : '',
+        activeElement: doc.activeElement ? doc.activeElement.id || doc.activeElement.tagName : '',
+        selectedCards: doc.querySelectorAll('.jobs-recruiter-application-card.is-selected').length
+      };
+      document.getElementById('out').textContent = JSON.stringify({variant:'mobile', initial:initial, afterManageClick:after}, null, 2);
+    }, 1200);
+  }
+  iframe.addEventListener('load', function(){ setTimeout(collect, 1800); });
+})();
+</script></body></html>
