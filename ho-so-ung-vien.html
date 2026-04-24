@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hồ sơ ứng viên | Kế Toán Diệu Tâm</title>
-  <meta name="description" content="Trang hồ sơ ứng viên: thông tin nghề nghiệp, kỹ năng, CV và mục tiêu công việc.">
+  <meta name="description" content="Cập nhật hồ sơ ứng viên, CV đang dùng và các thông tin sẽ được dùng lại trong đơn ứng tuyển.">
   <link rel="canonical" href="https://ketoandieutam.com/ho-so-ung-vien.html">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/jobs.css">
@@ -26,9 +26,9 @@
         </nav>
         <div class="jobs-hero-grid">
           <div>
-            <span class="jobs-kicker">Hồ sơ nghề nghiệp</span>
+            <span class="jobs-kicker">Hồ sơ ứng viên</span>
             <h1>Cập nhật hồ sơ ứng viên</h1>
-            <p class="jobs-hero-text">Cập nhật thông tin chính để dùng khi ứng tuyển và chia sẻ với nhà tuyển dụng.</p>
+            <p class="jobs-hero-text">Cập nhật các thông tin sẽ được dùng lại khi bạn nộp đơn ứng tuyển.</p>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@
           <section class="jobs-dashboard-panel">
             <div class="jobs-dashboard-panel-head">
               <h2>Thông tin hồ sơ</h2>
-              <span class="jobs-dashboard-note">Thông tin này sẽ dùng chung cho các đơn ứng tuyển của bạn.</span>
+              <span class="jobs-dashboard-note">Những thông tin này sẽ tự điền khi bạn mở đơn ứng tuyển mới.</span>
             </div>
             <form class="jobs-form-grid" id="candidateProfileForm" action="tai-khoan-ung-vien.html" method="post">
               <input type="hidden" name="profile_id" value="ho-so-nguyen-minh-anh">
@@ -78,7 +78,7 @@
                 <input type="text" id="candidatePreferredLocation" name="preferredLocation" required maxlength="160" value="Thủ Đức, TP.HCM · Làm việc kết hợp">
               </label>
               <label class="jobs-filter-field full">
-                <span>Giới thiệu ngắn</span>
+                <span>Giới thiệu ngắn về bạn</span>
                 <textarea id="candidateSummary" name="summary" rows="5" maxlength="1200">Kinh nghiệm tổng hợp số liệu kế toán, theo dõi công nợ, hỗ trợ kê khai thuế và lập báo cáo quản trị định kỳ.</textarea>
               </label>
               <label class="jobs-filter-field full">
@@ -88,14 +88,14 @@
             </form>
             <div class="jobs-portal-actions">
               <button type="submit" form="candidateProfileForm" class="btn-primary-orange">Lưu hồ sơ</button>
-              <a href="tuyen-dung.html#job-list" class="btn-outline-brown">Chọn việc phù hợp để ứng tuyển</a>
+              <a href="tuyen-dung.html#job-list" class="btn-outline-brown">Xem việc phù hợp</a>
             </div>
           </section>
 
           <section class="jobs-dashboard-panel">
             <div class="jobs-dashboard-panel-head">
-              <h2>CV đính kèm</h2>
-              <span class="jobs-dashboard-note">Dùng bản CV hiện tại khi nộp hồ sơ cho nhà tuyển dụng.</span>
+              <h2>CV đang dùng</h2>
+              <span class="jobs-dashboard-note">Bản CV này sẽ được dùng khi bạn nộp hồ sơ cho nhà tuyển dụng.</span>
             </div>
             <div class="jobs-dashboard-list">
               <article>
@@ -104,7 +104,7 @@
               </article>
             </div>
             <div class="jobs-portal-actions" style="margin-top:12px;">
-              <a href="ho-so-ung-vien.html?mode=tai-cv-moi&profile_id=ho-so-nguyen-minh-anh" class="btn-outline-brown">Tải CV mới</a>
+              <a href="ho-so-ung-vien.html?mode=tai-cv-moi&profile_id=ho-so-nguyen-minh-anh" class="btn-outline-brown">Cập nhật CV</a>
             </div>
           </section>
         </div>

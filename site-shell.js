@@ -375,6 +375,61 @@
     return href;
   }
 
+  function normalizeJobDetailLayout() {
+    var body = document.body;
+    if (!body || !body.classList.contains('job-detail-page')) return;
+
+    var topActions = document.querySelector('.job-detail-actions');
+    if (topActions && topActions.parentNode) {
+      topActions.parentNode.removeChild(topActions);
+    }
+
+    var applyBottom = document.querySelector('.job-apply-bottom');
+    var relatedSection = document.querySelector('.jobs-related-section');
+    if (applyBottom) {
+      if (relatedSection && relatedSection.parentNode === applyBottom.parentNode) {
+        applyBottom.parentNode.insertBefore(applyBottom, relatedSection);
+      }
+
+      var message = applyBottom.querySelector('p');
+      if (message) {
+        message.textContent = 'Đã xem xong mô tả? Nếu vị trí này phù hợp, bạn có thể nộp đơn hoặc lưu lại để xem sau.';
+      }
+
+      var actionWrap = applyBottom.querySelector('.job-apply-bottom-actions');
+      if (actionWrap) {
+        var links = actionWrap.querySelectorAll('a');
+        if (links[0]) {
+          links[0].textContent = 'Nộp đơn ứng tuyển';
+          links[0].className = 'btn-primary-orange';
+          links[0].removeAttribute('target');
+          links[0].removeAttribute('rel');
+        }
+        if (links[1]) {
+          links[1].textContent = 'Lưu việc làm';
+          links[1].className = 'btn-outline-brown';
+          links[1].removeAttribute('target');
+          links[1].removeAttribute('rel');
+          links[1].setAttribute('href', path(body.dataset.root || '', 'viec-lam-da-luu.html'));
+        }
+      }
+    }
+
+    var prose = document.querySelector('.job-detail-prose');
+    if (!prose) return;
+
+    var headings = prose.querySelectorAll('h2');
+    Array.prototype.forEach.call(headings, function (heading) {
+      var title = (heading.textContent || '').trim().toLowerCase();
+      if (title !== 'cách ứng tuyển') return;
+      var nextList = heading.nextElementSibling;
+      if (!nextList) return;
+      var firstItem = nextList.querySelector('li');
+      if (!firstItem) return;
+      firstItem.innerHTML = 'Sau khi xem kỹ mô tả, bạn có thể bấm <strong>Nộp đơn ứng tuyển</strong> ngay bên dưới để gửi hồ sơ hoặc bấm <strong>Lưu việc làm</strong> để xem lại sau.';
+    });
+  }
+
   function hydrateJobDetailActions() {
     var body = document.body;
     if (!body || !body.classList.contains('job-detail-page')) return;
@@ -385,8 +440,8 @@
     body.dataset.jobIdSlug = slug;
 
     var isExpired = !!document.querySelector('.job-badge.expired');
-    var applyTargets = document.querySelectorAll('.job-detail-actions .btn-primary-orange, .job-apply-bottom-actions .btn-primary-orange, .job-detail-mobile-bar .btn-primary-orange');
-    var saveTargets = document.querySelectorAll('.job-detail-actions .btn-outline-brown, .job-detail-mobile-bar .btn-outline-brown');
+    var applyTargets = document.querySelectorAll('.job-apply-bottom-actions .btn-primary-orange, .job-detail-mobile-bar .btn-primary-orange');
+    var saveTargets = document.querySelectorAll('.job-apply-bottom-actions .btn-outline-brown, .job-detail-mobile-bar .btn-outline-brown');
 
     Array.prototype.forEach.call(applyTargets, function (anchor) {
       if (!anchor || !anchor.getAttribute) return;
@@ -416,16 +471,15 @@
     if (!isExpired) return;
 
     var hintTargets = [
-      document.querySelector('.job-detail-actions'),
       document.querySelector('.job-apply-bottom')
     ];
-      hintTargets.forEach(function (target) {
-        if (!target || target.querySelector('.jobs-expired-hint')) return;
-        var hint = document.createElement('p');
-        hint.className = 'jobs-dashboard-note jobs-expired-hint';
-        hint.textContent = 'Tin này đã hết hạn nhận hồ sơ. Bạn có thể xem các tin còn đang tuyển.';
-        target.appendChild(hint);
-      });
+    hintTargets.forEach(function (target) {
+      if (!target || target.querySelector('.jobs-expired-hint')) return;
+      var hint = document.createElement('p');
+      hint.className = 'jobs-dashboard-note jobs-expired-hint';
+      hint.textContent = 'Tin này đã hết hạn nhận hồ sơ. Bạn có thể xem các tin còn đang tuyển.';
+      target.appendChild(hint);
+    });
   }
 
   function hydrateCandidatePublicProfileActions() {
@@ -537,6 +591,7 @@
     if (headerHost) headerHost.innerHTML = renderHeader(root, active);
     if (footerHost) footerHost.innerHTML = renderFooter(root);
 
+    normalizeJobDetailLayout();
     initInteractions();
     normalizeBreadcrumbs(document);
     window.setTimeout(function () { normalizeBreadcrumbs(document); }, 80);
@@ -547,5 +602,6 @@
   }
 
   window.KetoanDieuTamShellConfig = config;
+  normalizeJobDetailLayout();
   document.addEventListener('DOMContentLoaded', renderShell);
 })();

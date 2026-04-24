@@ -22,10 +22,9 @@
           <span>/</span>
           <span>Đăng nhập tuyển dụng</span>
         </nav>
-        <span class="jobs-kicker">Đăng nhập tuyển dụng</span>
         <div class="jobs-hero-compact-head jobs-hero-minimal-head">
           <h1>Đăng nhập cho ứng viên và nhà tuyển dụng</h1>
-          <p class="jobs-hero-text">Chọn đúng vai trò để bắt đầu sử dụng.</p>
+          <p class="jobs-hero-text">Chọn đúng vai trò để đăng nhập.</p>
         </div>
       </div>
     </section>
@@ -36,7 +35,7 @@
           <article class="jobs-auth-card" id="dang-nhap-ung-vien">
             <span class="jobs-kicker">Ứng viên</span>
             <h2>Đăng nhập ứng viên</h2>
-            <p>Đăng nhập để xem hồ sơ, việc đã lưu và tình trạng ứng tuyển của bạn.</p>
+            <p>Đăng nhập để xem hồ sơ, việc đã lưu và các đơn đã nộp của bạn.</p>
             <form class="jobs-auth-fields" id="candidateLoginForm" action="tai-khoan-ung-vien.html?from=dang-nhap-ung-vien" method="post" novalidate>
               <label class="jobs-filter-field">
                 <span>Email</span>
@@ -49,13 +48,8 @@
             </form>
             <div class="jobs-auth-actions">
               <button type="submit" form="candidateLoginForm" class="btn-primary-orange">Đăng nhập ứng viên</button>
-              <a href="ho-so-ung-vien.html?from=dang-nhap-ung-vien" class="btn-outline-brown">Tạo hồ sơ ứng viên</a>
+              <a href="ho-so-ung-vien.html?from=dang-nhap-ung-vien" class="btn-outline-brown">Chưa có hồ sơ? Tạo&nbsp;ngay</a>
             </div>
-            <ul class="jobs-auth-list">
-              <li>Xem lại các việc làm bạn đã lưu</li>
-              <li>Cập nhật CV và thông tin liên hệ</li>
-              <li>Theo dõi phản hồi từ nhà tuyển dụng</li>
-            </ul>
           </article>
 
           <article class="jobs-auth-card" id="dang-nhap-nha-tuyen-dung">
@@ -64,7 +58,7 @@
             <p>Đăng nhập để xem tin đang tuyển, đơn ứng tuyển theo từng tin và tiến độ xử lý.</p>
             <form class="jobs-auth-fields" id="employerLoginForm" action="nha-tuyen-dung.html?from=dang-nhap-nha-tuyen-dung" method="post" novalidate>
               <label class="jobs-filter-field">
-                <span>Email công ty</span>
+                <span>Email đăng nhập</span>
                 <input type="email" id="employerLoginEmail" name="email" required autocomplete="email" placeholder="hr@congty.com">
               </label>
               <label class="jobs-filter-field">
@@ -74,13 +68,8 @@
             </form>
             <div class="jobs-auth-actions">
               <button type="submit" form="employerLoginForm" class="btn-primary-orange">Đăng nhập nhà tuyển&nbsp;dụng</button>
-              <a href="dang-tin-tuyen-dung.html" class="btn-outline-brown">Gửi nhu cầu tuyển dụng</a>
+              <a href="dang-tin-tuyen-dung.html" class="btn-outline-brown">Gửi yêu cầu đăng tin</a>
             </div>
-            <ul class="jobs-auth-list">
-              <li>Xem lại các tin tuyển dụng đang mở</li>
-              <li>Theo dõi đơn ứng tuyển theo từng tin</li>
-              <li>Cập nhật trạng thái xử lý hồ sơ</li>
-            </ul>
           </article>
         </div>
       </div>
