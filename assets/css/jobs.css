@@ -2393,6 +2393,87 @@ body.is-request-dialog-open {
   margin: 0;
 }
 
+.saved-jobs-page .jobs-hero-grid,
+.application-list-page .jobs-hero-grid,
+.employer-job-form-page .jobs-hero-grid,
+.employer-manage-jobs-page .jobs-hero-grid,
+.recruiter-applications-page .jobs-hero-grid {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 860px;
+  gap: 18px;
+}
+
+.saved-jobs-page .jobs-hero,
+.application-list-page .jobs-hero,
+.employer-job-form-page .jobs-hero,
+.employer-manage-jobs-page .jobs-hero,
+.recruiter-applications-page .jobs-hero,
+.recruitment-login-page .jobs-hero {
+  padding: 28px 0 18px;
+}
+
+.saved-jobs-page .jobs-section.section-padding,
+.application-list-page .jobs-section.section-padding,
+.employer-job-form-page .jobs-section.section-padding,
+.employer-manage-jobs-page .jobs-section.section-padding,
+.recruiter-applications-page .jobs-section.section-padding,
+.recruitment-login-page .jobs-section.section-padding {
+  padding: 18px 0 64px;
+}
+
+.saved-jobs-page .jobs-hero h1,
+.application-list-page .jobs-hero h1,
+.employer-job-form-page .jobs-hero h1,
+.employer-manage-jobs-page .jobs-hero h1,
+.recruiter-applications-page .jobs-hero h1,
+.recruitment-login-page .jobs-hero h1 {
+  margin-bottom: 10px;
+}
+
+.saved-jobs-page .jobs-hero-text,
+.application-list-page .jobs-hero-text,
+.employer-job-form-page .jobs-hero-text,
+.employer-manage-jobs-page .jobs-hero-text,
+.recruiter-applications-page .jobs-hero-text,
+.recruitment-login-page .jobs-hero-text {
+  max-width: 760px;
+  margin: 0;
+}
+
+.recruitment-login-page .jobs-hero-compact-head {
+  grid-template-columns: 1fr;
+  max-width: 860px;
+  gap: 10px;
+}
+
+.candidate-dashboard-home-page .jobs-hero-grid,
+.employer-dashboard-home-page .jobs-hero-grid {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 860px;
+  gap: 18px;
+}
+
+.candidate-dashboard-home-page .jobs-hero,
+.employer-dashboard-home-page .jobs-hero {
+  padding: 28px 0 18px;
+}
+
+.candidate-dashboard-home-page .jobs-section.section-padding,
+.employer-dashboard-home-page .jobs-section.section-padding {
+  padding: 18px 0 64px;
+}
+
+.candidate-dashboard-home-page .jobs-hero h1,
+.employer-dashboard-home-page .jobs-hero h1 {
+  margin-bottom: 10px;
+}
+
+.candidate-dashboard-home-page .jobs-hero-text,
+.employer-dashboard-home-page .jobs-hero-text {
+  max-width: 760px;
+  margin: 0;
+}
+
 .employer-request-form {
   padding: 30px;
   background: #fff;
@@ -3288,6 +3369,28 @@ body.is-request-dialog-open {
   }
 
   .candidate-profile-page .jobs-section.section-padding {
+    padding: 16px 0 40px;
+  }
+
+  .saved-jobs-page .jobs-hero,
+  .application-list-page .jobs-hero,
+  .employer-job-form-page .jobs-hero,
+  .employer-manage-jobs-page .jobs-hero,
+  .recruiter-applications-page .jobs-hero,
+  .recruitment-login-page .jobs-hero,
+  .candidate-dashboard-home-page .jobs-hero,
+  .employer-dashboard-home-page .jobs-hero {
+    padding: 84px 0 12px;
+  }
+
+  .saved-jobs-page .jobs-section.section-padding,
+  .application-list-page .jobs-section.section-padding,
+  .employer-job-form-page .jobs-section.section-padding,
+  .employer-manage-jobs-page .jobs-section.section-padding,
+  .recruiter-applications-page .jobs-section.section-padding,
+  .recruitment-login-page .jobs-section.section-padding,
+  .candidate-dashboard-home-page .jobs-section.section-padding,
+  .employer-dashboard-home-page .jobs-section.section-padding {
     padding: 16px 0 40px;
   }
 
