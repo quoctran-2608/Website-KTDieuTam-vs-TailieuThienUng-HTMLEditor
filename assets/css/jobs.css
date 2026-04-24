@@ -2348,7 +2348,49 @@ body.is-request-dialog-open {
 }
 
 .employer-request-page .jobs-hero-grid {
-  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.9fr);
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 860px;
+  gap: 20px;
+}
+
+.employer-request-page .jobs-hero {
+  padding: 28px 0 18px;
+}
+
+.employer-request-page .jobs-section.section-padding {
+  padding: 18px 0 64px;
+}
+
+.employer-request-page .jobs-hero h1 {
+  margin-bottom: 10px;
+}
+
+.employer-request-page .jobs-hero-text {
+  max-width: 760px;
+  margin: 0;
+}
+
+.candidate-profile-page .jobs-hero-grid {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 860px;
+  gap: 18px;
+}
+
+.candidate-profile-page .jobs-hero {
+  padding: 28px 0 18px;
+}
+
+.candidate-profile-page .jobs-section.section-padding {
+  padding: 18px 0 64px;
+}
+
+.candidate-profile-page .jobs-hero h1 {
+  margin-bottom: 10px;
+}
+
+.candidate-profile-page .jobs-hero-text {
+  max-width: 760px;
+  margin: 0;
 }
 
 .employer-request-form {
@@ -3231,6 +3273,22 @@ body.is-request-dialog-open {
 
   .jobs-auth-page .jobs-section.section-padding {
     padding: 24px 0 44px;
+  }
+
+  .employer-request-page .jobs-hero {
+    padding: 84px 0 12px;
+  }
+
+  .employer-request-page .jobs-section.section-padding {
+    padding: 16px 0 40px;
+  }
+
+  .candidate-profile-page .jobs-hero {
+    padding: 84px 0 12px;
+  }
+
+  .candidate-profile-page .jobs-section.section-padding {
+    padding: 16px 0 40px;
   }
 
   .jobs-list-page .jobs-pagination {
