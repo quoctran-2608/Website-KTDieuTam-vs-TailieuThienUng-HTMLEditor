@@ -788,7 +788,8 @@
 
         function closeOpsPanel() {
           if (!opsPanel) return;
-          opsPanel.hidden = true;
+          var compact = isCompactOpsMode();
+          opsPanel.hidden = compact;
           opsPanel.classList.remove('is-open');
           if (opsBackdrop) {
             opsBackdrop.hidden = true;
@@ -970,10 +971,10 @@
             }
           });
 
-          card.innerHTML = ''
-            + '<div class="jobs-recruiter-application-head">'
-            +   '<div class="jobs-recruiter-application-id">'
-            +     '<span class="jobs-status-pill jobs-recruiter-application-code is-saved">' + (row.dataset.applicationId || '') + '</span>'
+	          card.innerHTML = ''
+	            + '<div class="jobs-recruiter-application-head">'
+	            +   '<div class="jobs-recruiter-application-id">'
+	            +     '<span class="jobs-status-pill jobs-recruiter-application-code is-saved">' + (row.dataset.applicationId || '') + '</span>'
             +     '<span class="jobs-dashboard-note">' + getRowUpdated(row) + '</span>'
             +   '</div>'
             +   '<span class="jobs-status-pill jobs-recruiter-status-pill ' + getRowStatusClass(row) + '">' + getRowStatusLabel(row) + '</span>'
@@ -987,13 +988,13 @@
             +   '<div class="jobs-recruiter-application-job">'
             +     '<span class="jobs-dashboard-note">Tin tuyển dụng:</span>'
             +     '<a href="' + getRowJobHref(row) + '" class="job-source-link">' + getRowJobText(row) + '</a>'
-            +   '</div>'
-            + '</div>'
-            + '<div class="jobs-recruiter-application-actions">'
-            +   '<a href="' + getRowProfileHref(row) + '" class="btn-outline-brown">Mở hồ sơ</a>'
-	            +   '<button type="button" class="btn-primary-orange jobs-recruiter-manage-btn">Xử lý nhanh</button>'
-            + '</div>'
-            + '<p class="jobs-recruiter-action-tip">' + getRowTip(row) + '</p>';
+	            +   '</div>'
+	            + '</div>'
+	            + '<div class="jobs-recruiter-application-actions">'
+	            +   '<a href="' + getRowProfileHref(row) + '" class="btn-outline-brown jobs-recruiter-card-action jobs-recruiter-card-action--profile" aria-label="Mở hồ sơ của ' + getRowName(row) + '"><i class="fa-regular fa-id-card" aria-hidden="true"></i><span>Mở hồ sơ</span></a>'
+		            +   '<button type="button" class="btn-primary-orange jobs-recruiter-manage-btn jobs-recruiter-card-action jobs-recruiter-card-action--manage" aria-label="Xử lý nhanh đơn ' + (row.dataset.applicationId || '') + '"><i class="fa-solid fa-bolt" aria-hidden="true"></i><span>Xử lý nhanh</span></button>'
+	            + '</div>'
+	            + '<p class="jobs-recruiter-action-tip">' + getRowTip(row) + '</p>';
 
           card.addEventListener('click', function (event) {
             if (event.target.closest('a, button')) return;
