@@ -123,6 +123,7 @@
                     <option value="">Tất cả trạng thái</option>
                     <option value="dang-tuyen">Đang tuyển</option>
                     <option value="nhap">Nháp</option>
+                    <option value="tam-dung">Tạm dừng</option>
                     <option value="sap-het-han">Sắp hết hạn</option>
                     <option value="het-han">Đã hết hạn</option>
                     <option value="da-dong">Đã đóng</option>
@@ -321,7 +322,9 @@
       var ACTION_LABELS = {
         'gia-han': 'gia hạn',
         'dong-tin': 'đóng',
-        'tam-dung': 'tạm dừng'
+        'tam-dung': 'tạm dừng',
+        'dang-tin': 'đăng',
+        'luu-nhap': 'lưu nháp'
       };
 
       function normalizeText(value) {
@@ -347,12 +350,12 @@
       function getTabForStatus(statusKey) {
         if (statusKey === 'dang-tuyen' || statusKey === 'sap-het-han') return 'dang-tuyen';
         if (statusKey === 'da-dong') return 'da-dong';
-        if (statusKey === 'nhap' || statusKey === 'het-han') return 'can-xu-ly';
+        if (statusKey === 'nhap' || statusKey === 'tam-dung' || statusKey === 'het-han') return 'can-xu-ly';
         return 'tat-ca';
       }
 
       function isNeedsAction(statusKey) {
-        return statusKey === 'nhap' || statusKey === 'sap-het-han' || statusKey === 'het-han';
+        return statusKey === 'nhap' || statusKey === 'tam-dung' || statusKey === 'sap-het-han' || statusKey === 'het-han';
       }
 
       function hasSelectOption(select, value) {
@@ -397,6 +400,7 @@
         var initialParams = typeof URLSearchParams === 'function' ? new URLSearchParams(window.location.search || '') : null;
         var requestedAction = initialParams ? String(initialParams.get('action') || '').trim() : '';
         var requestedJobId = initialParams ? String(initialParams.get('job_id') || '').trim() : '';
+        var requestedJobTitle = initialParams ? String(initialParams.get('job_title') || '').trim() : '';
         var highlightedJobId = requestedJobId;
 
         rows.forEach(function (row) {
@@ -490,7 +494,7 @@
           var targetRow = requestedJobId
             ? rows.find(function (row) { return getRowKey(row) === requestedJobId; })
             : null;
-          var targetTitle = targetRow ? getRowTitle(targetRow) : 'tin đã chọn';
+          var targetTitle = targetRow ? getRowTitle(targetRow) : (requestedJobTitle || 'tin đã chọn');
           var actionLabel = ACTION_LABELS[requestedAction] || 'cập nhật';
           var message = 'Bạn vừa ' + actionLabel + ' tin "' + targetTitle + '". Kiểm tra lại trạng thái và chọn thao tác tiếp theo bên dưới.';
 
@@ -622,6 +626,7 @@
           if (searchInput && searchInput.value.trim()) params.set('q', searchInput.value.trim());
           if (sortSelect && sortSelect.value && sortSelect.value !== defaultSort) params.set('sort', sortSelect.value);
           if (requestedJobId) params.set('job_id', requestedJobId);
+          if (requestedJobTitle) params.set('job_title', requestedJobTitle);
           if (requestedAction) params.set('action', requestedAction);
 
           var query = params.toString();
@@ -674,6 +679,8 @@
 
           if (TAB_LABELS[tabFromUrl]) {
             setActiveTab(tabFromUrl);
+          } else if (statusFromUrl && statusSelect && hasSelectOption(statusSelect, statusFromUrl)) {
+            setActiveTab(getTabForStatus(statusFromUrl));
           } else if (requestedJobId) {
             setActiveTab('tat-ca');
           }

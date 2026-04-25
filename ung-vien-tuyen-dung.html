@@ -460,7 +460,7 @@
 	          <section class="jobs-dashboard-panel jobs-recruiter-focus-panel" id="recruiterFocusPanel" hidden>
 	            <div class="jobs-dashboard-panel-head">
 	              <div>
-	                <h2>Xử lý đơn đang chọn</h2>
+		                <h2>Xử lý nhanh đơn đang chọn</h2>
 	                <span class="jobs-dashboard-note" id="recruiterFocusHint" aria-live="polite">Chọn một đơn trong danh sách để bắt đầu xử lý.</span>
 	              </div>
               <button type="button" class="jobs-recruiter-focus-close" id="recruiterFocusClose" aria-label="Đóng bảng xử lý">
@@ -475,7 +475,6 @@
                   <p class="jobs-recruiter-focus-meta" id="recruiterFocusMeta">Kế toán tổng hợp · 5 năm kinh nghiệm · Thanh Xuân, Cầu Giấy (Hà Nội) · Làm việc kết hợp</p>
                   <p class="jobs-recruiter-focus-job" id="recruiterFocusJob">Tin tuyển dụng: Kế toán tổng hợp</p>
                 </div>
-                <a href="ung-vien/do-thuy-linh.html?application_id=app-do-thuy-linh-20260422&job_id=ke-toan-tong-hop-cong-ty-tnhh-abc" class="btn-outline-brown" id="recruiterFocusProfileLink">Mở hồ sơ</a>
               </div>
               <div class="jobs-recruiter-focus-controls">
                 <label class="jobs-filter-field">
@@ -625,14 +624,12 @@
         var focusName = document.getElementById('recruiterFocusName');
         var focusMeta = document.getElementById('recruiterFocusMeta');
         var focusJob = document.getElementById('recruiterFocusJob');
-        var focusProfileLink = document.getElementById('recruiterFocusProfileLink');
         var focusStatus = document.getElementById('recruiterFocusStatus');
         var focusShortlistBtn = document.getElementById('recruiterFocusShortlistBtn');
         var focusNoteBtn = document.getElementById('recruiterFocusNoteBtn');
         var focusTip = document.getElementById('recruiterFocusTip');
 
-	        var focusProfileDefaultLabel = focusProfileLink ? focusProfileLink.textContent.trim() : 'Mở hồ sơ';
-	        var defaultSortValue = sortSelect ? sortSelect.value : 'updated-desc';
+		        var defaultSortValue = sortSelect ? sortSelect.value : 'updated-desc';
 	        var mediaQueryList = typeof window.matchMedia === 'function' ? window.matchMedia('(max-width: 1100px)') : null;
 	        var initialParams = typeof URLSearchParams === 'function' ? new URLSearchParams(window.location.search || '') : null;
 	        var requestedApplicationId = initialParams ? initialParams.get('application_id') || '' : '';
@@ -901,17 +898,6 @@
 	          if (focusNoteBtn) {
 	            focusNoteBtn.disabled = !hasSelection;
 	          }
-	          if (focusProfileLink) {
-	            focusProfileLink.classList.toggle('is-disabled', !hasSelection);
-	            focusProfileLink.setAttribute('aria-disabled', hasSelection ? 'false' : 'true');
-	            if (hasSelection) {
-	              focusProfileLink.removeAttribute('tabindex');
-	              focusProfileLink.textContent = focusProfileDefaultLabel;
-	              return;
-	            }
-	            focusProfileLink.setAttribute('tabindex', '-1');
-	            focusProfileLink.textContent = 'Chọn đơn để mở hồ sơ';
-	          }
 	        }
 
 	        function syncFocusShortlistState() {
@@ -1034,10 +1020,9 @@
 		          if (focusHint) focusHint.textContent = 'Chọn một đơn trong danh sách để cập nhật nhanh.';
 	          if (focusApplicationId) focusApplicationId.textContent = 'Chưa chọn đơn';
 	          if (focusName) focusName.textContent = 'Chưa có đơn được chọn';
-		          if (focusMeta) focusMeta.textContent = 'Không có đơn phù hợp hoặc bạn chưa chọn hồ sơ nào.';
+			          if (focusMeta) focusMeta.textContent = 'Không có đơn phù hợp hoặc bạn chưa chọn hồ sơ nào.';
 	          if (focusJob) focusJob.textContent = 'Tin tuyển dụng: Chưa chọn';
-	          if (focusProfileLink) focusProfileLink.setAttribute('href', '#');
-			          if (focusTip) focusTip.textContent = 'Chọn một đơn để cập nhật trạng thái hoặc thêm ghi chú.';
+	          if (focusTip) focusTip.textContent = 'Chọn một đơn để cập nhật trạng thái hoặc thêm ghi chú.';
 	          if (focusStatus) focusStatus.value = 'dang_xem';
 		          if (focusShortlistBtn) {
 		            focusShortlistBtn.classList.remove('is-active');
@@ -1071,9 +1056,8 @@
 		          if (focusHint) focusHint.textContent = 'Đang xử lý ' + (row.dataset.applicationId || 'đơn đã chọn') + '.';
 	          if (focusApplicationId) focusApplicationId.textContent = row.dataset.applicationId || '';
 	          if (focusName) focusName.textContent = getRowName(row);
-          if (focusMeta) focusMeta.textContent = getRowRole(row) + ' · ' + getRowExperience(row) + ' · ' + getRowLocation(row);
-          if (focusJob) focusJob.textContent = 'Tin tuyển dụng: ' + getRowJobText(row);
-          if (focusProfileLink) focusProfileLink.setAttribute('href', getRowProfileHref(row));
+	          if (focusMeta) focusMeta.textContent = getRowRole(row) + ' · ' + getRowExperience(row) + ' · ' + getRowLocation(row);
+	          if (focusJob) focusJob.textContent = 'Tin tuyển dụng: ' + getRowJobText(row);
           if (focusStatus) focusStatus.value = getRowStatusKey(row);
 		          if (focusTip) focusTip.textContent = getRowTip(row);
 	          if (focusNoteBtn) {
@@ -1269,15 +1253,7 @@
           }
         }
 
-	        if (focusProfileLink) {
-	          focusProfileLink.addEventListener('click', function (event) {
-	            if (focusProfileLink.classList.contains('is-disabled')) {
-	              event.preventDefault();
-	            }
-	          });
-	        }
-
-			        hydrateFiltersFromUrl();
+				        hydrateFiltersFromUrl();
 			        syncShortlistPanel();
 			        if (activityCount && activityFeed) {
 			          var initialActivityCount = activityFeed.querySelectorAll('li:not(.jobs-recruiter-empty-note)').length;

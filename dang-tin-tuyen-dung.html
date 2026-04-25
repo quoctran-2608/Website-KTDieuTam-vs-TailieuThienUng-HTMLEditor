@@ -45,15 +45,15 @@
                   <input type="text" id="companyName" name="companyName" required maxlength="120" autocomplete="organization" placeholder="Ví dụ: Công ty TNHH ABC">
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Người liên hệ</span>
+                  <span>Người phụ trách hồ sơ</span>
                   <input type="text" id="contactName" name="contactName" required maxlength="80" autocomplete="name" placeholder="Nguyễn Văn A">
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Số điện thoại / Zalo liên hệ</span>
+                  <span>Số điện thoại / Zalo người phụ trách</span>
                   <input type="tel" id="contactPhone" name="contactPhone" required inputmode="tel" autocomplete="tel" pattern="^[0-9+\\s.-]{8,20}$" placeholder="09xx xxx xxx">
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Email liên hệ</span>
+                  <span>Email nhận thông báo đơn mới</span>
                   <input type="email" id="contactEmail" name="contactEmail" autocomplete="email" placeholder="hr@congty.com">
                 </label>
                 <label class="jobs-filter-field">
@@ -69,7 +69,7 @@
                   <input type="number" id="jobQuantity" name="jobQuantity" min="1" max="99" step="1" value="1">
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Hạn nhận hồ sơ</span>
+                  <span>Hạn nộp hồ sơ</span>
                   <input type="date" id="jobDeadline" name="jobDeadline">
                 </label>
                 <label class="jobs-filter-field">
@@ -89,19 +89,8 @@
                     <option value="Làm việc từ xa">Làm việc từ xa</option>
                   </select>
                 </label>
-                <label class="jobs-filter-field">
-                  <span>Cách nhận hồ sơ</span>
-                  <select id="applicationMethod" name="applicationMethod">
-                    <option value="Nhận qua email">Nhận qua email</option>
-                    <option value="Nhận qua Zalo">Nhận qua Zalo</option>
-                    <option value="Nhận qua điện thoại">Nhận qua điện thoại</option>
-                    <option value="Nhận theo quy trình riêng">Nhận theo quy trình riêng</option>
-                  </select>
-                </label>
-                <label class="jobs-filter-field">
-                  <span>Email / link nhận hồ sơ</span>
-                  <input type="text" id="applicationContact" name="applicationContact" maxlength="180" placeholder="Ví dụ: cv@congty.com / Link form nhận hồ sơ">
-                </label>
+                <input type="hidden" id="applicationMethod" name="applicationMethod" value="Ứng viên nộp hồ sơ trên Diệu Tâm">
+                <input type="hidden" id="applicationContact" name="applicationContact" value="ung-tuyen.html">
                 <label class="jobs-filter-field">
                   <span>Mức lương tham khảo</span>
                   <input type="text" id="salaryLabel" name="salaryLabel" maxlength="60" placeholder="Ví dụ: 12 - 18 triệu / Thỏa thuận">
@@ -140,7 +129,7 @@
               <h2>Nên chuẩn bị trước khi gửi</h2>
               <ul>
                 <li>Tên công ty, vị trí, nơi làm việc và đầu mối liên hệ rõ ràng.</li>
-                <li>Cách nhận hồ sơ: email, Zalo hoặc quy trình riêng của doanh nghiệp.</li>
+                <li>Email hoặc số điện thoại người phụ trách để Diệu Tâm báo khi có đơn mới.</li>
                 <li>Ít nhất vài ý chính về công việc, yêu cầu và quyền lợi.</li>
                 <li>Nếu tuyển nhiều vị trí, nên gửi mỗi vị trí một form riêng.</li>
               </ul>
@@ -220,17 +209,16 @@
           'Thông tin tuyển dụng gửi Diệu Tâm',
           'Mã tham chiếu: ' + formatRequestCode(payload.requestId),
           'Công ty: ' + payload.companyName,
-          'Người liên hệ: ' + payload.contactName,
+          'Người phụ trách hồ sơ: ' + payload.contactName,
           'SĐT/Zalo: ' + payload.contactPhone,
-          'Email: ' + (payload.contactEmail || 'Chưa cung cấp'),
+          'Email nhận thông báo đơn mới: ' + (payload.contactEmail || 'Chưa cung cấp'),
           'Vị trí cần tuyển: ' + payload.jobTitle,
           'Khu vực làm việc: ' + payload.jobLocation,
           'Số lượng: ' + (payload.jobQuantity || '1'),
-          'Hạn nhận hồ sơ: ' + (payload.jobDeadline || 'Chưa chốt'),
+          'Hạn nộp hồ sơ: ' + (payload.jobDeadline || 'Chưa chốt'),
           'Hình thức: ' + payload.employmentType,
           'Cách làm việc: ' + payload.workMode,
-          'Cách nhận hồ sơ: ' + (payload.applicationMethod || 'Chưa ghi rõ'),
-          'Email / link nhận hồ sơ: ' + (payload.applicationContact || 'Chưa cung cấp'),
+          'Cách ứng tuyển: Ứng viên nộp hồ sơ trên Diệu Tâm',
           'Lương tham khảo: ' + (payload.salaryLabel || 'Chưa công khai'),
           'Yêu cầu kinh nghiệm: ' + (payload.experienceLevel || 'Chưa ghi rõ'),
           'Ghi chú thêm: ' + (payload.jobNotes || 'Không có ghi chú thêm')

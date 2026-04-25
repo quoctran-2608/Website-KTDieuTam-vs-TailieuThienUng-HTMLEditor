@@ -26,7 +26,16 @@
           <div>
             <span class="jobs-kicker">Trang nhà tuyển dụng</span>
             <h1>Theo dõi tin đăng và đơn theo từng vị trí</h1>
-            <p class="jobs-hero-text">Xem nhanh tin đang tuyển, đơn mới và việc nên xử lý trước.</p>
+            <p class="jobs-hero-text">Nắm nhanh tin đang tuyển, đơn mới và việc cần xử lý để không bỏ lỡ ứng viên phù hợp.</p>
+            <div class="jobs-hero-actions employer-dashboard-hero-actions">
+              <a href="dang-tin-viec-lam.html?mode=tao-moi" class="btn-primary-orange">Đăng tin mới</a>
+              <a href="ung-vien-tuyen-dung.html?view=theo-tin&status=moi_nop" class="btn-outline-brown">Xem đơn mới</a>
+            </div>
+          </div>
+          <div class="employer-dashboard-hero-card" aria-label="Tình hình tuyển dụng nhanh">
+            <span>Hôm nay cần chú ý</span>
+            <strong>8 đơn mới · 2 tin cần bổ sung</strong>
+            <p>Ưu tiên phản hồi trong 24 giờ để giữ lịch trao đổi với ứng viên.</p>
           </div>
         </div>
       </div>
@@ -44,85 +53,149 @@
         </aside>
 
         <div class="jobs-dashboard-main">
-          <section class="jobs-dashboard-panel" id="overview">
+          <section class="jobs-dashboard-panel employer-overview-panel" id="overview">
             <div class="jobs-dashboard-panel-head">
-              <h2>Thông tin tài khoản</h2>
-              <a href="dang-tin-viec-lam.html?mode=tao-moi" class="btn-outline-brown">Mở biểu mẫu đăng tin</a>
+              <div>
+                <h2>Tổng quan tuyển dụng</h2>
+                <span class="jobs-dashboard-note">Theo dõi hiệu suất phản hồi, số tin và đơn ứng tuyển ngay trên một màn hình.</span>
+              </div>
+              <span class="jobs-status-pill is-active">Đang hoạt động</span>
             </div>
-            <p class="jobs-dashboard-note">Kiểm tra nhanh doanh nghiệp, người phụ trách và kênh nhận hồ sơ đang dùng.</p>
+            <div class="employer-summary-grid">
+              <article>
+                <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                <strong>3</strong>
+                <span>Tin đang theo dõi</span>
+              </article>
+              <article class="is-hot">
+                <i class="fa-solid fa-file-signature" aria-hidden="true"></i>
+                <strong>8</strong>
+                <span>Đơn mới trong tuần</span>
+              </article>
+              <article>
+                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                <strong>24h</strong>
+                <span>Mục tiêu phản hồi</span>
+              </article>
+              <article class="is-warning">
+                <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                <strong>2</strong>
+                <span>Việc cần xử lý</span>
+              </article>
+            </div>
             <div class="jobs-dashboard-facts">
               <div><span>Doanh nghiệp</span><strong>Công ty TNHH ABC</strong></div>
               <div><span>Người phụ trách</span><strong>Phòng nhân sự</strong></div>
               <div><span>Ngành tuyển chính</span><strong>Kế toán / Thuế / Hành chính nhân sự</strong></div>
-              <div><span>Kênh liên hệ</span><strong>Zalo + Email</strong></div>
+              <div><span>Nhận thông báo</span><strong>Email + Zalo</strong></div>
             </div>
           </section>
 
-          <section class="jobs-dashboard-panel" id="jobs-managing">
+          <section class="jobs-dashboard-panel employer-dashboard-card" id="jobs-managing">
             <div class="jobs-dashboard-panel-head">
-              <h2>Tin tuyển dụng theo trạng thái</h2>
+              <div>
+                <h2>Tin tuyển dụng theo trạng thái</h2>
+                <span class="jobs-dashboard-note">Tập trung vào tin đang nhận đơn, tin nháp và tin đã hết hạn.</span>
+              </div>
               <a href="quan-ly-tin-tuyen-dung.html?tab=tat-ca" class="job-source-link">Xem tất cả tin đăng</a>
             </div>
-            <div class="jobs-dashboard-list">
+            <div class="jobs-dashboard-list employer-status-list">
               <article>
-                <strong><a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc" class="job-source-link">Kế toán tổng hợp</a></strong>
-                <p><span class="jobs-status-pill is-active">Đang tuyển</span> · Hạn nộp 25/04/2026 · <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link">6 đơn ứng tuyển</a></p>
+                <div class="employer-list-item-head">
+                  <strong><a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc" class="job-source-link">Kế toán tổng hợp</a></strong>
+                  <span class="jobs-status-pill is-active">Đang tuyển</span>
+                </div>
+                <p>Hạn nộp 25/04/2026 · 6 đơn ứng tuyển · cần phản hồi 2 đơn mới.</p>
+                <div class="employer-list-actions">
+                  <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link">Xem đơn theo tin</a>
+                </div>
               </article>
               <article>
-                <strong><a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-thue-cong-ty-tnhh-abc" class="job-source-link">Kế toán thuế</a></strong>
-                <p><span class="jobs-status-pill is-reviewing">Nháp</span> · Chưa hiển thị · <a href="dang-tin-viec-lam.html?job_id=ke-toan-thue-cong-ty-tnhh-abc&mode=sua" class="job-source-link">Mở tin để sửa</a></p>
+                <div class="employer-list-item-head">
+                  <strong><a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-thue-cong-ty-tnhh-abc" class="job-source-link">Kế toán thuế</a></strong>
+                  <span class="jobs-status-pill is-reviewing">Nháp</span>
+                </div>
+                <p>Chưa hiển thị · thiếu nội dung quyền lợi và người phụ trách hồ sơ.</p>
+                <div class="employer-list-actions">
+                  <a href="dang-tin-viec-lam.html?job_id=ke-toan-thue-cong-ty-tnhh-abc&mode=sua" class="job-source-link">Hoàn thiện tin</a>
+                </div>
               </article>
               <article>
-                <strong><a href="chi-tiet-tin-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc" class="job-source-link">Hành chính nhân sự</a></strong>
-                <p><span class="jobs-status-pill is-muted">Đã hết hạn</span> · Hạn nộp 12/04/2026 · <a href="quan-ly-tin-tuyen-dung.html?action=gia-han&job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc" class="job-source-link">Gia hạn tin</a></p>
+                <div class="employer-list-item-head">
+                  <strong><a href="chi-tiet-tin-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc" class="job-source-link">Hành chính nhân sự</a></strong>
+                  <span class="jobs-status-pill is-muted">Đã hết hạn</span>
+                </div>
+                <p>Hạn nộp 12/04/2026 · vẫn còn 3 đơn cần kết luận trước khi đóng tin.</p>
+                <div class="employer-list-actions">
+                  <a href="quan-ly-tin-tuyen-dung.html?action=gia-han&job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc" class="job-source-link">Gia hạn hoặc đóng tin</a>
+                </div>
               </article>
             </div>
           </section>
 
-          <section class="jobs-dashboard-panel" id="candidates">
+          <section class="jobs-dashboard-panel employer-dashboard-card" id="candidates">
             <div class="jobs-dashboard-panel-head">
-              <h2>Đơn ứng tuyển gần đây</h2>
-              <span class="jobs-dashboard-note">Ưu tiên xử lý đơn mới trong 24 giờ để tăng tỷ lệ phản hồi.</span>
+              <div>
+                <h2>Đơn ứng tuyển gần đây</h2>
+                <span class="jobs-dashboard-note">Ưu tiên xử lý đơn mới trong 24 giờ để tăng tỷ lệ phản hồi.</span>
+              </div>
+              <a href="ung-vien-tuyen-dung.html?view=theo-tin" class="job-source-link">Xem tất cả đơn</a>
             </div>
-            <div class="jobs-dashboard-list">
+            <div class="jobs-dashboard-list employer-application-list">
               <article>
-                <strong>Nguyễn Minh Anh</strong>
-                <p>Kế toán tổng hợp · Nộp 22/04/2026 · <span class="jobs-status-pill is-saved">Mới nộp</span></p>
+                <div class="employer-list-item-head">
+                  <strong>Nguyễn Minh Anh</strong>
+                  <span class="jobs-status-pill is-saved">Mới nộp</span>
+                </div>
+                <p>Kế toán tổng hợp · Nộp 22/04/2026 · 3 năm kinh nghiệm.</p>
+                <a href="ung-vien-tuyen-dung.html?view=theo-tin&application_id=app-nguyen-minh-anh-20260420" class="job-source-link">Xử lý nhanh</a>
               </article>
               <article>
-                <strong>Trần Bảo Vy</strong>
-                <p>Kế toán thuế · Nộp 18/04/2026 · <span class="jobs-status-pill is-active">Đề nghị phỏng vấn</span></p>
+                <div class="employer-list-item-head">
+                  <strong>Trần Bảo Vy</strong>
+                  <span class="jobs-status-pill is-active">Đề nghị phỏng vấn</span>
+                </div>
+                <p>Kế toán thuế · Nộp 18/04/2026 · cần xác nhận lịch trao đổi.</p>
+                <a href="ung-vien-tuyen-dung.html?view=theo-tin&application_id=app-tran-bao-vy-20260418" class="job-source-link">Mở đơn</a>
               </article>
               <article>
-                <strong>Lê Quốc Hưng</strong>
-                <p>Nhân viên kế toán · Nộp 19/04/2026 · <span class="jobs-status-pill is-muted">Cần bổ sung thông tin</span></p>
+                <div class="employer-list-item-head">
+                  <strong>Lê Quốc Hưng</strong>
+                  <span class="jobs-status-pill is-warning">Cần bổ sung</span>
+                </div>
+                <p>Nhân viên kế toán · Nộp 19/04/2026 · thiếu thông tin CV cập nhật.</p>
+                <a href="ung-vien-tuyen-dung.html?view=theo-tin&application_id=app-le-quoc-hung-20260419" class="job-source-link">Yêu cầu bổ sung</a>
               </article>
-            </div>
-            <div class="jobs-portal-actions" style="margin-top:12px;">
-              <a href="ung-vien-tuyen-dung.html?view=theo-tin" class="btn-outline-brown">Xem danh sách đơn ứng tuyển</a>
             </div>
           </section>
 
-          <section class="jobs-dashboard-panel" id="workflow">
+          <section class="jobs-dashboard-panel employer-dashboard-card" id="workflow">
             <div class="jobs-dashboard-panel-head">
-              <h2>Việc nên xử lý trước</h2>
+              <div>
+                <h2>Việc nên xử lý trước</h2>
+                <span class="jobs-dashboard-note">Sắp theo mức ảnh hưởng tới tốc độ tuyển dụng.</span>
+              </div>
             </div>
-            <div class="jobs-dashboard-list">
+            <div class="jobs-dashboard-list employer-priority-list">
               <article>
-                <strong>1. Hoàn thiện 2 tin còn thiếu thông tin</strong>
-                <p>Bổ sung mức lương, khu vực hoặc cách nhận hồ sơ trước khi cho tin hiển thị.</p>
+                <span class="employer-priority-index">1</span>
+                <strong>Hoàn thiện 2 tin còn thiếu thông tin</strong>
+                <p>Bổ sung mức lương, khu vực hoặc người phụ trách hồ sơ trước khi cho tin hiển thị.</p>
               </article>
               <article>
-                <strong>2. Xem 8 đơn mới trong tuần</strong>
+                <span class="employer-priority-index">2</span>
+                <strong>Xem 8 đơn mới trong tuần</strong>
                 <p>Ưu tiên phản hồi sớm các đơn mới nộp để giữ lịch trao đổi thuận tiện hơn.</p>
               </article>
               <article>
-                <strong>3. Kiểm tra 1 tin đã hết hạn</strong>
+                <span class="employer-priority-index">3</span>
+                <strong>Kiểm tra 1 tin đã hết hạn</strong>
                 <p>Gia hạn nếu vẫn cần thêm hồ sơ, hoặc đóng tin nếu đã tuyển đủ người.</p>
               </article>
             </div>
-            <div class="jobs-portal-actions" style="margin-top:12px;">
+            <div class="jobs-portal-actions employer-dashboard-actions">
               <a href="quan-ly-tin-tuyen-dung.html?tab=can-xu-ly" class="btn-outline-brown">Xem tin cần xử lý</a>
+              <a href="ung-vien-tuyen-dung.html?view=theo-tin&status=moi_nop" class="btn-primary-orange">Xử lý đơn mới</a>
             </div>
           </section>
         </div>
