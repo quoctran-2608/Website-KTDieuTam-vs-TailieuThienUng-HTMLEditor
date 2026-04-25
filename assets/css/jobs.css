@@ -5066,6 +5066,160 @@ body.is-recruiter-ops-open {
     border-color: rgba(182, 141, 64, 0.28);
   }
 
+  .employer-dashboard-home-page .jobs-dashboard-shell,
+  .employer-job-form-page .jobs-dashboard-shell,
+  .employer-manage-jobs-page .jobs-dashboard-shell,
+  .recruiter-applications-page .jobs-dashboard-shell {
+    gap: 14px;
+  }
+
+  .employer-dashboard-home-page .jobs-dashboard-main,
+  .employer-job-form-page .jobs-dashboard-main,
+  .employer-manage-jobs-page .jobs-dashboard-main,
+  .recruiter-applications-page .jobs-dashboard-main {
+    gap: 14px;
+    min-width: 0;
+  }
+
+  .employer-dashboard-home-page .jobs-dashboard-sidebar,
+  .employer-job-form-page .jobs-dashboard-sidebar,
+  .employer-manage-jobs-page .jobs-dashboard-sidebar,
+  .recruiter-applications-page .jobs-dashboard-sidebar {
+    overflow: hidden;
+    padding: 0 12px 2px;
+    margin: 0 -12px;
+  }
+
+  .employer-dashboard-home-page .jobs-dashboard-menu,
+  .employer-job-form-page .jobs-dashboard-menu,
+  .employer-manage-jobs-page .jobs-dashboard-menu,
+  .recruiter-applications-page .jobs-dashboard-menu {
+    padding: 0 0 8px;
+    scroll-padding-inline: 12px;
+  }
+
+  .employer-dashboard-home-page .jobs-dashboard-menu a,
+  .employer-job-form-page .jobs-dashboard-menu a,
+  .employer-manage-jobs-page .jobs-dashboard-menu a,
+  .recruiter-applications-page .jobs-dashboard-menu a {
+    min-height: 40px;
+    padding: 0 14px;
+    scroll-snap-align: start;
+  }
+
+  .employer-dashboard-home-page .jobs-dashboard-panel,
+  .employer-job-form-page .jobs-dashboard-panel,
+  .employer-manage-jobs-page .jobs-dashboard-panel,
+  .recruiter-applications-page .jobs-dashboard-panel {
+    padding: 18px 14px;
+    border-radius: 20px;
+  }
+
+  .employer-dashboard-home-page .jobs-dashboard-panel-head h2,
+  .employer-job-form-page .jobs-dashboard-panel-head h2,
+  .employer-manage-jobs-page .jobs-dashboard-panel-head h2,
+  .recruiter-applications-page .jobs-dashboard-panel-head h2 {
+    font-size: 22px;
+  }
+
+  .employer-dashboard-home-page .jobs-hero-actions > * {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .employer-dashboard-home-page .employer-status-list article,
+  .employer-dashboard-home-page .employer-application-list article,
+  .employer-dashboard-home-page .employer-priority-list article,
+  .employer-job-form-page .jobs-job-form-section,
+  .employer-manage-jobs-page .jobs-manage-job-card,
+  .recruiter-applications-page .jobs-recruiter-application-card {
+    border-radius: 16px;
+  }
+
+  .employer-job-form-page .jobs-job-form-section,
+  .employer-job-form-page .jobs-job-preview-card,
+  .employer-job-form-page .jobs-job-checklist {
+    padding: 14px;
+  }
+
+  .employer-job-form-page .jobs-job-form-section .jobs-filter-field > span {
+    align-items: flex-start;
+  }
+
+  .employer-job-form-page .jobs-char-count {
+    flex: 0 0 auto;
+    margin-top: 2px;
+  }
+
+  .employer-manage-jobs-page .jobs-manage-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    margin-right: -14px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .employer-manage-jobs-page .jobs-manage-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .employer-manage-jobs-page .jobs-manage-tab {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 12.5px;
+  }
+
+  .employer-manage-jobs-page .jobs-manage-summary-card {
+    padding: 13px;
+  }
+
+  .employer-manage-jobs-page .jobs-manage-summary-card strong {
+    font-size: 24px;
+  }
+
+  .employer-manage-jobs-page .jobs-manage-context-note {
+    font-size: 12.5px;
+  }
+
+  .recruiter-applications-page .jobs-recruiter-application-card {
+    padding: 14px;
+  }
+
+  .recruiter-applications-page .jobs-recruiter-application-body {
+    gap: 10px;
+  }
+
+  .recruiter-applications-page .jobs-recruiter-application-job {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .recruiter-applications-page .jobs-recruiter-focus-panel {
+    left: 8px;
+    right: 8px;
+    bottom: calc(8px + env(safe-area-inset-bottom));
+    max-height: calc(100vh - 72px);
+    border-radius: 20px;
+  }
+
+  .recruiter-applications-page .jobs-recruiter-focus-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .recruiter-applications-page .jobs-recruiter-focus-actions .btn-outline-brown {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .employer-dashboard-home-page .job-source-link,
+  .employer-manage-jobs-page .job-source-link,
+  .recruiter-applications-page .job-source-link {
+    overflow-wrap: anywhere;
+  }
+
   .jobs-portal-actions > *,
   .jobs-candidate-actions > *,
   .jobs-auth-actions > * {
@@ -5281,6 +5435,12 @@ body.is-recruiter-ops-open {
     align-items: stretch;
   }
 
+  .employer-dashboard-home-page .jobs-portal-actions > *,
+  .employer-manage-jobs-page .jobs-portal-actions > *,
+  .employer-job-form-page .jobs-portal-actions > * {
+    min-height: 42px;
+  }
+
   .home-recruitment .job-card h3,
   .home-recruitment .job-card-summary {
     min-height: 0;
@@ -5378,6 +5538,21 @@ body.is-recruiter-ops-open {
   .job-detail-support-actions .btn-outline-brown {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .employer-manage-jobs-page .jobs-manage-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recruiter-applications-page .jobs-recruiter-application-actions {
+    grid-template-columns: 1fr 42px;
+  }
+
+  .recruiter-applications-page .jobs-recruiter-card-action--profile {
+    width: 42px;
+    min-width: 42px;
   }
 }
 
