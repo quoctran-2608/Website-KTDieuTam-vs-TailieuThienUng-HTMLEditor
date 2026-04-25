@@ -53,27 +53,27 @@
             </div>
             <p class="jobs-dashboard-note">Theo dõi nhanh số tin đang hiển thị, tin cần xử lý và tổng số đơn theo từng trạng thái.</p>
             <div class="jobs-manage-summary-grid">
-              <article class="jobs-manage-summary-card">
+              <article class="jobs-manage-summary-card is-total">
                 <span>Tổng tin</span>
                 <strong id="manageSummaryTotal">0</strong>
                 <em>Tất cả tin đã tạo</em>
               </article>
-              <article class="jobs-manage-summary-card">
+              <article class="jobs-manage-summary-card is-live">
                 <span>Đang hiển thị</span>
                 <strong id="manageSummaryLive">0</strong>
                 <em>Tin đang nhận hồ sơ</em>
               </article>
-              <article class="jobs-manage-summary-card">
+              <article class="jobs-manage-summary-card is-action">
                 <span>Cần xử lý</span>
                 <strong id="manageSummaryNeedsAction">0</strong>
                 <em>Nháp · sắp hết hạn · đã hết hạn</em>
               </article>
-              <article class="jobs-manage-summary-card">
+              <article class="jobs-manage-summary-card is-warning">
                 <span>Sắp hết hạn</span>
                 <strong id="manageSummaryClosingSoon">0</strong>
                 <em>Nên gia hạn trong hôm nay</em>
               </article>
-              <article class="jobs-manage-summary-card">
+              <article class="jobs-manage-summary-card is-applications">
                 <span>Tổng đơn</span>
                 <strong id="manageSummaryApplications">0</strong>
                 <em>Ứng tuyển từ tất cả tin</em>
@@ -92,19 +92,19 @@
             </div>
 
             <div class="jobs-manage-tabs" role="tablist" aria-label="Lọc nhanh theo nhóm trạng thái">
-              <button type="button" class="jobs-manage-tab is-active" data-tab="tat-ca" role="tab" aria-selected="true">
+              <button type="button" class="jobs-manage-tab is-active" data-tab="tat-ca" role="tab" aria-selected="true" aria-controls="manageJobTable">
                 Tất cả
                 <span class="jobs-manage-tab-count" id="manageTabCountAll">0</span>
               </button>
-              <button type="button" class="jobs-manage-tab" data-tab="dang-tuyen" role="tab" aria-selected="false">
+              <button type="button" class="jobs-manage-tab" data-tab="dang-tuyen" role="tab" aria-selected="false" aria-controls="manageJobTable">
                 Đang tuyển
                 <span class="jobs-manage-tab-count" id="manageTabCountLive">0</span>
               </button>
-              <button type="button" class="jobs-manage-tab" data-tab="can-xu-ly" role="tab" aria-selected="false">
+              <button type="button" class="jobs-manage-tab" data-tab="can-xu-ly" role="tab" aria-selected="false" aria-controls="manageJobTable">
                 Cần xử lý
                 <span class="jobs-manage-tab-count" id="manageTabCountNeedsAction">0</span>
               </button>
-              <button type="button" class="jobs-manage-tab" data-tab="da-dong" role="tab" aria-selected="false">
+              <button type="button" class="jobs-manage-tab" data-tab="da-dong" role="tab" aria-selected="false" aria-controls="manageJobTable">
                 Đã đóng
                 <span class="jobs-manage-tab-count" id="manageTabCountClosed">0</span>
               </button>
@@ -168,16 +168,22 @@
                       </div>
                     </td>
                     <td class="jobs-manage-status-cell">
-                      <span class="jobs-status-pill is-active">Đang tuyển</span>
-                      <span class="jobs-dashboard-note">Tin đang hiển thị và nhận hồ sơ bình thường.</span>
+                      <div class="jobs-manage-cell-stack">
+                        <span class="jobs-status-pill is-active">Đang tuyển</span>
+                        <span class="jobs-dashboard-note">Tin đang hiển thị và nhận hồ sơ bình thường.</span>
+                      </div>
                     </td>
                     <td class="jobs-manage-deadline-cell">
-                      <span class="jobs-manage-deadline-text">25/04/2026</span>
-                      <span class="jobs-dashboard-note jobs-manage-deadline-note">Còn 1 ngày</span>
+                      <div class="jobs-manage-cell-stack">
+                        <span class="jobs-manage-deadline-text">25/04/2026</span>
+                        <span class="jobs-dashboard-note jobs-manage-deadline-note">Còn 1 ngày</span>
+                      </div>
                     </td>
                     <td class="jobs-manage-applications">
-                      <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link jobs-manage-application-link">6 đơn ứng tuyển</a>
-                      <span class="jobs-dashboard-note">2 đơn mới trong 24 giờ qua</span>
+                      <div class="jobs-manage-cell-stack">
+                        <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link jobs-manage-application-link">6 đơn ứng tuyển</a>
+                        <span class="jobs-dashboard-note">2 đơn mới trong 24 giờ qua</span>
+                      </div>
                     </td>
                     <td>
                       <div class="jobs-manage-actions jobs-manage-cell-actions">
@@ -194,16 +200,22 @@
                       </div>
                     </td>
                     <td class="jobs-manage-status-cell">
-                      <span class="jobs-status-pill is-reviewing">Nháp</span>
-                      <span class="jobs-dashboard-note">Thiếu mô tả lương và yêu cầu hồ sơ.</span>
+                      <div class="jobs-manage-cell-stack">
+                        <span class="jobs-status-pill is-reviewing">Nháp</span>
+                        <span class="jobs-dashboard-note">Thiếu mô tả lương và yêu cầu hồ sơ.</span>
+                      </div>
                     </td>
                     <td class="jobs-manage-deadline-cell">
-                      <span class="jobs-manage-deadline-text">Chưa đặt</span>
-                      <span class="jobs-dashboard-note jobs-manage-deadline-note">Cần hoàn thiện trước khi đăng</span>
+                      <div class="jobs-manage-cell-stack">
+                        <span class="jobs-manage-deadline-text">Chưa đặt</span>
+                        <span class="jobs-dashboard-note jobs-manage-deadline-note">Cần hoàn thiện trước khi đăng</span>
+                      </div>
                     </td>
                     <td class="jobs-manage-applications">
-                      <span class="jobs-manage-application-link">0 đơn ứng tuyển</span>
-                      <span class="jobs-dashboard-note">Tin chưa hiển thị công khai</span>
+                      <div class="jobs-manage-cell-stack">
+                        <span class="jobs-manage-application-link">0 đơn ứng tuyển</span>
+                        <span class="jobs-dashboard-note">Tin chưa hiển thị công khai</span>
+                      </div>
                     </td>
                     <td>
                       <div class="jobs-manage-actions jobs-manage-cell-actions">
@@ -220,16 +232,22 @@
                       </div>
                     </td>
                     <td class="jobs-manage-status-cell">
-                      <span class="jobs-status-pill is-warning">Sắp hết hạn</span>
-                      <span class="jobs-dashboard-note">Nên gia hạn sớm để không gián đoạn nhận hồ sơ.</span>
+                      <div class="jobs-manage-cell-stack">
+                        <span class="jobs-status-pill is-warning">Sắp hết hạn</span>
+                        <span class="jobs-dashboard-note">Nên gia hạn sớm để không gián đoạn nhận hồ sơ.</span>
+                      </div>
                     </td>
                     <td class="jobs-manage-deadline-cell">
-                      <span class="jobs-manage-deadline-text">26/04/2026</span>
-                      <span class="jobs-dashboard-note jobs-manage-deadline-note">Còn 2 ngày</span>
+                      <div class="jobs-manage-cell-stack">
+                        <span class="jobs-manage-deadline-text">26/04/2026</span>
+                        <span class="jobs-dashboard-note jobs-manage-deadline-note">Còn 2 ngày</span>
+                      </div>
                     </td>
                     <td class="jobs-manage-applications">
-                      <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-ban-hang-cong-ty-tnhh-thaco-auto-tp-hcm&view=theo-tin" class="job-source-link jobs-manage-application-link">4 đơn ứng tuyển</a>
-                      <span class="jobs-dashboard-note">1 đơn mới trong hôm nay</span>
+                      <div class="jobs-manage-cell-stack">
+                        <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-ban-hang-cong-ty-tnhh-thaco-auto-tp-hcm&view=theo-tin" class="job-source-link jobs-manage-application-link">4 đơn ứng tuyển</a>
+                        <span class="jobs-dashboard-note">1 đơn mới trong hôm nay</span>
+                      </div>
                     </td>
                     <td>
                       <div class="jobs-manage-actions jobs-manage-cell-actions">
@@ -246,16 +264,22 @@
                       </div>
                     </td>
                     <td class="jobs-manage-status-cell">
-                      <span class="jobs-status-pill is-muted">Đã hết hạn</span>
-                      <span class="jobs-dashboard-note">Tin ngừng hiển thị, cần gia hạn hoặc đóng lại.</span>
+                      <div class="jobs-manage-cell-stack">
+                        <span class="jobs-status-pill is-muted">Đã hết hạn</span>
+                        <span class="jobs-dashboard-note">Tin ngừng hiển thị, cần gia hạn hoặc đóng lại.</span>
+                      </div>
                     </td>
                     <td class="jobs-manage-deadline-cell">
-                      <span class="jobs-manage-deadline-text">12/04/2026</span>
-                      <span class="jobs-dashboard-note jobs-manage-deadline-note">Quá hạn 12 ngày</span>
+                      <div class="jobs-manage-cell-stack">
+                        <span class="jobs-manage-deadline-text">12/04/2026</span>
+                        <span class="jobs-dashboard-note jobs-manage-deadline-note">Quá hạn 12 ngày</span>
+                      </div>
                     </td>
                     <td class="jobs-manage-applications">
-                      <a href="ung-vien-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link jobs-manage-application-link">3 đơn ứng tuyển</a>
-                      <span class="jobs-dashboard-note">Đã có hồ sơ, nên quyết định nhanh</span>
+                      <div class="jobs-manage-cell-stack">
+                        <a href="ung-vien-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link jobs-manage-application-link">3 đơn ứng tuyển</a>
+                        <span class="jobs-dashboard-note">Đã có hồ sơ, nên quyết định nhanh</span>
+                      </div>
                     </td>
                     <td>
                       <div class="jobs-manage-actions jobs-manage-cell-actions">
@@ -272,16 +296,22 @@
                       </div>
                     </td>
                     <td class="jobs-manage-status-cell">
-                      <span class="jobs-status-pill is-muted">Đã đóng</span>
-                      <span class="jobs-dashboard-note">Đã tuyển đủ, có thể đăng lại khi cần bổ sung nhân sự.</span>
+                      <div class="jobs-manage-cell-stack">
+                        <span class="jobs-status-pill is-muted">Đã đóng</span>
+                        <span class="jobs-dashboard-note">Đã tuyển đủ, có thể đăng lại khi cần bổ sung nhân sự.</span>
+                      </div>
                     </td>
                     <td class="jobs-manage-deadline-cell">
-                      <span class="jobs-manage-deadline-text">10/04/2026</span>
-                      <span class="jobs-dashboard-note jobs-manage-deadline-note">Kết thúc đợt tuyển trước</span>
+                      <div class="jobs-manage-cell-stack">
+                        <span class="jobs-manage-deadline-text">10/04/2026</span>
+                        <span class="jobs-dashboard-note jobs-manage-deadline-note">Kết thúc đợt tuyển trước</span>
+                      </div>
                     </td>
                     <td class="jobs-manage-applications">
-                      <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-noi-bo-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link jobs-manage-application-link">5 đơn ứng tuyển</a>
-                      <span class="jobs-dashboard-note">Có thể tái sử dụng tệp ứng viên cũ</span>
+                      <div class="jobs-manage-cell-stack">
+                        <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-noi-bo-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link jobs-manage-application-link">5 đơn ứng tuyển</a>
+                        <span class="jobs-dashboard-note">Có thể tái sử dụng tệp ứng viên cũ</span>
+                      </div>
                     </td>
                     <td>
                       <div class="jobs-manage-actions jobs-manage-cell-actions">
@@ -480,6 +510,21 @@
             button.classList.toggle('is-active', isActive);
             button.setAttribute('aria-selected', isActive ? 'true' : 'false');
           });
+        }
+
+        function reconcileStatusWithTab(preferStatus) {
+          if (!statusSelect || !tabInput) return;
+          var statusValue = String(statusSelect.value || '').trim();
+          if (!statusValue) return;
+          var statusTab = getTabForStatus(statusValue);
+          var activeTab = String(tabInput.value || 'tat-ca').trim();
+          if (preferStatus) {
+            setActiveTab(statusTab);
+            return;
+          }
+          if (activeTab !== 'tat-ca' && activeTab !== statusTab) {
+            statusSelect.value = '';
+          }
         }
 
         function buildContextMessage() {
@@ -691,6 +736,7 @@
 
           if (statusSelect && hasSelectOption(statusSelect, statusFromUrl)) {
             statusSelect.value = statusFromUrl;
+            reconcileStatusWithTab(true);
           }
 
           if (sortSelect && hasSelectOption(sortSelect, sortFromUrl)) {
@@ -702,6 +748,7 @@
           button.addEventListener('click', function () {
             var tabKey = String(button.dataset.tab || '').trim();
             setActiveTab(tabKey);
+            reconcileStatusWithTab(false);
             applyFilters();
           });
         });
@@ -711,7 +758,10 @@
         }
 
         if (statusSelect) {
-          statusSelect.addEventListener('change', applyFilters);
+          statusSelect.addEventListener('change', function () {
+            reconcileStatusWithTab(true);
+            applyFilters();
+          });
         }
 
         if (sortSelect) {

@@ -289,9 +289,18 @@
                   <p class="jobs-job-preview-summary" id="jobPreviewSummary">Tóm tắt ngắn sẽ hiển thị ở đây để bạn kiểm tra trước khi đăng.</p>
                 </article>
 
-                <article class="jobs-job-checklist">
-                  <h3>Checklist trước khi đăng</h3>
-                  <ul>
+	                <article class="jobs-job-checklist">
+	                  <h3>Checklist trước khi đăng</h3>
+                  <div class="jobs-job-readiness" aria-live="polite">
+                    <div class="jobs-job-readiness-head">
+                      <span>Độ sẵn sàng đăng</span>
+                      <strong id="jobReadinessScore">0%</strong>
+                    </div>
+                    <div class="jobs-job-readiness-bar" aria-hidden="true">
+                      <span id="jobReadinessBar"></span>
+                    </div>
+                  </div>
+	                  <ul>
                     <li class="jobs-check-item" id="jobCheckTitle">
                       <span class="jobs-check-dot"><i class="fa-solid fa-check"></i></span>
                       <span>Tiêu đề rõ ràng và đúng nhóm vị trí</span>
@@ -434,8 +443,17 @@
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean(value));
       }
 
-      function hasPhone(value) {
-        return clean(value).replace(/\D/g, '').length >= 8;
+	      function hasPhone(value) {
+	        return clean(value).replace(/\D/g, '').length >= 8;
+	      }
+
+      function isFutureOrTodayDate(dateValue) {
+        if (!dateValue) return false;
+        var date = new Date(dateValue + 'T00:00:00');
+        if (Number.isNaN(date.getTime())) return false;
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return date.getTime() >= today.getTime();
       }
 
       function setPillState(node, text, stateClass) {
@@ -730,14 +748,28 @@
         node.classList.toggle('is-done', Boolean(passed));
       }
 
+      function focusChecklistField(fieldId) {
+        var field = document.getElementById(fieldId);
+        if (!field) return;
+        field.focus({ preventScroll: true });
+        field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
       function updateChecklist() {
         var data = collectData();
         var checks = {
           title: data.title.length >= 12 && data.roleGroupKey.length > 0,
           summary: data.summary.length >= 40,
           details: data.description.length >= 120 && data.requirements.length >= 60,
-          deadline: data.salaryLabel.length > 0 && data.deadline.length > 0,
+          deadline: data.salaryLabel.length > 0 && isFutureOrTodayDate(data.deadline),
           contact: isEmail(data.contactEmail) || hasPhone(data.contactPhone)
+        };
+        var fieldByCheck = {
+          title: data.title.length >= 12 ? 'jobPostRoleGroupKey' : 'jobPostTitle',
+          summary: 'jobPostSummary',
+          details: data.description.length >= 120 ? 'jobPostRequirements' : 'jobPostDescription',
+          deadline: data.salaryLabel.length > 0 ? 'jobPostDeadline' : 'jobPostSalaryLabel',
+          contact: data.contactEmail ? 'jobPostContactEmail' : 'jobPostContactPhone'
         };
 
         setCheckState('jobCheckTitle', checks.title);
@@ -748,7 +780,25 @@
 
         var passedCount = Object.keys(checks).filter(function (key) { return checks[key]; }).length;
         var totalCount = Object.keys(checks).length;
+        var score = Math.round((passedCount / totalCount) * 100);
+        var firstIncompleteKey = Object.keys(checks).find(function (key) { return !checks[key]; });
         document.getElementById('jobChecklistSummary').textContent = passedCount + '/' + totalCount + ' mục đã đạt.';
+        var readinessScore = document.getElementById('jobReadinessScore');
+        var readinessBar = document.getElementById('jobReadinessBar');
+        if (readinessScore) {
+          readinessScore.textContent = score + '%';
+          readinessScore.classList.toggle('is-ready', score === 100);
+        }
+        if (readinessBar) {
+          readinessBar.style.width = score + '%';
+          readinessBar.classList.toggle('is-ready', score === 100);
+        }
+        return {
+          checks: checks,
+          passedCount: passedCount,
+          totalCount: totalCount,
+          firstIncompleteFieldId: firstIncompleteKey ? fieldByCheck[firstIncompleteKey] : ''
+        };
       }
 
       function showFeedback(message, type) {
@@ -770,6 +820,10 @@
 
       applyModeTexts();
       fillForm(initialData);
+      var deadlineInput = document.getElementById('jobPostDeadline');
+      if (deadlineInput) {
+        deadlineInput.min = toDateInputValue(new Date());
+      }
       refreshUi();
 
       var trackedInputIds = Object.keys(fieldIdMap).map(function (key) { return fieldIdMap[key]; });
@@ -827,6 +881,12 @@
         }
 
         if (submitAction === 'dang-tin') {
+          var readiness = updateChecklist();
+          if (readiness.passedCount < readiness.totalCount) {
+            showFeedback('Tin chưa đủ điều kiện đăng. Vui lòng hoàn thiện checklist trước khi đăng tin.', 'warning');
+            focusChecklistField(readiness.firstIncompleteFieldId);
+            return;
+          }
           payload.status = 'dang-tuyen';
           document.getElementById('jobPostStatus').value = payload.status;
         }

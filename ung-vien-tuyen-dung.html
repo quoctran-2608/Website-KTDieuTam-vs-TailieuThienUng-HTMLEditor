@@ -28,7 +28,7 @@
           <div>
             <span class="jobs-kicker">Đơn ứng tuyển</span>
             <h1>Theo dõi đơn theo từng tin</h1>
-            <p class="jobs-hero-text">Lọc đơn, mở hồ sơ và cập nhật xử lý theo từng vị trí.</p>
+            <p class="jobs-hero-text">Lọc đơn, mở hồ sơ và xử lý nhanh từng hồ sơ ứng viên.</p>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
         <div class="jobs-dashboard-main">
           <section class="jobs-dashboard-panel jobs-recruiter-filter-panel">
             <div class="jobs-dashboard-panel-head">
-              <h2>Lọc đơn</h2>
+              <h2>Tìm và lọc đơn</h2>
               <span class="jobs-dashboard-note" id="recruiterCandidateCount" aria-live="polite">9 đơn đang hiển thị</span>
             </div>
             <form class="jobs-filter-bar jobs-candidate-filter-bar" id="recruiterCandidateFilterForm" action="ung-vien-tuyen-dung.html" method="get">
@@ -96,7 +96,14 @@
                 <button type="button" class="jobs-filter-reset" id="recruiterCandidateReset">Xóa lọc</button>
               </div>
             </form>
-	          </section>
+            <div class="jobs-recruiter-status-chips" aria-label="Lọc nhanh theo trạng thái">
+              <button type="button" class="is-active" data-recruiter-status-chip="">Tất cả <span>9</span></button>
+              <button type="button" data-recruiter-status-chip="moi_nop">Mới nộp <span>2</span></button>
+              <button type="button" data-recruiter-status-chip="dang_xem">Đang xem <span>2</span></button>
+              <button type="button" data-recruiter-status-chip="moi_phong_van">Phỏng vấn <span>1</span></button>
+              <button type="button" data-recruiter-status-chip="can_bo_sung">Cần bổ sung <span>2</span></button>
+            </div>
+		          </section>
 
           <section class="jobs-dashboard-panel jobs-recruiter-ops-compact" id="recruiterOpsCompactBar">
             <div class="jobs-recruiter-ops-compact-summary" aria-live="polite">
@@ -595,6 +602,7 @@
         var searchInput = document.getElementById('recruiterCandidateSearch');
         var jobSelect = document.getElementById('recruiterCandidateJob');
         var statusSelect = document.getElementById('recruiterCandidateStatus');
+        var statusChips = Array.prototype.slice.call(document.querySelectorAll('[data-recruiter-status-chip]'));
         var sortSelect = document.getElementById('recruiterCandidateSort');
         var resetBtn = document.getElementById('recruiterCandidateReset');
         var countLabel = document.getElementById('recruiterCandidateCount');
@@ -699,8 +707,18 @@
           return String(row.dataset.candidateProfile || '#').trim();
         }
 
-        function getRowTip(row) {
-          return ((row.querySelector('.jobs-recruiter-action-tip') || {}).textContent || '').trim();
+	        function getRowTip(row) {
+	          return ((row.querySelector('.jobs-recruiter-action-tip') || {}).textContent || '').trim();
+	        }
+
+        function syncStatusChips() {
+          if (!statusChips.length) return;
+          var currentStatus = statusSelect ? String(statusSelect.value || '') : '';
+          statusChips.forEach(function (chip) {
+            var active = String(chip.dataset.recruiterStatusChip || '') === currentStatus;
+            chip.classList.toggle('is-active', active);
+            chip.setAttribute('aria-pressed', active ? 'true' : 'false');
+          });
         }
 
 	        function compareRows(a, b, sortValue) {
@@ -1093,14 +1111,16 @@
           if (countLabel) {
             countLabel.textContent = matched.length + ' đơn đang hiển thị';
           }
+          syncStatusChips();
           if (emptyState) {
             emptyState.hidden = matched.length !== 0;
           }
 
-	          if (!matched.length) {
-	            clearFocusRow();
-	            return;
-	          }
+		          if (!matched.length) {
+		            clearFocusRow();
+            updateUrlState();
+		            return;
+		          }
 
 	          if (currentFocusedRow && matched.indexOf(currentFocusedRow) !== -1) {
 	            setFocusRow(currentFocusedRow, { reveal: focusPanel && !focusPanel.hidden });
@@ -1129,16 +1149,26 @@
 	          });
 	        }
 
-	        if (resetBtn) {
-	          resetBtn.addEventListener('click', function () {
-	            requestedApplicationId = '';
-	            form.reset();
+		        if (resetBtn) {
+		          resetBtn.addEventListener('click', function () {
+		            requestedApplicationId = '';
+		            form.reset();
 	            if (sortSelect) {
 	              sortSelect.value = defaultSortValue;
 	            }
 	            applyFilters();
-	          });
-	        }
+		          });
+		        }
+
+        statusChips.forEach(function (chip) {
+          chip.addEventListener('click', function () {
+            requestedApplicationId = '';
+            if (statusSelect) {
+              statusSelect.value = String(chip.dataset.recruiterStatusChip || '');
+            }
+            applyFilters();
+          });
+        });
 
 	        if (focusShortlistBtn) {
 	          focusShortlistBtn.addEventListener('click', function () {
