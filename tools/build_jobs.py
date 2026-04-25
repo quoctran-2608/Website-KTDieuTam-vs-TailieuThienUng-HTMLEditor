@@ -1332,7 +1332,7 @@ def render_candidate_list_page(candidates: list[dict[str, Any]]) -> str:
             <label class="jobs-filter-field">
               <span>Kinh nghiệm</span>
               <select id="candidateFilterExperience">
-{render_candidate_filter_options(experience_options, 'Tất cả mức kinh nghiệm')}
+{render_candidate_filter_options(experience_options, 'Tất cả kinh nghiệm')}
               </select>
             </label>
             <label class="jobs-filter-field">
@@ -1710,7 +1710,7 @@ def render_recruiter_candidate_page(candidates: list[dict[str, Any]]) -> str:
         [f'<option value="">{escape("Tất cả vị trí quan tâm")}</option>'] + [f'<option value="{escape(item)}">{escape(item)}</option>' for item in role_options]
     )
     experience_options_html = "\n".join(
-        [f'<option value="">{escape("Tất cả mức kinh nghiệm")}</option>'] + [f'<option value="{escape(item)}">{escape(item)}</option>' for item in experience_options]
+        [f'<option value="">{escape("Tất cả kinh nghiệm")}</option>'] + [f'<option value="{escape(item)}">{escape(item)}</option>' for item in experience_options]
     )
     status_options_html = "\n".join(
         [f'<option value="">{escape("Tất cả trạng thái")}</option>'] + [f'<option value="{escape(item)}">{escape(status_labels[item])}</option>' for item in status_options]
@@ -2501,7 +2501,7 @@ def render_jobs_filter_script() -> str:
           if (sortValue && sortValue !== 'publish-desc') filters.push({ key: 'sort', label: 'Sắp xếp: ' + getSelectedLabel(sortSelect) });
 
           if (resultCount) {
-            resultCount.textContent = visible + ' vị trí phù hợp';
+            resultCount.textContent = visible + ' vị trí';
           }
           if (emptyState) {
             emptyState.hidden = visible !== 0;
@@ -2968,7 +2968,7 @@ def render_list_page(jobs: list[Job], today: date, featured_candidates: list[dic
               <i class="fa-solid fa-sliders" aria-hidden="true"></i><span>Mở bộ lọc</span>
             </button>
             <form class="jobs-filter-bar" id="jobsFilterForm">
-              <div class="jobs-filter-grid">
+              <div class="jobs-filter-grid jobs-list-filter-grid">
                 <label class="jobs-filter-field">
                   <span>Tìm nhanh</span>
                   <input type="search" id="jobsFilterSearch" placeholder="Tên vị trí, công ty, khu vực...">
@@ -2996,7 +2996,7 @@ def render_list_page(jobs: list[Job], today: date, featured_candidates: list[dic
                 <label class="jobs-filter-field">
                   <span>Kinh nghiệm</span>
                   <select id="jobsFilterExperience">
-{render_select_options(experience_options, 'Tất cả mức kinh nghiệm')}
+{render_select_options(experience_options, 'Tất cả kinh nghiệm')}
                   </select>
                 </label>
                 <label class="jobs-filter-field">
@@ -3008,10 +3008,10 @@ def render_list_page(jobs: list[Job], today: date, featured_candidates: list[dic
                     <option value="featured-first">Nổi bật trước</option>
                   </select>
                 </label>
-              </div>
-              <div class="jobs-filter-meta">
-                <strong id="jobsFilterCount">{len(active_jobs)} vị trí phù hợp</strong>
-                <button type="button" class="jobs-filter-reset" id="jobsFilterReset">Xóa lọc</button>
+                <div class="jobs-list-filter-actions">
+                  <strong id="jobsFilterCount">{len(active_jobs)} vị trí</strong>
+                  <button type="button" class="jobs-filter-reset" id="jobsFilterReset">Xóa lọc</button>
+                </div>
               </div>
             </form>
           </div>

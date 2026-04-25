@@ -379,8 +379,9 @@
 }
 
 .jobs-list-page .jobs-filter-grid {
-  grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: minmax(190px, 1.55fr) repeat(5, minmax(116px, 1fr)) minmax(118px, auto);
   gap: 8px;
+  align-items: center;
 }
 
 .jobs-list-page .jobs-filter-field {
@@ -393,8 +394,9 @@
 
 .jobs-list-page .jobs-filter-field input,
 .jobs-list-page .jobs-filter-field select {
-  height: 38px;
-  padding: 0 12px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0 10px;
   background: #fdfbf7;
   border: 1px solid #eee5d8;
   border-radius: 8px;
@@ -403,6 +405,30 @@
   font-weight: 500;
   color: #1a1d24;
   transition: all 0.2s ease;
+}
+
+.jobs-list-page .jobs-list-filter-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+}
+
+.jobs-list-page .jobs-list-filter-actions strong {
+  min-width: 48px;
+  color: #8c6020;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.jobs-list-page .jobs-list-filter-actions .jobs-filter-reset {
+  min-height: 36px;
+  padding: 0 12px;
+  white-space: nowrap;
 }
 
 .jobs-list-page .jobs-filter-field input:focus,
@@ -7554,6 +7580,11 @@ body.is-recruiter-ops-open {
 
   .jobs-list-page .jobs-filter-grid label:nth-child(1) {
     grid-column: span 2;
+  }
+
+  .jobs-list-page .jobs-list-filter-actions {
+    grid-column: span 2;
+    justify-content: space-between;
   }
 
   .jobs-list-page .jobs-filter-field input,
