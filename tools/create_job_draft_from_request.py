@@ -271,7 +271,15 @@ def build_draft(row: dict) -> tuple[str, str]:
         or role["summary"]
         or f"Tin nháp được tạo từ brief tuyển dụng của {row['companyName']}, cần biên tập lại trước khi public."
     ).strip()
-    tags = list(dict.fromkeys(role["tags"] + infer_tags(row["jobTitle"], row["jobLocation"], employment)))
+    job_location = row.get("jobLocation") or ", ".join(
+        part for part in [
+            row.get("jobAddressDetail", ""),
+            row.get("jobAreaName", ""),
+            row.get("jobProvinceName", ""),
+        ]
+        if part
+    )
+    tags = list(dict.fromkeys(role["tags"] + infer_tags(row["jobTitle"], job_location, employment)))
     description_lines = role["description"][:]
     if row.get("jobNotes"):
         description_lines.insert(0, row["jobNotes"])
@@ -285,7 +293,7 @@ def build_draft(row: dict) -> tuple[str, str]:
     body += "## Yêu cầu\n\n" + "\n".join(f"- {line}" for line in requirements_lines) + "\n\n"
     body += "## Quyền lợi\n\n" + "\n".join(f"- {line}" for line in benefits_lines) + "\n\n"
     body += "## Thời gian và địa điểm làm việc\n\n"
-    body += f"- Địa điểm: {row['jobLocation']}\n"
+    body += f"- Địa điểm: {job_location or row.get('jobLocation', '')}\n"
     body += f"- Hình thức: {row.get('employmentType') or 'Toàn thời gian'}, {row.get('workMode') or 'Làm việc tại văn phòng'}\n\n"
     body += "## Cách ứng tuyển\n\n"
     body += f"- Liên hệ: {row['contactName']} — {row['contactPhone']}\n"
@@ -296,7 +304,11 @@ slug: {slug}
 title: {row['jobTitle']}
 companyName: {row['companyName']}
 companySlug: {company_slug}
-location: {row['jobLocation']}
+location: {job_location or row.get('jobLocation', '')}
+locationProvinceKey: {row.get('jobProvinceKey') or ''}
+locationProvinceLabel: {row.get('jobProvinceName') or ''}
+locationAreaKey: {row.get('jobAreaKey') or ''}
+locationAreaLabel: {row.get('jobAreaName') or ''}
 employmentType: {employment}
 workMode: {work_mode}
 salaryLabel: {row.get('salaryLabel') or 'Thỏa thuận'}

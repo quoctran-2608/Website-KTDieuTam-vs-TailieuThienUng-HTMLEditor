@@ -62,9 +62,26 @@
                   <input type="text" id="jobTitle" name="jobTitle" maxlength="120" placeholder="Kế toán tổng hợp / Kế toán thuế / Hành chính nhân sự...">
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Khu vực làm việc dự kiến</span>
-                  <input type="text" id="jobLocation" name="jobLocation" maxlength="160" placeholder="Quận 7, TP.HCM / Cầu Giấy, Hà Nội...">
+                  <span>Tỉnh / thành phố làm việc dự kiến</span>
+                  <select id="jobProvinceKey" name="jobProvinceKey" data-location-province-select data-location-target-area="jobAreaKey" data-location-display-target="jobLocation" data-location-province-name-target="jobProvinceName" data-location-area-name-target="jobAreaName" data-location-province-key-target="jobProvinceKeyMirror" data-location-area-key-target="jobAreaKeyMirror" data-location-address-target="jobAddressDetail">
+                    <option value="">Chọn tỉnh/thành phố</option>
+                  </select>
                 </label>
+                <label class="jobs-filter-field">
+                  <span>Quận / huyện / khu vực dự kiến</span>
+                  <select id="jobAreaKey" name="jobAreaKey" data-location-area-select disabled>
+                    <option value="">Chọn quận/huyện/khu vực</option>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Địa chỉ chi tiết dự kiến</span>
+                  <input type="text" id="jobAddressDetail" name="jobAddressDetail" maxlength="180" placeholder="Số nhà, đường, phường/xã nếu đã có">
+                </label>
+                <input type="hidden" id="jobLocation" name="jobLocation" value="">
+                <input type="hidden" id="jobProvinceName" name="jobProvinceName" value="">
+                <input type="hidden" id="jobAreaName" name="jobAreaName" value="">
+                <input type="hidden" id="jobProvinceKeyMirror" name="jobProvinceKeyValue" value="">
+                <input type="hidden" id="jobAreaKeyMirror" name="jobAreaKeyValue" value="">
                 <label class="jobs-filter-field">
                   <span>Số lượng</span>
                   <input type="number" id="jobQuantity" name="jobQuantity" min="1" max="99" step="1" value="1">
@@ -152,6 +169,8 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script src="assets/js/vn-location-data.js"></script>
+  <script src="assets/js/jobs-location-picker.js"></script>
   <script>
     (function () {
       var form = document.getElementById('recruitmentLeadForm');
@@ -182,6 +201,11 @@
           contactEmail: value('contactEmail'),
           jobTitle: value('jobTitle'),
           jobLocation: value('jobLocation'),
+          jobProvinceKey: value('jobProvinceKeyMirror') || value('jobProvinceKey'),
+          jobProvinceName: value('jobProvinceName'),
+          jobAreaKey: value('jobAreaKeyMirror') || value('jobAreaKey'),
+          jobAreaName: value('jobAreaName'),
+          jobAddressDetail: value('jobAddressDetail'),
           jobQuantity: value('jobQuantity') || '1',
           jobDeadline: value('jobDeadline'),
           employmentType: value('employmentType'),
@@ -215,9 +239,11 @@
 	          'Người phụ trách tuyển dụng: ' + payload.contactName,
 	          'SĐT/Zalo: ' + payload.contactPhone,
 	          'Email mở tài khoản: ' + payload.contactEmail,
-	          'Vị trí tuyển đầu tiên: ' + (payload.jobTitle || 'Chưa cung cấp'),
-	          'Khu vực làm việc dự kiến: ' + (payload.jobLocation || 'Chưa cung cấp'),
-	          'Số lượng: ' + (payload.jobQuantity || '1'),
+          'Vị trí tuyển đầu tiên: ' + (payload.jobTitle || 'Chưa cung cấp'),
+          'Khu vực làm việc dự kiến: ' + (payload.jobLocation || 'Chưa cung cấp'),
+          'Tỉnh/thành: ' + (payload.jobProvinceName || 'Chưa chọn'),
+          'Quận/huyện/khu vực: ' + (payload.jobAreaName || 'Chưa chọn'),
+          'Số lượng: ' + (payload.jobQuantity || '1'),
 	          'Hạn nộp hồ sơ: ' + (payload.jobDeadline || 'Chưa chốt'),
 	          'Hình thức: ' + payload.employmentType,
 	          'Cách làm việc: ' + payload.workMode,

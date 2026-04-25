@@ -39,6 +39,7 @@ RECRUITMENT_PORTAL_PAGES = [
 DATA_FILE = DATA_DIR / "jobs.json"
 FEED_FILE = FEED_DIR / "tuyen-dung.json"
 CANDIDATE_FEED_FILE = FEED_DIR / "featured-candidates.json"
+LOCATION_DATA_FILE = DATA_DIR / "locations" / "vn-location-options.json"
 JOBS_SITEMAP_FILE = ROOT / "sitemap-jobs.xml"
 SITEMAP_INDEX_FILE = ROOT / "sitemap-index.xml"
 ROBOTS_FILE = ROOT / "robots.txt"
@@ -96,6 +97,24 @@ ROLE_LABELS = {
     "nhan-vien-ke-toan": "Nhân viên kế toán",
     "hanh-chinh-nhan-su": "Hành chính nhân sự",
 }
+
+LOCATION_HINTS = [
+    ("giao long", "vinh-long", "huyen-chau-thanh-831"),
+    ("duong d52", "tp-hcm", "quan-tan-binh-766"),
+    ("phuong binh thuan", "tp-hcm", "quan-7-778"),
+    ("nguyen van linh", "tp-hcm", "quan-7-778"),
+    ("cat lai", "tp-hcm", "thanh-pho-thu-duc-769"),
+    ("duong 66", "tp-hcm", "thanh-pho-thu-duc-769"),
+    ("dai lo binh duong", "tp-hcm", "thanh-pho-thuan-an-725"),
+    ("binh giao", "tp-hcm", "thanh-pho-thuan-an-725"),
+    ("pham van chieu", "tp-hcm", "quan-go-vap-764"),
+    ("duong hong", "tp-hcm", "huyen-binh-chanh-785"),
+    ("xa binh hung", "tp-hcm", "huyen-binh-chanh-785"),
+    ("phan chu trinh", "ha-noi", "quan-hoan-kiem-2"),
+    ("bach mai", "ha-noi", "quan-hai-ba-trung-7"),
+    ("trung kinh", "ha-noi", "quan-cau-giay-5"),
+    ("hoa hung", "tp-hcm", "quan-10-771"),
+]
 
 RECRUITER_STATUS_LABELS = {
     "new": "Hồ sơ mới",
@@ -188,7 +207,207 @@ def fold_text(value: str) -> str:
     return re.sub(r"\s+", " ", folded).strip()
 
 
+def fold_search_text(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", fold_text(value)).strip()
+
+
+def folded_contains(text: str, alias: str) -> bool:
+    folded_text = fold_search_text(text)
+    folded_alias = fold_search_text(alias)
+    if not folded_alias:
+        return False
+    return re.search(rf"(^|\s){re.escape(folded_alias)}($|\s)", folded_text) is not None
+
+
+def load_location_options() -> list[dict[str, Any]]:
+    if not LOCATION_DATA_FILE.exists():
+        return []
+    try:
+        payload = json.loads(LOCATION_DATA_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return []
+    rows = payload.get("provinces") or []
+    return rows if isinstance(rows, list) else []
+
+
+LOCATION_OPTIONS = load_location_options()
+
+
+def find_location_province(key: str) -> dict[str, Any] | None:
+    for province in LOCATION_OPTIONS:
+        if clean_text(province.get("key")) == key:
+            return province
+    return None
+
+
+def find_location_area(province: dict[str, Any] | None, key: str) -> dict[str, Any] | None:
+    if not province:
+        return None
+    for area in province.get("areas") or []:
+        if clean_text(area.get("key")) == key:
+            return area
+    return None
+
+
+def location_province_label(province: dict[str, Any] | None) -> str:
+    if not province:
+        return ""
+    return clean_text(province.get("name") or province.get("fullName"))
+
+
+def location_area_label(area: dict[str, Any] | None) -> str:
+    if not area:
+        return ""
+    return clean_text(area.get("displayName") or area.get("name") or area.get("fullName"))
+
+
+def bare_location_area_name(area: dict[str, Any]) -> str:
+    return re.sub(r"^(Quận|Huyện|Thành phố|Thị xã|TP\.|TX\.)\s+", "", clean_text(area.get("fullName") or area.get("name"))).strip()
+
+
+def location_aliases(row: dict[str, Any], include_heavy: bool = True) -> list[str]:
+    aliases = [
+        clean_text(row.get("name")),
+        clean_text(row.get("fullName")),
+        clean_text(row.get("displayName")),
+    ]
+    if include_heavy:
+        aliases.extend(clean_text(alias) for alias in (row.get("aliases") or []))
+    return [alias for alias in aliases if alias]
+
+
+def resolve_location(text: str, tags: list[str] | None = None) -> dict[str, str]:
+    source = clean_text(" ".join([text or "", " ".join(tags or [])]))
+    folded = fold_search_text(source)
+
+    for pattern, province_key, area_key in LOCATION_HINTS:
+        if folded_contains(folded, pattern):
+            province = find_location_province(province_key)
+            area = find_location_area(province, area_key)
+            if province:
+                province_label = location_province_label(province)
+                area_label = location_area_label(area)
+                return {
+                    "provinceKey": province_key,
+                    "provinceLabel": province_label,
+                    "areaKey": area_key if area else "",
+                    "areaLabel": area_label,
+                    "displayLabel": ", ".join(part for part in [area_label, province_label] if part),
+                }
+
+    best: dict[str, Any] | None = None
+    for province in LOCATION_OPTIONS:
+        province_score = 0
+        for alias in location_aliases(province, include_heavy=False):
+            folded_alias = fold_search_text(alias)
+            if folded_alias and folded_contains(folded, folded_alias):
+                province_score = max(province_score, len(folded_alias) + 35)
+
+        for area in province.get("areas") or []:
+            area_score = 0
+            for alias in location_aliases(area):
+                folded_alias = fold_search_text(alias)
+                if not folded_alias or not folded_contains(folded, folded_alias):
+                    continue
+                score = len(folded_alias)
+                if folded_alias in {fold_search_text(area.get("name", "")), fold_search_text(area.get("fullName", ""))}:
+                    score += 70
+                area_score = max(area_score, score)
+            total_score = province_score + area_score
+            if total_score > 0 and (best is None or total_score > int(best["score"])):
+                best = {"province": province, "area": area, "score": total_score}
+
+        if province_score > 0 and (best is None or province_score > int(best["score"])):
+            best = {"province": province, "area": None, "score": province_score}
+
+    if best:
+        province = best["province"]
+        area = best.get("area")
+        province_label = location_province_label(province)
+        area_label = location_area_label(area)
+        return {
+            "provinceKey": clean_text(province.get("key")),
+            "provinceLabel": province_label,
+            "areaKey": clean_text(area.get("key")) if area else "",
+            "areaLabel": area_label,
+            "displayLabel": ", ".join(part for part in [area_label, province_label] if part) or province_label,
+        }
+
+    location_key, location_label = infer_location_group_legacy(text, tags)
+    return {
+        "provinceKey": location_key,
+        "provinceLabel": location_label,
+        "areaKey": "",
+        "areaLabel": "",
+        "displayLabel": location_label,
+    }
+
+
+def resolve_location_multi(text: str, tags: list[str] | None = None) -> dict[str, str]:
+    resolved = resolve_location(text, tags)
+    province = find_location_province(resolved["provinceKey"])
+    folded = fold_search_text(" ".join([text or "", " ".join(tags or [])]))
+    areas: list[dict[str, Any]] = []
+    if province:
+        for area in province.get("areas") or []:
+            for alias in location_aliases(area):
+                folded_alias = fold_search_text(alias)
+                if not folded_alias or re.match(r"^(phuong|xa|thi tran)\s+\d+$", folded_alias):
+                    continue
+                if folded_contains(folded, folded_alias):
+                    areas.append(area)
+                    break
+    if areas:
+        grouped: dict[str, list[dict[str, Any]]] = {}
+        for area in areas:
+            grouped.setdefault(fold_search_text(bare_location_area_name(area)), []).append(area)
+        deduped: list[dict[str, Any]] = []
+        for key, group in grouped.items():
+            if len(group) == 1:
+                deduped.extend(group)
+                continue
+            contextual = [
+                area for area in group
+                if folded_contains(folded, clean_text(area.get("legacyProvinceName")))
+                or folded_contains(folded, re.sub(r"^(Tỉnh|Thành phố)\s+", "", clean_text(area.get("legacyProvinceName"))))
+            ]
+            deduped.extend(contextual or group)
+        areas = deduped
+    if resolved["areaKey"] and all(clean_text(area.get("key")) != resolved["areaKey"] for area in areas):
+        area = find_location_area(province, resolved["areaKey"])
+        if area:
+            areas.insert(0, area)
+    if not areas:
+        return {
+            **resolved,
+            "areaKeys": resolved["areaKey"],
+            "areaLabels": resolved["areaLabel"],
+        }
+    area_keys = [clean_text(area.get("key")) for area in areas if clean_text(area.get("key"))]
+    area_labels = [location_area_label(area) for area in areas if location_area_label(area)]
+    first_label = area_labels[0] if area_labels else resolved["areaLabel"]
+    return {
+        **resolved,
+        "areaKey": area_keys[0] if area_keys else resolved["areaKey"],
+        "areaLabel": first_label,
+        "areaKeys": ",".join(dict.fromkeys(area_keys)),
+        "areaLabels": ", ".join(dict.fromkeys(area_labels)),
+        "displayLabel": ", ".join(part for part in [first_label, resolved["provinceLabel"]] if part),
+    }
+
+
+def current_province_options() -> list[tuple[str, str]]:
+    if LOCATION_OPTIONS:
+        return [(clean_text(row.get("key")), location_province_label(row)) for row in LOCATION_OPTIONS]
+    return []
+
+
 def infer_location_group(location: str, tags: list[str] | None = None) -> tuple[str, str]:
+    resolved = resolve_location(location, tags)
+    return resolved["provinceKey"], resolved["provinceLabel"]
+
+
+def infer_location_group_legacy(location: str, tags: list[str] | None = None) -> tuple[str, str]:
     folded = fold_text(location)
     tags_text = fold_text(" ".join(tags or []))
     combined = f"{folded} {tags_text}".strip()
@@ -319,9 +538,14 @@ def load_jobs(today: date) -> list[Job]:
         meta["featured"] = bool(meta.get("featured"))
         meta["urgent"] = bool(meta.get("urgent"))
         meta["tags"] = meta.get("tags") or []
-        location_key, location_label = infer_location_group(meta["location"], meta["tags"])
-        meta["locationGroupKey"] = location_key
-        meta["locationGroupLabel"] = location_label
+        location_meta = resolve_location(meta["location"], meta["tags"])
+        meta["locationGroupKey"] = location_meta["provinceKey"]
+        meta["locationGroupLabel"] = location_meta["provinceLabel"]
+        meta["locationProvinceKey"] = location_meta["provinceKey"]
+        meta["locationProvinceLabel"] = location_meta["provinceLabel"]
+        meta["locationAreaKey"] = location_meta["areaKey"]
+        meta["locationAreaLabel"] = location_meta["areaLabel"]
+        meta["locationDisplay"] = location_meta["displayLabel"]
         role_key, role_label = infer_role_group(meta["title"], meta["tags"])
         meta["roleGroupKey"] = role_key
         meta["roleGroupLabel"] = role_label
@@ -410,14 +634,14 @@ def job_card(job: Job, today: date, *, show_employment: bool = True, show_work_m
             meta.get("experienceLevel", ""),
         ]
     )
-    location_label = clean_text(meta.get("locationGroupLabel")) or meta["location"]
+    location_label = clean_text(meta.get("locationDisplay") or meta.get("locationAreaLabel") or meta.get("locationGroupLabel")) or meta["location"]
     salary_label = clean_text(meta.get("salaryLabel")) or "Liên hệ"
     experience_label = display_experience(meta["experienceLevel"])
     deadline_label = format_date_vi(job.deadline)
     badges_html = list_card_badge_html(job, today)
     save_label = f"Lưu việc làm: {meta['title']}"
     return f"""
-      <article class="job-card" data-status="{escape(job.effective_status)}" data-search="{escape(fold_text(search_blob))}" data-location-group="{escape(meta['locationGroupKey'])}" data-role-group="{escape(meta['roleGroupKey'])}" data-employment="{escape(meta['employmentType'])}" data-work-mode="{escape(meta['workMode'])}" data-experience="{escape(meta['experienceLevel'])}" data-featured="{1 if meta.get('featured') else 0}" data-publish-date="{escape(meta['publishDate'])}" data-deadline="{escape(meta['deadline'])}" data-salary-max="{int(meta.get('salaryMax') or 0)}">
+      <article class="job-card" data-status="{escape(job.effective_status)}" data-search="{escape(fold_text(search_blob))}" data-location-group="{escape(meta['locationGroupKey'])}" data-location-area="{escape(clean_text(meta.get('locationAreaKey')))}" data-role-group="{escape(meta['roleGroupKey'])}" data-employment="{escape(meta['employmentType'])}" data-work-mode="{escape(meta['workMode'])}" data-experience="{escape(meta['experienceLevel'])}" data-featured="{1 if meta.get('featured') else 0}" data-publish-date="{escape(meta['publishDate'])}" data-deadline="{escape(meta['deadline'])}" data-salary-max="{int(meta.get('salaryMax') or 0)}">
         <div class="job-card-top">
           <div class="job-card-badges">
             {badges_html}
@@ -633,6 +857,11 @@ def load_featured_candidates(limit: int = 6) -> list[dict[str, Any]]:
         location_label = clean_text(row.get("locationLabel"))
         if not all([full_name, headline, intro, experience_label, location_label]):
             continue
+        location_meta = resolve_location_multi(" ".join([
+            location_label,
+            clean_text(row.get("desiredWorkArea")),
+            clean_text(row.get("addressPublic")),
+        ]))
 
         skills: list[str] = []
         for skill in row.get("skills") or []:
@@ -651,6 +880,12 @@ def load_featured_candidates(limit: int = 6) -> list[dict[str, Any]]:
                 "intro": intro,
                 "experienceLabel": experience_label,
                 "locationLabel": location_label,
+                "locationProvinceKey": location_meta["provinceKey"],
+                "locationProvinceLabel": location_meta["provinceLabel"],
+                "locationAreaKey": location_meta["areaKey"],
+                "locationAreaLabel": location_meta["areaLabel"],
+                "locationAreaKeys": location_meta["areaKeys"],
+                "locationAreaLabels": location_meta["areaLabels"],
                 "salaryExpectation": compact_salary_label(clean_text(row.get("salaryExpectation")) or "Theo thỏa thuận"),
                 "availabilityLabel": clean_text(row.get("availabilityLabel")) or "Sẵn sàng trao đổi",
                 "updatedLabel": format_candidate_updated_label(clean_text(row.get("updatedDate"))),
@@ -722,6 +957,7 @@ def map_candidate_payload(row: dict[str, Any]) -> dict[str, Any] | None:
     desired_work_area = clean_text(row.get("desiredWorkArea"))
     if not desired_work_area:
         desired_work_area = address_public or clean_text(location_label.split("·")[0])
+    location_meta = resolve_location_multi(" ".join([desired_work_area, address_public, location_label]))
     profile_highlights: list[str] = []
     for item in row.get("highlights") or []:
         text = clean_text(item)
@@ -743,6 +979,12 @@ def map_candidate_payload(row: dict[str, Any]) -> dict[str, Any] | None:
         "profileHighlights": profile_highlights[:4],
         "experienceLabel": experience_label,
         "locationLabel": location_label,
+        "locationProvinceKey": location_meta["provinceKey"],
+        "locationProvinceLabel": location_meta["provinceLabel"],
+        "locationAreaKey": location_meta["areaKey"],
+        "locationAreaLabel": location_meta["areaLabel"],
+        "locationAreaKeys": location_meta["areaKeys"],
+        "locationAreaLabels": location_meta["areaLabels"],
         "avatarDataUri": build_candidate_avatar_data_uri(full_name, slug),
         "avatarSrc": avatar_image or build_candidate_avatar_data_uri(full_name, slug),
         "salaryExpectation": compact_salary_label(clean_text(row.get("salaryExpectation")) or "Theo thỏa thuận"),
@@ -818,7 +1060,7 @@ def candidate_list_card(candidate: dict[str, Any]) -> str:
     search_blob = clean_text(candidate.get("searchText"))
     avatar_thumb = render_candidate_avatar_thumb(candidate, "showcase")
     return f"""
-      <article class="jobs-candidate-card jobs-candidate-list-card" data-search="{escape(search_blob)}" data-location="{escape(candidate['locationLabel'])}" data-experience="{escape(candidate['experienceLabel'])}" data-updated-date="{escape(candidate['updatedDate']) or '1970-01-01'}" data-featured="{1 if candidate.get('featured') else 0}">
+      <article class="jobs-candidate-card jobs-candidate-list-card" data-search="{escape(search_blob)}" data-location="{escape(candidate['locationLabel'])}" data-location-province="{escape(clean_text(candidate.get('locationProvinceKey')))}" data-location-area="{escape(clean_text(candidate.get('locationAreaKeys') or candidate.get('locationAreaKey')))}" data-experience="{escape(candidate['experienceLabel'])}" data-updated-date="{escape(candidate['updatedDate']) or '1970-01-01'}" data-featured="{1 if candidate.get('featured') else 0}">
         <a href="{escape(candidate['profilePath'])}" class="jobs-candidate-card-link" aria-label="Xem chi tiết hồ sơ {escape(candidate['fullName'])}">
           <div class="jobs-candidate-card-head">
             {avatar_thumb}
@@ -878,6 +1120,7 @@ def render_candidates_filter_script() -> str:
         var countLabel = document.getElementById('candidateFilterCount');
         var searchInput = document.getElementById('candidateFilterSearch');
         var locationSelect = document.getElementById('candidateFilterLocation');
+        var locationAreaSelect = document.getElementById('candidateFilterArea');
         var experienceSelect = document.getElementById('candidateFilterExperience');
         var sortSelect = document.getElementById('candidateSortOrder');
         var resetBtn = document.getElementById('candidateFilterReset');
@@ -933,18 +1176,21 @@ def render_candidates_filter_script() -> str:
         function applyFilters(options) {
           options = options || {};
           var query = normalizeText(searchInput ? searchInput.value : '');
-          var location = normalizeText(locationSelect ? locationSelect.value : '');
+          var location = locationSelect ? locationSelect.value : '';
+          var locationArea = locationAreaSelect ? locationAreaSelect.value : '';
           var experience = normalizeText(experienceSelect ? experienceSelect.value : '');
           var sortValue = sortSelect ? sortSelect.value : 'updated-desc';
 
           var matched = cards.filter(function (card) {
             var searchBlob = normalizeText(card.dataset.search || card.textContent || '');
-            var locationValue = normalizeText(card.dataset.location || '');
+            var locationValue = card.dataset.locationProvince || '';
+            var locationAreaValues = String(card.dataset.locationArea || '').split(',');
             var experienceValue = normalizeText(card.dataset.experience || '');
             var matchesQuery = !query || searchBlob.indexOf(query) !== -1;
             var matchesLocation = !location || locationValue === location;
+            var matchesLocationArea = !locationArea || locationAreaValues.indexOf(locationArea) !== -1;
             var matchesExperience = !experience || experienceValue === experience;
-            return matchesQuery && matchesLocation && matchesExperience;
+            return matchesQuery && matchesLocation && matchesLocationArea && matchesExperience;
           });
 
           matched.sort(function (a, b) { return compareCards(a, b, sortValue); });
@@ -977,6 +1223,7 @@ def render_candidates_filter_script() -> str:
         if (resetBtn) {
           resetBtn.addEventListener('click', function () {
             form.reset();
+            if (locationSelect) locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
             applyFilters();
           });
         }
@@ -1019,7 +1266,6 @@ def render_candidates_filter_script() -> str:
 
 def render_candidate_list_page(candidates: list[dict[str, Any]]) -> str:
     candidate_cards = "\n".join(candidate_list_card(candidate) for candidate in candidates)
-    location_options = build_candidate_filter_options(candidates, "locationLabel")
     experience_options = build_candidate_filter_options(candidates, "experienceLabel")
     featured_count = sum(1 for candidate in candidates if candidate.get("featured"))
 
@@ -1074,9 +1320,13 @@ def render_candidate_list_page(candidates: list[dict[str, Any]]) -> str:
               <input type="search" id="candidateFilterSearch" placeholder="Tên ứng viên, vị trí, kỹ năng...">
             </label>
             <label class="jobs-filter-field">
-              <span>Khu vực</span>
-              <select id="candidateFilterLocation">
-{render_candidate_filter_options(location_options, 'Tất cả khu vực')}
+              <span>Tỉnh / thành phố</span>
+              <select id="candidateFilterLocation" data-location-province-select data-location-mode="filter" data-location-target-area="candidateFilterArea">
+              </select>
+            </label>
+            <label class="jobs-filter-field">
+              <span>Quận / huyện / khu vực</span>
+              <select id="candidateFilterArea" data-location-area-select data-location-mode="filter" disabled>
               </select>
             </label>
             <label class="jobs-filter-field">
@@ -1114,6 +1364,8 @@ def render_candidate_list_page(candidates: list[dict[str, Any]]) -> str:
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script src="assets/js/vn-location-data.js"></script>
+  <script src="assets/js/jobs-location-picker.js"></script>
 {render_candidates_filter_script()}
 </body>
 </html>
@@ -1129,7 +1381,7 @@ def render_recruiter_candidate_rows(candidates: list[dict[str, Any]]) -> str:
         )
         rows.append(
             f"""
-                  <tr class="jobs-recruiter-candidate-row" data-candidate-id="{escape(candidate['id'])}" data-candidate-name="{escape(candidate['fullName'])}" data-candidate-role="{escape(candidate['targetRole'])}" data-candidate-profile="{escape(candidate['profilePath'])}" data-search="{escape(candidate['searchText'])}" data-role="{escape(candidate['targetRole'])}" data-experience="{escape(candidate['experienceLabel'])}" data-status="{escape(candidate['recruiterStatus'])}" data-updated-date="{escape(candidate['updatedDate']) or '1970-01-01'}">
+                  <tr class="jobs-recruiter-candidate-row" data-candidate-id="{escape(candidate['id'])}" data-candidate-name="{escape(candidate['fullName'])}" data-candidate-role="{escape(candidate['targetRole'])}" data-candidate-profile="{escape(candidate['profilePath'])}" data-search="{escape(candidate['searchText'])}" data-role="{escape(candidate['targetRole'])}" data-experience="{escape(candidate['experienceLabel'])}" data-location-province="{escape(clean_text(candidate.get('locationProvinceKey')))}" data-location-area="{escape(clean_text(candidate.get('locationAreaKeys') or candidate.get('locationAreaKey')))}" data-status="{escape(candidate['recruiterStatus'])}" data-updated-date="{escape(candidate['updatedDate']) or '1970-01-01'}">
                     <td>
                       <div class="jobs-recruiter-candidate-name">
                         <strong>{escape(candidate['fullName'])}</strong>
@@ -1206,6 +1458,8 @@ def render_recruiter_candidate_filter_script() -> str:
         var rows = Array.prototype.slice.call(table.querySelectorAll('.jobs-recruiter-candidate-row'));
         var searchInput = document.getElementById('recruiterCandidateSearch');
         var roleSelect = document.getElementById('recruiterCandidateRole');
+        var locationSelect = document.getElementById('recruiterCandidateLocation');
+        var locationAreaSelect = document.getElementById('recruiterCandidateArea');
         var experienceSelect = document.getElementById('recruiterCandidateExperience');
         var statusSelect = document.getElementById('recruiterCandidateStatus');
         var sortSelect = document.getElementById('recruiterCandidateSort');
@@ -1297,6 +1551,8 @@ def render_recruiter_candidate_filter_script() -> str:
         function applyFilters() {
           var query = normalizeText(searchInput ? searchInput.value : '');
           var role = normalizeText(roleSelect ? roleSelect.value : '');
+          var location = locationSelect ? locationSelect.value : '';
+          var locationArea = locationAreaSelect ? locationAreaSelect.value : '';
           var experience = normalizeText(experienceSelect ? experienceSelect.value : '');
           var status = normalizeText(statusSelect ? statusSelect.value : '');
           var sortValue = sortSelect ? sortSelect.value : 'updated-desc';
@@ -1304,13 +1560,17 @@ def render_recruiter_candidate_filter_script() -> str:
           var matched = rows.filter(function (row) {
             var searchBlob = normalizeText(row.dataset.search || row.textContent || '');
             var rowRole = normalizeText(row.dataset.role || '');
+            var rowLocation = row.dataset.locationProvince || '';
+            var rowLocationAreas = String(row.dataset.locationArea || '').split(',');
             var rowExperience = normalizeText(row.dataset.experience || '');
             var rowStatus = normalizeText(row.dataset.status || '');
             var matchesQuery = !query || searchBlob.indexOf(query) !== -1;
             var matchesRole = !role || rowRole === role;
+            var matchesLocation = !location || rowLocation === location;
+            var matchesLocationArea = !locationArea || rowLocationAreas.indexOf(locationArea) !== -1;
             var matchesExperience = !experience || rowExperience === experience;
             var matchesStatus = !status || rowStatus === status;
-            return matchesQuery && matchesRole && matchesExperience && matchesStatus;
+            return matchesQuery && matchesRole && matchesLocation && matchesLocationArea && matchesExperience && matchesStatus;
           });
 
           matched.sort(function (a, b) { return compareRows(a, b, sortValue); });
@@ -1337,6 +1597,7 @@ def render_recruiter_candidate_filter_script() -> str:
         if (resetBtn) {
           resetBtn.addEventListener('click', function () {
             form.reset();
+            if (locationSelect) locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
             applyFilters();
           });
         }
@@ -1531,6 +1792,16 @@ def render_recruiter_candidate_page(candidates: list[dict[str, Any]]) -> str:
                   </select>
                 </label>
                 <label class="jobs-filter-field">
+                  <span>Tỉnh / thành phố</span>
+                  <select id="recruiterCandidateLocation" data-location-province-select data-location-mode="filter" data-location-target-area="recruiterCandidateArea">
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Quận / huyện / khu vực</span>
+                  <select id="recruiterCandidateArea" data-location-area-select data-location-mode="filter" disabled>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
                   <span>Kinh nghiệm</span>
                   <select id="recruiterCandidateExperience">
 {experience_options_html}
@@ -1627,6 +1898,8 @@ def render_recruiter_candidate_page(candidates: list[dict[str, Any]]) -> str:
     </div>
   </div>
   <script src="site-shell.js"></script>
+  <script src="assets/js/vn-location-data.js"></script>
+  <script src="assets/js/jobs-location-picker.js"></script>
 {render_recruiter_candidate_filter_script()}
 </body>
 </html>
@@ -2007,6 +2280,7 @@ def render_jobs_filter_script() -> str:
         var emptyState = document.getElementById('jobsEmptyState');
         var searchInput = document.getElementById('jobsFilterSearch');
         var locationSelect = document.getElementById('jobsFilterLocation');
+        var locationAreaSelect = document.getElementById('jobsFilterArea');
         var roleSelect = document.getElementById('jobsFilterRole');
         var employmentSelect = document.getElementById('jobsFilterEmployment');
         var workModeSelect = document.getElementById('jobsFilterWorkMode');
@@ -2182,6 +2456,7 @@ def render_jobs_filter_script() -> str:
           var keepPage = options && options.keepPage;
           var searchValue = normalizeText(searchInput ? searchInput.value : '');
           var locationValue = locationSelect ? locationSelect.value : '';
+          var locationAreaValue = locationAreaSelect ? locationAreaSelect.value : '';
           var roleValue = roleSelect ? roleSelect.value : '';
           var employmentValue = employmentSelect ? employmentSelect.value : '';
           var workModeValue = workModeSelect ? workModeSelect.value : '';
@@ -2193,12 +2468,13 @@ def render_jobs_filter_script() -> str:
           cards.forEach(function (card) {
             var matchesSearch = !searchValue || (card.dataset.search || '').indexOf(searchValue) !== -1;
             var matchesLocation = !locationValue || (card.dataset.locationGroup || '') === locationValue;
+            var matchesLocationArea = !locationAreaValue || (card.dataset.locationArea || '') === locationAreaValue;
             var matchesRole = !roleValue || (card.dataset.roleGroup || '') === roleValue;
             var matchesEmployment = !employmentValue || (card.dataset.employment || '') === employmentValue;
             var matchesWorkMode = !workModeValue || (card.dataset.workMode || '') === workModeValue;
             var matchesExperience = !experienceValue || (card.dataset.experience || '') === experienceValue;
 
-            var show = matchesSearch && matchesLocation && matchesRole && matchesEmployment && matchesWorkMode && matchesExperience;
+            var show = matchesSearch && matchesLocation && matchesLocationArea && matchesRole && matchesEmployment && matchesWorkMode && matchesExperience;
             card.classList.toggle('is-hidden', !show);
             card.classList.remove('is-page-hidden');
             if (show) {
@@ -2216,7 +2492,8 @@ def render_jobs_filter_script() -> str:
 
           var filters = [];
           if (searchValue) filters.push({ key: 'search', label: 'Từ khóa: ' + (searchInput ? searchInput.value.trim() : '') });
-          if (locationValue) filters.push({ key: 'location', label: 'Khu vực: ' + getSelectedLabel(locationSelect) });
+          if (locationValue) filters.push({ key: 'location', label: 'Tỉnh/thành: ' + getSelectedLabel(locationSelect) });
+          if (locationAreaValue) filters.push({ key: 'locationArea', label: 'Khu vực: ' + getSelectedLabel(locationAreaSelect) });
           if (roleValue) filters.push({ key: 'role', label: 'Vai trò: ' + getSelectedLabel(roleSelect) });
           if (employmentValue) filters.push({ key: 'employment', label: 'Hình thức: ' + getSelectedLabel(employmentSelect) });
           if (workModeValue) filters.push({ key: 'workMode', label: 'Cách làm việc: ' + getSelectedLabel(workModeSelect) });
@@ -2272,11 +2549,16 @@ def render_jobs_filter_script() -> str:
             var key = button.dataset.clearKey || '';
             if (key === 'all') {
               form.reset();
+              if (locationSelect) locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
               applyFilters();
               return;
             }
             if (key === 'search' && searchInput) searchInput.value = '';
-            if (key === 'location' && locationSelect) locationSelect.value = '';
+            if (key === 'location' && locationSelect) {
+              locationSelect.value = '';
+              locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+            if (key === 'locationArea' && locationAreaSelect) locationAreaSelect.value = '';
             if (key === 'role' && roleSelect) roleSelect.value = '';
             if (key === 'employment' && employmentSelect) employmentSelect.value = '';
             if (key === 'workMode' && workModeSelect) workModeSelect.value = '';
@@ -2602,7 +2884,7 @@ def render_list_page(jobs: list[Job], today: date, featured_candidates: list[dic
     featured_candidates = featured_candidates or []
     active_jobs = [job for job in jobs if job.effective_status == "active"]
     role_options = sorted({(job.meta["roleGroupKey"], job.meta["roleGroupLabel"]) for job in active_jobs}, key=lambda item: item[1])
-    location_options = sorted({(job.meta["locationGroupKey"], job.meta["locationGroupLabel"]) for job in active_jobs}, key=lambda item: item[1])
+    location_options = current_province_options() or sorted({(job.meta["locationGroupKey"], job.meta["locationGroupLabel"]) for job in active_jobs}, key=lambda item: item[1])
     role_counts: dict[str, int] = {}
     for job in active_jobs:
         role_key = job.meta["roleGroupKey"]
@@ -2692,9 +2974,15 @@ def render_list_page(jobs: list[Job], today: date, featured_candidates: list[dic
                   <input type="search" id="jobsFilterSearch" placeholder="Tên vị trí, công ty, khu vực...">
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Khu vực</span>
-                  <select id="jobsFilterLocation">
-{render_select_options(location_options, 'Tất cả khu vực')}
+                  <span>Tỉnh / thành phố</span>
+                  <select id="jobsFilterLocation" data-location-province-select data-location-mode="filter" data-location-target-area="jobsFilterArea">
+{render_select_options(location_options, 'Tất cả tỉnh/thành')}
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Quận / huyện / khu vực</span>
+                  <select id="jobsFilterArea" data-location-area-select data-location-mode="filter" disabled>
+                    <option value="">Tất cả quận/huyện/khu vực</option>
                   </select>
                 </label>
                 <label class="jobs-filter-field">
@@ -2773,7 +3061,9 @@ def render_list_page(jobs: list[Job], today: date, featured_candidates: list[dic
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
-{render_jobs_filter_script()}
+  <script src="assets/js/vn-location-data.js"></script>
+  <script src="assets/js/jobs-location-picker.js"></script>
+  {render_jobs_filter_script()}
 </body>
 </html>
 """
@@ -2782,7 +3072,7 @@ def render_list_page(jobs: list[Job], today: date, featured_candidates: list[dic
 def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
     meta = job.meta
     role_label = clean_text(meta.get("roleGroupLabel")) or "Kế toán"
-    location_group_label = clean_text(meta.get("locationGroupLabel")) or "Đang cập nhật"
+    location_group_label = clean_text(meta.get("locationDisplay") or meta.get("locationAreaLabel") or meta.get("locationGroupLabel")) or "Đang cập nhật"
     salary_label = meta.get("salaryLabel") or "Liên hệ"
     experience_label = display_experience(meta.get("experienceLevel") or "Đang cập nhật")
     employment_label = display_employment(meta.get("employmentType") or "Đang cập nhật")
@@ -2844,7 +3134,7 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
                 <h3><a href="../{escape(related.href)}">{escape(related.meta['title'])}</a></h3>
                 <p>{escape(related.meta['summary'])}</p>
                 <div class="jobs-related-meta">
-                  <span>{escape(related.meta.get('locationGroupLabel') or related.meta.get('location') or 'Đang cập nhật')}</span>
+                  <span>{escape(related.meta.get('locationDisplay') or related.meta.get('locationAreaLabel') or related.meta.get('locationGroupLabel') or related.meta.get('location') or 'Đang cập nhật')}</span>
                   <span>{escape(related.meta.get('salaryLabel') or 'Liên hệ')}</span>
                 </div>
               </article>
@@ -2969,6 +3259,11 @@ def build_json_payload(jobs: list[Job]) -> list[dict[str, Any]]:
                 "location": job.meta["location"],
                 "locationGroupKey": job.meta["locationGroupKey"],
                 "locationGroupLabel": job.meta["locationGroupLabel"],
+                "locationProvinceKey": job.meta.get("locationProvinceKey") or job.meta["locationGroupKey"],
+                "locationProvinceLabel": job.meta.get("locationProvinceLabel") or job.meta["locationGroupLabel"],
+                "locationAreaKey": job.meta.get("locationAreaKey") or "",
+                "locationAreaLabel": job.meta.get("locationAreaLabel") or "",
+                "locationDisplay": job.meta.get("locationDisplay") or job.meta.get("locationGroupLabel") or "",
                 "roleGroupKey": job.meta["roleGroupKey"],
                 "roleGroupLabel": job.meta["roleGroupLabel"],
                 "salaryLabel": job.meta.get("salaryLabel") or "",

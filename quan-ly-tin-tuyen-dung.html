@@ -130,6 +130,16 @@
                   </select>
                 </label>
                 <label class="jobs-filter-field">
+                  <span>Tỉnh / thành phố</span>
+                  <select id="manageJobLocation" name="location" data-location-province-select data-location-mode="filter" data-location-target-area="manageJobArea">
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Quận / huyện / khu vực</span>
+                  <select id="manageJobArea" name="area" data-location-area-select data-location-mode="filter" disabled>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
                   <span>Sắp xếp</span>
                   <select id="manageJobSort" name="sort">
                     <option value="updated-desc">Mới cập nhật</option>
@@ -160,11 +170,11 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-tong-hop-cong-ty-tnhh-abc" data-status="dang-tuyen" data-deadline="2026-04-25" data-updated="2026-04-24" data-applications="6" data-search="ke toan tong hop tp.hcm 15 18 trieu cong ty tnhh abc">
+                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-tong-hop-cong-ty-tnhh-abc" data-status="dang-tuyen" data-location-province="tp-hcm" data-location-area="quan-7-778" data-deadline="2026-04-25" data-updated="2026-04-24" data-applications="6" data-search="ke toan tong hop quan 7 tp.hcm 15 18 trieu cong ty tnhh abc">
                     <td>
                       <div class="jobs-manage-position">
                         <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&mode=xem" class="job-source-link jobs-manage-title">Kế toán tổng hợp</a>
-                        <p class="jobs-manage-meta">Mã tin: KTTH-ABC-2404 · TP.HCM · 15 - 18 triệu · Cập nhật 24/04/2026</p>
+                        <p class="jobs-manage-meta">Mã tin: KTTH-ABC-2404 · Quận 7, TP.HCM · 15 - 18 triệu · Cập nhật 24/04/2026</p>
                       </div>
                     </td>
                     <td class="jobs-manage-status-cell">
@@ -192,11 +202,11 @@
                       </div>
                     </td>
                   </tr>
-                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-thue-cong-ty-tnhh-abc" data-status="nhap" data-deadline="" data-updated="2026-04-22" data-applications="0" data-search="ke toan thue nhap cong ty tnhh abc">
+                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-thue-cong-ty-tnhh-abc" data-status="nhap" data-location-province="ha-noi" data-location-area="quan-cau-giay-5" data-deadline="" data-updated="2026-04-22" data-applications="0" data-search="ke toan thue nhap cau giay ha noi cong ty tnhh abc">
                     <td>
                       <div class="jobs-manage-position">
                         <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-thue-cong-ty-tnhh-abc&mode=sua" class="job-source-link jobs-manage-title">Kế toán thuế</a>
-                        <p class="jobs-manage-meta">Mã tin: KTT-ABC-2402 · Hà Nội · 13 - 16 triệu · Cập nhật 22/04/2026</p>
+                        <p class="jobs-manage-meta">Mã tin: KTT-ABC-2402 · Cầu Giấy, Hà Nội · 13 - 16 triệu · Cập nhật 22/04/2026</p>
                       </div>
                     </td>
                     <td class="jobs-manage-status-cell">
@@ -224,11 +234,11 @@
                       </div>
                     </td>
                   </tr>
-                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-ban-hang-cong-ty-tnhh-thaco-auto-tp-hcm" data-status="sap-het-han" data-deadline="2026-04-26" data-updated="2026-04-23" data-applications="4" data-search="ke toan ban hang thaco auto tp.hcm sap het han">
+                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-ban-hang-cong-ty-tnhh-thaco-auto-tp-hcm" data-status="sap-het-han" data-location-province="tp-hcm" data-location-area="quan-7-778" data-deadline="2026-04-26" data-updated="2026-04-23" data-applications="4" data-search="ke toan ban hang thaco auto quan 7 tp.hcm sap het han">
                     <td>
                       <div class="jobs-manage-position">
                         <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-ban-hang-cong-ty-tnhh-thaco-auto-tp-hcm&mode=xem" class="job-source-link jobs-manage-title">Kế toán bán hàng</a>
-                        <p class="jobs-manage-meta">Mã tin: KTBH-THACO-2403 · TP.HCM · 10 - 13 triệu · Cập nhật 23/04/2026</p>
+                        <p class="jobs-manage-meta">Mã tin: KTBH-THACO-2403 · Quận 7, TP.HCM · 10 - 13 triệu · Cập nhật 23/04/2026</p>
                       </div>
                     </td>
                     <td class="jobs-manage-status-cell">
@@ -256,11 +266,11 @@
                       </div>
                     </td>
                   </tr>
-                  <tr class="jobs-manage-job-row" data-job-id="hanh-chinh-nhan-su-cong-ty-tnhh-abc" data-status="het-han" data-deadline="2026-04-12" data-updated="2026-04-12" data-applications="3" data-search="hanh chinh nhan su da het han cong ty tnhh abc">
+                  <tr class="jobs-manage-job-row" data-job-id="hanh-chinh-nhan-su-cong-ty-tnhh-abc" data-status="het-han" data-location-province="ha-noi" data-location-area="quan-cau-giay-5" data-deadline="2026-04-12" data-updated="2026-04-12" data-applications="3" data-search="hanh chinh nhan su da het han cau giay ha noi cong ty tnhh abc">
                     <td>
                       <div class="jobs-manage-position">
                         <a href="chi-tiet-tin-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc&mode=xem" class="job-source-link jobs-manage-title">Hành chính nhân sự</a>
-                        <p class="jobs-manage-meta">Mã tin: HCNS-ABC-2401 · Hà Nội · 12 - 15 triệu · Cập nhật 12/04/2026</p>
+                        <p class="jobs-manage-meta">Mã tin: HCNS-ABC-2401 · Cầu Giấy, Hà Nội · 12 - 15 triệu · Cập nhật 12/04/2026</p>
                       </div>
                     </td>
                     <td class="jobs-manage-status-cell">
@@ -288,11 +298,11 @@
                       </div>
                     </td>
                   </tr>
-                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-noi-bo-cong-ty-tnhh-abc" data-status="da-dong" data-deadline="2026-04-10" data-updated="2026-04-10" data-applications="5" data-search="ke toan noi bo da dong cong ty tnhh abc">
+                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-noi-bo-cong-ty-tnhh-abc" data-status="da-dong" data-location-province="tp-hcm" data-location-area="thanh-pho-thu-duc-769" data-deadline="2026-04-10" data-updated="2026-04-10" data-applications="5" data-search="ke toan noi bo da dong thu duc tp.hcm cong ty tnhh abc">
                     <td>
                       <div class="jobs-manage-position">
                         <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-noi-bo-cong-ty-tnhh-abc&mode=xem" class="job-source-link jobs-manage-title">Kế toán nội bộ</a>
-                        <p class="jobs-manage-meta">Mã tin: KTNB-ABC-2399 · TP.HCM · 11 - 14 triệu · Cập nhật 10/04/2026</p>
+                        <p class="jobs-manage-meta">Mã tin: KTNB-ABC-2399 · TP. Thủ Đức, TP.HCM · 11 - 14 triệu · Cập nhật 10/04/2026</p>
                       </div>
                     </td>
                     <td class="jobs-manage-status-cell">
@@ -333,6 +343,8 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script src="assets/js/vn-location-data.js"></script>
+  <script src="assets/js/jobs-location-picker.js"></script>
   <script>
     (function () {
       var TAB_LABELS = {
@@ -407,6 +419,8 @@
         var tabInput = document.getElementById('manageJobTabInput');
         var searchInput = document.getElementById('manageJobSearch');
         var statusSelect = document.getElementById('manageJobStatus');
+        var locationSelect = document.getElementById('manageJobLocation');
+        var locationAreaSelect = document.getElementById('manageJobArea');
         var sortSelect = document.getElementById('manageJobSort');
         var resetBtn = document.getElementById('manageJobReset');
         var countLabel = document.getElementById('manageJobCount');
@@ -629,12 +643,16 @@
         function rowMatchesFilter(row) {
           var activeTab = tabInput ? tabInput.value : 'tat-ca';
           var statusFilter = statusSelect ? String(statusSelect.value || '').trim() : '';
+          var locationFilter = locationSelect ? String(locationSelect.value || '').trim() : '';
+          var locationAreaFilter = locationAreaSelect ? String(locationAreaSelect.value || '').trim() : '';
           var query = searchInput ? normalizeText(searchInput.value) : '';
           var rowStatus = getRowStatus(row);
           var rowTab = getTabForStatus(rowStatus);
 
           if (activeTab !== 'tat-ca' && rowTab !== activeTab) return false;
           if (statusFilter && rowStatus !== statusFilter) return false;
+          if (locationFilter && String(row.dataset.locationProvince || '') !== locationFilter) return false;
+          if (locationAreaFilter && String(row.dataset.locationArea || '') !== locationAreaFilter) return false;
           if (query && row.dataset.searchNormalized.indexOf(query) === -1) return false;
           return true;
         }
@@ -668,6 +686,8 @@
           var params = new URLSearchParams();
           if (tabInput && tabInput.value && tabInput.value !== 'tat-ca') params.set('tab', tabInput.value);
           if (statusSelect && statusSelect.value) params.set('status', statusSelect.value);
+          if (locationSelect && locationSelect.value) params.set('location', locationSelect.value);
+          if (locationAreaSelect && locationAreaSelect.value) params.set('area', locationAreaSelect.value);
           if (searchInput && searchInput.value.trim()) params.set('q', searchInput.value.trim());
           if (sortSelect && sortSelect.value && sortSelect.value !== defaultSort) params.set('sort', sortSelect.value);
           if (requestedJobId) params.set('job_id', requestedJobId);
@@ -720,6 +740,8 @@
           var tabFromUrl = String(initialParams.get('tab') || '').trim();
           var queryFromUrl = String(initialParams.get('q') || '').trim();
           var statusFromUrl = String(initialParams.get('status') || '').trim();
+          var locationFromUrl = String(initialParams.get('location') || '').trim();
+          var areaFromUrl = String(initialParams.get('area') || '').trim();
           var sortFromUrl = String(initialParams.get('sort') || '').trim();
 
           if (TAB_LABELS[tabFromUrl]) {
@@ -737,6 +759,14 @@
           if (statusSelect && hasSelectOption(statusSelect, statusFromUrl)) {
             statusSelect.value = statusFromUrl;
             reconcileStatusWithTab(true);
+          }
+
+          if (locationSelect && hasSelectOption(locationSelect, locationFromUrl)) {
+            locationSelect.value = locationFromUrl;
+            locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
+            if (locationAreaSelect && hasSelectOption(locationAreaSelect, areaFromUrl)) {
+              locationAreaSelect.value = areaFromUrl;
+            }
           }
 
           if (sortSelect && hasSelectOption(sortSelect, sortFromUrl)) {
@@ -764,6 +794,9 @@
           });
         }
 
+        if (locationSelect) locationSelect.addEventListener('change', applyFilters);
+        if (locationAreaSelect) locationAreaSelect.addEventListener('change', applyFilters);
+
         if (sortSelect) {
           sortSelect.addEventListener('change', applyFilters);
         }
@@ -777,6 +810,11 @@
           resetBtn.addEventListener('click', function () {
             if (searchInput) searchInput.value = '';
             if (statusSelect) statusSelect.value = '';
+            if (locationSelect) {
+              locationSelect.value = '';
+              locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+            if (locationAreaSelect) locationAreaSelect.value = '';
             if (sortSelect) sortSelect.value = defaultSort;
             setActiveTab('tat-ca');
             highlightedJobId = '';

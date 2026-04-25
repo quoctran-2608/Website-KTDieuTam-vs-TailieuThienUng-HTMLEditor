@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Danh sách ứng viên kế toán | Kế Toán Diệu Tâm</title>
-  <meta name="description" content="Danh sách hồ sơ ứng viên kế toán đã cập nhật gần đây, hỗ trợ lọc theo kinh nghiệm, khu vực và vị trí phù hợp nhu cầu tuyển dụng.">
+  <meta name="description" content="Danh sách hồ sơ ứng viên kế toán đã cập nhật gần đây, hỗ trợ lọc theo kinh nghiệm, khu vực và vai trò phù hợp nhu cầu tuyển dụng.">
   <link rel="canonical" href="https://ketoandieutam.vn/danh-sach-ung-vien.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css?v=20260425-h1-40">
+  <link rel="stylesheet" href="assets/css/jobs.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-candidate-page" data-root="" data-nav="tuyen-dung">
@@ -42,30 +42,25 @@
           </div>
         </div>
 
-        <form class="jobs-filter-bar jobs-candidate-filter-bar" id="candidateFilterForm" action="danh-sach-ung-vien.html" method="get">
+        <form class="jobs-filter-bar jobs-candidate-filter-bar" id="candidateFilterForm">
           <div class="jobs-filter-grid jobs-candidate-filter-grid">
             <label class="jobs-filter-field">
               <span>Tìm hồ sơ</span>
-              <input type="search" id="candidateFilterSearch" name="q" placeholder="Tên ứng viên, vị trí, kỹ năng..." autocomplete="off">
+              <input type="search" id="candidateFilterSearch" placeholder="Tên ứng viên, vị trí, kỹ năng...">
             </label>
             <label class="jobs-filter-field">
-              <span>Khu vực / cách làm việc</span>
-              <select id="candidateFilterLocation" name="location">
-<option value="">Tất cả khu vực</option>
-<option value="Thanh Xuân, Cầu Giấy (Hà Nội) · Làm việc kết hợp">Thanh Xuân, Cầu Giấy (Hà Nội) · Làm việc kết hợp</option>
-<option value="Nam Từ Liêm, Cầu Giấy (Hà Nội) · Làm việc kết hợp">Nam Từ Liêm, Cầu Giấy (Hà Nội) · Làm việc kết hợp</option>
-<option value="Thủ Đức, Bình Thạnh, Quận 7 (TP.HCM) · Làm việc kết hợp">Thủ Đức, Bình Thạnh, Quận 7 (TP.HCM) · Làm việc kết hợp</option>
-<option value="Cầu Giấy, Đống Đa, Thanh Xuân (Hà Nội) · Làm việc tại văn phòng">Cầu Giấy, Đống Đa, Thanh Xuân (Hà Nội) · Làm việc tại văn phòng</option>
-<option value="Thuận An, Dĩ An, Thủ Dầu Một (Bình Dương) · Làm việc tại văn phòng">Thuận An, Dĩ An, Thủ Dầu Một (Bình Dương) · Làm việc tại văn phòng</option>
-<option value="Bình Thạnh, Phú Nhuận, Gò Vấp (TP.HCM) · Làm việc tại văn phòng">Bình Thạnh, Phú Nhuận, Gò Vấp (TP.HCM) · Làm việc tại văn phòng</option>
-<option value="Gò Vấp, Tân Bình, Phú Nhuận (TP.HCM) · Làm việc tại văn phòng">Gò Vấp, Tân Bình, Phú Nhuận (TP.HCM) · Làm việc tại văn phòng</option>
-<option value="Tân Bình, Phú Nhuận, Quận 3 (TP.HCM) · Làm việc tại văn phòng">Tân Bình, Phú Nhuận, Quận 3 (TP.HCM) · Làm việc tại văn phòng</option>
-<option value="TP. Bến Tre, Châu Thành, Mỏ Cày Nam (Bến Tre) · Làm việc tại văn phòng">TP. Bến Tre, Châu Thành, Mỏ Cày Nam (Bến Tre) · Làm việc tại văn phòng</option>
+              <span>Tỉnh / thành phố</span>
+              <select id="candidateFilterLocation" data-location-province-select data-location-mode="filter" data-location-target-area="candidateFilterArea">
+              </select>
+            </label>
+            <label class="jobs-filter-field">
+              <span>Quận / huyện / khu vực</span>
+              <select id="candidateFilterArea" data-location-area-select data-location-mode="filter" disabled>
               </select>
             </label>
             <label class="jobs-filter-field">
               <span>Kinh nghiệm</span>
-              <select id="candidateFilterExperience" name="experience">
+              <select id="candidateFilterExperience">
 <option value="">Tất cả mức kinh nghiệm</option>
 <option value="1 năm kinh nghiệm">1 năm kinh nghiệm</option>
 <option value="2 năm kinh nghiệm">2 năm kinh nghiệm</option>
@@ -75,7 +70,7 @@
             </label>
             <label class="jobs-filter-field">
               <span>Sắp xếp</span>
-              <select id="candidateSortOrder" name="sort">
+              <select id="candidateSortOrder">
                 <option value="updated-desc">Mới cập nhật</option>
                 <option value="featured-first">Nổi bật trước</option>
                 <option value="name-asc">Tên A → Z</option>
@@ -89,7 +84,7 @@
         </form>
 
         <div class="jobs-candidate-grid jobs-candidate-list-grid" id="candidateListGrid">
-<article class="jobs-candidate-card jobs-candidate-list-card" data-search="do thuy linh ke toan tong hop · 5 nam kinh nghiem co kinh nghiem van hanh ke toan tong hop cho doanh nghiep thuong mai va dich vu, manh ve bao cao quan tri va kiem soat dong tien. ha noi · lam viec ket hop 5 nam kinh nghiem bao cao quan tri kiem soat dong tien misa power bi" data-location="Thanh Xuân, Cầu Giấy (Hà Nội) · Làm việc kết hợp" data-experience="5 năm kinh nghiệm" data-updated-date="2026-04-22" data-featured="1">
+<article class="jobs-candidate-card jobs-candidate-list-card" data-search="do thuy linh ke toan tong hop · 5 nam kinh nghiem co kinh nghiem van hanh ke toan tong hop cho doanh nghiep thuong mai va dich vu, manh ve bao cao quan tri va kiem soat dong tien. ha noi · hybrid 5 nam kinh nghiem bao cao quan tri kiem soat dong tien misa power bi" data-location="Hà Nội · Hybrid" data-location-province="ha-noi" data-location-area="quan-cau-giay-5,quan-hai-ba-trung-7,quan-thanh-xuan-9" data-experience="5 năm kinh nghiệm" data-updated-date="2026-04-22" data-featured="1">
         <a href="ung-vien/do-thuy-linh.html" class="jobs-candidate-card-link" aria-label="Xem chi tiết hồ sơ Đỗ Thùy Linh">
           <div class="jobs-candidate-card-head">
             <span class="jobs-candidate-avatar-thumb jobs-candidate-avatar-thumb--showcase"><img src="assets/images/candidates/do-thuy-linh.jpg" alt="Ảnh đại diện của Đỗ Thùy Linh" loading="lazy" decoding="async"></span>
@@ -102,7 +97,7 @@
           </div>
           <div class="jobs-candidate-facts">
             <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>5 năm kinh nghiệm</span>
-            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Thanh Xuân, Cầu Giấy (Hà Nội) · Làm việc kết hợp</span>
+            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Hà Nội · Hybrid</span>
             <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 20 - 25 triệu</span>
           </div>
           <p class="jobs-candidate-intro">Có kinh nghiệm vận hành kế toán tổng hợp cho doanh nghiệp thương mại và dịch vụ, mạnh về báo cáo quản trị và kiểm soát dòng tiền.</p>
@@ -116,7 +111,7 @@
           </div>
         </a>
       </article>
-<article class="jobs-candidate-card jobs-candidate-list-card" data-search="nguyen hoang yen hanh chinh nhan su · 3 nam kinh nghiem da phu trach tuyen dung, quan ly ho so lao dong, cham cong va phoi hop cung ke toan tien luong trong doanh nghiep dich vu. ha noi · lam viec ket hop 3 nam kinh nghiem tuyen dung ho so lao dong cham cong tien luong quy trinh nhan su" data-location="Nam Từ Liêm, Cầu Giấy (Hà Nội) · Làm việc kết hợp" data-experience="3 năm kinh nghiệm" data-updated-date="2026-04-21" data-featured="1">
+<article class="jobs-candidate-card jobs-candidate-list-card" data-search="nguyen hoang yen hanh chinh nhan su · 3 nam kinh nghiem da phu trach tuyen dung, quan ly ho so lao dong, cham cong va phoi hop cung ke toan tien luong trong doanh nghiep dich vu. ha noi · hybrid 3 nam kinh nghiem tuyen dung ho so lao dong cham cong tien luong quy trinh nhan su" data-location="Hà Nội · Hybrid" data-location-province="ha-noi" data-location-area="quan-cau-giay-5,quan-thanh-xuan-9,quan-nam-tu-liem-19" data-experience="3 năm kinh nghiệm" data-updated-date="2026-04-21" data-featured="1">
         <a href="ung-vien/nguyen-hoang-yen.html" class="jobs-candidate-card-link" aria-label="Xem chi tiết hồ sơ Nguyễn Hoàng Yến">
           <div class="jobs-candidate-card-head">
             <span class="jobs-candidate-avatar-thumb jobs-candidate-avatar-thumb--showcase"><img src="assets/images/candidates/nguyen-hoang-yen.jpg" alt="Ảnh đại diện của Nguyễn Hoàng Yến" loading="lazy" decoding="async"></span>
@@ -129,7 +124,7 @@
           </div>
           <div class="jobs-candidate-facts">
             <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>3 năm kinh nghiệm</span>
-            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Nam Từ Liêm, Cầu Giấy (Hà Nội) · Làm việc kết hợp</span>
+            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Hà Nội · Hybrid</span>
             <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 15 - 18 triệu</span>
           </div>
           <p class="jobs-candidate-intro">Đã phụ trách tuyển dụng, quản lý hồ sơ lao động, chấm công và phối hợp cùng kế toán tiền lương trong doanh nghiệp dịch vụ.</p>
@@ -143,7 +138,7 @@
           </div>
         </a>
       </article>
-<article class="jobs-candidate-card jobs-candidate-list-card" data-search="nguyen minh anh ke toan tong hop · 3 nam kinh nghiem da phu trach tong hop so lieu, kiem soat chung tu va lap bao cao quan tri theo thang cho doanh nghiep dich vu. tp.hcm · lam viec ket hop 3 nam kinh nghiem excel nang cao misa sme bao cao quan tri ke khai thue" data-location="Thủ Đức, Bình Thạnh, Quận 7 (TP.HCM) · Làm việc kết hợp" data-experience="3 năm kinh nghiệm" data-updated-date="2026-04-20" data-featured="1">
+<article class="jobs-candidate-card jobs-candidate-list-card" data-search="nguyen minh anh ke toan tong hop · 3 nam kinh nghiem da phu trach tong hop so lieu, kiem soat chung tu va lap bao cao quan tri theo thang cho doanh nghiep dich vu. tp.hcm · hybrid 3 nam kinh nghiem excel nang cao misa sme bao cao quan tri ke khai thue" data-location="TP.HCM · Hybrid" data-location-province="tp-hcm" data-location-area="quan-binh-thanh-765,thanh-pho-thu-duc-769,quan-7-778" data-experience="3 năm kinh nghiệm" data-updated-date="2026-04-20" data-featured="1">
         <a href="ung-vien/nguyen-minh-anh.html" class="jobs-candidate-card-link" aria-label="Xem chi tiết hồ sơ Nguyễn Minh Anh">
           <div class="jobs-candidate-card-head">
             <span class="jobs-candidate-avatar-thumb jobs-candidate-avatar-thumb--showcase"><img src="assets/images/candidates/nguyen-minh-anh.jpg" alt="Ảnh đại diện của Nguyễn Minh Anh" loading="lazy" decoding="async"></span>
@@ -156,7 +151,7 @@
           </div>
           <div class="jobs-candidate-facts">
             <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>3 năm kinh nghiệm</span>
-            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Thủ Đức, Bình Thạnh, Quận 7 (TP.HCM) · Làm việc kết hợp</span>
+            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>TP.HCM · Hybrid</span>
             <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 16 - 20 triệu</span>
           </div>
           <p class="jobs-candidate-intro">Đã phụ trách tổng hợp số liệu, kiểm soát chứng từ và lập báo cáo quản trị theo tháng cho doanh nghiệp dịch vụ.</p>
@@ -170,7 +165,7 @@
           </div>
         </a>
       </article>
-<article class="jobs-candidate-card jobs-candidate-list-card" data-search="tran bao vy ke toan thue · 2 nam kinh nghiem co kinh nghiem ke khai thue gtgt, tncn, quyet toan cuoi nam va phoi hop xu ly ho so hoan thue cho doanh nghiep thuong mai. ha noi · lam viec tai van phong 2 nam kinh nghiem ke khai thue quyet toan thue fast accounting kiem soat hoa don" data-location="Cầu Giấy, Đống Đa, Thanh Xuân (Hà Nội) · Làm việc tại văn phòng" data-experience="2 năm kinh nghiệm" data-updated-date="2026-04-18" data-featured="1">
+<article class="jobs-candidate-card jobs-candidate-list-card" data-search="tran bao vy ke toan thue · 2 nam kinh nghiem co kinh nghiem ke khai thue gtgt, tncn, quyet toan cuoi nam va phoi hop xu ly ho so hoan thue cho doanh nghiep thuong mai. ha noi · onsite 2 nam kinh nghiem ke khai thue quyet toan thue fast accounting kiem soat hoa don" data-location="Hà Nội · Onsite" data-location-province="ha-noi" data-location-area="quan-cau-giay-5,quan-dong-da-6,quan-thanh-xuan-9" data-experience="2 năm kinh nghiệm" data-updated-date="2026-04-18" data-featured="1">
         <a href="ung-vien/tran-bao-vy.html" class="jobs-candidate-card-link" aria-label="Xem chi tiết hồ sơ Trần Bảo Vy">
           <div class="jobs-candidate-card-head">
             <span class="jobs-candidate-avatar-thumb jobs-candidate-avatar-thumb--showcase"><img src="assets/images/candidates/tran-bao-vy.jpg" alt="Ảnh đại diện của Trần Bảo Vy" loading="lazy" decoding="async"></span>
@@ -183,7 +178,7 @@
           </div>
           <div class="jobs-candidate-facts">
             <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>2 năm kinh nghiệm</span>
-            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Cầu Giấy, Đống Đa, Thanh Xuân (Hà Nội) · Làm việc tại văn phòng</span>
+            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Hà Nội · Onsite</span>
             <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 14 - 18 triệu</span>
           </div>
           <p class="jobs-candidate-intro">Có kinh nghiệm kê khai thuế GTGT, TNCN, quyết toán cuối năm và phối hợp xử lý hồ sơ hoàn thuế cho doanh nghiệp thương mại.</p>
@@ -197,7 +192,7 @@
           </div>
         </a>
       </article>
-<article class="jobs-candidate-card jobs-candidate-list-card" data-search="le quoc hung nhan vien ke toan · 1 nam kinh nghiem da thuc hien doi chieu cong no, nhap lieu hoa don dau vao - dau ra va ho tro kiem ke ton kho dinh ky tai doanh nghiep san xuat. binh duong · lam viec tai van phong 1 nam kinh nghiem nhap lieu chung tu doi chieu cong no excel quan ly ton kho" data-location="Thuận An, Dĩ An, Thủ Dầu Một (Bình Dương) · Làm việc tại văn phòng" data-experience="1 năm kinh nghiệm" data-updated-date="2026-04-19" data-featured="0">
+<article class="jobs-candidate-card jobs-candidate-list-card" data-search="le quoc hung nhan vien ke toan · 1 nam kinh nghiem da thuc hien doi chieu cong no, nhap lieu hoa don dau vao - dau ra va ho tro kiem ke ton kho dinh ky tai doanh nghiep san xuat. binh duong · onsite 1 nam kinh nghiem nhap lieu chung tu doi chieu cong no excel quan ly ton kho" data-location="Bình Dương · Onsite" data-location-province="tp-hcm" data-location-area="thanh-pho-thu-dau-mot-718,thanh-pho-di-an-724,thanh-pho-thuan-an-725" data-experience="1 năm kinh nghiệm" data-updated-date="2026-04-19" data-featured="0">
         <a href="ung-vien/le-quoc-hung.html" class="jobs-candidate-card-link" aria-label="Xem chi tiết hồ sơ Lê Quốc Hưng">
           <div class="jobs-candidate-card-head">
             <span class="jobs-candidate-avatar-thumb jobs-candidate-avatar-thumb--showcase"><img src="assets/images/candidates/le-quoc-hung.jpg" alt="Ảnh đại diện của Lê Quốc Hưng" loading="lazy" decoding="async"></span>
@@ -210,7 +205,7 @@
           </div>
           <div class="jobs-candidate-facts">
             <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>1 năm kinh nghiệm</span>
-            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Thuận An, Dĩ An, Thủ Dầu Một (Bình Dương) · Làm việc tại văn phòng</span>
+            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Bình Dương · Onsite</span>
             <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 10 - 12 triệu</span>
           </div>
           <p class="jobs-candidate-intro">Đã thực hiện đối chiếu công nợ, nhập liệu hóa đơn đầu vào - đầu ra và hỗ trợ kiểm kê tồn kho định kỳ tại doanh nghiệp sản xuất.</p>
@@ -224,7 +219,7 @@
           </div>
         </a>
       </article>
-<article class="jobs-candidate-card jobs-candidate-list-card" data-search="pham thu ha ke toan noi bo · 2 nam kinh nghiem phu trach thu chi noi bo, quan ly ho so thanh toan va phoi hop voi bo phan mua hang de kiem soat chi phi van hanh hang thang. tp.hcm · lam viec tai van phong 2 nam kinh nghiem thu chi noi bo kiem soat thanh toan misa theo doi chi phi" data-location="Bình Thạnh, Phú Nhuận, Gò Vấp (TP.HCM) · Làm việc tại văn phòng" data-experience="2 năm kinh nghiệm" data-updated-date="2026-04-17" data-featured="0">
+<article class="jobs-candidate-card jobs-candidate-list-card" data-search="pham thu ha ke toan noi bo · 2 nam kinh nghiem phu trach thu chi noi bo, quan ly ho so thanh toan va phoi hop voi bo phan mua hang de kiem soat chi phi van hanh hang thang. tp.hcm · onsite 2 nam kinh nghiem thu chi noi bo kiem soat thanh toan misa theo doi chi phi" data-location="TP.HCM · Onsite" data-location-province="tp-hcm" data-location-area="quan-go-vap-764,quan-binh-thanh-765,quan-phu-nhuan-768" data-experience="2 năm kinh nghiệm" data-updated-date="2026-04-17" data-featured="0">
         <a href="ung-vien/pham-thu-ha.html" class="jobs-candidate-card-link" aria-label="Xem chi tiết hồ sơ Phạm Thu Hà">
           <div class="jobs-candidate-card-head">
             <span class="jobs-candidate-avatar-thumb jobs-candidate-avatar-thumb--showcase"><img src="assets/images/candidates/pham-thu-ha.jpg" alt="Ảnh đại diện của Phạm Thu Hà" loading="lazy" decoding="async"></span>
@@ -237,7 +232,7 @@
           </div>
           <div class="jobs-candidate-facts">
             <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>2 năm kinh nghiệm</span>
-            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Bình Thạnh, Phú Nhuận, Gò Vấp (TP.HCM) · Làm việc tại văn phòng</span>
+            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>TP.HCM · Onsite</span>
             <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 12 - 15 triệu</span>
           </div>
           <p class="jobs-candidate-intro">Phụ trách thu chi nội bộ, quản lý hồ sơ thanh toán và phối hợp với bộ phận mua hàng để kiểm soát chi phí vận hành hàng tháng.</p>
@@ -251,7 +246,7 @@
           </div>
         </a>
       </article>
-<article class="jobs-candidate-card jobs-candidate-list-card" data-search="vo thanh trung ke toan ban hang · 1 nam kinh nghiem co kinh nghiem theo doi doanh thu ban hang, xuat hoa don, doi chieu du lieu ban hang da kenh va cham soc bao cao cuoi ngay. tp.hcm · lam viec tai van phong 1 nam kinh nghiem hoa don dien tu doi soat doanh thu excel bao cao ban hang" data-location="Gò Vấp, Tân Bình, Phú Nhuận (TP.HCM) · Làm việc tại văn phòng" data-experience="1 năm kinh nghiệm" data-updated-date="2026-04-16" data-featured="0">
+<article class="jobs-candidate-card jobs-candidate-list-card" data-search="vo thanh trung ke toan ban hang · 1 nam kinh nghiem co kinh nghiem theo doi doanh thu ban hang, xuat hoa don, doi chieu du lieu ban hang da kenh va cham soc bao cao cuoi ngay. tp.hcm · onsite 1 nam kinh nghiem hoa don dien tu doi soat doanh thu excel bao cao ban hang" data-location="TP.HCM · Onsite" data-location-province="tp-hcm" data-location-area="quan-go-vap-764,quan-tan-binh-766,quan-phu-nhuan-768" data-experience="1 năm kinh nghiệm" data-updated-date="2026-04-16" data-featured="0">
         <a href="ung-vien/vo-thanh-trung.html" class="jobs-candidate-card-link" aria-label="Xem chi tiết hồ sơ Võ Thành Trung">
           <div class="jobs-candidate-card-head">
             <span class="jobs-candidate-avatar-thumb jobs-candidate-avatar-thumb--showcase"><img src="assets/images/candidates/vo-thanh-trung.jpg" alt="Ảnh đại diện của Võ Thành Trung" loading="lazy" decoding="async"></span>
@@ -264,7 +259,7 @@
           </div>
           <div class="jobs-candidate-facts">
             <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>1 năm kinh nghiệm</span>
-            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Gò Vấp, Tân Bình, Phú Nhuận (TP.HCM) · Làm việc tại văn phòng</span>
+            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>TP.HCM · Onsite</span>
             <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 11 - 13 triệu</span>
           </div>
           <p class="jobs-candidate-intro">Có kinh nghiệm theo dõi doanh thu bán hàng, xuất hóa đơn, đối chiếu dữ liệu bán hàng đa kênh và chăm sóc báo cáo cuối ngày.</p>
@@ -278,7 +273,7 @@
           </div>
         </a>
       </article>
-<article class="jobs-candidate-card jobs-candidate-list-card" data-search="bui thanh dat ke toan thue · 3 nam kinh nghiem thanh thao ke khai, quyet toan thue va chuan bi ho so thanh tra thue cho doanh nghiep vua va nho. tp.hcm · lam viec tai van phong 3 nam kinh nghiem quyet toan thue ho so thanh tra thue hoa don dien tu fast accounting" data-location="Tân Bình, Phú Nhuận, Quận 3 (TP.HCM) · Làm việc tại văn phòng" data-experience="3 năm kinh nghiệm" data-updated-date="2026-04-15" data-featured="0">
+<article class="jobs-candidate-card jobs-candidate-list-card" data-search="bui thanh dat ke toan thue · 3 nam kinh nghiem thanh thao ke khai, quyet toan thue va chuan bi ho so thanh tra thue cho doanh nghiep vua va nho. tp.hcm · onsite 3 nam kinh nghiem quyet toan thue ho so thanh tra thue hoa don dien tu fast accounting" data-location="TP.HCM · Onsite" data-location-province="tp-hcm" data-location-area="quan-tan-binh-766,quan-phu-nhuan-768,quan-3-770" data-experience="3 năm kinh nghiệm" data-updated-date="2026-04-15" data-featured="0">
         <a href="ung-vien/bui-thanh-dat.html" class="jobs-candidate-card-link" aria-label="Xem chi tiết hồ sơ Bùi Thành Đạt">
           <div class="jobs-candidate-card-head">
             <span class="jobs-candidate-avatar-thumb jobs-candidate-avatar-thumb--showcase"><img src="assets/images/candidates/bui-thanh-dat.jpg" alt="Ảnh đại diện của Bùi Thành Đạt" loading="lazy" decoding="async"></span>
@@ -291,7 +286,7 @@
           </div>
           <div class="jobs-candidate-facts">
             <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>3 năm kinh nghiệm</span>
-            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Tân Bình, Phú Nhuận, Quận 3 (TP.HCM) · Làm việc tại văn phòng</span>
+            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>TP.HCM · Onsite</span>
             <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 17 - 20 triệu</span>
           </div>
           <p class="jobs-candidate-intro">Thành thạo kê khai, quyết toán thuế và chuẩn bị hồ sơ thanh tra thuế cho doanh nghiệp vừa và nhỏ.</p>
@@ -305,7 +300,7 @@
           </div>
         </a>
       </article>
-<article class="jobs-candidate-card jobs-candidate-list-card" data-search="phan ngoc khanh ke toan noi bo · 1 nam kinh nghiem da co kinh nghiem theo doi chung tu thu chi, cong no noi bo va doi soat so lieu kho tai doanh nghiep san xuat. ben tre · lam viec tai van phong 1 nam kinh nghiem theo doi cong no doi soat kho excel misa" data-location="TP. Bến Tre, Châu Thành, Mỏ Cày Nam (Bến Tre) · Làm việc tại văn phòng" data-experience="1 năm kinh nghiệm" data-updated-date="2026-04-14" data-featured="0">
+<article class="jobs-candidate-card jobs-candidate-list-card" data-search="phan ngoc khanh ke toan noi bo · 1 nam kinh nghiem da co kinh nghiem theo doi chung tu thu chi, cong no noi bo va doi soat so lieu kho tai doanh nghiep san xuat. ben tre · onsite 1 nam kinh nghiem theo doi cong no doi soat kho excel misa" data-location="Bến Tre · Onsite" data-location-province="vinh-long" data-location-area="thanh-pho-ben-tre-829,huyen-chau-thanh-831,huyen-mo-cay-nam-833" data-experience="1 năm kinh nghiệm" data-updated-date="2026-04-14" data-featured="0">
         <a href="ung-vien/phan-ngoc-khanh.html" class="jobs-candidate-card-link" aria-label="Xem chi tiết hồ sơ Phan Ngọc Khánh">
           <div class="jobs-candidate-card-head">
             <span class="jobs-candidate-avatar-thumb jobs-candidate-avatar-thumb--showcase"><img src="assets/images/candidates/phan-ngoc-khanh.jpg" alt="Ảnh đại diện của Phan Ngọc Khánh" loading="lazy" decoding="async"></span>
@@ -318,7 +313,7 @@
           </div>
           <div class="jobs-candidate-facts">
             <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>1 năm kinh nghiệm</span>
-            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>TP. Bến Tre, Châu Thành, Mỏ Cày Nam (Bến Tre) · Làm việc tại văn phòng</span>
+            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Bến Tre · Onsite</span>
             <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 9 - 11 triệu</span>
           </div>
           <p class="jobs-candidate-intro">Đã có kinh nghiệm theo dõi chứng từ thu chi, công nợ nội bộ và đối soát số liệu kho tại doanh nghiệp sản xuất.</p>
@@ -344,6 +339,8 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script src="assets/js/vn-location-data.js"></script>
+  <script src="assets/js/jobs-location-picker.js"></script>
 <script>
     (function () {
       function normalizeText(value) {
@@ -365,6 +362,7 @@
         var countLabel = document.getElementById('candidateFilterCount');
         var searchInput = document.getElementById('candidateFilterSearch');
         var locationSelect = document.getElementById('candidateFilterLocation');
+        var locationAreaSelect = document.getElementById('candidateFilterArea');
         var experienceSelect = document.getElementById('candidateFilterExperience');
         var sortSelect = document.getElementById('candidateSortOrder');
         var resetBtn = document.getElementById('candidateFilterReset');
@@ -420,18 +418,21 @@
         function applyFilters(options) {
           options = options || {};
           var query = normalizeText(searchInput ? searchInput.value : '');
-          var location = normalizeText(locationSelect ? locationSelect.value : '');
+          var location = locationSelect ? locationSelect.value : '';
+          var locationArea = locationAreaSelect ? locationAreaSelect.value : '';
           var experience = normalizeText(experienceSelect ? experienceSelect.value : '');
           var sortValue = sortSelect ? sortSelect.value : 'updated-desc';
 
           var matched = cards.filter(function (card) {
             var searchBlob = normalizeText(card.dataset.search || card.textContent || '');
-            var locationValue = normalizeText(card.dataset.location || '');
+            var locationValue = card.dataset.locationProvince || '';
+            var locationAreaValues = String(card.dataset.locationArea || '').split(',');
             var experienceValue = normalizeText(card.dataset.experience || '');
             var matchesQuery = !query || searchBlob.indexOf(query) !== -1;
             var matchesLocation = !location || locationValue === location;
+            var matchesLocationArea = !locationArea || locationAreaValues.indexOf(locationArea) !== -1;
             var matchesExperience = !experience || experienceValue === experience;
-            return matchesQuery && matchesLocation && matchesExperience;
+            return matchesQuery && matchesLocation && matchesLocationArea && matchesExperience;
           });
 
           matched.sort(function (a, b) { return compareCards(a, b, sortValue); });
@@ -464,6 +465,7 @@
         if (resetBtn) {
           resetBtn.addEventListener('click', function () {
             form.reset();
+            if (locationSelect) locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
             applyFilters();
           });
         }

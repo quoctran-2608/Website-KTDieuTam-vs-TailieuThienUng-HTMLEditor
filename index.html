@@ -386,6 +386,11 @@
     "location": "69 Đường Láng, Đống Đa, Hà Nội",
     "locationGroupKey": "ha-noi",
     "locationGroupLabel": "Hà Nội",
+    "locationProvinceKey": "ha-noi",
+    "locationProvinceLabel": "Hà Nội",
+    "locationAreaKey": "quan-dong-da-6",
+    "locationAreaLabel": "Quận Đống Đa",
+    "locationDisplay": "Quận Đống Đa, Hà Nội",
     "roleGroupKey": "ke-toan-tong-hop",
     "roleGroupLabel": "Kế toán tổng hợp",
     "salaryLabel": "18 - 25 triệu",
@@ -411,8 +416,13 @@
     "title": "Tuyển dụng Kế toán tổng hợp",
     "companyName": "CÔNG TY TNHH CÔNG NGHIỆP SIGMA VIỆT NAM",
     "location": "KCN Giao Long",
-    "locationGroupKey": "ben-tre",
-    "locationGroupLabel": "Bến Tre",
+    "locationGroupKey": "vinh-long",
+    "locationGroupLabel": "Vĩnh Long",
+    "locationProvinceKey": "vinh-long",
+    "locationProvinceLabel": "Vĩnh Long",
+    "locationAreaKey": "huyen-chau-thanh-831",
+    "locationAreaLabel": "Huyện Châu Thành (Bến Tre cũ)",
+    "locationDisplay": "Huyện Châu Thành (Bến Tre cũ), Vĩnh Long",
     "roleGroupKey": "ke-toan-tong-hop",
     "roleGroupLabel": "Kế toán tổng hợp",
     "salaryLabel": "18 - 25 triệu",
@@ -440,6 +450,11 @@
     "location": "Ba Đình",
     "locationGroupKey": "ha-noi",
     "locationGroupLabel": "Hà Nội",
+    "locationProvinceKey": "ha-noi",
+    "locationProvinceLabel": "Hà Nội",
+    "locationAreaKey": "quan-ba-dinh-1",
+    "locationAreaLabel": "Quận Ba Đình",
+    "locationDisplay": "Quận Ba Đình, Hà Nội",
     "roleGroupKey": "ke-toan-truong",
     "roleGroupLabel": "Kế toán trưởng",
     "salaryLabel": "25 - 40 triệu",
@@ -987,7 +1002,7 @@
   function renderRecruitmentCards(host, jobs) {
     host.innerHTML = jobs.map(function(job) {
       const badges = [];
-      const locationLabel = job.locationGroupLabel || job.location || '';
+      const locationLabel = job.locationDisplay || job.locationAreaLabel || job.locationGroupLabel || job.location || '';
       const freshLabel = formatFreshLabel(job.publishDate);
       const experienceLabel = job.experienceLevelLabel || job.experienceLevel || 'Đang cập nhật';
 

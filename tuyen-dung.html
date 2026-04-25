@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tuyển dụng | Kế Toán Diệu Tâm</title>
-  <meta name="description" content="Việc làm kế toán, thuế và HCNS dành cho người đang tìm cơ hội phù hợp theo khu vực, vị trí và mức kinh nghiệm.">
+  <meta name="description" content="Việc làm kế toán, thuế và HCNS dành cho người đang tìm cơ hội phù hợp theo khu vực, vai trò và mức kinh nghiệm.">
   <link rel="canonical" href="https://ketoandieutam.vn/tuyen-dung.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css?v=20260425-h1-40">
+  <link rel="stylesheet" href="assets/css/jobs.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-list-page" data-root="" data-nav="tuyen-dung">
@@ -32,10 +32,10 @@
         <div id="jobsDiscoverySentinel" aria-hidden="true"></div>
         <div class="jobs-discovery-bar" id="jobsDiscoveryBar">
           <div class="jobs-quick-filters-scroll" id="jobsQuickRoleScroll">
-            <button type="button" class="jobs-quick-filters-nav jobs-quick-filters-nav--prev" data-jobs-quick-nav="prev" aria-label="Xem nhóm vị trí trước đó" hidden>
+            <button type="button" class="jobs-quick-filters-nav jobs-quick-filters-nav--prev" data-jobs-quick-nav="prev" aria-label="Xem nhóm vai trò trước đó" hidden>
               <i class="fa-solid fa-angle-left" aria-hidden="true"></i>
             </button>
-            <div class="jobs-quick-filters" id="jobsQuickFilters" aria-label="Lọc nhanh theo vị trí">
+            <div class="jobs-quick-filters" id="jobsQuickFilters" aria-label="Lọc nhanh theo vai trò">
 <button type="button" class="jobs-quick-chip" data-role-value="hanh-chinh-nhan-su" aria-label="Hành chính nhân sự - 1 việc làm">Hành chính nhân sự<span class="jobs-quick-chip-count">1 việc làm</span></button>
 <button type="button" class="jobs-quick-chip" data-role-value="ke-toan-ban-hang" aria-label="Kế toán bán hàng - 1 việc làm">Kế toán bán hàng<span class="jobs-quick-chip-count">1 việc làm</span></button>
 <button type="button" class="jobs-quick-chip" data-role-value="ke-toan-noi-bo" aria-label="Kế toán nội bộ - 3 việc làm">Kế toán nội bộ<span class="jobs-quick-chip-count">3 việc làm</span></button>
@@ -44,7 +44,7 @@
 <button type="button" class="jobs-quick-chip" data-role-value="ke-toan-tong-hop" aria-label="Kế toán tổng hợp - 7 việc làm">Kế toán tổng hợp<span class="jobs-quick-chip-count">7 việc làm</span></button>
 <button type="button" class="jobs-quick-chip" data-role-value="nhan-vien-ke-toan" aria-label="Nhân viên kế toán - 1 việc làm">Nhân viên kế toán<span class="jobs-quick-chip-count">1 việc làm</span></button>
             </div>
-            <button type="button" class="jobs-quick-filters-nav jobs-quick-filters-nav--next" data-jobs-quick-nav="next" aria-label="Xem nhóm vị trí tiếp theo" hidden>
+            <button type="button" class="jobs-quick-filters-nav jobs-quick-filters-nav--next" data-jobs-quick-nav="next" aria-label="Xem nhóm vai trò tiếp theo" hidden>
               <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
             </button>
           </div>
@@ -52,26 +52,62 @@
             <button type="button" class="jobs-filter-mobile-toggle" id="jobsFilterToggle" aria-expanded="false" aria-controls="jobsFilterForm">
               <i class="fa-solid fa-sliders" aria-hidden="true"></i><span>Mở bộ lọc</span>
             </button>
-            <form class="jobs-filter-bar" id="jobsFilterForm" action="tuyen-dung.html#job-list" method="get">
+            <form class="jobs-filter-bar" id="jobsFilterForm">
               <div class="jobs-filter-grid">
                 <label class="jobs-filter-field">
                   <span>Tìm nhanh</span>
-                  <input type="search" id="jobsFilterSearch" name="q" placeholder="Tên vị trí, công ty, khu vực..." autocomplete="off">
+                  <input type="search" id="jobsFilterSearch" placeholder="Tên vị trí, công ty, khu vực...">
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Thành phố / tỉnh</span>
-                  <select id="jobsFilterLocation" name="location">
-<option value="">Tất cả khu vực</option>
-<option value="binh-duong">Bình Dương</option>
-<option value="ben-tre">Bến Tre</option>
+                  <span>Tỉnh / thành phố</span>
+                  <select id="jobsFilterLocation" data-location-province-select data-location-mode="filter" data-location-target-area="jobsFilterArea">
+<option value="">Tất cả tỉnh/thành</option>
 <option value="ha-noi">Hà Nội</option>
+<option value="cao-bang">Cao Bằng</option>
+<option value="tuyen-quang">Tuyên Quang</option>
+<option value="dien-bien">Điện Biên</option>
+<option value="lai-chau">Lai Châu</option>
+<option value="son-la">Sơn La</option>
+<option value="lao-cai">Lào Cai</option>
+<option value="thai-nguyen">Thái Nguyên</option>
+<option value="lang-son">Lạng Sơn</option>
+<option value="quang-ninh">Quảng Ninh</option>
+<option value="bac-ninh">Bắc Ninh</option>
+<option value="phu-tho">Phú Thọ</option>
+<option value="hai-phong">Hải Phòng</option>
+<option value="hung-yen">Hưng Yên</option>
+<option value="ninh-binh">Ninh Bình</option>
+<option value="thanh-hoa">Thanh Hóa</option>
+<option value="nghe-an">Nghệ An</option>
+<option value="ha-tinh">Hà Tĩnh</option>
+<option value="quang-tri">Quảng Trị</option>
+<option value="hue">Huế</option>
+<option value="da-nang">Đà Nẵng</option>
+<option value="quang-ngai">Quảng Ngãi</option>
+<option value="gia-lai">Gia Lai</option>
+<option value="khanh-hoa">Khánh Hòa</option>
+<option value="dak-lak">Đắk Lắk</option>
+<option value="lam-dong">Lâm Đồng</option>
+<option value="dong-nai">Đồng Nai</option>
 <option value="tp-hcm">TP.HCM</option>
+<option value="tay-ninh">Tây Ninh</option>
+<option value="dong-thap">Đồng Tháp</option>
+<option value="vinh-long">Vĩnh Long</option>
+<option value="an-giang">An Giang</option>
+<option value="can-tho">Cần Thơ</option>
+<option value="ca-mau">Cà Mau</option>
                   </select>
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Vị trí</span>
-                  <select id="jobsFilterRole" name="role">
-<option value="">Tất cả vị trí</option>
+                  <span>Quận / huyện / khu vực</span>
+                  <select id="jobsFilterArea" data-location-area-select data-location-mode="filter" disabled>
+                    <option value="">Tất cả quận/huyện/khu vực</option>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Vai trò</span>
+                  <select id="jobsFilterRole">
+<option value="">Tất cả vai trò</option>
 <option value="hanh-chinh-nhan-su">Hành chính nhân sự</option>
 <option value="ke-toan-ban-hang">Kế toán bán hàng</option>
 <option value="ke-toan-noi-bo">Kế toán nội bộ</option>
@@ -81,30 +117,11 @@
 <option value="nhan-vien-ke-toan">Nhân viên kế toán</option>
                   </select>
                 </label>
-                <label class="jobs-filter-field">
-                  <span>Hình thức</span>
-                  <select id="jobsFilterEmployment" name="employmentType">
-<option value="">Tất cả hình thức</option>
-<option value="full-time">Toàn thời gian</option>
-<option value="part-time">Bán thời gian</option>
-<option value="internship">Thực tập</option>
-<option value="contract">Hợp đồng</option>
-                  </select>
-                </label>
-                <label class="jobs-filter-field">
-                  <span>Cách làm việc</span>
-                  <select id="jobsFilterWorkMode" name="workMode">
-<option value="">Tất cả cách làm việc</option>
-<option value="onsite">Làm việc tại văn phòng</option>
-<option value="hybrid">Làm việc kết hợp</option>
-<option value="remote">Làm việc từ xa</option>
-                  </select>
-                </label>
 
 
                 <label class="jobs-filter-field">
                   <span>Kinh nghiệm</span>
-                  <select id="jobsFilterExperience" name="experience">
+                  <select id="jobsFilterExperience">
 <option value="">Tất cả mức kinh nghiệm</option>
 <option value="1-nam">1 năm</option>
 <option value="2-nam">2 năm</option>
@@ -115,7 +132,7 @@
                 </label>
                 <label class="jobs-filter-field">
                   <span>Sắp xếp</span>
-                  <select id="jobsSortOrder" name="sort">
+                  <select id="jobsSortOrder">
                     <option value="publish-desc">Mới nhất</option>
                     <option value="deadline-asc">Gần hết hạn</option>
                     <option value="salary-desc">Lương cao</option>
@@ -132,7 +149,7 @@
         </div>
         <div class="jobs-active-filters" id="jobsActiveFilters" hidden></div>
         <div class="jobs-grid jobs-list-grid" id="jobsListGrid">
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh thuc pham gia khanh vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, kiem soat chung tu va xu ly bao cao o muc do sau hon. 69 duong lang, dong da, ha noi 5-nam" data-location-group="ha-noi" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="5-nam" data-featured="1" data-publish-date="2026-04-09" data-deadline="2026-04-25" data-salary-max="25000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh thuc pham gia khanh vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, kiem soat chung tu va xu ly bao cao o muc do sau hon. 69 duong lang, dong da, ha noi 5-nam" data-location-group="ha-noi" data-location-area="quan-dong-da-6" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="5-nam" data-featured="1" data-publish-date="2026-04-09" data-deadline="2026-04-25" data-salary-max="25000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             <span class="job-badge featured">Nổi bật</span>
@@ -155,7 +172,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Đống Đa, Hà Nội</span>
+            <span>Quận Đống Đa, Hà Nội</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán, kiểm soát chứng từ và xử lý báo cáo ở mức độ sâu hơn.</p>
@@ -164,7 +181,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 25/04/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh cong nghiep sigma viet nam vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. kcn giao long 2-nam" data-location-group="ben-tre" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="1" data-publish-date="2026-04-09" data-deadline="2026-05-02" data-salary-max="25000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh cong nghiep sigma viet nam vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. kcn giao long 2-nam" data-location-group="vinh-long" data-location-area="huyen-chau-thanh-831" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="1" data-publish-date="2026-04-09" data-deadline="2026-05-02" data-salary-max="25000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             <span class="job-badge featured">Nổi bật</span>
@@ -187,7 +204,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Châu Thành, Bến Tre</span>
+            <span>Huyện Châu Thành (Bến Tre cũ), Vĩnh Long</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán, theo dõi chứng từ và phối hợp lập báo cáo định kỳ cho doanh nghiệp.</p>
@@ -196,7 +213,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 02/05/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan truong cong ty tnhh elitez a chau viet nam vi tri phu hop voi ung vien co kinh nghiem quan ly he thong ke toan, kiem soat bao cao va tham muu tai chinh o cap do quan tri. ba dinh 5-nam" data-location-group="ha-noi" data-role-group="ke-toan-truong" data-employment="full-time" data-work-mode="onsite" data-experience="5-nam" data-featured="1" data-publish-date="2026-04-09" data-deadline="2026-05-08" data-salary-max="40000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan truong cong ty tnhh elitez a chau viet nam vi tri phu hop voi ung vien co kinh nghiem quan ly he thong ke toan, kiem soat bao cao va tham muu tai chinh o cap do quan tri. ba dinh 5-nam" data-location-group="ha-noi" data-location-area="quan-ba-dinh-1" data-role-group="ke-toan-truong" data-employment="full-time" data-work-mode="onsite" data-experience="5-nam" data-featured="1" data-publish-date="2026-04-09" data-deadline="2026-05-08" data-salary-max="40000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             <span class="job-badge featured">Nổi bật</span>
@@ -219,7 +236,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Ba Đình, Hà Nội</span>
+            <span>Quận Ba Đình, Hà Nội</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm quản lý hệ thống kế toán, kiểm soát báo cáo và tham mưu tài chính ở cấp độ quản trị.</p>
@@ -228,7 +245,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 08/05/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh thuc pham tadichi vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. so 08, duong so 1 - mh4, xa xuan thoi son, thanh pho ho chi minh 2-nam" data-location-group="tp-hcm" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-25" data-salary-max="15000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh thuc pham tadichi vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. so 08, duong so 1 - mh4, xa xuan thoi son, thanh pho ho chi minh 2-nam" data-location-group="tp-hcm" data-location-area="huyen-hoc-mon-784" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-25" data-salary-max="15000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -251,7 +268,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Xuân Thới Sơn, Hóc Môn, TP.HCM</span>
+            <span>Huyện Hóc Môn, TP.HCM</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán, theo dõi chứng từ và phối hợp lập báo cáo định kỳ cho doanh nghiệp.</p>
@@ -260,7 +277,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 25/04/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan ban hang cong ty tnhh thaco auto tp.hcm vi tri phu hop voi ung vien co kinh nghiem xu ly doanh thu, hoa don va doi chieu cong no ban hang. 314 nguyen van linh, phuong binh thuan 1-nam" data-location-group="tp-hcm" data-role-group="ke-toan-ban-hang" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-27" data-salary-max="13000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan ban hang cong ty tnhh thaco auto tp.hcm vi tri phu hop voi ung vien co kinh nghiem xu ly doanh thu, hoa don va doi chieu cong no ban hang. 314 nguyen van linh, phuong binh thuan 1-nam" data-location-group="tp-hcm" data-location-area="quan-7-778" data-role-group="ke-toan-ban-hang" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-27" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -283,7 +300,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Phường Bình Thuận, Quận 7, TP.HCM</span>
+            <span>Quận 7, TP.HCM</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm xử lý doanh thu, hóa đơn và đối chiếu công nợ bán hàng.</p>
@@ -292,7 +309,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 27/04/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan noi bo cong ty tnhh tm xnk nong san nguyet que vi tri phu hop voi ung vien muon theo doi chung tu noi bo, thu chi va hoc viec thuc te trong moi truong doanh nghiep. toa h2 masteri, vinhomes ocean park, gia lam, ha noi fresher" data-location-group="ha-noi" data-role-group="ke-toan-noi-bo" data-employment="full-time" data-work-mode="onsite" data-experience="fresher" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-30" data-salary-max="13000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan noi bo cong ty tnhh tm xnk nong san nguyet que vi tri phu hop voi ung vien muon theo doi chung tu noi bo, thu chi va hoc viec thuc te trong moi truong doanh nghiep. toa h2 masteri, vinhomes ocean park, gia lam, ha noi fresher" data-location-group="ha-noi" data-location-area="huyen-gia-lam-18" data-role-group="ke-toan-noi-bo" data-employment="full-time" data-work-mode="onsite" data-experience="fresher" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-30" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -315,7 +332,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Gia Lâm, Hà Nội</span>
+            <span>Huyện Gia Lâm, Hà Nội</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên muốn theo dõi chứng từ nội bộ, thu chi và học việc thực tế trong môi trường doanh nghiệp.</p>
@@ -324,7 +341,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 30/04/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty tnhh dich vu tu van thue hinh lam vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. so 2 do quang, trung hoa, cau giay, ha noi 1-nam" data-location-group="ha-noi" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-30" data-salary-max="15000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty tnhh dich vu tu van thue hinh lam vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. so 2 do quang, trung hoa, cau giay, ha noi 1-nam" data-location-group="ha-noi" data-location-area="quan-cau-giay-5" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-30" data-salary-max="15000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -347,7 +364,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Trung Hòa, Cầu Giấy, Hà Nội</span>
+            <span>Quận Cầu Giấy, Hà Nội</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm kê khai, kiểm soát hồ sơ thuế và phối hợp xử lý số liệu tuân thủ.</p>
@@ -356,7 +373,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 30/04/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh tm dv xd trang an vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, kiem soat chung tu va phoi hop bao cao trong doanh nghiep xay dung - thuong mai - dich vu. so 109 duong 66 phuong cat lai 3-nam" data-location-group="tp-hcm" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="3-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-30" data-salary-max="15000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh tm dv xd trang an vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, kiem soat chung tu va phoi hop bao cao trong doanh nghiep xay dung - thuong mai - dich vu. so 109 duong 66 phuong cat lai 3-nam" data-location-group="tp-hcm" data-location-area="thanh-pho-thu-duc-769" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="3-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-04-30" data-salary-max="15000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -379,7 +396,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Cát Lái, TP Thủ Đức, TP.HCM</span>
+            <span>TP. Thủ Đức, TP.HCM</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán, kiểm soát chứng từ và phối hợp báo cáo trong doanh nghiệp xây dựng - thương mại - dịch vụ.</p>
@@ -388,7 +405,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 30/04/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung nhan vien ke toan cong ty tnhh thaco auto tp.hcm vi tri phu hop voi ung vien da co kinh nghiem ke toan co ban, theo doi chung tu va ho tro bao cao noi bo. so 56/9 dai lo binh duong, kp binh giao 1-nam" data-location-group="binh-duong" data-role-group="nhan-vien-ke-toan" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-03" data-salary-max="13000000">
+<article class="job-card" data-status="active" data-search="tuyen dung nhan vien ke toan cong ty tnhh thaco auto tp.hcm vi tri phu hop voi ung vien da co kinh nghiem ke toan co ban, theo doi chung tu va ho tro bao cao noi bo. so 56/9 dai lo binh duong, kp binh giao 1-nam" data-location-group="tp-hcm" data-location-area="thanh-pho-thuan-an-725" data-role-group="nhan-vien-ke-toan" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-03" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -411,7 +428,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Thuận Giao, Thuận An, Bình Dương</span>
+            <span>TP. Thuận An (Bình Dương cũ), TP.HCM</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên đã có kinh nghiệm kế toán cơ bản, theo dõi chứng từ và hỗ trợ báo cáo nội bộ.</p>
@@ -420,7 +437,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 03/05/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung hanh chinh nhan su cong ty cp xay dụng và dàu tu thùy anh vi tri phu hop voi ung vien co kinh nghiem hanh chinh - nhan su, tuyen dung, ho so lao dong va phoi hop van hanh noi bo. ngõ 275 au co, tay hò, hà nọi 1-nam" data-location-group="ha-noi" data-role-group="hanh-chinh-nhan-su" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-08" data-salary-max="0">
+<article class="job-card" data-status="active" data-search="tuyen dung hanh chinh nhan su cong ty cp xay dụng và dàu tu thùy anh vi tri phu hop voi ung vien co kinh nghiem hanh chinh - nhan su, tuyen dung, ho so lao dong va phoi hop van hanh noi bo. ngõ 275 au co, tay hò, hà nọi 1-nam" data-location-group="ha-noi" data-location-area="quan-tay-ho-3" data-role-group="hanh-chinh-nhan-su" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-08" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -443,7 +460,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Tây Hồ, Hà Nội</span>
+            <span>Quận Tây Hồ, Hà Nội</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm hành chính - nhân sự, tuyển dụng, hồ sơ lao động và phối hợp vận hành nội bộ.</p>
@@ -452,7 +469,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 08/05/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty viet luat vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. 2 hoa phuong, phuong 2, phu nhuan fresher" data-location-group="tp-hcm" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="fresher" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-08" data-salary-max="0">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty viet luat vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. 2 hoa phuong, phuong 2, phu nhuan fresher" data-location-group="tp-hcm" data-location-area="quan-phu-nhuan-768" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="fresher" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-08" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -475,7 +492,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Phường 2, Phú Nhuận, TP.HCM</span>
+            <span>Quận Phú Nhuận, TP.HCM</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm kê khai, kiểm soát hồ sơ thuế và phối hợp xử lý số liệu tuân thủ.</p>
@@ -484,7 +501,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 08/05/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan noi bo cong ty cp dt sx - xnk hung thinh vi tri phu hop voi ung vien co kinh nghiem theo doi chung tu noi bo, thu chi va phoi hop kiem soat so lieu van hanh. 19 duong 18b, phuong binh hung hoa a, quan binh tan, tp. hcm fresher" data-location-group="tp-hcm" data-role-group="ke-toan-noi-bo" data-employment="full-time" data-work-mode="onsite" data-experience="fresher" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="0">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan noi bo cong ty cp dt sx - xnk hung thinh vi tri phu hop voi ung vien co kinh nghiem theo doi chung tu noi bo, thu chi va phoi hop kiem soat so lieu van hanh. 19 duong 18b, phuong binh hung hoa a, quan binh tan, tp. hcm fresher" data-location-group="tp-hcm" data-location-area="quan-binh-tan-777" data-role-group="ke-toan-noi-bo" data-employment="full-time" data-work-mode="onsite" data-experience="fresher" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -507,7 +524,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Bình Hưng Hòa A, Bình Tân, TP.HCM</span>
+            <span>Quận Bình Tân, TP.HCM</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm theo dõi chứng từ nội bộ, thu chi và phối hợp kiểm soát số liệu vận hành.</p>
@@ -516,7 +533,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 09/05/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan noi bo cong ty tnhh phuc giang (pgi) vi tri phu hop voi ung vien co kinh nghiem theo doi chung tu noi bo, thu chi va phoi hop kiem soat so lieu van hanh. so 5-7 duong d52, phuong 12 2-nam" data-location-group="tp-hcm" data-role-group="ke-toan-noi-bo" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="13000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan noi bo cong ty tnhh phuc giang (pgi) vi tri phu hop voi ung vien co kinh nghiem theo doi chung tu noi bo, thu chi va phoi hop kiem soat so lieu van hanh. so 5-7 duong d52, phuong 12 2-nam" data-location-group="tp-hcm" data-location-area="quan-tan-binh-766" data-role-group="ke-toan-noi-bo" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -539,7 +556,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Phường 12, Tân Bình, TP.HCM</span>
+            <span>Quận Tân Bình, TP.HCM</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm theo dõi chứng từ nội bộ, thu chi và phối hợp kiểm soát số liệu vận hành.</p>
@@ -548,7 +565,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 09/05/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty cp winitex viet nam vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. cum cn huynh cung-tam hiep-thanh tri-hn 1-nam" data-location-group="ha-noi" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="0">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty cp winitex viet nam vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. cum cn huynh cung-tam hiep-thanh tri-hn 1-nam" data-location-group="ha-noi" data-location-area="huyen-thanh-tri-20" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -571,7 +588,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Tam Hiệp, Thanh Trì, Hà Nội</span>
+            <span>Huyện Thanh Trì, Hà Nội</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm kê khai, kiểm soát hồ sơ thuế và phối hợp xử lý số liệu tuân thủ.</p>
@@ -580,7 +597,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 09/05/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty tnhh luat va ke toan viet my - chi nhanh thu do vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. 71 nguyen chi thanh - dong da - ha noi 1-nam" data-location-group="ha-noi" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="13000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan thue cong ty tnhh luat va ke toan viet my - chi nhanh thu do vi tri phu hop voi ung vien co kinh nghiem ke khai, kiem soat ho so thue va phoi hop xu ly so lieu tuan thu. 71 nguyen chi thanh - dong da - ha noi 1-nam" data-location-group="ha-noi" data-location-area="quan-dong-da-6" data-role-group="ke-toan-thue" data-employment="full-time" data-work-mode="onsite" data-experience="1-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -603,7 +620,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Đống Đa, Hà Nội</span>
+            <span>Quận Đống Đa, Hà Nội</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm kê khai, kiểm soát hồ sơ thuế và phối hợp xử lý số liệu tuân thủ.</p>
@@ -612,7 +629,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 09/05/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty co phan quan ly diem den chau a vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. so 47 phan chu trinh 3-nam" data-location-group="ha-noi" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="3-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="0">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty co phan quan ly diem den chau a vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. so 47 phan chu trinh 3-nam" data-location-group="ha-noi" data-location-area="quan-hoan-kiem-2" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="3-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="0">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -635,7 +652,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Phan Chu Trinh, Hoàn Kiếm, Hà Nội</span>
+            <span>Quận Hoàn Kiếm, Hà Nội</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán, theo dõi chứng từ và phối hợp lập báo cáo định kỳ cho doanh nghiệp.</p>
@@ -644,7 +661,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 09/05/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cty tthh nhan hoang ngan tam vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. 252/62/14, duong pham van chieu, phuong thong tay hoi 3-nam" data-location-group="tp-hcm" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="3-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="13000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cty tthh nhan hoang ngan tam vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. 252/62/14, duong pham van chieu, phuong thong tay hoi 3-nam" data-location-group="tp-hcm" data-location-area="quan-go-vap-764" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="3-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-05-09" data-salary-max="13000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -667,7 +684,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Thông Tây Hội, Gò Vấp, TP.HCM</span>
+            <span>Quận Gò Vấp, TP.HCM</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán, theo dõi chứng từ và phối hợp lập báo cáo định kỳ cho doanh nghiệp.</p>
@@ -676,7 +693,7 @@
           <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: 09/05/2026</span>
         </div>
       </article>
-<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh dp nhat nam long vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. 24 duong so 10, kdc duong hong, ap 19, xa binh hung 2-nam" data-location-group="tp-hcm" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-06-07" data-salary-max="15000000">
+<article class="job-card" data-status="active" data-search="tuyen dung ke toan tong hop cong ty tnhh dp nhat nam long vi tri phu hop voi ung vien co kinh nghiem tong hop so lieu ke toan, theo doi chung tu va phoi hop lap bao cao dinh ky cho doanh nghiep. 24 duong so 10, kdc duong hong, ap 19, xa binh hung 2-nam" data-location-group="tp-hcm" data-location-area="huyen-binh-chanh-785" data-role-group="ke-toan-tong-hop" data-employment="full-time" data-work-mode="onsite" data-experience="2-nam" data-featured="0" data-publish-date="2026-04-09" data-deadline="2026-06-07" data-salary-max="15000000">
         <div class="job-card-top">
           <div class="job-card-badges">
             
@@ -699,7 +716,7 @@
           </div>
           <div class="job-location">
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Bình Hưng, Bình Chánh, TP.HCM</span>
+            <span>Huyện Bình Chánh, TP.HCM</span>
           </div>
         </div>
         <p class="job-card-summary">Vị trí phù hợp với ứng viên có kinh nghiệm tổng hợp số liệu kế toán, theo dõi chứng từ và phối hợp lập báo cáo định kỳ cho doanh nghiệp.</p>
@@ -745,7 +762,7 @@
               </div>
               <div class="jobs-candidate-facts">
                 <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>5 năm kinh nghiệm</span>
-                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Thanh Xuân, Cầu Giấy (Hà Nội) · Làm việc kết hợp</span>
+                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Hà Nội · Hybrid</span>
                 <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 20 - 25 triệu</span>
               </div>
               <p class="jobs-candidate-intro">Có kinh nghiệm vận hành kế toán tổng hợp cho doanh nghiệp thương mại và dịch vụ, mạnh về báo cáo quản trị và kiểm soát dòng tiền.</p>
@@ -772,7 +789,7 @@
               </div>
               <div class="jobs-candidate-facts">
                 <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>3 năm kinh nghiệm</span>
-                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Nam Từ Liêm, Cầu Giấy (Hà Nội) · Làm việc kết hợp</span>
+                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Hà Nội · Hybrid</span>
                 <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 15 - 18 triệu</span>
               </div>
               <p class="jobs-candidate-intro">Đã phụ trách tuyển dụng, quản lý hồ sơ lao động, chấm công và phối hợp cùng kế toán tiền lương trong doanh nghiệp dịch vụ.</p>
@@ -799,7 +816,7 @@
               </div>
               <div class="jobs-candidate-facts">
                 <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>3 năm kinh nghiệm</span>
-                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Thủ Đức, Bình Thạnh, Quận 7 (TP.HCM) · Làm việc kết hợp</span>
+                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>TP.HCM · Hybrid</span>
                 <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 16 - 20 triệu</span>
               </div>
               <p class="jobs-candidate-intro">Đã phụ trách tổng hợp số liệu, kiểm soát chứng từ và lập báo cáo quản trị theo tháng cho doanh nghiệp dịch vụ.</p>
@@ -826,7 +843,7 @@
               </div>
               <div class="jobs-candidate-facts">
                 <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>2 năm kinh nghiệm</span>
-                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Cầu Giấy, Đống Đa, Thanh Xuân (Hà Nội) · Làm việc tại văn phòng</span>
+                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Hà Nội · Onsite</span>
                 <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 14 - 18 triệu</span>
               </div>
               <p class="jobs-candidate-intro">Có kinh nghiệm kê khai thuế GTGT, TNCN, quyết toán cuối năm và phối hợp xử lý hồ sơ hoàn thuế cho doanh nghiệp thương mại.</p>
@@ -853,7 +870,7 @@
               </div>
               <div class="jobs-candidate-facts">
                 <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>1 năm kinh nghiệm</span>
-                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Thuận An, Dĩ An, Thủ Dầu Một (Bình Dương) · Làm việc tại văn phòng</span>
+                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Bình Dương · Onsite</span>
                 <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 10 - 12 triệu</span>
               </div>
               <p class="jobs-candidate-intro">Đã thực hiện đối chiếu công nợ, nhập liệu hóa đơn đầu vào - đầu ra và hỗ trợ kiểm kê tồn kho định kỳ tại doanh nghiệp sản xuất.</p>
@@ -880,7 +897,7 @@
               </div>
               <div class="jobs-candidate-facts">
                 <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>2 năm kinh nghiệm</span>
-                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Bình Thạnh, Phú Nhuận, Gò Vấp (TP.HCM) · Làm việc tại văn phòng</span>
+                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>TP.HCM · Onsite</span>
                 <span><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>Mong muốn 12 - 15 triệu</span>
               </div>
               <p class="jobs-candidate-intro">Phụ trách thu chi nội bộ, quản lý hồ sơ thanh toán và phối hợp với bộ phận mua hàng để kiểm soát chi phí vận hành hàng tháng.</p>
@@ -897,7 +914,7 @@
         </div>
         <div class="jobs-candidate-actions">
           <a href="danh-sach-ung-vien.html" class="btn-outline-brown">Xem danh sách hồ sơ ứng viên</a>
-          <a href="dang-nhap-tuyen-dung.html#dang-nhap-nha-tuyen-dung" class="btn-primary-orange">Đăng nhập để xem thông tin liên hệ</a>
+          <a href="dang-nhap-tuyen-dung.html" class="btn-primary-orange">Đăng nhập nhà tuyển dụng để liên hệ</a>
         </div>
       </div>
     </section>
@@ -906,24 +923,24 @@
       <div class="container">
         <div class="section-label center"><span>LỐI VÀO NHANH</span></div>
         <h2 class="jobs-section-title">Bạn là ứng viên hay nhà tuyển dụng?</h2>
-        <p class="jobs-section-subtitle">Chọn trang phù hợp để thao tác nhanh hơn theo nhu cầu của bạn.</p>
+        <p class="jobs-section-subtitle">Chọn đúng khu chức năng để thao tác nhanh hơn theo vai trò của bạn.</p>
         <div class="jobs-portal-grid">
           <article class="jobs-portal-card">
             <span class="jobs-kicker">Cho ứng viên</span>
             <h3>Tài khoản ứng viên</h3>
             <p>Tạo hồ sơ, lưu việc làm, theo dõi đơn đã nộp và trạng thái phản hồi.</p>
             <div class="jobs-portal-actions">
-              <a href="dang-nhap-tuyen-dung.html#dang-nhap-ung-vien" class="btn-primary-orange">Đăng nhập ứng viên</a>
-              <a href="ho-so-ung-vien.html" class="btn-outline-brown">Tạo hồ sơ ứng viên</a>
+              <a href="tai-khoan-ung-vien.html" class="btn-primary-orange">Vào khu ứng viên</a>
+              <a href="dang-nhap-tuyen-dung.html" class="btn-outline-brown">Đăng nhập</a>
             </div>
           </article>
           <article class="jobs-portal-card">
             <span class="jobs-kicker">Cho nhà tuyển dụng</span>
-            <h3>Trang nhà tuyển dụng</h3>
-            <p>Đăng tin mới, quản lý tin đang chạy và theo dõi danh sách đơn ứng tuyển theo từng tin.</p>
+            <h3>Khu nhà tuyển dụng</h3>
+            <p>Đăng tin mới, quản lý tin đang chạy và theo dõi danh sách ứng viên quan tâm.</p>
             <div class="jobs-portal-actions">
-              <a href="dang-nhap-tuyen-dung.html#dang-nhap-nha-tuyen-dung" class="btn-primary-orange">Đăng nhập nhà tuyển dụng</a>
-              <a href="dang-tin-tuyen-dung.html?from=tuyen-dung" class="btn-outline-brown">Yêu cầu mở tài khoản</a>
+              <a href="nha-tuyen-dung.html" class="btn-primary-orange">Vào khu nhà tuyển dụng</a>
+              <a href="dang-tin-viec-lam.html" class="btn-outline-brown">Đăng tin nhanh</a>
             </div>
           </article>
         </div>
@@ -932,7 +949,9 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
-<script>
+  <script src="assets/js/vn-location-data.js"></script>
+  <script src="assets/js/jobs-location-picker.js"></script>
+  <script>
     (function () {
       function normalizeText(value) {
         return String(value || '')
@@ -959,6 +978,7 @@
         var emptyState = document.getElementById('jobsEmptyState');
         var searchInput = document.getElementById('jobsFilterSearch');
         var locationSelect = document.getElementById('jobsFilterLocation');
+        var locationAreaSelect = document.getElementById('jobsFilterArea');
         var roleSelect = document.getElementById('jobsFilterRole');
         var employmentSelect = document.getElementById('jobsFilterEmployment');
         var workModeSelect = document.getElementById('jobsFilterWorkMode');
@@ -1134,6 +1154,7 @@
           var keepPage = options && options.keepPage;
           var searchValue = normalizeText(searchInput ? searchInput.value : '');
           var locationValue = locationSelect ? locationSelect.value : '';
+          var locationAreaValue = locationAreaSelect ? locationAreaSelect.value : '';
           var roleValue = roleSelect ? roleSelect.value : '';
           var employmentValue = employmentSelect ? employmentSelect.value : '';
           var workModeValue = workModeSelect ? workModeSelect.value : '';
@@ -1145,12 +1166,13 @@
           cards.forEach(function (card) {
             var matchesSearch = !searchValue || (card.dataset.search || '').indexOf(searchValue) !== -1;
             var matchesLocation = !locationValue || (card.dataset.locationGroup || '') === locationValue;
+            var matchesLocationArea = !locationAreaValue || (card.dataset.locationArea || '') === locationAreaValue;
             var matchesRole = !roleValue || (card.dataset.roleGroup || '') === roleValue;
             var matchesEmployment = !employmentValue || (card.dataset.employment || '') === employmentValue;
             var matchesWorkMode = !workModeValue || (card.dataset.workMode || '') === workModeValue;
             var matchesExperience = !experienceValue || (card.dataset.experience || '') === experienceValue;
 
-            var show = matchesSearch && matchesLocation && matchesRole && matchesEmployment && matchesWorkMode && matchesExperience;
+            var show = matchesSearch && matchesLocation && matchesLocationArea && matchesRole && matchesEmployment && matchesWorkMode && matchesExperience;
             card.classList.toggle('is-hidden', !show);
             card.classList.remove('is-page-hidden');
             if (show) {
@@ -1168,8 +1190,9 @@
 
           var filters = [];
           if (searchValue) filters.push({ key: 'search', label: 'Từ khóa: ' + (searchInput ? searchInput.value.trim() : '') });
-          if (locationValue) filters.push({ key: 'location', label: 'Khu vực: ' + getSelectedLabel(locationSelect) });
-          if (roleValue) filters.push({ key: 'role', label: 'Vị trí: ' + getSelectedLabel(roleSelect) });
+          if (locationValue) filters.push({ key: 'location', label: 'Tỉnh/thành: ' + getSelectedLabel(locationSelect) });
+          if (locationAreaValue) filters.push({ key: 'locationArea', label: 'Khu vực: ' + getSelectedLabel(locationAreaSelect) });
+          if (roleValue) filters.push({ key: 'role', label: 'Vai trò: ' + getSelectedLabel(roleSelect) });
           if (employmentValue) filters.push({ key: 'employment', label: 'Hình thức: ' + getSelectedLabel(employmentSelect) });
           if (workModeValue) filters.push({ key: 'workMode', label: 'Cách làm việc: ' + getSelectedLabel(workModeSelect) });
           if (experienceValue) filters.push({ key: 'experience', label: 'Kinh nghiệm: ' + getSelectedLabel(experienceSelect) });
@@ -1224,11 +1247,16 @@
             var key = button.dataset.clearKey || '';
             if (key === 'all') {
               form.reset();
+              if (locationSelect) locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
               applyFilters();
               return;
             }
             if (key === 'search' && searchInput) searchInput.value = '';
-            if (key === 'location' && locationSelect) locationSelect.value = '';
+            if (key === 'location' && locationSelect) {
+              locationSelect.value = '';
+              locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+            if (key === 'locationArea' && locationAreaSelect) locationAreaSelect.value = '';
             if (key === 'role' && roleSelect) roleSelect.value = '';
             if (key === 'employment' && employmentSelect) employmentSelect.value = '';
             if (key === 'workMode' && workModeSelect) workModeSelect.value = '';

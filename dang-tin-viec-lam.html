@@ -87,9 +87,31 @@
                     </label>
 
                     <label class="jobs-filter-field">
-                      <span>Khu vực làm việc</span>
-                      <input type="text" id="jobPostLocation" name="location" required maxlength="160" placeholder="Ví dụ: Quận 7, TP.HCM">
+                      <span>Tỉnh / thành phố</span>
+                      <select id="jobPostProvinceKey" name="provinceKey" required data-location-province-select data-location-target-area="jobPostAreaKey" data-location-resolve-source="jobPostLocation" data-location-display-target="jobPostLocation" data-location-province-name-target="jobPostProvinceName" data-location-area-name-target="jobPostAreaName" data-location-province-key-target="jobPostLocationGroupKey" data-location-area-key-target="jobPostLocationAreaKey" data-location-address-target="jobPostAddressDetail">
+                        <option value="">Chọn tỉnh/thành phố</option>
+                      </select>
+                      <small class="jobs-field-hint">Danh sách 34 tỉnh/thành hiện hành, có kèm khu vực cũ để dễ tìm.</small>
                     </label>
+
+                    <label class="jobs-filter-field">
+                      <span>Quận / huyện / khu vực</span>
+                      <select id="jobPostAreaKey" name="areaKey" required data-location-area-select disabled>
+                        <option value="">Chọn quận/huyện/khu vực</option>
+                      </select>
+                    </label>
+
+                    <label class="jobs-filter-field full">
+                      <span>Địa chỉ chi tiết</span>
+                      <input type="text" id="jobPostAddressDetail" name="addressDetail" maxlength="180" placeholder="Ví dụ: 314 Nguyễn Văn Linh, Phường Bình Thuận">
+                      <small class="jobs-field-hint">Địa chỉ chi tiết sẽ ghép với khu vực đã chọn để hiển thị trên tin.</small>
+                    </label>
+
+                    <input type="hidden" id="jobPostLocation" name="location" value="">
+                    <input type="hidden" id="jobPostLocationGroupKey" name="locationGroupKey" value="">
+                    <input type="hidden" id="jobPostLocationAreaKey" name="locationAreaKey" value="">
+                    <input type="hidden" id="jobPostProvinceName" name="provinceName" value="">
+                    <input type="hidden" id="jobPostAreaName" name="areaName" value="">
 
                     <label class="jobs-filter-field">
                       <span>Nhóm vị trí</span>
@@ -102,19 +124,6 @@
                         <option value="ke-toan-truong">Kế toán trưởng</option>
                         <option value="hanh-chinh-nhan-su">Hành chính nhân sự</option>
                         <option value="khac">Khác</option>
-                      </select>
-                    </label>
-
-                    <label class="jobs-filter-field">
-                      <span>Khu vực hiển thị lọc</span>
-                      <select id="jobPostLocationGroupKey" name="locationGroupKey">
-                        <option value="toan-quoc">Toàn quốc</option>
-                        <option value="ha-noi">Hà Nội</option>
-                        <option value="tp-hcm">TP.HCM</option>
-                        <option value="da-nang">Đà Nẵng</option>
-                        <option value="binh-duong">Bình Dương</option>
-                        <option value="dong-nai">Đồng Nai</option>
-                        <option value="khac">Khu vực khác</option>
                       </select>
                     </label>
 
@@ -341,6 +350,8 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script src="assets/js/vn-location-data.js"></script>
+  <script src="assets/js/jobs-location-picker.js"></script>
   <script>
     (function () {
       var form = document.getElementById('employerJobForm');
@@ -490,8 +501,14 @@
         title: '',
         companyName: '',
         location: '',
+        provinceKey: '',
+        provinceName: '',
+        areaKey: '',
+        areaName: '',
+        addressDetail: '',
         roleGroupKey: '',
         locationGroupKey: 'toan-quoc',
+        locationAreaKey: '',
         quantity: '1',
         salaryLabel: '',
         deadline: futureDate(21),
@@ -593,8 +610,14 @@
         title: 'jobPostTitle',
         companyName: 'jobPostCompanyName',
         location: 'jobPostLocation',
+        provinceKey: 'jobPostProvinceKey',
+        provinceName: 'jobPostProvinceName',
+        areaKey: 'jobPostAreaKey',
+        areaName: 'jobPostAreaName',
+        addressDetail: 'jobPostAddressDetail',
         roleGroupKey: 'jobPostRoleGroupKey',
         locationGroupKey: 'jobPostLocationGroupKey',
+        locationAreaKey: 'jobPostLocationAreaKey',
         quantity: 'jobPostQuantity',
         salaryLabel: 'jobPostSalaryLabel',
         deadline: 'jobPostDeadline',
@@ -820,6 +843,9 @@
 
       applyModeTexts();
       fillForm(initialData);
+      if (window.JobLocationPicker && typeof window.JobLocationPicker.init === 'function') {
+        window.JobLocationPicker.init(document);
+      }
       var deadlineInput = document.getElementById('jobPostDeadline');
       if (deadlineInput) {
         deadlineInput.min = toDateInputValue(new Date());

@@ -78,8 +78,8 @@
               </article>
               <article>
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                <strong>TP.HCM</strong>
-                <span>Thủ Đức · Bình Thạnh · Quận 7</span>
+                <strong id="candidateProvinceSummary">TP.HCM</strong>
+                <span id="candidateAreaSummary">TP. Thủ Đức · Quận Bình Thạnh · Quận 7</span>
               </article>
               <article>
                 <i class="fa-regular fa-star" aria-hidden="true"></i>
@@ -144,10 +144,23 @@
                     <span>Kinh nghiệm</span>
                     <input type="text" id="candidateExperience" name="experience" required maxlength="60" value="3 năm">
                   </label>
-                  <label class="jobs-filter-field full">
-                    <span>Khu vực ưu tiên</span>
-                    <input type="text" id="candidatePreferredLocation" name="preferredLocation" required maxlength="160" value="Thủ Đức, TP.HCM · Làm việc kết hợp">
+                  <label class="jobs-filter-field">
+                    <span>Tỉnh / thành phố ưu tiên</span>
+                    <select id="candidatePreferredProvinceKey" name="preferredProvinceKey" required data-location-province-select data-location-target-area="candidatePreferredAreaKey" data-location-resolve-source="candidatePreferredLocation" data-location-display-target="candidatePreferredLocation" data-location-province-name-target="candidatePreferredProvinceName" data-location-area-name-target="candidatePreferredAreaName" data-location-province-key-target="candidatePreferredProvinceKeyMirror" data-location-area-key-target="candidatePreferredAreaKeyMirror">
+                      <option value="">Chọn tỉnh/thành phố</option>
+                    </select>
                   </label>
+                  <label class="jobs-filter-field">
+                    <span>Quận / huyện / khu vực ưu tiên</span>
+                    <select id="candidatePreferredAreaKey" name="preferredAreaKey" required data-location-area-select disabled>
+                      <option value="">Chọn quận/huyện/khu vực</option>
+                    </select>
+                  </label>
+                  <input type="hidden" id="candidatePreferredLocation" name="preferredLocation" value="Thủ Đức, TP.HCM · Làm việc kết hợp">
+                  <input type="hidden" id="candidatePreferredProvinceName" name="preferredProvinceName" value="">
+                  <input type="hidden" id="candidatePreferredAreaName" name="preferredAreaName" value="">
+                  <input type="hidden" id="candidatePreferredProvinceKeyMirror" name="preferredProvinceKeyValue" value="">
+                  <input type="hidden" id="candidatePreferredAreaKeyMirror" name="preferredAreaKeyValue" value="">
                 </div>
               </section>
 
@@ -205,6 +218,8 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script src="assets/js/vn-location-data.js"></script>
+  <script src="assets/js/jobs-location-picker.js"></script>
   <script>
     (function () {
       function initCandidateProfile() {
@@ -222,6 +237,14 @@
         var summary = document.getElementById('candidateSummary');
         var summaryCount = document.getElementById('candidateSummaryCount');
         var feedback = document.getElementById('candidateProfileFeedback');
+        var provinceSummary = document.getElementById('candidateProvinceSummary');
+        var areaSummary = document.getElementById('candidateAreaSummary');
+        var provinceName = document.getElementById('candidatePreferredProvinceName');
+        var areaName = document.getElementById('candidatePreferredAreaName');
+
+        if (window.JobLocationPicker && typeof window.JobLocationPicker.init === 'function') {
+          window.JobLocationPicker.init(document);
+        }
 
         function fieldHasValue(field) {
           return field && String(field.value || '').trim().length > 0 && (!field.checkValidity || field.checkValidity());
@@ -253,6 +276,8 @@
           setCheck('career', ['candidateTargetRole', 'candidateExperience', 'candidatePreferredLocation'].every(function (id) { return fieldHasValue(document.getElementById(id)); }));
           setCheck('summary', optionalFields.every(fieldHasValue));
           setCheck('cv', true);
+          if (provinceSummary && provinceName) provinceSummary.textContent = provinceName.value || 'Chưa chọn';
+          if (areaSummary && areaName) areaSummary.textContent = areaName.value || 'Chưa chọn khu vực';
           updateSummaryCount();
         }
 
