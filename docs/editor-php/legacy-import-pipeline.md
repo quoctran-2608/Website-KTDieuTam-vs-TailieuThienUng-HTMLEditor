@@ -1,6 +1,6 @@
-# Quy trình chuẩn import 2066 bài legacy vào `Ketoandieutam.com`
+# Quy trình chuẩn import 2066 bài legacy vào `ketoandieutam.vn`
 
-> Tài liệu này mô tả **pipeline vận hành chuẩn** để đưa hơn 2000 bài từ kho legacy vào `Ketoandieutam.com` một cách có kiểm soát, không làm kiểu vá tay từng bài.
+> Tài liệu này mô tả **pipeline vận hành chuẩn** để đưa hơn 2000 bài từ kho legacy vào `ketoandieutam.vn` một cách có kiểm soát, không làm kiểu vá tay từng bài.
 
 ## 1) Mục tiêu
 
@@ -29,7 +29,7 @@ Pipeline này dùng để:
 - Command:
 
 ```bash
-python3 Ketoandieutam.com/tools/audit_legacy_mobile_readiness.py
+python3 ketoandieutam.vn/tools/audit_legacy_mobile_readiness.py
 ```
 
 - Output:
@@ -41,7 +41,7 @@ python3 Ketoandieutam.com/tools/audit_legacy_mobile_readiness.py
 - Command:
 
 ```bash
-python3 Ketoandieutam.com/tools/audit_content_classification.py
+python3 ketoandieutam.vn/tools/audit_content_classification.py
 ```
 
 - Output:
@@ -151,7 +151,7 @@ Hai file này hiện đã có các lớp bảo vệ:
 ### 4.5 Quyền cần có
 
 - read: kho nguồn legacy
-- write: toàn bộ thư mục `Ketoandieutam.com/`
+- write: toàn bộ thư mục `ketoandieutam.vn/`
 - execute: Python/Node để scan, build, verify
 
 ## 5) Risk snapshot hiện tại
@@ -202,8 +202,8 @@ Mục tiêu:
 Command:
 
 ```bash
-python3 Ketoandieutam.com/tools/audit_legacy_mobile_readiness.py
-python3 Ketoandieutam.com/tools/audit_content_classification.py
+python3 ketoandieutam.vn/tools/audit_legacy_mobile_readiness.py
+python3 ketoandieutam.vn/tools/audit_content_classification.py
 ```
 
 Phải kiểm tra các phần sau trong report:

@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SITE = ROOT / "Ketoandieutam.com"
+SITE = ROOT / "ketoandieutam.vn"
 ARTICLES_PATH = SITE / "data" / "articles.json"
 REPORT_PATH = SITE / "docs" / "editor-php" / "hoc-lieu-review-queue.md"
 

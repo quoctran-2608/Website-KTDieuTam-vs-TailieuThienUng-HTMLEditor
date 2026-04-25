@@ -18,7 +18,7 @@ Nguyên tắc cốt lõi:
 
 ## 2) Quy ước đường dẫn trong tài liệu này
 
-- Mọi path bên dưới được tính từ **root của thư mục `Ketoandieutam.com/`**
+- Mọi path bên dưới được tính từ **root của thư mục `ketoandieutam.vn/`**
 - Vì file này nằm trong `docs/`, khi mở trực tiếp từ đây thì:
   - `site-shell.js` tương ứng `../site-shell.js`
 - `data/article-views/...` tương ứng `../data/article-views/...`
@@ -123,7 +123,7 @@ Chứa tài liệu nội bộ của site:
 - `docs/sample-migration-thu-vien-ban-tin.md`
 - `docs/sample-migration-thu-vien-ban-tin.json`
 
-> Tài liệu này chỉ liệt kê các path nằm **bên trong `Ketoandieutam.com/`**.
+> Tài liệu này chỉ liệt kê các path nằm **bên trong `ketoandieutam.vn/`**.
 
 ---
 

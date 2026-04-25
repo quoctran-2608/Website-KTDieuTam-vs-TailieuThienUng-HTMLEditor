@@ -3,7 +3,7 @@
 ## 1) Thông tin cuộc họp
 
 - Tên cuộc họp: Họp ký duyệt go-live tính năng Tuyển dụng
-- Dự án: ketoandieutam.com
+- Dự án: ketoandieutam.vn
 - Ngày họp: …… / …… / ……
 - Giờ họp: …… : …… đến …… : ……
 - Hình thức: Trực tiếp / Online

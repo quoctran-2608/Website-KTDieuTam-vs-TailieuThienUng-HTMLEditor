@@ -8,7 +8,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SITE_ROOT = REPO_ROOT / "Ketoandieutam.com"
+SITE_ROOT = REPO_ROOT / "ketoandieutam.vn"
 DOCS_DIR = SITE_ROOT / "docs"
 CATALOG_FILE = REPO_ROOT / "TailieuKeToanThienUng" / "index.html"
 REPORT_PATH = DOCS_DIR / "content-classification-audit.md"
@@ -194,7 +194,7 @@ def build_report(builder, catalog: dict) -> str:
             "## 7) Chạy lại lần sau",
             "",
             "```bash",
-            "python3 Ketoandieutam.com/tools/audit_content_classification.py",
+            "python3 ketoandieutam.vn/tools/audit_content_classification.py",
             "```",
             "",
             "Đọc kèm:",

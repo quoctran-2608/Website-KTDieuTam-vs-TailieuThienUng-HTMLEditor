@@ -230,7 +230,7 @@ Lớp này vẫn được giữ như **internal scoring model**
 ## 9) Tool audit để kiểm tra lại toàn kho
 
 ```bash
-python3 Ketoandieutam.com/tools/audit_content_classification.py
+python3 ketoandieutam.vn/tools/audit_content_classification.py
 ```
 
 Report sinh ra tại:

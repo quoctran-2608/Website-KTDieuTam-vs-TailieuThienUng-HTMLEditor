@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 Audit 2066 bài nguồn trong TailieuKeToanThienUng để phát hiện rủi ro mobile overflow
-trước khi nhập vào Ketoandieutam.com.
+trước khi nhập vào ketoandieutam.vn.
 
 Output:
-- Ketoandieutam.com/docs/legacy-mobile-import-audit.md
+- ketoandieutam.vn/docs/legacy-mobile-import-audit.md
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ from textwrap import shorten
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SITE_ROOT = REPO_ROOT / "Ketoandieutam.com"
+SITE_ROOT = REPO_ROOT / "ketoandieutam.vn"
 DOCS_DIR = SITE_ROOT / "docs"
 SOURCE_ROOT = REPO_ROOT / "TailieuKeToanThienUng"
 CATALOG_FILE = SOURCE_ROOT / "index.html"
@@ -303,7 +303,7 @@ def build_report(stats: list[dict]) -> str:
 
 ## 1) Mục đích
 
-Scan toàn bộ **2066 bài nguồn** trước khi nhập vào `Ketoandieutam.com`, để:
+Scan toàn bộ **2066 bài nguồn** trước khi nhập vào `ketoandieutam.vn`, để:
 
 1. nhận diện sớm bài có nguy cơ **tràn ngang trên mobile**
 2. gom bài theo mức độ rủi ro để **ưu tiên QA**
@@ -312,7 +312,7 @@ Scan toàn bộ **2066 bài nguồn** trước khi nhập vào `Ketoandieutam.co
 ## 2) Cách chạy lại
 
 ```bash
-python3 Ketoandieutam.com/tools/audit_legacy_mobile_readiness.py
+python3 ketoandieutam.vn/tools/audit_legacy_mobile_readiness.py
 ```
 
 ## 3) Snapshot tổng quan
@@ -330,7 +330,7 @@ python3 Ketoandieutam.com/tools/audit_legacy_mobile_readiness.py
 
 ### 5.1 Build-time sanitizer là lớp xử lý chính
 
-Khi nhập bài vào `Ketoandieutam.com`, nên chạy sanitizer **ngay lúc build** thay vì chờ runtime:
+Khi nhập bài vào `ketoandieutam.vn`, nên chạy sanitizer **ngay lúc build** thay vì chờ runtime:
 
 1. **Bỏ width cứng**
    - xóa `width="..."`

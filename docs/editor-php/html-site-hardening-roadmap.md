@@ -102,7 +102,7 @@
 Chạy:
 
 ```bash
-python3 Ketoandieutam.com/tools/site_html_readiness_audit.py
+python3 ketoandieutam.vn/tools/site_html_readiness_audit.py
 ```
 
 ### Mục tiêu QA

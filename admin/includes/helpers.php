@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Resolve admin base path from current request (supports subfolder deploy).
  * Example:
  * - /admin/login.php -> /admin
- * - /Ketoandieutam.com/admin/login.php -> /Ketoandieutam.com/admin
+ * - /ketoandieutam.vn/admin/login.php -> /ketoandieutam.vn/admin
  */
 function admin_base_path_uri(): string
 {
@@ -51,7 +51,7 @@ function enforce_admin_request_context_or_reject(): void
  * Resolve site base path from admin base path.
  * Example:
  * - /admin -> '' (site at root)
- * - /Ketoandieutam.com/admin -> /Ketoandieutam.com
+ * - /ketoandieutam.vn/admin -> /ketoandieutam.vn
  */
 function site_base_path_uri(): string
 {
@@ -82,7 +82,7 @@ function bootstrap_session(): void
   $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
   // IMPORTANT:
   // Do not hardcode '/admin' because this project can run under a subfolder
-  // (e.g. /Ketoandieutam.com/admin). Hardcoding breaks session cookie scope
+  // (e.g. /ketoandieutam.vn/admin). Hardcoding breaks session cookie scope
   // and causes silent CSRF/login loops.
   $cookiePath = admin_base_path_uri();
   session_set_cookie_params([

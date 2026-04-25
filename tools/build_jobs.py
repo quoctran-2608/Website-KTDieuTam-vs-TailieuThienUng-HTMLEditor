@@ -43,7 +43,7 @@ JOBS_SITEMAP_FILE = ROOT / "sitemap-jobs.xml"
 SITEMAP_INDEX_FILE = ROOT / "sitemap-index.xml"
 ROBOTS_FILE = ROOT / "robots.txt"
 INDEX_PAGE = ROOT / "index.html"
-SITE_URL = "https://ketoandieutam.com"
+SITE_URL = "https://ketoandieutam.vn"
 
 SKIP_FILES = {"README.md", "mau-tin-tuyen-dung.md"}
 REQUIRED_FIELDS = [

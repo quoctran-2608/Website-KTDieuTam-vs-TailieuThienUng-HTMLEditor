@@ -7,7 +7,7 @@
 
 ## 1) Mục đích
 
-Scan toàn bộ **2066 bài nguồn** trước khi nhập vào `Ketoandieutam.com`, để:
+Scan toàn bộ **2066 bài nguồn** trước khi nhập vào `ketoandieutam.vn`, để:
 
 1. nhận diện sớm bài có nguy cơ **tràn ngang trên mobile**
 2. gom bài theo mức độ rủi ro để **ưu tiên QA**
@@ -16,7 +16,7 @@ Scan toàn bộ **2066 bài nguồn** trước khi nhập vào `Ketoandieutam.co
 ## 2) Cách chạy lại
 
 ```bash
-python3 Ketoandieutam.com/tools/audit_legacy_mobile_readiness.py
+python3 ketoandieutam.vn/tools/audit_legacy_mobile_readiness.py
 ```
 
 ## 3) Snapshot tổng quan
@@ -45,7 +45,7 @@ python3 Ketoandieutam.com/tools/audit_legacy_mobile_readiness.py
 
 ### 5.1 Build-time sanitizer là lớp xử lý chính
 
-Khi nhập bài vào `Ketoandieutam.com`, nên chạy sanitizer **ngay lúc build** thay vì chờ runtime:
+Khi nhập bài vào `ketoandieutam.vn`, nên chạy sanitizer **ngay lúc build** thay vì chờ runtime:
 
 1. **Bỏ width cứng**
    - xóa `width="..."`

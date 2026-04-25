@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-SITE_ROOT = ROOT / "Ketoandieutam.com"
+SITE_ROOT = ROOT / "ketoandieutam.vn"
 DOCS_DIR = SITE_ROOT / "docs"
 REPORT_PATH = DOCS_DIR / "editorial-review-queue.md"
 
@@ -124,7 +124,7 @@ def main() -> None:
         "## Chạy lại",
         "",
         "```bash",
-        "python3 Ketoandieutam.com/tools/audit_editorial_review_queue.py",
+        "python3 ketoandieutam.vn/tools/audit_editorial_review_queue.py",
         "```",
         "",
     ]

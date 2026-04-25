@@ -1,4 +1,4 @@
-# Kế hoạch import full 2066 bài vào `Ketoandieutam.com`
+# Kế hoạch import full 2066 bài vào `ketoandieutam.vn`
 
 ## Mục tiêu
 

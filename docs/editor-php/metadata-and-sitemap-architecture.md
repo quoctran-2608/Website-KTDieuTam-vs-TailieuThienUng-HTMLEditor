@@ -1,4 +1,4 @@
-# Kiến trúc metadata và sitemap cho `Ketoandieutam.com`
+# Kiến trúc metadata và sitemap cho `ketoandieutam.vn`
 
 ## Mục tiêu
 
@@ -84,7 +84,7 @@ Builder hiện đã được mở rộng để sinh thêm thư mục:
 ### Cấu trúc
 
 ```text
-Ketoandieutam.com/
+ketoandieutam.vn/
   data/
     articles.json
     taxonomy.json

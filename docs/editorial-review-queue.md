@@ -77,5 +77,5 @@
 ## Chạy lại
 
 ```bash
-python3 Ketoandieutam.com/tools/audit_editorial_review_queue.py
+python3 ketoandieutam.vn/tools/audit_editorial_review_queue.py
 ```

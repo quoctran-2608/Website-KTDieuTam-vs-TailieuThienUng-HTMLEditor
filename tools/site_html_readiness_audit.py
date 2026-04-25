@@ -10,7 +10,7 @@ from urllib.parse import urlparse, unquote
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SITE = ROOT / "Ketoandieutam.com"
+SITE = ROOT / "ketoandieutam.vn"
 DOCS = SITE / "docs"
 REPORT = DOCS / "site-html-readiness-audit.md"
 

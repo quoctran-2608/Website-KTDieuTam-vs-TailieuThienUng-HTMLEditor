@@ -85,7 +85,7 @@ Trong đó:
 
 ## File kỹ thuật liên quan
 
-- `Ketoandieutam.com/article-layout.js`
-- `Ketoandieutam.com/assets/css/content-hub.css`
+- `ketoandieutam.vn/article-layout.js`
+- `ketoandieutam.vn/assets/css/content-hub.css`
 - `legacy-import-pipeline.md`
 - `legacy-mobile-import-audit.md`

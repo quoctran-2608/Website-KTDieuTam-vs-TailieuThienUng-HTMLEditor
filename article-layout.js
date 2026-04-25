@@ -153,7 +153,7 @@
       /* noop */
     }
     if (data && data.articleId) {
-      return 'https://ketoandieutam.com/' + String(data.articleId).replace(/^\//, '');
+      return 'https://ketoandieutam.vn/' + String(data.articleId).replace(/^\//, '');
     }
     return '';
   }

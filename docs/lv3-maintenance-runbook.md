@@ -8,7 +8,7 @@
   3. Lưu artifact truy vết.
 
 ## 2) Một lệnh chuẩn (khuyến nghị)
-Từ thư mục `Ketoandieutam.com`:
+Từ thư mục `ketoandieutam.vn`:
 
 ```bash
 python3 tools/run_lv3_maintenance.py --mode full
@@ -73,7 +73,7 @@ Wrapper daily mặc định bật guard coverage:
 Ví dụ chạy mỗi ngày lúc 01:30:
 
 ```cron
-30 1 * * * cd /mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com && ./tools/run_lv3_maintenance_daily.sh >> .m/reclass/cron-maintenance.log 2>&1
+30 1 * * * cd /mnt/d/WORKING/KetoanThienUng/ketoandieutam.vn && ./tools/run_lv3_maintenance_daily.sh >> .m/reclass/cron-maintenance.log 2>&1
 ```
 
 ## 4) Điều kiện PASS/FAIL
