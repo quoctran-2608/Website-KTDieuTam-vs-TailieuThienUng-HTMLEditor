@@ -234,18 +234,24 @@
     return window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
   }
 
-  function parseInlinePixelWidths(table) {
-    if (!table || !table.querySelectorAll) return [];
-    var values = [];
+  function parseInlineWidthHints(table) {
+    if (!table || !table.querySelectorAll) return { pixels: [], percentCount: 0 };
+    var pixels = [];
+    var percentCount = 0;
     table.querySelectorAll('[style]').forEach(function (node) {
       ['width', 'minWidth', 'maxWidth'].forEach(function (prop) {
         var current = node.style && node.style[prop];
-        if (!current || !hasPixelValue(current)) return;
-        var px = parseFloat(current);
-        if (isFinite(px)) values.push(px);
+        if (!current) return;
+        if (hasPixelValue(current)) {
+          var px = parseFloat(current);
+          if (isFinite(px)) pixels.push(px);
+        }
+        if (/-?\d+(?:\.\d+)?%/i.test(String(current))) {
+          percentCount += 1;
+        }
       });
     });
-    return values;
+    return { pixels: pixels, percentCount: percentCount };
   }
 
   function shouldPreserveLegacyTableLayout(table) {
@@ -256,10 +262,12 @@
       return Math.max(max, (row.cells || []).length);
     }, 0);
     if (maxCols < 8) return false;
-    var widths = parseInlinePixelWidths(table);
-    if (!widths.length) return false;
+    var hints = parseInlineWidthHints(table);
+    var widths = hints.pixels;
     var smallCount = widths.filter(function (value) { return value <= 72; }).length;
-    return smallCount >= 8 || (smallCount >= 6 && widths.length >= 40);
+    if (smallCount >= 8 || (smallCount >= 6 && widths.length >= 40)) return true;
+    // Some imported forms use percentage-only column widths; keep those dense layouts intact too.
+    return rows.length >= 3 && hints.percentCount >= Math.max(8, maxCols);
   }
 
   function shouldPreserveLegacyArticleLayout(prose) {
