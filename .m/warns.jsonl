@@ -62,3 +62,14 @@
 {"ts":1777047129.9918821,"message":"micro-compact triggered (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":231153,"saved_tokens":22986,"source":"usage.input_tokens"}}
 {"ts":1777047431.8831496,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
 {"ts": 1777047609.2205148, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1777048037.2561119,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1777048279.9146554,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18312834618758797,"terminal_event":"stream_end","last_event_type":"response.reasoning_summary_text.delta"}}
+{"ts":1777048439.7578444,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18406795039962415,"terminal_event":"stream_end","last_event_type":"response.reasoning_summary_text.delta"}}
+{"ts":1777048561.737546,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20421293291459464,"terminal_event":"stream_end","last_event_type":"response.reasoning_summary_text.delta"}}
+{"ts":1777048785.8617525,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19604864814134718,"terminal_event":"stream_end","last_event_type":"response.reasoning_summary_text.delta"}}
+{"ts":1777048976.6669383,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19534503186836141,"terminal_event":"stream_end","last_event_type":"response.reasoning_summary_text.delta"}}
+{"ts":1777049095.7549992,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20243438533620647,"terminal_event":"stream_end","last_event_type":"response.reasoning_summary_text.delta"}}
+{"ts":1777049217.787324,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18316441401986611,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts": 1777049277.9215186, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1777049429.8509698, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts": 1777049899.1137629, "message": "retryable error; retrying", "extra": {"attempt": 1, "max_retries": 5, "delay": 0.1856200442907114}}

@@ -2789,6 +2789,11 @@ body.is-recruiter-ops-open {
   color: #64748b;
 }
 
+.jobs-status-pill.is-warning {
+  background: #fff3dc;
+  color: #9a5e0a;
+}
+
 .employer-request-page .jobs-hero-grid {
   grid-template-columns: minmax(0, 1fr);
   max-width: 860px;
@@ -2898,6 +2903,224 @@ body.is-recruiter-ops-open {
 .recruiter-applications-page .jobs-hero h1,
 .employer-request-page .jobs-hero h1 {
   font-size: 40px;
+}
+
+.jobs-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.employer-manage-jobs-page .jobs-manage-summary-panel .jobs-dashboard-note {
+  margin-bottom: 16px;
+}
+
+.jobs-manage-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.jobs-manage-summary-card {
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(182, 141, 64, 0.14);
+  background: linear-gradient(180deg, #fffdf8 0%, #faf7f2 100%);
+  display: grid;
+  gap: 4px;
+}
+
+.jobs-manage-summary-card span {
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8b6b39;
+}
+
+.jobs-manage-summary-card strong {
+  font-size: 27px;
+  line-height: 1.15;
+  color: #1f2937;
+}
+
+.jobs-manage-summary-card em {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #708093;
+  font-style: normal;
+}
+
+.jobs-manage-summary-actions {
+  margin-top: 16px;
+}
+
+.jobs-manage-list-panel .jobs-dashboard-panel-head {
+  margin-bottom: 12px;
+}
+
+.jobs-manage-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.jobs-manage-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(182, 141, 64, 0.2);
+  background: #fff;
+  color: #6f5330;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.24s ease;
+}
+
+.jobs-manage-tab:hover {
+  border-color: rgba(182, 141, 64, 0.36);
+  background: #fef8ee;
+}
+
+.jobs-manage-tab.is-active {
+  border-color: rgba(182, 141, 64, 0.46);
+  background: #f8efdf;
+  color: #5f411b;
+}
+
+.jobs-manage-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(182, 141, 64, 0.2);
+  font-size: 11px;
+  line-height: 1;
+}
+
+.jobs-manage-filter-bar {
+  margin-bottom: 12px;
+}
+
+.jobs-manage-filter-grid {
+  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr));
+}
+
+.jobs-manage-filter-grid .jobs-filter-field.is-wide {
+  grid-column: auto;
+}
+
+.jobs-manage-context-note {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.jobs-manage-table-wrap {
+  border-radius: 20px;
+}
+
+.jobs-manage-table {
+  min-width: 980px;
+}
+
+.jobs-manage-table td {
+  vertical-align: top;
+}
+
+.jobs-manage-table .jobs-manage-position {
+  display: grid;
+  gap: 6px;
+}
+
+.jobs-manage-title {
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.jobs-manage-meta {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #6b7280;
+}
+
+.jobs-manage-status-cell,
+.jobs-manage-deadline-cell,
+.jobs-manage-applications {
+  display: grid;
+  gap: 6px;
+}
+
+.jobs-manage-deadline-text,
+.jobs-manage-application-link {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #2f3f56;
+}
+
+.jobs-manage-applications .jobs-manage-application-link {
+  margin-top: 0;
+}
+
+.jobs-manage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.jobs-manage-cell-actions {
+  min-width: 290px;
+}
+
+.jobs-manage-action-btn {
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.jobs-manage-cell-actions .btn-primary-orange,
+.jobs-manage-cell-actions .btn-outline-brown {
+  height: 36px;
+}
+
+.jobs-manage-cell-actions .btn-outline-brown {
+  border-width: 1px;
+}
+
+.jobs-manage-job-row.is-selected td {
+  background: #fffaf0;
+}
+
+.jobs-manage-card-list {
+  display: none;
+}
+
+.jobs-manage-job-card {
+  cursor: default;
+}
+
+.jobs-manage-job-card .jobs-manage-actions {
+  margin-top: 12px;
 }
 
 .employer-job-detail-page .jobs-hero-grid {
@@ -4380,6 +4603,58 @@ body.is-recruiter-ops-open {
   .jobs-recruiter-application-card,
   .jobs-recruiter-focus-card {
     padding: 18px;
+  }
+
+  .jobs-manage-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .jobs-manage-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jobs-manage-table-wrap {
+    display: none;
+  }
+
+  .jobs-manage-card-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .jobs-manage-job-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .jobs-manage-job-card .jobs-recruiter-application-head {
+    margin-bottom: 10px;
+  }
+
+  .jobs-manage-job-card .jobs-manage-title {
+    font-size: 15px;
+  }
+
+  .jobs-manage-job-card .jobs-manage-meta {
+    font-size: 12px;
+  }
+
+  .jobs-manage-job-card .jobs-recruiter-application-jobline {
+    gap: 4px;
+    margin: 0;
+  }
+
+  .jobs-manage-job-card .jobs-manage-actions > * {
+    flex: 1 1 100%;
+  }
+
+  .jobs-manage-job-card .jobs-manage-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .jobs-manage-summary-actions > * {
+    flex-basis: 100%;
   }
 
   .jobs-recruiter-application-head {

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quản lý tin tuyển dụng | Kế Toán Diệu Tâm</title>
-  <meta name="description" content="Theo dõi trạng thái từng tin, xem số đơn và mở nhanh các thao tác quản lý tin tuyển dụng.">
+  <meta name="description" content="Quản lý tin tuyển dụng theo trạng thái, lọc nhanh tin cần xử lý và mở thao tác đúng ưu tiên.">
   <link rel="canonical" href="https://ketoandieutam.com/quan-ly-tin-tuyen-dung.html">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/jobs.css">
@@ -27,8 +27,8 @@
         <div class="jobs-hero-grid">
           <div>
             <span class="jobs-kicker">Quản lý tin</span>
-            <h1>Theo dõi trạng thái tin tuyển dụng</h1>
-            <p class="jobs-hero-text">Mở nhanh từng tin để sửa, gia hạn, đóng tin hoặc xem đơn.</p>
+            <h1>Quản lý tin tuyển dụng theo trạng thái</h1>
+            <p class="jobs-hero-text">Xem tin đang tuyển, sắp hết hạn hoặc cần chỉnh sửa, rồi mở nhanh đơn ứng tuyển của từng vị trí.</p>
           </div>
         </div>
       </div>
@@ -46,66 +46,255 @@
         </aside>
 
         <div class="jobs-dashboard-main">
-          <section class="jobs-dashboard-panel">
+          <section class="jobs-dashboard-panel jobs-manage-summary-panel">
+            <div class="jobs-dashboard-panel-head">
+              <h2>Tổng quan tin đang đăng</h2>
+              <a href="dang-tin-viec-lam.html?mode=tao-moi" class="btn-outline-brown">Đăng tin mới</a>
+            </div>
+            <p class="jobs-dashboard-note">Theo dõi nhanh số tin đang hiển thị, tin cần xử lý và tổng số đơn theo từng trạng thái.</p>
+            <div class="jobs-manage-summary-grid">
+              <article class="jobs-manage-summary-card">
+                <span>Tổng tin</span>
+                <strong id="manageSummaryTotal">0</strong>
+                <em>Tất cả tin đã tạo</em>
+              </article>
+              <article class="jobs-manage-summary-card">
+                <span>Đang hiển thị</span>
+                <strong id="manageSummaryLive">0</strong>
+                <em>Tin đang nhận hồ sơ</em>
+              </article>
+              <article class="jobs-manage-summary-card">
+                <span>Cần xử lý</span>
+                <strong id="manageSummaryNeedsAction">0</strong>
+                <em>Nháp · sắp hết hạn · đã hết hạn</em>
+              </article>
+              <article class="jobs-manage-summary-card">
+                <span>Sắp hết hạn</span>
+                <strong id="manageSummaryClosingSoon">0</strong>
+                <em>Nên gia hạn trong hôm nay</em>
+              </article>
+              <article class="jobs-manage-summary-card">
+                <span>Tổng đơn</span>
+                <strong id="manageSummaryApplications">0</strong>
+                <em>Ứng tuyển từ tất cả tin</em>
+              </article>
+            </div>
+            <div class="jobs-portal-actions jobs-manage-summary-actions">
+              <a href="ung-vien-tuyen-dung.html?view=theo-tin" class="btn-outline-brown">Xem toàn bộ đơn ứng tuyển</a>
+              <a href="quan-ly-tin-tuyen-dung.html?tab=can-xu-ly" class="btn-primary-orange">Mở danh sách tin cần xử lý</a>
+            </div>
+          </section>
+
+          <section class="jobs-dashboard-panel jobs-manage-list-panel">
             <div class="jobs-dashboard-panel-head">
               <h2>Danh sách tin tuyển dụng</h2>
-              <span class="jobs-dashboard-note">Mỗi dòng là một tin để bạn mở, sửa, gia hạn hoặc đăng lại khi cần.</span>
+              <span class="jobs-dashboard-note" id="manageJobCount" aria-live="polite">0 tin đang hiển thị</span>
             </div>
-            <div class="jobs-dashboard-table-wrap">
-              <table class="jobs-dashboard-table">
+
+            <div class="jobs-manage-tabs" role="tablist" aria-label="Lọc nhanh theo nhóm trạng thái">
+              <button type="button" class="jobs-manage-tab is-active" data-tab="tat-ca" role="tab" aria-selected="true">
+                Tất cả
+                <span class="jobs-manage-tab-count" id="manageTabCountAll">0</span>
+              </button>
+              <button type="button" class="jobs-manage-tab" data-tab="dang-tuyen" role="tab" aria-selected="false">
+                Đang tuyển
+                <span class="jobs-manage-tab-count" id="manageTabCountLive">0</span>
+              </button>
+              <button type="button" class="jobs-manage-tab" data-tab="can-xu-ly" role="tab" aria-selected="false">
+                Cần xử lý
+                <span class="jobs-manage-tab-count" id="manageTabCountNeedsAction">0</span>
+              </button>
+              <button type="button" class="jobs-manage-tab" data-tab="da-dong" role="tab" aria-selected="false">
+                Đã đóng
+                <span class="jobs-manage-tab-count" id="manageTabCountClosed">0</span>
+              </button>
+            </div>
+
+            <form class="jobs-filter-bar jobs-manage-filter-bar" id="manageJobFilterForm" action="quan-ly-tin-tuyen-dung.html" method="get">
+              <input type="hidden" name="tab" value="tat-ca" id="manageJobTabInput">
+              <div class="jobs-filter-grid jobs-manage-filter-grid">
+                <label class="jobs-filter-field is-wide">
+                  <span>Tìm tin</span>
+                  <input type="search" id="manageJobSearch" name="q" placeholder="Mã tin, vị trí, khu vực, mức lương..." autocomplete="off">
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Trạng thái</span>
+                  <select id="manageJobStatus" name="status">
+                    <option value="">Tất cả trạng thái</option>
+                    <option value="dang-tuyen">Đang tuyển</option>
+                    <option value="nhap">Nháp</option>
+                    <option value="sap-het-han">Sắp hết hạn</option>
+                    <option value="het-han">Đã hết hạn</option>
+                    <option value="da-dong">Đã đóng</option>
+                  </select>
+                </label>
+                <label class="jobs-filter-field">
+                  <span>Sắp xếp</span>
+                  <select id="manageJobSort" name="sort">
+                    <option value="updated-desc">Mới cập nhật</option>
+                    <option value="deadline-asc">Hạn nộp gần nhất</option>
+                    <option value="applications-desc">Nhiều đơn nhất</option>
+                    <option value="title-asc">Tên vị trí A → Z</option>
+                  </select>
+                </label>
+              </div>
+              <div class="jobs-filter-meta">
+                <strong id="manageJobFilterHint">Ưu tiên xử lý tin nháp, sắp hết hạn hoặc đã hết hạn trước.</strong>
+                <button type="button" class="jobs-filter-reset" id="manageJobReset">Xóa lọc</button>
+              </div>
+            </form>
+
+            <p class="jobs-empty-state jobs-manage-context-note" id="manageJobContextNote" hidden></p>
+
+            <div class="jobs-dashboard-table-wrap jobs-manage-table-wrap">
+              <table class="jobs-dashboard-table jobs-manage-table" id="manageJobTable">
+                <caption class="jobs-visually-hidden">Danh sách tin tuyển dụng theo trạng thái và thao tác quản lý</caption>
                 <thead>
                   <tr>
-                    <th>Vị trí</th>
-                    <th>Trạng thái</th>
-                    <th>Hạn nộp</th>
-                    <th>Đơn ứng tuyển</th>
-                    <th>Hành động</th>
+                    <th scope="col">Vị trí</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Hạn nộp</th>
+                    <th scope="col">Đơn ứng tuyển</th>
+                    <th scope="col">Hành động</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Kế toán tổng hợp</td>
-                    <td><span class="jobs-status-pill is-active">Đang tuyển</span></td>
-                    <td>25/04/2026</td>
-                    <td>6 đơn</td>
+                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-tong-hop-cong-ty-tnhh-abc" data-status="dang-tuyen" data-deadline="2026-04-25" data-updated="2026-04-24" data-applications="6" data-search="ke toan tong hop tp.hcm 15 18 trieu cong ty tnhh abc">
                     <td>
-                      <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&mode=xem" class="job-source-link">Xem chi tiết</a>
-                      ·
-                      <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link">Mở danh sách đơn</a>
+                      <div class="jobs-manage-position">
+                        <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&mode=xem" class="job-source-link jobs-manage-title">Kế toán tổng hợp</a>
+                        <p class="jobs-manage-meta">Mã tin: KTTH-ABC-2404 · TP.HCM · 15 - 18 triệu · Cập nhật 24/04/2026</p>
+                      </div>
+                    </td>
+                    <td class="jobs-manage-status-cell">
+                      <span class="jobs-status-pill is-active">Đang tuyển</span>
+                      <span class="jobs-dashboard-note">Tin đang hiển thị và nhận hồ sơ bình thường.</span>
+                    </td>
+                    <td class="jobs-manage-deadline-cell">
+                      <span class="jobs-manage-deadline-text">25/04/2026</span>
+                      <span class="jobs-dashboard-note jobs-manage-deadline-note">Còn 1 ngày</span>
+                    </td>
+                    <td class="jobs-manage-applications">
+                      <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link jobs-manage-application-link">6 đơn ứng tuyển</a>
+                      <span class="jobs-dashboard-note">2 đơn mới trong 24 giờ qua</span>
+                    </td>
+                    <td>
+                      <div class="jobs-manage-actions jobs-manage-cell-actions">
+                        <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&view=theo-tin" class="btn-primary-orange jobs-manage-action-btn">Xem 6 đơn</a>
+                        <a href="dang-tin-viec-lam.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-abc&mode=sua" class="btn-outline-brown jobs-manage-action-btn">Sửa tin</a>
+                      </div>
                     </td>
                   </tr>
-                  <tr>
-                    <td>Kế toán thuế</td>
-                    <td><span class="jobs-status-pill is-reviewing">Nháp</span></td>
-                    <td>Chưa đặt</td>
-                    <td>0 đơn</td>
-                    <td><a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-thue-cong-ty-tnhh-abc&mode=sua" class="job-source-link">Sửa tin</a></td>
-                  </tr>
-                  <tr>
-                    <td>Hành chính nhân sự</td>
-                    <td><span class="jobs-status-pill is-muted">Đã hết hạn</span></td>
-                    <td>12/04/2026</td>
-                    <td>3 đơn</td>
+                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-thue-cong-ty-tnhh-abc" data-status="nhap" data-deadline="" data-updated="2026-04-22" data-applications="0" data-search="ke toan thue nhap cong ty tnhh abc">
                     <td>
-                      <a href="chi-tiet-tin-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc&action=gia-han" class="job-source-link">Gia hạn</a>
-                      ·
-                      <a href="chi-tiet-tin-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc&action=dong-tin" class="job-source-link">Đóng tin</a>
+                      <div class="jobs-manage-position">
+                        <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-thue-cong-ty-tnhh-abc&mode=sua" class="job-source-link jobs-manage-title">Kế toán thuế</a>
+                        <p class="jobs-manage-meta">Mã tin: KTT-ABC-2402 · Hà Nội · 13 - 16 triệu · Cập nhật 22/04/2026</p>
+                      </div>
+                    </td>
+                    <td class="jobs-manage-status-cell">
+                      <span class="jobs-status-pill is-reviewing">Nháp</span>
+                      <span class="jobs-dashboard-note">Thiếu mô tả lương và yêu cầu hồ sơ.</span>
+                    </td>
+                    <td class="jobs-manage-deadline-cell">
+                      <span class="jobs-manage-deadline-text">Chưa đặt</span>
+                      <span class="jobs-dashboard-note jobs-manage-deadline-note">Cần hoàn thiện trước khi đăng</span>
+                    </td>
+                    <td class="jobs-manage-applications">
+                      <span class="jobs-manage-application-link">0 đơn ứng tuyển</span>
+                      <span class="jobs-dashboard-note">Tin chưa hiển thị công khai</span>
+                    </td>
+                    <td>
+                      <div class="jobs-manage-actions jobs-manage-cell-actions">
+                        <a href="dang-tin-viec-lam.html?job_id=ke-toan-thue-cong-ty-tnhh-abc&mode=sua" class="btn-primary-orange jobs-manage-action-btn">Hoàn thiện tin</a>
+                        <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-thue-cong-ty-tnhh-abc&mode=sua" class="btn-outline-brown jobs-manage-action-btn">Mở bản nháp</a>
+                      </div>
                     </td>
                   </tr>
-                  <tr>
-                    <td>Kế toán nội bộ</td>
-                    <td><span class="jobs-status-pill is-muted">Đã đóng</span></td>
-                    <td>10/04/2026</td>
-                    <td>5 đơn</td>
+                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-ban-hang-cong-ty-tnhh-thaco-auto-tp-hcm" data-status="sap-het-han" data-deadline="2026-04-26" data-updated="2026-04-23" data-applications="4" data-search="ke toan ban hang thaco auto tp.hcm sap het han">
                     <td>
-                      <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-noi-bo-cong-ty-tnhh-abc&mode=xem" class="job-source-link">Xem chi tiết</a>
-                      ·
-                      <a href="dang-tin-viec-lam.html?job_id=ke-toan-noi-bo-cong-ty-tnhh-abc&mode=nhan-ban" class="job-source-link">Đăng lại</a>
+                      <div class="jobs-manage-position">
+                        <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-ban-hang-cong-ty-tnhh-thaco-auto-tp-hcm&mode=xem" class="job-source-link jobs-manage-title">Kế toán bán hàng</a>
+                        <p class="jobs-manage-meta">Mã tin: KTBH-THACO-2403 · TP.HCM · 10 - 13 triệu · Cập nhật 23/04/2026</p>
+                      </div>
+                    </td>
+                    <td class="jobs-manage-status-cell">
+                      <span class="jobs-status-pill is-warning">Sắp hết hạn</span>
+                      <span class="jobs-dashboard-note">Nên gia hạn sớm để không gián đoạn nhận hồ sơ.</span>
+                    </td>
+                    <td class="jobs-manage-deadline-cell">
+                      <span class="jobs-manage-deadline-text">26/04/2026</span>
+                      <span class="jobs-dashboard-note jobs-manage-deadline-note">Còn 2 ngày</span>
+                    </td>
+                    <td class="jobs-manage-applications">
+                      <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-ban-hang-cong-ty-tnhh-thaco-auto-tp-hcm&view=theo-tin" class="job-source-link jobs-manage-application-link">4 đơn ứng tuyển</a>
+                      <span class="jobs-dashboard-note">1 đơn mới trong hôm nay</span>
+                    </td>
+                    <td>
+                      <div class="jobs-manage-actions jobs-manage-cell-actions">
+                        <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-ban-hang-cong-ty-tnhh-thaco-auto-tp-hcm&action=gia-han" class="btn-primary-orange jobs-manage-action-btn">Gia hạn ngay</a>
+                        <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-ban-hang-cong-ty-tnhh-thaco-auto-tp-hcm&view=theo-tin" class="btn-outline-brown jobs-manage-action-btn">Xem 4 đơn</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="jobs-manage-job-row" data-job-id="hanh-chinh-nhan-su-cong-ty-tnhh-abc" data-status="het-han" data-deadline="2026-04-12" data-updated="2026-04-12" data-applications="3" data-search="hanh chinh nhan su da het han cong ty tnhh abc">
+                    <td>
+                      <div class="jobs-manage-position">
+                        <a href="chi-tiet-tin-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc&mode=xem" class="job-source-link jobs-manage-title">Hành chính nhân sự</a>
+                        <p class="jobs-manage-meta">Mã tin: HCNS-ABC-2401 · Hà Nội · 12 - 15 triệu · Cập nhật 12/04/2026</p>
+                      </div>
+                    </td>
+                    <td class="jobs-manage-status-cell">
+                      <span class="jobs-status-pill is-muted">Đã hết hạn</span>
+                      <span class="jobs-dashboard-note">Tin ngừng hiển thị, cần gia hạn hoặc đóng lại.</span>
+                    </td>
+                    <td class="jobs-manage-deadline-cell">
+                      <span class="jobs-manage-deadline-text">12/04/2026</span>
+                      <span class="jobs-dashboard-note jobs-manage-deadline-note">Quá hạn 12 ngày</span>
+                    </td>
+                    <td class="jobs-manage-applications">
+                      <a href="ung-vien-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link jobs-manage-application-link">3 đơn ứng tuyển</a>
+                      <span class="jobs-dashboard-note">Đã có hồ sơ, nên quyết định nhanh</span>
+                    </td>
+                    <td>
+                      <div class="jobs-manage-actions jobs-manage-cell-actions">
+                        <a href="chi-tiet-tin-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc&action=gia-han" class="btn-primary-orange jobs-manage-action-btn">Gia hạn tin</a>
+                        <a href="chi-tiet-tin-tuyen-dung.html?job_id=hanh-chinh-nhan-su-cong-ty-tnhh-abc&action=dong-tin" class="btn-outline-brown jobs-manage-action-btn">Đóng tin</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="jobs-manage-job-row" data-job-id="ke-toan-noi-bo-cong-ty-tnhh-abc" data-status="da-dong" data-deadline="2026-04-10" data-updated="2026-04-10" data-applications="5" data-search="ke toan noi bo da dong cong ty tnhh abc">
+                    <td>
+                      <div class="jobs-manage-position">
+                        <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-noi-bo-cong-ty-tnhh-abc&mode=xem" class="job-source-link jobs-manage-title">Kế toán nội bộ</a>
+                        <p class="jobs-manage-meta">Mã tin: KTNB-ABC-2399 · TP.HCM · 11 - 14 triệu · Cập nhật 10/04/2026</p>
+                      </div>
+                    </td>
+                    <td class="jobs-manage-status-cell">
+                      <span class="jobs-status-pill is-muted">Đã đóng</span>
+                      <span class="jobs-dashboard-note">Đã tuyển đủ, có thể đăng lại khi cần bổ sung nhân sự.</span>
+                    </td>
+                    <td class="jobs-manage-deadline-cell">
+                      <span class="jobs-manage-deadline-text">10/04/2026</span>
+                      <span class="jobs-dashboard-note jobs-manage-deadline-note">Kết thúc đợt tuyển trước</span>
+                    </td>
+                    <td class="jobs-manage-applications">
+                      <a href="ung-vien-tuyen-dung.html?job_id=ke-toan-noi-bo-cong-ty-tnhh-abc&view=theo-tin" class="job-source-link jobs-manage-application-link">5 đơn ứng tuyển</a>
+                      <span class="jobs-dashboard-note">Có thể tái sử dụng tệp ứng viên cũ</span>
+                    </td>
+                    <td>
+                      <div class="jobs-manage-actions jobs-manage-cell-actions">
+                        <a href="dang-tin-viec-lam.html?job_id=ke-toan-noi-bo-cong-ty-tnhh-abc&mode=nhan-ban" class="btn-primary-orange jobs-manage-action-btn">Đăng lại</a>
+                        <a href="chi-tiet-tin-tuyen-dung.html?job_id=ke-toan-noi-bo-cong-ty-tnhh-abc&mode=xem" class="btn-outline-brown jobs-manage-action-btn">Xem chi tiết</a>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
+
+            <div class="jobs-recruiter-application-list jobs-manage-card-list" id="manageJobCardList"></div>
+            <div class="jobs-empty-state" id="manageJobEmpty" hidden>Không có tin phù hợp với bộ lọc hiện tại. Thử xóa lọc hoặc đổi từ khóa tìm kiếm.</div>
           </section>
         </div>
       </div>
@@ -113,5 +302,443 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script>
+    (function () {
+      var TAB_LABELS = {
+        'tat-ca': 'Tất cả',
+        'dang-tuyen': 'Đang tuyển',
+        'can-xu-ly': 'Cần xử lý',
+        'da-dong': 'Đã đóng'
+      };
+
+      var TAB_HINTS = {
+        'tat-ca': 'Ưu tiên xử lý tin nháp, sắp hết hạn hoặc đã hết hạn trước.',
+        'dang-tuyen': 'Theo dõi các tin đang hiển thị để phản hồi đơn mới trong 24 giờ.',
+        'can-xu-ly': 'Nhóm này cần thao tác sớm để tránh gián đoạn tuyển dụng.',
+        'da-dong': 'Tin đã hoàn tất tuyển dụng, có thể đăng lại khi cần.'
+      };
+
+      var ACTION_LABELS = {
+        'gia-han': 'gia hạn',
+        'dong-tin': 'đóng',
+        'tam-dung': 'tạm dừng'
+      };
+
+      function normalizeText(value) {
+        return String(value || '')
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/đ/g, 'd')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+
+      function parseInteger(value) {
+        var parsed = parseInt(value, 10);
+        return Number.isNaN(parsed) ? 0 : parsed;
+      }
+
+      function parseDateValue(value) {
+        var parsed = Date.parse(value || '');
+        return Number.isNaN(parsed) ? 0 : parsed;
+      }
+
+      function getTabForStatus(statusKey) {
+        if (statusKey === 'dang-tuyen' || statusKey === 'sap-het-han') return 'dang-tuyen';
+        if (statusKey === 'da-dong') return 'da-dong';
+        if (statusKey === 'nhap' || statusKey === 'het-han') return 'can-xu-ly';
+        return 'tat-ca';
+      }
+
+      function isNeedsAction(statusKey) {
+        return statusKey === 'nhap' || statusKey === 'sap-het-han' || statusKey === 'het-han';
+      }
+
+      function hasSelectOption(select, value) {
+        if (!select || !value) return false;
+        return Array.prototype.some.call(select.options, function (option) {
+          return option.value === value;
+        });
+      }
+
+      function initManageJobsPage() {
+        var form = document.getElementById('manageJobFilterForm');
+        var table = document.getElementById('manageJobTable');
+        var tableBody = table ? table.querySelector('tbody') : null;
+        var cardList = document.getElementById('manageJobCardList');
+        if (!form || !table || !tableBody || !cardList) return;
+
+        var rows = Array.prototype.slice.call(tableBody.querySelectorAll('.jobs-manage-job-row'));
+        var tabButtons = Array.prototype.slice.call(document.querySelectorAll('.jobs-manage-tab[data-tab]'));
+        var tabInput = document.getElementById('manageJobTabInput');
+        var searchInput = document.getElementById('manageJobSearch');
+        var statusSelect = document.getElementById('manageJobStatus');
+        var sortSelect = document.getElementById('manageJobSort');
+        var resetBtn = document.getElementById('manageJobReset');
+        var countLabel = document.getElementById('manageJobCount');
+        var hintLabel = document.getElementById('manageJobFilterHint');
+        var emptyState = document.getElementById('manageJobEmpty');
+        var contextNote = document.getElementById('manageJobContextNote');
+
+        var summaryTotal = document.getElementById('manageSummaryTotal');
+        var summaryLive = document.getElementById('manageSummaryLive');
+        var summaryNeedsAction = document.getElementById('manageSummaryNeedsAction');
+        var summaryClosingSoon = document.getElementById('manageSummaryClosingSoon');
+        var summaryApplications = document.getElementById('manageSummaryApplications');
+
+        var tabCountAll = document.getElementById('manageTabCountAll');
+        var tabCountLive = document.getElementById('manageTabCountLive');
+        var tabCountNeedsAction = document.getElementById('manageTabCountNeedsAction');
+        var tabCountClosed = document.getElementById('manageTabCountClosed');
+
+        var cardMap = new Map();
+        var defaultSort = 'updated-desc';
+        var initialParams = typeof URLSearchParams === 'function' ? new URLSearchParams(window.location.search || '') : null;
+        var requestedAction = initialParams ? String(initialParams.get('action') || '').trim() : '';
+        var requestedJobId = initialParams ? String(initialParams.get('job_id') || '').trim() : '';
+        var highlightedJobId = requestedJobId;
+
+        rows.forEach(function (row) {
+          row.dataset.searchNormalized = normalizeText(row.dataset.search || row.textContent);
+        });
+
+        function getRowKey(row) {
+          return row ? String(row.dataset.jobId || '').trim() : '';
+        }
+
+        function getRowStatus(row) {
+          return row ? String(row.dataset.status || '').trim() : '';
+        }
+
+        function getRowTitle(row) {
+          var titleLink = row ? row.querySelector('.jobs-manage-title') : null;
+          return titleLink ? titleLink.textContent.trim() : '';
+        }
+
+        function updateSummaryCards() {
+          var totals = {
+            total: rows.length,
+            live: 0,
+            needsAction: 0,
+            closingSoon: 0,
+            applications: 0
+          };
+
+          rows.forEach(function (row) {
+            var status = getRowStatus(row);
+            var applications = parseInteger(row.dataset.applications);
+            totals.applications += applications;
+            if (status === 'dang-tuyen' || status === 'sap-het-han') {
+              totals.live += 1;
+            }
+            if (isNeedsAction(status)) {
+              totals.needsAction += 1;
+            }
+            if (status === 'sap-het-han') {
+              totals.closingSoon += 1;
+            }
+          });
+
+          if (summaryTotal) summaryTotal.textContent = String(totals.total);
+          if (summaryLive) summaryLive.textContent = String(totals.live);
+          if (summaryNeedsAction) summaryNeedsAction.textContent = String(totals.needsAction);
+          if (summaryClosingSoon) summaryClosingSoon.textContent = String(totals.closingSoon);
+          if (summaryApplications) summaryApplications.textContent = String(totals.applications);
+        }
+
+        function updateTabCounts() {
+          var counts = {
+            'tat-ca': rows.length,
+            'dang-tuyen': 0,
+            'can-xu-ly': 0,
+            'da-dong': 0
+          };
+
+          rows.forEach(function (row) {
+            var status = getRowStatus(row);
+            var tabKey = getTabForStatus(status);
+            if (tabKey === 'dang-tuyen') counts['dang-tuyen'] += 1;
+            if (tabKey === 'can-xu-ly') counts['can-xu-ly'] += 1;
+            if (tabKey === 'da-dong') counts['da-dong'] += 1;
+          });
+
+          if (tabCountAll) tabCountAll.textContent = String(counts['tat-ca']);
+          if (tabCountLive) tabCountLive.textContent = String(counts['dang-tuyen']);
+          if (tabCountNeedsAction) tabCountNeedsAction.textContent = String(counts['can-xu-ly']);
+          if (tabCountClosed) tabCountClosed.textContent = String(counts['da-dong']);
+        }
+
+        function updateTabButtons() {
+          var activeTab = tabInput ? tabInput.value : 'tat-ca';
+          tabButtons.forEach(function (button) {
+            var isActive = button.dataset.tab === activeTab;
+            button.classList.toggle('is-active', isActive);
+            button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+        }
+
+        function buildContextMessage() {
+          if (!contextNote) return;
+
+          if (!requestedAction && !requestedJobId) {
+            contextNote.hidden = true;
+            contextNote.textContent = '';
+            return;
+          }
+
+          var targetRow = requestedJobId
+            ? rows.find(function (row) { return getRowKey(row) === requestedJobId; })
+            : null;
+          var targetTitle = targetRow ? getRowTitle(targetRow) : 'tin đã chọn';
+          var actionLabel = ACTION_LABELS[requestedAction] || 'cập nhật';
+          var message = 'Bạn vừa ' + actionLabel + ' tin "' + targetTitle + '". Kiểm tra lại trạng thái và chọn thao tác tiếp theo bên dưới.';
+
+          contextNote.textContent = message;
+          contextNote.hidden = false;
+        }
+
+        function buildCard(row) {
+          var titleLink = row.querySelector('.jobs-manage-title');
+          var titleText = titleLink ? titleLink.textContent.trim() : '';
+          var titleHref = titleLink ? titleLink.getAttribute('href') || '#' : '#';
+          var metaText = ((row.querySelector('.jobs-manage-meta') || {}).textContent || '').trim();
+          var statusPill = (row.querySelector('.jobs-manage-status-cell .jobs-status-pill') || {});
+          var statusNote = ((row.querySelector('.jobs-manage-status-cell .jobs-dashboard-note') || {}).textContent || '').trim();
+          var deadlineText = ((row.querySelector('.jobs-manage-deadline-text') || {}).textContent || '').trim();
+          var deadlineNote = ((row.querySelector('.jobs-manage-deadline-note') || {}).textContent || '').trim();
+          var applicationLink = row.querySelector('.jobs-manage-application-link');
+          var applicationText = applicationLink ? applicationLink.textContent.trim() : (parseInteger(row.dataset.applications) + ' đơn ứng tuyển');
+          var applicationHref = applicationLink ? applicationLink.getAttribute('href') || '#' : '#';
+          var actionWrap = row.querySelector('.jobs-manage-actions');
+          var actionsHtml = actionWrap ? actionWrap.innerHTML : '';
+
+          var card = document.createElement('article');
+          card.className = 'jobs-recruiter-application-card jobs-manage-job-card';
+          card.dataset.jobId = getRowKey(row);
+          card.dataset.status = getRowStatus(row);
+          card.innerHTML = ''
+            + '<div class="jobs-recruiter-application-head">'
+            +   '<div class="jobs-recruiter-candidate-name">'
+            +     '<strong><a href="' + titleHref + '" class="job-source-link jobs-manage-title">' + titleText + '</a></strong>'
+            +     '<span>' + metaText + '</span>'
+            +   '</div>'
+            +   statusPill.outerHTML
+            + '</div>'
+            + '<div class="jobs-recruiter-application-jobline">'
+            +   '<span><strong>Trạng thái:</strong> ' + statusNote + '</span>'
+            +   '<span><strong>Hạn nộp:</strong> ' + deadlineText + (deadlineNote ? ' · ' + deadlineNote : '') + '</span>'
+            +   '<span><strong>Đơn ứng tuyển:</strong> <a href="' + applicationHref + '" class="job-source-link">' + applicationText + '</a></span>'
+            + '</div>'
+            + '<div class="jobs-manage-actions jobs-manage-card-actions">' + actionsHtml + '</div>';
+
+          return card;
+        }
+
+        function renderCards(matchedRows) {
+          cardList.innerHTML = '';
+          matchedRows.forEach(function (row) {
+            var rowKey = getRowKey(row);
+            var card = cardMap.get(rowKey);
+            if (!card) {
+              card = buildCard(row);
+              cardMap.set(rowKey, card);
+            }
+            card.classList.remove('is-selected');
+            cardList.appendChild(card);
+          });
+        }
+
+        function compareRows(a, b, sortValue) {
+          var aTitle = normalizeText(getRowTitle(a));
+          var bTitle = normalizeText(getRowTitle(b));
+          var aUpdated = parseDateValue(a.dataset.updated);
+          var bUpdated = parseDateValue(b.dataset.updated);
+          var aDeadline = parseDateValue(a.dataset.deadline);
+          var bDeadline = parseDateValue(b.dataset.deadline);
+          var aApplications = parseInteger(a.dataset.applications);
+          var bApplications = parseInteger(b.dataset.applications);
+
+          if (sortValue === 'deadline-asc') {
+            if (aDeadline && bDeadline) return aDeadline - bDeadline || bUpdated - aUpdated;
+            if (!aDeadline && bDeadline) return 1;
+            if (aDeadline && !bDeadline) return -1;
+            return bUpdated - aUpdated;
+          }
+
+          if (sortValue === 'applications-desc') {
+            return bApplications - aApplications || bUpdated - aUpdated || aTitle.localeCompare(bTitle, 'vi');
+          }
+
+          if (sortValue === 'title-asc') {
+            return aTitle.localeCompare(bTitle, 'vi') || bUpdated - aUpdated;
+          }
+
+          return bUpdated - aUpdated || aTitle.localeCompare(bTitle, 'vi');
+        }
+
+        function rowMatchesFilter(row) {
+          var activeTab = tabInput ? tabInput.value : 'tat-ca';
+          var statusFilter = statusSelect ? String(statusSelect.value || '').trim() : '';
+          var query = searchInput ? normalizeText(searchInput.value) : '';
+          var rowStatus = getRowStatus(row);
+          var rowTab = getTabForStatus(rowStatus);
+
+          if (activeTab !== 'tat-ca' && rowTab !== activeTab) return false;
+          if (statusFilter && rowStatus !== statusFilter) return false;
+          if (query && row.dataset.searchNormalized.indexOf(query) === -1) return false;
+          return true;
+        }
+
+        function updateHighlightedState(matchedRows) {
+          rows.forEach(function (row) { row.classList.remove('is-selected'); });
+
+          cardList.querySelectorAll('.jobs-manage-job-card').forEach(function (card) {
+            card.classList.remove('is-selected');
+          });
+
+          if (!highlightedJobId) return;
+
+          var targetRow = matchedRows.find(function (row) {
+            return getRowKey(row) === highlightedJobId;
+          });
+
+          if (!targetRow) return;
+
+          targetRow.classList.add('is-selected');
+
+          var targetCard = cardMap.get(highlightedJobId);
+          if (targetCard) {
+            targetCard.classList.add('is-selected');
+          }
+        }
+
+        function updateUrlState() {
+          if (!window.history || typeof window.history.replaceState !== 'function' || !window.URLSearchParams) return;
+
+          var params = new URLSearchParams();
+          if (tabInput && tabInput.value && tabInput.value !== 'tat-ca') params.set('tab', tabInput.value);
+          if (statusSelect && statusSelect.value) params.set('status', statusSelect.value);
+          if (searchInput && searchInput.value.trim()) params.set('q', searchInput.value.trim());
+          if (sortSelect && sortSelect.value && sortSelect.value !== defaultSort) params.set('sort', sortSelect.value);
+          if (requestedJobId) params.set('job_id', requestedJobId);
+          if (requestedAction) params.set('action', requestedAction);
+
+          var query = params.toString();
+          var nextUrl = window.location.pathname + (query ? '?' + query : '');
+          window.history.replaceState(null, '', nextUrl);
+        }
+
+        function applyFilters() {
+          var sortValue = sortSelect ? sortSelect.value : defaultSort;
+          var matchedRows = rows.filter(rowMatchesFilter).sort(function (a, b) {
+            return compareRows(a, b, sortValue);
+          });
+
+          tableBody.innerHTML = '';
+          matchedRows.forEach(function (row) {
+            tableBody.appendChild(row);
+          });
+
+          renderCards(matchedRows);
+          updateHighlightedState(matchedRows);
+
+          if (countLabel) {
+            countLabel.textContent = matchedRows.length + ' tin đang hiển thị';
+          }
+
+          if (hintLabel) {
+            hintLabel.textContent = TAB_HINTS[tabInput.value] || TAB_HINTS['tat-ca'];
+          }
+
+          if (emptyState) {
+            emptyState.hidden = matchedRows.length > 0;
+          }
+
+          updateTabButtons();
+          updateUrlState();
+        }
+
+        function setActiveTab(tabKey) {
+          var nextTab = TAB_LABELS[tabKey] ? tabKey : 'tat-ca';
+          if (tabInput) tabInput.value = nextTab;
+        }
+
+        function hydrateFromUrl() {
+          if (!initialParams) return;
+
+          var tabFromUrl = String(initialParams.get('tab') || '').trim();
+          var queryFromUrl = String(initialParams.get('q') || '').trim();
+          var statusFromUrl = String(initialParams.get('status') || '').trim();
+          var sortFromUrl = String(initialParams.get('sort') || '').trim();
+
+          if (TAB_LABELS[tabFromUrl]) {
+            setActiveTab(tabFromUrl);
+          } else if (requestedJobId) {
+            setActiveTab('tat-ca');
+          }
+
+          if (searchInput && queryFromUrl) {
+            searchInput.value = queryFromUrl;
+          }
+
+          if (statusSelect && hasSelectOption(statusSelect, statusFromUrl)) {
+            statusSelect.value = statusFromUrl;
+          }
+
+          if (sortSelect && hasSelectOption(sortSelect, sortFromUrl)) {
+            sortSelect.value = sortFromUrl;
+          }
+        }
+
+        tabButtons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            var tabKey = String(button.dataset.tab || '').trim();
+            setActiveTab(tabKey);
+            applyFilters();
+          });
+        });
+
+        if (searchInput) {
+          searchInput.addEventListener('input', applyFilters);
+        }
+
+        if (statusSelect) {
+          statusSelect.addEventListener('change', applyFilters);
+        }
+
+        if (sortSelect) {
+          sortSelect.addEventListener('change', applyFilters);
+        }
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          applyFilters();
+        });
+
+        if (resetBtn) {
+          resetBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            if (statusSelect) statusSelect.value = '';
+            if (sortSelect) sortSelect.value = defaultSort;
+            setActiveTab('tat-ca');
+            highlightedJobId = '';
+            requestedJobId = '';
+            requestedAction = '';
+            buildContextMessage();
+            applyFilters();
+          });
+        }
+
+        hydrateFromUrl();
+        updateSummaryCards();
+        updateTabCounts();
+        buildContextMessage();
+        applyFilters();
+      }
+
+      document.addEventListener('DOMContentLoaded', initManageJobsPage);
+    })();
+  </script>
 </body>
 </html>
