@@ -7,7 +7,7 @@
   <meta name="description" content="Theo dõi các đơn đã nộp, xem lại hồ sơ đã gửi và biết bước tiếp theo cho từng vị trí.">
   <link rel="canonical" href="https://ketoandieutam.com/don-ung-tuyen.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css">
+  <link rel="stylesheet" href="assets/css/jobs.css?v=20260425-h1-40">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-dashboard-page application-list-page" data-root="" data-nav="tuyen-dung">
@@ -28,7 +28,11 @@
           <div>
             <span class="jobs-kicker">Đơn ứng tuyển</span>
             <h1>Theo dõi các đơn đã nộp</h1>
-            <p class="jobs-hero-text">Xem lại hồ sơ đã gửi và biết bước tiếp theo cho từng vị trí.</p>
+            <p class="jobs-hero-text">Xem lại hồ sơ đã gửi, trạng thái phản hồi và việc nên làm tiếp cho từng vị trí.</p>
+            <div class="jobs-hero-actions candidate-application-hero-actions">
+              <a href="tuyen-dung.html#job-list" class="btn-primary-orange">Tìm việc phù hợp</a>
+              <a href="ho-so-ung-vien.html?from=don-ung-tuyen" class="btn-outline-brown">Cập nhật hồ sơ</a>
+            </div>
           </div>
         </div>
       </div>
@@ -46,54 +50,136 @@
         </aside>
 
         <div class="jobs-dashboard-main">
-          <section class="jobs-dashboard-panel">
+          <section class="jobs-dashboard-panel candidate-applications-summary-panel">
             <div class="jobs-dashboard-panel-head">
-              <h2>Danh sách đơn ứng tuyển</h2>
-              <span class="jobs-dashboard-note">Mỗi dòng là một đơn bạn đã gửi cho một vị trí cụ thể.</span>
+              <div>
+                <h2>Tổng quan đơn ứng tuyển</h2>
+                <span class="jobs-dashboard-note">Theo dõi nhanh đơn nào còn chờ phản hồi, đơn nào đã hết hạn và hồ sơ nào nên xem lại.</span>
+              </div>
+              <span class="jobs-status-pill is-reviewing">1 đơn đang chờ</span>
             </div>
-            <div class="jobs-dashboard-table-wrap">
-              <table class="jobs-dashboard-table">
-                <thead>
-                  <tr>
-                    <th>Vị trí</th>
-                    <th>Ngày nộp</th>
-                    <th>Trạng thái</th>
-                    <th>Hành động</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam.html?from=don-ung-tuyen&application_id=app-ichi-20260409&job_id=ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam">Kế toán tổng hợp — Ichi Việt Nam</a></td>
-                    <td>09/04/2026</td>
-                    <td><span class="jobs-status-pill is-muted">Tin đã hết hạn</span></td>
-                    <td><a href="ung-tuyen.html?application_id=app-ichi-20260409&job_id=ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam&mode=xem-ho-so" class="job-source-link">Xem hồ sơ đã nộp</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="tuyen-dung/nhan-vien-ke-toan-cong-ty-xay-dung-dat-viet.html?from=don-ung-tuyen&application_id=app-dat-viet-20260408&job_id=nhan-vien-ke-toan-cong-ty-xay-dung-dat-viet">Nhân viên kế toán — Xây dựng Đất Việt</a></td>
-                    <td>08/04/2026</td>
-                    <td><span class="jobs-status-pill is-muted">Tin đã hết hạn</span></td>
-                    <td><a href="ung-tuyen.html?application_id=app-dat-viet-20260408&job_id=nhan-vien-ke-toan-cong-ty-xay-dung-dat-viet&mode=xem-ho-so" class="job-source-link">Xem hồ sơ đã nộp</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="tuyen-dung/ke-toan-thue-cong-ty-cp-winitex-viet-nam.html?from=don-ung-tuyen&application_id=app-winitex-20260407&job_id=ke-toan-thue-cong-ty-cp-winitex-viet-nam">Kế toán thuế — Winitex Việt Nam</a></td>
-                    <td>07/04/2026</td>
-                    <td><span class="jobs-status-pill is-reviewing">Chờ phản hồi</span></td>
-                    <td><a href="ung-tuyen.html?application_id=app-winitex-20260407&job_id=ke-toan-thue-cong-ty-cp-winitex-viet-nam&mode=xem-ho-so" class="job-source-link">Xem hồ sơ đã nộp</a></td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="candidate-application-summary-grid">
+              <article>
+                <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+                <strong>3</strong>
+                <span>Tổng đơn đã nộp</span>
+              </article>
+              <article class="is-reviewing">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                <strong>1</strong>
+                <span>Đơn chờ phản hồi</span>
+              </article>
+              <article class="is-muted">
+                <i class="fa-regular fa-calendar-xmark" aria-hidden="true"></i>
+                <strong>2</strong>
+                <span>Tin đã hết hạn</span>
+              </article>
+              <article>
+                <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+                <strong>09/04</strong>
+                <span>CV dùng gần nhất</span>
+              </article>
+            </div>
+            <div class="candidate-application-alert">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+              <p><strong>Gợi ý:</strong> Với các tin đã hết hạn, bạn vẫn xem lại hồ sơ đã nộp được. Nếu muốn tìm cơ hội mới, hãy dùng nút “Tìm tin tương tự”.</p>
             </div>
           </section>
 
-          <section class="jobs-dashboard-panel">
+          <section class="jobs-dashboard-panel candidate-applications-list-panel">
             <div class="jobs-dashboard-panel-head">
-              <h2>Các trạng thái bạn có thể gặp</h2>
+              <div>
+                <h2>Danh sách đơn ứng tuyển</h2>
+                <span class="jobs-dashboard-note">Mỗi thẻ là một đơn bạn đã gửi cho một vị trí cụ thể.</span>
+              </div>
+              <a href="tuyen-dung.html#job-list" class="job-source-link">Tìm thêm việc</a>
+            </div>
+            <div class="candidate-application-filter-chips" aria-label="Lọc nhanh đơn ứng tuyển">
+              <a href="don-ung-tuyen.html?view=tat-ca" class="is-active" data-application-filter="tat-ca">Tất cả <span>3</span></a>
+              <a href="don-ung-tuyen.html?status=cho-phan-hoi" data-application-filter="cho-phan-hoi">Chờ phản hồi <span>1</span></a>
+              <a href="don-ung-tuyen.html?status=het-han" data-application-filter="het-han">Tin hết hạn <span>2</span></a>
+            </div>
+            <div class="candidate-application-list">
+              <article class="candidate-application-card is-reviewing" data-application-status="cho-phan-hoi">
+                <div class="candidate-application-card-head">
+                  <div>
+                    <span class="candidate-application-code">app-winitex-20260407</span>
+                    <h3><a href="tuyen-dung/ke-toan-thue-cong-ty-cp-winitex-viet-nam.html?from=don-ung-tuyen&application_id=app-winitex-20260407&job_id=ke-toan-thue-cong-ty-cp-winitex-viet-nam">Kế toán thuế — Winitex Việt Nam</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-reviewing">Chờ phản hồi</span>
+                </div>
+                <ul class="candidate-application-meta">
+                  <li><i class="fa-regular fa-calendar" aria-hidden="true"></i>Nộp ngày 07/04/2026</li>
+                  <li><i class="fa-regular fa-file-lines" aria-hidden="true"></i>CV kế toán tổng hợp đã gửi</li>
+                  <li><i class="fa-regular fa-bell" aria-hidden="true"></i>Nên theo dõi phản hồi qua email/Zalo</li>
+                </ul>
+                <p class="candidate-application-next">Bước tiếp theo: chờ nhà tuyển dụng phản hồi hoặc cập nhật hồ sơ nếu có thông tin mới.</p>
+                <div class="candidate-application-actions">
+                  <a href="ung-tuyen.html?application_id=app-winitex-20260407&job_id=ke-toan-thue-cong-ty-cp-winitex-viet-nam&mode=xem-ho-so" class="btn-primary-orange">Xem hồ sơ đã nộp</a>
+                  <a href="ho-so-ung-vien.html?from=don-ung-tuyen&application_id=app-winitex-20260407" class="btn-outline-brown">Cập nhật hồ sơ</a>
+                </div>
+              </article>
+
+              <article class="candidate-application-card is-expired" data-application-status="het-han">
+                <div class="candidate-application-card-head">
+                  <div>
+                    <span class="candidate-application-code">app-ichi-20260409</span>
+                    <h3><a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam.html?from=don-ung-tuyen&application_id=app-ichi-20260409&job_id=ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam">Kế toán tổng hợp — Ichi Việt Nam</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-muted">Tin đã hết hạn</span>
+                </div>
+                <ul class="candidate-application-meta">
+                  <li><i class="fa-regular fa-calendar" aria-hidden="true"></i>Nộp ngày 09/04/2026</li>
+                  <li><i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>Tin tuyển dụng không còn nhận hồ sơ</li>
+                  <li><i class="fa-regular fa-lightbulb" aria-hidden="true"></i>Có thể tìm vị trí kế toán tổng hợp tương tự</li>
+                </ul>
+                <p class="candidate-application-next">Bước tiếp theo: xem lại hồ sơ đã nộp để rút kinh nghiệm hoặc tìm tin đang tuyển tương tự.</p>
+                <div class="candidate-application-actions">
+                  <a href="ung-tuyen.html?application_id=app-ichi-20260409&job_id=ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam&mode=xem-ho-so" class="btn-outline-brown">Xem hồ sơ đã nộp</a>
+                  <a href="tuyen-dung.html#job-list" class="btn-primary-orange">Tìm tin tương tự</a>
+                </div>
+              </article>
+
+              <article class="candidate-application-card is-expired" data-application-status="het-han">
+                <div class="candidate-application-card-head">
+                  <div>
+                    <span class="candidate-application-code">app-dat-viet-20260408</span>
+                    <h3><a href="tuyen-dung/nhan-vien-ke-toan-cong-ty-xay-dung-dat-viet.html?from=don-ung-tuyen&application_id=app-dat-viet-20260408&job_id=nhan-vien-ke-toan-cong-ty-xay-dung-dat-viet">Nhân viên kế toán — Xây dựng Đất Việt</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-muted">Tin đã hết hạn</span>
+                </div>
+                <ul class="candidate-application-meta">
+                  <li><i class="fa-regular fa-calendar" aria-hidden="true"></i>Nộp ngày 08/04/2026</li>
+                  <li><i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>Tin tuyển dụng không còn nhận hồ sơ</li>
+                  <li><i class="fa-regular fa-lightbulb" aria-hidden="true"></i>Nên tìm các tin kế toán xây dựng đang còn hạn</li>
+                </ul>
+                <p class="candidate-application-next">Bước tiếp theo: lưu lại kinh nghiệm ứng tuyển và tìm cơ hội mới còn hạn nộp.</p>
+                <div class="candidate-application-actions">
+                  <a href="ung-tuyen.html?application_id=app-dat-viet-20260408&job_id=nhan-vien-ke-toan-cong-ty-xay-dung-dat-viet&mode=xem-ho-so" class="btn-outline-brown">Xem hồ sơ đã nộp</a>
+                  <a href="tuyen-dung.html#job-list" class="btn-primary-orange">Tìm tin tương tự</a>
+                </div>
+              </article>
+            </div>
+            <div class="jobs-empty-state candidate-application-empty" id="candidateApplicationEmpty" hidden>Chưa có đơn nào trong nhóm trạng thái này.</div>
+          </section>
+
+          <section class="jobs-dashboard-panel candidate-application-guide-panel">
+            <div class="jobs-dashboard-panel-head">
+              <div>
+                <h2>Các trạng thái bạn có thể gặp</h2>
+                <span class="jobs-dashboard-note">Dùng phần này để hiểu đơn đang ở bước nào và nên làm gì tiếp.</span>
+              </div>
             </div>
             <ol class="jobs-application-steps">
               <li><strong>Đã nộp hồ sơ</strong><span>Hồ sơ của bạn đã được gửi thành công.</span></li>
               <li><strong>Chờ phản hồi</strong><span>Nhà tuyển dụng đang xem hoặc chưa phản hồi cho vị trí này.</span></li>
               <li><strong>Mời phỏng vấn hoặc cần bổ sung</strong><span>Bạn theo dõi tiếp trong đơn đã nộp hoặc qua kênh liên hệ của nhà tuyển dụng.</span></li>
+              <li><strong>Tin đã hết hạn</strong><span>Tin không còn nhận hồ sơ mới, nhưng bạn vẫn có thể xem lại hồ sơ đã nộp.</span></li>
             </ol>
+            <div class="jobs-portal-actions candidate-application-guide-actions">
+              <a href="viec-lam-da-luu.html?from=don-ung-tuyen" class="btn-outline-brown">Mở việc đã lưu</a>
+              <a href="tuyen-dung.html#job-list" class="btn-primary-orange">Tìm cơ hội mới</a>
+            </div>
           </section>
         </div>
       </div>
@@ -101,5 +187,67 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script>
+    (function () {
+      function initApplicationFilters() {
+        var filterLinks = Array.prototype.slice.call(document.querySelectorAll('[data-application-filter]'));
+        var cards = Array.prototype.slice.call(document.querySelectorAll('[data-application-status]'));
+        var emptyState = document.getElementById('candidateApplicationEmpty');
+        if (!filterLinks.length || !cards.length) return;
+
+        function getInitialFilter() {
+          if (typeof URLSearchParams !== 'function') return 'tat-ca';
+          var params = new URLSearchParams(window.location.search || '');
+          return params.get('status') || params.get('view') || 'tat-ca';
+        }
+
+        function setUrlFilter(filter) {
+          if (!window.history || typeof window.history.replaceState !== 'function' || typeof URLSearchParams !== 'function') return;
+          var params = new URLSearchParams(window.location.search || '');
+          params.delete('view');
+          params.delete('status');
+          if (filter && filter !== 'tat-ca') {
+            params.set('status', filter);
+          } else {
+            params.set('view', 'tat-ca');
+          }
+          var query = params.toString();
+          window.history.replaceState(null, '', window.location.pathname + (query ? '?' + query : ''));
+        }
+
+        function applyFilter(filter, options) {
+          var activeFilter = filter || 'tat-ca';
+          var visibleCount = 0;
+          cards.forEach(function (card) {
+            var show = activeFilter === 'tat-ca' || card.dataset.applicationStatus === activeFilter;
+            card.hidden = !show;
+            if (show) visibleCount += 1;
+          });
+          filterLinks.forEach(function (link) {
+            var isActive = link.dataset.applicationFilter === activeFilter;
+            link.classList.toggle('is-active', isActive);
+            link.setAttribute('aria-current', isActive ? 'true' : 'false');
+          });
+          if (emptyState) {
+            emptyState.hidden = visibleCount !== 0;
+          }
+          if (!options || options.updateUrl !== false) {
+            setUrlFilter(activeFilter);
+          }
+        }
+
+        filterLinks.forEach(function (link) {
+          link.addEventListener('click', function (event) {
+            event.preventDefault();
+            applyFilter(link.dataset.applicationFilter || 'tat-ca');
+          });
+        });
+
+        applyFilter(getInitialFilter(), { updateUrl: false });
+      }
+
+      document.addEventListener('DOMContentLoaded', initApplicationFilters);
+    })();
+  </script>
 </body>
 </html>

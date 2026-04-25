@@ -7,7 +7,7 @@
   <meta name="description" content="Cập nhật hồ sơ ứng viên, CV đang dùng và các thông tin sẽ được dùng lại trong đơn ứng tuyển.">
   <link rel="canonical" href="https://ketoandieutam.com/ho-so-ung-vien.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css">
+  <link rel="stylesheet" href="assets/css/jobs.css?v=20260425-h1-40">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-dashboard-page candidate-profile-page" data-root="" data-nav="tuyen-dung">
@@ -28,7 +28,11 @@
           <div>
             <span class="jobs-kicker">Hồ sơ ứng viên</span>
             <h1>Cập nhật hồ sơ ứng viên</h1>
-            <p class="jobs-hero-text">Cập nhật các thông tin sẽ được dùng lại khi bạn nộp đơn ứng tuyển.</p>
+            <p class="jobs-hero-text">Làm rõ kinh nghiệm, kỹ năng và CV để nộp đơn nhanh hơn cho các vị trí phù hợp.</p>
+            <div class="jobs-hero-actions candidate-profile-hero-actions">
+              <a href="#candidateProfileForm" class="btn-primary-orange">Cập nhật hồ sơ</a>
+              <a href="tuyen-dung.html#job-list" class="btn-outline-brown">Xem việc phù hợp</a>
+            </div>
           </div>
         </div>
       </div>
@@ -46,65 +50,153 @@
         </aside>
 
         <div class="jobs-dashboard-main">
-          <section class="jobs-dashboard-panel">
+          <section class="jobs-dashboard-panel candidate-profile-summary-panel">
             <div class="jobs-dashboard-panel-head">
-              <h2>Thông tin hồ sơ</h2>
-              <span class="jobs-dashboard-note">Những thông tin này sẽ tự điền khi bạn mở đơn ứng tuyển mới.</span>
+              <div>
+                <h2>Tổng quan hồ sơ</h2>
+                <span class="jobs-dashboard-note">Theo dõi mức hoàn thiện trước khi nộp đơn cho nhà tuyển dụng.</span>
+              </div>
+              <span class="jobs-status-pill is-active" id="candidateProfileStatus">Hồ sơ sẵn sàng</span>
             </div>
-            <form class="jobs-form-grid" id="candidateProfileForm" action="tai-khoan-ung-vien.html" method="post">
+            <div class="candidate-profile-completion-card">
+              <div class="candidate-profile-completion-head">
+                <div>
+                  <span>Mức hoàn thiện hồ sơ</span>
+                  <strong id="candidateProfileScore">100%</strong>
+                </div>
+                <em id="candidateProfileUpdated">Cập nhật lần cuối: 09/04/2026</em>
+              </div>
+              <div class="candidate-profile-progress" aria-hidden="true">
+                <span id="candidateProfileProgressBar"></span>
+              </div>
+            </div>
+            <div class="candidate-profile-summary-grid">
+              <article>
+                <i class="fa-regular fa-user" aria-hidden="true"></i>
+                <strong>Nguyễn Minh Anh</strong>
+                <span>Kế toán tổng hợp · 3 năm</span>
+              </article>
+              <article>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <strong>TP.HCM</strong>
+                <span>Thủ Đức · Bình Thạnh · Quận 7</span>
+              </article>
+              <article>
+                <i class="fa-regular fa-star" aria-hidden="true"></i>
+                <strong>5 kỹ năng</strong>
+                <span>Excel, MISA, thuế, báo cáo, chứng từ</span>
+              </article>
+              <article>
+                <i class="fa-regular fa-file-pdf" aria-hidden="true"></i>
+                <strong>CV đã sẵn sàng</strong>
+                <span>PDF · 1.2 MB</span>
+              </article>
+            </div>
+            <ul class="candidate-profile-checklist" aria-label="Checklist hồ sơ">
+              <li data-profile-check="contact"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Thông tin liên hệ đầy đủ</span></li>
+              <li data-profile-check="career"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Mục tiêu nghề nghiệp rõ ràng</span></li>
+              <li data-profile-check="summary"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Giới thiệu và kỹ năng đã điền</span></li>
+              <li data-profile-check="cv"><i class="fa-solid fa-check" aria-hidden="true"></i><span>CV PDF đang dùng đã cập nhật</span></li>
+            </ul>
+          </section>
+
+          <section class="jobs-dashboard-panel candidate-profile-form-panel">
+            <div class="jobs-dashboard-panel-head">
+              <div>
+                <h2>Thông tin hồ sơ</h2>
+                <span class="jobs-dashboard-note">Những thông tin này sẽ tự điền khi bạn mở đơn ứng tuyển mới.</span>
+              </div>
+            </div>
+            <form class="candidate-profile-form" id="candidateProfileForm" action="tai-khoan-ung-vien.html" method="post">
               <input type="hidden" name="profile_id" value="ho-so-nguyen-minh-anh">
-              <label class="jobs-filter-field">
-                <span>Họ và tên</span>
-                <input type="text" id="candidateFullName" name="fullName" required maxlength="80" autocomplete="name" value="Nguyễn Minh Anh">
-              </label>
-              <label class="jobs-filter-field">
-                <span>Email</span>
-                <input type="email" id="candidateEmail" name="email" required autocomplete="email" value="minhanh@email.com">
-              </label>
-              <label class="jobs-filter-field">
-                <span>Số điện thoại</span>
-                <input type="tel" id="candidatePhone" name="phone" required inputmode="tel" autocomplete="tel" pattern="^[0-9+\\s.-]{8,20}$" value="09xx xxx xxx">
-              </label>
-              <label class="jobs-filter-field">
-                <span>Vị trí mục tiêu</span>
-                <input type="text" id="candidateTargetRole" name="targetRole" required maxlength="120" value="Kế toán tổng hợp">
-              </label>
-              <label class="jobs-filter-field">
-                <span>Kinh nghiệm</span>
-                <input type="text" id="candidateExperience" name="experience" required maxlength="60" value="3 năm">
-              </label>
-              <label class="jobs-filter-field">
-                <span>Khu vực ưu tiên</span>
-                <input type="text" id="candidatePreferredLocation" name="preferredLocation" required maxlength="160" value="Thủ Đức, TP.HCM · Làm việc kết hợp">
-              </label>
-              <label class="jobs-filter-field full">
-                <span>Giới thiệu ngắn về bạn</span>
-                <textarea id="candidateSummary" name="summary" rows="5" maxlength="1200">Kinh nghiệm tổng hợp số liệu kế toán, theo dõi công nợ, hỗ trợ kê khai thuế và lập báo cáo quản trị định kỳ.</textarea>
-              </label>
-              <label class="jobs-filter-field full">
-                <span>Kỹ năng chính</span>
-                <input type="text" id="candidateSkills" name="skills" maxlength="300" value="Excel, MISA, Báo cáo thuế, Báo cáo quản trị, Kiểm soát chứng từ">
-              </label>
+              <section class="candidate-profile-form-section">
+                <div class="candidate-profile-form-section-head">
+                  <h3>Thông tin liên hệ</h3>
+                  <p>Nhà tuyển dụng dùng phần này để liên hệ khi hồ sơ phù hợp.</p>
+                </div>
+                <div class="jobs-form-grid">
+                  <label class="jobs-filter-field">
+                    <span>Họ và tên</span>
+                    <input type="text" id="candidateFullName" name="fullName" required maxlength="80" autocomplete="name" value="Nguyễn Minh Anh">
+                  </label>
+                  <label class="jobs-filter-field">
+                    <span>Email</span>
+                    <input type="email" id="candidateEmail" name="email" required autocomplete="email" value="minhanh@email.com">
+                  </label>
+                  <label class="jobs-filter-field">
+                    <span>Số điện thoại</span>
+                    <input type="tel" id="candidatePhone" name="phone" required inputmode="tel" autocomplete="tel" pattern="^[0-9+\s.-]{8,20}$" value="0900 000 000">
+                  </label>
+                </div>
+              </section>
+
+              <section class="candidate-profile-form-section">
+                <div class="candidate-profile-form-section-head">
+                  <h3>Mục tiêu nghề nghiệp</h3>
+                  <p>Giúp hệ thống gợi ý việc gần với vị trí, khu vực và kinh nghiệm của bạn.</p>
+                </div>
+                <div class="jobs-form-grid">
+                  <label class="jobs-filter-field">
+                    <span>Vị trí mục tiêu</span>
+                    <input type="text" id="candidateTargetRole" name="targetRole" required maxlength="120" value="Kế toán tổng hợp">
+                  </label>
+                  <label class="jobs-filter-field">
+                    <span>Kinh nghiệm</span>
+                    <input type="text" id="candidateExperience" name="experience" required maxlength="60" value="3 năm">
+                  </label>
+                  <label class="jobs-filter-field full">
+                    <span>Khu vực ưu tiên</span>
+                    <input type="text" id="candidatePreferredLocation" name="preferredLocation" required maxlength="160" value="Thủ Đức, TP.HCM · Làm việc kết hợp">
+                  </label>
+                </div>
+              </section>
+
+              <section class="candidate-profile-form-section">
+                <div class="candidate-profile-form-section-head">
+                  <h3>Giới thiệu và kỹ năng</h3>
+                  <p>Viết ngắn gọn, ưu tiên số liệu, phần mềm và nghiệp vụ kế toán bạn làm tốt.</p>
+                </div>
+                <div class="jobs-form-grid">
+                  <label class="jobs-filter-field full">
+                    <span>Giới thiệu ngắn về bạn <em class="jobs-char-count" id="candidateSummaryCount">0/1200</em></span>
+                    <textarea id="candidateSummary" name="summary" rows="5" maxlength="1200">Kinh nghiệm tổng hợp số liệu kế toán, theo dõi công nợ, hỗ trợ kê khai thuế và lập báo cáo quản trị định kỳ.</textarea>
+                  </label>
+                  <label class="jobs-filter-field full">
+                    <span>Kỹ năng chính</span>
+                    <input type="text" id="candidateSkills" name="skills" maxlength="300" value="Excel, MISA, Báo cáo thuế, Báo cáo quản trị, Kiểm soát chứng từ">
+                  </label>
+                </div>
+              </section>
             </form>
-            <div class="jobs-portal-actions">
+            <p class="jobs-form-feedback candidate-profile-feedback" id="candidateProfileFeedback" hidden aria-live="polite"></p>
+            <div class="jobs-portal-actions candidate-profile-actions">
               <button type="submit" form="candidateProfileForm" class="btn-primary-orange">Lưu hồ sơ</button>
               <a href="tuyen-dung.html#job-list" class="btn-outline-brown">Xem việc phù hợp</a>
             </div>
           </section>
 
-          <section class="jobs-dashboard-panel">
+          <section class="jobs-dashboard-panel candidate-profile-cv-panel">
             <div class="jobs-dashboard-panel-head">
-              <h2>CV đang dùng</h2>
-              <span class="jobs-dashboard-note">Bản CV này sẽ được dùng khi bạn nộp hồ sơ cho nhà tuyển dụng.</span>
+              <div>
+                <h2>CV đang dùng</h2>
+                <span class="jobs-dashboard-note">Bản CV này sẽ được dùng khi bạn nộp hồ sơ cho nhà tuyển dụng.</span>
+              </div>
             </div>
-            <div class="jobs-dashboard-list">
+            <div class="candidate-profile-cv-card">
+              <div class="candidate-profile-cv-icon"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i></div>
               <article>
-                <strong>CV-NguyenMinhAnh-KeToanTongHop.pdf</strong>
-                <p>Cập nhật lần cuối: 09/04/2026 · Dung lượng: 1.2 MB</p>
+                <span class="jobs-status-pill is-active">Đang dùng</span>
+                <h3>CV-NguyenMinhAnh-KeToanTongHop.pdf</h3>
+                <p>Cập nhật lần cuối: 09/04/2026 · Dung lượng: 1.2 MB · Định dạng PDF</p>
+                <ul>
+                  <li>Phù hợp khi nộp vị trí kế toán tổng hợp, kế toán thuế.</li>
+                  <li>Nên cập nhật lại nếu bạn có chứng chỉ, dự án hoặc phần mềm mới.</li>
+                </ul>
               </article>
             </div>
-            <div class="jobs-portal-actions" style="margin-top:12px;">
+            <div class="jobs-portal-actions candidate-profile-cv-actions">
               <a href="ho-so-ung-vien.html?mode=tai-cv-moi&profile_id=ho-so-nguyen-minh-anh" class="btn-outline-brown">Cập nhật CV</a>
+              <a href="don-ung-tuyen.html?view=tat-ca&from=ho-so-ung-vien" class="btn-primary-orange">Xem đơn đã nộp</a>
             </div>
           </section>
         </div>
@@ -113,5 +205,84 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script>
+    (function () {
+      function initCandidateProfile() {
+        var form = document.getElementById('candidateProfileForm');
+        if (!form) return;
+
+        var requiredFields = Array.prototype.slice.call(form.querySelectorAll('[required]'));
+        var optionalFields = ['candidateSummary', 'candidateSkills'].map(function (id) {
+          return document.getElementById(id);
+        }).filter(Boolean);
+        var score = document.getElementById('candidateProfileScore');
+        var status = document.getElementById('candidateProfileStatus');
+        var progressBar = document.getElementById('candidateProfileProgressBar');
+        var updated = document.getElementById('candidateProfileUpdated');
+        var summary = document.getElementById('candidateSummary');
+        var summaryCount = document.getElementById('candidateSummaryCount');
+        var feedback = document.getElementById('candidateProfileFeedback');
+
+        function fieldHasValue(field) {
+          return field && String(field.value || '').trim().length > 0 && (!field.checkValidity || field.checkValidity());
+        }
+
+        function setCheck(key, done) {
+          var item = document.querySelector('[data-profile-check="' + key + '"]');
+          if (item) item.classList.toggle('is-done', done);
+        }
+
+        function updateSummaryCount() {
+          if (!summary || !summaryCount) return;
+          var max = Number(summary.getAttribute('maxlength') || 1200);
+          summaryCount.textContent = String(summary.value.length) + '/' + String(max);
+          summaryCount.classList.toggle('is-warning', summary.value.length > max * 0.9);
+        }
+
+        function updateProfileScore() {
+          var fields = requiredFields.concat(optionalFields);
+          var filled = fields.filter(fieldHasValue).length;
+          var percent = Math.round((filled / fields.length) * 100);
+          if (score) score.textContent = percent + '%';
+          if (progressBar) progressBar.style.width = percent + '%';
+          if (status) {
+            status.textContent = percent >= 90 ? 'Hồ sơ sẵn sàng' : 'Cần bổ sung';
+            status.className = 'jobs-status-pill ' + (percent >= 90 ? 'is-active' : 'is-warning');
+          }
+          setCheck('contact', ['candidateFullName', 'candidateEmail', 'candidatePhone'].every(function (id) { return fieldHasValue(document.getElementById(id)); }));
+          setCheck('career', ['candidateTargetRole', 'candidateExperience', 'candidatePreferredLocation'].every(function (id) { return fieldHasValue(document.getElementById(id)); }));
+          setCheck('summary', optionalFields.every(fieldHasValue));
+          setCheck('cv', true);
+          updateSummaryCount();
+        }
+
+        form.addEventListener('input', updateProfileScore);
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          if (!form.checkValidity()) {
+            if (feedback) {
+              feedback.hidden = false;
+              feedback.className = 'jobs-form-feedback candidate-profile-feedback is-warning';
+              feedback.textContent = 'Vui lòng kiểm tra lại các trường bắt buộc trước khi lưu hồ sơ.';
+            }
+            form.reportValidity();
+            updateProfileScore();
+            return;
+          }
+          updateProfileScore();
+          if (updated) updated.textContent = 'Cập nhật vừa xong';
+          if (feedback) {
+            feedback.hidden = false;
+            feedback.className = 'jobs-form-feedback candidate-profile-feedback is-success';
+            feedback.textContent = 'Đã lưu hồ sơ mẫu. Thông tin này sẽ được dùng lại khi bạn nộp đơn.';
+          }
+        });
+
+        updateProfileScore();
+      }
+
+      document.addEventListener('DOMContentLoaded', initCandidateProfile);
+    })();
+  </script>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <meta name="description" content="Xem nhanh hồ sơ, việc đã lưu, các đơn đã nộp và gợi ý việc làm còn phù hợp để ứng tuyển.">
   <link rel="canonical" href="https://ketoandieutam.com/tai-khoan-ung-vien.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css">
+  <link rel="stylesheet" href="assets/css/jobs.css?v=20260425-h1-40">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-dashboard-page candidate-dashboard-home-page" data-root="" data-nav="tuyen-dung">
@@ -26,7 +26,11 @@
           <div>
             <span class="jobs-kicker">Tài khoản ứng viên</span>
             <h1>Xem hồ sơ, việc đã lưu và đơn đã nộp</h1>
-            <p class="jobs-hero-text">Xem nhanh hồ sơ, việc đã lưu, các đơn đã nộp và việc còn phù hợp để ứng tuyển.</p>
+            <p class="jobs-hero-text">Theo dõi hồ sơ, việc đã lưu, đơn đang chờ phản hồi và việc nên nộp trước trong một màn hình.</p>
+            <div class="jobs-hero-actions candidate-account-hero-actions">
+              <a href="ho-so-ung-vien.html?from=tai-khoan-ung-vien" class="btn-primary-orange">Cập nhật hồ sơ</a>
+              <a href="tuyen-dung.html#job-list" class="btn-outline-brown">Tìm việc phù hợp</a>
+            </div>
           </div>
         </div>
       </div>
@@ -44,74 +48,196 @@
         </aside>
 
         <div class="jobs-dashboard-main">
-          <section class="jobs-dashboard-panel" id="profile">
+          <section class="jobs-dashboard-panel candidate-account-summary-panel" id="profile">
             <div class="jobs-dashboard-panel-head">
-              <h2>Thông tin hồ sơ</h2>
-              <a href="ho-so-ung-vien.html?from=tai-khoan-ung-vien" class="btn-outline-brown">Cập nhật hồ sơ</a>
+              <div>
+                <h2>Xin chào, Nguyễn Minh Anh</h2>
+                <span class="jobs-dashboard-note">Hồ sơ của bạn đã sẵn sàng để nộp cho các vị trí kế toán phù hợp.</span>
+              </div>
+              <span class="jobs-status-pill is-active">Hồ sơ 100%</span>
             </div>
-            <p class="jobs-dashboard-note">Thông tin này sẽ được dùng lại khi bạn mở đơn ứng tuyển mới.</p>
-            <div class="jobs-dashboard-facts">
-              <div><span>Họ tên</span><strong>Nguyễn Minh Anh</strong></div>
-              <div><span>Vị trí mục tiêu</span><strong>Kế toán tổng hợp</strong></div>
-              <div><span>Kinh nghiệm</span><strong>3 năm</strong></div>
-              <div><span>Khu vực ưu tiên</span><strong>Thủ Đức, Bình Thạnh, Quận 7 (TP.HCM)</strong></div>
+            <div class="candidate-account-profile-card">
+              <div class="candidate-account-avatar" aria-hidden="true">MA</div>
+              <div>
+                <strong>Nguyễn Minh Anh</strong>
+                <span>Kế toán tổng hợp · 3 năm kinh nghiệm · TP.HCM</span>
+                <p>Ưu tiên: Thủ Đức, Bình Thạnh, Quận 7 · Làm việc kết hợp.</p>
+              </div>
+              <a href="ho-so-ung-vien.html?from=tai-khoan-ung-vien" class="btn-outline-brown">Mở hồ sơ</a>
+            </div>
+            <div class="candidate-account-stat-grid">
+              <article>
+                <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                <strong>3</strong>
+                <span>Việc đã lưu</span>
+              </article>
+              <article class="is-active">
+                <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+                <strong>1</strong>
+                <span>Việc còn hạn</span>
+              </article>
+              <article class="is-reviewing">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                <strong>1</strong>
+                <span>Đơn chờ phản hồi</span>
+              </article>
+              <article class="is-warning">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                <strong>2</strong>
+                <span>Việc nên xử lý</span>
+              </article>
             </div>
           </section>
 
-          <section class="jobs-dashboard-panel" id="saved-jobs">
+          <section class="jobs-dashboard-panel candidate-account-task-panel" id="today">
             <div class="jobs-dashboard-panel-head">
-              <h2>Việc làm đã lưu</h2>
+              <div>
+                <h2>Việc nên làm hôm nay</h2>
+                <span class="jobs-dashboard-note">Ưu tiên theo tác động tới cơ hội ứng tuyển của bạn.</span>
+              </div>
+              <span class="jobs-status-pill is-warning" id="candidateAccountTaskCount">3 việc</span>
+            </div>
+            <div class="candidate-account-task-list">
+              <article data-account-task>
+                <span class="candidate-account-task-index">1</span>
+                <div>
+                  <strong>Nộp đơn tin Kế toán thuế — Việt Luật</strong>
+                  <p>Tin còn hạn đến 08/05/2026 và phù hợp với kỹ năng báo cáo thuế.</p>
+                </div>
+                <a href="ung-tuyen.html?job_id=ke-toan-thue-cong-ty-viet-luat&mode=nop-moi&from=tai-khoan-ung-vien" class="job-source-link">Nộp đơn</a>
+              </article>
+              <article data-account-task>
+                <span class="candidate-account-task-index">2</span>
+                <div>
+                  <strong>Dọn 2 tin đã hết hạn trong danh sách lưu</strong>
+                  <p>Giữ danh sách việc đã lưu gọn để tập trung vào tin còn cơ hội.</p>
+                </div>
+                <a href="viec-lam-da-luu.html?status=het-han&from=tai-khoan-ung-vien" class="job-source-link">Xem tin hết hạn</a>
+              </article>
+              <article data-account-task>
+                <span class="candidate-account-task-index">3</span>
+                <div>
+                  <strong>Theo dõi đơn Winitex đang chờ phản hồi</strong>
+                  <p>Xem lại hồ sơ đã nộp để chuẩn bị nếu nhà tuyển dụng liên hệ.</p>
+                </div>
+                <a href="don-ung-tuyen.html?status=cho-phan-hoi&from=tai-khoan-ung-vien" class="job-source-link">Xem đơn</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="jobs-dashboard-panel candidate-account-saved-panel" id="saved-jobs">
+            <div class="jobs-dashboard-panel-head">
+              <div>
+                <h2>Việc đã lưu cần chú ý</h2>
+                <span class="jobs-dashboard-note">Tin còn hạn được ưu tiên hiển thị trước.</span>
+              </div>
               <a href="viec-lam-da-luu.html" class="job-source-link">Xem tất cả việc đã lưu</a>
             </div>
-            <div class="jobs-dashboard-list">
-              <article>
-                <a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.html?from=tai-khoan-ung-vien&job_id=ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax">Tuyển dụng Kế toán tổng hợp — EasyTax</a>
-                <p>Phường Hòa Hưng, TP.HCM · Toàn thời gian · 15 - 18 triệu · <span class="jobs-status-pill is-muted">Đã hết hạn</span> · <a href="tuyen-dung.html#job-list" class="job-source-link">Xem tin tương tự</a></p>
+            <div class="candidate-account-card-grid">
+              <article class="candidate-account-job-card is-active">
+                <div class="candidate-account-card-head">
+                  <div>
+                    <span>Còn hạn đến 08/05</span>
+                    <h3><a href="tuyen-dung/ke-toan-thue-cong-ty-viet-luat.html?from=tai-khoan-ung-vien&job_id=ke-toan-thue-cong-ty-viet-luat">Kế toán thuế — Việt Luật</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-active">Có thể nộp</span>
+                </div>
+                <p>Phường 2, Phú Nhuận, TP.HCM · Fresher / Không yêu cầu · Thỏa thuận.</p>
+                <div class="candidate-account-card-actions">
+                  <a href="ung-tuyen.html?job_id=ke-toan-thue-cong-ty-viet-luat&mode=nop-moi&from=tai-khoan-ung-vien" class="btn-primary-orange">Nộp đơn</a>
+                  <a href="viec-lam-da-luu.html?status=con-han&from=tai-khoan-ung-vien" class="btn-outline-brown">Xem việc lưu</a>
+                </div>
               </article>
-              <article>
-                <a href="tuyen-dung/ke-toan-thue-cong-ty-viet-luat.html?from=tai-khoan-ung-vien&job_id=ke-toan-thue-cong-ty-viet-luat">Tuyển dụng Kế toán thuế — Việt Luật</a>
-                <p>Phường 2, Phú Nhuận, TP.HCM · Fresher / Không yêu cầu · Thỏa thuận · <a href="ung-tuyen.html?job_id=ke-toan-thue-cong-ty-viet-luat&mode=nop-moi&from=tai-khoan-ung-vien" class="job-source-link">Nộp đơn</a></p>
+
+              <article class="candidate-account-job-card is-expired">
+                <div class="candidate-account-card-head">
+                  <div>
+                    <span>Đã hết hạn</span>
+                    <h3><a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.html?from=tai-khoan-ung-vien&job_id=ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax">Kế toán tổng hợp — EasyTax</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-muted">Nên dọn</span>
+                </div>
+                <p>Phường Hòa Hưng, TP.HCM · Toàn thời gian · 15 - 18 triệu.</p>
+                <div class="candidate-account-card-actions">
+                  <a href="tuyen-dung.html#job-list" class="btn-primary-orange">Tìm tin tương tự</a>
+                  <a href="viec-lam-da-luu.html?status=het-han&from=tai-khoan-ung-vien" class="btn-outline-brown">Quản lý tin hết hạn</a>
+                </div>
               </article>
             </div>
           </section>
 
-          <section class="jobs-dashboard-panel" id="applications">
+          <section class="jobs-dashboard-panel candidate-account-application-panel" id="applications">
             <div class="jobs-dashboard-panel-head">
-              <h2>Đơn đã ứng tuyển</h2>
-              <span class="jobs-dashboard-note">Mở từng đơn để xem lại hồ sơ đã nộp hoặc bước tiếp theo.</span>
+              <div>
+                <h2>Đơn ứng tuyển gần đây</h2>
+                <span class="jobs-dashboard-note">Mở từng đơn để xem lại hồ sơ đã nộp hoặc bước tiếp theo.</span>
+              </div>
+              <a href="don-ung-tuyen.html?view=tat-ca&from=tai-khoan-ung-vien" class="job-source-link">Xem tất cả đơn</a>
             </div>
-            <div class="jobs-dashboard-list">
-              <article>
-                <a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam.html?from=tai-khoan-ung-vien&job_id=ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam">Kế toán tổng hợp — Ichi Việt Nam</a>
-                <p><span class="jobs-status-pill is-muted">Tin đã hết hạn</span> · <a href="ung-tuyen.html?application_id=app-ichi-20260409&job_id=ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam&mode=xem-ho-so" class="job-source-link">Xem hồ sơ đã nộp</a></p>
+            <div class="candidate-account-card-grid">
+              <article class="candidate-account-application-card is-reviewing">
+                <div class="candidate-account-card-head">
+                  <div>
+                    <span>app-winitex-20260407</span>
+                    <h3><a href="tuyen-dung/ke-toan-thue-cong-ty-cp-winitex-viet-nam.html?from=tai-khoan-ung-vien&job_id=ke-toan-thue-cong-ty-cp-winitex-viet-nam">Kế toán thuế — Winitex Việt Nam</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-reviewing">Chờ phản hồi</span>
+                </div>
+                <p>Nộp ngày 07/04/2026 · nên chuẩn bị sẵn hồ sơ nếu được liên hệ.</p>
+                <a href="ung-tuyen.html?application_id=app-winitex-20260407&job_id=ke-toan-thue-cong-ty-cp-winitex-viet-nam&mode=xem-ho-so" class="job-source-link">Xem hồ sơ đã nộp</a>
               </article>
-              <article>
-                <a href="tuyen-dung/nhan-vien-ke-toan-cong-ty-xay-dung-dat-viet.html?from=tai-khoan-ung-vien&job_id=nhan-vien-ke-toan-cong-ty-xay-dung-dat-viet">Nhân viên kế toán — Xây dựng Đất Việt</a>
-                <p><span class="jobs-status-pill is-muted">Tin đã hết hạn</span> · <a href="ung-tuyen.html?application_id=app-dat-viet-20260408&job_id=nhan-vien-ke-toan-cong-ty-xay-dung-dat-viet&mode=xem-ho-so" class="job-source-link">Xem hồ sơ đã nộp</a></p>
+
+              <article class="candidate-account-application-card is-muted">
+                <div class="candidate-account-card-head">
+                  <div>
+                    <span>app-ichi-20260409</span>
+                    <h3><a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam.html?from=tai-khoan-ung-vien&job_id=ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam">Kế toán tổng hợp — Ichi Việt Nam</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-muted">Tin hết hạn</span>
+                </div>
+                <p>Nộp ngày 09/04/2026 · có thể xem lại hồ sơ để rút kinh nghiệm.</p>
+                <a href="ung-tuyen.html?application_id=app-ichi-20260409&job_id=ke-toan-tong-hop-cong-ty-tnhh-thiet-bi-cong-nghiep-ichi-viet-nam&mode=xem-ho-so" class="job-source-link">Xem hồ sơ đã nộp</a>
               </article>
-              <article>
-                <a href="tuyen-dung/ke-toan-thue-cong-ty-cp-winitex-viet-nam.html?from=tai-khoan-ung-vien&job_id=ke-toan-thue-cong-ty-cp-winitex-viet-nam">Kế toán thuế — Winitex Việt Nam</a>
-                <p><span class="jobs-status-pill is-reviewing">Chờ phản hồi</span> · <a href="ung-tuyen.html?application_id=app-winitex-20260407&job_id=ke-toan-thue-cong-ty-cp-winitex-viet-nam&mode=xem-ho-so" class="job-source-link">Xem hồ sơ đã nộp</a></p>
-              </article>
-            </div>
-            <div class="jobs-portal-actions" style="margin-top:16px;">
-              <a href="don-ung-tuyen.html?view=tat-ca&from=tai-khoan-ung-vien" class="btn-outline-brown">Xem tất cả đơn đã nộp</a>
             </div>
           </section>
 
-          <section class="jobs-dashboard-panel" id="recommended">
+          <section class="jobs-dashboard-panel candidate-account-recommend-panel" id="recommended">
             <div class="jobs-dashboard-panel-head">
-              <h2>Gợi ý việc làm phù hợp</h2>
+              <div>
+                <h2>Gợi ý việc làm phù hợp</h2>
+                <span class="jobs-dashboard-note">Dựa trên vị trí mục tiêu, kỹ năng và khu vực ưu tiên trong hồ sơ.</span>
+              </div>
               <a href="tuyen-dung.html#job-list" class="job-source-link">Xem thêm việc phù hợp</a>
             </div>
-            <div class="jobs-dashboard-list">
-              <article>
-                <a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-gia-khanh.html?from=tai-khoan-ung-vien&job_id=ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-gia-khanh">Kế toán tổng hợp — Gia Khánh</a>
-                <p>Đống Đa, Hà Nội · 5 năm · 18 - 25 triệu · <a href="ung-tuyen.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-gia-khanh&mode=nop-moi&from=tai-khoan-ung-vien" class="job-source-link">Nộp đơn</a></p>
+            <div class="candidate-account-card-grid">
+              <article class="candidate-account-recommend-card">
+                <div class="candidate-account-card-head">
+                  <div>
+                    <span>Phù hợp 86%</span>
+                    <h3><a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-gia-khanh.html?from=tai-khoan-ung-vien&job_id=ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-gia-khanh">Kế toán tổng hợp — Gia Khánh</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-active">Đang tuyển</span>
+                </div>
+                <p>Đống Đa, Hà Nội · 5 năm · 18 - 25 triệu · hợp với kinh nghiệm tổng hợp số liệu.</p>
+                <div class="candidate-account-card-actions">
+                  <a href="ung-tuyen.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-gia-khanh&mode=nop-moi&from=tai-khoan-ung-vien" class="btn-primary-orange">Nộp đơn</a>
+                  <a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-gia-khanh.html?from=tai-khoan-ung-vien&job_id=ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-gia-khanh" class="btn-outline-brown">Xem chi tiết</a>
+                </div>
               </article>
-              <article>
-                <a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-tadichi.html?from=tai-khoan-ung-vien&job_id=ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-tadichi">Kế toán tổng hợp — Tadichi</a>
-                <p>Xuân Thới Sơn, Hóc Môn, TP.HCM · 2 năm · 13 - 15 triệu · <a href="ung-tuyen.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-tadichi&mode=nop-moi&from=tai-khoan-ung-vien" class="job-source-link">Nộp đơn</a></p>
+
+              <article class="candidate-account-recommend-card">
+                <div class="candidate-account-card-head">
+                  <div>
+                    <span>Phù hợp 92%</span>
+                    <h3><a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-tadichi.html?from=tai-khoan-ung-vien&job_id=ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-tadichi">Kế toán tổng hợp — Tadichi</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-active">Gần khu vực</span>
+                </div>
+                <p>Xuân Thới Sơn, Hóc Môn, TP.HCM · 2 năm · 13 - 15 triệu · phù hợp khu vực ưu tiên.</p>
+                <div class="candidate-account-card-actions">
+                  <a href="ung-tuyen.html?job_id=ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-tadichi&mode=nop-moi&from=tai-khoan-ung-vien" class="btn-primary-orange">Nộp đơn</a>
+                  <a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-tadichi.html?from=tai-khoan-ung-vien&job_id=ke-toan-tong-hop-cong-ty-tnhh-thuc-pham-tadichi" class="btn-outline-brown">Xem chi tiết</a>
+                </div>
               </article>
             </div>
           </section>
@@ -121,5 +247,37 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script>
+    (function () {
+      function initCandidateAccountTasks() {
+        var tasks = Array.prototype.slice.call(document.querySelectorAll('[data-account-task]'));
+        var count = document.getElementById('candidateAccountTaskCount');
+        if (!tasks.length || !count) return;
+
+        function updateCount() {
+          var open = tasks.filter(function (task) { return !task.classList.contains('is-done'); }).length;
+          count.textContent = open + ' việc';
+          count.className = 'jobs-status-pill ' + (open ? 'is-warning' : 'is-active');
+        }
+
+        tasks.forEach(function (task) {
+          var doneButton = document.createElement('button');
+          doneButton.type = 'button';
+          doneButton.className = 'candidate-account-task-done';
+          doneButton.textContent = 'Đánh dấu xong';
+          doneButton.addEventListener('click', function () {
+            task.classList.toggle('is-done');
+            doneButton.textContent = task.classList.contains('is-done') ? 'Đã xong' : 'Đánh dấu xong';
+            updateCount();
+          });
+          task.appendChild(doneButton);
+        });
+
+        updateCount();
+      }
+
+      document.addEventListener('DOMContentLoaded', initCandidateAccountTasks);
+    })();
+  </script>
 </body>
 </html>

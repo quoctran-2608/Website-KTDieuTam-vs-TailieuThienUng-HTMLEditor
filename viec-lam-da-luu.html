@@ -7,7 +7,7 @@
   <meta name="description" content="Xem các việc đã lưu, quyết định tin nào nên nộp đơn trước và bỏ lưu các tin không còn phù hợp.">
   <link rel="canonical" href="https://ketoandieutam.com/viec-lam-da-luu.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css">
+  <link rel="stylesheet" href="assets/css/jobs.css?v=20260425-h1-40">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-dashboard-page saved-jobs-page" data-root="" data-nav="tuyen-dung">
@@ -28,7 +28,11 @@
           <div>
             <span class="jobs-kicker">Việc làm đã lưu</span>
             <h1>Quản lý các việc bạn đã lưu</h1>
-            <p class="jobs-hero-text">Xem nhanh tin còn phù hợp để nộp đơn và bỏ lưu các tin không cần theo dõi nữa.</p>
+            <p class="jobs-hero-text">Ưu tiên tin còn hạn, nộp đơn đúng lúc và dọn lại các tin không còn phù hợp.</p>
+            <div class="jobs-hero-actions candidate-saved-hero-actions">
+              <a href="viec-lam-da-luu.html?status=con-han" class="btn-primary-orange">Xem tin còn hạn</a>
+              <a href="tuyen-dung.html#job-list" class="btn-outline-brown">Tìm thêm việc</a>
+            </div>
           </div>
         </div>
       </div>
@@ -46,48 +50,145 @@
         </aside>
 
         <div class="jobs-dashboard-main">
-          <section class="jobs-dashboard-panel">
+          <section class="jobs-dashboard-panel candidate-saved-summary-panel">
             <div class="jobs-dashboard-panel-head">
-              <h2>Danh sách việc làm đã lưu</h2>
-              <span class="jobs-dashboard-note">Tin còn hạn có thể nộp đơn ngay. Tin đã hết hạn nên bỏ lưu hoặc tìm tin khác.</span>
+              <div>
+                <h2>Tổng quan việc đã lưu</h2>
+                <span class="jobs-dashboard-note">Theo dõi tin còn hạn, tin đã hết hạn và việc nên nộp trước.</span>
+              </div>
+              <span class="jobs-status-pill is-active">1 tin còn hạn</span>
             </div>
-            <div class="jobs-dashboard-list">
+            <div class="candidate-saved-summary-grid">
               <article>
-                <strong><a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.html?from=viec-da-luu&job_id=ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax">Kế toán tổng hợp — EasyTax</a></strong>
-                <p>Phường Hòa Hưng, TP.HCM · Toàn thời gian · 15 - 18 triệu · Hạn 20/04/2026 · <span class="jobs-status-pill is-muted">Đã hết hạn</span></p>
-                <div class="jobs-portal-actions">
-                  <a href="tuyen-dung.html#job-list" class="btn-primary-orange">Tìm tin tương tự</a>
-                  <a href="viec-lam-da-luu.html?action=bo-luu&job_id=ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax" class="btn-outline-brown">Bỏ lưu</a>
-                </div>
+                <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                <strong>3</strong>
+                <span>Việc đã lưu</span>
               </article>
-              <article>
-                <strong><a href="tuyen-dung/ke-toan-thue-cong-ty-viet-luat.html?from=viec-da-luu&job_id=ke-toan-thue-cong-ty-viet-luat">Kế toán thuế — Việt Luật</a></strong>
-                <p>Phường 2, Phú Nhuận, TP.HCM · Fresher / Không yêu cầu · Liên hệ · Hạn 08/05/2026</p>
-                <div class="jobs-portal-actions">
+              <article class="is-active">
+                <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+                <strong>1</strong>
+                <span>Còn hạn nộp đơn</span>
+              </article>
+              <article class="is-muted">
+                <i class="fa-regular fa-calendar-xmark" aria-hidden="true"></i>
+                <strong>2</strong>
+                <span>Đã hết hạn</span>
+              </article>
+              <article class="is-warning">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                <strong>08/05</strong>
+                <span>Hạn gần nhất</span>
+              </article>
+            </div>
+            <div class="candidate-saved-alert">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+              <p><strong>Gợi ý:</strong> Tin còn hạn nên được xử lý trước. Với tin đã hết hạn, bạn có thể tìm tin tương tự hoặc bỏ lưu để danh sách gọn hơn.</p>
+            </div>
+          </section>
+
+          <section class="jobs-dashboard-panel candidate-saved-list-panel">
+            <div class="jobs-dashboard-panel-head">
+              <div>
+                <h2>Danh sách việc làm đã lưu</h2>
+                <span class="jobs-dashboard-note">Tin còn hạn có thể nộp đơn ngay. Tin đã hết hạn nên bỏ lưu hoặc tìm tin khác.</span>
+              </div>
+              <a href="tuyen-dung.html#job-list" class="job-source-link">Tìm thêm việc phù hợp</a>
+            </div>
+            <div class="candidate-saved-filter-chips" aria-label="Lọc nhanh việc đã lưu">
+              <a href="viec-lam-da-luu.html?view=tat-ca" class="is-active" data-saved-filter="tat-ca">Tất cả <span>3</span></a>
+              <a href="viec-lam-da-luu.html?status=con-han" data-saved-filter="con-han">Còn hạn <span>1</span></a>
+              <a href="viec-lam-da-luu.html?status=het-han" data-saved-filter="het-han">Đã hết hạn <span>2</span></a>
+            </div>
+            <div class="candidate-saved-job-list">
+              <article class="candidate-saved-job-card is-active" data-saved-status="con-han">
+                <div class="candidate-saved-job-head">
+                  <div>
+                    <span class="candidate-saved-job-code">Còn hạn đến 08/05/2026</span>
+                    <h3><a href="tuyen-dung/ke-toan-thue-cong-ty-viet-luat.html?from=viec-da-luu&job_id=ke-toan-thue-cong-ty-viet-luat">Kế toán thuế — Việt Luật</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-active">Có thể nộp đơn</span>
+                </div>
+                <ul class="candidate-saved-job-meta">
+                  <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Phường 2, Phú Nhuận, TP.HCM</li>
+                  <li><i class="fa-regular fa-user" aria-hidden="true"></i>Fresher / Không yêu cầu</li>
+                  <li><i class="fa-solid fa-coins" aria-hidden="true"></i>Thỏa thuận</li>
+                </ul>
+                <p class="candidate-saved-job-next">Nên xử lý: đọc lại yêu cầu và nộp đơn nếu hồ sơ thuế của bạn đã sẵn sàng.</p>
+                <div class="candidate-saved-job-actions">
                   <a href="ung-tuyen.html?job_id=ke-toan-thue-cong-ty-viet-luat&mode=nop-moi&from=viec-da-luu" class="btn-primary-orange">Nộp đơn</a>
+                  <a href="tuyen-dung/ke-toan-thue-cong-ty-viet-luat.html?from=viec-da-luu&job_id=ke-toan-thue-cong-ty-viet-luat" class="btn-outline-brown">Xem chi tiết</a>
                   <a href="viec-lam-da-luu.html?action=bo-luu&job_id=ke-toan-thue-cong-ty-viet-luat" class="btn-outline-brown">Bỏ lưu</a>
                 </div>
               </article>
-              <article>
-                <strong><a href="tuyen-dung/ke-toan-noi-bo-cong-ty-co-phan-du-an-ha-my.html?from=viec-da-luu&job_id=ke-toan-noi-bo-cong-ty-co-phan-du-an-ha-my">Kế toán nội bộ — Dự án Hà My</a></strong>
-                <p>Tân Mai, Hoàng Mai, Hà Nội · 3 năm · Liên hệ · Hạn 19/04/2026 · <span class="jobs-status-pill is-muted">Đã hết hạn</span></p>
-                <div class="jobs-portal-actions">
+
+              <article class="candidate-saved-job-card is-expired" data-saved-status="het-han">
+                <div class="candidate-saved-job-head">
+                  <div>
+                    <span class="candidate-saved-job-code">Hết hạn 20/04/2026</span>
+                    <h3><a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.html?from=viec-da-luu&job_id=ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax">Kế toán tổng hợp — EasyTax</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-muted">Đã hết hạn</span>
+                </div>
+                <ul class="candidate-saved-job-meta">
+                  <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Phường Hòa Hưng, TP.HCM</li>
+                  <li><i class="fa-regular fa-clock" aria-hidden="true"></i>Toàn thời gian</li>
+                  <li><i class="fa-solid fa-coins" aria-hidden="true"></i>15 - 18 triệu</li>
+                </ul>
+                <p class="candidate-saved-job-next">Nên xử lý: tìm tin kế toán tổng hợp tương tự hoặc bỏ lưu nếu không cần theo dõi nữa.</p>
+                <div class="candidate-saved-job-actions">
                   <a href="tuyen-dung.html#job-list" class="btn-primary-orange">Tìm tin tương tự</a>
+                  <a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.html?from=viec-da-luu&job_id=ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax" class="btn-outline-brown">Xem lại tin</a>
+                  <a href="viec-lam-da-luu.html?action=bo-luu&job_id=ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax" class="btn-outline-brown">Bỏ lưu</a>
+                </div>
+              </article>
+
+              <article class="candidate-saved-job-card is-expired" data-saved-status="het-han">
+                <div class="candidate-saved-job-head">
+                  <div>
+                    <span class="candidate-saved-job-code">Hết hạn 19/04/2026</span>
+                    <h3><a href="tuyen-dung/ke-toan-noi-bo-cong-ty-co-phan-du-an-ha-my.html?from=viec-da-luu&job_id=ke-toan-noi-bo-cong-ty-co-phan-du-an-ha-my">Kế toán nội bộ — Dự án Hà My</a></h3>
+                  </div>
+                  <span class="jobs-status-pill is-muted">Đã hết hạn</span>
+                </div>
+                <ul class="candidate-saved-job-meta">
+                  <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Tân Mai, Hoàng Mai, Hà Nội</li>
+                  <li><i class="fa-regular fa-user" aria-hidden="true"></i>3 năm kinh nghiệm</li>
+                  <li><i class="fa-solid fa-coins" aria-hidden="true"></i>Thỏa thuận</li>
+                </ul>
+                <p class="candidate-saved-job-next">Nên xử lý: nếu vẫn quan tâm mảng nội bộ, tìm thêm tin đang còn hạn nộp.</p>
+                <div class="candidate-saved-job-actions">
+                  <a href="tuyen-dung.html#job-list" class="btn-primary-orange">Tìm tin tương tự</a>
+                  <a href="tuyen-dung/ke-toan-noi-bo-cong-ty-co-phan-du-an-ha-my.html?from=viec-da-luu&job_id=ke-toan-noi-bo-cong-ty-co-phan-du-an-ha-my" class="btn-outline-brown">Xem lại tin</a>
                   <a href="viec-lam-da-luu.html?action=bo-luu&job_id=ke-toan-noi-bo-cong-ty-co-phan-du-an-ha-my" class="btn-outline-brown">Bỏ lưu</a>
                 </div>
               </article>
             </div>
+            <div class="jobs-empty-state candidate-saved-empty" id="candidateSavedEmpty" hidden>Chưa có việc đã lưu nào trong nhóm này.</div>
           </section>
 
-          <section class="jobs-dashboard-panel">
+          <section class="jobs-dashboard-panel candidate-saved-next-panel">
             <div class="jobs-dashboard-panel-head">
-              <h2>Lối đi nhanh</h2>
+              <div>
+                <h2>Lối đi nhanh</h2>
+                <span class="jobs-dashboard-note">Chọn việc tiếp theo phù hợp với tình trạng hồ sơ của bạn.</span>
+              </div>
             </div>
-            <p class="jobs-dashboard-note">Bạn có thể quay lại hồ sơ, xem các đơn đã nộp hoặc tìm thêm việc còn phù hợp.</p>
-            <div class="jobs-portal-actions">
-              <a href="ho-so-ung-vien.html?from=viec-da-luu" class="btn-outline-brown">Mở hồ sơ ứng viên</a>
-              <a href="don-ung-tuyen.html?view=tat-ca&from=viec-da-luu" class="btn-outline-brown">Xem đơn đã nộp</a>
-              <a href="tuyen-dung.html#job-list" class="btn-primary-orange">Tìm thêm việc phù hợp</a>
+            <div class="candidate-saved-next-grid">
+              <a href="ho-so-ung-vien.html?from=viec-da-luu">
+                <i class="fa-regular fa-id-card" aria-hidden="true"></i>
+                <strong>Mở hồ sơ ứng viên</strong>
+                <span>Cập nhật CV, kỹ năng và khu vực mong muốn trước khi nộp đơn.</span>
+              </a>
+              <a href="don-ung-tuyen.html?view=tat-ca&from=viec-da-luu">
+                <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+                <strong>Xem đơn đã nộp</strong>
+                <span>Theo dõi đơn đang chờ phản hồi và hồ sơ đã gửi.</span>
+              </a>
+              <a href="tuyen-dung.html#job-list">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <strong>Tìm thêm việc phù hợp</strong>
+                <span>Lọc thêm tin còn hạn theo vị trí, khu vực và mức lương.</span>
+              </a>
             </div>
           </section>
         </div>
@@ -96,5 +197,67 @@
   </main>
   <div id="siteFooter"></div>
   <script src="site-shell.js"></script>
+  <script>
+    (function () {
+      function initSavedJobFilters() {
+        var filterLinks = Array.prototype.slice.call(document.querySelectorAll('[data-saved-filter]'));
+        var cards = Array.prototype.slice.call(document.querySelectorAll('[data-saved-status]'));
+        var emptyState = document.getElementById('candidateSavedEmpty');
+        if (!filterLinks.length || !cards.length) return;
+
+        function getInitialFilter() {
+          if (typeof URLSearchParams !== 'function') return 'tat-ca';
+          var params = new URLSearchParams(window.location.search || '');
+          return params.get('status') || params.get('view') || 'tat-ca';
+        }
+
+        function setUrlFilter(filter) {
+          if (!window.history || typeof window.history.replaceState !== 'function' || typeof URLSearchParams !== 'function') return;
+          var params = new URLSearchParams(window.location.search || '');
+          params.delete('view');
+          params.delete('status');
+          if (filter && filter !== 'tat-ca') {
+            params.set('status', filter);
+          } else {
+            params.set('view', 'tat-ca');
+          }
+          var query = params.toString();
+          window.history.replaceState(null, '', window.location.pathname + (query ? '?' + query : ''));
+        }
+
+        function applyFilter(filter, options) {
+          var activeFilter = filter || 'tat-ca';
+          var visibleCount = 0;
+          cards.forEach(function (card) {
+            var show = activeFilter === 'tat-ca' || card.dataset.savedStatus === activeFilter;
+            card.hidden = !show;
+            if (show) visibleCount += 1;
+          });
+          filterLinks.forEach(function (link) {
+            var isActive = link.dataset.savedFilter === activeFilter;
+            link.classList.toggle('is-active', isActive);
+            link.setAttribute('aria-current', isActive ? 'true' : 'false');
+          });
+          if (emptyState) {
+            emptyState.hidden = visibleCount !== 0;
+          }
+          if (!options || options.updateUrl !== false) {
+            setUrlFilter(activeFilter);
+          }
+        }
+
+        filterLinks.forEach(function (link) {
+          link.addEventListener('click', function (event) {
+            event.preventDefault();
+            applyFilter(link.dataset.savedFilter || 'tat-ca');
+          });
+        });
+
+        applyFilter(getInitialFilter(), { updateUrl: false });
+      }
+
+      document.addEventListener('DOMContentLoaded', initSavedJobFilters);
+    })();
+  </script>
 </body>
 </html>
