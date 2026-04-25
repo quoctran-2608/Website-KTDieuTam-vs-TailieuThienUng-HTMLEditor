@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gửi yêu cầu đăng tin tuyển dụng | Kế Toán Diệu Tâm</title>
-  <meta name="description" content="Điền thông tin tuyển dụng để tạo sẵn nội dung, sao chép nhanh và gửi cho Diệu Tâm qua Zalo hoặc file.">
+  <title>Yêu cầu mở tài khoản nhà tuyển dụng | Kế Toán Diệu Tâm</title>
+  <meta name="description" content="Gửi thông tin doanh nghiệp để Diệu Tâm hỗ trợ mở tài khoản nhà tuyển dụng hoặc hỗ trợ đăng tin tuyển dụng đầu tiên.">
   <link rel="canonical" href="https://ketoandieutam.com/dang-tin-tuyen-dung.html">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/jobs.css?v=20260425-h1-40">
@@ -20,13 +20,13 @@
           <span>/</span>
           <a href="tuyen-dung.html#job-list">Tuyển dụng</a>
           <span>/</span>
-          <span>Gửi yêu cầu đăng tin tuyển dụng</span>
+          <span>Yêu cầu mở tài khoản nhà tuyển dụng</span>
         </nav>
         <div class="jobs-hero-grid">
           <div>
-            <span class="jobs-kicker">Gửi yêu cầu đăng tin</span>
-            <h1>Gửi yêu cầu đăng tin tuyển dụng</h1>
-            <p class="jobs-hero-text">Điền thông tin chính của vị trí cần tuyển để tạo nội dung gửi cho Diệu Tâm.</p>
+            <span class="jobs-kicker">Nhà tuyển dụng mới</span>
+            <h1>Yêu cầu mở tài khoản nhà tuyển dụng</h1>
+            <p class="jobs-hero-text">Dành cho doanh nghiệp chưa có tài khoản. Sau khi được kích hoạt, bạn sẽ đăng tin bằng chức năng Đăng tin mới trong Trang nhà tuyển dụng.</p>
           </div>
         </div>
       </div>
@@ -36,33 +36,34 @@
       <div class="container">
         <div class="job-detail-grid">
           <article class="employer-request-form" id="employerRequestForm">
-            <h2>Thông tin vị trí cần tuyển</h2>
-            <p class="employer-request-form-intro">Điền các thông tin chính rồi tạo nội dung để sao chép, tải file hoặc gửi qua Zalo.</p>
+            <h2>Thông tin doanh nghiệp và nhu cầu ban đầu</h2>
+            <p class="employer-request-form-intro">Điền thông tin liên hệ để Diệu Tâm hỗ trợ mở tài khoản. Nếu đã có vị trí tuyển đầu tiên, bạn có thể ghi thêm để được hỗ trợ tạo nháp ban đầu.</p>
             <form id="recruitmentLeadForm" action="dang-tin-tuyen-dung.html" method="post">
               <div class="employer-request-form-grid">
+                <input type="hidden" id="requestPurpose" name="requestPurpose" value="mo-tai-khoan-nha-tuyen-dung">
                 <label class="jobs-filter-field">
                   <span>Tên công ty</span>
                   <input type="text" id="companyName" name="companyName" required maxlength="120" autocomplete="organization" placeholder="Ví dụ: Công ty TNHH ABC">
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Người phụ trách hồ sơ</span>
+                  <span>Người phụ trách tuyển dụng</span>
                   <input type="text" id="contactName" name="contactName" required maxlength="80" autocomplete="name" placeholder="Nguyễn Văn A">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Số điện thoại / Zalo người phụ trách</span>
-                  <input type="tel" id="contactPhone" name="contactPhone" required inputmode="tel" autocomplete="tel" pattern="^[0-9+\\s.-]{8,20}$" placeholder="09xx xxx xxx">
+                  <input type="tel" id="contactPhone" name="contactPhone" required inputmode="tel" autocomplete="tel" pattern="^[0-9+\s.-]{8,20}$" placeholder="0900 000 000">
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Email nhận thông báo đơn mới</span>
-                  <input type="email" id="contactEmail" name="contactEmail" autocomplete="email" placeholder="hr@congty.com">
+                  <span>Email mở tài khoản</span>
+                  <input type="email" id="contactEmail" name="contactEmail" required autocomplete="email" placeholder="hr@congty.com">
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Vị trí cần tuyển</span>
-                  <input type="text" id="jobTitle" name="jobTitle" required maxlength="120" placeholder="Kế toán tổng hợp / Kế toán thuế / Hành chính nhân sự...">
+                  <span>Vị trí tuyển đầu tiên (nếu đã có)</span>
+                  <input type="text" id="jobTitle" name="jobTitle" maxlength="120" placeholder="Kế toán tổng hợp / Kế toán thuế / Hành chính nhân sự...">
                 </label>
                 <label class="jobs-filter-field">
-                  <span>Khu vực làm việc</span>
-                  <input type="text" id="jobLocation" name="jobLocation" required maxlength="160" placeholder="Quận 7, TP.HCM / Cầu Giấy, Hà Nội...">
+                  <span>Khu vực làm việc dự kiến</span>
+                  <input type="text" id="jobLocation" name="jobLocation" maxlength="160" placeholder="Quận 7, TP.HCM / Cầu Giấy, Hà Nội...">
                 </label>
                 <label class="jobs-filter-field">
                   <span>Số lượng</span>
@@ -100,26 +101,26 @@
                   <input type="text" id="experienceLevel" name="experienceLevel" maxlength="60" placeholder="Ví dụ: Từ 2 năm / Không yêu cầu / Có thể đào tạo thêm">
                 </label>
                 <label class="jobs-filter-field full">
-                  <span>Mô tả công việc và yêu cầu chính</span>
-                  <textarea id="jobNotes" name="jobNotes" rows="5" maxlength="1200" placeholder="Ghi ngắn các ý chính: công việc chính, yêu cầu nổi bật, quyền lợi, lưu ý đặc biệt..."></textarea>
+                  <span>Ghi chú mở tài khoản / tin tuyển đầu tiên</span>
+                  <textarea id="jobNotes" name="jobNotes" rows="5" maxlength="1200" placeholder="Ví dụ: cần mở tài khoản cho HR, muốn Diệu Tâm hỗ trợ tạo nháp tin đầu tiên, cần tư vấn cách nhận hồ sơ..."></textarea>
                 </label>
               </div>
               <div class="employer-request-actions">
-                <button type="submit" class="btn-primary-orange">Tạo nội dung tuyển dụng</button>
-                <button type="button" id="downloadBriefBtn" class="btn-outline-brown">Tải file nội dung</button>
+                <button type="submit" class="btn-primary-orange">Tạo yêu cầu mở tài khoản</button>
+                <button type="button" id="downloadBriefBtn" class="btn-outline-brown">Tải file yêu cầu</button>
               </div>
-              <p class="employer-request-note"><strong>Lưu ý:</strong> sau khi bấm tạo nội dung, bạn có thể sao chép, mở Zalo hoặc tải file ngay ở phần kết quả bên dưới.</p>
+              <p class="employer-request-note"><strong>Lưu ý:</strong> đây không phải form đăng tin chính thức. Sau khi có tài khoản, bạn sẽ tự tạo và quản lý tin trong Trang nhà tuyển dụng.</p>
             </form>
 
             <div class="employer-request-result" id="requestResult" hidden>
-              <h3>Nội dung tuyển dụng đã tạo</h3>
+              <h3>Yêu cầu mở tài khoản đã tạo</h3>
               <p class="employer-request-note">Mã tham chiếu: <strong class="employer-request-code" id="requestIdText"></strong></p>
-              <p class="employer-request-note" id="requestResultStatus">Nội dung đã sẵn sàng. Bạn có thể sao chép hoặc mở Zalo để gửi.</p>
+              <p class="employer-request-note" id="requestResultStatus">Yêu cầu đã sẵn sàng. Bạn có thể sao chép hoặc mở Zalo để gửi.</p>
               <pre id="requestPreview"></pre>
               <div class="employer-request-actions">
-                <button type="button" id="copyBriefBtn" class="btn-primary-orange">Sao chép nội dung</button>
+                <button type="button" id="copyBriefBtn" class="btn-primary-orange">Sao chép yêu cầu</button>
                 <a href="https://zalo.me/0777315188" target="_blank" rel="noopener" id="openZaloBtn" class="btn-outline-brown">Mở Zalo để gửi</a>
-                <button type="button" id="downloadBriefBtnInline" class="btn-outline-brown">Tải file nội dung</button>
+                <button type="button" id="downloadBriefBtnInline" class="btn-outline-brown">Tải file yêu cầu</button>
               </div>
             </div>
           </article>
@@ -128,21 +129,21 @@
             <div class="employer-request-box">
               <h2>Nên chuẩn bị trước khi gửi</h2>
               <ul>
-                <li>Tên công ty, vị trí, nơi làm việc và đầu mối liên hệ rõ ràng.</li>
-                <li>Email hoặc số điện thoại người phụ trách để Diệu Tâm báo khi có đơn mới.</li>
-                <li>Ít nhất vài ý chính về công việc, yêu cầu và quyền lợi.</li>
-                <li>Nếu tuyển nhiều vị trí, nên gửi mỗi vị trí một form riêng.</li>
+                <li>Tên công ty và đầu mối phụ trách tuyển dụng.</li>
+                <li>Email sẽ dùng để mở tài khoản nhà tuyển dụng.</li>
+                <li>Số điện thoại/Zalo để Diệu Tâm xác minh và hỗ trợ kích hoạt.</li>
+                <li>Nếu đã có vị trí tuyển đầu tiên, ghi thêm để được hỗ trợ tạo nháp ban đầu.</li>
               </ul>
             </div>
 
             <div class="employer-request-box">
               <h2>Sau khi gửi sẽ có gì tiếp theo?</h2>
               <ul>
-                <li>Diệu Tâm nhận nội dung bạn đã gửi qua Zalo hoặc file.</li>
-                <li>Diệu Tâm rà lại tiêu đề, cách trình bày và các thông tin còn thiếu nếu có.</li>
-                <li>Khi nội dung đã rõ ràng, tin sẽ được đăng lên trang Tuyển dụng.</li>
+                <li>Diệu Tâm nhận yêu cầu mở tài khoản qua Zalo hoặc file.</li>
+                <li>Diệu Tâm xác minh đầu mối liên hệ và hỗ trợ kích hoạt tài khoản.</li>
+                <li>Sau khi đăng nhập, bạn dùng Trang nhà tuyển dụng → Đăng tin mới để tạo tin chính thức.</li>
               </ul>
-              <p>Nếu doanh nghiệp có mẫu mô tả công việc sẵn, bạn có thể dán vào phần mô tả hoặc gửi kèm sau khi đã tạo nội dung tại trang này.</p>
+              <p>Nếu doanh nghiệp muốn Diệu Tâm hỗ trợ tin đầu tiên, hãy ghi nội dung vào phần ghi chú; tin vẫn nên được quản lý chính trong tài khoản nhà tuyển dụng sau khi kích hoạt.</p>
             </div>
           </aside>
         </div>
@@ -185,45 +186,47 @@
           jobDeadline: value('jobDeadline'),
           employmentType: value('employmentType'),
           workMode: value('workMode'),
-          applicationMethod: value('applicationMethod'),
-          applicationContact: value('applicationContact'),
-          salaryLabel: value('salaryLabel'),
-          experienceLevel: value('experienceLevel'),
-          jobNotes: value('jobNotes'),
-          sourcePage: 'dang-tin-tuyen-dung.html',
-          sourceChannel: 'website-brief',
-          createdAt: createdAt
-        };
-      }
+	          applicationMethod: value('applicationMethod'),
+	          applicationContact: value('applicationContact'),
+	          requestPurpose: value('requestPurpose') || 'mo-tai-khoan-nha-tuyen-dung',
+	          salaryLabel: value('salaryLabel'),
+	          experienceLevel: value('experienceLevel'),
+	          jobNotes: value('jobNotes'),
+	          sourcePage: 'dang-tin-tuyen-dung.html',
+	          sourceChannel: 'employer-account-request',
+	          createdAt: createdAt
+	        };
+	      }
 
-      function formatRequestCode(requestId) {
-        return String(requestId || '').replace(/^brief-/, 'YC-');
-      }
+	      function formatRequestCode(requestId) {
+	        return String(requestId || '').replace(/^brief-/, 'YCTK-');
+	      }
 
-      function buildDownloadName(requestId) {
-        return 'yeu-cau-tuyen-dung-' + formatRequestCode(requestId).toLowerCase() + '.txt';
-      }
+	      function buildDownloadName(requestId) {
+	        return 'yeu-cau-mo-tai-khoan-' + formatRequestCode(requestId).toLowerCase() + '.txt';
+	      }
 
-      function buildBrief(payload) {
-        return [
-          'Thông tin tuyển dụng gửi Diệu Tâm',
-          'Mã tham chiếu: ' + formatRequestCode(payload.requestId),
-          'Công ty: ' + payload.companyName,
-          'Người phụ trách hồ sơ: ' + payload.contactName,
-          'SĐT/Zalo: ' + payload.contactPhone,
-          'Email nhận thông báo đơn mới: ' + (payload.contactEmail || 'Chưa cung cấp'),
-          'Vị trí cần tuyển: ' + payload.jobTitle,
-          'Khu vực làm việc: ' + payload.jobLocation,
-          'Số lượng: ' + (payload.jobQuantity || '1'),
-          'Hạn nộp hồ sơ: ' + (payload.jobDeadline || 'Chưa chốt'),
-          'Hình thức: ' + payload.employmentType,
-          'Cách làm việc: ' + payload.workMode,
-          'Cách ứng tuyển: Ứng viên nộp hồ sơ trên Diệu Tâm',
-          'Lương tham khảo: ' + (payload.salaryLabel || 'Chưa công khai'),
-          'Yêu cầu kinh nghiệm: ' + (payload.experienceLevel || 'Chưa ghi rõ'),
-          'Ghi chú thêm: ' + (payload.jobNotes || 'Không có ghi chú thêm')
-        ].join('\\n');
-      }
+	      function buildBrief(payload) {
+	        return [
+	          'Yêu cầu mở tài khoản nhà tuyển dụng gửi Diệu Tâm',
+	          'Mã tham chiếu: ' + formatRequestCode(payload.requestId),
+	          'Mục đích: Mở tài khoản nhà tuyển dụng / hỗ trợ tin tuyển đầu tiên',
+	          'Công ty: ' + payload.companyName,
+	          'Người phụ trách tuyển dụng: ' + payload.contactName,
+	          'SĐT/Zalo: ' + payload.contactPhone,
+	          'Email mở tài khoản: ' + payload.contactEmail,
+	          'Vị trí tuyển đầu tiên: ' + (payload.jobTitle || 'Chưa cung cấp'),
+	          'Khu vực làm việc dự kiến: ' + (payload.jobLocation || 'Chưa cung cấp'),
+	          'Số lượng: ' + (payload.jobQuantity || '1'),
+	          'Hạn nộp hồ sơ: ' + (payload.jobDeadline || 'Chưa chốt'),
+	          'Hình thức: ' + payload.employmentType,
+	          'Cách làm việc: ' + payload.workMode,
+	          'Cách ứng tuyển dự kiến: Ứng viên nộp hồ sơ trên Diệu Tâm',
+	          'Lương tham khảo: ' + (payload.salaryLabel || 'Chưa công khai'),
+	          'Yêu cầu kinh nghiệm: ' + (payload.experienceLevel || 'Chưa ghi rõ'),
+	          'Ghi chú mở tài khoản / tin đầu tiên: ' + (payload.jobNotes || 'Không có ghi chú thêm')
+	        ].join('\\n');
+	      }
 
       function ensureValidForm() {
         if (!form) return false;
@@ -237,12 +240,12 @@
         var brief = buildBrief(payload);
         lastPayload = payload;
         preview.textContent = brief;
-        if (requestIdText) {
-          requestIdText.textContent = formatRequestCode(payload.requestId);
-        }
-        if (resultStatus) {
-          resultStatus.textContent = note || 'Nội dung đã sẵn sàng. Bạn có thể sao chép hoặc mở Zalo để gửi.';
-        }
+	        if (requestIdText) {
+	          requestIdText.textContent = formatRequestCode(payload.requestId);
+	        }
+	        if (resultStatus) {
+	          resultStatus.textContent = note || 'Yêu cầu đã sẵn sàng. Bạn có thể sao chép hoặc mở Zalo để gửi.';
+	        }
         result.hidden = false;
         result.scrollIntoView({ behavior: 'smooth', block: 'start' });
         return brief;
@@ -261,28 +264,28 @@
       }
 
       function submitBrief(event) {
-        event.preventDefault();
-        if (!ensureValidForm()) return;
-        var payload = buildPayload();
-        renderResult(payload, 'Nội dung đã tạo xong. Bạn có thể sao chép, tải file hoặc mở Zalo để gửi.');
-      }
+	        event.preventDefault();
+	        if (!ensureValidForm()) return;
+	        var payload = buildPayload();
+	        renderResult(payload, 'Yêu cầu đã tạo xong. Bạn có thể sao chép, tải file hoặc mở Zalo để gửi.');
+	      }
 
       function handleDownload() {
-        if (!ensureValidForm()) return;
-        var payload = lastPayload || buildPayload();
-        downloadBrief(payload);
-        renderResult(payload, 'Đã tạo và tải file nội dung. Bạn có thể tiếp tục sao chép hoặc mở Zalo để gửi.');
-      }
+	        if (!ensureValidForm()) return;
+	        var payload = lastPayload || buildPayload();
+	        downloadBrief(payload);
+	        renderResult(payload, 'Đã tạo và tải file yêu cầu. Bạn có thể tiếp tục sao chép hoặc mở Zalo để gửi.');
+	      }
 
       function handleCopy() {
         if (!ensureValidForm()) return;
         var payload = lastPayload || buildPayload();
         var brief = renderResult(payload, 'Đang chuẩn bị nội dung để sao chép...');
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(brief).then(function () {
-            if (resultStatus) {
-              resultStatus.textContent = 'Đã sao chép nội dung. Bạn có thể mở Zalo và dán ngay.';
-            }
+	          navigator.clipboard.writeText(brief).then(function () {
+	            if (resultStatus) {
+	              resultStatus.textContent = 'Đã sao chép yêu cầu. Bạn có thể mở Zalo và dán ngay.';
+	            }
           }).catch(function () {
             if (resultStatus) {
               resultStatus.textContent = 'Không thể sao chép tự động. Bạn có thể bôi đen phần nội dung bên dưới để sao chép thủ công.';

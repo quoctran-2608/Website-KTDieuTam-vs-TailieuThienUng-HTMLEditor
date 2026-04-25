@@ -5267,6 +5267,140 @@ body.is-recruiter-ops-open {
   margin: -2px 0 0;
 }
 
+.application-submit-checklist {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(182, 141, 64, 0.16);
+  background: linear-gradient(180deg, #fffdf8 0%, #fff 100%);
+}
+
+.application-submit-checklist-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.application-submit-checklist-head div {
+  display: grid;
+  gap: 4px;
+}
+
+.application-submit-checklist-head strong {
+  color: #1f2937;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.application-submit-checklist-head span {
+  color: #7b8797;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+#applicationReadinessScore {
+  flex: 0 0 auto;
+  min-width: 52px;
+  color: #9a5e0a;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: right;
+}
+
+#applicationReadinessScore.is-ready {
+  color: #18794e;
+}
+
+.application-readiness-bar {
+  overflow: hidden;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(182, 141, 64, 0.16);
+}
+
+.application-readiness-bar span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #d99745 0%, #b68d40 100%);
+  transition: width 0.24s ease;
+}
+
+.application-readiness-bar span.is-ready {
+  background: linear-gradient(90deg, #43a866 0%, #18794e 100%);
+}
+
+.application-submit-checklist ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.application-submit-checklist li {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  color: #687586;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.application-submit-checklist li i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: #f8fafc;
+  color: transparent;
+  font-size: 11px;
+}
+
+.application-submit-checklist li.is-done {
+  color: #1f2937;
+}
+
+.application-submit-checklist li.is-done i {
+  border-color: rgba(24, 121, 78, 0.45);
+  background: #e9f7ef;
+  color: #18794e;
+}
+
+.application-feedback {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .application-submit-checklist {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .application-submit-checklist-head {
+    align-items: stretch;
+  }
+
+  #applicationReadinessScore {
+    text-align: left;
+  }
+
+  .application-submit-checklist ul {
+    grid-template-columns: 1fr;
+  }
+}
+
 .employer-request-form {
   padding: 30px;
   background: #fff;

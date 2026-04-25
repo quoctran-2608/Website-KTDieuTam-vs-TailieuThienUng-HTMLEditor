@@ -44,14 +44,14 @@
               <span class="jobs-dashboard-note" id="applicationModeNote">Bạn đang nộp đơn mới cho vị trí đã chọn.</span>
             </div>
             <div class="jobs-dashboard-facts">
-              <div><span>Doanh nghiệp</span><strong id="applicationJobCompanyStat">CÔNG TY TNHH DỊCH VỤ KẾ TOÁN &amp; TƯ VẤN THUẾ EASYTAX</strong></div>
-              <div><span>Vị trí</span><strong id="applicationJobTitleStat">Kế toán tổng hợp — EasyTax</strong></div>
-              <div><span>Khu vực</span><strong id="applicationJobLocationStat">Phường Hòa Hưng, TP.HCM · Toàn thời gian</strong></div>
-              <div><span>Mức lương</span><strong id="applicationJobSalaryStat">15 - 18 triệu</strong></div>
-              <div class="full"><span>Trạng thái tin</span><strong id="applicationJobStatusStat">Đã hết hạn · Bạn chỉ có thể xem lại hồ sơ đã nộp</strong></div>
+              <div><span>Doanh nghiệp</span><strong id="applicationJobCompanyStat">Công ty CP Winitex Việt Nam</strong></div>
+              <div><span>Vị trí</span><strong id="applicationJobTitleStat">Kế toán thuế — Winitex Việt Nam</strong></div>
+              <div><span>Khu vực</span><strong id="applicationJobLocationStat">Tam Hiệp, Thanh Trì, Hà Nội · Toàn thời gian</strong></div>
+              <div><span>Mức lương</span><strong id="applicationJobSalaryStat">Thỏa thuận</strong></div>
+              <div class="full"><span>Trạng thái tin</span><strong id="applicationJobStatusStat">Đang tuyển · Bạn có thể nộp hồ sơ ngay</strong></div>
             </div>
             <div class="application-job-summary-links">
-              <a href="tuyen-dung/ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax.html?from=ung-tuyen&job_id=ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax" id="applicationBackToJobLink">Xem lại tin tuyển dụng</a>
+              <a href="tuyen-dung/ke-toan-thue-cong-ty-cp-winitex-viet-nam.html?from=ung-tuyen&job_id=ke-toan-thue-cong-ty-cp-winitex-viet-nam" id="applicationBackToJobLink">Xem lại tin tuyển dụng</a>
               <span aria-hidden="true">•</span>
               <a href="don-ung-tuyen.html?view=tat-ca&from=ung-tuyen" id="applicationViewApplicationsLink">Xem đơn đã nộp</a>
             </div>
@@ -67,14 +67,17 @@
             </label>
             <label class="jobs-filter-field">
               <span>Số điện thoại</span>
-              <input type="tel" id="applicationPhone" name="phone" required inputmode="tel" autocomplete="tel" pattern="^[0-9+\\s.-]{8,20}$" value="09xx xxx xxx">
+              <input type="tel" id="applicationPhone" name="phone" required inputmode="tel" autocomplete="tel" pattern="^[0-9+\s.-]{8,20}$" value="0900 000 000">
             </label>
             <label class="jobs-filter-field">
               <span>Kinh nghiệm liên quan</span>
               <input type="text" id="applicationExperience" name="experience" required maxlength="100" value="3 năm kế toán tổng hợp">
             </label>
             <label class="jobs-filter-field full">
-              <span>Thư giới thiệu ngắn</span>
+              <span>
+                Thư giới thiệu ngắn
+                <small class="jobs-char-count" data-count-for="applicationCoverLetter" data-max="2000">0/2000</small>
+              </span>
               <textarea id="applicationCoverLetter" name="coverLetter" rows="6" maxlength="2000">Em có kinh nghiệm tổng hợp số liệu kế toán, phối hợp kê khai thuế và lập báo cáo định kỳ. Em mong muốn được trao đổi thêm về vị trí để hiểu rõ kỳ vọng công việc.</textarea>
             </label>
             <label class="jobs-filter-field full">
@@ -82,8 +85,27 @@
               <input type="text" id="applicationCvFileName" name="cvFileName" required maxlength="150" value="CV-NguyenMinhAnh-KeToanTongHop.pdf" readonly>
             </label>
             <p class="jobs-dashboard-note application-cv-note" id="applicationCvNote">Nếu muốn đổi CV, hãy mở hồ sơ ứng viên để cập nhật trước khi gửi.</p>
-              <input type="hidden" id="applicationJobIdInput" name="job_id" value="ke-toan-tong-hop-cong-ty-tnhh-dich-vu-ke-toan-tu-van-thue-easytax">
-              <input type="hidden" id="applicationIdInput" name="application_id" value="app-mau-ung-tuyen-20260423">
+            <div class="application-submit-checklist">
+              <div class="application-submit-checklist-head">
+                <div>
+                  <strong>Kiểm tra nhanh trước khi gửi</strong>
+                  <span id="applicationChecklistSummary">0/4 mục đã sẵn sàng</span>
+                </div>
+                <span id="applicationReadinessScore">0%</span>
+              </div>
+              <div class="application-readiness-bar" aria-hidden="true">
+                <span id="applicationReadinessBar"></span>
+              </div>
+              <ul>
+                <li id="applicationCheckContact"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Thông tin liên hệ hợp lệ</span></li>
+                <li id="applicationCheckExperience"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Kinh nghiệm liên quan rõ ràng</span></li>
+                <li id="applicationCheckLetter"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Thư giới thiệu đủ ý</span></li>
+                <li id="applicationCheckCv"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Đã chọn CV để gửi</span></li>
+              </ul>
+            </div>
+            <p class="jobs-form-feedback application-feedback" id="applicationFeedback" role="status" aria-live="polite" hidden></p>
+              <input type="hidden" id="applicationJobIdInput" name="job_id" value="ke-toan-thue-cong-ty-cp-winitex-viet-nam">
+              <input type="hidden" id="applicationIdInput" name="application_id" value="">
             </form>
           <div class="jobs-auth-actions">
             <button type="submit" form="jobApplicationForm" class="btn-primary-orange" id="applicationSubmitBtn">Gửi hồ sơ</button>
@@ -100,6 +122,24 @@
       function readParam(name) {
         var params = new URLSearchParams(window.location.search || '');
         return String(params.get(name) || '').trim();
+      }
+
+      function clean(value) {
+        return String(value || '').trim();
+      }
+
+      function isEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean(value));
+      }
+
+      function hasPhone(value) {
+        return clean(value).replace(/\D/g, '').length >= 8;
+      }
+
+      function setCheckItemState(id, passed) {
+        var node = document.getElementById(id);
+        if (!node) return;
+        node.classList.toggle('is-done', Boolean(passed));
       }
 
       function setFormEditable(form, editable) {
@@ -139,6 +179,16 @@
         var applicationIdInput = document.getElementById('applicationIdInput');
         var profileLink = document.getElementById('applicationProfileLink');
         var cvNote = document.getElementById('applicationCvNote');
+        var fullNameInput = document.getElementById('applicationFullName');
+        var emailInput = document.getElementById('applicationEmail');
+        var phoneInput = document.getElementById('applicationPhone');
+        var experienceInput = document.getElementById('applicationExperience');
+        var coverLetterInput = document.getElementById('applicationCoverLetter');
+        var cvFileInput = document.getElementById('applicationCvFileName');
+        var feedback = document.getElementById('applicationFeedback');
+        var checklistSummary = document.getElementById('applicationChecklistSummary');
+        var readinessScore = document.getElementById('applicationReadinessScore');
+        var readinessBar = document.getElementById('applicationReadinessBar');
 
         if (!form || !submitBtn || !modeNote || !statusStat || !jobIdInput || !applicationIdInput || !heroTitle || !heroText || !formTitle || !introText || !companyStat || !profileLink || !cvNote) return;
 
@@ -189,6 +239,121 @@
         if (!jobContext && mode === 'nop-moi') {
           isExpired = false;
         }
+
+        function showApplicationFeedback(message, type) {
+          if (!feedback) return;
+          feedback.hidden = false;
+          feedback.textContent = message;
+          feedback.classList.remove('is-success', 'is-warning');
+          if (type) {
+            feedback.classList.add(type === 'warning' ? 'is-warning' : 'is-success');
+          }
+        }
+
+        function updateApplicationCharCount() {
+          var counter = document.querySelector('.jobs-char-count[data-count-for="applicationCoverLetter"]');
+          if (!counter || !coverLetterInput) return;
+          var max = parseInt(counter.getAttribute('data-max') || '0', 10);
+          var length = clean(coverLetterInput.value).length;
+          counter.textContent = max ? (length + '/' + max) : (length + ' ký tự');
+          counter.classList.toggle('is-warning', Boolean(max && length >= Math.floor(max * 0.9)));
+        }
+
+        function updateApplicationReadiness() {
+          var checks = {
+            contact: clean(fullNameInput && fullNameInput.value).length >= 2 && isEmail(emailInput && emailInput.value) && hasPhone(phoneInput && phoneInput.value),
+            experience: clean(experienceInput && experienceInput.value).length >= 8,
+            letter: clean(coverLetterInput && coverLetterInput.value).length >= 60,
+            cv: clean(cvFileInput && cvFileInput.value).length > 0
+          };
+          var firstIncomplete = '';
+          var fieldByCheck = {
+            contact: fullNameInput && clean(fullNameInput.value).length < 2 ? 'applicationFullName' : (isEmail(emailInput && emailInput.value) ? 'applicationPhone' : 'applicationEmail'),
+            experience: 'applicationExperience',
+            letter: 'applicationCoverLetter',
+            cv: 'applicationCvFileName'
+          };
+
+          Object.keys(checks).forEach(function (key) {
+            if (!checks[key] && !firstIncomplete) firstIncomplete = fieldByCheck[key];
+          });
+
+          setCheckItemState('applicationCheckContact', checks.contact);
+          setCheckItemState('applicationCheckExperience', checks.experience);
+          setCheckItemState('applicationCheckLetter', checks.letter);
+          setCheckItemState('applicationCheckCv', checks.cv);
+          updateApplicationCharCount();
+
+          var passedCount = Object.keys(checks).filter(function (key) { return checks[key]; }).length;
+          var totalCount = Object.keys(checks).length;
+          var score = Math.round((passedCount / totalCount) * 100);
+          if (checklistSummary) checklistSummary.textContent = passedCount + '/' + totalCount + ' mục đã sẵn sàng';
+          if (readinessScore) {
+            readinessScore.textContent = score + '%';
+            readinessScore.classList.toggle('is-ready', score === 100);
+          }
+          if (readinessBar) {
+            readinessBar.style.width = score + '%';
+            readinessBar.classList.toggle('is-ready', score === 100);
+          }
+          return {
+            passedCount: passedCount,
+            totalCount: totalCount,
+            firstIncompleteFieldId: firstIncomplete
+          };
+        }
+
+        function focusApplicationField(fieldId) {
+          var field = document.getElementById(fieldId);
+          if (!field || field.disabled) return;
+          field.focus({ preventScroll: true });
+          field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function buildApplicationId() {
+          var source = clean(jobIdInput.value || jobId || 'ung-tuyen').replace(/[^a-zA-Z0-9-]+/g, '-').replace(/(^-|-$)/g, '');
+          return 'app-' + source.slice(0, 64) + '-' + Date.now();
+        }
+
+        [fullNameInput, emailInput, phoneInput, experienceInput, coverLetterInput, cvFileInput].forEach(function (field) {
+          if (!field) return;
+          field.addEventListener('input', updateApplicationReadiness);
+          field.addEventListener('change', updateApplicationReadiness);
+        });
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          if (submitBtn.disabled) return;
+          var readiness = updateApplicationReadiness();
+          if (readiness.passedCount < readiness.totalCount) {
+            showApplicationFeedback('Hồ sơ chưa đủ sẵn sàng. Vui lòng hoàn thiện các mục được nhắc trước khi gửi.', 'warning');
+            focusApplicationField(readiness.firstIncompleteFieldId);
+            return;
+          }
+          if (!clean(applicationIdInput.value)) {
+            applicationIdInput.value = buildApplicationId();
+          }
+          try {
+            localStorage.setItem('jobs-candidate-last-application', JSON.stringify({
+              at: new Date().toISOString(),
+              job_id: jobIdInput.value,
+              application_id: applicationIdInput.value,
+              fullName: fullNameInput ? fullNameInput.value : '',
+              email: emailInput ? emailInput.value : ''
+            }));
+          } catch (error) {
+            // Bỏ qua khi trình duyệt chặn localStorage.
+          }
+          showApplicationFeedback('Đã gửi hồ sơ. Bạn sẽ được chuyển tới trang theo dõi đơn.', 'success');
+          var redirect = new URL('don-ung-tuyen.html', window.location.href);
+          redirect.searchParams.set('view', 'tat-ca');
+          redirect.searchParams.set('from', 'ung-tuyen');
+          redirect.searchParams.set('job_id', jobIdInput.value);
+          redirect.searchParams.set('focus_application_id', applicationIdInput.value);
+          window.setTimeout(function () {
+            window.location.href = redirect.toString();
+          }, 450);
+        });
 
         if (jobContext) {
           companyStat.textContent = jobContext.company;
@@ -242,6 +407,7 @@
             : 'Bạn đang xem lại hồ sơ đã nộp.';
           profileLink.textContent = 'Mở hồ sơ để cập nhật cho lần ứng tuyển sau';
           cvNote.textContent = 'Đây là tên file CV đã dùng khi nộp hồ sơ trước đó.';
+          updateApplicationReadiness();
           return;
         }
 
@@ -259,6 +425,7 @@
             profileLink.textContent = 'Tìm tin còn đang tuyển';
             profileLink.setAttribute('href', 'tuyen-dung.html#job-list');
             cvNote.textContent = 'Bạn có thể chọn tin còn đang tuyển khác hoặc cập nhật CV trong hồ sơ ứng viên.';
+            updateApplicationReadiness();
             return;
           }
 
@@ -273,6 +440,7 @@
           modeNote.textContent = 'Bạn đang nộp lại hồ sơ theo yêu cầu cập nhật từ nhà tuyển dụng.';
           profileLink.textContent = 'Mở hồ sơ để cập nhật CV';
           cvNote.textContent = 'Nếu cần thay CV, hãy mở hồ sơ ứng viên để cập nhật trước khi nộp lại.';
+          updateApplicationReadiness();
           return;
         }
 
@@ -289,6 +457,7 @@
           profileLink.textContent = 'Chọn tin còn đang tuyển';
           profileLink.setAttribute('href', 'tuyen-dung.html#job-list');
           cvNote.textContent = 'Nếu muốn đổi CV, bạn có thể cập nhật trong hồ sơ ứng viên rồi chọn tin khác để nộp.';
+          updateApplicationReadiness();
           return;
         }
 
@@ -303,6 +472,7 @@
         modeNote.textContent = 'Bạn đang nộp đơn mới cho vị trí đã chọn.';
         profileLink.textContent = 'Mở hồ sơ để cập nhật CV';
         cvNote.textContent = 'Nếu muốn đổi CV, hãy mở hồ sơ ứng viên để cập nhật trước khi gửi.';
+        updateApplicationReadiness();
       }
 
       document.addEventListener('DOMContentLoaded', initApplicationMode);
