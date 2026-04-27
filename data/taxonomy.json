@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-04-27T14:12:28.670728+00:00",
+  "generatedAt": "2026-04-27T15:31:11.569337+00:00",
   "roots": [
     {
       "key": "thu-vien",
       "label": "Thư viện",
-      "count": 2721,
+      "count": 2736,
       "children": [
         {
           "key": "huong-dan",
           "label": "Hướng dẫn",
-          "count": 1405,
+          "count": 1412,
           "children": [
             {
               "key": "ke-toan",
               "label": "Kế toán",
-              "count": 491,
+              "count": 495,
               "children": [
                 {
                   "key": "tai-khoan-hach-toan",
                   "label": "Tài khoản - Hạch toán",
-                  "count": 280,
+                  "count": 284,
                   "children": [
                     {
                       "key": "hang-ton-kho-gia-thanh",
                       "label": "Hàng tồn kho/Giá thành",
-                      "count": 52
+                      "count": 53
                     },
                     {
                       "key": "hach-toan-dac-thu",
@@ -39,7 +39,7 @@
                     {
                       "key": "doanh-thu-chi-phi-kqkd",
                       "label": "Doanh thu/Chi phí/KQKD",
-                      "count": 40
+                      "count": 42
                     },
                     {
                       "key": "von-dau-tu",
@@ -49,7 +49,7 @@
                     {
                       "key": "tscd-ccdc-khau-hao",
                       "label": "TSCĐ/CCDC/Khấu hao",
-                      "count": 24
+                      "count": 25
                     },
                     {
                       "key": "tien-quy-ngan-hang",
@@ -232,17 +232,17 @@
             {
               "key": "thue",
               "label": "Thuế - Hóa đơn",
-              "count": 447,
+              "count": 450,
               "children": [
                 {
                   "key": "gtgt-hoa-don",
                   "label": "GTGT - Hóa đơn",
-                  "count": 266,
+                  "count": 269,
                   "children": [
                     {
                       "key": "lap-xu-ly-hoa-don",
                       "label": "Lập/Xử lý hóa đơn",
-                      "count": 119
+                      "count": 121
                     },
                     {
                       "key": "hoa-don-dien-tu",
@@ -262,7 +262,7 @@
                     {
                       "key": "thue-suat-doi-tuong",
                       "label": "Thuế suất/Đối tượng chịu thuế",
-                      "count": 29
+                      "count": 30
                     },
                     {
                       "key": "bao-cao-bang-ke",
@@ -801,17 +801,17 @@
         {
           "key": "bieu-mau",
           "label": "Biểu mẫu",
-          "count": 860,
+          "count": 868,
           "children": [
             {
               "key": "thue",
               "label": "Thuế - Hóa đơn",
-              "count": 221,
+              "count": 222,
               "children": [
                 {
                   "key": "mau-bieu-thue",
                   "label": "Mẫu biểu thuế - hóa đơn",
-                  "count": 213,
+                  "count": 214,
                   "children": [
                     {
                       "key": "mau-thue-gtgt-hoa-don",
@@ -826,7 +826,7 @@
                     {
                       "key": "mau-thue-tndn",
                       "label": "Mẫu thuế TNDN",
-                      "count": 14
+                      "count": 15
                     },
                     {
                       "key": "mau-thue-nha-thau",
@@ -874,17 +874,17 @@
             {
               "key": "ke-toan",
               "label": "Kế toán",
-              "count": 206,
+              "count": 207,
               "children": [
                 {
                   "key": "mau-bieu-ke-toan",
                   "label": "Mẫu biểu kế toán",
-                  "count": 175,
+                  "count": 176,
                   "children": [
                     {
                       "key": "mau-hanh-chinh-quan-tri-khac",
                       "label": "Mẫu hành chính/quản trị khác",
-                      "count": 41
+                      "count": 42
                     },
                     {
                       "key": "mau-chung-tu-tien-thanh-toan",
@@ -1092,17 +1092,22 @@
             {
               "key": "doanh-nghiep-thu-tuc",
               "label": "Doanh nghiệp - Thủ tục",
-              "count": 111,
+              "count": 117,
               "children": [
                 {
                   "key": "mau-bieu-doanh-nghiep-thu-tuc",
                   "label": "Mẫu biểu doanh nghiệp - thủ tục",
-                  "count": 109,
+                  "count": 115,
                   "children": [
                     {
                       "key": "mau-to-khai-thue-tndn",
                       "label": "Mẫu tờ khai thuế TNDN",
                       "count": 32
+                    },
+                    {
+                      "key": "mau-khuyen-mai-thuong-mai",
+                      "label": "Mẫu khuyến mại/thương mại",
+                      "count": 18
                     },
                     {
                       "key": "mau-dang-ky-thay-doi-doanh-nghiep",
@@ -1113,11 +1118,6 @@
                       "key": "mau-dang-ky-thue-mst",
                       "label": "Mẫu đăng ký thuế/MST",
                       "count": 13
-                    },
-                    {
-                      "key": "mau-khuyen-mai-thuong-mai",
-                      "label": "Mẫu khuyến mại/thương mại",
-                      "count": 12
                     },
                     {
                       "key": "mau-ho-ca-nhan-kinh-doanh",
@@ -1981,17 +1981,17 @@
     {
       "key": "ban-tin",
       "label": "Bản tin",
-      "count": 88,
+      "count": 73,
       "children": [
         {
           "key": "thong-bao-tuyen-dung",
           "label": "Thông báo tuyển dụng",
-          "count": 42,
+          "count": 41,
           "children": [
             {
               "key": "",
               "label": "Thông báo tuyển dụng",
-              "count": 42
+              "count": 41
             }
           ]
         },
@@ -2023,18 +2023,6 @@
           ]
         },
         {
-          "key": "uu-dai-hoc-phi",
-          "label": "Ưu đãi học phí",
-          "count": 16,
-          "children": [
-            {
-              "key": "",
-              "label": "Ưu đãi học phí",
-              "count": 16
-            }
-          ]
-        },
-        {
           "key": "co-so-dia-diem",
           "label": "Cơ sở & địa điểm",
           "count": 9,
@@ -2043,6 +2031,25 @@
               "key": "co-so-dao-tao",
               "label": "Cơ sở đào tạo",
               "count": 9
+            }
+          ]
+        },
+        {
+          "key": "uu-dai-hoc-phi",
+          "label": "Ưu đãi học phí",
+          "count": 2,
+          "children": [
+            {
+              "key": "chuong-trinh-uu-dai-hoc-phi",
+              "label": "Chương trình ưu đãi học phí",
+              "count": 2,
+              "children": [
+                {
+                  "key": "khuyen-mai-giam-gia-khoa-hoc",
+                  "label": "Khuyến mãi giảm giá khóa học",
+                  "count": 2
+                }
+              ]
             }
           ]
         }

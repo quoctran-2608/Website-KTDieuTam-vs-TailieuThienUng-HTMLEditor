@@ -229,13 +229,14 @@
     "224": "thu-vien/trang/224/index.html",
     "225": "thu-vien/trang/225/index.html",
     "226": "thu-vien/trang/226/index.html",
-    "227": "thu-vien/trang/227/index.html"
+    "227": "thu-vien/trang/227/index.html",
+    "228": "thu-vien/trang/228/index.html"
   },
   "libraryKinds": [
     {
       "key": "huong-dan",
       "label": "Hướng dẫn",
-      "count": 1405,
+      "count": 1412,
       "href": "thu-vien.html?kind=huong-dan",
       "icon": "fa-compass-drafting",
       "description": "Quy trình, cách làm, nghiệp vụ thực tế"
@@ -243,7 +244,7 @@
     {
       "key": "bieu-mau",
       "label": "Biểu mẫu",
-      "count": 860,
+      "count": 868,
       "href": "thu-vien.html?kind=bieu-mau",
       "icon": "fa-file-lines",
       "description": "Mẫu biểu, hồ sơ, tờ khai dùng ngay"
@@ -269,17 +270,17 @@
     {
       "key": "thue",
       "label": "Thuế - Hóa đơn",
-      "count": 911,
+      "count": 915,
       "children": [
         {
           "key": "gtgt-hoa-don",
           "label": "GTGT - Hóa đơn",
-          "count": 292,
+          "count": 295,
           "children": [
             {
               "key": "lap-xu-ly-hoa-don",
               "label": "Lập/Xử lý hóa đơn",
-              "count": 129
+              "count": 131
             },
             {
               "key": "hoa-don-dien-tu",
@@ -294,7 +295,7 @@
             {
               "key": "thue-suat-doi-tuong",
               "label": "Thuế suất/Đối tượng chịu thuế",
-              "count": 33
+              "count": 34
             },
             {
               "key": "ke-khai-gtgt",
@@ -311,7 +312,7 @@
         {
           "key": "mau-bieu-thue",
           "label": "Mẫu biểu thuế - hóa đơn",
-          "count": 220,
+          "count": 221,
           "children": [
             {
               "key": "mau-thue-gtgt-hoa-don",
@@ -326,7 +327,7 @@
             {
               "key": "mau-thue-tndn",
               "label": "Mẫu thuế TNDN",
-              "count": 14
+              "count": 15
             },
             {
               "key": "mau-thue-nha-thau",
@@ -645,12 +646,12 @@
     {
       "key": "ke-toan",
       "label": "Kế toán",
-      "count": 755,
+      "count": 760,
       "children": [
         {
           "key": "tai-khoan-hach-toan",
           "label": "Tài khoản - Hạch toán",
-          "count": 299,
+          "count": 303,
           "children": [
             {
               "key": "hach-toan-dac-thu",
@@ -660,7 +661,7 @@
             {
               "key": "hang-ton-kho-gia-thanh",
               "label": "Hàng tồn kho/Giá thành",
-              "count": 52
+              "count": 53
             },
             {
               "key": "cong-no-thanh-toan",
@@ -670,7 +671,7 @@
             {
               "key": "doanh-thu-chi-phi-kqkd",
               "label": "Doanh thu/Chi phí/KQKD",
-              "count": 42
+              "count": 44
             },
             {
               "key": "von-dau-tu",
@@ -685,7 +686,7 @@
             {
               "key": "tscd-ccdc-khau-hao",
               "label": "TSCĐ/CCDC/Khấu hao",
-              "count": 24
+              "count": 25
             },
             {
               "key": "thue-nghia-vu",
@@ -697,12 +698,12 @@
         {
           "key": "mau-bieu-ke-toan",
           "label": "Mẫu biểu kế toán",
-          "count": 179,
+          "count": 180,
           "children": [
             {
               "key": "mau-hanh-chinh-quan-tri-khac",
               "label": "Mẫu hành chính/quản trị khác",
-              "count": 41
+              "count": 42
             },
             {
               "key": "mau-chung-tu-tien-thanh-toan",
@@ -1217,17 +1218,22 @@
     {
       "key": "doanh-nghiep-thu-tuc",
       "label": "Doanh nghiệp - Thủ tục",
-      "count": 200,
+      "count": 206,
       "children": [
         {
           "key": "mau-bieu-doanh-nghiep-thu-tuc",
           "label": "Mẫu biểu doanh nghiệp - thủ tục",
-          "count": 111,
+          "count": 117,
           "children": [
             {
               "key": "mau-to-khai-thue-tndn",
               "label": "Mẫu tờ khai thuế TNDN",
               "count": 32
+            },
+            {
+              "key": "mau-khuyen-mai-thuong-mai",
+              "label": "Mẫu khuyến mại/thương mại",
+              "count": 18
             },
             {
               "key": "mau-dang-ky-thay-doi-doanh-nghiep",
@@ -1238,11 +1244,6 @@
               "key": "mau-dang-ky-thue-mst",
               "label": "Mẫu đăng ký thuế/MST",
               "count": 13
-            },
-            {
-              "key": "mau-khuyen-mai-thuong-mai",
-              "label": "Mẫu khuyến mại/thương mại",
-              "count": 12
             },
             {
               "key": "mau-ho-ca-nhan-kinh-doanh",
@@ -1681,7 +1682,7 @@
       ]
     }
   ],
-  "count": 2721,
+  "count": 2736,
   "articles": [
     {
       "file": "dong-bao-hiem-xa-hoi-theo-muc-luong-nao.htm",
@@ -3911,7 +3912,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cac bao cao thue hang thang phai nop.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/cac-bao-cao-thue-hang-thang-phai-nop-cho-co-quan-thue.html"
     },
     {
@@ -4017,7 +4018,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cong viec cua nhan vien ke toan thue.jpg",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/cac-cong-viec-cua-nhan-vien-ke-toan-thue-phai-lam.html"
     },
     {
@@ -6795,6 +6796,30 @@
       "href": "thu-vien/cach-hach-toan-cac-khoan-chi-phi-khac-tai-khoan-811.html"
     },
     {
+      "file": "cach-hach-toan-cac-khoan-giam-tru-doanh-thu-tai-khoan-521.htm",
+      "title": "Cách hạch toán các khoản giảm trừ doanh thu - Tài khoản 521",
+      "excerpt": "Cách hạch toán các khoản giảm trừ doanh thu - Tài khoản 521, hạch toán Chiết khấu thương mại, giảm giá hàng bán và hàng bán bị trả lại theo TT 200",
+      "topic_lv1_key": "ke-toan",
+      "topic_lv1_label": "Kế toán",
+      "topic_lv2_key": "tai-khoan-hach-toan",
+      "topic_lv2_label": "Tài khoản - Hạch toán",
+      "topic_lv3_key": "doanh-thu-chi-phi-kqkd",
+      "topic_lv3_label": "Doanh thu/Chi phí/KQKD",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Hướng dẫn",
+      "topic_label": "Tài khoản - Hạch toán",
+      "library_kind_key": "huong-dan",
+      "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2026-04-26",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/So-do-tk-521-theo-tt-200.png",
+      "href": "ban-tin/cach-hach-toan-cac-khoan-giam-tru-doanh-thu-tai-khoan-521.html"
+    },
+    {
       "file": "cach-hach-toan-cac-khoan-phai-tra-phai-nop-khac-tai-khoan-338.htm",
       "title": "Cách hạch toán các khoản phải trả phải nộp khác - Tài khoản 338 theo TT 99",
       "excerpt": "Cách hạch toán các khoản phải trả phải nộp khác - Tài khoản 338 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán trích nộp BHXH, BHYT, BHTN và kinh phí công đoàn, hạch toán uỷ thác xuất nhập khẩu, tài sản thừa chờ xử lý",
@@ -7509,7 +7534,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/hach toan chi phi tra truoc ngan han.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/cach-hach-toan-chi-phi-tra-truoc-ngan-han-tai-khoan-142.html"
     },
     {
@@ -8059,6 +8084,30 @@
       "href": "thu-vien/cach-hach-toan-gia-von-hang-ban-dich-vu.html"
     },
     {
+      "file": "cach-hach-toan-gia-von-hang-ban-tai-khoan-632.htm",
+      "title": "Cách hạch toán giá vốn hàng bán - Tài khoản 632",
+      "excerpt": "Hướng dẫn Cách hạch toán giá vốn hàng bán - Tài khoản 632 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán giá vốn hàng bán, hạch toán giá vốn dịch vụ, nhận được chiết khấu thương mại, giảm giá hàng bán",
+      "topic_lv1_key": "ke-toan",
+      "topic_lv1_label": "Kế toán",
+      "topic_lv2_key": "tai-khoan-hach-toan",
+      "topic_lv2_label": "Tài khoản - Hạch toán",
+      "topic_lv3_key": "hang-ton-kho-gia-thanh",
+      "topic_lv3_label": "Hàng tồn kho/Giá thành",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Hướng dẫn",
+      "topic_label": "Tài khoản - Hạch toán",
+      "library_kind_key": "huong-dan",
+      "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2026-04-26",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/tk-632-hach-toan-gia-von.png",
+      "href": "ban-tin/cach-hach-toan-gia-von-hang-ban-tai-khoan-632.html"
+    },
+    {
       "file": "cach-hach-toan-gia-von-ban-hang-tai-khoan-632.htm",
       "title": "Cách hạch toán Giá vốn hàng bán Tài khoản 632 theo TT 200",
       "excerpt": "Cách hạch toán Tài khoản 632 – Giá vốn hàng bán Theo Thông tư 200/2014/TT-BTC: dùng để phản ánh trị giá vốn của sản…",
@@ -8519,6 +8568,30 @@
       "publish_date": "2014-08-14",
       "image": "assets/images/content/pic/Service/images/cach-hach-toan-hang-xuat-khau.png",
       "href": "thu-vien/hach-toan-ty-gia-doanh-thu-hang-xuat-khau.html"
+    },
+    {
+      "file": "cach-hach-toan-hao-mon-tai-san-co-dinh-tai-khoan-214.htm",
+      "title": "Cách hạch toán hao mòn tài sản cố định - Tài khoản 214",
+      "excerpt": "Cách hạch toán hao mòn tài sản cố định - Tài khoản 214 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán tăng, giảm giá trị hao mòn TSCĐ hữu hình, vô hình, thuê tài chính, hạch toán trích khấu hao TSCĐ,",
+      "topic_lv1_key": "ke-toan",
+      "topic_lv1_label": "Kế toán",
+      "topic_lv2_key": "tai-khoan-hach-toan",
+      "topic_lv2_label": "Tài khoản - Hạch toán",
+      "topic_lv3_key": "tscd-ccdc-khau-hao",
+      "topic_lv3_label": "TSCĐ/CCDC/Khấu hao",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Hướng dẫn",
+      "topic_label": "Tài khoản - Hạch toán",
+      "library_kind_key": "huong-dan",
+      "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2026-04-26",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-214.png",
+      "href": "ban-tin/cach-hach-toan-hao-mon-tai-san-co-dinh-tai-khoan-214.html"
     },
     {
       "file": "cach-hach-toan-hao-mon-tai-san-co-dinh-tk-214.htm",
@@ -14044,7 +14117,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-03-02",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cach lam bao cao quyet toan thue tncn nam 2014.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/cach-lam-bao-cao-quyet-toan-thue-tncn-cuoi-nam.html"
     },
     {
@@ -14574,7 +14647,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2014-06-01",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cach lap bao cao tinh hinh su dung hoa don theo thang.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/huong-dan-lap-bao-cao-tinh-hinh-su-dung-hoa-don-theo-thang.html"
     },
     {
@@ -14731,6 +14804,30 @@
       "publish_date": "2018-02-28",
       "image": "assets/images/content/pic/Service/images/cach lap hoa don co nhieu mat hang.jpg",
       "href": "thu-vien/cach-lap-hoa-don-khi-danh-muc-hang-hoa-co-nhieu-dong.html"
+    },
+    {
+      "file": "cach-viet-hoa-don-gtgt-chiet-khau-thuong-mai-giam-gia-ban.htm",
+      "title": "Cách lập hóa đơn GTGT chiết khấu thương mại",
+      "excerpt": "Hướng dẫn Cách lập hóa đơn chiết khấu thương mại khi bán hàng, chiết khấu từng lần, chiết khấu căn cứ doanh sô, số lượng, cuối kỳ ...",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
+      "topic_lv2_key": "gtgt-hoa-don",
+      "topic_lv2_label": "GTGT - Hóa đơn",
+      "topic_lv3_key": "lap-xu-ly-hoa-don",
+      "topic_lv3_label": "Lập/Xử lý hóa đơn",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Hướng dẫn",
+      "topic_label": "GTGT - Hóa đơn",
+      "library_kind_key": "huong-dan",
+      "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2022-11-08",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-xuat-hoa-don-chiet-khau-thuong-mai(2).png",
+      "href": "ban-tin/cach-viet-hoa-don-gtgt-chiet-khau-thuong-mai-giam-gia-ban.html"
     },
     {
       "file": "cach-viet-hoa-don-hang-ban-tra-lai-theo-mau-tai-tt-64.htm",
@@ -18916,6 +19013,30 @@
       "href": "thu-vien/doanh-thu-tinh-thue-thu-nhap-doanh-nghiep.html"
     },
     {
+      "file": "cach-xac-dinh-gia-tinh-thue-gia-tri-gia-tang.htm",
+      "title": "Cách xác định giá tính thuế GTGT mới nhất",
+      "excerpt": "Hướng dẫn cách xác định giá tính thuế GTGT đối với hàng hóa, dịch vụ bán ra, nhập khẩu, cho biếu tặng, trả thay lương, tiêu dùng nội bộ, khuyến mãi, cho thuê tài sản, xây dựng, xây lắp… Công thức xác định Giá tính thuế GTGT theo luật thuế GTGT số 48/2024/QH15",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
+      "topic_lv2_key": "gtgt-hoa-don",
+      "topic_lv2_label": "GTGT - Hóa đơn",
+      "topic_lv3_key": "thue-suat-doi-tuong",
+      "topic_lv3_label": "Thuế suất/Đối tượng chịu thuế",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Hướng dẫn",
+      "topic_label": "GTGT - Hóa đơn",
+      "library_kind_key": "huong-dan",
+      "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2025-07-01",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-xac-dinh-gia-tinh-thue-GTGT.png",
+      "href": "ban-tin/cach-xac-dinh-gia-tinh-thue-gia-tri-gia-tang.html"
+    },
+    {
       "file": "cach-xac-dinh-gia-tinh-thue-gia-tri-gia-tang-gtgt.htm",
       "title": "Cách xác định giá tính thuế GTGT từ ngày 01/07/2025",
       "excerpt": "Hướng dẫn cách xác định giá tính thuế GTGT theo Luật Thuế GTGT số: 48/2024/QH15 và Nghị định 181/2025/NĐ-CP có hiệu lực…",
@@ -19222,7 +19343,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/xac dinh thu nhap chiu thue thu nhap ca nhan.jpg",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/cach-xac-dinh-thu-nhap-chiu-thue-khi-tinh-thue-tncn.html"
     },
     {
@@ -22651,7 +22772,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-07-25",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cong van 10315 huong dan luat 106.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/cong-van-10315-btc-tct-huong-dan-thuc-hien-luat-106-2016.html"
     },
     {
@@ -22780,7 +22901,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-09-09",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/Cong van 12568_BTC-CĐKT giai thich noi dung thong tu 200.png",
+      "image": "assets/images/content/pic/Service/images/Cong van 12568_BTC-CĐKT giai thich noi dung thong tu 200.png",
       "href": "thu-vien/cong-van-12568-btc-cdkt-giai-thich-noi-dung-tt-200.html"
     },
     {
@@ -22858,7 +22979,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-04-30",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cong van 1434_TCT-KK ngay 7_4_2016.png",
+      "image": "assets/images/content/pic/Service/images/cong van 1434_TCT-KK ngay 7_4_2016.png",
       "href": "thu-vien/cong-van-1434-tct-kk-tiep-nhan-mau-06-gtgt-den-30-4-2016.html"
     },
     {
@@ -23165,7 +23286,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-06-24",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cong van 2512 nhung noi dung moi cua thong tu 96.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/cong-van-2512-tct-cs-nhung-noi-dung-moi-cua-thong-tu-96.html"
     },
     {
@@ -23295,7 +23416,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-08-02",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cong van 3437 khau tru thue tncn tien hoa hong.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/cong-van-3437-khau-tru-thue-tncn-tien-hoa-hong.html"
     },
     {
@@ -23449,7 +23570,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-08-17",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cong van 3706_tct gioi thieu noi dung moi thong tu 95.png",
+      "image": "assets/images/content/pic/Service/images/cong van 3706_tct gioi thieu noi dung moi thong tu 95.png",
       "href": "thu-vien/cong-van-3706-tct-kk-huong-dan-thu-tuc-dang-ky-thue.html"
     },
     {
@@ -23580,7 +23701,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2014-10-31",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/Cong van 4175_BHXH-PC huong dan thuc hien QĐ 1018.png",
+      "image": "assets/images/content/pic/Service/images/Cong van 4175_BHXH-PC huong dan thuc hien QĐ 1018.png",
       "href": "thu-vien/cong-van-4175-bhxh-pc-huong-dan-lap-to-khai-tham-gia-bhxh.html"
     },
     {
@@ -23885,7 +24006,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-11-23",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cong van 4943_TCT-KK ke khai bo sung, dieu chinh thue GTGT.png",
+      "image": "assets/images/content/pic/Service/images/cong van 4943_TCT-KK ke khai bo sung, dieu chinh thue GTGT.png",
       "href": "thu-vien/cong-van-4943-tct-kk-ke-khai-bo-sung-hoa-don-bo-sot.html"
     },
     {
@@ -24252,7 +24373,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-03-05",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cong van 767 cua bo tai chinh.png",
+      "image": "assets/images/content/pic/Service/images/cong van 767 cua bo tai chinh.png",
       "href": "thu-vien/cong-van-767-tct-cs-ngay-05-03-2015-cua-bo-tai-chinh.html"
     },
     {
@@ -24331,7 +24452,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-03-02",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cong van 801_2015 huong dan quyet toan thue tncn.png",
+      "image": "assets/images/content/pic/Service/images/cong van 801_2015 huong dan quyet toan thue tncn.png",
       "href": "thu-vien/cong-van-801-tct-tncn-huong-dan-quyet-toan-thue-tncn.html"
     },
     {
@@ -26825,7 +26946,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-04-02",
-      "image": "pic/Service/images/hach-toan-tnop-tien-thue-tndn-tam-tinh-quy-tren-misa-1.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/hach-toan-nop-tien-thue-tndn-tam-tinh-quy-tren-misa.html"
     },
     {
@@ -28991,6 +29112,30 @@
       "href": "thu-vien/huong-dan-hach-toan-chi-phi-lai-vay.html"
     },
     {
+      "file": "cach-hach-toan-chiet-khau-thuong-mai.htm",
+      "title": "Hướng dẫn cách hạch toán Chiết khấu thương mại khi mua - bán",
+      "excerpt": "Hướng dẫn cách hạch toán Giảm giá hàng bán, Hạch toán chiết khấu thương mại khi mua hàng (nhận được chiết khấu thương mại) và khi bán hàng theo Thông tư 133 và 99 của Bộ tài chính",
+      "topic_lv1_key": "ke-toan",
+      "topic_lv1_label": "Kế toán",
+      "topic_lv2_key": "tai-khoan-hach-toan",
+      "topic_lv2_label": "Tài khoản - Hạch toán",
+      "topic_lv3_key": "doanh-thu-chi-phi-kqkd",
+      "topic_lv3_label": "Doanh thu/Chi phí/KQKD",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Hướng dẫn",
+      "topic_label": "Tài khoản - Hạch toán",
+      "library_kind_key": "huong-dan",
+      "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2024-01-16",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-chiet-khau-thuong-mai(1)(2).png",
+      "href": "ban-tin/cach-hach-toan-chiet-khau-thuong-mai.html"
+    },
+    {
       "file": "huong-dan-cach-hach-toan-hang-ban-bi-tra-lai.htm",
       "title": "Hướng dẫn cách hạch toán hàng bán bị trả lại theo TT 133 và 200",
       "excerpt": "Hàng bán bị trả lại là số lượng hàng hóa được xác định là đã bán (Người bán đã giao hàng, đã xuất hóa đơn giao cho ngườ…",
@@ -29163,7 +29308,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-06-15",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/huong dan cach ke khai thue theo phuong phap khoan.jpg",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/huong-dan-cach-ke-khai-thue-theo-phuong-phap-khoan.html"
     },
     {
@@ -29966,7 +30111,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2013-12-31",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/huong dan lap bang ke hang hoa dich vu mua vao.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/huong-dan-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html"
     },
     {
@@ -30222,7 +30367,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2013-08-13",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/cach lap to khai thue thu nhap doanh nghiep.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/cach-lap-to-khai-thue-tndn-tam-tinh-quy-mau-01a-tndn.html"
     },
     {
@@ -30507,7 +30652,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-02-27",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/diem moi can luu y cua thong tu 26.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/diem-moi-can-chu-y-cua-thong-tu-26-ve-thue-gtgt.html"
     },
     {
@@ -31527,7 +31672,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/kinh nghiem xin viec ke toan.jpg",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/kinh-nghiem-xin-viec-ke-toan-cho-cac-ban-moi-ra-truong.html"
     },
     {
@@ -31901,7 +32046,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-04-06",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/luat 106_2016_qh13 sua doi luat thue gtgt, quan ly thue.png",
+      "image": "assets/images/content/pic/Service/images/luat 106_2016_qh13 sua doi luat thue gtgt, quan ly thue.png",
       "href": "thu-vien/luat-106-2016-qh13-sua-doi-luat-thue-gtgt-ttdb-quan-ly-thue.html"
     },
     {
@@ -31925,7 +32070,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-04-06",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/luat 107_2016_qh13 luat thue xuat nhap khau.png",
+      "image": "assets/images/content/pic/Service/images/luat 107_2016_qh13 luat thue xuat nhap khau.png",
       "href": "thu-vien/luat-107-2016-qh13-luat-thue-xuat-thue-nhap-khau.html"
     },
     {
@@ -32480,7 +32625,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-11-20",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/luat so 88 luat ke toan.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/luat-so-88-2015-qh13-luat-ke-toan-moi-nhat.html"
     },
     {
@@ -33330,6 +33475,30 @@
       "href": "thu-vien/mau-01-tckt-theo-thong-tu-so-18-2026-tt-btc.html"
     },
     {
+      "file": "mau-01-thong-bao-thuc-hien-khuyen-mai.htm",
+      "title": "Mẫu 01 thông báo thực hiện khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "excerpt": "Mẫu số 01 - mẫu thông báo thực hiện khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
+      "topic_lv1_key": "doanh-nghiep-thu-tuc",
+      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
+      "topic_lv2_key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topic_lv2_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "topic_lv3_key": "mau-khuyen-mai-thuong-mai",
+      "topic_lv3_label": "Mẫu khuyến mại/thương mại",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Biểu mẫu",
+      "topic_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "library_kind_key": "bieu-mau",
+      "library_kind_label": "Biểu mẫu",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2024-10-10",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-01-thong-bao-thuc-hien-khuyen-mai.png",
+      "href": "ban-tin/mau-01-thong-bao-thuc-hien-khuyen-mai.html"
+    },
+    {
       "file": "mau-01-tkn-cnkd-theo-thong-tu-so-18-2026-tt-btc.htm",
       "title": "Mẫu 01/TKN-CNKD theo Thông tư số 18/2026/TT-BTC Thông báo doanh thu, Tờ khai thuế năm",
       "excerpt": "Mẫu số: 01/TKN-CNKD theo Thông tư số 18/2026/TT-BTC là Thông báo doanh thu/Tờ khai thuế năm",
@@ -33533,6 +33702,30 @@
       "publish_date": "2025-07-29",
       "image": "assets/images/content/pic/Service/images/Mau-01B-HSB(3).png",
       "href": "thu-vien/mau-01b-hsb-theo-quyet-dinh-166-excel-moi-nhat.html"
+    },
+    {
+      "file": "mau-02-dang-ky-thuc-hien-khuyen-mai.htm",
+      "title": "Mẫu 02 đăng ký thực hiện khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "excerpt": "Mẫu số 02 - mẫu đăng ký thực hiện khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
+      "topic_lv1_key": "doanh-nghiep-thu-tuc",
+      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
+      "topic_lv2_key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topic_lv2_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "topic_lv3_key": "mau-khuyen-mai-thuong-mai",
+      "topic_lv3_label": "Mẫu khuyến mại/thương mại",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Biểu mẫu",
+      "topic_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "library_kind_key": "bieu-mau",
+      "library_kind_label": "Biểu mẫu",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2024-10-10",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-02-dang-ky-thuc-hien-khuyen-mai.png",
+      "href": "ban-tin/mau-02-dang-ky-thuc-hien-khuyen-mai.html"
     },
     {
       "file": "mau-02-bk-ktbds-theo-thong-tu-so-18-2026-tt-btc.htm",
@@ -33760,6 +33953,30 @@
       "publish_date": "2021-09-29",
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/mau-03-ntnn-to-khai-thue-nha-thau-nuoc-ngoai.html"
+    },
+    {
+      "file": "mau-03-the-le-chuong-trinh-khuyen-mai.htm",
+      "title": "Mẫu 03 thể lệ chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "excerpt": "Mẫu số 03 - mẫu thể lệ chương trình khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
+      "topic_lv1_key": "doanh-nghiep-thu-tuc",
+      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
+      "topic_lv2_key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topic_lv2_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "topic_lv3_key": "mau-khuyen-mai-thuong-mai",
+      "topic_lv3_label": "Mẫu khuyến mại/thương mại",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Biểu mẫu",
+      "topic_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "library_kind_key": "bieu-mau",
+      "library_kind_label": "Biểu mẫu",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2024-10-10",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-03-the-le-chuong-trinh-khuyen-mai.png",
+      "href": "ban-tin/mau-03-the-le-chuong-trinh-khuyen-mai.html"
     },
     {
       "file": "mau-03-nghi-dinh-119-excel-to-khai-du-lieu-hoa-don-ban-ra.htm",
@@ -34402,6 +34619,30 @@
       "href": "thu-vien/mau-06-theo-nd-119-de-nghi-cap-hoa-don-dien-tu-ban-le.html"
     },
     {
+      "file": "mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.htm",
+      "title": "Mẫu 06 thông báo sửa đổi bổ sung nội dung chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "excerpt": "Mẫu số 06 - mẫu thông báo sửa đổi, bổ sung nội dung chương trình khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
+      "topic_lv1_key": "doanh-nghiep-thu-tuc",
+      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
+      "topic_lv2_key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topic_lv2_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "topic_lv3_key": "mau-khuyen-mai-thuong-mai",
+      "topic_lv3_label": "Mẫu khuyến mại/thương mại",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Biểu mẫu",
+      "topic_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "library_kind_key": "bieu-mau",
+      "library_kind_label": "Biểu mẫu",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2024-10-10",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.png",
+      "href": "ban-tin/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html"
+    },
+    {
       "file": "mau-06-tncn-to-khai-khau-tru-thue-thu-nhap-ca-nhan.htm",
       "title": "Mẫu 06/TNCN Tờ khai thuế TNCN từ đầu tư vốn",
       "excerpt": "Tờ khai thuế TNCN từ đầu tư vốn, chuyển nhượng vốn Mẫu 06/TNCN đối với thu nhập từ trúng thưởng, chuyển nhượng chứng khoán theo Thông tư 80/2021/TT-BTC",
@@ -34452,6 +34693,54 @@
       "publish_date": "2026-04-02",
       "image": "assets/images/content/pic/Service/images/MAU-06-TNCN.png",
       "href": "thu-vien/to-khai-khau-tru-thue-thu-nhap-ca-nhan-mau-06-tncn.html"
+    },
+    {
+      "file": "mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.htm",
+      "title": "Mẫu 06a đăng ký sửa đổi bổ sung nội dung chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "excerpt": "Mẫu số 06a - mẫu đăng ký sửa đổi, bổ sung nội dung chương trình khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
+      "topic_lv1_key": "doanh-nghiep-thu-tuc",
+      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
+      "topic_lv2_key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topic_lv2_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "topic_lv3_key": "mau-khuyen-mai-thuong-mai",
+      "topic_lv3_label": "Mẫu khuyến mại/thương mại",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Biểu mẫu",
+      "topic_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "library_kind_key": "bieu-mau",
+      "library_kind_label": "Biểu mẫu",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2024-10-10",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.png",
+      "href": "ban-tin/mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html"
+    },
+    {
+      "file": "mau-07-bao-cao-thuc-hien-khuyen-mai.htm",
+      "title": "Mẫu 07 báo cáo thực hiện khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "excerpt": "Mẫu số 07 - mẫu báo cáo thực hiện khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
+      "topic_lv1_key": "doanh-nghiep-thu-tuc",
+      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
+      "topic_lv2_key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topic_lv2_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "topic_lv3_key": "mau-khuyen-mai-thuong-mai",
+      "topic_lv3_label": "Mẫu khuyến mại/thương mại",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Biểu mẫu",
+      "topic_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "library_kind_key": "bieu-mau",
+      "library_kind_label": "Biểu mẫu",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2024-10-10",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-07-bao-cao-thuc-hien-khuyen-mai.png",
+      "href": "ban-tin/mau-07-bao-cao-thuc-hien-khuyen-mai.html"
     },
     {
       "file": "mau-bao-cao-tinh-hinh-thay-doi-lao-dong-theo-thong-tu-23.htm",
@@ -38084,7 +38373,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2014-03-31",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/bao cao tinh hinh su dung hoa don quy.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/mau-bao-cao-tinh-hinh-su-dung-hoa-don-mau-so-bc26-ac.html"
     },
     {
@@ -39758,6 +40047,30 @@
       "href": "thu-vien/mau-cv-xin-viec-ke-toan-cho-sinh-vien-moi-ra-truong-hay-nhat.html"
     },
     {
+      "file": "mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.htm",
+      "title": "Mẫu CV xin việc kế toán cho sinh viên mới ra trường",
+      "excerpt": "Chia sẻ mẫu CV xin việc kế toán cho sinh viên mới ra trường, hướng dẫn cách viết CV xin việc sao cho ấn tượng với nhà tuyển dụng",
+      "topic_lv1_key": "ke-toan",
+      "topic_lv1_label": "Kế toán",
+      "topic_lv2_key": "mau-bieu-ke-toan",
+      "topic_lv2_label": "Mẫu biểu kế toán",
+      "topic_lv3_key": "mau-hanh-chinh-quan-tri-khac",
+      "topic_lv3_label": "Mẫu hành chính/quản trị khác",
+      "tags": [
+        "Thông báo tuyển dụng",
+        "Thông tin"
+      ],
+      "badge_label": "Biểu mẫu",
+      "topic_label": "Mẫu biểu kế toán",
+      "library_kind_key": "bieu-mau",
+      "library_kind_label": "Biểu mẫu",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "1992-06-11",
+      "image": "assets/images/content/pic/Service/images/mau CV xin viec ke toan.jpg",
+      "href": "ban-tin/mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.html"
+    },
+    {
       "file": "mau-don-de-nghi-mau-d01-ts.htm",
       "title": "Mẫu D01-TS theo Quyết định 505 mới nhất năm 2024",
       "excerpt": "Mẫu D01-TS Bảng kê thông tin theo Quyết định 505/QĐ-BHXH; Tải Mẫu D01-TS mới nhất 2024 file Excel; Hướng dẫn cách đ…",
@@ -40961,7 +41274,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-01-01",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/Service/images/Thang-bang-luong.png",
+      "image": "assets/images/content/pic/Service/images/Thang-bang-luong.png",
       "href": "thu-vien/mau-he-thong-thang-bang-luong-moi-nhat.html"
     },
     {
@@ -49906,7 +50219,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-07-01",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/nghi dinh 100_2016 huong dan luat thue gtgt.png",
+      "image": "assets/images/content/pic/Service/images/nghi dinh 100_2016 huong dan luat thue gtgt.png",
       "href": "thu-vien/nghi-dinh-100-2016-nd-cp-quy-dinh-ve-luat-thue-gia-tri-gia-tang-ttdb.html"
     },
     {
@@ -50164,7 +50477,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-02-12",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/nghi dinh 12_2015 cua chinh phu.png",
+      "image": "assets/images/content/pic/Service/images/nghi dinh 12_2015 cua chinh phu.png",
       "href": "thu-vien/nghi-dinh-12-2015-nd-cp-ngay-12-02-1015-cua-chinh-phu.html"
     },
     {
@@ -50604,7 +50917,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-10-04",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/Nghi dinh 139_2016 quy dinh bac thue mon bai.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/nghi-dinh-139-2016-nd-cp-thue-mon-bai-tu-nam-2017.html"
     },
     {
@@ -50860,7 +51173,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-11-14",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/nghi dinh 153 quy dịnh luong toi thieu vung nam 2017.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/nghi-dinh-153-2016-nd-cp-quy-dinh-luong-toi-thieu-vung.html"
     },
     {
@@ -50962,7 +51275,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-12-30",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/nghi dinh 174 quy dinh chi tiet 1 so dieu cua luat ke toan.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/nghi-dinh-174-2016-nd-cp-huong-dan-ve-luat-ke-toan.html"
     },
     {
@@ -52888,7 +53201,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2014-11-15",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/quy dinh ve ke khai thue TNDN nam 2014.jpg",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/nguyen-tac-ke-khai-thue-thu-nhap-doanh-nghiep-moi-nhat.html"
     },
     {
@@ -53625,6 +53938,30 @@
       "href": "thu-vien/nha-may-sx-viname-tuyen-ke-toan-tong-hop.html"
     },
     {
+      "file": "nhan-tien-ho-tro-co-phai-xuat-hoa-don.htm",
+      "title": "Nhận tiền bồi thường, hỗ trợ có phải xuất hóa đơn?",
+      "excerpt": "Nhận tiền bồi thường, tiền thưởng, tiền hỗ trợ nhận được, tiền khuyễn mãi, quảng cáo có phải xuất hóa đơn, bồi thường bằng hàng hóa, dịch vụ có phải lập hóa đơn",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
+      "topic_lv2_key": "gtgt-hoa-don",
+      "topic_lv2_label": "GTGT - Hóa đơn",
+      "topic_lv3_key": "lap-xu-ly-hoa-don",
+      "topic_lv3_label": "Lập/Xử lý hóa đơn",
+      "tags": [
+        "Ưu đãi học phí",
+        "Thông tin"
+      ],
+      "badge_label": "Hướng dẫn",
+      "topic_label": "GTGT - Hóa đơn",
+      "library_kind_key": "huong-dan",
+      "library_kind_label": "Hướng dẫn",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2025-07-01",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/quy-dinh-khoan-tien-ho-tro-ban-hang.png",
+      "href": "ban-tin/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html"
+    },
+    {
       "file": "nhan-tien-chi-phi-tiep-thi-co-phai-lap-hoa-dong.htm",
       "title": "Nhận tiền chi phí tiếp thị có phải xuất hóa đơn không",
       "excerpt": "Nhận tiền hỗ trợ chi phí tiếp thị bán hàng, hỗ trợ cho mục đích bán hàng khác có phải xuất hóa đơn, có phải kê khai thuế GTGT không? khi nào phải lập hóa đơn?",
@@ -53799,7 +54136,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/nhung kieu tim viec lang phi thoi gian.jpg",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/nhung-kieu-tim-viec-lang-phi-thoi-gian.html"
     },
     {
@@ -53823,7 +54160,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/ky nang tim viec trong thoi ky suy thoai.jpg",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/nhung-ky-nang-tim-viec-trong-thoi-ky-suy-thoai.html"
     },
     {
@@ -53875,7 +54212,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-03-09",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/nhung luu y khi quyet toan thue tndn 2015(1).png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/nhung-luu-y-khi-quyet-toan-thue-tndn.html"
     },
     {
@@ -54156,7 +54493,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thu thuat tim viec cap toc.jpg",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/nhung-thu-tuat-tim-viec-cap-toc.html"
     },
     {
@@ -56386,7 +56723,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2020-11-02",
-      "image": "pic/Service/images/phan-mem-ho-ke-khai-thue-HTKK-4_4_7.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-4-7-moi-nhat-2020.html"
     },
     {
@@ -60922,6 +61259,30 @@
       "href": "thu-vien/phu-luc-bang-ke-cac-nha-thau-phu-tham-gia-hop-dong-nha-thau.html"
     },
     {
+      "file": "phu-luc-bao-cao-trich-su-dung-quy-khoa-hoc-cong-nghe-mau-so-03-6-tndn.htm",
+      "title": "Phụ lục báo cáo trích sử dụng quỹ khoa học công nghệ Mẫu số 03-6/TNDN",
+      "excerpt": "Phụ lục báo cáo trích sử dụng quỹ khoa học và công nghệ Mẫu số 03-6/TNDN (ban hành kèm theo Thông tư số 80/2021/TT-BTC ngày 29/9/2021 của Bộ Tài chính)",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
+      "topic_lv2_key": "mau-bieu-thue",
+      "topic_lv2_label": "Mẫu biểu thuế - hóa đơn",
+      "topic_lv3_key": "mau-thue-tndn",
+      "topic_lv3_label": "Mẫu thuế TNDN",
+      "tags": [
+        "Khóa học kế toán",
+        "Thông tin"
+      ],
+      "badge_label": "Biểu mẫu",
+      "topic_label": "Mẫu biểu thuế - hóa đơn",
+      "library_kind_key": "bieu-mau",
+      "library_kind_label": "Biểu mẫu",
+      "tool_lv3_key": "",
+      "tool_lv3_label": "",
+      "publish_date": "2021-09-29",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-03-6-TNDN.png",
+      "href": "ban-tin/phu-luc-bao-cao-trich-su-dung-quy-khoa-hoc-cong-nghe-mau-so-03-6-tndn.html"
+    },
+    {
       "file": "phu-luc-chi-tiet-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-so-01-1-thkh.htm",
       "title": "Phụ lục chi tiết giảm trừ gia cảnh cho người phụ thuộc mẫu số 01-1/THKH",
       "excerpt": "Phụ lục chi tiết giảm trừ gia cảnh cho người phụ thuộc mẫu số: 01-1/THKH (Ban hành kèm theo Thông tư số 156/2013/TT-BTC ngày 6/11/2013 của Bộ Tài chính)",
@@ -61069,7 +61430,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2017-06-12",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/quy-dinh-moi-ve-dat-in-thong-bao-phat-hanh-hoa-don.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/quy-dinh-ve-dat-in-va-thong-bao-phat-hanh-hoa-don.html"
     },
     {
@@ -62055,7 +62416,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/quy-dinh-ve-don-vi-tien-te-trong-ke-toan.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/quy-dinh-ve-don-vi-tien-te-trong-ke-toan.html"
     },
     {
@@ -63250,7 +63611,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-09-09",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/quyet dinh 959_QĐ-BHXH.png",
+      "image": "assets/images/content/pic/Service/images/quyet dinh 959_QĐ-BHXH.png",
       "href": "thu-vien/quyet-dinh-959-qd-bhxh-quan-ly-thu-bhxh-bhyt-bhtn.html"
     },
     {
@@ -66591,7 +66952,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-02-05",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 04_vbhn ve thue tncn.png",
+      "image": "assets/images/content/pic/Service/images/thong tu 04_vbhn ve thue tncn.png",
       "href": "thu-vien/thong-tu-04-vbhn-btc-huong-dan-luat-thue-tncn.html"
     },
     {
@@ -66921,7 +67282,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-08-12",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 130_2016_tt-btc huong dan luat thue gtgt, quan ly thue.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/thong-tu-130-2016-tt-btc-huong-dan-luat-thue-gtgt-ttdb-quan-ly-thue.html"
     },
     {
@@ -67309,7 +67670,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-10-31",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 176_2016 xu phat vi pham ve hoa don.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/thong-tu-176-2016-tt-btc-xu-phat-vi-pham-ve-hoa-don.html"
     },
     {
@@ -67360,7 +67721,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-06-19",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 18_vbhn van ban hop nhat quan ly thue.png",
+      "image": "assets/images/content/pic/Service/images/thong tu 18_vbhn van ban hop nhat quan ly thue.png",
       "href": "thu-vien/thong-tu-18-vbhn-btc-huong-dan-luat-quan-ly-thue.html"
     },
     {
@@ -67638,7 +67999,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-06-23",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 23 cua bo lao dong.png",
+      "image": "assets/images/content/pic/Service/images/thong tu 23 cua bo lao dong.png",
       "href": "thu-vien/thong-tu-23-2015-tt-bldtbxh-huong-dan-ve-tien-luong.html"
     },
     {
@@ -67769,7 +68130,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-02-27",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 26_2015 huong dan thue gtgt va quan ly thue.jpg",
+      "image": "assets/images/content/pic/Service/images/thong tu 26_2015 huong dan thue gtgt va quan ly thue.jpg",
       "href": "thu-vien/thong-tu-26-2015-tt-btc-ngay-27-02-2015-cua-bo-tai-chinh.html"
     },
     {
@@ -67794,7 +68155,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-09-14",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 26_vbhn thue thu nhap doanh nghiep.png",
+      "image": "assets/images/content/pic/Service/images/thong tu 26_vbhn thue thu nhap doanh nghiep.png",
       "href": "thu-vien/thong-tu-26-vbhn-huong-dan-nd-218-ve-thue-tndn.html"
     },
     {
@@ -67872,7 +68233,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-11-15",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 302 quy dinh le phi môn bai.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/thong-tu-302-2016-tt-btc-quy-dinhh-ve-le-phi-mon-bai.html"
     },
     {
@@ -67950,7 +68311,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2017-04-27",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong-tu-37_2017_tt-btc-quy-dinh-thong-bao-phat-hanh-hoa-don.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/thong-tu-37-2017-tt-btc-quy-dinh-ve-thong-bao-phat-hanh-hoa-don.html"
     },
     {
@@ -68153,7 +68514,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-11-16",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 47 cua bo lao dong thuong binh xa hoi.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/thong-tu-47-2015-tt-bldtbxh-huong-dan-thi-hanh-luat-lao-dong.html"
     },
     {
@@ -68205,7 +68566,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-12-29",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 56 cua bhxh.png",
+      "image": "assets/images/content/pic/Service/images/thong tu 56 cua bhxh.png",
       "href": "thu-vien/thong-tu-59-bldtbxh-cac-khoan-phu-cap-phai-dong-bhxh.html"
     },
     {
@@ -68489,7 +68850,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-05-18",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/Thong tư 75 sua doi dieu 128 thong tư 200.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/thong-tu-75-2015-ngay-18-05-2015-cua-bo-tai-chinh.html"
     },
     {
@@ -68768,7 +69129,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-06-15",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 92_2015 huong dan thue gtgt, tncn.png",
+      "image": "assets/images/content/pic/Service/images/thong tu 92_2015 huong dan thue gtgt, tncn.png",
       "href": "thu-vien/thong-tu-92-2015-huong-dan-thue-gtgt-tncn.html"
     },
     {
@@ -68897,7 +69258,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2016-06-28",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/thong tu 95_2016 quy dinh ve thu tuc dang ky thue.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/thong-tu-95-2016-quy-dinh-ve-thu-tuc-dang-ky-thue.html"
     },
     {
@@ -71553,7 +71914,7 @@
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2025-05-17",
-      "image": "pic/Service/images/trich-lap-quy-khoa-hoc-cong-nghe.jpg",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "href": "thu-vien/trich-lap-quy-phat-trien-khoa-hoc-va-cong-nghe-cua-dn.html"
     },
     {

@@ -9,20 +9,19 @@
     "4": "ban-tin/trang/4/index.html",
     "5": "ban-tin/trang/5/index.html",
     "6": "ban-tin/trang/6/index.html",
-    "7": "ban-tin/trang/7/index.html",
-    "8": "ban-tin/trang/8/index.html"
+    "7": "ban-tin/trang/7/index.html"
   },
   "libraryKinds": [],
   "taxonomy": [
     {
       "key": "thong-bao-tuyen-dung",
       "label": "Thông báo tuyển dụng",
-      "count": 42,
+      "count": 41,
       "children": [
         {
           "key": "",
           "label": "Thông báo tuyển dụng",
-          "count": 42
+          "count": 41
         }
       ]
     },
@@ -54,18 +53,6 @@
       ]
     },
     {
-      "key": "uu-dai-hoc-phi",
-      "label": "Ưu đãi học phí",
-      "count": 16,
-      "children": [
-        {
-          "key": "",
-          "label": "Ưu đãi học phí",
-          "count": 16
-        }
-      ]
-    },
-    {
       "key": "co-so-dia-diem",
       "label": "Cơ sở & địa điểm",
       "count": 9,
@@ -76,9 +63,28 @@
           "count": 9
         }
       ]
+    },
+    {
+      "key": "uu-dai-hoc-phi",
+      "label": "Ưu đãi học phí",
+      "count": 2,
+      "children": [
+        {
+          "key": "chuong-trinh-uu-dai-hoc-phi",
+          "label": "Chương trình ưu đãi học phí",
+          "count": 2,
+          "children": [
+            {
+              "key": "khuyen-mai-giam-gia-khoa-hoc",
+              "label": "Khuyến mãi giảm giá khóa học",
+              "count": 2
+            }
+          ]
+        }
+      ]
     }
   ],
-  "count": 88,
+  "count": 73,
   "articles": [
     {
       "file": "dia-chi-hoc-ke-toan-thuc-hanh-tong-hop-tot-nhat-ha-noi.htm",
@@ -107,135 +113,15 @@
       "href": "ban-tin/dia-chi-hoc-ke-toan-thuc-hanh-tong-hop-tot-nhat-ha-noi.html"
     },
     {
-      "file": "cach-hach-toan-cac-khoan-giam-tru-doanh-thu-tai-khoan-521.htm",
-      "title": "Cách hạch toán các khoản giảm trừ doanh thu - Tài khoản 521",
-      "excerpt": "Cách hạch toán các khoản giảm trừ doanh thu - Tài khoản 521, hạch toán Chiết khấu thương mại, giảm giá hàng bán và hàng bán bị trả lại theo TT 200",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Cập nhật",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/So-do-tk-521-theo-tt-200.png",
-      "href": "ban-tin/cach-hach-toan-cac-khoan-giam-tru-doanh-thu-tai-khoan-521.html"
-    },
-    {
-      "file": "cach-hach-toan-gia-von-hang-ban-tai-khoan-632.htm",
-      "title": "Cách hạch toán giá vốn hàng bán - Tài khoản 632",
-      "excerpt": "Hướng dẫn Cách hạch toán giá vốn hàng bán - Tài khoản 632 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán giá vốn hàng bán, hạch toán giá vốn dịch vụ, nhận được chiết khấu thương mại, giảm giá hàng bán",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Cập nhật",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/tk-632-hach-toan-gia-von.png",
-      "href": "ban-tin/cach-hach-toan-gia-von-hang-ban-tai-khoan-632.html"
-    },
-    {
-      "file": "cach-hach-toan-hao-mon-tai-san-co-dinh-tai-khoan-214.htm",
-      "title": "Cách hạch toán hao mòn tài sản cố định - Tài khoản 214",
-      "excerpt": "Cách hạch toán hao mòn tài sản cố định - Tài khoản 214 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán tăng, giảm giá trị hao mòn TSCĐ hữu hình, vô hình, thuê tài chính, hạch toán trích khấu hao TSCĐ,",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Cập nhật",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2026-04-26",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-214.png",
-      "href": "ban-tin/cach-hach-toan-hao-mon-tai-san-co-dinh-tai-khoan-214.html"
-    },
-    {
-      "file": "cach-viet-hoa-don-gtgt-chiet-khau-thuong-mai-giam-gia-ban.htm",
-      "title": "Cách lập hóa đơn GTGT chiết khấu thương mại",
-      "excerpt": "Hướng dẫn Cách lập hóa đơn chiết khấu thương mại khi bán hàng, chiết khấu từng lần, chiết khấu căn cứ doanh sô, số lượng, cuối kỳ ...",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Cập nhật",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2022-11-08",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-xuat-hoa-don-chiet-khau-thuong-mai(2).png",
-      "href": "ban-tin/cach-viet-hoa-don-gtgt-chiet-khau-thuong-mai-giam-gia-ban.html"
-    },
-    {
-      "file": "cach-xac-dinh-gia-tinh-thue-gia-tri-gia-tang.htm",
-      "title": "Cách xác định giá tính thuế GTGT mới nhất",
-      "excerpt": "Hướng dẫn cách xác định giá tính thuế GTGT đối với hàng hóa, dịch vụ bán ra, nhập khẩu, cho biếu tặng, trả thay lương, tiêu dùng nội bộ, khuyến mãi, cho thuê tài sản, xây dựng, xây lắp… Công thức xác định Giá tính thuế GTGT theo luật thuế GTGT số 48/2024/QH15",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Cập nhật",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2025-07-01",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-xac-dinh-gia-tinh-thue-GTGT.png",
-      "href": "ban-tin/cach-xac-dinh-gia-tinh-thue-gia-tri-gia-tang.html"
-    },
-    {
       "file": "chuong-trinh-khuyen-mai-hoc-phi-khoa-hoc-ke-toan-online-moi-nhat.htm",
       "title": "Chương trình khuyến mại học phí khóa học kế toán online tại Công ty Kế Toán Diệu Tâm",
       "excerpt": "Công ty đào tạo Kế toán Diệu Tâm đang tổ chức chương trình khuyến mại học phí cho các khóa học thực hành kế toa…",
       "topic_lv1_key": "uu-dai-hoc-phi",
       "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
+      "topic_lv2_key": "chuong-trinh-uu-dai-hoc-phi",
+      "topic_lv2_label": "Chương trình ưu đãi học phí",
+      "topic_lv3_key": "khuyen-mai-giam-gia-khoa-hoc",
+      "topic_lv3_label": "Khuyến mãi giảm giá khóa học",
       "tags": [
         "Ưu đãi học phí",
         "Ưu đãi & thông báo",
@@ -243,7 +129,7 @@
         "Ưu đãi"
       ],
       "badge_label": "Ưu đãi",
-      "topic_label": "Ưu đãi học phí",
+      "topic_label": "Chương trình ưu đãi học phí",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1327,16 +1213,16 @@
       "excerpt": "Kế toán Diệu Tâm khuyến mãi lớn - học phí học kế toán Online thực hành tổng hợp thực tế, Vinh dự là dịch vụ đào tạo hàng đầu việt Nam.",
       "topic_lv1_key": "uu-dai-hoc-phi",
       "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
+      "topic_lv2_key": "chuong-trinh-uu-dai-hoc-phi",
+      "topic_lv2_label": "Chương trình ưu đãi học phí",
+      "topic_lv3_key": "khuyen-mai-giam-gia-khoa-hoc",
+      "topic_lv3_label": "Khuyến mãi giảm giá khóa học",
       "tags": [
         "Ưu đãi học phí",
         "Thông tin"
       ],
       "badge_label": "Ưu đãi học phí",
-      "topic_label": "Ưu đãi học phí",
+      "topic_label": "Chương trình ưu đãi học phí",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1369,30 +1255,6 @@
       "publish_date": "2026-04-02",
       "image": "assets/images/content/pic/Service/images/trung tam ke toan dieu tam.png",
       "href": "ban-tin/trung-tam-dao-tao-ke-toan-dieu-tam-thuc-te-tai-ha-noi.html"
-    },
-    {
-      "file": "cach-hach-toan-chiet-khau-thuong-mai.htm",
-      "title": "Hướng dẫn cách hạch toán Chiết khấu thương mại khi mua - bán",
-      "excerpt": "Hướng dẫn cách hạch toán Giảm giá hàng bán, Hạch toán chiết khấu thương mại khi mua hàng (nhận được chiết khấu thương mại) và khi bán hàng theo Thông tư 133 và 99 của Bộ tài chính",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Cập nhật",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2024-01-16",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-chiet-khau-thuong-mai(1)(2).png",
-      "href": "ban-tin/cach-hach-toan-chiet-khau-thuong-mai.html"
     },
     {
       "file": "dia-chi-hoc-ke-toan-tai-cau-giay-tot-nhat.htm",
@@ -1955,222 +1817,6 @@
       "publish_date": "2026-04-02",
       "image": "assets/images/content/pic/Service/images/hoc ke toan thuc hanh.png",
       "href": "ban-tin/khoa-hoc-ke-toan-thuc-hanh-thuc-te-tot-nhat-tai-ha-noi.html"
-    },
-    {
-      "file": "mau-01-thong-bao-thuc-hien-khuyen-mai.htm",
-      "title": "Mẫu 01 thông báo thực hiện khuyến mại theo Nghị định 128/2024/NĐ-CP",
-      "excerpt": "Mẫu số 01 - mẫu thông báo thực hiện khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Nghị định",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2024-10-10",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-01-thong-bao-thuc-hien-khuyen-mai.png",
-      "href": "ban-tin/mau-01-thong-bao-thuc-hien-khuyen-mai.html"
-    },
-    {
-      "file": "mau-02-dang-ky-thuc-hien-khuyen-mai.htm",
-      "title": "Mẫu 02 đăng ký thực hiện khuyến mại theo Nghị định 128/2024/NĐ-CP",
-      "excerpt": "Mẫu số 02 - mẫu đăng ký thực hiện khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Nghị định",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2024-10-10",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-02-dang-ky-thuc-hien-khuyen-mai.png",
-      "href": "ban-tin/mau-02-dang-ky-thuc-hien-khuyen-mai.html"
-    },
-    {
-      "file": "mau-03-the-le-chuong-trinh-khuyen-mai.htm",
-      "title": "Mẫu 03 thể lệ chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
-      "excerpt": "Mẫu số 03 - mẫu thể lệ chương trình khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Nghị định",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2024-10-10",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-03-the-le-chuong-trinh-khuyen-mai.png",
-      "href": "ban-tin/mau-03-the-le-chuong-trinh-khuyen-mai.html"
-    },
-    {
-      "file": "mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.htm",
-      "title": "Mẫu 06 thông báo sửa đổi bổ sung nội dung chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
-      "excerpt": "Mẫu số 06 - mẫu thông báo sửa đổi, bổ sung nội dung chương trình khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Nghị định",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2024-10-10",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.png",
-      "href": "ban-tin/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html"
-    },
-    {
-      "file": "mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.htm",
-      "title": "Mẫu 06a đăng ký sửa đổi bổ sung nội dung chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
-      "excerpt": "Mẫu số 06a - mẫu đăng ký sửa đổi, bổ sung nội dung chương trình khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Nghị định",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2024-10-10",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.png",
-      "href": "ban-tin/mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html"
-    },
-    {
-      "file": "mau-07-bao-cao-thuc-hien-khuyen-mai.htm",
-      "title": "Mẫu 07 báo cáo thực hiện khuyến mại theo Nghị định 128/2024/NĐ-CP",
-      "excerpt": "Mẫu số 07 - mẫu báo cáo thực hiện khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Nghị định",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2024-10-10",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-07-bao-cao-thuc-hien-khuyen-mai.png",
-      "href": "ban-tin/mau-07-bao-cao-thuc-hien-khuyen-mai.html"
-    },
-    {
-      "file": "mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.htm",
-      "title": "Mẫu CV xin việc kế toán cho sinh viên mới ra trường",
-      "excerpt": "Chia sẻ mẫu CV xin việc kế toán cho sinh viên mới ra trường, hướng dẫn cách viết CV xin việc sao cho ấn tượng với nhà tuyển dụng",
-      "topic_lv1_key": "thong-bao-tuyen-dung",
-      "topic_lv1_label": "Thông báo tuyển dụng",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Thông báo tuyển dụng",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Thông báo tuyển dụng",
-        "Thông tin"
-      ],
-      "badge_label": "Cập nhật",
-      "topic_label": "Thông báo tuyển dụng",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "1992-06-11",
-      "image": "assets/images/content/assets/ketoandieutam.vn/Images/images/mau cv xin viec ke toan cho sinh vien moi ra truong.jpg",
-      "href": "ban-tin/mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.html"
-    },
-    {
-      "file": "nhan-tien-ho-tro-co-phai-xuat-hoa-don.htm",
-      "title": "Nhận tiền bồi thường, hỗ trợ có phải xuất hóa đơn?",
-      "excerpt": "Nhận tiền bồi thường, tiền thưởng, tiền hỗ trợ nhận được, tiền khuyễn mãi, quảng cáo có phải xuất hóa đơn, bồi thường bằng hàng hóa, dịch vụ có phải lập hóa đơn",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "badge_label": "Cập nhật",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2025-07-01",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/quy-dinh-khoan-tien-ho-tro-ban-hang.png",
-      "href": "ban-tin/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html"
-    },
-    {
-      "file": "phu-luc-bao-cao-trich-su-dung-quy-khoa-hoc-cong-nghe-mau-so-03-6-tndn.htm",
-      "title": "Phụ lục báo cáo trích sử dụng quỹ khoa học công nghệ Mẫu số 03-6/TNDN",
-      "excerpt": "Phụ lục báo cáo trích sử dụng quỹ khoa học và công nghệ Mẫu số 03-6/TNDN (ban hành kèm theo Thông tư số 80/2021/TT-BTC ngày 29/9/2021 của Bộ Tài chính)",
-      "topic_lv1_key": "uu-dai-hoc-phi",
-      "topic_lv1_label": "Ưu đãi học phí",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Ưu đãi học phí",
-      "topic_lv3_key": "",
-      "topic_lv3_label": "",
-      "tags": [
-        "Khóa học kế toán",
-        "Thông tin"
-      ],
-      "badge_label": "Cập nhật",
-      "topic_label": "Ưu đãi học phí",
-      "library_kind_key": "",
-      "library_kind_label": "",
-      "tool_lv3_key": "",
-      "tool_lv3_label": "",
-      "publish_date": "2021-09-29",
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-03-6-TNDN.png",
-      "href": "ban-tin/phu-luc-bao-cao-trich-su-dung-quy-khoa-hoc-cong-nghe-mau-so-03-6-tndn.html"
     },
     {
       "file": "trung-tam-thuy-loi-mien-nui-phia-bac-tuyen-ke-toan-truong-va-noi-bo.htm",
