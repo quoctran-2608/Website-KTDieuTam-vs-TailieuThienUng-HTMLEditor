@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-04-27T13:56:57.197096",
+  "policy": "stage10 batch2 strict confirm-fast",
+  "records": [
+    {
+      "href": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.html",
+      "title": "Mẫu Báo cáo tình hình tài chính theo Thông tư 133",
+      "topicLv1Key": "ke-toan",
+      "topicLv1Label": "Kế toán",
+      "topicLv2Key": "bao-cao-tai-chinh",
+      "topicLv2Label": "Báo cáo tài chính",
+      "candidateCount": 6,
+      "suggestedTopicLv3Key": "lap-cac-bao-cao-thanh-phan",
+      "suggestedTopicLv3Label": "Lập các báo cáo thành phần",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 3,
+      "rationale": "top 4, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "lap-cac-bao-cao-thanh-phan",
+          "label": "Lập các báo cáo thành phần",
+          "score": 4
+        },
+        {
+          "key": "vi-pham-dieu-chinh-bctc",
+          "label": "Vi phạm/điều chỉnh BCTC",
+          "score": 3
+        },
+        {
+          "key": "chuan-muc-trinh-bay-bctc",
+          "label": "Chuẩn mực trình bày BCTC",
+          "score": 2
+        },
+        {
+          "key": "tong-quan-quy-dinh-nop-bctc",
+          "label": "Tổng quan/quy định nộp BCTC",
+          "score": 2
+        },
+        {
+          "key": "nguyen-tac-trinh-bay-bctc",
+          "label": "Nguyên tắc trình bày BCTC",
+          "score": 2
+        }
+      ],
+      "ov3": 2
+    },
+    {
+      "href": "thu-vien/nhung-thu-tuat-tim-viec-cap-toc.html",
+      "title": "Những thủ tuật tìm việc cấp tốc",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-phong-van-xin-viec",
+      "suggestedTopicLv3Label": "Kinh nghiệm/phỏng vấn/xin việc",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 5
+        },
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 4
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 3
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 3
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 2
+        }
+      ],
+      "ov3": 1
+    }
+  ]
+}

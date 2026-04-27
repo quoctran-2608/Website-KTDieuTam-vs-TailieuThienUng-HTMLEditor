@@ -168,25 +168,6 @@
   ],
   "related": [
     {
-      "id": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
-      "section": "ban-tin",
-      "sectionLabel": "Bản tin",
-      "sectionHref": "ban-tin.html",
-      "href": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
-      "title": "Khóa Học Thực Hành Kế Toán Tổng Hợp cho người đã biết về kế toán",
-      "excerpt": "Khóa học kế toán tổng hợp thực tế Online tốt nhất chỉ có ở Kế toán Diệu Tâm: Học thực hành kế toán tổng hợp trên chứng từ thực tế như đi làm tại Doanh nghiệp.",
-      "topicLabel": "Cơ sở đào tạo",
-      "tags": [
-        "Cơ sở đào tạo",
-        "Thông tin"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hoc-ke-toan-tong-hop.png",
-      "libraryKindLabel": "",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
-    {
       "id": "ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
@@ -195,7 +176,7 @@
       "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
       "title": "Khóa Học Thực Hành Kế Toán Trên Phần Mềm Misa",
       "excerpt": "Đây là khóa học dạy thực hành lên sổ sách, lập báo cáo tài chính trên phần mềm kế toán Misa bằng hóa đơn chứng từ thực tế",
-      "topicLabel": "Giới thiệu",
+      "topicLabel": "Khóa học MISA",
       "tags": [
         "Giới thiệu",
         "Thông tin"
@@ -206,24 +187,44 @@
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/dia-chi-hoc-ke-toan-thuc-hanh-tong-hop-tot-nhat-ha-noi.html",
+      "id": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tren-excel-thuc-te.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/dia-chi-hoc-ke-toan-thuc-hanh-tong-hop-tot-nhat-ha-noi.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/dia-chi-hoc-ke-toan-thuc-hanh-tong-hop-tot-nhat-ha-noi.html",
-      "title": "BẢN ĐỒ CHỈ ĐƯỜNG đến Kế toán Diệu Tâm (Các cơ sở)",
-      "excerpt": "Địa chỉ học Kế toán Diệu Tâm là 1 địa chỉ học kế toán thực hành thực tế (Thuế - Tổng hợp) tốt nhất và uy tín tại Hà Nội…",
-      "topicLabel": "Cơ sở đào tạo",
+      "href": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tren-excel-thuc-te.html",
+      "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-thuc-hanh-ke-toan-tren-excel-thuc-te.html",
+      "title": "Khóa học thực hành kế toán trên Excel",
+      "excerpt": "Khóa học thực hành kế toán kế toán trên Excel của công ty đào tạo Kế Toán Diệu Tâm là khóa học dạy thực hành cách lên s…",
+      "topicLabel": "Khóa học Excel",
       "tags": [
-        "Cơ sở đào tạo",
-        "Cơ sở & địa điểm",
+        "Excel",
+        "Khóa học Excel",
+        "Khóa học & đào tạo",
         "Chính sách",
-        "Cơ sở"
+        "Khóa học"
       ],
-      "image": "assets/images/content/pic/Service/images/dia-chi-ke-toan-dieu-tam-o-ha-dong.png",
+      "image": "assets/images/content/pic/Service/images/khoa-hoc-ke-toan-tren-Excel(1).png",
       "libraryKindLabel": "",
       "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
+      "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
+      "title": "Khóa Học Thực Hành Kế Toán Tổng Hợp cho người đã biết về kế toán",
+      "excerpt": "Khóa học kế toán tổng hợp thực tế Online tốt nhất chỉ có ở Kế toán Diệu Tâm: Học thực hành kế toán tổng hợp trên chứng từ thực tế như đi làm tại Doanh nghiệp.",
+      "topicLabel": "Khóa học kế toán",
+      "tags": [
+        "Cơ sở đào tạo",
+        "Thông tin"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hoc-ke-toan-tong-hop.png",
+      "libraryKindLabel": "",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     }
   ],
@@ -294,20 +295,20 @@
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
+      "id": "ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
-      "title": "Khóa Học Thực Hành Kế Toán Tổng Hợp cho người đã biết về kế toán",
-      "excerpt": "Khóa học kế toán tổng hợp thực tế Online tốt nhất chỉ có ở Kế toán Diệu Tâm: Học thực hành kế toán tổng hợp trên chứng từ thực tế như đi làm tại Doanh nghiệp.",
-      "topicLabel": "Cơ sở đào tạo",
+      "href": "ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
+      "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
+      "title": "Khóa Học Thực Hành Kế Toán Trên Phần Mềm Misa",
+      "excerpt": "Đây là khóa học dạy thực hành lên sổ sách, lập báo cáo tài chính trên phần mềm kế toán Misa bằng hóa đơn chứng từ thực tế",
+      "topicLabel": "Khóa học MISA",
       "tags": [
-        "Cơ sở đào tạo",
+        "Giới thiệu",
         "Thông tin"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hoc-ke-toan-tong-hop.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/khoa-hoc-ke-toan-Misa.png",
       "libraryKindLabel": "",
       "publishDate": "2026-04-26",
       "modifiedDate": null

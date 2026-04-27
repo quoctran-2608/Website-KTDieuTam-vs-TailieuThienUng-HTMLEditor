@@ -164,6 +164,25 @@
   ],
   "related": [
     {
+      "id": "thu-vien/huong-dan-cach-viet-hoa-don-gia-tri-gia-tang.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/huong-dan-cach-viet-hoa-don-gia-tri-gia-tang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-viet-hoa-don-gia-tri-gia-tang.html",
+      "title": "Hướng dẫn cách lập hóa đơn giá trị gia tăng",
+      "excerpt": "Hướng dẫn cách ghi hóa đơn giá trị gia tăng còn gọi là hóa đơn GTGT, hóa đơn đỏ chi tiết như khi bán hàng hóa, dịch vụ, xây dựng, xây lắp…Cách viết các chỉ tiêu trên hóa đơn như ngày tháng năm, tên hàng hóa, đơn vị tính …theo NĐ 123/2020/NĐ-CP.",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT - Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-hoa-don-gtgt.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2020-10-19",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-viet-hoa-don-dieu-chinh-tang-giam-thue-suat-thue-gtgt.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -172,7 +191,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-hoa-don-dieu-chinh-tang-giam-thue-suat-thue-gtgt.html",
       "title": "Cách viết hóa đơn Điều Chỉnh tăng giảm số tiền, doanh thu",
       "excerpt": "Hướng dẫn cách viết hóa đơn điều chỉnh tăng giảm như: Điều chỉnh tăng giảm số tiền thuế GTGT, doanh thu, số lượng. Điều chỉnh mã số thuế, số tiền bằng chữ, đơn giá, tên hàng hóa…",
-      "topicLabel": "Lao động - Tiền lương",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "Lao động - Tiền lương",
         "Hướng dẫn"
@@ -183,24 +202,30 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-ke-khai-thue-gtgt-chiet-khau-thuong-mai.html",
+      "id": "thu-vien/xu-ly-hoa-don-viet-sai-dia-chi-ma-so-thue-ten-nguoi-mua.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ke-khai-thue-gtgt-chiet-khau-thuong-mai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-ke-khai-thue-gtgt-chiet-khau-thuong-mai.html",
-      "title": "Hướng dẫn kê khai hóa đơn chiết khấu thương mại",
-      "excerpt": "Hướng dẫn cách kê khai hóa đơn chiết khấu thương mại (bên bán – bên mua), cách viết hóa đơn chiết khâu thương mại theo các trường hợp chiết khấu thương mại như: Chiết khấu từng lần, chiết khấu theo số lượng, doanh số theo Thông tư 219 và NĐ 123",
-      "topicLabel": "Lao động - Tiền lương",
+      "href": "thu-vien/xu-ly-hoa-don-viet-sai-dia-chi-ma-so-thue-ten-nguoi-mua.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/xu-ly-hoa-don-viet-sai-dia-chi-ma-so-thue-ten-nguoi-mua.html",
+      "title": "Hóa đơn ghi sai MST, tên hàng hóa, tên Cty, địa chỉ - Cách xử lý",
+      "excerpt": "Hóa đơn GTGT ghi sai tên công ty, địa chỉ, mã số thuế, ngày tháng năm, tên hàng hóa, số lượng, đơn vị tính, số tiền bằn…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "Lao động - Tiền lương",
+        "GTGT",
+        "Mã số thuế",
+        "Hóa đơn",
+        "Thuế",
+        "MST",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-ke-khai-hoa-don-chiet-khau-thuong-mai(1).png",
+      "image": "assets/images/content/pic/Service/images/xu ly hoa don viet sai ten dia chi ma so thue.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-10-19",
+      "publishDate": "2018-12-14",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/huong-dan-cach-viet-hoa-don-gia-tri-gia-tang.html",
       "section": "thu-vien",
@@ -219,45 +244,27 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2020-10-19",
       "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/cach-viet-hoa-don-dieu-chinh-tang-giam-thue-suat-thue-gtgt.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-viet-hoa-don-dieu-chinh-tang-giam-thue-suat-thue-gtgt.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-hoa-don-dieu-chinh-tang-giam-thue-suat-thue-gtgt.html",
-      "title": "Cách viết hóa đơn Điều Chỉnh tăng giảm số tiền, doanh thu",
-      "excerpt": "Hướng dẫn cách viết hóa đơn điều chỉnh tăng giảm như: Điều chỉnh tăng giảm số tiền thuế GTGT, doanh thu, số lượng. Điều chỉnh mã số thuế, số tiền bằng chữ, đơn giá, tên hàng hóa…",
-      "topicLabel": "Lao động - Tiền lương",
-      "tags": [
-        "Lao động - Tiền lương",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hoa-đieu-chinh-thue-suat.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-05-18",
-      "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-ke-trich-nop-cac-khoan-theo-luong-theo-qd-48-va-15.html",
+      "id": "thu-vien/mau-giay-de-nghi-hoan-thue-gtgt-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-ke-trich-nop-cac-khoan-theo-luong-theo-qd-48-va-15.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-trich-nop-cac-khoan-theo-luong-theo-qd-48-va-15.html",
-      "title": "Mẫu bảng kê trích nộp các khoản theo lương theo TT 200 và 133",
-      "excerpt": "Mẫu bảng kê trích nộp các khoản theo lương theo Thông tư 200 và 133. xác định số tiền bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, KPCĐ mà đơn vị và người lao động phải nộp trong tháng (hoặc quý) cho cơ quan bảo hiểm xã hội và công đoàn",
-      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "href": "thu-vien/mau-giay-de-nghi-hoan-thue-gtgt-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-giay-de-nghi-hoan-thue-gtgt-moi-nhat.html",
+      "title": "Mẫu Giấy Đề Nghị Hoàn Thuế Giá Trị Gia Tăng - GTGT Mới Nhất",
+      "excerpt": "Mẫu số 01/HT - GIẤY ĐỀ NGHỊ HOÀN THUẾ GIÁ TRỊ GIA TĂNG - GTGT theo Thông tư số 80/2021/TT-BTC 1. Các trường hợp được ho…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Mẫu biểu lao động - bảo hiểm",
+        "GTGT",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/bang-ke-trich-nop-cac-khoan-theo-luong(1).png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2016-08-26",
+      "publishDate": "2026-09-15",
       "modifiedDate": null
     },
     {

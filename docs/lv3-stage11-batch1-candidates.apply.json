@@ -1,0 +1,132 @@
+{
+  "generatedAt": "2026-04-27T14:00:50.437324",
+  "policy": "stage11 batch1 very-safe from auto-safe18",
+  "records": [
+    {
+      "href": "thu-vien/mau-bang-ke-cac-hop-dong-nha-thau-nuoc-ngoai.html",
+      "title": "Mẫu 04.1-ĐK-TCT-BK bảng kê các hợp đồng nhà thầu nước ngoài nộp thuế thông qua bên Việt Nam mới nhất",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv1Label": "Doanh nghiệp - Thủ tục",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv2Label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "mau-to-khai-thue-tndn",
+      "suggestedTopicLv3Label": "Mẫu tờ khai thuế TNDN",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "mau-to-khai-thue-tndn",
+          "label": "Mẫu tờ khai thuế TNDN",
+          "score": 5
+        },
+        {
+          "key": "mau-dang-ky-thay-doi-doanh-nghiep",
+          "label": "Mẫu đăng ký/thay đổi doanh nghiệp",
+          "score": 4
+        },
+        {
+          "key": "mau-ho-ca-nhan-kinh-doanh",
+          "label": "Mẫu hộ/cá nhân kinh doanh",
+          "score": 4
+        },
+        {
+          "key": "mau-khuyen-mai-thuong-mai",
+          "label": "Mẫu khuyến mại/thương mại",
+          "score": 4
+        },
+        {
+          "key": "mau-hoa-don-chung-tu",
+          "label": "Mẫu hóa đơn/chứng từ",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-thi-cong-noi-that.html",
+      "title": "Mẫu hợp đồng thi công nội thất",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "mo-ta-cong-viec-ke-toan",
+      "suggestedTopicLv3Label": "Mô tả công việc kế toán",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 3,
+      "rationale": "top 4, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 4
+        },
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 3
+        },
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 2
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 2
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/don-xin-cap-lai-chung-chi-hanh-nghe-moi-gioi-bat-dong-san.html",
+      "title": "Đơn xin cấp lại chứng chỉ hành nghề môi giới bất động sản theo Nghị định 96/2024/NĐ-CP",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-phong-van-xin-viec",
+      "suggestedTopicLv3Label": "Kinh nghiệm/phỏng vấn/xin việc",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 5
+        },
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 4
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 3
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 2
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 2
+        }
+      ]
+    }
+  ]
+}

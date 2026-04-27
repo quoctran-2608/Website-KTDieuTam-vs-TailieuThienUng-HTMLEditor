@@ -1,0 +1,132 @@
+{
+  "generatedAt": "2026-04-27T14:04:37.345611",
+  "policy": "stage11 batch2 conservative from auto-safe 15",
+  "records": [
+    {
+      "href": "thu-vien/mau-so-01-ht-giay-de-nghi-hoan-tra-khoan-thu-ngan-sach-nha-nuoc.html",
+      "title": "Mẫu giấy đề nghị hoàn trả khoản thu ngân sách nhà nước: Mẫu số 01/HT",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv1Label": "Doanh nghiệp - Thủ tục",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv2Label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "mau-to-khai-thue-tndn",
+      "suggestedTopicLv3Label": "Mẫu tờ khai thuế TNDN",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "mau-to-khai-thue-tndn",
+          "label": "Mẫu tờ khai thuế TNDN",
+          "score": 5
+        },
+        {
+          "key": "mau-dang-ky-thay-doi-doanh-nghiep",
+          "label": "Mẫu đăng ký/thay đổi doanh nghiệp",
+          "score": 4
+        },
+        {
+          "key": "mau-ho-ca-nhan-kinh-doanh",
+          "label": "Mẫu hộ/cá nhân kinh doanh",
+          "score": 4
+        },
+        {
+          "key": "mau-khuyen-mai-thuong-mai",
+          "label": "Mẫu khuyến mại/thương mại",
+          "score": 4
+        },
+        {
+          "key": "mau-hoa-don-chung-tu",
+          "label": "Mẫu hóa đơn/chứng từ",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/nghi-dinh-12-2015-nd-cp-ngay-12-02-1015-cua-chinh-phu.html",
+      "title": "Nghị định 12/2015/NĐ-CP Sửa đổi, bổ sung một số điều của Luật thuế",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "suggestedTopicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 5
+        },
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 4
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 3
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 2
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/nghi-dinh-41-2018-nd-cp-xu-phat-vi-pham-ke-toan-kiem-toan.html",
+      "title": "Nghị định 41/2018/NĐ-CP Xử phạt vi phạm kế toán, kiểm toán độc lập",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "suggestedTopicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 5
+        },
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 4
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 4
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 3
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 3
+        }
+      ]
+    }
+  ]
+}

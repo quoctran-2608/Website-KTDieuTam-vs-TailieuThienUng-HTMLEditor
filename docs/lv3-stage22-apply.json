@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-04-27T15:34:02.722328",
+  "scope": {
+    "targets": 10,
+    "applied": 6,
+    "skipped": 4
+  },
+  "articleMetaUpdated": 6,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-cac-tai-khoan-theo-thong-tu-200-va-133.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hach-toan-dac-thu",
+      "topicLv3Label": "Nghiệp vụ đặc thù",
+      "reason": "rule-tk-so-chi-tiet-tai-khoan"
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-tieu-thu-dac-biet-phai-nop.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "thue-suat-doi-tuong",
+      "topicLv3Label": "Thuế suất/Đối tượng chịu thuế",
+      "reason": "rule-gtgt-ttdb-thue-suat"
+    },
+    {
+      "href": "thu-vien/daonh-nghiep-duoc-lo-trong-may-nam.html",
+      "topicLv2Key": "thu-tuc-doanh-nghiep",
+      "topicLv3Key": "dn-thu-tuc-tai-chinh-vay-von",
+      "topicLv3Label": "DN thủ tục tài chính/vay vốn",
+      "reason": "rule-thu-tuc-lo-luy-ke"
+    },
+    {
+      "href": "thu-vien/giay-xac-nhan-chua-duoc-thanh-toan-mau-01-tcn.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "cong-no-thanh-toan",
+      "topicLv3Label": "Công nợ/Thanh toán",
+      "reason": "rule-tk-cong-no-thanh-toan"
+    },
+    {
+      "href": "thu-vien/mau-01-bds-theo-thong-tu-so-18-2026-tt-btc.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "thue-nghia-vu",
+      "topicLv3Label": "Thuế/Nghĩa vụ NSNN",
+      "reason": "rule-tk-thue-nghia-vu"
+    },
+    {
+      "href": "thu-vien/mau-giay-di-duong-theo-qd-48-va-15.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hach-toan-dac-thu",
+      "topicLv3Label": "Nghiệp vụ đặc thù",
+      "reason": "rule-tk-giay-di-duong"
+    }
+  ],
+  "skippedRows": [
+    {
+      "href": "thu-vien/bang-thue-xuat-khau-moi-nhat.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-match-gtgt"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-san-xuat-kinh-doanh-do-dang-tai-khoan-154.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-match-gtgt"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cac-khoan-tam-ung-tai-khoan-141.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-match-gtgt"
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-nhap-kho-hang-hoa-thanh-pham-nguyen-vat-lieu.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-match-gtgt"
+    }
+  ]
+}

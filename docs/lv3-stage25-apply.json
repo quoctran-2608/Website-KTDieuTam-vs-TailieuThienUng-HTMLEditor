@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-04-27T17:39:14.732325",
+  "scope": {
+    "targetHref": "thu-vien/muc-phat-cham-nop-ho-so-khai-thue-gtgt-tncn-tndn.html",
+    "applied": 1,
+    "skipped": 0
+  },
+  "articleMetaUpdated": 1,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/muc-phat-cham-nop-ho-so-khai-thue-gtgt-tncn-tndn.html",
+      "topicLv2Key": "htkk-etax-thue-dien-tu",
+      "topicLv3Key": "htkk-guide-import-bang-ke",
+      "topicLv3Label": "HTKK guide import bảng kê",
+      "reason": "stage25-finalize-last-row"
+    }
+  ],
+  "skippedRows": [],
+  "leftReviewPack": {
+    "json": "docs/lv3-stage25-manual-review-left.json",
+    "md": "docs/lv3-stage25-manual-review-left.md",
+    "count": 0
+  }
+}

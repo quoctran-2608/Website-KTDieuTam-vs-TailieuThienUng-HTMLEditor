@@ -1,0 +1,253 @@
+{
+  "generatedAt": "2026-04-27T14:35:20.412121",
+  "scope": {
+    "targets": 37,
+    "applied": 24,
+    "skipped": 13
+  },
+  "articleMetaUpdated": 24,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-thanh-toan-voi-nguoi-mua-ban.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "cong-no-thanh-toan",
+      "topicLv3Label": "Công nợ/Thanh toán",
+      "reason": "rule-tk-cong-no"
+    },
+    {
+      "href": "thu-vien/cac-khoan-thu-nhap-chiu-thue-thu-nhap-ca-nhan-nhap-moi.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "thue-tncn",
+      "topicLv3Label": "",
+      "reason": "rule-lao-dong-tncn"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-doanh-thu-ban-hang-va-cung-cap-dich-vu-tai-khoan-511.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "doanh-thu-chi-phi-kqkd",
+      "topicLv3Label": "Doanh thu/Chi phí/KQKD",
+      "reason": "rule-tk-doanh-thu"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-doanh-thu-hoat-dong-tai-chinh-tai-khoan-515.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "doanh-thu-chi-phi-kqkd",
+      "topicLv3Label": "Doanh thu/Chi phí/KQKD",
+      "reason": "rule-tk-doanh-thu"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-phai-thu-khac-tai-khoan-138.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "cong-no-thanh-toan",
+      "topicLv3Label": "Công nợ/Thanh toán",
+      "reason": "rule-tk-cong-no"
+    },
+    {
+      "href": "thu-vien/dinh-khoan-hach-toan-phai-thu-cua-khach-hang-tk-131.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "cong-no-thanh-toan",
+      "topicLv3Label": "Công nợ/Thanh toán",
+      "reason": "rule-tk-cong-no"
+    },
+    {
+      "href": "thu-vien/hach-toan-khoan-tien-cho-ca-nhan-cong-ty-khac-vay-muon.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "tien-quy-ngan-hang",
+      "topicLv3Label": "Tiền/Quỹ/Ngân hàng",
+      "reason": "rule-tk-tien"
+    },
+    {
+      "href": "thu-vien/cach-tinh-tinh-thue-thu-nhap-ca-nhan-moi-nhat.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "thue-tncn",
+      "topicLv3Label": "",
+      "reason": "rule-lao-dong-tncn"
+    },
+    {
+      "href": "thu-vien/cach-xac-dinh-thu-nhap-chiu-thue-khi-tinh-thue-tncn.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "thue-tncn",
+      "topicLv3Label": "",
+      "reason": "rule-lao-dong-tncn"
+    },
+    {
+      "href": "thu-vien/cach-xac-dinh-hach-toan-chenh-lech-ty-gia.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hach-toan-dac-thu",
+      "topicLv3Label": "Nghiệp vụ đặc thù",
+      "reason": "rule-tk-dac-thu"
+    },
+    {
+      "href": "thu-vien/danh-muc-dia-ban-ap-dung-muc-luong-toi-thieu-vung.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "tien-luong-thoi-gio-lam-viec",
+      "topicLv3Label": "Tiền lương/Thời giờ làm việc",
+      "reason": "rule-lao-dong-luong"
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-tinh-luong-co-ban-theo-vung.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "tien-luong-thoi-gio-lam-viec",
+      "topicLv3Label": "Tiền lương/Thời giờ làm việc",
+      "reason": "rule-lao-dong-luong"
+    },
+    {
+      "href": "thu-vien/nguyen-tac-xay-dung-thang-bang-luong-moi-nhat.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "tien-luong-thoi-gio-lam-viec",
+      "topicLv3Label": "Tiền lương/Thời giờ làm việc",
+      "reason": "rule-lao-dong-luong"
+    },
+    {
+      "href": "thu-vien/hach-toan-khoan-phai-tra-cho-nguoi-ban.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "cong-no-thanh-toan",
+      "topicLv3Label": "Công nợ/Thanh toán",
+      "reason": "rule-tk-cong-no"
+    },
+    {
+      "href": "thu-vien/mau-01-bk-stk-theo-thong-tu-so-18-2026-tt-btc.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "tien-quy-ngan-hang",
+      "topicLv3Label": "Tiền/Quỹ/Ngân hàng",
+      "reason": "rule-tk-tien"
+    },
+    {
+      "href": "thu-vien/mau-01-tkn-cnkd-theo-thong-tu-so-18-2026-tt-btc.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "doanh-thu-chi-phi-kqkd",
+      "topicLv3Label": "Doanh thu/Chi phí/KQKD",
+      "reason": "rule-tk-doanh-thu"
+    },
+    {
+      "href": "thu-vien/mau-bang-thanh-toan-hang-dai-ly-ky-gui-theo-qd-48-va-15.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hang-ton-kho-gia-thanh",
+      "topicLv3Label": "Hàng tồn kho/Giá thành",
+      "reason": "rule-tk-hang-ton"
+    },
+    {
+      "href": "thu-vien/mau-bang-tong-hop-doanh-thu.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "doanh-thu-chi-phi-kqkd",
+      "topicLv3Label": "Doanh thu/Chi phí/KQKD",
+      "reason": "rule-tk-doanh-thu"
+    },
+    {
+      "href": "thu-vien/muc-luong-co-so-moi-nhat.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "tien-luong-thoi-gio-lam-viec",
+      "topicLv3Label": "Tiền lương/Thời giờ làm việc",
+      "reason": "rule-lao-dong-luong"
+    },
+    {
+      "href": "thu-vien/muc-luong-toi-thieu-vung-moi-nhat.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "tien-luong-thoi-gio-lam-viec",
+      "topicLv3Label": "Tiền lương/Thời giờ làm việc",
+      "reason": "rule-lao-dong-luong"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-121-2018-nd-cp-huong-dan-thang-bang-luong.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "tien-luong-thoi-gio-lam-viec",
+      "topicLv3Label": "Tiền lương/Thời giờ làm việc",
+      "reason": "rule-lao-dong-luong"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-145-2020-nd-cp-huong-dan-bo-luat-lao-dong.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "van-ban-lao-dong",
+      "topicLv3Label": "",
+      "reason": "rule-lao-dong-van-ban"
+    },
+    {
+      "href": "thu-vien/cong-van-11819-ct-ttht-chi-phi-co-tinh-chat-phuc-loi-cho-nguoi-lao-dong.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "luong-khoan-phuc-loi-khac",
+      "topicLv3Label": "",
+      "reason": "rule-lao-dong-phuc-loi"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-ban-hanh-he-thong-thang-bang-luong-cua-doanh-nghiep.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "tien-luong-thoi-gio-lam-viec",
+      "topicLv3Label": "Tiền lương/Thời giờ làm việc",
+      "reason": "rule-lao-dong-luong"
+    }
+  ],
+  "skippedRows": [
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-cac-tai-khoan-theo-thong-tu-200-va-133.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "reason": "no-match-tai-khoan"
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-vat-tu-hang-hoa-theo-thong-tu-200-va-133.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-match-lao-dong"
+    },
+    {
+      "href": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-match-lao-dong"
+    },
+    {
+      "href": "thu-vien/cac-phuong-phap-trich-khau-hao-tai-san-co-dinh.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-match-lao-dong"
+    },
+    {
+      "href": "thu-vien/cach-ghi-nho-he-thong-tai-khoan-ke-toan-nhanh-nhat.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "reason": "no-match-tai-khoan"
+    },
+    {
+      "href": "thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-khoi-luong-san-pham.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-match-lao-dong"
+    },
+    {
+      "href": "thu-vien/cach-viet-hoa-don-dieu-chinh-tang-giam-thue-suat-thue-gtgt.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-match-lao-dong"
+    },
+    {
+      "href": "thu-vien/xu-ly-khi-viet-ghi-sai-hoa-don-gia-tri-gia-tang.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-match-lao-dong"
+    },
+    {
+      "href": "thu-vien/giay-xac-nhan-chua-duoc-thanh-toan-mau-01-tcn.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "reason": "no-match-tai-khoan"
+    },
+    {
+      "href": "thu-vien/cach-ke-khai-thue-gtgt-chiet-khau-thuong-mai.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-match-lao-dong"
+    },
+    {
+      "href": "thu-vien/mau-01-bds-theo-thong-tu-so-18-2026-tt-btc.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "reason": "no-match-tai-khoan"
+    },
+    {
+      "href": "thu-vien/mau-giay-di-duong-theo-qd-48-va-15.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "reason": "no-match-tai-khoan"
+    },
+    {
+      "href": "thu-vien/muc-phat-cham-nop-va-cong-khai-bao-cao-tai-chinh-moi-nhat.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-match-lao-dong"
+    }
+  ]
+}

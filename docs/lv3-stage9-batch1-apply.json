@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-04-27T13:46:48.905241",
+  "inputCandidates": 7,
+  "appliedCount": 7,
+  "skippedCount": 0,
+  "articleMetaUpdated": 7,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/bang-tinh-lai-truy-thu-bhxh-bhyt-bhtn-mau-d02b-ts.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "ho-so-thu-tuc",
+      "topicLv3Label": "Hồ sơ/Thủ tục",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cac-khoan-phai-tra-phai-nop-khac-tai-khoan-338.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "hach-toan-chi-phi-bao-hiem",
+      "topicLv3Label": "Hạch toán/Chi phí bảo hiểm",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 2"
+    },
+    {
+      "href": "thu-vien/cong-van-4064-bhxh-thu-quy-dinh-ve-bhxh-bhyt-bhtn.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-chinh-sach-chung",
+      "topicLv3Label": "Công văn Chính sách chung",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 4"
+    },
+    {
+      "href": "thu-vien/muc-luong-phu-cap-luong-va-cac-khoan-bo-sung-dong-bhxh.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "luong-can-cu-ty-le-dong",
+      "topicLv3Label": "Lương căn cứ/Tỷ lệ đóng",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/nguyen-tac-hach-toan-cac-khoan-no-phai-tra.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hach-toan-dac-thu",
+      "topicLv3Label": "Nghiệp vụ đặc thù",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-595-qd-bhxh-quy-trinh-thu-bhxh-bhyt-bhtn.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "ho-so-thu-tuc",
+      "topicLv3Label": "Hồ sơ/Thủ tục",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-919-qd-bhxh-cua-bao-hiem-xa-hoi-viet-nam.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "doi-tuong-muc-dong",
+      "topicLv3Label": "Đối tượng/Mức đóng",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    }
+  ],
+  "skippedRows": [],
+  "priorityQueues": {
+    "json": "docs/lv3-stage9-priority-queues.json",
+    "md": "docs/lv3-stage9-priority-queues.md"
+  }
+}

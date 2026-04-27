@@ -1,0 +1,157 @@
+{
+  "generatedAt": "2026-04-27T16:01:33.157465",
+  "scope": {
+    "inputMedium": 19,
+    "applied": 19,
+    "skipped": 0
+  },
+  "articleMetaUpdated": 19,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-vat-tu-hang-hoa-theo-thong-tu-200-va-133.html",
+      "topicLv1Key": "ke-toan",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hang-ton-kho-gia-thanh",
+      "reason": "Nội dung sổ kho/vật tư, nên chuyển về Hàng tồn kho/Giá thành"
+    },
+    {
+      "href": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
+      "topicLv1Key": "ke-toan",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hang-ton-kho-gia-thanh",
+      "reason": "Nội dung sổ kho/vật tư, nên chuyển về Hàng tồn kho/Giá thành"
+    },
+    {
+      "href": "thu-vien/cac-phuong-phap-trich-khau-hao-tai-san-co-dinh.html",
+      "topicLv1Key": "ke-toan",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "tscd-ccdc-khau-hao",
+      "reason": "Nội dung khấu hao/TSCĐ, nên chuyển về Tài khoản - Hạch toán"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-san-xuat-kinh-doanh-do-dang-tai-khoan-154.html",
+      "topicLv1Key": "ke-toan",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hang-ton-kho-gia-thanh",
+      "reason": "Nội dung giá thành/hàng tồn kho nên chuyển cụm Tài khoản"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cac-khoan-tam-ung-tai-khoan-141.html",
+      "topicLv1Key": "ke-toan",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "tien-quy-ngan-hang",
+      "reason": "Nội dung TK 141/tạm ứng nghiêng về hạch toán tiền"
+    },
+    {
+      "href": "thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-khoi-luong-san-pham.html",
+      "topicLv1Key": "ke-toan",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "tscd-ccdc-khau-hao",
+      "reason": "Nội dung khấu hao/TSCĐ, nên chuyển về Tài khoản - Hạch toán"
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-nhap-kho-hang-hoa-thanh-pham-nguyen-vat-lieu.html",
+      "topicLv1Key": "ke-toan",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hang-ton-kho-gia-thanh",
+      "reason": "Nội dung giá thành/hàng tồn kho nên chuyển cụm Tài khoản"
+    },
+    {
+      "href": "thu-vien/cach-viet-hoa-don-dieu-chinh-tang-giam-thue-suat-thue-gtgt.html",
+      "topicLv1Key": "thue",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "reason": "Nội dung hóa đơn/GTGT, nên chuyển về GTGT - Hóa đơn"
+    },
+    {
+      "href": "thu-vien/xu-ly-khi-viet-ghi-sai-hoa-don-gia-tri-gia-tang.html",
+      "topicLv1Key": "thue",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "reason": "Nội dung hóa đơn/GTGT, nên chuyển về GTGT - Hóa đơn"
+    },
+    {
+      "href": "thu-vien/cach-ke-khai-thue-gtgt-chiet-khau-thuong-mai.html",
+      "topicLv1Key": "thue",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "reason": "Nội dung hóa đơn/GTGT, nên chuyển về GTGT - Hóa đơn"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-cu-di-cong-tac-trong-nuoc-va-nuoc-ngoai.html",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-bieu-quan-tri-noi-bo",
+      "reason": "Mẫu quyết định nội bộ, không phải Kinh nghiệm nghề nghiệp"
+    },
+    {
+      "href": "thu-vien/mau-10-dang-ky-to-chuc-hoi-cho-trien-lam-thuong-mai.html",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-khuyen-mai-thuong-mai",
+      "reason": "Mẫu thủ tục hội chợ/triển lãm, lệch cụm Kinh nghiệm"
+    },
+    {
+      "href": "thu-vien/mau-13-dang-ky-sua-doi-bo-sung-noi-dung-to-chuc-hoi-cho-trien-lam-thuong-mai.html",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-khuyen-mai-thuong-mai",
+      "reason": "Mẫu thủ tục hội chợ/triển lãm, lệch cụm Kinh nghiệm"
+    },
+    {
+      "href": "thu-vien/mau-14-bao-cao-ket-qua-to-chuc-hoi-cho-trien-lam-thuong-mai.html",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-khuyen-mai-thuong-mai",
+      "reason": "Mẫu thủ tục hội chợ/triển lãm, lệch cụm Kinh nghiệm"
+    },
+    {
+      "href": "thu-vien/mau-bao-cao-qua-trinh-thuc-hien-toan-bo-hoac-mot-phan-du-an-bat-dong-san-chuyen-nhuong.html",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-bieu-bat-dong-san",
+      "reason": "Mẫu biểu BĐS, nên chuyển về cụm Mẫu biểu DN"
+    },
+    {
+      "href": "thu-vien/mau-cong-van-giai-trinh-voi-co-quan-thue.html",
+      "topicLv1Key": "thue",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "reason": "Nội dung công văn giải trình, nên chuyển về cụm Công văn"
+    },
+    {
+      "href": "thu-vien/mau-don-de-nghi-chuyen-nhuong-toan-bo-hoac-mot-phan-du-an-bat-dong-san.html",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-bieu-bat-dong-san",
+      "reason": "Mẫu biểu BĐS, nên chuyển về cụm Mẫu biểu DN"
+    },
+    {
+      "href": "thu-vien/don-dang-ky-du-thi-sat-hach-cap-chung-chi-hanh-nghe-moi-gioi-bat-dong-san.html",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-bieu-bat-dong-san",
+      "reason": "Mẫu biểu BĐS, nên chuyển về cụm Mẫu biểu DN"
+    },
+    {
+      "href": "thu-vien/don-dang-ky-hoat-dong-cua-san-giao-dich-bat-dong-san.html",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-bieu-bat-dong-san",
+      "reason": "Mẫu biểu BĐS, nên chuyển về cụm Mẫu biểu DN"
+    }
+  ],
+  "skippedRows": [],
+  "leftReviewPack": {
+    "json": "docs/lv3-stage24-manual-review-left.json",
+    "md": "docs/lv3-stage24-manual-review-left.md",
+    "count": 1
+  }
+}

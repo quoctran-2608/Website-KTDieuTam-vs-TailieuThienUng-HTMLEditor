@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-04-27T14:08:38.290865",
+  "policy": "stage12 batch1 very-safe (explicit tax/accounting keywords)",
+  "records": [
+    {
+      "href": "thu-vien/quy-dinh-ve-ky-ke-toan-chu-viet-chu-so-trong-ke-toan.html",
+      "title": "Quy định về kỳ kế toán, Chữ viết, chữ số trong kế toán",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "suggestedTopicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 5
+        },
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 4
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 3
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 3
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 3
+        }
+      ]
+    }
+  ]
+}

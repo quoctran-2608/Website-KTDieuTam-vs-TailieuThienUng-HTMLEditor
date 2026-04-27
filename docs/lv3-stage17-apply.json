@@ -1,0 +1,242 @@
+{
+  "generatedAt": "2026-04-27T14:40:41.532987",
+  "scope": {
+    "targets": 32,
+    "applied": 31,
+    "skipped": 1
+  },
+  "articleMetaUpdated": 31,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/cong-van-12568-btc-cdkt-giai-thich-noi-dung-tt-200.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-chinh-sach-chung",
+      "topicLv3Label": "Công văn Chính sách chung",
+      "reason": "rule-cong-van-chinh-sach"
+    },
+    {
+      "href": "thu-vien/cong-van-17526-btc-tct-sua-doi-bo-sung-luat-thue.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "reason": "rule-cong-van-thue"
+    },
+    {
+      "href": "thu-vien/cong-van-17940-sldtbxh-vl-ve-viec-su-dung-lao-dong.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-chinh-sach-chung",
+      "topicLv3Label": "Công văn Chính sách chung",
+      "reason": "rule-cong-van-chinh-sach"
+    },
+    {
+      "href": "thu-vien/cong-van-2086-bldtbxh-tldldvn-chi-dao-luong-toi-thieu-vung.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-chinh-sach-chung",
+      "topicLv3Label": "Công văn Chính sách chung",
+      "reason": "rule-cong-van-chinh-sach"
+    },
+    {
+      "href": "thu-vien/cong-van-2512-tct-cs-nhung-noi-dung-moi-cua-thong-tu-96.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "reason": "rule-cong-van-thue"
+    },
+    {
+      "href": "thu-vien/cong-van-3706-tct-kk-huong-dan-thu-tuc-dang-ky-thue.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "reason": "rule-cong-van-thue"
+    },
+    {
+      "href": "thu-vien/cong-van-4175-bhxh-pc-huong-dan-lap-to-khai-tham-gia-bhxh.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-chinh-sach-chung",
+      "topicLv3Label": "Công văn Chính sách chung",
+      "reason": "rule-cong-van-chinh-sach"
+    },
+    {
+      "href": "thu-vien/cong-van-4716-tct-cs-gioi-thieu-noi-dung-thong-tu-so-151-2014-tt-btc.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "reason": "rule-cong-van-thue"
+    },
+    {
+      "href": "thu-vien/cong-van-845-tct-nang-cap-htkk-bctc-theo-thong-tu-133.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "reason": "rule-cong-van-thue"
+    },
+    {
+      "href": "thu-vien/cong-van-897-tct-qln-gia-han-nop-thue-do-dich-benh-covid-19.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "reason": "rule-cong-van-thue"
+    },
+    {
+      "href": "thu-vien/cong-van-so-297-xoa-bo-thue-khoan-voi-ho-kinh-doanh.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "reason": "rule-cong-van-thue"
+    },
+    {
+      "href": "thu-vien/cong-van-so-3609-tct-cs-cua-bo-tai-chinh.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "reason": "rule-cong-van-thue"
+    },
+    {
+      "href": "thu-vien/cong-van-so-624-huong-dan-ve-khoan-chi-cong-tac-phi.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-chinh-sach-chung",
+      "topicLv3Label": "Công văn Chính sách chung",
+      "reason": "rule-cong-van-chinh-sach"
+    },
+    {
+      "href": "thu-vien/cong-van-de-nghi-dang-ky-thang-bang-luong.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-chinh-sach-chung",
+      "topicLv3Label": "Công văn Chính sách chung",
+      "reason": "rule-cong-van-chinh-sach"
+    },
+    {
+      "href": "thu-vien/thong-tu-03-2015-tt-bldtbxh-quy-dinh-tien-luong-da-dong-bhxh.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "reason": "rule-thong-tu-chinh-sach"
+    },
+    {
+      "href": "thu-vien/thong-tu-08-2013-tt-btc-thuc-hien-ke-toan-nha-nuoc.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "reason": "rule-thong-tu-ke-toan-chung"
+    },
+    {
+      "href": "thu-vien/thong-tu-10-2020-tt-bldtbxh-huong-dan-bo-luat-lao-dong.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "reason": "rule-thong-tu-chinh-sach"
+    },
+    {
+      "href": "thu-vien/thong-tu-119-2014-tt-btc-thu-tuc-hanh-chinh-ve-thue.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Thông tư Kê khai/Quản lý thuế",
+      "reason": "rule-thong-tu-ke-khai"
+    },
+    {
+      "href": "thu-vien/thong-tu-130-2016-tt-btc-huong-dan-luat-thue-gtgt-ttdb-quan-ly-thue.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Thông tư Kê khai/Quản lý thuế",
+      "reason": "rule-thong-tu-ke-khai"
+    },
+    {
+      "href": "thu-vien/thong-tu-200-bo-tai-chinh-che-do-ke-toan-doanh-nghiep.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "reason": "rule-thong-tu-ke-toan-chung"
+    },
+    {
+      "href": "thu-vien/thong-tu-200-2014-tt-btc-thay-the-che-do-ke-toan-doanh-nghiep-15.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "reason": "rule-thong-tu-ke-toan-chung"
+    },
+    {
+      "href": "thu-vien/thong-tu-202-cach-lap-va-trinh-bay-lap-bctc-hop-nhat.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "reason": "rule-thong-tu-ke-toan-chung"
+    },
+    {
+      "href": "thu-vien/thong-tu-23-2014-tt-bldtbxh-quy-dinh-ve-su-dung-lao-dong.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "reason": "rule-thong-tu-chinh-sach"
+    },
+    {
+      "href": "thu-vien/thong-tu-23-2015-tt-bldtbxh-huong-dan-ve-tien-luong.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "reason": "rule-thong-tu-chinh-sach"
+    },
+    {
+      "href": "thu-vien/thong-tu-25-2018-tt-btc-huong-dan-nd-146-2017-nd-cp-ve-thue-tndn-va-tncn.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Thông tư Kê khai/Quản lý thuế",
+      "reason": "rule-thong-tu-mix-tncn-tndn"
+    },
+    {
+      "href": "thu-vien/thong-tu-26-2015-tt-btc-ngay-27-02-2015-cua-bo-tai-chinh.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Thông tư Kê khai/Quản lý thuế",
+      "reason": "rule-thong-tu-ke-khai"
+    },
+    {
+      "href": "thu-vien/thong-tu-45-2013-tt-btc-quan-ly-su-dung-va-trich-hao-tai-san-co-dinh.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "reason": "rule-thong-tu-ke-toan-chung"
+    },
+    {
+      "href": "thu-vien/thong-tu-47-2015-tt-bldtbxh-huong-dan-thi-hanh-luat-lao-dong.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "reason": "rule-thong-tu-chinh-sach"
+    },
+    {
+      "href": "thu-vien/thong-tu-59-bldtbxh-cac-khoan-phu-cap-phai-dong-bhxh.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "reason": "rule-thong-tu-chinh-sach"
+    },
+    {
+      "href": "thu-vien/thong-tu-86-quy-dinh-ve-dang-ky-thue.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-mst-dang-ky-thue",
+      "topicLv3Label": "Thông tư MST/Đăng ký thuế",
+      "reason": "rule-thong-tu-mst"
+    },
+    {
+      "href": "thu-vien/thong-tu-86-2024-tt-btc-quy-dinh-ve-dang-ky-thue-moi-nhat.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-mst-dang-ky-thue",
+      "topicLv3Label": "Thông tư MST/Đăng ký thuế",
+      "reason": "rule-thong-tu-mst"
+    }
+  ],
+  "skippedRows": [
+    {
+      "href": "thu-vien/thong-tu-09-2015-tt-btc-dn-gop-von-phai-chuyen-khoan.html",
+      "topicLv2Key": "cong-van",
+      "reason": "no-match-cong-van"
+    }
+  ]
+}

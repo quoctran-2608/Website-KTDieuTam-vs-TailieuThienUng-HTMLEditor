@@ -1,0 +1,136 @@
+{
+  "generatedAt": "2026-04-27T15:42:57.353037",
+  "scope": {
+    "targets": 21,
+    "applied": 1,
+    "skipped": 20
+  },
+  "articleMetaUpdated": 1,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/bang-thue-xuat-khau-moi-nhat.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "thue-suat-doi-tuong",
+      "topicLv3Label": "Thuế suất/Đối tượng chịu thuế",
+      "reason": "rule-gtgt-bang-thue-xuat-khau"
+    }
+  ],
+  "skippedRows": [
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-vat-tu-hang-hoa-theo-thong-tu-200-va-133.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/cac-phuong-phap-trich-khau-hao-tai-san-co-dinh.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-san-xuat-kinh-doanh-do-dang-tai-khoan-154.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cac-khoan-tam-ung-tai-khoan-141.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-khoi-luong-san-pham.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-nhap-kho-hang-hoa-thanh-pham-nguyen-vat-lieu.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/cach-viet-hoa-don-dieu-chinh-tang-giam-thue-suat-thue-gtgt.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/xu-ly-khi-viet-ghi-sai-hoa-don-gia-tri-gia-tang.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/cach-ke-khai-thue-gtgt-chiet-khau-thuong-mai.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-cu-di-cong-tac-trong-nuoc-va-nuoc-ngoai.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/mau-10-dang-ky-to-chuc-hoi-cho-trien-lam-thuong-mai.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/mau-13-dang-ky-sua-doi-bo-sung-noi-dung-to-chuc-hoi-cho-trien-lam-thuong-mai.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/mau-14-bao-cao-ket-qua-to-chuc-hoi-cho-trien-lam-thuong-mai.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/mau-bao-cao-qua-trinh-thuc-hien-toan-bo-hoac-mot-phan-du-an-bat-dong-san-chuyen-nhuong.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/mau-cong-van-giai-trinh-voi-co-quan-thue.html",
+      "topicLv2Key": "htkk-etax-thue-dien-tu",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/mau-don-de-nghi-chuyen-nhuong-toan-bo-hoac-mot-phan-du-an-bat-dong-san.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/muc-phat-cham-nop-ho-so-khai-thue-gtgt-tncn-tndn.html",
+      "topicLv2Key": "htkk-etax-thue-dien-tu",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/don-dang-ky-du-thi-sat-hach-cap-chung-chi-hanh-nghe-moi-gioi-bat-dong-san.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "reason": "no-safe-match-stage23"
+    },
+    {
+      "href": "thu-vien/don-dang-ky-hoat-dong-cua-san-giao-dich-bat-dong-san.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "reason": "no-safe-match-stage23"
+    }
+  ],
+  "manualReviewPack": {
+    "json": "docs/lv3-stage23-manual-review.json",
+    "md": "docs/lv3-stage23-manual-review.md",
+    "stats": {
+      "count": 20,
+      "medium": 19,
+      "low": 1
+    }
+  }
+}

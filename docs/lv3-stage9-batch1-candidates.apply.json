@@ -1,0 +1,295 @@
+{
+  "generatedAt": "2026-04-27T13:43:41.192512",
+  "policy": "stage9-batch1-safe-vetted-manual",
+  "records": [
+    {
+      "href": "thu-vien/bang-tinh-lai-truy-thu-bhxh-bhyt-bhtn-mau-d02b-ts.html",
+      "title": "Bảng tính lãi truy thu BHXH – BHYT- BHTN Mẫu D02b-TS",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "ho-so-thu-tuc",
+      "suggestedTopicLv3Label": "Hồ sơ/Thủ tục",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 5
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 4
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 4
+        },
+        {
+          "key": "luong-can-cu-ty-le-dong",
+          "label": "Lương căn cứ/Tỷ lệ đóng",
+          "score": 4
+        },
+        {
+          "key": "hach-toan-chi-phi-bao-hiem",
+          "label": "Hạch toán/Chi phí bảo hiểm",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cac-khoan-phai-tra-phai-nop-khac-tai-khoan-338.html",
+      "title": "Cách hạch toán các khoản phải trả phải nộp khác - Tài khoản 338 theo TT 99",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "hach-toan-chi-phi-bao-hiem",
+      "suggestedTopicLv3Label": "Hạch toán/Chi phí bảo hiểm",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 3,
+      "rationale": "top 5, cách biệt 2",
+      "topCandidates": [
+        {
+          "key": "hach-toan-chi-phi-bao-hiem",
+          "label": "Hạch toán/Chi phí bảo hiểm",
+          "score": 5
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 3
+        },
+        {
+          "key": "van-ban-chinh-sach",
+          "label": "Văn bản/Chính sách",
+          "score": 3
+        },
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 2
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/cong-van-4064-bhxh-thu-quy-dinh-ve-bhxh-bhyt-bhtn.html",
+      "title": "Công văn Số 4064/BHXH-THU quy định về BHXH, BHYT và BHTN 2015",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "cong-van",
+      "topicLv2Label": "Công văn",
+      "candidateCount": 2,
+      "suggestedTopicLv3Key": "cong-van-chinh-sach-chung",
+      "suggestedTopicLv3Label": "Công văn Chính sách chung",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 0,
+      "rationale": "top 4, cách biệt 4",
+      "topCandidates": [
+        {
+          "key": "cong-van-chinh-sach-chung",
+          "label": "Công văn Chính sách chung",
+          "score": 4
+        },
+        {
+          "key": "cong-van-ke-khai-quan-ly-thue",
+          "label": "Công văn Kê khai/Quản lý thuế",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/muc-luong-phu-cap-luong-va-cac-khoan-bo-sung-dong-bhxh.html",
+      "title": "Mức lương, phụ cấp phải đóng BHXH năm 2026",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "luong-can-cu-ty-le-dong",
+      "suggestedTopicLv3Label": "Lương căn cứ/Tỷ lệ đóng",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "luong-can-cu-ty-le-dong",
+          "label": "Lương căn cứ/Tỷ lệ đóng",
+          "score": 5
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 4
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 4
+        },
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 3
+        },
+        {
+          "key": "hach-toan-chi-phi-bao-hiem",
+          "label": "Hạch toán/Chi phí bảo hiểm",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/nguyen-tac-hach-toan-cac-khoan-no-phai-tra.html",
+      "title": "Nguyên tắc kế toán nợ phải trả theo Thông tư 200",
+      "topicLv1Key": "ke-toan",
+      "topicLv1Label": "Kế toán",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv2Label": "Tài khoản - Hạch toán",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "hach-toan-dac-thu",
+      "suggestedTopicLv3Label": "Nghiệp vụ đặc thù",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 3,
+      "rationale": "top 4, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "hach-toan-dac-thu",
+          "label": "Nghiệp vụ đặc thù",
+          "score": 4
+        },
+        {
+          "key": "hang-ton-kho-gia-thanh",
+          "label": "Hàng tồn kho/Giá thành",
+          "score": 3
+        },
+        {
+          "key": "cong-no-thanh-toan",
+          "label": "Công nợ/Thanh toán",
+          "score": 3
+        },
+        {
+          "key": "doanh-thu-chi-phi-kqkd",
+          "label": "Doanh thu/Chi phí/KQKD",
+          "score": 3
+        },
+        {
+          "key": "von-dau-tu",
+          "label": "Vốn/Đầu tư",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/quyet-dinh-595-qd-bhxh-quy-trinh-thu-bhxh-bhyt-bhtn.html",
+      "title": "Quyết định 595/QĐ-BHXH Quy trình thu BHXH, BHYT, BHTN",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "ho-so-thu-tuc",
+      "suggestedTopicLv3Label": "Hồ sơ/Thủ tục",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 5
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 4
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 4
+        },
+        {
+          "key": "luong-can-cu-ty-le-dong",
+          "label": "Lương căn cứ/Tỷ lệ đóng",
+          "score": 4
+        },
+        {
+          "key": "hach-toan-chi-phi-bao-hiem",
+          "label": "Hạch toán/Chi phí bảo hiểm",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/quyet-dinh-919-qd-bhxh-cua-bao-hiem-xa-hoi-viet-nam.html",
+      "title": "Quyết định 919/QĐ-BHXH của Bảo hiểm xã hội Việt Nam",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "doi-tuong-muc-dong",
+      "suggestedTopicLv3Label": "Đối tượng/Mức đóng",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 5
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 4
+        },
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 4
+        },
+        {
+          "key": "luong-can-cu-ty-le-dong",
+          "label": "Lương căn cứ/Tỷ lệ đóng",
+          "score": 4
+        },
+        {
+          "key": "hach-toan-chi-phi-bao-hiem",
+          "label": "Hạch toán/Chi phí bảo hiểm",
+          "score": 4
+        }
+      ]
+    }
+  ],
+  "intended_allowlist": [
+    "thu-vien/bang-tinh-lai-truy-thu-bhxh-bhyt-bhtn-mau-d02b-ts.html",
+    "thu-vien/cach-hach-toan-cac-khoan-phai-tra-phai-nop-khac-tai-khoan-338.html",
+    "thu-vien/cong-van-4064-bhxh-thu-quy-dinh-ve-bhxh-bhyt-bhtn.html",
+    "thu-vien/muc-luong-phu-cap-luong-va-cac-khoan-bo-sung-dong-bhxh.html",
+    "thu-vien/nguyen-tac-hach-toan-cac-khoan-no-phai-tra.html",
+    "thu-vien/quyet-dinh-595-qd-bhxh-quy-trinh-thu-bhxh-bhyt-bhtn.html",
+    "thu-vien/quyet-dinh-919-qd-bhxh-cua-bao-hiem-xa-hoi-viet-nam.html"
+  ],
+  "missing_or_conflict": []
+}

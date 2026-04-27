@@ -1,0 +1,1962 @@
+{
+  "generatedAt": "2026-04-27T11:21:15.002234",
+  "sourceDryRun": "docs/lv3-dryrun-imported-745.json",
+  "autoCandidateCount": 194,
+  "appliedCount": 194,
+  "skippedMissingHref": [],
+  "conflicts": [],
+  "articleMetaUpdated": 194,
+  "articleMetaSkipped": [],
+  "queues": {
+    "mediumLow": 242,
+    "taxonomyGap": 246
+  },
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/bao-cao-ke-toan-chi-phi-san-xuat-va-gia-thanh-san-pham-tai-cong-ty-tvxd-truong-son.html",
+      "title": "Bao cáo kế toán chi phí sản xuất và giá thành sản phẩm tại Công ty TVXD Trường Sơn",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv3Key": "thuc-tap-chi-phi-gia-thanh",
+      "topicLv3Label": "Thực tập chi phí/giá thành",
+      "confidence": "high",
+      "score": 6,
+      "rationale": "match 6 token, bỏ xa lựa chọn 2 (3)"
+    },
+    {
+      "href": "thu-vien/bien-ban-thong-qua-he-thong-thang-bang-luong-cua-dn.html",
+      "title": "Biên bản thông qua hệ thống thang bảng lương 2025",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/bai-tap-dinh-khoan-nguyen-ly-ke-toan-co-loi-giai.html",
+      "title": "Bài tập định khoản nguyên lý kế toán có lời giải theo",
+      "topicLv2Key": "bai-tap-thuc-hanh",
+      "topicLv3Key": "bai-tap-dinh-khoan-hach-toan",
+      "topicLv3Label": "Bài tập định khoản/hạch toán",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-ban-hang-tai-cong-ty-cptm-va-xl-an-phu.html",
+      "title": "Báo cáo kế toán bán hàng tại Công ty CPTM và XL An Phú",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv3Key": "thuc-tap-ban-hang-doanh-thu-kqkd",
+      "topicLv3Label": "Thực tập bán hàng/doanh thu/KQKD",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (3)"
+    },
+    {
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-von-bang-tien-tai-doanh-nghiep-tien.html",
+      "title": "Báo cáo thực tập kế toán vốn bằng tiền tại doanh nghiệp tiền",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv3Key": "thuc-tap-von-bang-tien",
+      "topicLv3Label": "Thực tập vốn bằng tiền",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (3)"
+    },
+    {
+      "href": "thu-vien/bao-cao-thuc-tap-ve-he-thong-ke-toan.html",
+      "title": "Báo cáo thực tập về hệ thống kế toán",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv3Key": "thuc-tap-chi-phi-gia-thanh",
+      "topicLv3Label": "Thực tập chi phí/giá thành",
+      "confidence": "high",
+      "score": 6,
+      "rationale": "match 6 token, bỏ xa lựa chọn 2 (3)"
+    },
+    {
+      "href": "thu-vien/bang-ke-thu-mua-hang-hoa-dich-vu-khong-co-hoa-don-mau-01.html",
+      "title": "Bảng kê thu mua hàng hoá dịch vụ không có hoá đơn mẫu 01/TNDN",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-so-01-3-ttdb-bang-phan-bo-thue-tieu-thu-dac-biet.html",
+      "title": "Bảng phân bổ thuế tiêu thụ đặc biệt phải nộp với xổ số điện toán: Mẫu số 01-3/TTĐB",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-lam-bao-cao-quyet-toan-thue-tncn-cuoi-nam.html",
+      "title": "Cách làm báo quyết toán thuế TNCN năm 2016",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "title": "Cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo TT 200 và 133",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/cach-lap-so-cai-nhat-ky-chung-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập sổ Cái Nhật ký chung theo Thông tư 200 và 133",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv3Key": "hinh-thuc-ghi-so-ke-toan",
+      "topicLv3Label": "Hình thức ghi sổ kế toán",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh.html",
+      "title": "Cách lập Sổ chi phí sản xuất kinh doanh theo Thông tư 200 và 133",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "doanh-thu-chi-phi-kqkd",
+      "topicLv3Label": "Doanh thu/Chi phí/KQKD",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-ban-hang-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập Sổ chi tiết bán hàng theo Thông tư 200 và 133",
+      "topicLv2Key": "chuan-muc-che-do-nguyen-tac",
+      "topicLv3Key": "che-do-ke-toan-va-thong-tu",
+      "topicLv3Label": "Chế độ kế toán & thông tư",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-lap-so-nhat-ky-chung-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập sổ Nhật ký chung theo Thông tư 99 và 133",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv3Key": "hinh-thuc-ghi-so-ke-toan",
+      "topicLv3Label": "Hình thức ghi sổ kế toán",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/cach-lap-so-quy-tien-mat-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập sổ quỹ tiền mặt theo Thông tư 200 và 133",
+      "topicLv2Key": "chuan-muc-che-do-nguyen-tac",
+      "topicLv3Key": "che-do-ke-toan-va-thong-tu",
+      "topicLv3Label": "Chế độ kế toán & thông tư",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-lap-so-tai-san-co-dinh-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập Sổ Tải sản cố định theo Thông tư 200 và 133",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-lap-so-theo-doi-tai-san-co-dinh-cong-cu-dung-cu.html",
+      "title": "Cách lập sổ theo dõi Tài sản cố định, Công cụ dụng cụ theo TT 200 và 133",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-lap-the-tai-san-co-dinh-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập Thẻ Tải sản cố định theo Thông tư 200 và 133",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-viet-hoa-don-kem-theo-bang-ke-co-mau-bang-ke-kem-theo.html",
+      "title": "Cách lập hóa đơn kèm bảng kê có mẫu bảng kê kèm theo",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/cach-tinh-khau-hao-tai-san-co-dinh-da-qua-su-dung.html",
+      "title": "Cách tính khấu hao TSCĐ đã qua sử dụng",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/huong-dan-tinh-thue-tncn-thoi-vu-giao-khoan-thu-viec.html",
+      "title": "Cách tính thuế TNCN giao khoán - thử việc - dịch vụ",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/chi-phi-mua-hang-thanh-toan-bang-tai-khoan-ca-nhan.html",
+      "title": "Chi phí mua hàng thanh toán bằng tài khoản cá nhân",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (0)"
+    },
+    {
+      "href": "thu-vien/chi-phi-thue-xe-dua-don-nhan-vien-di-lam.html",
+      "title": "Chi phí thuê xe đưa đón nhân viên đi làm",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/che-do-thai-san-danh-cho-nam-khi-vo-sinh-con.html",
+      "title": "Chế độ thai sản cho chồng 2026 khi vợ sinh con",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "che-do-muc-huong",
+      "topicLv3Label": "Chế độ/Mức hưởng",
+      "confidence": "high",
+      "score": 3,
+      "rationale": "match 3 token, bỏ xa lựa chọn 2 (1)"
+    },
+    {
+      "href": "thu-vien/cac-bao-cao-thue-hang-thang-phai-nop-cho-co-quan-thue.html",
+      "title": "Các báo cáo thuế phải nộp hàng tháng cho cơ quan thuế",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cac-hinh-thuc-ghi-so-ke-toan-theo-quyet-dinh-48.html",
+      "title": "Các hình thức ghi sổ kế toán theo Thông tư 133 và 99 mới nhất",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv3Key": "hinh-thuc-ghi-so-ke-toan",
+      "topicLv3Label": "Hình thức ghi sổ kế toán",
+      "confidence": "high",
+      "score": 6,
+      "rationale": "match 6 token, bỏ xa lựa chọn 2 (3)"
+    },
+    {
+      "href": "thu-vien/cac-khoan-thu-nhap-duoc-mien-thue-thu-nhap-ca-nhan.html",
+      "title": "Các khoản được miễn thuế TNCN – Không tính thuế TNCN 2026",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cac-khoan-lo-duoc-ket-chuyen-theo-quy-dinh-cua-luat-thue-tndn.html",
+      "title": "Cách chuyển lỗ trên Tờ khai Quyết toán thuế 03/TNDN",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (0)"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-tra-truoc-ngan-han-tai-khoan-142.html",
+      "title": "Cách hạch toán chi phí trả trước ngắn hạn - Tài khoản 142",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "doanh-thu-chi-phi-kqkd",
+      "topicLv3Label": "Doanh thu/Chi phí/KQKD",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-hang-hoa-tai-khoan-156.html",
+      "title": "Cách hạch toán hàng hóa - Tài khoản 156",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-hang-hoa-het-han-su-dung-bi-hu-hong.html",
+      "title": "Cách hạch toán hàng hóa hết hạn sử dụng, bị hư hỏng",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (0)"
+    },
+    {
+      "href": "thu-vien/truy-thu-kinh-phi-cong-doan-co-duoc-dua-vao-chi-phi.html",
+      "title": "Cách hạch toán kinh phí công đoàn trích nộp - truy thu",
+      "topicLv2Key": "cong-doan",
+      "topicLv3Key": "cong-doan-trich-nop-ty-le-muc-dong",
+      "topicLv3Label": "Công đoàn trích nộp/tỷ lệ/mức đóng",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-nguyen-vat-lieu-tai-khoan-152.html",
+      "title": "Cách hạch toán nguyên, vật liệu - Tài khoản 152",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/phuong-phap-hach-toan-thanh-pham-tai-khoan-155.html",
+      "title": "Cách hạch toán sản phẩm, thành phẩm - Tài khoản 155",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/huong-dan-hach-toan-tien-mat-tk-111.html",
+      "title": "Cách hạch toán tiền mặt - TK 111",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "tien-quy-ngan-hang",
+      "topicLv3Label": "Tiền/Quỹ/Ngân hàng",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-xac-dinh-ket-qua-kinh-doanh-tai-khoan-911.html",
+      "title": "Cách hạch toán xác định kết quả kinh doanh - Tài khoản 911",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "doanh-thu-chi-phi-kqkd",
+      "topicLv3Label": "Doanh thu/Chi phí/KQKD",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/huong-dan-lap-bao-cao-tinh-hinh-su-dung-hoa-don-theo-thang.html",
+      "title": "Cách lập báo cáo tình hình sử dụng hóa đơn theo tháng",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/cach-phan-biet-tai-san-co-dinh-va-cong-cu-dung-cu.html",
+      "title": "Cách phân biệt TSCĐ và Công cụ dụng cụ",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-so-du-giam-dan.html",
+      "title": "Cách tính khấu hao TSCĐ theo số dư giảm dần có điều chỉnh",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-tinh-thoi-gian-phan-bo-cong-cu-dung-cu.html",
+      "title": "Cách tính phân bổ công cụ dụng cụ - Thời gian phân bổ",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-tu-dau-tu-von.html",
+      "title": "Cách tính thuế - Kê khai thuế TNCN từ đầu tư vốn 2026",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-tu-thua-ke-qua-tang.html",
+      "title": "Cách tính thuế thu nhập cá nhân từ thừa kế, quà tặng",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-tu-trung-thuong.html",
+      "title": "Cách tính thuế thu nhập cá nhân từ Trúng thưởng",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-tncn-cho-nguoi-nuoc-ngoai.html",
+      "title": "Cách tính thuế TNCN cho người nước ngoài",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-chuyen-nhuong-von.html",
+      "title": "Cách tính thuế TNCN từ chuyển nhượng vốn, chứng khoán.",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-viet-hoa-don-thu-tien-bang-ngoai-te.html",
+      "title": "Cách viết hóa đơn thu tiền bằng ngoại tệ",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/cach-xuat-hoa-don-ban-hang-kem-chi-phi-van-chuyen.html",
+      "title": "Cách xuất hóa đơn bán hàng kèm chi phí vận chuyển",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/cach-xac-dinh-nguyen-gia-tai-san-co-dinh-vo-hinh.html",
+      "title": "Cách xác định Nguyên giá TSCĐ vô hình, Thuê tài chính",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cach-xac-dinh-thoi-gian-trich-khau-hao-tai-san-co-dinh.html",
+      "title": "Cách xác định thời gian trích khấu hao TSCĐ hữu hình, vô hình",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/cong-van-336-tct-tncn-huong-dan-quyet-toan-thue-tncn-nam-2013.html",
+      "title": "Công văn 336/TCT-TNCN hướng dẫn quyết toán thuế TNCN năm 2013",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/giay-uy-quyen-quyet-toan-thue-tncn-mau-02-uq-qtt-tncn.html",
+      "title": "Giấy ủy quyền quyết toán thuế TNCN Mẫu 08/UQ-QTT-TNCN",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-hach-toan-chi-phi-thue-mon-bai.html",
+      "title": "Hướng dẫn cách hạch toán lệ phí môn bài",
+      "topicLv2Key": "le-phi-mon-bai",
+      "topicLv3Key": "mon-bai-mien-giam-tam-ngung",
+      "topicLv3Label": "Môn bài miễn giảm/tạm ngừng",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-viet-hoa-don-gia-tri-gia-tang.html",
+      "title": "Hướng dẫn cách lập hóa đơn giá trị gia tăng",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-viet-giay-nop-tien-vao-ngan-sach-nha-nuoc.html",
+      "title": "Hướng dẫn ghi giấy nộp tiền vào ngân sách nhà nước Mẫu C1- 02/NS",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/thu-tuc-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh.html",
+      "title": "Hướng dẫn đăng ký giảm trừ gia cảnh người phụ thuộc năm 2025",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/hach-toan-cac-but-toan-ket-chuyen-cuoi-ky.html",
+      "title": "Hạch toán các bút toán kết chuyển cuối kỳ năm tài chính",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (1)"
+    },
+    {
+      "href": "thu-vien/hach-toan-cac-khoan-thue-phai-nop-cho-nha-nuoc-tk-333.html",
+      "title": "Hạch toán các khoản thuế phải nộp cho nhà nước - TK 333",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/giai-dap-quyet-toan-thue-thu-nhap-ca-nhan.html",
+      "title": "Hỏi đáp Quyết toán thuế thu nhập cá nhân 2020",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-05-khai-trinh-su-dung-lao-dong-khi-bat-dau-hoa-dong.html",
+      "title": "Mẫu 05 - Khai trình sử dụng lao động lần đầu theo TT 23",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bien-ban-dieu-chinh-hoa-don-gtgt-viet-sai-theo-tt-39.html",
+      "title": "Mẫu biên bản điều chỉnh hoá đơn GTGT lập sai năm 2025",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-ban-cam-ket-mau-23-ck-tncn-theo-thong-tu-156.html",
+      "title": "Mẫu cam kết 08/CK-TNCN thu nhập dưới mức chịu thuế TNCN",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/quy-che-tien-luong-thuong-phu-cap-cho-nguoi-lao-dong.html",
+      "title": "Mẫu quy chế tiền lương thưởng phụ cấp 2026 của Doanh nghiệp",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/dang-ky-phuong-phap-trich-khau-hao-tscd.html",
+      "title": "Mẫu đăng ký phương pháp trích khấu hao TSCĐ mới nhất",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/muc-cong-tac-phi-khi-di-cong-tac-hop-ly.html",
+      "title": "Mức công tác phí khi đi công tác hợp lý mới nhất",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (0)"
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-thue-dung-cho-to-chuc.html",
+      "title": "Mẫu 01-ĐK-TCT tờ khai đăng ký thuế dùng cho tổ chức",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-01-bk-htk-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/BK-HTK theo Thông tư số 18/2026/TT-BTC Bảng kê hàng tồn kho của hộ kinh doanh",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-01-bk-kthtkd-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/BK-KTHTKD theo Thông tư số 18/2026/TT-BTC Phụ lục Bảng kê chi tiết hộ kinh doanh",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-01-bk-xsbhdc-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/BK-XSBHĐC theo Thông tư số 18/2026/TT-BTC Phụ lục Bảng kê",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-dien-tu-da-lap-sai-mau-01-bk-dctt.html",
+      "title": "Mẫu 01/BK-ĐCTT - Mẫu bảng kê hóa đơn điện tử đã lập sai theo NĐ 70/2025/NĐ-CP",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-01-cnkd-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/CNKD theo Thông tư số 18/2026/TT-BTC Tờ khai thuế đối với hộ kinh doanh",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-01-tb-ddkd-theo-thong-tu-so-18-2026.html",
+      "title": "Mẫu 01/TB-ĐĐKD theo Thông tư số 18/2026/TT-BTC Thông báo thành lập thay đổi thông tin địa điểm kinh doanh",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-dang-ky-thay-doi-doanh-nghiep",
+      "topicLv3Label": "Mẫu đăng ký/thay đổi doanh nghiệp",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/mau-01-xsbhdc-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/XSBHĐC theo Thông tư số 18/2026/TT-BTC Tờ khai thuế thu nhập cá nhân",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-01-dktd-hddt-to-khai-dang-ky-thong-tin-su-dung-hoa-don-dien-tu.html",
+      "title": "Mẫu 01/đktđ-hđđt tờ khai đăng ký thông tin sử dụng hóa đơn điện tử mới nhất năm 2025",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-de-nghi-giai-quyet-huong-che-do-om-dau-thai-san-duong-suc.html",
+      "title": "Mẫu 01B-HSB đề nghị giải quyết hưởng chế độ ốm đau, thai sản, dưỡng sức mới nhất",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-02-dk-tct-to-khai-dang-ky-thue.html",
+      "title": "Mẫu 02-ĐK-TCT Tờ khai đăng ký thuế dùng cho đơn vị phụ thuộc, địa điểm kinh doanh",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-02-cnkd-tncn-qtt-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 02/CNKD-TNCN-QTT theo Thông tư số 18/2026/TT-BTC Tờ khai quyết toán thuế TNCN cho hộ kinh doanh",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-02-tndn-bang-ke-thanh-toan-tien-dien-nuoc.html",
+      "title": "Mẫu 02/TNDN Bảng kê thanh toán tiền điện, nước",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-02-ttdb-to-khai-thue-tieu-thu-dac-biet-voi-co-so-san-xuat-xang.html",
+      "title": "Mẫu 02/TTĐB Tờ khai thuế tiêu thụ đặc biệt (áp dụng đối với cơ sở sản xuất, pha chế xăng sinh học)",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-thue-dung-cho-nha-thau-nuoc-ngoai.html",
+      "title": "Mẫu 04-ĐK-TCT tờ khai đăng ký thuế dùng cho nhà thầu nước ngoài ban điều hành liên danh mới nhất",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/to-khai-dang-ky-thue-dung-cho-khau-tru-nop-thue-thay-cho-nha-thau-nuoc-ngoai.html",
+      "title": "Mẫu 04.1-ĐK-TCT tờ khai đăng ký thuế dùng cho khấu trừ nộp thuế thay cho nhà thầu nước ngoài",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/to-khai-dang-ky-thue-cho-dn-duoc-co-quan-thue-uy-nhiem-thu.html",
+      "title": "Mẫu 04.4-ĐK-TCT tờ khai đăng ký thuế dùng cho cơ quan, tổ chức, cá nhân được cơ quan thuế ủy nhiệm thu",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-to-khai-thue-gtgt-theo-phuong-phap-truc-tiep-mau-so-04-gtgt-theo-thong-tu-so-156-2013-tt-btc.html",
+      "title": "Mẫu 04/GTGT - Mẫu tờ khai thuế GTGT theo phương pháp trực tiếp",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/phu-luc-bang-ke-thu-nhap-chiu-thue-va-thue-tncn-mau-so-05-1-bk-tncn.html",
+      "title": "Mẫu 05-1/BK-QTT-TNCN Phụ lục bảng kê cá nhân thuộc diện tính thuế theo biểu lũy tiến từng phần",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/bang-ke-thong-tin-nguoi-phu-thuoc-giam-tru-gia-canh-mau-05-3-bk-tncn.html",
+      "title": "Mẫu 05-3/BK-QTT-TNCN Bảng kê chi tiết người phụ thuộc giảm trừ gia cảnh",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/to-khai-dang-ky-thue-dung-cho-ca-nhan-khong-kinh-doanh.html",
+      "title": "Mẫu 05-ĐK-TCT tờ khai đăng ký thuế dùng cho cá nhân không kinh doanh",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/to-khai-dang-ky-thue-dung-cho-co-quan-dang-ky-ca-nhan-co-uy-quyen.html",
+      "title": "Mẫu 05-ĐK-TH-TCT tờ khai đăng ký thuế dùng cho cơ quan chi trả thu nhập đăng ký cho cá nhân có ủy quyền",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/to-khai-khau-tru-thue-thu-nhap-ca-nhan-mau-so-02-kk-tncn.html",
+      "title": "Mẫu 05/KK-TNCN Tờ khai khấu trừ thuế thu nhập cá nhân",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-06-tncn-to-khai-khau-tru-thue-thu-nhap-ca-nhan.html",
+      "title": "Mẫu 06/TNCN Tờ khai thuế TNCN từ đầu tư vốn",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-de-nghi-cap-hoa-don-co-ma-cua-co-quan-thue.html",
+      "title": "Mẫu 06/ĐN-PSĐT đề nghị cấp hóa đơn có mã của cơ quan thuế mới nhất",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/thong-bao-chuyen-doi-ky-ke-khai-thue-gtgt-tu-quy-sang-thang-mau-07-gtgt.html",
+      "title": "Mẫu 07/GTGT Thông báo chuyển đổi kỳ kê khai thuế GTGT từ quý sang tháng",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/to-khai-dieu-chinh-bo-sung-thong-tin-dang-ky-thue-mau-so-08-mst-theo-thong-tu-so-156-2013-tt-btc.html",
+      "title": "Mẫu 08-MST theo Thông tư 86/2024/TT-BTC mới nhất",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/to-khai-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh-mau-so-16-dk-tncn.html",
+      "title": "Mẫu 20-ĐK-TCT Tờ khai đăng ký người phụ thuộc năm 2026",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/van-ban-de-nghi-cham-dut-hieu-luc-ma-so-thue.html",
+      "title": "Mẫu 24/ĐK-TCT - Văn bản đề nghị chấm dứt hiệu lực mã số thuế",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/van-ban-de-nghi-khoi-phuc-ma-so-thue.html",
+      "title": "Mẫu 25/ĐK-TCT - Văn bản đề nghị khôi phục mã số thuế",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bien-ban-ban-giao-tscd-sua-chua-theo-qd-48-va-15.html",
+      "title": "Mẫu Biên bản bàn giao TSCĐ sửa chữa theo Thông tư 200, 133",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bien-ban-kiem-ke-tai-san-co-dinh-theo-qd-48-va-15.html",
+      "title": "Mẫu Biên bản kiểm kê TSCĐ theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bien-ban-kiem-ke-vat-tu-hang-hoa-theo-qd-48-va-15.html",
+      "title": "Mẫu biên bản kiểm kê vật tư hàng hóa theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bien-ban-kiem-nghiem-vat-tu-hang-hoa-theo-qd-48-va-15.html",
+      "title": "Mẫu biên bản kiểm nghiệm vật tư hàng hóa theo Thông tư 200, 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bien-ban-thanh-ly-hop-dong-theo-qd-48-va-15.html",
+      "title": "Mẫu biên bản thanh lý hợp đồng giao khoán theo Thông tư 200, 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bien-ban-thanh-ly-tscd-theo-qd-48-va-15.html",
+      "title": "Mẫu Biên bản thanh lý TSCĐ theo TT 200 và 133",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bien-ban-thu-hoi-hoa-don-gtgt-viet-sai.html",
+      "title": "Mẫu biên bản thu hồi hóa đơn GTGT viết sai 2018",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bien-ban-danh-gia-lai-tai-san-co-dinh-theo-qd-48-va-15.html",
+      "title": "Mẫu biên bản đánh giá lại TSCĐ theo Thông tư 200 và 133",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bao-cao-mat-chay-hong-hoa-don-mau-so-bc21-ac.html",
+      "title": "Mẫu Báo cáo mất cháy hỏng hóa đơn Mẫu số BC21/AC",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bao-cao-tinh-hinh-su-dung-hoa-don-mau-so-bc26-ac.html",
+      "title": "Mẫu Báo cáo tình hình sử dụng hóa đơn Mẫu số BC26/AC",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-cham-cong-lam-them-gio-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng chấm công làm thêm giờ theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-cham-cong-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng chấm công theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-kiem-ke-quy-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng kiểm kê quỹ theo Thông tư 200 và 133",
+      "topicLv2Key": "chuan-muc-che-do-nguyen-tac",
+      "topicLv3Key": "che-do-ke-toan-va-thong-tu",
+      "topicLv3Label": "Chế độ kế toán & thông tư",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/bang-ke-cac-hoa-don-dien-tu-da-lap-sai.html",
+      "title": "Mẫu bảng kê các hóa đơn điện tử đã lập sai 2026",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-chuyen-di-mau-bk01-ac.html",
+      "title": "Mẫu Bảng kê hoá đơn chuyển đi Mẫu BK01/AC",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-mua-hang-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng kê mua hàng theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-mua-lai-co-phieu-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng kê mua lại cổ phiếu theo QĐ 48 và TT 200",
+      "topicLv2Key": "chuan-muc-che-do-nguyen-tac",
+      "topicLv3Key": "che-do-ke-toan-va-thong-tu",
+      "topicLv3Label": "Chế độ kế toán & thông tư",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-trich-nop-cac-khoan-theo-luong-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng kê trích nộp các khoản theo lương theo TT 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-vang-bac-da-quy-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng kê vàng bạc đá quý theo Thông tư 200 và 133",
+      "topicLv2Key": "chuan-muc-che-do-nguyen-tac",
+      "topicLv3Key": "che-do-ke-toan-va-thong-tu",
+      "topicLv3Label": "Chế độ kế toán & thông tư",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-phan-bo-nguyen-vat-lieu-ccdc-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng phân bổ nguyên vật liệu CCDC theo Thông tư 200, 133",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-phan-bo-tien-luong-va-bao-hiem-xa-hoi-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng phân bổ tiền lương Bảo hiểm xã hội theo TT 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-thanh-toan-tien-lam-them-gio-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng thanh toán tiền làm thêm giờ theo Thông tư 200, 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-thanh-toan-tien-luong-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng thanh toán tiền lương theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-thanh-toan-tien-thue-ngoai-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng thanh toán tiền thuê ngoài theo Thông tư 200, 133",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-bang-thanh-toan-tien-thuong-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng thanh toán tiền thưởng theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-ke-toan",
+      "topicLv3Key": "mau-chung-tu-tien-thanh-toan",
+      "topicLv3Label": "Mẫu chứng từ tiền/thanh toán",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/mau-bang-tinh-va-phan-bo-khau-hao-tscd-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng tính phân bổ khấu hao TSCĐ theo Thông tư 200 và 133",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/danh-sach-che-do-thai-san-mau-c70a-hd-theo-qd-919.html",
+      "title": "Mẫu C70a-HD theo QĐ 636/QĐ-BHXH 2019 Danh sách chế độ thai sản",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-chung-tu-khau-tru-thue-thu-nhap-ca-nhan.html",
+      "title": "Mẫu chứng từ khấu trừ thuế thu nhập cá nhân mới nhất",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-cong-van-xin-nop-gop-bao-cao-tai-chinh.html",
+      "title": "Mẫu công văn xin nộp gộp báo cáo tài chính",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-van-ban-uy-nhiem-lap-hoa-don-gtgt-theo-thong-tu-64-2013.html",
+      "title": "Mẫu giấy ủy quyền Ký hoá đơn GTGT (lập hóa đơn)",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-giay-thanh-toan-tien-tam-ung-theo-qd-48-va-15.html",
+      "title": "Mẫu giấy thanh toán tiền tạm ứng theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-ke-toan",
+      "topicLv3Key": "mau-chung-tu-tien-thanh-toan",
+      "topicLv3Label": "Mẫu chứng từ tiền/thanh toán",
+      "confidence": "high",
+      "score": 3,
+      "rationale": "match 3 token, bỏ xa lựa chọn 2 (1)"
+    },
+    {
+      "href": "thu-vien/mau-hoa-don-ban-hang-thong-thuong-cua-btc.html",
+      "title": "Mẫu Hóa đơn bán hàng thông thường theo TT 39",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-hoa-don-ban-hang-trong-khu-phi-thue-quan-mau-so-07kptq.html",
+      "title": "Mẫu Hóa đơn bán hàng trong khu phi thuế quan Mẫu số 07KPTQ",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-hoa-don-ban-hang-tich-hop-bien-lai-thu-thue-phi-le-phi.html",
+      "title": "Mẫu hóa đơn bán hàng tích hợp biên lai thu thuế, phí, lệ phí",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-hoa-don-gia-tri-gia-tang-moi-nhat-mau-so-01gtkt3-001.html",
+      "title": "Mẫu Hóa đơn Giá trị gia tăng mới nhất Mẫu số 01GTKT3/001",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-hoa-don-gtgt-do-cuc-thue-phat-hanh.html",
+      "title": "Mẫu hóa đơn GTGT do cục thuế phát hành Mẫu số 01GTKT3/001",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-hoa-don-gtgt-kiem-to-khai-hoan-thue.html",
+      "title": "Mẫu hóa đơn GTGT kiêm tờ khai hoàn thuế theo TT 32/2025/TT-BTC",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-hoa-don-gtgt-tich-hop-bien-lai-thu-thue-phi-le-phi.html",
+      "title": "Mẫu hóa đơn GTGT tích hợp biên lai thu thuế, phí, lệ phí",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-hoa-don-thuong-mai-dien-tu.html",
+      "title": "Mẫu hóa đơn thương mại điện tử theo TT 32/2025/TT-BTC",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-hoa-don-xuat-khau-theo-thong-tu-64-2013-tt-btc.html",
+      "title": "Mẫu Hóa đơn xuất khẩu Mẫu số 06HDXK2/001",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-giao-khoan-theo-qd-48-va-15.html",
+      "title": "Mẫu hợp đồng giao khoán theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-lao-dong-nam-moi-nhat.html",
+      "title": "Mẫu hợp đồng lao động năm 2026 mới nhất",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-phieu-bao-vat-tu-con-lai-cuoi-ky-theo-qd-48-va-15.html",
+      "title": "Mẫu phiếu báo vật tư còn lại cuối kỳ theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-phieu-nhap-kho-theo-quyet-dinh-48-va-15.html",
+      "title": "Mẫu phiếu nhập kho theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-phieu-xuat-kho-hang-gui-ban-dai-ly-mau-so-04hgdl.html",
+      "title": "Mẫu Phiếu xuất kho hàng gửi bán đại lý theo TT 78/2021/TT-BTC",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-phieu-xuat-kho-kiem-van-chuyen-noi-bo-mau-so-03xknb.html",
+      "title": "Mẫu Phiếu xuất kho kiêm vận chuyển nội bộ Mẫu số 03XKNB",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-phieu-xuat-kho-theo-quyet-dinh-48-va-15.html",
+      "title": "Mẫu phiếu xuất kho theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-giay-uy-quyen-thuc-hien-cac-thu-tuc-bao-hiem.html",
+      "title": "Mẫu số 13-HSB giấy ủy quyền thực hiện các thủ tục Bảo Hiểm mới nhất",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-tb01-ac-thong-bao-phat-hanh-hoa-don.html",
+      "title": "Mẫu TB01/AC Thông báo phát hành hoá đơn theo TT 26",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-thong-bao-cham-dut-hop-dong-lao-dong.html",
+      "title": "Mẫu thông báo chấm dứt hợp đồng lao động",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-thong-bao-hoa-don-dien-tu-co-sai-sot-cho-nguoi-mua-moi.html",
+      "title": "Mẫu thông báo hóa đơn điện tử đã lập có sai sót cho người mua mới nhất",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-thong-bao-hoa-don-dien-tu-da-lap-sai-moi-nhat.html",
+      "title": "Mẫu thông báo hóa đơn điện tử đã lập sai mới nhất 2025",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-thong-bao-dieu-chinh-thong-tin-hoa-don.html",
+      "title": "Mẫu Thông báo điều chỉnh thông tin hóa đơn",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-the-quay-hang-theo-qd-48-va-15.html",
+      "title": "Mẫu thẻ quầy hàng theo Thông tư 200 và 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-tk1-ts-to-khai-tham-gia-bhxh-bhyt-bhtn.html",
+      "title": "Mẫu TK1-TS Tờ khai tham gia BHXH, BHYT, BHTN mới nhất",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-so-a01-ts-to-khai-tham-gia-bao-hiem-xa-hoi-bao-hiem-y-te.html",
+      "title": "Mẫu tờ khai tham gia bảo hiểm xã hội, bảo hiểm y tế Mẫu số A01-TS",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-to-khai-thue-gia-tri-gia-tang-mau-so-01-gtgt-theo-thong-tu-so-156-2013-tt-btc.html",
+      "title": "Mẫu tờ khai thuế giá trị gia tăng Mẫu số 01/GTGT",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-tk3-ts-to-khai-don-vi-tham-gia-bhxh-bhyt-bhtn.html",
+      "title": "Mẫu Tờ khai đơn vị tham gia BHXH Mẫu TK3-TS theo QĐ 490",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-van-ban-giai-trinh-cua-don-vi-mau-so-d01b-ts.html",
+      "title": "Mẫu văn bản giải trình của đơn vị Mẫu số D01b-TS",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-don-de-nghi-cap-hoa-don-le.html",
+      "title": "Mẫu Đơn đề nghị cấp hóa đơn lẻ",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-don-de-nghi-mua-hoa-don.html",
+      "title": "Mẫu Đơn đề nghị mua hóa đơn",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/muc-phat-cham-nop-tien-thue-gtgt-tncn-tndn.html",
+      "title": "Mức phạt chậm nộp tiền thuế GTGT, TNCN, TNDN mới nhất 2026",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/muc-xu-phat-ke-khai-thue-sai-anh-huong-den-so-tien-thue.html",
+      "title": "Mức phạt khai thuế sai dù có hay không ảnh hưởng đến tiền thuế 2026",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (0)"
+    },
+    {
+      "href": "thu-vien/muc-phat-mat-phieu-xuat-kho-kiem-van-chuyen-noi-bo.html",
+      "title": "Mức phạt mất Phiếu xuất kho kiêm vận chuyển nội bộ",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/muc-phat-khong-nop-thong-bao-phat-hanh-hoa-don.html",
+      "title": "Mức phạt sử dụng hoá đơn Chưa thông báo phát hành hóa đơn",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/muc-phat-vi-pham-ve-bo-tri-nguoi-lam-ke-toan-sai-quy-dinh.html",
+      "title": "Mức phạt vi phạm về bố trí người làm kế toán sai quy định",
+      "topicLv2Key": "chuan-muc-che-do-nguyen-tac",
+      "topicLv3Key": "che-do-ke-toan-va-thong-tu",
+      "topicLv3Label": "Chế độ kế toán & thông tư",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/xu-ly-vi-pham-hanh-chinh-ve-hoa-don-gtgt.html",
+      "title": "Mức phạt vi phạm về hóa đơn mới nhất",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-146-2017-nd-cp-sua-doi-bo-sung-nghi-dinh-100-va-12.html",
+      "title": "Nghị định 146/2017/NĐ-CP sửa đổi, bổ sung Nghị định 100/2016/NĐ-CP và 12/2015/NĐ-CP",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (1)"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-174-2016-nd-cp-huong-dan-ve-luat-ke-toan.html",
+      "title": "Nghị định 174/2016/NĐ-CP Hướng dẫn về Luật kế toán",
+      "topicLv2Key": "chuan-muc-che-do-nguyen-tac",
+      "topicLv3Key": "che-do-ke-toan-va-thong-tu",
+      "topicLv3Label": "Chế độ kế toán & thông tư",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-44-2021-nd-cp-chi-ung-ho-tai-tro-chong-dich-covid.html",
+      "title": "Nghị định 44/2021/NĐ-CP Chi ủng hộ tài trợ chống dịch Covid",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (0)"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-52-2021-nd-cp-gia-han-thoi-han-nop-thue-va-tien-thue-dat.html",
+      "title": "Nghị định 52/2021/NĐ-CP gia hạn thời hạn nộp thuế và tiền thuê đất 2021",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
+      "title": "Nghị định 82 mới nhất 2025 gia hạn thời gian nộp thuế gtgt-tndn-tncn và tiền thuê đất",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/nguyen-tac-ghi-nhan-hang-ton-kho.html",
+      "title": "Nguyên tắc kế toán Hàng tồn kho theo Thông tư 99",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/nguoi-phu-thuoc-bao-gom-nhung-ai.html",
+      "title": "Người phụ thuộc bao gồm những đối tượng nào",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/nhan-tien-chi-phi-tiep-thi-co-phai-lap-hoa-dong.html",
+      "title": "Nhận tiền chi phí tiếp thị có phải xuất hóa đơn không",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/nhung-luu-y-khi-quyet-toan-thue-tndn.html",
+      "title": "Những lưu ý khi quyết toán thuế TNDN năm 2016",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (0)"
+    },
+    {
+      "href": "thu-vien/phieu-dang-ky-du-tuyen-lao-dong-mau-04-theo-thong-tu-23.html",
+      "title": "Phiếu đăng ký dự tuyển lao động mẫu 01/PLII theo NĐ 152",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-phieu-xac-nhan-san-pham-cong-viec-hoan-thanh.html",
+      "title": "Phiếu xác nhận sản phẩm, công việc hoàn thành theo TT 200, 133",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/phu-luc-bang-ke-thu-nhap-chiu-thue-va-thue-tncn-da-khau-tru-mau-so-05-2-bk-tncn.html",
+      "title": "Phụ lục bảng kê cá nhân thuộc diện tính thuế suất toàn phần Mẫu 05-2/BK-QTT-TNCN",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/phu-luc-chi-tiet-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-so-01-1-thkh.html",
+      "title": "Phụ lục chi tiết giảm trừ gia cảnh cho người phụ thuộc mẫu số 01-1/THKH",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-kinh-phi-cong-doan-moi-nhat.html",
+      "title": "Quy định kinh phí công đoàn và đoàn phí công đoàn 2026",
+      "topicLv2Key": "cong-doan",
+      "topicLv3Key": "cong-doan-trich-nop-ty-le-muc-dong",
+      "topicLv3Label": "Công đoàn trích nộp/tỷ lệ/mức đóng",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/quy-dinh-phuong-phap-trich-khau-hao-nhanh-tscd.html",
+      "title": "Quy định phương pháp trích khấu hao nhanh TSCĐ không quá 2 lần",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-chung-tu-khau-tru-thue-tncn-dien-tu.html",
+      "title": "Quy định về chứng từ khấu trừ thuế TNCN điện tử",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/chi-phi-qua-cho-bieu-tang-khach-hang-hop-ly.html",
+      "title": "Quy định về hàng biếu tặng cho khách hàng, công nhân viên",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (0)"
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-so-sach-ke-toan.html",
+      "title": "Quy định về sổ sách kế toán - Mở sổ, ghi sổ, khóa sổ, lưu trữ sổ",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv3Key": "hinh-thuc-ghi-so-ke-toan",
+      "topicLv3Label": "Hình thức ghi sổ kế toán",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-viec-gia-han-nop-thue-gtgt-tndn.html",
+      "title": "Quy định về việc gia hạn nộp thuế năm 2021",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (0)"
+    },
+    {
+      "href": "thu-vien/thong-bao-ket-qua-dong-bhxh-bhyt-mau-c12-ts.html",
+      "title": "Thông báo kết quả đóng BHXH - BHYT Mẫu C12-TS",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/mau-pl-ii-1-thay-doi-noi-dung-dang-ky-doanh-nghiep.html",
+      "title": "Thông báo thay đổi nội dung đăng ký doanh nghiệp Phụ lục ii-1",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-dang-ky-thay-doi-doanh-nghiep",
+      "topicLv3Label": "Mẫu đăng ký/thay đổi doanh nghiệp",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/thoi-diem-lap-hoa-don-khi-ban-hang-cung-cap-dich-vu-xay-dung.html",
+      "title": "Thời điểm lập hóa đơn khi bán hàng, cung cấp dịch vụ, xây dựng, vận tải",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "match 4 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/to-khai-quyet-toan-thue-thu-nhap-ca-nhan-mau-05-qtt-tncn.html",
+      "title": "Tờ khai quyết toán thuế thu nhập cá nhân mẫu 05/QTT-TNCN",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/to-khai-quyet-toan-thue-thu-nhap-ca-nhan-mau-so-05-kk-tncn.html",
+      "title": "Tờ khai quyết toán thuế thu nhập cá nhân mẫu 05/QTT-TNCN",
+      "topicLv2Key": "mau-bieu-lao-dong-bao-hiem",
+      "topicLv3Key": "mau-tien-luong-phu-cap",
+      "topicLv3Label": "Mẫu tiền lương/phụ cấp",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/to-khai-thue-gia-tri-gia-tang-theo-phuong-phap-truc-tiep-mau-so-03-gtgt.html",
+      "title": "Tờ khai thuế giá trị gia tăng theo phương pháp trực tiếp mẫu số 03/GTGT",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/to-khai-thue-khoan-mau-so-01-thkh.html",
+      "title": "Tờ khai thuế khoán mẫu số 01/CNKD",
+      "topicLv2Key": "mau-bieu-thue",
+      "topicLv3Key": "mau-thue-gtgt-hoa-don",
+      "topicLv3Label": "Mẫu thuế GTGT/Hóa đơn",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/xuat-hang-cho-dai-ly-ban-dung-gia-co-phai-lap-hoa-don.html",
+      "title": "Xuất hàng cho đại lý bán đúng giá hưởng hoa hồng có phải lập hoá đơn GTGT?",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/xu-ly-mat-hoa-don-xoa-bo-da-xuat-hoa-don-khac-thay-the.html",
+      "title": "Xử lý mất hóa đơn xóa bỏ đã xuất hóa đơn khác thay thế",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "high",
+      "score": 7,
+      "rationale": "match 7 token, bỏ xa lựa chọn 2 (2)"
+    },
+    {
+      "href": "thu-vien/dieu-kien-de-chi-phi-lai-vay-hop-ly-hop-le.html",
+      "title": "Điều kiện để chi phí lãi vay hợp lý hợp lệ",
+      "topicLv2Key": "tndn",
+      "topicLv3Key": "doanh-thu-thu-nhap-tinh-thue",
+      "topicLv3Label": "Doanh thu/Thu nhập tính thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "match 5 token, bỏ xa lựa chọn 2 (1)"
+    },
+    {
+      "href": "thu-vien/dieu-kien-ghi-nhan-tai-san-co-dinh-moi-nhat.html",
+      "title": "Điều kiện ghi nhận tài sản cố định mới nhất",
+      "topicLv2Key": "tai-san-kho-ccdc",
+      "topicLv3Key": "hang-ton-kho-gia-xuat",
+      "topicLv3Label": "Hàng tồn kho/giá xuất kho",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/dieu-kien-giam-tru-gia-canh-cho-nguoi-phu-thuoc.html",
+      "title": "Điều kiện giảm trừ gia cảnh cho người phụ thuộc mới nhất 2026",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/uy-quyen-quyet-toan-thue-tncn.html",
+      "title": "Điều kiện ủy quyền quyết toán thuế thu nhập cá nhân 2026",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    },
+    {
+      "href": "thu-vien/don-de-nghi-cap-chung-tu-khau-tru-thue-tncn-mau-17-tncn.html",
+      "title": "Đơn đề nghị cấp chứng từ khấu trừ thuế TNCN mẫu 07/CTKT-TNCN",
+      "topicLv2Key": "tncn",
+      "topicLv3Key": "tinh-thue-bieu-thue",
+      "topicLv3Label": "Tính thuế/Biểu thuế",
+      "confidence": "auto-single-child",
+      "score": 999,
+      "rationale": "lv2 chỉ có 1 nhánh con"
+    }
+  ]
+}

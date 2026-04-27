@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-04-27T14:11:13.431622",
+  "inputCandidates": 1,
+  "appliedCount": 1,
+  "skippedCount": 0,
+  "articleMetaUpdated": 1,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/quy-dinh-ve-ky-ke-toan-chu-viet-chu-so-trong-ke-toan.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "topicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5
+    }
+  ],
+  "skippedRows": []
+}

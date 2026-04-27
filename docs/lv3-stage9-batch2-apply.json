@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-04-27T13:51:05.502261",
+  "inputCandidates": 7,
+  "appliedCount": 7,
+  "skippedCount": 0,
+  "articleMetaUpdated": 7,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/huong-dan-cach-ke-khai-thue-bao-ve-moi-truong.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "topicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-ke-khai-thue-tai-nguyen.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "topicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/mau-bang-tong-hop-du-lieu-hddt-gui-co-quan-thue.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "topicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/muc-phat-khai-khong-day-du-noi-dung-trong-ho-so-thue.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "topicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-126-2020-nd-cp-quy-dinh-chi-tiet-luat-quan-ly-thue.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "topicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-91-2014-nd-cp-sua-doi-bo-sung-quy-dinh-ve-thue.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "topicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-117-quy-dinh-quan-ly-thue-kinh-doanh-thuong-mai-dien-tu.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "topicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    }
+  ],
+  "skippedRows": []
+}

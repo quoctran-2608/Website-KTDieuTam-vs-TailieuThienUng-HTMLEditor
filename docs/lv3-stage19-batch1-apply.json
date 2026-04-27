@@ -1,0 +1,196 @@
+{
+  "generatedAt": "2026-04-27T14:49:59.773416",
+  "inputCandidates": 25,
+  "appliedCount": 25,
+  "skippedCount": 0,
+  "articleMetaUpdated": 25,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/chi-phi-ve-may-bay-hop-ly-can-chung-tu-gi.html",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv3Key": "chung-tu-cong-tac-thanh-toan",
+      "topicLv3Label": "Chứng từ công tác/thanh toán",
+      "reason": "rule-chung-tu-cong-tac"
+    },
+    {
+      "href": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-ke-toan-theo-luat-moi-nhat.html",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv3Key": "he-thong-chung-tu-mau-bieu",
+      "topicLv3Label": "Hệ thống chứng từ/mẫu biểu",
+      "reason": "rule-chung-tu-phap-ly"
+    },
+    {
+      "href": "thu-vien/cach-ghi-nho-he-thong-tai-khoan-ke-toan-nhanh-nhat.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hach-toan-dac-thu",
+      "topicLv3Label": "Nghiệp vụ đặc thù",
+      "reason": "rule-tk-he-thong-tai-khoan"
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-ke-khai-thue-theo-phuong-phap-khoan.html",
+      "topicLv2Key": "ho-ca-nhan-kinh-doanh",
+      "topicLv3Key": "thue-khoan-cnkd",
+      "topicLv3Label": "",
+      "reason": "rule-ho-cnkd-thue-khoan"
+    },
+    {
+      "href": "thu-vien/mau-thong-bao-tam-ngung-kinh-doanh-moi-nhat-mau-23.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-thong-bao-doanh-nghiep",
+      "topicLv3Label": "",
+      "reason": "rule-mau-dn-tam-ngung"
+    },
+    {
+      "href": "thu-vien/mau-bien-ban-giao-nhan-tscd-theo-qd-48-va-15.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-bieu-quan-tri-noi-bo",
+      "topicLv3Label": "",
+      "reason": "rule-mau-dn-giao-nhan-tscd"
+    },
+    {
+      "href": "thu-vien/mau-bang-kiem-ke-quy-ngoai-te-theo-qd-48-va-15.html",
+      "topicLv2Key": "mau-bieu-ke-toan",
+      "topicLv3Key": "mau-kiem-ke-doi-chieu",
+      "topicLv3Label": "",
+      "reason": "rule-mau-ke-toan-kiem-ke"
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-chi-tien-theo-qd-48-va-15.html",
+      "topicLv2Key": "mau-bieu-ke-toan",
+      "topicLv3Key": "mau-chung-tu-tien-thanh-toan",
+      "topicLv3Label": "Mẫu chứng từ tiền/thanh toán",
+      "reason": "rule-mau-ke-toan-bang-ke-chi"
+    },
+    {
+      "href": "thu-vien/mau-giay-de-nghi-tam-ung-theo-qd-48-va-15.html",
+      "topicLv2Key": "mau-bieu-ke-toan",
+      "topicLv3Key": "mau-chung-tu-tien-thanh-toan",
+      "topicLv3Label": "Mẫu chứng từ tiền/thanh toán",
+      "reason": "rule-mau-ke-toan-tam-ung"
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-cho-thue-chung-cu.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-hop-dong-thuong-mai",
+      "topicLv3Label": "",
+      "reason": "rule-mau-dn-hop-dong"
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-chuyen-nhuong-mot-phan-du-an-bat-dong-san.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-bieu-bat-dong-san",
+      "topicLv3Label": "",
+      "reason": "rule-mau-dn-bat-dong-san"
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-chuyen-nhuong-quyen-su-dung-dat-da-co-ha-tang-ky-thuat.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-bieu-bat-dong-san",
+      "topicLv3Label": "",
+      "reason": "rule-mau-dn-bat-dong-san"
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-chuyen-nhuong-toan-bo-du-an-bat-dong-san.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-bieu-bat-dong-san",
+      "topicLv3Label": "",
+      "reason": "rule-mau-dn-bat-dong-san"
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-muon-nha-lam-van-phong.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-hop-dong-thuong-mai",
+      "topicLv3Label": "",
+      "reason": "rule-mau-dn-hop-dong"
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-thue-tai-san-danh-cho-doanh-nghiep-moi-nhat.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-hop-dong-thuong-mai",
+      "topicLv3Label": "",
+      "reason": "rule-mau-dn-hop-dong"
+    },
+    {
+      "href": "thu-vien/mau-phieu-chi-theo-qd-48-va-15.html",
+      "topicLv2Key": "mau-bieu-ke-toan",
+      "topicLv3Key": "mau-phieu-thu-phieu-chi",
+      "topicLv3Label": "",
+      "reason": "rule-mau-ke-toan-phieu-chi"
+    },
+    {
+      "href": "thu-vien/mau-phieu-thu-theo-qd-48-va-15.html",
+      "topicLv2Key": "mau-bieu-ke-toan",
+      "topicLv3Key": "mau-phieu-thu-phieu-chi",
+      "topicLv3Label": "",
+      "reason": "rule-mau-ke-toan-phieu-thu"
+    },
+    {
+      "href": "thu-vien/mau-quyet-dinh-bo-nhiem-ke-toan-truong.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-bieu-quan-tri-noi-bo",
+      "topicLv3Label": "",
+      "reason": "rule-mau-dn-bo-nhiem"
+    },
+    {
+      "href": "thu-vien/mau-thong-bao-chung-tu-dien-tu-da-lap-sai.html",
+      "topicLv2Key": "mau-bieu-ke-toan",
+      "topicLv3Key": "mau-ke-khai-thue-gtgt-hoa-don",
+      "topicLv3Label": "",
+      "reason": "rule-mau-ke-toan-sai-chung-tu"
+    },
+    {
+      "href": "thu-vien/muc-phat-cham-nop-va-cong-khai-bao-cao-tai-chinh-moi-nhat.html",
+      "topicLv2Key": "lao-dong-tien-luong",
+      "topicLv3Key": "van-ban-lao-dong",
+      "topicLv3Label": "van-ban-lao-dong",
+      "reason": "rule-lao-dong-phat-bctc"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-174-quy-dinh-chinh-sach-giam-thue-gtgt.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "thue-suat-doi-tuong",
+      "topicLv3Label": "Thuế suất/Đối tượng chịu thuế",
+      "reason": "rule-gtgt-nghi-dinh-giam-thue"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-70-2025-nd-cp.html",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv3Key": "xu-ly-sai-sot-so-sach",
+      "topicLv3Label": "Xử lý sai sót sổ sách",
+      "reason": "rule-chung-tu-nghi-dinh-70"
+    },
+    {
+      "href": "thu-vien/nhung-ky-nang-tim-viec-trong-thoi-ky-suy-thoai.html",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv3Key": "kinh-nghiem-phong-van-xin-viec",
+      "topicLv3Label": "Kinh nghiệm/phỏng vấn/xin việc",
+      "reason": "rule-kinh-nghiem-tim-viec"
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-to-chuc-bo-may-ke-toan.html",
+      "topicLv2Key": "thu-tuc-doanh-nghiep",
+      "topicLv3Key": "dn-thu-tuc-quan-tri-ho-tro",
+      "topicLv3Label": "DN thủ tục quản trị/hỗ trợ",
+      "reason": "rule-thu-tuc-quan-tri"
+    },
+    {
+      "href": "thu-vien/trinh-tu-luan-chuyen-chung-tu-ke-toan.html",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv3Key": "he-thong-chung-tu-mau-bieu",
+      "topicLv3Label": "Hệ thống chứng từ/mẫu biểu",
+      "reason": "rule-chung-tu-luan-chuyen"
+    }
+  ],
+  "skippedRows": [],
+  "finalSummary": {
+    "md": "docs/lv3-final-summary.md",
+    "json": "docs/lv3-final-summary.json"
+  }
+}

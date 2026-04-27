@@ -17,51 +17,39 @@
     {
       "key": "thong-bao-tuyen-dung",
       "label": "Thông báo tuyển dụng",
-      "count": 22,
+      "count": 42,
       "children": [
         {
           "key": "",
           "label": "Thông báo tuyển dụng",
-          "count": 22
-        }
-      ]
-    },
-    {
-      "key": "co-so-dao-tao",
-      "label": "Cơ sở đào tạo",
-      "count": 21,
-      "children": [
-        {
-          "key": "",
-          "label": "Cơ sở đào tạo",
-          "count": 21
+          "count": 42
         }
       ]
     },
     {
       "key": "khoa-hoc-dao-tao",
       "label": "Khóa học & đào tạo",
-      "count": 15,
+      "count": 21,
       "children": [
         {
           "key": "khoa-hoc-ke-toan",
           "label": "Khóa học kế toán",
-          "count": 12
+          "count": 15
         },
         {
           "key": "khoa-hoc-excel",
           "label": "Khóa học Excel",
-          "count": 1
+          "count": 2
         },
         {
           "key": "khoa-hoc-misa",
           "label": "Khóa học MISA",
-          "count": 1
+          "count": 2
         },
         {
           "key": "khoa-hoc-thue",
           "label": "Khóa học thuế",
-          "count": 1
+          "count": 2
         }
       ]
     },
@@ -90,42 +78,6 @@
       ]
     },
     {
-      "key": "gioi-thieu",
-      "label": "Giới thiệu",
-      "count": 2,
-      "children": [
-        {
-          "key": "",
-          "label": "Giới thiệu",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "key": "khoa-hoc-ke-toan",
-      "label": "Khóa học kế toán",
-      "count": 2,
-      "children": [
-        {
-          "key": "",
-          "label": "Khóa học kế toán",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "key": "khoa-hoc-thue",
-      "label": "Khóa học thuế",
-      "count": 2,
-      "children": [
-        {
-          "key": "",
-          "label": "Khóa học thuế",
-          "count": 2
-        }
-      ]
-    },
-    {
       "key": "gioi-thieu-thuong-hieu",
       "label": "Giới thiệu & thương hiệu",
       "count": 1,
@@ -133,6 +85,18 @@
         {
           "key": "gioi-thieu",
           "label": "Giới thiệu",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "key": "khoa-hoc-ke-toan",
+      "label": "Khóa học kế toán",
+      "count": 1,
+      "children": [
+        {
+          "key": "",
+          "label": "Khóa học kế toán",
           "count": 1
         }
       ]
@@ -265,7 +229,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "GTGT - Hóa đơn",
+      "topic_label": "Ưu đãi học phí",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -289,7 +253,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "GTGT - Hóa đơn",
+      "topic_label": "Ưu đãi học phí",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -400,10 +364,10 @@
       "file": "cong-ty-co-phan-doorclick-tuyen-ke-toan-tong-hop-thue.htm",
       "title": "Công Ty Cổ Phần Doorclick Tuyển kế toán tổng hợp – Thuế",
       "excerpt": "Công Ty Cổ Phần Doorclick Tuyển kế toán tổng hợp – Thuế. Địa điểm làm việc: Phòng 1406, chung cư 4F, phố Trung Hòa, Cầu Giấy, Hà Nội. Lương cứng + phụ cấp ăn trưa + thưởng KPI từ 9 triệu – 12 triệu.",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -411,7 +375,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -448,10 +412,10 @@
       "file": "cong-ty-co-phan-houselink-tuyen-ke-toan-hanh-chinh-tong-hop.htm",
       "title": "Công ty Cổ Phần Houselink Tuyển kế toán hành chính tổng hợp",
       "excerpt": "Công ty Cổ Phần Houselink Tuyển kế toán hành chính tổng hợp. Địa điểm làm việc: Tòa nhà Sannam, 78 Duy Tân, phường Dịch Vọng Hậu, quận Cầu Giấy, HN. Thu nhập: 7-10tr",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -459,7 +423,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -472,10 +436,10 @@
       "file": "cong-ty-co-phan-houselink-tuyen-nhan-vien-ke-toan.htm",
       "title": "Công ty Cổ Phần Houselink Tuyển nhân viên kế toán",
       "excerpt": "Công ty Cổ Phần Houselink Tuyển nhân viên kế toán. Địa điểm làm việc: Tòa nhà Sannam, 78 Duy Tân, phường Dịch Vọng Hậu, quận Cầu Giấy, HN. Thu nhập: thoả thuận",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -483,7 +447,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -496,10 +460,10 @@
       "file": "cong-ty-co-phan-milano-viet-nam-tuyen-ke-toan-noi-bo.htm",
       "title": "Công ty Cổ phần MILANO Việt Nam Tuyển kế toán nội bộ",
       "excerpt": "Công ty Cổ phần MILANO Việt Nam Tuyển kế toán nội bộ. Địa chỉ: Số 36 Nguyễn Khang, tổ 40, phường Yên Hoà, Cầu Giấy, Hà Nội. Mức lương cứng theo thoả thuận: từ 7 đến 15 triệu;",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -507,7 +471,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -568,10 +532,10 @@
       "file": "cong-ty-co-phan-tap-doan-hoa-chat-nhua-tuyen-ke-toan-cong-truong.htm",
       "title": "Công ty Cổ phần Tập đoàn Hóa chất nhựa Tuyển Kế toán công trường",
       "excerpt": "Công ty Cổ phần Tập đoàn Hóa chất nhựa Tuyển Kế toán công trường. Nơi làm việc: Tại các dự án của Công ty ở Đông Triều - Quảng Ninh, Gia Lâm , Long Biên - Hà Nội. Lương: Thỏa thuận khi phỏng vấn",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -579,7 +543,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -616,10 +580,10 @@
       "file": "cong-ty-co-phan-waterpush-viet-nam-tuyen-nhan-vien-ke-toan.htm",
       "title": "Công ty Cổ phần WATERPUSH VIỆT NAM Tuyển nhân viên kế toán",
       "excerpt": "Công ty Cổ phần WATERPUSH VIỆT NAM Tuyển nhân viên kế toán làm việc tại Long Biên – Hà Nội. Mức lương 8 - 10 triệu. Được đóng BHXH, thưởng năm và các chế độ phúc lợi khác theo quy chế Công ty.",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -627,7 +591,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "BHXH - BHYT",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -640,10 +604,10 @@
       "file": "cong-ty-cp-dau-tu-o-to-bac-thu-do-tuyen-ke-toan-noi-bo.htm",
       "title": "Công Ty CP Đầu Tư Ô Tô Bắc Thủ Đô Tuyển kế toán nội bộ",
       "excerpt": "Công Ty CP Đầu Tư Ô Tô Bắc Thủ Đô Tuyển kế toán nội bộ. Địa Chỉ : 23 Duy Tân, Cầu Giấy, Hà Nội. Lương: từ 7-10tr",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -651,7 +615,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -664,10 +628,10 @@
       "file": "cong-ty-cp-dau-tu-va-du-lich-cpa-vietnam-tuyen-ke-toan-tong-hop.htm",
       "title": "Công ty CP Đầu tư và Du lịch CPA VIETNAM Tuyển kế toán tổng hợp",
       "excerpt": "Công ty CP Đầu tư và Du lịch CPA VIETNAM Tuyển kế toán tổng hợp. Địa chỉ: Tầng 9, Cao ốc Văn phòng VG Building, Số 235 Nguyễn Trãi, Thanh Xuân, Hà Nội. Mức lương phù hợp với năng lực chuyên môn",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -675,7 +639,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -712,10 +676,10 @@
       "file": "cong-ty-cp-cong-nghe-cao-nhat-minh-tuyen-nhan-vien-ke-toan.htm",
       "title": "Công ty CP Công nghệ cao Nhật Minh Tuyển nhân viên kế toán",
       "excerpt": "Công ty CP Công nghệ cao Nhật Minh Tuyển nhân viên kế toán. Địa chỉ: SỐ 140 Nguyễn Xiển, thanh xuân, hà nội. Lương Thỏa thuận theo năng lực",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -723,7 +687,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -784,10 +748,10 @@
       "file": "cong-ty-cp-tap-doan-dong-do-tuyen-ke-toan-tong-hop.htm",
       "title": "Công ty CP Tập đoàn Đông Đô Tuyển kế toán tổng hợp",
       "excerpt": "Công ty CP Tập đoàn Đông Đô Tuyển kế toán tổng hợp. Nơi làm việc: Số 219 Trung Kính, Yên Hòa, Cầu Giấy, Hà Nội. Mức lương chính: 8.000.000 –15.000.000 VND/Tháng",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -795,7 +759,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1061,10 +1025,10 @@
       "file": "cong-ty-tnhh-dau-tu-thuong-mai-va-dich-vu-mat-troi-moi-tuyen-ke-toan-tong-hop.htm",
       "title": "Công ty TNHH đầu tư thương mại và dịch vụ Mặt Trời Mới Tuyển kế toán tổng hợp",
       "excerpt": "Công ty TNHH đầu tư thương mại và dịch vụ Mặt Trời Mới Tuyển kế toán tổng hợp. Địa điểm làm việc: Toà nhà N04B1, phố Thành Thái, phường Dịch Vọng, quận Cầu Giấy, Hà Nội. Thu nhập: 8 -10 triệu dựa trên năng lực và kinh nghiệm (trao đổi trực tiếp trong buổi phỏng vấn)",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1072,7 +1036,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1085,10 +1049,10 @@
       "file": "cong-ty-tnhh-dau-tu-va-phat-trien-trung-chinh-tuyen-ke-toan-thue-va-ngan-hang.htm",
       "title": "Công ty TNHH Đầu tư và Phát triển Trung Chính Tuyển kế toán Thuế và Ngân hàng",
       "excerpt": "Công ty TNHH Đầu tư và Phát triển Trung Chính Tuyển kế toán Thuế và Ngân hàng. Địa điểm làm việc: Số nhà 13 dãy B8 Đầm Trấu, phường Bạch Đằng, quận Hai Bà Trưng, Hà Nội. Thu nhập: 6-8 triệu tùy năng lực",
-      "topic_lv1_key": "khoa-hoc-thue",
-      "topic_lv1_label": "Khóa học thuế",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Khóa học thuế",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1096,7 +1060,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Khóa học thuế",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1181,10 +1145,10 @@
       "file": "cong-ty-tnhh-kiem-toan-va-tham-dinh-gia-vn-tuyen-thuc-tap-ke-toan.htm",
       "title": "Công ty TNHH Kiểm toán và Thẩm định giá VN tuyển thực tập kế toán",
       "excerpt": "Chi nhánh Công ty TNHH Kiểm toán và Thẩm định giá VN tại Hà Nội: Tuyển thực tập kế toán, kiểm toán; Trợ cấp 3.000.000VNĐ/ tháng. Địa chỉ: VP6-3, Tòa nhà Comatce, 61 Ngụy Như Kon Tum, Nhân Chính, HN",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1192,7 +1156,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1205,10 +1169,10 @@
       "file": "cong-ty-tnhh-nam-long-ha-noi-tuyen-ke-toan-thue.htm",
       "title": "Công ty TNHH Nam Long Hà Nội Tuyển kế toán Thuế",
       "excerpt": "Công ty TNHH Nam Long Hà Nội Tuyển kế toán Thuế. Ưu tiên ứng viên khu vực Long Biên và khu vực lân cận. Mức lương: 8-10 triệu (Tùy theo mức độ hoàn thành công việc).",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1216,7 +1180,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1229,10 +1193,10 @@
       "file": "cong-ty-tnhh-san-xuat-thuc-an-chan-nuoi-dai-hung-tuyen-ke-toan.htm",
       "title": "Công ty TNHH Sản Xuất Thức Ăn Chăn Nuôi Đại Hưng Tuyển kế toán",
       "excerpt": "Công ty TNHH Sản Xuất Thức Ăn Chăn Nuôi Đại Hưng Tuyển kế toán. Địa chỉ: C10/29B, Quốc lộ 1, Thị trấn Tân Túc, Huyện Bình Chánh, TP. HCM. Lương từ 6 đến 8 triệu đồng",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1240,7 +1204,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1277,10 +1241,10 @@
       "file": "cong-ty-tnhh-tm-va-dvsx-noi-that-dalita-tuyen-ke-toan-noi-bo.htm",
       "title": "Công ty TNHH TM và DVSX nội thất DALITA Tuyển kế toán nội bộ",
       "excerpt": "Công ty TNHH TM và DVSX nội thất DALITA Tuyển kế toán nội bộ. Địa chỉ làm việc: Chung cư Hateco Yên Sở, Hoàng Mai, Hà Nội. Mức lương từ 6 tới 8 triệu.",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1288,7 +1252,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1301,10 +1265,10 @@
       "file": "cong-ty-tnhh-tu-van-dai-ha-tuyen-nhan-vien-tu-van-ke-toan.htm",
       "title": "Công ty TNHH Tư vấn Đại Hà Tuyển nhân viên tư vấn kế toán",
       "excerpt": "Công ty TNHH Tư vấn Đại Hà Tuyển nhân viên tư vấn kế toán. Địa chỉ: VP 6-3, Tầng 6, Comatce Tower, 61 Ngụy Như Kon Tum, Nhân Chính, Thanh Xuân, Hà Nội. Thu nhập từ 8 -15 triệu.",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1312,7 +1276,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1349,10 +1313,10 @@
       "file": "cong-ty-tnhh-tu-van-ao-tao-dieu-tam-tuyen-dung-ke-toan.htm",
       "title": "Công ty TNHH Tư vấn & Đào tạo Diệu Tâm tuyển dụng kế toán",
       "excerpt": "Công ty TNHH Tư vấn & Đào tạo Diệu Tâm tuyển dụng kế toán thuế + Tổng hợp. Địa điểm làm việc: Tại các cơ sở của Cty: Cầu Giấy, Thanh Xuân, Quận 3 TP.HCM. Mức lương: 10 - 20tr/tháng",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1360,7 +1324,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1373,10 +1337,10 @@
       "file": "cong-ty-tnhh-vat-tu-y-te-minh-long-tuyen-ke-toan-tong-hop.htm",
       "title": "Công ty TNHH Vật tư y tế Minh Long Tuyển kế toán tổng hợp",
       "excerpt": "Công ty TNHH Vật tư y tế Minh Long Tuyển kế toán tổng hợp. Địa điểm: 813 Giải Phóng- Hoàng Mai- Hà Nội. Mức lương: 8tr-10tr và có thể hơn tùy năng lực",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1384,7 +1348,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Cơ sở đào tạo",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1704,10 +1668,10 @@
       "file": "khoa-hoc-ke-toan-cho-nguoi-chua-biet-gi-tu-dau.htm",
       "title": "Khóa Học Kế Toán Tổng Hợp Trọn gói dành cho người mới bắt đầu hoặc đã quên",
       "excerpt": "Đây là khóa học dạy cả lý thuyết và thực hành dành cho những bạn chưa học gì về kế toán hoặc trước đó đã học nhưng lâu không dùng nên bị quên muốn học lại để đi làm kế toán tổng hợp",
-      "topic_lv1_key": "khoa-hoc-thue",
-      "topic_lv1_label": "Khóa học thuế",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Khóa học thuế",
+      "topic_lv1_key": "khoa-hoc-dao-tao",
+      "topic_lv1_label": "Khóa học & đào tạo",
+      "topic_lv2_key": "khoa-hoc-ke-toan",
+      "topic_lv2_label": "Khóa học kế toán",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1715,7 +1679,7 @@
         "Thông tin"
       ],
       "badge_label": "Khóa học thuế",
-      "topic_label": "Khóa học thuế",
+      "topic_label": "Khóa học kế toán",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1780,9 +1744,9 @@
       "file": "khoa-hoc-nguyen-ly-ke-toan-danh-cho-nguoi-moi-bat-dau.htm",
       "title": "Khóa Học Nguyên Lý Kế Toán dành cho người mới bắt đầu",
       "excerpt": "Khóa Học Nguyên Lý Kế Toán là khóa dành cho người mới bắt đầu hoặc đã học nhưng bị quên. Dạy cách định khoản hạch toán chuẩn, cách xử lý các nghiệp vụ kinh tế phát sinh trong doanh nghiệp để hạch toán ghi sổ kế toán",
-      "topic_lv1_key": "khoa-hoc-ke-toan",
-      "topic_lv1_label": "Khóa học kế toán",
-      "topic_lv2_key": "",
+      "topic_lv1_key": "khoa-hoc-dao-tao",
+      "topic_lv1_label": "Khóa học & đào tạo",
+      "topic_lv2_key": "khoa-hoc-ke-toan",
       "topic_lv2_label": "Khóa học kế toán",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
@@ -1830,10 +1794,10 @@
       "file": "lop-hoc-ke-toan-thue-thuc-hanh-thuc-te-tai-ha-noi.htm",
       "title": "Khóa Học Thực Hành Kế Toán Thuế Thực Tế",
       "excerpt": "Đây là khóa học dạy thực hành xử lý hóa đơn chứng từ kế toán, dạy cách kê khai làm báo cáo thuế theo tháng, theo quý và quyết toán thuế cuối năm",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "khoa-hoc-dao-tao",
+      "topic_lv1_label": "Khóa học & đào tạo",
+      "topic_lv2_key": "khoa-hoc-thue",
+      "topic_lv2_label": "Khóa học thuế",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1841,7 +1805,7 @@
         "Thông tin"
       ],
       "badge_label": "Cơ sở đào tạo",
-      "topic_label": "Địa điểm học",
+      "topic_label": "Khóa học thuế",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1854,10 +1818,10 @@
       "file": "khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.htm",
       "title": "Khóa Học Thực Hành Kế Toán Tổng Hợp cho người đã biết về kế toán",
       "excerpt": "Khóa học kế toán tổng hợp thực tế Online tốt nhất chỉ có ở Kế toán Diệu Tâm: Học thực hành kế toán tổng hợp trên chứng từ thực tế như đi làm tại Doanh nghiệp.",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "khoa-hoc-dao-tao",
+      "topic_lv1_label": "Khóa học & đào tạo",
+      "topic_lv2_key": "khoa-hoc-ke-toan",
+      "topic_lv2_label": "Khóa học kế toán",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1865,7 +1829,7 @@
         "Thông tin"
       ],
       "badge_label": "Cơ sở đào tạo",
-      "topic_label": "Địa điểm học",
+      "topic_label": "Khóa học kế toán",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1931,10 +1895,10 @@
       "file": "khoa-hoc-ke-toan-tren-excel-thuc-hanh-tai-ha-noi.htm",
       "title": "Khóa Học Thực Hành Kế Toán Trên Excel",
       "excerpt": "Khóa học Excel Kế toán Diệu Tâm: Học thực hành kế toán trên Excel bằng chứng từ thực tế tại Hà Nội – TPHCM, từ cơ bản đến lên Báo cáo tài chính trên Excel.",
-      "topic_lv1_key": "co-so-dao-tao",
-      "topic_lv1_label": "Cơ sở đào tạo",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Cơ sở đào tạo",
+      "topic_lv1_key": "khoa-hoc-dao-tao",
+      "topic_lv1_label": "Khóa học & đào tạo",
+      "topic_lv2_key": "khoa-hoc-excel",
+      "topic_lv2_label": "Khóa học Excel",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1942,7 +1906,7 @@
         "Thông tin"
       ],
       "badge_label": "Cơ sở đào tạo",
-      "topic_label": "Địa điểm học",
+      "topic_label": "Khóa học Excel",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -1982,10 +1946,10 @@
       "file": "khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.htm",
       "title": "Khóa Học Thực Hành Kế Toán Trên Phần Mềm Misa",
       "excerpt": "Đây là khóa học dạy thực hành lên sổ sách, lập báo cáo tài chính trên phần mềm kế toán Misa bằng hóa đơn chứng từ thực tế",
-      "topic_lv1_key": "gioi-thieu",
-      "topic_lv1_label": "Giới thiệu",
-      "topic_lv2_key": "",
-      "topic_lv2_label": "Giới thiệu",
+      "topic_lv1_key": "khoa-hoc-dao-tao",
+      "topic_lv1_label": "Khóa học & đào tạo",
+      "topic_lv2_key": "khoa-hoc-misa",
+      "topic_lv2_label": "Khóa học MISA",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -1993,7 +1957,7 @@
         "Thông tin"
       ],
       "badge_label": "Giới thiệu",
-      "topic_label": "Giới thiệu",
+      "topic_label": "Khóa học MISA",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -2211,7 +2175,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "GTGT - Hóa đơn",
+      "topic_label": "Ưu đãi học phí",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -2235,7 +2199,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Thuế TNDN",
+      "topic_label": "Khóa học kế toán",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",
@@ -2248,10 +2212,10 @@
       "file": "trung-tam-thuy-loi-mien-nui-phia-bac-tuyen-ke-toan-truong-va-noi-bo.htm",
       "title": "Trung tâm thủy lợi miền núi phía Bắc Tuyển kế toán trưởng và nội bộ",
       "excerpt": "Trung tâm thủy lợi miền núi phía Bắc Tuyển kế toán trưởng và nội bộ. Địa chỉ: P2807 Tháp A, tòa nhà Hồ Gươm Plaza, Trần Phú, Hà Đông, Hà Nội. Mức lương: từ 10 triệu kế toán trưởng, thỏa thuận kế toán nội bộ",
-      "topic_lv1_key": "gioi-thieu",
-      "topic_lv1_label": "Giới thiệu",
+      "topic_lv1_key": "thong-bao-tuyen-dung",
+      "topic_lv1_label": "Thông báo tuyển dụng",
       "topic_lv2_key": "",
-      "topic_lv2_label": "Giới thiệu",
+      "topic_lv2_label": "Thông báo tuyển dụng",
       "topic_lv3_key": "",
       "topic_lv3_label": "",
       "tags": [
@@ -2259,7 +2223,7 @@
         "Thông tin"
       ],
       "badge_label": "Cập nhật",
-      "topic_label": "Giới thiệu",
+      "topic_label": "Thông báo tuyển dụng",
       "library_kind_key": "",
       "library_kind_label": "",
       "tool_lv3_key": "",

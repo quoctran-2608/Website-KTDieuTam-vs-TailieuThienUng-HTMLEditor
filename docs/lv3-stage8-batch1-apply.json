@@ -1,0 +1,143 @@
+{
+  "generatedAt": "2026-04-27T13:34:36.990990",
+  "inputCandidates": 14,
+  "appliedCount": 14,
+  "skippedCount": 0,
+  "articleMetaUpdated": 14,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/cong-van-4868-tct-cs-gioi-thieu-cac-noi-dung-moi-nghi-dinh-123.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/cong-van-so-1839-tct-cs-noi-dung-moi-cua-thong-tu-39.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/thong-tu-133-2016-huong-dan-che-do-ke-toan-dn-nho-va-vua.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/thong-tu-302-2016-tt-btc-quy-dinhh-ve-le-phi-mon-bai.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Thông tư Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 2"
+    },
+    {
+      "href": "thu-vien/thong-tu-01-2021-tt-bkhdt-quy-dinh-ve-dang-ky-doanh-nghiep.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-ho-ca-nhan-kinh-doanh",
+      "topicLv3Label": "Thông tư Hộ/Cá nhân kinh doanh",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 2"
+    },
+    {
+      "href": "thu-vien/thong-tu-132-2018-tt-btc-che-do-ke-toan-cho-dn-sieu-nho.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-tndn",
+      "topicLv3Label": "Thông tư TNDN",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/thong-tu-151-2014-tt-btc-quy-dinh-ve-thue.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-chinh-sach-chung",
+      "topicLv3Label": "Thông tư Chính sách chung",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/thong-tu-37-2017-tt-btc-quy-dinh-ve-thong-bao-phat-hanh-hoa-don.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-gtgt-hoa-don",
+      "topicLv3Label": "Thông tư GTGT/Hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 2"
+    },
+    {
+      "href": "thu-vien/thong-tu-75-2015-ngay-18-05-2015-cua-bo-tai-chinh.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-tndn",
+      "topicLv3Label": "Thông tư TNDN",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/thong-tu-88-2020-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-gtgt-hoa-don",
+      "topicLv3Label": "Thông tư GTGT/Hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/thong-tu-93-2017-tt-btc-bai-bo-dang-ky-phuong-phap-tinh-thue.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-gtgt-hoa-don",
+      "topicLv3Label": "Thông tư GTGT/Hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/thong-tu-so-10-2014-tt-btc-muc-xu-phat-vi-pham-ve-hoa-don.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-gtgt-hoa-don",
+      "topicLv3Label": "Thông tư GTGT/Hóa đơn",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/thong-tu-so-138-2011-tt-btc-sua-doi-bo-sung-qd-so-48-2006-qd-btc.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-tndn",
+      "topicLv3Label": "Thông tư TNDN",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/thong-tu-so-244-2009-tt-btc-sua-doi-bo-sung-qd-15-2006-qd-btc.html",
+      "topicLv2Key": "thong-tu",
+      "topicLv3Key": "thong-tu-tndn",
+      "topicLv3Label": "Thông tư TNDN",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 1"
+    }
+  ],
+  "skippedRows": []
+}

@@ -1,0 +1,162 @@
+{
+  "generatedAt": "2026-04-27T14:45:24.474581",
+  "scope": {
+    "targets": 22,
+    "applied": 16,
+    "skipped": 6
+  },
+  "articleMetaUpdated": 16,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/cac-bao-cao-thue-hang-quy-phai-nop-cho-co-quan-thue.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "bao-cao-bang-ke",
+      "topicLv3Label": "Báo cáo/Bảng kê",
+      "reason": "rule-gtgt-bao-cao-bang-ke"
+    },
+    {
+      "href": "thu-vien/cach-viet-mau-01b-hsb-danh-sach-huong-che-do-thai-san.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "che-do-muc-huong",
+      "topicLv3Label": "Chế độ/Mức hưởng",
+      "reason": "rule-bh-che-do"
+    },
+    {
+      "href": "thu-vien/cach-viet-mau-c70a-hd-danh-sach-huong-che-do-thai-san.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "che-do-muc-huong",
+      "topicLv3Label": "Chế độ/Mức hưởng",
+      "reason": "rule-bh-che-do"
+    },
+    {
+      "href": "thu-vien/huong-dan-viet-to-khai-tham-gia-bhxh-bhyt-bhtn-mau-tk01-ts.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "ho-so-thu-tuc",
+      "topicLv3Label": "Hồ sơ/Thủ tục",
+      "reason": "rule-bh-ho-so-tk1-ts"
+    },
+    {
+      "href": "thu-vien/doi-tuong-ke-khai-thue-gtgt-theo-quy.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "thue-suat-doi-tuong",
+      "topicLv3Label": "Thuế suất/Đối tượng chịu thuế",
+      "reason": "rule-gtgt-thue-suat-doi-tuong"
+    },
+    {
+      "href": "thu-vien/muc-phat-khai-sai-ho-so-bhxh-bhtn-moi-nhat.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "vi-pham-xu-phat",
+      "topicLv3Label": "Vi phạm/Xử phạt",
+      "reason": "rule-bh-vi-pham"
+    },
+    {
+      "href": "thu-vien/muc-phat-su-dung-hoa-don-khong-hop-phap.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "reason": "rule-gtgt-lap-xu-ly-hoa-don"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-100-2016-nd-cp-quy-dinh-ve-luat-thue-gia-tri-gia-tang-ttdb.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "thue-suat-doi-tuong",
+      "topicLv3Label": "Thuế suất/Đối tượng chịu thuế",
+      "reason": "rule-gtgt-thue-suat-doi-tuong"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-181-quy-dinh-ve-thue-gia-tri-gia-tang.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "thue-suat-doi-tuong",
+      "topicLv3Label": "Thuế suất/Đối tượng chịu thuế",
+      "reason": "rule-gtgt-thue-suat-doi-tuong"
+    },
+    {
+      "href": "thu-vien/noi-dung-khong-bat-buoc-ghi-tren-hoa-don-gtgt.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "reason": "rule-gtgt-lap-xu-ly-hoa-don"
+    },
+    {
+      "href": "thu-vien/quy-dinh-muc-phu-cap-tien-dien-thoai-cho-nhan-vien.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "hach-toan-chi-phi-bao-hiem",
+      "topicLv3Label": "Hạch toán/Chi phí bảo hiểm",
+      "reason": "rule-bh-hach-toan-phu-cap"
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-bao-hiem-that-nghep-moi-nhat.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "van-ban-chinh-sach",
+      "topicLv3Label": "Văn bản/Chính sách",
+      "reason": "rule-bh-chinh-sach"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-1040-qd-bhxh-bao-cao-su-dung-lao-dong-va-danh-sach-tham-gia-bhxh.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "doi-tuong-muc-dong",
+      "topicLv3Label": "Đối tượng/Mức đóng",
+      "reason": "rule-bh-doi-tuong-muc-dong"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-959-qd-bhxh-quan-ly-thu-bhxh-bhyt-bhtn.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "doi-tuong-muc-dong",
+      "topicLv3Label": "Đối tượng/Mức đóng",
+      "reason": "rule-bh-doi-tuong-muc-dong"
+    },
+    {
+      "href": "thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-gia-tri-gia-tang.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "reason": "rule-gtgt-lap-xu-ly-hoa-don"
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-ty-le-dong-bhxh-bhyt-bhtn-moi-nhat.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "doi-tuong-muc-dong",
+      "topicLv3Label": "Đối tượng/Mức đóng",
+      "reason": "rule-bh-doi-tuong-muc-dong"
+    }
+  ],
+  "skippedRows": [
+    {
+      "href": "thu-vien/bang-thue-xuat-khau-moi-nhat.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-match-gtgt"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-san-xuat-kinh-doanh-do-dang-tai-khoan-154.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-match-gtgt"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cac-khoan-tam-ung-tai-khoan-141.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-match-gtgt"
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-nhap-kho-hang-hoa-thanh-pham-nguyen-vat-lieu.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-match-gtgt"
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-tieu-thu-dac-biet-phai-nop.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-match-gtgt"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-174-quy-dinh-chinh-sach-giam-thue-gtgt.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "reason": "no-match-gtgt"
+    }
+  ]
+}

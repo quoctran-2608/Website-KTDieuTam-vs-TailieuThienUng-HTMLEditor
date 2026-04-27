@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-04-27T13:41:48.505452",
+  "inputCandidates": 7,
+  "appliedCount": 7,
+  "skippedCount": 0,
+  "articleMetaUpdated": 7,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/bao-cao-tai-san-co-dinh-tai-cong-ty-cpdt-va-tm-bach-gia.html",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv3Key": "thuc-tap-chi-phi-gia-thanh",
+      "topicLv3Label": "Thực tập chi phí/giá thành",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/muc-phat-vi-pham-lien-quan-den-chung-tu-so-sach-ke-toan.html",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv3Key": "xu-ly-sai-sot-so-sach",
+      "topicLv3Label": "Xử lý sai sót sổ sách",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/ban-hang-hoa-thap-hon-gia-von.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hang-ton-kho-gia-thanh",
+      "topicLv3Label": "Hàng tồn kho/Giá thành",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-hang-gui-dai-ly-ban-dung-gia-huong-hoa-hong.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "hang-ton-kho-gia-thanh",
+      "topicLv3Label": "Hàng tồn kho/Giá thành",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-nguon-von-kinh-doanh-tai-khoan-411.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "von-dau-tu",
+      "topicLv3Label": "Vốn/Đầu tư",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-tien-dat-coc-nhan-tien-dat-coc.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "tien-quy-ngan-hang",
+      "topicLv3Label": "Tiền/Quỹ/Ngân hàng",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    },
+    {
+      "href": "thu-vien/tai-khoan-ngan-hang-khong-dang-ky-voi-co-quan-thue.html",
+      "topicLv2Key": "thu-tuc-doanh-nghiep",
+      "topicLv3Key": "dn-thu-tuc-quan-tri-ho-tro",
+      "topicLv3Label": "DN thủ tục quản trị/hỗ trợ",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 1"
+    }
+  ],
+  "skippedRows": []
+}

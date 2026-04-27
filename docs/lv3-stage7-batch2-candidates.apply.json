@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-04-27T13:25:45.190754",
+  "policy": "stage7-batch2-safe(lv2 in cong-van/gtgt/htkk, high,margin>=2,score>=4)",
+  "records": [
+    {
+      "href": "thu-vien/cong-van-so-2200-ve-chinh-sach-thue-nha-thau.html",
+      "title": "Công văn số 2200 về chính sách thuế nhà thầu mới nhất năm 2025",
+      "topicLv1Key": "thue",
+      "topicLv1Label": "Thuế - Hóa đơn",
+      "topicLv2Key": "cong-van",
+      "topicLv2Label": "Công văn",
+      "candidateCount": 2,
+      "suggestedTopicLv3Key": "cong-van-chinh-sach-chung",
+      "suggestedTopicLv3Label": "Công văn Chính sách chung",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 1,
+      "rationale": "top 5, cách biệt 4",
+      "topCandidates": [
+        {
+          "key": "cong-van-chinh-sach-chung",
+          "label": "Công văn Chính sách chung",
+          "score": 5
+        },
+        {
+          "key": "cong-van-ke-khai-quan-ly-thue",
+          "label": "Công văn Kê khai/Quản lý thuế",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/cong-van-1434-tct-kk-tiep-nhan-mau-06-gtgt-den-30-4-2016.html",
+      "title": "Công văn 1434/TCT-KK tiếp nhận mẫu 06/GTGT đến 30/4/2016",
+      "topicLv1Key": "thue",
+      "topicLv1Label": "Thuế - Hóa đơn",
+      "topicLv2Key": "cong-van",
+      "topicLv2Label": "Công văn",
+      "candidateCount": 2,
+      "suggestedTopicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "suggestedTopicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 1,
+      "rationale": "top 4, cách biệt 3",
+      "topCandidates": [
+        {
+          "key": "cong-van-ke-khai-quan-ly-thue",
+          "label": "Công văn Kê khai/Quản lý thuế",
+          "score": 4
+        },
+        {
+          "key": "cong-van-chinh-sach-chung",
+          "label": "Công văn Chính sách chung",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/cong-van-17709-btc-tct-quy-dinh-thue-gtgt-1-so-mat-hang.html",
+      "title": "Công văn 17709/BTC-TCT quy định thuế GTGT với 1 số mặt hàng",
+      "topicLv1Key": "thue",
+      "topicLv1Label": "Thuế - Hóa đơn",
+      "topicLv2Key": "cong-van",
+      "topicLv2Label": "Công văn",
+      "candidateCount": 2,
+      "suggestedTopicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "suggestedTopicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 1,
+      "rationale": "top 4, cách biệt 3",
+      "topCandidates": [
+        {
+          "key": "cong-van-ke-khai-quan-ly-thue",
+          "label": "Công văn Kê khai/Quản lý thuế",
+          "score": 4
+        },
+        {
+          "key": "cong-van-chinh-sach-chung",
+          "label": "Công văn Chính sách chung",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/cong-van-5189-tct-cs-gioi-thieu-cac-noi-dung-moi-nghi-dinh-126.html",
+      "title": "Công văn 5189/TCT-CS Giới thiệu các nội dung mới Nghị định 126",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "cong-van",
+      "topicLv2Label": "Công văn",
+      "candidateCount": 2,
+      "suggestedTopicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "suggestedTopicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 1,
+      "rationale": "top 4, cách biệt 3",
+      "topCandidates": [
+        {
+          "key": "cong-van-ke-khai-quan-ly-thue",
+          "label": "Công văn Kê khai/Quản lý thuế",
+          "score": 4
+        },
+        {
+          "key": "cong-van-chinh-sach-chung",
+          "label": "Công văn Chính sách chung",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/cong-van-so-2247-ve-hoan-thue-gtgt.html",
+      "title": "Công văn số 2247 về hoàn thuế GTGT mới nhất năm 2025",
+      "topicLv1Key": "thue",
+      "topicLv1Label": "Thuế - Hóa đơn",
+      "topicLv2Key": "cong-van",
+      "topicLv2Label": "Công văn",
+      "candidateCount": 2,
+      "suggestedTopicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "suggestedTopicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 1,
+      "rationale": "top 4, cách biệt 3",
+      "topCandidates": [
+        {
+          "key": "cong-van-ke-khai-quan-ly-thue",
+          "label": "Công văn Kê khai/Quản lý thuế",
+          "score": 4
+        },
+        {
+          "key": "cong-van-chinh-sach-chung",
+          "label": "Công văn Chính sách chung",
+          "score": 1
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    "thu-vien/cong-van-4064-bhxh-thu-quy-dinh-ve-bhxh-bhyt-bhtn.html",
+    "thu-vien/cong-van-5106-ve-muc-tien-an-trua-tien-an-giua-ca.html"
+  ]
+}

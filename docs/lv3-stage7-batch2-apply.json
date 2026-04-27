@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-04-27T13:28:53.992418",
+  "inputCandidates": 5,
+  "appliedCount": 5,
+  "skippedCount": 0,
+  "articleMetaUpdated": 5,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/cong-van-so-2200-ve-chinh-sach-thue-nha-thau.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-chinh-sach-chung",
+      "topicLv3Label": "Công văn Chính sách chung",
+      "confidence": "high",
+      "score": 5,
+      "rationale": "top 5, cách biệt 4"
+    },
+    {
+      "href": "thu-vien/cong-van-1434-tct-kk-tiep-nhan-mau-06-gtgt-den-30-4-2016.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 3"
+    },
+    {
+      "href": "thu-vien/cong-van-17709-btc-tct-quy-dinh-thue-gtgt-1-so-mat-hang.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 3"
+    },
+    {
+      "href": "thu-vien/cong-van-5189-tct-cs-gioi-thieu-cac-noi-dung-moi-nghi-dinh-126.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 3"
+    },
+    {
+      "href": "thu-vien/cong-van-so-2247-ve-hoan-thue-gtgt.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4,
+      "rationale": "top 4, cách biệt 3"
+    }
+  ],
+  "skippedRows": []
+}

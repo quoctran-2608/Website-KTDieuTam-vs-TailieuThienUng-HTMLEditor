@@ -1,0 +1,181 @@
+{
+  "generatedAt": "2026-04-27T11:30:09.790824",
+  "policy": "stage4-batch2-safe-allowlist",
+  "allowSetSize": 18,
+  "candidateCount": 18,
+  "appliedCount": 18,
+  "skippedCount": 0,
+  "articleMetaUpdated": 18,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/cach-lam-tron-so-khi-viet-hoa-don.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/cach-viet-hinh-thuc-thanh-toan-tren-hoa-don-gia-tri-gia-tang.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/ma-hoa-don-cua-cuc-thue-cac-tinh-thanh-pho.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-123-2020-nd-cp-quy-dinh-ve-hoa-don-chung-tu.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-125-2020-nd-cp-quy-dinh-xu-phat-ve-hoa-don-va-thue.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/nguyen-tac-lap-hoa-don-gia-tri-gia-tang-theo-thong-tu-64.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/phan-biet-hoa-don-ban-hang-va-hoa-don-gia-tri-gia-tang.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/phan-biet-xoa-bo-va-huy-hoa-don-tren-bao-cao-su-dung-hoa-don.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-tieu-huy-hoa-don-chung-tu-dien-tu-moi-nhat.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/xu-ly-khi-viet-sai-so-tien-bang-chu-tren-hoa-don-gtgt.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "lap-xu-ly-hoa-don",
+      "topicLv3Label": "Lập/Xử lý hóa đơn",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/cach-dinh-khoan-thue-gtgt-duoc-khau-tru.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "khau-tru-hoan-thue",
+      "topicLv3Label": "Khấu trừ/Hoàn thuế",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/thue-gtgt-vang-lai-co-duoc-khau-tru.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "khau-tru-hoan-thue",
+      "topicLv3Label": "Khấu trừ/Hoàn thuế",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-119-2018-nd-cp-quy-dinh-hoa-don-dien-tu-khi-ban-hang.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "hoa-don-dien-tu",
+      "topicLv3Label": "Hóa đơn điện tử",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/noi-dung-ghi-tren-hoa-don-gtgt-bat-buoc.html",
+      "topicLv2Key": "gtgt-hoa-don",
+      "topicLv3Key": "hoa-don-dien-tu",
+      "topicLv3Label": "Hóa đơn điện tử",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/mau-giay-de-nghi-thanh-toan-theo-qd-48-va-15.html",
+      "topicLv2Key": "mau-bieu-ke-toan",
+      "topicLv3Key": "mau-chung-tu-tien-thanh-toan",
+      "topicLv3Label": "Mẫu chứng từ tiền/thanh toán",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/muc-phat-khi-lap-va-trinh-bay-bctc-co-sai-sot.html",
+      "topicLv2Key": "bao-cao-tai-chinh",
+      "topicLv3Key": "nguyen-tac-trinh-bay-bctc",
+      "topicLv3Label": "Nguyên tắc trình bày BCTC",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/nguyen-tac-chung-tu-ke-toan-lap-ky-noi-dung.html",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv3Key": "chung-tu-cong-tac-thanh-toan",
+      "topicLv3Label": "Chứng từ công tác/thanh toán",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cac-khoan-chi-phi-khac-tai-khoan-811.html",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv3Key": "doanh-thu-chi-phi-kqkd",
+      "topicLv3Label": "Doanh thu/Chi phí/KQKD",
+      "confidence": "medium",
+      "score": 3,
+      "rationale": "match 3 token; cần rà soát nhẹ"
+    }
+  ],
+  "skippedRows": []
+}

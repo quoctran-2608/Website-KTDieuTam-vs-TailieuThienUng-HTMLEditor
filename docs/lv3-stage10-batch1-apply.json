@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-04-27T13:55:31.075968",
+  "inputCandidates": 8,
+  "appliedCount": 8,
+  "skippedCount": 0,
+  "articleMetaUpdated": 8,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/mau-hop-dong-cho-thue-nha-mat-dat.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-to-khai-thue-tndn",
+      "topicLv3Label": "Mẫu tờ khai thuế TNDN",
+      "confidence": "high",
+      "score": 5,
+      "ov3": 2
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-cho-thue-quyen-su-dung-dat-da-co-ha-tang-ky-thuat.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-to-khai-thue-tndn",
+      "topicLv3Label": "Mẫu tờ khai thuế TNDN",
+      "confidence": "high",
+      "score": 5,
+      "ov3": 2
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-chuyen-nhuong-mua-ban-cho-thue-nha-o-cong-trinh.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-to-khai-thue-tndn",
+      "topicLv3Label": "Mẫu tờ khai thuế TNDN",
+      "confidence": "high",
+      "score": 5,
+      "ov3": 2
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-mua-ban-cho-thue-cong-trinh-xay-dung.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-to-khai-thue-tndn",
+      "topicLv3Label": "Mẫu tờ khai thuế TNDN",
+      "confidence": "high",
+      "score": 5,
+      "ov3": 2
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-mua-ban-cho-thue-nha-mat-dat.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-to-khai-thue-tndn",
+      "topicLv3Label": "Mẫu tờ khai thuế TNDN",
+      "confidence": "high",
+      "score": 5,
+      "ov3": 2
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-mua-ban-cho-thue-phan-dien-tich-san-xay-dung.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-to-khai-thue-tndn",
+      "topicLv3Label": "Mẫu tờ khai thuế TNDN",
+      "confidence": "high",
+      "score": 5,
+      "ov3": 2
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-mua-ban-nha-o-chung-cu-moi-nhat.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-hoa-don-chung-tu",
+      "topicLv3Label": "Mẫu hóa đơn/chứng từ",
+      "confidence": "high",
+      "score": 5,
+      "ov3": 2
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-thue-cong-trinh-xay-dung-phan-dien-tich-san.html",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv3Key": "mau-to-khai-thue-tndn",
+      "topicLv3Label": "Mẫu tờ khai thuế TNDN",
+      "confidence": "high",
+      "score": 5,
+      "ov3": 2
+    }
+  ],
+  "skippedRows": []
+}

@@ -1,0 +1,301 @@
+{
+  "generatedAt": "2026-04-27T13:39:12.826065",
+  "policy": "stage8 batch2 conservative: tai-khoan+thu-tuc+reports+chung-tu",
+  "records": [
+    {
+      "href": "thu-vien/bao-cao-tai-san-co-dinh-tai-cong-ty-cpdt-va-tm-bach-gia.html",
+      "title": "Báo cáo tài sản cố định tại công ty CPDT Và TM Bách Gia",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv2Label": "Báo cáo thực tập",
+      "candidateCount": 4,
+      "suggestedTopicLv3Key": "thuc-tap-chi-phi-gia-thanh",
+      "suggestedTopicLv3Label": "Thực tập chi phí/giá thành",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "thuc-tap-chi-phi-gia-thanh",
+          "label": "Thực tập chi phí/giá thành",
+          "score": 5
+        },
+        {
+          "key": "thuc-tap-ban-hang-doanh-thu-kqkd",
+          "label": "Thực tập bán hàng/doanh thu/KQKD",
+          "score": 4
+        },
+        {
+          "key": "thuc-tap-tien-luong",
+          "label": "Thực tập tiền lương",
+          "score": 4
+        },
+        {
+          "key": "thuc-tap-von-bang-tien",
+          "label": "Thực tập vốn bằng tiền",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/muc-phat-vi-pham-lien-quan-den-chung-tu-so-sach-ke-toan.html",
+      "title": "Mức phạt vi phạm liên quan đến chứng từ, sổ sách kế toán",
+      "topicLv1Key": "ke-toan",
+      "topicLv1Label": "Kế toán",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv2Label": "Chứng từ - Sổ sách",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "xu-ly-sai-sot-so-sach",
+      "suggestedTopicLv3Label": "Xử lý sai sót sổ sách",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "xu-ly-sai-sot-so-sach",
+          "label": "Xử lý sai sót sổ sách",
+          "score": 5
+        },
+        {
+          "key": "hinh-thuc-ghi-so-ke-toan",
+          "label": "Hình thức ghi sổ kế toán",
+          "score": 4
+        },
+        {
+          "key": "so-sach-tien-kho-chi-tiet",
+          "label": "Sổ sách tiền/kho/chi tiết",
+          "score": 4
+        },
+        {
+          "key": "chung-tu-cong-tac-thanh-toan",
+          "label": "Chứng từ công tác/thanh toán",
+          "score": 4
+        },
+        {
+          "key": "he-thong-chung-tu-mau-bieu",
+          "label": "Hệ thống chứng từ/mẫu biểu",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/ban-hang-hoa-thap-hon-gia-von.html",
+      "title": "Có được bán hàng thấp hơn giá vốn không?",
+      "topicLv1Key": "ke-toan",
+      "topicLv1Label": "Kế toán",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv2Label": "Tài khoản - Hạch toán",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "hang-ton-kho-gia-thanh",
+      "suggestedTopicLv3Label": "Hàng tồn kho/Giá thành",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "hang-ton-kho-gia-thanh",
+          "label": "Hàng tồn kho/Giá thành",
+          "score": 5
+        },
+        {
+          "key": "hach-toan-dac-thu",
+          "label": "Nghiệp vụ đặc thù",
+          "score": 4
+        },
+        {
+          "key": "von-dau-tu",
+          "label": "Vốn/Đầu tư",
+          "score": 4
+        },
+        {
+          "key": "tien-quy-ngan-hang",
+          "label": "Tiền/Quỹ/Ngân hàng",
+          "score": 4
+        },
+        {
+          "key": "cong-no-thanh-toan",
+          "label": "Công nợ/Thanh toán",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-hang-gui-dai-ly-ban-dung-gia-huong-hoa-hong.html",
+      "title": "Cách hạch toán hàng gửi đại lý bán đúng giá hưởng hoa hồng",
+      "topicLv1Key": "ke-toan",
+      "topicLv1Label": "Kế toán",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv2Label": "Tài khoản - Hạch toán",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "hang-ton-kho-gia-thanh",
+      "suggestedTopicLv3Label": "Hàng tồn kho/Giá thành",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "hang-ton-kho-gia-thanh",
+          "label": "Hàng tồn kho/Giá thành",
+          "score": 5
+        },
+        {
+          "key": "hach-toan-dac-thu",
+          "label": "Nghiệp vụ đặc thù",
+          "score": 4
+        },
+        {
+          "key": "doanh-thu-chi-phi-kqkd",
+          "label": "Doanh thu/Chi phí/KQKD",
+          "score": 4
+        },
+        {
+          "key": "tien-quy-ngan-hang",
+          "label": "Tiền/Quỹ/Ngân hàng",
+          "score": 4
+        },
+        {
+          "key": "cong-no-thanh-toan",
+          "label": "Công nợ/Thanh toán",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-nguon-von-kinh-doanh-tai-khoan-411.html",
+      "title": "Cách hạch toán Vốn đầu tư của chủ sở hữu - Tài khoản 411",
+      "topicLv1Key": "ke-toan",
+      "topicLv1Label": "Kế toán",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv2Label": "Tài khoản - Hạch toán",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "von-dau-tu",
+      "suggestedTopicLv3Label": "Vốn/Đầu tư",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "von-dau-tu",
+          "label": "Vốn/Đầu tư",
+          "score": 5
+        },
+        {
+          "key": "hach-toan-dac-thu",
+          "label": "Nghiệp vụ đặc thù",
+          "score": 4
+        },
+        {
+          "key": "doanh-thu-chi-phi-kqkd",
+          "label": "Doanh thu/Chi phí/KQKD",
+          "score": 4
+        },
+        {
+          "key": "hang-ton-kho-gia-thanh",
+          "label": "Hàng tồn kho/Giá thành",
+          "score": 3
+        },
+        {
+          "key": "cong-no-thanh-toan",
+          "label": "Công nợ/Thanh toán",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-tien-dat-coc-nhan-tien-dat-coc.html",
+      "title": "Hạch toàn tiền đặt cọc – nhận tiền đặt cọc",
+      "topicLv1Key": "ke-toan",
+      "topicLv1Label": "Kế toán",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv2Label": "Tài khoản - Hạch toán",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "tien-quy-ngan-hang",
+      "suggestedTopicLv3Label": "Tiền/Quỹ/Ngân hàng",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "tien-quy-ngan-hang",
+          "label": "Tiền/Quỹ/Ngân hàng",
+          "score": 5
+        },
+        {
+          "key": "hang-ton-kho-gia-thanh",
+          "label": "Hàng tồn kho/Giá thành",
+          "score": 4
+        },
+        {
+          "key": "hach-toan-dac-thu",
+          "label": "Nghiệp vụ đặc thù",
+          "score": 4
+        },
+        {
+          "key": "thue-nghia-vu",
+          "label": "Thuế/Nghĩa vụ NSNN",
+          "score": 4
+        },
+        {
+          "key": "cong-no-thanh-toan",
+          "label": "Công nợ/Thanh toán",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/tai-khoan-ngan-hang-khong-dang-ky-voi-co-quan-thue.html",
+      "title": "Không đăng ký tài khoản ngân hàng với sở kế hoạch đầu tư",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv1Label": "Doanh nghiệp - Thủ tục",
+      "topicLv2Key": "thu-tuc-doanh-nghiep",
+      "topicLv2Label": "DN - Thủ tục",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "dn-thu-tuc-quan-tri-ho-tro",
+      "suggestedTopicLv3Label": "DN thủ tục quản trị/hỗ trợ",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "dn-thu-tuc-quan-tri-ho-tro",
+          "label": "DN thủ tục quản trị/hỗ trợ",
+          "score": 5
+        },
+        {
+          "key": "dn-thu-tuc-tai-chinh-vay-von",
+          "label": "DN thủ tục tài chính/vay vốn",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-thanh-lap-thay-doi",
+          "label": "DN thủ tục thành lập/thay đổi",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-khuyen-mai-thuong-mai",
+          "label": "DN thủ tục khuyến mại/thương mại",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-giai-the",
+          "label": "DN thủ tục giải thể",
+          "score": 4
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    "thu-vien/cach-xac-dinh-hach-toan-chenh-lech-ty-gia.html",
+    "thu-vien/cach-xac-dinh-nguyen-gia-tai-san-co-dinh-huu-hinh.html",
+    "thu-vien/phan-mem-chiu-thue-suat-bao-nhieu-0-hay-khong-chiu-thue.html",
+    "thu-vien/xu-ly-tien-phat-do-vi-pham-hop-dong-kinh-te.html"
+  ]
+}

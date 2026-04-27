@@ -1,0 +1,854 @@
+{
+  "summary": {
+    "generatedAt": "2026-04-27T13:52:59.534203",
+    "very_safe_apply_now": 8,
+    "confirm_fast": 20
+  },
+  "records": [
+    {
+      "href": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.html",
+      "title": "Mẫu Báo cáo tình hình tài chính theo Thông tư 133",
+      "topicLv1Key": "ke-toan",
+      "topicLv1Label": "Kế toán",
+      "topicLv2Key": "bao-cao-tai-chinh",
+      "topicLv2Label": "Báo cáo tài chính",
+      "candidateCount": 6,
+      "suggestedTopicLv3Key": "lap-cac-bao-cao-thanh-phan",
+      "suggestedTopicLv3Label": "Lập các báo cáo thành phần",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 3,
+      "rationale": "top 4, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "lap-cac-bao-cao-thanh-phan",
+          "label": "Lập các báo cáo thành phần",
+          "score": 4
+        },
+        {
+          "key": "vi-pham-dieu-chinh-bctc",
+          "label": "Vi phạm/điều chỉnh BCTC",
+          "score": 3
+        },
+        {
+          "key": "chuan-muc-trinh-bay-bctc",
+          "label": "Chuẩn mực trình bày BCTC",
+          "score": 2
+        },
+        {
+          "key": "tong-quan-quy-dinh-nop-bctc",
+          "label": "Tổng quan/quy định nộp BCTC",
+          "score": 2
+        },
+        {
+          "key": "nguyen-tac-trinh-bay-bctc",
+          "label": "Nguyên tắc trình bày BCTC",
+          "score": 2
+        }
+      ],
+      "ov3": 2
+    },
+    {
+      "href": "thu-vien/hoa-hong-dai-ly-bao-hiem-co-chiu-thue-gtgt.html",
+      "title": "Doanh thu hoa hồng đại lý bảo hiểm có chịu thuế GTGT không?",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "van-ban-chinh-sach",
+      "suggestedTopicLv3Label": "Văn bản/Chính sách",
+      "confidence": "high",
+      "score": 7,
+      "secondScore": 5,
+      "rationale": "top 7, cách biệt 2",
+      "topCandidates": [
+        {
+          "key": "van-ban-chinh-sach",
+          "label": "Văn bản/Chính sách",
+          "score": 7
+        },
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 5
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 4
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 4
+        },
+        {
+          "key": "luong-can-cu-ty-le-dong",
+          "label": "Lương căn cứ/Tỷ lệ đóng",
+          "score": 4
+        }
+      ],
+      "ov3": 0
+    },
+    {
+      "href": "thu-vien/cac-khoan-giam-tru-thue-thu-nhap-ca-nhan.html",
+      "title": "Các khoản giảm trừ thuế TNCN năm 2026 mới nhất",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "van-ban-chinh-sach",
+      "suggestedTopicLv3Label": "Văn bản/Chính sách",
+      "confidence": "high",
+      "score": 6,
+      "secondScore": 3,
+      "rationale": "top 6, cách biệt 3",
+      "topCandidates": [
+        {
+          "key": "van-ban-chinh-sach",
+          "label": "Văn bản/Chính sách",
+          "score": 6
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 3
+        },
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 3
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 3
+        },
+        {
+          "key": "luong-can-cu-ty-le-dong",
+          "label": "Lương căn cứ/Tỷ lệ đóng",
+          "score": 2
+        }
+      ],
+      "ov3": 0
+    },
+    {
+      "href": "thu-vien/tam-ngung-kinh-doanh-co-phai-nop-thue-mon-bai-bctc.html",
+      "title": "Tạm ngừng kinh doanh có phải nộp BCTC, Quyết toán thuế",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "van-ban-chinh-sach",
+      "suggestedTopicLv3Label": "Văn bản/Chính sách",
+      "confidence": "high",
+      "score": 6,
+      "secondScore": 5,
+      "rationale": "top 6, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "van-ban-chinh-sach",
+          "label": "Văn bản/Chính sách",
+          "score": 6
+        },
+        {
+          "key": "hach-toan-chi-phi-bao-hiem",
+          "label": "Hạch toán/Chi phí bảo hiểm",
+          "score": 5
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 4
+        },
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 4
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 4
+        }
+      ],
+      "ov3": 0
+    },
+    {
+      "href": "thu-vien/cach-viet-to-khai-don-vi-tham-gia-bhxh-mau-tk3-ts.html",
+      "title": "Cách điền Mẫu TK3-TS theo Quyết định 490/QĐ-BHXH mới nhất",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "van-ban-chinh-sach",
+      "suggestedTopicLv3Label": "Văn bản/Chính sách",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 2,
+      "rationale": "top 4, cách biệt 2",
+      "topCandidates": [
+        {
+          "key": "van-ban-chinh-sach",
+          "label": "Văn bản/Chính sách",
+          "score": 4
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 2
+        },
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 2
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 2
+        },
+        {
+          "key": "luong-can-cu-ty-le-dong",
+          "label": "Lương căn cứ/Tỷ lệ đóng",
+          "score": 2
+        }
+      ],
+      "ov3": 0
+    },
+    {
+      "href": "thu-vien/cong-van-5106-ve-muc-tien-an-trua-tien-an-giua-ca.html",
+      "title": "Công văn 5106 về mức tiền ăn trưa, tiền ăn giữa ca khi xác định thuế TNCN 2025",
+      "topicLv1Key": "thue",
+      "topicLv1Label": "Thuế - Hóa đơn",
+      "topicLv2Key": "cong-van",
+      "topicLv2Label": "Công văn",
+      "candidateCount": 2,
+      "suggestedTopicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "suggestedTopicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 1,
+      "rationale": "top 4, cách biệt 3",
+      "topCandidates": [
+        {
+          "key": "cong-van-ke-khai-quan-ly-thue",
+          "label": "Công văn Kê khai/Quản lý thuế",
+          "score": 4
+        },
+        {
+          "key": "cong-van-chinh-sach-chung",
+          "label": "Công văn Chính sách chung",
+          "score": 1
+        }
+      ],
+      "ov3": 2
+    },
+    {
+      "href": "thu-vien/cong-dien-so-102-ve-thuc-hien-nghi-dinh-175.html",
+      "title": "Công điện số 102 về thực hiện Nghị định 175 2025 quy định về lệ phí trước bạ",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "suggestedTopicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 6,
+      "secondScore": 4,
+      "rationale": "top 6, cách biệt 2",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 6
+        },
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 4
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 4
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 2
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 2
+        }
+      ],
+      "ov3": 0
+    },
+    {
+      "href": "thu-vien/don-xin-cap-lai-chung-chi-hanh-nghe-moi-gioi-bat-dong-san.html",
+      "title": "Đơn xin cấp lại chứng chỉ hành nghề môi giới bất động sản theo Nghị định 96/2024/NĐ-CP",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-phong-van-xin-viec",
+      "suggestedTopicLv3Label": "Kinh nghiệm/phỏng vấn/xin việc",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 5
+        },
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 4
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 3
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 2
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 2
+        }
+      ],
+      "ov3": 1
+    },
+    {
+      "href": "thu-vien/nghi-dinh-12-2015-nd-cp-ngay-12-02-1015-cua-chinh-phu.html",
+      "title": "Nghị định 12/2015/NĐ-CP Sửa đổi, bổ sung một số điều của Luật thuế",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "suggestedTopicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 5
+        },
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 4
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 3
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 2
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 2
+        }
+      ],
+      "ov3": 0
+    },
+    {
+      "href": "thu-vien/nghi-dinh-41-2018-nd-cp-xu-phat-vi-pham-ke-toan-kiem-toan.html",
+      "title": "Nghị định 41/2018/NĐ-CP Xử phạt vi phạm kế toán, kiểm toán độc lập",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "suggestedTopicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 5
+        },
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 4
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 4
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 3
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 3
+        }
+      ],
+      "ov3": 1
+    },
+    {
+      "href": "thu-vien/nhung-thu-tuat-tim-viec-cap-toc.html",
+      "title": "Những thủ tuật tìm việc cấp tốc",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-phong-van-xin-viec",
+      "suggestedTopicLv3Label": "Kinh nghiệm/phỏng vấn/xin việc",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 5
+        },
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 4
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 3
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 3
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 2
+        }
+      ],
+      "ov3": 1
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-ky-ke-toan-chu-viet-chu-so-trong-ke-toan.html",
+      "title": "Quy định về kỳ kế toán, Chữ viết, chữ số trong kế toán",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "suggestedTopicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 5
+        },
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 4
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 3
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 3
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 3
+        }
+      ],
+      "ov3": 1
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-thi-cong-noi-that.html",
+      "title": "Mẫu hợp đồng thi công nội thất",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "mo-ta-cong-viec-ke-toan",
+      "suggestedTopicLv3Label": "Mô tả công việc kế toán",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 3,
+      "rationale": "top 4, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 4
+        },
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 3
+        },
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 2
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 2
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 0
+        }
+      ],
+      "ov3": 1
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-cac-hop-dong-nha-thau-nuoc-ngoai.html",
+      "title": "Mẫu 04.1-ĐK-TCT-BK bảng kê các hợp đồng nhà thầu nước ngoài nộp thuế thông qua bên Việt Nam mới nhất",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv1Label": "Doanh nghiệp - Thủ tục",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv2Label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "mau-to-khai-thue-tndn",
+      "suggestedTopicLv3Label": "Mẫu tờ khai thuế TNDN",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "mau-to-khai-thue-tndn",
+          "label": "Mẫu tờ khai thuế TNDN",
+          "score": 5
+        },
+        {
+          "key": "mau-dang-ky-thay-doi-doanh-nghiep",
+          "label": "Mẫu đăng ký/thay đổi doanh nghiệp",
+          "score": 4
+        },
+        {
+          "key": "mau-ho-ca-nhan-kinh-doanh",
+          "label": "Mẫu hộ/cá nhân kinh doanh",
+          "score": 4
+        },
+        {
+          "key": "mau-khuyen-mai-thuong-mai",
+          "label": "Mẫu khuyến mại/thương mại",
+          "score": 4
+        },
+        {
+          "key": "mau-hoa-don-chung-tu",
+          "label": "Mẫu hóa đơn/chứng từ",
+          "score": 4
+        }
+      ],
+      "ov3": 1
+    },
+    {
+      "href": "thu-vien/mau-bien-lai-thu-tien-theo-qd-48-va-15.html",
+      "title": "Mẫu Biên lai thu tiền theo Thông tư 200 và 133",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv1Label": "Doanh nghiệp - Thủ tục",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv2Label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "mau-ho-ca-nhan-kinh-doanh",
+      "suggestedTopicLv3Label": "Mẫu hộ/cá nhân kinh doanh",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "mau-ho-ca-nhan-kinh-doanh",
+          "label": "Mẫu hộ/cá nhân kinh doanh",
+          "score": 5
+        },
+        {
+          "key": "mau-to-khai-thue-tndn",
+          "label": "Mẫu tờ khai thuế TNDN",
+          "score": 4
+        },
+        {
+          "key": "mau-dang-ky-thay-doi-doanh-nghiep",
+          "label": "Mẫu đăng ký/thay đổi doanh nghiệp",
+          "score": 4
+        },
+        {
+          "key": "mau-khuyen-mai-thuong-mai",
+          "label": "Mẫu khuyến mại/thương mại",
+          "score": 4
+        },
+        {
+          "key": "mau-hoa-don-chung-tu",
+          "label": "Mẫu hóa đơn/chứng từ",
+          "score": 4
+        }
+      ],
+      "ov3": 1
+    },
+    {
+      "href": "thu-vien/mau-so-01-ht-giay-de-nghi-hoan-tra-khoan-thu-ngan-sach-nha-nuoc.html",
+      "title": "Mẫu giấy đề nghị hoàn trả khoản thu ngân sách nhà nước: Mẫu số 01/HT",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv1Label": "Doanh nghiệp - Thủ tục",
+      "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topicLv2Label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "mau-to-khai-thue-tndn",
+      "suggestedTopicLv3Label": "Mẫu tờ khai thuế TNDN",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "mau-to-khai-thue-tndn",
+          "label": "Mẫu tờ khai thuế TNDN",
+          "score": 5
+        },
+        {
+          "key": "mau-dang-ky-thay-doi-doanh-nghiep",
+          "label": "Mẫu đăng ký/thay đổi doanh nghiệp",
+          "score": 4
+        },
+        {
+          "key": "mau-ho-ca-nhan-kinh-doanh",
+          "label": "Mẫu hộ/cá nhân kinh doanh",
+          "score": 4
+        },
+        {
+          "key": "mau-khuyen-mai-thuong-mai",
+          "label": "Mẫu khuyến mại/thương mại",
+          "score": 4
+        },
+        {
+          "key": "mau-hoa-don-chung-tu",
+          "label": "Mẫu hóa đơn/chứng từ",
+          "score": 4
+        }
+      ],
+      "ov3": 1
+    },
+    {
+      "href": "thu-vien/cach-xac-dinh-hach-toan-chenh-lech-ty-gia.html",
+      "title": "Cách xác định và hạch toán chênh lệch tỷ giá TK 413",
+      "topicLv1Key": "ke-toan",
+      "topicLv1Label": "Kế toán",
+      "topicLv2Key": "tai-khoan-hach-toan",
+      "topicLv2Label": "Tài khoản - Hạch toán",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "hang-ton-kho-gia-thanh",
+      "suggestedTopicLv3Label": "Hàng tồn kho/Giá thành",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "hang-ton-kho-gia-thanh",
+          "label": "Hàng tồn kho/Giá thành",
+          "score": 5
+        },
+        {
+          "key": "hach-toan-dac-thu",
+          "label": "Nghiệp vụ đặc thù",
+          "score": 4
+        },
+        {
+          "key": "tscd-ccdc-khau-hao",
+          "label": "TSCĐ/CCDC/Khấu hao",
+          "score": 4
+        },
+        {
+          "key": "tien-quy-ngan-hang",
+          "label": "Tiền/Quỹ/Ngân hàng",
+          "score": 4
+        },
+        {
+          "key": "cong-no-thanh-toan",
+          "label": "Công nợ/Thanh toán",
+          "score": 3
+        }
+      ],
+      "ov3": 1
+    },
+    {
+      "href": "thu-vien/cach-xac-dinh-nguyen-gia-tai-san-co-dinh-huu-hinh.html",
+      "title": "Cách xác định nguyên giá TSCĐ hữu hình",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv1Label": "Doanh nghiệp - Thủ tục",
+      "topicLv2Key": "thu-tuc-doanh-nghiep",
+      "topicLv2Label": "DN - Thủ tục",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "dn-thu-tuc-tai-chinh-vay-von",
+      "suggestedTopicLv3Label": "DN thủ tục tài chính/vay vốn",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "dn-thu-tuc-tai-chinh-vay-von",
+          "label": "DN thủ tục tài chính/vay vốn",
+          "score": 5
+        },
+        {
+          "key": "dn-thu-tuc-thanh-lap-thay-doi",
+          "label": "DN thủ tục thành lập/thay đổi",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-quan-tri-ho-tro",
+          "label": "DN thủ tục quản trị/hỗ trợ",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-khuyen-mai-thuong-mai",
+          "label": "DN thủ tục khuyến mại/thương mại",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-giai-the",
+          "label": "DN thủ tục giải thể",
+          "score": 4
+        }
+      ],
+      "ov3": 1
+    },
+    {
+      "href": "thu-vien/phan-mem-chiu-thue-suat-bao-nhieu-0-hay-khong-chiu-thue.html",
+      "title": "Thuế suất thuế GTGT, TNDN đối với Doanh nghiệp phần mềm",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv1Label": "Doanh nghiệp - Thủ tục",
+      "topicLv2Key": "thu-tuc-doanh-nghiep",
+      "topicLv2Label": "DN - Thủ tục",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "dn-thu-tuc-thanh-lap-thay-doi",
+      "suggestedTopicLv3Label": "DN thủ tục thành lập/thay đổi",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "dn-thu-tuc-thanh-lap-thay-doi",
+          "label": "DN thủ tục thành lập/thay đổi",
+          "score": 5
+        },
+        {
+          "key": "dn-thu-tuc-tai-chinh-vay-von",
+          "label": "DN thủ tục tài chính/vay vốn",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-quan-tri-ho-tro",
+          "label": "DN thủ tục quản trị/hỗ trợ",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-khuyen-mai-thuong-mai",
+          "label": "DN thủ tục khuyến mại/thương mại",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-giai-the",
+          "label": "DN thủ tục giải thể",
+          "score": 4
+        }
+      ],
+      "ov3": 0
+    },
+    {
+      "href": "thu-vien/xu-ly-tien-phat-do-vi-pham-hop-dong-kinh-te.html",
+      "title": "Xử lý tiền phạt vi phạm hợp đồng kinh tế",
+      "topicLv1Key": "doanh-nghiep-thu-tuc",
+      "topicLv1Label": "Doanh nghiệp - Thủ tục",
+      "topicLv2Key": "thu-tuc-doanh-nghiep",
+      "topicLv2Label": "DN - Thủ tục",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "dn-thu-tuc-khuyen-mai-thuong-mai",
+      "suggestedTopicLv3Label": "DN thủ tục khuyến mại/thương mại",
+      "confidence": "high",
+      "score": 5,
+      "secondScore": 4,
+      "rationale": "top 5, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "dn-thu-tuc-khuyen-mai-thuong-mai",
+          "label": "DN thủ tục khuyến mại/thương mại",
+          "score": 5
+        },
+        {
+          "key": "dn-thu-tuc-tai-chinh-vay-von",
+          "label": "DN thủ tục tài chính/vay vốn",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-thanh-lap-thay-doi",
+          "label": "DN thủ tục thành lập/thay đổi",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-quan-tri-ho-tro",
+          "label": "DN thủ tục quản trị/hỗ trợ",
+          "score": 4
+        },
+        {
+          "key": "dn-thu-tuc-giai-the",
+          "label": "DN thủ tục giải thể",
+          "score": 4
+        }
+      ],
+      "ov3": 0
+    }
+  ]
+}

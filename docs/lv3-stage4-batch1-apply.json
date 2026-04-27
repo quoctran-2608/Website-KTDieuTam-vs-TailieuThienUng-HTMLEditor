@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-04-27T11:25:52.828139",
+  "policy": "stage4-batch1-conservative",
+  "candidateCount": 6,
+  "appliedCount": 6,
+  "skippedCount": 0,
+  "articleMetaUpdated": 6,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/bao-cao-hoan-thien-ke-toan-tien-luong-tai-cong-ty-dien-luc-hoan-kiem.html",
+      "title": "Báo cáo hoàn thiện kế toán tiền lương tại công ty điện lực Hoàn Kiếm",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv3Key": "thuc-tap-tien-luong",
+      "topicLv3Label": "Thực tập tiền lương",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-ban-hang-tai-cong-ty-tnhh-xay-dung-cong-tien.html",
+      "title": "Báo cáo kế toán bán hàng tại Công ty TNHH Xây dựng Công Tiến",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv3Key": "thuc-tap-ban-hang-doanh-thu-kqkd",
+      "topicLv3Label": "Thực tập bán hàng/doanh thu/KQKD",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-chi-phi-doanh-thu-tai-cong-ty-cpkdptndt-ha-noi.html",
+      "title": "Báo cáo kế toán chi phí, doanh thu tại Công ty CPKDPTNĐT Hà Nội",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv3Key": "thuc-tap-ban-hang-doanh-thu-kqkd",
+      "topicLv3Label": "Thực tập bán hàng/doanh thu/KQKD",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-doanh-thu-tai-cong-ty-tnhh-tin-nghia.html",
+      "title": "Báo cáo kế toán doanh thu tại Công ty TNHH Tín Nghĩa",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv3Key": "thuc-tap-ban-hang-doanh-thu-kqkd",
+      "topicLv3Label": "Thực tập bán hàng/doanh thu/KQKD",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-tien-luong-tai-cong-ty-cp-dau-tu-va-phat-trien-nha-ha-noi.html",
+      "title": "báo cáo kế toán tiền lương tại Công ty CP Đầu tư và Phát triển nhà Hà Nội",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv3Key": "thuc-tap-tien-luong",
+      "topicLv3Label": "Thực tập tiền lương",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-von-bang-tien-tai-cong-ty-tnhh-mtv-hop-quoc.html",
+      "title": "Báo cáo kế toán vốn bằng tiền tại công ty TNHH MTV Hợp Quốc",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv3Key": "thuc-tap-von-bang-tien",
+      "topicLv3Label": "Thực tập vốn bằng tiền",
+      "confidence": "medium",
+      "score": 5,
+      "rationale": "match 5 token; cần rà soát nhẹ"
+    }
+  ],
+  "skippedRows": []
+}

@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-04-27T14:21:10.478013",
+  "inputCandidates": 0,
+  "appliedCount": 0,
+  "skippedCount": 0,
+  "decision": "no-safe-candidate",
+  "reason": "5 dòng auto-safe còn lại đều có lệch ngữ nghĩa giữa lv2/lv3, không apply tự động",
+  "countsSnapshot": {
+    "imported_total": 745,
+    "topicLv3_non_empty": 442,
+    "topicLv3_empty": 303
+  },
+  "remainingLv2Top": [
+    [
+      "htkk-etax-thue-dien-tu",
+      52
+    ],
+    [
+      "kinh-nghiem-hoi-dap-nghe-nghiep",
+      31
+    ],
+    [
+      "thu-tuc-doanh-nghiep",
+      28
+    ],
+    [
+      "lao-dong-tien-luong",
+      20
+    ],
+    [
+      "tai-khoan-hach-toan",
+      17
+    ],
+    [
+      "thong-tu",
+      17
+    ],
+    [
+      "cong-van",
+      15
+    ],
+    [
+      "gtgt-hoa-don",
+      13
+    ],
+    [
+      "luat-bo-luat",
+      12
+    ],
+    [
+      "mau-bieu-doanh-nghiep-thu-tuc",
+      11
+    ],
+    [
+      "bao-hiem",
+      9
+    ],
+    [
+      "mau-bieu-ke-toan",
+      6
+    ],
+    [
+      "chung-tu-so-sach",
+      4
+    ],
+    [
+      "nghi-quyet-quyet-dinh",
+      4
+    ],
+    [
+      "ho-ca-nhan-kinh-doanh",
+      1
+    ]
+  ],
+  "inputRows": []
+}

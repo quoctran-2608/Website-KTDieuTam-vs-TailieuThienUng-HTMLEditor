@@ -1,0 +1,132 @@
+{
+  "generatedAt": "2026-04-27T14:16:46.956921",
+  "policy": "stage13 conservative from auto-safe8",
+  "records": [
+    {
+      "href": "thu-vien/cac-khoan-giam-tru-thue-thu-nhap-ca-nhan.html",
+      "title": "Các khoản giảm trừ thuế TNCN năm 2026 mới nhất",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "van-ban-chinh-sach",
+      "suggestedTopicLv3Label": "Văn bản/Chính sách",
+      "confidence": "high",
+      "score": 6,
+      "secondScore": 3,
+      "rationale": "top 6, cách biệt 3",
+      "topCandidates": [
+        {
+          "key": "van-ban-chinh-sach",
+          "label": "Văn bản/Chính sách",
+          "score": 6
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 3
+        },
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 3
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 3
+        },
+        {
+          "key": "luong-can-cu-ty-le-dong",
+          "label": "Lương căn cứ/Tỷ lệ đóng",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/cach-viet-to-khai-don-vi-tham-gia-bhxh-mau-tk3-ts.html",
+      "title": "Cách điền Mẫu TK3-TS theo Quyết định 490/QĐ-BHXH mới nhất",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "van-ban-chinh-sach",
+      "suggestedTopicLv3Label": "Văn bản/Chính sách",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 2,
+      "rationale": "top 4, cách biệt 2",
+      "topCandidates": [
+        {
+          "key": "van-ban-chinh-sach",
+          "label": "Văn bản/Chính sách",
+          "score": 4
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 2
+        },
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 2
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 2
+        },
+        {
+          "key": "luong-can-cu-ty-le-dong",
+          "label": "Lương căn cứ/Tỷ lệ đóng",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/cong-dien-so-102-ve-thuc-hien-nghi-dinh-175.html",
+      "title": "Công điện số 102 về thực hiện Nghị định 175 2025 quy định về lệ phí trước bạ",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv1Label": "Học liệu - Tham khảo",
+      "topicLv2Key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topicLv2Label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "candidateCount": 5,
+      "suggestedTopicLv3Key": "kinh-nghiem-quyet-toan-thue",
+      "suggestedTopicLv3Label": "Kinh nghiệm quyết toán thuế",
+      "confidence": "high",
+      "score": 6,
+      "secondScore": 4,
+      "rationale": "top 6, cách biệt 2",
+      "topCandidates": [
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "score": 6
+        },
+        {
+          "key": "kinh-nghiem-phong-van-xin-viec",
+          "label": "Kinh nghiệm/phỏng vấn/xin việc",
+          "score": 4
+        },
+        {
+          "key": "hoc-nghe-va-thuc-tap",
+          "label": "Học nghề và thực tập",
+          "score": 4
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "score": 2
+        },
+        {
+          "key": "hoc-va-dao-tao-ke-toan",
+          "label": "Học và đào tạo kế toán",
+          "score": 2
+        }
+      ]
+    }
+  ]
+}

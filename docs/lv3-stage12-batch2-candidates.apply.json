@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-04-27T14:12:48.049436",
+  "policy": "stage12 batch2 conservative tax-policy rows",
+  "records": [
+    {
+      "href": "thu-vien/cong-van-5106-ve-muc-tien-an-trua-tien-an-giua-ca.html",
+      "title": "Công văn 5106 về mức tiền ăn trưa, tiền ăn giữa ca khi xác định thuế TNCN 2025",
+      "topicLv1Key": "thue",
+      "topicLv1Label": "Thuế - Hóa đơn",
+      "topicLv2Key": "cong-van",
+      "topicLv2Label": "Công văn",
+      "candidateCount": 2,
+      "suggestedTopicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "suggestedTopicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4,
+      "secondScore": 1,
+      "rationale": "top 4, cách biệt 3",
+      "topCandidates": [
+        {
+          "key": "cong-van-ke-khai-quan-ly-thue",
+          "label": "Công văn Kê khai/Quản lý thuế",
+          "score": 4
+        },
+        {
+          "key": "cong-van-chinh-sach-chung",
+          "label": "Công văn Chính sách chung",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/hoa-hong-dai-ly-bao-hiem-co-chiu-thue-gtgt.html",
+      "title": "Doanh thu hoa hồng đại lý bảo hiểm có chịu thuế GTGT không?",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "van-ban-chinh-sach",
+      "suggestedTopicLv3Label": "Văn bản/Chính sách",
+      "confidence": "high",
+      "score": 7,
+      "secondScore": 5,
+      "rationale": "top 7, cách biệt 2",
+      "topCandidates": [
+        {
+          "key": "van-ban-chinh-sach",
+          "label": "Văn bản/Chính sách",
+          "score": 7
+        },
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 5
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 4
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 4
+        },
+        {
+          "key": "luong-can-cu-ty-le-dong",
+          "label": "Lương căn cứ/Tỷ lệ đóng",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "href": "thu-vien/tam-ngung-kinh-doanh-co-phai-nop-thue-mon-bai-bctc.html",
+      "title": "Tạm ngừng kinh doanh có phải nộp BCTC, Quyết toán thuế",
+      "topicLv1Key": "lao-dong-bao-hiem",
+      "topicLv1Label": "Lao động - Bảo hiểm",
+      "topicLv2Key": "bao-hiem",
+      "topicLv2Label": "BHXH - BHYT - BHTN",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "van-ban-chinh-sach",
+      "suggestedTopicLv3Label": "Văn bản/Chính sách",
+      "confidence": "high",
+      "score": 6,
+      "secondScore": 5,
+      "rationale": "top 6, cách biệt 1",
+      "topCandidates": [
+        {
+          "key": "van-ban-chinh-sach",
+          "label": "Văn bản/Chính sách",
+          "score": 6
+        },
+        {
+          "key": "hach-toan-chi-phi-bao-hiem",
+          "label": "Hạch toán/Chi phí bảo hiểm",
+          "score": 5
+        },
+        {
+          "key": "che-do-muc-huong",
+          "label": "Chế độ/Mức hưởng",
+          "score": 4
+        },
+        {
+          "key": "ho-so-thu-tuc",
+          "label": "Hồ sơ/Thủ tục",
+          "score": 4
+        },
+        {
+          "key": "doi-tuong-muc-dong",
+          "label": "Đối tượng/Mức đóng",
+          "score": 4
+        }
+      ]
+    }
+  ],
+  "issues": []
+}

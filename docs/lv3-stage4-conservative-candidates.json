@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-04-27T11:22:37.488388",
+  "policy": "conservative-stage4-v1",
+  "selectedCount": 8,
+  "records": [
+    {
+      "href": "thu-vien/bai-tap-tinh-thue-thu-nhap-ca-nhan-co-loi-giai-nhap-moi.html",
+      "title": "Bài tập tính thuế thu nhập cá nhân có lời giải",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv2Key": "bai-tap-thuc-hanh",
+      "topicLv2Label": "Bài tập - Thực hành",
+      "candidateCount": 7,
+      "suggestedTopicLv3Key": "bai-tap-thue-ttdb",
+      "suggestedTopicLv3Label": "Bài tập thuế TTĐB",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/bao-cao-hoan-thien-ke-toan-tien-luong-tai-cong-ty-dien-luc-hoan-kiem.html",
+      "title": "Báo cáo hoàn thiện kế toán tiền lương tại công ty điện lực Hoàn Kiếm",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv2Label": "Báo cáo thực tập",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "thuc-tap-tien-luong",
+      "suggestedTopicLv3Label": "Thực tập tiền lương",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-ban-hang-tai-cong-ty-tnhh-xay-dung-cong-tien.html",
+      "title": "Báo cáo kế toán bán hàng tại Công ty TNHH Xây dựng Công Tiến",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv2Label": "Báo cáo thực tập",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "thuc-tap-ban-hang-doanh-thu-kqkd",
+      "suggestedTopicLv3Label": "Thực tập bán hàng/doanh thu/KQKD",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-chi-phi-doanh-thu-tai-cong-ty-cpkdptndt-ha-noi.html",
+      "title": "Báo cáo kế toán chi phí, doanh thu tại Công ty CPKDPTNĐT Hà Nội",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv2Label": "Báo cáo thực tập",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "thuc-tap-ban-hang-doanh-thu-kqkd",
+      "suggestedTopicLv3Label": "Thực tập bán hàng/doanh thu/KQKD",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-doanh-thu-tai-cong-ty-tnhh-tin-nghia.html",
+      "title": "Báo cáo kế toán doanh thu tại Công ty TNHH Tín Nghĩa",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv2Label": "Báo cáo thực tập",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "thuc-tap-ban-hang-doanh-thu-kqkd",
+      "suggestedTopicLv3Label": "Thực tập bán hàng/doanh thu/KQKD",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-tien-luong-tai-cong-ty-cp-dau-tu-va-phat-trien-nha-ha-noi.html",
+      "title": "báo cáo kế toán tiền lương tại Công ty CP Đầu tư và Phát triển nhà Hà Nội",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv2Label": "Báo cáo thực tập",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "thuc-tap-tien-luong",
+      "suggestedTopicLv3Label": "Thực tập tiền lương",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-von-bang-tien-tai-cong-ty-tnhh-mtv-hop-quoc.html",
+      "title": "Báo cáo kế toán vốn bằng tiền tại công ty TNHH MTV Hợp Quốc",
+      "topicLv1Key": "tham-khao-hoc-lieu",
+      "topicLv2Key": "bao-cao-thuc-tap",
+      "topicLv2Label": "Báo cáo thực tập",
+      "candidateCount": 8,
+      "suggestedTopicLv3Key": "thuc-tap-von-bang-tien",
+      "suggestedTopicLv3Label": "Thực tập vốn bằng tiền",
+      "confidence": "medium",
+      "score": 5,
+      "rationale": "match 5 token; cần rà soát nhẹ"
+    },
+    {
+      "href": "thu-vien/cach-lap-so-ke-toan-chi-tiet-quy-tien-mat.html",
+      "title": "Cách lập sổ kế toán chi tiết quỹ tiền mặt theo TT 200 và 133",
+      "topicLv1Key": "ke-toan",
+      "topicLv2Key": "chung-tu-so-sach",
+      "topicLv2Label": "Chứng từ - Sổ sách",
+      "candidateCount": 4,
+      "suggestedTopicLv3Key": "so-sach-tien-kho-chi-tiet",
+      "suggestedTopicLv3Label": "Sổ sách tiền/kho/chi tiết",
+      "confidence": "medium",
+      "score": 4,
+      "rationale": "match 4 token; cần rà soát nhẹ"
+    }
+  ]
+}

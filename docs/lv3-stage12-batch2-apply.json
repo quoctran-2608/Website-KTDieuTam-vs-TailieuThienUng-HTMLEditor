@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-04-27T14:15:23.706580",
+  "inputCandidates": 3,
+  "appliedCount": 3,
+  "skippedCount": 0,
+  "articleMetaUpdated": 3,
+  "articleMetaSkipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/cong-van-5106-ve-muc-tien-an-trua-tien-an-giua-ca.html",
+      "topicLv2Key": "cong-van",
+      "topicLv3Key": "cong-van-ke-khai-quan-ly-thue",
+      "topicLv3Label": "Công văn Kê khai/Quản lý thuế",
+      "confidence": "high",
+      "score": 4
+    },
+    {
+      "href": "thu-vien/hoa-hong-dai-ly-bao-hiem-co-chiu-thue-gtgt.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "van-ban-chinh-sach",
+      "topicLv3Label": "Văn bản/Chính sách",
+      "confidence": "high",
+      "score": 7
+    },
+    {
+      "href": "thu-vien/tam-ngung-kinh-doanh-co-phai-nop-thue-mon-bai-bctc.html",
+      "topicLv2Key": "bao-hiem",
+      "topicLv3Key": "van-ban-chinh-sach",
+      "topicLv3Label": "Văn bản/Chính sách",
+      "confidence": "high",
+      "score": 6
+    }
+  ],
+  "skippedRows": []
+}
