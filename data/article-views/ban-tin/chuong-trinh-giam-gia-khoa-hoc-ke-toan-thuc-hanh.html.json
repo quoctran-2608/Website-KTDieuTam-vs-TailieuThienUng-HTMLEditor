@@ -29,7 +29,7 @@
     "canonical": "https://ketoandieutam.vn/ban-tin/trung-tam-dao-tao-ke-toan-dieu-tam-thuc-te-tai-ha-noi.html",
     "title": "Giới thiệu về Trung tâm kế toán Diệu Tâm",
     "excerpt": "TRUNG TÂM KẾ TOÁN DIỆU TÂM là 1 trong những Trung tâm đào tạo kế toán thực hành thực tế tốt nhất tại Hà Nội và TPHCM. Đ…",
-    "topicLabel": "Giới thiệu",
+    "topicLabel": "Cơ sở đào tạo",
     "tags": [
       "Giới thiệu",
       "Giới thiệu & thương hiệu",
@@ -163,25 +163,6 @@
   ],
   "related": [
     {
-      "id": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
-      "section": "ban-tin",
-      "sectionLabel": "Bản tin",
-      "sectionHref": "ban-tin.html",
-      "href": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
-      "title": "Khóa Học Thực Hành Kế Toán Tổng Hợp cho người đã biết về kế toán",
-      "excerpt": "Khóa học kế toán tổng hợp thực tế Online tốt nhất chỉ có ở Kế toán Diệu Tâm: Học thực hành kế toán tổng hợp trên chứng từ thực tế như đi làm tại Doanh nghiệp.",
-      "topicLabel": "Khóa học kế toán",
-      "tags": [
-        "Cơ sở đào tạo",
-        "Thông tin"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hoc-ke-toan-tong-hop.png",
-      "libraryKindLabel": "",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
-    {
       "id": "ban-tin/chuong-trinh-khuyen-mai-hoc-phi-khoa-hoc-ke-toan-online-moi-nhat.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
@@ -200,6 +181,25 @@
       "image": "assets/images/content/pic/Service/images/25-gif.gif",
       "libraryKindLabel": "",
       "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
+      "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
+      "title": "Khóa Học Thực Hành Kế Toán Tổng Hợp cho người đã biết về kế toán",
+      "excerpt": "Khóa học kế toán tổng hợp thực tế Online tốt nhất chỉ có ở Kế toán Diệu Tâm: Học thực hành kế toán tổng hợp trên chứng từ thực tế như đi làm tại Doanh nghiệp.",
+      "topicLabel": "Khóa học kế toán",
+      "tags": [
+        "Cơ sở đào tạo",
+        "Thông tin"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hoc-ke-toan-tong-hop.png",
+      "libraryKindLabel": "",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     },
     {
@@ -288,22 +288,24 @@
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
+      "id": "ban-tin/chuong-trinh-khuyen-mai-hoc-phi-khoa-hoc-ke-toan-online-moi-nhat.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html",
-      "title": "Khóa Học Thực Hành Kế Toán Tổng Hợp cho người đã biết về kế toán",
-      "excerpt": "Khóa học kế toán tổng hợp thực tế Online tốt nhất chỉ có ở Kế toán Diệu Tâm: Học thực hành kế toán tổng hợp trên chứng từ thực tế như đi làm tại Doanh nghiệp.",
-      "topicLabel": "Khóa học kế toán",
+      "href": "ban-tin/chuong-trinh-khuyen-mai-hoc-phi-khoa-hoc-ke-toan-online-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/ban-tin/chuong-trinh-khuyen-mai-hoc-phi-khoa-hoc-ke-toan-online-moi-nhat.html",
+      "title": "Chương trình khuyến mại học phí khóa học kế toán online tại Công ty Kế Toán Diệu Tâm",
+      "excerpt": "Công ty đào tạo Kế toán Diệu Tâm đang tổ chức chương trình khuyến mại học phí cho các khóa học thực hành kế toa…",
+      "topicLabel": "Ưu đãi học phí",
       "tags": [
-        "Cơ sở đào tạo",
-        "Thông tin"
+        "Ưu đãi học phí",
+        "Ưu đãi & thông báo",
+        "Chính sách",
+        "Ưu đãi"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hoc-ke-toan-tong-hop.png",
+      "image": "assets/images/content/pic/Service/images/25-gif.gif",
       "libraryKindLabel": "",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

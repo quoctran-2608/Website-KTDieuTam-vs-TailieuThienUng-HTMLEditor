@@ -164,28 +164,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cach-hach-toan-tien-thue-mon-bai.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-tien-thue-mon-bai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-tien-thue-mon-bai.html",
-      "title": "Cách hạch toán lệ phí môn bài phải nộp 2025",
-      "excerpt": "Lệ phí môn bài là loại phí nộp theo năm. Do đó hàng năm khi nộp tiền lệ phí môn bài thì doanh nghiệp sẽ hạch toán khoản…",
-      "topicLabel": "Lệ phí môn bài",
-      "tags": [
-        "Lệ phí môn bài",
-        "Thuế",
-        "Hóa đơn",
-        "Môn bài",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-le-phi-mon-bai.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2017-01-01",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/cach-nop-thue-le-phi-mon-bai-qua-mang-dien-tu-bang-ma-id.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -229,18 +207,16 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-07-01",
       "modifiedDate": null
-    }
-  ],
-  "latestOther": [
+    },
     {
-      "id": "thu-vien/cach-hach-toan-tien-thue-mon-bai.html",
+      "id": "thu-vien/doi-tuong-phai-nop-thue-le-phi-mon-bai.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-tien-thue-mon-bai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-tien-thue-mon-bai.html",
-      "title": "Cách hạch toán lệ phí môn bài phải nộp 2025",
-      "excerpt": "Lệ phí môn bài là loại phí nộp theo năm. Do đó hàng năm khi nộp tiền lệ phí môn bài thì doanh nghiệp sẽ hạch toán khoản…",
+      "href": "thu-vien/doi-tuong-phai-nop-thue-le-phi-mon-bai.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/doi-tuong-phai-nop-thue-le-phi-mon-bai.html",
+      "title": "Đối tượng phải nộp thuế lệ phí môn bài năm 2025",
+      "excerpt": "Quy định về những đối tượng phải nộp thuế môn bài (lệ phí môn bài) mới nhất năm 2025 hiện nay Theo Thông tư 65/2020/TT-…",
       "topicLabel": "Lệ phí môn bài",
       "tags": [
         "Lệ phí môn bài",
@@ -249,9 +225,33 @@
         "Môn bài",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-le-phi-mon-bai.png",
+      "image": "assets/images/content/pic/Service/images/nop-le-phi-mon-bai.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2017-01-01",
+      "publishDate": "2016-10-04",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/cach-nop-thue-le-phi-mon-bai-qua-mang-dien-tu-bang-ma-id.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-nop-thue-le-phi-mon-bai-qua-mang-dien-tu-bang-ma-id.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-le-phi-mon-bai-qua-mang-dien-tu-bang-ma-id.html",
+      "title": "Cách nộp tiền thuế lệ phí môn bài 2025 qua mạng điện tử",
+      "excerpt": "Hiện nay, hệ thống thuedientu đã cho phép doanh nghiệp thực hiện nộp tiền lệ phí môn bài bằng mã định danh khoản phải n…",
+      "topicLabel": "Lệ phí môn bài",
+      "tags": [
+        "Lệ phí môn bài",
+        "Thuế",
+        "Hóa đơn",
+        "Môn bài",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/nop-thue-mon-bai-qua-mang-thuedientu.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {

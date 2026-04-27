@@ -243,7 +243,7 @@
     {
       "key": "bieu-mau",
       "label": "Biểu mẫu",
-      "count": 861,
+      "count": 860,
       "href": "thu-vien.html?kind=bieu-mau",
       "icon": "fa-file-lines",
       "description": "Mẫu biểu, hồ sơ, tờ khai dùng ngay"
@@ -251,7 +251,7 @@
     {
       "key": "cong-cu",
       "label": "Công cụ",
-      "count": 44,
+      "count": 43,
       "href": "thu-vien.html?kind=cong-cu",
       "icon": "fa-screwdriver-wrench",
       "description": "Excel, HTKK, MISA và file hỗ trợ"
@@ -259,7 +259,7 @@
     {
       "key": "van-ban",
       "label": "Văn bản",
-      "count": 411,
+      "count": 413,
       "href": "thu-vien.html?kind=van-ban",
       "icon": "fa-scale-balanced",
       "description": "Luật, nghị định, thông tư, công văn và cập nhật pháp lý"
@@ -269,12 +269,12 @@
     {
       "key": "thue",
       "label": "Thuế - Hóa đơn",
-      "count": 901,
+      "count": 911,
       "children": [
         {
           "key": "gtgt-hoa-don",
           "label": "GTGT - Hóa đơn",
-          "count": 287,
+          "count": 292,
           "children": [
             {
               "key": "lap-xu-ly-hoa-don",
@@ -292,14 +292,14 @@
               "count": 36
             },
             {
+              "key": "thue-suat-doi-tuong",
+              "label": "Thuế suất/Đối tượng chịu thuế",
+              "count": 33
+            },
+            {
               "key": "ke-khai-gtgt",
               "label": "Kê khai GTGT",
               "count": 30
-            },
-            {
-              "key": "thue-suat-doi-tuong",
-              "label": "Thuế suất/Đối tượng chịu thuế",
-              "count": 28
             },
             {
               "key": "bao-cao-bang-ke",
@@ -311,17 +311,17 @@
         {
           "key": "mau-bieu-thue",
           "label": "Mẫu biểu thuế - hóa đơn",
-          "count": 217,
+          "count": 220,
           "children": [
             {
               "key": "mau-thue-gtgt-hoa-don",
               "label": "Mẫu thuế GTGT/Hóa đơn",
-              "count": 142
+              "count": 143
             },
             {
               "key": "mau-thue-tncn",
               "label": "Mẫu thuế TNCN",
-              "count": 37
+              "count": 40
             },
             {
               "key": "mau-thue-tndn",
@@ -341,29 +341,19 @@
             {
               "key": "mau-bang-ke-phu-luc-ho-so",
               "label": "Mẫu bảng kê/phụ lục/hồ sơ",
-              "count": 3
-            },
-            {
-              "key": "mau-khau-tru-hoan-mien-giam",
-              "label": "Mẫu khấu trừ/hoàn/miễn giảm",
-              "count": 2
-            },
-            {
-              "key": "mau-dang-ky-thue-mst",
-              "label": "Mẫu đăng ký thuế/MST",
-              "count": 2
+              "count": 6
             }
           ]
         },
         {
           "key": "tncn",
           "label": "Thuế thu nhập cá nhân",
-          "count": 83,
+          "count": 84,
           "children": [
             {
               "key": "tinh-thue-bieu-thue",
               "label": "Tính thuế/Biểu thuế",
-              "count": 46
+              "count": 47
             },
             {
               "key": "ke-khai-quyet-toan",
@@ -395,12 +385,12 @@
         {
           "key": "cong-van",
           "label": "Công văn",
-          "count": 78,
+          "count": 82,
           "children": [
             {
               "key": "cong-van-ke-khai-quan-ly-thue",
               "label": "Công văn Kê khai/Quản lý thuế",
-              "count": 32
+              "count": 36
             },
             {
               "key": "cong-van-gtgt-hoa-don",
@@ -415,24 +405,19 @@
             {
               "key": "cong-van-tncn",
               "label": "Công văn TNCN",
-              "count": 8
+              "count": 9
             },
             {
               "key": "cong-van-tndn",
               "label": "Công văn TNDN",
               "count": 3
-            },
-            {
-              "key": "cong-van-mst-dang-ky-thue",
-              "label": "Công văn MST/Đăng ký thuế",
-              "count": 1
             }
           ]
         },
         {
           "key": "thong-tu",
           "label": "Thông tư",
-          "count": 67,
+          "count": 70,
           "children": [
             {
               "key": "thong-tu-gtgt-hoa-don",
@@ -442,12 +427,12 @@
             {
               "key": "thong-tu-chinh-sach-chung",
               "label": "Thông tư Chính sách chung",
-              "count": 10
+              "count": 11
             },
             {
               "key": "thong-tu-ke-khai-quan-ly-thue",
               "label": "Thông tư Kê khai/Quản lý thuế",
-              "count": 7
+              "count": 8
             },
             {
               "key": "thong-tu-ho-ca-nhan-kinh-doanh",
@@ -457,7 +442,7 @@
             {
               "key": "thong-tu-mst-dang-ky-thue",
               "label": "Thông tư MST/Đăng ký thuế",
-              "count": 4
+              "count": 5
             },
             {
               "key": "thong-tu-tncn",
@@ -474,12 +459,12 @@
         {
           "key": "tndn",
           "label": "Thuế thu nhập doanh nghiệp",
-          "count": 61,
+          "count": 62,
           "children": [
             {
               "key": "doanh-thu-thu-nhap-tinh-thue",
               "label": "Doanh thu/Thu nhập tính thuế",
-              "count": 18
+              "count": 17
             },
             {
               "key": "ke-khai-tam-nop-quyet-toan",
@@ -497,6 +482,11 @@
               "count": 8
             },
             {
+              "key": "van-ban-chinh-sach",
+              "label": "Văn bản/Chính sách",
+              "count": 6
+            },
+            {
               "key": "hach-toan-tndn",
               "label": "Hạch toán TNDN",
               "count": 5
@@ -505,11 +495,6 @@
               "key": "uu-dai-mien-giam-chuyen-lo",
               "label": "Ưu đãi/Miễn giảm/Chuyển lỗ",
               "count": 5
-            },
-            {
-              "key": "van-ban-chinh-sach",
-              "label": "Văn bản/Chính sách",
-              "count": 4
             }
           ]
         },
@@ -553,64 +538,22 @@
         {
           "key": "ma-so-thue-dang-ky-thue",
           "label": "Mã số thuế - Đăng ký thuế",
-          "count": 14,
+          "count": 13,
           "children": [
             {
               "key": "mst-thay-doi-va-xu-phat",
               "label": "MST thay đổi thông tin/xử phạt",
-              "count": 4
-            },
-            {
-              "key": "mst-tra-cuu-cau-truc-trang-thai",
-              "label": "MST tra cứu/cấu trúc/trạng thái",
-              "count": 4
+              "count": 5
             },
             {
               "key": "mst-dang-ky-lan-dau-doi-tuong",
               "label": "MST đăng ký lần đầu/đối tượng",
-              "count": 4
+              "count": 5
             },
             {
-              "key": "mst-thu-tuc-hanh-chinh-ho-so",
-              "label": "MST thủ tục hành chính/hồ sơ",
-              "count": 2
-            }
-          ]
-        },
-        {
-          "key": "le-phi-mon-bai",
-          "label": "Lệ phí môn bài",
-          "count": 12,
-          "children": [
-            {
-              "key": "mon-bai-mien-giam-tam-ngung",
-              "label": "Môn bài miễn giảm/tạm ngừng",
+              "key": "mst-tra-cuu-cau-truc-trang-thai",
+              "label": "MST tra cứu/cấu trúc/trạng thái",
               "count": 3
-            },
-            {
-              "key": "mon-bai-muc-thu-doi-tuong",
-              "label": "Môn bài mức thu/đối tượng",
-              "count": 3
-            },
-            {
-              "key": "mon-bai-ke-khai-to-khai",
-              "label": "Môn bài kê khai/tờ khai",
-              "count": 2
-            },
-            {
-              "key": "mon-bai-nop-thue-dien-tu",
-              "label": "Môn bài nộp thuế điện tử",
-              "count": 2
-            },
-            {
-              "key": "mon-bai-bien-lai-bao-cao",
-              "label": "Môn bài biên lai/báo cáo",
-              "count": 1
-            },
-            {
-              "key": "mon-bai-hach-toan",
-              "label": "Môn bài hạch toán",
-              "count": 1
             }
           ]
         },
@@ -622,27 +565,44 @@
             {
               "key": "hkd-ke-khai-ho-so-thoi-han",
               "label": "HKD kê khai/hồ sơ/thời hạn",
-              "count": 5
+              "count": 4
             },
             {
               "key": "hkd-tinh-thue-va-nop-thay",
               "label": "HKD tính thuế và nộp thay",
-              "count": 3
+              "count": 4
             },
             {
               "key": "hkd-che-do-ke-toan",
               "label": "HKD chế độ kế toán",
-              "count": 1
+              "count": 3
+            }
+          ]
+        },
+        {
+          "key": "le-phi-mon-bai",
+          "label": "Lệ phí môn bài",
+          "count": 11,
+          "children": [
+            {
+              "key": "mon-bai-muc-thu-doi-tuong",
+              "label": "Môn bài mức thu/đối tượng",
+              "count": 4
             },
             {
-              "key": "hkd-mon-bai",
-              "label": "HKD môn bài",
-              "count": 1
+              "key": "mon-bai-ke-khai-to-khai",
+              "label": "Môn bài kê khai/tờ khai",
+              "count": 3
             },
             {
-              "key": "thue-khoan-cnkd",
-              "label": "thue-khoan-cnkd",
-              "count": 1
+              "key": "mon-bai-mien-giam-tam-ngung",
+              "label": "Môn bài miễn giảm/tạm ngừng",
+              "count": 2
+            },
+            {
+              "key": "mon-bai-nop-thue-dien-tu",
+              "label": "Môn bài nộp thuế điện tử",
+              "count": 2
             }
           ]
         },
@@ -657,46 +617,14 @@
               "count": 4
             },
             {
+              "key": "nq-thue-tndn-giam-thue",
+              "label": "NQ/QĐ thuế TNDN giảm thuế",
+              "count": 4
+            },
+            {
               "key": "nq-thue-gtgt-giam-thue",
               "label": "NQ/QĐ thuế GTGT giảm thuế",
               "count": 3
-            },
-            {
-              "key": "nq-thue-tndn-giam-thue",
-              "label": "NQ/QĐ thuế TNDN giảm thuế",
-              "count": 3
-            },
-            {
-              "key": "qd-noi-bo-doanh-nghiep",
-              "label": "QĐ nội bộ doanh nghiệp",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "key": "luat-bo-luat",
-          "label": "Luật - Bộ luật",
-          "count": 4,
-          "children": [
-            {
-              "key": "luat-thue-tndn",
-              "label": "Luật Thuế TNDN",
-              "count": 1
-            },
-            {
-              "key": "luat-quan-ly-thue",
-              "label": "Luật quản lý thuế",
-              "count": 1
-            },
-            {
-              "key": "luat-thue-gtgt",
-              "label": "Luật thuế GTGT",
-              "count": 1
-            },
-            {
-              "key": "luat-thue-xuat-nhap-khau",
-              "label": "Luật thuế xuất nhập khẩu",
-              "count": 1
             }
           ]
         },
@@ -708,29 +636,7 @@
             {
               "key": "nha-thau-ke-khai-to-khai",
               "label": "Nhà thầu kê khai/tờ khai",
-              "count": 2
-            },
-            {
-              "key": "nha-thau-tinh-thue",
-              "label": "Nhà thầu tính thuế",
-              "count": 1
-            },
-            {
-              "key": "nha-thau-dang-ky-thue",
-              "label": "Nhà thầu đăng ký thuế",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "key": "chung-tu-so-sach",
-          "label": "Chứng từ - Sổ sách",
-          "count": 1,
-          "children": [
-            {
-              "key": "thue-chung-tu-tra-soat-c1-11ns",
-              "label": "Thuế chứng từ tra soát C1-11/NS",
-              "count": 1
+              "count": 4
             }
           ]
         }
@@ -739,27 +645,27 @@
     {
       "key": "ke-toan",
       "label": "Kế toán",
-      "count": 759,
+      "count": 755,
       "children": [
         {
           "key": "tai-khoan-hach-toan",
           "label": "Tài khoản - Hạch toán",
-          "count": 297,
+          "count": 299,
           "children": [
             {
               "key": "hach-toan-dac-thu",
               "label": "Nghiệp vụ đặc thù",
-              "count": 54
+              "count": 55
             },
             {
               "key": "hang-ton-kho-gia-thanh",
               "label": "Hàng tồn kho/Giá thành",
-              "count": 53
+              "count": 52
             },
             {
               "key": "cong-no-thanh-toan",
               "label": "Công nợ/Thanh toán",
-              "count": 46
+              "count": 49
             },
             {
               "key": "doanh-thu-chi-phi-kqkd",
@@ -774,7 +680,7 @@
             {
               "key": "tien-quy-ngan-hang",
               "label": "Tiền/Quỹ/Ngân hàng",
-              "count": 27
+              "count": 26
             },
             {
               "key": "tscd-ccdc-khau-hao",
@@ -796,12 +702,12 @@
             {
               "key": "mau-hanh-chinh-quan-tri-khac",
               "label": "Mẫu hành chính/quản trị khác",
-              "count": 42
+              "count": 41
             },
             {
               "key": "mau-chung-tu-tien-thanh-toan",
               "label": "Mẫu chứng từ tiền/thanh toán",
-              "count": 26
+              "count": 25
             },
             {
               "key": "mau-chung-tu-mua-ban-hop-dong",
@@ -816,7 +722,7 @@
             {
               "key": "mau-so-sach-ke-toan",
               "label": "Mẫu sổ sách kế toán",
-              "count": 16
+              "count": 17
             },
             {
               "key": "mau-thue-ke-khai-dang-ky",
@@ -831,7 +737,7 @@
             {
               "key": "mau-bao-cao-tai-chinh",
               "label": "Mẫu báo cáo tài chính",
-              "count": 11
+              "count": 13
             },
             {
               "key": "mau-luong-nhan-su",
@@ -841,39 +747,29 @@
             {
               "key": "mau-tai-chinh-von-ngoai-te",
               "label": "Mẫu tài chính vốn/ngoại tệ",
-              "count": 7
+              "count": 8
             },
             {
               "key": "mau-phieu-thu-phieu-chi",
               "label": "mau-phieu-thu-phieu-chi",
               "count": 2
-            },
-            {
-              "key": "mau-ke-khai-thue-gtgt-hoa-don",
-              "label": "mau-ke-khai-thue-gtgt-hoa-don",
-              "count": 1
-            },
-            {
-              "key": "mau-kiem-ke-doi-chieu",
-              "label": "mau-kiem-ke-doi-chieu",
-              "count": 1
             }
           ]
         },
         {
           "key": "chuan-muc-che-do-nguyen-tac",
           "label": "Chuẩn mực - Chế độ - Nguyên tắc",
-          "count": 96,
+          "count": 99,
           "children": [
             {
               "key": "tuyen-dung-nghe-nghiep-ke-toan",
               "label": "Tuyển dụng/Nghề nghiệp kế toán",
-              "count": 43
+              "count": 44
             },
             {
               "key": "che-do-ke-toan-va-thong-tu",
               "label": "Chế độ kế toán & thông tư",
-              "count": 27
+              "count": 30
             },
             {
               "key": "chuan-muc-ke-toan-vas",
@@ -886,19 +782,14 @@
               "count": 4
             },
             {
-              "key": "hinh-thuc-ghi-so-ke-toan",
-              "label": "Hình thức ghi sổ kế toán",
+              "key": "chuan-muc-che-do-khac",
+              "label": "Chuẩn mực/Chế độ khác",
               "count": 3
             },
             {
-              "key": "chuan-muc-che-do-khac",
-              "label": "Chuẩn mực/Chế độ khác",
+              "key": "hinh-thuc-ghi-so-ke-toan",
+              "label": "Hình thức ghi sổ kế toán",
               "count": 2
-            },
-            {
-              "key": "dich-vu-ke-toan",
-              "label": "Dịch vụ kế toán",
-              "count": 1
             }
           ]
         },
@@ -910,7 +801,7 @@
             {
               "key": "hang-ton-kho-gia-xuat",
               "label": "Hàng tồn kho/giá xuất kho",
-              "count": 37
+              "count": 38
             },
             {
               "key": "tscd-nguyen-gia-khau-hao",
@@ -923,13 +814,13 @@
               "count": 3
             },
             {
-              "key": "tai-san-kho-ccdc-khac",
-              "label": "Tài sản - Kho - CCDC khác",
-              "count": 3
-            },
-            {
               "key": "nghiep-vu-ke-toan-kho",
               "label": "Nghiệp vụ kế toán kho",
+              "count": 2
+            },
+            {
+              "key": "tai-san-kho-ccdc-khac",
+              "label": "Tài sản - Kho - CCDC khác",
               "count": 2
             }
           ]
@@ -937,27 +828,27 @@
         {
           "key": "chung-tu-so-sach",
           "label": "Chứng từ - Sổ sách",
-          "count": 43,
+          "count": 42,
           "children": [
             {
               "key": "hinh-thuc-ghi-so-ke-toan",
               "label": "Hình thức ghi sổ kế toán",
-              "count": 14
+              "count": 13
             },
             {
               "key": "so-sach-tien-kho-chi-tiet",
               "label": "Sổ sách tiền/kho/chi tiết",
-              "count": 13
+              "count": 12
             },
             {
               "key": "he-thong-chung-tu-mau-bieu",
               "label": "Hệ thống chứng từ/mẫu biểu",
-              "count": 7
+              "count": 9
             },
             {
               "key": "chung-tu-cong-tac-thanh-toan",
               "label": "Chứng từ công tác/thanh toán",
-              "count": 5
+              "count": 4
             },
             {
               "key": "xu-ly-sai-sot-so-sach",
@@ -974,17 +865,12 @@
             {
               "key": "lap-cac-bao-cao-thanh-phan",
               "label": "Lập các báo cáo thành phần",
-              "count": 14
+              "count": 15
             },
             {
               "key": "tong-quan-quy-dinh-nop-bctc",
               "label": "Tổng quan/quy định nộp BCTC",
-              "count": 5
-            },
-            {
-              "key": "vi-pham-dieu-chinh-bctc",
-              "label": "Vi phạm/điều chỉnh BCTC",
-              "count": 4
+              "count": 7
             },
             {
               "key": "chuan-muc-trinh-bay-bctc",
@@ -992,21 +878,21 @@
               "count": 3
             },
             {
-              "key": "nguyen-tac-trinh-bay-bctc",
-              "label": "Nguyên tắc trình bày BCTC",
+              "key": "vi-pham-dieu-chinh-bctc",
+              "label": "Vi phạm/điều chỉnh BCTC",
               "count": 3
             },
             {
-              "key": "phan-tich-doc-bctc",
-              "label": "Phân tích/đọc BCTC",
-              "count": 1
+              "key": "nguyen-tac-trinh-bay-bctc",
+              "label": "Nguyên tắc trình bày BCTC",
+              "count": 2
             }
           ]
         },
         {
           "key": "nghiep-vu-theo-phan-hanh",
           "label": "Nghiệp vụ theo phần hành",
-          "count": 24,
+          "count": 21,
           "children": [
             {
               "key": "chi-phi-duoc-tru-khong-duoc-tru",
@@ -1017,65 +903,23 @@
               "key": "so-sach-gia-thanh-ban-hang",
               "label": "Sổ sách giá thành/bán hàng",
               "count": 2
-            },
-            {
-              "key": "ghi-nhan-doanh-thu",
-              "label": "Ghi nhận doanh thu",
-              "count": 1
-            },
-            {
-              "key": "nghiep-vu-khuyen-mai",
-              "label": "Nghiệp vụ khuyến mại",
-              "count": 1
-            },
-            {
-              "key": "thanh-tra-cong-van-rui-ro",
-              "label": "Thanh tra/công văn/rủi ro",
-              "count": 1
             }
           ]
         },
         {
           "key": "thong-tu",
           "label": "Thông tư",
-          "count": 8,
+          "count": 7,
           "children": [
+            {
+              "key": "tt-che-do-ke-toan-doanh-nghiep",
+              "label": "Thông tư chế độ kế toán doanh nghiệp",
+              "count": 4
+            },
             {
               "key": "thong-tu-chinh-sach-chung",
               "label": "Thông tư Chính sách chung",
               "count": 3
-            },
-            {
-              "key": "tt-che-do-ke-toan-doanh-nghiep",
-              "label": "Thông tư chế độ kế toán doanh nghiệp",
-              "count": 3
-            },
-            {
-              "key": "tt-ke-toan-dn-sieu-nho",
-              "label": "Thông tư kế toán DN siêu nhỏ",
-              "count": 1
-            },
-            {
-              "key": "tt-ke-toan-ho-ca-nhan-kinh-doanh",
-              "label": "Thông tư kế toán hộ/cá nhân kinh doanh",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "key": "cong-van",
-          "label": "Công văn",
-          "count": 2,
-          "children": [
-            {
-              "key": "cong-van-ke-khai-quan-ly-thue",
-              "label": "Công văn Kê khai/Quản lý thuế",
-              "count": 1
-            },
-            {
-              "key": "cv-giai-thich-che-do-ke-toan",
-              "label": "Công văn giải thích chế độ kế toán",
-              "count": 1
             }
           ]
         },
@@ -1102,30 +946,13 @@
               "count": 2
             }
           ]
-        },
-        {
-          "key": "nghi-dinh",
-          "label": "Nghị định",
-          "count": 2,
-          "children": [
-            {
-              "key": "nd-huong-dan-luat-ke-toan",
-              "label": "Nghị định hướng dẫn Luật kế toán",
-              "count": 1
-            },
-            {
-              "key": "nd-xu-phat-vi-pham-ke-toan",
-              "label": "Nghị định xử phạt vi phạm kế toán",
-              "count": 1
-            }
-          ]
         }
       ]
     },
     {
       "key": "lao-dong-bao-hiem",
       "label": "Lao động - Bảo hiểm",
-      "count": 385,
+      "count": 382,
       "children": [
         {
           "key": "bao-hiem",
@@ -1135,7 +962,7 @@
             {
               "key": "che-do-muc-huong",
               "label": "Chế độ/Mức hưởng",
-              "count": 36
+              "count": 39
             },
             {
               "key": "ho-so-thu-tuc",
@@ -1145,7 +972,7 @@
             {
               "key": "doi-tuong-muc-dong",
               "label": "Đối tượng/Mức đóng",
-              "count": 18
+              "count": 17
             },
             {
               "key": "luong-can-cu-ty-le-dong",
@@ -1160,34 +987,39 @@
             {
               "key": "van-ban-chinh-sach",
               "label": "Văn bản/Chính sách",
-              "count": 9
+              "count": 8
             },
             {
               "key": "vi-pham-xu-phat",
               "label": "Vi phạm/Xử phạt",
-              "count": 6
+              "count": 5
             }
           ]
         },
         {
           "key": "lao-dong-tien-luong",
           "label": "Lao động - Tiền lương",
-          "count": 105,
+          "count": 110,
           "children": [
             {
               "key": "tien-luong-thoi-gio-lam-viec",
               "label": "Tiền lương/Thời giờ làm việc",
-              "count": 35
+              "count": 38
             },
             {
               "key": "ho-so-thu-tuc-lao-dong",
               "label": "Hồ sơ/Thủ tục lao động",
-              "count": 20
+              "count": 22
             },
             {
               "key": "hop-dong-quan-he-lao-dong",
               "label": "Hợp đồng/Quan hệ lao động",
-              "count": 20
+              "count": 21
+            },
+            {
+              "key": "thue-lien-quan-lao-dong",
+              "label": "Thuế liên quan lao động",
+              "count": 7
             },
             {
               "key": "hach-toan-luong",
@@ -1197,11 +1029,6 @@
             {
               "key": "noi-quy-thoa-uoc-ky-luat",
               "label": "Nội quy/Thỏa ước/Kỷ luật",
-              "count": 6
-            },
-            {
-              "key": "thue-lien-quan-lao-dong",
-              "label": "Thuế liên quan lao động",
               "count": 6
             },
             {
@@ -1218,28 +1045,18 @@
               "key": "van-ban-lao-dong",
               "label": "van-ban-lao-dong",
               "count": 2
-            },
-            {
-              "key": "xu-phat-vi-pham-lao-dong",
-              "label": "Xử phạt/Vi phạm lao động",
-              "count": 1
-            },
-            {
-              "key": "luong-khoan-phuc-loi-khac",
-              "label": "luong-khoan-phuc-loi-khac",
-              "count": 1
             }
           ]
         },
         {
           "key": "mau-bieu-lao-dong-bao-hiem",
           "label": "Mẫu biểu lao động - bảo hiểm",
-          "count": 85,
+          "count": 89,
           "children": [
             {
               "key": "mau-tien-luong-phu-cap",
               "label": "Mẫu tiền lương/phụ cấp",
-              "count": 41
+              "count": 42
             },
             {
               "key": "mau-bhxh-che-do",
@@ -1249,17 +1066,17 @@
             {
               "key": "mau-hop-dong-lao-dong",
               "label": "Mẫu hợp đồng lao động",
-              "count": 13
+              "count": 14
             },
             {
               "key": "mau-bao-cao-dang-ky-lao-dong",
               "label": "Mẫu báo cáo/đăng ký lao động",
-              "count": 5
+              "count": 6
             },
             {
               "key": "mau-noi-quy-thoa-uoc-lao-dong",
               "label": "Mẫu nội quy/thỏa ước lao động",
-              "count": 5
+              "count": 6
             },
             {
               "key": "mau-giay-phep-lao-dong-pli",
@@ -1271,7 +1088,7 @@
         {
           "key": "luat-bo-luat",
           "label": "Luật - Bộ luật",
-          "count": 23,
+          "count": 21,
           "children": [
             {
               "key": "luat-thue-gtgt",
@@ -1307,114 +1124,81 @@
               "key": "luat-lao-dong",
               "label": "Luật lao động",
               "count": 2
-            },
-            {
-              "key": "luat-thue-tncn",
-              "label": "Luật thuế TNCN",
-              "count": 1
-            },
-            {
-              "key": "luat-thue-xuat-nhap-khau",
-              "label": "Luật thuế xuất nhập khẩu",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "key": "nghi-quyet-quyet-dinh",
-          "label": "Nghị quyết - Quyết định",
-          "count": 13,
-          "children": [
-            {
-              "key": "qd-bhxh-bhyt-bhtn",
-              "label": "Quyết định BHXH/BHYT/BHTN",
-              "count": 8
-            },
-            {
-              "key": "qd-cong-doan-doan-phi",
-              "label": "Quyết định công đoàn/đoàn phí",
-              "count": 3
-            },
-            {
-              "key": "qd-cham-dut-hdld",
-              "label": "Quyết định chấm dứt HĐLĐ",
-              "count": 1
-            },
-            {
-              "key": "qd-thang-bang-luong",
-              "label": "Quyết định thang bảng lương",
-              "count": 1
             }
           ]
         },
         {
           "key": "cong-van",
           "label": "Công văn",
-          "count": 12,
+          "count": 11,
           "children": [
             {
               "key": "cong-van-chinh-sach-chung",
               "label": "Công văn Chính sách chung",
-              "count": 5
+              "count": 7
             },
             {
               "key": "cv-bhxh-bhyt-bhtn",
               "label": "Công văn BHXH/BHYT/BHTN",
               "count": 4
+            }
+          ]
+        },
+        {
+          "key": "cong-doan",
+          "label": "Công đoàn",
+          "count": 10,
+          "children": [
+            {
+              "key": "cong-doan-trich-nop-ty-le-muc-dong",
+              "label": "Công đoàn trích nộp/tỷ lệ/mức đóng",
+              "count": 7
             },
             {
-              "key": "cong-van-ke-khai-quan-ly-thue",
-              "label": "Công văn Kê khai/Quản lý thuế",
-              "count": 1
+              "key": "cong-doan-hach-toan-thue",
+              "label": "Công đoàn hạch toán/thuế",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "key": "nghi-quyet-quyet-dinh",
+          "label": "Nghị quyết - Quyết định",
+          "count": 10,
+          "children": [
+            {
+              "key": "qd-bhxh-bhyt-bhtn",
+              "label": "Quyết định BHXH/BHYT/BHTN",
+              "count": 7
             },
             {
-              "key": "cv-lao-dong-tien-luong",
-              "label": "Công văn lao động/tiền lương",
-              "count": 1
-            },
-            {
-              "key": "cv-thang-bang-luong",
-              "label": "Công văn thang bảng lương",
-              "count": 1
+              "key": "qd-cong-doan-doan-phi",
+              "label": "Quyết định công đoàn/đoàn phí",
+              "count": 3
             }
           ]
         },
         {
           "key": "thong-tu",
           "label": "Thông tư",
-          "count": 12,
+          "count": 10,
           "children": [
             {
               "key": "thong-tu-chinh-sach-chung",
               "label": "Thông tư Chính sách chung",
-              "count": 6
+              "count": 7
             },
             {
               "key": "tt-bhxh-bhyt-bhtn",
               "label": "Thông tư BHXH/BHYT/BHTN",
               "count": 3
-            },
-            {
-              "key": "tt-huong-dan-luat-lao-dong",
-              "label": "Thông tư hướng dẫn Luật lao động",
-              "count": 1
-            },
-            {
-              "key": "tt-tien-luong",
-              "label": "Thông tư tiền lương",
-              "count": 1
-            },
-            {
-              "key": "tt-tuyen-dung-bao-cao-lao-dong",
-              "label": "Thông tư tuyển dụng/báo cáo lao động",
-              "count": 1
             }
           ]
         },
         {
           "key": "nghi-dinh",
           "label": "Nghị định",
-          "count": 11,
+          "count": 6,
           "children": [
             {
               "key": "nd-bhxh",
@@ -1425,58 +1209,6 @@
               "key": "nd-bhyt",
               "label": "Nghị định BHYT",
               "count": 2
-            },
-            {
-              "key": "nd-cong-doan-kpcd",
-              "label": "Nghị định công đoàn/KPCĐ",
-              "count": 1
-            },
-            {
-              "key": "nd-huong-dan-luat-lao-dong",
-              "label": "Nghị định hướng dẫn Luật lao động",
-              "count": 1
-            },
-            {
-              "key": "nd-hop-dong-lao-dong",
-              "label": "Nghị định hợp đồng lao động",
-              "count": 1
-            },
-            {
-              "key": "nd-thang-bang-luong",
-              "label": "Nghị định thang bảng lương",
-              "count": 1
-            },
-            {
-              "key": "nd-viec-lam",
-              "label": "Nghị định việc làm",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "key": "cong-doan",
-          "label": "Công đoàn",
-          "count": 9,
-          "children": [
-            {
-              "key": "cong-doan-trich-nop-ty-le-muc-dong",
-              "label": "Công đoàn trích nộp/tỷ lệ/mức đóng",
-              "count": 5
-            },
-            {
-              "key": "cong-doan-hach-toan-thue",
-              "label": "Công đoàn hạch toán/thuế",
-              "count": 2
-            },
-            {
-              "key": "cong-doan-huong-dan-van-ban",
-              "label": "Công đoàn hướng dẫn/văn bản",
-              "count": 1
-            },
-            {
-              "key": "cong-doan-xu-phat-vi-pham",
-              "label": "Công đoàn xử phạt vi phạm",
-              "count": 1
             }
           ]
         }
@@ -1485,12 +1217,12 @@
     {
       "key": "doanh-nghiep-thu-tuc",
       "label": "Doanh nghiệp - Thủ tục",
-      "count": 202,
+      "count": 200,
       "children": [
         {
           "key": "mau-bieu-doanh-nghiep-thu-tuc",
           "label": "Mẫu biểu doanh nghiệp - thủ tục",
-          "count": 110,
+          "count": 111,
           "children": [
             {
               "key": "mau-to-khai-thue-tndn",
@@ -1500,7 +1232,7 @@
             {
               "key": "mau-dang-ky-thay-doi-doanh-nghiep",
               "label": "Mẫu đăng ký/thay đổi doanh nghiệp",
-              "count": 17
+              "count": 18
             },
             {
               "key": "mau-dang-ky-thue-mst",
@@ -1530,7 +1262,7 @@
             {
               "key": "mau-bieu-quan-tri-noi-bo",
               "label": "mau-bieu-quan-tri-noi-bo",
-              "count": 3
+              "count": 4
             },
             {
               "key": "mau-hop-dong-thuong-mai",
@@ -1541,28 +1273,28 @@
               "key": "mau-thu-tuc-khac",
               "label": "Mẫu thủ tục khác",
               "count": 2
-            },
-            {
-              "key": "mau-thong-bao-doanh-nghiep",
-              "label": "mau-thong-bao-doanh-nghiep",
-              "count": 1
             }
           ]
         },
         {
           "key": "thu-tuc-doanh-nghiep",
           "label": "DN - Thủ tục",
-          "count": 65,
+          "count": 67,
           "children": [
             {
               "key": "dn-thu-tuc-tai-chinh-vay-von",
               "label": "DN thủ tục tài chính/vay vốn",
-              "count": 33
+              "count": 32
             },
             {
               "key": "dn-thu-tuc-quan-tri-ho-tro",
               "label": "DN thủ tục quản trị/hỗ trợ",
-              "count": 14
+              "count": 12
+            },
+            {
+              "key": "dn-thu-tuc-khuyen-mai-thuong-mai",
+              "label": "DN thủ tục khuyến mại/thương mại",
+              "count": 9
             },
             {
               "key": "dn-thu-tuc-thanh-lap-thay-doi",
@@ -1570,21 +1302,16 @@
               "count": 9
             },
             {
-              "key": "dn-thu-tuc-khuyen-mai-thuong-mai",
-              "label": "DN thủ tục khuyến mại/thương mại",
-              "count": 6
-            },
-            {
               "key": "dn-thu-tuc-giai-the",
               "label": "DN thủ tục giải thể",
-              "count": 3
+              "count": 5
             }
           ]
         },
         {
           "key": "thong-tu",
           "label": "Thông tư",
-          "count": 14,
+          "count": 12,
           "children": [
             {
               "key": "thong-tu-tndn",
@@ -1594,32 +1321,12 @@
             {
               "key": "thong-tu-chinh-sach-chung",
               "label": "Thông tư Chính sách chung",
-              "count": 3
-            },
-            {
-              "key": "thong-tu-ho-ca-nhan-kinh-doanh",
-              "label": "Thông tư Hộ/Cá nhân kinh doanh",
-              "count": 1
-            },
-            {
-              "key": "thong-tu-ke-khai-quan-ly-thue",
-              "label": "Thông tư Kê khai/Quản lý thuế",
-              "count": 1
-            },
-            {
-              "key": "thong-tu-mst-dang-ky-thue",
-              "label": "Thông tư MST/Đăng ký thuế",
-              "count": 1
-            },
-            {
-              "key": "tt-giao-dich-tai-chinh-doanh-nghiep",
-              "label": "Thông tư giao dịch tài chính doanh nghiệp",
-              "count": 1
+              "count": 4
             },
             {
               "key": "tt-dang-ky-doanh-nghiep",
               "label": "Thông tư đăng ký doanh nghiệp",
-              "count": 1
+              "count": 2
             }
           ]
         },
@@ -1638,51 +1345,36 @@
         {
           "key": "cong-van",
           "label": "Công văn",
-          "count": 3,
+          "count": 2,
           "children": [
             {
               "key": "cong-van-chinh-sach-chung",
               "label": "Công văn Chính sách chung",
               "count": 2
-            },
-            {
-              "key": "cong-van-ke-khai-quan-ly-thue",
-              "label": "Công văn Kê khai/Quản lý thuế",
-              "count": 1
             }
           ]
         },
         {
           "key": "nghi-quyet-quyet-dinh",
           "label": "Nghị quyết - Quyết định",
-          "count": 3,
+          "count": 2,
           "children": [
             {
               "key": "nq-thue-tndn-giam-thue",
               "label": "NQ/QĐ thuế TNDN giảm thuế",
               "count": 2
-            },
-            {
-              "key": "qd-giai-the-doanh-nghiep",
-              "label": "QĐ giải thể doanh nghiệp",
-              "count": 1
             }
           ]
         },
         {
           "key": "nghi-dinh",
           "label": "Nghị định",
-          "count": 3,
+          "count": 2,
           "children": [
             {
               "key": "nd-dang-ky-doanh-nghiep",
               "label": "Nghị định đăng ký doanh nghiệp",
               "count": 2
-            },
-            {
-              "key": "nd-huong-dan-luat-doanh-nghiep",
-              "label": "Nghị định hướng dẫn Luật doanh nghiệp",
-              "count": 1
             }
           ]
         }
@@ -1691,7 +1383,7 @@
     {
       "key": "mau-file-ke-khai",
       "label": "Mẫu file & kê khai",
-      "count": 199,
+      "count": 198,
       "children": [
         {
           "key": "htkk-etax-thue-dien-tu",
@@ -1759,18 +1451,6 @@
               "key": "excel-kho-tscd-tien",
               "label": "Excel kho/TSCĐ/tiền",
               "count": 3
-            }
-          ]
-        },
-        {
-          "key": "fast",
-          "label": "FAST",
-          "count": 1,
-          "children": [
-            {
-              "key": "fast-tai-ve-dung-thu",
-              "label": "FAST tải về/dùng thử",
-              "count": 1
             }
           ]
         }
@@ -1860,29 +1540,12 @@
         {
           "key": "fast",
           "label": "FAST",
-          "count": 2,
+          "count": 3,
           "children": [
-            {
-              "key": "fast-cai-dat",
-              "label": "FAST cài đặt",
-              "count": 1
-            },
             {
               "key": "fast-huong-dan-su-dung",
               "label": "FAST hướng dẫn sử dụng",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "key": "cong-van",
-          "label": "Công văn",
-          "count": 1,
-          "children": [
-            {
-              "key": "cong-van-ke-khai-quan-ly-thue",
-              "label": "Công văn Kê khai/Quản lý thuế",
-              "count": 1
+              "count": 3
             }
           ]
         }
@@ -1896,32 +1559,27 @@
         {
           "key": "kinh-nghiem-hoi-dap-nghe-nghiep",
           "label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
-          "count": 72,
+          "count": 73,
           "children": [
             {
               "key": "kinh-nghiem-quyet-toan-thue",
               "label": "Kinh nghiệm quyết toán thuế",
-              "count": 35
+              "count": 38
             },
             {
               "key": "kinh-nghiem-phong-van-xin-viec",
               "label": "Kinh nghiệm/phỏng vấn/xin việc",
-              "count": 15
+              "count": 14
             },
             {
               "key": "mo-ta-cong-viec-ke-toan",
               "label": "Mô tả công việc kế toán",
-              "count": 13
+              "count": 12
             },
             {
               "key": "hoc-va-dao-tao-ke-toan",
               "label": "Học và đào tạo kế toán",
-              "count": 8
-            },
-            {
-              "key": "hoc-nghe-va-thuc-tap",
-              "label": "Học nghề và thực tập",
-              "count": 1
+              "count": 9
             }
           ]
         },
@@ -1936,13 +1594,18 @@
               "count": 7
             },
             {
-              "key": "thuc-tap-chi-phi-gia-thanh",
-              "label": "Thực tập chi phí/giá thành",
-              "count": 5
+              "key": "thuc-tap-ke-toan-tong-hop-to-chuc",
+              "label": "Thực tập kế toán tổng hợp/tổ chức",
+              "count": 7
             },
             {
               "key": "thuc-tap-nvl-ccdc",
               "label": "Thực tập NVL/CCDC",
+              "count": 4
+            },
+            {
+              "key": "thuc-tap-chi-phi-gia-thanh",
+              "label": "Thực tập chi phí/giá thành",
               "count": 4
             },
             {
@@ -1951,24 +1614,9 @@
               "count": 4
             },
             {
-              "key": "thuc-tap-ke-toan-tong-hop-to-chuc",
-              "label": "Thực tập kế toán tổng hợp/tổ chức",
-              "count": 3
-            },
-            {
               "key": "thuc-tap-tien-luong",
               "label": "Thực tập tiền lương",
-              "count": 3
-            },
-            {
-              "key": "thuc-tap-tscd",
-              "label": "Thực tập TSCĐ",
-              "count": 1
-            },
-            {
-              "key": "thuc-tap-thue",
-              "label": "Thực tập thuế",
-              "count": 1
+              "count": 2
             }
           ]
         },
@@ -1980,37 +1628,12 @@
             {
               "key": "bai-tap-dinh-khoan-hach-toan",
               "label": "Bài tập định khoản/hạch toán",
-              "count": 4
+              "count": 9
             },
             {
               "key": "bai-tap-thue-tncn",
               "label": "Bài tập thuế TNCN",
               "count": 2
-            },
-            {
-              "key": "bai-tap-tscd",
-              "label": "Bài tập TSCĐ",
-              "count": 1
-            },
-            {
-              "key": "bai-tap-thue-gtgt",
-              "label": "Bài tập thuế GTGT",
-              "count": 1
-            },
-            {
-              "key": "bai-tap-thue-tndn",
-              "label": "Bài tập thuế TNDN",
-              "count": 1
-            },
-            {
-              "key": "bai-tap-thue-ttdb",
-              "label": "Bài tập thuế TTĐB",
-              "count": 1
-            },
-            {
-              "key": "bai-tap-thue-xnk",
-              "label": "Bài tập thuế XNK",
-              "count": 1
             }
           ]
         },
@@ -2032,23 +1655,6 @@
           ]
         },
         {
-          "key": "thong-tu",
-          "label": "Thông tư",
-          "count": 3,
-          "children": [
-            {
-              "key": "thong-tu-ke-khai-quan-ly-thue",
-              "label": "Thông tư Kê khai/Quản lý thuế",
-              "count": 2
-            },
-            {
-              "key": "thong-tu-chinh-sach-chung",
-              "label": "Thông tư Chính sách chung",
-              "count": 1
-            }
-          ]
-        },
-        {
           "key": "luat-bo-luat",
           "label": "Luật - Bộ luật",
           "count": 2,
@@ -2056,6 +1662,18 @@
             {
               "key": "luat-quan-ly-thue",
               "label": "Luật quản lý thuế",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "thong-tu",
+          "label": "Thông tư",
+          "count": 2,
+          "children": [
+            {
+              "key": "thong-tu-ke-khai-quan-ly-thue",
+              "label": "Thông tư Kê khai/Quản lý thuế",
               "count": 2
             }
           ]
@@ -2101,8 +1719,8 @@
       "topic_lv1_label": "Lao động - Bảo hiểm",
       "topic_lv2_key": "lao-dong-tien-luong",
       "topic_lv2_label": "Lao động - Tiền lương",
-      "topic_lv3_key": "xu-phat-vi-pham-lao-dong",
-      "topic_lv3_label": "Xử phạt/Vi phạm lao động",
+      "topic_lv3_key": "noi-quy-thoa-uoc-ky-luat",
+      "topic_lv3_label": "Nội quy/Thỏa ước/Kỷ luật",
       "tags": [
         "Lao động",
         "Tiền lương",
@@ -2110,7 +1728,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Tiền lương",
+      "topic_label": "Nội quy/Thỏa ước/Kỷ luật",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -2235,10 +1853,10 @@
       "excerpt": "Ngày 17/5/2025, Quốc hội thông qua Nghị quyết 198/2025/QH15 về một số cơ chế, chính sách đặc biệt phát triển kinh tế tư…",
       "topic_lv1_key": "thue",
       "topic_lv1_label": "Thuế - Hóa đơn",
-      "topic_lv2_key": "le-phi-mon-bai",
-      "topic_lv2_label": "Lệ phí môn bài",
-      "topic_lv3_key": "mon-bai-mien-giam-tam-ngung",
-      "topic_lv3_label": "Môn bài miễn giảm/tạm ngừng",
+      "topic_lv2_key": "nghi-quyet-quyet-dinh",
+      "topic_lv2_label": "Nghị quyết - Quyết định",
+      "topic_lv3_key": "nq-thue-tndn-giam-thue",
+      "topic_lv3_label": "NQ/QĐ thuế TNDN giảm thuế",
       "tags": [
         "Lệ phí môn bài",
         "Thuế",
@@ -2247,7 +1865,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Lệ phí môn bài",
+      "topic_label": "Nghị quyết - Quyết định",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -2342,8 +1960,8 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "bai-tap-thuc-hanh",
       "topic_lv2_label": "Bài tập - Thực hành",
-      "topic_lv3_key": "bai-tap-tscd",
-      "topic_lv3_label": "Bài tập TSCĐ",
+      "topic_lv3_key": "bai-tap-dinh-khoan-hach-toan",
+      "topic_lv3_label": "Bài tập định khoản/hạch toán",
       "tags": [
         "TSCĐ",
         "Bài tập",
@@ -2353,7 +1971,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Bài tập",
+      "topic_label": "Bài tập định khoản/hạch toán",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -2370,8 +1988,8 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "bai-tap-thuc-hanh",
       "topic_lv2_label": "Bài tập - Thực hành",
-      "topic_lv3_key": "bai-tap-thue-ttdb",
-      "topic_lv3_label": "Bài tập thuế TTĐB",
+      "topic_lv3_key": "bai-tap-dinh-khoan-hach-toan",
+      "topic_lv3_label": "Bài tập định khoản/hạch toán",
       "tags": [
         "Bài tập",
         "Thực hành",
@@ -2380,7 +1998,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Bài tập",
+      "topic_label": "Bài tập định khoản/hạch toán",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -2397,8 +2015,8 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "bai-tap-thuc-hanh",
       "topic_lv2_label": "Bài tập - Thực hành",
-      "topic_lv3_key": "bai-tap-thue-xnk",
-      "topic_lv3_label": "Bài tập thuế XNK",
+      "topic_lv3_key": "bai-tap-dinh-khoan-hach-toan",
+      "topic_lv3_label": "Bài tập định khoản/hạch toán",
       "tags": [
         "Bài tập",
         "Thực hành",
@@ -2407,7 +2025,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Bài tập",
+      "topic_label": "Bài tập định khoản/hạch toán",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -2452,8 +2070,8 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "bai-tap-thuc-hanh",
       "topic_lv2_label": "Bài tập - Thực hành",
-      "topic_lv3_key": "bai-tap-thue-gtgt",
-      "topic_lv3_label": "Bài tập thuế GTGT",
+      "topic_lv3_key": "bai-tap-dinh-khoan-hach-toan",
+      "topic_lv3_label": "Bài tập định khoản/hạch toán",
       "tags": [
         "GTGT",
         "Bài tập",
@@ -2463,7 +2081,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Bài tập",
+      "topic_label": "Bài tập định khoản/hạch toán",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -2532,8 +2150,8 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "bai-tap-thuc-hanh",
       "topic_lv2_label": "Bài tập - Thực hành",
-      "topic_lv3_key": "bai-tap-thue-tndn",
-      "topic_lv3_label": "Bài tập thuế TNDN",
+      "topic_lv3_key": "bai-tap-dinh-khoan-hach-toan",
+      "topic_lv3_label": "Bài tập định khoản/hạch toán",
       "tags": [
         "TNDN",
         "Bài tập",
@@ -2543,7 +2161,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Bài tập",
+      "topic_label": "Bài tập định khoản/hạch toán",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -3030,8 +2648,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "mau-bieu-thue",
       "topic_lv2_label": "Mẫu biểu thuế - hóa đơn",
-      "topic_lv3_key": "mau-thue-gtgt-hoa-don",
-      "topic_lv3_label": "Mẫu thuế GTGT/Hóa đơn",
+      "topic_lv3_key": "mau-thue-tncn",
+      "topic_lv3_label": "Mẫu thuế TNCN",
       "tags": [
         "GTGT",
         "Mẫu biểu thuế",
@@ -3040,7 +2658,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Mẫu thuế - hóa đơn",
+      "topic_label": "Mẫu biểu thuế - hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -3108,8 +2726,8 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "mau-bieu-ke-toan",
       "topic_lv2_label": "Mẫu biểu kế toán",
-      "topic_lv3_key": "mau-hanh-chinh-quan-tri-khac",
-      "topic_lv3_label": "Mẫu hành chính/quản trị khác",
+      "topic_lv3_key": "mau-bao-cao-tai-chinh",
+      "topic_lv3_label": "Mẫu báo cáo tài chính",
       "tags": [
         "Mẫu biểu kế toán",
         "Kế toán",
@@ -3626,8 +3244,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "le-phi-mon-bai",
       "topic_lv2_label": "Lệ phí môn bài",
-      "topic_lv3_key": "mon-bai-bien-lai-bao-cao",
-      "topic_lv3_label": "Môn bài biên lai/báo cáo",
+      "topic_lv3_key": "mon-bai-ke-khai-to-khai",
+      "topic_lv3_label": "Môn bài kê khai/tờ khai",
       "tags": [
         "Lệ phí môn bài",
         "Thuế",
@@ -3636,7 +3254,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Lệ phí môn bài",
+      "topic_label": "Môn bài kê khai/tờ khai",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -4846,8 +4464,8 @@
       "topic_lv1_label": "Lao động - Bảo hiểm",
       "topic_lv2_key": "bao-hiem",
       "topic_lv2_label": "BHXH - BHYT - BHTN",
-      "topic_lv3_key": "doi-tuong-muc-dong",
-      "topic_lv3_label": "Đối tượng/Mức đóng",
+      "topic_lv3_key": "che-do-muc-huong",
+      "topic_lv3_label": "Chế độ/Mức hưởng",
       "tags": [
         "BHXH",
         "BHYT",
@@ -4857,7 +4475,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "BHXH - BHYT",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -5187,8 +4805,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "tndn",
       "topic_lv2_label": "Thuế thu nhập doanh nghiệp",
-      "topic_lv3_key": "doanh-thu-thu-nhap-tinh-thue",
-      "topic_lv3_label": "Doanh thu/Thu nhập tính thuế",
+      "topic_lv3_key": "van-ban-chinh-sach",
+      "topic_lv3_label": "Văn bản/Chính sách",
       "tags": [
         "TNDN",
         "Thuế thu nhập doanh nghiệp",
@@ -5197,7 +4815,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Thuế TNDN",
+      "topic_label": "Thuế thu nhập doanh nghiệp",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -9086,12 +8704,12 @@
       "file": "cach-hach-toan-tien-thue-mon-bai.htm",
       "title": "Cách hạch toán lệ phí môn bài phải nộp 2025",
       "excerpt": "Lệ phí môn bài là loại phí nộp theo năm. Do đó hàng năm khi nộp tiền lệ phí môn bài thì doanh nghiệp sẽ hạch toán khoản…",
-      "topic_lv1_key": "thue",
-      "topic_lv1_label": "Thuế - Hóa đơn",
-      "topic_lv2_key": "le-phi-mon-bai",
-      "topic_lv2_label": "Lệ phí môn bài",
-      "topic_lv3_key": "mon-bai-hach-toan",
-      "topic_lv3_label": "Môn bài hạch toán",
+      "topic_lv1_key": "ke-toan",
+      "topic_lv1_label": "Kế toán",
+      "topic_lv2_key": "tai-khoan-hach-toan",
+      "topic_lv2_label": "Tài khoản - Hạch toán",
+      "topic_lv3_key": "thue-nghia-vu",
+      "topic_lv3_label": "Thuế/Nghĩa vụ NSNN",
       "tags": [
         "Lệ phí môn bài",
         "Thuế",
@@ -9100,7 +8718,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Lệ phí môn bài",
+      "topic_label": "Thuế/Nghĩa vụ NSNN",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -17753,8 +17371,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "thue-nha-thau",
       "topic_lv2_label": "Thuế nhà thầu",
-      "topic_lv3_key": "nha-thau-tinh-thue",
-      "topic_lv3_label": "Nhà thầu tính thuế",
+      "topic_lv3_key": "nha-thau-ke-khai-to-khai",
+      "topic_lv3_label": "Nhà thầu kê khai/tờ khai",
       "tags": [
         "Nhà thầu",
         "Thuế nhà thầu",
@@ -17763,7 +17381,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Thuế nhà thầu",
+      "topic_label": "Nhà thầu kê khai/tờ khai",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -22345,8 +21963,8 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "chuan-muc-che-do-nguyen-tac",
       "topic_lv2_label": "Chuẩn mực - Chế độ - Nguyên tắc",
-      "topic_lv3_key": "dich-vu-ke-toan",
-      "topic_lv3_label": "Dịch vụ kế toán",
+      "topic_lv3_key": "chuan-muc-che-do-khac",
+      "topic_lv3_label": "Chuẩn mực/Chế độ khác",
       "tags": [
         "Chuẩn mực",
         "Chế độ",
@@ -22355,7 +21973,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Chuẩn mực - Chế độ",
+      "topic_label": "Chuẩn mực/Chế độ khác",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -23122,17 +22740,17 @@
       "excerpt": "Công văn 12568/BTC-CĐKT ngày 09/09/2015 của Bộ tài chính gửi Công ty Kiểm toán Giải thích nội dung Thông tư 200/2014/TT…",
       "topic_lv1_key": "ke-toan",
       "topic_lv1_label": "Kế toán",
-      "topic_lv2_key": "cong-van",
-      "topic_lv2_label": "Công văn",
-      "topic_lv3_key": "cv-giai-thich-che-do-ke-toan",
-      "topic_lv3_label": "Công văn giải thích chế độ kế toán",
+      "topic_lv2_key": "chuan-muc-che-do-nguyen-tac",
+      "topic_lv2_label": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "topic_lv3_key": "che-do-ke-toan-va-thong-tu",
+      "topic_lv3_label": "Chế độ kế toán & thông tư",
       "tags": [
         "Công văn",
         "Kế toán",
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Công văn",
+      "topic_label": "Chế độ kế toán & thông tư",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -23351,8 +22969,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "topic_lv3_key": "cong-van-mst-dang-ky-thue",
-      "topic_lv3_label": "Công văn MST/Đăng ký thuế",
+      "topic_lv3_key": "cong-van-ke-khai-quan-ly-thue",
+      "topic_lv3_label": "Công văn Kê khai/Quản lý thuế",
       "tags": [
         "Mã số thuế",
         "Công văn",
@@ -23362,7 +22980,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Công văn",
+      "topic_label": "Công văn Kê khai/Quản lý thuế",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -23530,8 +23148,8 @@
       "file": "cong-van-2512-tct-cs-nhung-noi-dung-moi-cua-thong-tu-96.htm",
       "title": "Công văn 2512/TCT-CS Những nội dung mới của Thông tư 96",
       "excerpt": "Công văn 2512/TCT-CS ngày 24/06/2015 giới thiệu nội dung mới của 96/2015/TT-BTC hướng dẫn về thuế thu nhập doanh nghiệp",
-      "topic_lv1_key": "doanh-nghiep-thu-tuc",
-      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "topic_lv3_key": "cong-van-ke-khai-quan-ly-thue",
@@ -23541,7 +23159,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Công văn",
+      "topic_label": "Công văn Kê khai/Quản lý thuế",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -24200,18 +23818,18 @@
       "file": "cong-van-4868-tct-cs-gioi-thieu-cac-noi-dung-moi-nghi-dinh-123.htm",
       "title": "Công văn 4868/TCT-CS Giới thiệu các nội dung mới Nghị định 123",
       "excerpt": "Công văn 4868/TCT-CS ngày 16/11/2020 của Tổng cục thuế giới thiệu các nội dung mới của Nghị định 123/2020/NĐ-CP quy định về hóa đơn điện tử, chứng từ",
-      "topic_lv1_key": "ke-toan",
-      "topic_lv1_label": "Kế toán",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "topic_lv3_key": "cong-van-ke-khai-quan-ly-thue",
-      "topic_lv3_label": "Công văn Kê khai/Quản lý thuế",
+      "topic_lv3_key": "cong-van-gtgt-hoa-don",
+      "topic_lv3_label": "Công văn GTGT/Hóa đơn",
       "tags": [
         "Công văn",
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Công văn",
+      "topic_label": "Công văn GTGT/Hóa đơn",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -24460,19 +24078,19 @@
       "file": "cong-van-5749-huong-dan-quyet-toan-thue-tncn.htm",
       "title": "Công văn 5749/CT-TNCN Hướng dẫn Quyết toán thuế TNCN năm 2017",
       "excerpt": "Công văn 5749/CT-TNCN ngày 5/2/2018 của Cục thuế TP Hà Nội hướng dẫn quyết toán thuế TNCN năm 2017 và cấp MST người phụ thuộc, chỉ quyết toán thuế đối với thu nhập chịu thuế từ tiền lương, tiền công.",
-      "topic_lv1_key": "lao-dong-bao-hiem",
-      "topic_lv1_label": "Lao động - Bảo hiểm",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "topic_lv3_key": "cong-van-ke-khai-quan-ly-thue",
-      "topic_lv3_label": "Công văn Kê khai/Quản lý thuế",
+      "topic_lv3_key": "cong-van-tncn",
+      "topic_lv3_label": "Công văn TNCN",
       "tags": [
         "TNCN",
         "Công văn",
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Công văn",
+      "topic_label": "Công văn TNCN",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -24514,8 +24132,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "topic_lv3_key": "cong-van-gtgt-hoa-don",
-      "topic_lv3_label": "Công văn GTGT/Hóa đơn",
+      "topic_lv3_key": "cong-van-ke-khai-quan-ly-thue",
+      "topic_lv3_label": "Công văn Kê khai/Quản lý thuế",
       "tags": [
         "GTGT",
         "Kê khai",
@@ -24748,8 +24366,8 @@
       "file": "cong-van-845-tct-nang-cap-htkk-bctc-theo-thong-tu-133.htm",
       "title": "Công văn 845/TCT-CNTT nâng cấp HTKK - BCTC theo Thông tư 133",
       "excerpt": "Công văn 845/TCT-CNTT ngày 15/03/2018 của Tổng cục thuế, về việc kế hoạch nâng cấp HTKK và các ứng dụng đáp ứng mẫu Báo cáo tài chính theo Thông tư 133/2016/TT-BTC",
-      "topic_lv1_key": "phan-mem-cong-cu",
-      "topic_lv1_label": "Phần mềm - Công cụ",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
       "topic_lv3_key": "cong-van-ke-khai-quan-ly-thue",
@@ -24827,8 +24445,8 @@
       "topic_lv1_label": "Lao động - Bảo hiểm",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "topic_lv3_key": "cv-thang-bang-luong",
-      "topic_lv3_label": "Công văn thang bảng lương",
+      "topic_lv3_key": "cong-van-chinh-sach-chung",
+      "topic_lv3_label": "Công văn Chính sách chung",
       "tags": [
         "Công văn",
         "Lao động",
@@ -24837,7 +24455,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Công văn",
+      "topic_label": "Công văn Chính sách chung",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -25117,8 +24735,8 @@
       "topic_lv1_label": "Lao động - Bảo hiểm",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "topic_lv3_key": "cv-lao-dong-tien-luong",
-      "topic_lv3_label": "Công văn lao động/tiền lương",
+      "topic_lv3_key": "cong-van-chinh-sach-chung",
+      "topic_lv3_label": "Công văn Chính sách chung",
       "tags": [
         "Công văn",
         "Lao động",
@@ -25126,7 +24744,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Công văn",
+      "topic_label": "Công văn Chính sách chung",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -25887,8 +25505,8 @@
       "topic_lv1_label": "Lao động - Bảo hiểm",
       "topic_lv2_key": "bao-hiem",
       "topic_lv2_label": "BHXH - BHYT - BHTN",
-      "topic_lv3_key": "van-ban-chinh-sach",
-      "topic_lv3_label": "Văn bản/Chính sách",
+      "topic_lv3_key": "che-do-muc-huong",
+      "topic_lv3_label": "Chế độ/Mức hưởng",
       "tags": [
         "BHXH",
         "BHYT",
@@ -25898,7 +25516,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "BHXH - BHYT",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -25965,8 +25583,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "ma-so-thue-dang-ky-thue",
       "topic_lv2_label": "Mã số thuế - Đăng ký thuế",
-      "topic_lv3_key": "mst-tra-cuu-cau-truc-trang-thai",
-      "topic_lv3_label": "MST tra cứu/cấu trúc/trạng thái",
+      "topic_lv3_key": "mst-dang-ky-lan-dau-doi-tuong",
+      "topic_lv3_label": "MST đăng ký lần đầu/đối tượng",
       "tags": [
         "Mã số thuế",
         "Đăng ký thuế",
@@ -25993,8 +25611,8 @@
       "topic_lv1_label": "Doanh nghiệp - Thủ tục",
       "topic_lv2_key": "thu-tuc-doanh-nghiep",
       "topic_lv2_label": "DN - Thủ tục",
-      "topic_lv3_key": "dn-thu-tuc-quan-tri-ho-tro",
-      "topic_lv3_label": "DN thủ tục quản trị/hỗ trợ",
+      "topic_lv3_key": "dn-thu-tuc-giai-the",
+      "topic_lv3_label": "DN thủ tục giải thể",
       "tags": [
         "DN",
         "Thủ tục",
@@ -26045,10 +25663,10 @@
       "excerpt": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế trên hệ thống Dịch vụ công hoặc thuế điện tử 1. Các mã thủ tục hàn…",
       "topic_lv1_key": "thue",
       "topic_lv1_label": "Thuế - Hóa đơn",
-      "topic_lv2_key": "ma-so-thue-dang-ky-thue",
-      "topic_lv2_label": "Mã số thuế - Đăng ký thuế",
-      "topic_lv3_key": "mst-thu-tuc-hanh-chinh-ho-so",
-      "topic_lv3_label": "MST thủ tục hành chính/hồ sơ",
+      "topic_lv2_key": "mau-bieu-thue",
+      "topic_lv2_label": "Mẫu biểu thuế - hóa đơn",
+      "topic_lv3_key": "mau-bang-ke-phu-luc-ho-so",
+      "topic_lv3_label": "Mẫu bảng kê/phụ lục/hồ sơ",
       "tags": [
         "Mã số thuế",
         "Đăng ký thuế",
@@ -26058,7 +25676,7 @@
         "Nộp tờ khai"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Mã số thuế - Đăng ký thuế",
+      "topic_label": "Mẫu biểu thuế - hóa đơn",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -26349,10 +25967,10 @@
         "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "badge_label": "Hướng dẫn",
-      "topic_label": "NQ / Quyết định",
-      "library_kind_key": "huong-dan",
-      "library_kind_label": "Hướng dẫn",
+      "badge_label": "Văn bản",
+      "topic_label": "Nghị quyết - Quyết định",
+      "library_kind_key": "van-ban",
+      "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2019-11-20",
@@ -28025,8 +27643,8 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "chuan-muc-che-do-nguyen-tac",
       "topic_lv2_label": "Chuẩn mực - Chế độ - Nguyên tắc",
-      "topic_lv3_key": "hinh-thuc-ghi-so-ke-toan",
-      "topic_lv3_label": "Hình thức ghi sổ kế toán",
+      "topic_lv3_key": "tuyen-dung-nghe-nghiep-ke-toan",
+      "topic_lv3_label": "Tuyển dụng/Nghề nghiệp kế toán",
       "tags": [
         "Chuẩn mực",
         "Chế độ",
@@ -28035,7 +27653,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Chuẩn mực - Chế độ",
+      "topic_label": "Chuẩn mực - Chế độ - Nguyên tắc",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -28078,8 +27696,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "topic_lv3_key": "cong-van-ke-khai-quan-ly-thue",
-      "topic_lv3_label": "Công văn Kê khai/Quản lý thuế",
+      "topic_lv3_key": "cong-van-chinh-sach-chung",
+      "topic_lv3_label": "Công văn Chính sách chung",
       "tags": [
         "Hộ kinh doanh",
         "Kê khai",
@@ -28215,8 +27833,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "ho-ca-nhan-kinh-doanh",
       "topic_lv2_label": "Hộ/Cá nhân kinh doanh",
-      "topic_lv3_key": "hkd-ke-khai-ho-so-thoi-han",
-      "topic_lv3_label": "HKD kê khai/hồ sơ/thời hạn",
+      "topic_lv3_key": "hkd-che-do-ke-toan",
+      "topic_lv3_label": "HKD chế độ kế toán",
       "tags": [
         "Hộ kinh doanh",
         "Kê khai",
@@ -28964,8 +28582,8 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "kinh-nghiem-hoi-dap-nghe-nghiep",
       "topic_lv2_label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
-      "topic_lv3_key": "hoc-nghe-va-thuc-tap",
-      "topic_lv3_label": "Học nghề và thực tập",
+      "topic_lv3_key": "hoc-va-dao-tao-ke-toan",
+      "topic_lv3_label": "Học và đào tạo kế toán",
       "tags": [
         "Kinh nghiệm",
         "Hỏi đáp",
@@ -28975,7 +28593,7 @@
         "Lao động"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Kinh nghiệm nghề",
+      "topic_label": "Học và đào tạo kế toán",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -29532,14 +29150,14 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "ho-ca-nhan-kinh-doanh",
       "topic_lv2_label": "Hộ/Cá nhân kinh doanh",
-      "topic_lv3_key": "thue-khoan-cnkd",
-      "topic_lv3_label": "",
+      "topic_lv3_key": "hkd-tinh-thue-va-nop-thay",
+      "topic_lv3_label": "HKD tính thuế và nộp thay",
       "tags": [
         "Hộ/Cá nhân kinh doanh",
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Hộ/Cá nhân kinh doanh",
+      "topic_label": "HKD tính thuế và nộp thay",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -29891,8 +29509,8 @@
       "topic_lv1_label": "Phần mềm - Công cụ",
       "topic_lv2_key": "fast",
       "topic_lv2_label": "FAST",
-      "topic_lv3_key": "fast-cai-dat",
-      "topic_lv3_label": "FAST cài đặt",
+      "topic_lv3_key": "fast-huong-dan-su-dung",
+      "topic_lv3_label": "FAST hướng dẫn sử dụng",
       "tags": [
         "FAST",
         "Phần mềm",
@@ -29901,7 +29519,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "FAST",
+      "topic_label": "FAST hướng dẫn sử dụng",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -30696,8 +30314,8 @@
       "topic_lv1_label": "Lao động - Bảo hiểm",
       "topic_lv2_key": "cong-doan",
       "topic_lv2_label": "Công đoàn",
-      "topic_lv3_key": "cong-doan-huong-dan-van-ban",
-      "topic_lv3_label": "Công đoàn hướng dẫn/văn bản",
+      "topic_lv3_key": "cong-doan-hach-toan-thue",
+      "topic_lv3_label": "Công đoàn hạch toán/thuế",
       "tags": [
         "Công đoàn",
         "Lao động",
@@ -30705,7 +30323,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Công đoàn",
+      "topic_label": "Công đoàn hạch toán/thuế",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -32267,17 +31885,17 @@
       "excerpt": "Ngày 6/4/2016 Quốc hội 13 đã ban hành Luật 106/2016/QH13 sửa đổi, bổ sung một số điều của Luật thuế GTGT, Luật thuế TTĐB và Quản lý thuế",
       "topic_lv1_key": "thue",
       "topic_lv1_label": "Thuế - Hóa đơn",
-      "topic_lv2_key": "luat-bo-luat",
-      "topic_lv2_label": "Luật - Bộ luật",
-      "topic_lv3_key": "luat-quan-ly-thue",
-      "topic_lv3_label": "Luật quản lý thuế",
+      "topic_lv2_key": "gtgt-hoa-don",
+      "topic_lv2_label": "GTGT - Hóa đơn",
+      "topic_lv3_key": "thue-suat-doi-tuong",
+      "topic_lv3_label": "Thuế suất/Đối tượng chịu thuế",
       "tags": [
         "GTGT",
         "Luật - Bộ luật",
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Luật",
+      "topic_label": "Thuế suất/Đối tượng chịu thuế",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -32292,16 +31910,16 @@
       "excerpt": "Ngày 6/4/2016 Quốc hội 13 đã ban hành Luật 107/2016/QH13 - Luật thuế Xuất khẩu, Thuế nhập khẩu. Có hiệu lực từ ngày 1/9/2016",
       "topic_lv1_key": "thue",
       "topic_lv1_label": "Thuế - Hóa đơn",
-      "topic_lv2_key": "luat-bo-luat",
-      "topic_lv2_label": "Luật - Bộ luật",
-      "topic_lv3_key": "luat-thue-xuat-nhap-khau",
-      "topic_lv3_label": "Luật thuế xuất nhập khẩu",
+      "topic_lv2_key": "gtgt-hoa-don",
+      "topic_lv2_label": "GTGT - Hóa đơn",
+      "topic_lv3_key": "thue-suat-doi-tuong",
+      "topic_lv3_label": "Thuế suất/Đối tượng chịu thuế",
       "tags": [
         "Luật - Bộ luật",
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Luật",
+      "topic_label": "Thuế suất/Đối tượng chịu thuế",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -32314,12 +31932,12 @@
       "file": "luat-107-2016-qh13-luat-thue-xuat-nhap-khau.htm",
       "title": "Luật 107/2016/QH13 Luật thuế Xuất Nhập khẩu",
       "excerpt": "Luật 107/2016/QH13 ngày 6/4/2016 của Quốc hội 13 quy định về Luật thuế xuất khẩu, thuế nhập khẩu, có hiệu lực từ ngày t…",
-      "topic_lv1_key": "lao-dong-bao-hiem",
-      "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "luat-bo-luat",
-      "topic_lv2_label": "Luật - Bộ luật",
-      "topic_lv3_key": "luat-thue-xuat-nhap-khau",
-      "topic_lv3_label": "Luật thuế xuất nhập khẩu",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
+      "topic_lv2_key": "gtgt-hoa-don",
+      "topic_lv2_label": "GTGT - Hóa đơn",
+      "topic_lv3_key": "thue-suat-doi-tuong",
+      "topic_lv3_label": "Thuế suất/Đối tượng chịu thuế",
       "tags": [
         "Luật",
         "Bộ luật",
@@ -32328,7 +31946,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Luật",
+      "topic_label": "Thuế suất/Đối tượng chịu thuế",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -33006,17 +32624,17 @@
       "excerpt": "Luật thuế GTGT số 48/2024/QH15 ban hành ngày 26/11/2024 có hiệu lực từ ngày 1/7/2025 mới nhất hiện nay",
       "topic_lv1_key": "thue",
       "topic_lv1_label": "Thuế - Hóa đơn",
-      "topic_lv2_key": "luat-bo-luat",
-      "topic_lv2_label": "Luật - Bộ luật",
-      "topic_lv3_key": "luat-thue-gtgt",
-      "topic_lv3_label": "Luật thuế GTGT",
+      "topic_lv2_key": "gtgt-hoa-don",
+      "topic_lv2_label": "GTGT - Hóa đơn",
+      "topic_lv3_key": "thue-suat-doi-tuong",
+      "topic_lv3_label": "Thuế suất/Đối tượng chịu thuế",
       "tags": [
         "GTGT",
         "Luật - Bộ luật",
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Luật",
+      "topic_label": "Thuế suất/Đối tượng chịu thuế",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -33031,10 +32649,10 @@
       "excerpt": "Ngày 14/6/2025, Quốc hội thông qua Luật Thuế thu nhập doanh nghiệp số 67/2025/QH15. Luật này có hiệu lực thi hành từ ng…",
       "topic_lv1_key": "thue",
       "topic_lv1_label": "Thuế - Hóa đơn",
-      "topic_lv2_key": "luat-bo-luat",
-      "topic_lv2_label": "Luật - Bộ luật",
-      "topic_lv3_key": "luat-thue-tndn",
-      "topic_lv3_label": "Luật Thuế TNDN",
+      "topic_lv2_key": "tndn",
+      "topic_lv2_label": "Thuế thu nhập doanh nghiệp",
+      "topic_lv3_key": "van-ban-chinh-sach",
+      "topic_lv3_label": "Văn bản/Chính sách",
       "tags": [
         "TNDN",
         "Luật",
@@ -33044,7 +32662,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Luật",
+      "topic_label": "Văn bản/Chính sách",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -33057,12 +32675,12 @@
       "file": "luat-thue-tncn-so-109-2025-qh15.htm",
       "title": "Luật Thuế TNCN số 109/2025/QH15 áp dụng từ năm 2026",
       "excerpt": "Luật Thuế TNCN số 109/2025/QH15 có hiệu lực thi hành từ ngày 01/07/2026, riêng các quy định liên quan đến thu nhập từ k…",
-      "topic_lv1_key": "lao-dong-bao-hiem",
-      "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "luat-bo-luat",
-      "topic_lv2_label": "Luật - Bộ luật",
-      "topic_lv3_key": "luat-thue-tncn",
-      "topic_lv3_label": "Luật thuế TNCN",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
+      "topic_lv2_key": "tncn",
+      "topic_lv2_label": "Thuế thu nhập cá nhân",
+      "topic_lv3_key": "tinh-thue-bieu-thue",
+      "topic_lv3_label": "Tính thuế/Biểu thuế",
       "tags": [
         "TNCN",
         "Luật",
@@ -33072,7 +32690,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Luật",
+      "topic_label": "Tính thuế/Biểu thuế",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -33220,14 +32838,14 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "tai-khoan-hach-toan",
       "topic_lv2_label": "Tài khoản - Hạch toán",
-      "topic_lv3_key": "thue-nghia-vu",
-      "topic_lv3_label": "Thuế/Nghĩa vụ NSNN",
+      "topic_lv3_key": "cong-no-thanh-toan",
+      "topic_lv3_label": "Công nợ/Thanh toán",
       "tags": [
         "Tài khoản - Hạch toán",
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Hạch toán",
+      "topic_label": "Tài khoản - Hạch toán",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -33368,14 +32986,14 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "tai-khoan-hach-toan",
       "topic_lv2_label": "Tài khoản - Hạch toán",
-      "topic_lv3_key": "tien-quy-ngan-hang",
-      "topic_lv3_label": "Tiền/Quỹ/Ngân hàng",
+      "topic_lv3_key": "cong-no-thanh-toan",
+      "topic_lv3_label": "Công nợ/Thanh toán",
       "tags": [
         "Tài khoản - Hạch toán",
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Hạch toán",
+      "topic_label": "Tài khoản - Hạch toán",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -33464,8 +33082,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "mau-bieu-thue",
       "topic_lv2_label": "Mẫu biểu thuế - hóa đơn",
-      "topic_lv3_key": "mau-khau-tru-hoan-mien-giam",
-      "topic_lv3_label": "Mẫu khấu trừ/hoàn/miễn giảm",
+      "topic_lv3_key": "mau-thue-gtgt-hoa-don",
+      "topic_lv3_label": "Mẫu thuế GTGT/Hóa đơn",
       "tags": [
         "Mẫu biểu thuế",
         "hóa đơn",
@@ -33473,7 +33091,7 @@
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Mẫu thuế - hóa đơn",
+      "topic_label": "Mẫu biểu thuế - hóa đơn",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -35174,14 +34792,14 @@
       "topic_lv1_label": "Doanh nghiệp - Thủ tục",
       "topic_lv2_key": "mau-bieu-doanh-nghiep-thu-tuc",
       "topic_lv2_label": "Mẫu biểu doanh nghiệp - thủ tục",
-      "topic_lv3_key": "mau-thong-bao-doanh-nghiep",
-      "topic_lv3_label": "",
+      "topic_lv3_key": "mau-dang-ky-thay-doi-doanh-nghiep",
+      "topic_lv3_label": "Mẫu đăng ký/thay đổi doanh nghiệp",
       "tags": [
         "Mẫu biểu doanh nghiệp - thủ tục",
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Mẫu DN - thủ tục",
+      "topic_label": "Mẫu đăng ký/thay đổi doanh nghiệp",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -36706,14 +36324,14 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "mau-bieu-ke-toan",
       "topic_lv2_label": "Mẫu biểu kế toán",
-      "topic_lv3_key": "mau-kiem-ke-doi-chieu",
-      "topic_lv3_label": "",
+      "topic_lv3_key": "mau-tai-chinh-von-ngoai-te",
+      "topic_lv3_label": "Mẫu tài chính vốn/ngoại tệ",
       "tags": [
         "Mẫu biểu kế toán",
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Mẫu biểu kế toán",
+      "topic_label": "Mẫu tài chính vốn/ngoại tệ",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -36884,14 +36502,14 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "tai-khoan-hach-toan",
       "topic_lv2_label": "Tài khoản - Hạch toán",
-      "topic_lv3_key": "hang-ton-kho-gia-thanh",
-      "topic_lv3_label": "Hàng tồn kho/Giá thành",
+      "topic_lv3_key": "cong-no-thanh-toan",
+      "topic_lv3_label": "Công nợ/Thanh toán",
       "tags": [
         "Tài khoản - Hạch toán",
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Hạch toán",
+      "topic_label": "Tài khoản - Hạch toán",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -37601,8 +37219,8 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "bao-cao-thuc-tap",
       "topic_lv2_label": "Báo cáo thực tập",
-      "topic_lv3_key": "thuc-tap-chi-phi-gia-thanh",
-      "topic_lv3_label": "Thực tập chi phí/giá thành",
+      "topic_lv3_key": "thuc-tap-ke-toan-tong-hop-to-chuc",
+      "topic_lv3_label": "Thực tập kế toán tổng hợp/tổ chức",
       "tags": [
         "Báo cáo thực tập",
         "Học liệu",
@@ -37653,8 +37271,8 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "bao-cao-thuc-tap",
       "topic_lv2_label": "Báo cáo thực tập",
-      "topic_lv3_key": "thuc-tap-tscd",
-      "topic_lv3_label": "Thực tập TSCĐ",
+      "topic_lv3_key": "thuc-tap-ke-toan-tong-hop-to-chuc",
+      "topic_lv3_label": "Thực tập kế toán tổng hợp/tổ chức",
       "tags": [
         "TSCĐ",
         "Báo cáo thực tập",
@@ -37663,7 +37281,7 @@
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Báo cáo thực tập",
+      "topic_label": "Thực tập kế toán tổng hợp/tổ chức",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -37812,8 +37430,8 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "bao-cao-thuc-tap",
       "topic_lv2_label": "Báo cáo thực tập",
-      "topic_lv3_key": "thuc-tap-thue",
-      "topic_lv3_label": "Thực tập thuế",
+      "topic_lv3_key": "thuc-tap-ke-toan-tong-hop-to-chuc",
+      "topic_lv3_label": "Thực tập kế toán tổng hợp/tổ chức",
       "tags": [
         "GTGT",
         "TNDN",
@@ -37823,7 +37441,7 @@
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Báo cáo thực tập",
+      "topic_label": "Thực tập kế toán tổng hợp/tổ chức",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -37840,8 +37458,8 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "bao-cao-thuc-tap",
       "topic_lv2_label": "Báo cáo thực tập",
-      "topic_lv3_key": "thuc-tap-tien-luong",
-      "topic_lv3_label": "Thực tập tiền lương",
+      "topic_lv3_key": "thuc-tap-ke-toan-tong-hop-to-chuc",
+      "topic_lv3_label": "Thực tập kế toán tổng hợp/tổ chức",
       "tags": [
         "Báo cáo thực tập",
         "Học liệu",
@@ -39995,8 +39613,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "cong-van",
       "topic_lv2_label": "Công văn",
-      "topic_lv3_key": "cong-van-chinh-sach-chung",
-      "topic_lv3_label": "Công văn Chính sách chung",
+      "topic_lv3_key": "cong-van-ke-khai-quan-ly-thue",
+      "topic_lv3_label": "Công văn Kê khai/Quản lý thuế",
       "tags": [
         "Công văn",
         "Thuế",
@@ -42658,14 +42276,14 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "kinh-nghiem-hoi-dap-nghe-nghiep",
       "topic_lv2_label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
-      "topic_lv3_key": "mo-ta-cong-viec-ke-toan",
-      "topic_lv3_label": "Mô tả công việc kế toán",
+      "topic_lv3_key": "kinh-nghiem-quyet-toan-thue",
+      "topic_lv3_label": "Kinh nghiệm quyết toán thuế",
       "tags": [
         "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Kinh nghiệm nghề",
+      "topic_label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -43014,14 +42632,14 @@
       "topic_lv1_label": "Học liệu - Tham khảo",
       "topic_lv2_key": "kinh-nghiem-hoi-dap-nghe-nghiep",
       "topic_lv2_label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
-      "topic_lv3_key": "kinh-nghiem-phong-van-xin-viec",
-      "topic_lv3_label": "Kinh nghiệm/phỏng vấn/xin việc",
+      "topic_lv3_key": "kinh-nghiem-quyet-toan-thue",
+      "topic_lv3_label": "Kinh nghiệm quyết toán thuế",
       "tags": [
         "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Kinh nghiệm nghề",
+      "topic_label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -43866,10 +43484,10 @@
       "excerpt": "Khi muốn chấm dứt hợp đồng lao động Doanh nghiệp và người lao động cần hồ sơ gồm: Quyết định chấm dứt…",
       "topic_lv1_key": "lao-dong-bao-hiem",
       "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "topic_lv3_key": "qd-cham-dut-hdld",
-      "topic_lv3_label": "Quyết định chấm dứt HĐLĐ",
+      "topic_lv2_key": "mau-bieu-lao-dong-bao-hiem",
+      "topic_lv2_label": "Mẫu biểu lao động - bảo hiểm",
+      "topic_lv3_key": "mau-hop-dong-lao-dong",
+      "topic_lv3_label": "Mẫu hợp đồng lao động",
       "tags": [
         "Nghị quyết",
         "Quyết định",
@@ -43879,7 +43497,7 @@
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "NQ / Quyết định",
+      "topic_label": "Mẫu hợp đồng lao động",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -43916,12 +43534,12 @@
       "file": "quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.htm",
       "title": "Mẫu quyết định của giám đốc về việc đi nghỉ mát",
       "excerpt": "Mẫu quyết định của Giám đốc về việc đi nghỉ mát, phê duyệt kinh phí đi nghỉ mát. Để hoàn thiện chứng từ chi phí cho nhâ…",
-      "topic_lv1_key": "thue",
-      "topic_lv1_label": "Thuế - Hóa đơn",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "topic_lv3_key": "qd-noi-bo-doanh-nghiep",
-      "topic_lv3_label": "QĐ nội bộ doanh nghiệp",
+      "topic_lv1_key": "doanh-nghiep-thu-tuc",
+      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
+      "topic_lv2_key": "mau-bieu-doanh-nghiep-thu-tuc",
+      "topic_lv2_label": "Mẫu biểu doanh nghiệp - thủ tục",
+      "topic_lv3_key": "mau-bieu-quan-tri-noi-bo",
+      "topic_lv3_label": "mau-bieu-quan-tri-noi-bo",
       "tags": [
         "Nghị quyết",
         "Quyết định",
@@ -43930,7 +43548,7 @@
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "NQ / Quyết định",
+      "topic_label": "mau-bieu-quan-tri-noi-bo",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -43945,10 +43563,10 @@
       "excerpt": "Mẫu Quyết định giải thể giải thể Doanh nghiệp, giải thể Công ty mới nhất để làm thủ tục giải thể Doanh nghiệp, tải mẫu…",
       "topic_lv1_key": "doanh-nghiep-thu-tuc",
       "topic_lv1_label": "Doanh nghiệp - Thủ tục",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "topic_lv3_key": "qd-giai-the-doanh-nghiep",
-      "topic_lv3_label": "QĐ giải thể doanh nghiệp",
+      "topic_lv2_key": "thu-tuc-doanh-nghiep",
+      "topic_lv2_label": "DN - Thủ tục",
+      "topic_lv3_key": "dn-thu-tuc-giai-the",
+      "topic_lv3_label": "DN thủ tục giải thể",
       "tags": [
         "Nghị quyết",
         "Quyết định",
@@ -43957,7 +43575,7 @@
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "NQ / Quyết định",
+      "topic_label": "DN thủ tục giải thể",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -46035,10 +45653,10 @@
       "excerpt": "Hướng dẫn cách lập Sổ chi tiết thanh toán với người mua (người bán) theo Thông tư 133 và 200 – Mẫu S12-DNN…",
       "topic_lv1_key": "ke-toan",
       "topic_lv1_label": "Kế toán",
-      "topic_lv2_key": "chung-tu-so-sach",
-      "topic_lv2_label": "Chứng từ - Sổ sách",
-      "topic_lv3_key": "so-sach-tien-kho-chi-tiet",
-      "topic_lv3_label": "Sổ sách tiền/kho/chi tiết",
+      "topic_lv2_key": "mau-bieu-ke-toan",
+      "topic_lv2_label": "Mẫu biểu kế toán",
+      "topic_lv3_key": "mau-so-sach-ke-toan",
+      "topic_lv3_label": "Mẫu sổ sách kế toán",
       "tags": [
         "Chứng từ",
         "Sổ sách",
@@ -46046,7 +45664,7 @@
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Chứng từ - Sổ sách",
+      "topic_label": "Mẫu biểu kế toán",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -47078,18 +46696,18 @@
       "file": "mau-thong-bao-chung-tu-dien-tu-da-lap-sai.htm",
       "title": "Mẫu thông báo chứng từ điện tử đã lập sai mới nhất",
       "excerpt": "Mẫu số 04/SS-CTĐT - thông báo chứng từ điện tử đã lập sai (ban hành kèm theo Nghị định 70/2025/NĐ-CP ngày 20/3/2025)",
-      "topic_lv1_key": "ke-toan",
-      "topic_lv1_label": "Kế toán",
-      "topic_lv2_key": "mau-bieu-ke-toan",
-      "topic_lv2_label": "Mẫu biểu kế toán",
-      "topic_lv3_key": "mau-ke-khai-thue-gtgt-hoa-don",
-      "topic_lv3_label": "",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
+      "topic_lv2_key": "mau-bieu-thue",
+      "topic_lv2_label": "Mẫu biểu thuế - hóa đơn",
+      "topic_lv3_key": "mau-thue-gtgt-hoa-don",
+      "topic_lv3_label": "Mẫu thuế GTGT/Hóa đơn",
       "tags": [
         "Mẫu biểu kế toán",
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Mẫu biểu kế toán",
+      "topic_label": "Mẫu thuế GTGT/Hóa đơn",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -49563,8 +49181,8 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "bao-cao-tai-chinh",
       "topic_lv2_label": "Báo cáo tài chính",
-      "topic_lv3_key": "nguyen-tac-trinh-bay-bctc",
-      "topic_lv3_label": "Nguyên tắc trình bày BCTC",
+      "topic_lv3_key": "lap-cac-bao-cao-thanh-phan",
+      "topic_lv3_label": "Lập các báo cáo thành phần",
       "tags": [
         "Báo cáo tài chính",
         "Hướng dẫn"
@@ -49613,8 +49231,8 @@
       "topic_lv1_label": "Lao động - Bảo hiểm",
       "topic_lv2_key": "cong-doan",
       "topic_lv2_label": "Công đoàn",
-      "topic_lv3_key": "cong-doan-xu-phat-vi-pham",
-      "topic_lv3_label": "Công đoàn xử phạt vi phạm",
+      "topic_lv3_key": "cong-doan-trich-nop-ty-le-muc-dong",
+      "topic_lv3_label": "Công đoàn trích nộp/tỷ lệ/mức đóng",
       "tags": [
         "Công đoàn",
         "Lao động",
@@ -49622,7 +49240,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Công đoàn",
+      "topic_label": "Công đoàn trích nộp/tỷ lệ/mức đóng",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -49889,8 +49507,8 @@
       "topic_lv1_label": "Lao động - Bảo hiểm",
       "topic_lv2_key": "bao-hiem",
       "topic_lv2_label": "BHXH - BHYT - BHTN",
-      "topic_lv3_key": "vi-pham-xu-phat",
-      "topic_lv3_label": "Vi phạm/Xử phạt",
+      "topic_lv3_key": "che-do-muc-huong",
+      "topic_lv3_label": "Chế độ/Mức hưởng",
       "tags": [
         "BHXH",
         "BHYT",
@@ -49900,7 +49518,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "BHXH - BHYT",
+      "topic_label": "BHXH - BHYT - BHTN",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -50410,10 +50028,10 @@
         "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "badge_label": "Hướng dẫn",
+      "badge_label": "Văn bản",
       "topic_label": "Nghị định",
-      "library_kind_key": "huong-dan",
-      "library_kind_label": "Hướng dẫn",
+      "library_kind_key": "van-ban",
+      "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2015-11-11",
@@ -50634,10 +50252,10 @@
       "excerpt": "Nghị định 121/2018/NĐ-CP ngày 13/9/2018 của Chính phủ quy định: Doanh nghiệp sử dụng dưới 10 lao động được miễn thủ tục…",
       "topic_lv1_key": "lao-dong-bao-hiem",
       "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "nghi-dinh",
-      "topic_lv2_label": "Nghị định",
-      "topic_lv3_key": "nd-thang-bang-luong",
-      "topic_lv3_label": "Nghị định thang bảng lương",
+      "topic_lv2_key": "lao-dong-tien-luong",
+      "topic_lv2_label": "Lao động - Tiền lương",
+      "topic_lv3_key": "tien-luong-thoi-gio-lam-viec",
+      "topic_lv3_label": "Tiền lương/Thời giờ làm việc",
       "tags": [
         "Nghị định",
         "Lao động",
@@ -50646,7 +50264,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Nghị định",
+      "topic_label": "Tiền lương/Thời giờ làm việc",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -51070,10 +50688,10 @@
       "excerpt": "Ngày 14/12/2020 Chính phủ ban hành Nghị định 145/2020/NĐ-CP Quy định chi tiết và hướng dẫn thi hành bộ luật lao động về…",
       "topic_lv1_key": "lao-dong-bao-hiem",
       "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "nghi-dinh",
-      "topic_lv2_label": "Nghị định",
-      "topic_lv3_key": "nd-huong-dan-luat-lao-dong",
-      "topic_lv3_label": "Nghị định hướng dẫn Luật lao động",
+      "topic_lv2_key": "lao-dong-tien-luong",
+      "topic_lv2_label": "Lao động - Tiền lương",
+      "topic_lv3_key": "tien-luong-thoi-gio-lam-viec",
+      "topic_lv3_label": "Tiền lương/Thời giờ làm việc",
       "tags": [
         "Nghị định",
         "Lao động",
@@ -51081,7 +50699,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Nghị định",
+      "topic_label": "Lao động - Tiền lương",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -51353,17 +50971,17 @@
       "excerpt": "Nghị định 174/2016/NĐ-CP ngày 30/12/2016 của Chính phủ: Quy định chi tiết một số điều của Luật kế toán số 88, công tác…",
       "topic_lv1_key": "ke-toan",
       "topic_lv1_label": "Kế toán",
-      "topic_lv2_key": "nghi-dinh",
-      "topic_lv2_label": "Nghị định",
-      "topic_lv3_key": "nd-huong-dan-luat-ke-toan",
-      "topic_lv3_label": "Nghị định hướng dẫn Luật kế toán",
+      "topic_lv2_key": "chuan-muc-che-do-nguyen-tac",
+      "topic_lv2_label": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "topic_lv3_key": "che-do-ke-toan-va-thong-tu",
+      "topic_lv3_label": "Chế độ kế toán & thông tư",
       "tags": [
         "Nghị định",
         "Kế toán",
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Nghị định",
+      "topic_label": "Chế độ kế toán & thông tư",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -51459,10 +51077,10 @@
       "excerpt": "Nghị định 191/2013/NĐ-CP quy định chi tiết về tài chính công đoàn đối với nguồn thu kinh phí công đoàn và ngân sách nhà…",
       "topic_lv1_key": "lao-dong-bao-hiem",
       "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "nghi-dinh",
-      "topic_lv2_label": "Nghị định",
-      "topic_lv3_key": "nd-cong-doan-kpcd",
-      "topic_lv3_label": "Nghị định công đoàn/KPCĐ",
+      "topic_lv2_key": "cong-doan",
+      "topic_lv2_label": "Công đoàn",
+      "topic_lv3_key": "cong-doan-trich-nop-ty-le-muc-dong",
+      "topic_lv3_label": "Công đoàn trích nộp/tỷ lệ/mức đóng",
       "tags": [
         "Công đoàn",
         "Nghị định",
@@ -51471,7 +51089,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Nghị định",
+      "topic_label": "Công đoàn trích nộp/tỷ lệ/mức đóng",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -51696,10 +51314,10 @@
       "excerpt": "Ngày 12/12/2025, Chính phủ ban hành Nghị định 318/2025/NĐ-CP hướng dẫn Luật Việc làm về đăng ký lao động và hệ thống th…",
       "topic_lv1_key": "lao-dong-bao-hiem",
       "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "nghi-dinh",
-      "topic_lv2_label": "Nghị định",
-      "topic_lv3_key": "nd-viec-lam",
-      "topic_lv3_label": "Nghị định việc làm",
+      "topic_lv2_key": "lao-dong-tien-luong",
+      "topic_lv2_label": "Lao động - Tiền lương",
+      "topic_lv3_key": "ho-so-thu-tuc-lao-dong",
+      "topic_lv3_label": "Hồ sơ/Thủ tục lao động",
       "tags": [
         "Nghị định",
         "Lao động",
@@ -51707,7 +51325,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Nghị định",
+      "topic_label": "Hồ sơ/Thủ tục lao động",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -51749,10 +51367,10 @@
       "excerpt": "Ngày 24/12/2025, Chính phủ ban hành Nghị định 337/2025/NĐ-CP quy định về hợp đồng lao động điện tử, có hiệu lực thi hàn…",
       "topic_lv1_key": "lao-dong-bao-hiem",
       "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "nghi-dinh",
-      "topic_lv2_label": "Nghị định",
-      "topic_lv3_key": "nd-hop-dong-lao-dong",
-      "topic_lv3_label": "Nghị định hợp đồng lao động",
+      "topic_lv2_key": "lao-dong-tien-luong",
+      "topic_lv2_label": "Lao động - Tiền lương",
+      "topic_lv3_key": "hop-dong-quan-he-lao-dong",
+      "topic_lv3_label": "Hợp đồng/Quan hệ lao động",
       "tags": [
         "Nghị định",
         "Lao động",
@@ -51761,7 +51379,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Nghị định",
+      "topic_label": "Hợp đồng/Quan hệ lao động",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -52010,17 +51628,17 @@
       "excerpt": "Ngày 12/3/2018 Chính phủ ban hành Nghị định 41/2018/NĐ-CP quy định xử phạt vi phạm hành chính trong lĩnh vực kế toán ki…",
       "topic_lv1_key": "ke-toan",
       "topic_lv1_label": "Kế toán",
-      "topic_lv2_key": "nghi-dinh",
-      "topic_lv2_label": "Nghị định",
-      "topic_lv3_key": "nd-xu-phat-vi-pham-ke-toan",
-      "topic_lv3_label": "Nghị định xử phạt vi phạm kế toán",
+      "topic_lv2_key": "chuan-muc-che-do-nguyen-tac",
+      "topic_lv2_label": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "topic_lv3_key": "che-do-ke-toan-va-thong-tu",
+      "topic_lv3_label": "Chế độ kế toán & thông tư",
       "tags": [
         "Nghị định",
         "Kế toán",
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Nghị định",
+      "topic_label": "Chế độ kế toán & thông tư",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -52162,10 +51780,10 @@
       "excerpt": "Nghị định 47/2021/NĐ-CP ngày 01/04/2021 của Chính phủ hướng dẫn chi tiết một số điều của Luật doanh nghiệp số 59/2020/Q…",
       "topic_lv1_key": "doanh-nghiep-thu-tuc",
       "topic_lv1_label": "Doanh nghiệp - Thủ tục",
-      "topic_lv2_key": "nghi-dinh",
-      "topic_lv2_label": "Nghị định",
-      "topic_lv3_key": "nd-huong-dan-luat-doanh-nghiep",
-      "topic_lv3_label": "Nghị định hướng dẫn Luật doanh nghiệp",
+      "topic_lv2_key": "thu-tuc-doanh-nghiep",
+      "topic_lv2_label": "DN - Thủ tục",
+      "topic_lv3_key": "dn-thu-tuc-khuyen-mai-thuong-mai",
+      "topic_lv3_label": "DN thủ tục khuyến mại/thương mại",
       "tags": [
         "Nghị định",
         "Doanh nghiệp",
@@ -52173,7 +51791,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Nghị định",
+      "topic_label": "DN - Thủ tục",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -54264,19 +53882,19 @@
       "file": "nhung-luu-y-khi-thanh-tra-thue-xuong-kiem-tra-dn-xay-dung.htm",
       "title": "Những lưu ý khi Thanh tra Thuế xuống kiểm tra DN xây dựng",
       "excerpt": "Chia sẻ những kinh nghiệm thực tế khi Cơ quan thuế vào kiểm tra doanh nghiệp Xây dựng, những chú ý khi làm kế toán tại…",
-      "topic_lv1_key": "ke-toan",
-      "topic_lv1_label": "Kế toán",
-      "topic_lv2_key": "nghiep-vu-theo-phan-hanh",
-      "topic_lv2_label": "Nghiệp vụ theo phần hành",
-      "topic_lv3_key": "thanh-tra-cong-van-rui-ro",
-      "topic_lv3_label": "Thanh tra/công văn/rủi ro",
+      "topic_lv1_key": "tham-khao-hoc-lieu",
+      "topic_lv1_label": "Học liệu - Tham khảo",
+      "topic_lv2_key": "kinh-nghiem-hoi-dap-nghe-nghiep",
+      "topic_lv2_label": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "topic_lv3_key": "kinh-nghiem-quyet-toan-thue",
+      "topic_lv3_label": "Kinh nghiệm quyết toán thuế",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Nghiệp vụ",
+      "topic_label": "Kinh nghiệm quyết toán thuế",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -61360,10 +60978,10 @@
       "excerpt": "Quy định về quy chế dân chủ ở cơ sở tại nơi làm việc hiện nay đang được thực hiện theo Nghị định 145/2020/NĐ-CP q…",
       "topic_lv1_key": "lao-dong-bao-hiem",
       "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "lao-dong-tien-luong",
-      "topic_lv2_label": "Lao động - Tiền lương",
-      "topic_lv3_key": "noi-quy-thoa-uoc-ky-luat",
-      "topic_lv3_label": "Nội quy/Thỏa ước/Kỷ luật",
+      "topic_lv2_key": "mau-bieu-lao-dong-bao-hiem",
+      "topic_lv2_label": "Mẫu biểu lao động - bảo hiểm",
+      "topic_lv3_key": "mau-noi-quy-thoa-uoc-lao-dong",
+      "topic_lv3_label": "Mẫu nội quy/thỏa ước lao động",
       "tags": [
         "Lao động",
         "Tiền lương",
@@ -61371,7 +60989,7 @@
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Tiền lương",
+      "topic_label": "Mẫu biểu lao động - bảo hiểm",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -61725,14 +61343,14 @@
       "topic_lv1_label": "Lao động - Bảo hiểm",
       "topic_lv2_key": "lao-dong-tien-luong",
       "topic_lv2_label": "Lao động - Tiền lương",
-      "topic_lv3_key": "luong-khoan-phuc-loi-khac",
-      "topic_lv3_label": "",
+      "topic_lv3_key": "thue-lien-quan-lao-dong",
+      "topic_lv3_label": "Thuế liên quan lao động",
       "tags": [
         "Lao động - Tiền lương",
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Tiền lương",
+      "topic_label": "Thuế liên quan lao động",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -63026,8 +62644,8 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "chung-tu-so-sach",
       "topic_lv2_label": "Chứng từ - Sổ sách",
-      "topic_lv3_key": "hinh-thuc-ghi-so-ke-toan",
-      "topic_lv3_label": "Hình thức ghi sổ kế toán",
+      "topic_lv3_key": "he-thong-chung-tu-mau-bieu",
+      "topic_lv3_label": "Hệ thống chứng từ/mẫu biểu",
       "tags": [
         "Chứng từ",
         "Sổ sách",
@@ -63288,10 +62906,10 @@
       "excerpt": "Ngày 18/8/2020 BHXH ban hành Quyết định 1040/QĐ-BHXH quy định Mẫu báo cáo tình hình sử dụng lao động và danh sách tham…",
       "topic_lv1_key": "lao-dong-bao-hiem",
       "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "topic_lv3_key": "qd-bhxh-bhyt-bhtn",
-      "topic_lv3_label": "Quyết định BHXH/BHYT/BHTN",
+      "topic_lv2_key": "mau-bieu-lao-dong-bao-hiem",
+      "topic_lv2_label": "Mẫu biểu lao động - bảo hiểm",
+      "topic_lv3_key": "mau-bao-cao-dang-ky-lao-dong",
+      "topic_lv3_label": "Mẫu báo cáo/đăng ký lao động",
       "tags": [
         "BHXH",
         "Nghị quyết",
@@ -63301,7 +62919,7 @@
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "NQ / Quyết định",
+      "topic_label": "Mẫu biểu lao động - bảo hiểm",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -63669,10 +63287,10 @@
       "excerpt": "Mẫu quyết định ban hành thang bảng lương của doanh nghiệp 2025 mới nhất khi Doanh nghiệp tự xây dựng hệ thống th…",
       "topic_lv1_key": "lao-dong-bao-hiem",
       "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "nghi-quyet-quyet-dinh",
-      "topic_lv2_label": "Nghị quyết - Quyết định",
-      "topic_lv3_key": "qd-thang-bang-luong",
-      "topic_lv3_label": "Quyết định thang bảng lương",
+      "topic_lv2_key": "mau-bieu-lao-dong-bao-hiem",
+      "topic_lv2_label": "Mẫu biểu lao động - bảo hiểm",
+      "topic_lv3_key": "mau-tien-luong-phu-cap",
+      "topic_lv3_label": "Mẫu tiền lương/phụ cấp",
       "tags": [
         "Nghị quyết",
         "Quyết định",
@@ -63682,7 +63300,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "NQ / Quyết định",
+      "topic_label": "Mẫu tiền lương/phụ cấp",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -63723,8 +63341,8 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "chung-tu-so-sach",
       "topic_lv2_label": "Chứng từ - Sổ sách",
-      "topic_lv3_key": "chung-tu-cong-tac-thanh-toan",
-      "topic_lv3_label": "Chứng từ công tác/thanh toán",
+      "topic_lv3_key": "he-thong-chung-tu-mau-bieu",
+      "topic_lv3_label": "Hệ thống chứng từ/mẫu biểu",
       "tags": [
         "Chứng từ",
         "Sổ sách",
@@ -63989,8 +63607,8 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "tai-san-kho-ccdc",
       "topic_lv2_label": "Tài sản - Kho - CCDC",
-      "topic_lv3_key": "tai-san-kho-ccdc-khac",
-      "topic_lv3_label": "Tài sản - Kho - CCDC khác",
+      "topic_lv3_key": "hang-ton-kho-gia-xuat",
+      "topic_lv3_label": "Hàng tồn kho/giá xuất kho",
       "tags": [
         "Tài sản",
         "Kho",
@@ -63999,7 +63617,7 @@
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Tài sản / Kho",
+      "topic_label": "Tài sản - Kho - CCDC",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -64096,8 +63714,8 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "bao-cao-tai-chinh",
       "topic_lv2_label": "Báo cáo tài chính",
-      "topic_lv3_key": "vi-pham-dieu-chinh-bctc",
-      "topic_lv3_label": "Vi phạm/điều chỉnh BCTC",
+      "topic_lv3_key": "tong-quan-quy-dinh-nop-bctc",
+      "topic_lv3_label": "Tổng quan/quy định nộp BCTC",
       "tags": [
         "Báo cáo tài chính",
         "Kế toán",
@@ -65140,8 +64758,8 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "tai-khoan-hach-toan",
       "topic_lv2_label": "Tài khoản - Hạch toán",
-      "topic_lv3_key": "doanh-thu-chi-phi-kqkd",
-      "topic_lv3_label": "Doanh thu/Chi phí/KQKD",
+      "topic_lv3_key": "hach-toan-dac-thu",
+      "topic_lv3_label": "Nghiệp vụ đặc thù",
       "tags": [
         "Tài khoản",
         "Hạch toán",
@@ -65149,7 +64767,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Hạch toán",
+      "topic_label": "Tài khoản - Hạch toán",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -65450,12 +65068,12 @@
       "file": "tai-phan-mem-ke-toan-fast-accounting-mien-phi-dung-thu.htm",
       "title": "Tải phần mềm kế toán Fast Accounting miễn phí dùng thử",
       "excerpt": "Tải phần mềm kế toán Fast Accounting và Fast Accounting Online miễn phí dùng thử, cách đăng ký dùng thử phần mềm kế toá…",
-      "topic_lv1_key": "mau-file-ke-khai",
-      "topic_lv1_label": "Mẫu file & kê khai",
+      "topic_lv1_key": "phan-mem-cong-cu",
+      "topic_lv1_label": "Phần mềm - Công cụ",
       "topic_lv2_key": "fast",
       "topic_lv2_label": "FAST",
-      "topic_lv3_key": "fast-tai-ve-dung-thu",
-      "topic_lv3_label": "FAST tải về/dùng thử",
+      "topic_lv3_key": "fast-huong-dan-su-dung",
+      "topic_lv3_label": "FAST hướng dẫn sử dụng",
       "tags": [
         "FAST",
         "Mẫu file & kê khai",
@@ -65463,10 +65081,10 @@
         "Tải về",
         "Biểu mẫu"
       ],
-      "badge_label": "Biểu mẫu",
+      "badge_label": "Hướng dẫn",
       "topic_label": "FAST",
-      "library_kind_key": "bieu-mau",
-      "library_kind_label": "Biểu mẫu",
+      "library_kind_key": "huong-dan",
+      "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2026-04-02",
@@ -66416,17 +66034,17 @@
       "excerpt": "Quy định về nguyên tắc ghi nhận doanh thu cung cấp dịch vụ: Thời điểm ghi nhận doanh thu dịch vụ; Thời điểm xuất hóa đơ…",
       "topic_lv1_key": "ke-toan",
       "topic_lv1_label": "Kế toán",
-      "topic_lv2_key": "nghiep-vu-theo-phan-hanh",
-      "topic_lv2_label": "Nghiệp vụ theo phần hành",
-      "topic_lv3_key": "ghi-nhan-doanh-thu",
-      "topic_lv3_label": "Ghi nhận doanh thu",
+      "topic_lv2_key": "tai-khoan-hach-toan",
+      "topic_lv2_label": "Tài khoản - Hạch toán",
+      "topic_lv3_key": "doanh-thu-chi-phi-kqkd",
+      "topic_lv3_label": "Doanh thu/Chi phí/KQKD",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Nghiệp vụ",
+      "topic_label": "Doanh thu/Chi phí/KQKD",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -66755,8 +66373,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "mau-bieu-thue",
       "topic_lv2_label": "Mẫu biểu thuế - hóa đơn",
-      "topic_lv3_key": "mau-dang-ky-thue-mst",
-      "topic_lv3_label": "Mẫu đăng ký thuế/MST",
+      "topic_lv3_key": "mau-thue-gtgt-hoa-don",
+      "topic_lv3_label": "Mẫu thuế GTGT/Hóa đơn",
       "tags": [
         "Mẫu biểu thuế",
         "hóa đơn",
@@ -66764,7 +66382,7 @@
         "Biểu mẫu"
       ],
       "badge_label": "Biểu mẫu",
-      "topic_label": "Mẫu thuế - hóa đơn",
+      "topic_label": "Mẫu biểu thuế - hóa đơn",
       "library_kind_key": "bieu-mau",
       "library_kind_label": "Biểu mẫu",
       "tool_lv3_key": "",
@@ -66883,14 +66501,14 @@
       "topic_lv1_label": "Doanh nghiệp - Thủ tục",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "topic_lv3_key": "thong-tu-ho-ca-nhan-kinh-doanh",
-      "topic_lv3_label": "Thông tư Hộ/Cá nhân kinh doanh",
+      "topic_lv3_key": "tt-dang-ky-doanh-nghiep",
+      "topic_lv3_label": "Thông tư đăng ký doanh nghiệp",
       "tags": [
         "Thông tư",
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Thông tư",
+      "topic_label": "Thông tư đăng ký doanh nghiệp",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -67085,8 +66703,8 @@
       "topic_lv1_label": "Doanh nghiệp - Thủ tục",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "topic_lv3_key": "tt-giao-dich-tai-chinh-doanh-nghiep",
-      "topic_lv3_label": "Thông tư giao dịch tài chính doanh nghiệp",
+      "topic_lv3_key": "thong-tu-chinh-sach-chung",
+      "topic_lv3_label": "Thông tư Chính sách chung",
       "tags": [
         "Thông tư",
         "Doanh nghiệp",
@@ -67094,7 +66712,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Thông tư",
+      "topic_label": "Thông tư Chính sách chung",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -67135,8 +66753,8 @@
       "topic_lv1_label": "Lao động - Bảo hiểm",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "topic_lv3_key": "tt-huong-dan-luat-lao-dong",
-      "topic_lv3_label": "Thông tư hướng dẫn Luật lao động",
+      "topic_lv3_key": "thong-tu-chinh-sach-chung",
+      "topic_lv3_label": "Thông tư Chính sách chung",
       "tags": [
         "Thông tư",
         "Lao động",
@@ -67144,7 +66762,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Thông tư",
+      "topic_label": "Thông tư Chính sách chung",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -67364,15 +66982,15 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
-      "topic_lv3_key": "tt-ke-toan-dn-sieu-nho",
-      "topic_lv3_label": "Thông tư kế toán DN siêu nhỏ",
+      "topic_lv3_key": "tt-che-do-ke-toan-doanh-nghiep",
+      "topic_lv3_label": "Thông tư chế độ kế toán doanh nghiệp",
       "tags": [
         "Thông tư",
         "Kế toán",
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Thông tư",
+      "topic_label": "Thông tư chế độ kế toán doanh nghiệp",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -67413,8 +67031,8 @@
       "topic_lv1_label": "Doanh nghiệp - Thủ tục",
       "topic_lv2_key": "thu-tuc-doanh-nghiep",
       "topic_lv2_label": "DN - Thủ tục",
-      "topic_lv3_key": "dn-thu-tuc-quan-tri-ho-tro",
-      "topic_lv3_label": "DN thủ tục quản trị/hỗ trợ",
+      "topic_lv3_key": "dn-thu-tuc-khuyen-mai-thuong-mai",
+      "topic_lv3_label": "DN thủ tục khuyến mại/thương mại",
       "tags": [
         "DN",
         "Thủ tục",
@@ -67463,8 +67081,8 @@
       "file": "thong-tu-151-2014-tt-btc-quy-dinh-ve-thue.htm",
       "title": "Thông tư 151/2014/TT-BTC hướng dẫn Nghị định 91/2014/NĐ-CP",
       "excerpt": "Thông tư 151/2014/TT-BTC ngày 10/10/2014 của Bộ tài chính hướng dẫn Nghị định 91/2014/NĐ-CP về việc sửa đổi, bổ sung một số điều tại các Nghị định quy định về thuế.",
-      "topic_lv1_key": "tham-khao-hoc-lieu",
-      "topic_lv1_label": "Học liệu - Tham khảo",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "topic_lv3_key": "thong-tu-chinh-sach-chung",
@@ -67474,7 +67092,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Thông tư",
+      "topic_label": "Thông tư Chính sách chung",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -67979,10 +67597,10 @@
       "excerpt": "Thông tư 23/2014/TT-BLĐTBXH ngày 29/08/2014 của Bộ Lao Động – Thương Binh và Xã Hội hướng dẫn thực hiện một số điều của…",
       "topic_lv1_key": "lao-dong-bao-hiem",
       "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "thong-tu",
-      "topic_lv2_label": "Thông tư",
-      "topic_lv3_key": "tt-tuyen-dung-bao-cao-lao-dong",
-      "topic_lv3_label": "Thông tư tuyển dụng/báo cáo lao động",
+      "topic_lv2_key": "lao-dong-tien-luong",
+      "topic_lv2_label": "Lao động - Tiền lương",
+      "topic_lv3_key": "ho-so-thu-tuc-lao-dong",
+      "topic_lv3_label": "Hồ sơ/Thủ tục lao động",
       "tags": [
         "Thông tư",
         "Lao động",
@@ -67990,7 +67608,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Thông tư",
+      "topic_label": "Hồ sơ/Thủ tục lao động",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -68029,10 +67647,10 @@
       "excerpt": "Thông tư 23/2015/TT-BLĐTBXH ngày 23/06/2015 của Bộ lao động - Thương binh và xã hội: HƯỚNG DẪN THỰC HIỆN MỘT SỐ ĐIỀU VỀ…",
       "topic_lv1_key": "lao-dong-bao-hiem",
       "topic_lv1_label": "Lao động - Bảo hiểm",
-      "topic_lv2_key": "thong-tu",
-      "topic_lv2_label": "Thông tư",
-      "topic_lv3_key": "tt-tien-luong",
-      "topic_lv3_label": "Thông tư tiền lương",
+      "topic_lv2_key": "lao-dong-tien-luong",
+      "topic_lv2_label": "Lao động - Tiền lương",
+      "topic_lv3_key": "tien-luong-thoi-gio-lam-viec",
+      "topic_lv3_label": "Tiền lương/Thời giờ làm việc",
       "tags": [
         "Thông tư",
         "Lao động",
@@ -68041,7 +67659,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Thông tư",
+      "topic_label": "Tiền lương/Thời giờ làm việc",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -68675,8 +68293,8 @@
       "file": "thong-tu-65-2020-tt-btc-huong-dan-ke-khai-le-phi-mon-bai.htm",
       "title": "Thông tư 65/2020/TT-BTC hướng dẫn kê khai lệ phí môn bài",
       "excerpt": "Thông tư 65/2020/TT-BTC ngày 09 tháng 7 năm 2020 của Bộ tài chính hướng dẫn về lệ phí môn bài mới nhất, hướng dẫn về việc kê khai thuế môn bài cho doanh nghiệp",
-      "topic_lv1_key": "doanh-nghiep-thu-tuc",
-      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "topic_lv3_key": "thong-tu-ke-khai-quan-ly-thue",
@@ -68686,7 +68304,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Thông tư",
+      "topic_label": "Thông tư Kê khai/Quản lý thuế",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -69081,12 +68699,12 @@
       "file": "thong-tu-88-che-do-ke-toan-cho-ca-nhan-ho-kinh-doanh.htm",
       "title": "Thông tư 88/2021/TT-BTC chế độ kế toán cho cá nhân, hộ kinh doanh",
       "excerpt": "Thông tư 88/2021/TT-BTC ngày 11/10/2021 của Bộ tài chính Hướng dẫn chế độ kế toán cho hộ kinh doanh, cá nhân kinh doanh…",
-      "topic_lv1_key": "ke-toan",
-      "topic_lv1_label": "Kế toán",
-      "topic_lv2_key": "thong-tu",
-      "topic_lv2_label": "Thông tư",
-      "topic_lv3_key": "tt-ke-toan-ho-ca-nhan-kinh-doanh",
-      "topic_lv3_label": "Thông tư kế toán hộ/cá nhân kinh doanh",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
+      "topic_lv2_key": "ho-ca-nhan-kinh-doanh",
+      "topic_lv2_label": "Hộ/Cá nhân kinh doanh",
+      "topic_lv3_key": "hkd-che-do-ke-toan",
+      "topic_lv3_label": "HKD chế độ kế toán",
       "tags": [
         "Hộ kinh doanh",
         "Thông tư",
@@ -69094,7 +68712,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Thông tư",
+      "topic_label": "HKD chế độ kế toán",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -69262,8 +68880,8 @@
       "file": "thong-tu-95-2016-quy-dinh-ve-thu-tuc-dang-ky-thue.htm",
       "title": "Thông tư 95/2016/TT- BTC quy định về thủ tục đăng ký thuế",
       "excerpt": "Ngày 28/6/2016 Bộ tài chính ban hành Thông tư 95/2016/TT- BTC quy định về hồ sơ, trình tự, thủ tục đăng ký thuế; thay đổi thông tin đăng ký thuế; chấm dứt hiệu lực mã số thuế, khôi phục mã số thuế, tạm ngừng kinh doanh",
-      "topic_lv1_key": "doanh-nghiep-thu-tuc",
-      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "thong-tu",
       "topic_lv2_label": "Thông tư",
       "topic_lv3_key": "thong-tu-mst-dang-ky-thue",
@@ -69273,7 +68891,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Thông tư",
+      "topic_label": "Thông tư MST/Đăng ký thuế",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -69618,8 +69236,8 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "bao-cao-tai-chinh",
       "topic_lv2_label": "Báo cáo tài chính",
-      "topic_lv3_key": "phan-tich-doc-bctc",
-      "topic_lv3_label": "Phân tích/đọc BCTC",
+      "topic_lv3_key": "tong-quan-quy-dinh-nop-bctc",
+      "topic_lv3_label": "Tổng quan/quy định nộp BCTC",
       "tags": [
         "Báo cáo tài chính",
         "Kế toán",
@@ -69627,7 +69245,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Báo cáo tài chính",
+      "topic_label": "Tổng quan/quy định nộp BCTC",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -69642,10 +69260,10 @@
       "excerpt": "Thư tra soát theo Thông tư 84/2016/TT-BTC - Mẫu C1-11/NS, sử dụng khi phát hiện sai sót liên quan đến khoản nộp ngâ…",
       "topic_lv1_key": "thue",
       "topic_lv1_label": "Thuế - Hóa đơn",
-      "topic_lv2_key": "chung-tu-so-sach",
-      "topic_lv2_label": "Chứng từ - Sổ sách",
-      "topic_lv3_key": "thue-chung-tu-tra-soat-c1-11ns",
-      "topic_lv3_label": "Thuế chứng từ tra soát C1-11/NS",
+      "topic_lv2_key": "mau-bieu-thue",
+      "topic_lv2_label": "Mẫu biểu thuế - hóa đơn",
+      "topic_lv3_key": "mau-bang-ke-phu-luc-ho-so",
+      "topic_lv3_label": "Mẫu bảng kê/phụ lục/hồ sơ",
       "tags": [
         "Chứng từ",
         "Sổ sách",
@@ -69654,7 +69272,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Chứng từ - Sổ sách",
+      "topic_label": "Mẫu bảng kê/phụ lục/hồ sơ",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
@@ -69667,19 +69285,19 @@
       "file": "thu-tuc-dang-ky-chuong-trinh-ban-hang-khuyen-mai.htm",
       "title": "Thủ tục đăng ký chương trình khuyến mại mới nhất theo NĐ 128",
       "excerpt": "Thủ tục thông báo, đăng ký chương trình khuyến mại theo quy định mới nhất tại Nghị định 128/2024/NĐ-CP sửa đ…",
-      "topic_lv1_key": "ke-toan",
-      "topic_lv1_label": "Kế toán",
-      "topic_lv2_key": "nghiep-vu-theo-phan-hanh",
-      "topic_lv2_label": "Nghiệp vụ theo phần hành",
-      "topic_lv3_key": "nghiep-vu-khuyen-mai",
-      "topic_lv3_label": "Nghiệp vụ khuyến mại",
+      "topic_lv1_key": "doanh-nghiep-thu-tuc",
+      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
+      "topic_lv2_key": "thu-tuc-doanh-nghiep",
+      "topic_lv2_label": "DN - Thủ tục",
+      "topic_lv3_key": "dn-thu-tuc-khuyen-mai-thuong-mai",
+      "topic_lv3_label": "DN thủ tục khuyến mại/thương mại",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Nghiệp vụ",
+      "topic_label": "DN thủ tục khuyến mại/thương mại",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -69831,8 +69449,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "thue-nha-thau",
       "topic_lv2_label": "Thuế nhà thầu",
-      "topic_lv3_key": "nha-thau-dang-ky-thue",
-      "topic_lv3_label": "Nhà thầu đăng ký thuế",
+      "topic_lv3_key": "nha-thau-ke-khai-to-khai",
+      "topic_lv3_label": "Nhà thầu kê khai/tờ khai",
       "tags": [
         "Nhà thầu",
         "Đăng ký thuế",
@@ -69842,7 +69460,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Thuế nhà thầu",
+      "topic_label": "Nhà thầu kê khai/tờ khai",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -70253,8 +69871,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "ma-so-thue-dang-ky-thue",
       "topic_lv2_label": "Mã số thuế - Đăng ký thuế",
-      "topic_lv3_key": "mst-thu-tuc-hanh-chinh-ho-so",
-      "topic_lv3_label": "MST thủ tục hành chính/hồ sơ",
+      "topic_lv3_key": "mst-thay-doi-va-xu-phat",
+      "topic_lv3_label": "MST thay đổi thông tin/xử phạt",
       "tags": [
         "Kê khai",
         "Mã số thuế",
@@ -70811,10 +70429,10 @@
       "excerpt": "Lệ phí môn bài (hay còn được gọi là thuế môn bài) là khoản tiền mà doanh nghiệp hay cá nhân kinh doanh hoặc hộ kinh doa…",
       "topic_lv1_key": "thue",
       "topic_lv1_label": "Thuế - Hóa đơn",
-      "topic_lv2_key": "ho-ca-nhan-kinh-doanh",
-      "topic_lv2_label": "Hộ/Cá nhân kinh doanh",
-      "topic_lv3_key": "hkd-mon-bai",
-      "topic_lv3_label": "HKD môn bài",
+      "topic_lv2_key": "le-phi-mon-bai",
+      "topic_lv2_label": "Lệ phí môn bài",
+      "topic_lv3_key": "mon-bai-muc-thu-doi-tuong",
+      "topic_lv3_label": "Môn bài mức thu/đối tượng",
       "tags": [
         "Hộ kinh doanh",
         "Hộ",
@@ -70824,7 +70442,7 @@
         "Môn bài"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Hộ/Cá nhân kinh doanh",
+      "topic_label": "Môn bài mức thu/đối tượng",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -70916,22 +70534,22 @@
       "file": "phan-mem-chiu-thue-suat-bao-nhieu-0-hay-khong-chiu-thue.htm",
       "title": "Thuế suất thuế GTGT, TNDN đối với Doanh nghiệp phần mềm",
       "excerpt": "Phần mềm chịu thuế suất bao nhiêu? Thuế suất thuế GTGT của phần mềm. Dịch vụ phần mềm có được ưu đãi thuế, Ưu đãi thuế TNDN đối với sản xuất, kinh doanh phần mềm như nào?",
-      "topic_lv1_key": "doanh-nghiep-thu-tuc",
-      "topic_lv1_label": "Doanh nghiệp - Thủ tục",
-      "topic_lv2_key": "thu-tuc-doanh-nghiep",
-      "topic_lv2_label": "DN - Thủ tục",
-      "topic_lv3_key": "dn-thu-tuc-tai-chinh-vay-von",
-      "topic_lv3_label": "DN thủ tục tài chính/vay vốn",
+      "topic_lv1_key": "thue",
+      "topic_lv1_label": "Thuế - Hóa đơn",
+      "topic_lv2_key": "gtgt-hoa-don",
+      "topic_lv2_label": "GTGT - Hóa đơn",
+      "topic_lv3_key": "thue-suat-doi-tuong",
+      "topic_lv3_label": "Thuế suất/Đối tượng chịu thuế",
       "tags": [
         "GTGT",
         "TNDN",
         "DN - Thủ tục",
         "Công cụ"
       ],
-      "badge_label": "Công cụ",
-      "topic_label": "DN - Thủ tục",
-      "library_kind_key": "cong-cu",
-      "library_kind_label": "Công cụ",
+      "badge_label": "Hướng dẫn",
+      "topic_label": "GTGT - Hóa đơn",
+      "library_kind_key": "huong-dan",
+      "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
       "tool_lv3_label": "",
       "publish_date": "2020-04-28",
@@ -72078,8 +71696,8 @@
       "topic_lv1_label": "Kế toán",
       "topic_lv2_key": "mau-bieu-ke-toan",
       "topic_lv2_label": "Mẫu biểu kế toán",
-      "topic_lv3_key": "mau-chung-tu-tien-thanh-toan",
-      "topic_lv3_label": "Mẫu chứng từ tiền/thanh toán",
+      "topic_lv3_key": "mau-bao-cao-tai-chinh",
+      "topic_lv3_label": "Mẫu báo cáo tài chính",
       "tags": [
         "Excel",
         "Mẫu biểu kế toán",
@@ -72557,8 +72175,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "mau-bieu-thue",
       "topic_lv2_label": "Mẫu biểu thuế - hóa đơn",
-      "topic_lv3_key": "mau-dang-ky-thue-mst",
-      "topic_lv3_label": "Mẫu đăng ký thuế/MST",
+      "topic_lv3_key": "mau-thue-tncn",
+      "topic_lv3_label": "Mẫu thuế TNCN",
       "tags": [
         "Mẫu biểu thuế",
         "hóa đơn",
@@ -72566,7 +72184,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Mẫu thuế - hóa đơn",
+      "topic_label": "Mẫu biểu thuế - hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -72607,8 +72225,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "mau-bieu-thue",
       "topic_lv2_label": "Mẫu biểu thuế - hóa đơn",
-      "topic_lv3_key": "mau-khau-tru-hoan-mien-giam",
-      "topic_lv3_label": "Mẫu khấu trừ/hoàn/miễn giảm",
+      "topic_lv3_key": "mau-thue-tncn",
+      "topic_lv3_label": "Mẫu thuế TNCN",
       "tags": [
         "Mẫu biểu thuế",
         "hóa đơn",
@@ -72616,7 +72234,7 @@
         "Hướng dẫn"
       ],
       "badge_label": "Hướng dẫn",
-      "topic_label": "Mẫu thuế - hóa đơn",
+      "topic_label": "Mẫu biểu thuế - hóa đơn",
       "library_kind_key": "huong-dan",
       "library_kind_label": "Hướng dẫn",
       "tool_lv3_key": "",
@@ -72633,8 +72251,8 @@
       "topic_lv1_label": "Thuế - Hóa đơn",
       "topic_lv2_key": "mau-bieu-thue",
       "topic_lv2_label": "Mẫu biểu thuế - hóa đơn",
-      "topic_lv3_key": "mau-thue-gtgt-hoa-don",
-      "topic_lv3_label": "Mẫu thuế GTGT/Hóa đơn",
+      "topic_lv3_key": "mau-bang-ke-phu-luc-ho-so",
+      "topic_lv3_label": "Mẫu bảng kê/phụ lục/hồ sơ",
       "tags": [
         "GTGT",
         "Mẫu biểu thuế",
@@ -72643,7 +72261,7 @@
         "Văn bản"
       ],
       "badge_label": "Văn bản",
-      "topic_label": "Mẫu thuế - hóa đơn",
+      "topic_label": "Mẫu biểu thuế - hóa đơn",
       "library_kind_key": "van-ban",
       "library_kind_label": "Văn bản",
       "tool_lv3_key": "",
