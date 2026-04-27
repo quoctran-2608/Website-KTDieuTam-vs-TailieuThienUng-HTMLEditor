@@ -636,6 +636,18 @@
 
   function resolveDataFromViewJson(meta, view) {
     if (!meta || !view) return null;
+    var sectionKey = '';
+    if (meta.section === 'ban-tin' || meta.section === 'thu-vien') {
+      sectionKey = meta.section;
+    } else if (meta.sectionKey === 'ban-tin' || meta.sectionKey === 'thu-vien') {
+      sectionKey = meta.sectionKey;
+    }
+    if (!sectionKey) {
+      sectionKey = 'thu-vien';
+    }
+    var hubHref = meta.sectionHref ? sitePath(meta.sectionHref) : sitePath(sectionKey + '.html');
+    var hubLabel = meta.sectionLabel || sectionLabelFromKey(sectionKey);
+
     function normalizeViewItem(item) {
       if (!item) return null;
       return {
@@ -656,9 +668,9 @@
     }
     return {
       articleId: meta.id,
-      sectionKey: meta.sectionKey,
-      hubHref: sitePath(meta.sectionKey + '.html'),
-      hubLabel: sectionLabelFromKey(meta.sectionKey),
+      sectionKey: sectionKey,
+      hubHref: hubHref,
+      hubLabel: hubLabel,
       canonicalUrl: canonicalArticleUrl({ canonicalUrl: '', articleId: meta.id }),
       topicLabel: meta.topicLabel || '',
       currentTitle: meta.title || '',
