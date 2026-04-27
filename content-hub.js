@@ -24,12 +24,7 @@
     var script = document.getElementById('hub-data');
     if (!script) return null;
     try {
-      var inlineData = JSON.parse(script.textContent);
-      var store = window.KetoanDieuTamHubStore || {};
-      if (inlineData && inlineData.section && store[inlineData.section]) {
-        return store[inlineData.section];
-      }
-      return inlineData;
+      return JSON.parse(script.textContent);
     } catch (error) {
       console.error('Hub data lỗi định dạng', error);
       return null;
@@ -616,10 +611,17 @@
 		      return Boolean(state.q || state.kind || state.badge || state.tag || state.lv1 || state.lv2);
 		    }
 
-		    function buildStateUrl(nextState) {
-		      var filtered = Boolean(nextState.q || nextState.kind || nextState.badge || nextState.tag || nextState.lv1 || nextState.lv2);
+	    function buildStateUrl(nextState) {
+	      var filtered = Boolean(nextState.q || nextState.kind || nextState.badge || nextState.tag || nextState.lv1 || nextState.lv2);
 	      if (!filtered) {
-	        return data.pageMap[String(nextState.page)] || data.pageMap['1'] || data.sectionRootHref || location.pathname;
+	        var pageMap = data.pageMap || {};
+	        var direct = pageMap[String(nextState.page)];
+	        if (direct) return direct;
+	        var rootHref = pageMap['1'] || data.sectionRootHref || location.pathname;
+	        if (nextState.page > 1) {
+	          return appendQueryParam(rootHref, 'page', String(nextState.page));
+	        }
+	        return rootHref;
 	      }
 	      return (data.sectionRootHref || location.pathname) + buildSearch(nextState);
     }

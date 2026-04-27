@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Không tìm thấy trang được yêu cầu
+</title>
+    <style type="text/css">
+        body{background:url(http://ketoanthienung.org/Errors/404.jpg) no-repeat center 120px}        
+        #CountDown{font:normal 12px Arial;color:#027aac;position:absolute;bottom:10px;right:10px}
+        #CountDown span{font-size:40px}
+    </style>
+    <script type="text/javascript">
+        function Redirect(redirectUrl, countDownTime) {
+            var int = setInterval(function () {
+                document.getElementById("CountDown").innerHTML = "<span>" + countDownTime + "</span> Đang quay về trang " + redirectUrl;
+                countDownTime--;
+                if (countDownTime < 0) {
+                    window.clearInterval(int);
+                    window.location = redirectUrl;
+                }
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <form name="form1" method="post" action="./thong tu 96_2015 quy dinh ve thue tndn.png?404%3bhttps%3a%2f%2fketoanthienung.org%3a443%2fImages%2fimages%2fthong+tu+96_2015+quy+dinh+ve+thue+tndn.png" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDkzNTIwMjE5ZGT7Wc5YGOM6fC56u0haRfDRLrglQicBWPPQwX28Gg10/g==" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="69BFA96F" />
+</div>
+    <div id="CountDown"></div>    
+    <script type="text/javascript">
+        Redirect("http://ketoanthienung.org/", 6);        
+    </script>    
+    </form>
+</body>
+</html>
