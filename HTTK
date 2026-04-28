@@ -1,0 +1,287 @@
+[0;90mcodex-suphugiangphap@gmail.com-plus.normalized.json[0m
+[0;90mgpt-5.5 | xhigh | priority[0m
+[0;33mWARN micro-compact triggered (startup, saved_tokens=9560)[0m
+[0;35m[user][0m ủa sao vẫn còn mà bạn, ví dụ Thư vi�…� nữa, và vẫn còn nữa. Rà soát lại đi
+[0;90m[usage] {in: 225975, cached: 1920, out: 1295, think: 645}[0m
+[0;35m[assist][0m
+[38;5;15mzmid 🔎 Đúng, anh bắt đúng lỗi trong cách audit trước: em đã đếm leaf theo taxonomy tổng, nhưng UI Thư viện còn tách theo **loại thư viện** ([0;32m`Hướng dẫn/Biểu mẫu/Công cụ/Văn bản`[38;5;15m), nên vẫn có singleton ở đường dẫn kiểu [0;32m`Văn bản > Phần mềm - Công cụ > HTKK/eTax`[38;5;15m.  [39m
+[38;5;15mEm sẽ audit lại theo đúng leaf mà người dùng nhìn thấy trên filter UI: với Thư viện là [0;32m`libraryKind + topicLv1 + topicLv2(+topicLv3 nếu có)`[38;5;15m, với Bản tin là [0;32m`topicLv1/topicLv2`[38;5;15m.[39m
+[0;36m[intent][0m audit UI singleton leaves including library kind
+[0;36m[expect][0m true singleton leaves visible in filters by section/kind
+[0;36m[action][0m workdir: /mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com | timeout: 120s
+```bash
+[0;36mpython3[0m - <<[38;5;180m'PY'[0m
+import json
+from collections import defaultdict, Counter
+arts=json.load(open([38;5;180m'data/articles.json'[0m,encoding=[38;5;180m'utf-8'[0m))
+
+def ui_leaf(a):
+    sec=a.get([38;5;180m'section'[0m) or [38;5;180m''[0m
+    [0;36mif[0m sec==[38;5;180m'thu-vien'[0m:
+        return (
+            sec,
+            a.get([38;5;180m'libraryKindKey'[0m) or [38;5;180m''[0m,
+            a.get([38;5;180m'topicLv1Key'[0m) or [38;5;180m''[0m,
+            a.get([38;5;180m'topicLv2Key'[0m) or [38;5;180m''[0m,
+            a.get([38;5;180m'topicLv3Key'[0m) or [38;5;180m''[0m,
+        )
+    return (sec,[38;5;180m''[0m,a.get([38;5;180m'topicLv1Key'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv2Key'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv3Key'[0m) or [38;5;180m''[0m)
+
+g=defaultdict(list)
+[0;36mfor[0m a in arts:
+    [0;36mif[0m a.get([38;5;180m'section'[0m) in {[38;5;180m'thu-vien'[0m,[38;5;180m'ban-tin'[0m}:
+        g[ui_leaf(a)].append(a)
+singles={k:v for k,v in g.items() if len(v)==1}
+print([38;5;180m'ui_leaf_groups'[0m,len(g),[38;5;180m'ui_singletons'[0m,len(singles),[38;5;180m'by_section'[0m,Counter(k[0] for k in singles),[38;5;180m'by_kind'[0m,Counter(k[1] for k in singles if k[0]==[38;5;180m'thu-vien'[0m))
+[0;36mfor[0m sec in [[38;5;180m'thu-vien'[0m,[38;5;180m'ban-tin'[0m]:
+    print([38;5;180m'\n==='[0m,sec,[38;5;180m'singletons'[0m,sum(1 for k in singles if k[0]==sec),[38;5;180m'==='[0m)
+    [0;36mfor[0m i,(k,v) in enumerate(sorted([(k,v) for k,v in singles.items() if k[0]==sec], key=lambda kv: kv[0])[:240],1):
+        a=v[0]
+        print(f[38;5;180m'{i:03d}'[0m,k,[38;5;180m'|'[0m,a.get([38;5;180m'href'[0m),[38;5;180m'|'[0m,a.get([38;5;180m'title'[0m),[38;5;180m'| labels='[0m,a.get([38;5;180m'libraryKindLabel'[0m),[38;5;180m'>'[0m,a.get([38;5;180m'topicLv1Label'[0m),[38;5;180m'>'[0m,a.get([38;5;180m'topicLv2Label'[0m),[38;5;180m'>'[0m,a.get([38;5;180m'topicLv3Label'[0m))
+PY
+```
+[0;90m[usage] {in: 233528, cached: 2432, out: 1507, think: 910}[0m
+[0;35m[assist][0m
+[38;5;15mzmid 🔎 Em rà lại kỹ hơn: với UI hiện tại của [0;32m`content-hub.js`[38;5;15m, cấp cuối người dùng thật sự bấm/lọc trong Thư viện là **Loại thư viện → LV1 → LV2**, chưa phải LV3; vì vậy ví dụ anh nêu đúng là còn sót.  [39m
+[38;5;15mEm sẽ chuyển sang audit đúng “visible leaf” này: [0;32m`libraryKind + topicLv1 + topicLv2`[38;5;15m cho Thư viện, và [0;32m`topicLv1 + topicLv2`[38;5;15m cho Bản tin.[39m
+[0;36m[intent][0m audit visible UI leaf singletons kind+lv1+lv2
+[0;36m[expect][0m true visible singleton categories matching user examples
+[0;36m[action][0m workdir: /mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com | timeout: 120s
+```bash
+[0;36mpython3[0m - <<[38;5;180m'PY'[0m
+import json
+from collections import defaultdict, Counter
+arts=json.load(open([38;5;180m'data/articles.json'[0m,encoding=[38;5;180m'utf-8'[0m))
+
+def visible_leaf(a):
+    sec=a.get([38;5;180m'section'[0m) or [38;5;180m''[0m
+    [0;36mif[0m sec==[38;5;180m'thu-vien'[0m:
+        return (sec,a.get([38;5;180m'libraryKindKey'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv1Key'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv2Key'[0m) or [38;5;180m''[0m)
+    [0;36mif[0m sec==[38;5;180m'ban-tin'[0m:
+        return (sec,[38;5;180m''[0m,a.get([38;5;180m'topicLv1Key'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv2Key'[0m) or [38;5;180m''[0m)
+    return (sec,[38;5;180m''[0m,[38;5;180m''[0m,[38;5;180m''[0m)
+
+g=defaultdict(list)
+[0;36mfor[0m a in arts:
+    [0;36mif[0m a.get([38;5;180m'section'[0m) in {[38;5;180m'thu-vien'[0m,[38;5;180m'ban-tin'[0m}:
+        g[visible_leaf(a)].append(a)
+singles={k:v for k,v in g.items() if len(v)==1}
+print([38;5;180m'visible_leaf_groups'[0m,len(g),[38;5;180m'visible_singletons'[0m,len(singles),[38;5;180m'by_section'[0m,Counter(k[0] for k in singles),[38;5;180m'by_kind'[0m,Counter(k[1] for k in singles if k[0]==[38;5;180m'thu-vien'[0m))
+[0;36mfor[0m sec in [[38;5;180m'thu-vien'[0m,[38;5;180m'ban-tin'[0m]:
+    print([38;5;180m'\n==='[0m,sec,[38;5;180m'singletons'[0m,sum(1 for k in singles if k[0]==sec),[38;5;180m'==='[0m)
+    [0;36mfor[0m i,(k,v) in enumerate(sorted([(k,v) for k,v in singles.items() if k[0]==sec], key=lambda kv: kv[0]),1):
+        a=v[0]
+        print(f[38;5;180m'{i:03d}'[0m,k,[38;5;180m'|'[0m,a.get([38;5;180m'href'[0m),[38;5;180m'|'[0m,a.get([38;5;180m'title'[0m),[38;5;180m'| labels='[0m,a.get([38;5;180m'libraryKindLabel'[0m),[38;5;180m'>'[0m,a.get([38;5;180m'topicLv1Label'[0m),[38;5;180m'>'[0m,a.get([38;5;180m'topicLv2Label'[0m))
+PY
+```
+[0;35m[think][0m [38;5;180m[4mExploring software organization[24m I’m considering how to organize the accounting software library. It looks like I need to ensure "cong-cu" is properly categorized. I’m contemplating whether it should feature fast as a library kind. There might be a count to check, and I want to ensure it’s displayed clearly—not as a singleton. I’m thinking about moving the library kind key to "cong-cu", with multiple levels of categorization: level 1 being phan-mem-cong-cu, level 2 fast, and level 3 being fast-huong-dan-su-dung.[0m
+[0;90m[usage] {in: 236157, cached: 2432, out: 1900, think: 1478}[0m
+[0;36m[intent][0m check visible leaf counts for proposed target buckets
+[0;36m[expect][0m target buckets exist and have non-singleton counts
+[0;36m[action][0m workdir: /mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com | timeout: 120s
+```bash
+[0;36mpython3[0m - <<[38;5;180m'PY'[0m
+import json
+from collections import Counter
+arts=json.load(open([38;5;180m'data/articles.json'[0m,encoding=[38;5;180m'utf-8'[0m))
+
+def key(a): return (a.get([38;5;180m'libraryKindKey'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv1Key'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv2Key'[0m) or [38;5;180m''[0m)
+ct=Counter(key(a) for a in arts if a.get([38;5;180m'section'[0m)==[38;5;180m'thu-vien'[0m)
+[0;36mfor[0m k in [
+([38;5;180m'bieu-mau'[0m,[38;5;180m'ke-toan'[0m,[38;5;180m'mau-bieu-ke-toan'[0m),
+([38;5;180m'bieu-mau'[0m,[38;5;180m'lao-dong-bao-hiem'[0m,[38;5;180m'mau-bieu-lao-dong-bao-hiem'[0m),
+([38;5;180m'cong-cu'[0m,[38;5;180m'phan-mem-cong-cu'[0m,[38;5;180m'fast'[0m),
+([38;5;180m'bieu-mau'[0m,[38;5;180m'thue'[0m,[38;5;180m'mau-bieu-thue'[0m),
+([38;5;180m'huong-dan'[0m,[38;5;180m'thue'[0m,[38;5;180m'gtgt-hoa-don'[0m),
+([38;5;180m'van-ban'[0m,[38;5;180m'lao-dong-bao-hiem'[0m,[38;5;180m'nghi-dinh'[0m),
+([38;5;180m'van-ban'[0m,[38;5;180m'lao-dong-bao-hiem'[0m,[38;5;180m'nghi-quyet-quyet-dinh'[0m),
+([38;5;180m'van-ban'[0m,[38;5;180m'thue'[0m,[38;5;180m'cong-van'[0m),
+([38;5;180m'van-ban'[0m,[38;5;180m'thue'[0m,[38;5;180m'nghi-quyet-quyet-dinh'[0m),
+]:
+    print(k,[38;5;180m'count'[0m,ct[k])
+    rows=[a for a in arts if a.get([38;5;180m'section'[0m)==[38;5;180m'thu-vien'[0m and key(a)==k]
+    [0;36mfor[0m a in rows[:4]:
+        print([38;5;180m'  '[0m,a[[38;5;180m'href'[0m],[38;5;180m'|'[0m,a[[38;5;180m'topicLv3Key'[0m],[38;5;180m'|'[0m,a[[38;5;180m'title'[0m])
+PY
+```
+[0;35m[think][0m [38;5;180m[4mChecking the count process[24m I'm targeting the `cong-cu` fast count, but it seems to be at zero. Cleanup moved quickly to `bieu-mau`, which might be an issue. I wonder if I need to act fast on `huong-dan` > `phan-mem-cong-cu` for a swift count. I'll check back on that count to ensure everything is aligned properly. It's all about keeping things organized and moving efficiently![0m
+[0;90m[usage] {in: 240413, cached: 6528, out: 261, think: 52}[0m
+[0;36m[intent][0m check FAST visible buckets by library kind
+[0;36m[expect][0m find non-singleton FAST target bucket
+[0;36m[action][0m workdir: /mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com | timeout: 60s
+```bash
+[0;36mpython3[0m - <<[38;5;180m'PY'[0m
+import json
+from collections import Counter
+arts=json.load(open([38;5;180m'data/articles.json'[0m,encoding=[38;5;180m'utf-8'[0m))
+[0;36mfor[0m kind in [[38;5;180m'huong-dan'[0m,[38;5;180m'cong-cu'[0m,[38;5;180m'bieu-mau'[0m,[38;5;180m'van-ban'[0m]:
+    rows=[a for a in arts if a.get([38;5;180m'section'[0m)==[38;5;180m'thu-vien'[0m and a.get([38;5;180m'libraryKindKey'[0m)==kind and a.get([38;5;180m'topicLv2Key'[0m)==[38;5;180m'fast'[0m]
+    print(kind,len(rows))
+    [0;36mfor[0m a in rows[:5]: print([38;5;180m' '[0m,a[[38;5;180m'href'[0m],[38;5;180m'|'[0m,a[[38;5;180m'topicLv1Key'[0m],a[[38;5;180m'topicLv3Key'[0m],a[[38;5;180m'title'[0m])
+PY
+```
+[0;90m[usage] {in: 240920, cached: 2432, out: 4989, think: 774}[0m
+[0;35m[assist][0m
+[38;5;15mzin 🔎 Em đã xác định lại đúng 10 singleton còn sót theo **visible filter leaf**; các ví dụ anh nêu nằm trong nhóm này.  [39m
+[38;5;15mEm sẽ apply batch sửa 10 dòng này, trong đó có cả chuyển [0;32m`libraryKind`[38;5;15m khi bài đang nằm sai loại như [0;32m`Văn bản > Phần mềm - Công cụ > HTKK/eTax`[38;5;15m hoặc [0;32m`Biểu mẫu > Phần mềm - Công cụ > FAST`[38;5;15m.[39m
+[0;36m[patch][0m
+[0;35m*** Begin Patch[0m
+[0;35m*** Add File: tools/apply_visible_leaf_singleton_cleanup.py[0m
+[0;32m+#!/usr/bin/env python3[0m
+[0;32m+"""Dọn singleton theo leaf hiển thị trên UI: libraryKind + topicLv1 + topicLv2."""[0m
+[0;32m+[0m
+[0;32m+from __future__ import annotations[0m
+[0;32m+[0m
+[0;32m+import importlib.util[0m
+[0;32m+import json[0m
+[0;32m+import re[0m
+[0;32m+from collections import Counter, defaultdict[0m
+[0;32m+from datetime import datetime[0m
+[0;32m+from pathlib import Path[0m
+[0;32m+from typing import Dict, List, Tuple[0m
+[0;32m+[0m
+[0;32m+[0m
+[0;32m+ROOT = Path(__file__).resolve().parent.parent[0m
+[0;32m+OUT_JSON = ROOT / "docs" / "visible-leaf-singleton-cleanup-apply.json"[0m
+[0;32m+OUT_MD = ROOT / "docs" / "visible-leaf-singleton-cleanup-apply.md"[0m
+[0;32m+[0m
+[0;32m+META_RE = re.compile([0m
+[0;32m+    r'(<script id="article-meta" type="application/json">)(.*?)(</script>)',[0m
+[0;32m+    re.IGNORECASE | re.DOTALL,[0m
+[0;32m+)[0m
+[0;32m+[0m
+[0;32m+[0m
+[0;32m+# href -> (libraryKindKey, topicLv1Key, topicLv2Key, topicLv3Key, reason)[0m
+[0;32m+MOVES: Dict[str, Tuple[str, str, str, str, str]] = {[0m
+[0;32m+    "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html": ("bieu-mau", "ke-toan", "mau-bieu-ke-toan", "mau-so-sach-ke-toan", "so-chi-tiet-to-mau-so-sach"),[0m
+[0;32m+    "thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html": ("bieu-mau", "lao-dong-bao-hiem", "mau-bieu-lao-dong-bao-hiem", "mau-noi-quy-thoa-uoc-lao-dong", "quy-che-to-mau-noi-quy"),[0m
+[0;32m+    "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html": ("bieu-mau", "lao-dong-bao-hiem", "mau-bieu-lao-dong-bao-hiem", "mau-bao-cao-dang-ky-lao-dong", "qd1040-to-mau-bao-cao-lao-dong"),[0m
+[0;32m+    "thu-vien/tai-phan-mem-ke-toan-fast-accounting-mien-phi-dung-thu.html": ("huong-dan", "phan-mem-cong-cu", "fast", "fast-huong-dan-su-dung", "fast-download-to-guide-fast"),[0m
+[0;32m+    "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html": ("bieu-mau", "thue", "mau-bieu-thue", "mau-bang-ke-phu-luc-ho-so", "ma-thu-tuc-to-tax-appendix"),[0m
+[0;32m+    "thu-vien/phan-mem-chiu-thue-suat-bao-nhieu-0-hay-khong-chiu-thue.html": ("huong-dan", "thue", "gtgt-hoa-don", "thue-suat-doi-tuong", "software-tax-rate-to-gtgt-guide"),[0m
+[0;32m+    "thu-vien/nghi-dinh-115-2015-nd-cp-quy-dinh-luat-bao-hiem-xa-hoi.html": ("van-ban", "lao-dong-bao-hiem", "nghi-dinh", "nd-bhxh", "nd115-to-van-ban-nghi-dinh"),[0m
+[0;32m+    "thu-vien/quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.html": ("van-ban", "lao-dong-bao-hiem", "nghi-quyet-quyet-dinh", "qd-cong-doan-doan-phi", "qd61-to-van-ban-quyet-dinh"),[0m
+[0;32m+    "thu-vien/cong-van-845-tct-nang-cap-htkk-bctc-theo-thong-tu-133.html": ("van-ban", "thue", "cong-van", "cong-van-ke-khai-quan-ly-thue", "cv845-to-tax-cong-van"),[0m
+[0;32m+    "thu-vien/bai-bo-le-phi-mon-bai-tu-nam-2026.html": ("van-ban", "thue", "nghi-quyet-quyet-dinh", "nq-thue-tndn-giam-thue", "mon-bai-nghi-quyet-to-tax-resolution"),[0m
+[0;32m+}[0m
+[0;32m+[0m
+[0;32m+[0m
+[0;32m+LIBRARY_KIND_LABELS = {[0m
+[0;32m+    "huong-dan": "Hướng dẫn",[0m
+[0;32m+    "bieu-mau": "Biểu mẫu",[0m
+[0;32m+    "cong-cu": "Công cụ",[0m
+[0;32m+    "van-ban": "Văn bản",[0m
+[0;32m+}[0m
+[0;32m+[0m
+[0;32m+[0m
+[0;32m+def load_importer_module():[0m
+…259 lines truncated…
+[0;90m[usage] {in: 245953, cached: 240000, out: 91, think: 0}[0m
+[0;36m[intent][0m run visible-leaf cleanup and generate report
+[0;36m[expect][0m 10 applied and zero visible leaf singleton categories
+[0;36m[action][0m workdir: /mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com | timeout: 420s
+```bash
+[0;36mpython3[0m -m py_compile tools/apply_visible_leaf_singleton_cleanup.py
+[0;36mpython3[0m tools/apply_visible_leaf_singleton_cleanup.py
+```
+[0;90m[usage] {in: 246147, cached: 235904, out: 1176, think: 0}[0m
+[0;36m[intent][0m verify no visible/UI singleton leaves and meta consistency
+[0;36m[expect][0m zero visible singletons and no mismatches for latest cleanup
+[0;36m[action][0m workdir: /mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com | timeout: 260s
+```bash
+set -e
+node --check content-hub.js
+[0;36mpython3[0m - <<[38;5;180m'PY'[0m
+import json, re, unicodedata
+from collections import defaultdict, Counter
+from pathlib import Path
+arts=json.load(open([38;5;180m'data/articles.json'[0m,encoding=[38;5;180m'utf-8'[0m))
+
+def visible_leaf(a):
+    [0;36mif[0m a.get([38;5;180m'section'[0m)==[38;5;180m'thu-vien'[0m:
+        return (a.get([38;5;180m'section'[0m) or [38;5;180m''[0m,a.get([38;5;180m'libraryKindKey'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv1Key'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv2Key'[0m) or [38;5;180m''[0m)
+    return (a.get([38;5;180m'section'[0m) or [38;5;180m''[0m,[38;5;180m''[0m,a.get([38;5;180m'topicLv1Key'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv2Key'[0m) or [38;5;180m''[0m)
+
+g=defaultdict(list)
+[0;36mfor[0m a in arts:
+    [0;36mif[0m a.get([38;5;180m'section'[0m) in {[38;5;180m'thu-vien'[0m,[38;5;180m'ban-tin'[0m}:
+        g[visible_leaf(a)].append(a)
+singles={k:v for k,v in g.items() if len(v)==1}
+print([38;5;180m'visible_singleton_count'[0m,len(singles),[38;5;180m'by_section'[0m,Counter(k[0] for k in singles),[38;5;180m'by_kind'[0m,Counter(k[1] for k in singles if k[0]==[38;5;180m'thu-vien'[0m))
+[0;36mfor[0m k,v in sorted(singles.items(), key=lambda kv: kv[0])[:20]: print([38;5;180m' remain'[0m,k,v[0][[38;5;180m'href'[0m])
+
+[0;90m# previous lv3 leaf singleton no longer primary but still check raw lv3 leaves not 1? optional[0m
+
+def deep_leaf(a):
+    [0;36mif[0m a.get([38;5;180m'section'[0m)==[38;5;180m'thu-vien'[0m: return (a.get([38;5;180m'section'[0m) or [38;5;180m''[0m,a.get([38;5;180m'libraryKindKey'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv1Key'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv2Key'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv3Key'[0m) or [38;5;180m''[0m)
+    return (a.get([38;5;180m'section'[0m) or [38;5;180m''[0m,[38;5;180m''[0m,a.get([38;5;180m'topicLv1Key'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv2Key'[0m) or [38;5;180m''[0m,a.get([38;5;180m'topicLv3Key'[0m) or [38;5;180m''[0m)
+g2=defaultdict(list)
+[0;36mfor[0m a in arts:
+    [0;36mif[0m a.get([38;5;180m'section'[0m) in {[38;5;180m'thu-vien'[0m,[38;5;180m'ban-tin'[0m}: g2[deep_leaf(a)].append(a)
+s2={k:v for k,v in g2.items() if len(v)==1}
+print([38;5;180m'deep_singleton_count_including_lv3'[0m,len(s2),[38;5;180m'by_kind'[0m,Counter(k[1] for k in s2 if k[0]==[38;5;180m'thu-vien'[0m))
+
+report=json.load(open([38;5;180m'docs/visible-leaf-singleton-cleanup-apply.json'[0m,encoding=[38;5;180m'utf-8'[0m))
+by_href={a['href']:a for a in arts}
+meta_re=re.compile(r[38;5;180m'<script id="article-meta" type="application/json">(.*?)</script>'[0m,re.S)
+mis=[]
+[0;36mfor[0m row in report.get([38;5;180m'appliedRows'[0m,[]):
+    href=row['href']; a=by_href[href]
+    m=meta_re.search(Path(href).read_text(encoding=[38;5;180m'utf-8'[0m,errors=[38;5;180m'ignore'[0m))
+    [0;36mif[0m not m:
+        mis.append((href,[38;5;180m'missing-meta'[0m)); continue
+    meta=json.loads(m.group(1))
+    [0;36mfor[0m k in [[38;5;180m'libraryKindKey'[0m,[38;5;180m'libraryKindLabel'[0m,[38;5;180m'cardBadgeLabel'[0m,[38;5;180m'topicLv1Key'[0m,[38;5;180m'topicLv2Key'[0m,[38;5;180m'topicLv3Key'[0m,[38;5;180m'topicLv1Label'[0m,[38;5;180m'topicLv2Label'[0m,[38;5;180m'topicLv3Label'[0m,[38;5;180m'cardTopicLabel'[0m]:
+        [0;36mif[0m (meta.get(k) or [38;5;180m''[0m) != (a.get(k) or [38;5;180m''[0m):
+            mis.append((href,k,meta.get(k),a.get(k))); break
+print([38;5;180m'meta_mismatch_count'[0m,len(mis))
+[0;36mif[0m mis[:5]: print(mis[:5])
+
+[0;90m# hub counts and named examples user cited[0m
+[0;36mfor[0m sec in [[38;5;180m'thu-vien'[0m,[38;5;180m'ban-tin'[0m]:
+…14 lines truncated…
+```
+[0;90m[usage] {in: 249034, cached: 2432, out: 558, think: 127}[0m
+[0;35m[assist][0m
+[38;5;15mzmid ✅ Anh đúng — lần trước em audit sai tiêu chí.[39m
+[38;5;15m[39m
+[38;5;15mEm đã rà lại theo đúng **leaf hiển thị trên UI filter**:[39m
+[38;5;15m[39m
+[38;5;15m- **Thư viện:** [0;32m`Loại thư viện > LV1 > LV2`[38;5;15m[39m
+[38;5;15m- **Bản tin:** [0;32m`LV1 > LV2`[38;5;15m[39m
+[38;5;15m[39m
+[1;36m## Kết quả rà lại[0m
+[38;5;15mTrước khi sửa còn **10 visible singleton**:[39m
+[38;5;15m- [0;32m`Biểu mẫu`[38;5;15m: 5[39m
+[38;5;15m- [0;32m`Văn bản`[38;5;15m: 2[39m
+[38;5;15m- [0;32m`Hướng dẫn`[38;5;15m: 2[39m
+[38;5;15m- [0;32m`Công cụ`[38;5;15m: 1[39m
+[38;5;15m[39m
+[38;5;15mBao gồm đúng các case anh nêu:[39m
+[38;5;15m- [0;32m`Văn bản > Phần mềm - Công cụ > HTKK - eTax - Thuế điện tử`[38;5;15m[39m
+[38;5;15m- [0;32m`Công cụ > Doanh nghiệp - Thủ tục > DN - Thủ tục`[38;5;15m[39m
+[38;5;15m- và các bucket lẻ khác.[39m
+[38;5;15m[39m
+[1;36m## Đã sửa[0m
+[38;5;15m- Applied: **10**[39m
+[38;5;15m- Skipped: **0**[39m
+[38;5;15m- Visible singleton sau sửa: **0**[39m
+[38;5;15m[39m
+[38;5;15mCác bucket ví dụ giờ đã hết:[39m
+[38;5;15m- [0;32m`Văn bản > Phần mềm - Công cụ > HTKK/eTax`[38;5;15m: **0 bài** — bài đã chuyển sang [0;32m`Văn bản > Thuế - Hóa đơn > Công văn`[38;5;15m[39m
+[38;5;15m- [0;32m`Công cụ > Doanh nghiệp - Thủ tục > DN - Thủ tục`[38;5;15m: **0 bài**[39m
+[38;5;15m- [0;32m`Biểu mẫu > Phần mềm - Công cụ > FAST`[38;5;15m: **0 bài**[39m
+[38;5;15m[39m
+[1;36m## Verify[0m
+[38;5;15m- [0;32m`visible_singleton_count`[38;5;15m: **0**[39m
+[38;5;15m- [0;32m`meta_mismatch_count`[38;5;15m: **0**[39m
+[38;5;15m- Rebuild xong:[39m
+[38;5;15m  - Thư viện: **2721 bài / 227 trang**[39m
+[38;5;15m  - Bản tin: **88 bài / 8 trang**[39m
+[38;5;15m[39m
+[38;5;15mReport:[39m
+[38;5;15m- [0;32m`docs/visible-leaf-singleton-cleanup-apply.md`[38;5;15m[39m
+[38;5;15m- [0;32m`docs/visible-leaf-singleton-cleanup-apply.json`[38;5;15m[39m
+[38;5;15m[39m
+[38;5;15mLưu ý: nếu tính sâu tới [0;32m`topicLv3`[38;5;15m không hiển thị trực tiếp trên filter chính thì vẫn còn vài singleton sâu, nhưng theo UI filter hiện tại thì đã sạch.[39m
+

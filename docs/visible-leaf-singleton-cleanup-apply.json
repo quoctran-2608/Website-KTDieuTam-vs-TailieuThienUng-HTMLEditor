@@ -1,0 +1,198 @@
+{
+  "generatedAt": "2026-04-27T20:58:41.760834",
+  "before": {
+    "singletonCount": 10,
+    "byKind": {
+      "van-ban": 2,
+      "bieu-mau": 5,
+      "huong-dan": 2,
+      "cong-cu": 1
+    }
+  },
+  "after": {
+    "singletonCount": 0,
+    "byKind": {}
+  },
+  "movesPlanned": 10,
+  "applied": 10,
+  "skipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
+      "title": "Mẫu Sổ chi tiết thanh toán với người mua - bán theo TT 133 và 200",
+      "oldLeaf": [
+        "bieu-mau",
+        "ke-toan",
+        "chung-tu-so-sach",
+        "so-sach-tien-kho-chi-tiet"
+      ],
+      "newLeaf": [
+        "bieu-mau",
+        "ke-toan",
+        "mau-bieu-ke-toan",
+        "mau-so-sach-ke-toan"
+      ],
+      "reason": "so-chi-tiet-to-mau-so-sach"
+    },
+    {
+      "href": "thu-vien/quy-che-dan-chu-o-co-so-tai-noi-lam-viec-theo-nghi-dinh-145.html",
+      "title": "Quy chế dân chủ ở cơ sở tại nơi làm việc",
+      "oldLeaf": [
+        "bieu-mau",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong",
+        "noi-quy-thoa-uoc-ky-luat"
+      ],
+      "newLeaf": [
+        "bieu-mau",
+        "lao-dong-bao-hiem",
+        "mau-bieu-lao-dong-bao-hiem",
+        "mau-noi-quy-thoa-uoc-lao-dong"
+      ],
+      "reason": "quy-che-to-mau-noi-quy"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-1040-qd-bhxh-mau-bao-cao-su-dung-lao-dong-tham-gia-bhxh.html",
+      "title": "Quyết định 1040/QĐ-BHXH Mẫu Báo cáo sử dụng lao động tham gia BHXH",
+      "oldLeaf": [
+        "bieu-mau",
+        "lao-dong-bao-hiem",
+        "nghi-quyet-quyet-dinh",
+        "qd-bhxh-bhyt-bhtn"
+      ],
+      "newLeaf": [
+        "bieu-mau",
+        "lao-dong-bao-hiem",
+        "mau-bieu-lao-dong-bao-hiem",
+        "mau-bao-cao-dang-ky-lao-dong"
+      ],
+      "reason": "qd1040-to-mau-bao-cao-lao-dong"
+    },
+    {
+      "href": "thu-vien/tai-phan-mem-ke-toan-fast-accounting-mien-phi-dung-thu.html",
+      "title": "Tải phần mềm kế toán Fast Accounting miễn phí dùng thử",
+      "oldLeaf": [
+        "bieu-mau",
+        "phan-mem-cong-cu",
+        "fast",
+        "fast-huong-dan-su-dung"
+      ],
+      "newLeaf": [
+        "huong-dan",
+        "phan-mem-cong-cu",
+        "fast",
+        "fast-huong-dan-su-dung"
+      ],
+      "reason": "fast-download-to-guide-fast"
+    },
+    {
+      "href": "thu-vien/danh-sach-ma-thu-tuc-hanh-chinh-khi-nop-to-khai-thue.html",
+      "title": "Danh sách mã thủ tục hành chính khi nộp tờ khai thuế",
+      "oldLeaf": [
+        "bieu-mau",
+        "thue",
+        "ma-so-thue-dang-ky-thue",
+        "mst-thu-tuc-hanh-chinh-ho-so"
+      ],
+      "newLeaf": [
+        "bieu-mau",
+        "thue",
+        "mau-bieu-thue",
+        "mau-bang-ke-phu-luc-ho-so"
+      ],
+      "reason": "ma-thu-tuc-to-tax-appendix"
+    },
+    {
+      "href": "thu-vien/phan-mem-chiu-thue-suat-bao-nhieu-0-hay-khong-chiu-thue.html",
+      "title": "Thuế suất thuế GTGT, TNDN đối với Doanh nghiệp phần mềm",
+      "oldLeaf": [
+        "cong-cu",
+        "doanh-nghiep-thu-tuc",
+        "thu-tuc-doanh-nghiep",
+        "dn-thu-tuc-tai-chinh-vay-von"
+      ],
+      "newLeaf": [
+        "huong-dan",
+        "thue",
+        "gtgt-hoa-don",
+        "thue-suat-doi-tuong"
+      ],
+      "reason": "software-tax-rate-to-gtgt-guide"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-115-2015-nd-cp-quy-dinh-luat-bao-hiem-xa-hoi.html",
+      "title": "Nghi định 115/2015/NĐ-CP Quy định Luật Bảo hiểm xã hội",
+      "oldLeaf": [
+        "huong-dan",
+        "lao-dong-bao-hiem",
+        "nghi-dinh",
+        "nd-bhxh"
+      ],
+      "newLeaf": [
+        "van-ban",
+        "lao-dong-bao-hiem",
+        "nghi-dinh",
+        "nd-bhxh"
+      ],
+      "reason": "nd115-to-van-ban-nghi-dinh"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-61-qd-tld-ve-dieu-chinh-giam-muc-dong-doan-phi-cong-doan.html",
+      "title": "Giảm mức đóng đoàn phí công đoàn từ ngày 01/07/2025",
+      "oldLeaf": [
+        "huong-dan",
+        "lao-dong-bao-hiem",
+        "nghi-quyet-quyet-dinh",
+        "qd-cong-doan-doan-phi"
+      ],
+      "newLeaf": [
+        "van-ban",
+        "lao-dong-bao-hiem",
+        "nghi-quyet-quyet-dinh",
+        "qd-cong-doan-doan-phi"
+      ],
+      "reason": "qd61-to-van-ban-quyet-dinh"
+    },
+    {
+      "href": "thu-vien/cong-van-845-tct-nang-cap-htkk-bctc-theo-thong-tu-133.html",
+      "title": "Công văn 845/TCT-CNTT nâng cấp HTKK - BCTC theo Thông tư 133",
+      "oldLeaf": [
+        "van-ban",
+        "phan-mem-cong-cu",
+        "htkk-etax-thue-dien-tu",
+        "htkk-guide-import-bang-ke"
+      ],
+      "newLeaf": [
+        "van-ban",
+        "thue",
+        "cong-van",
+        "cong-van-ke-khai-quan-ly-thue"
+      ],
+      "reason": "cv845-to-tax-cong-van"
+    },
+    {
+      "href": "thu-vien/bai-bo-le-phi-mon-bai-tu-nam-2026.html",
+      "title": "Bãi bỏ lệ phí môn bài từ năm 2026 theo Nghị quyết 198/2025/QH15",
+      "oldLeaf": [
+        "van-ban",
+        "thue",
+        "le-phi-mon-bai",
+        "mon-bai-mien-giam-tam-ngung"
+      ],
+      "newLeaf": [
+        "van-ban",
+        "thue",
+        "nghi-quyet-quyet-dinh",
+        "nq-thue-tndn-giam-thue"
+      ],
+      "reason": "mon-bai-nghi-quyet-to-tax-resolution"
+    }
+  ],
+  "remainingSingletons": []
+}

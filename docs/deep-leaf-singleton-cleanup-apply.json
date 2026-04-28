@@ -1,0 +1,815 @@
+{
+  "generatedAt": "2026-04-27T21:12:28.719774",
+  "before": {
+    "deepSingletonCount": 42
+  },
+  "after": {
+    "deepSingletonCount": 0
+  },
+  "applied": 36,
+  "skipped": [],
+  "bucketDecisions": [
+    {
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "doanh-nghiep-thu-tuc",
+        "thu-tuc-doanh-nghiep"
+      ],
+      "canonicalLv3": "dn-thu-tuc-giai-the",
+      "beforeCounts": {
+        "dn-thu-tuc-quan-tri-ho-tro": 1,
+        "dn-thu-tuc-giai-the": 1
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "ke-toan",
+        "tai-khoan-hach-toan"
+      ],
+      "canonicalLv3": "cong-no-thanh-toan",
+      "beforeCounts": {
+        "cong-no-thanh-toan": 2,
+        "tien-quy-ngan-hang": 1,
+        "thue-nghia-vu": 1,
+        "doanh-thu-chi-phi-kqkd": 2,
+        "hach-toan-dac-thu": 2,
+        "hang-ton-kho-gia-thanh": 1,
+        "von-dau-tu": 2
+      },
+      "movedRows": 3
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "ke-toan",
+        "tai-san-kho-ccdc"
+      ],
+      "canonicalLv3": "hang-ton-kho-gia-xuat",
+      "beforeCounts": {
+        "tscd-nguyen-gia-khau-hao": 2,
+        "hang-ton-kho-gia-xuat": 7,
+        "tai-san-kho-ccdc-khac": 1
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "tham-khao-hoc-lieu",
+        "bao-cao-thuc-tap"
+      ],
+      "canonicalLv3": "thuc-tap-ke-toan-tong-hop-to-chuc",
+      "beforeCounts": {
+        "thuc-tap-ke-toan-tong-hop-to-chuc": 5,
+        "thuc-tap-chi-phi-gia-thanh": 1,
+        "thuc-tap-ban-hang-doanh-thu-kqkd": 3,
+        "thuc-tap-nvl-ccdc": 4,
+        "thuc-tap-tien-luong": 1,
+        "thuc-tap-von-bang-tien": 2
+      },
+      "movedRows": 2
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "tham-khao-hoc-lieu",
+        "kinh-nghiem-hoi-dap-nghe-nghiep"
+      ],
+      "canonicalLv3": "kinh-nghiem-quyet-toan-thue",
+      "beforeCounts": {
+        "kinh-nghiem-quyet-toan-thue": 17,
+        "kinh-nghiem-phong-van-xin-viec": 1,
+        "mo-ta-cong-viec-ke-toan": 1
+      },
+      "movedRows": 2
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "thue",
+        "cong-van"
+      ],
+      "canonicalLv3": "cong-van-ke-khai-quan-ly-thue",
+      "beforeCounts": {
+        "cong-van-gtgt-hoa-don": 1,
+        "cong-van-chinh-sach-chung": 1,
+        "cong-van-ke-khai-quan-ly-thue": 2
+      },
+      "movedRows": 2
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "thue",
+        "mau-bieu-thue"
+      ],
+      "canonicalLv3": "mau-thue-gtgt-hoa-don",
+      "beforeCounts": {
+        "mau-thue-tndn": 14,
+        "mau-thue-gtgt-hoa-don": 141,
+        "mau-thue-tncn": 35,
+        "mau-bang-ke-phu-luc-ho-so": 4,
+        "mau-khau-tru-hoan-mien-giam": 1,
+        "mau-thue-ho-ca-nhan-mon-bai": 8,
+        "mau-thue-nha-thau": 9,
+        "mau-dang-ky-thue-mst": 1
+      },
+      "movedRows": 2
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "ke-toan",
+        "bao-cao-tai-chinh"
+      ],
+      "canonicalLv3": "lap-cac-bao-cao-thanh-phan",
+      "beforeCounts": {
+        "tong-quan-quy-dinh-nop-bctc": 3,
+        "lap-cac-bao-cao-thanh-phan": 9,
+        "chuan-muc-trinh-bay-bctc": 3,
+        "vi-pham-dieu-chinh-bctc": 3,
+        "nguyen-tac-trinh-bay-bctc": 1
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "ke-toan",
+        "chuan-muc-che-do-nguyen-tac"
+      ],
+      "canonicalLv3": "tuyen-dung-nghe-nghiep-ke-toan",
+      "beforeCounts": {
+        "che-do-ke-toan-va-thong-tu": 7,
+        "chuan-muc-ke-toan-vas": 16,
+        "tuyen-dung-nghe-nghiep-ke-toan": 43,
+        "chuan-muc-che-do-khac": 3,
+        "hinh-thuc-ghi-so-ke-toan": 1,
+        "nguyen-tac-ke-toan": 4
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "ke-toan",
+        "mau-bieu-ke-toan"
+      ],
+      "canonicalLv3": "mau-bao-cao-tai-chinh",
+      "beforeCounts": {
+        "mau-hanh-chinh-quan-tri-khac": 1,
+        "mau-bao-cao-tai-chinh": 2,
+        "mau-chung-tu-tien-thanh-toan": 1
+      },
+      "movedRows": 2
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "thue",
+        "cong-van"
+      ],
+      "canonicalLv3": "cong-van-chinh-sach-chung",
+      "beforeCounts": {
+        "cong-van-chinh-sach-chung": 1,
+        "cong-van-ke-khai-quan-ly-thue": 1
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "thue",
+        "ma-so-thue-dang-ky-thue"
+      ],
+      "canonicalLv3": "mst-thay-doi-va-xu-phat",
+      "beforeCounts": {
+        "mst-tra-cuu-cau-truc-trang-thai": 3,
+        "mst-thay-doi-va-xu-phat": 4,
+        "mst-thu-tuc-hanh-chinh-ho-so": 1,
+        "mst-dang-ky-lan-dau-doi-tuong": 3
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "thue",
+        "mau-bieu-thue"
+      ],
+      "canonicalLv3": "mau-thue-tncn",
+      "beforeCounts": {
+        "mau-thue-gtgt-hoa-don": 1,
+        "mau-thue-tncn": 2,
+        "mau-dang-ky-thue-mst": 1,
+        "mau-khau-tru-hoan-mien-giam": 1
+      },
+      "movedRows": 3
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "doanh-nghiep-thu-tuc",
+        "thu-tuc-doanh-nghiep"
+      ],
+      "canonicalLv3": "dn-thu-tuc-khuyen-mai-thuong-mai",
+      "beforeCounts": {
+        "dn-thu-tuc-khuyen-mai-thuong-mai": 1,
+        "dn-thu-tuc-thanh-lap-thay-doi": 1,
+        "dn-thu-tuc-quan-tri-ho-tro": 1
+      },
+      "movedRows": 2
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "ke-toan",
+        "bao-cao-tai-chinh"
+      ],
+      "canonicalLv3": "tong-quan-quy-dinh-nop-bctc",
+      "beforeCounts": {
+        "tong-quan-quy-dinh-nop-bctc": 3,
+        "nguyen-tac-trinh-bay-bctc": 2,
+        "vi-pham-dieu-chinh-bctc": 1
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "ke-toan",
+        "chung-tu-so-sach"
+      ],
+      "canonicalLv3": "he-thong-chung-tu-mau-bieu",
+      "beforeCounts": {
+        "so-sach-tien-kho-chi-tiet": 3,
+        "he-thong-chung-tu-mau-bieu": 4,
+        "hinh-thuc-ghi-so-ke-toan": 1,
+        "chung-tu-cong-tac-thanh-toan": 1
+      },
+      "movedRows": 2
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "ke-toan",
+        "tai-khoan-hach-toan"
+      ],
+      "canonicalLv3": "hach-toan-dac-thu",
+      "beforeCounts": {
+        "hach-toan-dac-thu": 5,
+        "tien-quy-ngan-hang": 2,
+        "doanh-thu-chi-phi-kqkd": 1
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "lao-dong-bao-hiem",
+        "bao-hiem"
+      ],
+      "canonicalLv3": "che-do-muc-huong",
+      "beforeCounts": {
+        "che-do-muc-huong": 1,
+        "doi-tuong-muc-dong": 1,
+        "van-ban-chinh-sach": 1,
+        "vi-pham-xu-phat": 1
+      },
+      "movedRows": 3
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong"
+      ],
+      "canonicalLv3": "tien-luong-thoi-gio-lam-viec",
+      "beforeCounts": {
+        "tien-luong-thoi-gio-lam-viec": 4,
+        "van-ban-lao-dong": 1,
+        "ho-so-thu-tuc-lao-dong": 2,
+        "hop-dong-quan-he-lao-dong": 2
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "thue",
+        "ho-ca-nhan-kinh-doanh"
+      ],
+      "canonicalLv3": "hkd-che-do-ke-toan",
+      "beforeCounts": {
+        "hkd-ke-khai-ho-so-thoi-han": 1,
+        "hkd-che-do-ke-toan": 2
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "thue",
+        "ma-so-thue-dang-ky-thue"
+      ],
+      "canonicalLv3": "mst-dang-ky-lan-dau-doi-tuong",
+      "beforeCounts": {
+        "mst-tra-cuu-cau-truc-trang-thai": 1,
+        "mst-dang-ky-lan-dau-doi-tuong": 1
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "thue",
+        "mau-bieu-thue"
+      ],
+      "canonicalLv3": "mau-bang-ke-phu-luc-ho-so",
+      "beforeCounts": {
+        "mau-bang-ke-phu-luc-ho-so": 1,
+        "mau-thue-gtgt-hoa-don": 1
+      },
+      "movedRows": 1
+    },
+    {
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "thue",
+        "tndn"
+      ],
+      "canonicalLv3": "van-ban-chinh-sach",
+      "beforeCounts": {
+        "doanh-thu-thu-nhap-tinh-thue": 1,
+        "van-ban-chinh-sach": 3
+      },
+      "movedRows": 1
+    }
+  ],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "thu-vien/danh-sach-chu-so-huu-huong-loi-cua-doanh-nghiep.html",
+      "title": "Danh sách chủ sở hữu hưởng lợi của doanh nghiệp",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "doanh-nghiep-thu-tuc",
+        "thu-tuc-doanh-nghiep"
+      ],
+      "oldLv3": "dn-thu-tuc-quan-tri-ho-tro",
+      "newLv3": "dn-thu-tuc-giai-the"
+    },
+    {
+      "href": "thu-vien/mau-01-bk-stk-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/BK-STK theo Thông tư số 18/2026/TT-BTC Thông báo số tài khoản, ví điện tử",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "ke-toan",
+        "tai-khoan-hach-toan"
+      ],
+      "oldLv3": "tien-quy-ngan-hang",
+      "newLv3": "cong-no-thanh-toan"
+    },
+    {
+      "href": "thu-vien/mau-01-bds-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/BĐS theo Thông tư số 18/2026/TT-BTC Tờ khai thuế cho thuê nhà",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "ke-toan",
+        "tai-khoan-hach-toan"
+      ],
+      "oldLv3": "thue-nghia-vu",
+      "newLv3": "cong-no-thanh-toan"
+    },
+    {
+      "href": "thu-vien/mau-bang-thanh-toan-hang-dai-ly-ky-gui-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng thanh toán hàng đại lý ký gửi theo Thông tư 200 và 133",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "ke-toan",
+        "tai-khoan-hach-toan"
+      ],
+      "oldLv3": "hang-ton-kho-gia-thanh",
+      "newLv3": "cong-no-thanh-toan"
+    },
+    {
+      "href": "thu-vien/so-theo-doi-phan-bo-cac-khoan-chenh-lech-phat-sinh-khi-mua-khoan-dau-tu-vao-cong-ty-lien-ket.html",
+      "title": "Sổ theo dõi phân bổ các khoản chênh lệch phát sinh khi mua khoản đầu tư vào công ty liên doanh",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "ke-toan",
+        "tai-san-kho-ccdc"
+      ],
+      "oldLv3": "tai-san-kho-ccdc-khac",
+      "newLv3": "hang-ton-kho-gia-xuat"
+    },
+    {
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-chi-phi-va-tinh-gia-thanh-san-pham.html",
+      "title": "Mẫu báo cáo: Công tác kế toán tập hợp chi phí sản xuất và tính giá thành sản phẩm tại Công ty TNHH Thế Anh",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "tham-khao-hoc-lieu",
+        "bao-cao-thuc-tap"
+      ],
+      "oldLv3": "thuc-tap-chi-phi-gia-thanh",
+      "newLv3": "thuc-tap-ke-toan-tong-hop-to-chuc"
+    },
+    {
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-tien-luong-va-cac-khoan-trich-theo-luong.html",
+      "title": "Mẫu báo cáo: Kế toán tiền lương và các khoản trích theo lương tại Công ty cổ phần Đầu tư và Phát triển nhà Hà Nội số 27",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "tham-khao-hoc-lieu",
+        "bao-cao-thuc-tap"
+      ],
+      "oldLv3": "thuc-tap-tien-luong",
+      "newLv3": "thuc-tap-ke-toan-tong-hop-to-chuc"
+    },
+    {
+      "href": "thu-vien/mau-don-xin-viec-ke-toan-viet-tay-hay-nhat.html",
+      "title": "Mẫu đơn xin việc kế toán viết tay hay nhất",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "tham-khao-hoc-lieu",
+        "kinh-nghiem-hoi-dap-nghe-nghiep"
+      ],
+      "oldLv3": "kinh-nghiem-phong-van-xin-viec",
+      "newLv3": "kinh-nghiem-quyet-toan-thue"
+    },
+    {
+      "href": "thu-vien/mau-hop-dong-thi-cong-noi-that.html",
+      "title": "Mẫu hợp đồng thi công nội thất",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "tham-khao-hoc-lieu",
+        "kinh-nghiem-hoi-dap-nghe-nghiep"
+      ],
+      "oldLv3": "mo-ta-cong-viec-ke-toan",
+      "newLv3": "kinh-nghiem-quyet-toan-thue"
+    },
+    {
+      "href": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
+      "title": "Công văn 624/TCT – CS tiếp nhận hồ sơ đăng ký kê khai thuế GTGT theo mẫu số 06/GTGT",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "thue",
+        "cong-van"
+      ],
+      "oldLv3": "cong-van-gtgt-hoa-don",
+      "newLv3": "cong-van-ke-khai-quan-ly-thue"
+    },
+    {
+      "href": "thu-vien/cong-van-giai-trinh-nop-lai-bao-cao-tai-chinh.html",
+      "title": "Mẫu Công văn giải trình nộp lại Báo cáo tài chính",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "thue",
+        "cong-van"
+      ],
+      "oldLv3": "cong-van-chinh-sach-chung",
+      "newLv3": "cong-van-ke-khai-quan-ly-thue"
+    },
+    {
+      "href": "thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
+      "title": "Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp tiền thuế tiền phạt",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "thue",
+        "mau-bieu-thue"
+      ],
+      "oldLv3": "mau-khau-tru-hoan-mien-giam",
+      "newLv3": "mau-thue-gtgt-hoa-don"
+    },
+    {
+      "href": "thu-vien/thong-bao-ve-co-quan-thue-quan-ly-truc-tiep.html",
+      "title": "Thông báo về cơ quan thuế quản lý trực tiếp",
+      "bucket": [
+        "thu-vien",
+        "bieu-mau",
+        "thue",
+        "mau-bieu-thue"
+      ],
+      "oldLv3": "mau-dang-ky-thue-mst",
+      "newLv3": "mau-thue-gtgt-hoa-don"
+    },
+    {
+      "href": "thu-vien/muc-phat-khi-lap-va-trinh-bay-bctc-co-sai-sot.html",
+      "title": "Mức phạt khi lập và trình bầy BCTC có sai sót theo luật mới nhất",
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "ke-toan",
+        "bao-cao-tai-chinh"
+      ],
+      "oldLv3": "nguyen-tac-trinh-bay-bctc",
+      "newLv3": "lap-cac-bao-cao-thanh-phan"
+    },
+    {
+      "href": "thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh.html",
+      "title": "Hình thức ghi sổ kế toán trên máy vi tính",
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "ke-toan",
+        "chuan-muc-che-do-nguyen-tac"
+      ],
+      "oldLv3": "hinh-thuc-ghi-so-ke-toan",
+      "newLv3": "tuyen-dung-nghe-nghiep-ke-toan"
+    },
+    {
+      "href": "thu-vien/bang-quy-dinh-cac-tieu-chuan-va-dieu-kien-ap-dung-chuc-vu.html",
+      "title": "Bảng quy định tiêu chuẩn và điều kiện áp dụng chức danh",
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "ke-toan",
+        "mau-bieu-ke-toan"
+      ],
+      "oldLv3": "mau-hanh-chinh-quan-tri-khac",
+      "newLv3": "mau-bao-cao-tai-chinh"
+    },
+    {
+      "href": "thu-vien/mau-giay-uy-nhiem-chi-cua-cac-ngan-hang-bang-excel.html",
+      "title": "Trọn bộ mẫu giấy ủy nhiệm chi của các ngân hàng",
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "ke-toan",
+        "mau-bieu-ke-toan"
+      ],
+      "oldLv3": "mau-chung-tu-tien-thanh-toan",
+      "newLv3": "mau-bao-cao-tai-chinh"
+    },
+    {
+      "href": "thu-vien/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
+      "title": "Hộ cá nhân kinh doanh không phải nộp thuế vẫn phải nộp tờ khai",
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "thue",
+        "cong-van"
+      ],
+      "oldLv3": "cong-van-ke-khai-quan-ly-thue",
+      "newLv3": "cong-van-chinh-sach-chung"
+    },
+    {
+      "href": "thu-vien/thu-tuc-lam-ho-so-ke-khai-thue-ban-dau.html",
+      "title": "Thủ tục hồ sơ khai thuế ban đầu 2021 Cty mới thành lập",
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "thue",
+        "ma-so-thue-dang-ky-thue"
+      ],
+      "oldLv3": "mst-thu-tuc-hanh-chinh-ho-so",
+      "newLv3": "mst-thay-doi-va-xu-phat"
+    },
+    {
+      "href": "thu-vien/bang-phan-bo-so-thue-gtgt-phai-nop-mau-01-7-gtgt.html",
+      "title": "Bảng phân bổ số thuế GTGT phải nộp mẫu 01-7/GTGT",
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "thue",
+        "mau-bieu-thue"
+      ],
+      "oldLv3": "mau-thue-gtgt-hoa-don",
+      "newLv3": "mau-thue-tncn"
+    },
+    {
+      "href": "thu-vien/mau-01-dk-tdktt-van-ban-de-nghi-thay-doi-ky-tinh-thue.html",
+      "title": "Văn bản đề nghị thay đổi kỳ tính thuế từ tháng sang quý Mẫu 01/DK-TĐKTT",
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "thue",
+        "mau-bieu-thue"
+      ],
+      "oldLv3": "mau-dang-ky-thue-mst",
+      "newLv3": "mau-thue-tncn"
+    },
+    {
+      "href": "thu-vien/mau-01-dnxlnt-van-ban-de-nghi-xu-ly-so-tien-thue-nop-thua.html",
+      "title": "Văn bản đề nghị xử lý số tiền thuế, tiền chậm nộp, tiền phạt nộp thừa",
+      "bucket": [
+        "thu-vien",
+        "huong-dan",
+        "thue",
+        "mau-bieu-thue"
+      ],
+      "oldLv3": "mau-khau-tru-hoan-mien-giam",
+      "newLv3": "mau-thue-tncn"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-47-2021-nd-cp-huong-dan-luat-doanh-nghiep.html",
+      "title": "Nghị định 47/2021/NĐ-CP hướng dẫn Luật doanh nghiệp",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "doanh-nghiep-thu-tuc",
+        "thu-tuc-doanh-nghiep"
+      ],
+      "oldLv3": "dn-thu-tuc-thanh-lap-thay-doi",
+      "newLv3": "dn-thu-tuc-khuyen-mai-thuong-mai"
+    },
+    {
+      "href": "thu-vien/thong-tu-133-2016-che-do-ke-toan-doanh-nghiep-vua-va-nho.html",
+      "title": "Thông tư 133/2016/TT-BTC Chế độ kế toán Doanh nghiệp vừa và nhỏ",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "doanh-nghiep-thu-tuc",
+        "thu-tuc-doanh-nghiep"
+      ],
+      "oldLv3": "dn-thu-tuc-quan-tri-ho-tro",
+      "newLv3": "dn-thu-tuc-khuyen-mai-thuong-mai"
+    },
+    {
+      "href": "thu-vien/sua-doi-bo-sung-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "title": "Sửa đổi, bổ sung Báo cáo tài chính theo Thông tư 99",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "ke-toan",
+        "bao-cao-tai-chinh"
+      ],
+      "oldLv3": "vi-pham-dieu-chinh-bctc",
+      "newLv3": "tong-quan-quy-dinh-nop-bctc"
+    },
+    {
+      "href": "thu-vien/trinh-tu-ghi-so-ke-toan-chi-tiet-tu-mo-so-den-in-so.html",
+      "title": "Quy trình ghi sổ kế toán chi tiết theo Thông tư 200",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "ke-toan",
+        "chung-tu-so-sach"
+      ],
+      "oldLv3": "hinh-thuc-ghi-so-ke-toan",
+      "newLv3": "he-thong-chung-tu-mau-bieu"
+    },
+    {
+      "href": "thu-vien/lenh-dieu-di-cong-tac-cua-cong-ty.html",
+      "title": "Quyết định cử đi công tác trong nước và nước ngoài",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "ke-toan",
+        "chung-tu-so-sach"
+      ],
+      "oldLv3": "chung-tu-cong-tac-thanh-toan",
+      "newLv3": "he-thong-chung-tu-mau-bieu"
+    },
+    {
+      "href": "thu-vien/tai-khoan-511-doanh-thu-ban-hang-dich-vu-theo-thong-tu-133.html",
+      "title": "Tài khoản 511 Doanh thu bán hàng và cung cấp dịch vụ theo Thông tư 133",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "ke-toan",
+        "tai-khoan-hach-toan"
+      ],
+      "oldLv3": "doanh-thu-chi-phi-kqkd",
+      "newLv3": "hach-toan-dac-thu"
+    },
+    {
+      "href": "thu-vien/cac-diem-moi-ve-doi-tuong-dong-bhxh-bhyt-bat-buoc-ke-tu-1-7-2025.html",
+      "title": "Các điểm mới về đối tượng đóng BHXH, BHYT bắt buộc từ ngày 1/7/2025",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "lao-dong-bao-hiem",
+        "bao-hiem"
+      ],
+      "oldLv3": "doi-tuong-muc-dong",
+      "newLv3": "che-do-muc-huong"
+    },
+    {
+      "href": "thu-vien/danh-muc-benh-can-chua-tri-dai-ngay.html",
+      "title": "Danh mục bệnh cần chữa trị dài ngày theo Thông tư 25/2025/TT-BYT",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "lao-dong-bao-hiem",
+        "bao-hiem"
+      ],
+      "oldLv3": "van-ban-chinh-sach",
+      "newLv3": "che-do-muc-huong"
+    },
+    {
+      "href": "thu-vien/muc-phat-tron-dong-bao-hiem-xa-hoi.html",
+      "title": "Mức phạt trốn đóng BHXH 2026 theo Luật Bảo hiểm xã hội số: 41/2024/QH15",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "lao-dong-bao-hiem",
+        "bao-hiem"
+      ],
+      "oldLv3": "vi-pham-xu-phat",
+      "newLv3": "che-do-muc-huong"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-145-2020-nd-cp-huong-dan-thi-hanh-luat-lao-dong.html",
+      "title": "Nghị định 145/2020/NĐ-CP hướng dẫn thi hành Luật lao động",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong"
+      ],
+      "oldLv3": "van-ban-lao-dong",
+      "newLv3": "tien-luong-thoi-gio-lam-viec"
+    },
+    {
+      "href": "thu-vien/ho-so-ke-khai-thue-cua-ho-ca-nhan-kinh-doanh.html",
+      "title": "Hồ sơ kê khai thuế của hộ kinh doanh theo Thông tư 18/2026",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "thue",
+        "ho-ca-nhan-kinh-doanh"
+      ],
+      "oldLv3": "hkd-ke-khai-ho-so-thoi-han",
+      "newLv3": "hkd-che-do-ke-toan"
+    },
+    {
+      "href": "thu-vien/danh-muc-trang-thai-ma-so-thue.html",
+      "title": "Danh mục trạng thái mã số thuế theo Thông tư 86/2024/TT-BTC",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "thue",
+        "ma-so-thue-dang-ky-thue"
+      ],
+      "oldLv3": "mst-tra-cuu-cau-truc-trang-thai",
+      "newLv3": "mst-dang-ky-lan-dau-doi-tuong"
+    },
+    {
+      "href": "thu-vien/mau-van-ban-uy-nhiem-lap-hoa-don.html",
+      "title": "Văn bản ủy nhiệm lập hóa đơn theo Thông tư 39",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "thue",
+        "mau-bieu-thue"
+      ],
+      "oldLv3": "mau-thue-gtgt-hoa-don",
+      "newLv3": "mau-bang-ke-phu-luc-ho-so"
+    },
+    {
+      "href": "thu-vien/thu-nhap-chiu-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Các khoản thu nhập chịu thuế TNDN theo quy định mới nhất 2026",
+      "bucket": [
+        "thu-vien",
+        "van-ban",
+        "thue",
+        "tndn"
+      ],
+      "oldLv3": "doanh-thu-thu-nhap-tinh-thue",
+      "newLv3": "van-ban-chinh-sach"
+    }
+  ],
+  "remainingDeepSingletons": []
+}

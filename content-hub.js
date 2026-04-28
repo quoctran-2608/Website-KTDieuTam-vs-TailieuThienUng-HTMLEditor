@@ -978,8 +978,8 @@
       });
 	    }
 
-    function renderDesktopTree() {
-      if (!desktopTree) return;
+	    function renderDesktopTree() {
+	      if (!desktopTree) return;
       var sections = [];
       if (data.section === 'thu-vien') {
         (data.libraryKinds || []).forEach(function (kind) {
@@ -1042,9 +1042,9 @@
         '<h3 class="catalog-sidebar__title">' + (data.section === 'thu-vien' ? 'Thư viện' : 'Bản tin') + '</h3>' +
         '<div class="catalog-tree">' + sections.join('') + '</div>';
 
-      desktopTree.querySelectorAll('button').forEach(function (button) {
-        button.addEventListener('click', function () {
-          var isActive = button.classList.contains('is-active');
+	      desktopTree.querySelectorAll('button').forEach(function (button) {
+	        button.addEventListener('click', function () {
+	          var isActive = button.classList.contains('is-active');
           state.badge = '';
           state.tag = '';
           if (button.dataset.kind !== undefined) {
@@ -1054,10 +1054,23 @@
           state.lv2 = isActive ? '' : (button.dataset.lv2 || '');
           state.page = 1;
           updateUrl(buildStateUrl(state), 'push');
-          renderAll();
-        });
-      });
-    }
+	          renderAll();
+	        });
+	      });
+
+	      if (window.requestAnimationFrame && window.innerWidth > 991 && (state.kind || state.lv1 || state.lv2)) {
+	        window.requestAnimationFrame(function () {
+	          if (!desktopTree || desktopTree.offsetParent === null) return;
+	          var activeNode = desktopTree.querySelector('.catalog-tree__child.is-active, .catalog-tree__group.is-active, .catalog-tree__root.is-active');
+	          if (!activeNode || !activeNode.scrollIntoView) return;
+	          activeNode.scrollIntoView({
+	            behavior: 'smooth',
+	            block: 'nearest',
+	            inline: 'nearest'
+	          });
+	        });
+	      }
+	    }
 
 	    function renderAdvancedFilters() {
 	      if (!filters) return;

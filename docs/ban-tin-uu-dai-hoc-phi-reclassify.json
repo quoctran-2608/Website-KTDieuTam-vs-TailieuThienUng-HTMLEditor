@@ -1,0 +1,341 @@
+{
+  "generatedAt": "2026-04-27T23:27:19.555955",
+  "sourceCount": 16,
+  "missingDecisions": [],
+  "extraDecisions": [],
+  "appliedCount": 16,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "ban-tin/cach-hach-toan-cac-khoan-giam-tru-doanh-thu-tai-khoan-521.html",
+      "title": "Cách hạch toán các khoản giảm trừ doanh thu - Tài khoản 521",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "ke-toan",
+        "topicLv2Key": "tai-khoan-hach-toan",
+        "topicLv3Key": "doanh-thu-chi-phi-kqkd"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "ke-toan",
+        "topicLv2Key": "tai-khoan-hach-toan",
+        "topicLv3Key": "doanh-thu-chi-phi-kqkd"
+      },
+      "reason": "nghiep-vu-hach-toan"
+    },
+    {
+      "href": "ban-tin/cach-hach-toan-chiet-khau-thuong-mai.html",
+      "title": "Hướng dẫn cách hạch toán Chiết khấu thương mại khi mua - bán",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "ke-toan",
+        "topicLv2Key": "tai-khoan-hach-toan",
+        "topicLv3Key": "doanh-thu-chi-phi-kqkd"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "ke-toan",
+        "topicLv2Key": "tai-khoan-hach-toan",
+        "topicLv3Key": "doanh-thu-chi-phi-kqkd"
+      },
+      "reason": "nghiep-vu-hach-toan"
+    },
+    {
+      "href": "ban-tin/cach-hach-toan-gia-von-hang-ban-tai-khoan-632.html",
+      "title": "Cách hạch toán giá vốn hàng bán - Tài khoản 632",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "ke-toan",
+        "topicLv2Key": "tai-khoan-hach-toan",
+        "topicLv3Key": "hang-ton-kho-gia-thanh"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "ke-toan",
+        "topicLv2Key": "tai-khoan-hach-toan",
+        "topicLv3Key": "hang-ton-kho-gia-thanh"
+      },
+      "reason": "nghiep-vu-gia-von"
+    },
+    {
+      "href": "ban-tin/cach-hach-toan-hao-mon-tai-san-co-dinh-tai-khoan-214.html",
+      "title": "Cách hạch toán hao mòn tài sản cố định - Tài khoản 214",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "ke-toan",
+        "topicLv2Key": "tai-khoan-hach-toan",
+        "topicLv3Key": "tscd-ccdc-khau-hao"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "ke-toan",
+        "topicLv2Key": "tai-khoan-hach-toan",
+        "topicLv3Key": "tscd-ccdc-khau-hao"
+      },
+      "reason": "nghiep-vu-tscd"
+    },
+    {
+      "href": "ban-tin/cach-viet-hoa-don-gtgt-chiet-khau-thuong-mai-giam-gia-ban.html",
+      "title": "Cách lập hóa đơn GTGT chiết khấu thương mại",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "thue",
+        "topicLv2Key": "gtgt-hoa-don",
+        "topicLv3Key": "lap-xu-ly-hoa-don"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "thue",
+        "topicLv2Key": "gtgt-hoa-don",
+        "topicLv3Key": "lap-xu-ly-hoa-don"
+      },
+      "reason": "huong-dan-hoa-don"
+    },
+    {
+      "href": "ban-tin/cach-xac-dinh-gia-tinh-thue-gia-tri-gia-tang.html",
+      "title": "Cách xác định giá tính thuế GTGT mới nhất",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "thue",
+        "topicLv2Key": "gtgt-hoa-don",
+        "topicLv3Key": "thue-suat-doi-tuong"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "thue",
+        "topicLv2Key": "gtgt-hoa-don",
+        "topicLv3Key": "thue-suat-doi-tuong"
+      },
+      "reason": "huong-dan-thue-gtgt"
+    },
+    {
+      "href": "ban-tin/chuong-trinh-giam-gia-khoa-hoc-ke-toan-thuc-hanh.html",
+      "title": "GIẢM 30% - Khóa học kế toán thực tế Online",
+      "action": "keep-bantin",
+      "before": {
+        "section": "ban-tin",
+        "libraryKindKey": "",
+        "topicLv1Key": "uu-dai-hoc-phi",
+        "topicLv2Key": "chuong-trinh-uu-dai-hoc-phi",
+        "topicLv3Key": "khuyen-mai-giam-gia-khoa-hoc"
+      },
+      "after": {
+        "section": "ban-tin",
+        "libraryKindKey": "",
+        "topicLv1Key": "uu-dai-hoc-phi",
+        "topicLv2Key": "chuong-trinh-uu-dai-hoc-phi",
+        "topicLv3Key": "khuyen-mai-giam-gia-khoa-hoc"
+      },
+      "reason": "tin-khuyen-mai-hoc-phi"
+    },
+    {
+      "href": "ban-tin/chuong-trinh-khuyen-mai-hoc-phi-khoa-hoc-ke-toan-online-moi-nhat.html",
+      "title": "Chương trình khuyến mại học phí khóa học kế toán online tại Công ty Kế Toán Diệu Tâm",
+      "action": "keep-bantin",
+      "before": {
+        "section": "ban-tin",
+        "libraryKindKey": "",
+        "topicLv1Key": "uu-dai-hoc-phi",
+        "topicLv2Key": "chuong-trinh-uu-dai-hoc-phi",
+        "topicLv3Key": "khuyen-mai-giam-gia-khoa-hoc"
+      },
+      "after": {
+        "section": "ban-tin",
+        "libraryKindKey": "",
+        "topicLv1Key": "uu-dai-hoc-phi",
+        "topicLv2Key": "chuong-trinh-uu-dai-hoc-phi",
+        "topicLv3Key": "khuyen-mai-giam-gia-khoa-hoc"
+      },
+      "reason": "tin-uu-dai-hoc-phi"
+    },
+    {
+      "href": "ban-tin/mau-01-thong-bao-thuc-hien-khuyen-mai.html",
+      "title": "Mẫu 01 thông báo thực hiện khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "reason": "mau-khuyen-mai"
+    },
+    {
+      "href": "ban-tin/mau-02-dang-ky-thuc-hien-khuyen-mai.html",
+      "title": "Mẫu 02 đăng ký thực hiện khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "reason": "mau-khuyen-mai"
+    },
+    {
+      "href": "ban-tin/mau-03-the-le-chuong-trinh-khuyen-mai.html",
+      "title": "Mẫu 03 thể lệ chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "reason": "mau-khuyen-mai"
+    },
+    {
+      "href": "ban-tin/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
+      "title": "Mẫu 06 thông báo sửa đổi bổ sung nội dung chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "reason": "mau-khuyen-mai"
+    },
+    {
+      "href": "ban-tin/mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
+      "title": "Mẫu 06a đăng ký sửa đổi bổ sung nội dung chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "reason": "mau-khuyen-mai"
+    },
+    {
+      "href": "ban-tin/mau-07-bao-cao-thuc-hien-khuyen-mai.html",
+      "title": "Mẫu 07 báo cáo thực hiện khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "doanh-nghiep-thu-tuc",
+        "topicLv2Key": "mau-bieu-doanh-nghiep-thu-tuc",
+        "topicLv3Key": "mau-khuyen-mai-thuong-mai"
+      },
+      "reason": "mau-khuyen-mai"
+    },
+    {
+      "href": "ban-tin/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
+      "title": "Nhận tiền bồi thường, hỗ trợ có phải xuất hóa đơn?",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "thue",
+        "topicLv2Key": "gtgt-hoa-don",
+        "topicLv3Key": "lap-xu-ly-hoa-don"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "huong-dan",
+        "topicLv1Key": "thue",
+        "topicLv2Key": "gtgt-hoa-don",
+        "topicLv3Key": "lap-xu-ly-hoa-don"
+      },
+      "reason": "nghiep-vu-hoa-don"
+    },
+    {
+      "href": "ban-tin/phu-luc-bao-cao-trich-su-dung-quy-khoa-hoc-cong-nghe-mau-so-03-6-tndn.html",
+      "title": "Phụ lục báo cáo trích sử dụng quỹ khoa học công nghệ Mẫu số 03-6/TNDN",
+      "action": "move-thuvien",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "thue",
+        "topicLv2Key": "mau-bieu-thue",
+        "topicLv3Key": "mau-thue-tndn"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "thue",
+        "topicLv2Key": "mau-bieu-thue",
+        "topicLv3Key": "mau-thue-tndn"
+      },
+      "reason": "phu-luc-to-khai-thue-tndn"
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "banTinUuDaiCount": 2,
+    "movedToThuVienCount": 14,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2736,
+      "ban_tin_count": 73,
+      "thu_vien_pages": 228,
+      "ban_tin_pages": 7
+    }
+  }
+}

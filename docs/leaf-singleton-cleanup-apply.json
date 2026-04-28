@@ -1,0 +1,1182 @@
+{
+  "generatedAt": "2026-04-27T20:28:34.592551",
+  "before": {
+    "singletonCount": 71,
+    "bySection": {
+      "ban-tin": 3,
+      "thu-vien": 68
+    }
+  },
+  "after": {
+    "singletonCount": 0,
+    "bySection": {}
+  },
+  "movesPlanned": 68,
+  "applied": 68,
+  "skipped": [],
+  "countsAfterRebuild": {
+    "thu_vien_count": 2721,
+    "ban_tin_count": 88,
+    "thu_vien_pages": 227,
+    "ban_tin_pages": 8
+  },
+  "appliedRows": [
+    {
+      "href": "ban-tin/trung-tam-dao-tao-ke-toan-dieu-tam-thuc-te-tai-ha-noi.html",
+      "title": "Giới thiệu về Trung tâm kế toán Diệu Tâm",
+      "oldPath": [
+        "ban-tin",
+        "gioi-thieu-thuong-hieu",
+        "gioi-thieu",
+        ""
+      ],
+      "newPath": [
+        "ban-tin",
+        "co-so-dia-diem",
+        "co-so-dao-tao",
+        ""
+      ],
+      "reason": "intro-center-to-training-location"
+    },
+    {
+      "href": "ban-tin/chuong-trinh-khuyen-mai-hoc-phi-khoa-hoc-ke-toan-online-moi-nhat.html",
+      "title": "Chương trình khuyến mại học phí khóa học kế toán online tại Công ty Kế Toán Diệu Tâm",
+      "oldPath": [
+        "ban-tin",
+        "uu-dai-thong-bao",
+        "uu-dai-hoc-phi",
+        ""
+      ],
+      "newPath": [
+        "ban-tin",
+        "uu-dai-hoc-phi",
+        "",
+        ""
+      ],
+      "reason": "promo-to-main-discount"
+    },
+    {
+      "href": "ban-tin/phu-luc-bao-cao-trich-su-dung-quy-khoa-hoc-cong-nghe-mau-so-03-6-tndn.html",
+      "title": "Phụ lục báo cáo trích sử dụng quỹ khoa học công nghệ Mẫu số 03-6/TNDN",
+      "oldPath": [
+        "ban-tin",
+        "khoa-hoc-ke-toan",
+        "",
+        ""
+      ],
+      "newPath": [
+        "ban-tin",
+        "uu-dai-hoc-phi",
+        "",
+        ""
+      ],
+      "reason": "legacy-news-tax-form-to-existing-update-bucket"
+    },
+    {
+      "href": "thu-vien/cong-van-2512-tct-cs-nhung-noi-dung-moi-cua-thong-tu-96.html",
+      "title": "Công văn 2512/TCT-CS Những nội dung mới của Thông tư 96",
+      "oldPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "cong-van",
+        "cong-van-ke-khai-quan-ly-thue"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "cong-van",
+        "cong-van-ke-khai-quan-ly-thue"
+      ],
+      "reason": "cv-tax-to-main-tax-cv"
+    },
+    {
+      "href": "thu-vien/mau-thong-bao-tam-ngung-kinh-doanh-moi-nhat-mau-23.html",
+      "title": "Mẫu 23/ĐK-TCT thông báo tạm ngừng kinh doanh mới nhất",
+      "oldPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "mau-bieu-doanh-nghiep-thu-tuc",
+        "mau-thong-bao-doanh-nghiep"
+      ],
+      "newPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "mau-bieu-doanh-nghiep-thu-tuc",
+        "mau-dang-ky-thay-doi-doanh-nghiep"
+      ],
+      "reason": "tam-ngung-to-dn-change-form"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-47-2021-nd-cp-huong-dan-luat-doanh-nghiep.html",
+      "title": "Nghị định 47/2021/NĐ-CP hướng dẫn Luật doanh nghiệp",
+      "oldPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "nghi-dinh",
+        "nd-huong-dan-luat-doanh-nghiep"
+      ],
+      "newPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "thu-tuc-doanh-nghiep",
+        "dn-thu-tuc-thanh-lap-thay-doi"
+      ],
+      "reason": "nd-law-dn-to-dn-change"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-giai-the-doanh-nghiep-cong-ty.html",
+      "title": "Mẫu Quyết định giải thể doanh nghiệp công ty",
+      "oldPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "nghi-quyet-quyet-dinh",
+        "qd-giai-the-doanh-nghiep"
+      ],
+      "newPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "thu-tuc-doanh-nghiep",
+        "dn-thu-tuc-giai-the"
+      ],
+      "reason": "qd-giai-the-to-procedure"
+    },
+    {
+      "href": "thu-vien/thong-tu-01-2021-tt-bkhdt-quy-dinh-ve-dang-ky-doanh-nghiep.html",
+      "title": "Thông tư 01/2021/TT-BKHĐT quy định về đăng ký doanh nghiệp",
+      "oldPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "thong-tu",
+        "thong-tu-ho-ca-nhan-kinh-doanh"
+      ],
+      "newPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "thong-tu",
+        "tt-dang-ky-doanh-nghiep"
+      ],
+      "reason": "merge-tt-dang-ky-dn"
+    },
+    {
+      "href": "thu-vien/thong-tu-65-2020-tt-btc-huong-dan-ke-khai-le-phi-mon-bai.html",
+      "title": "Thông tư 65/2020/TT-BTC hướng dẫn kê khai lệ phí môn bài",
+      "oldPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "thong-tu",
+        "thong-tu-ke-khai-quan-ly-thue"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "thong-tu",
+        "thong-tu-ke-khai-quan-ly-thue"
+      ],
+      "reason": "tt-tax-filing"
+    },
+    {
+      "href": "thu-vien/thong-tu-95-2016-quy-dinh-ve-thu-tuc-dang-ky-thue.html",
+      "title": "Thông tư 95/2016/TT- BTC quy định về thủ tục đăng ký thuế",
+      "oldPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "thong-tu",
+        "thong-tu-mst-dang-ky-thue"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "thong-tu",
+        "thong-tu-mst-dang-ky-thue"
+      ],
+      "reason": "tt-mst-dang-ky-thue"
+    },
+    {
+      "href": "thu-vien/thong-tu-09-2015-tt-btc-giao-dich-tai-chinh-cua-doanh-nghiep.html",
+      "title": "Thông tư 09/2015/TT-BTC quy định giao dịch tài chính của doanh nghiệp",
+      "oldPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "thong-tu",
+        "tt-giao-dich-tai-chinh-doanh-nghiep"
+      ],
+      "newPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "thong-tu",
+        "thong-tu-chinh-sach-chung"
+      ],
+      "reason": "tt-finance-dn-to-policy"
+    },
+    {
+      "href": "thu-vien/thu-thuat-doc-va-phan-tich-bao-cao-tai-chinh-doanh-nghiep.html",
+      "title": "Thủ thuật kiểm tra báo cáo tài chính nhanh và chính xác",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "bao-cao-tai-chinh",
+        "phan-tich-doc-bctc"
+      ],
+      "newPath": [
+        "thu-vien",
+        "ke-toan",
+        "bao-cao-tai-chinh",
+        "tong-quan-quy-dinh-nop-bctc"
+      ],
+      "reason": "bctc-analysis-to-overview"
+    },
+    {
+      "href": "thu-vien/cong-ty-lam-dich-vu-ke-toan-thue-tron-goi-uy-tin-tai-ha-noi.html",
+      "title": "Công ty làm dịch vụ kế toán thuế trọn gói uy tín tại Hà Nội",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "chuan-muc-che-do-nguyen-tac",
+        "dich-vu-ke-toan"
+      ],
+      "newPath": [
+        "thu-vien",
+        "ke-toan",
+        "chuan-muc-che-do-nguyen-tac",
+        "chuan-muc-che-do-khac"
+      ],
+      "reason": "service-accounting-to-other"
+    },
+    {
+      "href": "thu-vien/cong-van-4868-tct-cs-gioi-thieu-cac-noi-dung-moi-nghi-dinh-123.html",
+      "title": "Công văn 4868/TCT-CS Giới thiệu các nội dung mới Nghị định 123",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "cong-van",
+        "cong-van-ke-khai-quan-ly-thue"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "cong-van",
+        "cong-van-gtgt-hoa-don"
+      ],
+      "reason": "cv-nd123-invoice"
+    },
+    {
+      "href": "thu-vien/cong-van-12568-btc-cdkt-giai-thich-noi-dung-thong-tu-200.html",
+      "title": "Công văn 12568/BTC-CĐKT Giải thích nội dung Thông tư 200/2014/TT-BTC",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "cong-van",
+        "cv-giai-thich-che-do-ke-toan"
+      ],
+      "newPath": [
+        "thu-vien",
+        "ke-toan",
+        "chuan-muc-che-do-nguyen-tac",
+        "che-do-ke-toan-va-thong-tu"
+      ],
+      "reason": "cv-tt200-to-chedo"
+    },
+    {
+      "href": "thu-vien/mau-thong-bao-chung-tu-dien-tu-da-lap-sai.html",
+      "title": "Mẫu thông báo chứng từ điện tử đã lập sai mới nhất",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "mau-bieu-ke-toan",
+        "mau-ke-khai-thue-gtgt-hoa-don"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "mau-bieu-thue",
+        "mau-thue-gtgt-hoa-don"
+      ],
+      "reason": "wrong-electronic-doc-to-tax-form"
+    },
+    {
+      "href": "thu-vien/mau-bang-kiem-ke-quy-ngoai-te-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng kiểm kê vàng bạc đá quý theo Thông tư 200 và 133",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "mau-bieu-ke-toan",
+        "mau-kiem-ke-doi-chieu"
+      ],
+      "newPath": [
+        "thu-vien",
+        "ke-toan",
+        "mau-bieu-ke-toan",
+        "mau-tai-chinh-von-ngoai-te"
+      ],
+      "reason": "foreign-currency-inventory"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-174-2016-nd-cp-quy-dinh-ve-luat-ke-toan.html",
+      "title": "Nghị định 174/2016/NĐ-CP Quy định một số điều của Luật kế toán",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "nghi-dinh",
+        "nd-huong-dan-luat-ke-toan"
+      ],
+      "newPath": [
+        "thu-vien",
+        "ke-toan",
+        "chuan-muc-che-do-nguyen-tac",
+        "che-do-ke-toan-va-thong-tu"
+      ],
+      "reason": "nd-174-chedo"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-41-2018-nd-cp-quy-dinh-muc-phat-vu-pham-ke-toan.html",
+      "title": "Nghị định 41/2018/NĐ-CP quy định mức phạt vi phạm kế toán",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "nghi-dinh",
+        "nd-xu-phat-vi-pham-ke-toan"
+      ],
+      "newPath": [
+        "thu-vien",
+        "ke-toan",
+        "chuan-muc-che-do-nguyen-tac",
+        "che-do-ke-toan-va-thong-tu"
+      ],
+      "reason": "nd-41-chedo-penalty"
+    },
+    {
+      "href": "thu-vien/thoi-diem-ghi-nhan-doanh-thu-cung-cap-dich-vu.html",
+      "title": "Thời điểm ghi nhận doanh thu cung cấp dịch vụ",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "nghiep-vu-theo-phan-hanh",
+        "ghi-nhan-doanh-thu"
+      ],
+      "newPath": [
+        "thu-vien",
+        "ke-toan",
+        "tai-khoan-hach-toan",
+        "doanh-thu-chi-phi-kqkd"
+      ],
+      "reason": "revenue-recognition-to-tk"
+    },
+    {
+      "href": "thu-vien/thu-tuc-dang-ky-chuong-trinh-ban-hang-khuyen-mai.html",
+      "title": "Thủ tục đăng ký chương trình khuyến mại mới nhất theo NĐ 128",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "nghiep-vu-theo-phan-hanh",
+        "nghiep-vu-khuyen-mai"
+      ],
+      "newPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "thu-tuc-doanh-nghiep",
+        "dn-thu-tuc-khuyen-mai-thuong-mai"
+      ],
+      "reason": "promotion-procedure"
+    },
+    {
+      "href": "thu-vien/nhung-luu-y-khi-thanh-tra-thue-xuong-kiem-tra-dn-xay-dung.html",
+      "title": "Những lưu ý khi Thanh tra Thuế xuống kiểm tra DN xây dựng",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "nghiep-vu-theo-phan-hanh",
+        "thanh-tra-cong-van-rui-ro"
+      ],
+      "newPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "kinh-nghiem-quyet-toan-thue"
+      ],
+      "reason": "tax-inspection-experience"
+    },
+    {
+      "href": "thu-vien/thong-tu-132-2018-tt-btc-che-do-ke-toan-doanh-nghiep-sieu-nho.html",
+      "title": "Thông tư 132/2018/TT-BTC Chế độ kế toán Doanh nghiệp siêu nhỏ",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "thong-tu",
+        "tt-ke-toan-dn-sieu-nho"
+      ],
+      "newPath": [
+        "thu-vien",
+        "ke-toan",
+        "thong-tu",
+        "tt-che-do-ke-toan-doanh-nghiep"
+      ],
+      "reason": "tt132-chedo-dn"
+    },
+    {
+      "href": "thu-vien/thong-tu-88-che-do-ke-toan-cho-ca-nhan-ho-kinh-doanh.html",
+      "title": "Thông tư 88/2021/TT-BTC chế độ kế toán cho cá nhân, hộ kinh doanh",
+      "oldPath": [
+        "thu-vien",
+        "ke-toan",
+        "thong-tu",
+        "tt-ke-toan-ho-ca-nhan-kinh-doanh"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "ho-ca-nhan-kinh-doanh",
+        "hkd-che-do-ke-toan"
+      ],
+      "reason": "tt88-hkd-accounting"
+    },
+    {
+      "href": "thu-vien/huong-dan-so-32-hd-tld-tai-chinh-cong-doan-nam-2025.html",
+      "title": "Hướng dẫn số 32/HD-TLĐ xây dựng dự toán tài chính công đoàn năm 2025",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "cong-doan",
+        "cong-doan-huong-dan-van-ban"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "cong-doan",
+        "cong-doan-hach-toan-thue"
+      ],
+      "reason": "cong-doan-finance"
+    },
+    {
+      "href": "thu-vien/muc-phat-khong-dong-kinh-phi-cong-doan.html",
+      "title": "Mức phạt không đóng kinh phí công đoàn năm 2026",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "cong-doan",
+        "cong-doan-xu-phat-vi-pham"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "cong-doan",
+        "cong-doan-trich-nop-ty-le-muc-dong"
+      ],
+      "reason": "cong-doan-penalty-to-contribution"
+    },
+    {
+      "href": "thu-vien/cong-van-5749-huong-dan-quyet-toan-thue-tncn.html",
+      "title": "Công văn 5749/CT-TNCN Hướng dẫn Quyết toán thuế TNCN năm 2017",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "cong-van",
+        "cong-van-ke-khai-quan-ly-thue"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "cong-van",
+        "cong-van-tncn"
+      ],
+      "reason": "cv-tncn-to-tax"
+    },
+    {
+      "href": "thu-vien/cong-van-so-17940-sldtbxh-vl-quy-dinh-ve-lao-dong.html",
+      "title": "Công văn Số 17940/SLĐTBXH-VL quy định về lao động",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "cong-van",
+        "cv-lao-dong-tien-luong"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "cong-van",
+        "cong-van-chinh-sach-chung"
+      ],
+      "reason": "cv-labor-policy"
+    },
+    {
+      "href": "thu-vien/cong-van-xin-dang-ky-thang-bang-luong-gui-phong-lao-dong.html",
+      "title": "Công văn đăng ký Thang bảng lương mới nhất",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "cong-van",
+        "cv-thang-bang-luong"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "cong-van",
+        "cong-van-chinh-sach-chung"
+      ],
+      "reason": "cv-wage-policy"
+    },
+    {
+      "href": "thu-vien/cong-van-11819-ct-ttht-chi-phi-co-tinh-chat-phuc-loi-cho-nguoi-lao-dong.html",
+      "title": "Quy định về chi phí Phúc lợi cho nhân viên được trừ",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong",
+        "luong-khoan-phuc-loi-khac"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong",
+        "thue-lien-quan-lao-dong"
+      ],
+      "reason": "benefit-tax-labor"
+    },
+    {
+      "href": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-linh-vuc-lao-dong.html",
+      "title": "7 hành vi bị nghiêm cấm trong lĩnh vực lao động và Mức phạt vi phạm",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong",
+        "xu-phat-vi-pham-lao-dong"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong",
+        "noi-quy-thoa-uoc-ky-luat"
+      ],
+      "reason": "labor-violation-to-discipline"
+    },
+    {
+      "href": "thu-vien/luat-thue-tncn-so-109-2025-qh15.html",
+      "title": "Luật Thuế TNCN số 109/2025/QH15 áp dụng từ năm 2026",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "luat-bo-luat",
+        "luat-thue-tncn"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "tncn",
+        "tinh-thue-bieu-thue"
+      ],
+      "reason": "tncn-law-to-tncn-tax"
+    },
+    {
+      "href": "thu-vien/luat-107-2016-qh13-luat-thue-xuat-nhap-khau.html",
+      "title": "Luật 107/2016/QH13 Luật thuế Xuất Nhập khẩu",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "luat-bo-luat",
+        "luat-thue-xuat-nhap-khau"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "gtgt-hoa-don",
+        "thue-suat-doi-tuong"
+      ],
+      "reason": "xnk-law-to-tax-rate-broad"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-191-huong-dan-ve-kinh-phi-cong-doan.html",
+      "title": "Nghị định 191/2013/NĐ-CP hướng dẫn về kinh phí công đoàn",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "nghi-dinh",
+        "nd-cong-doan-kpcd"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "cong-doan",
+        "cong-doan-trich-nop-ty-le-muc-dong"
+      ],
+      "reason": "nd-congdoan-contribution"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-337-2025-nd-cp-hop-dong-lao-dong-dien-tu.html",
+      "title": "Nghị định 337/2025/NĐ-CP quy định về hợp đồng lao động điện tử",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "nghi-dinh",
+        "nd-hop-dong-lao-dong"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong",
+        "hop-dong-quan-he-lao-dong"
+      ],
+      "reason": "e-labor-contract"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-145-2020-nd-cp-huong-dan-thi-hanh-luat-lao-dong.html",
+      "title": "Nghị định 145/2020/NĐ-CP hướng dẫn thi hành Luật lao động",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "nghi-dinh",
+        "nd-huong-dan-luat-lao-dong"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong",
+        "van-ban-lao-dong"
+      ],
+      "reason": "nd-labor-law-to-vanban"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-121-2018-nd-cp-quy-dinh-ve-thang-bang-luong.html",
+      "title": "Nghị định 121/2018/NĐ-CP quy định về Thang bảng lương",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "nghi-dinh",
+        "nd-thang-bang-luong"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong",
+        "tien-luong-thoi-gio-lam-viec"
+      ],
+      "reason": "nd-wage"
+    },
+    {
+      "href": "thu-vien/nghi-dinh-318-2025-nd-cp-huong-dan-luat-viec-lam.html",
+      "title": "Nghị định 318/2025/NĐ-CP hướng dẫn Luật Việc làm",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "nghi-dinh",
+        "nd-viec-lam"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong",
+        "ho-so-thu-tuc-lao-dong"
+      ],
+      "reason": "nd-vieclam"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-cham-dut-hop-dong-lao-dong-moi-nhat.html",
+      "title": "Mẫu Quyết định chấm dứt hợp đồng lao động",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "nghi-quyet-quyet-dinh",
+        "qd-cham-dut-hdld"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "mau-bieu-lao-dong-bao-hiem",
+        "mau-hop-dong-lao-dong"
+      ],
+      "reason": "termination-decision-form"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-ban-hanh-he-thong-thang-bang-luong.html",
+      "title": "Quyết định ban hành hệ thống thang bảng lương 2025",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "nghi-quyet-quyet-dinh",
+        "qd-thang-bang-luong"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "mau-bieu-lao-dong-bao-hiem",
+        "mau-tien-luong-phu-cap"
+      ],
+      "reason": "salary-scale-decision-form"
+    },
+    {
+      "href": "thu-vien/thong-tu-10-2020-tt-bldtbxh-huong-dan-luat-lao-dong.html",
+      "title": "Thông tư 10/2020/TT-BLĐTBXH hướng dẫn Luật lao động",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "thong-tu",
+        "tt-huong-dan-luat-lao-dong"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "thong-tu",
+        "thong-tu-chinh-sach-chung"
+      ],
+      "reason": "tt-labor-policy"
+    },
+    {
+      "href": "thu-vien/thong-tu-23-2015-tt-bldtbxh-quy-dinh-ve-tien-luong.html",
+      "title": "Thông tư 23/2015/TT-BLĐTBXH quy định về cách tính lương cho người lao động",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "thong-tu",
+        "tt-tien-luong"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong",
+        "tien-luong-thoi-gio-lam-viec"
+      ],
+      "reason": "tt-wage"
+    },
+    {
+      "href": "thu-vien/thong-tu-23-2014-tt-bldtbxh-quy-dinh-ve-tuyen-dung-va-bao-cao-su-dung-lao-dong.html",
+      "title": "Thông tư 23/2014/TT-BLĐTBXH Quy định về tuyển dụng và báo cáo sử dụng lao động",
+      "oldPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "thong-tu",
+        "tt-tuyen-dung-bao-cao-lao-dong"
+      ],
+      "newPath": [
+        "thu-vien",
+        "lao-dong-bao-hiem",
+        "lao-dong-tien-luong",
+        "ho-so-thu-tuc-lao-dong"
+      ],
+      "reason": "tt-recruitment-report"
+    },
+    {
+      "href": "thu-vien/tai-phan-mem-ke-toan-fast-accounting-mien-phi-dung-thu.html",
+      "title": "Tải phần mềm kế toán Fast Accounting miễn phí dùng thử",
+      "oldPath": [
+        "thu-vien",
+        "mau-file-ke-khai",
+        "fast",
+        "fast-tai-ve-dung-thu"
+      ],
+      "newPath": [
+        "thu-vien",
+        "phan-mem-cong-cu",
+        "fast",
+        "fast-huong-dan-su-dung"
+      ],
+      "reason": "fast-download-merge"
+    },
+    {
+      "href": "thu-vien/cong-van-845-tct-nang-cap-htkk-bctc-theo-thong-tu-133.html",
+      "title": "Công văn 845/TCT-CNTT nâng cấp HTKK - BCTC theo Thông tư 133",
+      "oldPath": [
+        "thu-vien",
+        "phan-mem-cong-cu",
+        "cong-van",
+        "cong-van-ke-khai-quan-ly-thue"
+      ],
+      "newPath": [
+        "thu-vien",
+        "phan-mem-cong-cu",
+        "htkk-etax-thue-dien-tu",
+        "htkk-guide-import-bang-ke"
+      ],
+      "reason": "htkk-cv-to-guide"
+    },
+    {
+      "href": "thu-vien/cach-cai-dat-phan-mem-ke-toan-fast.html",
+      "title": "Hướng dẫn cài đặt phần mềm kế toán Fast",
+      "oldPath": [
+        "thu-vien",
+        "phan-mem-cong-cu",
+        "fast",
+        "fast-cai-dat"
+      ],
+      "newPath": [
+        "thu-vien",
+        "phan-mem-cong-cu",
+        "fast",
+        "fast-huong-dan-su-dung"
+      ],
+      "reason": "fast-install-merge"
+    },
+    {
+      "href": "thu-vien/bai-tap-ke-toan-thue-gia-tri-gia-tang-co-loi-giai.html",
+      "title": "Bài tập tính thuế GTGT theo pp khấu trừ, trực tiếp",
+      "oldPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bai-tap-thuc-hanh",
+        "bai-tap-thue-gtgt"
+      ],
+      "newPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bai-tap-thuc-hanh",
+        "bai-tap-dinh-khoan-hach-toan"
+      ],
+      "reason": "tax-exercise-broad"
+    },
+    {
+      "href": "thu-vien/bai-tap-tinh-thue-thu-nhap-doanh-nghiep-co-loi-giai.html",
+      "title": "Bài tập tính thuế Thu nhập doanh nghiệp 2026 có lời giải",
+      "oldPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bai-tap-thuc-hanh",
+        "bai-tap-thue-tndn"
+      ],
+      "newPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bai-tap-thuc-hanh",
+        "bai-tap-dinh-khoan-hach-toan"
+      ],
+      "reason": "tax-exercise-broad"
+    },
+    {
+      "href": "thu-vien/bai-tap-ke-toan-thue-tieu-thu-dac-biet-co-loi-giai.html",
+      "title": "Bài tập kế toán thuế tiêu thụ đặc biệt có lời giải",
+      "oldPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bai-tap-thuc-hanh",
+        "bai-tap-thue-ttdb"
+      ],
+      "newPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bai-tap-thuc-hanh",
+        "bai-tap-dinh-khoan-hach-toan"
+      ],
+      "reason": "tax-exercise-broad"
+    },
+    {
+      "href": "thu-vien/bai-tap-ke-toan-thue-xuat-nhap-khau-co-loi-giai.html",
+      "title": "Bài tập kế toán thuế xuất nhập khẩu có lời giải",
+      "oldPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bai-tap-thuc-hanh",
+        "bai-tap-thue-xnk"
+      ],
+      "newPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bai-tap-thuc-hanh",
+        "bai-tap-dinh-khoan-hach-toan"
+      ],
+      "reason": "tax-exercise-broad"
+    },
+    {
+      "href": "thu-vien/bai-tap-ke-toan-tai-san-co-dinh-co-dap-an.html",
+      "title": "Bài tập kế toán Tài sản cố định có lời giải",
+      "oldPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bai-tap-thuc-hanh",
+        "bai-tap-tscd"
+      ],
+      "newPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bai-tap-thuc-hanh",
+        "bai-tap-dinh-khoan-hach-toan"
+      ],
+      "reason": "tscd-exercise-broad"
+    },
+    {
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
+      "title": "Mẫu báo cáo: Kế toán thanh toán thuế GTGT và thuế TNDN tại Công ty Cổ phần Dịch vụ Thương mại Đồng Tâm",
+      "oldPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bao-cao-thuc-tap",
+        "thuc-tap-thue"
+      ],
+      "newPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bao-cao-thuc-tap",
+        "thuc-tap-ke-toan-tong-hop-to-chuc"
+      ],
+      "reason": "intern-tax-to-general"
+    },
+    {
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-tai-san-co-dinh-huu-hinh.html",
+      "title": "Mẫu báo cáo: Hoàn thiện kế toán tài sản cố định hữu hình tại công ty CP bưu chính Viettel",
+      "oldPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bao-cao-thuc-tap",
+        "thuc-tap-tscd"
+      ],
+      "newPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "bao-cao-thuc-tap",
+        "thuc-tap-ke-toan-tong-hop-to-chuc"
+      ],
+      "reason": "intern-tscd-to-general"
+    },
+    {
+      "href": "thu-vien/hoc-nghe-tap-nghe-de-lam-viec-cho-nguoi-su-dung-lao-dong.html",
+      "title": "Học nghề, tập nghề để làm việc cho người sử dụng lao động",
+      "oldPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "hoc-nghe-va-thuc-tap"
+      ],
+      "newPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "hoc-va-dao-tao-ke-toan"
+      ],
+      "reason": "hoc-nghe-to-dao-tao"
+    },
+    {
+      "href": "thu-vien/thong-tu-151-2014-tt-btc-quy-dinh-ve-thue.html",
+      "title": "Thông tư 151/2014/TT-BTC hướng dẫn Nghị định 91/2014/NĐ-CP",
+      "oldPath": [
+        "thu-vien",
+        "tham-khao-hoc-lieu",
+        "thong-tu",
+        "thong-tu-chinh-sach-chung"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "thong-tu",
+        "thong-tu-chinh-sach-chung"
+      ],
+      "reason": "tt151-to-main-tax-tt"
+    },
+    {
+      "href": "thu-vien/thu-tra-soat-c1-11ns-theo-thong-tu-84.html",
+      "title": "Thư tra soát C1-11/NS theo Thông tư 84",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "chung-tu-so-sach",
+        "thue-chung-tu-tra-soat-c1-11ns"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "mau-bieu-thue",
+        "mau-bang-ke-phu-luc-ho-so"
+      ],
+      "reason": "c1-11ns-to-tax-form-appendix"
+    },
+    {
+      "href": "thu-vien/cong-van-2065-ct-nvt-su-dung-so-dinh-danh-thay-ma-so-thue.html",
+      "title": "Công văn 2065/CT-NVT sử dụng số định danh thay mã số thuế",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "cong-van",
+        "cong-van-mst-dang-ky-thue"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "cong-van",
+        "cong-van-ke-khai-quan-ly-thue"
+      ],
+      "reason": "mst-cv-to-ke-khai"
+    },
+    {
+      "href": "thu-vien/thue-mon-bai-cua-ho-ca-nhan-kinh-doanh.html",
+      "title": "Thuế môn bài của hộ kinh doanh năm 2026",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "ho-ca-nhan-kinh-doanh",
+        "hkd-mon-bai"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "le-phi-mon-bai",
+        "mon-bai-muc-thu-doi-tuong"
+      ],
+      "reason": "hkd-monbai-to-monbai"
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-ke-khai-thue-theo-phuong-phap-khoan.html",
+      "title": "Hướng dẫn cách kê khai thuế theo phương pháp khoán",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "ho-ca-nhan-kinh-doanh",
+        "thue-khoan-cnkd"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "ho-ca-nhan-kinh-doanh",
+        "hkd-tinh-thue-va-nop-thay"
+      ],
+      "reason": "thue-khoan-to-hkd-tinh-thue"
+    },
+    {
+      "href": "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "title": "Báo cáo tình hình sử dụng biên lai điện tử thu thuế, phí, lệ phí",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "le-phi-mon-bai",
+        "mon-bai-bien-lai-bao-cao"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "le-phi-mon-bai",
+        "mon-bai-ke-khai-to-khai"
+      ],
+      "reason": "bien-lai-to-ke-khai"
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-tien-thue-mon-bai.html",
+      "title": "Cách hạch toán lệ phí môn bài phải nộp 2025",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "le-phi-mon-bai",
+        "mon-bai-hach-toan"
+      ],
+      "newPath": [
+        "thu-vien",
+        "ke-toan",
+        "tai-khoan-hach-toan",
+        "thue-nghia-vu"
+      ],
+      "reason": "monbai-hachtoan-to-tax-obligation"
+    },
+    {
+      "href": "thu-vien/luat-106-2016-qh13-sua-doi-luat-thue-gtgt-ttdb-quan-ly-thue.html",
+      "title": "Luật 106/2016/QH13 sửa đổi Luật thuế GTGT, TTĐB, Quản lý thuế",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "luat-bo-luat",
+        "luat-quan-ly-thue"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "gtgt-hoa-don",
+        "thue-suat-doi-tuong"
+      ],
+      "reason": "gtgt-law-to-tax-rate"
+    },
+    {
+      "href": "thu-vien/luat-thue-gtgt-so-48-2024-qh15-moi-nhat-hien-nay.html",
+      "title": "Luật thuế GTGT số 48/2024/QH15 mới nhất hiện nay",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "luat-bo-luat",
+        "luat-thue-gtgt"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "gtgt-hoa-don",
+        "thue-suat-doi-tuong"
+      ],
+      "reason": "gtgt-law-to-tax-rate"
+    },
+    {
+      "href": "thu-vien/luat-thue-thu-nhap-doanh-nghiep-so-67-2025-qh15.html",
+      "title": "Luật Thuế thu nhập doanh nghiệp 2025 có hiệu lực từ 01/10/2025",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "luat-bo-luat",
+        "luat-thue-tndn"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "tndn",
+        "van-ban-chinh-sach"
+      ],
+      "reason": "tndn-law-to-policy"
+    },
+    {
+      "href": "thu-vien/luat-107-2016-qh13-luat-thue-xuat-thue-nhap-khau.html",
+      "title": "Luât 107/2016/QH13 Luật thuế Xuất khẩu, Thuế nhập khẩu",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "luat-bo-luat",
+        "luat-thue-xuat-nhap-khau"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "gtgt-hoa-don",
+        "thue-suat-doi-tuong"
+      ],
+      "reason": "xnk-law-to-tax-rate-broad"
+    },
+    {
+      "href": "thu-vien/quyet-dinh-cua-giam-doc-ve-viec-di-nghi-mat-du-lich.html",
+      "title": "Mẫu quyết định của giám đốc về việc đi nghỉ mát",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "nghi-quyet-quyet-dinh",
+        "qd-noi-bo-doanh-nghiep"
+      ],
+      "newPath": [
+        "thu-vien",
+        "doanh-nghiep-thu-tuc",
+        "mau-bieu-doanh-nghiep-thu-tuc",
+        "mau-bieu-quan-tri-noi-bo"
+      ],
+      "reason": "internal-decision-form"
+    },
+    {
+      "href": "thu-vien/thu-tuc-dang-ky-thue-nha-thau-nha-thau-phu-nuoc-ngoai.html",
+      "title": "Thủ tục đăng ký thuế nhà thầu nước ngoài",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "thue-nha-thau",
+        "nha-thau-dang-ky-thue"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "thue-nha-thau",
+        "nha-thau-ke-khai-to-khai"
+      ],
+      "reason": "contractor-registration-to-filing"
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat-theo-tt-103.html",
+      "title": "Cách tính thuế nhà thầu nước ngoài mới nhất",
+      "oldPath": [
+        "thu-vien",
+        "thue",
+        "thue-nha-thau",
+        "nha-thau-tinh-thue"
+      ],
+      "newPath": [
+        "thu-vien",
+        "thue",
+        "thue-nha-thau",
+        "nha-thau-ke-khai-to-khai"
+      ],
+      "reason": "contractor-calculation-to-filing"
+    }
+  ],
+  "remainingSingletons": []
+}

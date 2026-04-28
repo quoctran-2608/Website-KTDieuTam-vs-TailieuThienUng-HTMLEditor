@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-04-27T23:31:12.031048",
+  "targetHref": "ban-tin/mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.html",
+  "before": {
+    "brokenThumbnailCount": 0,
+    "reasonCounts": {}
+  },
+  "after": {
+    "brokenThumbnailCount": 0,
+    "reasonCounts": {}
+  },
+  "imageFixes": {
+    "appliedCount": 0,
+    "strategyCounts": {},
+    "applied": []
+  },
+  "reclassification": [
+    {
+      "href": "ban-tin/mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.html",
+      "before": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "ke-toan",
+        "topicLv2Key": "mau-bieu-ke-toan",
+        "topicLv3Key": "mau-hanh-chinh-quan-tri-khac"
+      },
+      "after": {
+        "section": "thu-vien",
+        "libraryKindKey": "bieu-mau",
+        "topicLv1Key": "ke-toan",
+        "topicLv2Key": "mau-bieu-ke-toan",
+        "topicLv3Key": "mau-hanh-chinh-quan-tri-khac"
+      }
+    }
+  ],
+  "metaSkipped": [],
+  "rebuild": {
+    "thu_vien_count": 2736,
+    "ban_tin_count": 73,
+    "thu_vien_pages": 228,
+    "ban_tin_pages": 7
+  },
+  "remainingIssues": []
+}
