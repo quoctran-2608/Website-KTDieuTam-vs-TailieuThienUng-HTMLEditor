@@ -1294,6 +1294,9 @@
           var matchedCards = getCardsForDirectoryLink(link);
           var title = getDirectoryLabel(link);
           var countLabel = matchedCards.length ? matchedCards.length + ' việc phù hợp' : 'Chưa có tin phù hợp';
+          var actionMarkup = matchedCards.length
+            ? '<button type="button" class="jobs-directory-result-action" data-directory-scroll-list>Xem trong danh sách</button>'
+            : '';
           var cardsMarkup = matchedCards.length
             ? '<div class="jobs-directory-result-grid">' + matchedCards.slice(0, 6).map(renderDirectoryResultCard).join('') + '</div>'
             : '<div class="jobs-directory-result-empty">Chưa có tin tuyển dụng phù hợp.</div>';
@@ -1301,8 +1304,8 @@
           directoryResults.hidden = false;
           directoryResults.innerHTML =
             '<div class="jobs-directory-result-head">' +
-              '<strong>' + escapeHtml(title) + '</strong>' +
-              '<span>' + escapeHtml(countLabel) + '</span>' +
+              '<div><strong>' + escapeHtml(title) + '</strong><span>' + escapeHtml(countLabel) + '</span></div>' +
+              '<div class="jobs-directory-result-actions">' + actionMarkup + '<button type="button" class="jobs-directory-result-clear" data-directory-clear>Bỏ chọn</button></div>' +
             '</div>' +
             cardsMarkup;
         }
@@ -1311,6 +1314,23 @@
           if (!directoryResults) return;
           directoryResults.hidden = true;
           directoryResults.innerHTML = '';
+        }
+
+        function clearDirectorySelection(options) {
+          var settings = options || {};
+          form.reset();
+          if (locationSelect) {
+            locationSelect.value = '';
+            locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+          if (locationAreaSelect) {
+            locationAreaSelect.value = '';
+          }
+          clearDirectoryResults();
+          if (window.history && window.history.pushState && settings.pushUrl) {
+            window.history.pushState(null, '', 'tuyen-dung.html#viec-lam-theo-nganh-tinh');
+          }
+          applyFilters();
         }
 
         function resetDirectoryDrivenFilters() {
@@ -1394,6 +1414,15 @@
             }
             return false;
           }) || null;
+        }
+
+        function applyDirectoryFromUrl() {
+          var link = findDirectoryLinkFromUrl();
+          if (link) {
+            applyDirectoryLink(link, { pushUrl: false, scroll: false });
+          } else {
+            clearDirectorySelection({ pushUrl: false });
+          }
         }
 
         function syncDirectoryLinks() {
@@ -1628,7 +1657,35 @@
           tab.addEventListener('click', function () {
             setActiveDirectoryTab(tab.dataset.jobsDirectoryTab || 'careers');
           });
+          tab.addEventListener('keydown', function (event) {
+            if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+            event.preventDefault();
+            var currentIndex = directoryTabs.indexOf(tab);
+            var nextIndex = event.key === 'ArrowRight'
+              ? (currentIndex + 1) % directoryTabs.length
+              : (currentIndex - 1 + directoryTabs.length) % directoryTabs.length;
+            var nextTab = directoryTabs[nextIndex];
+            if (nextTab) {
+              nextTab.focus();
+              setActiveDirectoryTab(nextTab.dataset.jobsDirectoryTab || 'careers');
+            }
+          });
         });
+
+        if (directoryResults) {
+          directoryResults.addEventListener('click', function (event) {
+            if (event.target.closest('[data-directory-clear]')) {
+              clearDirectorySelection({ pushUrl: true });
+              return;
+            }
+            if (event.target.closest('[data-directory-scroll-list]')) {
+              var jobList = document.getElementById('job-list');
+              if (jobList) {
+                jobList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }
+          });
+        }
 
         if (quickFilters) {
           quickFilters.addEventListener('scroll', syncQuickFilterNav, { passive: true });
@@ -1723,6 +1780,7 @@
         window.addEventListener('scroll', syncDiscoverySticky, { passive: true });
         window.addEventListener('resize', syncDiscoverySticky);
         window.addEventListener('resize', syncQuickFilterNav);
+        window.addEventListener('popstate', applyDirectoryFromUrl);
 
         if (resetBtn) {
           resetBtn.addEventListener('click', function () {
@@ -1733,12 +1791,7 @@
         }
 
         hydrateDirectoryCounts();
-        var initialDirectoryLink = findDirectoryLinkFromUrl();
-        if (initialDirectoryLink) {
-          applyDirectoryLink(initialDirectoryLink, { pushUrl: false, scroll: false });
-        } else {
-          applyFilters();
-        }
+        applyDirectoryFromUrl();
         window.setTimeout(syncQuickFilterNav, 120);
       }
 
