@@ -933,6 +933,34 @@
   line-height: 1.3;
 }
 
+.job-card-posted {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  max-width: 100%;
+  margin: -8px 0 4px;
+  padding: 7px 11px;
+  border: 1px solid rgba(245, 158, 11, 0.24);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fff7ed 0%, #fefce8 100%);
+  box-shadow: 0 10px 22px rgba(180, 83, 9, 0.08);
+  color: #92400e;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.job-card-posted i {
+  color: #d97706;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.job-card-posted span {
+  min-width: 0;
+}
+
 .job-card-context {
   display: flex;
   flex-direction: column;
@@ -5811,6 +5839,13 @@ body.is-recruiter-ops-open {
   width: 20px;
   height: 20px;
   font-size: 10px;
+}
+
+.home-recruitment .job-card-posted {
+  margin-top: -6px;
+  margin-bottom: 2px;
+  padding: 6px 10px;
+  font-size: 12px;
 }
 
 .home-recruitment .job-card-context {

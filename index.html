@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css?v=20260425-h1-40">
+  <link rel="stylesheet" href="assets/css/jobs.css?v=20260428-posted-time">
 </head>
 <body>
 
@@ -972,16 +972,30 @@
     return parts[2] + '/' + parts[1] + '/' + parts[0];
   }
 
-  function formatFreshLabel(value) {
-    if (!value) return '';
-    const publishDate = new Date(value + 'T00:00:00');
-    if (Number.isNaN(publishDate.getTime())) return '';
+  function getPublishAgeInDays(value) {
+    if (!value) return null;
+    const publishDate = new Date(String(value) + 'T00:00:00');
+    if (Number.isNaN(publishDate.getTime())) return null;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    const diff = Math.max(0, Math.round((today - publishDate) / 86400000));
-    if (diff > 7) return '';
-    if (diff === 0) return 'Mới hôm nay';
-    return 'Mới ' + diff + ' ngày';
+    return Math.max(0, Math.round((today - publishDate) / 86400000));
+  }
+
+  function formatFreshLabel(value) {
+    const diff = getPublishAgeInDays(value);
+    if (diff === null || diff >= 7) return '';
+    if (diff === 0) return 'Mới đăng hôm nay';
+    return 'Mới đăng ' + diff + ' ngày';
+  }
+
+  function formatPostedLabel(value) {
+    const days = getPublishAgeInDays(value);
+    if (days === null) return '';
+    if (days === 0) return 'Mới đăng hôm nay';
+    if (days < 7) return 'Mới đăng ' + days + ' ngày';
+    if (days < 30) return 'Đã đăng ' + Math.max(1, Math.floor(days / 7)) + ' tuần';
+    if (days < 365) return 'Đã đăng ' + Math.max(1, Math.floor(days / 30)) + ' tháng';
+    return 'Đã đăng ' + Math.max(1, Math.floor(days / 365)) + ' năm';
   }
 
   function getRecruitmentFallbackJobs() {
@@ -1005,6 +1019,10 @@
       const locationLabel = job.locationDisplay || job.locationAreaLabel || job.locationGroupLabel || job.location || '';
       const freshLabel = formatFreshLabel(job.publishDate);
       const experienceLabel = job.experienceLevelLabel || job.experienceLevel || 'Đang cập nhật';
+      const postedLabel = formatPostedLabel(job.publishDate);
+      const postedDate = formatDateVi(job.publishDate);
+      const postedTitle = postedDate ? ' title="Ngày đăng: ' + escapeHtml(postedDate) + '"' : '';
+      const postedMarkup = postedLabel ? '<div class="job-card-posted"' + postedTitle + '><i class="fa-regular fa-calendar-plus" aria-hidden="true"></i><span>' + escapeHtml(postedLabel) + '</span></div>' : '';
 
       if (freshLabel) badges.push('<span class="job-badge fresh">' + escapeHtml(freshLabel) + '</span>');
       if (job.featured) badges.push('<span class="job-badge featured">Nổi bật</span>');
@@ -1021,6 +1039,7 @@
           '<div class="job-card-main">',
             '<h3><a href="' + escapeHtml(job.href) + '" class="job-card-stretched-link">' + escapeHtml(job.title) + '</a></h3>',
             '<div class="job-card-salary"><i class="fa-solid fa-dollar-sign" aria-hidden="true"></i><span>Lương: ' + escapeHtml(job.salaryLabel || 'Liên hệ') + '</span></div>',
+            postedMarkup,
           '</div>',
           '<div class="job-card-context">',
             '<div class="company-full-name"><i class="fa-regular fa-building" aria-hidden="true"></i><span>' + escapeHtml(job.companyName || '') + '</span></div>',

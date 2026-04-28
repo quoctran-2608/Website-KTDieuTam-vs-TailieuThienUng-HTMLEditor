@@ -963,6 +963,51 @@
           .trim();
       }
 
+      function getPublishAgeInDays(value) {
+        if (!value) return null;
+        var publishDate = new Date(String(value) + 'T00:00:00');
+        if (Number.isNaN(publishDate.getTime())) return null;
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return Math.max(0, Math.round((today - publishDate) / 86400000));
+      }
+
+      function formatDateVi(value) {
+        if (!value) return '';
+        var parts = String(value).split('-');
+        if (parts.length !== 3) return value;
+        return parts[2] + '/' + parts[1] + '/' + parts[0];
+      }
+
+      function formatPostedLabel(value) {
+        var days = getPublishAgeInDays(value);
+        if (days === null) return '';
+        if (days === 0) return 'Mới đăng hôm nay';
+        if (days < 7) return 'Mới đăng ' + days + ' ngày';
+        if (days < 30) return 'Đã đăng ' + Math.max(1, Math.floor(days / 7)) + ' tuần';
+        if (days < 365) return 'Đã đăng ' + Math.max(1, Math.floor(days / 30)) + ' tháng';
+        return 'Đã đăng ' + Math.max(1, Math.floor(days / 365)) + ' năm';
+      }
+
+      function hydrateJobPostedLabels(cards) {
+        cards.forEach(function (card) {
+          if (card.querySelector('.job-card-posted')) return;
+          var postedLabel = formatPostedLabel(card.dataset.publishDate);
+          var main = card.querySelector('.job-card-main');
+          if (!postedLabel || !main) return;
+
+          var posted = document.createElement('div');
+          posted.className = 'job-card-posted';
+          var postedDate = formatDateVi(card.dataset.publishDate);
+          if (postedDate) {
+            posted.title = 'Ngày đăng: ' + postedDate;
+          }
+          posted.innerHTML = '<i class="fa-regular fa-calendar-plus" aria-hidden="true"></i><span></span>';
+          posted.querySelector('span').textContent = postedLabel;
+          main.appendChild(posted);
+        });
+      }
+
       function initJobsFilter() {
         var form = document.getElementById('jobsFilterForm');
         var grid = document.getElementById('jobsListGrid');
@@ -998,6 +1043,7 @@
         var currentPage = 1;
         var pageSize = 9;
         var totalPages = 1;
+        hydrateJobPostedLabels(cards);
 
         function syncDiscoverySticky() {
           if (!discoveryBar || !discoverySentinel) return;
