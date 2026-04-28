@@ -1285,9 +1285,9 @@ def main() -> None:
         records_by_id[section][article_id] = rec
 
     all_lookup = load_source_lookup()
-    for key, meta in manifest_lookup.items():
-        if key not in all_lookup:
-            all_lookup[key] = meta
+    # Manifest rows contain the final imported target_path. Prefer them over
+    # the source-file stub lookup so internal links resolve to article pages.
+    all_lookup.update(manifest_lookup)
     selected_lookup = build_selected_lookup(planned)
     assets_to_copy: set[str] = set()
     imported_target_set = set(item["href"] for item in data_articles)

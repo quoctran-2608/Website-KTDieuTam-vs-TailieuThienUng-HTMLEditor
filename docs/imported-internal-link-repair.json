@@ -1,0 +1,39 @@
+{
+  "root_cause": "import_stage1_20.py used source-file stubs before manifest target_path metadata, so manifest rows were shadowed and internal links outside the current batch fell back to hub search or index.",
+  "code_fixes": [
+    "tools/import_stage1_20.py now applies all_lookup.update(manifest_lookup)",
+    "tools/repair_imported_internal_links.py added for repeatable exact, source-manifest, semantic/manual, and moved-path repairs"
+  ],
+  "applied_repairs": {
+    "initial_fallback_links_changed": 1051,
+    "initial_methods": {
+      "hub_q_exact_slug": 752,
+      "index_source_href_manifest": 222,
+      "index_semantic": 77
+    },
+    "manual_alias_normalize_links_changed": 2,
+    "moved_direct_slug_links_changed": 6,
+    "article_html_files_changed": 391
+  },
+  "final_verification": {
+    "imported_current_files_checked": 745,
+    "hub_q_fallbacks_remaining": 0,
+    "direct_article_links_checked": 1259,
+    "missing_direct_article_targets": 0,
+    "remaining_index_links": "brand/homepage links only"
+  },
+  "verified_examples": [
+    {
+      "text": "Hướng dẫn đăng ký người phụ thuộc",
+      "href": "../thu-vien/thu-tuc-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh.html"
+    },
+    {
+      "text": "Cách đăng ký mã số thuế cá nhân",
+      "href": "../thu-vien/cach-dang-ky-ma-so-thue-ca-nhan-qua-mang-tren-tncn-2-5.html"
+    },
+    {
+      "text": "Thủ tục hoàn thuế TNCN",
+      "href": "../thu-vien/thu-tuc-hoan-thue-thu-nhap-ca-nhan-online-moi-nhat-2025.html"
+    }
+  ]
+}

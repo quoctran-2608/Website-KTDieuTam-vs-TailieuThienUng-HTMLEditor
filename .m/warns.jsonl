@@ -1793,3 +1793,8 @@
 {"ts":1777381940.3489404,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":505242,"source":"usage.input_tokens"}}
 {"ts":1777381966.6864531,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":505339,"source":"usage.input_tokens"}}
 {"ts":1777381966.6977062,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":505339,"source":"usage.input_tokens"}}
+{"ts":1777384783.2958207,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1777384824.3972027,"message":"micro-compact triggered (startup)","extra":{"min_saved":0,"saved_tokens":11622}}
+{"ts":1777384830.5806918,"message":"micro-compact running (context_length_exceeded)","extra":{"stage":"micro"}}
+{"ts":1777384830.589396,"message":"auto-compact running (context_length_exceeded)","extra":{"stage":"auto"}}
+{"ts":1777385029.2489598,"message":"auto-compact triggered (context_length_exceeded)","extra":{"stage":"auto"}}
