@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2333,
-  "totalCount": 2736,
+  "currentIndex": 2295,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/tai-san-co-dinh-huu-hinh.html",
     "section": "thu-vien",
@@ -116,7 +116,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -135,7 +135,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -169,6 +169,25 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/cac-quy-tac-trich-khau-hao-tai-san-co-dinh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-quy-tac-trich-khau-hao-tai-san-co-dinh.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-quy-tac-trich-khau-hao-tai-san-co-dinh.html",
+      "title": "Các nguyên tắc trích khấu hao TSCĐ trong DN",
+      "excerpt": "Quy tắc trích khấu hao tài sản cố định trong Doanh nghiệp, Tất cả TSCĐ hiện có của doanh nghiệp đều phải trích khấu hao dù Không sử dụng theo quy định tại Thông tư 45",
+      "topicLabel": "Tài sản - Kho - CCDC",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nguyen-tac-trich-khau-hao-tai-san-co-dinh.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/quy-dinh-ve-tai-san-co-dinh-va-nguyen-tac-quan-ly-tscd.html",
       "section": "thu-vien",
@@ -213,53 +232,26 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-05-17",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-xac-dinh-nguyen-gia-tai-san-co-dinh-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-xac-dinh-nguyen-gia-tai-san-co-dinh-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-xac-dinh-nguyen-gia-tai-san-co-dinh-moi-nhat.html",
-      "title": "Cách xác định nguyên giá TSCĐ hữu hình - vô hình",
-      "excerpt": "Cách xác định nguyên giá Tài sản cố định hữu hình, vô hình, thuê tài chính; Nguyên tắc xác định nguyên giá TSCĐ mua mới…",
-      "topicLabel": "Tài sản - Kho - CCDC",
-      "tags": [
-        "TSCĐ",
-        "Tài sản",
-        "Kho",
-        "CCDC",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/xac-dinh-nguyen-gia-tai-san-co-dinh.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2017-01-01",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/quy-dinh-ve-tai-san-co-dinh-va-nguyen-tac-quan-ly-tscd.html",
+      "id": "thu-vien/cac-quy-tac-trich-khau-hao-tai-san-co-dinh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quy-dinh-ve-tai-san-co-dinh-va-nguyen-tac-quan-ly-tscd.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-tai-san-co-dinh-va-nguyen-tac-quan-ly-tscd.html",
-      "title": "Quy định về nguyên tắc quản lý tài sản cố định tại DN",
-      "excerpt": "Các biện pháp quản lý Tài sản cố định trong Doanh nghiệp; Quy định về nguyên tắc quản lý tài sản cố định trong Công ty,…",
+      "href": "thu-vien/cac-quy-tac-trich-khau-hao-tai-san-co-dinh.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-quy-tac-trich-khau-hao-tai-san-co-dinh.html",
+      "title": "Các nguyên tắc trích khấu hao TSCĐ trong DN",
+      "excerpt": "Quy tắc trích khấu hao tài sản cố định trong Doanh nghiệp, Tất cả TSCĐ hiện có của doanh nghiệp đều phải trích khấu hao dù Không sử dụng theo quy định tại Thông tư 45",
       "topicLabel": "Tài sản - Kho - CCDC",
       "tags": [
-        "TSCĐ",
-        "Tài sản",
-        "Kho",
-        "CCDC",
-        "Kế toán",
+        "DN - Thủ tục",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/nguyen-tac-quan-ly-tai-san-co-dinh.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nguyen-tac-trich-khau-hao-tai-san-co-dinh.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     },
     {
@@ -271,7 +263,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/dang-ky-phuong-phap-trich-khau-hao-tscd.html",
       "title": "Mẫu đăng ký phương pháp trích khấu hao TSCĐ mới nhất",
       "excerpt": "Mẫu đăng ký trích khấu hao tài sản cố định mới nhất; Tải bảng đăng ký phương pháp trích khấu hao TSCĐ theo quy định về đăng ký khấu hao TSCĐ của Bộ tài chính.",
-      "topicLabel": "Tài sản - Kho - CCDC",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Tài sản - Kho - CCDC",
         "Biểu mẫu"
@@ -282,23 +274,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-hach-toan-mang-tscd-di-dau-tu-dai-han-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-hach-toan-mang-tscd-di-dau-tu-dai-han-tren-misa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-mang-tscd-di-dau-tu-dai-han-tren-misa.html",
+      "title": "Cách hạch toán mang TSCĐ đi đầu tư dài hạn trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán mang Tài sản cố định - TSCĐ đi đầu tư dài hạn trên phần mềm Misa Khi phát sinh nghiệp vụ mang…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TSCĐ",
+        "MISA",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Cach-hach-toan-mang-TSCD-di-dau-tu-dai-han-tren-misa-1(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-ty-thien-vu-group-tuyen-nhan-vien-thu-kho-thu-quy.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-thien-vu-group-tuyen-nhan-vien-thu-kho-thu-quy.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-thien-vu-group-tuyen-nhan-vien-thu-kho-thu-quy.html",
+      "title": "Công ty Thiên Vũ Group tuyển Nhân viên Thủ kho - Thủ quỹ",
+      "excerpt": "Công ty Thiên Vũ Group tuyển Nhân viên Thủ kho - Thủ quỹ tại Tầng 9 tòa nhà VP 169 Nguyễn Ngọc Vũ - Cầu Giấy - Hà Nội M…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Tài sản",
+        "Kho",
+        "CCDC",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2014-06-05",
       "modifiedDate": null
     }
   ]

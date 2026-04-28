@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2048,
-  "totalCount": 2736,
+  "currentIndex": 2010,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/doi-tuong-nop-thue-gia-tri-gia-tang.html",
     "section": "thu-vien",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -255,21 +255,43 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/to-khai-dieu-chinh-bo-sung-thong-tin-dang-ky-thue-mau-so-08-mst-theo-thong-tu-so-156-2013-tt-btc.html",
+      "id": "thu-vien/mau-to-khai-dang-ky-thu-01-dk-tct.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/to-khai-dieu-chinh-bo-sung-thong-tin-dang-ky-thue-mau-so-08-mst-theo-thong-tu-so-156-2013-tt-btc.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-dieu-chinh-bo-sung-thong-tin-dang-ky-thue-mau-so-08-mst-theo-thong-tu-so-156-2013-tt-btc.html",
-      "title": "Mẫu 08-MST theo Thông tư 86/2024/TT-BTC mới nhất",
-      "excerpt": "Tờ khai điều chỉnh bổ sung thông tin đăng ký thuế Mẫu 08-MST theo Thông tư 86/2024/TT-BTC mới nhất. Thay thế cho Mẫu 08-MST theo Thông tư 105/2020/TT-BTC trước đây.",
+      "href": "thu-vien/mau-to-khai-dang-ky-thu-01-dk-tct.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-dang-ky-thu-01-dk-tct.html",
+      "title": "Mẫu 01-ĐK-TCT Tờ khai đăng ký thuế theo thông tư 86/2024/TT-BTC",
+      "excerpt": "Mẫu tờ khai đăng ký thuế dùng cho tổ chức, doanh nghiệp mới nhất năm 2025 là Mẫu 01-ĐK-TCT được ban hành kè…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Mẫu biểu thuế - hóa đơn",
+        "Đăng ký thuế",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-08-mst-theo-tt-86.png",
+      "image": "assets/images/content/pic/Service/images/MST(1).png",
       "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2024-12-23",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bang-tong-hop-dang-ky-nguoi-phu-thuoc-mau-20-dk-th-tc.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bang-tong-hop-dang-ky-nguoi-phu-thuoc-mau-20-dk-th-tc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/bang-tong-hop-dang-ky-nguoi-phu-thuoc-mau-20-dk-th-tc.html",
+      "title": "Mẫu 20-ĐK-TH-TCT theo Thông tư 86 mới nhất năm 2026",
+      "excerpt": "Mẫu 20-ĐK-TH-TCT năm 2026 mới nhất theo Thông tư 86/2024/TT-BTC Tờ khai đăng ký thuế tổng hợp người phụ thuộc của cá nhân có thu nhập từ tiền lương, tiền công.",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel - Công cụ khác",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-to-khai-20-dk-th-tct-theo-thong-tu-86.png",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2024-12-23",
       "modifiedDate": null
     }

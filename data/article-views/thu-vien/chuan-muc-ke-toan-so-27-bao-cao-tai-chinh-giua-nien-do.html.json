@@ -1,6 +1,6 @@
 {
   "currentIndex": 756,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/chuan-muc-ke-toan-so-26-thong-tin-ve-cac-ben-lien-quan.html",
     "section": "thu-vien",
@@ -114,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -133,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -255,6 +255,25 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/mau-bang-ke-mua-lai-co-phieu-theo-qd-48-va-15.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bang-ke-mua-lai-co-phieu-theo-qd-48-va-15.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-mua-lai-co-phieu-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng kê mua lại cổ phiếu theo QĐ 48 và TT 200",
+      "excerpt": "Mẫu bảng kê mua lại cổ phiếu theo quyết định số 48/2006/QĐ-BTC ngày 14/9/2006 và Thông tư 200 của Bộ tài chính.",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Chuẩn mực - Chế độ - Nguyên tắc",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2006-09-14",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-theo-qd-15-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -273,28 +292,30 @@
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2006-03-20",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "id": "thu-vien/cong-ty-tnhh-tu-van-tham-dinh-va-dau-tu-cong-nghe-gia-loc-tuyen-ke-toan-vat-tu.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-tnhh-tu-van-tham-dinh-va-dau-tu-cong-nghe-gia-loc-tuyen-ke-toan-vat-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-tnhh-tu-van-tham-dinh-va-dau-tu-cong-nghe-gia-loc-tuyen-ke-toan-vat-tu.html",
+      "title": "Công ty TNHH tư vấn thẩm định và đầu tư công nghệ Gia Lộc tuyển Kế toán vật tư",
+      "excerpt": "Công ty TNHH tư vấn thẩm định và đầu tư công nghệ Gia Lộc tuyển Kế toán vật tư tại TT Tổng Cục Chính Trị - Phố Trung Kí…",
+      "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2006-07-25",
       "modifiedDate": null
     }
   ]

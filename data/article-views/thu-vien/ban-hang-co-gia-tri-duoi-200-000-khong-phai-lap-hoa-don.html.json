@@ -1,6 +1,6 @@
 {
   "currentIndex": 20,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/ban-giai-trinh-khai-bo-sung-dieu-chinh-mau-so-01-khbs.html",
     "section": "thu-vien",
@@ -10,7 +10,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/ban-giai-trinh-khai-bo-sung-dieu-chinh-mau-so-01-khbs.html",
     "title": "Bản giải trình khai bổ sung điều chỉnh mẫu 01-1/KHBS",
     "excerpt": "Bản giải trình khai bổ sung, điều chỉnh mẫu 01-1/KHBS (Ban hành kèm theo Thông tư số 80/2021/TT-BTC ngày 29/9/2021 của Bộ Tài Chính)",
-    "topicLabel": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+    "topicLabel": "Mẫu biểu thuế - hóa đơn",
     "tags": [
       "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
       "Biểu mẫu"
@@ -109,7 +109,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -128,7 +128,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -184,25 +184,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/thoi-han-luu-tru-so-sach-chung-tu-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thoi-han-luu-tru-so-sach-chung-tu-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/thoi-han-luu-tru-so-sach-chung-tu-ke-toan.html",
-      "title": "Thời hạn lưu trữ sổ sách, chứng từ kế toán",
-      "excerpt": "Thời hạn lưu trữ chứng từ kế toán như: Chứng từ kế toán, Sổ sách kế toán, Báo cáo Tài chính, hợp đồng kinh tế, hóa đơn giá trị gia tăng, bán hàng...",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT - Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/thoi-han-luu-tru-chung-tu-ke-toan.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-12-30",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/cach-dinh-khoan-thue-gtgt-duoc-khau-tru.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -220,6 +201,25 @@
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-133.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/huong-dan-lap-bao-cao-tinh-hinh-su-dung-hoa-don-theo-thang.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/huong-dan-lap-bao-cao-tinh-hinh-su-dung-hoa-don-theo-thang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-lap-bao-cao-tinh-hinh-su-dung-hoa-don-theo-thang.html",
+      "title": "Cách lập báo cáo tình hình sử dụng hóa đơn theo tháng",
+      "excerpt": "Hướng dẫn Cách lập báo cáo tình hình sử dụng hóa đơn theo tháng theo hình thức kê khai trực tuyến, theo Thông tư Số 39/2014/TT-BTC của Bộ tài chính",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT - Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-06-01",
       "modifiedDate": null
     }
   ],
@@ -265,42 +265,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "title": "Cách lập bảng kê bán ra theo Mẫu 01-1/GTGT trên Excel",
+      "excerpt": "Hướng dẫn cách lập bảng kê hóa đơn hàng hóa dịch vụ bán ra theo Mẫu 01-1/GTGT trên file Excel khi làm tờ khai thuế GTGT…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Cach-lap-bang-ke-ban-ra.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-03-30",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
+      "id": "thu-vien/cong-ty-eurodoor-vietnam-tuyen-ke-toan-ban-hang.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
-      "title": "Khóa Học Thực Hành Kế Toán Trên Phần Mềm Misa",
-      "excerpt": "Đây là khóa học dạy thực hành lên sổ sách, lập báo cáo tài chính trên phần mềm kế toán Misa bằng hóa đơn chứng từ thực tế",
-      "topicLabel": "Khóa học MISA",
+      "href": "thu-vien/cong-ty-eurodoor-vietnam-tuyen-ke-toan-ban-hang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-eurodoor-vietnam-tuyen-ke-toan-ban-hang.html",
+      "title": "Công ty Eurodoor Vietnam tuyển Kế toán bán hàng",
+      "excerpt": "Công ty Eurodoor Vietnam tuyển Kế toán bán hàng tại 94 Nguyễn Chính, Hoàng Mai, Hà Nội Mô tả công việc Xử lý đơn hàng t…",
+      "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Giới thiệu",
-        "Thông tin"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/khoa-hoc-ke-toan-Misa.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "",
-      "publishDate": "2026-04-26",
+      "publishDate": "2014-06-30",
       "modifiedDate": null
     }
   ]

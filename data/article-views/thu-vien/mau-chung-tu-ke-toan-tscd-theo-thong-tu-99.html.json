@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1463,
-  "totalCount": 2736,
+  "currentIndex": 1426,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-chi-tiet-giam-tru-gia-canh-cho-nguoi-phu-thuoc-01-1-thkh.html",
     "section": "thu-vien",
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -185,6 +185,25 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/cach-lap-the-tai-san-co-dinh-theo-thong-tu-200-va-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-the-tai-san-co-dinh-theo-thong-tu-200-va-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-the-tai-san-co-dinh-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập Thẻ Tải sản cố định theo Thông tư 200 và 133",
+      "excerpt": "Hướng dẫn cách lập Thẻ Tải sản cố định theo Thông tư 200 và 133. Mẫu Thẻ Tải sản cố định S23-DN (S11-DNN) dùng để theo dõi chi tiết từng TSCĐ, tình hình thay đổi nguyên giá và giá trị hao mòn đã trích hàng năm của từng TSCĐ.",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "Tài sản - Kho - CCDC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-the-tai-san-co-dinh-theo-tt-200-133.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/mau-the-tai-san-co-dinh-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -203,28 +222,6 @@
       "image": "assets/images/content/pic/Service/images/mau-the-tai-san-co-dinh.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/hach-toan-tk-153-cong-cu-dung-cu-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/hach-toan-tk-153-cong-cu-dung-cu-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/hach-toan-tk-153-cong-cu-dung-cu-theo-thong-tu-99.html",
-      "title": "Cách hạch toán Tài khoản 153 - Công cụ, dụng cụ theo Thông tư 99",
-      "excerpt": "Tài khoản 153 - Công cụ, dụng cụ: dùng để phản ánh giá trị hiện có và tình hình biến động tăng, giảm các loại công cụ,…",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "CCDC",
-        "Tài khoản",
-        "Hạch toán",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-TK153-TT99.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ],
@@ -272,23 +269,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/mau-bang-trich-khau-hao-tai-san-co-dinh-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/mau-bang-trich-khau-hao-tai-san-co-dinh-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-trich-khau-hao-tai-san-co-dinh-tren-excel.html",
+      "title": "Mẫu bảng trích khấu hao tài sản cố định trên Excel 2026 mới nhất",
+      "excerpt": "Theo quy định tại chế độ kế toán của Thông tư 99/2025/TT-BTC và thông tư 133/2016/TT-BTC thì định kỳ doanh nghiệp sẽ th…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
+        "TSCĐ",
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Công cụ khác",
+        "Mẫu file & kê khai",
+        "Khấu hao",
+        "Kê khai"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Mau-bang-trich-khau-hao-TSCD.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

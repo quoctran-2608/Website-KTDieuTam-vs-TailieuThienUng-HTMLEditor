@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2735,
-  "totalCount": 2736,
+  "currentIndex": 2693,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/xuat-hoa-don-cho-khach-le-ca-nhan-nguoi-mua-khong-lay-hoa-don.html",
     "section": "thu-vien",
@@ -39,7 +39,7 @@
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/Yeu cau thong tin trinh bay tren BCTC tt99.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-01-01",
     "modifiedDate": null
   },
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -165,6 +165,26 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-va-hoan-thue-gtgt.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-va-hoan-thue-gtgt.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-va-hoan-thue-gtgt.html",
+      "title": "Các hành vi bị nghiêm cấm trong khấu trừ và hoàn thuế GTGT năm 2025",
+      "excerpt": "Tổng hợp các hành vi bị nghiêm cấm trong khấu trừ và hoàn thuế giá trị gia tăng năm 2025 theo Luật GTGT số 48/2024/QH15 có hiệu lực từ ngày 1/7/2025. Do đó nếu các doanh nghiệp cố tình sai phạm để được khấu trừ thuế gtgt đầu vào cũng như hoàn thuế thì sẽ bị xử phạt",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hanh-vi-bi-nghiem-cam-trong-khau-tru-thue-gtgt.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-07-01",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/cach-xu-ly-hoa-don-dau-vao-xuat-sau-hoa-don-dau-ra.html",
       "section": "thu-vien",
@@ -206,47 +226,27 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2017-04-28",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thoi-diem-lap-hoa-don-khi-ban-hang-cung-cap-dich-vu-xay-dung.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thoi-diem-lap-hoa-don-khi-ban-hang-cung-cap-dich-vu-xay-dung.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/thoi-diem-lap-hoa-don-khi-ban-hang-cung-cap-dich-vu-xay-dung.html",
-      "title": "Thời điểm lập hóa đơn khi bán hàng, cung cấp dịch vụ, xây dựng, vận tải",
-      "excerpt": "Thời điểm lập hóa đơn khi bán hàng hóa, cung cấp dịch vụ, xây dựng xây lắp , kinh doanh bán lẻ, vận tải, kinh doanh bất động sản... theo quy định tại NĐ 123/2020/NĐ-CP và được sửa đổi tại NĐ 70/2025/NĐ-CP mới nhất hiện nay. Xuất hóa đơn sai thời điểm sẽ bị phạt.",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT - Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Thoi-diem-lap-hoa-don.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-07-20",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-xu-ly-hoa-don-dau-vao-xuat-sau-hoa-don-dau-ra.html",
+      "id": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-va-hoan-thue-gtgt.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-xu-ly-hoa-don-dau-vao-xuat-sau-hoa-don-dau-ra.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-xu-ly-hoa-don-dau-vao-xuat-sau-hoa-don-dau-ra.html",
-      "title": "Cách xử lý hóa đơn đầu vào xuất sau hóa đơn đầu ra",
-      "excerpt": "Công văn số 43222/CTHN-TTHT ngày 1/11/2021 của Cục Thuế TP. Hà Nội về chi phí được trừ khi xác định thu nhập chịu thuế…",
+      "href": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-va-hoan-thue-gtgt.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-va-hoan-thue-gtgt.html",
+      "title": "Các hành vi bị nghiêm cấm trong khấu trừ và hoàn thuế GTGT năm 2025",
+      "excerpt": "Tổng hợp các hành vi bị nghiêm cấm trong khấu trừ và hoàn thuế giá trị gia tăng năm 2025 theo Luật GTGT số 48/2024/QH15 có hiệu lực từ ngày 1/7/2025. Do đó nếu các doanh nghiệp cố tình sai phạm để được khấu trừ thuế gtgt đầu vào cũng như hoàn thuế thì sẽ bị xử phạt",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
-        "Hóa đơn",
-        "Thuế",
+        "DN - Thủ tục",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Hoa-don.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hanh-vi-bi-nghiem-cam-trong-khau-tru-thue-gtgt.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-11-01",
+      "publishDate": "2025-07-01",
       "modifiedDate": null
     },
     {
@@ -271,23 +271,46 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "title": "Cách đăng ký và nộp Tiền thuế điện tử qua mạng mới nhất.",
+      "excerpt": "Hướng dẫn cách Đăng ký nộp thuế điện tử qua mạng -> Cách lấy giấy nộp tiền thuế điện tử -> Cách nộp thuế điện tử trên t…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-nop-thue-dien-tu-qua-mang.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "title": "Trường mầm non Thành Đông Tuyển kế toán viên",
+      "excerpt": "Trường mầm non Thành Đông tuyển dụng Nhân viên kế toán Mô tả công việc: - Tính học phí, thu học phí, xuất hóa đơn, giao…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2021-06-20",
       "modifiedDate": null
     }
   ]

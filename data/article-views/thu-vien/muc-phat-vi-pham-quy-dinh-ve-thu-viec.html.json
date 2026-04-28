@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1854,
-  "totalCount": 2736,
+  "currentIndex": 1817,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/muc-phat-khong-ky-hop-dong-lao-dong.html",
     "section": "thu-vien",
@@ -32,7 +32,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/muc-phat-vi-pham-lien-quan-den-chung-tu-so-sach-ke-toan.html",
     "title": "Mức phạt vi phạm liên quan đến chứng từ, sổ sách kế toán",
     "excerpt": "Tổng hợp các mức phạt vi phạm liên quan đến chứng từ, sổ sách kế toán như: sai chữ số, chữ viết, chữ ký, không đầy đủ nội dung của chứng từ, hạch toán sai tài khoản...",
-    "topicLabel": "Chứng từ - Sổ sách",
+    "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
     "tags": [
       "Chứng từ - Sổ sách",
       "Hướng dẫn"
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -207,22 +207,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/nghi-dinh-38-2022-nd-cp-muc-luong-toi-thieu-vung-nam-2022.html",
+      "id": "thu-vien/quy-dinh-ve-thoi-gian-nghi-ngoi-trong-bo-luat-lao-dong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-38-2022-nd-cp-muc-luong-toi-thieu-vung-nam-2022.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-38-2022-nd-cp-muc-luong-toi-thieu-vung-nam-2022.html",
-      "title": "Nghị định 38/2022/NĐ-CP mức lương tối thiểu vùng năm 2022",
-      "excerpt": "Ngày 12/6/2022 Chính phủ ban hành Nghị định 38/2022/NĐ-CP Quy định mức lương tối thiểu vùng đối với người lao động làm việc theo hợp đồng lao động áp dụng từ 1/7/2022",
+      "href": "thu-vien/quy-dinh-ve-thoi-gian-nghi-ngoi-trong-bo-luat-lao-dong.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-thoi-gian-nghi-ngoi-trong-bo-luat-lao-dong.html",
+      "title": "Quy định về thời gian nghỉ ngơi trong Bộ luật lao động",
+      "excerpt": "Tổng hợp các quy định về thời gian nghỉ ngơi của người lao động như nghỉ trong giờ làm việc, nghỉ chuyển ca, nghỉ hằng…",
       "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Lao động - Tiền lương",
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-38-muc-luong-toi-thieu-vung-2022.jpg",
+      "image": "assets/images/content/pic/Service/images/thoi-gian-nghi-ngoi.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2022-06-12",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ],
@@ -271,42 +273,46 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-hach-toan-mua-hang-co-phat-sinh-chi-phi-mua-hang-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-hach-toan-mua-hang-co-phat-sinh-chi-phi-mua-hang-tren-misa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-mua-hang-co-phat-sinh-chi-phi-mua-hang-tren-misa.html",
+      "title": "Cách hạch toán mua hàng có phát sinh chi phí mua hàng trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán nghiệp vụ mua hàng có phát sinh các chi phí mua hàng hóa như: bảo hiểm hàng hóa, tiền thuê kho…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "MISA",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-mua-hang-co-phat-sinh-chi-phi-mua-hang-tren-misa-1(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/cong-ty-co-phan-asin-viet-nam-tuyen-ke-toan-tong-hop.html",
+      "id": "thu-vien/hyundai-my-dinh-tuyen-dung-ke-toan-tong-hop.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/cong-ty-co-phan-asin-viet-nam-tuyen-ke-toan-tong-hop.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/cong-ty-co-phan-asin-viet-nam-tuyen-ke-toan-tong-hop.html",
-      "title": "Công ty Cổ phần ASIN Việt Nam Tuyển kế toán tổng hợp",
-      "excerpt": "Công ty Cổ phần ASIN Việt Nam Tuyển kế toán tổng hợp. Địa điểm làm việc: Tầng 2-B Tòa nhà T6-08, số 643A, Đường Phạm Văn Đồng, Đường Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội. Mức lương trao đối thêm theo năng lực",
+      "href": "thu-vien/hyundai-my-dinh-tuyen-dung-ke-toan-tong-hop.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/hyundai-my-dinh-tuyen-dung-ke-toan-tong-hop.html",
+      "title": "Hyundai Mỹ Đình tuyển dụng Kế toán tổng hợp",
+      "excerpt": "Hyundai Mỹ Đình tuyển dụng Kế toán tổng hợp tại Mỹ Đình, Từ Liêm, Hà Nội Mô tả công việc: - Thời gian làm việc 6 tháng.…",
       "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Thông báo tuyển dụng",
-        "Thông tin"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "",
-      "publishDate": "2026-04-26",
+      "publishDate": "2014-07-31",
       "modifiedDate": null
     }
   ]

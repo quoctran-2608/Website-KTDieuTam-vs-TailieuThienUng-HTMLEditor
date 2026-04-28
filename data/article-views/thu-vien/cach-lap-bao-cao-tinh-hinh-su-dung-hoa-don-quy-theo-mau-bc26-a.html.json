@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1089,
-  "totalCount": 2736,
+  "currentIndex": 1053,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/huong-dan-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
     "section": "thu-vien",
@@ -10,7 +10,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
     "title": "Hướng dẫn lập bảng kê hàng hóa dịch vụ mua vào PL 01-2/GTGT",
     "excerpt": "Hướng dẫn cách lập bảng kê hóa đơn, chứng từ hàng hóa, dịch vụ mua vào PL 01-2/GTGT trên tờ khai thuế GTGT khấu trừ 01/GTGT trên phần mềm HTKK",
-    "topicLabel": "HTKK - eTax - Thuế điện tử",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
       "GTGT",
       "HTKK - eTax - Thuế điện tử",
@@ -30,7 +30,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-chi-tiet-vat-lieu-dung-cu-san-pham-hang-hoa.html",
     "title": "Hướng dẫn lập sổ chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa theo Thông tư 200",
     "excerpt": "Hướng dẫn cách lập sổ chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa Mẫu S10- DN theo Thông tư 200/2014/TT-BTC : Mục đí…",
-    "topicLabel": "Tài sản - Kho - CCDC",
+    "topicLabel": "Chứng từ - Sổ sách",
     "tags": [
       "Tài sản",
       "Kho",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -187,46 +187,45 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/huong-dan-ke-khai-thue-gtgt-theo-phuong-phap-khau-tru.html",
+      "id": "thu-vien/cach-lap-to-khai-thue-thu-nhap-ca-nhan-mau-so-02kk-tncn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-ke-khai-thue-gtgt-theo-phuong-phap-khau-tru.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-ke-khai-thue-gtgt-theo-phuong-phap-khau-tru.html",
-      "title": "Cách kê khai thuế GTGT theo phương pháp khấu trừ",
-      "excerpt": "Hướng dẫn cách kê khai thuế Giá trị gia tăng theo phương pháp khấu chi tiết như: Cách xác định kê khai thuế GTGT theo pp khấu trừ, hồ sơ kê khai – cách lập Tờ khai thuế GTGT theo pp khấu trừ, thời hạn nộp Tờ khai thuế GTGT …",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/cach-lap-to-khai-thue-thu-nhap-ca-nhan-mau-so-02kk-tncn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-to-khai-thue-thu-nhap-ca-nhan-mau-so-02kk-tncn.html",
+      "title": "Cách lập tờ khai thuế thu nhập cá nhân 05/KK-TNCN",
+      "excerpt": "Cách lập tờ khai thuế thu nhập cá nhân theo quý – tháng năm 2026; Hướng dẫn lập tờ khai thuế TNCN 05/KK-TNCN cách làm trên phần mềm HTKK.",
+      "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
-        "GTGT",
+        "TNCN",
         "HTKK - eTax - Thuế điện tử",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-ke-khai-thue-gtgt-theo-pp-khau-tru(1).png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-to-khai-thue-thu-nhap-ca-nhan(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2017-09-20",
+      "publishDate": "2026-02-20",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-to-khai-quyet-toan-thue-tndn-mau-03-tndn.html",
+      "id": "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-to-khai-quyet-toan-thue-tndn-mau-03-tndn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-to-khai-quyet-toan-thue-tndn-mau-03-tndn.html",
-      "title": "Cách lập tờ khai quyết toán thuế TNDN mẫu 03/TNDN 2026 trên HTKK mới nhất",
-      "excerpt": "Hướng dẫn cách làm tờ khai quyết toán thuế TNDN mới nhất năm 2026 theo mẫu 03/TNDN thông tư 80/2021/TT-BTC trên phần mề…",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/bao-cao-tinh-hinh-su-dung-bien-lai-dien-tu-thu-thue-phi-le-phi.html",
+      "title": "Báo cáo tình hình sử dụng biên lai điện tử thu thuế, phí, lệ phí",
+      "excerpt": "Mẫu Báo cáo tình hình sử dụng biên lai điện tử thu thuế, phí, lệ phí mới nhất năm 2025 là Mẫu BC26/BLĐT Nghị định 70/20…",
+      "topicLabel": "Lệ phí môn bài",
       "tags": [
-        "TNDN",
-        "HTKK",
-        "Quyết toán",
-        "eTax",
-        "Thuế điện tử",
-        "Phần mềm"
+        "Lệ phí môn bài",
+        "Thuế",
+        "Hóa đơn",
+        "Môn bài",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Mau-to-khai-quye-toan-thue-TNDN.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-12-15",
+      "publishDate": "2026-09-15",
       "modifiedDate": null
     }
   ],
@@ -253,46 +252,43 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-3-2-2-moi-nhat-hien-nay.html",
+      "id": "thu-vien/mau-bao-cao-tinh-hinh-su-dung-bien-lai-thu-thue-phi-le-phi.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-3-2-2-moi-nhat-hien-nay.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-3-2-2-moi-nhat-hien-nay.html",
-      "title": "Phần mềm HTKK 3.2.2 mới nhất hiện nay",
-      "excerpt": "Ngày 26/03/2014 Tổng cục thuế đã thông báo về việc: Nâng cấp ứng dụng Hỗ trợ kê khai tờ khai mã vạch (HTKK) phiên bản 3…",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/mau-bao-cao-tinh-hinh-su-dung-bien-lai-thu-thue-phi-le-phi.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bao-cao-tinh-hinh-su-dung-bien-lai-thu-thue-phi-le-phi.html",
+      "title": "Mẫu báo cáo tình hình sử dụng biên lai thu thuế - phí - lệ phí mới nhất 2025",
+      "excerpt": "Mẫu số BC26/BLĐT - ban hành kèm theo Nghị định 70/2025/NĐ-CP ngày 20/3 mới nhất năm 2025",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "HTKK",
-        "eTax",
-        "Thuế điện tử",
-        "Mẫu file & kê khai",
-        "Kê khai",
+        "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/phan mem htkk 3_2_2.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Bao-cao-tinh-hinh-su-dung-bien-lai-thu-thue-phi-le-phi.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-03-26",
+      "publishDate": "2025-03-20",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
+      "id": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "title": "Phần mềm HTKK 5.2.1 mới nhất ngày 2/8/2024",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.1 mới nhất 2/8/2024 của Tổng cục thuế. Tải phần mềm HTKK 5.2.1 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2024.",
+      "href": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "title": "Cách đăng ký và nộp Tiền thuế điện tử qua mạng mới nhất.",
+      "excerpt": "Hướng dẫn cách Đăng ký nộp thuế điện tử qua mạng -> Cách lấy giấy nộp tiền thuế điện tử -> Cách nộp thuế điện tử trên t…",
       "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_1-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/cach-nop-thue-dien-tu-qua-mang.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2024-08-02",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 861,
-  "totalCount": 2736,
+  "currentIndex": 825,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cong-van-5485-btc-tct-dang-ky-ke-khai-thue-theo-pp-khau-tru.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -186,25 +186,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-hach-toan-khoan-phai-tra-cho-nguoi-lao-dong-tai-khoan-334.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-khoan-phai-tra-cho-nguoi-lao-dong-tai-khoan-334.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-khoan-phai-tra-cho-nguoi-lao-dong-tai-khoan-334.html",
-      "title": "Cách hạch toán khoản phải trả cho người lao động - Tài khoản 334 theo TT 99",
-      "excerpt": "Cách hạch toán phải trả người lao động - Tài khoản 334 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán tiền lương, tiền công, tiền thưởng, bảo hiểm xã hội thuế thu nhập cá nhân, ứng trước tiền lương",
-      "topicLabel": "BHXH - BHYT - BHTN",
-      "tags": [
-        "BHXH - BHYT - BHTN",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/tk-334.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/muc-luong-toi-thieu-vung-moi-nhat-theo-tt-33.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -223,6 +204,29 @@
       "image": "assets/images/content/pic/Service/images/muc luong toi thieu vung.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2016-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bhxh-doi-voi-nguoi-quan-ly-doanh-nghiep-khong-huong-luong.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bhxh-doi-voi-nguoi-quan-ly-doanh-nghiep-khong-huong-luong.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/bhxh-doi-voi-nguoi-quan-ly-doanh-nghiep-khong-huong-luong.html",
+      "title": "BHXH đối với người quản lý doanh nghiệp không hưởng lương",
+      "excerpt": "Đối tượng tham gia bảo hiểm xã hội bắt buộc hiện nay đang được quy định tại khoản 1 Điều 2 của Luật Bảo hiểm xã hội số:…",
+      "topicLabel": "BHXH - BHYT - BHTN",
+      "tags": [
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Tiền lương"
+      ],
+      "image": "assets/images/content/pic/Service/images/BHXH-doi-voi-nguoi-quan-dn-khong-huong-luong.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2024-06-29",
       "modifiedDate": null
     }
   ],
@@ -248,22 +252,44 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-ke-trich-nop-cac-khoan-theo-luong-theo-qd-48-va-15.html",
+      "id": "thu-vien/mau-bang-phan-bo-tien-luong-va-bao-hiem-xa-hoi-theo-qd-48-va-15.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-ke-trich-nop-cac-khoan-theo-luong-theo-qd-48-va-15.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-trich-nop-cac-khoan-theo-luong-theo-qd-48-va-15.html",
-      "title": "Mẫu bảng kê trích nộp các khoản theo lương theo TT 200 và 133",
-      "excerpt": "Mẫu bảng kê trích nộp các khoản theo lương theo Thông tư 200 và 133. xác định số tiền bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, KPCĐ mà đơn vị và người lao động phải nộp trong tháng (hoặc quý) cho cơ quan bảo hiểm xã hội và công đoàn",
+      "href": "thu-vien/mau-bang-phan-bo-tien-luong-va-bao-hiem-xa-hoi-theo-qd-48-va-15.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-phan-bo-tien-luong-va-bao-hiem-xa-hoi-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng phân bổ tiền lương Bảo hiểm xã hội theo TT 200 và 133",
+      "excerpt": "Bảng phân bổ tiền lương và bảo hiểm xã hội theo Thông tư 200 và 133, tập hợp và phân bổ tiền lương tiền công thực tế phải trả và BHXH, BHYT, BHTN, KPCĐ phải trích nộp trong tháng",
       "topicLabel": "Mẫu biểu lao động - bảo hiểm",
       "tags": [
+        "BHXH",
         "Mẫu biểu lao động - bảo hiểm",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/bang-ke-trich-nop-cac-khoan-theo-luong(1).png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/bang-phan-bo-tien-luong-va-bhxh.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2016-08-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
+      "title": "Mẫu D02-TS Danh sách tham gia BHXH theo QĐ 595 file Excel",
+      "excerpt": "Mẫu D02-TS Danh sách lao động tham gia Bảo hiểm xã hội, Bảo hiểm y tế, bảo hiểm thất nghiệp mới nhất; Tải Mẫu D02-TS theo Quyết định 595 file Excel.",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "BHXH",
+        "Excel",
+        "Excel - Công cụ khác",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-d02-ts-theo-quyet-dinh-595-file-excel.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2017-04-14",
       "modifiedDate": null
     }
   ]

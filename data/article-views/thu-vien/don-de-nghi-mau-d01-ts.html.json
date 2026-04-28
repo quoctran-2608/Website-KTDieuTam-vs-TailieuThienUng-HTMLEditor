@@ -1,6 +1,6 @@
 {
   "currentIndex": 33,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/bang-ke-thanh-toan-tien-dien-nuoc-mau-02-tndn.html",
     "section": "thu-vien",
@@ -116,7 +116,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -135,7 +135,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -170,48 +170,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
-      "title": "Quy định về báo cáo tình hình sử dụng lao động mới nhất",
-      "excerpt": "Doanh nghiệp phải lập báo cáo tình hình sử dụng lao động 6 tháng và hằng năm; Lập mẫu sổ quản lý lao động Excel theo quy định về Báo cáo sử dụng lao động.",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel - Công cụ khác",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Bao-cao-tinh-hinh-su-dung-lao-dong.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-10-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-bang-trich-khau-hao-tscd-tren-excel.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bang-trich-khau-hao-tscd-tren-excel.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-trich-khau-hao-tscd-tren-excel.html",
-      "title": "Cách lập bảng trích khấu hao TSCĐ trên Excel",
-      "excerpt": "Hướng dẫn cách lập bảng trích tính khấu hao tài sản cố định hàng tháng trên Excel Các thông tin ban đầu cần khai báo, c…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "TSCĐ",
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Khấu hao"
-      ],
-      "image": "assets/images/content/pic/Service/images/Bang-tinh-khau0hao-TSCD-tren-Excel.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -228,29 +186,95 @@
         "Biểu mẫu"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-d02-ts-theo-quyet-dinh-595-file-excel.png",
-      "libraryKindLabel": "Biểu mẫu",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2017-04-14",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-danh-sach-lao-dong-tham-bhxh-bhtn-mau-d02-ts.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-danh-sach-lao-dong-tham-bhxh-bhtn-mau-d02-ts.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-danh-sach-lao-dong-tham-bhxh-bhtn-mau-d02-ts.html",
+      "title": "Cách lập Mẫu D02-TS Danh sách tham gia BHXH theo QĐ 595",
+      "excerpt": "Hướng dẫn cách lập Mẫu D02-TS theo Quyết định 595 mới nhất 2020 như: Đăng ký danh sách tham gia BHXH; Báo tăng - bá…",
+      "topicLabel": "BHXH - BHYT - BHTN",
+      "tags": [
+        "BHXH",
+        "BHTN",
+        "BHYT",
+        "Lao động",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cach-dien-Mau-D02-TS.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2017-04-14",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "title": "Quy định về báo cáo tình hình sử dụng lao động mới nhất",
+      "excerpt": "Doanh nghiệp phải lập báo cáo tình hình sử dụng lao động 6 tháng và hằng năm; Lập mẫu sổ quản lý lao động Excel theo quy định về Báo cáo sử dụng lao động.",
+      "topicLabel": "Lao động - Tiền lương",
+      "tags": [
+        "Excel - Công cụ khác",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Bao-cao-tinh-hinh-su-dung-lao-dong.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2020-10-15",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "id": "thu-vien/cach-lap-danh-sach-lao-dong-tham-bhxh-bhtn-mau-d02-ts.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
-      "title": "Quy định về báo cáo tình hình sử dụng lao động mới nhất",
-      "excerpt": "Doanh nghiệp phải lập báo cáo tình hình sử dụng lao động 6 tháng và hằng năm; Lập mẫu sổ quản lý lao động Excel theo quy định về Báo cáo sử dụng lao động.",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-lap-danh-sach-lao-dong-tham-bhxh-bhtn-mau-d02-ts.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-danh-sach-lao-dong-tham-bhxh-bhtn-mau-d02-ts.html",
+      "title": "Cách lập Mẫu D02-TS Danh sách tham gia BHXH theo QĐ 595",
+      "excerpt": "Hướng dẫn cách lập Mẫu D02-TS theo Quyết định 595 mới nhất 2020 như: Đăng ký danh sách tham gia BHXH; Báo tăng - bá…",
+      "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
-        "Excel - Công cụ khác",
+        "BHXH",
+        "BHTN",
+        "BHYT",
+        "Lao động",
+        "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Bao-cao-tinh-hinh-su-dung-lao-dong.jpg",
+      "image": "assets/images/content/pic/Service/images/Cach-dien-Mau-D02-TS.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-10-15",
+      "publishDate": "2017-04-14",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-don-de-nghi-mau-d01-ts.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-don-de-nghi-mau-d01-ts.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-don-de-nghi-mau-d01-ts.html",
+      "title": "Mẫu D01-TS theo Quyết định 505 mới nhất năm 2024",
+      "excerpt": "Mẫu D01-TS Bảng kê thông tin theo Quyết định 505/QĐ-BHXH; Tải Mẫu D01-TS mới nhất 2024 file Excel; Hướng dẫn cách đ…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Mau-D01-TS-theo-quyet-dinh-505.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2020-03-27",
       "modifiedDate": null
     },
     {
@@ -270,28 +294,8 @@
         "Biểu mẫu"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-d02-ts-theo-quyet-dinh-595-file-excel.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2017-04-14",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2017-04-14",
       "modifiedDate": null
     }
   ]

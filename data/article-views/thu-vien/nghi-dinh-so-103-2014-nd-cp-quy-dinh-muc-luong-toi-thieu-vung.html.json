@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1960,
-  "totalCount": 2736,
+  "currentIndex": 1923,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/nghi-dinh-92-2021-nd-cp-giam-thue-tndn-gtgt-nam-2021.html",
     "section": "thu-vien",
@@ -115,7 +115,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +134,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -252,24 +252,45 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
+      "id": "thu-vien/van-ban-de-nghi-xu-ly-so-tien-thue-nop-thua.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/van-ban-de-nghi-gia-han-nop-tien-thue-tien-phat-mau-01-ghan.html",
-      "title": "Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp tiền thuế tiền phạt",
-      "excerpt": "Mẫu 01/GHAN Văn bản đề nghị gia hạn nộp thuế mới nhất theo Thông tư 156/2013/TT-BTC: Xin gia hạn nộp tiền thuế, tiền ph…",
+      "href": "thu-vien/van-ban-de-nghi-xu-ly-so-tien-thue-nop-thua.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/van-ban-de-nghi-xu-ly-so-tien-thue-nop-thua.html",
+      "title": "Mẫu 01/DNXLNT văn bản đề nghị xử lý số tiền thuế, tiền chậm nộp, tiền phạt nộp thừa",
+      "excerpt": "Mẫu 01/DNXLNT (ban hành kèm theo Thông tư 20/2021/TT-BTC) - mẫu văn bản đề nghị xử lý số tiền thuế, tiền chậm nộp, tiền phạt nộp thừa",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Thuế",
+        "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-01-DNXLNT.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/phan-mem-htkk-3-3-0-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/phan-mem-htkk-3-3-0-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-3-3-0-moi-nhat.html",
+      "title": "Phần mềm HTKK 3.3.0 mới nhất năm 2015",
+      "excerpt": "Ngày 05/01/2015 Tổng cục thuế đã nâng cấp Phần mềm HTKK 3.3.0, Khai thuế qua mạng (iHTKK) phiên bản 3.1.0 và ph…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "tags": [
+        "HTKK",
+        "eTax",
+        "Thuế điện tử",
+        "Mẫu file & kê khai",
+        "Kê khai",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/phan mem htkk 3_3_0.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2014-08-25",
       "modifiedDate": null
     }
   ]

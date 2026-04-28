@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1312,
-  "totalCount": 2736,
+  "currentIndex": 1275,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/bang-ke-cac-hoa-don-dien-tu-da-lap-sai.html",
     "section": "thu-vien",
@@ -109,7 +109,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -128,7 +128,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -163,6 +163,25 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "title": "Cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo TT 200 và 133",
+      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo Thông tư 200 và 133. Mẫu bảng tổng hợp chi tiết vật liệu dụng cụ sản phẩm hàng hóa S11-DN (S07-DNN) Dùng để tổng hợp phần giá trị từ các trang sổ, thẻ chi tiết",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "GTGT - Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-tong-hop-nhap-xuat-ton-kho-hang-hoa.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-lap-so-ke-toan-chi-tiet-quy-tien-mat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -190,7 +209,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-quy-tien-mat-theo-thong-tu-200-va-133.html",
       "title": "Cách lập sổ quỹ tiền mặt theo Thông tư 200 và 133",
       "excerpt": "Hướng dẫn Cách lập sổ quỹ tiền mặt theo Thông tư 200 và 133. Mẫu sổ quỹ tiền mặt S07-DN (S04a-DNN) dùng cho thủ quỹ để phản ánh tình hình thu, chi tồn quỹ tiền mặt bằng tiền Việt Nam",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "Chuẩn mực - Chế độ - Nguyên tắc",
         "Hướng dẫn"
@@ -199,43 +218,24 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-so-chi-tiet-tien-vay-theo-thong-tu-200-va-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-so-chi-tiet-tien-vay-theo-thong-tu-200-va-133.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-chi-tiet-tien-vay-theo-thong-tu-200-va-133.html",
-      "title": "Cách lập Sổ chi tiết tiền vay theo Thông tư 200 và 133",
-      "excerpt": "Hướng dẫn cách lập Sổ chi tiết tiền vay theo Thông tư 200 và 133. Mẫu sổ chi tiết tiền vay S34-DN (S15-DNN) dùng để theo dõi theo từng tài khoản, theo từng đối tượng vay (Ngân hàng, người cho vay...) và theo từng khế ước vay.",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản - Hạch toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-so-chi-tiet-tien-vay.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-lap-so-ke-toan-chi-tiet-quy-tien-mat.html",
+      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-so-ke-toan-chi-tiet-quy-tien-mat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-ke-toan-chi-tiet-quy-tien-mat.html",
-      "title": "Cách lập sổ kế toán chi tiết quỹ tiền mặt theo TT 200 và 133",
-      "excerpt": "Hướng dẫn cách lập sổ kế toán chi tiết quỹ tiền mặt theo Thông tư 200 và 133. Mẫu Sổ chi tiết quỹ tiền mặt 07a-DN (S04b-DNN) dùng cho kế toán tiền mặt để phản ánh tình hình thu, chi tồn quỹ tiền mặt",
+      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "title": "Cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo TT 200 và 133",
+      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo Thông tư 200 và 133. Mẫu bảng tổng hợp chi tiết vật liệu dụng cụ sản phẩm hàng hóa S11-DN (S07-DNN) Dùng để tổng hợp phần giá trị từ các trang sổ, thẻ chi tiết",
       "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
-        "Chứng từ - Sổ sách",
+        "GTGT - Hóa đơn",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-so-ke-toan-chi-tiet-quy-tien-mat.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-tong-hop-nhap-xuat-ton-kho-hang-hoa.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
@@ -261,23 +261,23 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/don-de-nghi-mau-d01-ts.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/don-de-nghi-mau-d01-ts.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/don-de-nghi-mau-d01-ts.html",
+      "title": "Bảng kê thông tin Mẫu D01-TS theo quyết định 595/BHXH",
+      "excerpt": "Bảng kê thông tin Mẫu D01-TS theo Quyết định 595 của BHXH. Cách lập Mẫu D01-TS Bảng kê thông tin, trách nhiệm lập, thời gian lập và căn cứ lập Mẫu D01-TS.",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
+        "BHXH",
         "Excel - Công cụ khác",
-        "Công cụ"
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-D01-TS-Bang-ke-thong-tin-qd-595.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2017-04-14",
       "modifiedDate": null
     }
   ]

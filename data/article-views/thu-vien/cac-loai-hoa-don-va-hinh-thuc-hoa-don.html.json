@@ -1,6 +1,6 @@
 {
   "currentIndex": 131,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cac-loai-hoa-don-theo-thong-tu-64-2013-tt-btc.html",
     "section": "thu-vien",
@@ -10,7 +10,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/cac-loai-hoa-don-theo-thong-tu-64-2013-tt-btc.html",
     "title": "Các loại hóa đơn hiện nay trong Doanh nghiệp",
     "excerpt": "Các loại hóa đơn hiện nay theo NĐ 123 và NĐ 70/2025/NĐ-CP gồm: Hóa đơn giá trị gia tăng (hóa đơn đỏ, VAT); Hoá đơn bán hàng; Hóa đơn khác: tem; vé; thẻ; phiếu thu tiền bảo hiểm",
-    "topicLabel": "BHXH - BHYT - BHTN",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
       "BHXH - BHYT - BHTN",
       "Hướng dẫn"
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -164,6 +164,25 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/cac-loai-hoa-don-theo-thong-tu-64-2013-tt-btc.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-loai-hoa-don-theo-thong-tu-64-2013-tt-btc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-loai-hoa-don-theo-thong-tu-64-2013-tt-btc.html",
+      "title": "Các loại hóa đơn hiện nay trong Doanh nghiệp",
+      "excerpt": "Các loại hóa đơn hiện nay theo NĐ 123 và NĐ 70/2025/NĐ-CP gồm: Hóa đơn giá trị gia tăng (hóa đơn đỏ, VAT); Hoá đơn bán hàng; Hóa đơn khác: tem; vé; thẻ; phiếu thu tiền bảo hiểm",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "BHXH - BHYT - BHTN",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cac-loai-hoa-don.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/dieu-kien-khau-tru-thue-gia-tri-gia-tang-dau-vao.html",
       "section": "thu-vien",
@@ -201,47 +220,26 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-26",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-muc-xu-phat-vi-pham-ve-hoa-don-gtgt.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-muc-xu-phat-vi-pham-ve-hoa-don-gtgt.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-muc-xu-phat-vi-pham-ve-hoa-don-gtgt.html",
-      "title": "Các mức xử phạt vi phạm hành chính về hóa đơn mới nhất năm 2026",
-      "excerpt": "Khi doanh nghiệp vi phạm quy định về lập hóa đơn khi bán hàng hóa, dịch vụ theo quy định về hóa đơn tại nghị định 70/20…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/muc-xu-phat-vi-pham-ve-hoa-don.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-12-02",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/dieu-kien-khau-tru-thue-gia-tri-gia-tang-dau-vao.html",
+      "id": "thu-vien/cac-loai-hoa-don-theo-thong-tu-64-2013-tt-btc.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/dieu-kien-khau-tru-thue-gia-tri-gia-tang-dau-vao.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/dieu-kien-khau-tru-thue-gia-tri-gia-tang-dau-vao.html",
-      "title": "Điều kiện khấu trừ thuế giá trị gia tăng đầu vào năm 2026",
-      "excerpt": "Hướng dẫn cách xác định thuế giá trị gia tăng đầu vào được khấu trừ, các điều kiện khấu trừ thuế GTGT đầu vào trường hợp sản xuất kinh doanh chịu thuế GTGT và Không chịu thuế GTGT … theo Luật thuế GTGT số 48/2024/QH15, Thông tư 219/2013/TT-BTC, 119/2014/TT-BTC và Thông tư 26/2015/TT-BTC.",
+      "href": "thu-vien/cac-loai-hoa-don-theo-thong-tu-64-2013-tt-btc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-loai-hoa-don-theo-thong-tu-64-2013-tt-btc.html",
+      "title": "Các loại hóa đơn hiện nay trong Doanh nghiệp",
+      "excerpt": "Các loại hóa đơn hiện nay theo NĐ 123 và NĐ 70/2025/NĐ-CP gồm: Hóa đơn giá trị gia tăng (hóa đơn đỏ, VAT); Hoá đơn bán hàng; Hóa đơn khác: tem; vé; thẻ; phiếu thu tiền bảo hiểm",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "GTGT - Hóa đơn",
+        "BHXH - BHYT - BHTN",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/dieu-kien-khau-tru-thue-GTGT-dau-vao.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cac-loai-hoa-don.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2024-05-15",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     },
     {
@@ -267,23 +265,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
+      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
+      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

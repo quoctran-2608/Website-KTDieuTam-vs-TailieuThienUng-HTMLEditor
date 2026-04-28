@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2585,
-  "totalCount": 2736,
+  "currentIndex": 2544,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thong-tu-92-2015-quy-dinh-ve-thue-gtgt-tncn-doi-voi-ca-nhan.html",
     "section": "thu-vien",
@@ -114,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -133,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -253,23 +253,48 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-to-khai-thue-gtgt-theo-phuong-phap-truc-tiep-mau-so-04-gtgt-theo-thong-tu-so-156-2013-tt-btc.html",
+      "id": "thu-vien/mau-to-khai-dang-ky-thu-01-dk-tct.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-to-khai-thue-gtgt-theo-phuong-phap-truc-tiep-mau-so-04-gtgt-theo-thong-tu-so-156-2013-tt-btc.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-thue-gtgt-theo-phuong-phap-truc-tiep-mau-so-04-gtgt-theo-thong-tu-so-156-2013-tt-btc.html",
-      "title": "Mẫu 04/GTGT - Mẫu tờ khai thuế GTGT theo phương pháp trực tiếp",
-      "excerpt": "Mẫu tờ khai thuế GTGT theo phương pháp trực tiếp Mẫu số 04/GTGT (ban hành kèm theo Thông tư số 80/2021/TT-BTC ngày 29/9/2021 của Bộ Tài chính)",
+      "href": "thu-vien/mau-to-khai-dang-ky-thu-01-dk-tct.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-dang-ky-thu-01-dk-tct.html",
+      "title": "Mẫu 01-ĐK-TCT Tờ khai đăng ký thuế theo thông tư 86/2024/TT-BTC",
+      "excerpt": "Mẫu tờ khai đăng ký thuế dùng cho tổ chức, doanh nghiệp mới nhất năm 2025 là Mẫu 01-ĐK-TCT được ban hành kè…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "GTGT",
-        "Mẫu biểu thuế - hóa đơn",
+        "Đăng ký thuế",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/MST(1).png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2021-09-29",
+      "publishDate": "2024-12-23",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/phan-mem-htkk-3-3-1.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/phan-mem-htkk-3-3-1.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-3-3-1.html",
+      "title": "Phần mềm HTKK 3.3.1 mới nhất năm 2015",
+      "excerpt": "Ngày 27/03/2015 Tổng cục Thuế đã thông báo về việc nâng cấp lên phần mềm hỗ trợ kê khai HTKK 3.3.1, Khai t…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "tags": [
+        "HTKK",
+        "eTax",
+        "Thuế điện tử",
+        "Mẫu file & kê khai",
+        "Kê khai",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/phan mem htkk 3_3_1.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2014-10-01",
       "modifiedDate": null
     }
   ]

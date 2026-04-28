@@ -1,6 +1,6 @@
 {
   "currentIndex": 102,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cac-hinh-thuc-ghi-so-ke-toan-theo-quyet-dinh-48.html",
     "section": "thu-vien",
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -164,90 +164,93 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh.html",
+      "id": "thu-vien/cac-hinh-thuc-so-ke-toan-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh.html",
-      "title": "Hình thức ghi sổ kế toán trên máy vi tính",
-      "excerpt": "Hướng dẫn cách ghi sổ theo hình thức kế toán trên máy vi tính theo Thông tư 200 và 133: Đặc trưng và trình tự ghi sổ…",
+      "href": "thu-vien/cac-hinh-thuc-so-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-hinh-thuc-so-ke-toan-theo-thong-tu-99.html",
+      "title": "Các loại sổ kế toán và hình thức sổ kế toán theo Thông tư 99",
+      "excerpt": "Các loại sổ kế toán và hình thức sổ kế toán Chế độ kế toán của Thông tư 99/2025/TT-BTC có hiệu lực từ ngày 01/01/2026 v…",
       "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "Chuẩn mực",
         "Chế độ",
         "Nguyên tắc",
         "Kế toán",
-        "Hướng dẫn"
+        "Văn bản"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-ghi-so-theo-hinh-thuc-tren-may-vi-tinh.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
-      "title": "Cách ghi sổ theo hình thức kế toán trên máy vi tính theo Thông tư 99",
-      "excerpt": "Hướng dẫn trình tự ghi sổ kế toán theo hình thức kế toán trên máy vi tính theo chế độ kế toán của Thông tư 99/2025/TT-B…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
-      "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hinh-thuc-ke-toan-tren-may-vi-tinh(1).png",
+      "image": "assets/images/content/pic/Service/images/Các loại sổ kế toán và hình thức sổ kế toán theo Thông tư 99.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-so-quy-tien-mat-theo-thong-tu-200-va-133.html",
+      "id": "thu-vien/nguyen-tac-ke-toan-chi-phi-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-so-quy-tien-mat-theo-thong-tu-200-va-133.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-quy-tien-mat-theo-thong-tu-200-va-133.html",
-      "title": "Cách lập sổ quỹ tiền mặt theo Thông tư 200 và 133",
-      "excerpt": "Hướng dẫn Cách lập sổ quỹ tiền mặt theo Thông tư 200 và 133. Mẫu sổ quỹ tiền mặt S07-DN (S04a-DNN) dùng cho thủ quỹ để phản ánh tình hình thu, chi tồn quỹ tiền mặt bằng tiền Việt Nam",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
-      "tags": [
-        "Chuẩn mực - Chế độ - Nguyên tắc",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-so-quy-tien-mat-tren-excel.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh.html",
-      "title": "Hình thức ghi sổ kế toán trên máy vi tính",
-      "excerpt": "Hướng dẫn cách ghi sổ theo hình thức kế toán trên máy vi tính theo Thông tư 200 và 133: Đặc trưng và trình tự ghi sổ…",
+      "href": "thu-vien/nguyen-tac-ke-toan-chi-phi-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nguyen-tac-ke-toan-chi-phi-theo-thong-tu-133.html",
+      "title": "Nguyên tắc kế toán chi phí theo thông tư 133",
+      "excerpt": "Quy định kế toán chi phí theo Thông tư 133, nguyên tắc ghi nhận chi phí kế toán như: Các khoản chi phí không được trừ t…",
       "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "Chuẩn mực",
         "Chế độ",
         "Nguyên tắc",
         "Kế toán",
-        "Hướng dẫn"
+        "Văn bản"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-ghi-so-theo-hinh-thuc-tren-may-vi-tinh.png",
+      "image": "assets/images/content/pic/Service/images/nguyen-tac-ke-toan-chi-phi-theo-thong-tu-133.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/nguyen-tac-ke-toan-doanh-thu-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/nguyen-tac-ke-toan-doanh-thu-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nguyen-tac-ke-toan-doanh-thu-theo-thong-tu-133.html",
+      "title": "Nguyên tắc kế toán doanh thu theo Thông tư 133",
+      "excerpt": "Nguyên tắc kế toán doanh thu theo Thông tư 133. Quy định ghi nhận doanh thu, doanh thu gồm những khoản nào, các khoản k…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/nguyen-tac-ke-toan-doanh-thu-theo-thong-tu-133.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/cac-hinh-thuc-so-ke-toan-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-hinh-thuc-so-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-hinh-thuc-so-ke-toan-theo-thong-tu-99.html",
+      "title": "Các loại sổ kế toán và hình thức sổ kế toán theo Thông tư 99",
+      "excerpt": "Các loại sổ kế toán và hình thức sổ kế toán Chế độ kế toán của Thông tư 99/2025/TT-BTC có hiệu lực từ ngày 01/01/2026 v…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Các loại sổ kế toán và hình thức sổ kế toán theo Thông tư 99.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {
@@ -259,7 +262,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-vang-bac-da-quy-theo-qd-48-va-15.html",
       "title": "Mẫu bảng kê vàng bạc đá quý theo Thông tư 200 và 133",
       "excerpt": "Mẫu bảng kê vàng bạc đá quý kim khí quý theo Thông tư 200 và 133, liệt kê số vàng bạc, kim khí quý, đá quý của đơn vị, nhằm quản lý chặt chẽ, chính xác các loại vàng bạc, kim khí quý, đá quý có tại đơn vị",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Chuẩn mực - Chế độ - Nguyên tắc",
         "Biểu mẫu"
@@ -270,23 +273,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-ty-ke-toan-dieu-tam-tuyen-ke-toan-giang-day.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-ke-toan-dieu-tam-tuyen-ke-toan-giang-day.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-ke-toan-dieu-tam-tuyen-ke-toan-giang-day.html",
+      "title": "Công ty kế toán Diệu Tâm tuyển kế toán gấp",
+      "excerpt": "KẾ TOÁN DIỆU TÂM TUYỂN DỤNG KẾ TOÁN GIẢNG DẠY CÁC KHÓA HỌC KẾ TOÁN THỰC TẾ. Vị trí tuyển dụng: - Giáo viên giảng dạy cá…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "libraryKindLabel": "",
+      "publishDate": "2022-01-22",
       "modifiedDate": null
     }
   ]

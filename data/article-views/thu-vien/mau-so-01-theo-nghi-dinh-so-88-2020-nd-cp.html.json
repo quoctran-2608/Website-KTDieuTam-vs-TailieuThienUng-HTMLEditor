@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1635,
-  "totalCount": 2736,
+  "currentIndex": 1598,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-01-tcn-don-xac-nhan-chua-duoc-thanh-toan.html",
     "section": "thu-vien",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -166,28 +166,6 @@
     }
   ],
   "related": [
-    {
-      "id": "thu-vien/thoi-gian-nghi-viec-huong-che-do-khi-thuc-hien-cac-bien-phap-tranh-thai.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thoi-gian-nghi-viec-huong-che-do-khi-thuc-hien-cac-bien-phap-tranh-thai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/thoi-gian-nghi-viec-huong-che-do-khi-thuc-hien-cac-bien-phap-tranh-thai.html",
-      "title": "Thời gian nghỉ việc hưởng chế độ khi thực hiện các biện pháp tránh thai",
-      "excerpt": "Quy định về thời gian nghỉ việc hưởng chế độ khi thực hiện các biện pháp tránh thai mới nhất năm 2025 theo Luật Bảo hiể…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
-      "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/thoi-gian-nghi-viec-huong-che-do-thai-san-khi-tranh-thai.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
-      "modifiedDate": null
-    },
     {
       "id": "thu-vien/bang-quy-dinh-cac-tieu-chuan-va-dieu-kien-ap-dung-chuc-vu.html",
       "section": "thu-vien",
@@ -226,29 +204,46 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2020-10-19",
       "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/don-dang-ky-du-thi-sat-hach-cap-chung-chi-hanh-nghe-moi-gioi-bat-dong-san.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/don-dang-ky-du-thi-sat-hach-cap-chung-chi-hanh-nghe-moi-gioi-bat-dong-san.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/don-dang-ky-du-thi-sat-hach-cap-chung-chi-hanh-nghe-moi-gioi-bat-dong-san.html",
+      "title": "Đơn đăng ký dự thi sát hạch cấp chứng chỉ hành nghề môi giới bất động sản theo Nghị định 96/2024/NĐ-CP",
+      "excerpt": "Mẫu đơn đăng ký dự thi sát hạch cấp chứng chỉ hành nghề môi giới bất động sản - Phụ lục XXI kèm theo Nghị định 96/2024/NĐ-CP",
+      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
+      "tags": [
+        "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/don-dang-ky-du-thi-sat-hach-cap-chung-chi-hanh-nghe-moi-gioi-bat-dong-san.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/thoi-gian-nghi-viec-huong-che-do-khi-thuc-hien-cac-bien-phap-tranh-thai.html",
+      "id": "thu-vien/bang-quy-dinh-cac-tieu-chuan-va-dieu-kien-ap-dung-chuc-vu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thoi-gian-nghi-viec-huong-che-do-khi-thuc-hien-cac-bien-phap-tranh-thai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/thoi-gian-nghi-viec-huong-che-do-khi-thuc-hien-cac-bien-phap-tranh-thai.html",
-      "title": "Thời gian nghỉ việc hưởng chế độ khi thực hiện các biện pháp tránh thai",
-      "excerpt": "Quy định về thời gian nghỉ việc hưởng chế độ khi thực hiện các biện pháp tránh thai mới nhất năm 2025 theo Luật Bảo hiể…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "href": "thu-vien/bang-quy-dinh-cac-tieu-chuan-va-dieu-kien-ap-dung-chuc-vu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/bang-quy-dinh-cac-tieu-chuan-va-dieu-kien-ap-dung-chuc-vu.html",
+      "title": "Bảng quy định tiêu chuẩn và điều kiện áp dụng chức danh",
+      "excerpt": "Mẫu bảng quy định các tiêu chuẩn và điều kiện áp dụng chức danh: Đối với từng chức danh hoặc nhóm chức…",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
+        "Mẫu biểu kế toán",
         "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/thoi-gian-nghi-viec-huong-che-do-thai-san-khi-tranh-thai.png",
+      "image": "assets/images/content/pic/Service/images/bang-quy-dinh-tieu-chuan-va-dieu-kien-ap-dung-chuc-danh.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
+      "publishDate": "2024-07-01",
       "modifiedDate": null
     },
     {
@@ -269,6 +264,25 @@
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-01b-hsb-excel-theo-quyet-dinh-166.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-01b-hsb-excel-theo-quyet-dinh-166.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-01b-hsb-excel-theo-quyet-dinh-166.html",
+      "title": "Mẫu 01B-HSB theo Quyết định 186 mới nhất",
+      "excerpt": "Mẫu Danh sách đề nghị hưởng chế độ thai sản, ốm đau, dưỡng sức phục hồi sức khỏe - Mẫu 01B-HSB file Excel theo Quyết định 186/QĐ-BHXH mới nhất năm 2025.",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel - Công cụ khác",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-01B-HSB-theo-Quyet-dinh-186.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     }
   ]

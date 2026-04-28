@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1146,
-  "totalCount": 2736,
+  "currentIndex": 1109,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/kinh-nghiem-quyet-toan-thue-doanh-nghiep-thuc-te.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -166,6 +166,27 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cach-viet-giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07-ns.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-viet-giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07-ns.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07-ns.html",
+      "title": "Cách ghi mẫu C1-07a/NS giấy đề nghị điều chỉnh thu NSNN",
+      "excerpt": "Hướng dẫn cách viết giấy đề nghị điều chỉnh thu NSNN mẫu C1-07a/NS; Cách điền mẫu C1-07a/NS theo thông tư 19/…",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-viet-giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07a-ns.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2020-03-31",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-kiem-tra-doi-chieu-so-sach-ke-toan-can-ban.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -187,68 +208,46 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-ghi-so-theo-hinh-thuc-chung-tu-ghi-so-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh-mau-s36-dn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ghi-so-theo-hinh-thuc-chung-tu-ghi-so-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-ghi-so-theo-hinh-thuc-chung-tu-ghi-so-theo-thong-tu-99.html",
-      "title": "Cách ghi sổ theo hình thức Chứng từ ghi sổ theo Thông tư 99",
-      "excerpt": "Hướng dẫn trình tự ghi sổ kế toán theo hình thức kế toán Chứng từ ghi sổ theo chế độ kế toán của Thông tư 99/2025/TT-BT…",
+      "href": "thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh-mau-s36-dn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh-mau-s36-dn.html",
+      "title": "Cách lập sổ chi phí sản xuất, kinh doanh Mẫu S36-DN theo Thông tư 200",
+      "excerpt": "Hướng dẫn cách lập sổ chi phí sản xuất, kinh doanh Mẫu S36-DN theo Thông tư 200/2014/TT-BTC , mục đích lập, căn cứ và p…",
       "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
-        "Chứng từ",
-        "Sổ sách",
+        "Nghiệp vụ theo phần hành",
         "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Hinh-thuc-chung-tu-ghi-so.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-ghi-so-theo-hinh-thuc-nhat-ky-chung-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ghi-so-theo-hinh-thuc-nhat-ky-chung-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-ghi-so-theo-hinh-thuc-nhat-ky-chung-theo-thong-tu-99.html",
-      "title": "Cách ghi sổ theo hình thức Nhật ký chung theo Thông tư 99",
-      "excerpt": "Hướng dẫn trình tự ghi sổ kế toán theo hình thức kế toán Nhật ký chung được ban hành kèm theo chế độ kế toán của Thông…",
-      "topicLabel": "Chứng từ - Sổ sách",
-      "tags": [
-        "Chứng từ",
-        "Sổ sách",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hinh-thuc-ghi-so-nhat-ky-chung(1).png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-01",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-kiem-tra-doi-chieu-so-sach-ke-toan-can-ban.html",
+      "id": "thu-vien/cach-viet-giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07-ns.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-kiem-tra-doi-chieu-so-sach-ke-toan-can-ban.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-kiem-tra-doi-chieu-so-sach-ke-toan-can-ban.html",
-      "title": "Cách kiểm tra đối chiếu số liệu kế toán cơ bản",
-      "excerpt": "Hướng dẫn cách kiểm tra đối chiếu số sách kế toán: Kiểm tra đối chiếu số liệu các sổ chi tiết, tổng hợp, thuế GTGT, h…",
+      "href": "thu-vien/cach-viet-giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07-ns.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07-ns.html",
+      "title": "Cách ghi mẫu C1-07a/NS giấy đề nghị điều chỉnh thu NSNN",
+      "excerpt": "Hướng dẫn cách viết giấy đề nghị điều chỉnh thu NSNN mẫu C1-07a/NS; Cách điền mẫu C1-07a/NS theo thông tư 19/…",
       "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
-        "Chứng từ",
-        "Sổ sách",
-        "Kế toán",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-kiem-tra-doi-chieu-so-sach-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-viet-giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07a-ns.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-12-31",
+      "publishDate": "2020-03-31",
       "modifiedDate": null
     },
     {
@@ -272,23 +271,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-kiem-tra-doi-chieu-chung-tu-so-sach-ke-toan-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-kiem-tra-doi-chieu-chung-tu-so-sach-ke-toan-tren-misa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-kiem-tra-doi-chieu-chung-tu-so-sach-ke-toan-tren-misa.html",
+      "title": "Cách kiểm tra đối chiếu chứng từ sổ sách kế toán trên Misa",
+      "excerpt": "Hướng dẫn cách kiểm tra, đối chiếu chứng từ, sổ sách và hướng dẫn cách khắc phục các sai sót đã phát hiện theo từng nội…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "MISA",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-kiem-tra-trang-thai-ghi-so-chung-tu-tren-misa-1(2).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

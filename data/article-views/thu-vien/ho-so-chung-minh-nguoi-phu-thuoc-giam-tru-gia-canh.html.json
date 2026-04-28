@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1003,
-  "totalCount": 2736,
+  "currentIndex": 967,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/ho-so-dang-ky-noi-quy-lao-dong-gom-nhung-gi.html",
     "section": "thu-vien",
@@ -114,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -133,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -167,6 +167,26 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/cac-khoan-giam-tru-thue-thu-nhap-ca-nhan.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-khoan-giam-tru-thue-thu-nhap-ca-nhan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-giam-tru-thue-thu-nhap-ca-nhan.html",
+      "title": "Các khoản giảm trừ thuế TNCN năm 2026 mới nhất",
+      "excerpt": "Các khoản giảm trừ thuế TNCN 2026 mới nhất, như: Giảm trừ bản thân, giảm trừ người phụ thuộc; Mức giảm trừ gia cảnh khi tính thuế TNCN theo quy định.",
+      "topicLabel": "Thuế thu nhập cá nhân",
+      "tags": [
+        "TNCN",
+        "BHXH - BHYT - BHTN",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cac-khoan-giam-tru-thue-tncn.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2024-09-21",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/dieu-kien-giam-tru-gia-canh-cho-nguoi-phu-thuoc.html",
       "section": "thu-vien",
@@ -207,49 +227,27 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2024-09-21",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thu-tuc-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh-2024-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thu-tuc-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh-2024-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh-2024-moi-nhat.html",
-      "title": "Thủ tục đăng ký giảm trừ gia cảnh người phụ thuộc qua mạng",
-      "excerpt": "Thủ tục đăng ký người phụ thuộc mới nhất 2024; Thủ tục đăng ký giảm trừ gia cảnh là cha mẹ, con cháu, ông bà, anh chị e…",
-      "topicLabel": "Thuế thu nhập cá nhân",
-      "tags": [
-        "Thuế thu nhập cá nhân",
-        "Thuế",
-        "Hóa đơn",
-        "TNCN",
-        "Người phụ thuộc",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/thu-tuc-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/dieu-kien-giam-tru-gia-canh-cho-nguoi-phu-thuoc.html",
+      "id": "thu-vien/cac-khoan-giam-tru-thue-thu-nhap-ca-nhan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/dieu-kien-giam-tru-gia-canh-cho-nguoi-phu-thuoc.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/dieu-kien-giam-tru-gia-canh-cho-nguoi-phu-thuoc.html",
-      "title": "Điều kiện giảm trừ gia cảnh cho người phụ thuộc mới nhất 2026",
-      "excerpt": "Điều kiện giảm trừ gia cảnh 2026 mới nhất; Quy định về người phụ thuộc giảm trừ gia cảnh 2026, người phụ thuộc gồm những ai, mức giảm trừ gia cảnh người phụ thuộc, hồ sơ chứng minh người phụ thuộc.",
+      "href": "thu-vien/cac-khoan-giam-tru-thue-thu-nhap-ca-nhan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-giam-tru-thue-thu-nhap-ca-nhan.html",
+      "title": "Các khoản giảm trừ thuế TNCN năm 2026 mới nhất",
+      "excerpt": "Các khoản giảm trừ thuế TNCN 2026 mới nhất, như: Giảm trừ bản thân, giảm trừ người phụ thuộc; Mức giảm trừ gia cảnh khi tính thuế TNCN theo quy định.",
       "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
-        "Thuế thu nhập cá nhân",
+        "TNCN",
+        "BHXH - BHYT - BHTN",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/dieu-kien-giam-tru-gia-canh-cho-nguoi-phu-thuoc.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cac-khoan-giam-tru-thue-tncn.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-07-25",
+      "publishDate": "2024-09-21",
       "modifiedDate": null
     },
     {
@@ -276,23 +274,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
+      "id": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "title": "Phần mềm HTKK 5.2.6 mới nhất ngày 1/1/2025",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.6 mới nhất 1/1/2025 của Tổng cục thuế. Tải phần mềm HTKK 5.2.6 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2025.",
+      "href": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "title": "Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK",
+      "excerpt": "Hướng dẫn thủ cắt giảm người phụ thuộc 2025 trên phần mềm HTKK để nộp qua mạng Khi nào thì thực hiện cắt giảm người phụ…",
       "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "Thuế thu nhập cá nhân",
+        "Thuế",
+        "Hóa đơn",
+        "TNCN",
+        "HTKK",
+        "Người phụ thuộc"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_6-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/Cat-giam-nguoi-phu-thuoc(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2025-01-01",
+      "publishDate": "2024-12-23",
       "modifiedDate": null
     }
   ]

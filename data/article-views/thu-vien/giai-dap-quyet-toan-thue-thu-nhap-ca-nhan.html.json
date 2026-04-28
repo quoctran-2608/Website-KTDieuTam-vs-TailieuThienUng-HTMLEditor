@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1035,
-  "totalCount": 2736,
+  "currentIndex": 999,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/hoc-nghe-tap-nghe-de-lam-viec-cho-nguoi-su-dung-lao-dong.html",
     "section": "thu-vien",
@@ -33,7 +33,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/giai-dap-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
     "title": "Hỏi đáp Quyết toán thuế thu nhập doanh nghiệp 2020",
     "excerpt": "Trả lời vướng mắc Quyết toán thuế thu nhập Doanh nghiệp 2020; Giải đáp một số tình huống thuế thu nhập doanh nghiệp khi quyết toán cuối năm.",
-    "topicLabel": "DN - Thủ tục",
+    "topicLabel": "Thuế thu nhập doanh nghiệp",
     "tags": [
       "DN - Thủ tục",
       "Hướng dẫn"
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -166,29 +166,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/tra-loi-vuong-mac-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/tra-loi-vuong-mac-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/tra-loi-vuong-mac-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
-      "title": "Trả lời vướng mắc Quyết toán thuế TNDN năm 2020",
-      "excerpt": "Tổng hợp những giải đáp vướng mắc Quyết toán thuế thu nhập Doanh nghiệp năm 2020; Những tình huống thuế thu nhập doanh…",
-      "topicLabel": "Thuế thu nhập doanh nghiệp",
-      "tags": [
-        "TNDN",
-        "Quyết toán",
-        "Thuế thu nhập doanh nghiệp",
-        "Thuế",
-        "Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/giai-dap-quyet-toan-thue-tndn.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-03-11",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/giai-dap-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -197,7 +174,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/giai-dap-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
       "title": "Hỏi đáp Quyết toán thuế thu nhập doanh nghiệp 2020",
       "excerpt": "Trả lời vướng mắc Quyết toán thuế thu nhập Doanh nghiệp 2020; Giải đáp một số tình huống thuế thu nhập doanh nghiệp khi quyết toán cuối năm.",
-      "topicLabel": "DN - Thủ tục",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "DN - Thủ tục",
         "Hướng dẫn"
@@ -216,7 +193,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/hoi-dap-quyet-toan-thue-thu-nhap-doanh-nghiep-2020-phan-2.html",
       "title": "Hỏi đáp Quyết toán thuế thu nhập doanh nghiệp 2020 Phần 2",
       "excerpt": "Trả lời vướng mắc về nội dung Quyết toán thuế thu nhập Doanh nghiệp 2020; Giải đáp một số tình huống thuế TNDN khi quyết toán cuối năm.",
-      "topicLabel": "DN - Thủ tục",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "DN - Thủ tục",
         "Hướng dẫn"
@@ -225,9 +202,7 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2021-03-25",
       "modifiedDate": null
-    }
-  ],
-  "latestOther": [
+    },
     {
       "id": "thu-vien/tra-loi-vuong-mac-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
       "section": "thu-vien",
@@ -249,6 +224,27 @@
       "image": "assets/images/content/pic/Service/images/giai-dap-quyet-toan-thue-tndn.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2021-03-11",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/giai-dap-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/giai-dap-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/giai-dap-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Hỏi đáp Quyết toán thuế thu nhập doanh nghiệp 2020",
+      "excerpt": "Trả lời vướng mắc Quyết toán thuế thu nhập Doanh nghiệp 2020; Giải đáp một số tình huống thuế thu nhập doanh nghiệp khi quyết toán cuối năm.",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hoi-dap-quyet-toan-thue-thu-nhap-doanh-nghiep.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2021-03-16",
       "modifiedDate": null
     },
     {
@@ -275,42 +271,48 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-lap-to-khai-quyet-toan-thue-tncn-05-kk-tncn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-lap-to-khai-quyet-toan-thue-tncn-05-kk-tncn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-to-khai-quyet-toan-thue-tncn-05-kk-tncn.html",
+      "title": "Cách làm tờ khai quyết toán thuế TNCN Mẫu 05/QTT-TNCN trên HTKK",
+      "excerpt": "Vào đầu năm 2025 thì doanh nghiệp sẽ thực hiện làm tờ khai quyết toán thuế thu nhập cá nhân cho phần thu…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TNCN",
+        "Quyết toán",
+        "Thuế thu nhập cá nhân",
+        "Thuế",
+        "Hóa đơn",
+        "HTKK"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Cach-lam-to-khai-QTT-TNCN.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2024-01-01",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/lop-hoc-ke-toan-thue-thuc-hanh-thuc-te-tai-ha-noi.html",
+      "id": "thu-vien/cong-ty-tnhh-tham-my-quoc-te-nha-khoa-lien-thanh-tuyen-ke-toan.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/lop-hoc-ke-toan-thue-thuc-hanh-thuc-te-tai-ha-noi.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/lop-hoc-ke-toan-thue-thuc-hanh-thuc-te-tai-ha-noi.html",
-      "title": "Khóa Học Thực Hành Kế Toán Thuế Thực Tế",
-      "excerpt": "Đây là khóa học dạy thực hành xử lý hóa đơn chứng từ kế toán, dạy cách kê khai làm báo cáo thuế theo tháng, theo quý và quyết toán thuế cuối năm",
-      "topicLabel": "Khóa học thuế",
+      "href": "thu-vien/cong-ty-tnhh-tham-my-quoc-te-nha-khoa-lien-thanh-tuyen-ke-toan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-tnhh-tham-my-quoc-te-nha-khoa-lien-thanh-tuyen-ke-toan.html",
+      "title": "Công ty TNHH Thẩm Mỹ Quốc Tế Nha Khoa Liên Thanh tuyển Nhân viên kế toán kiêm lễ tân",
+      "excerpt": "Mô tả công việc: - Đón tiếp bệnh nhân, bác sĩ, khách của bệnh viện - Trả lời điện thoại và giải quyết những yêu cầu của…",
+      "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Cơ sở đào tạo",
-        "Thông tin"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/khoa-hoc-ke-toan-thue.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "",
-      "publishDate": "2025-07-01",
+      "publishDate": "2014-08-31",
       "modifiedDate": null
     }
   ]

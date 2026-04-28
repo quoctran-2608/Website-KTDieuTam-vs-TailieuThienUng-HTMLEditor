@@ -1,6 +1,6 @@
 {
-  "currentIndex": 64,
-  "totalCount": 73,
+  "currentIndex": 101,
+  "totalCount": 115,
   "prev": {
     "id": "ban-tin/lop-hoc-ke-toan-thue-thuc-hanh-thuc-te-tai-ha-noi.html",
     "section": "ban-tin",
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -271,23 +271,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/mau-bang-trich-khau-hao-tai-san-co-dinh-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/mau-bang-trich-khau-hao-tai-san-co-dinh-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-trich-khau-hao-tai-san-co-dinh-tren-excel.html",
+      "title": "Mẫu bảng trích khấu hao tài sản cố định trên Excel 2026 mới nhất",
+      "excerpt": "Theo quy định tại chế độ kế toán của Thông tư 99/2025/TT-BTC và thông tư 133/2016/TT-BTC thì định kỳ doanh nghiệp sẽ th…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
+        "TSCĐ",
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Công cụ khác",
+        "Mẫu file & kê khai",
+        "Khấu hao",
+        "Kê khai"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Mau-bang-trich-khau-hao-TSCD.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {

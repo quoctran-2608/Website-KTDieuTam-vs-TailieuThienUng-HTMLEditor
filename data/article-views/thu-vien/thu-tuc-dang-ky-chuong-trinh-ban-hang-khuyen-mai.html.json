@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2604,
-  "totalCount": 2736,
+  "currentIndex": 2563,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thu-tra-soat-c1-11ns-theo-thong-tu-84.html",
     "section": "thu-vien",
@@ -115,7 +115,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +134,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -190,25 +190,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-so-sach-ke-toan-theo-quyet-dinh-48-2006-qd-btc.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-so-sach-ke-toan-theo-quyet-dinh-48-2006-qd-btc.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-so-sach-ke-toan-theo-quyet-dinh-48-2006-qd-btc.html",
-      "title": "Hệ thống sổ sách kế toán theo Thông tư 133/2016/TT-BTC",
-      "excerpt": "Danh mục hệ thống sổ sách kế toán theo Thông tư 133 áp dụng cho Doanh nghiệp vừa và nhỏ, và thay thế hệ thống sổ sách kế toán theo Quyết định 48 mới nhất hiện nay.",
-      "topicLabel": "DN - Thủ tục",
-      "tags": [
-        "DN - Thủ tục",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/he-thong-so-sach-ke-toan-theo-thong-tu-133-moi-nhat.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-08-26",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/thu-tuc-chuyen-dia-diem-kinh-doanh-thay-doi-ten-cong-ty.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -225,6 +206,25 @@
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/thu-tuc-thay-doi-tru-so-kinh-doanh.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2019-10-10",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/muc-phat-vi-pham-quy-dinh-ve-bao-quan-luu-tru-tai-lieu-ke-toan.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/muc-phat-vi-pham-quy-dinh-ve-bao-quan-luu-tru-tai-lieu-ke-toan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/muc-phat-vi-pham-quy-dinh-ve-bao-quan-luu-tru-tai-lieu-ke-toan.html",
+      "title": "Mức phạt vi phạm quy định về bảo quản, lưu trữ tài liệu kế toán và kiểm kê tài sản",
+      "excerpt": "Mức phạt hành vi vi phạm quy định về bảo quản, lưu trữ tài liệu kế toán cũng như kiểm kê tài sản tại doanh nghiệp theo Nghị định 41/2018/NĐ-CP mới nhất hiện nay.",
+      "topicLabel": "DN - Thủ tục",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/muc-phat-vi-pham-ve-bao-quan-lưu-tru-ke-toan.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     }
   ],
@@ -251,42 +251,45 @@
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
+      "id": "thu-vien/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "ban-tin/mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
-      "title": "Mẫu 06a đăng ký sửa đổi bổ sung nội dung chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
-      "excerpt": "Mẫu số 06a - mẫu đăng ký sửa đổi, bổ sung nội dung chương trình khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
+      "href": "thu-vien/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
+      "title": "Mẫu 06 thông báo sửa đổi bổ sung nội dung chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
+      "excerpt": "Mẫu số 06 - mẫu thông báo sửa đổi, bổ sung nội dung chương trình khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
       "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
       "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
+        "Mẫu biểu doanh nghiệp - thủ tục",
+        "Doanh nghiệp - Thủ tục",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2024-10-10",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

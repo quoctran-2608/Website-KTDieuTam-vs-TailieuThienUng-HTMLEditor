@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1161,
-  "totalCount": 2736,
+  "currentIndex": 1124,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
     "section": "thu-vien",
@@ -10,7 +10,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
     "title": "Lịch nộp các loại tờ khai thuế năm 2026 chi tiết",
     "excerpt": "Quy định về Lịch nộp các loại báo cáo thuế năm 2026: Thời hạn nộp tờ khai thuế GTGT, TNCN; Thời hạn nộp báo cáo tài chính, quyết toán thuế TNDN.",
-    "topicLabel": "HTKK - eTax - Thuế điện tử",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
       "HTKK - eTax - Thuế điện tử",
       "Hướng dẫn"
@@ -29,7 +29,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/luat-106-2016-qh13-sua-doi-luat-thue-gtgt-ttdb-quan-ly-thue.html",
     "title": "Luật 106/2016/QH13 sửa đổi Luật thuế GTGT, TTĐB, Quản lý thuế",
     "excerpt": "Ngày 6/4/2016 Quốc hội 13 đã ban hành Luật 106/2016/QH13 sửa đổi, bổ sung một số điều của Luật thuế GTGT, Luật thuế TTĐB và Quản lý thuế",
-    "topicLabel": "GTGT - Hóa đơn",
+    "topicLabel": "Luật - Bộ luật",
     "tags": [
       "GTGT",
       "Luật - Bộ luật",
@@ -109,7 +109,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -128,7 +128,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -205,26 +205,23 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/luat-thue-gia-tri-gia-tang-hop-nhat.html",
+      "id": "thu-vien/luat-106-2016-qh13-sua-doi-luat-thue-gtgt-ttdb-quan-ly-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/luat-thue-gia-tri-gia-tang-hop-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/luat-thue-gia-tri-gia-tang-hop-nhat.html",
-      "title": "Luật thuế giá trị gia tăng hợp nhất",
-      "excerpt": "Luật thuế giá trị gia tăng số 13/2008/QH12 ngày 03/6/2008 của Quốc hội, có hiệu lực kể từ ngày 01 tháng 01 năm 2009, đư…",
+      "href": "thu-vien/luat-106-2016-qh13-sua-doi-luat-thue-gtgt-ttdb-quan-ly-thue.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/luat-106-2016-qh13-sua-doi-luat-thue-gtgt-ttdb-quan-ly-thue.html",
+      "title": "Luật 106/2016/QH13 sửa đổi Luật thuế GTGT, TTĐB, Quản lý thuế",
+      "excerpt": "Ngày 6/4/2016 Quốc hội 13 đã ban hành Luật 106/2016/QH13 sửa đổi, bổ sung một số điều của Luật thuế GTGT, Luật thuế TTĐB và Quản lý thuế",
       "topicLabel": "Luật - Bộ luật",
       "tags": [
         "GTGT",
-        "Luật",
-        "Bộ luật",
-        "Lao động",
-        "Bảo hiểm",
+        "Luật - Bộ luật",
         "Văn bản"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/luat 106_2016_qh13 sua doi luat thue gtgt, quan ly thue.png",
       "libraryKindLabel": "Văn bản",
-      "publishDate": "2008-06-03",
+      "publishDate": "2016-04-06",
       "modifiedDate": null
     }
   ],
@@ -249,42 +246,46 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-van-ban-giai-trinh-cua-don-vi-mau-so-d01b-ts.html",
+      "id": "thu-vien/mau-hoa-don-gia-tri-gia-tang-moi-nhat-2014-theo-tt-39.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-van-ban-giai-trinh-cua-don-vi-mau-so-d01b-ts.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-van-ban-giai-trinh-cua-don-vi-mau-so-d01b-ts.html",
-      "title": "Mẫu văn bản giải trình của đơn vị Mẫu số D01b-TS",
-      "excerpt": "Mẫu văn bản giải trình của đơn vị Mẫu số D01b-TS ban hành kèm theo Quyết định Số 1111/QĐ-BHXH ngày 25 tháng 10 năm 2011 của Bảo hiểm xã hội Việt Nam",
-      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "href": "thu-vien/mau-hoa-don-gia-tri-gia-tang-moi-nhat-2014-theo-tt-39.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-hoa-don-gia-tri-gia-tang-moi-nhat-2014-theo-tt-39.html",
+      "title": "Mẫu Hóa đơn Giá trị gia tăng mới nhất 2017 theo Thông tư 39",
+      "excerpt": "Mẫu Hóa đơn Giá trị gia tăng mới nhất năm 2017 Ban hành kèm theo Thông tư số 39/2014/TT-BTC ngày 31/3/2014 của Bộ Tài c…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Mẫu biểu lao động - bảo hiểm",
+        "GTGT",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2011-10-25",
+      "publishDate": "2014-03-31",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
+      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "title": "Phần mềm HTKK 5.2.1 mới nhất ngày 2/8/2024",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.1 mới nhất 2/8/2024 của Tổng cục thuế. Tải phần mềm HTKK 5.2.1 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2024.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
+      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
+      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
+      "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_1-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2024-08-02",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

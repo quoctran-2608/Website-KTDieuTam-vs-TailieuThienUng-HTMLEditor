@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1153,
-  "totalCount": 2736,
+  "currentIndex": 1116,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/quy-dinh-ve-ky-ke-khai-thue-thu-nhap-doanh-nghiep.html",
     "section": "thu-vien",
@@ -115,7 +115,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +134,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -191,6 +191,25 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/thue-suat-thue-thu-nhap-doanh-nghiep-nam-2014.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thue-suat-thue-thu-nhap-doanh-nghiep-nam-2014.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thue-suat-thue-thu-nhap-doanh-nghiep-nam-2014.html",
+      "title": "Thuế suất thuế thu nhập doanh nghiệp năm 2026",
+      "excerpt": "Thuế suất thuế TNDN năm 2026 mới nhất theo Nghị định 320/2025/NĐ-CP hướng dẫn luật Thuế TNDN (có hiệu lực từ 15/12/2025) áp dụng cho kỳ tình thuế thu nhập doanh nghiệp từ 2025",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/muc-thue-suat-thu-nhap-doanh-nghiep-2026.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-10-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -210,29 +229,6 @@
       "image": "assets/images/content/pic/Service/images/Chi-phi-duoc-tru.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2021-01-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-chuyen-lo-khi-tinh-quyet-toan-thue-tndn-sang-cac-nam-sau.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-chuyen-lo-khi-tinh-quyet-toan-thue-tndn-sang-cac-nam-sau.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-chuyen-lo-khi-tinh-quyet-toan-thue-tndn-sang-cac-nam-sau.html",
-      "title": "Cách chuyển lỗ khi tạm tính, quyết toán thuế TNDN 2026",
-      "excerpt": "Hướng dẫn cách xác định lỗ và chuyển lỗ theo quy định tại Nghị định 320/2025/NĐ-CP hướng dẫn Luật Thuế thu nhập doanh n…",
-      "topicLabel": "Thuế thu nhập doanh nghiệp",
-      "tags": [
-        "TNDN",
-        "Quyết toán",
-        "Thuế thu nhập doanh nghiệp",
-        "Thuế",
-        "Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Cach-chuyen-lo.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-09-10",
       "modifiedDate": null
     }
   ],
@@ -260,45 +256,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-01-hknn-to-khai-thue-tndn-doi-voi-hang-hang-khong-nuoc-ngoai.html",
+      "id": "thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-tam-tinh-01a-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-01-hknn-to-khai-thue-tndn-doi-voi-hang-hang-khong-nuoc-ngoai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-01-hknn-to-khai-thue-tndn-doi-voi-hang-hang-khong-nuoc-ngoai.html",
-      "title": "Mẫu 01/HKNN Tờ khai thuế TNDN đối với hãng hàng không nước ngoài",
-      "excerpt": "Mẫu 01/HKNN được ban hành kèm theo thông tư 80/2021/TT-BTC là Tờ khai thuế thuế thu nhập doanh nghiệp đối với hãng hàng…",
+      "href": "thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-tam-tinh-01a-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-tam-tinh-01a-tndn.html",
+      "title": "Mẫu tờ khai thuế thu nhập doanh nghiệp tạm tính Mẫu số 01A/TNDN",
+      "excerpt": "Mẫu tờ khai thuế thu nhập doanh nghiệp tạm tính Mẫu số 01A/TNDN mới nhất năm 2014 ban hành kèm theo Thông tư số 156/201…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "TNDN",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Thuế",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Mau-01-HKNN.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2021-09-29",
+      "publishDate": "2013-11-06",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "title": "Cách nộp thuế TNDN tạm tính 2025 qua mạng trên thuế điện tử",
+      "excerpt": "Hướng dẫn cách nộp tiền thuế thu nhập doanh nghiệp tạm tính quý qua mạng trên trang https://thuedientu.gdt.gov.vn/ mới…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Nop-thue-TNDN-tam-tinh-quy.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2624,
-  "totalCount": 2736,
+  "currentIndex": 2583,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thu-tuc-giai-the-cong-ty-doanh-nghiep-voi-co-quan-thue.html",
     "section": "thu-vien",
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -184,25 +184,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/nghi-dinh-122-2020-nd-cp-lien-thong-thu-tuc-thanh-lap-doanh-nghiep.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-122-2020-nd-cp-lien-thong-thu-tuc-thanh-lap-doanh-nghiep.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-122-2020-nd-cp-lien-thong-thu-tuc-thanh-lap-doanh-nghiep.html",
-      "title": "Nghị định 122/2020/NĐ-CP liên thông thủ tục đăng ký thành lập doanh nghiệp",
-      "excerpt": "Nghị định 122/2020/NĐ-CP ngày 15/10/2020 của Chính Phủ liên thông thủ tục đăng ký thành lập doanh nghiệp, khai trình việc sử dụng lao động, cấp mã số đơn vị tham gia BHXH, đăng ký sử dụng hóa đơn của doanh nghiệp.",
-      "topicLabel": "BHXH - BHYT - BHTN",
-      "tags": [
-        "BHXH - BHYT - BHTN",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-122-lien-thong-thu-tuc-dang-ky-thanh-lap-doanh-nghiep.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-10-15",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/bhxh-doi-voi-nguoi-quan-ly-doanh-nghiep-khong-huong-luong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -223,6 +204,29 @@
       "image": "assets/images/content/pic/Service/images/BHXH-doi-voi-nguoi-quan-dn-khong-huong-luong.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2024-06-29",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/thu-tuc-lam-ho-so-huong-che-do-thai-san.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thu-tuc-lam-ho-so-huong-che-do-thai-san.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-lam-ho-so-huong-che-do-thai-san.html",
+      "title": "Hồ sơ thủ tục hưởng chế độ thai sản 2026 mới nhất",
+      "excerpt": "Khi làm hồ sơ, thủ tục hưởng chế độ thai sản vào năm 2026 thì người lao động và doanh nghiệp sẽ thực hiện theo hướng dẫ…",
+      "topicLabel": "BHXH - BHYT - BHTN",
+      "tags": [
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thu-tuc-huong-che-do-thai-san.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-01-24",
       "modifiedDate": null
     }
   ],
@@ -271,23 +275,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
+      "title": "Mẫu D02-TS Danh sách tham gia BHXH theo QĐ 595 file Excel",
+      "excerpt": "Mẫu D02-TS Danh sách lao động tham gia Bảo hiểm xã hội, Bảo hiểm y tế, bảo hiểm thất nghiệp mới nhất; Tải Mẫu D02-TS theo Quyết định 595 file Excel.",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
+        "BHXH",
         "Excel",
         "Excel - Công cụ khác",
-        "Công cụ"
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-d02-ts-theo-quyet-dinh-595-file-excel.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2017-04-14",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
   "currentIndex": 486,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-lam-tron-so-khi-viet-hoa-don.html",
     "section": "thu-vien",
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -164,6 +164,48 @@
   ],
   "related": [
     {
+      "id": "thu-vien/huong-dan-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/huong-dan-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
+      "title": "Hướng dẫn lập bảng kê hàng hóa dịch vụ mua vào PL 01-2/GTGT",
+      "excerpt": "Hướng dẫn cách lập bảng kê hóa đơn, chứng từ hàng hóa, dịch vụ mua vào PL 01-2/GTGT trên tờ khai thuế GTGT khấu trừ 01/GTGT trên phần mềm HTKK",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "HTKK - eTax - Thuế điện tử",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2013-12-31",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
+      "title": "Mẫu bảng kê mua vào bán ra trên File Excel 2026 mới nhất",
+      "excerpt": "Bảng kê mua vào bán ra dùng để kê khai hóa đơn đầu ra và hóa đơn đầu vào khi làm tờ khai thuế GTGT Kế Toán Diệu Tâm có…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Mẫu file & kê khai",
+        "Kê khai",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Mau-bang-ke-mua-vao(3).png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2014-08-25",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -182,108 +224,73 @@
       "image": "assets/images/content/pic/Service/images/Mau-bnag-ke-mua-vao(1).png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2015-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/huong-dan-cach-viet-hoa-don-gia-tri-gia-tang.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-viet-hoa-don-gia-tri-gia-tang.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-viet-hoa-don-gia-tri-gia-tang.html",
-      "title": "Hướng dẫn cách lập hóa đơn giá trị gia tăng",
-      "excerpt": "Hướng dẫn cách ghi hóa đơn giá trị gia tăng còn gọi là hóa đơn GTGT, hóa đơn đỏ chi tiết như khi bán hàng hóa, dịch vụ, xây dựng, xây lắp…Cách viết các chỉ tiêu trên hóa đơn như ngày tháng năm, tên hàng hóa, đơn vị tính …theo NĐ 123/2020/NĐ-CP.",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT - Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-hoa-don-gtgt.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-10-19",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-hoa-don-ban-hang-dien-tu.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-hoa-don-ban-hang-dien-tu.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-hoa-don-ban-hang-dien-tu.html",
-      "title": "Cách lập hóa đơn bán hàng điện tử (Hóa đơn bán hàng thông thường trực tiếp)",
-      "excerpt": "Hóa đơn bán hàng là hóa đơn dành cho các tổ chức, cá nhân kê khai, tính thuế giá trị gia tăng theo phương pháp trực tiế…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Mau-hoa-don-ban-hang(3).png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-06-01",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
+      "id": "thu-vien/huong-dan-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
-      "title": "Cách lập bảng kê hóa đơn hàng hóa dịch vụ mua vào Mẫu 01-2/GTGT",
-      "excerpt": "Hướng dẫn cách lập, kê khai các hóa đơn hàng hóa dịch vụ mua vào lên bảng kê hóa đơn, chứng từ hàng hóa dịch vụ mua vào…",
+      "href": "thu-vien/huong-dan-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
+      "title": "Hướng dẫn lập bảng kê hàng hóa dịch vụ mua vào PL 01-2/GTGT",
+      "excerpt": "Hướng dẫn cách lập bảng kê hóa đơn, chứng từ hàng hóa, dịch vụ mua vào PL 01-2/GTGT trên tờ khai thuế GTGT khấu trừ 01/GTGT trên phần mềm HTKK",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
-        "Hóa đơn",
-        "Thuế",
+        "HTKK - eTax - Thuế điện tử",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Mau-bnag-ke-mua-vao(1).png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2015-01-01",
+      "publishDate": "2013-12-31",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-ke-mua-hang-theo-qd-48-va-15.html",
+      "id": "thu-vien/mau-03-nghi-dinh-119-excel-to-khai-du-lieu-hoa-don-ban-ra.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-ke-mua-hang-theo-qd-48-va-15.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-mua-hang-theo-qd-48-va-15.html",
-      "title": "Mẫu bảng kê mua hàng theo Thông tư 200 và 133",
-      "excerpt": "Mẫu bảng kê mua hàng theo Thông tư 200 và 133 - Mẫu 06 - VT. Là chứng từ kê khai mua vật tư, công cụ, dụng cụ, hàng hóa, dịch vụ lặt vặt trên thị trường tự do trong trường hợp người bán thuộc diện không phải lập hóa đơn",
+      "href": "thu-vien/mau-03-nghi-dinh-119-excel-to-khai-du-lieu-hoa-don-ban-ra.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-03-nghi-dinh-119-excel-to-khai-du-lieu-hoa-don-ban-ra.html",
+      "title": "Mẫu 03 Tờ khai dữ liệu hóa đơn bán ra theo NĐ 119",
+      "excerpt": "Tờ khai dữ liệu hóa đơn, chứng từ hàng hóa, dịch vụ bán ra - Mẫu 03 theo Nghị định 119/2018/NĐ-CP; Tải mẫu số 03 file E…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Mẫu biểu thuế - hóa đơn",
-        "Biểu mẫu"
+        "GTGT",
+        "Excel",
+        "Công cụ khác",
+        "Mẫu file & kê khai",
+        "Hóa đơn",
+        "Kê khai"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-ke-mua-hang-tren-excel.png",
+      "image": "assets/images/content/pic/Service/images/Mau-03-nghi-dinh-119-excel-to-khai-du-lieu-hoa-don.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-12-22",
+      "publishDate": "2018-01-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
+      "title": "Mẫu bảng kê mua vào bán ra trên File Excel 2026 mới nhất",
+      "excerpt": "Bảng kê mua vào bán ra dùng để kê khai hóa đơn đầu ra và hóa đơn đầu vào khi làm tờ khai thuế GTGT Kế Toán Diệu Tâm có…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Công cụ khác",
+        "Mẫu file & kê khai",
+        "Kê khai",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Mau-bang-ke-mua-vao(3).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2014-08-25",
       "modifiedDate": null
     }
   ]

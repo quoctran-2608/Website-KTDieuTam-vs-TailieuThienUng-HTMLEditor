@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1368,
-  "totalCount": 2736,
+  "currentIndex": 1331,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/bang-tinh-va-phan-bo-khau-hao-tscd-mau-so-06-tscd.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -174,7 +174,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
       "title": "Cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa",
       "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa Mẫu S11- DN theo Thông tư 200/2014/TT-B…",
-      "topicLabel": "Tài sản - Kho - CCDC",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "Tài sản",
         "Kho",
@@ -188,6 +188,25 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "title": "Cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo TT 200 và 133",
+      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo Thông tư 200 và 133. Mẫu bảng tổng hợp chi tiết vật liệu dụng cụ sản phẩm hàng hóa S11-DN (S07-DNN) Dùng để tổng hợp phần giá trị từ các trang sổ, thẻ chi tiết",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "GTGT - Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-tong-hop-nhap-xuat-ton-kho-hang-hoa.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-lap-so-chi-tiet-vat-lieu-dung-cu-san-pham-hang-hoa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -196,7 +215,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-chi-tiet-vat-lieu-dung-cu-san-pham-hang-hoa.html",
       "title": "Hướng dẫn lập sổ chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa theo Thông tư 200",
       "excerpt": "Hướng dẫn cách lập sổ chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa Mẫu S10- DN theo Thông tư 200/2014/TT-BTC : Mục đí…",
-      "topicLabel": "Tài sản - Kho - CCDC",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "Tài sản",
         "Kho",
@@ -207,25 +226,6 @@
       "image": "assets/images/content/pic/Service/images/cach lap so chi tiet vat lieu dung cu san pham hang hoa.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
-      "title": "Cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo TT 200 và 133",
-      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo Thông tư 200 và 133. Mẫu bảng tổng hợp chi tiết vật liệu dụng cụ sản phẩm hàng hóa S11-DN (S07-DNN) Dùng để tổng hợp phần giá trị từ các trang sổ, thẻ chi tiết",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT - Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-tong-hop-nhap-xuat-ton-kho-hang-hoa.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ],
@@ -239,7 +239,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
       "title": "Cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa",
       "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa Mẫu S11- DN theo Thông tư 200/2014/TT-B…",
-      "topicLabel": "Tài sản - Kho - CCDC",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "Tài sản",
         "Kho",
@@ -273,23 +273,23 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
+      "title": "Hướng dẫn cách lập sổ sách kế toán trên Excel",
+      "excerpt": "Hướng dẫn cách làm sổ sách kế toán bằng Excel thực hành trên mẫu sổ sách kế toán trên Excel chi tiết, cách sử dụng các hàm Excel để tính toán, lập bảng biểu, báo cáo tài chính trên Excel",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
         "Excel - Công cụ khác",
-        "Công cụ"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lam-so-sach-ke-toan-tren-excel.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
   "currentIndex": 556,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-nop-tien-thue-tncn-qua-mang-dien-tu-bang-ma-id.html",
     "section": "thu-vien",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -167,6 +167,25 @@
   ],
   "related": [
     {
+      "id": "thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
+      "title": "Lịch nộp các loại tờ khai thuế năm 2026 chi tiết",
+      "excerpt": "Quy định về Lịch nộp các loại báo cáo thuế năm 2026: Thời hạn nộp tờ khai thuế GTGT, TNCN; Thời hạn nộp báo cáo tài chính, quyết toán thuế TNDN.",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "HTKK - eTax - Thuế điện tử",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/LICH-NOP-THUE-2026.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-30",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -188,69 +207,46 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
+      "id": "thu-vien/cach-tra-cuu-hoa-don-dien-tu-dau-vao-dau-ra-tren-trang-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
-      "title": "Các loại thuế phải nộp khi cá nhân cho thuê nhà 2026",
-      "excerpt": "Hướng dẫn cách tính các loại thuế cho thuê nhà, cho thuê tài sản như thuế thu nhập cá nhân, thuế giá trị gia tăng theo…",
+      "href": "thu-vien/cach-tra-cuu-hoa-don-dien-tu-dau-vao-dau-ra-tren-trang-thue.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tra-cuu-hoa-don-dien-tu-dau-vao-dau-ra-tren-trang-thue.html",
+      "title": "Cách tra cứu hóa đơn điện tử đầu vào, đầu ra trên trang thuế",
+      "excerpt": "Hướng dẫn cách tra cứu các loại hóa đơn điện tử như hóa đơn điện tử có mã của cơ quan thuế, hóa đơn điện tử không có mã…",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
-        "TNCN",
+        "Hóa đơn điện tử",
         "Hóa đơn",
         "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Thue-cho-thue-nha.png",
+      "image": "assets/images/content/pic/Service/images/tra-cuu-hoa-don-dien-tu(3).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "title": "Cách đăng ký và nộp Tiền thuế điện tử qua mạng mới nhất.",
-      "excerpt": "Hướng dẫn cách Đăng ký nộp thuế điện tử qua mạng -> Cách lấy giấy nộp tiền thuế điện tử -> Cách nộp thuế điện tử trên t…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-nop-thue-dien-tu-qua-mang.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2025-01-01",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
+      "id": "thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/lich-nop-cac-loai-bao-cao-thue-moi-nhat-hien-nay.html",
-      "title": "Lịch nộp các loại báo cáo thuế năm 2026 mới nhất",
-      "excerpt": "Thời hạn nộp các loại báo cáo thuế năm 2026 cụ thể: Hạn nộp thuế GTGT, thuế TNCN, thuế TNDN, Báo cáo tài chính, Tờ khai…",
+      "href": "thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
+      "title": "Lịch nộp các loại tờ khai thuế năm 2026 chi tiết",
+      "excerpt": "Quy định về Lịch nộp các loại báo cáo thuế năm 2026: Thời hạn nộp tờ khai thuế GTGT, TNCN; Thời hạn nộp báo cáo tài chính, quyết toán thuế TNDN.",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
+        "HTKK - eTax - Thuế điện tử",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Lich-nop-bao-cao-thue-2026.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/LICH-NOP-THUE-2026.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-03-31",
+      "publishDate": "2026-01-30",
       "modifiedDate": null
     },
     {
@@ -277,23 +273,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "title": "Cách nộp thuế TNDN tạm tính 2025 qua mạng trên thuế điện tử",
+      "excerpt": "Hướng dẫn cách nộp tiền thuế thu nhập doanh nghiệp tạm tính quý qua mạng trên trang https://thuedientu.gdt.gov.vn/ mới…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Nop-thue-TNDN-tam-tinh-quy.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

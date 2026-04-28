@@ -1,6 +1,6 @@
 {
-  "currentIndex": 931,
-  "totalCount": 2736,
+  "currentIndex": 895,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/duong-suc-phuc-hoi-suc-khoe-sau-khi-om-dau.html",
     "section": "thu-vien",
@@ -33,7 +33,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/gia-han-nop-bao-cao-tai-chinh-theo-thong-tu-133.html",
     "title": "Gia hạn nộp Báo cáo tài chính theo thông tư 133 năm 2018",
     "excerpt": "Ngày 13/3/2018 Cục Công nghệ thông tin - Tổng cục thuế thông báo: Gia hạn nộp báo cáo tài chính theo thông tư 133/2016/TT-BTC năm 2017 đến hết ngày 30/4/2018, để có cơ sở nâng cấp phần mềm HTKK, iHTKK, Etax, TMS,BCTC...",
-    "topicLabel": "HTKK - eTax - Thuế điện tử",
+    "topicLabel": "Báo cáo tài chính",
     "tags": [
       "HTKK - eTax - Thuế điện tử",
       "Hướng dẫn"
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -166,6 +166,44 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-duong-thang.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-duong-thang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-duong-thang.html",
+      "title": "Cách hạch toán trích khấu hao TSCĐ theo Đường thẳng",
+      "excerpt": "Hướng dẫn cách tính khấu hao Tài sản cố định theo đường thẳng, cách hạch toán trích khấu hao TSCĐ theo phương pháp đường thẳng, hạch toán chi phí khấu hao TSCĐ trong Doanh nghiệp",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tscd-theo-duong-thang.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cac-phuong-phap-trich-khau-hao-tai-san-co-dinh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-phuong-phap-trich-khau-hao-tai-san-co-dinh.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-phuong-phap-trich-khau-hao-tai-san-co-dinh.html",
+      "title": "Các phương pháp trích khấu hao TSCĐ mới nhất",
+      "excerpt": "Các phương pháp trích khấu hao TSCĐ theo Thông tư 45 gồm 3 Phương pháp khấu hao là: Phương pháp khấu hao theo đường thẳng, số dư giảm dần, số lượng khối lượng sản phẩm.",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Lao động - Tiền lương",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cac-phuong-phap-trich-khau-hao-tscd.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-lap-bang-trich-khau-hao-tscd-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -184,30 +222,12 @@
         "Khấu hao"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-tinh-khau0hao-TSCD-tren-Excel.png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-02",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
-      "title": "Hướng dẫn cách lập sổ sách kế toán trên Excel",
-      "excerpt": "Hướng dẫn cách làm sổ sách kế toán bằng Excel thực hành trên mẫu sổ sách kế toán trên Excel chi tiết, cách sử dụng các hàm Excel để tính toán, lập bảng biểu, báo cáo tài chính trên Excel",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lam-so-sach-ke-toan-tren-excel.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-duong-thang.html",
       "section": "thu-vien",
@@ -217,7 +237,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-duong-thang.html",
       "title": "Cách hạch toán trích khấu hao TSCĐ theo Đường thẳng",
       "excerpt": "Hướng dẫn cách tính khấu hao Tài sản cố định theo đường thẳng, cách hạch toán trích khấu hao TSCĐ theo phương pháp đường thẳng, hạch toán chi phí khấu hao TSCĐ trong Doanh nghiệp",
-      "topicLabel": "DN - Thủ tục",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
         "DN - Thủ tục",
         "Hướng dẫn"
@@ -226,9 +246,26 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-01-01",
       "modifiedDate": null
-    }
-  ],
-  "latestOther": [
+    },
+    {
+      "id": "thu-vien/dang-ky-phuong-phap-trich-khau-hao-tscd.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/dang-ky-phuong-phap-trich-khau-hao-tscd.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/dang-ky-phuong-phap-trich-khau-hao-tscd.html",
+      "title": "Mẫu đăng ký phương pháp trích khấu hao TSCĐ mới nhất",
+      "excerpt": "Mẫu đăng ký trích khấu hao tài sản cố định mới nhất; Tải bảng đăng ký phương pháp trích khấu hao TSCĐ theo quy định về đăng ký khấu hao TSCĐ của Bộ tài chính.",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Tài sản - Kho - CCDC",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/bang-dang-ky-phuong-phap-trich-khau-tscd.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2024-07-25",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/cach-lap-bang-trich-khau-hao-tscd-tren-excel.html",
       "section": "thu-vien",
@@ -248,47 +285,8 @@
         "Khấu hao"
       ],
       "image": "assets/images/content/pic/Service/images/Bang-tinh-khau0hao-TSCD-tren-Excel.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
-      "title": "Mẫu bảng cân đối kế toán theo Thông tư 200",
-      "excerpt": "Mẫu bảng cân đối kế toán theo Thông tư 200/2014/TT-BTC mới nhất gồm cả bản word và Excel, các bạn có thể tải Mẫu bảng cân đối kế toán miễn phí tại đây . Hướng dẫn cách lập bảng cân đối kế toán theo Thông tư 200 chi tiết.",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel - Công cụ khác",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-can-doi-ke-toan-theo-thong-tu-200.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

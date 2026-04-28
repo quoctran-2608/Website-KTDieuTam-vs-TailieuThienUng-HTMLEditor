@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2693,
-  "totalCount": 2736,
+  "currentIndex": 2652,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/tro-cap-mat-viec-lam-dieu-kien-huong-cach-tinh-muc-huong.html",
     "section": "thu-vien",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -259,22 +259,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-ke-trich-nop-cac-khoan-theo-luong-theo-qd-48-va-15.html",
+      "id": "thu-vien/so-bao-hiem-xa-hoi.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-ke-trich-nop-cac-khoan-theo-luong-theo-qd-48-va-15.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-trich-nop-cac-khoan-theo-luong-theo-qd-48-va-15.html",
-      "title": "Mẫu bảng kê trích nộp các khoản theo lương theo TT 200 và 133",
-      "excerpt": "Mẫu bảng kê trích nộp các khoản theo lương theo Thông tư 200 và 133. xác định số tiền bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, KPCĐ mà đơn vị và người lao động phải nộp trong tháng (hoặc quý) cho cơ quan bảo hiểm xã hội và công đoàn",
-      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "href": "thu-vien/so-bao-hiem-xa-hoi.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/so-bao-hiem-xa-hoi.html",
+      "title": "Sổ bảo hiểm xã hội",
+      "excerpt": "Hiện nay, sổ bảo hiểm xã hội đang được quy định tại điều 25 của Luật Bảo hiểm xã hội số: 41/2024/QH15 có hiệu lực từ ng…",
+      "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
-        "Mẫu biểu lao động - bảo hiểm",
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/bang-ke-trich-nop-cac-khoan-theo-luong(1).png",
+      "image": "assets/images/content/pic/Service/images/SO-BAO-HIEM-XA-HOI.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2016-08-26",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
+      "title": "Mẫu D02-TS Danh sách tham gia BHXH theo QĐ 595 file Excel",
+      "excerpt": "Mẫu D02-TS Danh sách lao động tham gia Bảo hiểm xã hội, Bảo hiểm y tế, bảo hiểm thất nghiệp mới nhất; Tải Mẫu D02-TS theo Quyết định 595 file Excel.",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "BHXH",
+        "Excel",
+        "Excel - Công cụ khác",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-d02-ts-theo-quyet-dinh-595-file-excel.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2017-04-14",
       "modifiedDate": null
     }
   ]

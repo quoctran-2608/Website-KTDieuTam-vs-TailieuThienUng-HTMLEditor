@@ -1,6 +1,6 @@
 {
-  "currentIndex": 903,
-  "totalCount": 2736,
+  "currentIndex": 867,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cong-van-so-586-tct-cs-tuyen-truyen-chinh-sach-thue-gtgt.html",
     "section": "thu-vien",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -167,24 +167,70 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cong-dien-so-102-ve-thuc-hien-nghi-dinh-175.html",
+      "id": "thu-vien/cac-cong-viec-cua-nhan-vien-ke-toan-thue-phai-lam.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-dien-so-102-ve-thuc-hien-nghi-dinh-175.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cong-dien-so-102-ve-thuc-hien-nghi-dinh-175.html",
-      "title": "Công điện số 102 về thực hiện Nghị định 175 2025 quy định về lệ phí trước bạ",
-      "excerpt": "Công điện số 102/CĐ-CT ban hành ngày 1/7/2025 của Cục trưởng Cục Thuế - Về triển khai thực hiện Nghị định số 175 và Quyết định số 2226 ngày 30/6/2025",
+      "href": "thu-vien/cac-cong-viec-cua-nhan-vien-ke-toan-thue-phai-lam.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-cong-viec-cua-nhan-vien-ke-toan-thue-phai-lam.html",
+      "title": "Các công việc của kế toán thuế phải làm trong Doanh nghiệp",
+      "excerpt": "Mô tả các công việc của một nhân viên kế toán thuế phải làm trong Doanh nghiệp thực tế, các công việc phải làm hàng ngày, hàng tháng, hàng quý và hàng năm",
       "topicLabel": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
       "tags": [
         "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/CONG-DIEN-102.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     },
+    {
+      "id": "thu-vien/cong-viec-cua-nhan-vien-ke-toan-kho-phai-lam.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cong-viec-cua-nhan-vien-ke-toan-kho-phai-lam.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-viec-cua-nhan-vien-ke-toan-kho-phai-lam.html",
+      "title": "Mô tả các công việc của một nhân viên kế toán kho",
+      "excerpt": "Kế toán kho hàng ngày phải làm những công việc gì? Nhiều bạn kế toán mới ra trường đang còn bỡ ngỡ trong vấn đề này. Để…",
+      "topicLabel": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "tags": [
+        "Tài sản",
+        "Kho",
+        "CCDC",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cong viec cua ke toan kho.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/tai-lieu-on-thi-chung-chi-hanh-nghe-ke-toan-kiem-toan-2014.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/tai-lieu-on-thi-chung-chi-hanh-nghe-ke-toan-kiem-toan-2014.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/tai-lieu-on-thi-chung-chi-hanh-nghe-ke-toan-kiem-toan-2014.html",
+      "title": "Tài liệu ôn thi chứng chỉ hành nghề kế toán, kiểm toán 2014",
+      "excerpt": "Ngày 04/06/2014, Bộ Tài Chính đã ban hành công văn số 7357/BTC-CĐKT gửi các Hội hành nghề về việc tài liệu học, ôn tập,…",
+      "topicLabel": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-06-04",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/cac-cong-viec-cua-nhan-vien-ke-toan-thue-phai-lam.html",
       "section": "thu-vien",
@@ -205,82 +251,71 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/bai-tap-dinh-khoan-nguyen-ly-ke-toan-co-loi-giai.html",
+      "id": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bai-tap-dinh-khoan-nguyen-ly-ke-toan-co-loi-giai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/bai-tap-dinh-khoan-nguyen-ly-ke-toan-co-loi-giai.html",
-      "title": "Bài tập định khoản nguyên lý kế toán có lời giải theo",
-      "excerpt": "Bài tập định khoản môn nguyên lý kế toán có đáp án, hướng dẫn giải bài tập định khoản nguyên lý kế toán chi tiết với từng nghiệp vụ kinh tế phát sinh áp dụng theo Thông tư 99/2025/TT-BTC mới nhất 2026.",
-      "topicLabel": "Bài tập - Thực hành",
+      "href": "thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-van-624-tct-cs-tiep-nhan-ho-so-dang-ky-ke-khai-thue-gtgt.html",
+      "title": "Công văn 624/TCT – CS tiếp nhận hồ sơ đăng ký kê khai thuế GTGT theo mẫu số 06/GTGT",
+      "excerpt": "Ngày 28 tháng 2 năm 2014 Tổng cục thuế ban hành Công văn số 624/TCT – CS về việc tiếp nhận hồ sơ đăng ký kê khai thuế G…",
+      "topicLabel": "Công văn",
       "tags": [
-        "Bài tập - Thực hành",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/bai-tap-nguyen-ly-ke-toan.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-10-01",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/cong-dien-so-102-ve-thuc-hien-nghi-dinh-175.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-dien-so-102-ve-thuc-hien-nghi-dinh-175.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cong-dien-so-102-ve-thuc-hien-nghi-dinh-175.html",
-      "title": "Công điện số 102 về thực hiện Nghị định 175 2025 quy định về lệ phí trước bạ",
-      "excerpt": "Công điện số 102/CĐ-CT ban hành ngày 1/7/2025 của Cục trưởng Cục Thuế - Về triển khai thực hiện Nghị định số 175 và Quyết định số 2226 ngày 30/6/2025",
-      "topicLabel": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
-      "tags": [
-        "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/CONG-DIEN-102.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-bao-cao-tinh-hinh-su-dung-bien-lai-thu-thue-phi-le-phi.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bao-cao-tinh-hinh-su-dung-bien-lai-thu-thue-phi-le-phi.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bao-cao-tinh-hinh-su-dung-bien-lai-thu-thue-phi-le-phi.html",
-      "title": "Mẫu báo cáo tình hình sử dụng biên lai thu thuế - phí - lệ phí mới nhất 2025",
-      "excerpt": "Mẫu số BC26/BLĐT - ban hành kèm theo Nghị định 70/2025/NĐ-CP ngày 20/3 mới nhất năm 2025",
-      "topicLabel": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
-      "tags": [
-        "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+        "GTGT",
+        "Kê khai",
+        "Công văn",
+        "Thuế",
+        "Hóa đơn",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Bao-cao-tinh-hinh-su-dung-bien-lai-thu-thue-phi-le-phi.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-03-20",
+      "publishDate": "2014-02-28",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
+      "id": "thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "title": "Phần mềm HTKK 5.2.6 mới nhất ngày 1/1/2025",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.6 mới nhất 1/1/2025 của Tổng cục thuế. Tải phần mềm HTKK 5.2.6 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2025.",
+      "href": "thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
+      "title": "Cách hoàn thuế thu nhập cá nhân tự động qua Etax 2025",
+      "excerpt": "Hướng dẫn cách làm hoàn thuế thu nhập cá nhân tự động qua Etax Mobile mới nhất năm 2025 1. Căn cứ hướng dẫn hoàn thuế T…",
       "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
+        "TNCN",
+        "HTKK",
+        "eTax",
         "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
+        "Phần mềm",
         "Công cụ"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_6-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/hoan-thue-TNCN-tu-dong.jpg",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2025-01-01",
+      "publishDate": "2025-01-24",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "title": "Trường mầm non Thành Đông Tuyển kế toán viên",
+      "excerpt": "Trường mầm non Thành Đông tuyển dụng Nhân viên kế toán Mô tả công việc: - Tính học phí, thu học phí, xuất hóa đơn, giao…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2021-06-20",
       "modifiedDate": null
     }
   ]

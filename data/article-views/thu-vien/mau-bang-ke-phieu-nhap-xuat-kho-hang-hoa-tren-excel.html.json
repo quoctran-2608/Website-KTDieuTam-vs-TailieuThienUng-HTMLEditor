@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1331,
-  "totalCount": 2736,
+  "currentIndex": 1294,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
     "section": "thu-vien",
@@ -19,7 +19,7 @@
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Mau-bang-ke-mua-vao(3).png",
-    "libraryKindLabel": "Biểu mẫu",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2014-08-25",
     "modifiedDate": null
   },
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -167,6 +167,25 @@
   ],
   "related": [
     {
+      "id": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng cân đối kế toán theo Thông tư 200",
+      "excerpt": "Mẫu bảng cân đối kế toán theo Thông tư 200/2014/TT-BTC mới nhất gồm cả bản word và Excel, các bạn có thể tải Mẫu bảng cân đối kế toán miễn phí tại đây . Hướng dẫn cách lập bảng cân đối kế toán theo Thông tư 200 chi tiết.",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel - Công cụ khác",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-can-doi-ke-toan-theo-thong-tu-200.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -182,71 +201,74 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lam-so-sach-ke-toan-tren-excel.png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-26",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-bang-can-doi-ke-toan-tren-excel-theo-qd-48-va-15.html",
+      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bang-can-doi-ke-toan-tren-excel-theo-qd-48-va-15.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-can-doi-ke-toan-tren-excel-theo-qd-48-va-15.html",
-      "title": "Hướng dẫn cách lập bảng cân đối kế toán theo Thông tư 200",
-      "excerpt": "Hướng dẫn cách lập bảng cân đối kế toán theo Thông tư 200/2014/TT-BTC chi tiết từng chỉ tiêu trên bảng cân đối kế toán…",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
+      "title": "Cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa",
+      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa Mẫu S11- DN theo Thông tư 200/2014/TT-B…",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
+        "Tài sản",
+        "Kho",
+        "CCDC",
+        "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach lap bang can doi ke toan.png",
+      "image": "assets/images/content/pic/Service/images/cach lap bang tong hop chi tiet hang hoa vat lieu.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
-      "title": "Mẫu bảng cân đối kế toán theo Thông tư 200",
-      "excerpt": "Mẫu bảng cân đối kế toán theo Thông tư 200/2014/TT-BTC mới nhất gồm cả bản word và Excel, các bạn có thể tải Mẫu bảng cân đối kế toán miễn phí tại đây . Hướng dẫn cách lập bảng cân đối kế toán theo Thông tư 200 chi tiết.",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel - Công cụ khác",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-can-doi-ke-toan-theo-thong-tu-200.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
+      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
-      "title": "Hướng dẫn cách lập sổ sách kế toán trên Excel",
-      "excerpt": "Hướng dẫn cách làm sổ sách kế toán bằng Excel thực hành trên mẫu sổ sách kế toán trên Excel chi tiết, cách sử dụng các hàm Excel để tính toán, lập bảng biểu, báo cáo tài chính trên Excel",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
+      "title": "Cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa",
+      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa Mẫu S11- DN theo Thông tư 200/2014/TT-B…",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
+        "Tài sản",
+        "Kho",
+        "CCDC",
+        "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lam-so-sach-ke-toan-tren-excel.png",
+      "image": "assets/images/content/pic/Service/images/cach lap bang tong hop chi tiet hang hoa vat lieu.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/phieu-nhap-kho-mau-so-01-vt.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/phieu-nhap-kho-mau-so-01-vt.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/phieu-nhap-kho-mau-so-01-vt.html",
+      "title": "Mẫu Phiếu nhập kho 01-VT theo Thông tư 133 và 200",
+      "excerpt": "Hướng dẫn cách lập Phiếu nhập kho theo Thông tư 133 và 200 - Mẫu 01-VT, Phiếu nhập kho áp dụng trong các trường hợp nhậ…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/phieu-nhap-kho-cach-lap.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     },
     {
@@ -264,28 +286,30 @@
         "Biểu mẫu"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-can-doi-ke-toan-theo-thong-tu-200.png",
-      "libraryKindLabel": "Biểu mẫu",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2014-12-22",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "id": "thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "title": "Công ty Cổ phần Thương mại và Xuất nhập TVH tuyển Kế toán Kho",
+      "excerpt": "Công ty Cổ phần Thương mại và Xuất nhập TVH tuyển Kế toán Kho làm việc tại Hà Nội tại 19 Thái Hà - Đống Đa - Hà Nội Mô…",
+      "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2014-05-31",
       "modifiedDate": null
     }
   ]

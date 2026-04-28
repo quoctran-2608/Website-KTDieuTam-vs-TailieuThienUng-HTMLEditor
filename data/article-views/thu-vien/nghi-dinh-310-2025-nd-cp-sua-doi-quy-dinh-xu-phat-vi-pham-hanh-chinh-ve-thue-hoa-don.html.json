@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1921,
-  "totalCount": 2736,
+  "currentIndex": 1884,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/nghi-dinh-28-2020-nd-cp-xu-phat-vi-pham-ve-lao-dong-bhxh.html",
     "section": "thu-vien",
@@ -32,7 +32,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-318-2025-nd-cp-huong-dan-luat-viec-lam.html",
     "title": "Nghị định 318/2025/NĐ-CP hướng dẫn Luật Việc làm",
     "excerpt": "Ngày 12/12/2025, Chính phủ ban hành Nghị định 318/2025/NĐ-CP hướng dẫn Luật Việc làm về đăng ký lao động và hệ thống th…",
-    "topicLabel": "Lao động - Tiền lương",
+    "topicLabel": "Nghị định",
     "tags": [
       "Nghị định",
       "Lao động",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -166,25 +166,6 @@
     }
   ],
   "related": [
-    {
-      "id": "thu-vien/nghi-dinh-125-2020-nd-cp-quy-dinh-xu-phat-ve-hoa-don-va-thue.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-125-2020-nd-cp-quy-dinh-xu-phat-ve-hoa-don-va-thue.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-125-2020-nd-cp-quy-dinh-xu-phat-ve-hoa-don-va-thue.html",
-      "title": "Nghị định 125/2020/NĐ-CP Quy định xử phạt về hóa đơn và thuế",
-      "excerpt": "Ngày 19/10/2020 Chính phủ ban hành Nghị định 125/2020/NĐ-CP: Quy định xử phạt vi phạm hành chính về hoá đơn, mức xử phạt vi phạm hành chính về thuế.",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT - Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-125-muc-phat-hanh-chinh-ve-thue-hoa-don.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-10-19",
-      "modifiedDate": null
-    },
     {
       "id": "thu-vien/nghi-dinh-70-2025-nd-cp-sua-doi-nghi-dinh-123-ve-hoa-don-dien-tu.html",
       "section": "thu-vien",
@@ -229,26 +210,49 @@
       "libraryKindLabel": "Văn bản",
       "publishDate": "2025-12-31",
       "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/nghi-dinh-373-2025-nd-cp-sua-doi-nghi-dinh-126-2020-nd-cp.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/nghi-dinh-373-2025-nd-cp-sua-doi-nghi-dinh-126-2020-nd-cp.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-373-2025-nd-cp-sua-doi-nghi-dinh-126-2020-nd-cp.html",
+      "title": "Nghị định 373/2025/NĐ-CP sửa đổi Nghị định 126/2020/NĐ-CP về Quản lý thuế",
+      "excerpt": "Ngày 31/12/2025, Chính phủ đã ban hành Nghị định 373/2025/NĐ-CP sửa đổi, bổ sung một số điều của Nghị định 126/2020/NĐ-…",
+      "topicLabel": "Nghị định",
+      "tags": [
+        "Nghị định",
+        "Thuế",
+        "Hóa đơn",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Nghi-dinh-373.png",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2025-12-31",
+      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/nghi-dinh-125-2020-nd-cp-quy-dinh-xu-phat-ve-hoa-don-va-thue.html",
+      "id": "thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-125-2020-nd-cp-quy-dinh-xu-phat-ve-hoa-don-va-thue.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-125-2020-nd-cp-quy-dinh-xu-phat-ve-hoa-don-va-thue.html",
-      "title": "Nghị định 125/2020/NĐ-CP Quy định xử phạt về hóa đơn và thuế",
-      "excerpt": "Ngày 19/10/2020 Chính phủ ban hành Nghị định 125/2020/NĐ-CP: Quy định xử phạt vi phạm hành chính về hoá đơn, mức xử phạt vi phạm hành chính về thuế.",
+      "href": "thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thoi-hieu-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.html",
+      "title": "Thời hiệu xử phạt vi phạm hành chính về hóa đơn",
+      "excerpt": "Quy định về Thời hiệu xử phạt vi phạm hành chính về hóa đơn mới nhất năm 2025 theo Nghị định 125/2020/NĐ-CP và được sửa…",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "GTGT - Hóa đơn",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-125-muc-phat-hanh-chinh-ve-thue-hoa-don.png",
+      "image": "assets/images/content/pic/Service/images/Thoi-hieu-xu-phat-vi-pham-hoa-don.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-10-19",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
@@ -271,23 +275,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
+      "id": "thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-theo-qd-15-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "title": "Phần mềm HTKK 5.2.6 mới nhất ngày 1/1/2025",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.6 mới nhất 1/1/2025 của Tổng cục thuế. Tải phần mềm HTKK 5.2.6 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2025.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-theo-qd-15-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-theo-qd-15-excel.html",
+      "title": "Mẫu Bản Thuyết minh Báo cáo tài chính theo QĐ 15 Excel",
+      "excerpt": "Mẫu Bản Thuyết minh Báo cáo tài chính Excel mới nhất Mẫu số B 09 – DN Ban hành theo Quyết định số 15/2006/QĐ-BTC Ngày 2…",
+      "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "Excel",
+        "Công cụ khác",
+        "Mẫu file & kê khai",
+        "BCTC",
+        "Kê khai",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_6-moi-nhat.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2025-01-01",
+      "publishDate": "2006-03-20",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1055,
-  "totalCount": 2736,
+  "currentIndex": 1019,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/huong-dan-cach-ke-khai-thue-bao-ve-moi-truong.html",
     "section": "thu-vien",
@@ -108,7 +108,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -127,7 +127,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -161,6 +161,25 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/phuong-phap-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/phuong-phap-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/phuong-phap-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat.html",
+      "title": "Cách tính thuế nhà thầu nước ngoài mới nhất",
+      "excerpt": "Hướng dẫn cách tính thuế nhà thầu nước ngoài mới nhất, nhà thầu phụ nước ngoài theo Thông tư 103/2014/TT-BTC gồm thuế giá trị gia tăng và thuế thu nhập doanh nghiệp",
+      "topicLabel": "Thuế nhà thầu",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-tinh-thue-nha-thau-nuoc-ngoai.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2024-06-24",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/khach-mua-hang-khong-lay-hoa-don-gtgt-ca-ch-xu-ly.html",
       "section": "thu-vien",
@@ -204,51 +223,26 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-08-06",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/huong-dan-cach-ke-khai-thue-mon-bai-nam-qua-mang.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-ke-khai-thue-mon-bai-nam-qua-mang.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-ke-khai-thue-mon-bai-nam-qua-mang.html",
-      "title": "Cách kê khai Lệ phí môn bài năm 2026 qua mạng",
-      "excerpt": "Cách kê khai lệ phí môn bài qua mạng như nào? Kế toán Diệu Tâm xin hướng dẫn cách kê khai lệ phí môn bài qua mạng và…",
-      "topicLabel": "Lệ phí môn bài",
-      "tags": [
-        "Kê khai",
-        "Lệ phí môn bài",
-        "Thuế",
-        "Hóa đơn",
-        "Môn bài",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-ke-khai-le-phi-mon-bai.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/khach-mua-hang-khong-lay-hoa-don-gtgt-ca-ch-xu-ly.html",
+      "id": "thu-vien/phuong-phap-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/khach-mua-hang-khong-lay-hoa-don-gtgt-ca-ch-xu-ly.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/khach-mua-hang-khong-lay-hoa-don-gtgt-ca-ch-xu-ly.html",
-      "title": "Khách hàng không lấy hóa đơn GTGT – Cách viết hóa đơn",
-      "excerpt": "Khách hàng không lấy hóa đơn GTGT phải xử lý thế nào? Kê khai thuế GTGT như nào? Kế toán Diệu Tâm xin hướng…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/phuong-phap-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/phuong-phap-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat.html",
+      "title": "Cách tính thuế nhà thầu nước ngoài mới nhất",
+      "excerpt": "Hướng dẫn cách tính thuế nhà thầu nước ngoài mới nhất, nhà thầu phụ nước ngoài theo Thông tư 103/2014/TT-BTC gồm thuế giá trị gia tăng và thuế thu nhập doanh nghiệp",
+      "topicLabel": "Thuế nhà thầu",
       "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
+        "DN - Thủ tục",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/khach-hang-khong-lay-hoa-don.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-tinh-thue-nha-thau-nuoc-ngoai.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-03-31",
+      "publishDate": "2024-06-24",
       "modifiedDate": null
     },
     {
@@ -274,23 +268,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-lap-to-khai-quyet-toan-thue-tndn-mau-03-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-lap-to-khai-quyet-toan-thue-tndn-mau-03-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-to-khai-quyet-toan-thue-tndn-mau-03-tndn.html",
+      "title": "Cách lập tờ khai quyết toán thuế TNDN mẫu 03/TNDN 2026 trên HTKK mới nhất",
+      "excerpt": "Hướng dẫn cách làm tờ khai quyết toán thuế TNDN mới nhất năm 2026 theo mẫu 03/TNDN thông tư 80/2021/TT-BTC trên phần mề…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TNDN",
+        "HTKK",
+        "Quyết toán",
+        "eTax",
+        "Thuế điện tử",
+        "Phần mềm"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Mau-to-khai-quye-toan-thue-TNDN.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2025-12-15",
       "modifiedDate": null
     }
   ]

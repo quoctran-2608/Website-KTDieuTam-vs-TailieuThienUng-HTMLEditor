@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1609,
-  "totalCount": 2736,
+  "currentIndex": 1572,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-phieu-xuat-kho-kiem-van-chuyen-noi-bo-theo-tt-39.html",
     "section": "thu-vien",
@@ -30,7 +30,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/mau-phieu-xuat-kho-theo-thong-tu-99.html",
     "title": "Mẫu phiếu xuất kho theo thông tư 99 trên Word và Excel",
     "excerpt": "Mẫu số: 02 - VT được ban hành kèm theo phụ lục II của Thông tư 99/2025/TT-BTC là mẫu phiếu xuất kho mới nhất năm 2026 (…",
-    "topicLabel": "Mẫu biểu kế toán",
+    "topicLabel": "Excel - Công cụ khác",
     "tags": [
       "Mẫu biểu kế toán",
       "Kế toán",
@@ -38,7 +38,7 @@
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/Mau-phieu-Xuat-kho-theo-thong-tu-99(1).png",
-    "libraryKindLabel": "Biểu mẫu",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2025-10-27",
     "modifiedDate": null
   },
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -165,25 +165,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/mau-phieu-nhap-kho-theo-quyet-dinh-48-va-15.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-phieu-nhap-kho-theo-quyet-dinh-48-va-15.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-phieu-nhap-kho-theo-quyet-dinh-48-va-15.html",
-      "title": "Mẫu phiếu nhập kho theo Thông tư 200 và 133",
-      "excerpt": "Mẫu phiếu nhập kho theo Thông tư 200 và 133 - Mẫu 01-VT. Nhằm xác nhận số lượng vật tư, công cụ, dụng cụ, sản phẩm, hàng hóa nhập kho",
-      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
-      "tags": [
-        "Mẫu biểu lao động - bảo hiểm",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-phieu-nhap-kho-theo-tt-133.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -192,13 +173,32 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
       "title": "Cách lập Thẻ kho (Sổ kho) theo Thông tư 200 và 133",
       "excerpt": "Hướng dẫn cách lập Sổ kho (Thẻ kho) theo Thông tư 200 và 133. Mẫu Thẻ kho (Sổ kho) S12-DN (S08-DNN) để Theo dõi số lượng nhập, xuất, tồn, kho từng thứ nguyên liệu, vật liệu, công cụ, dụng cụ, sản phẩm, hàng hóa ở từng kho",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "Lao động - Tiền lương",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-the-kho-so-kho.png",
       "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-phieu-nhap-kho-theo-quyet-dinh-48-va-15.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-phieu-nhap-kho-theo-quyet-dinh-48-va-15.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-phieu-nhap-kho-theo-quyet-dinh-48-va-15.html",
+      "title": "Mẫu phiếu nhập kho theo Thông tư 200 và 133",
+      "excerpt": "Mẫu phiếu nhập kho theo Thông tư 200 và 133 - Mẫu 01-VT. Nhằm xác nhận số lượng vật tư, công cụ, dụng cụ, sản phẩm, hàng hóa nhập kho",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu lao động - bảo hiểm",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-phieu-nhap-kho-theo-tt-133.png",
+      "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2014-12-22",
       "modifiedDate": null
     },
@@ -211,7 +211,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/mau-bien-ban-kiem-ke-vat-tu-hang-hoa-theo-qd-48-va-15.html",
       "title": "Mẫu biên bản kiểm kê vật tư hàng hóa theo Thông tư 200 và 133",
       "excerpt": "Mẫu biên bản kiểm kê vật tư hàng hóa theo Thông tư 200 và 133. xác định số lượng, chất lượng và giá trị vật tư, công cụ, sản phẩm, hàng hóa có ở kho tại thời điểm kiểm kê",
-      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu lao động - bảo hiểm",
         "Biểu mẫu"
@@ -232,7 +232,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
       "title": "Cách lập Thẻ kho (Sổ kho) theo Thông tư 200 và 133",
       "excerpt": "Hướng dẫn cách lập Sổ kho (Thẻ kho) theo Thông tư 200 và 133. Mẫu Thẻ kho (Sổ kho) S12-DN (S08-DNN) để Theo dõi số lượng nhập, xuất, tồn, kho từng thứ nguyên liệu, vật liệu, công cụ, dụng cụ, sản phẩm, hàng hóa ở từng kho",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "Lao động - Tiền lương",
         "Hướng dẫn"
@@ -251,7 +251,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/mau-phieu-nhap-kho-theo-quyet-dinh-48-va-15.html",
       "title": "Mẫu phiếu nhập kho theo Thông tư 200 và 133",
       "excerpt": "Mẫu phiếu nhập kho theo Thông tư 200 và 133 - Mẫu 01-VT. Nhằm xác nhận số lượng vật tư, công cụ, dụng cụ, sản phẩm, hàng hóa nhập kho",
-      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Mẫu biểu lao động - bảo hiểm",
         "Biểu mẫu"
@@ -262,23 +262,45 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/mau-bang-ke-phieu-nhap-xuat-kho-hang-hoa-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/mau-bang-ke-phieu-nhap-xuat-kho-hang-hoa-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-phieu-nhap-xuat-kho-hang-hoa-tren-excel.html",
+      "title": "Mẫu bảng kê phiếu nhập xuất kho hàng hóa trên Excel",
+      "excerpt": "Mẫu bảng kê phiếu nhập xuất kho hàng hóa trên Excel và Hướng dẫn chi tiết cách lập cụ thể theo TT 133 và TT 200",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
         "Excel - Công cụ khác",
-        "Công cụ"
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-ke-phieu-nhap-xuat-kho-hang-hoa-tren-excel.png",
       "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-ty-co-phan-co-kim-khi-viet-my-tuyen-ke-toan.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-co-phan-co-kim-khi-viet-my-tuyen-ke-toan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-co-phan-co-kim-khi-viet-my-tuyen-ke-toan.html",
+      "title": "Công ty cổ phần cơ kim khí Việt Mỹ Tuyển kế toán",
+      "excerpt": "Công ty cổ phần cơ kim khí Việt Mỹ chuyên sản xuất và phân phối bồn nước inox, bình nước nóng, chậu, năng lượng mặt trờ…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

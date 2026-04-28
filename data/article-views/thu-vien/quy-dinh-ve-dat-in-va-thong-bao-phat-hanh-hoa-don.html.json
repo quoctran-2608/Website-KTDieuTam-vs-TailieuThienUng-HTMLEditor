@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2288,
-  "totalCount": 2736,
+  "currentIndex": 2250,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/quy-dinh-ve-kinh-phi-cong-doan-moi-nhat.html",
     "section": "thu-vien",
@@ -108,7 +108,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -127,7 +127,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -162,26 +162,70 @@
   ],
   "related": [
     {
-      "id": "thu-vien/nghi-dinh-34-2022-nd-cp-gia-han-thoi-han-nop-thue-tndn-gtgt-2022.html",
+      "id": "thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-lan-dau.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-34-2022-nd-cp-gia-han-thoi-han-nop-thue-tndn-gtgt-2022.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-34-2022-nd-cp-gia-han-thoi-han-nop-thue-tndn-gtgt-2022.html",
-      "title": "Nghị định 34/2022/NĐ-CP gia hạn thời hạn nộp thuế TNDN, GTGT 2022",
-      "excerpt": "Ngày 28/5/2022 Chính phủ ban hành Nghị định 34/2022/NĐ-CP: Gia hạn thời hạn nộp thuế giá trị gia tăng, thu nhập doanh nghiệp, thu nhập cá nhân và tiền thuê đất trong năm 2022.",
-      "topicLabel": "DN - Thủ tục",
+      "href": "thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-lan-dau.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-lan-dau.html",
+      "title": "Thủ tục thông báo phát hành hóa đơn lần đầu năm 2018",
+      "excerpt": "Trước khi sử dụng hóa đơn GTGT đặt in Doanh nghiệp phải làm thủ tục Thông báo phát hành hóa đơn gửi đến cơ quan thuế qu…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
-        "TNDN",
-        "DN - Thủ tục",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Nghi-dinh-34-gia-han-thoi-han-nop-thue-gtgt-tndn-2022.jpg",
+      "image": "assets/images/content/pic/Service/images/thu-tuc-thong-bao-phat-hanh-hoa-don-qua-mang.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2022-05-28",
+      "publishDate": "2015-02-27",
       "modifiedDate": null
     },
+    {
+      "id": "thu-vien/thu-tuc-thong-bao-ngung-su-dung-hoa-don-dien-tu.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thu-tuc-thong-bao-ngung-su-dung-hoa-don-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-thong-bao-ngung-su-dung-hoa-don-dien-tu.html",
+      "title": "Thủ tục thông báo ngừng sử dụng hóa đơn điện tử 2025 mới nhất",
+      "excerpt": "Trình tự thực hiện ngừng sử dụng hóa đơn điện tử đang được quy định tại Khoản 12 Điều 1 Nghị định 70/2025/NĐ-CP Sửa đổi…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn điện tử",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/ngung-su-dung-hoa-don-dien-tu.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-gia-tri-gia-tang.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-gia-tri-gia-tang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-gia-tri-gia-tang.html",
+      "title": "Thủ tục thông báo phát hành hóa đơn GTGT qua mạng lần đầu",
+      "excerpt": "Hướng dẫn cách làm Thủ tục thông báo phát hành hóa đơn GTGT lần đầu qua mạng như: Mẫu thông báo phát hành hóa đơn mới nhất, cách nộp hồ sơ thông báo phát hành hóa đơn qua mạng.",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "GTGT - Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/thu-tuc-thong-bao-phat-hanh-hoa-don-gtgt.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2017-06-12",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-lan-dau.html",
       "section": "thu-vien",
@@ -204,49 +248,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
-      "title": "Các khoản chi phí được trừ khi tính thuế TNDN",
-      "excerpt": "Các khoản chi phí được trừ khi tính thuế Thu nhập Doanh Nghiệp, điều kiện để đưa vào chi phí hợp lý khi tính thuế TNDN theo quy định tại Nghị định 320, Thông tư 26/2026 và Luật thuế TNDN mới nhất hiện hành.",
-      "topicLabel": "DN - Thủ tục",
-      "tags": [
-        "TNDN",
-        "DN - Thủ tục",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/chi-phi-duoc-tru-khi-tinh-thue-tndn.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-01-26",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/nghi-dinh-34-2022-nd-cp-gia-han-thoi-han-nop-thue-tndn-gtgt-2022.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-34-2022-nd-cp-gia-han-thoi-han-nop-thue-tndn-gtgt-2022.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-34-2022-nd-cp-gia-han-thoi-han-nop-thue-tndn-gtgt-2022.html",
-      "title": "Nghị định 34/2022/NĐ-CP gia hạn thời hạn nộp thuế TNDN, GTGT 2022",
-      "excerpt": "Ngày 28/5/2022 Chính phủ ban hành Nghị định 34/2022/NĐ-CP: Gia hạn thời hạn nộp thuế giá trị gia tăng, thu nhập doanh nghiệp, thu nhập cá nhân và tiền thuê đất trong năm 2022.",
-      "topicLabel": "DN - Thủ tục",
-      "tags": [
-        "GTGT",
-        "TNDN",
-        "DN - Thủ tục",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Nghi-dinh-34-gia-han-thoi-han-nop-thue-gtgt-tndn-2022.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2022-05-28",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/to-khai-dang-ky-su-dung-hoa-don-dien-tu-mau-01-nghi-dinh-119.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -255,7 +256,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-dang-ky-su-dung-hoa-don-dien-tu-mau-01-nghi-dinh-119.html",
       "title": "Mẫu 01 Nghị định 119 Tờ khai đăng ký sử dụng hóa đơn điện tử",
       "excerpt": "Tờ khai Mẫu 01 Nghị định 119 - Tờ khai đăng ký sử dụng hóa đơn điện tử, thay đổi thông tin sử dụng hóa đơn điện tử; Các…",
-      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
         "Hóa đơn điện tử",
@@ -270,23 +271,45 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-lap-bao-cao-tinh-hinh-su-dung-hoa-don-quy-theo-mau-bc26-a.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-lap-bao-cao-tinh-hinh-su-dung-hoa-don-quy-theo-mau-bc26-a.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bao-cao-tinh-hinh-su-dung-hoa-don-quy-theo-mau-bc26-a.html",
+      "title": "Hướng dẫn lập báo cáo sử dụng hóa đơn Mẫu BC26-A trên HTKK",
+      "excerpt": "Hướng dẫn cách lập báo cáo tình hình sử dụng hóa đơn theo quý Mẫu BC26-A mới nhất làm trên phần mềm HTKK. Cách xác định thời hạn nộp Báo cáo tình hình sử dụng hoá đơn quý, tháng.",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Thuế điện tử",
+        "HTKK - eTax - Thuế điện tử",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/huong-dan-lap-bao-cao-su-dung-hoa-don-quy.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2018-03-09",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "title": "Trường mầm non Thành Đông Tuyển kế toán viên",
+      "excerpt": "Trường mầm non Thành Đông tuyển dụng Nhân viên kế toán Mô tả công việc: - Tính học phí, thu học phí, xuất hóa đơn, giao…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "libraryKindLabel": "",
+      "publishDate": "2021-06-20",
       "modifiedDate": null
     }
   ]

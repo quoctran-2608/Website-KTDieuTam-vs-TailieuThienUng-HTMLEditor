@@ -1,6 +1,6 @@
 {
   "currentIndex": 543,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-lap-thuyet-minh-bctc-theo-thong-tu-99.html",
     "section": "thu-vien",
@@ -41,7 +41,7 @@
       "Phần mềm"
     ],
     "image": "assets/images/content/pic/Service/images/Mau-to-khai-quye-toan-thue-TNDN.png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2025-12-15",
     "modifiedDate": null
   },
@@ -114,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -133,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -168,6 +168,25 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cach-ke-khai-thue-mon-bai-qua-mang-truc-tuyen.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-ke-khai-thue-mon-bai-qua-mang-truc-tuyen.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-ke-khai-thue-mon-bai-qua-mang-truc-tuyen.html",
+      "title": "Hướng dẫn kê khai thuế môn bài qua mạng 2021",
+      "excerpt": "Hướng dẫn kê khai thuế môn bài chi tiết các trường hợp: Cách kê khai lệ phí môn bài qua mạng điện tử và trên HTKK; Cách kê khai thuế môn bài lần đầu.",
+      "topicLabel": "Lệ phí môn bài",
+      "tags": [
+        "HTKK - eTax - Thuế điện tử",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/huong-dan-ke-khai-thue-mon-bai.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2020-11-09",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/huong-dan-cach-ke-khai-thue-mon-bai-nam-qua-mang.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -188,26 +207,6 @@
       "image": "assets/images/content/pic/Service/images/cach-ke-khai-le-phi-mon-bai.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/huong-dan-lap-to-khai-thue-mon-bai-mau-so-01-mbai.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-lap-to-khai-thue-mon-bai-mau-so-01-mbai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-lap-to-khai-thue-mon-bai-mau-so-01-mbai.html",
-      "title": "Hướng dẫn lập tờ khai Lệ phí Môn bài trên HTKK và qua mạng",
-      "excerpt": "Cách lập tờ khai thuế môn bài trên HTKK và qua mạng; Hướng dẫn cách lập tờ khai lệ phí môn bài lần đầu; Cho chi nhánh khác tỉnh và cùng tỉnh.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
-      "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-to-khai-thue-mon-bai(1).png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
       "modifiedDate": null
     },
     {
@@ -235,26 +234,22 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/huong-dan-cach-ke-khai-thue-mon-bai-nam-qua-mang.html",
+      "id": "thu-vien/cach-ke-khai-thue-mon-bai-qua-mang-truc-tuyen.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-ke-khai-thue-mon-bai-nam-qua-mang.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-ke-khai-thue-mon-bai-nam-qua-mang.html",
-      "title": "Cách kê khai Lệ phí môn bài năm 2026 qua mạng",
-      "excerpt": "Cách kê khai lệ phí môn bài qua mạng như nào? Kế toán Diệu Tâm xin hướng dẫn cách kê khai lệ phí môn bài qua mạng và…",
+      "href": "thu-vien/cach-ke-khai-thue-mon-bai-qua-mang-truc-tuyen.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-ke-khai-thue-mon-bai-qua-mang-truc-tuyen.html",
+      "title": "Hướng dẫn kê khai thuế môn bài qua mạng 2021",
+      "excerpt": "Hướng dẫn kê khai thuế môn bài chi tiết các trường hợp: Cách kê khai lệ phí môn bài qua mạng điện tử và trên HTKK; Cách kê khai thuế môn bài lần đầu.",
       "topicLabel": "Lệ phí môn bài",
       "tags": [
-        "Kê khai",
-        "Lệ phí môn bài",
-        "Thuế",
-        "Hóa đơn",
-        "Môn bài",
+        "HTKK - eTax - Thuế điện tử",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-ke-khai-le-phi-mon-bai.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/huong-dan-ke-khai-thue-mon-bai.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-01",
+      "publishDate": "2020-11-09",
       "modifiedDate": null
     },
     {
@@ -280,23 +275,23 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
+      "id": "thu-vien/huong-dan-lap-to-khai-thue-mon-bai-mau-so-01-mbai.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
-      "title": "Phần mềm HTKK 5.5.6 mới nhất ngày 18/1/2026",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.5.6 mới nhất 18/1/2026 của Tổng cục thuế. Tải phần mềm HTKK 5.5.6 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2026.",
+      "href": "thu-vien/huong-dan-lap-to-khai-thue-mon-bai-mau-so-01-mbai.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-lap-to-khai-thue-mon-bai-mau-so-01-mbai.html",
+      "title": "Hướng dẫn lập tờ khai Lệ phí Môn bài trên HTKK và qua mạng",
+      "excerpt": "Cách lập tờ khai thuế môn bài trên HTKK và qua mạng; Hướng dẫn cách lập tờ khai lệ phí môn bài lần đầu; Cho chi nhánh khác tỉnh và cùng tỉnh.",
       "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
         "Thuế điện tử",
         "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_5_1-moi-nhat.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-to-khai-thue-mon-bai(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-01-18",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     }
   ]

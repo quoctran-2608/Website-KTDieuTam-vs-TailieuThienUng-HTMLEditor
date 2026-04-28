@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1913,
-  "totalCount": 2736,
+  "currentIndex": 1876,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/nghi-dinh-188-2025-nd-cp-huong-dan-luat-bao-hiem-y-te.html",
     "section": "thu-vien",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -167,6 +167,25 @@
   ],
   "related": [
     {
+      "id": "thu-vien/huong-dan-hach-toan-chi-phi-tra-truoc-dai-han.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/huong-dan-hach-toan-chi-phi-tra-truoc-dai-han.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-hach-toan-chi-phi-tra-truoc-dai-han.html",
+      "title": "Hướng dẫn hạch toán chi phí chờ phân bổ - Tài khoản 242",
+      "excerpt": "Cách hạch toán chi phí chờ phân bổ - Tài khoản 242 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán chi phí thuê nhà, văn phòng, sửa chữa TSCĐ, mya bảo hiểm, công cụ dụng cụ dùng trong nhiều kỳ kế toán",
+      "topicLabel": "BHXH - BHYT - BHTN",
+      "tags": [
+        "BHXH - BHYT - BHTN",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-242.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/kinh-phi-cong-doan-co-duoc-tru-khi-tinh-thue-tndn-khong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -189,65 +208,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quy-dinh-ve-kinh-phi-cong-doan-moi-nhat.html",
+      "id": "thu-vien/kinh-phi-va-thuc-hien-chi-tra-tro-cap-huu-tri-xa-hoi.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quy-dinh-ve-kinh-phi-cong-doan-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-kinh-phi-cong-doan-moi-nhat.html",
-      "title": "Quy định kinh phí công đoàn và đoàn phí công đoàn 2026",
-      "excerpt": "Mức đóng kinh phí công đoàn năm 2026 theo quy định về kinh phí công đoàn và đoàn phí công đoàn. Đối tượng đóng, tỷ lệ trích nộp kinh phí công đoàn.",
-      "topicLabel": "Công đoàn",
+      "href": "thu-vien/kinh-phi-va-thuc-hien-chi-tra-tro-cap-huu-tri-xa-hoi.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/kinh-phi-va-thuc-hien-chi-tra-tro-cap-huu-tri-xa-hoi.html",
+      "title": "Kinh phí và thực hiện chi trả trợ cấp hưu trí xã hội",
+      "excerpt": "Kinh phí và thực hiện chi trả trợ cấp hưu trí xã hội theo Nghị định 176/2025/NĐ-CP quy định chi tiết và hướng dẫn thi h…",
+      "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
-        "Công đoàn",
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/quy-dinh-kinh-phi-cong-doan-doan-phi(2).png",
+      "image": "assets/images/content/pic/Service/images/kinh-phi-tro-cap-huu-tri-xh.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-12-19",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/truy-thu-kinh-phi-cong-doan-co-duoc-dua-vao-chi-phi.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/truy-thu-kinh-phi-cong-doan-co-duoc-dua-vao-chi-phi.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/truy-thu-kinh-phi-cong-doan-co-duoc-dua-vao-chi-phi.html",
-      "title": "Cách hạch toán kinh phí công đoàn trích nộp - truy thu",
-      "excerpt": "Cách hạch toán kinh phí công đoàn khi trích nộp; Tiền truy thu kinh phí công đoàn có được đưa vào chi phí hợp lý, hạch toán truy thu kinh phí công đoàn.",
-      "topicLabel": "Công đoàn",
-      "tags": [
-        "Công đoàn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/truy-thu-kinh-phi-cong-doan.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-04-14",
+      "publishDate": "2021-03-15",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/kinh-phi-cong-doan-co-duoc-tru-khi-tinh-thue-tndn-khong.html",
+      "id": "thu-vien/huong-dan-hach-toan-chi-phi-tra-truoc-dai-han.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/kinh-phi-cong-doan-co-duoc-tru-khi-tinh-thue-tndn-khong.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/kinh-phi-cong-doan-co-duoc-tru-khi-tinh-thue-tndn-khong.html",
-      "title": "Kinh phí công đoàn có được trừ khi tính thuế TNDN không?",
-      "excerpt": "Hướng dẫn cách xác định khoản trích nộp kinh phí công đoàn của doanh nghiệp có được tính vào làm chi phí được trừ khi t…",
-      "topicLabel": "Công đoàn",
+      "href": "thu-vien/huong-dan-hach-toan-chi-phi-tra-truoc-dai-han.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-hach-toan-chi-phi-tra-truoc-dai-han.html",
+      "title": "Hướng dẫn hạch toán chi phí chờ phân bổ - Tài khoản 242",
+      "excerpt": "Cách hạch toán chi phí chờ phân bổ - Tài khoản 242 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán chi phí thuê nhà, văn phòng, sửa chữa TSCĐ, mya bảo hiểm, công cụ dụng cụ dùng trong nhiều kỳ kế toán",
+      "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
-        "TNDN",
-        "Công đoàn",
-        "Lao động",
-        "Bảo hiểm",
+        "BHXH - BHYT - BHTN",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/kinh-phi-cong-doan-duoc-tru-thue-tndn.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-242.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-04-14",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     },
     {
@@ -272,23 +273,23 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
+      "title": "Hướng dẫn cách lập sổ sách kế toán trên Excel",
+      "excerpt": "Hướng dẫn cách làm sổ sách kế toán bằng Excel thực hành trên mẫu sổ sách kế toán trên Excel chi tiết, cách sử dụng các hàm Excel để tính toán, lập bảng biểu, báo cáo tài chính trên Excel",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
         "Excel - Công cụ khác",
-        "Công cụ"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lam-so-sach-ke-toan-tren-excel.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     }
   ]

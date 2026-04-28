@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1380,
-  "totalCount": 2736,
+  "currentIndex": 1343,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/bao-cao-thuc-tap-ke-toan-doanh-thu-va-xac-dinh-ket-qua-kd.html",
     "section": "thu-vien",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -274,44 +274,45 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
+      "title": "Hướng dẫn cách lập sổ sách kế toán trên Excel",
+      "excerpt": "Hướng dẫn cách làm sổ sách kế toán bằng Excel thực hành trên mẫu sổ sách kế toán trên Excel chi tiết, cách sử dụng các hàm Excel để tính toán, lập bảng biểu, báo cáo tài chính trên Excel",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
         "Excel - Công cụ khác",
-        "Công cụ"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lam-so-sach-ke-toan-tren-excel.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/chuong-trinh-khuyen-mai-hoc-phi-khoa-hoc-ke-toan-online-moi-nhat.html",
+      "id": "thu-vien/cong-ty-ke-toan-dieu-tam-tuyen-ke-toan-giang-day.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/chuong-trinh-khuyen-mai-hoc-phi-khoa-hoc-ke-toan-online-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/chuong-trinh-khuyen-mai-hoc-phi-khoa-hoc-ke-toan-online-moi-nhat.html",
-      "title": "Chương trình khuyến mại học phí khóa học kế toán online tại Công ty Kế Toán Diệu Tâm",
-      "excerpt": "Công ty đào tạo Kế toán Diệu Tâm đang tổ chức chương trình khuyến mại học phí cho các khóa học thực hành kế toa…",
-      "topicLabel": "Chương trình ưu đãi học phí",
+      "href": "thu-vien/cong-ty-ke-toan-dieu-tam-tuyen-ke-toan-giang-day.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-ke-toan-dieu-tam-tuyen-ke-toan-giang-day.html",
+      "title": "Công ty kế toán Diệu Tâm tuyển kế toán gấp",
+      "excerpt": "KẾ TOÁN DIỆU TÂM TUYỂN DỤNG KẾ TOÁN GIẢNG DẠY CÁC KHÓA HỌC KẾ TOÁN THỰC TẾ. Vị trí tuyển dụng: - Giáo viên giảng dạy cá…",
+      "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Ưu đãi học phí",
-        "Ưu đãi & thông báo",
-        "Chính sách",
-        "Ưu đãi"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/25-gif.gif",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "",
-      "publishDate": "2026-04-02",
+      "publishDate": "2022-01-22",
       "modifiedDate": null
     }
   ]

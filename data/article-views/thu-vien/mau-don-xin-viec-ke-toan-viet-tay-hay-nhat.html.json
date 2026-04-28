@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1588,
-  "totalCount": 2736,
+  "currentIndex": 1551,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-don-de-nghi-su-dung-hoa-don-dat-in-tu-in-mau-3-14.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -244,22 +244,44 @@
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.html",
+      "id": "thu-vien/mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "ban-tin/mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.html",
+      "href": "thu-vien/mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.html",
       "title": "Mẫu CV xin việc kế toán cho sinh viên mới ra trường",
       "excerpt": "Chia sẻ mẫu CV xin việc kế toán cho sinh viên mới ra trường, hướng dẫn cách viết CV xin việc sao cho ấn tượng với nhà tuyển dụng",
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "Thông báo tuyển dụng",
-        "Thông tin"
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau CV xin viec ke toan.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "1992-06-11",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-su-dung-phan-mem-ke-toan-fast-accounting-qua-mang.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-su-dung-phan-mem-ke-toan-fast-accounting-qua-mang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-su-dung-phan-mem-ke-toan-fast-accounting-qua-mang.html",
+      "title": "Hướng dẫn cách sử dụng phần mềm kế toán Fast Accounting",
+      "excerpt": "Hướng dẫn cách sử dụng phần mềm kế toán Fast Accounting qua mạng chi tiết, với đầy đủ các phân hệ trong p…",
+      "topicLabel": "FAST",
+      "tags": [
+        "FAST",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach su dung phan mem ke toan fast.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

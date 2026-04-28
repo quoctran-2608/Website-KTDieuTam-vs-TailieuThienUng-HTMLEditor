@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2404,
-  "totalCount": 2736,
+  "currentIndex": 2366,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/tai-khoan-154-chi-phi-san-xuat-kinh-doanh-do-dang-theo-tt-133.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -185,25 +185,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
-      "title": "Cách lập Thẻ kho (Sổ kho) theo Thông tư 200 và 133",
-      "excerpt": "Hướng dẫn cách lập Sổ kho (Thẻ kho) theo Thông tư 200 và 133. Mẫu Thẻ kho (Sổ kho) S12-DN (S08-DNN) để Theo dõi số lượng nhập, xuất, tồn, kho từng thứ nguyên liệu, vật liệu, công cụ, dụng cụ, sản phẩm, hàng hóa ở từng kho",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Lao động - Tiền lương",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-the-kho-so-kho.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/tai-khoan-157-hang-gui-ban-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -222,6 +203,27 @@
       "image": "assets/images/content/pic/Service/images/hach-toan-hang-gui-ban-tai-khoan-157-theo-tt133.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-hach-toan-nhap-kho-thanh-pham.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-hach-toan-nhap-kho-thanh-pham.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-nhap-kho-thanh-pham.html",
+      "title": "Cách hạch toán nhập kho thành phẩm",
+      "excerpt": "Khi nhập kho thành phẩm do đơn vị sản xuất ra hoặc thuê ngoài gia công, chế biến thì hạch toán như thế nà…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/hach toan nhap kho thanh pham.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2017-05-20",
       "modifiedDate": null
     }
   ],
@@ -254,7 +256,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
       "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
       "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Tài khoản",
         "Hạch toán",
@@ -267,23 +269,48 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "title": "Cách hạch toán xuất kho hàng hóa, thành phẩm làm TSCĐ trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ xuất kho hàng hóa, thành phẩm làm tài sản cố định trên phần mềm Misa Khi phát…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TSCĐ",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "MISA",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd-tren-misa-1(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "title": "Công ty Cổ phần Thương mại và Xuất nhập TVH tuyển Kế toán Kho",
+      "excerpt": "Công ty Cổ phần Thương mại và Xuất nhập TVH tuyển Kế toán Kho làm việc tại Hà Nội tại 19 Thái Hà - Đống Đa - Hà Nội Mô…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2014-05-31",
       "modifiedDate": null
     }
   ]

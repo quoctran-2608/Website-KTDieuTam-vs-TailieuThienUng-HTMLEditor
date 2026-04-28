@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1435,
-  "totalCount": 2736,
+  "currentIndex": 1398,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-bien-ban-doi-chieu-cong-no.html",
     "section": "thu-vien",
@@ -109,7 +109,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -128,7 +128,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -183,6 +183,28 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/cac-phuong-phap-tinh-gia-xuat-kho.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-phuong-phap-tinh-gia-xuat-kho.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-phuong-phap-tinh-gia-xuat-kho.html",
+      "title": "Các phương pháp tính giá xuất kho theo thông tư 200 và 133",
+      "excerpt": "Tổng hợp các phương pháp tính đơn giá xuất kho theo hướng dẫn tại thông tư 200/2014/TT-BTC và Thông tư 133/2016/TT-BTC…",
+      "topicLabel": "Tài sản - Kho - CCDC",
+      "tags": [
+        "Tài sản",
+        "Kho",
+        "CCDC",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Phuong-phap-tinh-gia-xuat-kho.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-lap-so-chi-tiet-ban-hang-mau-s35-dn-theo-thong-tu-200.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -191,32 +213,9 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-chi-tiet-ban-hang-mau-s35-dn-theo-thong-tu-200.html",
       "title": "Cách lập sổ chi tiết bán hàng Mẫu S35-DN theo Thông tư 200",
       "excerpt": "Hướng dẫn cách lập sổ chi tiết bán hàng Mẫu S35-DN theo Thông tư 200/2014/TT-BTC , mục đích lập, căn cứ và phương pháp…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "Nghiệp vụ theo phần hành",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-so-tai-san-co-dinh-the-tai-san-co-dinh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-so-tai-san-co-dinh-the-tai-san-co-dinh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-tai-san-co-dinh-the-tai-san-co-dinh.html",
-      "title": "Cách lập sổ tài sản cố định theo Thông tư 200",
-      "excerpt": "Hướng dẫn cách ghi sổ tài sản cố định Mẫu S21- DN theo Thông tư 200/2014/TT-BTC : Mục đích lập, căn cứ và phương pháp g…",
-      "topicLabel": "Tài sản - Kho - CCDC",
-      "tags": [
-        "TSCĐ",
-        "Tài sản",
-        "Kho",
-        "CCDC",
         "Kế toán",
         "Hướng dẫn"
       ],
@@ -268,23 +267,22 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng cân đối kế toán theo Thông tư 200",
+      "excerpt": "Mẫu bảng cân đối kế toán theo Thông tư 200/2014/TT-BTC mới nhất gồm cả bản word và Excel, các bạn có thể tải Mẫu bảng cân đối kế toán miễn phí tại đây . Hướng dẫn cách lập bảng cân đối kế toán theo Thông tư 200 chi tiết.",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
         "Excel - Công cụ khác",
-        "Công cụ"
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-can-doi-ke-toan-theo-thong-tu-200.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ]

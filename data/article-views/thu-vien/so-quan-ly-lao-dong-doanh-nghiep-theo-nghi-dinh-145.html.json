@@ -1,6 +1,6 @@
 {
   "currentIndex": 528,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-lap-so-nhat-ky-chung-theo-thong-tu-200-va-133.html",
     "section": "thu-vien",
@@ -29,7 +29,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-quy-tien-mat-theo-thong-tu-200-va-133.html",
     "title": "Cách lập sổ quỹ tiền mặt theo Thông tư 200 và 133",
     "excerpt": "Hướng dẫn Cách lập sổ quỹ tiền mặt theo Thông tư 200 và 133. Mẫu sổ quỹ tiền mặt S07-DN (S04a-DNN) dùng cho thủ quỹ để phản ánh tình hình thu, chi tồn quỹ tiền mặt bằng tiền Việt Nam",
-    "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+    "topicLabel": "Chứng từ - Sổ sách",
     "tags": [
       "Chuẩn mực - Chế độ - Nguyên tắc",
       "Hướng dẫn"
@@ -108,7 +108,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -127,7 +127,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -161,6 +161,25 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "title": "Quy định về báo cáo tình hình sử dụng lao động mới nhất",
+      "excerpt": "Doanh nghiệp phải lập báo cáo tình hình sử dụng lao động 6 tháng và hằng năm; Lập mẫu sổ quản lý lao động Excel theo quy định về Báo cáo sử dụng lao động.",
+      "topicLabel": "Lao động - Tiền lương",
+      "tags": [
+        "Excel - Công cụ khác",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Bao-cao-tinh-hinh-su-dung-lao-dong.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2020-10-15",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/thu-tuc-dang-ky-noi-quy-lao-dong-cua-doanh-nghiep.html",
       "section": "thu-vien",
@@ -202,50 +221,26 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2020-12-14",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lam-hop-dong-lao-dong-cho-nhan-vien-moi-nhat-nam-2024.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lam-hop-dong-lao-dong-cho-nhan-vien-moi-nhat-nam-2024.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lam-hop-dong-lao-dong-cho-nhan-vien-moi-nhat-nam-2024.html",
-      "title": "Cách làm hợp đồng lao động cho nhân viên mới nhất năm 2026",
-      "excerpt": "Hướng dẫn cách làm hợp đồng lao động không xác định thời hạn và có xác định thời gian cho nhân viên theo quy định của B…",
-      "topicLabel": "Lao động - Tiền lương",
-      "tags": [
-        "Lao động",
-        "Tiền lương",
-        "Bảo hiểm",
-        "Hợp đồng lao động",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-lam-hop-dong-lao-dong(1).png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/thu-tuc-dang-ky-noi-quy-lao-dong-cua-doanh-nghiep.html",
+      "id": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thu-tuc-dang-ky-noi-quy-lao-dong-cua-doanh-nghiep.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-dang-ky-noi-quy-lao-dong-cua-doanh-nghiep.html",
-      "title": "Thủ tục đăng ký nội quy lao động 2026 mới nhất",
-      "excerpt": "Thủ tục hành chính \"Đăng ký nội quy lao động của doanh nghiệp\" năm 2026 đang được thực hiện theo Quyết định số 628/ QĐ-…",
+      "href": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "title": "Quy định về báo cáo tình hình sử dụng lao động mới nhất",
+      "excerpt": "Doanh nghiệp phải lập báo cáo tình hình sử dụng lao động 6 tháng và hằng năm; Lập mẫu sổ quản lý lao động Excel theo quy định về Báo cáo sử dụng lao động.",
       "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Lao động",
-        "Tiền lương",
-        "Bảo hiểm",
+        "Excel - Công cụ khác",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Thu-tuc-dang-ky-noi-quy-lao-dong.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Bao-cao-tinh-hinh-su-dung-lao-dong.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-06-20",
+      "publishDate": "2020-10-15",
       "modifiedDate": null
     },
     {
@@ -270,21 +265,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
+      "title": "Cách làm bảng tính lương trên Excel hàng tháng năm 2026",
+      "excerpt": "Hướng dẫn cách làm bảng tính lương trên Excel 2026 theo mẫu Bảng thanh toán tiền lương theo Thông tư 99 và TT 133 mới n…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Tiền lương",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Bang-luong-2026.png",
       "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-26",
       "modifiedDate": null

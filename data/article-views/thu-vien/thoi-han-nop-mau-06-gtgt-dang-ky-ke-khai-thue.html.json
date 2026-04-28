@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2471,
-  "totalCount": 2736,
+  "currentIndex": 2431,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thoi-han-nop-bao-cao-tinh-hinh-su-dung-hoa-don-quy.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -253,22 +253,48 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-cong-van-xin-nop-gop-bao-cao-tai-chinh.html",
+      "id": "thu-vien/mau-to-khai-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-cong-van-xin-nop-gop-bao-cao-tai-chinh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-cong-van-xin-nop-gop-bao-cao-tai-chinh.html",
-      "title": "Mẫu công văn xin nộp gộp báo cáo tài chính",
-      "excerpt": "Quy định về điều kiện xin gộp báo cáo tài chính vào năm sau. Mẫu công văn xin gộp Báo cáo tài chính, Quyết toán thuế TNDN vào năm sau, Thời hạn nộp công văn xin gộp BCTC.",
+      "href": "thu-vien/mau-to-khai-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh.html",
+      "title": "Mẫu 20-ĐK-TCT Tờ khai đăng ký người phụ thuộc giảm trừ gia cảnh 2026",
+      "excerpt": "Mẫu tờ khai đăng ký người phụ thuộc mới nhất năm 2026 là Mẫu số: 20-ĐK-TCT được ban hành kèm theo Thông tư s…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Mẫu biểu thuế - hóa đơn",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Người phụ thuộc",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cong-van-xin-gop-bao-cao-tai-chinh-nam-sau(1).png",
+      "image": "assets/images/content/pic/Service/images/Mau-To-khai-dang-ky-NPT(1).png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2018-01-18",
+      "publishDate": "2024-12-23",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-bang-tinh-thue-tncn-tren-excel-2026-cho-doanh-nghiep.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bang-tinh-thue-tncn-tren-excel-2026-cho-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-tinh-thue-tncn-tren-excel-2026-cho-doanh-nghiep.html",
+      "title": "Mẫu bảng tính thuế TNCN trên Excel 2026 cho doanh nghiệp",
+      "excerpt": "Vì thời điểm tính thuế TNCN là thời điểm chi trả thu nhập nên đối với những doanh nghiệp trả lương theo…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "TNCN",
+        "Excel",
+        "Công cụ khác",
+        "Mẫu file & kê khai",
+        "Kê khai",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Bang-tinh-thue-TNCN-2026.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

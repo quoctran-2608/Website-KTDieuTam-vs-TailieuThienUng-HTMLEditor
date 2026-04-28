@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2514,
-  "totalCount": 2736,
+  "currentIndex": 2473,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thong-tu-132-2018-tt-btc-che-do-ke-toan-cho-dn-sieu-nho.html",
     "section": "thu-vien",
@@ -108,7 +108,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -127,7 +127,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -162,6 +162,48 @@
   ],
   "related": [
     {
+      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-quyet-dinh-15-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-quyet-dinh-15-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-quyet-dinh-15-moi-nhat.html",
+      "title": "Hệ thống tài khoản kế toán theo quyết định 15 mới nhất năm 2014",
+      "excerpt": "Ngày 31/12/2009 Bộ tài chính đã ban hành Thông tư Số 244/2009/TT-BTC Hướng dẫn sửa đổi, bổ sung Chế độ kế toán Doanh ng…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2009-12-31",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-quyet-dinh-48-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-quyet-dinh-48-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-quyet-dinh-48-moi-nhat.html",
+      "title": "Hệ thống tài khoản kế toán theo quyết định 48 mới nhất năm 2016 đã được sử đổi",
+      "excerpt": "Ngày 4/10/2011 Bộ tài chính đã ban hành Thông tư Số 138/2011/TT-BTC Hướng dẫn sửa đổi, bổ sung Chế độ kế toán Doanh ngh…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2011-10-04",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -170,7 +212,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.html",
       "title": "So sánh tài khoản kế toán Thông tư 200 và Thông tư 99",
       "excerpt": "Ngày 27/10/2025, Bộ trưởng Bộ Tài chính ban hành Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp. Thông t…",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "Tài khoản",
         "Hạch toán",
@@ -180,73 +222,29 @@
       "image": "assets/images/content/pic/Service/images/So-sanh-Thong-tu-200-voi-thong-tu-99.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-10-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
-      "title": "Sửa đổi, bổ sung chế độ kế toán Thông tư 133/2016/TT-BTC",
-      "excerpt": "Ngày 20/6/2025 Bộ trưởng Bộ Tài chính ban hành Thông tư 46/2025/TT-BTC (có hiệu lực từ ngày 01/7/2025) sửa đổi, bổ sung…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
-      "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Sua-doi-thong-tu-133.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-08-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/tai-lieu-on-thi-chung-chi-hanh-nghe-ke-toan-kiem-toan-2014.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/tai-lieu-on-thi-chung-chi-hanh-nghe-ke-toan-kiem-toan-2014.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/tai-lieu-on-thi-chung-chi-hanh-nghe-ke-toan-kiem-toan-2014.html",
-      "title": "Tài liệu ôn thi chứng chỉ hành nghề kế toán, kiểm toán 2014",
-      "excerpt": "Ngày 04/06/2014, Bộ Tài Chính đã ban hành công văn số 7357/BTC-CĐKT gửi các Hội hành nghề về việc tài liệu học, ôn tập,…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
-      "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-06-04",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.html",
+      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-quyet-dinh-15-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.html",
-      "title": "So sánh tài khoản kế toán Thông tư 200 và Thông tư 99",
-      "excerpt": "Ngày 27/10/2025, Bộ trưởng Bộ Tài chính ban hành Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp. Thông t…",
+      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-quyet-dinh-15-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-quyet-dinh-15-moi-nhat.html",
+      "title": "Hệ thống tài khoản kế toán theo quyết định 15 mới nhất năm 2014",
+      "excerpt": "Ngày 31/12/2009 Bộ tài chính đã ban hành Thông tư Số 244/2009/TT-BTC Hướng dẫn sửa đổi, bổ sung Chế độ kế toán Doanh ng…",
       "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
         "Tài khoản",
         "Hạch toán",
         "Kế toán",
-        "Hướng dẫn"
+        "Văn bản"
       ],
-      "image": "assets/images/content/pic/Service/images/So-sanh-Thong-tu-200-voi-thong-tu-99.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-10-27",
+      "publishDate": "2009-12-31",
       "modifiedDate": null
     },
     {
@@ -258,7 +256,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/giay-xac-nhan-chua-duoc-thanh-toan-mau-01-tcn.html",
       "title": "Giấy xác nhận chưa được thanh toán Mẫu 01/TCN",
       "excerpt": "Giấy xác nhận về việc chưa được thanh toán Mẫu 01/TCN Ban hành kèm theo Thông tư số 26/2015/TT-BTC ngày 27/02/2015 của Bộ Tài chính",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Tài khoản - Hạch toán",
         "Biểu mẫu"
@@ -269,23 +267,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/tap-doan-tai-chinh-fb-viet-nam-tuyen-nhan-vien-ke-toan-tai-dong-anh-ha-noi.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/tap-doan-tai-chinh-fb-viet-nam-tuyen-nhan-vien-ke-toan-tai-dong-anh-ha-noi.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/tap-doan-tai-chinh-fb-viet-nam-tuyen-nhan-vien-ke-toan-tai-dong-anh-ha-noi.html",
+      "title": "Tập đoàn tài chính FB Việt Nam Tuyển Nhân viên kế toán",
+      "excerpt": "Tập đoàn tài chính FB Việt Nam Tuyển Nhân viên kế toán tại Khu công nghiệp Bắc Thăng Long - Đông Anh - Hà Nội. Mô tả cô…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "libraryKindLabel": "",
+      "publishDate": "2014-09-30",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2041,
-  "totalCount": 2736,
+  "currentIndex": 2003,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/quy-dinh-ve-noi-quy-lao-dong.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -188,49 +188,42 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "id": "thu-vien/cach-lap-to-khai-thue-thu-nhap-ca-nhan-mau-so-02kk-tncn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
-      "title": "Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK",
-      "excerpt": "Hướng dẫn thủ cắt giảm người phụ thuộc 2025 trên phần mềm HTKK để nộp qua mạng Khi nào thì thực hiện cắt giảm người phụ…",
+      "href": "thu-vien/cach-lap-to-khai-thue-thu-nhap-ca-nhan-mau-so-02kk-tncn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-to-khai-thue-thu-nhap-ca-nhan-mau-so-02kk-tncn.html",
+      "title": "Cách lập tờ khai thuế thu nhập cá nhân 05/KK-TNCN",
+      "excerpt": "Cách lập tờ khai thuế thu nhập cá nhân theo quý – tháng năm 2026; Hướng dẫn lập tờ khai thuế TNCN 05/KK-TNCN cách làm trên phần mềm HTKK.",
       "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
-        "Thuế thu nhập cá nhân",
-        "Thuế",
-        "Hóa đơn",
         "TNCN",
-        "HTKK",
-        "Người phụ thuộc"
+        "HTKK - eTax - Thuế điện tử",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Cat-giam-nguoi-phu-thuoc(1).png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-to-khai-thue-thu-nhap-ca-nhan(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2024-12-23",
+      "publishDate": "2026-02-20",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-hach-toan-thue-tncn-phai-nop-khi-tam-tinh-quyet-toan.html",
+      "id": "thu-vien/huong-dan-cach-ke-khai-thue-thu-nhap-ca-nhan-theo-thang-quy.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-thue-tncn-phai-nop-khi-tam-tinh-quyet-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-thue-tncn-phai-nop-khi-tam-tinh-quyet-toan.html",
-      "title": "Cách hạch toán thuế TNDN phải nộp, tạm tính, sau quyết toán",
-      "excerpt": "Hướng dẫn cách hạch toán thuế thu nhập doanh nghiệp phải nộp thì tạm tính quý và hạch toán phần chênh lệch sau khi làm…",
+      "href": "thu-vien/huong-dan-cach-ke-khai-thue-thu-nhap-ca-nhan-theo-thang-quy.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-ke-khai-thue-thu-nhap-ca-nhan-theo-thang-quy.html",
+      "title": "Hướng dẫn kê khai thuế thu nhập cá nhân theo tháng - quý",
+      "excerpt": "Hướng dẫn kê khai thuế thu nhập cá nhân theo quý - tháng; Cách kê khai thuế TNCN năm 2025 qua mạng - trên HTKK quy định kê khai thuế thu nhập cá nhân.",
       "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
-        "TNCN",
-        "TNDN",
-        "Quyết toán",
-        "Thuế thu nhập cá nhân",
-        "Thuế",
-        "Hóa đơn"
+        "HTKK - eTax - Thuế điện tử",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-thue-tndn.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-ke-khai-thue-tncn.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-03-31",
+      "publishDate": "2026-02-20",
       "modifiedDate": null
     }
   ],
@@ -280,23 +273,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "title": "Cách nộp thuế TNDN tạm tính 2025 qua mạng trên thuế điện tử",
+      "excerpt": "Hướng dẫn cách nộp tiền thuế thu nhập doanh nghiệp tạm tính quý qua mạng trên trang https://thuedientu.gdt.gov.vn/ mới…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Nop-thue-TNDN-tam-tinh-quy.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

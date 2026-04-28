@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1171,
-  "totalCount": 2736,
+  "currentIndex": 1134,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/luat-so-68-2014-qh13-luat-doanh-nghiep-2015.html",
     "section": "thu-vien",
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -184,24 +184,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/nghi-dinh-47-2021-nd-cp-quy-dinh-chi-tiet-luat-doanh-nghiep.html",
+      "id": "thu-vien/dang-ky-thanh-lap-chi-nhanh-vpdd-dia-diem-kinh-doanh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-47-2021-nd-cp-quy-dinh-chi-tiet-luat-doanh-nghiep.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-47-2021-nd-cp-quy-dinh-chi-tiet-luat-doanh-nghiep.html",
-      "title": "Nghị định 47/2021/NĐ-CP quy định chi tiết Luật doanh nghiệp",
-      "excerpt": "Ngày 01/04/2021 Chính phủ ban hành Nghị định 47/2021/NĐ-CP Quy định chi tiết một số điều của Luật số 59/2020/QH14 Luật doanh nghiệp.",
+      "href": "thu-vien/dang-ky-thanh-lap-chi-nhanh-vpdd-dia-diem-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/dang-ky-thanh-lap-chi-nhanh-vpdd-dia-diem-kinh-doanh.html",
+      "title": "Đăng ký thành lập chi nhánh, văn phòng đại diện, địa điểm kinh doanh",
+      "excerpt": "10 biểu mẫu sử dụng trong việc đăng ký thành lập chi nhánh, văn phòng đại diện, lập địa điểm kinh doanh được ban hành k…",
       "topicLabel": "DN - Thủ tục",
       "tags": [
-        "DN - Thủ tục",
+        "DN",
+        "Thủ tục",
+        "Doanh nghiệp",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-47-quy-dinh-luat-doanh-nghiep.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-04-01",
+      "publishDate": "2026-09-15",
       "modifiedDate": null
     },
+    {
+      "id": "thu-vien/luat-doanh-nghiep-so-68-2014-qh13-cua-quoc-hoi.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/luat-doanh-nghiep-so-68-2014-qh13-cua-quoc-hoi.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/luat-doanh-nghiep-so-68-2014-qh13-cua-quoc-hoi.html",
+      "title": "Luật Doanh nghiệp số 68/2014/QH13 ban hành ngày 26/11/2014",
+      "excerpt": "Luật Doanh nghiệp số 68/2014/QH13 của Quốc hội ban hành ngày 26/11/2014 quy định về việc thành lập, tổ chức quản lý, hoạt động có liên quan của doanh nghiệp.",
+      "topicLabel": "Luật - Bộ luật",
+      "tags": [
+        "Luật - Bộ luật",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Văn bản",
+      "publishDate": "2014-11-26",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/dang-ky-thanh-lap-chi-nhanh-vpdd-dia-diem-kinh-doanh.html",
       "section": "thu-vien",
@@ -222,27 +245,6 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-09-15",
       "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/nghi-dinh-47-2021-nd-cp-quy-dinh-chi-tiet-luat-doanh-nghiep.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-47-2021-nd-cp-quy-dinh-chi-tiet-luat-doanh-nghiep.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-47-2021-nd-cp-quy-dinh-chi-tiet-luat-doanh-nghiep.html",
-      "title": "Nghị định 47/2021/NĐ-CP quy định chi tiết Luật doanh nghiệp",
-      "excerpt": "Ngày 01/04/2021 Chính phủ ban hành Nghị định 47/2021/NĐ-CP Quy định chi tiết một số điều của Luật số 59/2020/QH14 Luật doanh nghiệp.",
-      "topicLabel": "DN - Thủ tục",
-      "tags": [
-        "DN - Thủ tục",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-47-quy-dinh-luat-doanh-nghiep.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-04-01",
-      "modifiedDate": null
     },
     {
       "id": "thu-vien/mau-10-dang-ky-to-chuc-hoi-cho-trien-lam-thuong-mai.html",
@@ -261,6 +263,29 @@
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-10-dang-ky-to-chuc-hoi-cro-trien-lam-thuong-mai.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2024-10-10",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-theo-qd-15-excel.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-theo-qd-15-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-ban-thuyet-minh-bao-cao-tai-chinh-theo-qd-15-excel.html",
+      "title": "Mẫu Bản Thuyết minh Báo cáo tài chính theo QĐ 15 Excel",
+      "excerpt": "Mẫu Bản Thuyết minh Báo cáo tài chính Excel mới nhất Mẫu số B 09 – DN Ban hành theo Quyết định số 15/2006/QĐ-BTC Ngày 2…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Mẫu file & kê khai",
+        "BCTC",
+        "Kê khai",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2006-03-20",
       "modifiedDate": null
     }
   ]

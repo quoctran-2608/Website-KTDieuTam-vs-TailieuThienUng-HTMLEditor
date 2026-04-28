@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1450,
-  "totalCount": 2736,
+  "currentIndex": 1413,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-bieu-chung-tu-ke-toan-hang-ton-kho-theo-thong-tu-99.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -166,91 +166,110 @@
   ],
   "related": [
     {
-      "id": "thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
+      "id": "thu-vien/danh-muc-mau-bieu-so-sach-ke-toan-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
-      "title": "Sửa đổi, bổ sung chế độ kế toán Thông tư 133/2016/TT-BTC",
-      "excerpt": "Ngày 20/6/2025 Bộ trưởng Bộ Tài chính ban hành Thông tư 46/2025/TT-BTC (có hiệu lực từ ngày 01/7/2025) sửa đổi, bổ sung…",
+      "href": "thu-vien/danh-muc-mau-bieu-so-sach-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/danh-muc-mau-bieu-so-sach-ke-toan-theo-thong-tu-99.html",
+      "title": "Danh mục mẫu biểu sổ sách kế toán theo Thông tư 99",
+      "excerpt": "Danh mục biểu mẫu sổ sách kế toán được ban hành kèm theo phụ lục III của chế độ kế toán theo Thông tư 99/2025/TT-BTC có…",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "Chứng từ",
+        "Sổ sách",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Danh-muc-bieu-mau-so-sach-ke-toan-theo-tt99.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-10-27",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99-2025-tt-btc.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99-2025-tt-btc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99-2025-tt-btc.html",
+      "title": "Bảng danh mục hệ thống tài khoản kế toán theo Thông tư 99/2025/TT-BTC",
+      "excerpt": "Bảng danh mục hệ thống tài khoản kế toán doanh nghiệp được ban hành kèm theo Phụ Lục II của Thông tư 99/2025/TT-BTC có…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/He-thong-tai-khoan-ke-toan-theo-thong-tu-99.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mo-so-ghi-so-va-khoa-so-ke-toan-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mo-so-ghi-so-va-khoa-so-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mo-so-ghi-so-va-khoa-so-ke-toan-theo-thong-tu-99.html",
+      "title": "Mở sổ, ghi sổ và khóa sổ kế toán theo Thông tư 99",
+      "excerpt": "Quy định về Mở sổ, ghi sổ và khóa sổ kế toán theo chế độ kế toán của Thông tư 99/2025/TT-BTC hiệu lực thi hành kể từ ng…",
       "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "Chuẩn mực",
         "Chế độ",
         "Nguyên tắc",
         "Kế toán",
-        "Hướng dẫn"
+        "Văn bản"
       ],
-      "image": "assets/images/content/pic/Service/images/Sua-doi-thong-tu-133.png",
+      "image": "assets/images/content/pic/Service/images/mo-so-ghi-so-khoa-so-theo-tt99(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-08-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-phieu-xuat-kho-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-phieu-xuat-kho-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-phieu-xuat-kho-theo-thong-tu-99.html",
-      "title": "Mẫu phiếu xuất kho theo thông tư 99 trên Word và Excel",
-      "excerpt": "Mẫu số: 02 - VT được ban hành kèm theo phụ lục II của Thông tư 99/2025/TT-BTC là mẫu phiếu xuất kho mới nhất năm 2026 (…",
-      "topicLabel": "Mẫu biểu kế toán",
-      "tags": [
-        "Mẫu biểu kế toán",
-        "Kế toán",
-        "Excel",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/Mau-phieu-Xuat-kho-theo-thong-tu-99(1).png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-10-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-99.html",
-      "title": "Cách lập Báo cáo lưu chuyển tiền tệ theo Thông tư 99",
-      "excerpt": "Hướng dẫn lập và trình bày Báo cáo lưu chuyển tiền tệ theo Mẫu số B03 - DN ban hành kèm theo Thông tư 99/2025/TT-BTC 1.…",
-      "topicLabel": "Báo cáo tài chính",
-      "tags": [
-        "Báo cáo tài chính",
-        "Kế toán",
-        "BCTC",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Cach-lap-bao-cao-luu-chuyen-tien-te-tt99.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
+      "id": "thu-vien/danh-muc-mau-bieu-so-sach-ke-toan-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/sua-doi-bo-sung-thong-tu-133-2016-tt-btc.html",
-      "title": "Sửa đổi, bổ sung chế độ kế toán Thông tư 133/2016/TT-BTC",
-      "excerpt": "Ngày 20/6/2025 Bộ trưởng Bộ Tài chính ban hành Thông tư 46/2025/TT-BTC (có hiệu lực từ ngày 01/7/2025) sửa đổi, bổ sung…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "href": "thu-vien/danh-muc-mau-bieu-so-sach-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/danh-muc-mau-bieu-so-sach-ke-toan-theo-thong-tu-99.html",
+      "title": "Danh mục mẫu biểu sổ sách kế toán theo Thông tư 99",
+      "excerpt": "Danh mục biểu mẫu sổ sách kế toán được ban hành kèm theo phụ lục III của chế độ kế toán theo Thông tư 99/2025/TT-BTC có…",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
+        "Chứng từ",
+        "Sổ sách",
         "Kế toán",
-        "Hướng dẫn"
+        "Văn bản"
       ],
-      "image": "assets/images/content/pic/Service/images/Sua-doi-thong-tu-133.png",
+      "image": "assets/images/content/pic/Service/images/Danh-muc-bieu-mau-so-sach-ke-toan-theo-tt99.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-08-26",
+      "publishDate": "2025-10-27",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-ban-tom-tat-ho-so-benh-an.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-ban-tom-tat-ho-so-benh-an.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-ban-tom-tat-ho-so-benh-an.html",
+      "title": "Mẫu bản tóm tắt hồ sơ bệnh án theo Thông tư 25/2025/TT-BYT",
+      "excerpt": "Mẫu bản tóm tắt hồ sơ bệnh án mới nhất năm 2025 là Mẫu số 03 Phụ lục II ban hành kèm theo Thông tư 25/2025/TT-BYT ngày…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/mau-tom-tat-ho-so-benh-an.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2025-06-30",
       "modifiedDate": null
     },
     {
@@ -262,7 +281,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/mau-phieu-xuat-kho-theo-thong-tu-99.html",
       "title": "Mẫu phiếu xuất kho theo thông tư 99 trên Word và Excel",
       "excerpt": "Mẫu số: 02 - VT được ban hành kèm theo phụ lục II của Thông tư 99/2025/TT-BTC là mẫu phiếu xuất kho mới nhất năm 2026 (…",
-      "topicLabel": "Mẫu biểu kế toán",
+      "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Mẫu biểu kế toán",
         "Kế toán",
@@ -270,28 +289,8 @@
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-phieu-Xuat-kho-theo-thong-tu-99(1).png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-10-27",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     }
   ]

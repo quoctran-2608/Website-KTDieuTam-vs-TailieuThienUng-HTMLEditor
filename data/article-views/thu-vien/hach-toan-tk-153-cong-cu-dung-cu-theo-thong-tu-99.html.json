@@ -1,6 +1,6 @@
 {
   "currentIndex": 325,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-hach-toan-cong-cu-dung-cu-tai-khoan-153.html",
     "section": "thu-vien",
@@ -10,7 +10,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-cong-cu-dung-cu-tai-khoan-153.html",
     "title": "Cách hạch toán Tài khoản 153 Công cụ dụng cụ",
     "excerpt": "Hướng dẫn cách hạch toán Công cụ dụng cụ. Cách hạch toán tài khoản 153 CCDC của Doanh nghiệp áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, cách hạch toán phẩn bổ công cụ dụng cụ",
-    "topicLabel": "DN - Thủ tục",
+    "topicLabel": "Tài khoản - Hạch toán",
     "tags": [
       "DN - Thủ tục",
       "Hướng dẫn"
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -250,44 +250,68 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/so-theo-doi-chi-tiet-von-dau-tu-cua-chu-so-huu-theo-thong-tu-99.html",
+      "id": "thu-vien/mau-chung-tu-ke-toan-tscd-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/so-theo-doi-chi-tiet-von-dau-tu-cua-chu-so-huu-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/so-theo-doi-chi-tiet-von-dau-tu-cua-chu-so-huu-theo-thong-tu-99.html",
-      "title": "Sổ theo dõi chi tiết vốn đầu tư của chủ sở hữu theo Thông tư 99",
-      "excerpt": "Sổ theo dõi chi tiết nguồn vốn kinh doanh dùng để ghi chép số hiện có và tình hình tăng, giảm nguồn vốn kinh doanh của…",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "href": "thu-vien/mau-chung-tu-ke-toan-tscd-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-chung-tu-ke-toan-tscd-theo-thong-tu-99.html",
+      "title": "Mẫu chứng từ kế toán TSCĐ theo Thông tư 99",
+      "excerpt": "Các chứng từ kế toán tài sản cố định dùng để theo dõi tình hình biến động về số lượng, chất lượng và giá trị của TSCĐ.…",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "Tài khoản",
-        "Hạch toán",
+        "TSCĐ",
+        "Mẫu biểu kế toán",
         "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-so-theo doi-chi-tiet-von-dau-tu-cua-chu-so-huu.png",
+      "image": "assets/images/content/pic/Service/images/Danh-muc-chung-tu-ke-toan-TSCĐ.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-10-27",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-phan-bo-cong-cu-dung-cu-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-phan-bo-cong-cu-dung-cu-tren-misa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-phan-bo-cong-cu-dung-cu-tren-misa.html",
+      "title": "Cách phân bổ công cụ dụng cụ trên Misa",
+      "excerpt": "Hướng dẫn lập chứng từ phân bổ giá trị của CCDC vào chi phí hàng tháng, đồng thời hạch toán chi phí vào các đối tượng p…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "CCDC",
+        "MISA",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-phan-bo-cong-cu-dung-cu-tren-misa-1(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-ty-thien-vu-group-tuyen-nhan-vien-thu-kho-thu-quy.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-thien-vu-group-tuyen-nhan-vien-thu-kho-thu-quy.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-thien-vu-group-tuyen-nhan-vien-thu-kho-thu-quy.html",
+      "title": "Công ty Thiên Vũ Group tuyển Nhân viên Thủ kho - Thủ quỹ",
+      "excerpt": "Công ty Thiên Vũ Group tuyển Nhân viên Thủ kho - Thủ quỹ tại Tầng 9 tòa nhà VP 169 Nguyễn Ngọc Vũ - Cầu Giấy - Hà Nội M…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Tài sản",
+        "Kho",
+        "CCDC",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2014-06-05",
       "modifiedDate": null
     }
   ]

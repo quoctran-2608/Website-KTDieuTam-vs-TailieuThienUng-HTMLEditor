@@ -1,19 +1,20 @@
 {
-  "currentIndex": 2012,
-  "totalCount": 2736,
+  "currentIndex": 1974,
+  "totalCount": 2694,
   "prev": {
-    "id": "ban-tin/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
+    "id": "thu-vien/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
     "section": "thu-vien",
     "sectionLabel": "Thư viện",
     "sectionHref": "thu-vien.html",
-    "href": "ban-tin/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
-    "canonical": "https://ketoandieutam.vn/ban-tin/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
+    "href": "thu-vien/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
+    "canonical": "https://ketoandieutam.vn/thu-vien/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
     "title": "Nhận tiền bồi thường, hỗ trợ có phải xuất hóa đơn?",
     "excerpt": "Nhận tiền bồi thường, tiền thưởng, tiền hỗ trợ nhận được, tiền khuyễn mãi, quảng cáo có phải xuất hóa đơn, bồi thường bằng hàng hóa, dịch vụ có phải lập hóa đơn",
     "topicLabel": "GTGT - Hóa đơn",
     "tags": [
-      "Ưu đãi học phí",
-      "Thông tin"
+      "GTGT - Hóa đơn",
+      "Thuế - Hóa đơn",
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/quy-dinh-khoan-tien-ho-tro-ban-hang.png",
     "libraryKindLabel": "Hướng dẫn",
@@ -37,7 +38,7 @@
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/nhap-kho-nguyen-vat-lieu-dung-cho-san-xuat-khong-su-dung-het-tren-misa-1(1).png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -110,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -164,6 +165,26 @@
   ],
   "related": [
     {
+      "id": "thu-vien/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
+      "title": "Nhận tiền bồi thường, hỗ trợ có phải xuất hóa đơn?",
+      "excerpt": "Nhận tiền bồi thường, tiền thưởng, tiền hỗ trợ nhận được, tiền khuyễn mãi, quảng cáo có phải xuất hóa đơn, bồi thường bằng hàng hóa, dịch vụ có phải lập hóa đơn",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT - Hóa đơn",
+        "Thuế - Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/quy-dinh-khoan-tien-ho-tro-ban-hang.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-07-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-xuat-hoa-don-ban-hang-kem-chi-phi-van-chuyen.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -180,25 +201,6 @@
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hoa-don-ban-hang-kem-chi-phi-van-chuyen.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2021-07-05",
-      "modifiedDate": null
-    },
-    {
-      "id": "ban-tin/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "ban-tin/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
-      "title": "Nhận tiền bồi thường, hỗ trợ có phải xuất hóa đơn?",
-      "excerpt": "Nhận tiền bồi thường, tiền thưởng, tiền hỗ trợ nhận được, tiền khuyễn mãi, quảng cáo có phải xuất hóa đơn, bồi thường bằng hàng hóa, dịch vụ có phải lập hóa đơn",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/quy-dinh-khoan-tien-ho-tro-ban-hang.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
       "modifiedDate": null
     },
     {
@@ -224,22 +226,23 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-xuat-hoa-don-ban-hang-kem-chi-phi-van-chuyen.html",
+      "id": "thu-vien/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-xuat-hoa-don-ban-hang-kem-chi-phi-van-chuyen.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-xuat-hoa-don-ban-hang-kem-chi-phi-van-chuyen.html",
-      "title": "Cách xuất hóa đơn bán hàng kèm chi phí vận chuyển",
-      "excerpt": "Khi xuất hóa đơn bán hàng kèm dịch vụ vận chuyển thì ghi như thế nào? Cách viết hóa đơn bán hàng kèm chi phí vận chuyển chi tiết theo quy định tại Nghị định 123/2020/NĐ-CP",
+      "href": "thu-vien/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
+      "title": "Nhận tiền bồi thường, hỗ trợ có phải xuất hóa đơn?",
+      "excerpt": "Nhận tiền bồi thường, tiền thưởng, tiền hỗ trợ nhận được, tiền khuyễn mãi, quảng cáo có phải xuất hóa đơn, bồi thường bằng hàng hóa, dịch vụ có phải lập hóa đơn",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT - Hóa đơn",
+        "Thuế - Hóa đơn",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hoa-don-ban-hang-kem-chi-phi-van-chuyen.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/quy-dinh-khoan-tien-ho-tro-ban-hang.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-07-05",
+      "publishDate": "2025-07-01",
       "modifiedDate": null
     },
     {
@@ -262,23 +265,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
+      "id": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "title": "Phần mềm HTKK 5.2.1 mới nhất ngày 2/8/2024",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.1 mới nhất 2/8/2024 của Tổng cục thuế. Tải phần mềm HTKK 5.2.1 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2024.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "title": "Cách lập bảng kê bán ra theo Mẫu 01-1/GTGT trên Excel",
+      "excerpt": "Hướng dẫn cách lập bảng kê hóa đơn hàng hóa dịch vụ bán ra theo Mẫu 01-1/GTGT trên file Excel khi làm tờ khai thuế GTGT…",
+      "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Excel",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_1-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/Cach-lap-bang-ke-ban-ra.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2024-08-02",
+      "publishDate": "2026-03-30",
       "modifiedDate": null
     }
   ]

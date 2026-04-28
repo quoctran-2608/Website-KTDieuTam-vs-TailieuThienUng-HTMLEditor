@@ -1,6 +1,6 @@
 {
   "currentIndex": 561,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/huong-dan-quyet-toan-thue-thu-nhap-ca-nhan.html",
     "section": "thu-vien",
@@ -42,7 +42,7 @@
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/su-dung-ham-subtotal-trong-excel-ke-toan.png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -115,7 +115,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +134,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -186,6 +186,28 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/su-dung-ham-subtotal-trong-excel-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "title": "Cách hạch toán kết chuyển cuối kỳ (Lãi lỗ, Thuế)",
+      "excerpt": "Các bút toán kết chuyển cuối kỳ theo Thông tư 200 và 133 như: Hạch toán kết chuyển thuế GTGT, kết chuyển lãi lỗ, Doanh…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cac-but-toan-ket-chuyen-cuoi-ky.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
@@ -206,20 +228,22 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lam-so-sach-ke-toan-tren-excel.png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-26",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
-      "id": "thu-vien/cach-su-dung-ham-sumif-trong-excel-ke-toan.html",
+      "id": "thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-su-dung-ham-sumif-trong-excel-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-su-dung-ham-sumif-trong-excel-ke-toan.html",
-      "title": "Hướng dẫn dùng hàm Sumif trong Excel kế toán công thức chi tiết",
-      "excerpt": "Hướng dẫn sử dụng hàm Sumif trong Excel kế toán như: Cách dùng hàm Sumif để kết chuyển các bút toán cuối kỳ, tổng hợp s…",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "title": "Cách hạch toán kết chuyển cuối kỳ (Lãi lỗ, Thuế)",
+      "excerpt": "Các bút toán kết chuyển cuối kỳ theo Thông tư 200 và 133 như: Hạch toán kết chuyển thuế GTGT, kết chuyển lãi lỗ, Doanh…",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
         "Excel",
         "Công cụ khác",
@@ -227,13 +251,32 @@
         "Công cụ",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-dung-ham-sumif-trong-excel-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cac-but-toan-ket-chuyen-cuoi-ky.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
-    }
-  ],
-  "latestOther": [
+    },
+    {
+      "id": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
+      "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
+      "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2016-08-26",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/cach-su-dung-ham-subtotal-trong-excel-khi-lam-ke-toan.html",
       "section": "thu-vien",
@@ -252,66 +295,30 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/su-dung-ham-subtotal-trong-excel-ke-toan.png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-can-doi-tai-khoan-theo-qd-48-2006-qd-btc.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-can-doi-tai-khoan-theo-qd-48-2006-qd-btc.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-can-doi-tai-khoan-theo-qd-48-2006-qd-btc.html",
-      "title": "Mẫu bảng cân đối tài khoản kế toán theo Thông tư 133",
-      "excerpt": "Mẫu bảng cân đối tài khoản kế toán theo Thông tư 133, đây là mẫu bảng cân đối số phát sinh tài khoản kế toán Excel mới nhất hiện nay, cách lập Bảng cân đối tài khoản kế toán theo Thông tư 133.",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel - Công cụ khác",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-can-doi-tai-khoan-tt-133.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2016-08-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "ban-tin/cong-ty-co-phan-doorclick-tuyen-ke-toan-tong-hop-thue.html",
+      "id": "thu-vien/cong-ty-co-phan-ninza-tuyen-ke-toan-tong-hop.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/cong-ty-co-phan-doorclick-tuyen-ke-toan-tong-hop-thue.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/cong-ty-co-phan-doorclick-tuyen-ke-toan-tong-hop-thue.html",
-      "title": "Công Ty Cổ Phần Doorclick Tuyển kế toán tổng hợp – Thuế",
-      "excerpt": "Công Ty Cổ Phần Doorclick Tuyển kế toán tổng hợp – Thuế. Địa điểm làm việc: Phòng 1406, chung cư 4F, phố Trung Hòa, Cầu Giấy, Hà Nội. Lương cứng + phụ cấp ăn trưa + thưởng KPI từ 9 triệu – 12 triệu.",
+      "href": "thu-vien/cong-ty-co-phan-ninza-tuyen-ke-toan-tong-hop.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-co-phan-ninza-tuyen-ke-toan-tong-hop.html",
+      "title": "Công ty Cổ phần NinZA tuyển Kế toán tổng hợp",
+      "excerpt": "Công ty Cổ phần NinZA tuyển Kế toán tổng hợp tại Phường Yên Hòa, Quận Cầu Giấy, Thành Phố Hà Nội Mô tả công việc: Cập n…",
       "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Cơ sở đào tạo",
-        "Thông tin"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "",
-      "publishDate": "2021-06-30",
+      "publishDate": "2014-06-20",
       "modifiedDate": null
     }
   ]

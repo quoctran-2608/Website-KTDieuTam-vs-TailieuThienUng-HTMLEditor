@@ -256,6 +256,8 @@
 
   function shouldPreserveLegacyTableLayout(table) {
     if (!table) return false;
+    if (table.dataset && table.dataset.preserveLayout === 'true') return true;
+    if (table.getAttribute && String(table.getAttribute('data-preserve-layout') || '').toLowerCase() === 'true') return true;
     var rows = Array.prototype.slice.call(table.rows || []);
     if (!rows.length) return false;
     var maxCols = rows.reduce(function (max, row) {

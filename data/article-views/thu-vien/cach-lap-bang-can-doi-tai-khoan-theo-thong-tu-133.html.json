@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1301,
-  "totalCount": 2736,
+  "currentIndex": 1264,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-bang-can-doi-tai-khoan-theo-qd-48-2006-qd-btc.html",
     "section": "thu-vien",
@@ -16,7 +16,7 @@
       "Biểu mẫu"
     ],
     "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-can-doi-tai-khoan-tt-133.png",
-    "libraryKindLabel": "Biểu mẫu",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2016-08-26",
     "modifiedDate": null
   },
@@ -38,7 +38,7 @@
       "Biểu mẫu"
     ],
     "image": "assets/images/content/pic/Service/images/mau-bang-cham-cong-lam-them-gio-theo-TT133.png",
-    "libraryKindLabel": "Biểu mẫu",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -165,6 +165,47 @@
   ],
   "related": [
     {
+      "id": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "title": "Cách lập báo cáo tính tài chính Mẫu B01b-DNN theo TT 133",
+      "excerpt": "Mẫu Báo cáo tình hình tài chính B01b-DNN theo Thông tư 133, hướng dẫn cách làm Báo cáo tình hình tài chính Mẫu B01b-DNN…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-mau-b01b-dnn.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2016-08-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-bao-cao-tai-chinh-theo-thong-tu-133-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bao-cao-tai-chinh-theo-thong-tu-133-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bao-cao-tai-chinh-theo-thong-tu-133-moi-nhat.html",
+      "title": "Cách làm báo cáo tài chính theo Thông tư 133 mới nhất",
+      "excerpt": "Mẫu Báo cáo tài chính theo Thông tư 133 mới nhất, Hướng dẫn cách làm Báo cáo tài chính theo Thông tư 133 gồm: Báo cáo t…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "BCTC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/bao-cao-tai-chinh-theo-thong-tu-133.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-hach-toan-chi-nhanh-phu-thuoc-khac-tinh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -183,67 +224,49 @@
       "image": "assets/images/content/pic/Service/images/hach-toan-chi-nhanh-phu-thuoc-doc-lap.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh.html",
-      "title": "Cách lập Sổ chi phí sản xuất kinh doanh theo Thông tư 200 và 133",
-      "excerpt": "Hướng dẫn Cách lập Sổ chi phí sản xuất kinh doanh theo Thông tư 200 và 133. Mẫu Sổ chi phí sản xuất kinh doanh S36-DN (S17-DNN) mở theo từng đối tượng tập hợp chi phí như phân xưởng, bộ phận sản xuất",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản - Hạch toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-so-chi-phi-san-xuat-kinh-doanh.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-so-chi-tiet-cac-tai-khoan-theo-thong-tu-200-va-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-so-chi-tiet-cac-tai-khoan-theo-thong-tu-200-va-133.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-chi-tiet-cac-tai-khoan-theo-thong-tu-200-va-133.html",
-      "title": "Cách lập Sổ chi tiết các Tài khoản theo Thông tư 99 và 133",
-      "excerpt": "Hướng dẫn Cách lập Sổ chi tiết các Tài khoản theo Thông tư 99 và 133. Mẫu Sổ chi tiết các Tài khoản S38-DN (S19-DNN) dùng cho một số tài khoản thuộc loại thanh toán nguồn vốn mà chưa có mẫu sổ riêng.",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản - Hạch toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-so-chi-tiet-cac-tai-khoan-ke-toan(1).png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-10-27",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-hach-toan-chi-nhanh-phu-thuoc-khac-tinh.html",
+      "id": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-chi-nhanh-phu-thuoc-khac-tinh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-chi-nhanh-phu-thuoc-khac-tinh.html",
-      "title": "Cách hạch toán chi nhánh độc lập và phụ thuộc cùng tỉnh - khác tỉnh",
-      "excerpt": "Hướng dẫn cách hạch toán chi nhánh Phụ thuộc và Độc lập theo Thông tư 200 và 133; Quy định về chi nhánh hạch toán phụ t…",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "href": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "title": "Cách lập báo cáo tính tài chính Mẫu B01b-DNN theo TT 133",
+      "excerpt": "Mẫu Báo cáo tình hình tài chính B01b-DNN theo Thông tư 133, hướng dẫn cách làm Báo cáo tình hình tài chính Mẫu B01b-DNN…",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "Tài khoản",
-        "Hạch toán",
+        "Mẫu biểu kế toán",
         "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/hach-toan-chi-nhanh-phu-thuoc-doc-lap.png",
+      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-mau-b01b-dnn.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2016-08-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.html",
+      "title": "Mẫu Báo cáo tình hình tài chính theo Thông tư 133 – Cách lập",
+      "excerpt": "Hướng dẫn cách lập Báo cáo tình hình tài chính Mẫu B01a – DNN theo Mẫu Báo cáo tình hình tài chính theo Thông tư 133 mớ…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     },
     {
@@ -261,28 +284,8 @@
         "Biểu mẫu"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-can-doi-tai-khoan-tt-133.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2016-08-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     }
   ]

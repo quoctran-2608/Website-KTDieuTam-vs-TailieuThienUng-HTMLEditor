@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1722,
-  "totalCount": 2736,
+  "currentIndex": 1685,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-so-s02a-dn-chung-tu-ghi-so-theo-thong-tu-99.html",
     "section": "thu-vien",
@@ -37,7 +37,7 @@
       "Biểu mẫu"
     ],
     "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-so-sach-ke-toan-excel-theo-tt-133-200.png",
-    "libraryKindLabel": "Biểu mẫu",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-26",
     "modifiedDate": null
   },
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -164,81 +164,83 @@
   ],
   "related": [
     {
-      "id": "thu-vien/huong-dan-cach-lap-cac-bang-bieu-cuoi-thang-tren-excel.html",
+      "id": "thu-vien/mau-bang-can-doi-ke-toan-excel-moi-nhat-theo-quyet-dinh-48.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-lap-cac-bang-bieu-cuoi-thang-tren-excel.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-lap-cac-bang-bieu-cuoi-thang-tren-excel.html",
-      "title": "Hướng dẫn cách lập các bảng biểu cuối tháng trên Excel",
-      "excerpt": "Phần trước các bạn đã được hướng dẫn cách làm sổ sách kế toán trên Excel theo mẫu Công ty kế toán Diệu Tâm thiết kế. Bà…",
+      "href": "thu-vien/mau-bang-can-doi-ke-toan-excel-moi-nhat-theo-quyet-dinh-48.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-can-doi-ke-toan-excel-moi-nhat-theo-quyet-dinh-48.html",
+      "title": "Mẫu bảng cân đối kế toán Excel theo Thông tư 200",
+      "excerpt": "Mẫu bảng cân đối kế toán theo Thông tư 200, đây là Mẫu bảng cân đối kế toán Excel mới nhất hiện nay. Cách lập bảng cân…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
         "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Hướng dẫn"
+        "Mẫu file & kê khai",
+        "Kê khai",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-lap-bang-can-doi-phat-sinh-tren-excel.png",
-      "libraryKindLabel": "Hướng dẫn",
+      "image": "assets/images/content/pic/Service/images/mau-bang-can-doi-ke-toan-excel-theo-thong-tu-200.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-bang-cham-cong-tren-excel-cho-nhan-vien.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bang-cham-cong-tren-excel-cho-nhan-vien.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-cham-cong-tren-excel-cho-nhan-vien.html",
+      "title": "Mẫu bảng chấm công trên Excel mới nhất năm 2026",
+      "excerpt": "Mẫu bảng chấm công theo Thông tư 99 và Thông tư 133 mới nhất. Đây là mẫu bảng chấm công trên Excel năm 2026 do Kế toán…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Công cụ khác",
+        "Mẫu file & kê khai",
+        "Kê khai",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Bang-cham-cong-2026.png",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/danh-muc-he-thong-tai-khoan-ke-toan-theo-thong-tu-133.html",
+      "id": "thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/danh-muc-he-thong-tai-khoan-ke-toan-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/danh-muc-he-thong-tai-khoan-ke-toan-theo-thong-tu-133.html",
-      "title": "Bảng Hệ thống Tài khoản kế toán theo Thông tư 133",
-      "excerpt": "Bảng hệ thống tài khoản theo thông tư 133 file Excel – word danh mục Hệ thống tài khoản kế toán Doanh nghiệp vừa và nhỏ; Download Hệ thống tài khoản kế toán theo Thông tư 133 tại đây.",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel - Công cụ khác",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/he-thong-tai-khoan-ke-toan-theo-thong-tu-133.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-08-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
-      "title": "Cách làm bảng tính lương trên Excel hàng tháng năm 2026",
-      "excerpt": "Hướng dẫn cách làm bảng tính lương trên Excel 2026 theo mẫu Bảng thanh toán tiền lương theo Thông tư 99 và TT 133 mới n…",
+      "href": "thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-mua-vao-ban-ra-tren-file-excel.html",
+      "title": "Mẫu bảng kê mua vào bán ra trên File Excel 2026 mới nhất",
+      "excerpt": "Bảng kê mua vào bán ra dùng để kê khai hóa đơn đầu ra và hóa đơn đầu vào khi làm tờ khai thuế GTGT Kế Toán Diệu Tâm có…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
         "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Tiền lương",
-        "Hướng dẫn"
+        "Mẫu file & kê khai",
+        "Kê khai",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Bang-luong-2026.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
+      "image": "assets/images/content/pic/Service/images/Mau-bang-ke-mua-vao(3).png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2014-08-25",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/huong-dan-cach-lap-cac-bang-bieu-cuoi-thang-tren-excel.html",
+      "id": "thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-lap-cac-bang-bieu-cuoi-thang-tren-excel.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-lap-cac-bang-bieu-cuoi-thang-tren-excel.html",
-      "title": "Hướng dẫn cách lập các bảng biểu cuối tháng trên Excel",
-      "excerpt": "Phần trước các bạn đã được hướng dẫn cách làm sổ sách kế toán trên Excel theo mẫu Công ty kế toán Diệu Tâm thiết kế. Bà…",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "title": "Cách hạch toán kết chuyển cuối kỳ (Lãi lỗ, Thuế)",
+      "excerpt": "Các bút toán kết chuyển cuối kỳ theo Thông tư 200 và 133 như: Hạch toán kết chuyển thuế GTGT, kết chuyển lãi lỗ, Doanh…",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
         "Excel",
         "Công cụ khác",
@@ -246,9 +248,31 @@
         "Công cụ",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-lap-bang-can-doi-phat-sinh-tren-excel.png",
+      "image": "assets/images/content/pic/Service/images/cac-but-toan-ket-chuyen-cuoi-ky.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-bien-ban-huy-hoa-don-gtgt-theo-thong-tu-39-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bien-ban-huy-hoa-don-gtgt-theo-thong-tu-39-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bien-ban-huy-hoa-don-gtgt-theo-thong-tu-39-moi-nhat.html",
+      "title": "Mẫu biên bản hủy hóa đơn GTGT theo Thông tư 39 mới nhất",
+      "excerpt": "Kế toán Diệu Tâm xin chia sẻ Mẫu biên bản hủy hóa đơn GTGT viết sai theo Thông tư 39/2014/TT-BTC mới nhất hiện nay để c…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "GTGT",
+        "Mẫu biểu thuế",
+        "hóa đơn",
+        "Thuế",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2010-05-14",
       "modifiedDate": null
     },
     {
@@ -269,28 +293,8 @@
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/mau-bang-can-doi-ke-toan-excel-theo-thong-tu-200.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2380,
-  "totalCount": 2736,
+  "currentIndex": 2342,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/so-chi-tiet-thue-gtgt-duoc-hoan-lai-theo-thong-tu-99.html",
     "section": "thu-vien",
@@ -31,7 +31,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
     "title": "Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh",
     "excerpt": "Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh: là một phần của hệ thống sổ kế toán chi tiết phục…",
-    "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+    "topicLabel": "Mẫu biểu kế toán",
     "tags": [
       "Chuẩn mực",
       "Chế độ",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -188,25 +188,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
-      "title": "Cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo TT 200 và 133",
-      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo Thông tư 200 và 133. Mẫu bảng tổng hợp chi tiết vật liệu dụng cụ sản phẩm hàng hóa S11-DN (S07-DNN) Dùng để tổng hợp phần giá trị từ các trang sổ, thẻ chi tiết",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT - Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-tong-hop-nhap-xuat-ton-kho-hang-hoa.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/huong-dan-lap-bao-cao-tinh-hinh-su-dung-hoa-don-theo-quy.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -226,26 +207,47 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-03-31",
       "modifiedDate": null
-    }
-  ],
-  "latestOther": [
+    },
     {
-      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "id": "thu-vien/dieu-kien-khau-tru-thue-gia-tri-gia-tang-dau-vao.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
-      "title": "Cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo TT 200 và 133",
-      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo Thông tư 200 và 133. Mẫu bảng tổng hợp chi tiết vật liệu dụng cụ sản phẩm hàng hóa S11-DN (S07-DNN) Dùng để tổng hợp phần giá trị từ các trang sổ, thẻ chi tiết",
+      "href": "thu-vien/dieu-kien-khau-tru-thue-gia-tri-gia-tang-dau-vao.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/dieu-kien-khau-tru-thue-gia-tri-gia-tang-dau-vao.html",
+      "title": "Điều kiện khấu trừ thuế giá trị gia tăng đầu vào năm 2026",
+      "excerpt": "Hướng dẫn cách xác định thuế giá trị gia tăng đầu vào được khấu trừ, các điều kiện khấu trừ thuế GTGT đầu vào trường hợp sản xuất kinh doanh chịu thuế GTGT và Không chịu thuế GTGT … theo Luật thuế GTGT số 48/2024/QH15, Thông tư 219/2013/TT-BTC, 119/2014/TT-BTC và Thông tư 26/2015/TT-BTC.",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-tong-hop-nhap-xuat-ton-kho-hang-hoa.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/dieu-kien-khau-tru-thue-GTGT-dau-vao.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-12-22",
+      "publishDate": "2024-05-15",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/huong-dan-lap-bao-cao-tinh-hinh-su-dung-hoa-don-theo-quy.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/huong-dan-lap-bao-cao-tinh-hinh-su-dung-hoa-don-theo-quy.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-lap-bao-cao-tinh-hinh-su-dung-hoa-don-theo-quy.html",
+      "title": "Cách lập báo cáo tình hình sử dụng hóa đơn theo quý - Tháng",
+      "excerpt": "Hướng dẫn lập báo cáo tình hình sử dụng hóa đơn theo quý mẫu BC26-A trên phần mềm HTKK mới nhất, cách ghi các chi tiêu…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-lap-bao-cao-tinh-hinh-su-dung-hoa-don-quy.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-03-31",
       "modifiedDate": null
     },
     {
@@ -270,23 +272,22 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng cân đối kế toán theo Thông tư 200",
+      "excerpt": "Mẫu bảng cân đối kế toán theo Thông tư 200/2014/TT-BTC mới nhất gồm cả bản word và Excel, các bạn có thể tải Mẫu bảng cân đối kế toán miễn phí tại đây . Hướng dẫn cách lập bảng cân đối kế toán theo Thông tư 200 chi tiết.",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
         "Excel - Công cụ khác",
-        "Công cụ"
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-can-doi-ke-toan-theo-thong-tu-200.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ]

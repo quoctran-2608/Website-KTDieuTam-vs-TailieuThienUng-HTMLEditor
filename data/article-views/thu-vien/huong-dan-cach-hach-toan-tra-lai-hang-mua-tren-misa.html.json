@@ -1,6 +1,6 @@
 {
   "currentIndex": 415,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-hach-toan-tk-911-theo-thong-tu-99.html",
     "section": "thu-vien",
@@ -31,7 +31,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-tra-luong-bang-tien-gui-ngan-hang.html",
     "title": "Cách hạch toán trả lương bằng tiền gửi ngân hàng trên Misa",
     "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ trả lương bằng tiền gửi ngân hàng trên phần mềm Misa Hàng tháng, căn cứ vào B…",
-    "topicLabel": "Tài khoản - Hạch toán",
+    "topicLabel": "MISA",
     "tags": [
       "Tài khoản",
       "Hạch toán",
@@ -41,7 +41,7 @@
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach-hach-toan-tra-luong-bang-tien-gui-ngan-hang-tren-misa-1(1).png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -114,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -133,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -184,7 +184,7 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach-hach-toan-xuat-tra-lai-hang-da-mua-tren-misa-1.png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
@@ -205,7 +205,7 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach-hach-toan-hang-ban-bi-tra-lai-tren-misa-1.png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
@@ -226,12 +226,53 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/mua-hang-trong-nuoc-khong-qua-kho(1).png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2023-01-19",
       "modifiedDate": null
     }
   ],
   "latestOther": [
+    {
+      "id": "thu-vien/cach-hach-toan-xuat-hang-cho-chi-nhanh-hach-toan-phu-thuoc.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-hach-toan-xuat-hang-cho-chi-nhanh-hach-toan-phu-thuoc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-xuat-hang-cho-chi-nhanh-hach-toan-phu-thuoc.html",
+      "title": "Cách hạch toán xuất hàng cho các đơn vị (chi nhánh) hạch toán phụ thuộc",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ xuất hàng cho các đơn vị (chi nhánh) hạch toán phụ thuộc trên phần mềm Misa K…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-xuat-hang-cho-chi-nhanh-hach-toan-phu-thuoc-1(1).png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bien-ban-kiem-nghiem-vat-tu-cong-cu-san-pham-hang-hoa.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bien-ban-kiem-nghiem-vat-tu-cong-cu-san-pham-hang-hoa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/bien-ban-kiem-nghiem-vat-tu-cong-cu-san-pham-hang-hoa.html",
+      "title": "Mẫu biên bản kiểm nghiệm vật tư, công cụ, sản phẩm, hàng hóa",
+      "excerpt": "Biên bản kiểm nghiệm vật tư, công cụ, sản phẩm, hàng hóa là chứng từ kế toán dùng để xác định số lượng, qui cách, chất…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Mau-03-VT-theo-Thong-tu-99.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2025-10-27",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/cach-hach-toan-xuat-tra-lai-hang-da-mua-tren-misa.html",
       "section": "thu-vien",
@@ -249,48 +290,30 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/cach-hach-toan-xuat-tra-lai-hang-da-mua-tren-misa-1.png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-ke-phieu-nhap-xuat-kho-hang-hoa-tren-excel.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-ke-phieu-nhap-xuat-kho-hang-hoa-tren-excel.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-phieu-nhap-xuat-kho-hang-hoa-tren-excel.html",
-      "title": "Mẫu bảng kê phiếu nhập xuất kho hàng hóa trên Excel",
-      "excerpt": "Mẫu bảng kê phiếu nhập xuất kho hàng hóa trên Excel và Hướng dẫn chi tiết cách lập cụ thể theo TT 133 và TT 200",
-      "topicLabel": "Excel - Công cụ khác",
+      "id": "thu-vien/cong-ty-co-phan-dau-tu-everland-tuyen-ke-toan-ban-hang.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-co-phan-dau-tu-everland-tuyen-ke-toan-ban-hang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-co-phan-dau-tu-everland-tuyen-ke-toan-ban-hang.html",
+      "title": "Công ty Cổ phần Đầu tư Everland tuyển Kế toán bán hàng",
+      "excerpt": "Công ty Cổ phần Đầu tư Everland tuyển Kế toán bán hàng tại Tầng 1, Tòa nhà CT1, Khu đô thị Mỹ Đình - Mễ Trì, Nam Từ Li…",
+      "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Biểu mẫu"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-ke-phieu-nhap-xuat-kho-hang-hoa-tren-excel.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2014-06-30",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
   "currentIndex": 678,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-xac-dinh-thu-nhap-chiu-thue-khi-tinh-thue-tncn.html",
     "section": "thu-vien",
@@ -10,7 +10,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/cach-xac-dinh-thu-nhap-chiu-thue-khi-tinh-thue-tncn.html",
     "title": "Cách xác định thu nhập chịu thuế khi tính thuế TNCN",
     "excerpt": "Hướng dẫn cách xác định thu nhập chịu thuế từ tiền lương, tiền công, kinh doanh khi tính thuế thu nhập cá nhân theo Thông tư số 111/2013/TT-BTC",
-    "topicLabel": "Lao động - Tiền lương",
+    "topicLabel": "Thuế thu nhập cá nhân",
     "tags": [
       "TNCN",
       "Lao động - Tiền lương",
@@ -109,7 +109,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -128,7 +128,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -255,45 +255,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-01-hknn-to-khai-thue-tndn-doi-voi-hang-hang-khong-nuoc-ngoai.html",
+      "id": "thu-vien/mau-cong-van-dang-ky-thoi-gian-bat-dau-mien-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-01-hknn-to-khai-thue-tndn-doi-voi-hang-hang-khong-nuoc-ngoai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-01-hknn-to-khai-thue-tndn-doi-voi-hang-hang-khong-nuoc-ngoai.html",
-      "title": "Mẫu 01/HKNN Tờ khai thuế TNDN đối với hãng hàng không nước ngoài",
-      "excerpt": "Mẫu 01/HKNN được ban hành kèm theo thông tư 80/2021/TT-BTC là Tờ khai thuế thuế thu nhập doanh nghiệp đối với hãng hàng…",
+      "href": "thu-vien/mau-cong-van-dang-ky-thoi-gian-bat-dau-mien-thue-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-cong-van-dang-ky-thoi-gian-bat-dau-mien-thue-tndn.html",
+      "title": "Mẫu công văn đăng ký thời gian bắt đầu miễn thuế TNDN 2026",
+      "excerpt": "Mẫu công văn đăng ký thời gian bắt đầu miễn thuế TNDN 3 năm đầu cho doanh nghiệp mới thành lập theo quy định tại Nghị đ…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "TNDN",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Thuế",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Mau-01-HKNN.png",
+      "image": "assets/images/content/pic/Service/images/Dang-ky-thoi-gian-mien-thue-TNDN.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2021-09-29",
+      "publishDate": "2026-03-18",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "title": "Cách nộp thuế TNDN tạm tính 2025 qua mạng trên thuế điện tử",
+      "excerpt": "Hướng dẫn cách nộp tiền thuế thu nhập doanh nghiệp tạm tính quý qua mạng trên trang https://thuedientu.gdt.gov.vn/ mới…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Nop-thue-TNDN-tam-tinh-quy.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

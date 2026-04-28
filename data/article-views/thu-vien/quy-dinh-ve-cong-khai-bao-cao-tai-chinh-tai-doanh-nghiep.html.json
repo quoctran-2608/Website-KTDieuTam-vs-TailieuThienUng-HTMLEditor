@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2308,
-  "totalCount": 2736,
+  "currentIndex": 2270,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/chung-tu-khau-tru-thue-thu-nhap-ca-nhan-dien-tu.html",
     "section": "thu-vien",
@@ -114,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -133,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -168,22 +168,43 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cac-hinh-thuc-xu-phat-vi-pham-hanh-chinh-trong-ke-toan.html",
+      "id": "thu-vien/cong-khai-bao-cao-tai-chinh-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-hinh-thuc-xu-phat-vi-pham-hanh-chinh-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-hinh-thuc-xu-phat-vi-pham-hanh-chinh-trong-ke-toan.html",
-      "title": "Các hình thức xử phạt vi phạm hành chính trong kế toán, kiểm toán",
-      "excerpt": "Trong quá trình doanh nghiệp hoạt động, nếu có các vi phạm trong lĩnh vực kế toán, kiểm toán thì sẽ có các hình thức xử phạt vi phạm hành chính như: phạt cảnh cáo, phạt tiền...",
-      "topicLabel": "DN - Thủ tục",
+      "href": "thu-vien/cong-khai-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-khai-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "title": "Công khai Báo cáo tài chính theo Thông tư 99",
+      "excerpt": "Quy định về Công khai Báo cáo tài chính theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực…",
+      "topicLabel": "Báo cáo tài chính",
+      "tags": [
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/cong-khai-bao-cao-tai-chinh-tt99.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cac-phuong-phap-phan-loai-tai-san-co-dinh-cua-doanh-nghiep.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-phuong-phap-phan-loai-tai-san-co-dinh-cua-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-phuong-phap-phan-loai-tai-san-co-dinh-cua-doanh-nghiep.html",
+      "title": "Các loại TSCĐ hữu hình và vô hình trong Doanh nghiệp",
+      "excerpt": "Các loại Tài sản cố định hữu hình và các loại tài sản cố định vô hình trong Doanh nghiệp được quy định chi tiết tại Thông tư 45 và 147/2016/TT-BTC mới nhất hiện nay",
+      "topicLabel": "Tài sản - Kho - CCDC",
       "tags": [
         "DN - Thủ tục",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/xu-phat-vi-pham-hc-trong-ke-toan.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cac-loai-tscd.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
+      "publishDate": "2017-05-26",
       "modifiedDate": null
     },
     {
@@ -195,7 +216,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/tieu-chuan-va-dieu-kien-de-bo-nhiem-lam-ke-toan-truong.html",
       "title": "Tiêu chuẩn, điều kiện để bổ nhiệm kế toán trưởng tại Công ty",
       "excerpt": "Quy định tiêu chuẩn và điều kiện bổ nhiệm kế toán trưởng tại Doanh nghiệp, những người không được làm kế toán theo NĐ 174/2016/NĐ-CP và Luật 88/2015/QH13",
-      "topicLabel": "DN - Thủ tục",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "DN - Thủ tục",
         "Hướng dẫn"
@@ -204,61 +225,44 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2011-12-30",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
-      "title": "Các khoản chi phí được trừ khi tính thuế TNDN",
-      "excerpt": "Các khoản chi phí được trừ khi tính thuế Thu nhập Doanh Nghiệp, điều kiện để đưa vào chi phí hợp lý khi tính thuế TNDN theo quy định tại Nghị định 320, Thông tư 26/2026 và Luật thuế TNDN mới nhất hiện hành.",
-      "topicLabel": "DN - Thủ tục",
-      "tags": [
-        "TNDN",
-        "DN - Thủ tục",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/chi-phi-duoc-tru-khi-tinh-thue-tndn.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-01-26",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cac-hinh-thuc-xu-phat-vi-pham-hanh-chinh-trong-ke-toan.html",
+      "id": "thu-vien/cong-khai-bao-cao-tai-chinh-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-hinh-thuc-xu-phat-vi-pham-hanh-chinh-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-hinh-thuc-xu-phat-vi-pham-hanh-chinh-trong-ke-toan.html",
-      "title": "Các hình thức xử phạt vi phạm hành chính trong kế toán, kiểm toán",
-      "excerpt": "Trong quá trình doanh nghiệp hoạt động, nếu có các vi phạm trong lĩnh vực kế toán, kiểm toán thì sẽ có các hình thức xử phạt vi phạm hành chính như: phạt cảnh cáo, phạt tiền...",
-      "topicLabel": "DN - Thủ tục",
+      "href": "thu-vien/cong-khai-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-khai-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "title": "Công khai Báo cáo tài chính theo Thông tư 99",
+      "excerpt": "Quy định về Công khai Báo cáo tài chính theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực…",
+      "topicLabel": "Báo cáo tài chính",
       "tags": [
-        "DN - Thủ tục",
-        "Hướng dẫn"
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
+        "Văn bản"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/xu-phat-vi-pham-hc-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cong-khai-bao-cao-tai-chinh-tt99.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
+      "id": "thu-vien/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "ban-tin/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
+      "href": "thu-vien/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
       "title": "Mẫu 06 thông báo sửa đổi bổ sung nội dung chương trình khuyến mại theo Nghị định 128/2024/NĐ-CP",
       "excerpt": "Mẫu số 06 - mẫu thông báo sửa đổi, bổ sung nội dung chương trình khuyến mại ban hành kèm theo Nghị định số 128/2024/NĐ-CP ngày 10/10/2024 sửa đổi, bổ sung một số điều của Nghị định 81/2018/NĐ-CP quy định chi tiết luật thương mại về hoạt động xúc tiến thương mại",
       "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
       "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
+        "Mẫu biểu doanh nghiệp - thủ tục",
+        "Doanh nghiệp - Thủ tục",
+        "Biểu mẫu"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.png",
       "libraryKindLabel": "Biểu mẫu",
@@ -286,22 +290,25 @@
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/cong-ty-tnhh-kiem-toan-va-tham-dinh-gia-vn-tuyen-thuc-tap-ke-toan.html",
+      "id": "thu-vien/cong-ty-tnhh-tu-van-luat-bravo-tuyen-nhan-vien-ke-toan.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/cong-ty-tnhh-kiem-toan-va-tham-dinh-gia-vn-tuyen-thuc-tap-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/cong-ty-tnhh-kiem-toan-va-tham-dinh-gia-vn-tuyen-thuc-tap-ke-toan.html",
-      "title": "Công ty TNHH Kiểm toán và Thẩm định giá VN tuyển thực tập kế toán",
-      "excerpt": "Chi nhánh Công ty TNHH Kiểm toán và Thẩm định giá VN tại Hà Nội: Tuyển thực tập kế toán, kiểm toán; Trợ cấp 3.000.000VNĐ/ tháng. Địa chỉ: VP6-3, Tòa nhà Comatce, 61 Ngụy Như Kon Tum, Nhân Chính, HN",
+      "href": "thu-vien/cong-ty-tnhh-tu-van-luat-bravo-tuyen-nhan-vien-ke-toan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-tnhh-tu-van-luat-bravo-tuyen-nhan-vien-ke-toan.html",
+      "title": "Công ty TNHH Tư vấn Luật Bravo tuyển Nhân viên kế toán",
+      "excerpt": "Công ty TNHH Tư vấn Luật Bravo tuyển Nhân viên kế toán tại Đống Đa, Hà Nội Mô tả công việc: - Lập báo cáo kinh doanh hà…",
       "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Cơ sở đào tạo",
-        "Thông tin"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "",
-      "publishDate": "2021-12-25",
+      "publishDate": "2010-08-01",
       "modifiedDate": null
     }
   ]

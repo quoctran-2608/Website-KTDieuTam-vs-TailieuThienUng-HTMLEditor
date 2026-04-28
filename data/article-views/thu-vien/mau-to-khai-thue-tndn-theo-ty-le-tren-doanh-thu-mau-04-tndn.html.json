@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1794,
-  "totalCount": 2736,
+  "currentIndex": 1757,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-tam-tinh-01b-tndn.html",
     "section": "thu-vien",
@@ -10,7 +10,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-tam-tinh-01b-tndn.html",
     "title": "Mẫu tờ khai thuế thu nhập doanh nghiệp tạm tính Mẫu số 01B/TNDN",
     "excerpt": "Mẫu tờ khai thuế thu nhập doanh nghiệp tạm tính Mẫu số 01B/TNDN mới nhất năm 2014 ban hành kèm theo Thông tư số 156/201…",
-    "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
+    "topicLabel": "Mẫu biểu thuế - hóa đơn",
     "tags": [
       "TNDN",
       "Mẫu biểu doanh nghiệp",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -167,28 +167,74 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cach-lap-to-khai-quyet-toan-thue-tncn-05-kk-tncn.html",
+      "id": "thu-vien/mau-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-mau-03-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-to-khai-quyet-toan-thue-tncn-05-kk-tncn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-to-khai-quyet-toan-thue-tncn-05-kk-tncn.html",
-      "title": "Cách làm tờ khai quyết toán thuế TNCN Mẫu 05/QTT-TNCN trên HTKK",
-      "excerpt": "Vào đầu năm 2025 thì doanh nghiệp sẽ thực hiện làm tờ khai quyết toán thuế thu nhập cá nhân cho phần thu…",
-      "topicLabel": "Thuế thu nhập cá nhân",
+      "href": "thu-vien/mau-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-mau-03-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-mau-03-tndn.html",
+      "title": "Mẫu Tờ khai quyết toán thuế thu nhập doanh nghiệp Mẫu 03/TNDN theo TT 151",
+      "excerpt": "Mẫu Tờ khai quyết toán thuế thu nhập doanh nghiệp Mẫu 03/TNDN Ban hành kèm theo Thông tư 151/2014/TT-BTC ngày 10…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "TNCN",
+        "TNDN",
         "Quyết toán",
-        "Thuế thu nhập cá nhân",
-        "Thuế",
-        "Hóa đơn",
-        "HTKK"
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Cach-lam-to-khai-QTT-TNCN.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2024-01-01",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2014-10-10",
       "modifiedDate": null
     },
+    {
+      "id": "thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-mau-02-tndn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-mau-02-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-mau-02-tndn.html",
+      "title": "Mẫu Tờ khai thuế thu nhập doanh nghiệp Mẫu 02/TNDN theo TT 151",
+      "excerpt": "Mẫu Tờ khai thuế thu nhập doanh nghiệp Mẫu 02/TNDN Dùng cho DN kê khai thuế TNDN từ chuyển nhượng bất động sản th…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "TNDN",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2014-11-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/to-khai-thue-thu-nhap-doanh-nghiep-mau-08-tndn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/to-khai-thue-thu-nhap-doanh-nghiep-mau-08-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-thue-thu-nhap-doanh-nghiep-mau-08-tndn.html",
+      "title": "Tờ khai thuế thu nhập doanh nghiệp mẫu 08/TNDN",
+      "excerpt": "Mẫu Tờ khai thuế thu nhập doanh nghiệp mẫu 08/TNDN Ban hành kèm theo Thông tư số 78/2014/TT-BTC ngày 18/6/2014 củ…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "TNDN",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2014-06-18",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/bang-quy-doi-thu-nhap-khong-bao-gom-thue-ra-thu-nhap-tinh-thue.html",
       "section": "thu-vien",
@@ -211,30 +257,28 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-ke-khai-thue-thu-nhap-doanh-nghiep-tam-tinh-quy.html",
+      "id": "thu-vien/mau-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-mau-03-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-ke-khai-thue-thu-nhap-doanh-nghiep-tam-tinh-quy.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-ke-khai-thue-thu-nhap-doanh-nghiep-tam-tinh-quy.html",
-      "title": "Cách kê khai thuế TNDN tạm tính theo quý",
-      "excerpt": "Hướng dẫn cách kê khai và nộp tiền thuế thu nhập doanh nghiệp tạm tính quý Hiện nay: + Doanh nghiệp không…",
-      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "href": "thu-vien/mau-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-mau-03-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-mau-03-tndn.html",
+      "title": "Mẫu Tờ khai quyết toán thuế thu nhập doanh nghiệp Mẫu 03/TNDN theo TT 151",
+      "excerpt": "Mẫu Tờ khai quyết toán thuế thu nhập doanh nghiệp Mẫu 03/TNDN Ban hành kèm theo Thông tư 151/2014/TT-BTC ngày 10…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "TNDN",
-        "Kê khai",
-        "Thuế thu nhập doanh nghiệp",
-        "Thuế",
-        "Hóa đơn",
-        "Hướng dẫn"
+        "Quyết toán",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/cach ke khai thue thua nhap doanh nghiep tam tinh quy.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2024-07-30",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2014-10-10",
       "modifiedDate": null
-    }
-  ],
-  "latestOther": [
+    },
     {
       "id": "thu-vien/cach-lap-to-khai-quyet-toan-thue-tncn-05-kk-tncn.html",
       "section": "thu-vien",
@@ -244,7 +288,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-to-khai-quyet-toan-thue-tncn-05-kk-tncn.html",
       "title": "Cách làm tờ khai quyết toán thuế TNCN Mẫu 05/QTT-TNCN trên HTKK",
       "excerpt": "Vào đầu năm 2025 thì doanh nghiệp sẽ thực hiện làm tờ khai quyết toán thuế thu nhập cá nhân cho phần thu…",
-      "topicLabel": "Thuế thu nhập cá nhân",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
         "TNCN",
         "Quyết toán",
@@ -254,27 +298,8 @@
         "HTKK"
       ],
       "image": "assets/images/content/pic/Service/images/Cach-lam-to-khai-QTT-TNCN.png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2024-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/to-khai-dang-ky-thue-dung-cho-khau-tru-nop-thue-thay-cho-nha-thau-nuoc-ngoai.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/to-khai-dang-ky-thue-dung-cho-khau-tru-nop-thue-thay-cho-nha-thau-nuoc-ngoai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-dang-ky-thue-dung-cho-khau-tru-nop-thue-thay-cho-nha-thau-nuoc-ngoai.html",
-      "title": "Mẫu 04.1-ĐK-TCT tờ khai đăng ký thuế dùng cho khấu trừ nộp thuế thay cho nhà thầu nước ngoài",
-      "excerpt": "Mẫu 04.1-ĐK-TCT tờ khai đăng ký thuế dùng cho tổ chức - cá nhân khấu trừ, nộp thuế thay cho nhà thầu nước ngoài, nhà thầu phụ nước ngoài, nhà cung cấp nước ngoài; tổ chức hợp tác kinh doanh với cá nhân, tổ chức hợp tác kinh doanh với tổ chức (ban hành kèm theo TT86)",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
-      "tags": [
-        "Mẫu biểu thuế - hóa đơn",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-04_1-dk-tct.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2024-12-23",
       "modifiedDate": null
     }
   ]

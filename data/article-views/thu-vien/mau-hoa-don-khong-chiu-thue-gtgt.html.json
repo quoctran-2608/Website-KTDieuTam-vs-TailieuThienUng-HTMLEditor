@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1542,
-  "totalCount": 2736,
+  "currentIndex": 1505,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-hoa-don-co-nhieu-thue-suat.html",
     "section": "thu-vien",
@@ -116,7 +116,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -135,7 +135,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -191,6 +191,25 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/cach-tinh-thue-tieu-thu-dac-biet-phai-nop.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-tinh-thue-tieu-thu-dac-biet-phai-nop.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-tieu-thu-dac-biet-phai-nop.html",
+      "title": "Cách tính thuế tiêu thụ đặc biệt phải nộp năm 2026",
+      "excerpt": "Hướng dẫn cách tính thuế tiêu thụ đặc biệt phải nộp của tất cả các hàng hóa dịch vụ như: hàng xuất khẩu, hàng nhập khẩu, rượu bia, ô tô, dịch vụ karaoke",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "GTGT - Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-tinh-thue-tieu-thu-dac-biet(1).png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cong-van-4613-ct-cs-khong-nop-thue-van-phai-ke-khai.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -211,26 +230,6 @@
       "image": "assets/images/content/pic/Service/images/khong-phai-nop-thue-van-phai-nop-to-khai.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-03-05",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-doi-tuong-khong-chiu-thue-gtgt.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-doi-tuong-khong-chiu-thue-gtgt.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-doi-tuong-khong-chiu-thue-gtgt.html",
-      "title": "Những đối tượng - Mặt hàng không chịu thuế GTGT năm 2026",
-      "excerpt": "Các đối tượng không chịu thuế GTGT theo quy định mới nhất gồm các mặt hàng như: Sản phẩm trồng trọt, giống vật nuôi, giống cây trồng, Phân bón, dịch vụ tài chính, ngân hàng, chứng khoán, Dạy học, dạy nghề, phần mềm …theo luật thuế GTGT số 48/2024/QH15 mới nhất",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "GTGT - Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cac-mat-hang-khong-chiu-thue-gtgt.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-01-26",
       "modifiedDate": null
     }
   ],
@@ -277,6 +276,28 @@
       "image": "assets/images/content/pic/Service/images/Mau-hoa-don-ban-hang(5).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "title": "Cách lập bảng kê bán ra theo Mẫu 01-1/GTGT trên Excel",
+      "excerpt": "Hướng dẫn cách lập bảng kê hóa đơn hàng hóa dịch vụ bán ra theo Mẫu 01-1/GTGT trên file Excel khi làm tờ khai thuế GTGT…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Excel",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cach-lap-bang-ke-ban-ra.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-03-30",
       "modifiedDate": null
     }
   ]

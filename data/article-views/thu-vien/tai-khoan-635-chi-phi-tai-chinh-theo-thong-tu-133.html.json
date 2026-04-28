@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2434,
-  "totalCount": 2736,
+  "currentIndex": 2396,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/tai-khoan-632-gia-von-hang-ban-theo-thong-tu-133.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -185,6 +185,25 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/huong-dan-hach-toan-chi-phi-lai-vay.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/huong-dan-hach-toan-chi-phi-lai-vay.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-hach-toan-chi-phi-lai-vay.html",
+      "title": "Hướng dẫn cách hạch toán chi phí lãi vay",
+      "excerpt": "Hướng dẫn cách hạch toán chi phí lãi vay phải trả cho Doanh nghiệp, phải trả cho cá nhân, cách hạch toán thuế TNCN từ tiền lãi cho vay theo Thông tư 99 và 133",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-chi-phi-lai-vay.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2011-09-26",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/tai-khoan-242-chi-phi-tra-truoc-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -201,27 +220,6 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/hach-toan-chi-phi-tra-truoc-tai-khoan-242-theo-tt133.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/tai-khoan-335-chi-phi-phai-tra-theo-thong-tu-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/tai-khoan-335-chi-phi-phai-tra-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/tai-khoan-335-chi-phi-phai-tra-theo-thong-tu-133.html",
-      "title": "Tài khoản 335 Chi phí phải trả theo Thông tư 133",
-      "excerpt": "Hướng dẫn cách hạch toán Tài khoản 335 theo thông tư 133, cách hạch toán chi phí trích trước như: Chi phí tiền lương, s…",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản",
-        "Hạch toán",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/hach-toan-chi-phi-phai-tra-tai-khoan-335-theo-tt133.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
@@ -256,7 +254,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
       "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
       "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Tài khoản",
         "Hạch toán",
@@ -269,23 +267,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-hach-toan-ghi-nhan-chi-phi-tra-truoc-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-hach-toan-ghi-nhan-chi-phi-tra-truoc-tren-misa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-ghi-nhan-chi-phi-tra-truoc-tren-misa.html",
+      "title": "Cách hạch toán ghi nhận chi phí trả trước trên Misa",
+      "excerpt": "Hướng dẫn hạch toán ghi nhận chi phí trả trước trên phần mềm Misa Quản lý các chi phí trả trước được phân bổ ch…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "MISA",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-ghi-nhan-chi-phi-tra-truoc-tren-misa-1(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

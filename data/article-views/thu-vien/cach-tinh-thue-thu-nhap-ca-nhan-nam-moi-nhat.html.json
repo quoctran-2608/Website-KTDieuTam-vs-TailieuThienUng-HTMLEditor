@@ -1,6 +1,6 @@
 {
   "currentIndex": 608,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-tinh-tinh-thue-thu-nhap-ca-nhan-moi-nhat.html",
     "section": "thu-vien",
@@ -10,7 +10,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-tinh-thue-thu-nhap-ca-nhan-moi-nhat.html",
     "title": "Cách tính thuế thu nhập cá nhân 2026 mới nhất",
     "excerpt": "Hướng dẫn tính thuế thu nhập cá nhân 2026: Cách tính thuế TNCN từ tiền lương, tiền thưởng; Hướng dẫn tính thuế TNCN mới nhất theo tháng và theo quý.",
-    "topicLabel": "Lao động - Tiền lương",
+    "topicLabel": "Thuế thu nhập cá nhân",
     "tags": [
       "Lao động - Tiền lương",
       "Hướng dẫn"
@@ -108,7 +108,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -127,7 +127,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -162,6 +162,25 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cach-tinh-tinh-thue-thu-nhap-ca-nhan-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-tinh-tinh-thue-thu-nhap-ca-nhan-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-tinh-thue-thu-nhap-ca-nhan-moi-nhat.html",
+      "title": "Cách tính thuế thu nhập cá nhân 2026 mới nhất",
+      "excerpt": "Hướng dẫn tính thuế thu nhập cá nhân 2026: Cách tính thuế TNCN từ tiền lương, tiền thưởng; Hướng dẫn tính thuế TNCN mới nhất theo tháng và theo quý.",
+      "topicLabel": "Thuế thu nhập cá nhân",
+      "tags": [
+        "Lao động - Tiền lương",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/huong-dan-tinh-thue-thu-nhap-ca-nhan.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-05",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cac-khoan-giam-tru-gia-canh-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -184,71 +203,44 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/muc-phat-cham-nop-tien-thue-gtgt-tncn-tndn.html",
+      "id": "thu-vien/cac-khoan-thu-nhap-chiu-thue-thu-nhap-ca-nhan-nhap-moi.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/muc-phat-cham-nop-tien-thue-gtgt-tncn-tndn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/muc-phat-cham-nop-tien-thue-gtgt-tncn-tndn.html",
-      "title": "Mức phạt chậm nộp tiền thuế GTGT, TNCN, TNDN mới nhất 2026",
-      "excerpt": "Mức phạt nộp chậm tiền thuế GTGT, TNCN, TNDN mới nhất; Cách tính tiền phạt chậm nộp thuế TNDN, GTGT, TNCN; Cách tính số ngày chậm nộp tiền thuế.",
-      "topicLabel": "Thuế thu nhập cá nhân",
-      "tags": [
-        "GTGT",
-        "TNCN",
-        "TNDN",
-        "Thuế thu nhập cá nhân",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/phat-cham-nọp-tien-thue.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-07-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-nop-tien-thue-tncn-qua-mang-dien-tu-bang-ma-id.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-nop-tien-thue-tncn-qua-mang-dien-tu-bang-ma-id.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-tien-thue-tncn-qua-mang-dien-tu-bang-ma-id.html",
-      "title": "Cách nộp tiền thuế TNCN qua mạng điện tử bằng mã ID mới nhất 2025",
-      "excerpt": "Hướng dẫn cách nộp thuế thu nhập cá nhân online trên trang thuế điện tử bằng mã định danh ID mới nhất năm 2025. Lập giấ…",
+      "href": "thu-vien/cac-khoan-thu-nhap-chiu-thue-thu-nhap-ca-nhan-nhap-moi.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-thu-nhap-chiu-thue-thu-nhap-ca-nhan-nhap-moi.html",
+      "title": "Các khoản chịu thuế thu nhập cá nhân – tính thuế TNCN",
+      "excerpt": "Quy định các khoản chịu thuế thu nhập cá nhân 2026: Các khoản tính thuế thu nhập cá nhân; Các khoản thu nhập, phụ cấp chịu thuế TNCN từ tiền lương, tiền công.",
       "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
         "TNCN",
-        "Thuế thu nhập cá nhân",
-        "Thuế",
-        "Hóa đơn",
+        "Lao động - Tiền lương",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Dang-nhap-thue-dien-tu.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cac-khoan-tinh-thue-tncn.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cac-khoan-giam-tru-gia-canh-moi-nhat.html",
+      "id": "thu-vien/cach-tinh-tinh-thue-thu-nhap-ca-nhan-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-khoan-giam-tru-gia-canh-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-giam-tru-gia-canh-moi-nhat.html",
-      "title": "Mức giảm trừ gia cảnh mới nhất năm 2025 và 2026",
-      "excerpt": "Mức giảm trừ gia cảnh 2025 mới nhất là bao nhiêu? Cách tính giảm trừ gia cảnh cho bản thân và người phụ thuộc? Giảm trừ…",
+      "href": "thu-vien/cach-tinh-tinh-thue-thu-nhap-ca-nhan-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-tinh-thue-thu-nhap-ca-nhan-moi-nhat.html",
+      "title": "Cách tính thuế thu nhập cá nhân 2026 mới nhất",
+      "excerpt": "Hướng dẫn tính thuế thu nhập cá nhân 2026: Cách tính thuế TNCN từ tiền lương, tiền thưởng; Hướng dẫn tính thuế TNCN mới nhất theo tháng và theo quý.",
       "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
-        "Thuế thu nhập cá nhân",
-        "Thuế",
-        "Hóa đơn",
-        "TNCN",
+        "Lao động - Tiền lương",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/muc-giam-tru-gia-canh.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/huong-dan-tinh-thue-thu-nhap-ca-nhan.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2024-09-21",
+      "publishDate": "2026-01-05",
       "modifiedDate": null
     },
     {
@@ -274,23 +266,48 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
+      "id": "thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
-      "title": "Phần mềm HTKK 5.5.6 mới nhất ngày 18/1/2026",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.5.6 mới nhất 18/1/2026 của Tổng cục thuế. Tải phần mềm HTKK 5.5.6 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2026.",
+      "href": "thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
+      "title": "Cách hoàn thuế thu nhập cá nhân tự động qua Etax 2025",
+      "excerpt": "Hướng dẫn cách làm hoàn thuế thu nhập cá nhân tự động qua Etax Mobile mới nhất năm 2025 1. Căn cứ hướng dẫn hoàn thuế T…",
       "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
+        "TNCN",
+        "HTKK",
+        "eTax",
         "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
+        "Phần mềm",
         "Công cụ"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_5_1-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/hoan-thue-TNCN-tu-dong.jpg",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-01-18",
+      "publishDate": "2025-01-24",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "title": "Trường mầm non Thành Đông Tuyển kế toán viên",
+      "excerpt": "Trường mầm non Thành Đông tuyển dụng Nhân viên kế toán Mô tả công việc: - Tính học phí, thu học phí, xuất hóa đơn, giao…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2021-06-20",
       "modifiedDate": null
     }
   ]

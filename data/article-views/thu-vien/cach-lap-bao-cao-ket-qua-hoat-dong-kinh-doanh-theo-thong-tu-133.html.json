@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1391,
-  "totalCount": 2736,
+  "currentIndex": 1354,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-qd-15.html",
     "section": "thu-vien",
@@ -36,7 +36,7 @@
       "Biểu mẫu"
     ],
     "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/ma-bao-cao-ket-qua-hoat-dong-kinh-doanh.png",
-    "libraryKindLabel": "Biểu mẫu",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2016-08-26",
     "modifiedDate": null
   },
@@ -109,7 +109,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -128,7 +128,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -205,24 +205,23 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-truc-tiep-va-gian-tiep.html",
+      "id": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-truc-tiep-va-gian-tiep.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-truc-tiep-va-gian-tiep.html",
-      "title": "Hướng dẫn cách lập báo cáo lưu chuyển tiền tệ theo Thông tư 200",
-      "excerpt": "Có 2 phương pháp lập báo cáo lưu chuyển tiền tệ là: Trực tiếp và gián tiếp. Bài viết này Kế toán Diệu Tâm xin hướng dẫn…",
-      "topicLabel": "Báo cáo tài chính",
+      "href": "thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bao-cao-tinh-hinh-tai-chinh-b01b-dnn-theo-thong-tu-133.html",
+      "title": "Cách lập báo cáo tính tài chính Mẫu B01b-DNN theo TT 133",
+      "excerpt": "Mẫu Báo cáo tình hình tài chính B01b-DNN theo Thông tư 133, hướng dẫn cách làm Báo cáo tình hình tài chính Mẫu B01b-DNN…",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "Báo cáo tài chính",
+        "Mẫu biểu kế toán",
         "Kế toán",
-        "BCTC",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach lap bao cao luu chuyen tien te theo phuong phap truc tiep.png",
+      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-mau-b01b-dnn.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     }
   ],
@@ -257,7 +256,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bao-cao-luu-chuyen-tien-te-theo-thong-tu-133.html",
       "title": "Mẫu Báo cáo lưu chuyển tiền tệ theo Thông tư 133 - Cách lập",
       "excerpt": "Cách lập Báo cáo lưu chuyển tiền tệ theo phương pháp trực tiếp và gián tiếp theo Mẫu Báo cáo lưu chuyển tiền tệ theo Th…",
-      "topicLabel": "Báo cáo tài chính",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Báo cáo tài chính",
         "Kế toán",
@@ -270,42 +269,44 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/mau-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-qd-48-va-15.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/mau-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-qd-48-va-15.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bao-cao-ket-qua-hoat-dong-kinh-doanh-theo-qd-48-va-15.html",
+      "title": "Mẫu báo cáo kết quả hoạt động kinh doanh theo TT 133 và 200",
+      "excerpt": "Mẫu báo cáo kết quả hoạt động kinh doanh theo Thông tư 133/2016/TT-BTC và Mẫu báo cáo kết quả kinh doanh theo Thông tư 200/2014/TT-BTC, gồm cả bản word và Excel. Hướng dẫn cách lập báo cáo kết quả hoạt động kinh doanh.",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
         "Excel - Công cụ khác",
-        "Công cụ"
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/ma-bao-cao-ket-qua-hoat-dong-kinh-doanh.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
+      "id": "thu-vien/cong-ty-tnhh-tu-van-luat-bravo-tuyen-nhan-vien-ke-toan.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
-      "title": "Khóa Học Thực Hành Kế Toán Trên Phần Mềm Misa",
-      "excerpt": "Đây là khóa học dạy thực hành lên sổ sách, lập báo cáo tài chính trên phần mềm kế toán Misa bằng hóa đơn chứng từ thực tế",
-      "topicLabel": "Khóa học MISA",
+      "href": "thu-vien/cong-ty-tnhh-tu-van-luat-bravo-tuyen-nhan-vien-ke-toan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-tnhh-tu-van-luat-bravo-tuyen-nhan-vien-ke-toan.html",
+      "title": "Công ty TNHH Tư vấn Luật Bravo tuyển Nhân viên kế toán",
+      "excerpt": "Công ty TNHH Tư vấn Luật Bravo tuyển Nhân viên kế toán tại Đống Đa, Hà Nội Mô tả công việc: - Lập báo cáo kinh doanh hà…",
+      "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Giới thiệu",
-        "Thông tin"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/khoa-hoc-ke-toan-Misa.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "",
-      "publishDate": "2026-04-26",
+      "publishDate": "2010-08-01",
       "modifiedDate": null
     }
   ]

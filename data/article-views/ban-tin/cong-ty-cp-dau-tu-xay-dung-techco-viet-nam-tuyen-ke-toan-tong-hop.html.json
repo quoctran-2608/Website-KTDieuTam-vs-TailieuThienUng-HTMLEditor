@@ -1,6 +1,6 @@
 {
-  "currentIndex": 18,
-  "totalCount": 73,
+  "currentIndex": 26,
+  "totalCount": 115,
   "prev": {
     "id": "ban-tin/cong-ty-cp-dau-tu-va-du-lich-cpa-vietnam-tuyen-ke-toan-tong-hop.html",
     "section": "ban-tin",
@@ -108,7 +108,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -127,7 +127,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -221,23 +221,22 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cong-ty-tnhh-xay-dung-halo-tuyen-ke-toan-tong-hop.html",
+      "id": "thu-vien/quyen-va-nghia-vu-cua-nguoi-lao-dong-theo-bo-luat-lao-dong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cong-ty-tnhh-xay-dung-halo-tuyen-ke-toan-tong-hop.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-tnhh-xay-dung-halo-tuyen-ke-toan-tong-hop.html",
-      "title": "Công ty TNHH xây dựng HALÔ Tuyển kế toán tổng hợp",
-      "excerpt": "CÔNG TY TNHH XÂY DỰNG HALÔ CẦN TUYỂN DỤNG KẾ TOÁN TỔNG HỢP - CÓ KINH NGHIỆM BÊN LĨNH VỰC XÂY DỰNG . - Địa điểm làm việc…",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "href": "thu-vien/quyen-va-nghia-vu-cua-nguoi-lao-dong-theo-bo-luat-lao-dong.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quyen-va-nghia-vu-cua-nguoi-lao-dong-theo-bo-luat-lao-dong.html",
+      "title": "Quyền và nghĩa vụ của người lao động theo Bộ Luật Lao Động",
+      "excerpt": "Người lao động là người làm việc cho người sử dụng lao động theo thỏa thuận, được trả lương và chịu sự quản lý, điều hà…",
+      "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Chuẩn mực",
-        "Chế độ",
-        "Nguyên tắc",
-        "Kế toán",
+        "Lao động",
+        "Tiền lương",
+        "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/quyen-nghia-vu-nld.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
@@ -265,23 +264,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/phan-mem-ho-tro-ke-khai-htkk-3-2-5.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-htkk-3-2-5.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-ho-tro-ke-khai-htkk-3-2-5.html",
+      "title": "Phần mềm hỗ trợ kê khai HTKK 3.2.5",
+      "excerpt": "Ngày 25/08/2014 Tổng cục thuế đã thông báo về việc Nâng cấp Phần mềm hỗ trợ kê khai HTKK 3.2.5, ứng dụng khai thuế qua…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "HTKK",
+        "Kê khai",
+        "eTax",
+        "Thuế điện tử",
+        "Mẫu file & kê khai",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/phan mem htkk 3_2_5.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2014-08-25",
       "modifiedDate": null
     },
     {

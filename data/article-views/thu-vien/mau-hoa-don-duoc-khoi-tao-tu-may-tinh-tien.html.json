@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1543,
-  "totalCount": 2736,
+  "currentIndex": 1506,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-hoa-don-khong-chiu-thue-gtgt.html",
     "section": "thu-vien",
@@ -115,7 +115,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +134,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -190,6 +190,26 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/huong-dan-cach-lap-to-khai-thue-gtgt-mau-01-gtgt.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/huong-dan-cach-lap-to-khai-thue-gtgt-mau-01-gtgt.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-lap-to-khai-thue-gtgt-mau-01-gtgt.html",
+      "title": "Hướng dẫn cách lập Tờ khai thuế GTGT mẫu 01/GTGT theo Quý và Tháng",
+      "excerpt": "Hướng dẫn cách lập tờ khai thuế GTGT mẫu 01/GTGT theo quý hoặc theo tháng trên phần mềm HTKK – Cách lập tờ khai thuế GTGT theo phương pháp khấu trừ, cách kê khai thuế GTGT được khấu trừ và Không được khấu trừ.",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "HTKK - eTax - Thuế điện tử",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/huong-dan-lap-to-khai-thue-gtgt-khau-tru(1).png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-08-19",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/doi-tuong-su-dung-hoa-don-dien-tu-co-ma-cua-co-quan-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -209,28 +229,6 @@
       "image": "assets/images/content/pic/Service/images/Doi-tuong-su-dung-hoa-don-co-ma-cua-CQT.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/doi-tuong-su-dung-hoa-don-dien-tu-khong-co-ma-cua-co-quan-thue.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/doi-tuong-su-dung-hoa-don-dien-tu-khong-co-ma-cua-co-quan-thue.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/doi-tuong-su-dung-hoa-don-dien-tu-khong-co-ma-cua-co-quan-thue.html",
-      "title": "Đối tượng sử dụng hóa đơn điện tử không có mã của cơ quan thuế",
-      "excerpt": "Hóa đơn điện tử không có mã của cơ quan thuế là hóa đơn điện tử do tổ chức bán hàng hóa, cung cấp dịch vụ gửi cho người…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn điện tử",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Doi-tuong-su-dung-hoa-don-khong-co-ma-cua-CQT.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-05-17",
       "modifiedDate": null
     }
   ],
@@ -279,23 +277,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
+      "id": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-0-7-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "title": "Phần mềm HTKK 5.2.1 mới nhất ngày 2/8/2024",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.1 mới nhất 2/8/2024 của Tổng cục thuế. Tải phần mềm HTKK 5.2.1 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2024.",
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-0-7-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-0-7-moi-nhat.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.0.7 mới nhất",
+      "excerpt": "Phần mềm hỗ trợ kê khai thuế 4.0.7 đây là phần mềm HTKK mới nhất hiện nay của Tổng cục thuế được nâng cấp vào ngày 25/0…",
       "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
+        "HTKK",
+        "Kê khai",
+        "eTax",
         "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "Mẫu file & kê khai",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_1-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/tai-xuong.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2024-08-02",
+      "publishDate": "2018-09-25",
       "modifiedDate": null
     }
   ]

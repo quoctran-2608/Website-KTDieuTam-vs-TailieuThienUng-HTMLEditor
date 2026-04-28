@@ -1,6 +1,6 @@
 {
   "currentIndex": 126,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cac-khoan-duoc-giam-tru-khi-tinh-thue-tncn.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -186,6 +186,26 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/cac-khoan-thu-nhap-chiu-thue-thu-nhap-ca-nhan-nhap-moi.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-khoan-thu-nhap-chiu-thue-thu-nhap-ca-nhan-nhap-moi.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-thu-nhap-chiu-thue-thu-nhap-ca-nhan-nhap-moi.html",
+      "title": "Các khoản chịu thuế thu nhập cá nhân – tính thuế TNCN",
+      "excerpt": "Quy định các khoản chịu thuế thu nhập cá nhân 2026: Các khoản tính thuế thu nhập cá nhân; Các khoản thu nhập, phụ cấp chịu thuế TNCN từ tiền lương, tiền công.",
+      "topicLabel": "Thuế thu nhập cá nhân",
+      "tags": [
+        "TNCN",
+        "Lao động - Tiền lương",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cac-khoan-tinh-thue-tncn.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/phu-cap-tien-dien-thoai-co-tinh-thue-tncn-khong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -205,28 +225,6 @@
       "image": "assets/images/content/pic/Service/images/phu-cap-dien-thoai.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2018-07-06",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/tien-thue-nha-co-tinh-thue-tncn-khong-chiu-thue-theo-muc-nao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/tien-thue-nha-co-tinh-thue-tncn-khong-chiu-thue-theo-muc-nao.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/tien-thue-nha-co-tinh-thue-tncn-khong-chiu-thue-theo-muc-nao.html",
-      "title": "Tiền thuê nhà có tính thuế TNCN không? chịu thuế theo mức nào?",
-      "excerpt": "Cách xác định thu nhập chịu thuế đối với khoản tiền thuê nhà doanh nghiệp trả hộ cho nhân viên người lao động đang được…",
-      "topicLabel": "Thuế thu nhập cá nhân",
-      "tags": [
-        "TNCN",
-        "Thuế thu nhập cá nhân",
-        "Thuế",
-        "Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/thue-TNCN-tien-thue-nha.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ],
@@ -271,23 +269,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "title": "Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK",
+      "excerpt": "Hướng dẫn thủ cắt giảm người phụ thuộc 2025 trên phần mềm HTKK để nộp qua mạng Khi nào thì thực hiện cắt giảm người phụ…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Thuế thu nhập cá nhân",
+        "Thuế",
+        "Hóa đơn",
+        "TNCN",
+        "HTKK",
+        "Người phụ thuộc"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Cat-giam-nguoi-phu-thuoc(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2024-12-23",
       "modifiedDate": null
     }
   ]

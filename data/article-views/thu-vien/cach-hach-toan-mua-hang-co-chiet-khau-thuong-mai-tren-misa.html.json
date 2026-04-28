@@ -1,6 +1,6 @@
 {
   "currentIndex": 283,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-hach-toan-mua-hang-ban-thang-khong-qua-kho-tren-misa.html",
     "section": "thu-vien",
@@ -18,7 +18,7 @@
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/mua-hang-trong-nuoc-khong-qua-kho(1).png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2023-01-19",
     "modifiedDate": null
   },
@@ -39,7 +39,7 @@
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach-hach-toan-mua-hang-co-phat-sinh-chi-phi-mua-hang-tren-misa-1(1).png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -166,6 +166,46 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cach-hach-toan-hang-hoa-tai-khoan-156.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-hach-toan-hang-hoa-tai-khoan-156.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-hang-hoa-tai-khoan-156.html",
+      "title": "Cách hạch toán hàng hóa - Tài khoản 156",
+      "excerpt": "Cách hạch toán hàng hóa - Tài khoản 156 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán hàng mua nhập kho, nhập khẩu, hàng thuê ngoài gia công, hàng bán trả lại, nhận được chiết khấu thương mại",
+      "topicLabel": "Tài sản - Kho - CCDC",
+      "tags": [
+        "Tài sản - Kho - CCDC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-156.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-hach-toan-chiet-khau-thuong-mai-khi-mua-ban-hang.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-hach-toan-chiet-khau-thuong-mai-khi-mua-ban-hang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-chiet-khau-thuong-mai-khi-mua-ban-hang.html",
+      "title": "Cách hạch toán Chiết khấu thương mại theo thông tư 200 và TT 133",
+      "excerpt": "Hướng dẫn cách hạch toán chiết khấu thương thương mại cho bên bán và bên mua theo hóa đơn chiết khấu thương mại được lậ…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Hach-toan-chiet-khau-thuong-mai.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-07-01",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/hach-toan-ban-hang-co-chiet-khau-thuong-mai-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -182,55 +222,55 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/hach-toan-ban-hang-co-chiet-khau-thuong-mai-tren-misa-1.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-hach-toan-mua-hang-duoc-giam-gia-tren-misa.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-mua-hang-duoc-giam-gia-tren-misa.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-mua-hang-duoc-giam-gia-tren-misa.html",
-      "title": "Cách hạch toán mua hàng được giảm giá trên Misa",
-      "excerpt": "Hướng dẫn cách hạch toán nghiệp vụ mua hàng hóa được giảm giá hàng bán trên phần mềm Misa Tùy vào từng trường hợp mua h…",
-      "topicLabel": "MISA",
-      "tags": [
-        "MISA",
-        "Phần mềm",
-        "Công cụ",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Cách hạch toán mua hàng được giảm giá trên Misa 1(1).png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-hach-toan-ban-hang-co-khuyen-mai-tren-misa.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-ban-hang-co-khuyen-mai-tren-misa.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-ban-hang-co-khuyen-mai-tren-misa.html",
-      "title": "Cách hạch toán bán hàng có khuyến mại trên Misa",
-      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ bán hàng có khuyến mại trên phần mềm Misa trong cả 2 trường hợp: Khuyến mại c…",
-      "topicLabel": "MISA",
-      "tags": [
-        "MISA",
-        "Phần mềm",
-        "Công cụ",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/hach-toan-ban-hang-co-khuyen-mai-tren-misa-1(1).png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
+      "id": "thu-vien/cach-hach-toan-hang-hoa-tai-khoan-156.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-hach-toan-hang-hoa-tai-khoan-156.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-hang-hoa-tai-khoan-156.html",
+      "title": "Cách hạch toán hàng hóa - Tài khoản 156",
+      "excerpt": "Cách hạch toán hàng hóa - Tài khoản 156 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán hàng mua nhập kho, nhập khẩu, hàng thuê ngoài gia công, hàng bán trả lại, nhận được chiết khấu thương mại",
+      "topicLabel": "Tài sản - Kho - CCDC",
+      "tags": [
+        "Tài sản - Kho - CCDC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-156.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
+      "title": "Mẫu báo cáo: Kế toán thanh toán thuế GTGT và thuế TNDN tại Công ty Cổ phần Dịch vụ Thương mại Đồng Tâm",
+      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán thanh toán thuế GTGT và thuế TNDN tại Công…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "GTGT",
+        "TNDN",
+        "Báo cáo thực tập",
+        "Học liệu",
+        "Tham khảo",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/hach-toan-ban-hang-co-chiet-khau-thuong-mai-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -247,66 +287,30 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/pic/Service/images/hach-toan-ban-hang-co-chiet-khau-thuong-mai-tren-misa-1.png",
-      "libraryKindLabel": "Hướng dẫn",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-hop-dong-mua-ban-cho-thue-san-xay-dung-cong-trinh-giao-duc-y-te-the-thao.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-hop-dong-mua-ban-cho-thue-san-xay-dung-cong-trinh-giao-duc-y-te-the-thao.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-hop-dong-mua-ban-cho-thue-san-xay-dung-cong-trinh-giao-duc-y-te-the-thao.html",
-      "title": "Mẫu hợp đồng mua bán cho thuê sàn xây dựng công trình giáo dục y tế thể thao theo nghị định 96/2024/NĐ-CP",
-      "excerpt": "Hợp đồng mẫu áp dụng trong bán, cho thuê mua phần diện tích sàn xây dựng trong công trình xây dựng có công năng phục vụ mục đích giáo dục, y tế, thể thao, văn hóa, văn phòng, thương mại, dịch vụ, công nghiệp và công trình xây dựng có công năng phục vụ hỗn hợp - Mẫu số Va kèm theo Nghị định 96/2024/NĐ-CP ngày 24/7/2024",
-      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
-      "tags": [
-        "Mẫu biểu doanh nghiệp - thủ tục",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hop-dong-mua-ban-cho-thue-phan-dien-tich-san-xay-dung-giao-duc-y-te-the-thao.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2024-07-24",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
+      "id": "thu-vien/cong-ty-co-phan-tm-dtpt-echo-tuyen-nhan-vien-ke-toan.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/khoa-hoc-phan-mem-ke-toan-misa-thuc-hanh-thuc-te.html",
-      "title": "Khóa Học Thực Hành Kế Toán Trên Phần Mềm Misa",
-      "excerpt": "Đây là khóa học dạy thực hành lên sổ sách, lập báo cáo tài chính trên phần mềm kế toán Misa bằng hóa đơn chứng từ thực tế",
-      "topicLabel": "Khóa học MISA",
+      "href": "thu-vien/cong-ty-co-phan-tm-dtpt-echo-tuyen-nhan-vien-ke-toan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-co-phan-tm-dtpt-echo-tuyen-nhan-vien-ke-toan.html",
+      "title": "Công ty cố phần thương mại và đầu tư phát triển Echo tuyển Nhân viên kế toán",
+      "excerpt": "Công ty cố phần thương mại và đầu tư phát triển Echo tuyển Nhân viên kế toán tại Tầng 4,Số 219A Nguyễn Ngọc Vũ, Trung H…",
+      "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Giới thiệu",
-        "Thông tin"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/khoa-hoc-ke-toan-Misa.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "",
-      "publishDate": "2026-04-26",
+      "publishDate": "2014-06-30",
       "modifiedDate": null
     }
   ]

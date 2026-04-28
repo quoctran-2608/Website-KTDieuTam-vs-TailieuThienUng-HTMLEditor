@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1279,
-  "totalCount": 2736,
+  "currentIndex": 1242,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/to-khai-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh-mau-so-16-dk-tncn.html",
     "section": "thu-vien",
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -164,29 +164,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
-      "title": "Cách làm bảng tính lương trên Excel hàng tháng năm 2026",
-      "excerpt": "Hướng dẫn cách làm bảng tính lương trên Excel 2026 theo mẫu Bảng thanh toán tiền lương theo Thông tư 99 và TT 133 mới n…",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Tiền lương",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Bang-luong-2026.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/to-khai-dang-ky-thue-dung-cho-co-quan-dang-ky-ca-nhan-co-uy-quyen.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -195,7 +172,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-dang-ky-thue-dung-cho-co-quan-dang-ky-ca-nhan-co-uy-quyen.html",
       "title": "Mẫu 05-ĐK-TH-TCT tờ khai đăng ký thuế dùng cho cơ quan chi trả thu nhập đăng ký cho cá nhân có ủy quyền",
       "excerpt": "Mẫu 05-ĐK-TH-TCT (ban hành kèm theo Thông tư số 86/2024) tờ khai đăng ký thuế tổng hợp của cá nhân có thu nhập từ tiền lương tiền công - dùng cho cơ quan chi trả thu nhập đăng ký cho cá nhân có ủy quyền mới nhất 2025",
-      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "Mẫu biểu lao động - bảo hiểm",
         "Biểu mẫu"
@@ -224,31 +201,48 @@
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/Mau-bang-luong-tren-Excel.png",
-      "libraryKindLabel": "Biểu mẫu",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-phieu-xuat-kho-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-phieu-xuat-kho-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-phieu-xuat-kho-theo-thong-tu-99.html",
+      "title": "Mẫu phiếu xuất kho theo thông tư 99 trên Word và Excel",
+      "excerpt": "Mẫu số: 02 - VT được ban hành kèm theo phụ lục II của Thông tư 99/2025/TT-BTC là mẫu phiếu xuất kho mới nhất năm 2026 (…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Excel",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Mau-phieu-Xuat-kho-theo-thong-tu-99(1).png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
+      "id": "thu-vien/cach-hach-toan-khoan-phai-tra-cho-nguoi-lao-dong-tai-khoan-334.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lam-bang-tinh-luong-tren-excel.html",
-      "title": "Cách làm bảng tính lương trên Excel hàng tháng năm 2026",
-      "excerpt": "Hướng dẫn cách làm bảng tính lương trên Excel 2026 theo mẫu Bảng thanh toán tiền lương theo Thông tư 99 và TT 133 mới n…",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-hach-toan-khoan-phai-tra-cho-nguoi-lao-dong-tai-khoan-334.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-khoan-phai-tra-cho-nguoi-lao-dong-tai-khoan-334.html",
+      "title": "Cách hạch toán khoản phải trả cho người lao động - Tài khoản 334 theo TT 99",
+      "excerpt": "Cách hạch toán phải trả người lao động - Tài khoản 334 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán tiền lương, tiền công, tiền thưởng, bảo hiểm xã hội thuế thu nhập cá nhân, ứng trước tiền lương",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Excel",
-        "Công cụ khác",
-        "Phần mềm",
-        "Công cụ",
-        "Tiền lương",
+        "BHXH - BHYT - BHTN",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Bang-luong-2026.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/tk-334.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-26",
       "modifiedDate": null
@@ -262,7 +256,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-dang-ky-thue-dung-cho-co-quan-dang-ky-ca-nhan-co-uy-quyen.html",
       "title": "Mẫu 05-ĐK-TH-TCT tờ khai đăng ký thuế dùng cho cơ quan chi trả thu nhập đăng ký cho cá nhân có ủy quyền",
       "excerpt": "Mẫu 05-ĐK-TH-TCT (ban hành kèm theo Thông tư số 86/2024) tờ khai đăng ký thuế tổng hợp của cá nhân có thu nhập từ tiền lương tiền công - dùng cho cơ quan chi trả thu nhập đăng ký cho cá nhân có ủy quyền mới nhất 2025",
-      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "Mẫu biểu lao động - bảo hiểm",
         "Biểu mẫu"
@@ -273,23 +267,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/mau-bang-thanh-toan-tien-luong-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/mau-bang-thanh-toan-tien-luong-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-thanh-toan-tien-luong-tren-excel.html",
+      "title": "Mẫu bảng tính lương trên Excel mới nhất năm 2026",
+      "excerpt": "Mẫu bảng thanh toán tiền lương Excel theo Thông tư 133 và Thông tư 99 mới nhất 2026. Đây là mẫu bảng tính lương và các…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Công cụ khác",
+        "Mẫu file & kê khai",
+        "Tiền lương",
+        "Kê khai",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Mau-bang-luong-tren-Excel.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {

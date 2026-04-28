@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2369,
-  "totalCount": 2736,
+  "currentIndex": 2331,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/quyet-dinh-8086-qd-tld-huong-dan-thu-doan-phi-cong-doan.html",
     "section": "thu-vien",
@@ -116,7 +116,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -135,7 +135,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -170,25 +170,73 @@
   ],
   "related": [
     {
-      "id": "thu-vien/quyet-dinh-959-qd-bhxh-quan-ly-thu-bhxh-bhyt-bhtn.html",
+      "id": "thu-vien/bang-tinh-lai-truy-thu-bhxh-bhyt-bhtn-mau-d02b-ts.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-959-qd-bhxh-quan-ly-thu-bhxh-bhyt-bhtn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/quyet-dinh-959-qd-bhxh-quan-ly-thu-bhxh-bhyt-bhtn.html",
-      "title": "Quyết định 959/QĐ-BHXH Quản lý thu BHXH, BHYT, BHTN",
-      "excerpt": "Quyết định 959/QĐ-BHXH quản lý thu bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, ban hành ngày 9/9/2015 của BHXH Việt Nam",
+      "href": "thu-vien/bang-tinh-lai-truy-thu-bhxh-bhyt-bhtn-mau-d02b-ts.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/bang-tinh-lai-truy-thu-bhxh-bhyt-bhtn-mau-d02b-ts.html",
+      "title": "Bảng tính lãi truy thu BHXH – BHYT- BHTN Mẫu D02b-TS",
+      "excerpt": "Bảng tính lãi truy thu BHXH – BHYT- BHTN Mẫu D02b-TS ban hành kèm theo Quyết định Số 1111/QĐ-BHXH ngày 25 tháng 10 năm 2011 của Bảo hiểm xã hội Việt Nam.",
       "topicLabel": "BHXH - BHYT - BHTN",
       "tags": [
         "BHXH",
         "BHXH - BHYT - BHTN",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/quyet dinh 959_QĐ-BHXH.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2015-09-09",
+      "publishDate": "2011-10-25",
       "modifiedDate": null
     },
+    {
+      "id": "thu-vien/ho-so-de-nghi-huong-tro-cap-om-dau.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/ho-so-de-nghi-huong-tro-cap-om-dau.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/ho-so-de-nghi-huong-tro-cap-om-dau.html",
+      "title": "Hồ sơ đề nghị hưởng trợ cấp ốm đau 2025 mới nhất",
+      "excerpt": "Ngày 29/7/2025, Bảo hiểm xã hội Việt Nam ban hành Quy trình giải quyết hưởng các chế độ bảo hiểm xã hội, chi trả các ch…",
+      "topicLabel": "BHXH - BHYT - BHTN",
+      "tags": [
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/ho-so-de-nghi-huong-tro-cap-om-dau.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-07-29",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/muc-huong-tro-cap-mot-lan-khi-sinh-con.html",
+      "title": "Điều kiện và cách tính mức hưởng trợ cấp một lần khi sinh con 2025",
+      "excerpt": "Quy định về điều kiện và cách tính mức hưởng trợ cấp một lần khi sinh con từ ngày 01/07/2025 theo Luật Bảo hiểm xã hội…",
+      "topicLabel": "BHXH - BHYT - BHTN",
+      "tags": [
+        "BHXH",
+        "BHYT",
+        "BHTN",
+        "Lao động",
+        "Bảo hiểm",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/dieu-kien-cach-tinh-tro-cap-mot-lan-khi-sinh.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-07-01",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/bang-tinh-lai-truy-thu-bhxh-bhyt-bhtn-mau-d02b-ts.html",
       "section": "thu-vien",
@@ -210,68 +258,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/quyet-dinh-595-qd-bhxh-quy-trinh-thu-bhxh-bhyt-bhtn.html",
+      "id": "thu-vien/to-khai-tham-gia-bhxh-bhyt-bhtn-mau-so-tk1-ts.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-595-qd-bhxh-quy-trinh-thu-bhxh-bhyt-bhtn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/quyet-dinh-595-qd-bhxh-quy-trinh-thu-bhxh-bhyt-bhtn.html",
-      "title": "Quyết định 595/QĐ-BHXH Quy trình thu BHXH, BHYT, BHTN",
-      "excerpt": "Quyết định 595/QĐ-BHXH ngày 14/4/2017 của Bảo hiểm xã hội Việt Nam, Quy trình thu và Quản lý BHXH, BHYT, BHTN, BHTNLĐ, bệnh nghề nghiệp",
-      "topicLabel": "BHXH - BHYT - BHTN",
-      "tags": [
-        "BHXH",
-        "BHXH - BHYT - BHTN",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/qd-595.gif",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2017-04-14",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/quyet-dinh-959-qd-bhxh-quan-ly-thu-bhxh-bhyt-bhtn.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/quyet-dinh-959-qd-bhxh-quan-ly-thu-bhxh-bhyt-bhtn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/quyet-dinh-959-qd-bhxh-quan-ly-thu-bhxh-bhyt-bhtn.html",
-      "title": "Quyết định 959/QĐ-BHXH Quản lý thu BHXH, BHYT, BHTN",
-      "excerpt": "Quyết định 959/QĐ-BHXH quản lý thu bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, ban hành ngày 9/9/2015 của BHXH Việt Nam",
-      "topicLabel": "BHXH - BHYT - BHTN",
-      "tags": [
-        "BHXH",
-        "BHXH - BHYT - BHTN",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/quyet dinh 959_QĐ-BHXH.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2015-09-09",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/so-bao-hiem-xa-hoi.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/so-bao-hiem-xa-hoi.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/so-bao-hiem-xa-hoi.html",
-      "title": "Sổ bảo hiểm xã hội",
-      "excerpt": "Hiện nay, sổ bảo hiểm xã hội đang được quy định tại điều 25 của Luật Bảo hiểm xã hội số: 41/2024/QH15 có hiệu lực từ ng…",
-      "topicLabel": "BHXH - BHYT - BHTN",
+      "href": "thu-vien/to-khai-tham-gia-bhxh-bhyt-bhtn-mau-so-tk1-ts.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-tham-gia-bhxh-bhyt-bhtn-mau-so-tk1-ts.html",
+      "title": "Mẫu TK1-TS Tờ khai tham gia BHXH theo Quyết định 490/QĐ-BHXH",
+      "excerpt": "Mẫu TK1-TS theo Quyết định 490/QĐ-BHXH là Tờ khai tham gia bảo hiểm xã hội mới nhất năm 2025 (Sửa đổi, bổ sung…",
+      "topicLabel": "Mẫu biểu lao động - bảo hiểm",
       "tags": [
         "BHXH",
         "BHYT",
         "BHTN",
-        "Lao động",
-        "Bảo hiểm",
+        "Mẫu biểu lao động",
+        "bảo hiểm",
+        "Lao động"
+      ],
+      "image": "assets/images/content/pic/Service/images/Mau-phu-luc-ho-gia-dinh(2).png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2023-03-28",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-danh-sach-lao-dong-tham-gia-bhxh-bhyt-mau-so-d02-ts.html",
+      "title": "Mẫu D02-TS Danh sách tham gia BHXH theo QĐ 595 file Excel",
+      "excerpt": "Mẫu D02-TS Danh sách lao động tham gia Bảo hiểm xã hội, Bảo hiểm y tế, bảo hiểm thất nghiệp mới nhất; Tải Mẫu D02-TS theo Quyết định 595 file Excel.",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "BHXH",
+        "Excel",
+        "Excel - Công cụ khác",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/SO-BAO-HIEM-XA-HOI.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-01-01",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-d02-ts-theo-quyet-dinh-595-file-excel.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2017-04-14",
       "modifiedDate": null
     }
   ]

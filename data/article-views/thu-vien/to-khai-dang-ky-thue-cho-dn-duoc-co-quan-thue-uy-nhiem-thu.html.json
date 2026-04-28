@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1244,
-  "totalCount": 2736,
+  "currentIndex": 1207,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-04-4-dk-tct-theo-thong-tu-so-86-2024-tt-btc.html",
     "section": "thu-vien",
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -163,6 +163,25 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/to-khai-dang-ky-thue-dung-cho-co-quan-dang-ky-ca-nhan-co-uy-quyen.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/to-khai-dang-ky-thue-dung-cho-co-quan-dang-ky-ca-nhan-co-uy-quyen.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-dang-ky-thue-dung-cho-co-quan-dang-ky-ca-nhan-co-uy-quyen.html",
+      "title": "Mẫu 05-ĐK-TH-TCT tờ khai đăng ký thuế dùng cho cơ quan chi trả thu nhập đăng ký cho cá nhân có ủy quyền",
+      "excerpt": "Mẫu 05-ĐK-TH-TCT (ban hành kèm theo Thông tư số 86/2024) tờ khai đăng ký thuế tổng hợp của cá nhân có thu nhập từ tiền lương tiền công - dùng cho cơ quan chi trả thu nhập đăng ký cho cá nhân có ủy quyền mới nhất 2025",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "Mẫu biểu lao động - bảo hiểm",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-05-dk-th-tct(1).png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2024-12-23",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/mau-to-khai-dang-ky-thue-dung-cho-nha-thau-nuoc-ngoai.html",
       "section": "thu-vien",
@@ -200,87 +219,65 @@
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2024-12-23",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/to-khai-dang-ky-thue-dung-cho-ca-nhan-khong-kinh-doanh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/to-khai-dang-ky-thue-dung-cho-ca-nhan-khong-kinh-doanh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-dang-ky-thue-dung-cho-ca-nhan-khong-kinh-doanh.html",
-      "title": "Mẫu 05-ĐK-TCT tờ khai đăng ký thuế dùng cho cá nhân không kinh doanh",
-      "excerpt": "Mẫu 05-ĐK-TCT - ban hành kèm theo Thông tư số 86/2024/TT-BTC: tờ khai đăng ký thuế dùng cho cá nhân không kinh doanh trực tiếp đăng ký thuế",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
-      "tags": [
-        "Mẫu biểu thuế - hóa đơn",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-05-dk-tct(1).png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2024-12-23",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
+      "id": "thu-vien/don-de-nghi-cap-chung-tu-khau-tru-thue-tncn-mau-17-tncn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
-      "title": "Nghị định 82 mới nhất 2025 gia hạn thời gian nộp thuế gtgt-tndn-tncn và tiền thuê đất",
-      "excerpt": "Nghị định 82/2025/NĐ-CP ban hành ngày 02/04/2025 áp dung cho người nộp thuế; cơ quan thuế; công chức thuế; cơ quan nhà nước, tổ chức, cá nhân khác có liên quan",
+      "href": "thu-vien/don-de-nghi-cap-chung-tu-khau-tru-thue-tncn-mau-17-tncn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/don-de-nghi-cap-chung-tu-khau-tru-thue-tncn-mau-17-tncn.html",
+      "title": "Đơn đề nghị cấp chứng từ khấu trừ thuế TNCN mẫu 07/CTKT-TNCN",
+      "excerpt": "Đơn đề nghị cấp chứng từ khấu trừ thuế TNCN mẫu 07/CTKT-TNCN Ban hành kèm theo Thông tư 92/2015/TT-BTC ngày 15/6/2015 của Bộ Tài chính",
       "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
-        "GTGT",
         "TNCN",
-        "TNDN",
         "Thuế thu nhập cá nhân",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Nghi-dinh-82-2025-nd-cp.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-04-02",
+      "publishDate": "2015-06-15",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-to-khai-dang-ky-thue-dung-cho-nha-thau-nuoc-ngoai.html",
+      "id": "thu-vien/to-khai-dang-ky-thue-dung-cho-co-quan-dang-ky-ca-nhan-co-uy-quyen.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-to-khai-dang-ky-thue-dung-cho-nha-thau-nuoc-ngoai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-dang-ky-thue-dung-cho-nha-thau-nuoc-ngoai.html",
-      "title": "Mẫu 04-ĐK-TCT tờ khai đăng ký thuế dùng cho nhà thầu nước ngoài ban điều hành liên danh mới nhất",
-      "excerpt": "Mẫu 04-ĐK-TCT - mẫu Tờ khai đăng ký thuế dùng cho nhà thầu nước ngoài, nhà thầu phụ nước ngoài, ban điều hành liên danh (ban hành kèm theo Thông tư số 86/2024/TT-BTC ngày 23/12/2024)",
+      "href": "thu-vien/to-khai-dang-ky-thue-dung-cho-co-quan-dang-ky-ca-nhan-co-uy-quyen.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-dang-ky-thue-dung-cho-co-quan-dang-ky-ca-nhan-co-uy-quyen.html",
+      "title": "Mẫu 05-ĐK-TH-TCT tờ khai đăng ký thuế dùng cho cơ quan chi trả thu nhập đăng ký cho cá nhân có ủy quyền",
+      "excerpt": "Mẫu 05-ĐK-TH-TCT (ban hành kèm theo Thông tư số 86/2024) tờ khai đăng ký thuế tổng hợp của cá nhân có thu nhập từ tiền lương tiền công - dùng cho cơ quan chi trả thu nhập đăng ký cho cá nhân có ủy quyền mới nhất 2025",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Mẫu biểu thuế - hóa đơn",
+        "Mẫu biểu lao động - bảo hiểm",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-05-dk-th-tct(1).png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2024-12-23",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/bang-tong-hop-dang-ky-nguoi-phu-thuoc-mau-20-dk-th-tc.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/bang-tong-hop-dang-ky-nguoi-phu-thuoc-mau-20-dk-th-tc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/bang-tong-hop-dang-ky-nguoi-phu-thuoc-mau-20-dk-th-tc.html",
+      "title": "Mẫu 20-ĐK-TH-TCT theo Thông tư 86 mới nhất năm 2026",
+      "excerpt": "Mẫu 20-ĐK-TH-TCT năm 2026 mới nhất theo Thông tư 86/2024/TT-BTC Tờ khai đăng ký thuế tổng hợp người phụ thuộc của cá nhân có thu nhập từ tiền lương, tiền công.",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
         "Excel - Công cụ khác",
-        "Công cụ"
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-to-khai-20-dk-th-tct-theo-thong-tu-86.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2024-12-23",
       "modifiedDate": null
     }
   ]

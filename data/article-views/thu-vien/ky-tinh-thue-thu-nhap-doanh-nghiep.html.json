@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1154,
-  "totalCount": 2736,
+  "currentIndex": 1117,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/quy-dinh-ve-ky-tinh-thue-thu-nhap-doanh-nghiep.html",
     "section": "thu-vien",
@@ -115,7 +115,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +134,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -213,26 +213,23 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-chuyen-lo-khi-tinh-quyet-toan-thue-tndn-sang-cac-nam-sau.html",
+      "id": "thu-vien/cac-khoan-thu-nhap-duoc-mien-thue-thu-nhap-doanh-nghiep.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-chuyen-lo-khi-tinh-quyet-toan-thue-tndn-sang-cac-nam-sau.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-chuyen-lo-khi-tinh-quyet-toan-thue-tndn-sang-cac-nam-sau.html",
-      "title": "Cách chuyển lỗ khi tạm tính, quyết toán thuế TNDN 2026",
-      "excerpt": "Hướng dẫn cách xác định lỗ và chuyển lỗ theo quy định tại Nghị định 320/2025/NĐ-CP hướng dẫn Luật Thuế thu nhập doanh n…",
+      "href": "thu-vien/cac-khoan-thu-nhap-duoc-mien-thue-thu-nhap-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-thu-nhap-duoc-mien-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Các khoản thu nhập được miễn thuế TNDN năm 2026",
+      "excerpt": "Các khoản thu nhập được miễn thuế thu nhập doanh nghiệp gồm 15 khoản thu nhập được được quy định tại Luật thuế TNDN số 67/2025/QH15 mới nhất và nghị định 320/2025/NĐ-CP",
       "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "TNDN",
-        "Quyết toán",
-        "Thuế thu nhập doanh nghiệp",
-        "Thuế",
-        "Hóa đơn",
+        "DN - Thủ tục",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Cach-chuyen-lo.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cac-khoan-thu-nhap-dc-mien-thue-tndn.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-09-10",
+      "publishDate": "2025-12-15",
       "modifiedDate": null
     }
   ],
@@ -260,42 +257,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-cong-van-xin-nop-gop-bao-cao-tai-chinh.html",
+      "id": "thu-vien/mau-to-khai-dang-ky-thu-01-dk-tct.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-cong-van-xin-nop-gop-bao-cao-tai-chinh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-cong-van-xin-nop-gop-bao-cao-tai-chinh.html",
-      "title": "Mẫu công văn xin nộp gộp báo cáo tài chính",
-      "excerpt": "Quy định về điều kiện xin gộp báo cáo tài chính vào năm sau. Mẫu công văn xin gộp Báo cáo tài chính, Quyết toán thuế TNDN vào năm sau, Thời hạn nộp công văn xin gộp BCTC.",
+      "href": "thu-vien/mau-to-khai-dang-ky-thu-01-dk-tct.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-dang-ky-thu-01-dk-tct.html",
+      "title": "Mẫu 01-ĐK-TCT Tờ khai đăng ký thuế theo thông tư 86/2024/TT-BTC",
+      "excerpt": "Mẫu tờ khai đăng ký thuế dùng cho tổ chức, doanh nghiệp mới nhất năm 2025 là Mẫu 01-ĐK-TCT được ban hành kè…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Mẫu biểu thuế - hóa đơn",
+        "Đăng ký thuế",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cong-van-xin-gop-bao-cao-tai-chinh-nam-sau(1).png",
+      "image": "assets/images/content/pic/Service/images/MST(1).png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2018-01-18",
+      "publishDate": "2024-12-23",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
+      "id": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "title": "Phần mềm HTKK 5.2.6 mới nhất ngày 1/1/2025",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.6 mới nhất 1/1/2025 của Tổng cục thuế. Tải phần mềm HTKK 5.2.6 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2025.",
+      "href": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "title": "Cách nộp thuế TNDN tạm tính 2025 qua mạng trên thuế điện tử",
+      "excerpt": "Hướng dẫn cách nộp tiền thuế thu nhập doanh nghiệp tạm tính quý qua mạng trên trang https://thuedientu.gdt.gov.vn/ mới…",
       "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_6-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/Nop-thue-TNDN-tam-tinh-quy.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2025-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2643,
-  "totalCount": 2736,
+  "currentIndex": 2602,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thu-tuc-thu-hoi-giay-phep-hoat-dong-cho-thue-lai-lao-dong.html",
     "section": "thu-vien",
@@ -114,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -133,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -168,25 +168,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
-      "title": "Xử lý hóa đơn khi chuyển địa điểm Công ty",
-      "excerpt": "Hướng dẫn cách xử lý hóa đơn khi thay đổi tên Công ty, thay đổi địa chỉ công ty, chuyển địa điểm kinh doanh đối với những hóa đơn điện tử đã đăng ký sử dụng với cơ quan thuế",
-      "topicLabel": "DN - Thủ tục",
-      "tags": [
-        "DN - Thủ tục",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/xu-ly-hoa-don-khi-doi-ten-cty-dia-chi.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-03-20",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/thu-tuc-chuyen-dia-diem-kinh-doanh-thay-doi-ten-cong-ty.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -203,6 +184,25 @@
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/thu-tuc-thay-doi-tru-so-kinh-doanh.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2019-10-10",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
+      "title": "Xử lý hóa đơn khi chuyển địa điểm Công ty",
+      "excerpt": "Hướng dẫn cách xử lý hóa đơn khi thay đổi tên Công ty, thay đổi địa chỉ công ty, chuyển địa điểm kinh doanh đối với những hóa đơn điện tử đã đăng ký sử dụng với cơ quan thuế",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/xu-ly-hoa-don-khi-doi-ten-cty-dia-chi.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-03-20",
       "modifiedDate": null
     },
     {
@@ -229,22 +229,22 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
+      "id": "thu-vien/thu-tuc-chuyen-dia-diem-kinh-doanh-thay-doi-ten-cong-ty.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
-      "title": "Xử lý hóa đơn khi chuyển địa điểm Công ty",
-      "excerpt": "Hướng dẫn cách xử lý hóa đơn khi thay đổi tên Công ty, thay đổi địa chỉ công ty, chuyển địa điểm kinh doanh đối với những hóa đơn điện tử đã đăng ký sử dụng với cơ quan thuế",
+      "href": "thu-vien/thu-tuc-chuyen-dia-diem-kinh-doanh-thay-doi-ten-cong-ty.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-chuyen-dia-diem-kinh-doanh-thay-doi-ten-cong-ty.html",
+      "title": "Thủ tục chuyển địa điểm kinh doanh, thay đổi tên công ty",
+      "excerpt": "Thủ tục Chuyển địa điểm kinh doanh, thay đổi tên công ty, thủ tục thay đổi vốn điều lệ, chủ sở hữu, thay đổi đăng ký kinh doanh theo Thông tư 86/2024/TT-BTC, Thông tư 40/2025/TT-BTC và Nghị định 168/2025/NĐ-CP.",
       "topicLabel": "DN - Thủ tục",
       "tags": [
         "DN - Thủ tục",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/xu-ly-hoa-don-khi-doi-ten-cty-dia-chi.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/thu-tuc-thay-doi-tru-so-kinh-doanh.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-03-20",
+      "publishDate": "2019-10-10",
       "modifiedDate": null
     },
     {
@@ -267,23 +267,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "title": "Cách nộp thuế TNDN tạm tính 2025 qua mạng trên thuế điện tử",
+      "excerpt": "Hướng dẫn cách nộp tiền thuế thu nhập doanh nghiệp tạm tính quý qua mạng trên trang https://thuedientu.gdt.gov.vn/ mới…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Nop-thue-TNDN-tam-tinh-quy.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-ty-tnhh-xay-dung-halo-tuyen-ke-toan-tong-hop.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-tnhh-xay-dung-halo-tuyen-ke-toan-tong-hop.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-tnhh-xay-dung-halo-tuyen-ke-toan-tong-hop.html",
+      "title": "Công ty TNHH xây dựng HALÔ Tuyển kế toán tổng hợp",
+      "excerpt": "CÔNG TY TNHH XÂY DỰNG HALÔ CẦN TUYỂN DỤNG KẾ TOÁN TỔNG HỢP - CÓ KINH NGHIỆM BÊN LĨNH VỰC XÂY DỰNG . - Địa điểm làm việc…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "libraryKindLabel": "",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

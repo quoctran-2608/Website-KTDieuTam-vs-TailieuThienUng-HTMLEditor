@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1079,
-  "totalCount": 2736,
+  "currentIndex": 1043,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-ke-khai-thue-gtgt-chiet-khau-thuong-mai.html",
     "section": "thu-vien",
@@ -29,7 +29,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/cach-ke-khai-thue-cho-chi-nhanh-hach-toan-phu-thuoc-va-doc-lap.html",
     "title": "Hướng dẫn kê khai thuế chi nhánh hạch toán phụ thuộc và độc lập",
     "excerpt": "Hướng dẫn cách kê khai thuế GTGT cho chi nhánh phụ thuộc - độc lập; Cách kê khai thuế môn bài chi nhánh cùng tỉnh - khá…",
-    "topicLabel": "Tài khoản - Hạch toán",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
       "Kê khai",
       "Tài khoản",
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -205,25 +205,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/hoa-don-khong-chiu-thue-co-phai-ke-khai-khong.html",
+      "id": "thu-vien/hoa-hong-dai-ly-bao-hiem-co-chiu-thue-gtgt.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/hoa-don-khong-chiu-thue-co-phai-ke-khai-khong.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/hoa-don-khong-chiu-thue-co-phai-ke-khai-khong.html",
-      "title": "Hóa đơn không chịu thuế có kê khai không",
-      "excerpt": "Hóa đơn không có thuế có kê khai không? Bên mua: Hóa đơn đầu vào không chịu thuế có phải kê khai không? Kế toán Diệu Tâ…",
+      "href": "thu-vien/hoa-hong-dai-ly-bao-hiem-co-chiu-thue-gtgt.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/hoa-hong-dai-ly-bao-hiem-co-chiu-thue-gtgt.html",
+      "title": "Doanh thu hoa hồng đại lý bảo hiểm có chịu thuế GTGT không?",
+      "excerpt": "Hoa hồng đại lý bảo hiểm có tính thuế GTGT không? Khi nhận doanh thu hoa hồng đại lý bảo hiểm có xuất hóa đơn GTGT không? Có phải kê khai tính thuế GTGT không",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
-        "Kê khai",
-        "Hóa đơn",
-        "Thuế",
+        "BHXH",
+        "BHXH - BHYT - BHTN",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/hoa-don-khong-chiu-thue-co-ke-khai-khong.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/thue-gtgt-voi-dai-ly-bao-hiem.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2013-11-06",
+      "publishDate": "2023-08-04",
       "modifiedDate": null
     }
   ],
@@ -272,23 +271,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "title": "Cách lập bảng kê bán ra theo Mẫu 01-1/GTGT trên Excel",
+      "excerpt": "Hướng dẫn cách lập bảng kê hóa đơn hàng hóa dịch vụ bán ra theo Mẫu 01-1/GTGT trên file Excel khi làm tờ khai thuế GTGT…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Cach-lap-bang-ke-ban-ra.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-03-30",
       "modifiedDate": null
     }
   ]

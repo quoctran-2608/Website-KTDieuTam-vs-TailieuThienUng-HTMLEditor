@@ -1,6 +1,6 @@
 {
   "currentIndex": 274,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/truy-thu-kinh-phi-cong-doan-co-duoc-dua-vao-chi-phi.html",
     "section": "thu-vien",
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -164,69 +164,43 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cach-nop-thue-le-phi-mon-bai-qua-mang-dien-tu-bang-ma-id.html",
+      "id": "thu-vien/cach-hach-toan-hang-hoa-het-han-su-dung-bi-hu-hong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-nop-thue-le-phi-mon-bai-qua-mang-dien-tu-bang-ma-id.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-le-phi-mon-bai-qua-mang-dien-tu-bang-ma-id.html",
-      "title": "Cách nộp tiền thuế lệ phí môn bài 2025 qua mạng điện tử",
-      "excerpt": "Hiện nay, hệ thống thuedientu đã cho phép doanh nghiệp thực hiện nộp tiền lệ phí môn bài bằng mã định danh khoản phải n…",
-      "topicLabel": "Lệ phí môn bài",
-      "tags": [
-        "Lệ phí môn bài",
-        "Thuế",
-        "Hóa đơn",
-        "Môn bài",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/nop-thue-mon-bai-qua-mang-thuedientu.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/dinh-khoan-hach-toan-phai-thu-cua-khach-hang-tk-131.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/dinh-khoan-hach-toan-phai-thu-cua-khach-hang-tk-131.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/dinh-khoan-hach-toan-phai-thu-cua-khach-hang-tk-131.html",
-      "title": "Cách hạch toán phải thu của khách hàng - TK 131",
-      "excerpt": "Cách hạch toán phải thu của khách hàng - Tài khoản 131 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất năm 2026, hạch toán khách hàng trả trước tiền, số tiền khách hàng đã trả nợ, số tiền thừa trả lại cho khách hàng",
+      "href": "thu-vien/cach-hach-toan-hang-hoa-het-han-su-dung-bi-hu-hong.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-hang-hoa-het-han-su-dung-bi-hu-hong.html",
+      "title": "Cách hạch toán hàng hóa hết hạn sử dụng, bị hư hỏng",
+      "excerpt": "Hướng dẫn cách xử lý hàng tồn bị hỏng, hết hạn sử dụng. Cách hạch toán hàng tồn kho hết hạn sử dụng, bị hỏng. Hồ sơ để đưa vào chi phí được trừ khi tính thuế TNDN.",
       "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Tài khoản - Hạch toán",
+        "Thuế thu nhập doanh nghiệp",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/so-do-hach-toan-TK-131(1).png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-hang-hoa-hu-hong-het-han-su-dung.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-26",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-hach-toan-thue-va-cac-khoan-phai-nop-nha-nuoc-tk-333.html",
+      "id": "thu-vien/huong-dan-hach-toan-chi-phi-lai-vay.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-thue-va-cac-khoan-phai-nop-nha-nuoc-tk-333.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-thue-va-cac-khoan-phai-nop-nha-nuoc-tk-333.html",
-      "title": "Cách hạch toán thuế và các khoản phải nộp nhà nước - Tài khoản 333",
-      "excerpt": "Tài khoản 333 – Thuế và các khoản phải nộp nhà nước dùng để phản ánh quan hệ giữa doanh nghiệp với Nhà nước về các khoả…",
+      "href": "thu-vien/huong-dan-hach-toan-chi-phi-lai-vay.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-hach-toan-chi-phi-lai-vay.html",
+      "title": "Hướng dẫn cách hạch toán chi phí lãi vay",
+      "excerpt": "Hướng dẫn cách hạch toán chi phí lãi vay phải trả cho Doanh nghiệp, phải trả cho cá nhân, cách hạch toán thuế TNCN từ tiền lãi cho vay theo Thông tư 99 và 133",
       "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Tài khoản",
-        "Hạch toán",
-        "Kế toán",
+        "DN - Thủ tục",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-thue.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-chi-phi-lai-vay.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-01",
+      "publishDate": "2011-09-26",
       "modifiedDate": null
-    }
-  ],
-  "latestOther": [
+    },
     {
       "id": "thu-vien/cach-nop-thue-le-phi-mon-bai-qua-mang-dien-tu-bang-ma-id.html",
       "section": "thu-vien",
@@ -248,44 +222,68 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
-      "id": "thu-vien/mau-01-tkn-cnkd-theo-thong-tu-so-18-2026-tt-btc.html",
+      "id": "thu-vien/cach-hach-toan-hang-hoa-het-han-su-dung-bi-hu-hong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-01-tkn-cnkd-theo-thong-tu-so-18-2026-tt-btc.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-01-tkn-cnkd-theo-thong-tu-so-18-2026-tt-btc.html",
-      "title": "Mẫu 01/TKN-CNKD theo Thông tư số 18/2026/TT-BTC Thông báo doanh thu, Tờ khai thuế năm",
-      "excerpt": "Mẫu số: 01/TKN-CNKD theo Thông tư số 18/2026/TT-BTC là Thông báo doanh thu/Tờ khai thuế năm",
+      "href": "thu-vien/cach-hach-toan-hang-hoa-het-han-su-dung-bi-hu-hong.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-hang-hoa-het-han-su-dung-bi-hu-hong.html",
+      "title": "Cách hạch toán hàng hóa hết hạn sử dụng, bị hư hỏng",
+      "excerpt": "Hướng dẫn cách xử lý hàng tồn bị hỏng, hết hạn sử dụng. Cách hạch toán hàng tồn kho hết hạn sử dụng, bị hỏng. Hồ sơ để đưa vào chi phí được trừ khi tính thuế TNDN.",
       "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
-        "Tài khoản - Hạch toán",
-        "Biểu mẫu"
+        "Thuế thu nhập doanh nghiệp",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-03-05",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-hang-hoa-hu-hong-het-han-su-dung.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/mau-to-khai-thue-mon-bai-mau-so-01-mbai.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/mau-to-khai-thue-mon-bai-mau-so-01-mbai.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-thue-mon-bai-mau-so-01-mbai.html",
+      "title": "Mẫu Tờ khai lệ phí môn bài năm 2025 mới nhất theo Thông tư 80",
+      "excerpt": "Mẫu Tờ khai thuế môn bài mới nhất 2025 là Tờ khai lệ phí môn bài theo Thông tư 80 áp dụng cho hộ kinh doanh, doanh nghiệp, địa điểm kinh doanh, chi nhánh.",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
+        "Mẫu biểu doanh nghiệp - thủ tục",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-to-khai-le-phi-mon-bai.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/hach-toan-nop-thue-gtgt-tncn-tndn-mon-bai-tren-misa.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/hach-toan-nop-thue-gtgt-tncn-tndn-mon-bai-tren-misa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/hach-toan-nop-thue-gtgt-tncn-tndn-mon-bai-tren-misa.html",
+      "title": "Hạch toán nộp thuế GTGT, TNCN, TNDN, Lệ phí môn bài trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ nộp tiền các loại thuế như thuế GTGT, thuế TNDN, thuế TNCN, thuế xuất nhập kh…",
+      "topicLabel": "MISA",
+      "tags": [
+        "GTGT",
+        "TNCN",
+        "TNDN",
+        "MISA",
+        "Phần mềm",
         "Công cụ"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/hach-toan-nop-thue-gtgt-tncn-tndn-le-phi-mon-bai-tren-misa-1.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2021,
-  "totalCount": 2736,
+  "currentIndex": 1983,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/nhung-luu-y-khi-lam-ke-toan-nhap-khau.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -166,6 +166,26 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cac-khoan-chi-phi-bi-khong-che-muc-duoc-tru-2026-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-khoan-chi-phi-bi-khong-che-muc-duoc-tru-2026-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-bi-khong-che-muc-duoc-tru-2026-moi-nhat.html",
+      "title": "Các khoản chi phí bị khống chế mức được trừ 2026",
+      "excerpt": "Quy định về các khoản chi bị khống chế mức được tính vào làm chi phí được trừ khi tính thuế TNDN mới nhất năm 2026 theo…",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cac-khoan-chi-phi-bi-khong-che.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-06-14",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cac-khoan-chi-phi-khong-duoc-tru-khi-tinh-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -188,59 +208,79 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-khoan-lo-duoc-ket-chuyen-theo-quy-dinh-cua-luat-thue-tndn.html",
+      "id": "thu-vien/cach-tinh-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-khoan-lo-duoc-ket-chuyen-theo-quy-dinh-cua-luat-thue-tndn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-lo-duoc-ket-chuyen-theo-quy-dinh-cua-luat-thue-tndn.html",
-      "title": "Cách chuyển lỗ trên Tờ khai Quyết toán thuế 03/TNDN",
-      "excerpt": "Các khoản lỗ được kết chuyển theo quy định năm 2025 - 2026, cách chuyển lỗ trên tờ khai Quyết toán thuế 03-2/TNDN giữa các năm, từ năm trước chuyển sang năm nay theo đúng quy định xác định lỗ và chuyển lỗ khi tính thuế TNDN.",
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
+      "title": "Cách tính thuế thu nhập doanh nghiệp tạm tính quý và cả năm",
+      "excerpt": "Hướng dẫn cách tính thuế TNDN tạm tính theo quý và cách tính thuế thu nhập doanh nghiệp năm 2026 phải nộp cả năm; Cách xác định thu nhập chịu thuế, các khoản chi phí được trừ khi tính thuế TNDN.",
       "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
-        "TNDN",
-        "Thuế thu nhập doanh nghiệp",
+        "DN - Thủ tục",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-chuyen-lo-tren-to-khai-quyet-toan-thue-tndn(2).png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-tinh-thue-thu-nhap-doanh-nghiep(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-11-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
-      "title": "Các khoản chi phí được trừ khi tính thuế TNDN 2026",
-      "excerpt": "Quy định về các khoản chi phí được trừ khi tính thuế TNDN theo Nghị định 320/2025/NĐ-CP hướng dẫn Luật Thuế thu nhập do…",
-      "topicLabel": "Thuế thu nhập doanh nghiệp",
-      "tags": [
-        "TNDN",
-        "Thuế thu nhập doanh nghiệp",
-        "Thuế",
-        "Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Chi-phi-duoc-tru.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-01-26",
+      "publishDate": "2025-12-15",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cac-khoan-chi-phi-khong-duoc-tru-khi-tinh-thue-tndn.html",
+      "id": "thu-vien/cac-khoan-chi-phi-bi-khong-che-muc-duoc-tru-2026-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-khoan-chi-phi-khong-duoc-tru-khi-tinh-thue-tndn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-duoc-tru-khi-tinh-thue-tndn.html",
-      "title": "Các khoản chi phí không được trừ khi tính thuế TNDN 2026",
-      "excerpt": "Tổng hợp các khoản chi phí không được trừ khi tính thuế TNDN mới nhất năm 2026 theo quy định tại Nghị định 320/2025/NĐ-…",
+      "href": "thu-vien/cac-khoan-chi-phi-bi-khong-che-muc-duoc-tru-2026-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-bi-khong-che-muc-duoc-tru-2026-moi-nhat.html",
+      "title": "Các khoản chi phí bị khống chế mức được trừ 2026",
+      "excerpt": "Quy định về các khoản chi bị khống chế mức được tính vào làm chi phí được trừ khi tính thuế TNDN mới nhất năm 2026 theo…",
       "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cac-khoan-chi-phi-bi-khong-che.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-06-14",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-so-03-tndn-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-so-03-tndn-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-so-03-tndn-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Mẫu số 03/TNDN tờ khai quyết toán thuế thu nhập doanh nghiệp theo TT 80/2021",
+      "excerpt": "Mẫu Tờ khai quyết toán thuế thu nhập doanh nghiệp áp dụng đối với phương pháp doanh thu - chi phí mới nhất năm 2024 là…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "TNDN",
+        "Quyết toán",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Mau-so-03-tndn-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "title": "Cách nộp thuế TNDN tạm tính 2025 qua mạng trên thuế điện tử",
+      "excerpt": "Hướng dẫn cách nộp tiền thuế thu nhập doanh nghiệp tạm tính quý qua mạng trên trang https://thuedientu.gdt.gov.vn/ mới…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
         "TNDN",
         "Thuế thu nhập doanh nghiệp",
@@ -248,52 +288,31 @@
         "Hóa đơn",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Chi-phi-khong-duoc-tru.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-12-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-thu-xac-nhan-thu-nhap-de-quyet-toan-thue-tncn.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-thu-xac-nhan-thu-nhap-de-quyet-toan-thue-tncn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-thu-xac-nhan-thu-nhap-de-quyet-toan-thue-tncn.html",
-      "title": "Mẫu thư xác nhận thu nhập để quyết toán thuế TNCN 2026 mới nhất",
-      "excerpt": "Khi cá nhân tự làm quyết toán thuế thu nhập cá nhân thì cần các hồ sơ chứng từ để xác định, chứng minh thu nhập: + Nếu…",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
-      "tags": [
-        "TNCN",
-        "Quyết toán",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Thuế",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/Mau-thu-xac-minh-thu-nhap(1)(1).png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Nop-thue-TNDN-tam-tinh-quy.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "title": "Trường mầm non Thành Đông Tuyển kế toán viên",
+      "excerpt": "Trường mầm non Thành Đông tuyển dụng Nhân viên kế toán Mô tả công việc: - Tính học phí, thu học phí, xuất hóa đơn, giao…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2021-06-20",
       "modifiedDate": null
     }
   ]

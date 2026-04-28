@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2656,
-  "totalCount": 2736,
+  "currentIndex": 2615,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/tien-ho-tro-van-chuyen-co-xuat-hoa-don-chi-phi-duoc-tru-khong.html",
     "section": "thu-vien",
@@ -31,7 +31,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/tien-phat-vi-pham-hop-dong-kinh-te-co-duoc-cho-vao-chi-phi.html",
     "title": "Tiền phạt vi phạm hợp đồng có tính vào chi phí?",
     "excerpt": "Tiền phạt vi phạm hợp đồng có tính vào chi phí hợp lý? Thu tiền phạt có phải xuất hoá đơn không? Cách hạch toán ti…",
-    "topicLabel": "Nghiệp vụ theo phần hành",
+    "topicLabel": "Thuế thu nhập doanh nghiệp",
     "tags": [
       "Nghiệp vụ theo phần hành",
       "Kế toán",
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -205,25 +205,22 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
+      "id": "thu-vien/cac-bao-cao-thue-hang-quy-phai-nop-cho-co-quan-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
-      "title": "Các loại thuế phải nộp khi cá nhân cho thuê nhà 2026",
-      "excerpt": "Hướng dẫn cách tính các loại thuế cho thuê nhà, cho thuê tài sản như thuế thu nhập cá nhân, thuế giá trị gia tăng theo…",
+      "href": "thu-vien/cac-bao-cao-thue-hang-quy-phai-nop-cho-co-quan-thue.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-bao-cao-thue-hang-quy-phai-nop-cho-co-quan-thue.html",
+      "title": "Các Tờ khai Báo cáo thuế phải nộp theo Qúy cho cơ quan thuế",
+      "excerpt": "Hàng quý phải nộp những gì cho cơ quan thuế? Các loại tờ khai, báo cáo phải nộp theo quý cho cơ quan thuế, thời hạn nộp các loại báo cáo thuế hàng quý.",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "GTGT",
-        "TNCN",
-        "Hóa đơn",
-        "Thuế",
+        "GTGT - Hóa đơn",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Thue-cho-thue-nha.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/To-khai-thue-gtgt-phai-nop-hang-quy.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
+      "publishDate": "2018-10-30",
       "modifiedDate": null
     }
   ],
@@ -270,6 +267,27 @@
       "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "title": "Cách đăng ký và nộp Tiền thuế điện tử qua mạng mới nhất.",
+      "excerpt": "Hướng dẫn cách Đăng ký nộp thuế điện tử qua mạng -> Cách lấy giấy nộp tiền thuế điện tử -> Cách nộp thuế điện tử trên t…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-nop-thue-dien-tu-qua-mang.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

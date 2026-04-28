@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2574,
-  "totalCount": 2736,
+  "currentIndex": 2533,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thong-tu-78-2014-tt-btc-huong-dan-thi-hanh-luat-thue-tndn.html",
     "section": "thu-vien",
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -165,6 +165,48 @@
   ],
   "related": [
     {
+      "id": "thu-vien/ho-tro-chi-phi-mai-tang.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/ho-tro-chi-phi-mai-tang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/ho-tro-chi-phi-mai-tang.html",
+      "title": "Hỗ trợ chi phí mai táng theo Nghị định 176/2025/NĐ-CP",
+      "excerpt": "Hỗ trợ chi phí mai táng theo Nghị định 176/2025/NĐ-CP quy định chi tiết và hướng dẫn thi hành về đối tượng và điều kiện…",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/chi-phi-mai-tang.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2021-03-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/huong-dan-ke-khai-thue-tieu-thu-dac-biet.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/huong-dan-ke-khai-thue-tieu-thu-dac-biet.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-ke-khai-thue-tieu-thu-dac-biet.html",
+      "title": "Hướng dẫn kê khai thuế tiêu thụ đặc biệt",
+      "excerpt": "Hướng dẫn cách kê khai thuế tiêu thụ đặc biệt, hồ sơ khai thuế tiêu thụ đặc biệt theo Thông tư số 156/2013/TT-BTC ngày…",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "Kê khai",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/huong dan ke khai thue tieu thu dac biet.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2013-11-06",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -173,7 +215,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
       "title": "Các khoản chi phí được trừ khi tính thuế TNDN",
       "excerpt": "Các khoản chi phí được trừ khi tính thuế Thu nhập Doanh Nghiệp, điều kiện để đưa vào chi phí hợp lý khi tính thuế TNDN theo quy định tại Nghị định 320, Thông tư 26/2026 và Luật thuế TNDN mới nhất hiện hành.",
-      "topicLabel": "DN - Thủ tục",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "TNDN",
         "DN - Thủ tục",
@@ -182,67 +224,28 @@
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/chi-phi-duoc-tru-khi-tinh-thue-tndn.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2021-01-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/nguyen-tac-ke-khai-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nguyen-tac-ke-khai-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nguyen-tac-ke-khai-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
-      "title": "Nguyên tắc kê khai thuế thu nhập doanh nghiệp năm 2017",
-      "excerpt": "Các nguyên tắc và quy định kê khai thuế thu nhập doanh nghiệp (TNDN) năm 2017 mới nhất theo Thông tư 156/2013/TT-BTC của Bộ tài chính",
-      "topicLabel": "DN - Thủ tục",
-      "tags": [
-        "DN - Thủ tục",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-11-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-va-hoan-thue-gtgt.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-va-hoan-thue-gtgt.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-va-hoan-thue-gtgt.html",
-      "title": "Các hành vi bị nghiêm cấm trong khấu trừ và hoàn thuế GTGT năm 2025",
-      "excerpt": "Tổng hợp các hành vi bị nghiêm cấm trong khấu trừ và hoàn thuế giá trị gia tăng năm 2025 theo Luật GTGT số 48/2024/QH15 có hiệu lực từ ngày 1/7/2025. Do đó nếu các doanh nghiệp cố tình sai phạm để được khấu trừ thuế gtgt đầu vào cũng như hoàn thuế thì sẽ bị xử phạt",
-      "topicLabel": "DN - Thủ tục",
-      "tags": [
-        "GTGT",
-        "DN - Thủ tục",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/hanh-vi-bi-nghiem-cam-trong-khau-tru-thue-gtgt.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
+      "id": "thu-vien/ho-tro-chi-phi-mai-tang.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
-      "title": "Các khoản chi phí được trừ khi tính thuế TNDN",
-      "excerpt": "Các khoản chi phí được trừ khi tính thuế Thu nhập Doanh Nghiệp, điều kiện để đưa vào chi phí hợp lý khi tính thuế TNDN theo quy định tại Nghị định 320, Thông tư 26/2026 và Luật thuế TNDN mới nhất hiện hành.",
-      "topicLabel": "DN - Thủ tục",
+      "href": "thu-vien/ho-tro-chi-phi-mai-tang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/ho-tro-chi-phi-mai-tang.html",
+      "title": "Hỗ trợ chi phí mai táng theo Nghị định 176/2025/NĐ-CP",
+      "excerpt": "Hỗ trợ chi phí mai táng theo Nghị định 176/2025/NĐ-CP quy định chi tiết và hướng dẫn thi hành về đối tượng và điều kiện…",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
-        "TNDN",
-        "DN - Thủ tục",
-        "Hướng dẫn"
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Văn bản"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/chi-phi-duoc-tru-khi-tinh-thue-tndn.png",
+      "image": "assets/images/content/pic/Service/images/chi-phi-mai-tang.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-01-26",
+      "publishDate": "2021-03-15",
       "modifiedDate": null
     },
     {
@@ -254,7 +257,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-mau-03-tndn.html",
       "title": "Mẫu Tờ khai quyết toán thuế thu nhập doanh nghiệp Mẫu 03/TNDN theo TT 151",
       "excerpt": "Mẫu Tờ khai quyết toán thuế thu nhập doanh nghiệp Mẫu 03/TNDN Ban hành kèm theo Thông tư 151/2014/TT-BTC ngày 10…",
-      "topicLabel": "Mẫu biểu doanh nghiệp - thủ tục",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "TNDN",
         "Quyết toán",
@@ -269,23 +272,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

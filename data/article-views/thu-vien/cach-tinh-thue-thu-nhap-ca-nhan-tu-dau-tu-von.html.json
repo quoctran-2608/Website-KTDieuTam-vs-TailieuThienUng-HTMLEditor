@@ -1,6 +1,6 @@
 {
   "currentIndex": 602,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-tinh-thue-ho-kinh-doanh-theo-phuong-phap-ke-khai.html",
     "section": "thu-vien",
@@ -116,7 +116,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -135,7 +135,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -169,6 +169,26 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/cach-ke-khai-thue-tncn-tu-chuyen-nhuong-von-nhap-moi.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-ke-khai-thue-tncn-tu-chuyen-nhuong-von-nhap-moi.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-ke-khai-thue-tncn-tu-chuyen-nhuong-von-nhap-moi.html",
+      "title": "Hướng dẫn kê khai thuế TNCN từ chuyển nhượng vốn",
+      "excerpt": "Cách kê khai thuế TNCN từ chuyển nhượng vốn, chứng khoán: Hướng dẫn lập tờ khai 04/CNV-TNCN chuyển nhượng vốn; Thời hạn nộp tờ khai thuế chuyển nhượng vốn.",
+      "topicLabel": "Thuế thu nhập cá nhân",
+      "tags": [
+        "TNCN",
+        "HTKK - eTax - Thuế điện tử",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-ke-khai-thue-tncn-chuyen-nhuong-von.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2021-09-29",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-nam-moi-nhat.html",
       "section": "thu-vien",
@@ -212,49 +232,27 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-07-01",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-chuyen-nhuong-von.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-chuyen-nhuong-von.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-chuyen-nhuong-von.html",
-      "title": "Cách tính thuế TNCN từ chuyển nhượng vốn, chứng khoán.",
-      "excerpt": "Hướng dẫn tính thuế TNCN từ chuyển nhượng vốn: Cách tính thuế thu nhập cá nhân chuyển nhượng vốn góp , cổ phần, chứng khoán; Thuế suất chuyển nhượng.",
-      "topicLabel": "Thuế thu nhập cá nhân",
-      "tags": [
-        "TNCN",
-        "Thuế thu nhập cá nhân",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-tinh-thue-tncn-tu-chuyen-nhuong-von-chung-khoan.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2019-04-04",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-nam-moi-nhat.html",
+      "id": "thu-vien/cach-ke-khai-thue-tncn-tu-chuyen-nhuong-von-nhap-moi.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-nam-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-nam-moi-nhat.html",
-      "title": "Cách tính thuế thu nhập cá nhân năm 2026 mới nhất",
-      "excerpt": "Hướng dẫn cách tính thuế thu nhập cá nhân từ tiền lương tiền công theo công thức và ví dụ mới nhất năm 2026 1. Thời điể…",
+      "href": "thu-vien/cach-ke-khai-thue-tncn-tu-chuyen-nhuong-von-nhap-moi.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-ke-khai-thue-tncn-tu-chuyen-nhuong-von-nhap-moi.html",
+      "title": "Hướng dẫn kê khai thuế TNCN từ chuyển nhượng vốn",
+      "excerpt": "Cách kê khai thuế TNCN từ chuyển nhượng vốn, chứng khoán: Hướng dẫn lập tờ khai 04/CNV-TNCN chuyển nhượng vốn; Thời hạn nộp tờ khai thuế chuyển nhượng vốn.",
       "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
         "TNCN",
-        "Thuế thu nhập cá nhân",
-        "Thuế",
-        "Hóa đơn",
+        "HTKK - eTax - Thuế điện tử",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Cach-tinh-thue-TNCN.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-ke-khai-thue-tncn-chuyen-nhuong-von.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-05",
+      "publishDate": "2021-09-29",
       "modifiedDate": null
     },
     {
@@ -278,23 +276,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "title": "Cách lập bảng kê bán ra theo Mẫu 01-1/GTGT trên Excel",
+      "excerpt": "Hướng dẫn cách lập bảng kê hóa đơn hàng hóa dịch vụ bán ra theo Mẫu 01-1/GTGT trên file Excel khi làm tờ khai thuế GTGT…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Cach-lap-bang-ke-ban-ra.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-03-30",
       "modifiedDate": null
     }
   ]

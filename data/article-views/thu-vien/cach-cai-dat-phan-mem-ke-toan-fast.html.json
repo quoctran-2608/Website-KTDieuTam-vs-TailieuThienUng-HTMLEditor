@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1071,
-  "totalCount": 2736,
+  "currentIndex": 1035,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/huong-dan-cach-viet-don-xin-viec-viet-tay-thanh-cong.html",
     "section": "thu-vien",
@@ -29,7 +29,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
     "title": "Hướng dẫn chuyển số dư TK từ QĐ 15 sang Thông tư 200/2014/TT-BTC",
     "excerpt": "Quyết định 15 đã được thay thế bằng Thông tư 200/2014/TT-BTC, trong đó có 1 số tài khoản đã được loại bỏ. Kế toán Diệu…",
-    "topicLabel": "Tài khoản - Hạch toán",
+    "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
     "tags": [
       "Tài khoản",
       "Hạch toán",
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -164,87 +164,111 @@
   ],
   "related": [
     {
-      "id": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
+      "id": "thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
-      "title": "Hướng dẫn cách lập sổ sách kế toán trên Excel",
-      "excerpt": "Hướng dẫn cách làm sổ sách kế toán bằng Excel thực hành trên mẫu sổ sách kế toán trên Excel chi tiết, cách sử dụng các hàm Excel để tính toán, lập bảng biểu, báo cáo tài chính trên Excel",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "title": "Cách hạch toán kết chuyển cuối kỳ (Lãi lỗ, Thuế)",
+      "excerpt": "Các bút toán kết chuyển cuối kỳ theo Thông tư 200 và 133 như: Hạch toán kết chuyển thuế GTGT, kết chuyển lãi lỗ, Doanh…",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
         "Excel",
-        "Excel - Công cụ khác",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lam-so-sach-ke-toan-tren-excel.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-tai-du-lieu-tu-excel-vao-phan-mem-htkk.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tai-du-lieu-tu-excel-vao-phan-mem-htkk.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tai-du-lieu-tu-excel-vao-phan-mem-htkk.html",
-      "title": "Hướng dẫn cách tải file Excel vào HTKK chi tiết",
-      "excerpt": "Hướng dẫn cách tải file Excel vào HTKK: Cách tải bảng kê từ Excel vào phần mềm HTKK; Đẩy BCTC từ EXCEL vào HTKK; Tải bảng kê Quyết toán thuế TNCN vào HTKK.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
-      "tags": [
-        "Excel",
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/tai-mau-bang-ke.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-su-dung-phan-mem-ke-toan-fast-accounting-qua-mang.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-su-dung-phan-mem-ke-toan-fast-accounting-qua-mang.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-su-dung-phan-mem-ke-toan-fast-accounting-qua-mang.html",
-      "title": "Hướng dẫn cách sử dụng phần mềm kế toán Fast Accounting",
-      "excerpt": "Hướng dẫn cách sử dụng phần mềm kế toán Fast Accounting qua mạng chi tiết, với đầy đủ các phân hệ trong p…",
-      "topicLabel": "FAST",
-      "tags": [
-        "FAST",
+        "Công cụ khác",
         "Phần mềm",
         "Công cụ",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach su dung phan mem ke toan fast.png",
+      "image": "assets/images/content/pic/Service/images/cac-but-toan-ket-chuyen-cuoi-ky.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-hach-toan-xuat-hang-cho-chi-nhanh-hach-toan-phu-thuoc.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-hach-toan-xuat-hang-cho-chi-nhanh-hach-toan-phu-thuoc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-xuat-hang-cho-chi-nhanh-hach-toan-phu-thuoc.html",
+      "title": "Cách hạch toán xuất hàng cho các đơn vị (chi nhánh) hạch toán phụ thuộc",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ xuất hàng cho các đơn vị (chi nhánh) hạch toán phụ thuộc trên phần mềm Misa K…",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-xuat-hang-cho-chi-nhanh-hach-toan-phu-thuoc-1(1).png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-so-chi-tiet-ban-hang-mau-s35-dn-theo-thong-tu-200.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-so-chi-tiet-ban-hang-mau-s35-dn-theo-thong-tu-200.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-chi-tiet-ban-hang-mau-s35-dn-theo-thong-tu-200.html",
+      "title": "Cách lập sổ chi tiết bán hàng Mẫu S35-DN theo Thông tư 200",
+      "excerpt": "Hướng dẫn cách lập sổ chi tiết bán hàng Mẫu S35-DN theo Thông tư 200/2014/TT-BTC , mục đích lập, căn cứ và phương pháp…",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
+      "id": "thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
-      "title": "Hướng dẫn cách lập sổ sách kế toán trên Excel",
-      "excerpt": "Hướng dẫn cách làm sổ sách kế toán bằng Excel thực hành trên mẫu sổ sách kế toán trên Excel chi tiết, cách sử dụng các hàm Excel để tính toán, lập bảng biểu, báo cáo tài chính trên Excel",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "title": "Cách hạch toán kết chuyển cuối kỳ (Lãi lỗ, Thuế)",
+      "excerpt": "Các bút toán kết chuyển cuối kỳ theo Thông tư 200 và 133 như: Hạch toán kết chuyển thuế GTGT, kết chuyển lãi lỗ, Doanh…",
+      "topicLabel": "Tài khoản - Hạch toán",
       "tags": [
         "Excel",
-        "Excel - Công cụ khác",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lam-so-sach-ke-toan-tren-excel.png",
+      "image": "assets/images/content/pic/Service/images/cac-but-toan-ket-chuyen-cuoi-ky.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/bang-phan-bo-nguyen-lieu-vat-lieu-cong-cu-dung-cu-mau-so-07-vt.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/bang-phan-bo-nguyen-lieu-vat-lieu-cong-cu-dung-cu-mau-so-07-vt.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/bang-phan-bo-nguyen-lieu-vat-lieu-cong-cu-dung-cu-mau-so-07-vt.html",
+      "title": "Mẫu Bảng phân bổ nguyên vật liệu, công cụ dụng cụ theo TT 133, 200",
+      "excerpt": "Hướng dẫn cách lập Bảng phân bổ nguyên vật liệu công cụ dụng cụ theo Thông tư 133 và 200 - Mẫu 07-VT, Giá trị nguyên vậ…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "CCDC",
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/bang-phan-bo-nguyen-vat-lieu-cong-cu-dung-cu.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     },
     {
@@ -262,28 +286,8 @@
         "Biểu mẫu"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-can-doi-ke-toan-theo-thong-tu-200.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ]

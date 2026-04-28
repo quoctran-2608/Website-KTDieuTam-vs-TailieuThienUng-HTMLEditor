@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2730,
-  "totalCount": 2736,
+  "currentIndex": 2688,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/xu-ly-mat-hoa-don-xoa-bo-da-xuat-hoa-don-khac-thay-the.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -165,25 +165,6 @@
     }
   ],
   "related": [
-    {
-      "id": "thu-vien/nghi-dinh-123-2020-nd-cp-quy-dinh-ve-hoa-don-chung-tu.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-123-2020-nd-cp-quy-dinh-ve-hoa-don-chung-tu.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-123-2020-nd-cp-quy-dinh-ve-hoa-don-chung-tu.html",
-      "title": "Nghị định 123/2020/NĐ-CP Quy định về hoá đơn chứng từ",
-      "excerpt": "Nghị định 123/2020/NĐ-CP ngày 19/10/2020 của Chính phủ: Quy định về hoá đơn điện tử, chứng từ; Quản lý, sử dụng hóa đơn khi bán hàng hóa và quản lý, sử dụng chứng từ khi thực hiện các thủ tục về thuế.",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT - Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Nghi-dinh-123-Quy-dinh-ve-hoa-don-chung-tu.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-10-19",
-      "modifiedDate": null
-    },
     {
       "id": "thu-vien/cac-hanh-vi-bi-cam-trong-linh-vuc-hoa-don-chung-tu.html",
       "section": "thu-vien",
@@ -226,26 +207,50 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2018-06-07",
       "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/chuyen-doi-hoa-don-dien-tu-thanh-hoa-don-giay.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/chuyen-doi-hoa-don-dien-tu-thanh-hoa-don-giay.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/chuyen-doi-hoa-don-dien-tu-thanh-hoa-don-giay.html",
+      "title": "Chuyển đổi hóa đơn điện tử thành hóa đơn giấy",
+      "excerpt": "Chuyển đổi hóa đơn điện tử thành hóa đơn giấy hiện nay đang được quy định tại điều 7 của Nghị định 123/2020/NĐ-CP quy đ…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn điện tử",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Chuyen-doi-hoa-don-dien-tu-thanh-hoa-don-giay(1).png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/nghi-dinh-123-2020-nd-cp-quy-dinh-ve-hoa-don-chung-tu.html",
+      "id": "thu-vien/cac-hanh-vi-bi-cam-trong-linh-vuc-hoa-don-chung-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-123-2020-nd-cp-quy-dinh-ve-hoa-don-chung-tu.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-123-2020-nd-cp-quy-dinh-ve-hoa-don-chung-tu.html",
-      "title": "Nghị định 123/2020/NĐ-CP Quy định về hoá đơn chứng từ",
-      "excerpt": "Nghị định 123/2020/NĐ-CP ngày 19/10/2020 của Chính phủ: Quy định về hoá đơn điện tử, chứng từ; Quản lý, sử dụng hóa đơn khi bán hàng hóa và quản lý, sử dụng chứng từ khi thực hiện các thủ tục về thuế.",
+      "href": "thu-vien/cac-hanh-vi-bi-cam-trong-linh-vuc-hoa-don-chung-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-hanh-vi-bi-cam-trong-linh-vuc-hoa-don-chung-tu.html",
+      "title": "Các hành vi bị cấm trong lĩnh vực hóa đơn, chứng từ theo NĐ 70/2025",
+      "excerpt": "Các hành vi bị cấm trong lĩnh vực hóa đơn, chứng từ hiện nay đang được quy định tại điều 5 của Nghị định 123/2020/NĐ-CP…",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
-        "GTGT - Hóa đơn",
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Nghi-dinh-123-Quy-dinh-ve-hoa-don-chung-tu.png",
+      "image": "assets/images/content/pic/Service/images/cac-hanh-vi-bi-cam-trong-hoa-don.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-10-19",
+      "publishDate": "2025-06-01",
       "modifiedDate": null
     },
     {
@@ -272,23 +277,23 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-lap-bao-cao-tinh-hinh-su-dung-hoa-don-quy-theo-mau-bc26-a.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-lap-bao-cao-tinh-hinh-su-dung-hoa-don-quy-theo-mau-bc26-a.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bao-cao-tinh-hinh-su-dung-hoa-don-quy-theo-mau-bc26-a.html",
+      "title": "Hướng dẫn lập báo cáo sử dụng hóa đơn Mẫu BC26-A trên HTKK",
+      "excerpt": "Hướng dẫn cách lập báo cáo tình hình sử dụng hóa đơn theo quý Mẫu BC26-A mới nhất làm trên phần mềm HTKK. Cách xác định thời hạn nộp Báo cáo tình hình sử dụng hoá đơn quý, tháng.",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Thuế điện tử",
+        "HTKK - eTax - Thuế điện tử",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/huong-dan-lap-bao-cao-su-dung-hoa-don-quy.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2018-03-09",
       "modifiedDate": null
     }
   ]

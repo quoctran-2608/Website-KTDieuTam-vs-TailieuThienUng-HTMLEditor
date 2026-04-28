@@ -1,6 +1,6 @@
 {
   "currentIndex": 638,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-tinh-tien-phat-cham-nop-thue-tndn-tam-tinh-quy.html",
     "section": "thu-vien",
@@ -115,7 +115,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +134,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -192,28 +192,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-tinh-tien-phat-cham-nop-thue-tndn-tam-tinh-quy.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-tien-phat-cham-nop-thue-tndn-tam-tinh-quy.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-tien-phat-cham-nop-thue-tndn-tam-tinh-quy.html",
-      "title": "Cách tính tiền phạt chậm nộp thuế TNDN tạm tính quý 2026",
-      "excerpt": "Hướng dẫn cách tính số tiền phạt chậm nộp thuế thu nhập doanh nghiệp tạm tính quý theo quy định mới nhất năm 2026 tại N…",
-      "topicLabel": "Thuế thu nhập doanh nghiệp",
-      "tags": [
-        "TNDN",
-        "Thuế thu nhập doanh nghiệp",
-        "Thuế",
-        "Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Phat-cham-nop-thue-TNDN-tam-tinh-quy.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-04-15",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/muc-phat-cham-nop-tien-thue-gtgt-tncn-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -222,7 +200,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/muc-phat-cham-nop-tien-thue-gtgt-tncn-tndn.html",
       "title": "Mức phạt chậm nộp tiền thuế GTGT, TNCN, TNDN mới nhất 2026",
       "excerpt": "Mức phạt nộp chậm tiền thuế GTGT, TNCN, TNDN mới nhất; Cách tính tiền phạt chậm nộp thuế TNDN, GTGT, TNCN; Cách tính số ngày chậm nộp tiền thuế.",
-      "topicLabel": "Thuế thu nhập cá nhân",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
         "TNCN",
@@ -233,6 +211,28 @@
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/phat-cham-nọp-tien-thue.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-07-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/muc-phat-cham-nop-ho-so-khai-thue-gtgt-tncn-tndn.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/muc-phat-cham-nop-ho-so-khai-thue-gtgt-tncn-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/muc-phat-cham-nop-ho-so-khai-thue-gtgt-tncn-tndn.html",
+      "title": "Mức phạt chậm nộp tờ khai thuế GTGT, TNCN, TNDN mới nhất",
+      "excerpt": "Mức phạt chậm nộp tờ khai thuế GTGT, TNCN, thuế môn bài mới nhất theo quy định về xử phạt chậm nộp hồ sơ khai thuế; Mức phạt chậm nộp tờ khai quyết toán thuế TNCN, TNDN",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "TNCN",
+        "TNDN",
+        "HTKK - eTax - Thuế điện tử",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/muc-phat-cham-nop-to-khai-thue(1).png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-16",
       "modifiedDate": null
     }
   ],
@@ -284,23 +284,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
+      "id": "thu-vien/hach-toan-nop-thue-gtgt-tncn-tndn-mon-bai-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
-      "title": "Phần mềm HTKK 5.5.6 mới nhất ngày 18/1/2026",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.5.6 mới nhất 18/1/2026 của Tổng cục thuế. Tải phần mềm HTKK 5.5.6 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2026.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/hach-toan-nop-thue-gtgt-tncn-tndn-mon-bai-tren-misa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/hach-toan-nop-thue-gtgt-tncn-tndn-mon-bai-tren-misa.html",
+      "title": "Hạch toán nộp thuế GTGT, TNCN, TNDN, Lệ phí môn bài trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ nộp tiền các loại thuế như thuế GTGT, thuế TNDN, thuế TNCN, thuế xuất nhập kh…",
+      "topicLabel": "MISA",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
+        "GTGT",
+        "TNCN",
+        "TNDN",
+        "MISA",
+        "Phần mềm",
         "Công cụ"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_5_1-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/hach-toan-nop-thue-gtgt-tncn-tndn-le-phi-mon-bai-tren-misa-1.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-01-18",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

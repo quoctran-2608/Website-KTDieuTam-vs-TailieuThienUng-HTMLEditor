@@ -1,6 +1,6 @@
 {
   "currentIndex": 724,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/chi-phi-thue-thu-nhap-ca-nhan.html",
     "section": "thu-vien",
@@ -10,7 +10,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/chi-phi-thue-thu-nhap-ca-nhan.html",
     "title": "Chi phí thuế TNCN có được trừ khi tính thuế TNDN không?",
     "excerpt": "Quy định về chi phí thuế thu nhập cá nhân khi xác định các khoản chi được trừ và không được trừ khi xác định thu…",
-    "topicLabel": "Thuế thu nhập cá nhân",
+    "topicLabel": "Thuế thu nhập doanh nghiệp",
     "tags": [
       "TNCN",
       "TNDN",
@@ -115,7 +115,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +134,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -192,6 +192,26 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/quy-dinh-ve-chi-phi-cho-nhan-vien-di-nghi-mat-di-lai-ngay-le-tet.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quy-dinh-ve-chi-phi-cho-nhan-vien-di-nghi-mat-di-lai-ngay-le-tet.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-chi-phi-cho-nhan-vien-di-nghi-mat-di-lai-ngay-le-tet.html",
+      "title": "Các khoản chi có tính chất phúc lợi cho nhân viên hợp lý 2026",
+      "excerpt": "Quy định về cách khoản chi có tính chất phúc lợi cho người lao động được tính vào làm chi phí được trừ khi tính thuế TN…",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/chi-phi-phuc-loi-dao-tao-nghi-mat-cho-nhan-vien.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2018-11-26",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/tien-thue-nha-co-tinh-thue-tncn-khong-chiu-thue-theo-muc-nao.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -211,28 +231,6 @@
       "image": "assets/images/content/pic/Service/images/thue-TNCN-tien-thue-nha.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/tien-thuong-phu-cap-co-tinh-thue-tncn-co-dua-vao-chi-phi-hop-ly.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/tien-thuong-phu-cap-co-tinh-thue-tncn-co-dua-vao-chi-phi-hop-ly.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/tien-thuong-phu-cap-co-tinh-thue-tncn-co-dua-vao-chi-phi-hop-ly.html",
-      "title": "Tiền thưởng, phụ cấp có tính thuế TNCN - Tính chi phí hợp lý",
-      "excerpt": "Tiền thưởng, phụ cấp, hộ trợ có tính thuế TNCN không? Điều kiện để tiền thưởng, phụ cấp, hỗ trợ nhân viên tính vào chi…",
-      "topicLabel": "Thuế thu nhập cá nhân",
-      "tags": [
-        "TNCN",
-        "Thuế thu nhập cá nhân",
-        "Thuế",
-        "Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/tien-thuong-co-tinh-thue-tncn-.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-06-30",
       "modifiedDate": null
     }
   ],
@@ -261,23 +259,68 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-ban-cam-ket-mau-23-ck-tncn-theo-thong-tu-156.html",
+      "id": "thu-vien/to-khai-khau-tru-thue-thu-nhap-ca-nhan-mau-so-02-kk-tncn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-ban-cam-ket-mau-23-ck-tncn-theo-thong-tu-156.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-ban-cam-ket-mau-23-ck-tncn-theo-thong-tu-156.html",
-      "title": "Mẫu cam kết 08/CK-TNCN thu nhập dưới mức chịu thuế TNCN",
-      "excerpt": "Mẫu cam kết 08/CK-TNCN mới nhất theo Thông tư 80; Mẫu cam kết thu nhập dưới mức chịu thuế thu nhập cá nhân áp dụng cho cá nhân chưa đến mức chịu thuế TNCN thay thế cho Mẫu 02/CK-TNCN theo TT 92",
+      "href": "thu-vien/to-khai-khau-tru-thue-thu-nhap-ca-nhan-mau-so-02-kk-tncn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-khau-tru-thue-thu-nhap-ca-nhan-mau-so-02-kk-tncn.html",
+      "title": "Mẫu 05/KK-TNCN Tờ khai khấu trừ thuế thu nhập cá nhân",
+      "excerpt": "Tờ khai khấu trừ thuế thu nhập cá nhân mẫu mẫu 05/KK-TNCN theo Thông tư 80/2021/TT-BTC Dành cho tổ chức, cá nhân trả các khoản thu nhập từ tiền lương, tiền công",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "TNCN",
-        "Mẫu biểu thuế - hóa đơn",
+        "Mẫu biểu lao động - bảo hiểm",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-cam-ket-08-ck-tncn.jpg",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2021-09-29",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
+      "title": "Xử lý Chi phí mua phần mềm nước ngoài qua mạng",
+      "excerpt": "Điều kiện để chi phí mua phần mềm nước ngoài qua mạng vào chi phí được trừ. Mua phần mềm nước ngoài có chịu thuế nhà th…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "GTGT",
+        "Excel",
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang.jpg",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2017-10-17",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "title": "Trường mầm non Thành Đông Tuyển kế toán viên",
+      "excerpt": "Trường mầm non Thành Đông tuyển dụng Nhân viên kế toán Mô tả công việc: - Tính học phí, thu học phí, xuất hóa đơn, giao…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2021-06-20",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
   "currentIndex": 440,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-hoan-thue-thu-nhap-ca-nhan-tu-dong-qua-etax.html",
     "section": "thu-vien",
@@ -20,7 +20,7 @@
       "Công cụ"
     ],
     "image": "assets/images/content/pic/Service/images/hoan-thue-TNCN-tu-dong.jpg",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2025-01-24",
     "modifiedDate": null
   },
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -167,48 +167,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "title": "Cách đăng ký và nộp Tiền thuế điện tử qua mạng mới nhất.",
-      "excerpt": "Hướng dẫn cách Đăng ký nộp thuế điện tử qua mạng -> Cách lấy giấy nộp tiền thuế điện tử -> Cách nộp thuế điện tử trên t…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-nop-thue-dien-tu-qua-mang.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-viet-giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-viet-giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns.html",
-      "title": "Cách viết giấy nộp tiền vào ngân sách nhà nước mẫu C1-02/NS",
-      "excerpt": "Hướng dẫn cách viết giấy nộp tiền vào ngân sách nhà nước; Cách ghi giấy nộp tiền thuế môn bài, thuế GTGT, thuế TNCN, th…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach-viet-giay-nop-tien-vao-ngan-sach-nha-nuoc-c1-02NS.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-12-29",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/xu-ly-hoa-don-viet-sai-so-tien-bang-chu-tien-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -228,18 +186,16 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2018-11-18",
       "modifiedDate": null
-    }
-  ],
-  "latestOther": [
+    },
     {
-      "id": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "id": "thu-vien/cach-viet-hoa-don-chiet-khau-thuong-mai-giam-gia-hang-ban.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
-      "title": "Cách đăng ký và nộp Tiền thuế điện tử qua mạng mới nhất.",
-      "excerpt": "Hướng dẫn cách Đăng ký nộp thuế điện tử qua mạng -> Cách lấy giấy nộp tiền thuế điện tử -> Cách nộp thuế điện tử trên t…",
+      "href": "thu-vien/cach-viet-hoa-don-chiet-khau-thuong-mai-giam-gia-hang-ban.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-hoa-don-chiet-khau-thuong-mai-giam-gia-hang-ban.html",
+      "title": "Cách viết hóa đơn chiết khấu thương mại - giảm giá hàng bán",
+      "excerpt": "Khi bán hàng có chiết khấu thương mại, giảm giá hàng bán thì ghi hóa đơn như thế nào? Kế toán Diệu Tâm xin hướng dẫn cá…",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
@@ -247,9 +203,53 @@
         "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/cach-nop-thue-dien-tu-qua-mang.png",
+      "image": "assets/images/content/pic/Service/images/cach viet hoa don chiet khau thuong mai.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2014-03-31",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-viet-hoa-don-dieu-chinh-tang-giam-thue-suat-gtgt.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-viet-hoa-don-dieu-chinh-tang-giam-thue-suat-gtgt.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-hoa-don-dieu-chinh-tang-giam-thue-suat-gtgt.html",
+      "title": "Cách viết hóa đơn điều chỉnh tăng, giảm tiền thuế, doanh thu",
+      "excerpt": "Viết hóa đơn điều chỉnh tăng giảm, sai sót như thế nào? kế toán Diệu Tâm xin hướng dẫn cách viết hóa đơn điều chỉnh sai…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-viet-hoa-don-dieu-chinh-tang-giam.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2018-09-11",
+      "modifiedDate": null
+    }
+  ],
+  "latestOther": [
+    {
+      "id": "thu-vien/xu-ly-hoa-don-viet-sai-so-tien-bang-chu-tien-thue.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/xu-ly-hoa-don-viet-sai-so-tien-bang-chu-tien-thue.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/xu-ly-hoa-don-viet-sai-so-tien-bang-chu-tien-thue.html",
+      "title": "Hóa đơn ghi sai thuế suất, tiền thuế, đơn giá, thành tiền...",
+      "excerpt": "Viết sai tiền thuế, thuế suất, thành tiền, đơn giá trên hóa đơn GTGT xử lý như thế nào? Kế toán Diệu Tâm xin hương dẫn…",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/xu-ly-hoa-don-viet-sai-so-tien-thue-suat-don-gia.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2018-11-18",
       "modifiedDate": null
     },
     {
@@ -276,23 +276,24 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-cach-dang-ky-nop-thue-dien-tu.html",
+      "title": "Cách đăng ký và nộp Tiền thuế điện tử qua mạng mới nhất.",
+      "excerpt": "Hướng dẫn cách Đăng ký nộp thuế điện tử qua mạng -> Cách lấy giấy nộp tiền thuế điện tử -> Cách nộp thuế điện tử trên t…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-nop-thue-dien-tu-qua-mang.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

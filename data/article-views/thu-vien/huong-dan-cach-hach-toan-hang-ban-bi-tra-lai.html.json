@@ -1,19 +1,20 @@
 {
-  "currentIndex": 1051,
-  "totalCount": 2736,
+  "currentIndex": 1015,
+  "totalCount": 2694,
   "prev": {
-    "id": "ban-tin/cach-hach-toan-chiet-khau-thuong-mai.html",
+    "id": "thu-vien/cach-hach-toan-chiet-khau-thuong-mai.html",
     "section": "thu-vien",
     "sectionLabel": "Thư viện",
     "sectionHref": "thu-vien.html",
-    "href": "ban-tin/cach-hach-toan-chiet-khau-thuong-mai.html",
-    "canonical": "https://ketoandieutam.vn/ban-tin/cach-hach-toan-chiet-khau-thuong-mai.html",
+    "href": "thu-vien/cach-hach-toan-chiet-khau-thuong-mai.html",
+    "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-chiet-khau-thuong-mai.html",
     "title": "Hướng dẫn cách hạch toán Chiết khấu thương mại khi mua - bán",
     "excerpt": "Hướng dẫn cách hạch toán Giảm giá hàng bán, Hạch toán chiết khấu thương mại khi mua hàng (nhận được chiết khấu thương mại) và khi bán hàng theo Thông tư 133 và 99 của Bộ tài chính",
     "topicLabel": "Tài khoản - Hạch toán",
     "tags": [
-      "Ưu đãi học phí",
-      "Thông tin"
+      "Tài khoản - Hạch toán",
+      "Kế toán",
+      "Hướng dẫn"
     ],
     "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-chiet-khau-thuong-mai(1)(2).png",
     "libraryKindLabel": "Hướng dẫn",
@@ -110,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -258,7 +259,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-thanh-toan-hang-dai-ly-ky-gui-theo-qd-48-va-15.html",
       "title": "Mẫu bảng thanh toán hàng đại lý ký gửi theo Thông tư 200 và 133",
       "excerpt": "Mẫu bảng thanh toán hàng đại lý ký gửi theo Thông tư 200 và 133. Phản ánh tình hình thanh toán hàng đại lý, ký gửi giữa đơn vị có hàng và đơn vị nhận bán hàng",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Tài khoản - Hạch toán",
         "Biểu mẫu"
@@ -269,23 +270,48 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "title": "Cách hạch toán xuất kho hàng hóa, thành phẩm làm TSCĐ trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ xuất kho hàng hóa, thành phẩm làm tài sản cố định trên phần mềm Misa Khi phát…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TSCĐ",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "MISA",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd-tren-misa-1(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "title": "Trường mầm non Thành Đông Tuyển kế toán viên",
+      "excerpt": "Trường mầm non Thành Đông tuyển dụng Nhân viên kế toán Mô tả công việc: - Tính học phí, thu học phí, xuất hóa đơn, giao…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2021-06-20",
       "modifiedDate": null
     }
   ]

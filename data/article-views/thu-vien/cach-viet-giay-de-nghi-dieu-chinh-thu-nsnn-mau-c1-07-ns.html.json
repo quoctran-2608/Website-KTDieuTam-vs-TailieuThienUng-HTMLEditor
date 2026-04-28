@@ -1,6 +1,6 @@
 {
   "currentIndex": 178,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/huong-dan-viet-giay-dieu-chinh-thu-ngan-sach-nha-nuoc.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -166,24 +166,43 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cach-viet-hoa-don-khong-chiu-thue-theo-nghi-dinh-70-va-tt-32-2025.html",
+      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-viet-hoa-don-khong-chiu-thue-theo-nghi-dinh-70-va-tt-32-2025.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-hoa-don-khong-chiu-thue-theo-nghi-dinh-70-va-tt-32-2025.html",
-      "title": "Cách xuất hóa đơn không chịu thuế theo Nghị định 70/2025 và Thông tư 32/2025",
-      "excerpt": "Hướng dẫn cách lập hóa đơn không chịu thuế theo thông tư 32/2025/TT-BTC và nghị định 70/2025/NĐ-CP khi bán h…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "title": "Cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo TT 200 và 133",
+      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo Thông tư 200 và 133. Mẫu bảng tổng hợp chi tiết vật liệu dụng cụ sản phẩm hàng hóa S11-DN (S07-DNN) Dùng để tổng hợp phần giá trị từ các trang sổ, thẻ chi tiết",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "GTGT - Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-tong-hop-nhap-xuat-ton-kho-hang-hoa.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-viet-giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-viet-giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns.html",
+      "title": "Cách viết giấy nộp tiền vào ngân sách nhà nước mẫu C1-02/NS",
+      "excerpt": "Hướng dẫn cách viết giấy nộp tiền vào ngân sách nhà nước; Cách ghi giấy nộp tiền thuế môn bài, thuế GTGT, thuế TNCN, th…",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "GTGT",
         "Hóa đơn",
         "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Mau-hoa-don-khong-chiu-thue(2).png",
+      "image": "assets/images/content/pic/Service/images/cach-viet-giay-nop-tien-vao-ngan-sach-nha-nuoc-c1-02NS.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2022-04-27",
+      "publishDate": "2025-12-29",
       "modifiedDate": null
     },
     {
@@ -204,7 +223,9 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2020-03-31",
       "modifiedDate": null
-    },
+    }
+  ],
+  "latestOther": [
     {
       "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
       "section": "thu-vien",
@@ -214,7 +235,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
       "title": "Cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo TT 200 và 133",
       "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo Thông tư 200 và 133. Mẫu bảng tổng hợp chi tiết vật liệu dụng cụ sản phẩm hàng hóa S11-DN (S07-DNN) Dùng để tổng hợp phần giá trị từ các trang sổ, thẻ chi tiết",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -222,29 +243,6 @@
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-tong-hop-nhap-xuat-ton-kho-hang-hoa.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
-      "modifiedDate": null
-    }
-  ],
-  "latestOther": [
-    {
-      "id": "thu-vien/cach-viet-hoa-don-khong-chiu-thue-theo-nghi-dinh-70-va-tt-32-2025.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-viet-hoa-don-khong-chiu-thue-theo-nghi-dinh-70-va-tt-32-2025.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-hoa-don-khong-chiu-thue-theo-nghi-dinh-70-va-tt-32-2025.html",
-      "title": "Cách xuất hóa đơn không chịu thuế theo Nghị định 70/2025 và Thông tư 32/2025",
-      "excerpt": "Hướng dẫn cách lập hóa đơn không chịu thuế theo thông tư 32/2025/TT-BTC và nghị định 70/2025/NĐ-CP khi bán h…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Mau-hoa-don-khong-chiu-thue(2).png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2022-04-27",
       "modifiedDate": null
     },
     {
@@ -256,7 +254,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07-ns.html",
       "title": "Giấy đề nghị điều chỉnh thu NSNN mẫu C1-07a/NS mới nhất",
       "excerpt": "Mẫu C1-07a/NS – Giấy đề nghị điều chỉnh thu ngân sách nhà nước mới nhất theo Theo Thông tư 19/2020/TT-BTC thay thế Mẫu C1-07a/NS theo 77/2017/TT-BTC",
-      "topicLabel": "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
         "Biểu mẫu"
@@ -267,23 +265,45 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-lap-to-khai-quyet-toan-thue-tndn-mau-03-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-lap-to-khai-quyet-toan-thue-tndn-mau-03-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-to-khai-quyet-toan-thue-tndn-mau-03-tndn.html",
+      "title": "Cách lập tờ khai quyết toán thuế TNDN mẫu 03/TNDN 2026 trên HTKK mới nhất",
+      "excerpt": "Hướng dẫn cách làm tờ khai quyết toán thuế TNDN mới nhất năm 2026 theo mẫu 03/TNDN thông tư 80/2021/TT-BTC trên phần mề…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TNDN",
+        "HTKK",
+        "Quyết toán",
+        "eTax",
+        "Thuế điện tử",
+        "Phần mềm"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Mau-to-khai-quye-toan-thue-TNDN.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2025-12-15",
+      "modifiedDate": null
+    },
+    {
+      "id": "ban-tin/lop-hoc-ke-toan-thue-thuc-hanh-thuc-te-tai-ha-noi.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "ban-tin/lop-hoc-ke-toan-thue-thuc-hanh-thuc-te-tai-ha-noi.html",
+      "canonical": "https://ketoandieutam.vn/ban-tin/lop-hoc-ke-toan-thue-thuc-hanh-thuc-te-tai-ha-noi.html",
+      "title": "Khóa Học Thực Hành Kế Toán Thuế Thực Tế",
+      "excerpt": "Đây là khóa học dạy thực hành xử lý hóa đơn chứng từ kế toán, dạy cách kê khai làm báo cáo thuế theo tháng, theo quý và quyết toán thuế cuối năm",
+      "topicLabel": "Khóa học thuế",
+      "tags": [
+        "Cơ sở đào tạo",
+        "Thông tin"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/khoa-hoc-ke-toan-thue.png",
+      "libraryKindLabel": "",
+      "publishDate": "2025-07-01",
       "modifiedDate": null
     }
   ]

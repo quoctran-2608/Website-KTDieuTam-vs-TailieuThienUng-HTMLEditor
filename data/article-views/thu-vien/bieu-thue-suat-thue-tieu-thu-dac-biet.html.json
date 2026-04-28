@@ -1,6 +1,6 @@
 {
   "currentIndex": 78,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-06-tndn-bien-ban-xac-nhan-tai-tro-xay-nha-tinh-nghia-nha-dai-doan-ket.html",
     "section": "thu-vien",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -175,7 +175,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-doi-tuong-chiu-thue-tieu-thu-dac-biet.html",
       "title": "Các đối tượng chịu thuế tiêu thụ đặc biệt",
       "excerpt": "Các đối tượng nộp thuế tiêu thụ đặc biệt (TTĐB) mới nhất theo quy định tại Điều 2 Luật thuế tiêu thụ đặc biệt và Thông tư 195/2015/TT-BTC",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -183,25 +183,6 @@
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/CÁC-DOI-TUONG-CHIU-THUE-TTDB.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2008-11-14",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/nghi-dinh-100-2016-nd-cp-quy-dinh-ve-luat-thue-gia-tri-gia-tang-ttdb.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-100-2016-nd-cp-quy-dinh-ve-luat-thue-gia-tri-gia-tang-ttdb.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-100-2016-nd-cp-quy-dinh-ve-luat-thue-gia-tri-gia-tang-ttdb.html",
-      "title": "Nghị định 100/2016/NĐ-CP Quy định về Luật thuế giá trị gia tăng, TTĐB",
-      "excerpt": "Ngày 1/7/2016 Chính phủ ban hành Nghị định 100/2016/NĐ-CP Quy định và hướng dẫn thi hành Luật thuế giá trị gia tăng, quản lý thuế và tiêu thụ đặc biệt",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT - Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/nghi dinh 100_2016 huong dan luat thue gtgt.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-07-01",
       "modifiedDate": null
     },
     {
@@ -213,7 +194,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-tieu-thu-dac-biet-phai-nop.html",
       "title": "Cách tính thuế tiêu thụ đặc biệt phải nộp năm 2026",
       "excerpt": "Hướng dẫn cách tính thuế tiêu thụ đặc biệt phải nộp của tất cả các hàng hóa dịch vụ như: hàng xuất khẩu, hàng nhập khẩu, rượu bia, ô tô, dịch vụ karaoke",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -221,6 +202,26 @@
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-tinh-thue-tieu-thu-dac-biet(1).png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cac-khoan-thu-nhap-duoc-mien-thue-thu-nhap-doanh-nghiep.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-khoan-thu-nhap-duoc-mien-thue-thu-nhap-doanh-nghiep.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-thu-nhap-duoc-mien-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Các khoản thu nhập được miễn thuế TNDN năm 2026",
+      "excerpt": "Các khoản thu nhập được miễn thuế thu nhập doanh nghiệp gồm 15 khoản thu nhập được được quy định tại Luật thuế TNDN số 67/2025/QH15 mới nhất và nghị định 320/2025/NĐ-CP",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "TNDN",
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cac-khoan-thu-nhap-dc-mien-thue-tndn.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-12-15",
       "modifiedDate": null
     }
   ],
@@ -234,7 +235,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-doi-tuong-chiu-thue-tieu-thu-dac-biet.html",
       "title": "Các đối tượng chịu thuế tiêu thụ đặc biệt",
       "excerpt": "Các đối tượng nộp thuế tiêu thụ đặc biệt (TTĐB) mới nhất theo quy định tại Điều 2 Luật thuế tiêu thụ đặc biệt và Thông tư 195/2015/TT-BTC",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -245,46 +246,48 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "id": "thu-vien/mau-giau-uy-quyen-dang-ky-ma-so-thue-tncn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "title": "Danh sách mã chương, mã tiểu mục nộp thuế mới nhất năm 2026",
-      "excerpt": "Danh sách mã chương, mã tiểu mục nộp thuế TNCN, thuế GTGT, Thuế TNDN mới nhất năm 2026 theo Thông tư 130/2025/TT-BTC qu…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/mau-giau-uy-quyen-dang-ky-ma-so-thue-tncn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-giau-uy-quyen-dang-ky-ma-so-thue-tncn.html",
+      "title": "Mẫu giấy ủy quyền đăng ký mã số thuế cá nhân mới nhất năm 2026",
+      "excerpt": "Khi cá nhân người lao động muốn ủy quyền cho doanh nghiệp thực hiện đăng ký mã số thuế thu nhập cá nhân thì người lao đ…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "GTGT",
         "TNCN",
-        "TNDN",
-        "Hóa đơn",
-        "Thuế",
-        "Biểu mẫu"
+        "Mã số thuế",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "MST"
       ],
-      "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
+      "image": "assets/images/content/pic/Service/images/Mau-giay-uy-quyen-dang-ky-MST-TNCN.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-01-01",
+      "publishDate": "2024-12-23",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "title": "Cách nộp thuế TNDN tạm tính 2025 qua mạng trên thuế điện tử",
+      "excerpt": "Hướng dẫn cách nộp tiền thuế thu nhập doanh nghiệp tạm tính quý qua mạng trên trang https://thuedientu.gdt.gov.vn/ mới…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Nop-thue-TNDN-tam-tinh-quy.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

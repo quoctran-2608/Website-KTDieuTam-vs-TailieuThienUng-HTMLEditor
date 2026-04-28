@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2648,
-  "totalCount": 2736,
+  "currentIndex": 2607,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thue-mon-bai-cua-ho-ca-nhan-kinh-doanh.html",
     "section": "thu-vien",
@@ -33,7 +33,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
     "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
     "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
-    "topicLabel": "GTGT - Hóa đơn",
+    "topicLabel": "Excel - Công cụ khác",
     "tags": [
       "GTGT",
       "Hóa đơn",
@@ -41,7 +41,7 @@
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -114,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -133,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -167,6 +167,25 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/cac-bac-thue-mon-bai-moi-nhat-nam.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cac-bac-thue-mon-bai-moi-nhat-nam.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-bac-thue-mon-bai-moi-nhat-nam.html",
+      "title": "Các mức đóng lệ phí môn bài năm 2025",
+      "excerpt": "Các mức đóng thuế môn bài 2025 theo quy định mới nhất: Quy định mức nộp lệ phí môn bài đối với Doanh nghiệp và cá nhân, hộ kinh doanh cá thể.",
+      "topicLabel": "Lệ phí môn bài",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/muc-nop-thue-mon-bai-2025.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2015-06-15",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/doi-tuong-phai-nop-thue-le-phi-mon-bai.html",
       "section": "thu-vien",
@@ -210,90 +229,71 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2015-06-15",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/nhung-truong-hop-duoc-mien-le-phi-mon-bai.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nhung-truong-hop-duoc-mien-le-phi-mon-bai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nhung-truong-hop-duoc-mien-le-phi-mon-bai.html",
-      "title": "Những trường hợp được miễn lệ phí môn bài năm 2025",
-      "excerpt": "Các Trường Hợp Được Miễn Lệ Phí Môn Bài năm 2025 Quy định tại: + Điều 3 Nghị định số 139/2016/NĐ-CP ngày 04/10/2016 của…",
-      "topicLabel": "Lệ phí môn bài",
-      "tags": [
-        "Lệ phí môn bài",
-        "Thuế",
-        "Hóa đơn",
-        "Môn bài",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/mien-le-phi-mon-bai.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-02-24",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/doi-tuong-phai-nop-thue-le-phi-mon-bai.html",
+      "id": "thu-vien/cac-bac-thue-mon-bai-moi-nhat-nam.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/doi-tuong-phai-nop-thue-le-phi-mon-bai.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/doi-tuong-phai-nop-thue-le-phi-mon-bai.html",
-      "title": "Đối tượng phải nộp thuế lệ phí môn bài năm 2025",
-      "excerpt": "Quy định về những đối tượng phải nộp thuế môn bài (lệ phí môn bài) mới nhất năm 2025 hiện nay Theo Thông tư 65/2020/TT-…",
+      "href": "thu-vien/cac-bac-thue-mon-bai-moi-nhat-nam.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-bac-thue-mon-bai-moi-nhat-nam.html",
+      "title": "Các mức đóng lệ phí môn bài năm 2025",
+      "excerpt": "Các mức đóng thuế môn bài 2025 theo quy định mới nhất: Quy định mức nộp lệ phí môn bài đối với Doanh nghiệp và cá nhân, hộ kinh doanh cá thể.",
       "topicLabel": "Lệ phí môn bài",
       "tags": [
-        "Lệ phí môn bài",
-        "Thuế",
-        "Hóa đơn",
-        "Môn bài",
+        "DN - Thủ tục",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/nop-le-phi-mon-bai.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/muc-nop-thue-mon-bai-2025.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2016-10-04",
+      "publishDate": "2015-06-15",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-ke-mua-hang-theo-qd-48-va-15.html",
+      "id": "thu-vien/mau-to-khai-doanh-nghiep-ke-khai-thay-thue-cho-thue-nha.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-ke-mua-hang-theo-qd-48-va-15.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-mua-hang-theo-qd-48-va-15.html",
-      "title": "Mẫu bảng kê mua hàng theo Thông tư 200 và 133",
-      "excerpt": "Mẫu bảng kê mua hàng theo Thông tư 200 và 133 - Mẫu 06 - VT. Là chứng từ kê khai mua vật tư, công cụ, dụng cụ, hàng hóa, dịch vụ lặt vặt trên thị trường tự do trong trường hợp người bán thuộc diện không phải lập hóa đơn",
+      "href": "thu-vien/mau-to-khai-doanh-nghiep-ke-khai-thay-thue-cho-thue-nha.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-doanh-nghiep-ke-khai-thay-thue-cho-thue-nha.html",
+      "title": "Mẫu tờ khai doanh nghiệp kê khai thuế thay cho chủ nhà 2026",
+      "excerpt": "Mẫu tờ khai thuế cho thuê nhà đối với trường hợp doanh nghiệp kê khai, nộp thuế thay cho chủ nhà mới nhất năm 2026 là M…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "Mẫu biểu thuế - hóa đơn",
+        "Kê khai",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-ke-mua-hang-tren-excel.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2014-12-22",
+      "publishDate": "2026-03-05",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
+      "id": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "title": "Phần mềm HTKK 5.2.6 mới nhất ngày 1/1/2025",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.6 mới nhất 1/1/2025 của Tổng cục thuế. Tải phần mềm HTKK 5.2.6 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2025.",
+      "href": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "title": "Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK",
+      "excerpt": "Hướng dẫn thủ cắt giảm người phụ thuộc 2025 trên phần mềm HTKK để nộp qua mạng Khi nào thì thực hiện cắt giảm người phụ…",
       "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "Thuế thu nhập cá nhân",
+        "Thuế",
+        "Hóa đơn",
+        "TNCN",
+        "HTKK",
+        "Người phụ thuộc"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_6-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/Cat-giam-nguoi-phu-thuoc(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2025-01-01",
+      "publishDate": "2024-12-23",
       "modifiedDate": null
     }
   ]

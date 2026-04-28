@@ -1,6 +1,6 @@
 {
-  "currentIndex": 932,
-  "totalCount": 2736,
+  "currentIndex": 896,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/file-excel-theo-doi-tscd-tinh-theo-ngay-theo-phuong-phap-duong-thang.html",
     "section": "thu-vien",
@@ -17,7 +17,7 @@
       "Biểu mẫu"
     ],
     "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-    "libraryKindLabel": "Biểu mẫu",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-26",
     "modifiedDate": null
   },
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -166,83 +166,110 @@
   ],
   "related": [
     {
-      "id": "thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
+      "id": "thu-vien/thoi-han-nop-bao-cao-tai-chinh-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
-      "title": "Lịch nộp các loại tờ khai thuế năm 2026 chi tiết",
-      "excerpt": "Quy định về Lịch nộp các loại báo cáo thuế năm 2026: Thời hạn nộp tờ khai thuế GTGT, TNCN; Thời hạn nộp báo cáo tài chính, quyết toán thuế TNDN.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/thoi-han-nop-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thoi-han-nop-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "title": "Thời hạn nộp Báo cáo tài chính theo Thông tư 99",
+      "excerpt": "Thời hạn nộp Báo cáo tài chính theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực từ ngày 0…",
+      "topicLabel": "Báo cáo tài chính",
       "tags": [
-        "HTKK - eTax - Thuế điện tử",
-        "Hướng dẫn"
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
+        "Văn bản"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/LICH-NOP-THUE-2026.png",
+      "image": "assets/images/content/pic/Service/images/thoi han nop-bao-cao-tai-chinh-tt99.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-30",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-bao-cao-tinh-hinh-su-dung-hoa-don-quy-theo-mau-bc26-a.html",
+      "id": "thu-vien/bao-cao-tai-chinh-gom-nhung-gi-mau-bieu-bang-nao.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bao-cao-tinh-hinh-su-dung-hoa-don-quy-theo-mau-bc26-a.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bao-cao-tinh-hinh-su-dung-hoa-don-quy-theo-mau-bc26-a.html",
-      "title": "Hướng dẫn lập báo cáo sử dụng hóa đơn Mẫu BC26-A trên HTKK",
-      "excerpt": "Hướng dẫn cách lập báo cáo tình hình sử dụng hóa đơn theo quý Mẫu BC26-A mới nhất làm trên phần mềm HTKK. Cách xác định thời hạn nộp Báo cáo tình hình sử dụng hoá đơn quý, tháng.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/bao-cao-tai-chinh-gom-nhung-gi-mau-bieu-bang-nao.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/bao-cao-tai-chinh-gom-nhung-gi-mau-bieu-bang-nao.html",
+      "title": "Báo cáo tài chính theo TT 99 gồm những gì? Mẫu biểu bảng nào?",
+      "excerpt": "Theo điều Điều 17 của Thông tư 99/2025/TT-BTC thì Hệ thống Báo cáo tài chính của doanh nghiệp bao gồm những phần sau: 1…",
+      "topicLabel": "Báo cáo tài chính",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/huong-dan-lap-bao-cao-su-dung-hoa-don-quy.png",
+      "image": "assets/images/content/pic/Service/images/mau-bang-bieu-bao-cao-tai-chinh.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2018-03-09",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/huong-dan-ke-khai-thue-gtgt-theo-phuong-phap-khau-tru.html",
+      "id": "thu-vien/cach-lap-thuyet-minh-bctc-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-ke-khai-thue-gtgt-theo-phuong-phap-khau-tru.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-ke-khai-thue-gtgt-theo-phuong-phap-khau-tru.html",
-      "title": "Cách kê khai thuế GTGT theo phương pháp khấu trừ",
-      "excerpt": "Hướng dẫn cách kê khai thuế Giá trị gia tăng theo phương pháp khấu chi tiết như: Cách xác định kê khai thuế GTGT theo pp khấu trừ, hồ sơ kê khai – cách lập Tờ khai thuế GTGT theo pp khấu trừ, thời hạn nộp Tờ khai thuế GTGT …",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/cach-lap-thuyet-minh-bctc-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-thuyet-minh-bctc-theo-thong-tu-99.html",
+      "title": "Cách lập Thuyết minh BCTC Theo Thông tư 99",
+      "excerpt": "Hướng dẫn cách lập và trình bày Thuyết minh BCTC Theo Mẫu số B09 - DN cùa Thông tư 99/2025/TT-BTC Công ty đào tạo Kế To…",
+      "topicLabel": "Báo cáo tài chính",
       "tags": [
-        "GTGT",
-        "HTKK - eTax - Thuế điện tử",
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-ke-khai-thue-gtgt-theo-pp-khau-tru(1).png",
+      "image": "assets/images/content/pic/Service/images/Cach-lap-thuyet-minh-bctc-tt99.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2017-09-20",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
+      "id": "thu-vien/thoi-han-nop-bao-cao-tai-chinh-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
-      "title": "Lịch nộp các loại tờ khai thuế năm 2026 chi tiết",
-      "excerpt": "Quy định về Lịch nộp các loại báo cáo thuế năm 2026: Thời hạn nộp tờ khai thuế GTGT, TNCN; Thời hạn nộp báo cáo tài chính, quyết toán thuế TNDN.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/thoi-han-nop-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thoi-han-nop-bao-cao-tai-chinh-theo-thong-tu-99.html",
+      "title": "Thời hạn nộp Báo cáo tài chính theo Thông tư 99",
+      "excerpt": "Thời hạn nộp Báo cáo tài chính theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực từ ngày 0…",
+      "topicLabel": "Báo cáo tài chính",
       "tags": [
-        "HTKK - eTax - Thuế điện tử",
-        "Hướng dẫn"
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
+        "Văn bản"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/LICH-NOP-THUE-2026.png",
+      "image": "assets/images/content/pic/Service/images/thoi han nop-bao-cao-tai-chinh-tt99.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-30",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.html",
+      "title": "Mẫu Báo cáo tình hình tài chính theo Thông tư 133 – Cách lập",
+      "excerpt": "Hướng dẫn cách lập Báo cáo tình hình tài chính Mẫu B01a – DNN theo Mẫu Báo cáo tình hình tài chính theo Thông tư 133 mớ…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Báo cáo tài chính",
+        "Kế toán",
+        "BCTC",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/bao-cao-tinh-hinh-tai-chinh-theo-thong-tu-133.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2016-08-26",
       "modifiedDate": null
     },
     {
@@ -264,47 +291,30 @@
         "Biểu mẫu"
       ],
       "image": "assets/images/content/pic/Service/images/phan mem htkk 3_3_7(1).png",
-      "libraryKindLabel": "Biểu mẫu",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2016-03-16",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "title": "Phần mềm HTKK 5.2.1 mới nhất ngày 2/8/2024",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.1 mới nhất 2/8/2024 của Tổng cục thuế. Tải phần mềm HTKK 5.2.1 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2024.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
-      "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_1-moi-nhat.png",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2024-08-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "ban-tin/cong-ty-co-phan-doorclick-tuyen-ke-toan-tong-hop-thue.html",
+      "id": "thu-vien/cong-ty-tnhh-tu-van-tham-dinh-va-dau-tu-cong-nghe-gia-loc-tuyen-ke-toan-vat-tu.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/cong-ty-co-phan-doorclick-tuyen-ke-toan-tong-hop-thue.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/cong-ty-co-phan-doorclick-tuyen-ke-toan-tong-hop-thue.html",
-      "title": "Công Ty Cổ Phần Doorclick Tuyển kế toán tổng hợp – Thuế",
-      "excerpt": "Công Ty Cổ Phần Doorclick Tuyển kế toán tổng hợp – Thuế. Địa điểm làm việc: Phòng 1406, chung cư 4F, phố Trung Hòa, Cầu Giấy, Hà Nội. Lương cứng + phụ cấp ăn trưa + thưởng KPI từ 9 triệu – 12 triệu.",
+      "href": "thu-vien/cong-ty-tnhh-tu-van-tham-dinh-va-dau-tu-cong-nghe-gia-loc-tuyen-ke-toan-vat-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-tnhh-tu-van-tham-dinh-va-dau-tu-cong-nghe-gia-loc-tuyen-ke-toan-vat-tu.html",
+      "title": "Công ty TNHH tư vấn thẩm định và đầu tư công nghệ Gia Lộc tuyển Kế toán vật tư",
+      "excerpt": "Công ty TNHH tư vấn thẩm định và đầu tư công nghệ Gia Lộc tuyển Kế toán vật tư tại TT Tổng Cục Chính Trị - Phố Trung Kí…",
       "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Cơ sở đào tạo",
-        "Thông tin"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "",
-      "publishDate": "2021-06-30",
+      "publishDate": "2006-07-25",
       "modifiedDate": null
     }
   ]

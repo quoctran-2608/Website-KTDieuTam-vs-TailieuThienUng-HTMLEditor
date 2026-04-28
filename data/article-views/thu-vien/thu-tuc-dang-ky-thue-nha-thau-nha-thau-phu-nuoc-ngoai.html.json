@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2610,
-  "totalCount": 2736,
+  "currentIndex": 2569,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thu-tuc-dang-ky-tham-gia-bao-hiem-xa-hoi-lan-dau.html",
     "section": "thu-vien",
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -210,23 +210,22 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/huong-dan-lap-to-khai-thue-gtgt-04-truc-tiep-tren-doanh-thu.html",
+      "id": "thu-vien/phuong-phap-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/huong-dan-lap-to-khai-thue-gtgt-04-truc-tiep-tren-doanh-thu.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-lap-to-khai-thue-gtgt-04-truc-tiep-tren-doanh-thu.html",
-      "title": "Cách lập tờ khai thuế GTGT trực tiếp trên doanh thu (Mẫu 04/GTGT)",
-      "excerpt": "Hướng dẫn cách lập tờ khai thuế 04/GTGT trực tiếp trên doanh thu, cách ghi từng chỉ tiêu trên tờ khai 04/GTGT. Mức thuế suất thuế GTGT trực tiếp trên doanh thu đối với từng ngành nghề, cách xác định doanh thu tính thuế GTGT trực tiếp.",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/phuong-phap-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/phuong-phap-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat.html",
+      "title": "Cách tính thuế nhà thầu nước ngoài mới nhất",
+      "excerpt": "Hướng dẫn cách tính thuế nhà thầu nước ngoài mới nhất, nhà thầu phụ nước ngoài theo Thông tư 103/2014/TT-BTC gồm thuế giá trị gia tăng và thuế thu nhập doanh nghiệp",
+      "topicLabel": "Thuế nhà thầu",
       "tags": [
-        "GTGT",
-        "GTGT - Hóa đơn",
+        "DN - Thủ tục",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/huong-dan-lap-to-khai-thue-04GTGT-truc-tiep-tren-doanh-thu.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-tinh-thue-nha-thau-nuoc-ngoai.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2022-01-31",
+      "publishDate": "2024-06-24",
       "modifiedDate": null
     }
   ],
@@ -270,6 +269,29 @@
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-04_1-dk-tct.png",
       "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2024-12-23",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-cat-giam-nguoi-phu-thuoc.html",
+      "title": "Thủ tục cắt giảm người phụ thuộc 2025 trên phần mềm HTKK",
+      "excerpt": "Hướng dẫn thủ cắt giảm người phụ thuộc 2025 trên phần mềm HTKK để nộp qua mạng Khi nào thì thực hiện cắt giảm người phụ…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "tags": [
+        "Thuế thu nhập cá nhân",
+        "Thuế",
+        "Hóa đơn",
+        "TNCN",
+        "HTKK",
+        "Người phụ thuộc"
+      ],
+      "image": "assets/images/content/pic/Service/images/Cat-giam-nguoi-phu-thuoc(1).png",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2024-12-23",
       "modifiedDate": null
     }

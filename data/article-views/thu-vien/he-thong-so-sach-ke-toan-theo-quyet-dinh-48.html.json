@@ -1,6 +1,6 @@
 {
-  "currentIndex": 988,
-  "totalCount": 2736,
+  "currentIndex": 952,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/he-thong-so-sach-ke-toan-theo-quyet-dinh-15.html",
     "section": "thu-vien",
@@ -18,7 +18,7 @@
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/he thong so sach ke toan theo quyet dinh 15.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2006-03-20",
     "modifiedDate": null
   },
@@ -31,7 +31,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-so-sach-ke-toan-theo-quyet-dinh-48-2006-qd-btc.html",
     "title": "Hệ thống sổ sách kế toán theo Thông tư 133/2016/TT-BTC",
     "excerpt": "Danh mục hệ thống sổ sách kế toán theo Thông tư 133 áp dụng cho Doanh nghiệp vừa và nhỏ, và thay thế hệ thống sổ sách kế toán theo Quyết định 48 mới nhất hiện nay.",
-    "topicLabel": "DN - Thủ tục",
+    "topicLabel": "Chứng từ - Sổ sách",
     "tags": [
       "DN - Thủ tục",
       "Hướng dẫn"
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -172,12 +172,33 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-so-sach-ke-toan-theo-quyet-dinh-48-2006-qd-btc.html",
       "title": "Hệ thống sổ sách kế toán theo Thông tư 133/2016/TT-BTC",
       "excerpt": "Danh mục hệ thống sổ sách kế toán theo Thông tư 133 áp dụng cho Doanh nghiệp vừa và nhỏ, và thay thế hệ thống sổ sách kế toán theo Quyết định 48 mới nhất hiện nay.",
-      "topicLabel": "DN - Thủ tục",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "DN - Thủ tục",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/he-thong-so-sach-ke-toan-theo-thong-tu-133-moi-nhat.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2016-08-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/he-thong-mau-chung-tu-ke-toan-theo-thong-tu-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/he-thong-mau-chung-tu-ke-toan-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-mau-chung-tu-ke-toan-theo-thong-tu-133.html",
+      "title": "Hệ thống mẫu Chứng từ kế toán theo Thông tư 133",
+      "excerpt": "Danh mục Mẫu chứng từ kế toán theo Thông tư 133 mới nhất, áp dụng cho Doanh nghiệp nhỏ và vừa, hệ thống chứng từ gồm: C…",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "Chứng từ",
+        "Sổ sách",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/mau chung tu ke toan theo thong tu 133.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2016-08-26",
       "modifiedDate": null
@@ -200,25 +221,6 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-hinh-thuc-ghi-so-ke-toan-theo-quyet-dinh-48.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-hinh-thuc-ghi-so-ke-toan-theo-quyet-dinh-48.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-hinh-thuc-ghi-so-ke-toan-theo-quyet-dinh-48.html",
-      "title": "Các hình thức ghi sổ kế toán theo Thông tư 133 và 99 mới nhất",
-      "excerpt": "Tổng hợp các hình thức ghi sổ kế toán theo Thông tư 99 và 133, nguyên tắc, đặc trưng, trình tự ghi sổ, nội dung, phương pháp ghi sổ của từng hình thức ghi sổ kế toán.",
-      "topicLabel": "Chứng từ - Sổ sách",
-      "tags": [
-        "Chứng từ - Sổ sách",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cac-hinh-thuc-ghi-so-ke-toan.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
@@ -231,7 +233,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-so-sach-ke-toan-theo-quyet-dinh-48-2006-qd-btc.html",
       "title": "Hệ thống sổ sách kế toán theo Thông tư 133/2016/TT-BTC",
       "excerpt": "Danh mục hệ thống sổ sách kế toán theo Thông tư 133 áp dụng cho Doanh nghiệp vừa và nhỏ, và thay thế hệ thống sổ sách kế toán theo Quyết định 48 mới nhất hiện nay.",
-      "topicLabel": "DN - Thủ tục",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "DN - Thủ tục",
         "Hướng dẫn"
@@ -263,23 +265,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-200-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-200-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-200-moi-nhat.html",
+      "title": "Hệ thống tài khoản kế toán theo Thông tư 200 Excel",
+      "excerpt": "Bảng hệ thống tài khoản kế toán theo Thông tư 200 mới nhất cho tất cả Doanh nghiệp. Download danh mục hệ thống Tà…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Văn bản"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/tk-521.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
   "currentIndex": 386,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-hach-toan-tk-336-phai-tra-noi-bo-theo-thong-tu-99.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -258,7 +258,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
       "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
       "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Tài khoản",
         "Hạch toán",
@@ -271,23 +271,48 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-hach-toan-chuyen-tscd-thanh-ccdc-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-hach-toan-chuyen-tscd-thanh-ccdc-tren-misa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-chuyen-tscd-thanh-ccdc-tren-misa.html",
+      "title": "Cách hạch toán chuyển TSCĐ thành CCDC trên Misa",
+      "excerpt": "Hướng dẫn hạch toán chuyển Tài sản cố định thành Công cụ dụng cụ trên phần mềm Misa Các trường hợp chuyển TSCĐ thành CC…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TSCĐ",
+        "CCDC",
+        "MISA",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-chuyen-tscd-thanh-ccdc-tren-misa-1.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-ty-tnhh-xay-dung-halo-tuyen-ke-toan-tong-hop.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-tnhh-xay-dung-halo-tuyen-ke-toan-tong-hop.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-tnhh-xay-dung-halo-tuyen-ke-toan-tong-hop.html",
+      "title": "Công ty TNHH xây dựng HALÔ Tuyển kế toán tổng hợp",
+      "excerpt": "CÔNG TY TNHH XÂY DỰNG HALÔ CẦN TUYỂN DỤNG KẾ TOÁN TỔNG HỢP - CÓ KINH NGHIỆM BÊN LĨNH VỰC XÂY DỰNG . - Địa điểm làm việc…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "libraryKindLabel": "",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

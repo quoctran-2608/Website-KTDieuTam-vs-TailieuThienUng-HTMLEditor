@@ -1,6 +1,6 @@
 {
   "currentIndex": 525,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-lap-so-chi-tiet-tien-vay-theo-thong-tu-200-va-133.html",
     "section": "thu-vien",
@@ -10,7 +10,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-chi-tiet-tien-vay-theo-thong-tu-200-va-133.html",
     "title": "Cách lập Sổ chi tiết tiền vay theo Thông tư 200 và 133",
     "excerpt": "Hướng dẫn cách lập Sổ chi tiết tiền vay theo Thông tư 200 và 133. Mẫu sổ chi tiết tiền vay S34-DN (S15-DNN) dùng để theo dõi theo từng tài khoản, theo từng đối tượng vay (Ngân hàng, người cho vay...) và theo từng khế ước vay.",
-    "topicLabel": "Tài khoản - Hạch toán",
+    "topicLabel": "Chứng từ - Sổ sách",
     "tags": [
       "Tài khoản - Hạch toán",
       "Hướng dẫn"
@@ -108,7 +108,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -127,7 +127,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -162,25 +162,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
-      "title": "Cách lập Thẻ kho (Sổ kho) theo Thông tư 200 và 133",
-      "excerpt": "Hướng dẫn cách lập Sổ kho (Thẻ kho) theo Thông tư 200 và 133. Mẫu Thẻ kho (Sổ kho) S12-DN (S08-DNN) để Theo dõi số lượng nhập, xuất, tồn, kho từng thứ nguyên liệu, vật liệu, công cụ, dụng cụ, sản phẩm, hàng hóa ở từng kho",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Lao động - Tiền lương",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-the-kho-so-kho.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -189,12 +170,31 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
       "title": "Cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo TT 200 và 133",
       "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo Thông tư 200 và 133. Mẫu bảng tổng hợp chi tiết vật liệu dụng cụ sản phẩm hàng hóa S11-DN (S07-DNN) Dùng để tổng hợp phần giá trị từ các trang sổ, thẻ chi tiết",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-tong-hop-nhap-xuat-ton-kho-hang-hoa.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập Thẻ kho (Sổ kho) theo Thông tư 200 và 133",
+      "excerpt": "Hướng dẫn cách lập Sổ kho (Thẻ kho) theo Thông tư 200 và 133. Mẫu Thẻ kho (Sổ kho) S12-DN (S08-DNN) để Theo dõi số lượng nhập, xuất, tồn, kho từng thứ nguyên liệu, vật liệu, công cụ, dụng cụ, sản phẩm, hàng hóa ở từng kho",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "Lao động - Tiền lương",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-the-kho-so-kho.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
@@ -208,7 +208,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-theo-doi-tai-san-co-dinh-cong-cu-dung-cu.html",
       "title": "Cách lập sổ theo dõi Tài sản cố định, Công cụ dụng cụ theo TT 200 và 133",
       "excerpt": "Hướng dẫn cách lập Sổ theo dõi Tài sản cố định và Công cụ dụng cụ tại nơi sử dụng theo Thông tư 200 và 133. Mẫu sổ theo dõi TSCĐ và CCDC S22-DN (S10-DNN) dùng để ghi chép tình hình tăng, giảm TSCĐ và CCDC tại từng nơi sử dụng.",
-      "topicLabel": "Tài sản - Kho - CCDC",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "Tài sản - Kho - CCDC",
         "Hướng dẫn"
@@ -221,20 +221,20 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
+      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
-      "title": "Cách lập Thẻ kho (Sổ kho) theo Thông tư 200 và 133",
-      "excerpt": "Hướng dẫn cách lập Sổ kho (Thẻ kho) theo Thông tư 200 và 133. Mẫu Thẻ kho (Sổ kho) S12-DN (S08-DNN) để Theo dõi số lượng nhập, xuất, tồn, kho từng thứ nguyên liệu, vật liệu, công cụ, dụng cụ, sản phẩm, hàng hóa ở từng kho",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "title": "Cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo TT 200 và 133",
+      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật tư hàng hóa theo Thông tư 200 và 133. Mẫu bảng tổng hợp chi tiết vật liệu dụng cụ sản phẩm hàng hóa S11-DN (S07-DNN) Dùng để tổng hợp phần giá trị từ các trang sổ, thẻ chi tiết",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
-        "Lao động - Tiền lương",
+        "GTGT - Hóa đơn",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-the-kho-so-kho.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-tong-hop-nhap-xuat-ton-kho-hang-hoa.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2014-12-22",
       "modifiedDate": null
@@ -260,23 +260,46 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html",
+      "title": "Các hàm Excel trong kế toán thường dùng",
+      "excerpt": "Các hàm Excel thông dụng trong kế toán thường dùng lên sổ sách, tính lương, kho, nhập xuất tồn, công nợ: Hướng dẫn cách…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Công cụ khác",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cac-ham-excel-thong-dung-trong-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2013-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "title": "Công ty Cổ phần Thương mại và Xuất nhập TVH tuyển Kế toán Kho",
+      "excerpt": "Công ty Cổ phần Thương mại và Xuất nhập TVH tuyển Kế toán Kho làm việc tại Hà Nội tại 19 Thái Hà - Đống Đa - Hà Nội Mô…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "libraryKindLabel": "",
+      "publishDate": "2014-05-31",
       "modifiedDate": null
     }
   ]

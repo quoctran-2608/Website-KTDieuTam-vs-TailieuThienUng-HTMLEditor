@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1755,
-  "totalCount": 2736,
+  "currentIndex": 1718,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-thong-bao-ket-qua-thu-viec-dat-hoac-khong-dat-yeu-cau.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -205,20 +205,17 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/to-khai-thue-gtgt-mau-01-gtgt-theo-thong-tu-26.html",
+      "id": "thu-vien/thong-bao-ve-viec-nop-tien-vao-nsnn-mau-02-tcn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/to-khai-thue-gtgt-mau-01-gtgt-theo-thong-tu-26.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-thue-gtgt-mau-01-gtgt-theo-thong-tu-26.html",
-      "title": "Tờ khai thuế GTGT mẫu 01/GTGT theo Thông tư 26",
-      "excerpt": "Tờ khai thuế giá trị gia tăng Mẫu 01/GTGT Ban hành kèm theo Thông tư số 26/2015/TT-BTC ngày 27/02/2015 của Bộ Tài c…",
+      "href": "thu-vien/thong-bao-ve-viec-nop-tien-vao-nsnn-mau-02-tcn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thong-bao-ve-viec-nop-tien-vao-nsnn-mau-02-tcn.html",
+      "title": "Thông báo về việc nộp tiền thuế vào NSNN Mẫu 02/TCN",
+      "excerpt": "Mẫu Thông báo về việc nộp tiền thuế vào NSNN Mẫu 02/TCN Ban hành kèm theo Thông tư số 26/2015/TT-BTC ngày 27/02/2015 của Bộ Tài chính",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "GTGT",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Thuế",
+        "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
         "Biểu mẫu"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
@@ -265,6 +262,29 @@
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2015-02-27",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/phan-mem-htkk-3-3-1.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/phan-mem-htkk-3-3-1.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-3-3-1.html",
+      "title": "Phần mềm HTKK 3.3.1 mới nhất năm 2015",
+      "excerpt": "Ngày 27/03/2015 Tổng cục Thuế đã thông báo về việc nâng cấp lên phần mềm hỗ trợ kê khai HTKK 3.3.1, Khai t…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "tags": [
+        "HTKK",
+        "eTax",
+        "Thuế điện tử",
+        "Mẫu file & kê khai",
+        "Kê khai",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/phan mem htkk 3_3_1.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2014-10-01",
       "modifiedDate": null
     }
   ]

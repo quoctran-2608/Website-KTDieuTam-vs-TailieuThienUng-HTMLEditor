@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2687,
-  "totalCount": 2736,
+  "currentIndex": 2646,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/tra-loi-vuong-mac-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
     "section": "thu-vien",
@@ -116,7 +116,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -135,7 +135,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -210,14 +210,14 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-hach-toan-tk-334-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-tinh-luong-theo-gio-ngay-tuan-thang-theo-cong-thuc-chuan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-tk-334-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-tk-334-theo-thong-tu-99.html",
-      "title": "Cách hạch toán TK 334 - Phải trả người lao động theo Thông tư 99",
-      "excerpt": "Theo Thông tư 99/2025/TT-BTC thì Tài khoản 334 dùng để phản ánh các khoản phải trả và tình hình thanh toán các khoản ph…",
+      "href": "thu-vien/cach-tinh-luong-theo-gio-ngay-tuan-thang-theo-cong-thuc-chuan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-luong-theo-gio-ngay-tuan-thang-theo-cong-thuc-chuan.html",
+      "title": "Cách tính lương theo giờ, ngày, tuần, tháng theo công thức chuẩn",
+      "excerpt": "Căn cứ vào tính chất công việc và điều kiện sản xuất, kinh doanh, người sử dụng lao động và người lao động thỏa thuận t…",
       "topicLabel": "Lao động - Tiền lương",
       "tags": [
         "Lao động",
@@ -225,7 +225,7 @@
         "Bảo hiểm",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-TK334-TT99.png",
+      "image": "assets/images/content/pic/Service/images/cach-tinh-luong.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
       "modifiedDate": null
@@ -271,23 +271,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-tren-excel.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-tren-excel.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bao-cao-ket-qua-hoat-dong-kinh-doanh-tren-excel.html",
+      "title": "Hướng dẫn cách lập báo cáo kết quả kinh doanh theo Thông tư 200",
+      "excerpt": "Hướng dẫn cách lập báo cáo kết quả hoạt động kinh doanh theo Thông tư 200/2014/TT-BTC, nội dung, kết cấu báo cáo, cơ sở…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Công cụ khác",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach lap bao cao ket qua kinh doanh.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2006-03-20",
       "modifiedDate": null
     }
   ]

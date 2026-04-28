@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2587,
-  "totalCount": 2736,
+  "currentIndex": 2546,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thong-tu-93-2017-tt-btc-sua-doi-bo-sung-tt-156-119-219.html",
     "section": "thu-vien",
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -185,6 +185,25 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/nguyen-tac-ke-khai-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/nguyen-tac-ke-khai-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nguyen-tac-ke-khai-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
+      "title": "Nguyên tắc kê khai thuế thu nhập doanh nghiệp năm 2017",
+      "excerpt": "Các nguyên tắc và quy định kê khai thuế thu nhập doanh nghiệp (TNDN) năm 2017 mới nhất theo Thông tư 156/2013/TT-BTC của Bộ tài chính",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-11-15",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/thay-doi-thong-tin-dang-ky-thue-cua-ca-nhan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -205,27 +224,6 @@
       "image": "assets/images/content/pic/Service/images/Thay-doi-thong-tn-dang-ky-thue.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-07-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/dieu-kien-khau-tru-thue-gtgt-hang-xuat-khau.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/dieu-kien-khau-tru-thue-gtgt-hang-xuat-khau.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/dieu-kien-khau-tru-thue-gtgt-hang-xuat-khau.html",
-      "title": "Điều kiện khấu trừ thuế GTGT hàng xuất khẩu năm 2017 theo TT 219",
-      "excerpt": "Theo Điều 16 Thông tư 219/2013/TT- BTC ngày 31/12/2013 của Bộ tài chính: Quy định về điều kiện khấu trừ, hoàn thuế đầu…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/dieu kien khau tru thue gtgt hang xuat khau.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2013-12-31",
       "modifiedDate": null
     }
   ],
@@ -252,43 +250,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/bang-ke-thong-tin-nguoi-phu-thuoc-giam-tru-gia-canh-mau-05-3-bk-tncn.html",
+      "id": "thu-vien/mau-02-dang-ky-thue.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bang-ke-thong-tin-nguoi-phu-thuoc-giam-tru-gia-canh-mau-05-3-bk-tncn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/bang-ke-thong-tin-nguoi-phu-thuoc-giam-tru-gia-canh-mau-05-3-bk-tncn.html",
-      "title": "Mẫu 05-3/BK-QTT-TNCN Bảng kê chi tiết người phụ thuộc giảm trừ gia cảnh",
-      "excerpt": "Phụ lục bảng kê thông tin người phụ thuộc giảm tPhụ lục bảng kê chi tiết người phụ thuộc giảm trừ gia cảnh mẫu 05-3/BK-QTT-TNCN (Ban hành kèm theo Thông tư 80/2021/TT-BTC thay thế cho mẫu tại TT 92/2015/TT-BTC)rừ gia cảnh mẫu 05-3/BK-QTT-TNCN (Ban hành kèm theo Thông tư 92/2015/TT-BTC ngày 15/06/2015 của Bộ Tài chính)",
+      "href": "thu-vien/mau-02-dang-ky-thue.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-02-dang-ky-thue.html",
+      "title": "Mẫu 02-ĐK-TCT theo thông tư 86 Tờ khai đăng ký thuế",
+      "excerpt": "Mẫu 02-ĐK-TCT được ban hành kèm theo Thông tư số 86/2024/TT-BTC ngày 23/12/2024 của Bộ trưởng Bộ Tài chính là mẫu t…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "TNCN",
-        "Mẫu biểu thuế - hóa đơn",
+        "Đăng ký thuế",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-05-3-bk-qtt-tncn.png",
+      "image": "assets/images/content/pic/Service/images/Mau-02-dk-tct.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2021-09-29",
+      "publishDate": "2025-02-06",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

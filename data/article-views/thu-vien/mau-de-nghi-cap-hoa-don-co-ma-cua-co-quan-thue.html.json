@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1261,
-  "totalCount": 2736,
+  "currentIndex": 1224,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-05a-hsb-theo-quyet-dinh-166-qd-bhxh.html",
     "section": "thu-vien",
@@ -115,7 +115,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +134,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -169,28 +169,6 @@
   ],
   "related": [
     {
-      "id": "thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
-      "title": "Nghị định 82 mới nhất 2025 gia hạn thời gian nộp thuế gtgt-tndn-tncn và tiền thuê đất",
-      "excerpt": "Nghị định 82/2025/NĐ-CP ban hành ngày 02/04/2025 áp dung cho người nộp thuế; cơ quan thuế; công chức thuế; cơ quan nhà nước, tổ chức, cá nhân khác có liên quan",
-      "topicLabel": "Thuế thu nhập cá nhân",
-      "tags": [
-        "GTGT",
-        "TNCN",
-        "TNDN",
-        "Thuế thu nhập cá nhân",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Nghi-dinh-82-2025-nd-cp.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-04-02",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/mau-06-theo-nd-119-de-nghi-cap-hoa-don-dien-tu-ban-le.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -211,6 +189,25 @@
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2025-06-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-bang-tong-hop-du-lieu-hddt-gui-co-quan-thue.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bang-tong-hop-du-lieu-hddt-gui-co-quan-thue.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-tong-hop-du-lieu-hddt-gui-co-quan-thue.html",
+      "title": "Mẫu bảng tổng hợp dữ liệu hóa đơn điện tử gửi cơ quan thuế mới nhất",
+      "excerpt": "Mẫu 01/TH-HĐĐT bảng tổng hợp dữ liệu hóa đơn điện tử gửi cơ quan thuế ban hành kèm theo Nghị định 70/2025/NĐ-CP mới nhất năm 2025",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "Kinh nghiệm - Hỏi đáp - Nghề nghiệp",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-01-th-hddt-bang-tong-hop-hoa-don-dien-tu.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-04-26",
       "modifiedDate": null
     },
     {
@@ -238,25 +235,25 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
+      "id": "thu-vien/xu-ly-hoa-don-dien-tu-khong-co-ma-lap-sai-sot.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
-      "title": "Nghị định 82 mới nhất 2025 gia hạn thời gian nộp thuế gtgt-tndn-tncn và tiền thuê đất",
-      "excerpt": "Nghị định 82/2025/NĐ-CP ban hành ngày 02/04/2025 áp dung cho người nộp thuế; cơ quan thuế; công chức thuế; cơ quan nhà nước, tổ chức, cá nhân khác có liên quan",
-      "topicLabel": "Thuế thu nhập cá nhân",
+      "href": "thu-vien/xu-ly-hoa-don-dien-tu-khong-co-ma-lap-sai-sot.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/xu-ly-hoa-don-dien-tu-khong-co-ma-lap-sai-sot.html",
+      "title": "Xử lý khi lập sai hóa đơn điện tử KHÔNG có mã của CQT 2025 mới nhất",
+      "excerpt": "Hướng dẫn cách xử lý hóa đơn điện tử không có mã của cơ quan thuế có sai sót theo quy định mới nhất năm 2025 tại Nghị đ…",
+      "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
-        "TNCN",
-        "TNDN",
-        "Thuế thu nhập cá nhân",
+        "Hóa đơn điện tử",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Nghi-dinh-82-2025-nd-cp.png",
+      "image": "assets/images/content/pic/Service/images/Xu-ly-hoa-don-dien-tu-khong-co-ma-CQT.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-04-02",
+      "publishDate": "2025-06-01",
       "modifiedDate": null
     },
     {
@@ -283,23 +280,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
+      "id": "thu-vien/giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns-theo-tt-119.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "title": "Phần mềm HTKK 5.2.6 mới nhất ngày 1/1/2025",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.6 mới nhất 1/1/2025 của Tổng cục thuế. Tải phần mềm HTKK 5.2.6 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2025.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns-theo-tt-119.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns-theo-tt-119.html",
+      "title": "Mẫu giấy nộp tiền vào ngân sách nhà nước 2026 Excel, Word",
+      "excerpt": "Mẫu giấy nộp tiền vào ngân sách nhà nước 2026 mới nhất Mẫu số 02 Ký hiệu: C1-02/NS, được ban hành kèm theo Nghị định số…",
+      "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "Excel",
+        "Công cụ khác",
+        "Mẫu file & kê khai",
+        "Kê khai",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_6-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/giay-nop-tien-vao-NSNN.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2025-01-01",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

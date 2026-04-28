@@ -1,6 +1,6 @@
 {
   "currentIndex": 174,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-chuyen-so-du-theo-thong-tu-133.html",
     "section": "thu-vien",
@@ -41,7 +41,7 @@
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/doi-so-thanh-chu-trong-excel.png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -114,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -133,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -168,130 +168,150 @@
   ],
   "related": [
     {
-      "id": "thu-vien/cach-hach-toan-chi-phi-ban-hang-tai-khoan-641.html",
+      "id": "thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-chi-phi-ban-hang-tai-khoan-641.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-chi-phi-ban-hang-tai-khoan-641.html",
-      "title": "Cách hạch toán Chi phí bán hàng Tài khoản 641 theo TT 200",
-      "excerpt": "Cách hạch toán Tài khoản 641 - Chi phí bán hàng Theo Thông tư 200/2014/TT-BTC: dùng để phản ánh các chi phí thực tế…",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "href": "thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
+      "title": "Hướng dẫn chuyển số dư TK từ QĐ 15 sang Thông tư 200/2014/TT-BTC",
+      "excerpt": "Quyết định 15 đã được thay thế bằng Thông tư 200/2014/TT-BTC, trong đó có 1 số tài khoản đã được loại bỏ. Kế toán Diệu…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "Tài khoản",
         "Hạch toán",
         "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Cach hach toan chi phi ban hang - TK 641.gif",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-hach-toan-chi-phi-quan-ly-doanh-nghiep-tk-642.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-chi-phi-quan-ly-doanh-nghiep-tk-642.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-chi-phi-quan-ly-doanh-nghiep-tk-642.html",
-      "title": "Cách hạch toán Chi phí quản lý doanh nghiệp Tài khoản 642 theo TT 200",
-      "excerpt": "Cách hạch toán Tài khoản 642 – Chi phí quản lý doanh nghiệp Theo Thông tư 200/2014/TT-BTC: dùng để phản ánh các chi…",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản",
-        "Hạch toán",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Cach hach toan chi phi quan ly doanh nghiep - TK 642.gif",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-hach-toan-phai-thu-khac-tk-138.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-phai-thu-khac-tk-138.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-phai-thu-khac-tk-138.html",
-      "title": "Cách hạch toán phải thu khác - Tài khoản 138 theo TT 200",
-      "excerpt": "Cách hạch toán Tài khoản 138 – phải thu khác Theo Thông tư 200/2014/TT-BTC: dùng để phản ánh các khoản nợ phải thu n…",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản",
-        "Hạch toán",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach hach toan phai thu khac - TK 138.gif",
+      "image": "assets/images/content/pic/Service/images/cach chuyen so du tai khoan theo thong tu 200.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/nguyen-tac-hach-toan-cac-khoan-no-phai-tra.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/nguyen-tac-hach-toan-cac-khoan-no-phai-tra.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nguyen-tac-hach-toan-cac-khoan-no-phai-tra.html",
+      "title": "Nguyên tắc kế toán nợ phải trả theo Thông tư 200",
+      "excerpt": "Nguyên tắc kế toán nợ phải trả, nguyên tắc hạch toán các khoản nợ phải trả theo quy định tại Thông tư 200, cách phân loại các khoản nợ phải trả",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "tags": [
+        "Tài khoản - Hạch toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nguyen-tac-ke-toan-no-phai-tra.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.html",
+      "title": "So sánh tài khoản kế toán Thông tư 200 và Thông tư 99",
+      "excerpt": "Ngày 27/10/2025, Bộ trưởng Bộ Tài chính ban hành Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp. Thông t…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "tags": [
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/So-sanh-Thong-tu-200-voi-thong-tu-99.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-hach-toan-chi-phi-ban-hang-tai-khoan-641.html",
+      "id": "thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-chi-phi-ban-hang-tai-khoan-641.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-chi-phi-ban-hang-tai-khoan-641.html",
-      "title": "Cách hạch toán Chi phí bán hàng Tài khoản 641 theo TT 200",
-      "excerpt": "Cách hạch toán Tài khoản 641 - Chi phí bán hàng Theo Thông tư 200/2014/TT-BTC: dùng để phản ánh các chi phí thực tế…",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "href": "thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
+      "title": "Hướng dẫn chuyển số dư TK từ QĐ 15 sang Thông tư 200/2014/TT-BTC",
+      "excerpt": "Quyết định 15 đã được thay thế bằng Thông tư 200/2014/TT-BTC, trong đó có 1 số tài khoản đã được loại bỏ. Kế toán Diệu…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "Tài khoản",
         "Hạch toán",
         "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Cach hach toan chi phi ban hang - TK 641.gif",
+      "image": "assets/images/content/pic/Service/images/cach chuyen so du tai khoan theo thong tu 200.png",
       "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-bang-ke-mua-lai-co-phieu-theo-qd-48-va-15.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-bang-ke-mua-lai-co-phieu-theo-qd-48-va-15.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-mua-lai-co-phieu-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng kê mua lại cổ phiếu theo QĐ 48 và TT 200",
+      "excerpt": "Mẫu bảng kê mua lại cổ phiếu theo quyết định số 48/2006/QĐ-BTC ngày 14/9/2006 và Thông tư 200 của Bộ tài chính.",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Chuẩn mực - Chế độ - Nguyên tắc",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2006-09-14",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
       "publishDate": "2026-01-01",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
-      "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
-      "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "id": "thu-vien/cong-ty-ke-toan-dieu-tam-tuyen-ke-toan-giang-day.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-ke-toan-dieu-tam-tuyen-ke-toan-giang-day.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-ke-toan-dieu-tam-tuyen-ke-toan-giang-day.html",
+      "title": "Công ty kế toán Diệu Tâm tuyển kế toán gấp",
+      "excerpt": "KẾ TOÁN DIỆU TÂM TUYỂN DỤNG KẾ TOÁN GIẢNG DẠY CÁC KHÓA HỌC KẾ TOÁN THỰC TẾ. Vị trí tuyển dụng: - Giáo viên giảng dạy cá…",
+      "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Tài khoản",
-        "Hạch toán",
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
         "Kế toán",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/bang-can-doi-tai-khoan-theo-thong-tu-133(1).png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2016-08-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "libraryKindLabel": "",
+      "publishDate": "2022-01-22",
       "modifiedDate": null
     }
   ]

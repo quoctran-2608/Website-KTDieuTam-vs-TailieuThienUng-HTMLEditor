@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2036,
-  "totalCount": 2736,
+  "currentIndex": 1998,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-kiem-tra-so-sach-ke-toan-bao-cao-truoc-khi-lap-bctc.html",
     "section": "thu-vien",
@@ -109,7 +109,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -128,7 +128,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -162,28 +162,6 @@
     }
   ],
   "related": [
-    {
-      "id": "thu-vien/cach-tinh-thue-gtgt-cua-ho-kinh-doanh.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-thue-gtgt-cua-ho-kinh-doanh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-gtgt-cua-ho-kinh-doanh.html",
-      "title": "Cách tính thuế GTGT của hộ kinh doanh năm 2026",
-      "excerpt": "Hướng dẫn cách tính thuế giá trị gia tăng cho hộ kinh doanh năm 2026 theo quy định tại Nghị định 68/2026/NĐ-CP và Thông…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Hộ kinh doanh",
-        "Hóa đơn",
-        "Thuế",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Thue-GTGT-ho-kinh-doanh.jpg",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
-      "modifiedDate": null
-    },
     {
       "id": "thu-vien/thu-tuc-hoan-thue-gia-tri-gia-tang-moi-nhat.html",
       "section": "thu-vien",
@@ -223,29 +201,47 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2025-06-30",
       "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/nghi-dinh-so-181-quy-dinh-ve-thue-gia-tri-gia-tang.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/nghi-dinh-so-181-quy-dinh-ve-thue-gia-tri-gia-tang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-so-181-quy-dinh-ve-thue-gia-tri-gia-tang.html",
+      "title": "Nghị định số 181/2025/NĐ-CP quy định về luật thuế giá trị gia tăng",
+      "excerpt": "Nghị định số 181/2025/NĐ-CP ban hành ngày 1/7/2025 - quy định chi tiết một số điều của luật thuế giá trị gia tăng",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "GTGT - Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-181.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-07-01",
+      "modifiedDate": null
     }
   ],
   "latestOther": [
     {
-      "id": "thu-vien/cach-tinh-thue-gtgt-cua-ho-kinh-doanh.html",
+      "id": "thu-vien/thu-tuc-hoan-thue-gia-tri-gia-tang-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-thue-gtgt-cua-ho-kinh-doanh.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-gtgt-cua-ho-kinh-doanh.html",
-      "title": "Cách tính thuế GTGT của hộ kinh doanh năm 2026",
-      "excerpt": "Hướng dẫn cách tính thuế giá trị gia tăng cho hộ kinh doanh năm 2026 theo quy định tại Nghị định 68/2026/NĐ-CP và Thông…",
+      "href": "thu-vien/thu-tuc-hoan-thue-gia-tri-gia-tang-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-hoan-thue-gia-tri-gia-tang-moi-nhat.html",
+      "title": "Hồ sơ và Thủ tục hoàn thuế giá trị gia tăng mới nhất năm 2025",
+      "excerpt": "Hồ sơ, thủ tục hoàn thuế giá trị gia tăng mới nhất năm 2025 theo thông tư 80/2021/TT-BTC Hồ sơ đề nghị hoàn thuế giá tr…",
       "topicLabel": "GTGT - Hóa đơn",
       "tags": [
         "GTGT",
-        "Hộ kinh doanh",
         "Hóa đơn",
         "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/Thue-GTGT-ho-kinh-doanh.jpg",
+      "image": "assets/images/content/pic/Service/images/hoan-thu-GTGT.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2025-07-01",
+      "publishDate": "2022-07-29",
       "modifiedDate": null
     },
     {
@@ -271,23 +267,46 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
+      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
-      "title": "Phần mềm HTKK 5.2.6 mới nhất ngày 1/1/2025",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.6 mới nhất 1/1/2025 của Tổng cục thuế. Tải phần mềm HTKK 5.2.6 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2025.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
+      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
+      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
+      "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_6-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2025-01-01",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-ty-tnhh-tu-van-tham-dinh-va-dau-tu-cong-nghe-gia-loc-tuyen-ke-toan-vat-tu.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-tnhh-tu-van-tham-dinh-va-dau-tu-cong-nghe-gia-loc-tuyen-ke-toan-vat-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-tnhh-tu-van-tham-dinh-va-dau-tu-cong-nghe-gia-loc-tuyen-ke-toan-vat-tu.html",
+      "title": "Công ty TNHH tư vấn thẩm định và đầu tư công nghệ Gia Lộc tuyển Kế toán vật tư",
+      "excerpt": "Công ty TNHH tư vấn thẩm định và đầu tư công nghệ Gia Lộc tuyển Kế toán vật tư tại TT Tổng Cục Chính Trị - Phố Trung Kí…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2006-07-25",
       "modifiedDate": null
     }
   ]

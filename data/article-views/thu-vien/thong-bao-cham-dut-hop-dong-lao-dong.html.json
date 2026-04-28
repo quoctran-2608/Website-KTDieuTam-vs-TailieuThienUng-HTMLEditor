@@ -1,26 +1,25 @@
 {
-  "currentIndex": 2485,
-  "totalCount": 2736,
+  "currentIndex": 2444,
+  "totalCount": 2694,
   "prev": {
-    "id": "thu-vien/thoi-trang-cong-so-emspo-tuyen-nhan-vien-ke-toan.html",
+    "id": "thu-vien/thoi-diem-xuat-hoa-don-dich-vu.html",
     "section": "thu-vien",
     "sectionLabel": "Thư viện",
     "sectionHref": "thu-vien.html",
-    "href": "thu-vien/thoi-trang-cong-so-emspo-tuyen-nhan-vien-ke-toan.html",
-    "canonical": "https://ketoandieutam.vn/thu-vien/thoi-trang-cong-so-emspo-tuyen-nhan-vien-ke-toan.html",
-    "title": "Thời trang công sở EMSPO tuyển Nhân viên kế toán",
-    "excerpt": "Thời trang công sở EMSPO tuyển Nhân viên kế toán làm việc tại Hoàn Kiếm – Hà Nội Mô tả công việc: 1. Thống kê, hạch toá…",
-    "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+    "href": "thu-vien/thoi-diem-xuat-hoa-don-dich-vu.html",
+    "canonical": "https://ketoandieutam.vn/thu-vien/thoi-diem-xuat-hoa-don-dich-vu.html",
+    "title": "Thời điểm xuất hóa đơn dịch vụ theo nghị định 70/2025/NĐ-CP",
+    "excerpt": "Quy định về thời điểm xuất hóa đơn dịch vụ theo Nghị định 70/2025/NĐ-CP sửa đổi Nghị định 123/2020/NĐ-CP và Th…",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
-      "Chuẩn mực",
-      "Chế độ",
-      "Nguyên tắc",
-      "Kế toán",
-      "Hướng dẫn"
+      "GTGT",
+      "Hóa đơn",
+      "Thuế",
+      "Văn bản"
     ],
-    "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-    "libraryKindLabel": "Hướng dẫn",
-    "publishDate": "2014-06-30",
+    "image": "assets/images/content/pic/Service/images/thoi-diem-xuat-hoa-don-dich-vu.png",
+    "libraryKindLabel": "Văn bản",
+    "publishDate": "2025-07-15",
     "modifiedDate": null
   },
   "next": {
@@ -115,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -277,6 +276,26 @@
       "image": "assets/images/content/pic/Service/images/mau-hop-dong-thu-viec.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2019-11-20",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-he-thong-thang-bang-luong-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-he-thong-thang-bang-luong-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-he-thong-thang-bang-luong-moi-nhat.html",
+      "title": "Mẫu hệ thống thang bảng lương năm 2026 Excel",
+      "excerpt": "Mẫu hệ thống thang bảng lương năm 2026 mới nhất theo Điều 93 của Bộ Luật Lao Động số 45/2019/QH14.",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Excel - Công cụ khác",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thang-bang-luong.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

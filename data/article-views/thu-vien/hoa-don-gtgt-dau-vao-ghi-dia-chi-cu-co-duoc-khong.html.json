@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1021,
-  "totalCount": 2736,
+  "currentIndex": 985,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/hoa-don-ghi-thieu-dia-chi-phuong-tinh-viet-nam.html",
     "section": "thu-vien",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -188,6 +188,25 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
+      "title": "Xử lý hóa đơn khi chuyển địa điểm Công ty",
+      "excerpt": "Hướng dẫn cách xử lý hóa đơn khi thay đổi tên Công ty, thay đổi địa chỉ công ty, chuyển địa điểm kinh doanh đối với những hóa đơn điện tử đã đăng ký sử dụng với cơ quan thuế",
+      "topicLabel": "GTGT - Hóa đơn",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/xu-ly-hoa-don-khi-doi-ten-cty-dia-chi.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2025-03-20",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/xu-ly-hoa-don-khi-thay-doi-dia-chi-cong-ty.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -206,29 +225,6 @@
       "image": "assets/images/content/pic/Service/images/hoa-don-thay-doi-dia-chi.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2024-08-21",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/xu-ly-hoa-don-viet-sai-dia-chi-ma-so-thue-ten-nguoi-mua.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/xu-ly-hoa-don-viet-sai-dia-chi-ma-so-thue-ten-nguoi-mua.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/xu-ly-hoa-don-viet-sai-dia-chi-ma-so-thue-ten-nguoi-mua.html",
-      "title": "Hóa đơn ghi sai MST, tên hàng hóa, tên Cty, địa chỉ - Cách xử lý",
-      "excerpt": "Hóa đơn GTGT ghi sai tên công ty, địa chỉ, mã số thuế, ngày tháng năm, tên hàng hóa, số lượng, đơn vị tính, số tiền bằn…",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "Mã số thuế",
-        "Hóa đơn",
-        "Thuế",
-        "MST",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/xu ly hoa don viet sai ten dia chi ma so thue.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2018-12-14",
       "modifiedDate": null
     }
   ],
@@ -255,43 +251,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/bang-ke-thu-mua-hang-hoa-dich-vu-khong-co-hoa-don-mau-01.html",
+      "id": "thu-vien/to-khai-dang-ky-su-dung-hoa-don-dien-tu-mau-01-nghi-dinh-119.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bang-ke-thu-mua-hang-hoa-dich-vu-khong-co-hoa-don-mau-01.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/bang-ke-thu-mua-hang-hoa-dich-vu-khong-co-hoa-don-mau-01.html",
-      "title": "Bảng kê thu mua hàng hoá dịch vụ không có hoá đơn mẫu 01/TNDN",
-      "excerpt": "Mẩu bảng kê thu mua hàng hóa, dịch vụ mua vào không có hóa đơn Mẫu 01/TNDN Ban hành kèm theo Thông tư số 78/2014/TT-BTC của Bộ Tài chính",
+      "href": "thu-vien/to-khai-dang-ky-su-dung-hoa-don-dien-tu-mau-01-nghi-dinh-119.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/to-khai-dang-ky-su-dung-hoa-don-dien-tu-mau-01-nghi-dinh-119.html",
+      "title": "Mẫu 01 Nghị định 119 Tờ khai đăng ký sử dụng hóa đơn điện tử",
+      "excerpt": "Tờ khai Mẫu 01 Nghị định 119 - Tờ khai đăng ký sử dụng hóa đơn điện tử, thay đổi thông tin sử dụng hóa đơn điện tử; Các…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "TNDN",
-        "Mẫu biểu thuế - hóa đơn",
-        "Biểu mẫu"
+        "GTGT",
+        "Hóa đơn điện tử",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Hóa đơn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/bang-ke-mua-hang-khong-co-hoa-don-mau-01-TNDN(1).png",
+      "image": "assets/images/content/pic/Service/images/to-khai-dang-ky-su-dung-hoa-don-dien-tu.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-04-26",
+      "publishDate": "2018-09-12",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/thue-suat-thue-gia-tri-gia-tang-doi-voi-phan-mem-nhu-the-nao.html",
+      "title": "Thuế suất thuế giá trị gia tăng đối với phần mềm như thế nào",
+      "excerpt": "Câu hỏi: - Kính gửi ban biên tập Công ty chúng tôi có kinh doanh các sản phẩn phần mềm của các Doanh nghiệp trong nước…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/thue suat thue gtgt doi voi phan mem.jpg",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

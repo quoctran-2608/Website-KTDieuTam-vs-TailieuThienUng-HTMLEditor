@@ -1,6 +1,6 @@
 {
   "currentIndex": 169,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/dang-ky-su-dung-hoa-don-dien-tu-khong-co-ma-cua-co-quan-thue.html",
     "section": "thu-vien",
@@ -41,7 +41,7 @@
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach-danh-gia-lai-tscd-tren-misa-1(1).png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -114,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -133,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -168,6 +168,28 @@
   ],
   "related": [
     {
+      "id": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "title": "Cách nộp thuế TNDN tạm tính 2025 qua mạng trên thuế điện tử",
+      "excerpt": "Hướng dẫn cách nộp tiền thuế thu nhập doanh nghiệp tạm tính quý qua mạng trên trang https://thuedientu.gdt.gov.vn/ mới…",
+      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "tags": [
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/Nop-thue-TNDN-tam-tinh-quy.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-nop-tien-thue-tncn-qua-mang-dien-tu-bang-ma-id.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -190,46 +212,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-nop-to-khai-thue-tncn-tndn-gtgt-qua-mang-dien-tu.html",
+      "id": "thu-vien/nop-danh-sach-chi-tiet-so-tien-thue-tncn-da-nop-thay-cho-tung-ca-nhan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-nop-to-khai-thue-tncn-tndn-gtgt-qua-mang-dien-tu.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-to-khai-thue-tncn-tndn-gtgt-qua-mang-dien-tu.html",
-      "title": "Cách nộp tờ khai thuế TNCN, TNDN, GTGT 2026 trên Dịch Vụ Công",
-      "excerpt": "Hướng dẫn cách nộp các loại tờ khai, báo thuế GTGT, TNCN, TNDN qua mạng điện tử trên trang Dịch vụ công và thuế điện tử…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/nop-danh-sach-chi-tiet-so-tien-thue-tncn-da-nop-thay-cho-tung-ca-nhan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nop-danh-sach-chi-tiet-so-tien-thue-tncn-da-nop-thay-cho-tung-ca-nhan.html",
+      "title": "Nộp danh sách chi tiết số tiền thuế TNCN đã nộp thay cho từng cá nhân",
+      "excerpt": "Hướng dẫn cách làm danh sách chi tiết số tiền thuế TNCN đã nộp thay cho từng cá nhân trên phần mềm HTKK để nộp qua mạng…",
+      "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
-        "GTGT",
         "TNCN",
-        "TNDN",
-        "Hóa đơn",
+        "Thuế thu nhập cá nhân",
         "Thuế",
-        "Nộp tờ khai"
-      ],
-      "image": "assets/images/content/pic/Service/images/Nop-to-khai-thue-qua-mang.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-gia-tri-gia-tang.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-gia-tri-gia-tang.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/thu-tuc-thong-bao-phat-hanh-hoa-don-gia-tri-gia-tang.html",
-      "title": "Thủ tục thông báo phát hành hóa đơn GTGT qua mạng lần đầu",
-      "excerpt": "Hướng dẫn cách làm Thủ tục thông báo phát hành hóa đơn GTGT lần đầu qua mạng như: Mẫu thông báo phát hành hóa đơn mới nhất, cách nộp hồ sơ thông báo phát hành hóa đơn qua mạng.",
-      "topicLabel": "GTGT - Hóa đơn",
-      "tags": [
-        "GTGT",
-        "GTGT - Hóa đơn",
+        "Hóa đơn",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/thu-tuc-thong-bao-phat-hanh-hoa-don-gtgt.png",
+      "image": "assets/images/content/pic/Service/images/Nop-ds-chi-tiet-nop-thue-TNCN-qua-mang(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2017-06-12",
+      "publishDate": "2025-11-21",
       "modifiedDate": null
     }
   ],
@@ -257,46 +258,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "id": "thu-vien/mau-hoa-don-tien-nuoc.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "title": "Danh sách mã chương, mã tiểu mục nộp thuế mới nhất năm 2026",
-      "excerpt": "Danh sách mã chương, mã tiểu mục nộp thuế TNCN, thuế GTGT, Thuế TNDN mới nhất năm 2026 theo Thông tư 130/2025/TT-BTC qu…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/mau-hoa-don-tien-nuoc.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-hoa-don-tien-nuoc.html",
+      "title": "Mẫu hóa đơn tiền nước mới nhất năm 2026",
+      "excerpt": "Mẫu hóa đơn tiền nước điện tử mới nhất năm 2026 Mẫu hóa đơn tiền nước điện tử năm 2025 Công ty đào tạo Kế Toán Diệu T…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
-        "TNCN",
-        "TNDN",
-        "Hóa đơn",
+        "Mẫu biểu thuế",
+        "hóa đơn",
         "Thuế",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
+      "image": "assets/images/content/pic/Service/images/Mau-hoa-don-tien-nuoc-2026.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
+      "id": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "title": "Phần mềm HTKK 5.2.1 mới nhất ngày 2/8/2024",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.1 mới nhất 2/8/2024 của Tổng cục thuế. Tải phần mềm HTKK 5.2.1 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2024.",
+      "href": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "title": "Cách nộp thuế TNDN tạm tính 2025 qua mạng trên thuế điện tử",
+      "excerpt": "Hướng dẫn cách nộp tiền thuế thu nhập doanh nghiệp tạm tính quý qua mạng trên trang https://thuedientu.gdt.gov.vn/ mới…",
       "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_1-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/Nop-thue-TNDN-tam-tinh-quy.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2024-08-02",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

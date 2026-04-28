@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1074,
-  "totalCount": 2736,
+  "currentIndex": 1038,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-su-dung-ham-sumif-trong-excel-ke-toan.html",
     "section": "thu-vien",
@@ -19,7 +19,7 @@
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/cach-dung-ham-sumif-trong-excel-ke-toan.png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -173,7 +173,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns.html",
       "title": "Cách viết giấy nộp tiền vào ngân sách nhà nước mẫu C1-02/NS",
       "excerpt": "Hướng dẫn cách viết giấy nộp tiền vào ngân sách nhà nước; Cách ghi giấy nộp tiền thuế môn bài, thuế GTGT, thuế TNCN, th…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "GTGT",
         "Hóa đơn",
@@ -186,41 +186,47 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/hach-toan-cac-khoan-thue-phai-nop-cho-nha-nuoc-tk-333.html",
+      "id": "thu-vien/nop-danh-sach-chi-tiet-so-tien-thue-tncn-da-nop-thay-cho-tung-ca-nhan.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/hach-toan-cac-khoan-thue-phai-nop-cho-nha-nuoc-tk-333.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/hach-toan-cac-khoan-thue-phai-nop-cho-nha-nuoc-tk-333.html",
-      "title": "Hạch toán các khoản thuế phải nộp cho nhà nước - TK 333",
-      "excerpt": "Cách hạch toán thuế và các khoản phải nộp nhà nước - Tài khoản 333 áp dụng chế độ kế toán theo Thông tư 99 mới nhất 2026, hạch toán thuế GTGT phải nộp, được khấu trừ, thuế TNDN tạm nộp, thuế TNCN phải nộp, phí lệ phí",
+      "href": "thu-vien/nop-danh-sach-chi-tiet-so-tien-thue-tncn-da-nop-thay-cho-tung-ca-nhan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nop-danh-sach-chi-tiet-so-tien-thue-tncn-da-nop-thay-cho-tung-ca-nhan.html",
+      "title": "Nộp danh sách chi tiết số tiền thuế TNCN đã nộp thay cho từng cá nhân",
+      "excerpt": "Hướng dẫn cách làm danh sách chi tiết số tiền thuế TNCN đã nộp thay cho từng cá nhân trên phần mềm HTKK để nộp qua mạng…",
       "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
+        "TNCN",
         "Thuế thu nhập cá nhân",
+        "Thuế",
+        "Hóa đơn",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-333.png",
+      "image": "assets/images/content/pic/Service/images/Nop-ds-chi-tiet-nop-thue-TNCN-qua-mang(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
+      "publishDate": "2025-11-21",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/nghi-dinh-52-2021-nd-cp-gia-han-thoi-han-nop-thue-va-tien-thue-dat.html",
+      "id": "thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-52-2021-nd-cp-gia-han-thoi-han-nop-thue-va-tien-thue-dat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-52-2021-nd-cp-gia-han-thoi-han-nop-thue-va-tien-thue-dat.html",
-      "title": "Nghị định 52/2021/NĐ-CP gia hạn thời hạn nộp thuế và tiền thuê đất 2021",
-      "excerpt": "Nghị định 52/2021/NĐ-CP ngày 19/4/2021 của Chính phủ: Gia hạn thời hạn nộp thuế GTGT, thuế TNCN, thuế TNDN và tiền thuê đất năm 2021. Mẫu giấy đề nghị gia hạn nộp thuế.",
+      "href": "thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-gtgt-tncn-cho-thue-nha-moi-nhat.html",
+      "title": "Các loại thuế phải nộp khi cá nhân cho thuê nhà 2026",
+      "excerpt": "Hướng dẫn cách tính các loại thuế cho thuê nhà, cho thuê tài sản như thuế thu nhập cá nhân, thuế giá trị gia tăng theo…",
       "topicLabel": "Thuế thu nhập cá nhân",
       "tags": [
-        "Thuế thu nhập cá nhân",
+        "GTGT",
+        "TNCN",
+        "Hóa đơn",
+        "Thuế",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-52-gia-han-thoi-han-nop-thue-2021.png",
+      "image": "assets/images/content/pic/Service/images/Thue-cho-thue-nha.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-04-19",
+      "publishDate": "2025-07-01",
       "modifiedDate": null
     }
   ],
@@ -234,7 +240,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-viet-giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-c1-02-ns.html",
       "title": "Cách viết giấy nộp tiền vào ngân sách nhà nước mẫu C1-02/NS",
       "excerpt": "Hướng dẫn cách viết giấy nộp tiền vào ngân sách nhà nước; Cách ghi giấy nộp tiền thuế môn bài, thuế GTGT, thuế TNCN, th…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Chứng từ - Sổ sách",
       "tags": [
         "GTGT",
         "Hóa đơn",
@@ -247,46 +253,46 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
+      "id": "thu-vien/giay-nop-tien-vao-ngan-sach-nha-nuoc-bang-ngoai-te-theo-tt-119.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/ma-chuong-ma-tieu-muc-nop-thue-tncn-thue-gtgt-thue-tndn.html",
-      "title": "Danh sách mã chương, mã tiểu mục nộp thuế mới nhất năm 2026",
-      "excerpt": "Danh sách mã chương, mã tiểu mục nộp thuế TNCN, thuế GTGT, Thuế TNDN mới nhất năm 2026 theo Thông tư 130/2025/TT-BTC qu…",
-      "topicLabel": "GTGT - Hóa đơn",
+      "href": "thu-vien/giay-nop-tien-vao-ngan-sach-nha-nuoc-bang-ngoai-te-theo-tt-119.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/giay-nop-tien-vao-ngan-sach-nha-nuoc-bang-ngoai-te-theo-tt-119.html",
+      "title": "Giấy nộp tiền vào ngân sách nhà nước bằng ngoại tệ theo TT 119",
+      "excerpt": "Mẫu Giấy nộp tiền vào ngân sách nhà nước bằng ngoại tệ Mẫu C1-03/NS (Ban hành kèm theo Thông tư số 119/2014/TT-BTC ngày…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2014-08-25",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/hach-toan-nop-thue-gtgt-tncn-tndn-mon-bai-tren-misa.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/hach-toan-nop-thue-gtgt-tncn-tndn-mon-bai-tren-misa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/hach-toan-nop-thue-gtgt-tncn-tndn-mon-bai-tren-misa.html",
+      "title": "Hạch toán nộp thuế GTGT, TNCN, TNDN, Lệ phí môn bài trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ nộp tiền các loại thuế như thuế GTGT, thuế TNDN, thuế TNCN, thuế xuất nhập kh…",
+      "topicLabel": "MISA",
       "tags": [
         "GTGT",
         "TNCN",
         "TNDN",
-        "Hóa đơn",
-        "Thuế",
-        "Biểu mẫu"
-      ],
-      "image": "assets/images/content/pic/Service/images/Danh-muc-ma-chuong-tieu-muc-nop-thue.png",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-01-01",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
-      "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
+        "MISA",
+        "Phần mềm",
         "Công cụ"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/hach-toan-nop-thue-gtgt-tncn-tndn-le-phi-mon-bai-tren-misa-1.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

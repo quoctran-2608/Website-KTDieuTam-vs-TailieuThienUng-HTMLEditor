@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1855,
-  "totalCount": 2736,
+  "currentIndex": 1818,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/muc-phat-vi-pham-quy-dinh-ve-thu-viec.html",
     "section": "thu-vien",
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -172,7 +172,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/muc-phat-vi-pham-quy-dinh-ve-so-ke-toan.html",
       "title": "Mức phạt vi phạm quy định về sổ sách kế toán",
       "excerpt": "Quy định về mức phạt vi phạm hành chính về sổ sách kế toán như: Lập sai sổ sách kế toán; không có chữ ký; Không mở sổ s…",
-      "topicLabel": "Chứng từ - Sổ sách",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "Chứng từ",
         "Sổ sách",
@@ -193,7 +193,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/muc-phat-vi-pham-ve-chung-tu-ke-toan.html",
       "title": "Mức phạt vi phạm quy định về chứng từ kế toán",
       "excerpt": "Quy định mức phạt vi phạm về chứng từ kế toán như: Mức phạt mất chứng từ kế toán; Lập sai chứng từ kế toán; Chữ ký khôn…",
-      "topicLabel": "Chứng từ - Sổ sách",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "Chứng từ",
         "Sổ sách",
@@ -206,22 +206,25 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-so-cai-nhat-ky-chung-theo-thong-tu-200-va-133.html",
+      "id": "thu-vien/muc-xu-phat-vi-pham-trong-linh-vuc-ke-toan-moi-nhat.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-so-cai-nhat-ky-chung-theo-thong-tu-200-va-133.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-cai-nhat-ky-chung-theo-thong-tu-200-va-133.html",
-      "title": "Cách lập sổ Cái Nhật ký chung theo Thông tư 200 và 133",
-      "excerpt": "Hướng dẫn cách lập sổ Cái Nhật ký chung theo Thông tư 200 và 133. Mẫu Sổ cái Nhật ký chung S03b-DN (S03b-DNN) là sổ kế toán tổng hợp ghi chép các nghiệp vụ kinh tế phát sinh trong niên độ kế toán theo tài khoản kế toán.",
-      "topicLabel": "Chứng từ - Sổ sách",
+      "href": "thu-vien/muc-xu-phat-vi-pham-trong-linh-vuc-ke-toan-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/muc-xu-phat-vi-pham-trong-linh-vuc-ke-toan-moi-nhat.html",
+      "title": "Mức xử phạt vi phạm hành chính kế toán mới nhất",
+      "excerpt": "Mức xử phạt vi phạm hành chính trong lĩnh vực kế toán như: Vi phạm về Chứng từ kế toán, Sổ sách kế toán, Tài khoản kế t…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
-        "Chứng từ - Sổ sách",
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-lap-so-cai-nhat-ky-chung.png",
+      "image": "assets/images/content/pic/Service/images/muc-phat-vi-pham-hanh-chinh-ke-toan.png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-12-22",
+      "publishDate": "2018-05-01",
       "modifiedDate": null
     }
   ],
@@ -235,7 +238,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/muc-phat-vi-pham-quy-dinh-ve-so-ke-toan.html",
       "title": "Mức phạt vi phạm quy định về sổ sách kế toán",
       "excerpt": "Quy định về mức phạt vi phạm hành chính về sổ sách kế toán như: Lập sai sổ sách kế toán; không có chữ ký; Không mở sổ s…",
-      "topicLabel": "Chứng từ - Sổ sách",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "Chứng từ",
         "Sổ sách",
@@ -248,63 +251,68 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bang-tong-hop-doanh-thu.html",
+      "id": "thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-tong-hop-doanh-thu.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-tong-hop-doanh-thu.html",
-      "title": "Mẫu bảng tổng hợp doanh thu mới nhất năm 2025",
-      "excerpt": "Mẫu số 01/TH-DT ban hành kèm theo Nghị định số 70/2025/NĐ-CP ngày 20/3/2025 sửa đổi bổ sung một số điều của Nghị định 123/2020/NĐ-CP",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "href": "thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/so-ke-toan-chi-tiet-theo-doi-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.html",
+      "title": "Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh",
+      "excerpt": "Sổ kế toán chi tiết theo dõi các khoản đầu tư vào công ty liên doanh: là một phần của hệ thống sổ kế toán chi tiết phục…",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "Tài khoản - Hạch toán",
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Mau-01-TH-DT-Bang-tong-hop-doanh-thu.png",
+      "image": "assets/images/content/pic/Service/images/mau-so-chi-tiet-cac-khoan-dau-tu-vao-cong-ty-lien-doanh.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-03-20",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-kiem-tra-doi-chieu-chung-tu-so-sach-ke-toan-tren-misa.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-kiem-tra-doi-chieu-chung-tu-so-sach-ke-toan-tren-misa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-kiem-tra-doi-chieu-chung-tu-so-sach-ke-toan-tren-misa.html",
+      "title": "Cách kiểm tra đối chiếu chứng từ sổ sách kế toán trên Misa",
+      "excerpt": "Hướng dẫn cách kiểm tra, đối chiếu chứng từ, sổ sách và hướng dẫn cách khắc phục các sai sót đã phát hiện theo từng nội…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "MISA",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-kiem-tra-trang-thai-ghi-so-chung-tu-tren-misa-1(2).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/hoc-thuc-hanh-ke-toan-tong-hop-thuc-te-tai-ha-noi.html",
+      "id": "thu-vien/cong-ty-tnhh-mtv-toyota-my-dinh-tuyen-nhan-vien-ke-toan-tong-hop.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/hoc-thuc-hanh-ke-toan-tong-hop-thuc-te-tai-ha-noi.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/hoc-thuc-hanh-ke-toan-tong-hop-thuc-te-tai-ha-noi.html",
-      "title": "Khóa học thực hành kế toán tổng hợp dành cho người đã học kế toán",
-      "excerpt": "Chào mừng bạn đã đến với chương trình đào tạo kế toán thực hành thực tế của công ty Kế Toán Diệu Tâm. Đây là bài viết g…",
-      "topicLabel": "Khóa học kế toán",
+      "href": "thu-vien/cong-ty-tnhh-mtv-toyota-my-dinh-tuyen-nhan-vien-ke-toan-tong-hop.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-tnhh-mtv-toyota-my-dinh-tuyen-nhan-vien-ke-toan-tong-hop.html",
+      "title": "Công ty TNHH MTV Toyota Mỹ Đình tuyển Nhân viên kế toán tổng hợp",
+      "excerpt": "Công ty TNHH MTV Toyota Mỹ Đình tuyển Nhân viên kế toán tổng hợp tại Số 15, Phạm Hùng, Mỹ Đình, Từ Liêm, Hà Nội Mô tả c…",
+      "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Khóa học kế toán",
-        "Khóa học & đào tạo",
-        "Chính sách",
-        "Khóa học"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/hoc-thuc-hanh-ke-toan-tong-hop(2).png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "",
-      "publishDate": "2026-04-02",
+      "publishDate": "2014-06-14",
       "modifiedDate": null
     }
   ]

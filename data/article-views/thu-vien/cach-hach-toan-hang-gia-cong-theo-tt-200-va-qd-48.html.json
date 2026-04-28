@@ -1,6 +1,6 @@
 {
   "currentIndex": 254,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/hach-toan-hang-ban-dung-gia-huong-hoa-hong-tren-misa.html",
     "section": "thu-vien",
@@ -18,7 +18,7 @@
       "Hướng dẫn"
     ],
     "image": "assets/images/content/pic/Service/images/Cach-hach-toan-hang-ban-dung-gia-huong-hoa-hong-tren-misa-1(1).png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -110,7 +110,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -129,7 +129,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -183,6 +183,25 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/cach-hach-toan-cac-khoan-thu-nhap-khac-tai-khoan-711.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-hach-toan-cac-khoan-thu-nhap-khac-tai-khoan-711.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-cac-khoan-thu-nhap-khac-tai-khoan-711.html",
+      "title": "Cách hạch toán các khoản thu nhập khác - Tài khoản 711",
+      "excerpt": "Cách hạch toán các khoản thu nhập khác - Tài khoản 711 áp dụng chế độ kế toán theo Thông tư 99 mới nhất 2026, cách hạch toán nhận tiền bồi thường, hạch toán tiền hoàn thuế, hạch toán hàng được cho biếu tặng",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "GTGT - Hóa đơn",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/tk-711.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/cach-hach-toan-doanh-thu-hoat-dong-tai-chinh-tai-khoan-515.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -197,25 +216,6 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-515.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "ban-tin/cach-hach-toan-gia-von-hang-ban-tai-khoan-632.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "ban-tin/cach-hach-toan-gia-von-hang-ban-tai-khoan-632.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/cach-hach-toan-gia-von-hang-ban-tai-khoan-632.html",
-      "title": "Cách hạch toán giá vốn hàng bán - Tài khoản 632",
-      "excerpt": "Hướng dẫn Cách hạch toán giá vốn hàng bán - Tài khoản 632 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán giá vốn hàng bán, hạch toán giá vốn dịch vụ, nhận được chiết khấu thương mại, giảm giá hàng bán",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Ưu đãi học phí",
-        "Thông tin"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/tk-632-hach-toan-gia-von.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-26",
       "modifiedDate": null
@@ -250,7 +250,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-can-doi-tai-khoan-theo-thong-tu-133.html",
       "title": "Mẫu bảng cân đối tài khoản theo Thông tư 133 – Cách lập",
       "excerpt": "Hướng dẫn cách lập bảng cân đối tài khoản theo Thông tư 133, theo Mẫu bảng cân đối tài khoản kế toán Excel F01 – DNN mớ…",
-      "topicLabel": "Tài khoản - Hạch toán",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
         "Tài khoản",
         "Hạch toán",
@@ -263,23 +263,26 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-hach-toan-tra-luong-bang-tien-gui-ngan-hang.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-hach-toan-tra-luong-bang-tien-gui-ngan-hang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-tra-luong-bang-tien-gui-ngan-hang.html",
+      "title": "Cách hạch toán trả lương bằng tiền gửi ngân hàng trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ trả lương bằng tiền gửi ngân hàng trên phần mềm Misa Hàng tháng, căn cứ vào B…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "MISA",
+        "Tiền lương",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-tra-luong-bang-tien-gui-ngan-hang-tren-misa-1(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1999,
-  "totalCount": 2736,
+  "currentIndex": 1962,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/nguyen-tac-ke-toan-tien-theo-thong-tu-133.html",
     "section": "thu-vien",
@@ -19,7 +19,7 @@
       "Văn bản"
     ],
     "image": "assets/images/content/pic/Service/images/nguyen-tac-ke-toan-tien-theo-thong-tu-133.png",
-    "libraryKindLabel": "Văn bản",
+    "libraryKindLabel": "Hướng dẫn",
     "publishDate": "2026-04-02",
     "modifiedDate": null
   },
@@ -115,7 +115,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +134,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -169,61 +169,67 @@
   ],
   "related": [
     {
-      "id": "thu-vien/phuong-phap-hach-toan-tien-gui-tai-khoan-112.html",
+      "id": "thu-vien/nguyen-tac-ke-toan-tien-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phuong-phap-hach-toan-tien-gui-tai-khoan-112.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phuong-phap-hach-toan-tien-gui-tai-khoan-112.html",
-      "title": "Cách hạch toán tiền gửi ngân hàng - Tài khoản 112",
-      "excerpt": "Cách hạch toán tiền gửi ngân hàng không kỳ hạn - Tài khoản 112 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán gửi tiền vào ngân hàng, hạch toán rút tiền gửi ngân hàng, các khoản tiền gửi không kỳ hạn tại ngân hàng của DN",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản - Hạch toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-112.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-lap-so-quy-tien-mat-theo-thong-tu-200-va-133.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-so-quy-tien-mat-theo-thong-tu-200-va-133.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-quy-tien-mat-theo-thong-tu-200-va-133.html",
-      "title": "Cách lập sổ quỹ tiền mặt theo Thông tư 200 và 133",
-      "excerpt": "Hướng dẫn Cách lập sổ quỹ tiền mặt theo Thông tư 200 và 133. Mẫu sổ quỹ tiền mặt S07-DN (S04a-DNN) dùng cho thủ quỹ để phản ánh tình hình thu, chi tồn quỹ tiền mặt bằng tiền Việt Nam",
-      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
-      "tags": [
-        "Chuẩn mực - Chế độ - Nguyên tắc",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-so-quy-tien-mat-tren-excel.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2014-12-22",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/nguyen-tac-ke-toan-cac-khoan-dau-tu-vao-don-vi-khac-theo-tt99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nguyen-tac-ke-toan-cac-khoan-dau-tu-vao-don-vi-khac-theo-tt99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nguyen-tac-ke-toan-cac-khoan-dau-tu-vao-don-vi-khac-theo-tt99.html",
-      "title": "Nguyên tắc kế toán các khoản đầu tư vào đơn vị khác theo TT99",
-      "excerpt": "9 Nguyên tắc kế toán các khoản đầu tư vào đơn vị khác theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệ…",
+      "href": "thu-vien/nguyen-tac-ke-toan-tien-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nguyen-tac-ke-toan-tien-theo-thong-tu-133.html",
+      "title": "Nguyên tắc kế toán tiền theo Thông tư 133",
+      "excerpt": "Nguyên tắc kế toán tiền mặt tại quỹ, tiền gửi ngân hàng bằng tiền việt nam đồng, tiền gửi ngân hàng bằng ngoại tệ theo…",
       "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
         "Chuẩn mực",
         "Chế độ",
         "Nguyên tắc",
         "Kế toán",
-        "Hướng dẫn"
+        "Văn bản"
       ],
-      "image": "assets/images/content/pic/Service/images/nguyen-tac-ke-toan-cac-khoan-dau-tu-vao-don-vi-khac.png",
+      "image": "assets/images/content/pic/Service/images/nguyen-tac-ke-toan-tien-theo-thong-tu-133.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/ke-toan-giao-dich-hop-dong-hop-tac-kinh-doanh-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/ke-toan-giao-dich-hop-dong-hop-tac-kinh-doanh-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/ke-toan-giao-dich-hop-dong-hop-tac-kinh-doanh-theo-thong-tu-99.html",
+      "title": "Kế toán giao dịch hợp đồng hợp tác kinh doanh theo Thông tư 99",
+      "excerpt": "Kế toán giao dịch hợp đồng hợp tác kinh doanh theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp (áp dụ…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/ke-toan-giao-dich-hop-dong-hop-tac-kinh-doanh-theo-tt-99.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/nguyen-tac-ke-toan-cac-khoan-chi-phi-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/nguyen-tac-ke-toan-cac-khoan-chi-phi-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nguyen-tac-ke-toan-cac-khoan-chi-phi-theo-thong-tu-99.html",
+      "title": "Nguyên tắc kế toán các khoản chi phí theo Thông tư 99",
+      "excerpt": "Nguyên tắc kế toán các khoản chi phí theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp (áp dụng từ ngà…",
+      "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/nguyen-tac-ke-toan-cac-khoan-chi-phi.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-01-01",
       "modifiedDate": null
@@ -231,61 +237,89 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/phuong-phap-hach-toan-tien-gui-tai-khoan-112.html",
+      "id": "thu-vien/nguyen-tac-ke-toan-tien-theo-thong-tu-133.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phuong-phap-hach-toan-tien-gui-tai-khoan-112.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phuong-phap-hach-toan-tien-gui-tai-khoan-112.html",
-      "title": "Cách hạch toán tiền gửi ngân hàng - Tài khoản 112",
-      "excerpt": "Cách hạch toán tiền gửi ngân hàng không kỳ hạn - Tài khoản 112 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán gửi tiền vào ngân hàng, hạch toán rút tiền gửi ngân hàng, các khoản tiền gửi không kỳ hạn tại ngân hàng của DN",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản - Hạch toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-112.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-bang-ke-mua-lai-co-phieu-theo-qd-48-va-15.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bang-ke-mua-lai-co-phieu-theo-qd-48-va-15.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-ke-mua-lai-co-phieu-theo-qd-48-va-15.html",
-      "title": "Mẫu bảng kê mua lại cổ phiếu theo QĐ 48 và TT 200",
-      "excerpt": "Mẫu bảng kê mua lại cổ phiếu theo quyết định số 48/2006/QĐ-BTC ngày 14/9/2006 và Thông tư 200 của Bộ tài chính.",
+      "href": "thu-vien/nguyen-tac-ke-toan-tien-theo-thong-tu-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/nguyen-tac-ke-toan-tien-theo-thong-tu-133.html",
+      "title": "Nguyên tắc kế toán tiền theo Thông tư 133",
+      "excerpt": "Nguyên tắc kế toán tiền mặt tại quỹ, tiền gửi ngân hàng bằng tiền việt nam đồng, tiền gửi ngân hàng bằng ngoại tệ theo…",
       "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
       "tags": [
-        "Chuẩn mực - Chế độ - Nguyên tắc",
-        "Biểu mẫu"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2006-09-14",
+      "image": "assets/images/content/pic/Service/images/nguyen-tac-ke-toan-tien-theo-thong-tu-133.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/mau-so-tien-gui-ngan-hang-khong-ky-han-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
+      "href": "thu-vien/mau-so-tien-gui-ngan-hang-khong-ky-han-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-so-tien-gui-ngan-hang-khong-ky-han-theo-thong-tu-99.html",
+      "title": "Mẫu sổ tiền gửi ngân hàng không kỳ hạn theo Thông tư 99",
+      "excerpt": "Mẫu sổ tiền gửi ngân hàng không kỳ hạn mới nhất năm 2026 là Mẫu số S08-DN được ban hành kèm theo Thông tư số 99/2025/TT…",
+      "topicLabel": "Mẫu biểu kế toán",
+      "tags": [
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Mau-so-tien-gui-ngan-hang(1).png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2025-10-27",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "excerpt": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99/2025/TT-BTC hướng dẫn Chế độ kế toán doanh nghiệp có hiệu lực thi…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/pic/Service/images/Su-dung-phan-mem-ke-toan.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-01-01",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-ty-co-phan-dau-tu-everland-tuyen-ke-toan-ban-hang.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-co-phan-dau-tu-everland-tuyen-ke-toan-ban-hang.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-co-phan-dau-tu-everland-tuyen-ke-toan-ban-hang.html",
+      "title": "Công ty Cổ phần Đầu tư Everland tuyển Kế toán bán hàng",
+      "excerpt": "Công ty Cổ phần Đầu tư Everland tuyển Kế toán bán hàng tại Tầng 1, Tòa nhà CT1, Khu đô thị Mỹ Đình - Mễ Trì, Nam Từ Li…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "libraryKindLabel": "",
+      "publishDate": "2014-06-30",
       "modifiedDate": null
     }
   ]

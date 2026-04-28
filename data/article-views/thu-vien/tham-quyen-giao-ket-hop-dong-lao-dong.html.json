@@ -1,26 +1,26 @@
 {
-  "currentIndex": 2450,
-  "totalCount": 2736,
+  "currentIndex": 2410,
+  "totalCount": 2694,
   "prev": {
-    "id": "thu-vien/tap-doan-tan-a-dai-thanh-tuyen-ke-toan-chi-nhanh.html",
+    "id": "thu-vien/tang-qua-tet-cho-nhan-vien-co-tinh-thue-tncn-khong.html",
     "section": "thu-vien",
     "sectionLabel": "Thư viện",
     "sectionHref": "thu-vien.html",
-    "href": "thu-vien/tap-doan-tan-a-dai-thanh-tuyen-ke-toan-chi-nhanh.html",
-    "canonical": "https://ketoandieutam.vn/thu-vien/tap-doan-tan-a-dai-thanh-tuyen-ke-toan-chi-nhanh.html",
-    "title": "Tập đoàn Tân Á Đại Thành tuyển Kế toán chi nhánh",
-    "excerpt": "Tập đoàn Tân Á Đại Thành tuyển Kế toán chi nhánh tại VP HN: 124 Tôn Đức Thắng, Đống Đa, Hà Nội Mô tả công việc: + Chịu…",
-    "topicLabel": "Chuẩn mực - Chế độ - Nguyên tắc",
+    "href": "thu-vien/tang-qua-tet-cho-nhan-vien-co-tinh-thue-tncn-khong.html",
+    "canonical": "https://ketoandieutam.vn/thu-vien/tang-qua-tet-cho-nhan-vien-co-tinh-thue-tncn-khong.html",
+    "title": "Tặng quà tết cho nhân viên có tính thuế TNCN không?",
+    "excerpt": "Trường hợp công ty có tặng quà cho người lao động nhân dịp lễ, Tết thì phần quà này có phải tính thuế thu nhập cá nhân…",
+    "topicLabel": "Thuế thu nhập cá nhân",
     "tags": [
-      "Chuẩn mực",
-      "Chế độ",
-      "Nguyên tắc",
-      "Kế toán",
+      "TNCN",
+      "Thuế thu nhập cá nhân",
+      "Thuế",
+      "Hóa đơn",
       "Hướng dẫn"
     ],
-    "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+    "image": "assets/images/content/pic/Service/images/Thuế TNCN tặng quà tết cho nhân viên.jpg",
     "libraryKindLabel": "Hướng dẫn",
-    "publishDate": "2014-05-30",
+    "publishDate": "2024-02-05",
     "modifiedDate": null
   },
   "next": {
@@ -114,7 +114,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -133,7 +133,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -277,6 +277,26 @@
       "image": "assets/images/content/pic/Service/images/thong-bao-cham-dut-hdld.jpg",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/mau-he-thong-thang-bang-luong-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-he-thong-thang-bang-luong-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-he-thong-thang-bang-luong-moi-nhat.html",
+      "title": "Mẫu hệ thống thang bảng lương năm 2026 Excel",
+      "excerpt": "Mẫu hệ thống thang bảng lương năm 2026 mới nhất theo Điều 93 của Bộ Luật Lao Động số 45/2019/QH14.",
+      "topicLabel": "Excel - Công cụ khác",
+      "tags": [
+        "Excel",
+        "Excel - Công cụ khác",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Thang-bang-luong.png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-01-01",
       "modifiedDate": null
     }
   ]

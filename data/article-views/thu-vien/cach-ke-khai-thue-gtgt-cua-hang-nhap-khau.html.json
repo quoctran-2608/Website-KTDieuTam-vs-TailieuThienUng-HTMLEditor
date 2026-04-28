@@ -1,6 +1,6 @@
 {
   "currentIndex": 456,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-ke-khai-phu-luc-so-05-1-pbt-kk-tncn-theo-tt80-tren-htkk.html",
     "section": "thu-vien",
@@ -20,7 +20,7 @@
       "Phần mềm"
     ],
     "image": "assets/images/content/pic/Service/images/Cach-lam-phu-luc-05-1-PBT-KK-TNCN.png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Công cụ",
     "publishDate": "2017-11-13",
     "modifiedDate": null
   },
@@ -33,7 +33,7 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/huong-dan-ke-khai-thue-gtgt-theo-phuong-phap-khau-tru.html",
     "title": "Cách kê khai thuế GTGT theo phương pháp khấu trừ",
     "excerpt": "Hướng dẫn cách kê khai thuế Giá trị gia tăng theo phương pháp khấu chi tiết như: Cách xác định kê khai thuế GTGT theo pp khấu trừ, hồ sơ kê khai – cách lập Tờ khai thuế GTGT theo pp khấu trừ, thời hạn nộp Tờ khai thuế GTGT …",
-    "topicLabel": "HTKK - eTax - Thuế điện tử",
+    "topicLabel": "GTGT - Hóa đơn",
     "tags": [
       "GTGT",
       "HTKK - eTax - Thuế điện tử",
@@ -113,7 +113,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -132,7 +132,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -253,45 +253,48 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-bien-ban-bao-mat-hoa-don-dau-vao-lien-2.html",
+      "id": "thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-bien-ban-bao-mat-hoa-don-dau-vao-lien-2.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bien-ban-bao-mat-hoa-don-dau-vao-lien-2.html",
-      "title": "Mẫu biên bản báo mất hóa đơn GTGT liên 2 đầu vào",
-      "excerpt": "Khi phát hiện mất hóa đơn GTGT liên 2 đầu vào thì: Hai bên phải lập biên bản mất hóa đơn liên 2. Kế toán Diệu Tâm xin c…",
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
+      "title": "Mẫu báo cáo: Kế toán thanh toán thuế GTGT và thuế TNDN tại Công ty Cổ phần Dịch vụ Thương mại Đồng Tâm",
+      "excerpt": "Công ty kế toán Diệu Tâm xin chia sẻ Mẫu Báo cáo thực tập kế toán: “Kế toán thanh toán thuế GTGT và thuế TNDN tại Công…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
         "GTGT",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Thuế",
+        "TNDN",
+        "Báo cáo thực tập",
+        "Học liệu",
+        "Tham khảo",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/mau-bien-ban-mat-hoa-don-gtgt-lien-2.png",
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2010-05-14",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-ke-hoa-don-hang-hoa-dich-vu-ban-ra.html",
+      "title": "Cách lập bảng kê bán ra theo Mẫu 01-1/GTGT trên Excel",
+      "excerpt": "Hướng dẫn cách lập bảng kê hóa đơn hàng hóa dịch vụ bán ra theo Mẫu 01-1/GTGT trên file Excel khi làm tờ khai thuế GTGT…",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
+        "GTGT",
+        "Hóa đơn",
+        "Thuế",
         "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/Cach-lap-bang-ke-ban-ra.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-03-30",
       "modifiedDate": null
     }
   ]

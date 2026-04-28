@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1746,
-  "totalCount": 2736,
+  "currentIndex": 1709,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/mau-thong-bao-chung-tu-dien-tu-da-lap-sai.html",
     "section": "thu-vien",
@@ -108,7 +108,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -127,7 +127,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -161,6 +161,28 @@
     }
   ],
   "related": [
+    {
+      "id": "thu-vien/mau-to-khai-thue-doi-voi-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/mau-to-khai-thue-doi-voi-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-thue-doi-voi-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "title": "Mẫu Tờ khai thuế đối với hộ kinh doanh, cá nhân kinh doanh",
+      "excerpt": "Mẫu Tờ khai thuế đối với hộ kinh doanh, cá nhân kinh doanh mới nhất năm 2026 là Mẫu số: 01/CNKD được ban hành kèm theo…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "Hộ kinh doanh",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/mau-to-khai-thue-voi-ho-ca-nhan-kinh-doanh.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-09-15",
+      "modifiedDate": null
+    },
     {
       "id": "thu-vien/thoi-han-nop-to-khai-bao-cao-thue-cua-ho-kinh-doanh.html",
       "section": "thu-vien",
@@ -206,29 +228,6 @@
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-07-31",
       "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-tinh-thue-tncn-cua-ho-kinh-doanh-nam-2026.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-tinh-thue-tncn-cua-ho-kinh-doanh-nam-2026.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-tncn-cua-ho-kinh-doanh-nam-2026.html",
-      "title": "Cách tính thuế TNCN của hộ kinh doanh năm 2026",
-      "excerpt": "Hướng dẫn cách tính thuế thu nhập cá nhân cho hộ kinh doanh năm 2026 theo quy định tại Nghị định 68/2026/NĐ-CP và Thông…",
-      "topicLabel": "Thuế thu nhập cá nhân",
-      "tags": [
-        "TNCN",
-        "Hộ kinh doanh",
-        "Thuế thu nhập cá nhân",
-        "Thuế",
-        "Hóa đơn",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Thue-TNCN-ho-kinh-doanh.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-07-31",
-      "modifiedDate": null
     }
   ],
   "latestOther": [
@@ -256,45 +255,46 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-01-tndn-theo-thong-tu-so-20-2026-bien-ban-xac-nhan-tai-tro.html",
+      "id": "thu-vien/mau-to-khai-thue-doi-voi-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-01-tndn-theo-thong-tu-so-20-2026-bien-ban-xac-nhan-tai-tro.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-01-tndn-theo-thong-tu-so-20-2026-bien-ban-xac-nhan-tai-tro.html",
-      "title": "Mẫu 01/TNDN theo Thông tư số 20/2026 biên bản xác nhận tài trợ",
-      "excerpt": "Mẫu biên bản xác nhận khoản tài trợ mới nhất năm 2026 là Mẫu 01/TNDN được ban hành kèm theo Thông tư 20/2026/TT-BTC (có…",
+      "href": "thu-vien/mau-to-khai-thue-doi-voi-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-to-khai-thue-doi-voi-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "title": "Mẫu Tờ khai thuế đối với hộ kinh doanh, cá nhân kinh doanh",
+      "excerpt": "Mẫu Tờ khai thuế đối với hộ kinh doanh, cá nhân kinh doanh mới nhất năm 2026 là Mẫu số: 01/CNKD được ban hành kèm theo…",
       "topicLabel": "Mẫu biểu thuế - hóa đơn",
       "tags": [
-        "TNDN",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Thuế",
+        "Hộ kinh doanh",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Mau-01-TNDN-Thong-tu-20-2026.png",
+      "image": "assets/images/content/pic/Service/images/mau-to-khai-thue-voi-ho-ca-nhan-kinh-doanh.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2026-09-15",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
+      "id": "thu-vien/mau-phieu-xuat-kho-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-5-6-moi-nhat.html",
-      "title": "Phần mềm HTKK 5.5.6 mới nhất ngày 18/1/2026",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.5.6 mới nhất 18/1/2026 của Tổng cục thuế. Tải phần mềm HTKK 5.5.6 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2026.",
-      "topicLabel": "HTKK - eTax - Thuế điện tử",
+      "href": "thu-vien/mau-phieu-xuat-kho-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-phieu-xuat-kho-theo-thong-tu-99.html",
+      "title": "Mẫu phiếu xuất kho theo thông tư 99 trên Word và Excel",
+      "excerpt": "Mẫu số: 02 - VT được ban hành kèm theo phụ lục II của Thông tư 99/2025/TT-BTC là mẫu phiếu xuất kho mới nhất năm 2026 (…",
+      "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "Mẫu biểu kế toán",
+        "Kế toán",
+        "Excel",
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_5_1-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/Mau-phieu-Xuat-kho-theo-thong-tu-99(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-01-18",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     },
     {

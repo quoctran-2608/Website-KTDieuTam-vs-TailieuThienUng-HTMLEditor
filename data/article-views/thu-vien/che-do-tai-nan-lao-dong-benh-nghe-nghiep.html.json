@@ -1,6 +1,6 @@
 {
   "currentIndex": 705,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/thu-tuc-ho-so-huong-che-do-om-dau-bhxh-2021-moi-nhat.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -204,24 +204,22 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/thoa-uoc-lao-dong-tap-the.html",
+      "id": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/thoa-uoc-lao-dong-tap-the.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/thoa-uoc-lao-dong-tap-the.html",
-      "title": "Thỏa ước lao động tập thể là gì? có bắt buộc không? Quy định như nào?",
-      "excerpt": "Quy định về thỏa ước lao động tập thể mới nhất năm 2025 theo Bộ luật Lao động số 45/2019/QH14. 1. Thỏa ước la…",
+      "href": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "title": "Quy định về báo cáo tình hình sử dụng lao động mới nhất",
+      "excerpt": "Doanh nghiệp phải lập báo cáo tình hình sử dụng lao động 6 tháng và hằng năm; Lập mẫu sổ quản lý lao động Excel theo quy định về Báo cáo sử dụng lao động.",
       "topicLabel": "Lao động - Tiền lương",
       "tags": [
-        "Lao động",
-        "Tiền lương",
-        "Bảo hiểm",
+        "Excel - Công cụ khác",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/pic/Service/images/thoa-uoc-lao-dong-tap-the.jpg",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Bao-cao-tinh-hinh-su-dung-lao-dong.jpg",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
+      "publishDate": "2020-10-15",
       "modifiedDate": null
     }
   ],
@@ -266,6 +264,27 @@
       "image": "assets/images/content/pic/Service/images/danh sach thanh toan che do thai san mau c70a-hd.png",
       "libraryKindLabel": "Biểu mẫu",
       "publishDate": "2015-08-26",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-hach-toan-mua-hang-co-phat-sinh-chi-phi-mua-hang-tren-misa.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-hach-toan-mua-hang-co-phat-sinh-chi-phi-mua-hang-tren-misa.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-mua-hang-co-phat-sinh-chi-phi-mua-hang-tren-misa.html",
+      "title": "Cách hạch toán mua hàng có phát sinh chi phí mua hàng trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán nghiệp vụ mua hàng có phát sinh các chi phí mua hàng hóa như: bảo hiểm hàng hóa, tiền thuê kho…",
+      "topicLabel": "MISA",
+      "tags": [
+        "MISA",
+        "Phần mềm",
+        "Công cụ",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-mua-hang-co-phat-sinh-chi-phi-mua-hang-tren-misa-1(1).png",
+      "libraryKindLabel": "Công cụ",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

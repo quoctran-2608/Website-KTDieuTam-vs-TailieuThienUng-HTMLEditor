@@ -1,6 +1,6 @@
 {
-  "currentIndex": 1870,
-  "totalCount": 2736,
+  "currentIndex": 1833,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/nghi-dinh-109-2013-nd-cp-xu-phat-vi-pham-ve-hoa-don-phi-le-phi.html",
     "section": "thu-vien",
@@ -32,13 +32,13 @@
     "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-114-2020-nd-cp-giam-thue-thu-nhap-doanh-nghiep-nam-2020.html",
     "title": "Nghị định 114/2020/NĐ-CP giảm thuế thu nhập doanh nghiệp năm 2020",
     "excerpt": "Ngày 25/9/2020 Chính Phủ ban hành Nghị định 114/2020/NĐ-CP quy định về giảm 30% thuế thu nhập doanh nghiệp phải nộp năm 2020 cho Doanh nghiệp, hợp tác xã, đơn vị sự nghiệp và tổ chức khác.",
-    "topicLabel": "DN - Thủ tục",
+    "topicLabel": "Nghị định",
     "tags": [
       "DN - Thủ tục",
       "Hướng dẫn"
     ],
     "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-114-giam-thue-thu-nhap-doanh-nghiep-nam-2020.png",
-    "libraryKindLabel": "Hướng dẫn",
+    "libraryKindLabel": "Văn bản",
     "publishDate": "2020-09-25",
     "modifiedDate": null
   },
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -165,41 +165,42 @@
   ],
   "related": [
     {
-      "id": "thu-vien/nghi-dinh-114-2020-nd-cp-giam-thue-thu-nhap-doanh-nghiep-nam-2020.html",
+      "id": "thu-vien/cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-114-2020-nd-cp-giam-thue-thu-nhap-doanh-nghiep-nam-2020.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-114-2020-nd-cp-giam-thue-thu-nhap-doanh-nghiep-nam-2020.html",
-      "title": "Nghị định 114/2020/NĐ-CP giảm thuế thu nhập doanh nghiệp năm 2020",
-      "excerpt": "Ngày 25/9/2020 Chính Phủ ban hành Nghị định 114/2020/NĐ-CP quy định về giảm 30% thuế thu nhập doanh nghiệp phải nộp năm 2020 cho Doanh nghiệp, hợp tác xã, đơn vị sự nghiệp và tổ chức khác.",
-      "topicLabel": "DN - Thủ tục",
+      "href": "thu-vien/cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html",
+      "title": "Công văn 2270/TCT-CS tiền thuê nhà của cá nhân là chi phí hợp lý",
+      "excerpt": "Ngày 18/06/2014 Bộ tài chính ban hành Công văn CV 2270/TCT-CS theo đó thì tiền thuê nhà của cá nhân dưới 100 tr/năm mà…",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
+      "tags": [
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Văn bản"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-06-18",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-tinh-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
+      "title": "Cách tính thuế thu nhập doanh nghiệp tạm tính quý và cả năm",
+      "excerpt": "Hướng dẫn cách tính thuế TNDN tạm tính theo quý và cách tính thuế thu nhập doanh nghiệp năm 2026 phải nộp cả năm; Cách xác định thu nhập chịu thuế, các khoản chi phí được trừ khi tính thuế TNDN.",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "DN - Thủ tục",
         "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-114-giam-thue-thu-nhap-doanh-nghiep-nam-2020.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-tinh-thue-thu-nhap-doanh-nghiep(1).png",
       "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-09-25",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/nghi-dinh-52-2021-nd-cp-gia-han-thoi-han-nop-thue-va-tien-thue-dat.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-52-2021-nd-cp-gia-han-thoi-han-nop-thue-va-tien-thue-dat.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-52-2021-nd-cp-gia-han-thoi-han-nop-thue-va-tien-thue-dat.html",
-      "title": "Nghị định 52/2021/NĐ-CP gia hạn thời hạn nộp thuế và tiền thuê đất 2021",
-      "excerpt": "Nghị định 52/2021/NĐ-CP ngày 19/4/2021 của Chính phủ: Gia hạn thời hạn nộp thuế GTGT, thuế TNCN, thuế TNDN và tiền thuê đất năm 2021. Mẫu giấy đề nghị gia hạn nộp thuế.",
-      "topicLabel": "Thuế thu nhập cá nhân",
-      "tags": [
-        "Thuế thu nhập cá nhân",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-52-gia-han-thoi-han-nop-thue-2021.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2021-04-19",
+      "publishDate": "2025-12-15",
       "modifiedDate": null
     },
     {
@@ -224,64 +225,67 @@
   ],
   "latestOther": [
     {
-      "id": "thu-vien/nghi-dinh-114-2020-nd-cp-giam-thue-thu-nhap-doanh-nghiep-nam-2020.html",
+      "id": "thu-vien/cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/nghi-dinh-114-2020-nd-cp-giam-thue-thu-nhap-doanh-nghiep-nam-2020.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/nghi-dinh-114-2020-nd-cp-giam-thue-thu-nhap-doanh-nghiep-nam-2020.html",
-      "title": "Nghị định 114/2020/NĐ-CP giảm thuế thu nhập doanh nghiệp năm 2020",
-      "excerpt": "Ngày 25/9/2020 Chính Phủ ban hành Nghị định 114/2020/NĐ-CP quy định về giảm 30% thuế thu nhập doanh nghiệp phải nộp năm 2020 cho Doanh nghiệp, hợp tác xã, đơn vị sự nghiệp và tổ chức khác.",
-      "topicLabel": "DN - Thủ tục",
+      "href": "thu-vien/cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cv-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html",
+      "title": "Công văn 2270/TCT-CS tiền thuê nhà của cá nhân là chi phí hợp lý",
+      "excerpt": "Ngày 18/06/2014 Bộ tài chính ban hành Công văn CV 2270/TCT-CS theo đó thì tiền thuê nhà của cá nhân dưới 100 tr/năm mà…",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
-        "DN - Thủ tục",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/nghi-dinh-114-giam-thue-thu-nhap-doanh-nghiep-nam-2020.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2020-09-25",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/mau-phu-luc-giam-thue-gtgt.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-phu-luc-giam-thue-gtgt.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-phu-luc-giam-thue-gtgt.html",
-      "title": "Mẫu phụ lục giảm thuế GTGT 2024 theo Nghị định 72/2024/NĐ-CP",
-      "excerpt": "Khi làm tờ khai thuế GTGT của các kỳ thuộc 6 tháng cuối năm 2024 mà doanh nghiệp có các hóa đơn được giảm thuế GTGT the…",
-      "topicLabel": "Mẫu biểu thuế - hóa đơn",
-      "tags": [
-        "GTGT",
-        "Mẫu biểu thuế",
-        "hóa đơn",
-        "Thuế",
-        "Biểu mẫu"
+        "Nghiệp vụ theo phần hành",
+        "Kế toán",
+        "Văn bản"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
-      "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2026-09-15",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-06-18",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
+      "id": "thu-vien/mau-cong-van-dang-ky-thoi-gian-bat-dau-mien-thue-tndn.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/phan-mem-htkk-5-2-1-moi-nhat-ngay-2-8-2024.html",
-      "title": "Phần mềm HTKK 5.2.1 mới nhất ngày 2/8/2024",
-      "excerpt": "Phần mềm hỗ trợ kê khai thuế 5.2.1 mới nhất 2/8/2024 của Tổng cục thuế. Tải phần mềm HTKK 5.2.1 mới nhất miễn phí tại đây, phần mềm kê khai thuế mới nhất năm 2024.",
+      "href": "thu-vien/mau-cong-van-dang-ky-thoi-gian-bat-dau-mien-thue-tndn.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-cong-van-dang-ky-thoi-gian-bat-dau-mien-thue-tndn.html",
+      "title": "Mẫu công văn đăng ký thời gian bắt đầu miễn thuế TNDN 2026",
+      "excerpt": "Mẫu công văn đăng ký thời gian bắt đầu miễn thuế TNDN 3 năm đầu cho doanh nghiệp mới thành lập theo quy định tại Nghị đ…",
+      "topicLabel": "Mẫu biểu thuế - hóa đơn",
+      "tags": [
+        "TNDN",
+        "Mẫu biểu doanh nghiệp",
+        "thủ tục",
+        "Doanh nghiệp",
+        "Biểu mẫu"
+      ],
+      "image": "assets/images/content/pic/Service/images/Dang-ky-thoi-gian-mien-thue-TNDN.png",
+      "libraryKindLabel": "Biểu mẫu",
+      "publishDate": "2026-03-18",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-nop-thue-tndn-tam-tinh-qua-mang-tren-thue-dien-tu.html",
+      "title": "Cách nộp thuế TNDN tạm tính 2025 qua mạng trên thuế điện tử",
+      "excerpt": "Hướng dẫn cách nộp tiền thuế thu nhập doanh nghiệp tạm tính quý qua mạng trên trang https://thuedientu.gdt.gov.vn/ mới…",
       "topicLabel": "HTKK - eTax - Thuế điện tử",
       "tags": [
-        "Thuế điện tử",
-        "HTKK - eTax - Thuế điện tử",
-        "Công cụ"
+        "TNDN",
+        "Thuế thu nhập doanh nghiệp",
+        "Thuế",
+        "Hóa đơn",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cap-nhat-ho-tro-ke-khai-thue-5_2_1-moi-nhat.png",
+      "image": "assets/images/content/pic/Service/images/Nop-thue-TNDN-tam-tinh-quy.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2024-08-02",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

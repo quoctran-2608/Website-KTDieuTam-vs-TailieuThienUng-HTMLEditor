@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2317,
-  "totalCount": 2736,
+  "currentIndex": 2279,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/dieu-chuyen-tai-san-co-dinh-cho-chi-nhanh-co-phai-xuat-hoa-don.html",
     "section": "thu-vien",
@@ -111,7 +111,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -130,7 +130,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -187,28 +187,6 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
-      "title": "Cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa",
-      "excerpt": "Hướng dẫn cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa Mẫu S11- DN theo Thông tư 200/2014/TT-B…",
-      "topicLabel": "Tài sản - Kho - CCDC",
-      "tags": [
-        "Tài sản",
-        "Kho",
-        "CCDC",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/cach lap bang tong hop chi tiet hang hoa vat lieu.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
-      "modifiedDate": null
-    },
-    {
       "id": "thu-vien/chi-phi-lai-vay-mua-sam-tai-san-co-dinh.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -229,6 +207,25 @@
       "image": "assets/images/content/pic/Service/images/chi-phi-lai-vay-mua-tscđ-oto.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2017-06-16",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cach-tinh-thoi-gian-phan-bo-cong-cu-dung-cu.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-tinh-thoi-gian-phan-bo-cong-cu-dung-cu.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-tinh-thoi-gian-phan-bo-cong-cu-dung-cu.html",
+      "title": "Cách tính phân bổ công cụ dụng cụ - Thời gian phân bổ",
+      "excerpt": "Quy định về thời gian phân bổ công cụ dụng cụ, hướng dẫn cách tính phân bổ công cụ dụng cụ; Cách hạch toán phân bổ công cụ dụng cụ vào chi phí.",
+      "topicLabel": "Tài sản - Kho - CCDC",
+      "tags": [
+        "Tài sản - Kho - CCDC",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/phan-bo-cong-cu-dung-cu.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-02-08",
       "modifiedDate": null
     }
   ],
@@ -256,43 +253,67 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/bien-ban-kiem-nghiem-vat-tu-cong-cu-san-pham-hang-hoa.html",
+      "id": "thu-vien/mau-bien-ban-kiem-nghiem-vat-tu-hang-hoa-theo-qd-48-va-15.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/bien-ban-kiem-nghiem-vat-tu-cong-cu-san-pham-hang-hoa.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/bien-ban-kiem-nghiem-vat-tu-cong-cu-san-pham-hang-hoa.html",
-      "title": "Mẫu biên bản kiểm nghiệm vật tư, công cụ, sản phẩm, hàng hóa",
-      "excerpt": "Biên bản kiểm nghiệm vật tư, công cụ, sản phẩm, hàng hóa là chứng từ kế toán dùng để xác định số lượng, qui cách, chất…",
+      "href": "thu-vien/mau-bien-ban-kiem-nghiem-vat-tu-hang-hoa-theo-qd-48-va-15.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bien-ban-kiem-nghiem-vat-tu-hang-hoa-theo-qd-48-va-15.html",
+      "title": "Mẫu biên bản kiểm nghiệm vật tư hàng hóa theo Thông tư 200, 133",
+      "excerpt": "Mẫu biên bản kiểm nghiệm vật tư, công cụ, sản phẩm, hàng hóa theo Thông tư 200 và 133, Xác định số lượng, qui cách, chất lượng vật tư, công cụ, sản phẩm, hàng hóa trước khi nhập kho, làm căn cứ để qui trách nhiệm trong thanh toán và bảo quản.",
       "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "Mẫu biểu kế toán",
-        "Kế toán",
+        "Mẫu biểu lao động - bảo hiểm",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/pic/Service/images/Mau-03-VT-theo-Thong-tu-99.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/bien-ban-kiem-nghiem-vat-tu-cong-cu-hang-hoa.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2025-10-27",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "title": "Cách hạch toán xuất kho hàng hóa, thành phẩm làm TSCĐ trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ xuất kho hàng hóa, thành phẩm làm tài sản cố định trên phần mềm Misa Khi phát…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TSCĐ",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "MISA",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd-tren-misa-1(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2026-04-02",
+      "modifiedDate": null
+    },
+    {
+      "id": "thu-vien/cong-ty-co-phan-co-kim-khi-viet-my-tuyen-ke-toan.html",
+      "section": "ban-tin",
+      "sectionLabel": "Bản tin",
+      "sectionHref": "ban-tin.html",
+      "href": "thu-vien/cong-ty-co-phan-co-kim-khi-viet-my-tuyen-ke-toan.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-co-phan-co-kim-khi-viet-my-tuyen-ke-toan.html",
+      "title": "Công ty cổ phần cơ kim khí Việt Mỹ Tuyển kế toán",
+      "excerpt": "Công ty cổ phần cơ kim khí Việt Mỹ chuyên sản xuất và phân phối bồn nước inox, bình nước nóng, chậu, năng lượng mặt trờ…",
+      "topicLabel": "Thông báo tuyển dụng",
+      "tags": [
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "libraryKindLabel": "",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ]

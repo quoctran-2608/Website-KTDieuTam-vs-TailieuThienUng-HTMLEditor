@@ -1,6 +1,6 @@
 {
   "currentIndex": 317,
-  "totalCount": 2736,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/cach-hach-toan-quy-phat-trien-khoa-hoc-va-cong-nghe-tai-khoan-356.html",
     "section": "thu-vien",
@@ -112,7 +112,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -131,7 +131,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -185,6 +185,25 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/cach-hach-toan-cac-khoan-phai-tra-phai-nop-khac-tai-khoan-338.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-hach-toan-cac-khoan-phai-tra-phai-nop-khac-tai-khoan-338.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-cac-khoan-phai-tra-phai-nop-khac-tai-khoan-338.html",
+      "title": "Cách hạch toán các khoản phải trả phải nộp khác - Tài khoản 338 theo TT 99",
+      "excerpt": "Cách hạch toán các khoản phải trả phải nộp khác - Tài khoản 338 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, hạch toán trích nộp BHXH, BHYT, BHTN và kinh phí công đoàn, hạch toán uỷ thác xuất nhập khẩu, tài sản thừa chờ xử lý",
+      "topicLabel": "Tài khoản - Hạch toán",
+      "tags": [
+        "BHXH - BHYT - BHTN",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-338.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2026-04-26",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/dinh-khoan-hach-toan-phai-thu-cua-khach-hang-tk-131.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -199,25 +218,6 @@
         "Hướng dẫn"
       ],
       "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/so-do-hach-toan-TK-131(1).png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-26",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/cach-hach-toan-phai-thu-khac-tai-khoan-138.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cach-hach-toan-phai-thu-khac-tai-khoan-138.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-phai-thu-khac-tai-khoan-138.html",
-      "title": "Cách hạch toán khoản phải thu khác - Tài khoản 138 theo thông tư 99",
-      "excerpt": "Cách hạch toán phải thu khác- Tài khoản 138 áp dụng chế độ kế toán theo Thông tư 99/2025/TT-BTC mới nhất 2026, cách hạch toán khoản chi hộ, ủy thác xuất - nhập khẩu, tài sản thiếu chờ xử lý, hạch toán tiền lãi cho vay, tiền đặt cọc, ký cược",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản - Hạch toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/cach-hach-toan-tk-138.png",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2026-04-26",
       "modifiedDate": null
@@ -244,61 +244,68 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/mau-phieu-xuat-kho-hang-gui-ban-dai-ly-mau-so-04hgdl.html",
+      "id": "thu-vien/mau-bieu-chung-tu-ke-toan-hang-ton-kho-theo-thong-tu-99.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/mau-phieu-xuat-kho-hang-gui-ban-dai-ly-mau-so-04hgdl.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/mau-phieu-xuat-kho-hang-gui-ban-dai-ly-mau-so-04hgdl.html",
-      "title": "Mẫu Phiếu xuất kho hàng gửi bán đại lý theo TT 78/2021/TT-BTC",
-      "excerpt": "Mẫu Phiếu xuất kho hàng gửi bán đại lý điện tử theo Phục lục II ban hành kèm Thông tư 78/2021/TT-BTC ngày 17/09/2021 của Bộ Tài chính)",
-      "topicLabel": "Tài sản - Kho - CCDC",
+      "href": "thu-vien/mau-bieu-chung-tu-ke-toan-hang-ton-kho-theo-thong-tu-99.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bieu-chung-tu-ke-toan-hang-ton-kho-theo-thong-tu-99.html",
+      "title": "Mẫu biểu chứng từ kế toán hàng tồn kho theo Thông tư 99",
+      "excerpt": "Chứng từ kế toán hàng tồn kho dùng để theo dõi tình hình nhập, xuất, tồn kho vật tư, công cụ, dụng cụ, sản phẩm, hàng h…",
+      "topicLabel": "Mẫu biểu kế toán",
       "tags": [
-        "Tài sản - Kho - CCDC",
+        "Mẫu biểu kế toán",
+        "Kế toán",
         "Biểu mẫu"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/Chung-tu-ke-toan-hang-ton-kho-theo-Thong-tu-99.png",
       "libraryKindLabel": "Biểu mẫu",
-      "publishDate": "2021-09-17",
+      "publishDate": "2025-10-27",
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
+      "id": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-99.html",
-      "title": "Hệ thống tài khoản kế toán theo Thông tư 99 Excel mới nhất 2025",
-      "excerpt": "Danh mục Hệ thống tài khoản theo Thông tư 99 mới nhất 2025. Download bảng hệ thống tài khoản kế toán theo thông tư 99 Excel dùng cho doanh nghiệp lớn, nhỏ và vừa (áp dụng từ 2026) thay thế cho Thông tư 200/2014/TT-BTC",
-      "topicLabel": "Excel - Công cụ khác",
+      "href": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "title": "Cách hạch toán xuất kho hàng hóa, thành phẩm làm TSCĐ trên Misa",
+      "excerpt": "Hướng dẫn cách hạch toán ghi sổ nghiệp vụ xuất kho hàng hóa, thành phẩm làm tài sản cố định trên phần mềm Misa Khi phát…",
+      "topicLabel": "MISA",
       "tags": [
-        "Excel",
-        "Excel - Công cụ khác",
-        "Công cụ"
+        "TSCĐ",
+        "Tài khoản",
+        "Hạch toán",
+        "Kế toán",
+        "MISA",
+        "Hướng dẫn"
       ],
-      "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
+      "image": "assets/images/content/pic/Service/images/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd-tren-misa-1(1).png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2026-04-26",
+      "publishDate": "2026-04-02",
       "modifiedDate": null
     },
     {
-      "id": "ban-tin/cong-ty-tnhh-dau-tu-thuong-mai-va-dich-vu-mat-troi-moi-tuyen-ke-toan-tong-hop.html",
+      "id": "thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
       "section": "ban-tin",
       "sectionLabel": "Bản tin",
       "sectionHref": "ban-tin.html",
-      "href": "ban-tin/cong-ty-tnhh-dau-tu-thuong-mai-va-dich-vu-mat-troi-moi-tuyen-ke-toan-tong-hop.html",
-      "canonical": "https://ketoandieutam.vn/ban-tin/cong-ty-tnhh-dau-tu-thuong-mai-va-dich-vu-mat-troi-moi-tuyen-ke-toan-tong-hop.html",
-      "title": "Công ty TNHH đầu tư thương mại và dịch vụ Mặt Trời Mới Tuyển kế toán tổng hợp",
-      "excerpt": "Công ty TNHH đầu tư thương mại và dịch vụ Mặt Trời Mới Tuyển kế toán tổng hợp. Địa điểm làm việc: Toà nhà N04B1, phố Thành Thái, phường Dịch Vọng, quận Cầu Giấy, Hà Nội. Thu nhập: 8 -10 triệu dựa trên năng lực và kinh nghiệm (trao đổi trực tiếp trong buổi phỏng vấn)",
+      "href": "thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "title": "Công ty Cổ phần Thương mại và Xuất nhập TVH tuyển Kế toán Kho",
+      "excerpt": "Công ty Cổ phần Thương mại và Xuất nhập TVH tuyển Kế toán Kho làm việc tại Hà Nội tại 19 Thái Hà - Đống Đa - Hà Nội Mô…",
       "topicLabel": "Thông báo tuyển dụng",
       "tags": [
-        "Cơ sở đào tạo",
-        "Thông tin"
+        "Chuẩn mực",
+        "Chế độ",
+        "Nguyên tắc",
+        "Kế toán",
+        "Hướng dẫn"
       ],
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "",
-      "publishDate": "2026-04-26",
+      "publishDate": "2014-05-31",
       "modifiedDate": null
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "currentIndex": 2695,
-  "totalCount": 2736,
+  "currentIndex": 2654,
+  "totalCount": 2694,
   "prev": {
     "id": "thu-vien/tro-cap-thoi-viec-co-bi-tinh-thue-tncn-khong-co-chiu-hay-khong.html",
     "section": "thu-vien",
@@ -115,7 +115,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
       "title": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất 2026",
       "excerpt": "Biểu thuế suất thuế tiêu thụ đặc biệt mới nhất theo Luật thuế tiêu thụ đặc biệt Luật số Luật số 70/2014/QH13, Luật 106/2016/QH13, NĐ 108/2015/NĐ-CP và Luật số 03/2022/QH15",
-      "topicLabel": "GTGT - Hóa đơn",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "GTGT - Hóa đơn",
         "Hướng dẫn"
@@ -134,7 +134,7 @@
       "canonical": "https://ketoandieutam.vn/thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
       "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
       "excerpt": "Các khoản chi phí không tương ứng với doanh thu tính thuế được trừ và không được trừ khi tính thuế TNDN năm 20…",
-      "topicLabel": "Nghiệp vụ theo phần hành",
+      "topicLabel": "Thuế thu nhập doanh nghiệp",
       "tags": [
         "Nghiệp vụ theo phần hành",
         "Kế toán",
@@ -188,6 +188,25 @@
       "modifiedDate": null
     },
     {
+      "id": "thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200-va-133.html",
+      "section": "thu-vien",
+      "sectionLabel": "Thư viện",
+      "sectionHref": "thu-vien.html",
+      "href": "thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200-va-133.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập sổ tiền gửi ngân hàng theo Thông tư 200 và 133",
+      "excerpt": "Hướng dẫn cách lập sổ tiền gửi ngân hàng theo Thông tư 200 và 133. Mẫu sổ tiền gửi ngân hàng S08-DN (S05-DNN) dùng cho kế toán theo dõi chi tiết tiền Việt Nam của doanh nghiệp gửi tại Ngân hàng.",
+      "topicLabel": "Chứng từ - Sổ sách",
+      "tags": [
+        "DN - Thủ tục",
+        "Hướng dẫn"
+      ],
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-so-quy-tien-gui-ngan-hang-tren-excel.png",
+      "libraryKindLabel": "Hướng dẫn",
+      "publishDate": "2014-12-22",
+      "modifiedDate": null
+    },
+    {
       "id": "thu-vien/chuan-muc-ke-toan-so-22-trinh-bay-bo-sung-bao-cao-tai-chinh-cua-cac-ngan-hang-va-to-chuc-tai-chinh-tuong-tu.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
@@ -206,27 +225,6 @@
       "image": "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg",
       "libraryKindLabel": "Hướng dẫn",
       "publishDate": "2005-02-15",
-      "modifiedDate": null
-    },
-    {
-      "id": "thu-vien/hach-toan-tai-khoan-113-tien-dang-chuyen-theo-thong-tu-99.html",
-      "section": "thu-vien",
-      "sectionLabel": "Thư viện",
-      "sectionHref": "thu-vien.html",
-      "href": "thu-vien/hach-toan-tai-khoan-113-tien-dang-chuyen-theo-thong-tu-99.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/hach-toan-tai-khoan-113-tien-dang-chuyen-theo-thong-tu-99.html",
-      "title": "Hạch toán Tài khoản 113 - Tiền đang chuyển theo Thông tư 99/2025/TT-BTC",
-      "excerpt": "Tài khoản 113 - Tiền đang chuyển: dùng để phản ánh các khoản tiền của doanh nghiệp đã nộp vào ngân hàng, đã gửi bưu điệ…",
-      "topicLabel": "Tài khoản - Hạch toán",
-      "tags": [
-        "Tài khoản",
-        "Hạch toán",
-        "Kế toán",
-        "Hướng dẫn"
-      ],
-      "image": "assets/images/content/pic/Service/images/Hach-toan-TK113-TT99.png",
-      "libraryKindLabel": "Hướng dẫn",
-      "publishDate": "2026-04-02",
       "modifiedDate": null
     }
   ],
@@ -271,23 +269,22 @@
       "modifiedDate": null
     },
     {
-      "id": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
+      "id": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
       "section": "thu-vien",
       "sectionLabel": "Thư viện",
       "sectionHref": "thu-vien.html",
-      "href": "thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "canonical": "https://ketoandieutam.vn/thu-vien/cac-ham-excel-thuong-dung-trong-ke-toan.html",
-      "title": "Các hàm Excel thường dùng trong kế toán để lên sổ sách",
-      "excerpt": "Hướng dẫn cách sử dụng các hàm Excel thường dùng trong kế toán để lên sổ sách, lên các bảng biểu, lên các sổ, lên báo cáo tài chính cuối năm",
+      "href": "thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
+      "canonical": "https://ketoandieutam.vn/thu-vien/mau-bang-can-doi-ke-toan-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng cân đối kế toán theo Thông tư 200",
+      "excerpt": "Mẫu bảng cân đối kế toán theo Thông tư 200/2014/TT-BTC mới nhất gồm cả bản word và Excel, các bạn có thể tải Mẫu bảng cân đối kế toán miễn phí tại đây . Hướng dẫn cách lập bảng cân đối kế toán theo Thông tư 200 chi tiết.",
       "topicLabel": "Excel - Công cụ khác",
       "tags": [
-        "Excel",
         "Excel - Công cụ khác",
-        "Công cụ"
+        "Biểu mẫu"
       ],
-      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/Cach-su-dung-Ham-Excel-trong-ke-toan.png",
+      "image": "assets/images/content/assets/ketoandieutam.vn/pic/general/images/mau-bang-can-doi-ke-toan-theo-thong-tu-200.png",
       "libraryKindLabel": "Công cụ",
-      "publishDate": "2013-01-01",
+      "publishDate": "2014-12-22",
       "modifiedDate": null
     }
   ]
