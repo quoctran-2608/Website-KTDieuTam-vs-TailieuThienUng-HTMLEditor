@@ -305,12 +305,24 @@
 		      page: Math.max(1, Number(state.page || 1))
 		    };
 
-    if (data.section !== 'thu-vien') {
-      next.kind = '';
-    } else if (next.kind) {
-      var validKind = (data.libraryKinds || []).some(function (item) { return item.key === next.kind; });
-      if (!validKind) next.kind = '';
-    }
+	    if (data.section !== 'thu-vien') {
+	      next.kind = '';
+	    } else if (next.kind) {
+	      var validKind = (data.libraryKinds || []).some(function (item) { return item.key === next.kind; });
+	      if (!validKind) next.kind = '';
+	    } else if (next.lv1 || next.lv2) {
+	      var kindMap = {};
+	      (data.articles || []).forEach(function (article) {
+	        if (!article.library_kind_key) return;
+	        if (next.lv1 && article.topic_lv1_key !== next.lv1) return;
+	        if (next.lv2 && article.topic_lv2_key !== next.lv2) return;
+	        if (next.tag && !(article.tags || []).includes(next.tag)) return;
+	        if (next.q && !matchesSearch(article, next.q)) return;
+	        kindMap[article.library_kind_key] = true;
+	      });
+	      var inferredKinds = Object.keys(kindMap);
+	      if (inferredKinds.length === 1) next.kind = inferredKinds[0];
+	    }
 
     var scopedTaxonomy = data.taxonomy || [];
     if (data.section === 'thu-vien' && next.kind) {
@@ -1354,12 +1366,13 @@
 		              escapeHtml(badgeLabel) +
 		            '</button>'
 		          : '';
-		        var topicHtml = showTopic
-		          ? '<button class="catalog-card__topic" type="button"' +
-		              (article.topic_lv2_key ? ' data-card-lv2="' + escapeHtml(article.topic_lv2_key) + '"' : '') +
-		              (article.topic_lv1_key ? ' data-card-lv1="' + escapeHtml(article.topic_lv1_key) + '"' : '') +
-		            '>' + escapeHtml(topicLabel) + '</button>'
-		          : '';
+			        var topicHtml = showTopic
+			          ? '<button class="catalog-card__topic" type="button"' +
+			              (data.section === 'thu-vien' && article.library_kind_key ? ' data-card-kind="' + escapeHtml(article.library_kind_key) + '"' : '') +
+			              (article.topic_lv2_key ? ' data-card-lv2="' + escapeHtml(article.topic_lv2_key) + '"' : '') +
+			              (article.topic_lv1_key ? ' data-card-lv1="' + escapeHtml(article.topic_lv1_key) + '"' : '') +
+			            '>' + escapeHtml(topicLabel) + '</button>'
+			          : '';
 			        return '' +
 			          '<article class="catalog-card' + (isNews ? ' catalog-card--news' : '') + '">' +
 			            '<a class="catalog-card__media" data-article-link="1" href="' + escapeHtml(articleHref) + '">' +
@@ -1443,12 +1456,21 @@
 		      var topicFilter = event.target && event.target.closest ? event.target.closest('[data-card-lv1], [data-card-lv2]') : null;
 			      if (topicFilter) {
             event.preventDefault();
+	            var nextKind = topicFilter.dataset.cardKind || '';
+	            if (!nextKind && data.section === 'thu-vien' && topicFilter.closest) {
+	              var card = topicFilter.closest('.catalog-card');
+	              var badge = card && card.querySelector ? card.querySelector('[data-card-kind]') : null;
+	              if (badge && badge.dataset) nextKind = badge.dataset.cardKind || '';
+	            }
             var nextLv1 = topicFilter.dataset.cardLv1 || '';
             var nextLv2 = topicFilter.dataset.cardLv2 || '';
-            var sameTopic = state.lv1 === nextLv1 && state.lv2 === nextLv2 && !state.tag;
+	            var sameTopic = state.lv1 === nextLv1 && state.lv2 === nextLv2 && (!nextKind || state.kind === nextKind) && !state.tag;
 			        state.page = 1;
 			        state.badge = '';
 			        state.tag = '';
+			        if (data.section === 'thu-vien') {
+			          state.kind = sameTopic ? '' : nextKind;
+			        }
 			        state.lv1 = sameTopic ? '' : nextLv1;
 		        state.lv2 = sameTopic ? '' : nextLv2;
 		        updateUrl(buildStateUrl(state), 'push');
