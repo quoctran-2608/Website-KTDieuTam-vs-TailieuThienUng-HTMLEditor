@@ -1,0 +1,868 @@
+{
+  "generatedAt": "2026-04-28T15:00:46.865833",
+  "phase": "phase42-batch50",
+  "plannedCount": 50,
+  "appliedCount": 50,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "ban-tin/phu-luc-bao-cao-trich-su-dung-quy-khoa-hoc-cong-nghe-mau-so-03-6-tndn.html",
+      "title": "Phụ lục báo cáo trích sử dụng quỹ khoa học công nghệ Mẫu số 03-6/TNDN",
+      "reason": "phase42-thue-pattern-tail",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-cac-hoa-don-dien-tu-da-lap-sai.html",
+      "title": "Mẫu bảng kê các hóa đơn điện tử đã lập sai 2026",
+      "reason": "phase42-thue-pattern-tail",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "title": "Bảng kê giảm trừ gia cảnh cho người phụ thuộc Mẫu 2-1/BK-QTT-TNCN",
+      "reason": "phase42-thue-pattern-tail",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-hang-hoa-dich-vu-ban-ra-01-1-gtgt-theo-tt-119.html",
+      "title": "Bảng kê hàng hóa, dịch vụ bán ra 01-1/GTGT theo TT 119",
+      "reason": "phase42-thue-pattern-tail",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-vang-bac-da-quy-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng kê vàng bạc đá quý theo Thông tư 200 và 133",
+      "reason": "phase42-ke-toan-doc-tail",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "ke-toan",
+        "lv2": "mau-bieu-ke-toan",
+        "lv3": "mau-hanh-chinh-quan-tri-khac"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "ke-toan",
+        "lv2": "mau-bieu-ke-toan",
+        "lv3": "mau-so-sach-ke-toan"
+      }
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-viec-gia-han-nop-thue-gtgt-tndn.html",
+      "title": "Quy định về việc gia hạn nộp thuế năm 2021",
+      "reason": "phase42-nghi-dinh-tail",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-quan-ly-xu-phat"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-105-2020-tt-btc-huong-dan-ve-dang-ky-thue.html",
+      "title": "Thông tư 105/2020/TT-BTC hướng dẫn về đăng ký thuế",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-130-2016-tt-btc-huong-dan-luat-thue-gtgt-ttdb-quan-ly-thue.html",
+      "title": "Thông tư 130/2016/TT-BTC Hướng dẫn Luật thuế GTGT, TTĐB, Quản lý thuế",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-141-2013-tt-btc-thi-hanh-luat-thue-tndn-va-gtgt.html",
+      "title": "Thông tư 141/2013/TT-BTC hướng dẫn thi hành luật thuế TNDN và GTGT",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-16-vbhn-btc-van-ban-hop-nhat-ve-thue-gtgt.html",
+      "title": "Thông tư 16/VBHN-BTC Văn bản hợp nhất về thuế GTGT",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-17-vbhn-btc-van-ban-hop-nhat-ve-hoa-don.html",
+      "title": "Thông tư 17/VBHN-BTC Văn bản hợp nhất về hóa đơn",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-176-2016-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.html",
+      "title": "Thông tư 176/2016/TT-BTC Xử phạt vi phạm hành chính về hóa đơn",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-176-2016-tt-btc-xu-phat-vi-pham-ve-hoa-don.html",
+      "title": "Thông tư 176/2016/TT-BTC xử phạt vi phạm về hóa đơn",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-18-vbhn-btc-huong-dan-luat-quan-ly-thue.html",
+      "title": "Thông tư 18/VBHN-BTC hướng dẫn luật quản lý thuế",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-18-vbhn-btc-van-ban-hop-nhat-ve-quan-ly-thue.html",
+      "title": "Thông tư 18/VBHN-BTC văn bản hợp nhất về quản lý thuế",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "title": "Thông tư 20/2026/TT-BTC hướng dẫn về Thuế TNDN",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-219-2013-tt-btc-huong-dan-thi-hanh-luat-thue-gtgt.html",
+      "title": "Thông tư 219/2013/TT-BTC hướng dẫn thi hành luật thuế GTGT",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-25-2018-tt-btc-huong-dan-nd-146-2017-nd-cp-ve-thue-tndn-va-tncn.html",
+      "title": "Thông tư 25/2018/TT-BTC Hướng dẫn NĐ 146/2017/NĐ-CP về Thuế TNDN và TNCN",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-26-2015-tt-btc-huong-dan-thue-gtgt-va-quan-ly-thue.html",
+      "title": "Thông tư 26/2015/TT-BTC hướng dẫn về thuế GTGT và quản lý thuế",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-26-2015-tt-btc-ngay-27-02-2015-cua-bo-tai-chinh.html",
+      "title": "Thông tư 26/2015/TT-BTC quy định về thuế GTGT và quản lý thuế",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-26-vbhn-btc-van-ban-hop-nhat-thue-tndn.html",
+      "title": "Thông tư 26/VBHN –BTC văn bản hợp nhất thuế TNDN",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-26-vbhn-huong-dan-nd-218-ve-thue-tndn.html",
+      "title": "Thông tư 26/VBHN–BTC Hướng dẫn NĐ 218 về thuế TNDN",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-37-2017-tt-btc-quy-dinh-ve-thong-bao-phat-hanh-hoa-don.html",
+      "title": "Thông tư 37/2017/TT-BTC quy định về thông báo phát hành hóa đơn",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-37-2017-tt-btc-sua-doi-bo-sung-thong-tu-39.html",
+      "title": "Thông tư 37/2017/TT-BTC sửa đổi, bổ sung Thông tư 39 về hóa đơn",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-39-2014-tt-btc-nhung-quy-dinh-moi-ve-hoa-don.html",
+      "title": "Thông tư 39/2014/TT-BTC Những quy định mới về hóa đơn",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-39-2014-tt-btc-quy-dinh-ve-hoa-don-moi-nhat.html",
+      "title": "Thông tư 39/2014/TT-BTC quy định về hóa đơn mới nhất",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-40-2021-tt-btc-quy-dinh-thue-cho-ho-ca-nhan-kinh-doanh.html",
+      "title": "Thông tư 40/2021/TT-BTC quy định thuế GTGT, TNCN cho cá nhân, hộ kinh doanh",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-64-2015-ttlt-btc-bct-bca-bqp-quy-dinh-ve-hoa-don.html",
+      "title": "Thông tư 64/2015/TTLT-BTC-BCT-BCA-BQP quy định về hóa đơn hàng nhập khẩu",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-65-2020-tt-btc-huong-dan-ke-khai-le-phi-mon-bai.html",
+      "title": "Thông tư 65/2020/TT-BTC hướng dẫn kê khai lệ phí môn bài",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-68-2019-huong-dan-ve-hoa-don-dien-tu.html",
+      "title": "Thông tư 68/2019/TT-BTC hướng dẫn về hóa đơn điện tử",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-68-2019-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
+      "title": "Thông tư 68/2019/TT-BTC quy định về hóa đơn điện tử",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-69-2025-tt-btc-huong-dan-ve-thue-gtgt.html",
+      "title": "Thông tư 69/2025/TT-BTC Hướng dẫn về thuế GTGT từ ngày 01/07/2025",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-78-2014-tt-btc-huong-dan-thi-hanh-luat-thue-tndn.html",
+      "title": "Thông tư 78/2014/TT-BTC hướng dẫn thi hành luật thuế TNDN",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-78-2014-tt-btc-thi-hanh-luat-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Thông tư 78/2014/TT-BTC thi hành luật thuế thu nhập doanh nghiệp",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-78-2021-tt-btc-huong-dan-hoa-don-dien-tu.html",
+      "title": "Thông tư 78/2021/TT-BTC hướng dẫn hoá đơn điện tử",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
+      "title": "Thông tư 78/2021/TT-BTC quy định về hoá đơn điện tử",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-86-2024-tt-btc-quy-dinh-ve-dang-ky-thue-moi-nhat.html",
+      "title": "Thông tư 86/2024/TT-BTC quy định về đăng ký thuế mới nhất",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-86-quy-dinh-ve-dang-ky-thue.html",
+      "title": "Thông tư 86 Quy định về đăng ký thuế mới nhất năm 2025",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-88-2020-tt-btc-huong-dan-ve-hoa-don-dien-tu.html",
+      "title": "Thông tư 88/2020/TT-BTC hướng dẫn về hóa đơn điện tử",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-88-2020-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
+      "title": "Thông tư 88/2020/TT-BTC quy định về hóa đơn điện tử",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-92-2015-huong-dan-thue-gtgt-tncn.html",
+      "title": "Thông tư 92/2015/TT-BTC hướng dẫn thuế GTGT, TNCN của cá nhân",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-92-2015-quy-dinh-ve-thue-gtgt-tncn-doi-voi-ca-nhan.html",
+      "title": "Thông tư 92/2015/TT-BTC quy định về thuế GTGT, TNCN đối với cá nhân",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-95-2016-quy-dinh-ve-thu-tuc-dang-ky-thue.html",
+      "title": "Thông tư 95/2016/TT- BTC quy định về thủ tục đăng ký thuế",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-95-2016-tt-btc-huong-dan-dang-ky-thue.html",
+      "title": "Thông tư 95/2016/TT- BTC Hướng dẫn đăng ký Thuế",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-96-2015-quy-dinh-ve-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Thông tư 96/2015/TT-BTC quy định về thuế thu nhập doanh nghiệp",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-96-2015-tt-btc-huong-dan-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Thông tư 96/2015/TT-BTC Hướng dẫn Luật thuế TNDN năm 2015",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-so-10-2014-tt-btc-muc-xu-phat-vi-pham-ve-hoa-don.html",
+      "title": "Thông tư số 10/2014/TT-BTC mức xử phạt vi phạm về hóa đơn",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-so-10-2014-tt-btc-xu-phat-vi-pham-ve-hoa-don-gtgt.html",
+      "title": "Thông tư số 10/2014/TT-BTC quy định xử phạt vi phạm hành chính về hóa đơn",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-so-156-2013-tt-btc-huong-dan-thi-hanh-luat-quan-ly-thue.html",
+      "title": "Thông tư Số 156/2013/TT-BTC hướng dẫn thi hành luật quản lý Thuế",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-so-64-2013-tt-btc-quy-dinh-ve-hoa-don-gia-tri-gia-tang.html",
+      "title": "Thông tư số 64/2013/TT-BTC quy định về hóa đơn giá trị gia tăng",
+      "reason": "phase42-thong-tu-balance",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

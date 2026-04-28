@@ -1,0 +1,449 @@
+{
+  "generatedAt": "2026-04-28T11:23:34.625986",
+  "phase": "phase10-huong-dan-doanh-nghiep-thu-tuc",
+  "appliedCount": 25,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập sổ tiền gửi ngân hàng theo Thông tư 200 và 133",
+      "reason": "so-tien-gui-ngan-hang",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-thanh-lap-thay-doi"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/dinh-khoan-hach-toan-tai-san-co-dinh.html",
+      "title": "Cách hạch toán tài sản cố định - Tài khoản 211",
+      "reason": "tk211-tscd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "tscd-ccdc-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-duong-thang.html",
+      "title": "Cách hạch toán trích khấu hao TSCĐ theo Đường thẳng",
+      "reason": "khau-hao-tscd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "tscd-ccdc-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/cach-xac-dinh-nguyen-gia-tai-san-co-dinh-huu-hinh.html",
+      "title": "Cách xác định nguyên giá TSCĐ hữu hình",
+      "reason": "nguyen-gia-tscd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "tscd-ccdc-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-to-chuc-bo-may-ke-toan.html",
+      "title": "Quy định về tổ chức bộ máy kế toán trong Doanh nghiệp 2025",
+      "reason": "to-chuc-bo-may-ke-toan",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-quan-tri-ho-tro"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "nguyen-tac-ke-toan"
+      }
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-don-vi-tien-te-trong-ke-toan.html",
+      "title": "Quy định về đơn vị tiền tệ trong kế toán Doanh nghiệp",
+      "reason": "don-vi-tien-te-ke-toan",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-thanh-lap-thay-doi"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      }
+    },
+    {
+      "href": "thu-vien/tieu-chuan-va-dieu-kien-de-bo-nhiem-lam-ke-toan-truong.html",
+      "title": "Tiêu chuẩn, điều kiện để bổ nhiệm kế toán trưởng tại Công ty",
+      "reason": "bo-nhiem-ke-toan-truong",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-quan-tri-ho-tro"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "nguyen-tac-ke-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cac-khoan-chi-phi-duoc-tru-khi-tinh-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Các khoản chi phí được trừ khi tính thuế TNDN",
+      "reason": "chi-phi-duoc-tru-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/cac-khoan-thu-nhap-duoc-mien-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Các khoản thu nhập được miễn thuế TNDN năm 2026",
+      "reason": "mien-thue-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "uu-dai-mien-giam-chuyen-lo"
+      }
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-thue-thu-nhap-doanh-nghiep-tai-khoan-821.html",
+      "title": "Cách hạch toán chi phí thuế thu nhập doanh nghiệp - Tài khoản 821",
+      "reason": "hach-toan-tk821",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "hach-toan-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
+      "title": "Cách tính thuế thu nhập doanh nghiệp tạm tính quý và cả năm",
+      "reason": "tinh-thue-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "thue-suat-phuong-phap"
+      }
+    },
+    {
+      "href": "thu-vien/giai-dap-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Hỏi đáp Quyết toán thuế thu nhập doanh nghiệp 2020",
+      "reason": "hoi-dap-quyet-toan-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-giai-the"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "ke-khai-tam-nop-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/hoi-dap-quyet-toan-thue-thu-nhap-doanh-nghiep-2020-phan-2.html",
+      "title": "Hỏi đáp Quyết toán thuế thu nhập doanh nghiệp 2020 Phần 2",
+      "reason": "hoi-dap-quyet-toan-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-giai-the"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "ke-khai-tam-nop-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/nguyen-tac-ke-khai-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
+      "title": "Nguyên tắc kê khai thuế thu nhập doanh nghiệp năm 2017",
+      "reason": "nguyen-tac-ke-khai-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "ke-khai-tam-nop-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/thue-suat-thue-thu-nhap-doanh-nghiep-nam-2014.html",
+      "title": "Thuế suất thuế thu nhập doanh nghiệp năm 2026",
+      "reason": "thue-suat-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "thue-suat-phuong-phap"
+      }
+    },
+    {
+      "href": "thu-vien/doanh-thu-de-tinh-thu-nhap-chiu-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Xác định Doanh thu tính Thuế thu nhập Doanh nghiệp",
+      "reason": "doanh-thu-tinh-thue-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      }
+    },
+    {
+      "href": "thu-vien/cac-bac-thue-mon-bai-moi-nhat-nam.html",
+      "title": "Các mức đóng lệ phí môn bài năm 2025",
+      "reason": "muc-thu-mon-bai",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "le-phi-mon-bai",
+        "lv3": "mon-bai-muc-thu-doi-tuong"
+      }
+    },
+    {
+      "href": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-va-hoan-thue-gtgt.html",
+      "title": "Các hành vi bị nghiêm cấm trong khấu trừ và hoàn thuế GTGT năm 2025",
+      "reason": "hanh-vi-nghiem-cam-khau-tru-hoan-thue",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-quan-tri-ho-tro"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "khau-tru-hoan-thue"
+      }
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-dat-in-va-thong-bao-phat-hanh-hoa-don.html",
+      "title": "Quy định mới về đặt in và Thông báo phát hành hóa đơn",
+      "reason": "phat-hanh-hoa-don",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "lap-xu-ly-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/xu-ly-hoa-don-khi-chuyen-dia-diem-kinh-doanh.html",
+      "title": "Xử lý hóa đơn khi chuyển địa điểm Công ty",
+      "reason": "xu-ly-hoa-don-khi-thay-doi-dia-diem",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-thanh-lap-thay-doi"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "lap-xu-ly-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-01-2021-nd-cp-ve-dang-ky-doanh-nghiep.html",
+      "title": "Nghị định 01/2021/NĐ-CP về đăng ký doanh nghiệp",
+      "reason": "nghi-dinh-dang-ky-doanh-nghiep",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "nghi-dinh",
+        "lv3": "nd-dang-ky-doanh-nghiep"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-114-2020-nd-cp-giam-thue-thu-nhap-doanh-nghiep-nam-2020.html",
+      "title": "Nghị định 114/2020/NĐ-CP giảm thuế thu nhập doanh nghiệp năm 2020",
+      "reason": "nghi-dinh-giam-thue-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-22-2020-nd-cp-quy-dinh-ve-le-phi-mon-bai.html",
+      "title": "Nghị định 22/2020/NĐ-CP Quy định về Lệ phí môn bài",
+      "reason": "nghi-dinh-le-phi-mon-bai",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-34-2022-nd-cp-gia-han-thoi-han-nop-thue-tndn-gtgt-2022.html",
+      "title": "Nghị định 34/2022/NĐ-CP gia hạn thời hạn nộp thuế TNDN, GTGT 2022",
+      "reason": "nghi-dinh-gia-han-thue",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-92-2021-nd-cp-quy-dinh-giam-thue-gtgt-tndn-2021.html",
+      "title": "Nghị định 92/2021/NĐ-CP quy định giảm thuế GTGT TNDN 2021",
+      "reason": "nghi-dinh-giam-thue-gtgt-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-gtgt-hoa-don"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "remainingInBucket": 39,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2695,
+      "ban_tin_count": 114,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  },
+  "deferredManualReview": [
+    {
+      "href": "thu-vien/nghi-dinh-47-2021-nd-cp-quy-dinh-chi-tiet-luat-doanh-nghiep.html",
+      "reason": "van-ban-doanh-nghiep-vs-thu-tuc-huong-dan-boundary"
+    }
+  ]
+}

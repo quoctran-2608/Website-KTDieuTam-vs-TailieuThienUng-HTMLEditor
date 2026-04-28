@@ -1,0 +1,160 @@
+{
+  "generatedAt": "2026-04-28T11:45:43.197646",
+  "phase": "phase13-huong-dan-ke-toan-tai-san-kho-ccdc-forms",
+  "appliedCount": 8,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/cach-lap-so-tai-san-co-dinh-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập Sổ Tải sản cố định theo Thông tư 200 và 133",
+      "reason": "mau-so-tscd-s21-dn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-theo-doi-tai-san-co-dinh-cong-cu-dung-cu.html",
+      "title": "Cách lập sổ theo dõi Tài sản cố định, Công cụ dụng cụ theo TT 200 và 133",
+      "reason": "mau-so-tscd-ccdc-s22-dn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-the-tai-san-co-dinh-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập Thẻ Tải sản cố định theo Thông tư 200 và 133",
+      "reason": "mau-the-tscd-s23-dn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-tai-san-co-dinh-the-tai-san-co-dinh.html",
+      "title": "Cách lập sổ tài sản cố định theo Thông tư 200",
+      "reason": "lap-so-tscd-tt200",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-the-tai-san-co-dinh-mau-s23-dn-theo-tt-200.html",
+      "title": "Cách lập thẻ tài sản cố định mẫu S23-DN theo TT 200",
+      "reason": "lap-the-tscd-s23-tt200",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-theo-doi-tscd-va-ccdc-tai-noi-su-dung.html",
+      "title": "Cách lập sổ theo dõi TSCĐ, CCDC tại nơi sử dụng",
+      "reason": "lap-so-theo-doi-tscd-ccdc-noi-su-dung",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-lieu-hang-hoa-dung-cu-san-pham.html",
+      "title": "Cách lập bảng tổng hợp chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa",
+      "reason": "bang-tong-hop-chi-tiet-vat-tu-hang-hoa",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-vat-lieu-dung-cu-san-pham-hang-hoa.html",
+      "title": "Hướng dẫn lập sổ chi tiết vật liệu, dụng cụ, sản phẩm, hàng hóa theo Thông tư 200",
+      "reason": "so-chi-tiet-vat-tu-hang-hoa",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "remainingInBucket": 47,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  },
+  "deferredManualReview": [
+    {
+      "href": "thu-vien/trich-lap-quy-phat-trien-khoa-hoc-va-cong-nghe-cua-dn.html",
+      "reason": "chinh-sach-thue-vs-hach-toan-dac-thu"
+    }
+  ]
+}

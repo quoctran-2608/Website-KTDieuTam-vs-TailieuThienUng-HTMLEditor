@@ -1,0 +1,413 @@
+{
+  "generatedAt": "2026-04-28T17:56:00.628628",
+  "phase": "table-fix-phase5-batch100",
+  "importedTotal": 745,
+  "importedWithTable": 530,
+  "selectedCount": 100,
+  "appliedCount": 100,
+  "skippedCount": 0,
+  "totalTableTagsChanged": 687,
+  "applied": [
+    {
+      "href": "thu-vien/nghi-dinh-41-2018-nd-cp-xu-phat-vi-pham-ke-toan-kiem-toan.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/nghi-dinh-44-2021-nd-cp-chi-ung-ho-tai-tro-chong-dich-covid.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/nghi-dinh-47-2021-nd-cp-quy-dinh-chi-tiet-luat-doanh-nghiep.html",
+      "tablesTagged": 25
+    },
+    {
+      "href": "thu-vien/nghi-dinh-52-2021-nd-cp-gia-han-thoi-han-nop-thue-va-tien-thue-dat.html",
+      "tablesTagged": 7
+    },
+    {
+      "href": "thu-vien/nghi-dinh-80-2021-nd-cp-quy-dinh-luat-ho-tro-dn-vua-va-nho.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/nghi-dinh-90-muc-luong-toi-thieu-vung-nam-2020.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/nghi-dinh-92-2021-nd-cp-quy-dinh-giam-thue-gtgt-tndn-2021.html",
+      "tablesTagged": 33
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-117-quy-dinh-quan-ly-thue-kinh-doanh-thuong-mai-dien-tu.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-174-quy-dinh-chinh-sach-giam-thue-gtgt.html",
+      "tablesTagged": 7
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-175-quy-dinh-ve-le-phi-truoc-ba.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-181-quy-dinh-ve-thue-gia-tri-gia-tang.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-70-2025-nd-cp.html",
+      "tablesTagged": 5
+    },
+    {
+      "href": "thu-vien/nghi-quyet-116-2020-qh14-giam-thue-tndn-phai-nop-nam-2020.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/nghi-quyet-406-nq-ubtvqh15-giam-thue-tndn-va-gtgt-nam-2021.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/nghi-quyet-43-2022-qh15-giam-thue-gtgt-tu-10-xuong-8-nam-2022.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/nghi-quyet-954-2020-quy-dinh-muc-giam-tru-gia-canh-thue-tncn.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/nguyen-tac-chung-tu-ke-toan-lap-ky-noi-dung.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/nguyen-tac-ghi-nhan-hang-ton-kho.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/nguyen-tac-quan-ly-tai-san-co-dinh-trong-doanh-nghiep.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/nguyen-tac-xay-dung-thang-bang-luong-moi-nhat.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/noi-dung-cua-hoa-don-gtgt-kiem-to-khai-hoan-thue.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/phan-biet-ca-nhan-cu-tru-va-ca-nhan-khong-cu-tru.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/phan-biet-hoa-don-ban-hang-va-hoa-don-gia-tri-gia-tang.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/phan-mem-chiu-thue-suat-bao-nhieu-0-hay-khong-chiu-thue.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/phan-mem-htkk-5-2-4-moi-nhat.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/phan-mem-htkk-5-2-6-moi-nhat.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/phan-mem-htkk-5-4-5-moi-nhat.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/phieu-dang-ky-du-tuyen-lao-dong-mau-04-theo-thong-tu-23.html",
+      "tablesTagged": 6
+    },
+    {
+      "href": "thu-vien/phu-luc-bang-ke-thu-nhap-chiu-thue-va-thue-tncn-da-khau-tru-mau-so-05-2-bk-tncn.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/phu-luc-bang-ke-thu-nhap-chiu-thue-va-thue-tncn-mau-so-05-1-bk-tncn.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/phu-luc-chi-tiet-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-so-01-1-thkh.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/phuong-phap-hach-toan-thanh-pham-tai-khoan-155.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/phuong-phap-hach-toan-tien-gui-tai-khoan-112.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/phuong-phap-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat.html",
+      "tablesTagged": 8
+    },
+    {
+      "href": "thu-vien/quy-che-tien-luong-thuong-phu-cap-cho-nguoi-lao-dong.html",
+      "tablesTagged": 5
+    },
+    {
+      "href": "thu-vien/quy-dinh-muc-phu-cap-tien-dien-thoai-cho-nhan-vien.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/quy-dinh-phuong-phap-trich-khau-hao-nhanh-tscd.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-chung-tu-khau-tru-thue-tncn-dien-tu.html",
+      "tablesTagged": 6
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-don-vi-tien-te-trong-ke-toan.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-kinh-phi-cong-doan-moi-nhat.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-so-sach-ke-toan.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-ty-le-dong-bhxh-bhyt-bhtn-moi-nhat.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/quyet-dinh-1040-qd-bhxh-bao-cao-su-dung-lao-dong-va-danh-sach-tham-gia-bhxh.html",
+      "tablesTagged": 6
+    },
+    {
+      "href": "thu-vien/quyet-dinh-595-qd-bhxh-quy-trinh-thu-bhxh-bhyt-bhtn.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/quyet-dinh-919-qd-bhxh-cua-bao-hiem-xa-hoi-viet-nam.html",
+      "tablesTagged": 17
+    },
+    {
+      "href": "thu-vien/quyet-dinh-959-qd-bhxh-quan-ly-thu-bhxh-bhyt-bhtn.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/quyet-dinh-ban-hanh-he-thong-thang-bang-luong-cua-doanh-nghiep.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/quyet-dinh-cu-di-cong-tac-trong-nuoc-va-nuoc-ngoai.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/tai-khoan-ngan-hang-khong-dang-ky-voi-co-quan-thue.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/tam-ngung-kinh-doanh-co-phai-nop-thue-mon-bai-bctc.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/thoi-diem-lap-hoa-don-khi-ban-hang-cung-cap-dich-vu-xay-dung.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-bao-chuyen-doi-ky-ke-khai-thue-gtgt-tu-quy-sang-thang-mau-07-gtgt.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/thong-bao-ket-qua-dong-bhxh-bhyt-mau-c12-ts.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/thong-bao-ve-viec-nop-tien-vao-nsnn-mau-02-tcn.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-tu-01-2021-tt-bkhdt-quy-dinh-ve-dang-ky-doanh-nghiep.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/thong-tu-03-2015-tt-bldtbxh-quy-dinh-tien-luong-da-dong-bhxh.html",
+      "tablesTagged": 6
+    },
+    {
+      "href": "thu-vien/thong-tu-04-vbhn-btc-huong-dan-luat-thue-tncn.html",
+      "tablesTagged": 29
+    },
+    {
+      "href": "thu-vien/thong-tu-08-2013-tt-btc-thuc-hien-ke-toan-nha-nuoc.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/thong-tu-09-2015-tt-btc-dn-gop-von-phai-chuyen-khoan.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/thong-tu-10-2020-tt-bldtbxh-huong-dan-bo-luat-lao-dong.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-tu-100-2021-tt-btc-sua-doi-thong-tu-40-thue-ho-kinh-doanh.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-tu-119-2014-tt-btc-thu-tuc-hanh-chinh-ve-thue.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/thong-tu-130-2016-tt-btc-huong-dan-luat-thue-gtgt-ttdb-quan-ly-thue.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/thong-tu-132-2018-tt-btc-che-do-ke-toan-cho-dn-sieu-nho.html",
+      "tablesTagged": 88
+    },
+    {
+      "href": "thu-vien/thong-tu-133-2016-huong-dan-che-do-ke-toan-dn-nho-va-vua.html",
+      "tablesTagged": 15
+    },
+    {
+      "href": "thu-vien/thong-tu-176-2016-tt-btc-xu-phat-vi-pham-ve-hoa-don.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-tu-18-vbhn-btc-huong-dan-luat-quan-ly-thue.html",
+      "tablesTagged": 11
+    },
+    {
+      "href": "thu-vien/thong-tu-200-2014-tt-btc-thay-the-che-do-ke-toan-doanh-nghiep-15.html",
+      "tablesTagged": 19
+    },
+    {
+      "href": "thu-vien/thong-tu-200-bo-tai-chinh-che-do-ke-toan-doanh-nghiep.html",
+      "tablesTagged": 19
+    },
+    {
+      "href": "thu-vien/thong-tu-202-cach-lap-va-trinh-bay-lap-bctc-hop-nhat.html",
+      "tablesTagged": 9
+    },
+    {
+      "href": "thu-vien/thong-tu-23-2014-tt-bldtbxh-quy-dinh-ve-su-dung-lao-dong.html",
+      "tablesTagged": 33
+    },
+    {
+      "href": "thu-vien/thong-tu-23-2015-tt-bldtbxh-huong-dan-ve-tien-luong.html",
+      "tablesTagged": 10
+    },
+    {
+      "href": "thu-vien/thong-tu-25-2018-tt-btc-huong-dan-nd-146-2017-nd-cp-ve-thue-tndn-va-tncn.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/thong-tu-26-2015-tt-btc-ngay-27-02-2015-cua-bo-tai-chinh.html",
+      "tablesTagged": 6
+    },
+    {
+      "href": "thu-vien/thong-tu-302-2016-tt-btc-quy-dinhh-ve-le-phi-mon-bai.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-tu-37-2017-tt-btc-quy-dinh-ve-thong-bao-phat-hanh-hoa-don.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-tu-40-2021-tt-btc-huong-dan-thue-doi-voi-ho-ca-nhan-kinh-doanh.html",
+      "tablesTagged": 48
+    },
+    {
+      "href": "thu-vien/thong-tu-45-2013-tt-btc-quan-ly-su-dung-va-trich-hao-tai-san-co-dinh.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/thong-tu-47-2015-tt-bldtbxh-huong-dan-thi-hanh-luat-lao-dong.html",
+      "tablesTagged": 6
+    },
+    {
+      "href": "thu-vien/thong-tu-59-bldtbxh-cac-khoan-phu-cap-phai-dong-bhxh.html",
+      "tablesTagged": 32
+    },
+    {
+      "href": "thu-vien/thong-tu-65-2020-tt-btc-huong-dan-ke-khai-le-phi-mon-bai.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-tu-68-2019-huong-dan-ve-hoa-don-dien-tu.html",
+      "tablesTagged": 13
+    },
+    {
+      "href": "thu-vien/thong-tu-68-ban-hanh-bieu-mau.html",
+      "tablesTagged": 7
+    },
+    {
+      "href": "thu-vien/thong-tu-75-2015-ngay-18-05-2015-cua-bo-tai-chinh.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-tu-78-2014-tt-btc-thi-hanh-luat-thue-thu-nhap-doanh-nghiep.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/thong-tu-78-2021-tt-btc-huong-dan-hoa-don-dien-tu.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-tu-86-2024-tt-btc-quy-dinh-ve-dang-ky-thue-moi-nhat.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/thong-tu-86-quy-dinh-ve-dang-ky-thue.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/thong-tu-88-2020-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-tu-88-2021-che-do-ke-toan-cho-ho-kinh-doanh.html",
+      "tablesTagged": 39
+    },
+    {
+      "href": "thu-vien/thong-tu-92-2015-huong-dan-thue-gtgt-tncn.html",
+      "tablesTagged": 11
+    },
+    {
+      "href": "thu-vien/thong-tu-93-2017-tt-btc-bai-bo-dang-ky-phuong-phap-tinh-thue.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/thong-tu-95-2016-quy-dinh-ve-thu-tuc-dang-ky-thue.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/thong-tu-96-2015-quy-dinh-ve-thue-thu-nhap-doanh-nghiep.html",
+      "tablesTagged": 5
+    },
+    {
+      "href": "thu-vien/thong-tu-so-06-2012-tt-btc-huong-dan-thi-hanh-luat-thue-gtgt.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/thong-tu-so-10-2014-tt-btc-muc-xu-phat-vi-pham-ve-hoa-don.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/thong-tu-so-138-2011-tt-btc-sua-doi-bo-sung-qd-so-48-2006-qd-btc.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/thong-tu-so-244-2009-tt-btc-sua-doi-bo-sung-qd-15-2006-qd-btc.html",
+      "tablesTagged": 1
+    }
+  ],
+  "skipped": []
+}

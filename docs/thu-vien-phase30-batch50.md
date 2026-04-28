@@ -1,0 +1,62 @@
+# Phase 30 - Batch 50
+
+- Thời gian chạy: `2026-04-28 13:43:23`
+- Planned: **50**
+- Applied: **50**
+- Skipped: **0**
+- Rebuild: Thư viện 2694 bài / 225 trang; Bản tin 115 bài / 10 trang
+
+## Các bài đã chỉnh
+
+| # | href | before | after | reason |
+|---:|---|---|---|---|
+| 1 | `ban-tin/phu-luc-bao-cao-trich-su-dung-quy-khoa-hoc-cong-nghe-mau-so-03-6-tndn.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 2 | `thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 3 | `thu-vien/bang-ke-thong-tin-nguoi-phu-thuoc-giam-tru-gia-canh-mau-05-3-bk-tncn.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 4 | `thu-vien/bang-ke-thu-mua-hang-hoa-dich-vu-khong-co-hoa-don-mau-01.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 5 | `thu-vien/mau-01-bk-htk-theo-thong-tu-so-18-2026-tt-btc.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-ho-ca-nhan-mon-bai` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 6 | `thu-vien/mau-01-bk-kthtkd-theo-thong-tu-so-18-2026-tt-btc.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-ho-ca-nhan-mon-bai` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 7 | `thu-vien/mau-ban-ke-khai-ve-nguoi-phai-truc-tiep-nuoi-duong-21a-xn-tncn.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 8 | `thu-vien/mau-bang-ke-02-tndn-theo-thong-tu-20.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 9 | `thu-vien/mau-bang-ke-cac-hop-dong-nha-thau-nuoc-ngoai.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-nha-thau` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 10 | `thu-vien/mau-bang-ke-thong-tin-nguoi-phu-thuoc-giam-tru-gia-canh-05-3-bk-tncn.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 11 | `thu-vien/mau-bang-ke-thu-nhap-chiu-thue-va-thue-thu-nhap-ca-nhan-05-1-bk-tncn.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 12 | `thu-vien/mau-bang-ke-thu-nhap-chiu-thue-va-thue-thu-nhap-ca-nhan-05-2-bk-tncn.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 13 | `thu-vien/mau-phu-luc-bang-ke-cac-nha-thau-nuoc-ngoai.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-nha-thau` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 14 | `thu-vien/mau-so-02-1-bk-qtt-tncn-bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 15 | `thu-vien/mau-so-03-1a-tndn-phu-luc-ket-qua-hoat-dong-san-xuat-kinh-doanh.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 16 | `thu-vien/mau-so-03-1b-tndn-phu-luc-ket-qua-hoat-dong-san-xuat-kinh-doanh.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 17 | `thu-vien/mau-so-03-1c-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 18 | `thu-vien/mau-so-03-2-tndn-phu-luc-chuyen-lo-theo-tt-80-2021.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 19 | `thu-vien/mau-so-03-3a-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 20 | `thu-vien/mau-so-03-3b-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 21 | `thu-vien/mau-so-03-3c-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 22 | `thu-vien/mau-so-03-3d-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 23 | `thu-vien/mau-so-03-4-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-da-nop-o-nuoc-ngoai-theo-tt-80-2021.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 24 | `thu-vien/mau-so-03-5-tndn-phu-luc-thu-nhap-doi-voi-hoat-dong-chuyen-nhuong-bat-dong-san.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 25 | `thu-vien/mau-so-03-8a-tndn-phu-luc-bang-phan-bo-so-thue-thu-nhap-doanh-nghiep-phai-nop.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 26 | `thu-vien/mau-so-03-8b-tndn-phu-luc-bang-phan-bo-so-thue-thu-nhap-doanh-nghiep-phai-nop.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 27 | `thu-vien/mau-so-03-8c-tndn-phu-luc-bang-phan-bo-so-thue-thu-nhap-doanh-nghiep-phai-nop.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 28 | `thu-vien/mau-so-03-9-tndn-bang-ke-chung-tu-nop-thue-tndn-tam-nop.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tndn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 29 | `thu-vien/mau-so-04-1-cnv-tncn-bang-ke-chi-tiet-ca-nhan-chuyen-nhuong-von.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 30 | `thu-vien/mau-so-04-1-dtv-tncn-phu-luc-bang-ke-chi-tiet-theo-tt-80-2021.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 31 | `thu-vien/mau-so-05-1-bk-qtt-tncn-bang-ke-chi-tiet-ca-nhan.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 32 | `thu-vien/mau-so-05-2-bk-qtt-tncn-bang-ke-chi-tiet-ca-nhan.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 33 | `thu-vien/mau-so-05-3-bk-qtt-tncn-bang-ke-chi-tiet-nguoi-phu-thuoc-giam-tru-gia-canh.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 34 | `thu-vien/mau-so-06-1-bk-tncn-bang-ke-chi-tiet-ca-nhan-co-thu-nhap-trong-nam-tinh-thue.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 35 | `thu-vien/phu-luc-bang-ke-cac-nha-thau-phu-tham-gia-hop-dong-nha-thau.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-nha-thau` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 36 | `thu-vien/phu-luc-bang-ke-thu-nhap-chiu-thue-va-thue-tncn-da-khau-tru-mau-so-05-2-bk-tncn.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 37 | `thu-vien/phu-luc-bang-ke-thu-nhap-chiu-thue-va-thue-tncn-mau-so-05-1-bk-tncn.html` | `bieu-mau / thue / mau-bieu-thue / mau-thue-tncn` | `bieu-mau / thue / mau-bieu-thue / mau-bang-ke-phu-luc-ho-so` | `phase30-thue-bangke-phuluc-normalize` |
+| 38 | `thu-vien/thong-tu-40-2021-tt-btc-quy-dinh-thue-cho-ho-ca-nhan-kinh-doanh.html` | `van-ban / thue / thong-tu / thong-tu-gtgt-hoa-don` | `van-ban / thue / thong-tu / thong-tu-tncn` | `phase30-thong-tu-lv3-normalize` |
+| 39 | `thu-vien/thong-tu-64-2013-tt-btc-quy-dinh-ve-hoa-don-gtgt-ban-hang.html` | `van-ban / thue / thong-tu / thong-tu-gtgt-hoa-don` | `van-ban / thue / thong-tu / thong-tu-chinh-sach-chung` | `phase30-thong-tu-lv3-normalize` |
+| 40 | `thu-vien/thong-tu-65-2020-tt-btc-quy-dinh-ve-thue-mon-bai.html` | `van-ban / thue / thong-tu / thong-tu-ho-ca-nhan-kinh-doanh` | `van-ban / thue / thong-tu / thong-tu-chinh-sach-chung` | `phase30-thong-tu-lv3-normalize` |
+| 41 | `thu-vien/thong-tu-78-2014-tt-btc-huong-dan-thi-hanh-luat-thue-tndn.html` | `van-ban / thue / thong-tu / thong-tu-gtgt-hoa-don` | `van-ban / thue / thong-tu / thong-tu-tndn` | `phase30-thong-tu-lv3-normalize` |
+| 42 | `thu-vien/thong-tu-92-2015-quy-dinh-ve-thue-gtgt-tncn-doi-voi-ca-nhan.html` | `van-ban / thue / thong-tu / thong-tu-gtgt-hoa-don` | `van-ban / thue / thong-tu / thong-tu-tncn` | `phase30-thong-tu-lv3-normalize` |
+| 43 | `thu-vien/thong-tu-93-2017-tt-btc-bai-bo-dang-ky-phuong-phap-tinh-thue.html` | `van-ban / thue / thong-tu / thong-tu-gtgt-hoa-don` | `van-ban / thue / thong-tu / thong-tu-chinh-sach-chung` | `phase30-thong-tu-lv3-normalize` |
+| 44 | `thu-vien/thong-tu-so-06-2012-tt-btc-huong-dan-thi-hanh-luat-thue-gtgt.html` | `van-ban / thue / thong-tu / thong-tu-gtgt-hoa-don` | `van-ban / thue / thong-tu / thong-tu-chinh-sach-chung` | `phase30-thong-tu-lv3-normalize` |
+| 45 | `thu-vien/thong-tu-so-119-2014-tt-btc-ngay-25-8-2014.html` | `van-ban / thue / thong-tu / thong-tu-gtgt-hoa-don` | `van-ban / thue / thong-tu / thong-tu-chinh-sach-chung` | `phase30-thong-tu-lv3-normalize` |
+| 46 | `thu-vien/bien-ban-thanh-ly-nghiem-thu-hop-dong-giao-khoan-mau-09-ldtl.html` | `bieu-mau / ke-toan / mau-bieu-ke-toan / mau-kho-vat-tu-ccdc` | `bieu-mau / ke-toan / mau-bieu-ke-toan / mau-chung-tu-mua-ban-hop-dong` | `phase30-ke-toan-contract-form` |
+| 47 | `thu-vien/mau-bien-ban-thanh-ly-hop-dong-giao-khoan-theo-thong-tu-99.html` | `bieu-mau / ke-toan / mau-bieu-ke-toan / mau-kho-vat-tu-ccdc` | `bieu-mau / ke-toan / mau-bieu-ke-toan / mau-chung-tu-mua-ban-hop-dong` | `phase30-ke-toan-contract-form` |
+| 48 | `thu-vien/hop-dong-giao-khoan-mau-so-08-ldtl.html` | `bieu-mau / ke-toan / mau-bieu-ke-toan / mau-kho-vat-tu-ccdc` | `bieu-mau / ke-toan / mau-bieu-ke-toan / mau-chung-tu-mua-ban-hop-dong` | `phase30-ke-toan-contract-form` |
+| 49 | `thu-vien/mau-hop-dong-giao-khoan-theo-thong-tu-99.html` | `bieu-mau / ke-toan / mau-bieu-ke-toan / mau-kho-vat-tu-ccdc` | `bieu-mau / ke-toan / mau-bieu-ke-toan / mau-chung-tu-mua-ban-hop-dong` | `phase30-ke-toan-contract-form` |
+| 50 | `thu-vien/hop-dong-thu-viec-co-phai-dong-bhxh-khong.html` | `bieu-mau / lao-dong-bao-hiem / mau-bieu-lao-dong-bao-hiem / mau-bhxh-che-do` | `bieu-mau / lao-dong-bao-hiem / mau-bieu-lao-dong-bao-hiem / mau-hop-dong-lao-dong` | `phase30-laodong-contract-topup` |

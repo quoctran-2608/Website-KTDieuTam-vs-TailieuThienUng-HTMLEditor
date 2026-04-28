@@ -1,0 +1,868 @@
+{
+  "generatedAt": "2026-04-28T12:23:42.002391",
+  "phase": "phase19-batch50",
+  "plannedCount": 50,
+  "appliedCount": 50,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-5-9-moi-nhat-2021.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.5.9 mới nhất 2021",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-6-0-moi-nhat-2021.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.6.0 mới nhất 2021",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-6-1-moi-nhat-2021.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.6.1 mới nhất 2021",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-6-2-moi-nhat-2021.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.6.2 mới nhất 2021",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-6-5-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.6.5 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-6-6-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.6.6 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-6-7-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.6.7 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-6-8-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.6.8 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-7-3-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.7.3 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-7-4-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.7.4 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-7-5-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.7.5 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-7-6-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.7.6 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-7-7-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.7.7 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-7-8-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.7.8 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-7-9-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.7.9 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-45-47"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-8-0-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.8.0 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-8-2-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.8.2 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-8-3-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.8.3 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-8-4-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.8.4 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-8-5-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.8.5 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-8-6-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.8.6 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-8-7-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.8.7 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-8-8-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.8.8 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-8-9-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.8.9 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-9-0-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.9.0 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-9-4-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.9.4 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-9-5-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.9.5 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-9-6-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.9.6 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-9-7-moi-nhat-2022.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.9.7 mới nhất 2022",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-9-8-moi-nhat-2023.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.9.8 mới nhất 2023",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-4-9-9-moi-nhat-2023.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 4.9.9 mới nhất 2023",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-48-49"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-0-8-moi-nhat-2023.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.0.8 mới nhất 2023",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-0-9-moi-nhat-2023.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.0.9 mới nhất 2023",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-1-0-moi-nhat-2023.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.1.0 mới nhất 2023",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-1-1-moi-nhat-2023.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.1.1 mới nhất 2023",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-1-2-moi-nhat-2023.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.1.2 mới nhất 2023",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-1-3-moi-nhat-2023.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.1.3 mới nhất 2023",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-1-4-moi-nhat-2024.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.1.4 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-1-5-moi-nhat-2024.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.1.5 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-1-6-moi-nhat-2024.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.1.6 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-1-7-moi-nhat-2024.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.1.7 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-1-8-moi-nhat-2024.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.1.8 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-1-9-moi-nhat-2024.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.1.9 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-2-0-moi-nhat-2024.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.2.0 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-2-1-moi-nhat-2024.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.2.1 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-2-2-moi-nhat-2024.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.2.2 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-2-3-moi-nhat-2024.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.2.3 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-2-4-moi-nhat-2024.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.2.4 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-2-5.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.2.5 mới nhất 2024",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/phan-mem-ho-tro-ke-khai-thue-htkk-5-2-6.html",
+      "title": "Phần mềm hỗ trợ kê khai thuế HTKK 5.2.6 mới nhất 2025",
+      "reason": "phase19-htkk-releases-to-cong-cu",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-5x"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

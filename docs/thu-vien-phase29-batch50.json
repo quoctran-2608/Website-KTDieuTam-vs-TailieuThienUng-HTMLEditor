@@ -1,0 +1,868 @@
+{
+  "generatedAt": "2026-04-28T13:36:08.098604",
+  "phase": "phase29-batch50",
+  "plannedCount": 50,
+  "appliedCount": 50,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/cong-van-10315-btc-tct-huong-dan-thuc-hien-luat-106-2016.html",
+      "title": "Công văn 10315/BTC-TCT Hướng dẫn thực hiện Luật 106/2016/QH13",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-10315-btc-tct-quy-dinh-muc-phat-cham-nop-tien-thue.html",
+      "title": "Công văn 10315/BTC-TCT Quy định mức phạt chậm nộp tiền thuế",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-1307-tct-cs-gia-han-nop-tien-thue-do-covid-19.html",
+      "title": "Công văn 1307/TCT-CS gia hạn nộp tiền Thuế do Covid-19",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-1434-tct-kk-tiep-nhan-mau-06-gtgt-den-30-4-2016.html",
+      "title": "Công văn 1434/TCT-KK tiếp nhận mẫu 06/GTGT đến 30/4/2016",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-17709-btc-tct-quy-dinh-thue-gtgt-1-so-mat-hang.html",
+      "title": "Công văn 17709/BTC-TCT quy định thuế GTGT với 1 số mặt hàng",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-2270-tct-cs-tien-thue-nha-cua-ca-nhan-la-chi-phi-hop-ly.html",
+      "title": "Công văn 2270/TCT-CS tiền thuê nhà của cá nhân là chi phí hợp lý",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-2512-tct-cs-nhung-noi-dung-moi-cua-thong-tu-96.html",
+      "title": "Công văn 2512/TCT-CS Những nội dung mới của Thông tư 96",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-3437-khau-tru-thue-tncn-tien-hoa-hong.html",
+      "title": "Công văn 3437/TCT-TNCN Khấu trừ thuế TNCN đối với tiền hoa hồng",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-348-ct-cs-gioi-thieu-noi-dung-moi-tai-nd-70-2025.html",
+      "title": "Công văn 348/CT-CS giới thiệu nội dung mới tại Nghị định 70/2025/NĐ-CP",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-3496-huong-dan-xuat-hoa-don-vao-cuoi-tuan.html",
+      "title": "Công văn 3496 hướng dẫn về việc xuất hóa đơn GTGT vào cuối tuần",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-3609-tct-cs-gioi-hieu-noi-dung-tt-119-2014-tt-btc.html",
+      "title": "Công văn 3609/TCT-CS giới hiệu nội dung Thông tư 119/2014/TT-BTC",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4153-tct-cs-cach-lap-hoa-don-giam-30-thue-gtgt.html",
+      "title": "Công văn 4153/TCT-CS cách lập hoá đơn giảm 30% thuế GTGT",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4253-tct-cs-bai-bo-huong-dan-nop-mau-06-gtgt.html",
+      "title": "Công văn 4253/TCT-CS Bãi bỏ hướng dẫn nộp Mẫu 06/GTGT",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4291-tct-cs-viet-tat-ten-dia-chi-tren-hoa-don-gtgt.html",
+      "title": "Công văn 4291/TCT-CS về việc viết tắt tên, địa chỉ trên hóa đơn GTGT",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-457-cthn-ttht-lap-hoa-don-dien-tu-chiet-khau-thuong-mai.html",
+      "title": "Công văn 457/CTHN-TTHT lập hóa đơn điện tử chiết khấu thương mại",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4818-tct-pc-nhung-diem-moi-xu-phat-vi-pham-ve-thue-hoa-don.html",
+      "title": "Công văn 4818/TCT-PC những điểm mới xử phạt vi phạm về thuế, hóa đơn",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4868-tct-cs-gioi-thieu-cac-noi-dung-moi-nghi-dinh-123.html",
+      "title": "Công văn 4868/TCT-CS Giới thiệu các nội dung mới Nghị định 123",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4868-tct-cs-nhung-noi-dung-moi-cua-nghi-dinh-123.html",
+      "title": "Công văn 4868/TCT-CS Những nội dung mới của Nghị định 123",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4943-tct-kk-ke-khai-bo-sung-hoa-don-bo-sot.html",
+      "title": "Công văn 4943/TCT-KK Cách Kê khai bổ sung hóa đơn bỏ sót",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-5106-ve-muc-tien-an-trua-tien-an-giua-ca.html",
+      "title": "Công văn 5106 về mức tiền ăn trưa, tiền ăn giữa ca khi xác định thuế TNCN 2025",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-5485-btc-tct-dang-ky-ke-khai-thue-theo-pp-khau-tru.html",
+      "title": "Công văn 5485/BTC-TCT đăng ký kê khai thuế theo pp khấu trừ",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-6043-ct-ttht-huong-dan-quyet-toan-thue-tncn-nam-2019.html",
+      "title": "Công văn 6043/CT-TTHT hướng dẫn quyết toán thuế TNCN năm 2019",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-636-tct-dnncn-huong-dan-quyet-toan-thue-tncn-2020.html",
+      "title": "Công văn 636/TCT-DNNCN Hướng dẫn quyết toán thuế TNCN 2020",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-767-tct-cs-gioi-thieu-noi-dung-moi-thong-tu-26.html",
+      "title": "Công văn 767/TCT-CS giới thiệu nội dung mới của Thông tư 26/2015/TT-BTC",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-767-tct-cs-ngay-05-03-2015-cua-bo-tai-chinh.html",
+      "title": "Công văn 767/TCT-CS những nội dung mới của Thông tư 26",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-801-tct-tncn-huong-dan-quyet-toan-thue-tncn.html",
+      "title": "Công văn 801/TCT- TNCN V/v Quyết toán thuế TNCN năm 2015",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-845-tct-nang-cap-htkk-bctc-theo-thong-tu-133.html",
+      "title": "Công văn 845/TCT-CNTT nâng cấp HTKK - BCTC theo Thông tư 133",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-897-tct-qln-gia-han-nop-thue-do-dich-benh-covid-19.html",
+      "title": "Công văn 897/TCT-QLN Gia hạn nộp thuế do dịch bệnh Covid-19",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-897-tct-qln-ve-viec-gia-han-nop-thue-do-covid.html",
+      "title": "Công văn 897/TCT-QLN về việc gia hạn nộp thuế do Covid",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-13896-huong-dan-ve-thue-gia-tri-gia-tang.html",
+      "title": "Công văn số 13896 hướng dẫn về thuế giá trị gia tăng năm 2025",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-13945-ve-thue-gtgt-hang-nhap-khau.html",
+      "title": "Công văn số 13945 hướng dẫn về thuế GTGT hàng nhập khẩu năm 2025",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-2247-ve-hoan-thue-gtgt.html",
+      "title": "Công văn số 2247 về hoàn thuế GTGT mới nhất năm 2025",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-2366-huong-dan-ve-hoa-don-dien-tu-khoi-tao-tu-may-tinh-tien.html",
+      "title": "Công văn số 2366 hướng dẫn về hóa đơn điện tử khởi tạo từ máy tính tiền năm 2025",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-2541.html",
+      "title": "Công văn số 2541 hướng dẫn về chính sách thuế thu nhập doanh nghiệp năm 2025",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-297-xoa-bo-thue-khoan-voi-ho-kinh-doanh.html",
+      "title": "Công văn số 297 xóa bỏ thuế khoán với hộ kinh doanh mới nhất 2025",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-4716-tct-cs-gioi-thieu-noi-dung-thong-tu-151-2014-tt-btc.html",
+      "title": "Công văn Số 4716/TCT-CS giới thiệu nội dung Thông tư 151/2014/TT-BTC",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-7527-btc-tct-thanh-tra-kiem-tra-thue-cac-dn.html",
+      "title": "Công văn Số 7527/BTC-TCT thanh tra, kiểm tra thuế đối với các doanh nghiệp",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-7924-btc-tchq-lam-thu-tuc-xuat-khau-quyet-toan-thue.html",
+      "title": "Công văn Số 7924/BTC-TCHQ làm thủ tục xuất khẩu, quyết toán thuế",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-100-2021-tt-btc-sua-doi-bo-sung-thong-tu-40-2021.html",
+      "title": "Thông tư 100/2021/TT-BTC sửa đổi, bổ sung Thông tư 40/2021",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ho-ca-nhan-kinh-doanh"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-119-2014-tt-btc-thu-tuc-hanh-chinh-ve-thue.html",
+      "title": "Thông tư 119/2014/TT- BTC thủ tục hành chính về thuế",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-130-2016-tt-btc-huong-dan-luat-thue-gtgt-ttdb-quan-ly-thue.html",
+      "title": "Thông tư 130/2016/TT-BTC Hướng dẫn Luật thuế GTGT, TTĐB, Quản lý thuế",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-141-2013-tt-btc-thi-hanh-luat-thue-tndn-va-gtgt.html",
+      "title": "Thông tư 141/2013/TT-BTC hướng dẫn thi hành luật thuế TNDN và GTGT",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-151-2014-tt-btc-huong-dan-thi-hanh-nd-91-quy-dinh-ve-thue.html",
+      "title": "Thông tư 151/2014/TT-BTC hướng dẫn thi hành NĐ 91 quy định về thuế",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-166-2013-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-thue.html",
+      "title": "Thông tư 166/2013/TT-BTC xử phạt vi phạm hành chính về Thuế",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-25-2018-tt-btc-huong-dan-nd-146-2017-nd-cp-ve-thue-tndn-va-tncn.html",
+      "title": "Thông tư 25/2018/TT-BTC Hướng dẫn NĐ 146/2017/NĐ-CP về Thuế TNDN và TNCN",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-26-2015-tt-btc-ngay-27-02-2015-cua-bo-tai-chinh.html",
+      "title": "Thông tư 26/2015/TT-BTC quy định về thuế GTGT và quản lý thuế",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-26-vbhn-btc-van-ban-hop-nhat-thue-tndn.html",
+      "title": "Thông tư 26/VBHN –BTC văn bản hợp nhất thuế TNDN",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-302-2016-tt-btc-quy-dinhh-ve-le-phi-mon-bai.html",
+      "title": "Thông tư 302/2016/TT-BTC Quy địnhh về lệ phí môn bài",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-32-2025-tt-btc-hoa-don-dien-tu.html",
+      "title": "Thông tư 32/2025/TT-BTC thay thế Thông tư 78/2021 về hóa đơn điện tử",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-39-2025-tt-bct-quy-dinh-ve-han-muc-khuyen-mai-giam-gia.html",
+      "title": "Thông tư 39/2025/TT-BCT quy định về hạn mức khuyến mại giảm giá",
+      "reason": "phase29-vanban-thue-lv3-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

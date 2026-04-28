@@ -1,0 +1,936 @@
+{
+  "generatedAt": "2026-04-28T16:16:53.468520",
+  "phase": "phase52-finalize54-oneway",
+  "plannedCount": 54,
+  "appliedCount": 54,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "ban-tin/phu-luc-bao-cao-trich-su-dung-quy-khoa-hoc-cong-nghe-mau-so-03-6-tndn.html",
+      "title": "Phụ lục báo cáo trích sử dụng quỹ khoa học công nghệ Mẫu số 03-6/TNDN",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-cac-hoa-don-dien-tu-da-lap-sai.html",
+      "title": "Mẫu bảng kê các hóa đơn điện tử đã lập sai 2026",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-2-1-bk-qtt-tncn.html",
+      "title": "Bảng kê giảm trừ gia cảnh cho người phụ thuộc Mẫu 2-1/BK-QTT-TNCN",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-hang-hoa-dich-vu-ban-ra-01-1-gtgt-theo-tt-119.html",
+      "title": "Bảng kê hàng hóa, dịch vụ bán ra 01-1/GTGT theo TT 119",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-hang-hoa-dich-vu-ban-ra-04-1-gtgt-theo-tt-119.html",
+      "title": "Bảng kê hàng hóa, dịch vụ bán ra 04-1/GTGT theo TT 119",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-hang-hoa-dich-vu-mua-vao-01-2-gtgt-theo-tt-119.html",
+      "title": "Bảng kê hàng hóa, dịch vụ MUA VÀO 01-2/GTGT theo TT 119",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-hoa-don-chung-tu-hang-hoa-dich-vu-ban-ra-mau-03-thkh.html",
+      "title": "Mẫu bảng kê hóa đơn chứng từ hàng hóa dịch vụ bán ra mẫu số 03/THKH",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-kem-theo-hoa-don-gia-tri-gia-tang.html",
+      "title": "Mẫu bảng kê xuất kèm hóa đơn điện tử GTGT mới nhất",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-thong-tin-nguoi-phu-thuoc-giam-tru-gia-canh-mau-05-3-bk-tncn.html",
+      "title": "Mẫu 05-3/BK-QTT-TNCN Bảng kê chi tiết người phụ thuộc giảm trừ gia cảnh",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-thu-mua-hang-hoa-dich-vu-khong-co-hoa-don-mau-01.html",
+      "title": "Bảng kê thu mua hàng hoá dịch vụ không có hoá đơn mẫu 01/TNDN",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-01-bk-htk-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/BK-HTK theo Thông tư số 18/2026/TT-BTC Bảng kê hàng tồn kho của hộ kinh doanh",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-ho-ca-nhan-mon-bai"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-01-bk-kthtkd-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/BK-KTHTKD theo Thông tư số 18/2026/TT-BTC Phụ lục Bảng kê chi tiết hộ kinh doanh",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-ho-ca-nhan-mon-bai"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-ban-ke-khai-ve-nguoi-phai-truc-tiep-nuoi-duong-21a-xn-tncn.html",
+      "title": "Mẫu 07/XN-NPT-TNCN bảng kê khai người trực tiếp nuôi dưỡng",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-02-tndn-theo-thong-tu-20.html",
+      "title": "Mẫu bảng kê 02/TNDN mới nhất 2026 theo Thông tư 20/2026",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-cac-hop-dong-nha-thau-nuoc-ngoai.html",
+      "title": "Mẫu 04.1-ĐK-TCT-BK bảng kê các hợp đồng nhà thầu nước ngoài nộp thuế thông qua bên Việt Nam mới nhất",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-nha-thau"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hang-hoa-dich-vu-ban-ra-theo-pp-truc-tiep-04-1-gtgt.html",
+      "title": "Mẫu bảng kê hàng hóa dịch vụ bán ra theo PP trực tiếp Mẫu số 04-1/GTGT",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hang-hoa-dich-vu-ban-ra-thue-ttdb-01-1-ttdb.html",
+      "title": "Mẫu bảng kê hóa đơn hàng hóa dịch vụ bán ra chịu thuế TTĐB Mẫu số 01-1/TTĐB",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hang-hoa-dich-vu-mua-vao-thue-ttdb-01-2-ttdb.html",
+      "title": "Mẫu bảng kê hóa đơn hàng hóa dịch vụ mua vào chịu thuế TTĐB Mẫu số 01-2/TTĐB",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-chiet-khau-thuong-mai.html",
+      "title": "Mẫu bảng kê hóa đơn chiết khấu thương mại theo Nghị Định 70/2025",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-chuyen-di-mau-bk01-ac.html",
+      "title": "Mẫu Bảng kê hoá đơn chuyển đi Mẫu BK01/AC",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-chuyen-di-theo-thong-tu-39.html",
+      "title": "Mẫu Bảng kê hoá đơn chuyển đi mới nhất theo TT 39",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-dien-tu-da-lap-sai-mau-01-bk-dctt.html",
+      "title": "Mẫu 01/BK-ĐCTT - Mẫu bảng kê hóa đơn điện tử đã lập sai theo NĐ 70/2025/NĐ-CP",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-dien-tu-da-lap-sai.html",
+      "title": "Mẫu 01/BK-ĐCTT Bảng kê hóa đơn điện tử đã lập sai theo NĐ 70/2025",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-thong-tin-nguoi-phu-thuoc-giam-tru-gia-canh-05-3-bk-tncn.html",
+      "title": "Bảng kê thông tin người phụ thuộc giảm trừ gia cảnh mẫu 05-3/BK-QTT-TNCN",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-thu-nhap-chiu-thue-va-thue-thu-nhap-ca-nhan-05-1-bk-tncn.html",
+      "title": "Bảng kê cá nhân thuộc diện tính thuế theo biểu lũy tiến từng phần mẫu 05-1/BK-QTT-TNCN",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-thu-nhap-chiu-thue-va-thue-thu-nhap-ca-nhan-05-2-bk-tncn.html",
+      "title": "Bảng kê cá nhân thuộc diện tính thuế toàn phần mẫu 05-2/BK-QTT-TNCN",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-phu-luc-bang-ke-cac-nha-thau-nuoc-ngoai.html",
+      "title": "Mẫu Phụ lục bảng kê các nhà thầu nước ngoài - Mẫu 02-1/NTNN",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-nha-thau"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-phu-luc-giam-thue-gtgt-theo-nghi-quyet-174.html",
+      "title": "Mẫu phụ lục giảm thuế GTGT 2026 theo Nghị quyết 174/2024/QH15",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-phu-luc-giam-thue-gtgt.html",
+      "title": "Mẫu phụ lục giảm thuế GTGT 2024 theo Nghị định 72/2024/NĐ-CP",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-02-1-bk-qtt-tncn-bang-ke-giam-tru-gia-canh-cho-nguoi-phu-thuoc.html",
+      "title": "Mẫu số 02-1/BK-QTT-TNCN Bảng kê giảm trừ gia cảnh cho người phụ thuộc theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-1a-tndn-phu-luc-ket-qua-hoat-dong-san-xuat-kinh-doanh.html",
+      "title": "Mẫu số 03-1A/TNDN Phụ lục kết quả hoạt động sản xuất kinh doanh theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-1b-tndn-phu-luc-ket-qua-hoat-dong-san-xuat-kinh-doanh.html",
+      "title": "Mẫu số 03-1B/TNDN Phụ lục kết quả hoạt động sản xuất kinh doanh theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-1c-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html",
+      "title": "Mẫu số 03-1C/TNDN Phụ lục thuế thu nhập doanh nghiệp được ưu đãi theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-2-tndn-phu-luc-chuyen-lo-theo-tt-80-2021.html",
+      "title": "Mẫu số 03-2/TNDN Phụ lục chuyển lỗ theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-3a-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html",
+      "title": "Mẫu số 03-3A/TNDN Phụ lục thuế thu nhập doanh nghiệp được ưu đãi theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-3b-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html",
+      "title": "Mẫu số 03-3B/TNDN Phụ lục thuế TNDN được ưu đãi theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-3c-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html",
+      "title": "Mẫu số 03-3C/TNDN Phụ lục thuế thu nhập doanh nghiệp được ưu đãi theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-3d-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html",
+      "title": "Mẫu số 03-3D/TNDN Phụ lục thuế thu nhập doanh nghiệp được ưu đãi theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-4-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-da-nop-o-nuoc-ngoai-theo-tt-80-2021.html",
+      "title": "Mẫu số 03-4/TNDN Phụ lục thuế thu nhập doanh nghiệp đã nộp ở nước ngoài theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-5-tndn-phu-luc-thu-nhap-doi-voi-hoat-dong-chuyen-nhuong-bat-dong-san.html",
+      "title": "Mẫu số 03-5/TNDN Phụ lục thu nhập đối với hoạt động chuyển nhượng bất động sản theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-8a-tndn-phu-luc-bang-phan-bo-so-thue-thu-nhap-doanh-nghiep-phai-nop.html",
+      "title": "Mẫu số 03-8A/TNDN Phụ lục bảng phân bổ số thuế thu nhập doanh nghiệp phải nộp theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-8b-tndn-phu-luc-bang-phan-bo-so-thue-thu-nhap-doanh-nghiep-phai-nop.html",
+      "title": "Mẫu số 03-8B/TNDN Phụ lục bảng phân bổ số thuế thu nhập doanh nghiệp phải nộp theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-8c-tndn-phu-luc-bang-phan-bo-so-thue-thu-nhap-doanh-nghiep-phai-nop.html",
+      "title": "Mẫu số 03-8C/TNDN Phụ lục bảng phân bổ số thuế thu nhập doanh nghiệp phải nộp theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-9-tndn-bang-ke-chung-tu-nop-thue-tndn-tam-nop.html",
+      "title": "Mẫu số 03-9/TNDN Bảng kê chứng từ nộp thuế TNDN tạm nộp theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-04-1-cnv-tncn-bang-ke-chi-tiet-ca-nhan-chuyen-nhuong-von.html",
+      "title": "Mẫu số 04-1/CNV-TNCN Bảng kê chi tiết cá nhân chuyển nhượng vốn theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-04-1-dtv-tncn-phu-luc-bang-ke-chi-tiet-theo-tt-80-2021.html",
+      "title": "Mẫu số 04-1/ĐTV-TNCN Phụ lục bảng kê chi tiết theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-05-1-bk-qtt-tncn-bang-ke-chi-tiet-ca-nhan.html",
+      "title": "Mẫu số 05-1/BK-QTT-TNCN Bảng kê chi tiết cá nhân thuộc diện tính thuế theo biễu lũy tiến từng phần",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-05-2-bk-qtt-tncn-bang-ke-chi-tiet-ca-nhan.html",
+      "title": "Mẫu số 05-2/BK-QTT-TNCN bảng kê chi tiết cá nhân thuộc diện tính thuế theo thuế suất toàn phần",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-05-3-bk-qtt-tncn-bang-ke-chi-tiet-nguoi-phu-thuoc-giam-tru-gia-canh.html",
+      "title": "Mẫu số 05-3/BK-QTT-TNCN bảng kê chi tiết người phụ thuộc giảm trừ gia cảnh",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-06-1-bk-tncn-bang-ke-chi-tiet-ca-nhan-co-thu-nhap-trong-nam-tinh-thue.html",
+      "title": "Mẫu số 06-1/BK-TNCN Bảng kê chi tiết cá nhân có thu nhập trong năm tính thuế theo TT 80/2021",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/phu-luc-bang-ke-cac-nha-thau-phu-tham-gia-hop-dong-nha-thau.html",
+      "title": "Phụ lục bảng kê các nhà thầu phụ tham gia hợp đồng nhà thầu mẫu 02-2/NTNN",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-nha-thau"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/phu-luc-bang-ke-thu-nhap-chiu-thue-va-thue-tncn-da-khau-tru-mau-so-05-2-bk-tncn.html",
+      "title": "Phụ lục bảng kê cá nhân thuộc diện tính thuế suất toàn phần Mẫu 05-2/BK-QTT-TNCN",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/phu-luc-bang-ke-thu-nhap-chiu-thue-va-thue-tncn-mau-so-05-1-bk-tncn.html",
+      "title": "Mẫu 05-1/BK-QTT-TNCN Phụ lục bảng kê cá nhân thuộc diện tính thuế theo biểu lũy tiến từng phần",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/phu-luc-chi-tiet-giam-tru-gia-canh-cho-nguoi-phu-thuoc-mau-so-01-1-thkh.html",
+      "title": "Phụ lục chi tiết giảm trừ gia cảnh cho người phụ thuộc mẫu số 01-1/THKH",
+      "reason": "phase52-final-oneway-bangke-phuluc",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

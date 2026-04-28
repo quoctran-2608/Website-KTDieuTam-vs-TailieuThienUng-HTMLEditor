@@ -1,0 +1,868 @@
+{
+  "generatedAt": "2026-04-28T12:44:28.324052",
+  "phase": "phase23-batch50",
+  "plannedCount": 50,
+  "appliedCount": 50,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/cach-su-dung-phan-mem-ke-toan-fast-accounting-qua-mang.html",
+      "title": "Hướng dẫn cách sử dụng phần mềm kế toán Fast Accounting",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "fast",
+        "lv3": "fast-huong-dan-su-dung"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "fast",
+        "lv3": "fast-huong-dan-su-dung"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tai-bang-ke-excel-vao-phan-mem-htkk.html",
+      "title": "Cách tải bảng kê Excel vào HTKK mới nhất",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tai-du-lieu-tu-excel-vao-phan-mem-htkk.html",
+      "title": "Hướng dẫn cách tải file Excel vào HTKK chi tiết",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tncn"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tam-tinh-thue-tndn-phai-nop-quy-tren-misa.html",
+      "title": "Cách tạm tính thuế TNDN phải nộp quý trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tap-hop-chi-phi-truc-tiep-tren-misa-theo-tt200.html",
+      "title": "Cách tập hợp chi phí trực tiếp trên Misa theo Thông tư 200",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-thay-the-cum-tu-ky-tu-trong-word-va-excel.html",
+      "title": "Cách thay thế cụm từ, ký tự, chữ trong Word và Excel",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-thanh-don-hang-tren-misa-theo-thong-tu-133.html",
+      "title": "Cách tính giá thành đơn hàng trên Misa theo Thông tư 133",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-thanh-don-hang-tren-misa-theo-thong-tu-200.html",
+      "title": "Cách tính giá thành đơn hàng trên Misa theo Thông tư 200",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-thanh-theo-cong-trinh-vu-viec-tren-misa-theo-thong-tu-133.html",
+      "title": "Cách tính giá thành theo công trình vụ việc trên Misa theo Thông tư 133",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-thanh-theo-cong-trinh-vu-viec-tren-misa-theo-thong-tu-200.html",
+      "title": "Cách tính giá thành theo công trình vụ việc trên Misa theo Thông tư 200",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-thanh-theo-hop-dong-tren-misa-ap-dung-thong-tu-133.html",
+      "title": "Cách tính giá thành theo hợp đồng trên Misa áp dụng Thông tư 133",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-thanh-theo-hop-dong-tren-misa-theo-tt200.html",
+      "title": "Cách tính giá thành theo hợp đồng trên Misa áp dụng Thông tư 200",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-thanh-theo-phuong-phap-gian-don-tren-misa-theo-thong-tu-133.html",
+      "title": "Cách tính giá thành theo phương pháp giản đơn trên Misa theo Thông tư 133",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-thanh-theo-phuong-phap-gian-don-tren-misa-theo-thong-tu-200.html",
+      "title": "Cách tính giá thành theo phương pháp giản đơn trên Misa theo Thông tư 200",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-thanh-theo-phuong-phap-he-so-ty-le-tren-misa-theo-thong-tu-133.html",
+      "title": "Cách tính giá thành theo phương pháp hệ số tỷ lệ trên Misa theo Thông tư 133",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-thanh-theo-phuong-phap-he-so-ty-le-tren-misa-theo-thong-tu-200.html",
+      "title": "Cách tính giá thành theo phương pháp hệ số tỷ lệ trên Misa theo Thông tư 200",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-xuat-kho-tren-misa.html",
+      "title": "Cách tính giá xuất kho trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-kho-san-xuat"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-kho-san-xuat"
+      }
+    },
+    {
+      "href": "thu-vien/chi-phi-mua-phan-mem-nuoc-ngoai-qua-mang-khong-co-hoa-don.html",
+      "title": "Xử lý Chi phí mua phần mềm nước ngoài qua mạng",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      }
+    },
+    {
+      "href": "thu-vien/danh-muc-he-thong-tai-khoan-ke-toan-theo-thong-tu-133.html",
+      "title": "Bảng Hệ thống Tài khoản kế toán theo Thông tư 133",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-ban-hang-co-chiet-khau-thuong-mai-tren-misa.html",
+      "title": "Cách hạch toán bán hàng có chiết khấu thương mại trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-ban-hang-doanh-thu"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-ban-hang-doanh-thu"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-chi-tien-tam-ung-cho-nhan-vien-tren-misa.html",
+      "title": "Hạch toán chi tiền tạm ứng cho nhân viên trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-khac"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-khac"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-hang-ban-dung-gia-huong-hoa-hong-tren-misa.html",
+      "title": "Cách hạch toán hàng bán đúng giá hưởng hoa hồng trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-ban-hang-doanh-thu"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-ban-hang-doanh-thu"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-ket-chuyen-lai-lo-dau-nam-tren-misa.html",
+      "title": "Hạch toán kết chuyển lãi lỗ đầu năm trên misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-nhan-tien-ung-truoc-cua-khach-hang-bang-tien-mat-tren-misa.html",
+      "title": "Hạch toán nhận tiền ứng trước của khách hàng bằng tiền mặt trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-ban-hang-doanh-thu"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-ban-hang-doanh-thu"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-nhap-kho-thanh-pham-san-xuat-tren-misa.html",
+      "title": "Cách hạch toán nhập kho thành phẩm sản xuất trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-mua-hang-cong-no"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-mua-hang-cong-no"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-nop-thue-gtgt-tncn-tndn-mon-bai-tren-misa.html",
+      "title": "Hạch toán nộp thuế GTGT, TNCN, TNDN, Lệ phí môn bài trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-nop-thue-hang-nhap-khau-tren-misa.html",
+      "title": "Hạch toán nộp thuế hàng nhập khẩu trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-nop-tien-bao-hiem-xa-hoi-tren-misa.html",
+      "title": "Hạch toán nộp tiền bảo hiểm xã hội trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-khac"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-khac"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-nop-tien-mat-vao-tai-khoan-ngan-hang-tren-misa.html",
+      "title": "Hạch toán nộp tiền mặt vào tài khoản ngân hàng trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-khac"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-khac"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-nop-tien-thue-tndn-tam-tinh-quy-tren-misa.html",
+      "title": "Hạch toán nộp tiền thuế TNDN tạm tính quý trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-bao-cao-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-rut-tien-gui-ngan-hang-ve-nhap-quy-tien-mat-tren-misa.html",
+      "title": "Hạch toán rút tiền gửi ngân hàng về nhập quỹ tiền mặt trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-khac"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-khac"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-tra-truoc-tien-hang-cho-nguoi-ban-tren-misa.html",
+      "title": "Hạch toán trả trước tiền hàng cho người bán trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-mua-hang-cong-no"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-mua-hang-cong-no"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-hach-toan-tra-lai-hang-mua-tren-misa.html",
+      "title": "Cách hạch toán trả lại hàng mua trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-mua-hang-cong-no"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-mua-hang-cong-no"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-lap-cac-bang-bieu-cuoi-thang-tren-excel.html",
+      "title": "Hướng dẫn cách lập các bảng biểu cuối tháng trên Excel",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-lap-so-sach-ke-toan-tren-excel.html",
+      "title": "Hướng dẫn cách lập sổ sách kế toán trên Excel",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-lap-to-khai-thue-mon-bai-mau-so-01-mbai.html",
+      "title": "Hướng dẫn lập tờ khai Lệ phí Môn bài trên HTKK và qua mạng",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/ke-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-tren-htkk.html",
+      "title": "Hướng dẫn quyết toán thuế TNDN năm 2026 trên HTKK",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tndn"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/ke-khai-thue-nha-thau-phan-mem-nhap-khau.html",
+      "title": "Cách tính thuế nhà thầu bản quyền phần mềm nước ngoài",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      }
+    },
+    {
+      "href": "thu-vien/nhap-kho-nguyen-vat-lieu-dung-cho-san-xuat-khong-su-dung-het-tren-misa.html",
+      "title": "Nhập kho nguyên vật liệu dùng cho sản xuất không sử dụng hết trên Misa",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-mua-hang-cong-no"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-mua-hang-cong-no"
+      }
+    },
+    {
+      "href": "thu-vien/tai-phan-mem-ke-toan-fast-accounting-mien-phi-dung-thu.html",
+      "title": "Tải phần mềm kế toán Fast Accounting miễn phí dùng thử",
+      "reason": "phase23-remaining-software-guides-to-cong-cu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "fast",
+        "lv3": "fast-huong-dan-su-dung"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "fast",
+        "lv3": "fast-huong-dan-su-dung"
+      }
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-ban-hang-co-giam-gia-hang-ban.html",
+      "title": "Cách hạch toán bán hàng có giảm giá hàng bán trên Misa",
+      "reason": "phase23-extra-misa-guide",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "doanh-thu-chi-phi-kqkd"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-ban-hang-doanh-thu"
+      }
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-mang-tscd-di-gop-von-vao-cong-ty-lien-doanh.html",
+      "title": "Cách hạch toán mang TSCĐ đi góp vốn vào công ty liên doanh, liên kết trên Misa",
+      "reason": "phase23-extra-misa-guide",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "tscd-ccdc-khau-hao"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-tscd-ccdc"
+      }
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-mua-ccdc-ve-nhap-kho-sau-do-xuat-kho-su-dung.html",
+      "title": "Cách hạch toán mua CCDC về nhập kho sau đó xuất kho ra sử dụng trên Misa",
+      "reason": "phase23-extra-misa-guide",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "hang-ton-kho-gia-thanh"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-tscd-ccdc"
+      }
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-tra-luong-bang-tien-gui-ngan-hang.html",
+      "title": "Cách hạch toán trả lương bằng tiền gửi ngân hàng trên Misa",
+      "reason": "phase23-extra-misa-guide",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "tien-quy-ngan-hang"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-khac"
+      }
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-tra-luong-bang-tien-mat.html",
+      "title": "Cách hạch toán trả lương bằng tiền mặt trên Misa",
+      "reason": "phase23-extra-misa-guide",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "tien-quy-ngan-hang"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-khac"
+      }
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-xuat-kho-hang-hoa-thanh-pham-lam-tscd.html",
+      "title": "Cách hạch toán xuất kho hàng hóa, thành phẩm làm TSCĐ trên Misa",
+      "reason": "phase23-extra-misa-guide",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "hang-ton-kho-gia-thanh"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-tscd-ccdc"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-phai-thu-khac-thu-nhap-khac-gop-von-bang-tien-mat.html",
+      "title": "Hạch toán phải thu khác, thu nhập khác, góp vốn bằng tiền mặt trên Misa",
+      "reason": "phase23-extra-misa-guide",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "tien-quy-ngan-hang"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "misa",
+        "lv3": "misa-khac"
+      }
+    },
+    {
+      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-133.html",
+      "title": "Hệ thống tài khoản kế toán theo Thông tư 133 Excel",
+      "reason": "phase23-extra-excel-tooling",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "hach-toan-dac-thu"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      }
+    },
+    {
+      "href": "thu-vien/he-thong-tai-khoan-ke-toan-theo-thong-tu-200-moi-nhat.html",
+      "title": "Hệ thống tài khoản kế toán theo Thông tư 200 Excel",
+      "reason": "phase23-extra-excel-tooling",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "hach-toan-dac-thu"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      }
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-su-dung-phan-mem-ke-toan-theo-thong-tu-99.html",
+      "title": "Quy định về sử dụng phần mềm kế toán theo Thông tư 99",
+      "reason": "phase23-extra-software-policy",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      },
+      "after": {
+        "kind": "cong-cu",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

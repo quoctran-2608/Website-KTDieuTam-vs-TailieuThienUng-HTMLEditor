@@ -1,0 +1,975 @@
+{
+  "generatedAt": "2026-04-28T10:35:15.877590",
+  "phase": "phase3-huong-dan-ke-toan-chuan-muc-che-do-nguyen-tac",
+  "appliedCount": 50,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/cong-ty-co-phan-asia-pacific-tuyen-ke-toan-tong-hop.html",
+      "title": "Công ty cổ phần Asia Pacific tuyển Kế toán tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-co-phan-co-kim-khi-viet-my-tuyen-ke-toan.html",
+      "title": "Công ty cổ phần cơ kim khí Việt Mỹ Tuyển kế toán",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-co-phan-dau-tu-everland-tuyen-ke-toan-ban-hang.html",
+      "title": "Công ty Cổ phần Đầu tư Everland tuyển Kế toán bán hàng",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-co-phan-dich-vu-va-tu-van-phat-trien-nguon-nhan-luc-eq-tuyen-nhan-vien-ke-toan.html",
+      "title": "Công ty Cổ phần Dịch vụ và tư vấn phát triển nguồn nhân lực EQ tuyển Nhân viên Kế toán",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-co-phan-ninza-tuyen-ke-toan-tong-hop.html",
+      "title": "Công ty Cổ phần NinZA tuyển Kế toán tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-co-phan-thuong-mai-va-dich-vu-viet-huong-tuyen-nhan-vien-ke-toan.html",
+      "title": "Công ty cổ phần thương mại và dịch vụ Việt Hương tuyển Nhân viên kế toán",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-co-phan-thuong-mai-va-xuat-nhap-tvh-tuyen-ke-toan-kho.html",
+      "title": "Công ty Cổ phần Thương mại và Xuất nhập TVH tuyển Kế toán Kho",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-co-phan-tm-dtpt-echo-tuyen-nhan-vien-ke-toan.html",
+      "title": "Công ty cố phần thương mại và đầu tư phát triển Echo tuyển Nhân viên kế toán",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-cp-dich-vu-va-van-tai-bao-chau-tuyen-ke-toan-nha-hang.html",
+      "title": "Công ty CP Dịch vụ và Vận tải Bảo Châu tuyển Kế toán nhà hàng",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-cp-tam-hoang-viet-tuyen-ke-toan-tong-hop.html",
+      "title": "Công ty Cp Tâm Hoàng Việt tuyển Kế toán tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-cp-xnk-thu-cong-my-nghe-viet-nhat-tuyen-ke-toan-tong-hop.html",
+      "title": "Công ty CP XNK Thủ Công Mỹ Nghệ Việt Nhật tuyển Kế toán Tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-cp-xnk-thuong-mai-va-xay-dung-ngoc-khanh-tuyen-ke-toan.html",
+      "title": "Công ty CP XNK Thương Mại và Xây Dựng Ngọc Khánh tuyển Kế toán",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-eurodoor-vietnam-tuyen-ke-toan-ban-hang.html",
+      "title": "Công ty Eurodoor Vietnam tuyển Kế toán bán hàng",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-ke-toan-dieu-tam-tuyen-ke-toan-giang-day.html",
+      "title": "Công ty kế toán Diệu Tâm tuyển kế toán gấp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-thanh-lich-tuyen-nhan-vien-ke-toan-tong-hop.html",
+      "title": "Công ty Thanh Lịch tuyển Nhân viên kế toán tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tl-logistics-tuyen-ke-toan-vien.html",
+      "title": "Công ty TL LOGISTICS Tuyển kế toán viên",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tm-va-dv-rong-viet-dvc-pharma-tuyen-ke-toan-cong-no.html",
+      "title": "Công ty TNHH TM và DV Rồng Việt (DVC PHARMA) tuyển Kế toán công nợ",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-hbc-viet-nam-tuyen-ke-toan-kho.html",
+      "title": "Công ty TNHH HBC Việt Nam tuyển Kế toán kho",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-mtv-toyota-my-dinh-tuyen-nhan-vien-ke-toan-tong-hop.html",
+      "title": "Công ty TNHH MTV Toyota Mỹ Đình tuyển Nhân viên kế toán tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-phan-phoi-san-pham-cao-cap-lpd-tuyen-ke-toan-thue.html",
+      "title": "Công ty TNHH Phân phối sản phẩm cao cấp LPD tuyển Kế toán thuế",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-pttm-va-sx-thanh-long-tuyen-ke-toan-tong-hop.html",
+      "title": "Công ty TNHH PTTM và SX Thành Long tuyển Kế toán tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-tham-my-quoc-te-nha-khoa-lien-thanh-tuyen-ke-toan.html",
+      "title": "Công ty TNHH Thẩm Mỹ Quốc Tế Nha Khoa Liên Thanh tuyển Nhân viên kế toán kiêm lễ tân",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-thanh-cong-tuyen-ke-toan-tong-hop.html",
+      "title": "Công ty TNHH dịch vụ kỹ thuật tổng hợp Thành Công tuyển Kế toán tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-thuong-mai-huong-thuy-tuyen-ke-toan-trung-tam-bao-hanh.html",
+      "title": "Công ty TNHH thương mại Hương Thủy tuyển Kế toán trung tâm bảo hành tại Quận Hai Bà Trưng, Hà Nội",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-thuong-mai-tvahat-quoc-te-tuyen-ke-toan-ban-hang-ke-toan-kho.html",
+      "title": "Công ty TNHH thương mại TVAHAT Quốc Tế tuyển Kế toán bán hàng + kế toán kho",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-thuong-mai-va-dau-tu-kleve-tuyen-ke-toan-thue.html",
+      "title": "Công ty TNHH thương mại và đầu tư K.L.E.V.E tuyển Kế toán thuế",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-thuong-mai-va-dich-vu-quan-phong-tuyen-nhan-vien-ke-toan.html",
+      "title": "Công ty TNHH Thương mại và Dịch vụ Quán Phong tuyển Nhân viên kế toán",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-thuong-mai-va-du-lich-mc-viet-nam-tuyen-ke-toan-kho.html",
+      "title": "Công ty TNHH thương mại và du lịch M&C Việt Nam tuyển Kế toán kho",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-tqt-thuong-mai-tuyen-nhan-vien-ke-toan.html",
+      "title": "Công ty TNHH TQT Thương mại tuyển Nhân viên kế toán",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-tu-van-luat-bravo-tuyen-nhan-vien-ke-toan.html",
+      "title": "Công ty TNHH Tư vấn Luật Bravo tuyển Nhân viên kế toán",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-tu-van-tham-dinh-va-dau-tu-cong-nghe-gia-loc-tuyen-ke-toan-vat-tu.html",
+      "title": "Công ty TNHH tư vấn thẩm định và đầu tư công nghệ Gia Lộc tuyển Kế toán vật tư",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tnhh-xay-dung-halo-tuyen-ke-toan-tong-hop.html",
+      "title": "Công ty TNHH xây dựng HALÔ Tuyển kế toán tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-tu-van-va-kinh-doanh-vietbay-tuyen-nhan-vien-ke-toan.html",
+      "title": "Công ty tư vấn và kinh doanh Vietbay tuyển Nhân viên kế toán",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-viet-nhat-handicraft-jsc-tuyen-ke-toan-tong-hop.html",
+      "title": "Công ty Viet Nhat Handicraft., JSC tuyển Kế toán Tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/http-ketoandieutam-net.html",
+      "title": "Công ty TNHH Thái Hoa Đô tuyển Nhân viên Kế toán bán hàng",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/hyundai-my-dinh-tuyen-dung-ke-toan-tong-hop.html",
+      "title": "Hyundai Mỹ Đình tuyển dụng Kế toán tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/nha-may-sx-viname-tuyen-ke-toan-tong-hop.html",
+      "title": "Nhà máy SX VINAME tuyển Kế toán tổng hợp",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/tap-doan-tai-chinh-fb-viet-nam-tuyen-nhan-vien-ke-toan-tai-dong-anh-ha-noi.html",
+      "title": "Tập đoàn tài chính FB Việt Nam Tuyển Nhân viên kế toán",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/tap-doan-tan-a-dai-thanh-tuyen-ke-toan-chi-nhanh.html",
+      "title": "Tập đoàn Tân Á Đại Thành tuyển Kế toán chi nhánh",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/thoi-trang-cong-so-emspo-tuyen-nhan-vien-ke-toan.html",
+      "title": "Thời trang công sở EMSPO tuyển Nhân viên kế toán",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/truong-mam-non-thanh-dong-tuyen-ke-toan-vien.html",
+      "title": "Trường mầm non Thành Đông Tuyển kế toán viên",
+      "reason": "job-post-should-be-ban-tin",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cach-viet-don-xin-viec-ke-toan-viet-tay-hay-nhat.html",
+      "title": "Hướng dẫn cách viết đơn xin việc kế toán viết tay",
+      "reason": "huong-dan-xin-viec-nghe-nghiep",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-phong-van-xin-viec"
+      }
+    },
+    {
+      "href": "thu-vien/tai-lieu-on-thi-chung-chi-hanh-nghe-ke-toan-kiem-toan-2014.html",
+      "title": "Tài liệu ôn thi chứng chỉ hành nghề kế toán, kiểm toán 2014",
+      "reason": "tai-lieu-on-thi-hoc-dao-tao",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "hoc-va-dao-tao-ke-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh.html",
+      "title": "Hình thức ghi sổ kế toán trên máy vi tính",
+      "reason": "hinh-thuc-ghi-so-khong-phai-tuyen-dung",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "tuyen-dung-nghe-nghiep-ke-toan"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "hinh-thuc-ghi-so-ke-toan"
+      }
+    },
+    {
+      "href": "thu-vien/ghi-so-theo-hinh-thuc-ke-toan-tren-may-vi-tinh-theo-thong-tu-99.html",
+      "title": "Cách ghi sổ theo hình thức kế toán trên máy vi tính theo Thông tư 99",
+      "reason": "ghi-so-tren-may-vi-tinh",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "hinh-thuc-ghi-so-ke-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-ban-hang-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập Sổ chi tiết bán hàng theo Thông tư 200 và 133",
+      "reason": "mau-so-chi-tiet-ban-hang",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-quy-tien-mat-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập sổ quỹ tiền mặt theo Thông tư 200 và 133",
+      "reason": "mau-so-quy-tien-mat",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/muc-phat-vi-pham-ve-bo-tri-nguoi-lam-ke-toan-sai-quy-dinh.html",
+      "title": "Mức phạt vi phạm về bố trí người làm kế toán sai quy định",
+      "reason": "xu-phat-vi-pham-ke-toan",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "nguyen-tac-ke-toan"
+      }
+    },
+    {
+      "href": "thu-vien/ho-so-thu-tuc-huong-che-do-tu-tuat.html",
+      "title": "Hồ sơ, thủ tục hưởng chế độ tử tuất mới nhất năm 2025",
+      "reason": "che-do-tu-tuat-thuoc-bao-hiem",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "chuan-muc-che-do-khac"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "lao-dong-bao-hiem",
+        "lv2": "bao-hiem",
+        "lv3": "ho-so-thu-tuc"
+      }
+    },
+    {
+      "href": "thu-vien/thoi-gian-nghi-viec-huong-che-do-khi-thuc-hien-cac-bien-phap-tranh-thai.html",
+      "title": "Thời gian nghỉ việc hưởng chế độ khi thực hiện các biện pháp tránh thai",
+      "reason": "che-do-bhxh-thai-san",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "chuan-muc-che-do-khac"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "lao-dong-bao-hiem",
+        "lv2": "bao-hiem",
+        "lv3": "che-do-muc-huong"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "remainingInBucket": 39,
+    "remainingJobLv3InBucket": 0,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2695,
+      "ban_tin_count": 114,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  },
+  "deferredManualReview": [
+    {
+      "href": "thu-vien/cong-ty-lam-dich-vu-ke-toan-thue-tron-goi-uy-tin-tai-ha-noi.html",
+      "reason": "service-marketing-article-no-clear-taxonomy-destination"
+    }
+  ]
+}

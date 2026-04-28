@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-04-28T11:19:30.435891",
+  "phase": "phase9-huong-dan-phan-mem-cong-cu",
+  "appliedCount": 4,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/quy-dinh-ve-bao-cao-tinh-hinh-su-dung-lao-dong.html",
+      "title": "Quy định về báo cáo tình hình sử dụng lao động mới nhất",
+      "reason": "bao-cao-lao-dong-thu-tuc",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "lao-dong-bao-hiem",
+        "lv2": "lao-dong-tien-luong",
+        "lv3": "ho-so-thu-tuc-lao-dong"
+      }
+    },
+    {
+      "href": "thu-vien/thoi-han-nop-cac-loai-bao-cao-thue-nam-moi-nhat.html",
+      "title": "Lịch nộp các loại tờ khai thuế năm 2026 chi tiết",
+      "reason": "lich-nop-bao-cao-thue-tong-hop",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "bao-cao-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/muc-phat-cham-nop-ho-so-khai-thue-gtgt-tncn-tndn.html",
+      "title": "Mức phạt chậm nộp tờ khai thuế GTGT, TNCN, TNDN mới nhất",
+      "reason": "muc-phat-khai-thue-da-sac-thue",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "ke-khai-gtgt"
+      }
+    },
+    {
+      "href": "thu-vien/muc-phat-cham-nop-tien-mon-bai.html",
+      "title": "Mức phạt chậm nộp tờ khai và tiền thuế môn bài",
+      "reason": "muc-phat-mon-bai",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "le-phi-mon-bai",
+        "lv3": "mon-bai-ke-khai-to-khai"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "remainingInBucket": 104,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2695,
+      "ban_tin_count": 114,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  },
+  "deferredManualReview": [
+    {
+      "href": "thu-vien/danh-muc-he-thong-tai-khoan-ke-toan-theo-thong-tu-133.html",
+      "reason": "excel-tool-vs-ke-toan-reference-boundary"
+    }
+  ]
+}

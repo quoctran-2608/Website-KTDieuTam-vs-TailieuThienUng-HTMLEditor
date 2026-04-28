@@ -1,0 +1,164 @@
+{
+  "generatedAt": "2026-04-28T11:48:49.980890",
+  "phase": "phase14-huong-dan-ke-toan-tai-san-kho-ccdc-lv3-refine",
+  "appliedCount": 8,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/cach-tinh-khau-hao-tai-san-co-dinh-da-qua-su-dung.html",
+      "title": "Cách tính khấu hao TSCĐ đã qua sử dụng",
+      "reason": "khau-hao-tscd-da-qua-su-dung",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/cach-phan-biet-tai-san-co-dinh-va-cong-cu-dung-cu.html",
+      "title": "Cách phân biệt TSCĐ và Công cụ dụng cụ",
+      "reason": "phan-biet-tscd-va-ccdc",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-so-du-giam-dan.html",
+      "title": "Cách tính khấu hao TSCĐ theo số dư giảm dần có điều chỉnh",
+      "reason": "khau-hao-so-du-giam-dan",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/cach-xac-dinh-nguyen-gia-tai-san-co-dinh-vo-hinh.html",
+      "title": "Cách xác định Nguyên giá TSCĐ vô hình, Thuê tài chính",
+      "reason": "nguyen-gia-tscd-vo-hinh-thue-tai-chinh",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/cach-xac-dinh-thoi-gian-trich-khau-hao-tai-san-co-dinh.html",
+      "title": "Cách xác định thời gian trích khấu hao TSCĐ hữu hình, vô hình",
+      "reason": "thoi-gian-trich-khau-hao-tscd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/quy-dinh-phuong-phap-trich-khau-hao-nhanh-tscd.html",
+      "title": "Quy định phương pháp trích khấu hao nhanh TSCĐ không quá 2 lần",
+      "reason": "khau-hao-nhanh-tscd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/dieu-kien-ghi-nhan-tai-san-co-dinh-moi-nhat.html",
+      "title": "Điều kiện ghi nhận tài sản cố định mới nhất",
+      "reason": "dieu-kien-ghi-nhan-tscd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-tinh-phan-bo-cong-cu-dung-cu.html",
+      "title": "Cách tính phân bổ công cụ dụng cụ mới nhất",
+      "reason": "phan-bo-ccdc",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "hang-ton-kho-gia-xuat"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "remainingInBucket": 47,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  },
+  "deferredManualReview": [
+    {
+      "href": "thu-vien/trich-lap-quy-phat-trien-khoa-hoc-va-cong-nghe-cua-dn.html",
+      "reason": "canh-gioi-chinh-sach-thue-vs-ke-toan"
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-viec-kiem-ke-tai-san-hang-nam.html",
+      "reason": "canh-gioi-chuan-muc-vs-nghiep-vu-kho"
+    }
+  ]
+}

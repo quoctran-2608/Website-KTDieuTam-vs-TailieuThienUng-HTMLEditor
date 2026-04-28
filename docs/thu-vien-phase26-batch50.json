@@ -1,0 +1,868 @@
+{
+  "generatedAt": "2026-04-28T13:06:20.996732",
+  "phase": "phase26-batch50",
+  "plannedCount": 50,
+  "appliedCount": 50,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/bang-ke-cac-hoa-don-dien-tu-da-lap-sai.html",
+      "title": "Mẫu bảng kê các hóa đơn điện tử đã lập sai 2026",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-hang-hoa-dich-vu-ban-ra-01-1-gtgt-theo-tt-119.html",
+      "title": "Bảng kê hàng hóa, dịch vụ bán ra 01-1/GTGT theo TT 119",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-hang-hoa-dich-vu-ban-ra-04-1-gtgt-theo-tt-119.html",
+      "title": "Bảng kê hàng hóa, dịch vụ bán ra 04-1/GTGT theo TT 119",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-hang-hoa-dich-vu-mua-vao-01-2-gtgt-theo-tt-119.html",
+      "title": "Bảng kê hàng hóa, dịch vụ MUA VÀO 01-2/GTGT theo TT 119",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-hoa-don-chung-tu-hang-hoa-dich-vu-ban-ra-mau-03-thkh.html",
+      "title": "Mẫu bảng kê hóa đơn chứng từ hàng hóa dịch vụ bán ra mẫu số 03/THKH",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-kem-theo-hoa-don-gia-tri-gia-tang.html",
+      "title": "Mẫu bảng kê xuất kèm hóa đơn điện tử GTGT mới nhất",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-thong-tin-nguoi-phu-thuoc-giam-tru-gia-canh-mau-05-3-bk-tncn.html",
+      "title": "Mẫu 05-3/BK-QTT-TNCN Bảng kê chi tiết người phụ thuộc giảm trừ gia cảnh",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/bang-ke-thu-mua-hang-hoa-dich-vu-khong-co-hoa-don-mau-01.html",
+      "title": "Bảng kê thu mua hàng hoá dịch vụ không có hoá đơn mẫu 01/TNDN",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/bien-ban-xac-nhan-tai-tro-cho-dia-ban-dac-biet-kho-khan-mau-07-tndn.html",
+      "title": "Biên bản xác nhận tài trợ cho địa bàn đặc biệt khó khăn mẫu 07/TNDN",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/bien-ban-xac-nhan-tai-tro-cho-giao-duc-mau-03-tndn.html",
+      "title": "Biên bản xác nhận tài trợ cho giáo dục mẫu 03/TNDN",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/bien-ban-xac-nhan-tai-tro-cho-y-te-mau-04-tndn.html",
+      "title": "Biên bản xác nhận tài trợ cho y tế mẫu 04/TNDN",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/bien-ban-xac-nhan-tai-tro-khac-phuc-hau-qua-thien-tai-mau-05-tndn.html",
+      "title": "Biên bản xác nhận tài trợ khắc phục hậu quả thiên tai mẫu 05/TNDN",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/giay-uy-quyen-quyet-toan-thue-tncn-mau-02-uq-qtt-tncn.html",
+      "title": "Giấy ủy quyền quyết toán thuế TNCN Mẫu 08/UQ-QTT-TNCN",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-01-bk-htk-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/BK-HTK theo Thông tư số 18/2026/TT-BTC Bảng kê hàng tồn kho của hộ kinh doanh",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-ho-ca-nhan-mon-bai"
+      }
+    },
+    {
+      "href": "thu-vien/mau-01-bk-kthtkd-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/BK-KTHTKD theo Thông tư số 18/2026/TT-BTC Phụ lục Bảng kê chi tiết hộ kinh doanh",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-ho-ca-nhan-mon-bai"
+      }
+    },
+    {
+      "href": "thu-vien/mau-01-cnkd-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/CNKD theo Thông tư số 18/2026/TT-BTC Tờ khai thuế đối với hộ kinh doanh",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-ho-ca-nhan-mon-bai"
+      }
+    },
+    {
+      "href": "thu-vien/mau-01-tndn-theo-thong-tu-so-20-2026-bien-ban-xac-nhan-tai-tro.html",
+      "title": "Mẫu 01/TNDN theo Thông tư số 20/2026 biên bản xác nhận tài trợ",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-01-xsbhdc-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/XSBHĐC theo Thông tư số 18/2026/TT-BTC Tờ khai thuế thu nhập cá nhân",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-02-cnkd-tncn-qtt-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 02/CNKD-TNCN-QTT theo Thông tư số 18/2026/TT-BTC Tờ khai quyết toán thuế TNCN cho hộ kinh doanh",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-02-dang-ky-thue.html",
+      "title": "Mẫu 02-ĐK-TCT theo thông tư 86 Tờ khai đăng ký thuế",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-02-dk-tct-to-khai-dang-ky-thue.html",
+      "title": "Mẫu 02-ĐK-TCT Tờ khai đăng ký thuế dùng cho đơn vị phụ thuộc, địa điểm kinh doanh",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-02-tndn-bang-ke-thanh-toan-tien-dien-nuoc.html",
+      "title": "Mẫu 02/TNDN Bảng kê thanh toán tiền điện, nước",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-06-tncn-to-khai-khau-tru-thue-thu-nhap-ca-nhan.html",
+      "title": "Mẫu 06/TNCN Tờ khai thuế TNCN từ đầu tư vốn",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-06-tndn-bien-ban-xac-nhan-tai-tro-xay-nha-tinh-nghia-nha-dai-doan-ket.html",
+      "title": "Biên bản xác nhận tài trợ xây nhà tình nghĩa, nhà đại đoàn kết mẫu 06/TNDN",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-ban-cam-ket-mau-23-ck-tncn-theo-thong-tu-156.html",
+      "title": "Mẫu cam kết 08/CK-TNCN thu nhập dưới mức chịu thuế TNCN",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hang-hoa-dich-vu-ban-ra-theo-pp-truc-tiep-04-1-gtgt.html",
+      "title": "Mẫu bảng kê hàng hóa dịch vụ bán ra theo PP trực tiếp Mẫu số 04-1/GTGT",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hang-hoa-dich-vu-ban-ra-thue-ttdb-01-1-ttdb.html",
+      "title": "Mẫu bảng kê hóa đơn hàng hóa dịch vụ bán ra chịu thuế TTĐB Mẫu số 01-1/TTĐB",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hang-hoa-dich-vu-mua-vao-thue-ttdb-01-2-ttdb.html",
+      "title": "Mẫu bảng kê hóa đơn hàng hóa dịch vụ mua vào chịu thuế TTĐB Mẫu số 01-2/TTĐB",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-chiet-khau-thuong-mai.html",
+      "title": "Mẫu bảng kê hóa đơn chiết khấu thương mại theo Nghị Định 70/2025",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-chuyen-di-mau-bk01-ac.html",
+      "title": "Mẫu Bảng kê hoá đơn chuyển đi Mẫu BK01/AC",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-chuyen-di-theo-thong-tu-39.html",
+      "title": "Mẫu Bảng kê hoá đơn chuyển đi mới nhất theo TT 39",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-dien-tu-da-lap-sai-mau-01-bk-dctt.html",
+      "title": "Mẫu 01/BK-ĐCTT - Mẫu bảng kê hóa đơn điện tử đã lập sai theo NĐ 70/2025/NĐ-CP",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-hoa-don-dien-tu-da-lap-sai.html",
+      "title": "Mẫu 01/BK-ĐCTT Bảng kê hóa đơn điện tử đã lập sai theo NĐ 70/2025",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-ke-mua-hang-theo-qd-48-va-15.html",
+      "title": "Mẫu bảng kê mua hàng theo Thông tư 200 và 133",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-chung-tu-khau-tru-thue-thu-nhap-ca-nhan.html",
+      "title": "Mẫu chứng từ khấu trừ thuế thu nhập cá nhân mới nhất",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-danh-sach-ca-nhan-nhan-thu-nhap-mau-25-ds-tncn.html",
+      "title": "Mẫu danh sách cá nhân nhận thu nhập mẫu 25/DS-TNCN theo TT 151",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-giay-uy-quyen-dang-ky-thue.html",
+      "title": "Mẫu giấy ủy quyền đăng ký thuế 2026 - Mẫu số: 41/UQ-ĐKT",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-phu-luc-bang-ke-cac-nha-thau-nuoc-ngoai.html",
+      "title": "Mẫu Phụ lục bảng kê các nhà thầu nước ngoài - Mẫu 02-1/NTNN",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-nha-thau"
+      }
+    },
+    {
+      "href": "thu-vien/mau-phu-luc-giam-thue-gtgt-theo-nghi-quyet-174.html",
+      "title": "Mẫu phụ lục giảm thuế GTGT 2026 theo Nghị quyết 174/2024/QH15",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-phu-luc-giam-thue-gtgt.html",
+      "title": "Mẫu phụ lục giảm thuế GTGT 2024 theo Nghị định 72/2024/NĐ-CP",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-01-1-tain-phu-luc-bang-phan-bo-so-thue-tai-nguyen-phai-nop.html",
+      "title": "Mẫu số 01-1/TAIN Phụ lục bảng phân bổ số thuế tài nguyên phải nộp theo TT 80/2021",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-nha-thau"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-01-tain-to-khai-thue-tai-nguyen-theo-tt-80-2021.html",
+      "title": "Mẫu số 01/TAIN Tờ khai thuế tài nguyên theo TT 80/2021",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-nha-thau"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-02-tain-to-khai-quyet-toan-thue-tai-nguyen.html",
+      "title": "Mẫu số 02/TAIN Tờ khai quyết toán thuế tài nguyên theo TT 80/2021",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-nha-thau"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-05-1-pbt-kk-tncn-bang-xac-dinh-so-thue-thu-nhap-ca-nhan-phai-nop.html",
+      "title": "Mẫu số 05-1/PBT-KK-TNCN Bảng xác định số thuế thu nhập cá nhân phải nộp theo TT 80/2021",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-thu-xac-nhan-thu-nhap-de-quyet-toan-thue-tncn.html",
+      "title": "Mẫu thư xác nhận thu nhập để quyết toán thuế TNCN 2026 mới nhất",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh.html",
+      "title": "Mẫu 20-ĐK-TCT Tờ khai đăng ký người phụ thuộc giảm trừ gia cảnh 2026",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-thu-01-dk-tct.html",
+      "title": "Mẫu 01-ĐK-TCT Tờ khai đăng ký thuế theo thông tư 86/2024/TT-BTC",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-thue-dung-cho-nha-thau-nuoc-ngoai.html",
+      "title": "Mẫu 04-ĐK-TCT tờ khai đăng ký thuế dùng cho nhà thầu nước ngoài ban điều hành liên danh mới nhất",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-nha-thau"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-thue-dung-cho-to-chuc.html",
+      "title": "Mẫu 01-ĐK-TCT tờ khai đăng ký thuế dùng cho tổ chức",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/phu-luc-bang-ke-cac-nha-thau-phu-tham-gia-hop-dong-nha-thau.html",
+      "title": "Phụ lục bảng kê các nhà thầu phụ tham gia hợp đồng nhà thầu mẫu 02-2/NTNN",
+      "reason": "phase26-thue-form-lv3-normalize",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-nha-thau"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

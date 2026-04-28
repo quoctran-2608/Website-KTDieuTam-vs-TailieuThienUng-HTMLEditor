@@ -1,0 +1,278 @@
+{
+  "generatedAt": "2026-04-28T09:32:44.642078",
+  "phase": "phase1-huong-dan-ke-toan-tai-khoan-hach-toan",
+  "appliedCount": 20,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh.html",
+      "title": "Cách lập Sổ chi phí sản xuất kinh doanh theo Thông tư 200 và 133",
+      "reason": "bai-ve-so-sach-theo-doi",
+      "before": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      },
+      "after": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-cac-tai-khoan-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập Sổ chi tiết các Tài khoản theo Thông tư 99 và 133",
+      "reason": "so-chi-tiet-tai-khoan",
+      "before": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      },
+      "after": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-tien-vay-theo-thong-tu-200.html",
+      "title": "Cách lập sổ chi tiết tiền vay theo Thông tư 200",
+      "reason": "so-chi-tiet-tien-vay",
+      "before": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      },
+      "after": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-tien-vay-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập Sổ chi tiết tiền vay theo Thông tư 200 và 133",
+      "reason": "so-chi-tiet-tien-vay",
+      "before": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      },
+      "after": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-thanh-toan-voi-nguoi-mua-nguoi-ban.html",
+      "title": "Cách lập sổ chi tiết thanh toán với người mua (người bán)",
+      "reason": "so-chi-tiet-thanh-toan",
+      "before": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      },
+      "after": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-thanh-toan-voi-nguoi-mua-bang-ngoai-te.html",
+      "title": "Cách lập Sổ chi tiết thanh toán với người mua (người bán) bằng ngoại tệ",
+      "reason": "so-chi-tiet-thanh-toan",
+      "before": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      },
+      "after": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-theo-doi-thanh-toan-bang-ngoai-te.html",
+      "title": "Cách lập Sổ theo dõi thanh toán bằng ngoại tệ",
+      "reason": "so-theo-doi-thanh-toan",
+      "before": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      },
+      "after": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-vat-tu-hang-hoa-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập sổ chi tiết vật tư hàng hóa theo Thông tư 200 và 133",
+      "reason": "so-chi-tiet-vat-tu-hang-hoa",
+      "before": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      },
+      "after": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
+      "title": "Cách lập Thẻ kho (Sổ kho) theo Thông tư 200 và 133",
+      "reason": "the-kho-so-kho",
+      "before": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      },
+      "after": {
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/chuan-muc-ke-toan-so-18-cac-tai-khoan-du-phong-tai-san-va-no-tiem-tang.html",
+      "title": "CHUẨN MỰC KẾ TOÁN SỐ 18 - CÁC KHOẢN DỰ PHÒNG, TÀI SẢN VÀ NỢ TIỀM TÀNG",
+      "reason": "chuan-muc-ke-toan-vas",
+      "before": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "chuan-muc-ke-toan-vas"
+      },
+      "after": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "chuan-muc-ke-toan-vas"
+      }
+    },
+    {
+      "href": "thu-vien/cach-chuyen-so-du-tai-khoan-thong-tu-200-sang-thong-tu-99.html",
+      "title": "Cách chuyển số dư tài khoản thông tư 200 sang thông tư 99",
+      "reason": "chuyen-doi-che-do-ke-toan",
+      "before": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      },
+      "after": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      }
+    },
+    {
+      "href": "thu-vien/cach-chuyen-so-du-tai-khoan-theo-thong-tu-200.html",
+      "title": "Hướng dẫn chuyển số dư TK từ QĐ 15 sang Thông tư 200/2014/TT-BTC",
+      "reason": "chuyen-doi-che-do-ke-toan",
+      "before": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      },
+      "after": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      }
+    },
+    {
+      "href": "thu-vien/so-sanh-tai-khoan-ke-toan-thong-tu-200-va-thong-tu-99.html",
+      "title": "So sánh tài khoản kế toán Thông tư 200 và Thông tư 99",
+      "reason": "so-sanh-he-thong-tai-khoan",
+      "before": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      },
+      "after": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      }
+    },
+    {
+      "href": "thu-vien/cach-ghi-nho-he-thong-tai-khoan-ke-toan-nhanh-nhat.html",
+      "title": "Cách ghi nhớ hệ thống tài khoản kế toán nhanh nhất",
+      "reason": "he-thong-tai-khoan",
+      "before": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      },
+      "after": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      }
+    },
+    {
+      "href": "thu-vien/meo-nho-bang-he-thong-tai-khoan-ke-toan-nhanh-nhat.html",
+      "title": "Cách nhớ bảng hệ thống tài khoản kế toán nhanh nhất",
+      "reason": "he-thong-tai-khoan",
+      "before": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      },
+      "after": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "che-do-ke-toan-va-thong-tu"
+      }
+    },
+    {
+      "href": "thu-vien/nguyen-tac-hach-toan-cac-khoan-no-phai-tra.html",
+      "title": "Nguyên tắc kế toán nợ phải trả theo Thông tư 200",
+      "reason": "nguyen-tac-ke-toan",
+      "before": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "nguyen-tac-ke-toan"
+      },
+      "after": {
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "nguyen-tac-ke-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-tai-chinh-tai-khoan-635.html",
+      "title": "Cách hạch toán chi phí tài chính - Tài khoản 635",
+      "reason": "tk635-doanh-thu-chi-phi-kqkd",
+      "before": {
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "hang-ton-kho-gia-thanh"
+      },
+      "after": {
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "doanh-thu-chi-phi-kqkd"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-tk-229-du-phong-ton-that-tai-san-theo-thong-tu-99.html",
+      "title": "Cách hạch toán TK 229 - Dự phòng tổn thất tài sản theo Thông tư 99",
+      "reason": "tk229-von-dau-tu",
+      "before": {
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "hach-toan-dac-thu"
+      },
+      "after": {
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "von-dau-tu"
+      }
+    },
+    {
+      "href": "thu-vien/tai-khoan-229-du-phong-ton-that-tai-san-theo-thong-tu-133.html",
+      "title": "Tài khoản 229 Dự phòng tổn thất tài sản theo Thông tư 133",
+      "reason": "tk229-von-dau-tu",
+      "before": {
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "hach-toan-dac-thu"
+      },
+      "after": {
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "von-dau-tu"
+      }
+    },
+    {
+      "href": "thu-vien/cach-xac-dinh-hach-toan-chenh-lech-ty-gia.html",
+      "title": "Cách xác định và hạch toán chênh lệch tỷ giá TK 413",
+      "reason": "tk413-von-dau-tu",
+      "before": {
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "hach-toan-dac-thu"
+      },
+      "after": {
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "von-dau-tu"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "remainingInBucket": 268,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2736,
+      "ban_tin_count": 73,
+      "thu_vien_pages": 228,
+      "ban_tin_pages": 7
+    }
+  }
+}

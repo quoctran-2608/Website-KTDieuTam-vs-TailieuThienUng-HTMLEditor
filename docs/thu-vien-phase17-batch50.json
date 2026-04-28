@@ -1,0 +1,868 @@
+{
+  "generatedAt": "2026-04-28T12:17:06.174978",
+  "phase": "phase17-batch50",
+  "plannedCount": 50,
+  "appliedCount": 50,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/ban-giai-trinh-khai-bo-sung-dieu-chinh-mau-so-01-khbs.html",
+      "title": "Bản giải trình khai bổ sung điều chỉnh mẫu 01-1/KHBS",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/bao-cao-thuc-tap-ke-toan-thanh-toan-thue-gtgt-va-thue-tndn.html",
+      "title": "Mẫu báo cáo: Kế toán thanh toán thuế GTGT và thuế TNDN tại Công ty Cổ phần Dịch vụ Thương mại Đồng Tâm",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "bao-cao-thuc-tap",
+        "lv3": "thuc-tap-ke-toan-tong-hop-to-chuc"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/bien-ban-xac-minh-tinh-trang-hoat-dong.html",
+      "title": "Biên bản xác minh tình trạng hoạt động của người nộp thuế - Mẫu 15/BB-XMHĐ",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/giay-de-nghi-dieu-chinh-thu-nsnn-mau-c1-07-ns.html",
+      "title": "Giấy đề nghị điều chỉnh thu NSNN mẫu C1-07a/NS mới nhất",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/giay-nop-tien-vao-ngan-sach-nha-nuoc-bang-ngoai-te-theo-tt-119.html",
+      "title": "Giấy nộp tiền vào ngân sách nhà nước bằng ngoại tệ theo TT 119",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "ke-toan",
+        "lv2": "mau-bieu-ke-toan",
+        "lv3": "mau-thue-ke-khai-dang-ky"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-01-bds-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/BĐS theo Thông tư số 18/2026/TT-BTC Tờ khai thuế cho thuê nhà",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "cong-no-thanh-toan"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-ho-ca-nhan-mon-bai"
+      }
+    },
+    {
+      "href": "thu-vien/mau-01-tckt-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/TCKT theo Thông tư số 18/2026/TT-BTC Tờ khai thuế của tổ chức khai thay",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-01-tkn-cnkd-theo-thong-tu-so-18-2026-tt-btc.html",
+      "title": "Mẫu 01/TKN-CNKD theo Thông tư số 18/2026/TT-BTC Thông báo doanh thu, Tờ khai thuế năm",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "doanh-thu-chi-phi-kqkd"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-ho-ca-nhan-mon-bai"
+      }
+    },
+    {
+      "href": "thu-vien/mau-02-dang-ky-thue.html",
+      "title": "Mẫu 02-ĐK-TCT theo thông tư 86 Tờ khai đăng ký thuế",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-dang-ky-thue-mst"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-03-nghi-dinh-119-excel-to-khai-du-lieu-hoa-don-ban-ra.html",
+      "title": "Mẫu 03 Tờ khai dữ liệu hóa đơn bán ra theo NĐ 119",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "mau-file-ke-khai",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-thue-hoa-don"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-ban-giai-trinh-khai-bo-sung-dieu-chinh-mau-so-01-khbs.html",
+      "title": "Mẫu bản giải trình khai bổ sung điều chỉnh Mẫu số 01/KHBS",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "ke-toan",
+        "lv2": "mau-bieu-ke-toan",
+        "lv3": "mau-thue-ke-khai-dang-ky"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bang-tong-hop-du-lieu-hddt-gui-co-quan-thue.html",
+      "title": "Mẫu bảng tổng hợp dữ liệu hóa đơn điện tử gửi cơ quan thuế mới nhất",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-bao-cao-tinh-hinh-su-dung-bien-lai-thu-thue-phi-le-phi.html",
+      "title": "Mẫu báo cáo tình hình sử dụng biên lai thu thuế - phí - lệ phí mới nhất 2025",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-c1-07-ns-giay-dieu-chinh-thu-ngan-sach-nha-nuoc.html",
+      "title": "Giấy đề nghị điều chỉnh thu NSNN Mẫu C1-07a/NS tt 19/2020/TT-BTC",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "ke-toan",
+        "lv2": "mau-bieu-ke-toan",
+        "lv3": "mau-thue-ke-khai-dang-ky"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-cong-van-dang-ky-thoi-gian-bat-dau-mien-thue-tndn.html",
+      "title": "Mẫu công văn đăng ký thời gian bắt đầu miễn thuế TNDN 2026",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-giau-uy-quyen-dang-ky-ma-so-thue-tncn.html",
+      "title": "Mẫu giấy ủy quyền đăng ký mã số thuế cá nhân mới nhất năm 2026",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-dang-ky-thue-mst"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-giay-de-nghi-gia-han-nop-thue-va-tien-thue-dat.html",
+      "title": "Mẫu giấy đề nghị gia hạn nộp thuế và tiền thuê đất mới nhất 2025",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-giay-nop-tien-vao-ngan-sach-nha-nuoc-mau-so-c1-02-ns.html",
+      "title": "Mẫu giấy nộp tiền vào ngân sách nhà nước Mẫu số C1- 02/NS",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-giay-nop-tien-vao-ngan-sach-nha-nuoc-moi-nhat.html",
+      "title": "Mẫu giấy nộp tiền vào ngân sách nhà nước Mẫu số C1- 02/NS mới nhất",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "ke-toan",
+        "lv2": "mau-bieu-ke-toan",
+        "lv3": "mau-thue-ke-khai-dang-ky"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-giay-uy-quyen-dang-ky-thue.html",
+      "title": "Mẫu giấy ủy quyền đăng ký thuế 2026 - Mẫu số: 41/UQ-ĐKT",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-dang-ky-thue-mst"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-01-1-khbs-ban-giai-trinh-khai-bo-sung-theo-tt-80-2021.html",
+      "title": "Mẫu số 01-1/KHBS Bản giải trình khai bổ sung theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "ke-toan",
+        "lv2": "mau-bieu-ke-toan",
+        "lv3": "mau-thue-ke-khai-dang-ky"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-01-khbs-to-khai-bo-sung-theo-tt-80-2021.html",
+      "title": "Mẫu số 01/KHBS Tờ khai bổ sung theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "ke-toan",
+        "lv2": "mau-bieu-ke-toan",
+        "lv3": "mau-thue-ke-khai-dang-ky"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-bang-ke-phu-luc-ho-so"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-02-tndn-to-khai-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Mẫu số 02/TNDN tờ khai thuế thu nhập doanh nghiệp theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-1c-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html",
+      "title": "Mẫu số 03-1C/TNDN Phụ lục thuế thu nhập doanh nghiệp được ưu đãi theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-3a-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html",
+      "title": "Mẫu số 03-3A/TNDN Phụ lục thuế thu nhập doanh nghiệp được ưu đãi theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-3b-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html",
+      "title": "Mẫu số 03-3B/TNDN Phụ lục thuế TNDN được ưu đãi theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-3c-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html",
+      "title": "Mẫu số 03-3C/TNDN Phụ lục thuế thu nhập doanh nghiệp được ưu đãi theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-3d-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-duoc-uu-dai.html",
+      "title": "Mẫu số 03-3D/TNDN Phụ lục thuế thu nhập doanh nghiệp được ưu đãi theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-4-tndn-phu-luc-thue-thu-nhap-doanh-nghiep-da-nop-o-nuoc-ngoai-theo-tt-80-2021.html",
+      "title": "Mẫu số 03-4/TNDN Phụ lục thuế thu nhập doanh nghiệp đã nộp ở nước ngoài theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-8a-tndn-phu-luc-bang-phan-bo-so-thue-thu-nhap-doanh-nghiep-phai-nop.html",
+      "title": "Mẫu số 03-8A/TNDN Phụ lục bảng phân bổ số thuế thu nhập doanh nghiệp phải nộp theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-8b-tndn-phu-luc-bang-phan-bo-so-thue-thu-nhap-doanh-nghiep-phai-nop.html",
+      "title": "Mẫu số 03-8B/TNDN Phụ lục bảng phân bổ số thuế thu nhập doanh nghiệp phải nộp theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-8c-tndn-phu-luc-bang-phan-bo-so-thue-thu-nhap-doanh-nghiep-phai-nop.html",
+      "title": "Mẫu số 03-8C/TNDN Phụ lục bảng phân bổ số thuế thu nhập doanh nghiệp phải nộp theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-03-tndn-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Mẫu số 03/TNDN tờ khai quyết toán thuế thu nhập doanh nghiệp theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-04-tndn-to-khai-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Mẫu số 04/TNDN tờ khai thuế thu nhập doanh nghiệp theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-05-tndn-to-khai-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Mẫu số 05/TNDN Tờ khai thuế thu nhập doanh nghiệp theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-so-06-tndn-to-khai-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Mẫu số 06/TNDN Tờ khai thuế thu nhập doanh nghiệp theo TT 80/2021",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-nguoi-phu-thuoc-giam-tru-gia-canh.html",
+      "title": "Mẫu 20-ĐK-TCT Tờ khai đăng ký người phụ thuộc giảm trừ gia cảnh 2026",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-dang-ky-thue-mst"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-su-dung-chung-tu-khau-tru-thue-tncn-dien-tu.html",
+      "title": "Mẫu Tờ khai đăng ký sử dụng chứng từ khấu trừ thuế TNCN điện tử Theo NĐ 70 2025",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-hoa-don-chung-tu"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tncn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-su-dung-hoa-don-dien-tu.html",
+      "title": "Mẫu tờ khai đăng ký sử dụng hóa đơn điện tử",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-hoa-don-chung-tu"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-thay-doi-thong-tin-su-dung-chung-tu-dien-tu.html",
+      "title": "Mẫu tờ khai đăng ký/thay đổi thông tin sử dụng chứng từ điện tử",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-hoa-don-chung-tu"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-thu-01-dk-tct.html",
+      "title": "Mẫu 01-ĐK-TCT Tờ khai đăng ký thuế theo thông tư 86/2024/TT-BTC",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-dang-ky-thue-mst"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-dang-ky-thue-nha-thau-theo-thong-tu-86.html",
+      "title": "Mẫu 04.1-ĐK-TCT tờ khai đăng ký thuế nhà thầu theo Thông tư số 86/2024/TT-BTC",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-dang-ky-thue-mst"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-nha-thau"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-doanh-nghiep-ke-khai-thay-thue-cho-thue-nha.html",
+      "title": "Mẫu tờ khai doanh nghiệp kê khai thuế thay cho chủ nhà 2026",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-ho-ca-nhan-kinh-doanh"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-03-tndn.html",
+      "title": "Mẫu Tờ khai quyết toán thuế thu nhập doanh nghiệp Mẫu số 03/TNDN",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-quyet-toan-thue-thu-nhap-doanh-nghiep-mau-03-tndn.html",
+      "title": "Mẫu Tờ khai quyết toán thuế thu nhập doanh nghiệp Mẫu 03/TNDN theo TT 151",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-thue-doi-voi-ho-kinh-doanh-ca-nhan-kinh-doanh.html",
+      "title": "Mẫu Tờ khai thuế đối với hộ kinh doanh, cá nhân kinh doanh",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-ho-ca-nhan-kinh-doanh"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-ho-ca-nhan-mon-bai"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-thue-mon-bai-mau-so-01-mbai.html",
+      "title": "Mẫu Tờ khai lệ phí môn bài năm 2025 mới nhất theo Thông tư 80",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-ho-ca-nhan-mon-bai"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-mau-02-tndn.html",
+      "title": "Mẫu Tờ khai thuế thu nhập doanh nghiệp Mẫu 02/TNDN theo TT 151",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-tam-tinh-01a-tndn.html",
+      "title": "Mẫu tờ khai thuế thu nhập doanh nghiệp tạm tính Mẫu số 01A/TNDN",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/mau-to-khai-thue-thu-nhap-doanh-nghiep-tam-tinh-01b-tndn.html",
+      "title": "Mẫu tờ khai thuế thu nhập doanh nghiệp tạm tính Mẫu số 01B/TNDN",
+      "reason": "phase17-bieumau-tax-rebalance",
+      "before": {
+        "kind": "bieu-mau",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "mau-bieu-doanh-nghiep-thu-tuc",
+        "lv3": "mau-to-khai-thue-tndn"
+      },
+      "after": {
+        "kind": "bieu-mau",
+        "lv1": "thue",
+        "lv2": "mau-bieu-thue",
+        "lv3": "mau-thue-tndn"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

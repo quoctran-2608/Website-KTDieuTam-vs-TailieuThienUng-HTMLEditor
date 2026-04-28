@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-04-28T11:31:38.762789",
+  "phase": "phase11-huong-dan-ke-toan-tai-khoan-refine",
+  "appliedCount": 2,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/khong-phai-dang-ky-tai-khoan-ngan-hang-voi-co-quan-thue.html",
+      "title": "Bỏ quy định về việc đăng ký TKNH với Sở kế hoạch đầu tư",
+      "reason": "chinh-sach-khau-tru-gtgt",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "thue-nghia-vu"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "khau-tru-hoan-thue"
+      }
+    },
+    {
+      "href": "thu-vien/cach-ke-khai-thue-cho-chi-nhanh-hach-toan-phu-thuoc-va-doc-lap.html",
+      "title": "Hướng dẫn kê khai thuế chi nhánh hạch toán phụ thuộc và độc lập",
+      "reason": "ke-khai-thue-chi-nhanh",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "thue-nghia-vu"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "ke-khai-gtgt"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "remainingInBucket": 279,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2695,
+      "ban_tin_count": 114,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  },
+  "deferredManualReview": [
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-tien-thue-nha.html",
+      "reason": "mixed-tax-contract-vs-accounting-entry"
+    }
+  ]
+}

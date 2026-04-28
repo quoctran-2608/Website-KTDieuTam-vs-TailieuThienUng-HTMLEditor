@@ -1,0 +1,97 @@
+{
+  "phase_report_files": [
+    "docs/thu-vien-phase38-batch50.json",
+    "docs/thu-vien-phase39-batch50.json",
+    "docs/thu-vien-phase4-huong-dan-thue-gtgt-hoa-don.json",
+    "docs/thu-vien-phase40-batch50.json",
+    "docs/thu-vien-phase41-batch50.json",
+    "docs/thu-vien-phase42-batch50.json",
+    "docs/thu-vien-phase43-batch50.json",
+    "docs/thu-vien-phase44-batch50.json",
+    "docs/thu-vien-phase45-batch100.json",
+    "docs/thu-vien-phase46-batch100.json",
+    "docs/thu-vien-phase47-batch100.json",
+    "docs/thu-vien-phase48-batch100.json",
+    "docs/thu-vien-phase49-batch87.json",
+    "docs/thu-vien-phase5-huong-dan-thue-tncn.json",
+    "docs/thu-vien-phase50-batch50-oneway.json",
+    "docs/thu-vien-phase51-unblock-apply50.json",
+    "docs/thu-vien-phase6-huong-dan-thue-tndn.json",
+    "docs/thu-vien-phase7-huong-dan-lao-dong-bao-hiem.json",
+    "docs/thu-vien-phase8-huong-dan-ke-toan-nghiep-vu.json",
+    "docs/thu-vien-phase9-huong-dan-phan-mem-cong-cu.json"
+  ],
+  "phase_report_count": 51,
+  "total_articles": 2809,
+  "section_counts": {
+    "ban-tin": 115,
+    "thu-vien": 2694
+  },
+  "thu_vien_kind_counts": {
+    "huong-dan": 1272,
+    "bieu-mau": 669,
+    "cong-cu": 351,
+    "van-ban": 402
+  },
+  "bieu_mau_thue_lv3": {
+    "mau-thue-tndn": 66,
+    "mau-thue-gtgt-hoa-don": 120,
+    "mau-bang-ke-phu-luc-ho-so": 7,
+    "mau-thue-tncn": 56,
+    "mau-thue-ho-ca-nhan-mon-bai": 16,
+    "mau-thue-nha-thau": 12
+  },
+  "van_ban_thue_thong_tu_lv3": {
+    "thong-tu-chinh-sach-chung": 23,
+    "thong-tu-tncn": 3,
+    "thong-tu-ho-ca-nhan-kinh-doanh": 6,
+    "thong-tu-ke-khai-quan-ly-thue": 9,
+    "thong-tu-gtgt-hoa-don": 26,
+    "thong-tu-tndn": 9
+  },
+  "van_ban_thue_nghi_dinh_lv3": {
+    "nghi-dinh-chinh-sach-chung": 46,
+    "nghi-dinh-quan-ly-xu-phat": 18
+  },
+  "van_ban_thue_cong_van_lv3": {
+    "cong-van-chinh-sach-chung": 70,
+    "cong-van-tndn": 4,
+    "cong-van-ke-khai-quan-ly-thue": 6
+  },
+  "bieu_mau_ke_toan_lv3": {
+    "mau-luong-nhan-su": 9,
+    "mau-kho-vat-tu-ccdc": 39,
+    "mau-so-sach-ke-toan": 39,
+    "mau-hanh-chinh-quan-tri-khac": 30,
+    "mau-thue-ke-khai-dang-ky": 9,
+    "mau-chung-tu-mua-ban-hop-dong": 14,
+    "mau-chung-tu-tien-thanh-toan": 23,
+    "mau-tscd-khau-hao": 26,
+    "mau-phieu-thu-phieu-chi": 7,
+    "mau-bao-cao-tai-chinh": 15,
+    "mau-tai-chinh-von-ngoai-te": 3
+  },
+  "bieu_mau_lao_dong_lv3": {
+    "mau-tien-luong-phu-cap": 11,
+    "mau-bao-cao-dang-ky-lao-dong": 5,
+    "mau-bhxh-che-do": 28,
+    "mau-hop-dong-lao-dong": 17,
+    "mau-noi-quy-thoa-uoc-lao-dong": 6,
+    "mau-giay-phep-lao-dong-pli": 2
+  },
+  "one_way_queue_counts": {
+    "q1_thue_generic_to_specific": 0,
+    "q2_thongtu_generic_to_specific": 0,
+    "q3_nghidinh_generic_to_specific": 0,
+    "q4_congvan_generic_to_specific": 0
+  },
+  "one_way_queue_samples": {
+    "q1": [],
+    "q2": [],
+    "q3": [],
+    "q4": []
+  },
+  "toggle_pool_counts": {
+    "thue_pattern": 54
+  }
+}

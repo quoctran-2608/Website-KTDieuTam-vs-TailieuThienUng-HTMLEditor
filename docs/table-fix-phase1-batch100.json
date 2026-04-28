@@ -1,0 +1,413 @@
+{
+  "generatedAt": "2026-04-28T17:50:18.504346",
+  "phase": "table-fix-phase1-batch100",
+  "importedTotal": 745,
+  "importedWithTable": 530,
+  "selectedCount": 100,
+  "appliedCount": 100,
+  "skippedCount": 0,
+  "totalTableTagsChanged": 294,
+  "applied": [
+    {
+      "href": "ban-tin/cach-hach-toan-cac-khoan-giam-tru-doanh-thu-tai-khoan-521.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "ban-tin/cach-hach-toan-chiet-khau-thuong-mai.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "ban-tin/cach-hach-toan-gia-von-hang-ban-tai-khoan-632.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "ban-tin/cach-hach-toan-hao-mon-tai-san-co-dinh-tai-khoan-214.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "ban-tin/cach-viet-hoa-don-gtgt-chiet-khau-thuong-mai-giam-gia-ban.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "ban-tin/cach-xac-dinh-gia-tinh-thue-gia-tri-gia-tang.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "ban-tin/chuong-trinh-giam-gia-khoa-hoc-ke-toan-thuc-hanh.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "ban-tin/cong-ty-cp-tap-doan-dong-do-tuyen-ke-toan-tong-hop.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "ban-tin/cong-ty-tnhh-dich-vu-va-tu-van-du-hoc-tuyen-nhan-vien-ke-toan.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "ban-tin/lop-hoc-ke-toan-thue-thuc-hanh-thuc-te-tai-ha-noi.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "ban-tin/mau-01-thong-bao-thuc-hien-khuyen-mai.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "ban-tin/mau-02-dang-ky-thuc-hien-khuyen-mai.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "ban-tin/mau-03-the-le-chuong-trinh-khuyen-mai.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "ban-tin/mau-06-thong-bao-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "ban-tin/mau-06a-dang-ky-sua-doi-bo-sung-noi-dung-chuong-trinh-khuyen-mai.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "ban-tin/mau-07-bao-cao-thuc-hien-khuyen-mai.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "ban-tin/mau-cv-xin-viec-cho-ke-toan-moi-ra-truong-hay-nhat.html",
+      "tablesTagged": 8
+    },
+    {
+      "href": "ban-tin/nhan-tien-ho-tro-co-phai-xuat-hoa-don.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "ban-tin/phu-luc-bao-cao-trich-su-dung-quy-khoa-hoc-cong-nghe-mau-so-03-6-tndn.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/bai-tap-tinh-thue-thu-nhap-ca-nhan-co-loi-giai-nhap-moi.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/ban-giai-trinh-khai-bo-sung-dieu-chinh-mau-so-01-khbs.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/bang-ke-cac-hoa-don-dien-tu-da-lap-sai.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/bang-ke-thong-tin-nguoi-phu-thuoc-giam-tru-gia-canh-mau-05-3-bk-tncn.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/bang-ke-thu-mua-hang-hoa-dich-vu-khong-co-hoa-don-mau-01.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/bang-quy-dinh-tieu-chuan-va-dieu-kien-ap-dung-chuc-danh.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/bang-thue-xuat-khau-moi-nhat.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/bang-tinh-lai-truy-thu-bhxh-bhyt-bhtn-mau-d02b-ts.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/bang-tong-hop-dang-ky-nguoi-phu-thuoc-mau-20-dk-th-tc.html",
+      "tablesTagged": 5
+    },
+    {
+      "href": "thu-vien/bao-cao-ke-toan-chi-phi-doanh-thu-tai-cong-ty-cpkdptndt-ha-noi.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/bao-cao-to-chuc-cong-tac-ke-toan-nguyen-vat-lieu-tai-cong-ty-cp-hoang-lam.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/bien-ban-thong-qua-he-thong-thang-bang-luong-cua-dn.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/bien-ban-xac-minh-tinh-trang-hoat-dong.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/bieu-thue-suat-thue-tieu-thu-dac-biet.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/bo-luat-45-2019-qh14-bo-luat-lao-dong.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/bu-tru-cong-no-co-duoc-khau-tru-thue-gtgt.html",
+      "tablesTagged": 6
+    },
+    {
+      "href": "thu-vien/cac-bac-thue-mon-bai-moi-nhat-nam.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cac-bao-cao-thue-hang-quy-phai-nop-cho-co-quan-thue.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/cac-hanh-vi-bi-nghiem-cam-trong-khau-tru-va-hoan-thue-gtgt.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/cac-khoan-lo-duoc-ket-chuyen-theo-quy-dinh-cua-luat-thue-tndn.html",
+      "tablesTagged": 5
+    },
+    {
+      "href": "thu-vien/cac-khoan-thu-nhap-chiu-thue-thu-nhap-ca-nhan-nhap-moi.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cac-loai-hoa-don-theo-thong-tu-64-2013-tt-btc.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cac-phuong-phap-phan-loai-tai-san-co-dinh-cua-doanh-nghiep.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/cach-dinh-khoan-thue-gtgt-duoc-khau-tru.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cac-khoan-chi-phi-khac-tai-khoan-811.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cac-khoan-phai-tra-phai-nop-khac-tai-khoan-338.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cac-khoan-tam-ung-tai-khoan-141.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cac-khoan-thu-nhap-khac-tai-khoan-711.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-quan-ly-doanh-nghiep-tai-khoan-642.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-san-xuat-kinh-doanh-do-dang-tai-khoan-154.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-tai-chinh-tai-khoan-635.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-thue-thu-nhap-doanh-nghiep-tai-khoan-821.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-tra-truoc-ngan-han-tai-khoan-142.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cong-cu-dung-cu-tai-khoan-153.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-doanh-thu-ban-hang-va-cung-cap-dich-vu-tai-khoan-511.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-doanh-thu-hoat-dong-tai-chinh-tai-khoan-515.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-gop-von-bang-tai-san-co-dinh.html",
+      "tablesTagged": 5
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-hang-hoa-het-han-su-dung-bi-hu-hong.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-hang-hoa-tai-khoan-156.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-khoan-phai-tra-cho-nguoi-lao-dong-tai-khoan-334.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-nguon-von-kinh-doanh-tai-khoan-411.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-nguyen-vat-lieu-tai-khoan-152.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-phai-thu-khac-tai-khoan-138.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-tien-dat-coc-nhan-tien-dat-coc.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-xac-dinh-ket-qua-kinh-doanh-tai-khoan-911.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-ke-khai-thue-mon-bai-qua-mang-truc-tuyen.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/cach-ke-khai-thue-tncn-tu-chuyen-nhuong-von-nhap-moi.html",
+      "tablesTagged": 10
+    },
+    {
+      "href": "thu-vien/cach-lam-bao-cao-quyet-toan-thue-tncn-cuoi-nam.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/cach-lap-bang-tong-hop-chi-tiet-vat-tu-hang-hoa.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/cach-lap-so-cai-nhat-ky-chung-theo-thong-tu-200-va-133.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-ban-hang-theo-thong-tu-200-va-133.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-cac-tai-khoan-theo-thong-tu-200-va-133.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-thanh-toan-voi-nguoi-mua-ban.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-tien-vay-theo-thong-tu-200-va-133.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-vat-tu-hang-hoa-theo-thong-tu-200-va-133.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-lap-so-ke-toan-chi-tiet-quy-tien-mat.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-lap-so-nhat-ky-chung-theo-thong-tu-200-va-133.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/cach-lap-so-quy-tien-mat-theo-thong-tu-200-va-133.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-lap-so-tai-san-co-dinh-theo-thong-tu-200-va-133.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-lap-so-theo-doi-tai-san-co-dinh-cong-cu-dung-cu.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-lap-so-tien-gui-ngan-hang-theo-thong-tu-200-va-133.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/cach-lap-the-kho-so-kho-theo-thong-tu-200-va-133.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-lap-the-tai-san-co-dinh-theo-thong-tu-200-va-133.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/cach-lap-the-tinh-gia-thanh-san-pham-dich-vu.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/cach-lap-to-khai-thue-thu-nhap-ca-nhan-mau-so-02kk-tncn.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/cach-phan-biet-tai-san-co-dinh-va-cong-cu-dung-cu.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-tinh-gia-nhap-kho-hang-hoa-thanh-pham-nguyen-vat-lieu.html",
+      "tablesTagged": 4
+    },
+    {
+      "href": "thu-vien/cach-tinh-khau-hao-tai-san-co-dinh-da-qua-su-dung.html",
+      "tablesTagged": 6
+    },
+    {
+      "href": "thu-vien/cach-tinh-thoi-gian-phan-bo-cong-cu-dung-cu.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-gtgt-theo-phuong-phap-truc-tiep.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-chuyen-nhuong-von.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-tu-dau-tu-von.html",
+      "tablesTagged": 1
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-tu-thua-ke-qua-tang.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-ca-nhan-tu-trung-thuong.html",
+      "tablesTagged": 7
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-thu-nhap-doanh-nghiep-moi-nhat.html",
+      "tablesTagged": 6
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-tieu-thu-dac-biet-phai-nop.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-tinh-thue-tncn-cho-nguoi-nuoc-ngoai.html",
+      "tablesTagged": 3
+    },
+    {
+      "href": "thu-vien/cach-tinh-tinh-thue-thu-nhap-ca-nhan-moi-nhat.html",
+      "tablesTagged": 5
+    },
+    {
+      "href": "thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-duong-thang.html",
+      "tablesTagged": 2
+    },
+    {
+      "href": "thu-vien/cach-trich-khau-hao-tai-san-co-dinh-theo-khoi-luong-san-pham.html",
+      "tablesTagged": 5
+    }
+  ],
+  "skipped": []
+}

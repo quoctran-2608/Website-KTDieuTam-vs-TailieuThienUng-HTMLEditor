@@ -1,0 +1,867 @@
+{
+  "generatedAt": "2026-04-28T12:03:17.315191",
+  "phase": "phase15-batch50",
+  "appliedCount": 50,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/cac-khoan-chi-phi-khong-tuong-ung-voi-doanh-thu-tinh-thue.html",
+      "title": "Các khoản chi phí không tương ứng với doanh thu tính thuế 2026",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/chi-phi-chi-cho-sep-di-tiep-khach-xu-ly-nhu-the-nao.html",
+      "title": "Chi phí chi cho sêp đi tiếp khách xử lý như thế nào?",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/chi-phi-mua-nha-chung-cu-cho-nhan-vien-giam-doc-o.html",
+      "title": "Chi phí mua nhà chung cư cho nhân viên, Giám đốc ở",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/chi-phi-tien-thu-nha-cho-nguoi-nuoc-ngoai-hop-ly.html",
+      "title": "Chi phí thuê nhà cho người nước ngoài ở hợp lệ",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/hoa-don-tien-dien-nuoc-khong-mang-ten-cong-ty.html",
+      "title": "Chi phí tiền điện nước khi thuê nhà mang tên chủ nhà",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/chi-phi-trang-phuc-cho-nhan-vien.html",
+      "title": "Chi phí trang phục cho nhân viên bằng tiền mặt, hiện vật 2026",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-thanh-toan-uy-quyen-qua-ben-thu-3.html",
+      "title": "Chi phí trước khi thành lập công ty có được trừ 2026",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/chi-tai-tro-lam-nha-tinh-nghia-cho-nguoi-ngheo-nha-dai-doan-ket.html",
+      "title": "Chi phí tài trợ, làm từ thiện khắc phục hậu quả thiên tai, dịch bệnh",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/chi-phi-ton-that-do-thien-tai-dich-benh-hoa-hoan.html",
+      "title": "Chi phí tổn thất do thiên tai, dịch bệnh, hỏa hoạn",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-chi-phi-cho-nhan-vien-di-nghi-mat-di-lai-ngay-le-tet.html",
+      "title": "Các khoản chi có tính chất phúc lợi cho nhân viên hợp lý 2026",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/cac-khoan-chi-phi-bi-khong-che-muc-duoc-tru-2026-moi-nhat.html",
+      "title": "Các khoản chi phí bị khống chế mức được trừ 2026",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/chi-phi-quang-cao-tren-mang-facebook-google-hop-ly-thi-can-gi.html",
+      "title": "Quy định về chi phí quảng cáo Facebook, Google hợp lý",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/cach-dua-tien-thue-nha-vao-chi-phi-hop-ly.html",
+      "title": "Quy định về chi phí thuê nhà, thuê xe ô tô của cá nhân",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/chi-phi-ve-may-bay-di-cong-tac-hop-ly.html",
+      "title": "Quy định về chi phí vé máy bay hợp lệ hợp lý",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/tien-phat-vi-pham-hop-dong-kinh-te-co-duoc-cho-vao-chi-phi.html",
+      "title": "Tiền phạt vi phạm hợp đồng có tính vào chi phí?",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/xu-ly-khoan-chi-phi-to-chuc-hoi-thao-quang-ba-khuyen-mai.html",
+      "title": "Xử lý khoản chi phí tổ chức hội thảo quảng bá khuyến mãi",
+      "reason": "batch50-tndn-costs",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-so-chi-phi-san-xuat-kinh-doanh-mau-s36-dn.html",
+      "title": "Cách lập sổ chi phí sản xuất, kinh doanh Mẫu S36-DN theo Thông tư 200",
+      "reason": "batch50-ledger-form",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/phuong-phap-tinh-thue-nha-thau-nuoc-ngoai-moi-nhat.html",
+      "title": "Cách tính thuế nhà thầu nước ngoài mới nhất",
+      "reason": "batch50-dn-thue-nha-thau",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-quan-tri-ho-tro"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "thue-nha-thau",
+        "lv3": "nha-thau-ke-khai-to-khai"
+      }
+    },
+    {
+      "href": "thu-vien/tai-khoan-ngan-hang-khong-dang-ky-voi-co-quan-thue.html",
+      "title": "Không đăng ký tài khoản ngân hàng với sở kế hoạch đầu tư",
+      "reason": "batch50-dn-gtgt-khau-tru",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-quan-tri-ho-tro"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "khau-tru-hoan-thue"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-139-2016-nd-cp-thue-mon-bai-tu-nam-2017.html",
+      "title": "Nghị định 139/2016/NĐ-CP Thuế môn bài từ năm 2017",
+      "reason": "batch50-dn-nd-mon-bai",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cac-phuong-phap-phan-loai-tai-san-co-dinh-cua-doanh-nghiep.html",
+      "title": "Các loại TSCĐ hữu hình và vô hình trong Doanh nghiệp",
+      "reason": "batch50-dn-tscd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/cac-quy-tac-trich-khau-hao-tai-san-co-dinh.html",
+      "title": "Các nguyên tắc trích khấu hao TSCĐ trong DN",
+      "reason": "batch50-dn-tscd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "tscd-nguyen-gia-khau-hao"
+      }
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-cong-cu-dung-cu-tai-khoan-153.html",
+      "title": "Cách hạch toán Tài khoản 153 Công cụ dụng cụ",
+      "reason": "batch50-dn-tk153",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "hang-ton-kho-gia-thanh"
+      }
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-chi-phi-quan-ly-doanh-nghiep-tai-khoan-642.html",
+      "title": "Cách hạch toán chi phí quản lý doanh nghiệp - Tài khoản 642",
+      "reason": "batch50-dn-tk642",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-quan-tri-ho-tro"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "doanh-thu-chi-phi-kqkd"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-hach-toan-chi-phi-lai-vay.html",
+      "title": "Hướng dẫn cách hạch toán chi phí lãi vay",
+      "reason": "batch50-dn-lai-vay",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "cong-no-thanh-toan"
+      }
+    },
+    {
+      "href": "thu-vien/he-thong-so-sach-ke-toan-theo-quyet-dinh-48-2006-qd-btc.html",
+      "title": "Hệ thống sổ sách kế toán theo Thông tư 133/2016/TT-BTC",
+      "reason": "batch50-dn-he-thong-so-sach",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "he-thong-chung-tu-mau-bieu"
+      }
+    },
+    {
+      "href": "thu-vien/nguyen-tac-ke-toan-cac-khoan-chi-phi.html",
+      "title": "Nguyên tắc kế toán các khoản chi phí theo Thông tư 99",
+      "reason": "batch50-dn-nguyen-tac-ke-toan",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "nguyen-tac-ke-toan"
+      }
+    },
+    {
+      "href": "thu-vien/nguyen-tac-ke-toan-cac-khoan-doanh-thu.html",
+      "title": "Nguyên tắc kế toán doanh thu theo Thông tư 99",
+      "reason": "batch50-dn-nguyen-tac-ke-toan",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "nguyen-tac-ke-toan"
+      }
+    },
+    {
+      "href": "thu-vien/nguyen-tac-ke-toan-von-chu-so-huu.html",
+      "title": "Nguyên tắc kế toán vốn chủ sở hữu theo Thông tư 99",
+      "reason": "batch50-dn-nguyen-tac-ke-toan",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "nguyen-tac-ke-toan"
+      }
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-cong-khai-bao-cao-tai-chinh-tai-doanh-nghiep.html",
+      "title": "Quy định về công khai báo cáo tài chính tại doanh nghiệp",
+      "reason": "batch50-dn-bctc",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "doanh-nghiep-thu-tuc",
+        "lv2": "thu-tuc-doanh-nghiep",
+        "lv3": "dn-thu-tuc-tai-chinh-vay-von"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "bao-cao-tai-chinh",
+        "lv3": "tong-quan-quy-dinh-nop-bctc"
+      }
+    },
+    {
+      "href": "thu-vien/cac-but-toan-ket-chuyen-cuoi-ky-ke-toan-tren-excel.html",
+      "title": "Cách hạch toán kết chuyển cuối kỳ (Lãi lỗ, Thuế)",
+      "reason": "batch50-phanmem-ket-chuyen",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "excel-va-cong-cu-khac",
+        "lv3": "excel-cong-cu-khac"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "doanh-thu-chi-phi-kqkd"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-ke-khai-thue-gtgt-theo-phuong-phap-khau-tru.html",
+      "title": "Cách kê khai thuế GTGT theo phương pháp khấu trừ",
+      "reason": "batch50-phanmem-gtgt",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "ke-khai-gtgt"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-to-khai-thue-thu-nhap-ca-nhan-mau-so-02kk-tncn.html",
+      "title": "Cách lập tờ khai thuế thu nhập cá nhân 05/KK-TNCN",
+      "reason": "batch50-phanmem-tncn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tncn"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "ke-khai-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-lap-to-khai-quyet-toan-thue-tncn-05kk-tncn.html",
+      "title": "Hướng dẫn lập tờ khai quyết toán thuế TNCN mẫu 05/QTT-TNCN",
+      "reason": "batch50-phanmem-tncn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tncn"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "ke-khai-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-lap-to-khai-quyet-toan-thue-tndn-cuoi-nam-mau-03-tndn.html",
+      "title": "Hướng dẫn lập tờ khai quyết toán thuế TNDN năm 2026 mẫu 03/TNDN",
+      "reason": "batch50-phanmem-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tndn"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "ke-khai-tam-nop-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-quyet-toan-thue-tncn-moi-nhat.html",
+      "title": "Hướng dẫn quyết toán thuế TNCN 2026 qua mạng",
+      "reason": "batch50-phanmem-tncn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tncn"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "ke-khai-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-lap-to-khai-thue-gtgt-mau-01-gtgt.html",
+      "title": "Hướng dẫn cách lập Tờ khai thuế GTGT mẫu 01/GTGT theo Quý và Tháng",
+      "reason": "batch50-phanmem-gtgt",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "ke-khai-gtgt"
+      }
+    },
+    {
+      "href": "thu-vien/cach-ke-khai-thue-mon-bai-qua-mang-truc-tuyen.html",
+      "title": "Hướng dẫn kê khai thuế môn bài qua mạng 2021",
+      "reason": "batch50-phanmem-monbai",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "le-phi-mon-bai",
+        "lv3": "mon-bai-ke-khai-to-khai"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-cach-ke-khai-thue-thu-nhap-ca-nhan-theo-thang-quy.html",
+      "title": "Hướng dẫn kê khai thuế thu nhập cá nhân theo tháng - quý",
+      "reason": "batch50-phanmem-tncn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tncn"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "ke-khai-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/cach-ke-khai-thue-tncn-tu-chuyen-nhuong-von-nhap-moi.html",
+      "title": "Hướng dẫn kê khai thuế TNCN từ chuyển nhượng vốn",
+      "reason": "batch50-phanmem-tncn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tncn"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "ke-khai-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/huong-dan-lap-bang-ke-hang-hoa-dich-vu-mua-vao-pl-01-2-gtgt.html",
+      "title": "Hướng dẫn lập bảng kê hàng hóa dịch vụ mua vào PL 01-2/GTGT",
+      "reason": "batch50-phanmem-gtgt-bang-ke",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "bao-cao-bang-ke"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-to-khai-thue-tndn-tam-tinh-quy-mau-01a-tndn.html",
+      "title": "Hướng dẫn lập tờ khai thuế TNDN tạm tính quý mẫu 01A/TNDN",
+      "reason": "batch50-phanmem-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tndn"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "ke-khai-tam-nop-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/thue-tncn-khong-phat-sinh-co-phai-nop-to-khai-khong.html",
+      "title": "Không phát sinh thuế TNCN có phải nộp tờ khai Thuế TNCN?",
+      "reason": "batch50-phanmem-tncn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-tncn"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "ke-khai-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/gia-han-nop-bao-cao-tai-chinh-theo-thong-tu-133.html",
+      "title": "Gia hạn nộp Báo cáo tài chính theo thông tư 133 năm 2018",
+      "reason": "batch50-phanmem-bctc",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "phan-mem-cong-cu",
+        "lv2": "htkk-etax-thue-dien-tu",
+        "lv3": "htkk-guide-import-bang-ke"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "bao-cao-tai-chinh",
+        "lv3": "tong-quan-quy-dinh-nop-bctc"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-126-2020-nd-cp-quy-dinh-chi-tiet-luat-quan-ly-thue.html",
+      "title": "Nghị định 126/2020/NĐ-CP Quy định chi tiết Luật quản lý thuế",
+      "reason": "batch50-thamkhao-nd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-91-2014-nd-cp-sua-doi-bo-sung-quy-dinh-ve-thue.html",
+      "title": "Nghị định 91/2014/NĐ-CP sửa đổi, bổ sung quy định về thuế",
+      "reason": "batch50-thamkhao-nd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-117-quy-dinh-quan-ly-thue-kinh-doanh-thuong-mai-dien-tu.html",
+      "title": "Nghị định số 117 quy định quản lý thuế với kinh doanh thương mại điện tử của hộ, cá nhân 2025",
+      "reason": "batch50-thamkhao-nd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-so-175-quy-dinh-ve-le-phi-truoc-ba.html",
+      "title": "Nghị định số 175 quy định về lệ phí trước bạ 2025",
+      "reason": "batch50-thamkhao-nd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-dien-so-102-ve-thuc-hien-nghi-dinh-175.html",
+      "title": "Công điện số 102 về thực hiện Nghị định 175 2025 quy định về lệ phí trước bạ",
+      "reason": "batch50-thamkhao-nd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-41-2018-nd-cp-xu-phat-vi-pham-ke-toan-kiem-toan.html",
+      "title": "Nghị định 41/2018/NĐ-CP Xử phạt vi phạm kế toán, kiểm toán độc lập",
+      "reason": "batch50-thamkhao-nd",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "kinh-nghiem-quyet-toan-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-chinh-sach-chung"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

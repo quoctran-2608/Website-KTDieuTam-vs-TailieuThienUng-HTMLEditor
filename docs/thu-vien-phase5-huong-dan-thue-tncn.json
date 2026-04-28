@@ -1,0 +1,143 @@
+{
+  "generatedAt": "2026-04-28T10:58:34.053074",
+  "phase": "phase5-huong-dan-thue-tncn",
+  "appliedCount": 7,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/cach-hach-toan-thue-tncn-phai-nop-khi-tam-tinh-quyet-toan.html",
+      "title": "Cách hạch toán thuế TNDN phải nộp, tạm tính, sau quyết toán",
+      "reason": "title-noi-dung-ve-thue-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "hach-toan-tncn"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "hach-toan-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-cac-khoan-thue-phai-nop-cho-nha-nuoc-tk-333.html",
+      "title": "Hạch toán các khoản thuế phải nộp cho nhà nước - TK 333",
+      "reason": "tk333-ke-toan-tai-khoan",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "tinh-thue-bieu-thue"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "thue-nghia-vu"
+      }
+    },
+    {
+      "href": "thu-vien/thu-tuc-dang-ky-ma-so-thue-thu-nhap-ca-nhan-moi-nhat.html",
+      "title": "Cách đăng ký Mã số thuế cá nhân quan mạng trên trang Dịch Vụ Công",
+      "reason": "dang-ky-mst-ca-nhan",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "ke-khai-quyet-toan"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "ma-so-thue-dang-ky-thue",
+        "lv3": "mst-dang-ky-lan-dau-doi-tuong"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-52-2021-nd-cp-gia-han-thoi-han-nop-thue-va-tien-thue-dat.html",
+      "title": "Nghị định 52/2021/NĐ-CP gia hạn thời hạn nộp thuế và tiền thuê đất 2021",
+      "reason": "nghi-dinh-gia-han-nop-thue",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "tinh-thue-bieu-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-quan-ly-xu-phat"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-82-moi-nhat-2025-gia-han-thoi-gian-nop-thue-va-tien-thue-dat.html",
+      "title": "Nghị định 82 mới nhất 2025 gia hạn thời gian nộp thuế gtgt-tndn-tncn và tiền thuê đất",
+      "reason": "nghi-dinh-gia-han-nop-thue",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "tinh-thue-bieu-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-quan-ly-xu-phat"
+      }
+    },
+    {
+      "href": "thu-vien/muc-phat-cham-nop-tien-thue-gtgt-tncn-tndn.html",
+      "title": "Mức phạt chậm nộp tiền thuế GTGT, TNCN, TNDN mới nhất 2026",
+      "reason": "bai-phat-cham-nop-thue-da-sac-thue",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "tinh-thue-bieu-thue"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "lap-xu-ly-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/cac-bao-cao-thue-hang-thang-phai-nop-cho-co-quan-thue.html",
+      "title": "Các báo cáo thuế phải nộp hàng tháng cho cơ quan thuế",
+      "reason": "tong-hop-bao-cao-thue-da-sac-thue",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "tinh-thue-bieu-thue"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "gtgt-hoa-don",
+        "lv3": "bao-cao-bang-ke"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "remainingInBucket": 76,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2695,
+      "ban_tin_count": 114,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  },
+  "deferredManualReview": [
+    {
+      "href": "thu-vien/ca-ch-lam-bao-quye-t-toa-n-thue-tncn-nam-2016.html",
+      "reason": "legacy-year-content-but-still-tncn-topic"
+    }
+  ]
+}

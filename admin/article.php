@@ -83,8 +83,8 @@ function validate_draft_payload(array $payload): array
   }, preg_split('/[,;\n]+/', $tagsInput) ?: []), static function (string $value): bool {
     return $value !== '';
   })));
-  if (count($tags) < 3) {
-    $errors['tags_text'] = 'Cần tối thiểu 3 tag.';
+  if (count($tags) < 2) {
+    $errors['tags_text'] = 'Cần tối thiểu 2 tag.';
   }
   if (count($tags) > 7) {
     $errors['tags_text'] = 'Tối đa 7 tag.';
@@ -675,7 +675,7 @@ admin_layout_header([
               </label>
 
               <label class="filter-field span-2">
-                <span>Thẻ (3-7 thẻ, ngăn cách bằng dấu phẩy) *</span>
+                <span>Thẻ (2-7 thẻ, ngăn cách bằng dấu phẩy) *</span>
                 <input type="text" name="tags_text" value="<?= h((string) ($form['tags_text'] ?? '')) ?>" required>
                 <?php if (!empty($validationErrors['tags_text'])): ?><small class="field-error"><?= h((string) $validationErrors['tags_text']) ?></small><?php endif; ?>
               </label>

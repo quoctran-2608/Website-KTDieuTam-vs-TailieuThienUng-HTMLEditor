@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-04-28T11:14:58.039431",
+  "phase": "phase8-huong-dan-ke-toan-nghiep-vu-theo-phan-hanh",
+  "appliedCount": 2,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/cach-lap-so-chi-tiet-ban-hang-mau-s35-dn-theo-thong-tu-200.html",
+      "title": "Cách lập sổ chi tiết bán hàng Mẫu S35-DN theo Thông tư 200",
+      "reason": "mau-so-chi-tiet-ban-hang-s35",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "so-sach-gia-thanh-ban-hang"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-tien-kho-chi-tiet"
+      }
+    },
+    {
+      "href": "thu-vien/cach-lap-the-tinh-gia-thanh-san-pham-dich-vu-mau-s37-dn.html",
+      "title": "Cách lập thẻ tính giá thành sản phẩm, dịch vụ Mẫu S37-DN theo Thông tư 200",
+      "reason": "mau-the-gia-thanh-s37",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "nghiep-vu-theo-phan-hanh",
+        "lv3": "so-sach-gia-thanh-ban-hang"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chung-tu-so-sach",
+        "lv3": "so-sach-gia-thanh-ban-hang"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "remainingInBucket": 17,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2695,
+      "ban_tin_count": 114,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

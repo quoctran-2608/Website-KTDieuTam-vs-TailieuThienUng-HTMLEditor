@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-04-28T16:30:00+00:00",
+  "scope": {
+    "importedTotal": 745,
+    "importedWithTablePages": 530
+  },
+  "phases": [
+    {
+      "phase": "table-fix-phase1-batch100",
+      "selected": 100,
+      "applied": 100,
+      "skipped": 0,
+      "tableTagsChanged": 294,
+      "reportJson": "docs/table-fix-phase1-batch100.json",
+      "reportMd": "docs/table-fix-phase1-batch100.md"
+    },
+    {
+      "phase": "table-fix-phase2-batch100",
+      "selected": 100,
+      "applied": 100,
+      "skipped": 0,
+      "tableTagsChanged": 268,
+      "reportJson": "docs/table-fix-phase2-batch100.json",
+      "reportMd": "docs/table-fix-phase2-batch100.md"
+    },
+    {
+      "phase": "table-fix-phase3-batch100",
+      "selected": 100,
+      "applied": 100,
+      "skipped": 0,
+      "tableTagsChanged": 429,
+      "reportJson": "docs/table-fix-phase3-batch100.json",
+      "reportMd": "docs/table-fix-phase3-batch100.md"
+    },
+    {
+      "phase": "table-fix-phase4-batch100",
+      "selected": 100,
+      "applied": 100,
+      "skipped": 0,
+      "tableTagsChanged": 477,
+      "reportJson": "docs/table-fix-phase4-batch100.json",
+      "reportMd": "docs/table-fix-phase4-batch100.md"
+    },
+    {
+      "phase": "table-fix-phase5-batch100",
+      "selected": 100,
+      "applied": 100,
+      "skipped": 0,
+      "tableTagsChanged": 687,
+      "reportJson": "docs/table-fix-phase5-batch100.json",
+      "reportMd": "docs/table-fix-phase5-batch100.md"
+    },
+    {
+      "phase": "table-fix-phase6-finalize30",
+      "selected": 30,
+      "applied": 30,
+      "skipped": 0,
+      "tableTagsChanged": 120,
+      "reportJson": "docs/table-fix-phase6-finalize30.json",
+      "reportMd": "docs/table-fix-phase6-finalize30.md"
+    }
+  ],
+  "totals": {
+    "selected": 530,
+    "applied": 530,
+    "skipped": 0,
+    "tableTagsChanged": 2275
+  },
+  "qa": {
+    "importedWithTablePages": 530,
+    "totalTableTags": 2275,
+    "untaggedPages": 0,
+    "untaggedTableTagsMissing": 0,
+    "missingArticleProse": 0,
+    "missingArticleLayoutScript": 0
+  },
+  "status": "completed"
+}

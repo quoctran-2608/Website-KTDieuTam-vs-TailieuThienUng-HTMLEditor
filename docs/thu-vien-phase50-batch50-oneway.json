@@ -1,0 +1,659 @@
+{
+  "generatedAt": "2026-04-28T15:42:00.899204",
+  "phase": "phase50-batch50-oneway",
+  "plannedCount": 50,
+  "appliedCount": 15,
+  "skippedCount": 35,
+  "applied": [
+    {
+      "href": "thu-vien/cong-van-2065-ct-nvt-su-dung-so-dinh-danh-thay-ma-so-thue.html",
+      "title": "Công văn 2065/CT-NVT sử dụng số định danh thay mã số thuế",
+      "reason": "phase50-congvan-generic-to-kekhai",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-3706-tct-kk-huong-dan-thu-tuc-dang-ky-thue.html",
+      "title": "Công văn 3706/TCT-KK hướng dẫn thủ tục đăng ký thuế",
+      "reason": "phase50-congvan-generic-to-kekhai",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4943-tct-kk-ke-khai-bo-sung-hoa-don-bo-sot.html",
+      "title": "Công văn 4943/TCT-KK Cách Kê khai bổ sung hóa đơn bỏ sót",
+      "reason": "phase50-congvan-generic-to-kekhai",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4943-tct-kk-ke-khai-bo-sung-hoa-don-dieu-chinh.html",
+      "title": "Công văn 4943/TCT-KK Hướng dẫn kê khai bổ sung, hóa đơn điều chỉnh",
+      "reason": "phase50-congvan-generic-to-kekhai",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-5485-btc-tct-dang-ky-ke-khai-thue-theo-pp-khau-tru.html",
+      "title": "Công văn 5485/BTC-TCT đăng ký kê khai thuế theo pp khấu trừ",
+      "reason": "phase50-congvan-generic-to-kekhai",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-109-2013-nd-cp-xu-phat-vi-pham-ve-hoa-don-phi-le-phi.html",
+      "title": "Nghị định 109/2013/NĐ-CP Xử phạt vi phạm hành chính về hóa đơn, phí, lệ phí",
+      "reason": "phase50-nghidinh-generic-to-quanly",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-quan-ly-xu-phat"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-12-2023-nd-cp-gia-han-nop-thue-gtgt-tndn-nam-2023.html",
+      "title": "Nghị định 12/2023/NĐ-CP gia hạn nộp thuế GTGT, TNDN năm 2023",
+      "reason": "phase50-nghidinh-generic-to-quanly",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-quan-ly-xu-phat"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-20-2026-tt-btc-huong-dan-luat-thue-tndn.html",
+      "title": "Thông tư 20/2026/TT-BTC hướng dẫn về Thuế TNDN",
+      "reason": "phase50-thongtu-generic-to-specific",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-25-2018-tt-btc-huong-dan-nd-146-2017-nd-cp-ve-thue-tndn-va-tncn.html",
+      "title": "Thông tư 25/2018/TT-BTC Hướng dẫn NĐ 146/2017/NĐ-CP về Thuế TNDN và TNCN",
+      "reason": "phase50-thongtu-generic-to-specific",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-26-vbhn-btc-van-ban-hop-nhat-thue-tndn.html",
+      "title": "Thông tư 26/VBHN –BTC văn bản hợp nhất thuế TNDN",
+      "reason": "phase50-thongtu-generic-to-specific",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-26-vbhn-huong-dan-nd-218-ve-thue-tndn.html",
+      "title": "Thông tư 26/VBHN–BTC Hướng dẫn NĐ 218 về thuế TNDN",
+      "reason": "phase50-thongtu-generic-to-specific",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-78-2014-tt-btc-huong-dan-thi-hanh-luat-thue-tndn.html",
+      "title": "Thông tư 78/2014/TT-BTC hướng dẫn thi hành luật thuế TNDN",
+      "reason": "phase50-thongtu-generic-to-specific",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-78-2014-tt-btc-thi-hanh-luat-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Thông tư 78/2014/TT-BTC thi hành luật thuế thu nhập doanh nghiệp",
+      "reason": "phase50-thongtu-generic-to-specific",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-96-2015-quy-dinh-ve-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Thông tư 96/2015/TT-BTC quy định về thuế thu nhập doanh nghiệp",
+      "reason": "phase50-thongtu-generic-to-specific",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-96-2015-tt-btc-huong-dan-thue-thu-nhap-doanh-nghiep.html",
+      "title": "Thông tư 96/2015/TT-BTC Hướng dẫn Luật thuế TNDN năm 2015",
+      "reason": "phase50-thongtu-generic-to-specific",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-chinh-sach-chung"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-tndn"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "href": "thu-vien/thong-tu-105-2020-tt-btc-huong-dan-ve-dang-ky-thue.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-130-2016-tt-btc-huong-dan-luat-thue-gtgt-ttdb-quan-ly-thue.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-16-vbhn-btc-van-ban-hop-nhat-ve-thue-gtgt.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-17-vbhn-btc-van-ban-hop-nhat-ve-hoa-don.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-176-2016-tt-btc-xu-phat-vi-pham-hanh-chinh-ve-hoa-don.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-176-2016-tt-btc-xu-phat-vi-pham-ve-hoa-don.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-18-vbhn-btc-huong-dan-luat-quan-ly-thue.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-18-vbhn-btc-van-ban-hop-nhat-ve-quan-ly-thue.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-219-2013-tt-btc-huong-dan-thi-hanh-luat-thue-gtgt.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-26-2015-tt-btc-huong-dan-thue-gtgt-va-quan-ly-thue.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-26-2015-tt-btc-ngay-27-02-2015-cua-bo-tai-chinh.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-37-2017-tt-btc-quy-dinh-ve-thong-bao-phat-hanh-hoa-don.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-37-2017-tt-btc-sua-doi-bo-sung-thong-tu-39.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-39-2014-tt-btc-nhung-quy-dinh-moi-ve-hoa-don.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-39-2014-tt-btc-quy-dinh-ve-hoa-don-moi-nhat.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-40-2021-tt-btc-quy-dinh-thue-cho-ho-ca-nhan-kinh-doanh.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-64-2015-ttlt-btc-bct-bca-bqp-quy-dinh-ve-hoa-don.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-65-2020-tt-btc-huong-dan-ke-khai-le-phi-mon-bai.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-68-2019-huong-dan-ve-hoa-don-dien-tu.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-68-2019-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-69-2025-tt-btc-huong-dan-ve-thue-gtgt.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-78-2021-tt-btc-huong-dan-hoa-don-dien-tu.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-78-2021-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-86-2024-tt-btc-quy-dinh-ve-dang-ky-thue-moi-nhat.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-86-quy-dinh-ve-dang-ky-thue.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-88-2020-tt-btc-huong-dan-ve-hoa-don-dien-tu.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-88-2020-tt-btc-quy-dinh-ve-hoa-don-dien-tu.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-92-2015-huong-dan-thue-gtgt-tncn.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-92-2015-quy-dinh-ve-thue-gtgt-tncn-doi-voi-ca-nhan.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-95-2016-quy-dinh-ve-thu-tuc-dang-ky-thue.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-95-2016-tt-btc-huong-dan-dang-ky-thue.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-so-10-2014-tt-btc-muc-xu-phat-vi-pham-ve-hoa-don.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-so-10-2014-tt-btc-xu-phat-vi-pham-ve-hoa-don-gtgt.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-so-156-2013-tt-btc-huong-dan-thi-hanh-luat-quan-ly-thue.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-ke-khai-quan-ly-thue",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    },
+    {
+      "href": "thu-vien/thong-tu-so-64-2013-tt-btc-quy-dinh-ve-hoa-don-gia-tri-gia-tang.html",
+      "reason": "missing-target-label",
+      "decision": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "thong-tu",
+        "lv3": "thong-tu-gtgt-hoa-don",
+        "reason": "phase50-thongtu-generic-to-specific"
+      }
+    }
+  ],
+  "after": {
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

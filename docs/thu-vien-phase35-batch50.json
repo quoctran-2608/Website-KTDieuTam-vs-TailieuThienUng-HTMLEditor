@@ -1,0 +1,868 @@
+{
+  "generatedAt": "2026-04-28T14:19:57.400189",
+  "phase": "phase35-batch50",
+  "plannedCount": 50,
+  "appliedCount": 50,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/cac-khoan-phu-cap-tro-cap-de-xac-dinh-thu-nhap-chiu-thue-tncn.html",
+      "title": "Công văn số 1381/TCT-TNCN Các khoản phụ cấp, trợ cấp để tính thuế TNCN",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-11352-btc-tchq-vv-hoa-don-hang-xuat-khau.html",
+      "title": "Công văn 11352/BTC-TCHQ V/v hóa đơn hàng xuất khẩu",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-11819-ct-ttht-chi-phi-duoc-tru-khi-tinh-thue-tndn.html",
+      "title": "Công văn 11819/CT-TTHT chi phí được trừ khi tính thuế TNDN",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-1434-tct-kk-gia-han-nop-mau-6-gtgt.html",
+      "title": "Công văn 1434/TCT-KK gia hạn nộp mẫu 06/GTGT năm 2016-2017",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-1434-tct-kk-tiep-nhan-mau-06-gtgt-den-30-4-2016.html",
+      "title": "Công văn 1434/TCT-KK tiếp nhận mẫu 06/GTGT đến 30/4/2016",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-17709-btc-tct-ap-dung-thue-gtgt-voi-1-so-mat-hang.html",
+      "title": "Công văn 17709/BTC-TCT áp dụng thuế GTGT với 1 số mặt hàng",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-17709-btc-tct-quy-dinh-thue-gtgt-1-so-mat-hang.html",
+      "title": "Công văn 17709/BTC-TCT quy định thuế GTGT với 1 số mặt hàng",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-2065-ct-nvt-su-dung-so-dinh-danh-thay-ma-so-thue.html",
+      "title": "Công văn 2065/CT-NVT sử dụng số định danh thay mã số thuế",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-2393-tct-dnncn-khai-thue-thu-nhap-ca-nhan.html",
+      "title": "Công văn 2393/TCT-DNNCN khai thuế thu nhập cá nhân",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-2785-tct-cs-noi-dung-moi-cua-tt-78-ve-thue-tndn.html",
+      "title": "Công văn 2785/TCT-CS nội dung mới của TT 78/2014/TT-BTC về thuế TNDN",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-3437-khau-tru-thue-tncn-tien-hoa-hong.html",
+      "title": "Công văn 3437/TCT-TNCN Khấu trừ thuế TNCN đối với tiền hoa hồng",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-3437-tct-tncn-thue-tncn-tien-thu-lao-tra-cho-ca-nhan.html",
+      "title": "Công văn 3437/TCT-TNCN Thuế TNCN tiền thu lao trả cho cá nhân",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-3496-huong-dan-xuat-hoa-don-vao-cuoi-tuan.html",
+      "title": "Công văn 3496 hướng dẫn về việc xuất hóa đơn GTGT vào cuối tuần",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-3706-tct-kk-huong-dan-thu-tuc-dang-ky-thue.html",
+      "title": "Công văn 3706/TCT-KK hướng dẫn thủ tục đăng ký thuế",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-ke-khai-quan-ly-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-3723-tct-kk-quy-dinh-ve-viec-su-dung-hoa-don-gtgt.html",
+      "title": "Công văn 3723/TCT-KK Quy định về việc sử dụng hóa đơn GTGT",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-3789-tct-cs-xu-phat-lam-mat-hoa-don-theo-hanh-vi.html",
+      "title": "Công văn 3789/TCT-CS Xử phạt làm mất hóa đơn theo hành vi",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4153-tct-cs-cach-lap-hoa-don-giam-30-thue-gtgt.html",
+      "title": "Công văn 4153/TCT-CS cách lập hoá đơn giảm 30% thuế GTGT",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4153-tct-cs-cach-viet-hoa-don-giam-30-thue-gtgt.html",
+      "title": "Công văn 4153/TCT-CS hướng dẫn viết hoá đơn giảm 30% thuế GTGT",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4253-tct-cs-bai-bo-huong-dan-nop-mau-06-gtgt.html",
+      "title": "Công văn 4253/TCT-CS Bãi bỏ hướng dẫn nộp Mẫu 06/GTGT",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4291-tct-cs-cho-phep-viet-tat-tren-hoa-don-gtgt.html",
+      "title": "Công văn 4291/TCT-CS Cho phép viết tắt trên hóa đơn GTGT",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4291-tct-cs-viet-tat-ten-dia-chi-tren-hoa-don-gtgt.html",
+      "title": "Công văn 4291/TCT-CS về việc viết tắt tên, địa chỉ trên hóa đơn GTGT",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-457-cthn-ttht-hoa-don-dien-tu-chiet-khau-thuong-mai.html",
+      "title": "Công văn 457/CTHN-TTHT hóa đơn điện tử chiết khấu thương mại",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-457-cthn-ttht-lap-hoa-don-dien-tu-chiet-khau-thuong-mai.html",
+      "title": "Công văn 457/CTHN-TTHT lập hóa đơn điện tử chiết khấu thương mại",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4818-tct-pc-diem-moi-muc-phat-ve-hoa-don-thue.html",
+      "title": "Công văn 4818/TCT-PC những điểm mới mức phạt về hóa đơn, thuế",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4818-tct-pc-nhung-diem-moi-xu-phat-vi-pham-ve-thue-hoa-don.html",
+      "title": "Công văn 4818/TCT-PC những điểm mới xử phạt vi phạm về thuế, hóa đơn",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4943-tct-kk-ke-khai-bo-sung-hoa-don-bo-sot.html",
+      "title": "Công văn 4943/TCT-KK Cách Kê khai bổ sung hóa đơn bỏ sót",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-4943-tct-kk-ke-khai-bo-sung-hoa-don-dieu-chinh.html",
+      "title": "Công văn 4943/TCT-KK Hướng dẫn kê khai bổ sung, hóa đơn điều chỉnh",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-5106-ve-muc-tien-an-trua-tien-an-giua-ca.html",
+      "title": "Công văn 5106 về mức tiền ăn trưa, tiền ăn giữa ca khi xác định thuế TNCN 2025",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-5286-ct-tncn-huong-dan-quyet-toan-thue-tncn-2016.html",
+      "title": "Công văn 5286/CT-TNCN hướng dẫn Quyết toán thuế TNCN 2016",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-5485-btc-tct-dang-ky-ke-khai-thue-theo-pp-khau-tru.html",
+      "title": "Công văn 5485/BTC-TCT đăng ký kê khai thuế theo pp khấu trừ",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-5749-huong-dan-quyet-toan-thue-tncn.html",
+      "title": "Công văn 5749/CT-TNCN Hướng dẫn Quyết toán thuế TNCN năm 2017",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-6043-ct-ttht-huong-dan-quyet-toan-thue-tncn-nam-2019.html",
+      "title": "Công văn 6043/CT-TTHT hướng dẫn quyết toán thuế TNCN năm 2019",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-636-tct-dnncn-huong-dan-quyet-toan-thue-tncn-2020.html",
+      "title": "Công văn 636/TCT-DNNCN Hướng dẫn quyết toán thuế TNCN 2020",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-7040-ct-tncn-huong-dan-quyet-toan-thue-tncn-2018.html",
+      "title": "Công văn 7040/CT-TNCN Hướng dẫn Quyết toán thuế TNCN 2018",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-801-tct-tncn-huong-dan-quyet-toan-thue-tncn.html",
+      "title": "Công văn 801/TCT- TNCN V/v Quyết toán thuế TNCN năm 2015",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-801-tct-tncn-ngay-2-3-2016-huong-dan-quyet-toan-thue-tncn.html",
+      "title": "Công văn 801/TCT- TNCN Hướng dẫn quyết toán thuế TNCN năm 2015",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-huong-dan-ke-khai-hoa-don-dieu-chinh-hoa-don-thay-the.html",
+      "title": "Công văn hướng dẫn kê khai hóa đơn điều chỉnh, thay thế, bỏ sót",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-huong-dan-quyet-toan-thue-tncn-2026.html",
+      "title": "Công văn hướng dẫn quyết toán thuế TNCN 2026 cho năm 2025",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-huong-dan-quyet-toan-thue-tncn.html",
+      "title": "Công văn hướng dẫn quyết toán thuế TNCN 2024 vào năm 2025",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-huong-dan-ve-thue-thu-nhap-ca-nhan.html",
+      "title": "Các công văn hướng dẫn về thuế TNCN đáng chú ý nhất năm 2025",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tncn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-13945-ve-thue-gtgt-hang-nhap-khau.html",
+      "title": "Công văn số 13945 hướng dẫn về thuế GTGT hàng nhập khẩu năm 2025",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-17557-btc-tct-trien-khai-thuc-hien-luat-thue-gtgt.html",
+      "title": "Công văn Số 17557/BTC-TCT triển khai thực hiện luật thuế GTGT",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-17963-btc-tct-tinh-thue-gtgt-theo-ty-le.html",
+      "title": "Công văn số 17963/BTC-TCT tính thuế GTGT theo tỷ lệ %",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-18128-btc-tct-trien-khai-thuc-hien-luat-thue-gtgt.html",
+      "title": "Công văn số 18128 /BTC-TCT triển khai thực hiện Luật thuế GTGT",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-2247-ve-hoan-thue-gtgt.html",
+      "title": "Công văn số 2247 về hoàn thuế GTGT mới nhất năm 2025",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-2366-huong-dan-ve-hoa-don-dien-tu-khoi-tao-tu-may-tinh-tien.html",
+      "title": "Công văn số 2366 hướng dẫn về hóa đơn điện tử khởi tạo từ máy tính tiền năm 2025",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-2541.html",
+      "title": "Công văn số 2541 hướng dẫn về chính sách thuế thu nhập doanh nghiệp năm 2025",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-tndn"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-431-tct-tvqt-quy-dinh-hoa-don-ban-hang.html",
+      "title": "Công văn số 431/TCT-TVQT ngày 14/2/2014 về quản lý và sử dụng hóa đơn (bán hàng)",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-586-tct-cs-tuyen-truyen-chinh-sach-thue-gtgt.html",
+      "title": "Công văn số 586/TCT-CS tuyên truyền chính sách thuế GTGT",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    },
+    {
+      "href": "thu-vien/cong-van-so-9531-ct-thnvdt-tinh-thue-gtgt-theo-phuong-phap-truc-tiep.html",
+      "title": "Công văn số 9531/CT-THNVDT tính thuế GTGT theo phương pháp trực tiếp",
+      "reason": "phase35-cong-van-generic-normalize",
+      "before": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-gtgt-hoa-don"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "cong-van",
+        "lv3": "cong-van-chinh-sach-chung"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

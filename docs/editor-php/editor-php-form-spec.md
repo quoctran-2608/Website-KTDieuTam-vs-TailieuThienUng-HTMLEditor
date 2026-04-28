@@ -265,7 +265,7 @@ Chỉ cần:
 
 ### Tags
 
-- tối thiểu 3 tag
+- tối thiểu 2 tag
 - tối đa 7 tag
 - không duplicate
 

@@ -1,0 +1,222 @@
+{
+  "generatedAt": "2026-04-28T11:04:24.703639",
+  "phase": "phase6-huong-dan-thue-tndn",
+  "appliedCount": 12,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/chi-phi-mua-hang-thanh-toan-bang-tai-khoan-ca-nhan.html",
+      "title": "Chi phí mua hàng thanh toán bằng tài khoản cá nhân",
+      "reason": "chi-phi-mua-hang-va-dieu-kien-chung-tu",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/muc-cong-tac-phi-khi-di-cong-tac-hop-ly.html",
+      "title": "Mức công tác phí khi đi công tác hợp lý mới nhất",
+      "reason": "chi-phi-cong-tac-hop-ly",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/dieu-kien-de-chi-phi-lai-vay-hop-ly-hop-le.html",
+      "title": "Điều kiện để chi phí lãi vay hợp lý hợp lệ",
+      "reason": "chi-phi-lai-vay-duoc-tru",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/chi-phi-qua-cho-bieu-tang-khach-hang-hop-ly.html",
+      "title": "Quy định về hàng biếu tặng cho khách hàng, công nhân viên",
+      "reason": "chi-phi-bieu-tang-khach-hang",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    },
+    {
+      "href": "thu-vien/cac-khoan-lo-duoc-ket-chuyen-theo-quy-dinh-cua-luat-thue-tndn.html",
+      "title": "Cách chuyển lỗ trên Tờ khai Quyết toán thuế 03/TNDN",
+      "reason": "chuyen-lo-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "uu-dai-mien-giam-chuyen-lo"
+      }
+    },
+    {
+      "href": "thu-vien/nhung-luu-y-khi-quyet-toan-thue-tndn.html",
+      "title": "Những lưu ý khi quyết toán thuế TNDN năm 2016",
+      "reason": "luu-y-quyet-toan-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "ke-khai-tam-nop-quyet-toan"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-146-2017-nd-cp-sua-doi-bo-sung-nghi-dinh-100-va-12.html",
+      "title": "Nghị định 146/2017/NĐ-CP sửa đổi, bổ sung Nghị định 100/2016/NĐ-CP và 12/2015/NĐ-CP",
+      "reason": "nghi-dinh-thue-phap-ly",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-gtgt-hoa-don"
+      }
+    },
+    {
+      "href": "thu-vien/nghi-dinh-44-2021-nd-cp-chi-ung-ho-tai-tro-chong-dich-covid.html",
+      "title": "Nghị định 44/2021/NĐ-CP Chi ủng hộ tài trợ chống dịch Covid",
+      "reason": "nghi-dinh-chinh-sach-thue",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-quan-ly-xu-phat"
+      }
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-viec-gia-han-nop-thue-gtgt-tndn.html",
+      "title": "Quy định về việc gia hạn nộp thuế năm 2021",
+      "reason": "gia-han-nop-thue-van-ban",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      },
+      "after": {
+        "kind": "van-ban",
+        "lv1": "thue",
+        "lv2": "nghi-dinh",
+        "lv3": "nghi-dinh-quan-ly-xu-phat"
+      }
+    },
+    {
+      "href": "thu-vien/cach-hach-toan-hang-hoa-het-han-su-dung-bi-hu-hong.html",
+      "title": "Cách hạch toán hàng hóa hết hạn sử dụng, bị hư hỏng",
+      "reason": "hach-toan-hang-ton-kho-hu-hong",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "hang-ton-kho-gia-thanh"
+      }
+    },
+    {
+      "href": "thu-vien/hach-toan-cac-but-toan-ket-chuyen-cuoi-ky.html",
+      "title": "Hạch toán các bút toán kết chuyển cuối kỳ năm tài chính",
+      "reason": "but-toan-ket-chuyen-cuoi-ky-ke-toan",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "doanh-thu-thu-nhap-tinh-thue"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-khoan-hach-toan",
+        "lv3": "doanh-thu-chi-phi-kqkd"
+      }
+    },
+    {
+      "href": "thu-vien/chi-phi-thue-thu-nhap-ca-nhan.html",
+      "title": "Chi phí thuế TNCN có được trừ khi tính thuế TNDN không?",
+      "reason": "noi-dung-chi-phi-duoc-tru-tndn",
+      "before": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tncn",
+        "lv3": "hach-toan-tncn"
+      },
+      "after": {
+        "kind": "huong-dan",
+        "lv1": "thue",
+        "lv2": "tndn",
+        "lv3": "chi-phi-duoc-tru-khong-duoc-tru"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "remainingInBucket": 60,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2695,
+      "ban_tin_count": 114,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  }
+}

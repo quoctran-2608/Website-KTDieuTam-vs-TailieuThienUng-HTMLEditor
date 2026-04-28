@@ -1,0 +1,46 @@
+{
+  "version": "2026-04-28",
+  "mode": "freeze",
+  "scope": "thu-vien taxonomy",
+  "current_state": {
+    "one_way_queues": {
+      "q1_thue_generic_to_specific": 0,
+      "q2_thongtu_generic_to_specific": 0,
+      "q3_nghidinh_generic_to_specific": 0,
+      "q4_congvan_generic_to_specific": 0
+    },
+    "toggle_pool": {
+      "thue_pattern": 54
+    }
+  },
+  "allow": [
+    "rebuild-hub-and-index-artifacts",
+    "meta-sync-with-current-taxonomy",
+    "one-way-reclassify-only-when-queue>0-and-target-key-exists",
+    "append-phase-report-json-md"
+  ],
+  "deny": [
+    "toggle-reclassify-bidirectional",
+    "new-lv3-key-without-editorial-signoff",
+    "bulk-moves-without-preflight-count-and-noop-check",
+    "direct-manual-edit-on-generated-artifacts"
+  ],
+  "required_checks_before_apply": [
+    "candidate-count",
+    "target-key-availability",
+    "no-op-count==0",
+    "duplicate-href-count==0"
+  ],
+  "required_outputs_after_apply": [
+    "docs/thu-vien-phase*.json",
+    "docs/thu-vien-phase*.md",
+    "data/articles.json",
+    "content-index.js",
+    "sitemap.xml"
+  ],
+  "exit_criteria_from_freeze": [
+    "new-editorial-scope-approved",
+    "new-taxonomy-keys-approved",
+    "non-toggle-one-way-queue>0"
+  ]
+}

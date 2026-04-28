@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2026-04-28T11:39:48.462781",
+  "phase": "phase12-huong-dan-ke-toan-tai-san-kho-ccdc",
+  "appliedCount": 5,
+  "skippedCount": 0,
+  "applied": [
+    {
+      "href": "thu-vien/chuan-muc-ke-toan-so-02-hang-ton-kho.html",
+      "title": "CHUẨN MỰC KẾ TOÁN SỐ 02 HÀNG TỒN KHO",
+      "reason": "vas02-hang-ton-kho",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "chuan-muc-tscd-hang-ton-kho"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "chuan-muc-ke-toan-vas"
+      }
+    },
+    {
+      "href": "thu-vien/chuan-muc-ke-toan-so-03-tai-san-co-dinh-huu-hinh.html",
+      "title": "CHUẨN MỰC KẾ TOÁN SỐ 03 TÀI SẢN CỐ ĐỊNH HỮU HÌNH",
+      "reason": "vas03-tscd-huu-hinh",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "chuan-muc-tscd-hang-ton-kho"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "chuan-muc-ke-toan-vas"
+      }
+    },
+    {
+      "href": "thu-vien/chuan-muc-ke-toan-so-04-tai-san-co-dinh-vo-hinh.html",
+      "title": "CHUẨN MỰC KẾ TOÁN SỐ 04 TÀI SẢN CỐ ĐỊNH VÔ HÌNH",
+      "reason": "vas04-tscd-vo-hinh",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "chuan-muc-tscd-hang-ton-kho"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "chuan-muc-che-do-nguyen-tac",
+        "lv3": "chuan-muc-ke-toan-vas"
+      }
+    },
+    {
+      "href": "thu-vien/cong-ty-thien-vu-group-tuyen-nhan-vien-thu-kho-thu-quy.html",
+      "title": "Công ty Thiên Vũ Group tuyển Nhân viên Thủ kho - Thủ quỹ",
+      "reason": "job-post-thu-kho-thu-quy",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "nghiep-vu-ke-toan-kho"
+      },
+      "after": {
+        "section": "ban-tin",
+        "kind": "",
+        "lv1": "thong-bao-tuyen-dung",
+        "lv2": "",
+        "lv3": ""
+      }
+    },
+    {
+      "href": "thu-vien/cong-viec-cua-nhan-vien-ke-toan-kho-phai-lam.html",
+      "title": "Mô tả các công việc của một nhân viên kế toán kho",
+      "reason": "mo-ta-cong-viec-ke-toan-kho",
+      "before": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "ke-toan",
+        "lv2": "tai-san-kho-ccdc",
+        "lv3": "nghiep-vu-ke-toan-kho"
+      },
+      "after": {
+        "section": "thu-vien",
+        "kind": "huong-dan",
+        "lv1": "tham-khao-hoc-lieu",
+        "lv2": "kinh-nghiem-hoi-dap-nghe-nghiep",
+        "lv3": "mo-ta-cong-viec-ke-toan"
+      }
+    }
+  ],
+  "skipped": [],
+  "after": {
+    "remainingInBucket": 55,
+    "countsAfterRebuild": {
+      "thu_vien_count": 2694,
+      "ban_tin_count": 115,
+      "thu_vien_pages": 225,
+      "ban_tin_pages": 10
+    }
+  },
+  "deferredManualReview": [
+    {
+      "href": "thu-vien/trich-lap-quy-phat-trien-khoa-hoc-va-cong-nghe-cua-dn.html",
+      "reason": "canh-gioi-hach-toan-dac-thu-vs-chinh-sach-thue"
+    },
+    {
+      "href": "thu-vien/quy-dinh-ve-viec-kiem-ke-tai-san-hang-nam.html",
+      "reason": "canh-gioi-ke-toan-kho-chuan-muc-phap-che"
+    }
+  ]
+}
