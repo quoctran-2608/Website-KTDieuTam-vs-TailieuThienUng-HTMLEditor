@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Đăng tin việc làm | Kế Toán Diệu Tâm</title>
-  <meta name="description" content="Đăng tin tuyển dụng với bản xem trước và checklist giúp nội dung rõ ràng, dễ ứng tuyển.">
+  <meta name="description" content="Đăng tin tuyển dụng với bản xem trước tức thì giúp nội dung rõ ràng, dễ ứng tuyển.">
   <link rel="canonical" href="https://ketoandieutam.vn/dang-tin-viec-lam.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css?v=20260429-employer-post-v1">
+  <link rel="stylesheet" href="assets/css/jobs.css?v=20260429-employer-post-v7">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-dashboard-page employer-job-form-page" data-root="" data-nav="tuyen-dung">
@@ -32,7 +32,7 @@
             <div class="jobs-post-hero-chips" aria-label="Điểm cần tối ưu khi đăng tin">
               <span><i class="fa-solid fa-pen-nib" aria-hidden="true"></i>Nội dung rõ ý</span>
               <span><i class="fa-solid fa-eye" aria-hidden="true"></i>Xem trước tức thì</span>
-              <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Checklist trước khi đăng</span>
+              <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Kiểm tra tự động</span>
             </div>
           </div>
           <div class="jobs-post-hero-card">
@@ -52,6 +52,31 @@
             <a href="dang-tin-viec-lam.html?mode=tao-moi" class="is-active">Đăng tin mới</a>
             <a href="quan-ly-tin-tuyen-dung.html?tab=tat-ca">Quản lý tin</a>
             <a href="ung-vien-tuyen-dung.html?view=theo-tin">Đơn ứng tuyển</a>
+          </div>
+          <div class="jobs-post-sidebar-status-anchor" id="jobPreviewStickyAnchor">
+            <div class="jobs-post-sidebar-status" id="jobPreviewSticky">
+              <article class="jobs-job-preview-card jobs-job-preview-card--sticky" id="jobPreviewCard">
+                <div class="jobs-job-preview-head">
+                  <span class="jobs-status-pill is-reviewing" id="jobPreviewStatus">Nháp</span>
+                  <h3 id="jobPreviewTitle">Tin tuyển dụng của bạn</h3>
+                </div>
+                <p class="jobs-job-preview-company" id="jobPreviewCompany">Tên doanh nghiệp</p>
+                <p class="jobs-job-preview-salary" id="jobPreviewSalary">
+                  <i class="fa-solid fa-money-bill-wave"></i>
+                  <span>Mức lương sẽ hiển thị ở đây</span>
+                </p>
+                <ul class="jobs-job-preview-meta">
+                  <li><i class="fa-solid fa-location-dot"></i><span id="jobPreviewLocation">Khu vực làm việc</span></li>
+                  <li><i class="fa-solid fa-briefcase"></i><span id="jobPreviewEmployment">Hình thức làm việc</span></li>
+                  <li><i class="fa-regular fa-calendar"></i><span id="jobPreviewDeadline">Hạn nộp hồ sơ</span></li>
+                  <li><i class="fa-regular fa-user"></i><span id="jobPreviewQuantity">Số lượng tuyển</span></li>
+                  <li><i class="fa-regular fa-envelope"></i><span id="jobPreviewApply">Cách ứng tuyển</span></li>
+                </ul>
+                <div class="jobs-job-preview-tags" id="jobPreviewTags"></div>
+                <p class="jobs-job-preview-summary" id="jobPreviewSummary">Tóm tắt ngắn sẽ hiển thị ở đây để bạn kiểm tra trước khi đăng.</p>
+              </article>
+              <p class="jobs-empty-state jobs-form-feedback" id="jobFormFeedback" role="status" aria-live="polite" hidden></p>
+            </div>
           </div>
         </aside>
 
@@ -293,66 +318,6 @@
                 </article>
               </div>
 
-              <aside class="jobs-job-form-side">
-                <article class="jobs-job-preview-card" id="jobPreviewCard">
-                  <div class="jobs-job-preview-head">
-                    <h3 id="jobPreviewTitle">Tin tuyển dụng của bạn</h3>
-                    <span class="jobs-status-pill is-reviewing" id="jobPreviewStatus">Nháp</span>
-                  </div>
-                  <p class="jobs-job-preview-company" id="jobPreviewCompany">Tên doanh nghiệp</p>
-                  <p class="jobs-job-preview-salary" id="jobPreviewSalary">
-                    <i class="fa-solid fa-money-bill-wave"></i>
-                    <span>Mức lương sẽ hiển thị ở đây</span>
-                  </p>
-                  <ul class="jobs-job-preview-meta">
-                    <li><i class="fa-solid fa-location-dot"></i><span id="jobPreviewLocation">Khu vực làm việc</span></li>
-                    <li><i class="fa-solid fa-briefcase"></i><span id="jobPreviewEmployment">Hình thức làm việc</span></li>
-                    <li><i class="fa-regular fa-calendar"></i><span id="jobPreviewDeadline">Hạn nộp hồ sơ</span></li>
-                    <li><i class="fa-regular fa-user"></i><span id="jobPreviewQuantity">Số lượng tuyển</span></li>
-                    <li><i class="fa-regular fa-envelope"></i><span id="jobPreviewApply">Cách ứng tuyển</span></li>
-                  </ul>
-                  <div class="jobs-job-preview-tags" id="jobPreviewTags"></div>
-                  <p class="jobs-job-preview-summary" id="jobPreviewSummary">Tóm tắt ngắn sẽ hiển thị ở đây để bạn kiểm tra trước khi đăng.</p>
-                </article>
-
-                <article class="jobs-job-checklist">
-                  <h3>Checklist trước khi đăng</h3>
-                  <div class="jobs-job-readiness" aria-live="polite">
-                    <div class="jobs-job-readiness-head">
-                      <span>Độ sẵn sàng đăng</span>
-                      <strong id="jobReadinessScore">0%</strong>
-                    </div>
-                    <div class="jobs-job-readiness-bar" aria-hidden="true">
-                      <span id="jobReadinessBar"></span>
-                    </div>
-                  </div>
-                  <ul>
-                    <li class="jobs-check-item" id="jobCheckTitle">
-                      <span class="jobs-check-dot"><i class="fa-solid fa-check"></i></span>
-                      <span>Tiêu đề rõ ràng và đúng nhóm vị trí</span>
-                    </li>
-                    <li class="jobs-check-item" id="jobCheckSummary">
-                      <span class="jobs-check-dot"><i class="fa-solid fa-check"></i></span>
-                      <span>Tóm tắt ngắn đủ thông tin cốt lõi</span>
-                    </li>
-                    <li class="jobs-check-item" id="jobCheckDetails">
-                      <span class="jobs-check-dot"><i class="fa-solid fa-check"></i></span>
-                      <span>Mô tả + yêu cầu đủ dài để ứng viên tự đánh giá</span>
-                    </li>
-                    <li class="jobs-check-item" id="jobCheckDeadline">
-                      <span class="jobs-check-dot"><i class="fa-solid fa-check"></i></span>
-                      <span>Có mức lương và hạn nộp hồ sơ rõ ràng</span>
-                    </li>
-                    <li class="jobs-check-item" id="jobCheckContact">
-                      <span class="jobs-check-dot"><i class="fa-solid fa-check"></i></span>
-                      <span>Có email hoặc số điện thoại để nhận thông báo đơn mới</span>
-                    </li>
-                  </ul>
-                  <p class="jobs-job-checklist-summary" id="jobChecklistSummary">0/5 mục đã đạt.</p>
-                </article>
-
-                <p class="jobs-empty-state jobs-form-feedback" id="jobFormFeedback" role="status" aria-live="polite" hidden></p>
-              </aside>
             </form>
 
             <div class="jobs-portal-actions jobs-job-form-actions">
@@ -491,6 +456,84 @@
         if (stateClass) {
           node.classList.add(stateClass);
         }
+      }
+
+      var refreshPreviewSticky = function () {};
+
+      function initPreviewSticky() {
+        var anchor = document.getElementById('jobPreviewStickyAnchor');
+        var sticky = document.getElementById('jobPreviewSticky');
+        var shell = document.querySelector('.jobs-post-shell');
+        if (!anchor || !sticky || !shell) return function () {};
+
+        // Fixed fallback keeps the preview pinned even if CSS sticky is limited by grid/overflow ancestors.
+        var desktopQuery = window.matchMedia
+          ? window.matchMedia('(min-width: 1101px)')
+          : { matches: true };
+        var topOffset = 108;
+        var ticking = false;
+
+        function clearStickyState() {
+          sticky.classList.remove('is-fixed', 'is-parked');
+          sticky.style.removeProperty('--jobs-post-preview-left');
+          sticky.style.removeProperty('--jobs-post-preview-width');
+          sticky.style.removeProperty('--jobs-post-preview-park-top');
+          anchor.style.removeProperty('--jobs-post-preview-anchor-height');
+        }
+
+        function syncSticky() {
+          ticking = false;
+          sticky.classList.remove('is-fixed', 'is-parked');
+          sticky.style.removeProperty('--jobs-post-preview-park-top');
+          anchor.style.removeProperty('--jobs-post-preview-anchor-height');
+
+          if (!desktopQuery.matches) {
+            clearStickyState();
+            return;
+          }
+
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+          var anchorRect = anchor.getBoundingClientRect();
+          var shellRect = shell.getBoundingClientRect();
+          var naturalTop = anchorRect.top + scrollTop;
+          var shellBottom = shellRect.bottom + scrollTop;
+          var height = sticky.offsetHeight;
+          var width = anchorRect.width;
+
+          if (!height || !width || scrollTop + topOffset < naturalTop) {
+            clearStickyState();
+            return;
+          }
+
+          anchor.style.setProperty('--jobs-post-preview-anchor-height', height + 'px');
+          sticky.style.setProperty('--jobs-post-preview-left', anchorRect.left + 'px');
+          sticky.style.setProperty('--jobs-post-preview-width', width + 'px');
+
+          var lastFixedScrollTop = shellBottom - height - topOffset;
+          if (scrollTop >= lastFixedScrollTop) {
+            sticky.style.setProperty('--jobs-post-preview-park-top', Math.max(0, shellBottom - height - naturalTop) + 'px');
+            sticky.classList.add('is-parked');
+            return;
+          }
+
+          sticky.classList.add('is-fixed');
+        }
+
+        function scheduleSticky() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(syncSticky);
+        }
+
+        window.addEventListener('scroll', scheduleSticky, { passive: true });
+        window.addEventListener('resize', scheduleSticky);
+        if (desktopQuery.addEventListener) {
+          desktopQuery.addEventListener('change', scheduleSticky);
+        } else if (desktopQuery.addListener) {
+          desktopQuery.addListener(scheduleSticky);
+        }
+        window.setTimeout(scheduleSticky, 0);
+        return scheduleSticky;
       }
 
       function appendCopySuffix(title) {
@@ -822,7 +865,10 @@
         var totalCount = Object.keys(checks).length;
         var score = Math.round((passedCount / totalCount) * 100);
         var firstIncompleteKey = Object.keys(checks).find(function (key) { return !checks[key]; });
-        document.getElementById('jobChecklistSummary').textContent = passedCount + '/' + totalCount + ' mục đã đạt.';
+        var checklistSummary = document.getElementById('jobChecklistSummary');
+        if (checklistSummary) {
+          checklistSummary.textContent = passedCount + '/' + totalCount + ' mục đã đạt.';
+        }
         var readinessScore = document.getElementById('jobReadinessScore');
         var readinessBar = document.getElementById('jobReadinessBar');
         if (readinessScore) {
@@ -856,6 +902,7 @@
         updateCharCounts();
         updatePreview();
         updateChecklist();
+        refreshPreviewSticky();
       }
 
       applyModeTexts();
@@ -867,6 +914,7 @@
       if (deadlineInput) {
         deadlineInput.min = toDateInputValue(new Date());
       }
+      refreshPreviewSticky = initPreviewSticky();
       refreshUi();
 
       var trackedInputIds = Object.keys(fieldIdMap).map(function (key) { return fieldIdMap[key]; });
@@ -883,6 +931,9 @@
           refreshUi();
           var previewCard = document.getElementById('jobPreviewCard');
           if (previewCard) {
+            if ('open' in previewCard) {
+              previewCard.open = true;
+            }
             previewCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
           showFeedback('Đã làm mới bản xem trước.', 'success');
@@ -926,7 +977,7 @@
         if (submitAction === 'dang-tin') {
           var readiness = updateChecklist();
           if (readiness.passedCount < readiness.totalCount) {
-            showFeedback('Tin chưa đủ điều kiện đăng. Vui lòng hoàn thiện checklist trước khi đăng tin.', 'warning');
+            showFeedback('Tin chưa đủ điều kiện đăng. Vui lòng hoàn thiện các thông tin bắt buộc trước khi đăng tin.', 'warning');
             focusChecklistField(readiness.firstIncompleteFieldId);
             return;
           }
