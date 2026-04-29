@@ -23,6 +23,7 @@ CANDIDATE_OUTPUT_DIR = ROOT / "ung-vien"
 RECRUITER_CANDIDATE_PAGE = ROOT / "ung-vien-tuyen-dung.html"
 EMPLOYER_PAGE = ROOT / "dang-tin-tuyen-dung.html"
 RECRUITMENT_PORTAL_PAGES = [
+    ROOT / "dang-nhap-ung-vien.html",
     ROOT / "dang-nhap-tuyen-dung.html",
     ROOT / "tai-khoan-ung-vien.html",
     ROOT / "danh-sach-ung-vien.html",
@@ -45,7 +46,7 @@ SITEMAP_INDEX_FILE = ROOT / "sitemap-index.xml"
 ROBOTS_FILE = ROOT / "robots.txt"
 INDEX_PAGE = ROOT / "index.html"
 SITE_URL = "https://ketoandieutam.vn"
-ASSET_VERSION = "20260429-job-detail-v11"
+ASSET_VERSION = "20260429-job-detail-v12"
 
 SKIP_FILES = {"README.md", "mau-tin-tuyen-dung.md"}
 REQUIRED_FIELDS = [
@@ -3274,7 +3275,7 @@ def render_list_page(jobs: list[Job], today: date, featured_candidates: list[dic
             <p>Tạo hồ sơ, lưu việc làm, theo dõi đơn đã nộp và trạng thái phản hồi.</p>
             <div class="jobs-portal-actions">
               <a href="tai-khoan-ung-vien.html" class="btn-primary-orange">Vào khu ứng viên</a>
-              <a href="dang-nhap-tuyen-dung.html" class="btn-outline-brown">Đăng nhập</a>
+              <a href="dang-nhap-ung-vien.html" class="btn-outline-brown">Đăng nhập</a>
             </div>
           </article>
           <article class="jobs-portal-card">

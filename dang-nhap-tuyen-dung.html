@@ -3,75 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng nhập Tuyển dụng | Kế Toán Diệu Tâm</title>
-  <meta name="description" content="Đăng nhập khu Tuyển dụng dành cho ứng viên và nhà tuyển dụng trên Kế Toán Diệu Tâm.">
+  <title>Đăng nhập nhà tuyển dụng | Kế Toán Diệu Tâm</title>
+  <meta name="description" content="Đăng nhập khu nhà tuyển dụng để đăng tin, quản lý tin tuyển dụng và xem hồ sơ ứng viên phù hợp.">
   <link rel="canonical" href="https://ketoandieutam.vn/dang-nhap-tuyen-dung.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css?v=20260425-h1-40">
+  <link rel="stylesheet" href="assets/css/jobs.css?v=20260429-login-split-v1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body class="jobs-page jobs-auth-page recruitment-login-page" data-root="" data-nav="tuyen-dung">
+<body class="jobs-page jobs-auth-page recruitment-login-page employer-login-page role-login-page" data-root="" data-nav="tuyen-dung">
   <div id="siteHeader"></div>
   <main>
-    <section class="jobs-hero">
+    <section class="jobs-hero role-login-hero">
       <div class="container">
         <nav class="jobs-breadcrumbs" aria-label="Breadcrumb">
           <a href="index.html">Trang chủ</a>
           <span>/</span>
           <a href="tuyen-dung.html">Tuyển dụng</a>
           <span>/</span>
-          <span>Đăng nhập tuyển dụng</span>
+          <span>Đăng nhập nhà tuyển dụng</span>
         </nav>
-        <div class="jobs-hero-compact-head jobs-hero-minimal-head">
-          <h1>Đăng nhập cho ứng viên và nhà tuyển dụng</h1>
-          <p class="jobs-hero-text">Chọn đúng vai trò để đăng nhập.</p>
+        <div class="role-login-hero-grid">
+          <div class="role-login-copy">
+            <span class="jobs-kicker">Nhà tuyển dụng</span>
+            <h1>Đăng nhập nhà tuyển dụng</h1>
+            <p class="jobs-hero-text">Vào khu quản trị để đăng tin, theo dõi hồ sơ và xử lý đơn ứng tuyển theo từng vị trí.</p>
+            <div class="role-login-chips" aria-label="Tác vụ nhà tuyển dụng">
+              <span><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>Đăng tin nhanh</span>
+              <span><i class="fa-solid fa-users-viewfinder" aria-hidden="true"></i>Xem ứng viên phù hợp</span>
+              <span><i class="fa-solid fa-chart-line" aria-hidden="true"></i>Quản lý hiệu quả tin</span>
+            </div>
+          </div>
+          <div class="role-login-hero-card">
+            <i class="fa-solid fa-building-user" aria-hidden="true"></i>
+            <strong>Luồng dành riêng cho doanh nghiệp</strong>
+            <span>Tập trung vào nhu cầu tuyển kế toán, kiểm soát hồ sơ và phản hồi ứng viên nhanh hơn.</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="jobs-section section-padding jobs-section-soft">
-      <div class="container">
-        <div class="jobs-auth-grid">
-          <article class="jobs-auth-card" id="dang-nhap-ung-vien">
-            <span class="jobs-kicker">Ứng viên</span>
-            <h2>Đăng nhập ứng viên</h2>
-            <p>Đăng nhập để xem hồ sơ, việc đã lưu và các đơn đã nộp của bạn.</p>
-            <form class="jobs-auth-fields" id="candidateLoginForm" action="tai-khoan-ung-vien.html?from=dang-nhap-ung-vien" method="post" novalidate>
-              <label class="jobs-filter-field">
-                <span>Email</span>
-                <input type="email" id="candidateLoginEmail" name="email" required autocomplete="email" placeholder="ungvien@email.com">
+      <div class="container role-login-shell">
+        <article class="jobs-auth-card role-login-card">
+          <div class="role-login-card-head">
+            <span class="jobs-kicker">Đăng nhập</span>
+            <h2>Vào khu nhà tuyển dụng</h2>
+            <p>Dùng email doanh nghiệp hoặc email phụ trách tuyển dụng để tiếp tục.</p>
+          </div>
+          <form class="jobs-auth-fields role-login-form" id="employerLoginForm" action="nha-tuyen-dung.html?from=dang-nhap-nha-tuyen-dung" method="post" novalidate>
+            <label class="jobs-filter-field">
+              <span>Email đăng nhập</span>
+              <input type="email" id="employerLoginEmail" name="email" required autocomplete="email" placeholder="hr@congty.com">
+            </label>
+            <label class="jobs-filter-field">
+              <span>Mật khẩu</span>
+              <input type="password" id="employerLoginPassword" name="password" required minlength="8" autocomplete="current-password" placeholder="••••••••">
+            </label>
+            <div class="role-login-form-row">
+              <label class="role-login-remember">
+                <input type="checkbox" name="remember" value="1">
+                <span>Ghi nhớ đăng nhập</span>
               </label>
-              <label class="jobs-filter-field">
-                <span>Mật khẩu</span>
-                <input type="password" id="candidateLoginPassword" name="password" required minlength="8" autocomplete="current-password" placeholder="••••••••">
-              </label>
-            </form>
-            <div class="jobs-auth-actions">
-              <button type="submit" form="candidateLoginForm" class="btn-primary-orange">Đăng nhập ứng viên</button>
-              <a href="ho-so-ung-vien.html?from=dang-nhap-ung-vien" class="btn-outline-brown">Chưa có hồ sơ? Tạo&nbsp;ngay</a>
+              <a href="mailto:ketoandieutam@gmail.com?subject=H%E1%BB%97%20tr%E1%BB%A3%20%C4%91%C4%83ng%20nh%E1%BA%ADp%20nh%C3%A0%20tuy%E1%BB%83n%20d%E1%BB%A5ng">Cần hỗ trợ?</a>
             </div>
-          </article>
+          </form>
+          <div class="jobs-auth-actions role-login-actions">
+            <button type="submit" form="employerLoginForm" class="btn-primary-orange">Đăng nhập nhà tuyển dụng</button>
+            <a href="dang-tin-tuyen-dung.html?from=dang-nhap-nha-tuyen-dung" class="btn-outline-brown">Chưa có tài khoản? Gửi yêu cầu</a>
+          </div>
+          <p class="role-login-switch">Bạn là ứng viên? <a href="dang-nhap-ung-vien.html">Đăng nhập ứng viên</a></p>
+        </article>
 
-          <article class="jobs-auth-card" id="dang-nhap-nha-tuyen-dung">
-            <span class="jobs-kicker">Nhà tuyển dụng</span>
-            <h2>Đăng nhập nhà tuyển dụng</h2>
-            <p>Đăng nhập để đăng tin mới, quản lý tin đang chạy và xử lý đơn ứng tuyển theo từng vị trí.</p>
-            <form class="jobs-auth-fields" id="employerLoginForm" action="nha-tuyen-dung.html?from=dang-nhap-nha-tuyen-dung" method="post" novalidate>
-              <label class="jobs-filter-field">
-                <span>Email đăng nhập</span>
-                <input type="email" id="employerLoginEmail" name="email" required autocomplete="email" placeholder="hr@congty.com">
-              </label>
-              <label class="jobs-filter-field">
-                <span>Mật khẩu</span>
-                <input type="password" id="employerLoginPassword" name="password" required minlength="8" autocomplete="current-password" placeholder="••••••••">
-              </label>
-            </form>
-            <div class="jobs-auth-actions">
-              <button type="submit" form="employerLoginForm" class="btn-primary-orange">Đăng nhập nhà tuyển&nbsp;dụng</button>
-              <a href="dang-tin-tuyen-dung.html?from=dang-nhap-nha-tuyen-dung" class="btn-outline-brown">Chưa có tài khoản? Gửi yêu cầu</a>
+        <aside class="role-login-side">
+          <span class="jobs-kicker">Sau khi đăng nhập</span>
+          <h2>Quản lý tuyển dụng rõ ràng hơn</h2>
+          <ul class="role-login-benefits">
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Đăng và quản lý tin tuyển dụng kế toán.</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Theo dõi hồ sơ ứng tuyển theo từng vị trí.</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Lọc hồ sơ ứng viên theo kinh nghiệm, khu vực và kỹ năng.</span></li>
+          </ul>
+          <div class="role-login-help">
+            <i class="fa-solid fa-headset" aria-hidden="true"></i>
+            <div>
+              <strong>Cần mở tài khoản doanh nghiệp?</strong>
+              <p>Gửi yêu cầu, Diệu Tâm sẽ hỗ trợ thiết lập luồng đăng tin phù hợp.</p>
             </div>
-          </article>
-        </div>
+          </div>
+        </aside>
       </div>
     </section>
   </main>

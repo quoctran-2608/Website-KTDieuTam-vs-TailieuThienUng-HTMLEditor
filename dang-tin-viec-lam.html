@@ -7,7 +7,7 @@
   <meta name="description" content="Đăng tin tuyển dụng với bản xem trước và checklist giúp nội dung rõ ràng, dễ ứng tuyển.">
   <link rel="canonical" href="https://ketoandieutam.vn/dang-tin-viec-lam.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css?v=20260425-h1-40">
+  <link rel="stylesheet" href="assets/css/jobs.css?v=20260429-employer-post-v1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-dashboard-page employer-job-form-page" data-root="" data-nav="tuyen-dung">
@@ -24,18 +24,28 @@
           <span>/</span>
           <span>Đăng tin việc làm</span>
         </nav>
-        <div class="jobs-hero-grid">
-          <div>
+        <div class="jobs-hero-grid jobs-post-hero-grid">
+          <div class="jobs-post-hero-copy">
             <span class="jobs-kicker" id="jobFormHeroKicker">Đăng tin tuyển dụng</span>
             <h1 id="jobFormHeroTitle">Soạn và cập nhật tin tuyển dụng</h1>
             <p class="jobs-hero-text" id="jobFormHeroText">Điền thông tin vị trí để lưu nháp, xem trước và đăng tin.</p>
+            <div class="jobs-post-hero-chips" aria-label="Điểm cần tối ưu khi đăng tin">
+              <span><i class="fa-solid fa-pen-nib" aria-hidden="true"></i>Nội dung rõ ý</span>
+              <span><i class="fa-solid fa-eye" aria-hidden="true"></i>Xem trước tức thì</span>
+              <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Checklist trước khi đăng</span>
+            </div>
+          </div>
+          <div class="jobs-post-hero-card">
+            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+            <strong>Tin tốt giúp ứng viên quyết định nhanh hơn</strong>
+            <span>Ưu tiên tiêu đề rõ, lương minh bạch, địa điểm cụ thể và yêu cầu đủ ngắn để dễ đọc.</span>
           </div>
         </div>
       </div>
     </section>
 
     <section class="jobs-section section-padding jobs-section-soft">
-      <div class="container jobs-dashboard-shell">
+      <div class="container jobs-dashboard-shell jobs-post-shell">
         <aside class="jobs-dashboard-sidebar">
           <div class="jobs-dashboard-menu">
             <a href="nha-tuyen-dung.html?from=dang-tin-viec-lam">Tổng quan</a>
@@ -47,7 +57,7 @@
 
         <div class="jobs-dashboard-main">
           <section class="jobs-dashboard-panel jobs-job-form-panel">
-            <div class="jobs-dashboard-panel-head">
+            <div class="jobs-dashboard-panel-head jobs-post-panel-head">
               <div>
                 <h2 id="jobFormPanelTitle">Thông tin tin tuyển dụng</h2>
                 <span class="jobs-dashboard-note" id="jobFormPanelNote">Điền đầy đủ thông tin để tin tuyển dụng rõ ràng, dễ tìm và dễ ứng tuyển.</span>
@@ -59,12 +69,19 @@
               Nên hoàn thiện tiêu đề, mô tả, yêu cầu và người phụ trách hồ sơ trước khi đăng.
             </div>
 
+            <nav class="jobs-post-step-nav" aria-label="Các phần của biểu mẫu đăng tin">
+              <a href="#post-section-basic"><i class="fa-solid fa-briefcase" aria-hidden="true"></i>Vị trí</a>
+              <a href="#post-section-content"><i class="fa-solid fa-align-left" aria-hidden="true"></i>Nội dung</a>
+              <a href="#post-section-contact"><i class="fa-solid fa-user-tie" aria-hidden="true"></i>Phụ trách</a>
+              <a href="#post-section-display"><i class="fa-solid fa-sliders" aria-hidden="true"></i>Hiển thị</a>
+            </nav>
+
             <form class="jobs-job-form-layout" id="employerJobForm" action="quan-ly-tin-tuyen-dung.html?tab=tat-ca" method="post">
               <input type="hidden" id="jobPostIdInput" name="job_id" value="">
               <input type="hidden" id="jobPostFormModeInput" name="formMode" value="tao-moi">
 
               <div class="jobs-job-form-sections">
-                <article class="jobs-job-form-section">
+                <article class="jobs-job-form-section" id="post-section-basic">
                   <div class="jobs-job-form-section-head">
                     <div>
                       <h3>1) Thông tin vị trí</h3>
@@ -174,7 +191,7 @@
                   </div>
                 </article>
 
-                <article class="jobs-job-form-section">
+                <article class="jobs-job-form-section" id="post-section-content">
                   <div class="jobs-job-form-section-head">
                     <div>
                       <h3>2) Nội dung hiển thị</h3>
@@ -216,7 +233,7 @@
                   </div>
                 </article>
 
-                <article class="jobs-job-form-section">
+                <article class="jobs-job-form-section" id="post-section-contact">
                   <div class="jobs-job-form-section-head">
                     <div>
                       <h3>3) Ứng tuyển & người phụ trách</h3>
@@ -246,7 +263,7 @@
                   </div>
                 </article>
 
-                <article class="jobs-job-form-section">
+                <article class="jobs-job-form-section" id="post-section-display">
                   <div class="jobs-job-form-section-head">
                     <div>
                       <h3>4) Hiển thị tin</h3>
@@ -298,8 +315,8 @@
                   <p class="jobs-job-preview-summary" id="jobPreviewSummary">Tóm tắt ngắn sẽ hiển thị ở đây để bạn kiểm tra trước khi đăng.</p>
                 </article>
 
-	                <article class="jobs-job-checklist">
-	                  <h3>Checklist trước khi đăng</h3>
+                <article class="jobs-job-checklist">
+                  <h3>Checklist trước khi đăng</h3>
                   <div class="jobs-job-readiness" aria-live="polite">
                     <div class="jobs-job-readiness-head">
                       <span>Độ sẵn sàng đăng</span>
@@ -309,7 +326,7 @@
                       <span id="jobReadinessBar"></span>
                     </div>
                   </div>
-	                  <ul>
+                  <ul>
                     <li class="jobs-check-item" id="jobCheckTitle">
                       <span class="jobs-check-dot"><i class="fa-solid fa-check"></i></span>
                       <span>Tiêu đề rõ ràng và đúng nhóm vị trí</span>
