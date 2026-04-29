@@ -45,7 +45,7 @@ SITEMAP_INDEX_FILE = ROOT / "sitemap-index.xml"
 ROBOTS_FILE = ROOT / "robots.txt"
 INDEX_PAGE = ROOT / "index.html"
 SITE_URL = "https://ketoandieutam.vn"
-ASSET_VERSION = "20260429-job-detail-v8"
+ASSET_VERSION = "20260429-job-detail-v11"
 
 SKIP_FILES = {"README.md", "mau-tin-tuyen-dung.md"}
 REQUIRED_FIELDS = [
@@ -3377,6 +3377,36 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
         )
     info_html = "\n".join(info_html_parts)
 
+    mobile_quick_rows = [
+        ("Lương", salary_label, "fa-solid fa-coins"),
+        ("Khu vực", location_group_label, "fa-solid fa-location-dot"),
+        ("Kinh nghiệm", experience_label, "fa-solid fa-user-clock"),
+        ("Hạn nộp", deadline_label, "fa-regular fa-calendar-check"),
+    ]
+    mobile_quick_html = "\n".join(
+        (
+            '<div class="job-mobile-quick-fact">'
+            f'<i class="{escape(icon)}" aria-hidden="true"></i>'
+            '<span>'
+            f'<small>{escape(label)}</small>'
+            f'<strong>{escape(value)}</strong>'
+            '</span>'
+            '</div>'
+        )
+        for label, value, icon in mobile_quick_rows
+    )
+    mobile_quick_info = f"""
+          <section class="job-mobile-quick-info" aria-label="Thông tin nhanh">
+            <div class="job-mobile-quick-head">
+              <span>Thông tin nhanh</span>
+              <strong>{escape(meta['companyName'])}</strong>
+            </div>
+            <div class="job-mobile-quick-grid">
+{mobile_quick_html}
+            </div>
+          </section>
+    """.strip()
+
     report_link = f'<a href="{escape(report_url)}" class="job-report-simple">Báo tin sai</a>'
 
     share_box = (
@@ -3409,7 +3439,7 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
     related_section = ""
     if related_jobs:
         related_cards = []
-        for related in related_jobs[:4]:
+        for related in related_jobs[:3]:
             related_location = clean_text(
                 related.meta.get("locationDisplay")
                 or related.meta.get("locationAreaLabel")
@@ -3420,25 +3450,45 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
             related_salary = clean_text(related.meta.get("salaryLabel") or "Liên hệ")
             related_experience = display_experience(clean_text(related.meta.get("experienceLevel") or ""))
             related_deadline = format_date_vi(related.deadline)
+            related_badges = list_card_badge_html(related, date.today()) or '<span class="job-badge neutral">Đang tuyển</span>'
+            related_save_url = (
+                "../viec-lam-da-luu.html?action=luu-viec"
+                f"&job_id={quote(clean_text(related.meta.get('slug')))}"
+                "&from=viec-lam-lien-quan"
+            )
+            related_save_label = f"Lưu việc làm: {related.meta['title']}"
             related_cards.append(
                 f"""
-              <article class="jobs-related-card">
-                <div class="jobs-related-card-head">
-                  <span class="job-card-company">{escape(related.meta['companyName'])}</span>
-                  <span class="jobs-related-status">Đang tuyển</span>
+              <article class="job-card jobs-related-job-card">
+                <div class="job-card-top">
+                  <div class="job-card-badges">
+                    {related_badges}
+                  </div>
+                  <a href="{escape(related_save_url)}" class="job-card-save-btn" aria-label="{escape(related_save_label)}" title="Lưu việc làm">
+                    <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                  </a>
                 </div>
-                <h3><a href="../{escape(related.href)}">{escape(related.meta['title'])}</a></h3>
-                <div class="jobs-related-pills">
-                  <span><i class="fa-solid fa-coins" aria-hidden="true"></i>{escape(related_salary)}</span>
-                  <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>{escape(related_experience or 'Kinh nghiệm phù hợp')}</span>
+                <div class="job-card-main">
+                  <h3><a href="../{escape(related.href)}" class="job-card-stretched-link">{escape(related.meta['title'])}</a></h3>
+                  <div class="job-card-salary">
+                    <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+                    <span>Lương: {escape(related_salary)}</span>
+                  </div>
                 </div>
-                <div class="jobs-related-location">
-                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                  <span>{escape(related_location)}</span>
+                <div class="job-card-context">
+                  <div class="company-full-name">
+                    <i class="fa-regular fa-building" aria-hidden="true"></i>
+                    <span>{escape(related.meta['companyName'])}</span>
+                  </div>
+                  <div class="job-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <span>{escape(related_location)}</span>
+                  </div>
                 </div>
-                <div class="jobs-related-card-foot">
-                  <span><i class="fa-regular fa-calendar-check" aria-hidden="true"></i>Hạn {escape(related_deadline)}</span>
-                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                <p class="job-card-summary">{escape(related.meta['summary'])}</p>
+                <div class="job-card-footer">
+                  <span class="fact-item"><i class="fa-solid fa-briefcase" aria-hidden="true"></i>{escape(related_experience or 'Kinh nghiệm phù hợp')}</span>
+                  <span class="fact-item urgency"><i class="fa-regular fa-clock" aria-hidden="true"></i>Hạn: {escape(related_deadline)}</span>
                 </div>
               </article>
                 """.strip()
@@ -3448,7 +3498,7 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
           <section class="jobs-related-section jobs-related-section--wide">
             <div class="jobs-dashboard-panel-head jobs-related-wide-head">
               <div>
-                <h2>Việc làm liên quan</h2>
+                <h2><i class="fa-solid fa-briefcase" aria-hidden="true"></i>Việc làm liên quan</h2>
               </div>
               <a href="../tuyen-dung.html#job-list" class="job-source-link">Xem toàn bộ việc làm</a>
             </div>
@@ -3475,8 +3525,7 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
     keywords_section = f"""
           <section class="job-detail-box job-detail-keywords" aria-labelledby="job-detail-keywords-title">
             <div class="job-detail-keywords-head">
-              <span>Danh sách từ khoá</span>
-              <h2 id="job-detail-keywords-title">Từ khóa liên quan</h2>
+              <h2 id="job-detail-keywords-title">Từ khoá liên quan</h2>
             </div>
             <div class="job-detail-keyword-list">
 {keywords_html}
@@ -3548,6 +3597,9 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
     </section>
 
     <section class="job-detail-section section-padding">
+      <div class="container">
+        {mobile_quick_info}
+      </div>
       <div class="container job-detail-grid">
         <article class="job-detail-main">
           <div class="job-detail-prose">
