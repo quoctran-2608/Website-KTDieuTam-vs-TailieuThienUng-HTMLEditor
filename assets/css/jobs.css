@@ -11782,3 +11782,631 @@ body.is-recruiter-ops-open {
     position: static !important;
   }
 }
+
+/* Recruiter candidate page: keep status readable while the updater stays quiet */
+.employer-candidate-page .container.jobs-dashboard-shell {
+  max-width: 1320px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.employer-candidate-page .jobs-dashboard-sidebar {
+  position: static;
+  top: auto;
+}
+
+.employer-candidate-page .jobs-dashboard-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 22px;
+}
+
+.employer-candidate-page .jobs-dashboard-menu a {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+}
+
+.employer-candidate-page .jobs-dashboard-main {
+  min-width: 0;
+}
+
+.employer-candidate-page .jobs-dashboard-table-wrap {
+  max-width: 100%;
+  overflow-x: visible;
+}
+
+.employer-candidate-page .jobs-dashboard-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.employer-candidate-page .jobs-dashboard-table th,
+.employer-candidate-page .jobs-dashboard-table td {
+  padding: 13px 12px;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(1),
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(1) {
+  width: 18%;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(2),
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(2) {
+  width: 13%;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(3),
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(3) {
+  width: 11%;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(4),
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(4) {
+  width: 22%;
+  min-width: 0;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(5),
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(5) {
+  width: 12%;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(6),
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(6) {
+  width: 24%;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(4),
+.employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(5) {
+  white-space: nowrap;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(4) {
+  vertical-align: middle;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(4) .jobs-status-pill {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  line-height: 1;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(4) .jobs-status-pill.is-reviewing {
+  border-color: rgba(182, 141, 64, 0.16);
+  background: #fff8e8;
+  color: #7a5a2a;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(4) .jobs-status-pill.is-active {
+  border-color: rgba(31, 128, 87, 0.14);
+  background: #edf8f1;
+  color: #1f7651;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(4) .jobs-status-pill.is-saved {
+  border-color: rgba(59, 130, 246, 0.13);
+  background: #eef6ff;
+  color: #2c65b8;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(4) .jobs-status-pill.is-muted {
+  border-color: rgba(100, 116, 139, 0.14);
+  background: #f5f7fa;
+  color: #667085;
+}
+
+.employer-candidate-page .jobs-recruiter-status-control {
+  display: grid;
+  gap: 5px;
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  opacity: 0.68;
+  transition: opacity 0.2s ease;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table tr:hover .jobs-recruiter-status-control,
+.employer-candidate-page .jobs-recruiter-status-control:focus-within {
+  opacity: 1;
+}
+
+.employer-candidate-page .jobs-recruiter-status-control > span {
+  display: block;
+  color: #98a2b3;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.employer-candidate-page .jobs-recruiter-status-control .jobs-recruiter-status-select {
+  width: 100%;
+  min-width: 0;
+  min-height: 32px;
+  padding-inline: 9px;
+  border-color: rgba(100, 116, 139, 0.14);
+  border-radius: 10px;
+  background-color: #fbfcfe;
+  color: #4b5563;
+  font-size: 12.5px;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.employer-candidate-page .jobs-recruiter-status-control .jobs-recruiter-status-select:hover,
+.employer-candidate-page .jobs-recruiter-status-control .jobs-recruiter-status-select:focus {
+  border-color: rgba(182, 141, 64, 0.28);
+  background-color: #fff;
+}
+
+@media (max-width: 1100px) {
+  .employer-candidate-page .jobs-dashboard-menu {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0 0 8px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .employer-candidate-page .jobs-dashboard-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .employer-candidate-page .jobs-dashboard-menu a {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .employer-candidate-page .jobs-dashboard-table-wrap {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table,
+  .employer-candidate-page .jobs-recruiter-candidate-table thead,
+  .employer-candidate-page .jobs-recruiter-candidate-table tbody,
+  .employer-candidate-page .jobs-recruiter-candidate-table tr,
+  .employer-candidate-page .jobs-recruiter-candidate-table th,
+  .employer-candidate-page .jobs-recruiter-candidate-table td {
+    display: block;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table {
+    background: transparent;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table thead {
+    display: none;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table tbody {
+    display: grid;
+    gap: 12px;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-row {
+    padding: 14px;
+    border: 1px solid rgba(182, 141, 64, 0.14);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(18, 32, 55, 0.04);
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td {
+    width: auto !important;
+    min-width: 0 !important;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(182, 141, 64, 0.14);
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td::before {
+    display: block;
+    margin-bottom: 4px;
+    color: #98a2b3;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(1)::before {
+    content: "Ứng viên";
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(2)::before {
+    content: "Vị trí";
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(3)::before {
+    content: "Kinh nghiệm";
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(4)::before {
+    content: "Trạng thái";
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(5)::before {
+    content: "Cập nhật";
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(6)::before {
+    content: "Hành động";
+  }
+
+  .employer-candidate-page .jobs-recruiter-status-control {
+    max-width: 280px;
+  }
+
+  .employer-candidate-page .jobs-recruiter-ops-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Recruiter candidate page v5: inline status editing only when requested */
+.employer-candidate-page .jobs-recruiter-status-cell {
+  vertical-align: middle;
+}
+
+.employer-candidate-page .jobs-recruiter-status-read {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.employer-candidate-page .jobs-recruiter-status-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  padding: 0 9px;
+  border: 1px solid rgba(100, 116, 139, 0.16);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #64748b;
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.employer-candidate-page .jobs-recruiter-status-edit-btn:hover,
+.employer-candidate-page .jobs-recruiter-status-edit-btn:focus-visible {
+  border-color: rgba(182, 141, 64, 0.34);
+  background: #fffaf0;
+  color: #7a5a2a;
+  outline: none;
+}
+
+.employer-candidate-page .jobs-recruiter-status-cell .jobs-recruiter-status-control {
+  display: none !important;
+  max-width: 230px;
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px solid rgba(100, 116, 139, 0.13);
+  border-radius: 12px;
+  background: #fbfcfe;
+  opacity: 1;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-row.is-status-editing .jobs-recruiter-status-control {
+  display: grid !important;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-row.is-status-editing .jobs-recruiter-status-edit-btn {
+  display: none;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-row.is-status-editing td:nth-child(4) {
+  background: linear-gradient(180deg, rgba(255, 250, 240, 0.75), rgba(255, 255, 255, 0));
+}
+
+.employer-candidate-page .jobs-recruiter-status-cell .jobs-recruiter-status-control > span {
+  color: #8a94a6;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.employer-candidate-page .jobs-recruiter-status-cell .jobs-recruiter-status-select {
+  min-height: 34px;
+  background: #fff;
+}
+
+@media (min-width: 1281px) {
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(1),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(1) {
+    width: 19%;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(2),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(2) {
+    width: 13%;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(3),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(3) {
+    width: 10%;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(4),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(4) {
+    width: 16%;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(5),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(5) {
+    width: 11%;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(6),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(6) {
+    width: 31%;
+  }
+}
+
+@media (max-width: 767px) {
+  .employer-candidate-page .jobs-dashboard-table {
+    min-width: 0;
+  }
+
+  .employer-candidate-page .jobs-dashboard-table-wrap {
+    margin-right: 0;
+  }
+}
+
+/* Recruiter candidate page v4: restore left sidebar and make content fit */
+.employer-candidate-page .jobs-dashboard-main,
+.employer-candidate-page .jobs-dashboard-panel,
+.employer-candidate-page .jobs-dashboard-table-wrap,
+.employer-candidate-page .jobs-recruiter-ops-panel,
+.employer-candidate-page .jobs-recruiter-ops-card {
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .employer-candidate-page .container.jobs-dashboard-shell {
+    max-width: min(1440px, calc(100vw - 32px));
+    grid-template-columns: 236px minmax(0, 1fr) !important;
+    gap: 18px;
+    align-items: start;
+  }
+
+  .employer-candidate-page .jobs-dashboard-sidebar {
+    position: sticky;
+    top: 110px;
+    min-width: 0;
+  }
+
+  .employer-candidate-page .jobs-dashboard-menu {
+    display: grid !important;
+    gap: 9px;
+    padding: 14px;
+    border: 1px solid rgba(182, 141, 64, 0.14);
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04);
+  }
+
+  .employer-candidate-page .jobs-dashboard-menu a {
+    width: 100%;
+    min-height: 40px;
+    justify-content: flex-start;
+    padding: 0 12px;
+    border-radius: 14px;
+    white-space: normal;
+  }
+}
+
+.employer-candidate-page .jobs-dashboard-table-wrap {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table {
+  width: 100%;
+  min-width: 0 !important;
+  table-layout: fixed;
+}
+
+.employer-candidate-page .jobs-recruiter-candidate-table th,
+.employer-candidate-page .jobs-recruiter-candidate-table td {
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 1281px) {
+  .employer-candidate-page .jobs-recruiter-candidate-table th,
+  .employer-candidate-page .jobs-recruiter-candidate-table td {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(1),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(1) {
+    width: 19%;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(2),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(2) {
+    width: 13%;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(3),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(3) {
+    width: 10%;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(4),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(4) {
+    width: 16%;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(5),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(5) {
+    width: 11%;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table th:nth-child(6),
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(6) {
+    width: 31%;
+  }
+}
+
+.employer-candidate-page .jobs-recruiter-actions-inline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.employer-candidate-page .jobs-recruiter-actions-inline .job-source-link {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.employer-candidate-page .jobs-recruiter-shortlist-btn,
+.employer-candidate-page .jobs-recruiter-note-btn {
+  width: 100%;
+  justify-content: center;
+  min-width: 0;
+  min-height: 32px;
+  padding: 0 7px;
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+
+.employer-candidate-page .jobs-recruiter-action-tip {
+  display: none;
+}
+
+.employer-candidate-page .jobs-recruiter-ops-grid {
+  min-width: 0;
+}
+
+.employer-candidate-page .jobs-recruiter-ops-card,
+.employer-candidate-page .jobs-recruiter-shortlist-list li,
+.employer-candidate-page .jobs-recruiter-activity-feed li {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1280px) and (min-width: 768px) {
+  .employer-candidate-page .jobs-dashboard-table-wrap {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table,
+  .employer-candidate-page .jobs-recruiter-candidate-table thead,
+  .employer-candidate-page .jobs-recruiter-candidate-table tbody,
+  .employer-candidate-page .jobs-recruiter-candidate-table tr,
+  .employer-candidate-page .jobs-recruiter-candidate-table th,
+  .employer-candidate-page .jobs-recruiter-candidate-table td {
+    display: block;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table {
+    background: transparent;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table thead {
+    display: none;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table tbody {
+    display: grid;
+    gap: 12px;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-row {
+    padding: 14px;
+    border: 1px solid rgba(182, 141, 64, 0.14);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(18, 32, 55, 0.04);
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td {
+    width: auto !important;
+    min-width: 0 !important;
+    padding: 9px 0;
+    border-bottom: 1px dashed rgba(182, 141, 64, 0.14);
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td::before {
+    display: block;
+    margin-bottom: 4px;
+    color: #98a2b3;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(1)::before {
+    content: "Ứng viên";
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(2)::before {
+    content: "Vị trí";
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(3)::before {
+    content: "Kinh nghiệm";
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(4)::before {
+    content: "Trạng thái";
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(5)::before {
+    content: "Cập nhật";
+  }
+
+  .employer-candidate-page .jobs-recruiter-candidate-table td:nth-child(6)::before {
+    content: "Hành động";
+  }
+
+  .employer-candidate-page .jobs-recruiter-status-control {
+    max-width: 300px;
+  }
+
+  .employer-candidate-page .jobs-recruiter-ops-grid {
+    grid-template-columns: 1fr;
+  }
+}
