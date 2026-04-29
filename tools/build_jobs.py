@@ -45,6 +45,7 @@ SITEMAP_INDEX_FILE = ROOT / "sitemap-index.xml"
 ROBOTS_FILE = ROOT / "robots.txt"
 INDEX_PAGE = ROOT / "index.html"
 SITE_URL = "https://ketoandieutam.vn"
+ASSET_VERSION = "20260429-job-detail-v8"
 
 SKIP_FILES = {"README.md", "mau-tin-tuyen-dung.md"}
 REQUIRED_FIELDS = [
@@ -75,6 +76,23 @@ WORK_MODE_LABELS = {
     "onsite": "Làm việc tại văn phòng",
     "hybrid": "Kết hợp",
     "remote": "Từ xa",
+}
+
+TAG_LABELS = {
+    "full-time": "Toàn thời gian",
+    "part-time": "Bán thời gian",
+    "internship": "Thực tập",
+    "freelance": "Freelance",
+    "contract": "Hợp đồng",
+    "tp hcm": "TP.HCM",
+    "hà nội": "Hà Nội",
+    "ha noi": "Hà Nội",
+    "bình dương": "Bình Dương",
+    "binh duong": "Bình Dương",
+    "bến tre": "Bến Tre",
+    "ben tre": "Bến Tre",
+    "fresher": "Fresher",
+    "senior": "Senior",
 }
 
 EXPERIENCE_LABELS = {
@@ -504,6 +522,32 @@ def markdown_to_html(markdown: str) -> str:
     return "\n".join(out)
 
 
+def sanitize_job_detail_body(body_html: str) -> str:
+    """Keep public job copy useful and remove import-source instructions."""
+    apply_section = (
+        "<h2>Cách ứng tuyển</h2>\n"
+        "<ul>\n"
+        "<li>Bấm nút Nộp đơn ứng tuyển trên trang để gửi thông tin cho Kế Toán Diệu Tâm.</li>\n"
+        "<li>Chuẩn bị CV hoặc tóm tắt kinh nghiệm, mức lương mong muốn và thời gian có thể nhận việc.</li>\n"
+        "</ul>"
+    )
+    cleaned = re.sub(
+        r"<h2>Cách ứng tuyển</h2>\s*<ul>.*?</ul>",
+        apply_section,
+        body_html,
+        flags=re.S | re.I,
+    )
+    cleaned = re.sub(
+        r"<li>[^<]*(?:sourceUrl|tin gốc|tin nguồn|URL nguồn|metadata|sanketoan)[\s\S]*?</li>\s*",
+        "",
+        cleaned,
+        flags=re.I,
+    )
+    cleaned = re.sub(r"https?://sanketoan\.vn[^\s\"'<>)]*", "", cleaned, flags=re.I)
+    cleaned = re.sub(r"\bSanketoan(?:\.vn)?\b", "", cleaned, flags=re.I)
+    return cleaned
+
+
 def load_jobs(today: date) -> list[Job]:
     jobs: list[Job] = []
     for path in sorted(SOURCE_DIR.glob("*.md")):
@@ -599,6 +643,70 @@ def display_experience(value: str) -> str:
     return EXPERIENCE_LABELS.get(value, value)
 
 
+def display_tag(value: str) -> str:
+    tag = clean_text(value)
+    if not tag:
+        return ""
+    mapped = TAG_LABELS.get(fold_text(tag)) or TAG_LABELS.get(tag.lower())
+    if mapped:
+        return mapped
+    return tag[:1].upper() + tag[1:]
+
+
+def format_optional_date_vi(value: Any) -> str:
+    raw = clean_text(value)
+    if not raw:
+        return ""
+    try:
+        parsed = datetime.strptime(raw, "%Y-%m-%d").date()
+    except ValueError:
+        return raw
+    return format_date_vi(parsed)
+
+
+def detail_filter_href(filter_name: str, value: str) -> str:
+    return f"../tuyen-dung.html?{filter_name}={quote(clean_text(value), safe='')}#job-list"
+
+
+def detail_keyword_items(meta: dict[str, Any], core_filters: list[tuple[str, str, str]]) -> list[tuple[str, str]]:
+    items: list[tuple[str, str]] = []
+    seen: set[str] = set()
+
+    def add(label: str, href: str) -> None:
+        clean_label = clean_text(label)
+        if not clean_label:
+            return
+        key = fold_search_text(clean_label)
+        if not key or key in seen:
+            return
+        seen.add(key)
+        items.append((clean_label, href))
+
+    for label, filter_name, value in core_filters:
+        add(label, detail_filter_href(filter_name, value))
+
+    role_label = core_filters[0][0] if core_filters else ""
+    province_label = clean_text(meta.get("locationGroupLabel"))
+    for tag in meta.get("tags") or []:
+        label = display_tag(tag)
+        if fold_search_text(label) == fold_search_text(role_label):
+            add(label, detail_filter_href("nganh", clean_text(meta.get("roleGroupKey"))))
+        elif fold_search_text(label) == fold_search_text(province_label):
+            add(label, detail_filter_href("tinh", clean_text(meta.get("locationGroupKey"))))
+        else:
+            add(label, detail_filter_href("tu-khoa", label))
+        if len(items) >= 10:
+            break
+    return items[:10]
+
+
+def detail_keyword_chips_html(items: list[tuple[str, str]]) -> str:
+    return "\n".join(
+        f'<a href="{escape(href)}" class="job-keyword-chip"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>{escape(label)}</a>'
+        for label, href in items
+    )
+
+
 def badge_html(job: Job) -> str:
     badges: list[str] = []
     if job.meta.get("featured"):
@@ -631,7 +739,14 @@ def job_card(job: Job, today: date, *, show_employment: bool = True, show_work_m
             meta["companyName"],
             meta["summary"],
             meta["location"],
+            meta.get("locationDisplay", ""),
+            meta.get("roleGroupLabel", ""),
+            meta.get("salaryLabel", ""),
+            display_employment(meta.get("employmentType", "")),
+            display_work_mode(meta.get("workMode", "")),
+            display_experience(meta.get("experienceLevel", "")),
             meta.get("experienceLevel", ""),
+            " ".join(display_tag(tag) for tag in meta.get("tags") or []),
         ]
     )
     location_label = clean_text(meta.get("locationDisplay") or meta.get("locationAreaLabel") or meta.get("locationGroupLabel")) or meta["location"]
@@ -1278,7 +1393,7 @@ def render_candidate_list_page(candidates: list[dict[str, Any]]) -> str:
   <meta name="description" content="Danh sách hồ sơ ứng viên kế toán đã cập nhật gần đây, hỗ trợ lọc theo kinh nghiệm, khu vực và vai trò phù hợp nhu cầu tuyển dụng.">
   <link rel="canonical" href="{SITE_URL}/danh-sach-ung-vien.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css">
+  <link rel="stylesheet" href="assets/css/jobs.css?v={ASSET_VERSION}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-candidate-page" data-root="" data-nav="tuyen-dung">
@@ -1725,7 +1840,7 @@ def render_recruiter_candidate_page(candidates: list[dict[str, Any]]) -> str:
   <meta name="description" content="Trang ứng viên dành cho nhà tuyển dụng: theo dõi hồ sơ theo vị trí quan tâm, trạng thái xử lý và mức kinh nghiệm.">
   <link rel="canonical" href="{SITE_URL}/ung-vien-tuyen-dung.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css">
+  <link rel="stylesheet" href="assets/css/jobs.css?v={ASSET_VERSION}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-dashboard-page" data-root="" data-nav="tuyen-dung">
@@ -2033,7 +2148,7 @@ def render_candidate_detail_page(candidate: dict[str, Any], related_candidates: 
   <meta name="description" content="{escape(candidate['profileSummary'])}">
   <link rel="canonical" href="{SITE_URL}/{escape(candidate['profilePath'])}">
   <link rel="stylesheet" href="../assets/css/styles.css">
-  <link rel="stylesheet" href="../assets/css/jobs.css">
+  <link rel="stylesheet" href="../assets/css/jobs.css?v={ASSET_VERSION}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-candidate-detail-page" data-root="../" data-nav="tuyen-dung">
@@ -2615,6 +2730,35 @@ def render_jobs_filter_script() -> str:
           }
         }
 
+        function filterOptionExists(select, value) {
+          if (!select || !value) return false;
+          return Array.prototype.some.call(select.options || [], function (option) {
+            return option.value === value;
+          });
+        }
+
+        function hydrateFiltersFromUrl() {
+          if (!window.URLSearchParams) return;
+          var params = new URLSearchParams(window.location.search || '');
+          var keyword = params.get('tu-khoa') || params.get('q') || '';
+          var role = params.get('nganh') || params.get('role') || '';
+          var province = params.get('tinh') || params.get('location') || '';
+          var employment = params.get('hinh-thuc') || params.get('employment') || '';
+          var workMode = params.get('cach-lam-viec') || params.get('work-mode') || '';
+          var experience = params.get('kinh-nghiem') || params.get('experience') || '';
+
+          if (keyword && searchInput) searchInput.value = keyword;
+          if (role && filterOptionExists(roleSelect, role)) roleSelect.value = role;
+          if (employment && filterOptionExists(employmentSelect, employment)) employmentSelect.value = employment;
+          if (workMode && filterOptionExists(workModeSelect, workMode)) workModeSelect.value = workMode;
+          if (experience && filterOptionExists(experienceSelect, experience)) experienceSelect.value = experience;
+          if (province && filterOptionExists(locationSelect, province)) {
+            locationSelect.value = province;
+            locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+
+        hydrateFiltersFromUrl();
         syncDiscoverySticky();
         syncQuickFilterNav();
         window.addEventListener('scroll', syncDiscoverySticky, { passive: true });
@@ -2741,7 +2885,94 @@ def render_detail_mobile_bar_script() -> str:
         window.addEventListener('resize', scheduleSetup);
       }
 
-      document.addEventListener('DOMContentLoaded', initJobDetailMobileBar);
+      function initJobDetailShare() {
+        var shareButtons = Array.prototype.slice.call(document.querySelectorAll('[data-job-share]'));
+        var copyButtons = Array.prototype.slice.call(document.querySelectorAll('[data-job-copy-link]'));
+        if (!shareButtons.length && !copyButtons.length) return;
+
+        var canonical = document.querySelector('link[rel="canonical"]');
+        var titleNode = document.querySelector('.job-detail-top h1, h1');
+        var descriptionMeta = document.querySelector('meta[name="description"]');
+        var shareUrl = canonical && canonical.href ? canonical.href : window.location.href;
+        var shareTitle = titleNode && titleNode.textContent ? titleNode.textContent.trim() : document.title;
+        var shareText = descriptionMeta && descriptionMeta.content ? descriptionMeta.content : 'Tin tuyển dụng hữu ích từ Kế Toán Diệu Tâm';
+        var feedbackNodes = Array.prototype.slice.call(document.querySelectorAll('[data-job-share-feedback]'));
+
+        function showFeedback(message) {
+          feedbackNodes.forEach(function (node) {
+            node.hidden = false;
+            node.textContent = message;
+          });
+          shareButtons.concat(copyButtons).forEach(function (button) {
+            var original = button.getAttribute('data-original-html');
+            if (!original) {
+              original = button.innerHTML;
+              button.setAttribute('data-original-html', original);
+            }
+            button.classList.add('is-copied');
+            if (button.hasAttribute('data-job-copy-link')) {
+              button.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i>';
+              button.setAttribute('title', 'Đã sao chép');
+            }
+            window.setTimeout(function () {
+              button.classList.remove('is-copied');
+              if (button.hasAttribute('data-job-copy-link')) {
+                button.innerHTML = original;
+                button.setAttribute('title', 'Sao chép link');
+              }
+            }, 1800);
+          });
+        }
+
+        function fallbackCopy(text) {
+          var textarea = document.createElement('textarea');
+          textarea.value = text;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'fixed';
+          textarea.style.left = '-9999px';
+          document.body.appendChild(textarea);
+          textarea.select();
+          var ok = false;
+          try {
+            ok = document.execCommand('copy');
+          } catch (error) {
+            ok = false;
+          }
+          document.body.removeChild(textarea);
+          return ok;
+        }
+
+        function copyShareUrl() {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(shareUrl).then(function () {
+              showFeedback('Đã sao chép link tin tuyển dụng.');
+            }).catch(function () {
+              if (fallbackCopy(shareUrl)) showFeedback('Đã sao chép link tin tuyển dụng.');
+            });
+            return;
+          }
+          if (fallbackCopy(shareUrl)) showFeedback('Đã sao chép link tin tuyển dụng.');
+        }
+
+        shareButtons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            if (navigator.share) {
+              navigator.share({ title: shareTitle, text: shareText, url: shareUrl }).catch(function () {});
+              return;
+            }
+            copyShareUrl();
+          });
+        });
+
+        copyButtons.forEach(function (button) {
+          button.addEventListener('click', copyShareUrl);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        initJobDetailMobileBar();
+        initJobDetailShare();
+      });
     })();
   </script>
 """.strip()
@@ -2892,8 +3123,8 @@ def render_list_page(jobs: list[Job], today: date, featured_candidates: list[dic
     employment_options = sorted({(job.meta["employmentType"], display_employment(job.meta["employmentType"])) for job in active_jobs}, key=lambda item: item[1])
     work_mode_options = sorted({(job.meta["workMode"], display_work_mode(job.meta["workMode"])) for job in active_jobs}, key=lambda item: item[1])
     experience_options = sorted({(job.meta["experienceLevel"], display_experience(job.meta["experienceLevel"])) for job in active_jobs}, key=lambda item: item[1])
-    show_employment = len(employment_options) > 1
-    show_work_mode = len(work_mode_options) > 1
+    show_employment = bool(employment_options)
+    show_work_mode = bool(work_mode_options)
     all_jobs = "\n".join(
         job_card(job, today, show_employment=show_employment, show_work_mode=show_work_mode) for job in active_jobs
     )
@@ -2928,7 +3159,7 @@ def render_list_page(jobs: list[Job], today: date, featured_candidates: list[dic
   <meta name="description" content="Việc làm kế toán, thuế và HCNS dành cho người đang tìm cơ hội phù hợp theo khu vực, vai trò và mức kinh nghiệm.">
   <link rel="canonical" href="{SITE_URL}/tuyen-dung.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css">
+  <link rel="stylesheet" href="assets/css/jobs.css?v={ASSET_VERSION}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-list-page" data-root="" data-nav="tuyen-dung">
@@ -3079,6 +3310,40 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
     work_mode_label = display_work_mode(meta.get("workMode") or "Đang cập nhật")
     publish_label = format_date_vi(job.publish_date)
     deadline_label = format_date_vi(job.deadline)
+    canonical_url = f"{SITE_URL}/{meta['href']}"
+    is_expired = job.effective_status == "expired"
+    deadline_status_label = "Đã quá hạn" if is_expired else "Hạn nộp"
+    primary_apply_href = "../ung-tuyen.html"
+    primary_apply_label = "Nộp đơn ứng tuyển"
+    deadline_pill_class = " is-expired" if is_expired else ""
+    report_subject = f"Báo tin sai: {meta['title']} - {meta['companyName']}"
+    report_body = (
+        "Tôi muốn báo tin tuyển dụng có thông tin chưa chính xác.\n\n"
+        f"Tin: {meta['title']}\n"
+        f"Công ty: {meta['companyName']}\n"
+        f"Link: {canonical_url}\n\n"
+        "Nội dung cần kiểm tra: "
+    )
+    report_url = f"mailto:ketoandieutam@gmail.com?subject={quote(report_subject, safe='')}&body={quote(report_body, safe='')}"
+    encoded_share_url = quote(canonical_url, safe="")
+    encoded_share_title = quote(f"{meta['title']} | {meta['companyName']}", safe="")
+    facebook_share_url = f"https://www.facebook.com/sharer/sharer.php?u={encoded_share_url}"
+    zalo_share_url = f"https://zalo.me/share?u={encoded_share_url}"
+    linkedin_share_url = f"https://www.linkedin.com/sharing/share-offsite/?url={encoded_share_url}"
+    x_share_url = f"https://twitter.com/intent/tweet?url={encoded_share_url}&text={encoded_share_title}"
+    email_share_url = f"mailto:?subject={encoded_share_title}&body={encoded_share_title}%0A{encoded_share_url}"
+    keyword_items = detail_keyword_items(
+        meta,
+        [
+            (role_label, "nganh", clean_text(meta.get("roleGroupKey"))),
+            (location_group_label, "tinh", clean_text(meta.get("locationGroupKey"))),
+            (employment_label, "hinh-thuc", clean_text(meta.get("employmentType"))),
+            (experience_label, "kinh-nghiem", clean_text(meta.get("experienceLevel"))),
+            (work_mode_label, "cach-lam-viec", clean_text(meta.get("workMode"))),
+        ],
+    )
+    keywords_html = detail_keyword_chips_html(keyword_items)
+    body_html = sanitize_job_detail_body(job.body_html)
 
     highlight_rows = [
         ("fa-solid fa-location-dot", f"Khu vực: {location_group_label}"),
@@ -3112,6 +3377,24 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
         )
     info_html = "\n".join(info_html_parts)
 
+    report_link = f'<a href="{escape(report_url)}" class="job-report-simple">Báo tin sai</a>'
+
+    share_box = (
+        '<div class="job-detail-box job-detail-share-box">'
+        '<div class="job-detail-share-head"><h2>Chia sẻ tin</h2><p>Gửi nhanh vị trí này cho người phù hợp.</p></div>'
+        '<div class="job-share-icon-grid" aria-label="Chia sẻ tin tuyển dụng">'
+        '<button type="button" class="job-share-icon" data-job-share aria-label="Chia sẻ bằng thiết bị" title="Chia sẻ"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i></button>'
+        '<button type="button" class="job-share-icon" data-job-copy-link aria-label="Sao chép link" title="Sao chép link"><i class="fa-regular fa-copy" aria-hidden="true"></i></button>'
+        f'<a href="{escape(facebook_share_url)}" target="_blank" rel="noopener" class="job-share-icon" aria-label="Chia sẻ Facebook" title="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>'
+        f'<a href="{escape(zalo_share_url)}" target="_blank" rel="noopener" class="job-share-icon job-share-icon--zalo" aria-label="Chia sẻ Zalo" title="Zalo"><span aria-hidden="true">Z</span></a>'
+        f'<a href="{escape(linkedin_share_url)}" target="_blank" rel="noopener" class="job-share-icon" aria-label="Chia sẻ LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>'
+        f'<a href="{escape(x_share_url)}" target="_blank" rel="noopener" class="job-share-icon" aria-label="Chia sẻ X" title="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>'
+        f'<a href="{escape(email_share_url)}" class="job-share-icon" aria-label="Chia sẻ qua email" title="Email"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>'
+        '</div>'
+        '<p class="job-detail-share-feedback" data-job-share-feedback aria-live="polite" hidden></p>'
+        '</div>'
+    )
+
     support_box = (
         '<div class="job-detail-box job-detail-support">'
         '<h2>Cần hỗ trợ thêm?</h2>'
@@ -3126,42 +3409,80 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
     related_section = ""
     if related_jobs:
         related_cards = []
-        for related in related_jobs:
+        for related in related_jobs[:4]:
+            related_location = clean_text(
+                related.meta.get("locationDisplay")
+                or related.meta.get("locationAreaLabel")
+                or related.meta.get("locationGroupLabel")
+                or related.meta.get("location")
+                or "Đang cập nhật"
+            )
+            related_salary = clean_text(related.meta.get("salaryLabel") or "Liên hệ")
+            related_experience = display_experience(clean_text(related.meta.get("experienceLevel") or ""))
+            related_deadline = format_date_vi(related.deadline)
             related_cards.append(
                 f"""
               <article class="jobs-related-card">
-                <span class="job-card-company">{escape(related.meta['companyName'])}</span>
+                <div class="jobs-related-card-head">
+                  <span class="job-card-company">{escape(related.meta['companyName'])}</span>
+                  <span class="jobs-related-status">Đang tuyển</span>
+                </div>
                 <h3><a href="../{escape(related.href)}">{escape(related.meta['title'])}</a></h3>
-                <p>{escape(related.meta['summary'])}</p>
-                <div class="jobs-related-meta">
-                  <span>{escape(related.meta.get('locationDisplay') or related.meta.get('locationAreaLabel') or related.meta.get('locationGroupLabel') or related.meta.get('location') or 'Đang cập nhật')}</span>
-                  <span>{escape(related.meta.get('salaryLabel') or 'Liên hệ')}</span>
+                <div class="jobs-related-pills">
+                  <span><i class="fa-solid fa-coins" aria-hidden="true"></i>{escape(related_salary)}</span>
+                  <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i>{escape(related_experience or 'Kinh nghiệm phù hợp')}</span>
+                </div>
+                <div class="jobs-related-location">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <span>{escape(related_location)}</span>
+                </div>
+                <div class="jobs-related-card-foot">
+                  <span><i class="fa-regular fa-calendar-check" aria-hidden="true"></i>Hạn {escape(related_deadline)}</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </div>
               </article>
                 """.strip()
             )
         related_html = "\n".join(related_cards)
         related_section = f"""
-          <section class="jobs-related-section">
-            <div class="jobs-dashboard-panel-head">
-              <h2>Việc làm liên quan</h2>
+          <section class="jobs-related-section jobs-related-section--wide">
+            <div class="jobs-dashboard-panel-head jobs-related-wide-head">
+              <div>
+                <h2>Việc làm liên quan</h2>
+              </div>
+              <a href="../tuyen-dung.html#job-list" class="job-source-link">Xem toàn bộ việc làm</a>
             </div>
             <div class="jobs-related-grid">
 {related_html}
             </div>
-            <a href="../tuyen-dung.html#job-list" class="job-source-link">Xem toàn bộ việc làm</a>
           </section>
         """.strip()
 
-    apply_bottom_block = (
-        '<div class="job-apply-bottom">'
-        '<p>Bạn đã sẵn sàng đồng hành cùng Kế Toán Diệu Tâm?</p>'
-        '<div class="job-apply-bottom-actions">'
-        '<a href="../ung-tuyen.html" class="btn-primary-orange">Ứng tuyển ngay</a>'
-        '<a href="https://zalo.me/0777315188" target="_blank" class="btn-outline-brown">Hỏi thêm về vị trí</a>'
-        '</div>'
-        '</div>'
-    )
+    apply_bottom_block = f"""
+          <div class="job-apply-bottom">
+            <div class="job-apply-bottom-copy">
+              <span class="job-apply-eyebrow"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Ứng tuyển trực tiếp</span>
+              <strong>Ứng tuyển vị trí này</strong>
+              <p>Gửi hồ sơ hoặc thông tin liên hệ. Diệu Tâm sẽ hỗ trợ kiểm tra và kết nối vị trí phù hợp.</p>
+            </div>
+            <div class="job-apply-bottom-actions">
+              <a href="{escape(primary_apply_href)}" class="btn-primary-orange">{escape(primary_apply_label)}</a>
+              <a href="../viec-lam-da-luu.html" class="btn-outline-brown">Lưu việc làm</a>
+            </div>
+          </div>
+    """.strip()
+
+    keywords_section = f"""
+          <section class="job-detail-box job-detail-keywords" aria-labelledby="job-detail-keywords-title">
+            <div class="job-detail-keywords-head">
+              <span>Danh sách từ khoá</span>
+              <h2 id="job-detail-keywords-title">Từ khóa liên quan</h2>
+            </div>
+            <div class="job-detail-keyword-list">
+{keywords_html}
+            </div>
+          </section>
+    """.strip()
 
     return f"""<!DOCTYPE html>
 <html lang="vi">
@@ -3172,7 +3493,7 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
   <meta name="description" content="{escape(meta['summary'])}">
   <link rel="canonical" href="{SITE_URL}/{meta['href']}">
   <link rel="stylesheet" href="../assets/css/styles.css">
-  <link rel="stylesheet" href="../assets/css/jobs.css">
+  <link rel="stylesheet" href="../assets/css/jobs.css?v={ASSET_VERSION}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page job-detail-page" data-root="../" data-nav="tuyen-dung">
@@ -3206,9 +3527,21 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
               {highlights_html}
             </ul>
           </div>
-          <div class="job-detail-actions">
-            <a href="../ung-tuyen.html" class="btn-primary-orange">Ứng tuyển nhanh</a>
-            <a href="../viec-lam-da-luu.html" class="btn-outline-brown">Lưu việc làm</a>
+          <div class="job-detail-actions job-detail-action-card">
+            <span class="job-detail-action-kicker">Thông tin nổi bật</span>
+            <div class="job-detail-salary-hero">
+              <span>Mức lương</span>
+              <strong>{escape(salary_label)}</strong>
+            </div>
+            <div class="job-detail-deadline-pill{deadline_pill_class}">
+              <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+              <span>{escape(deadline_status_label)}: {escape(deadline_label)}</span>
+            </div>
+            <div class="job-detail-cta-stack">
+              <a href="{escape(primary_apply_href)}" class="btn-primary-orange">{escape(primary_apply_label)}</a>
+              <a href="../viec-lam-da-luu.html" class="btn-outline-brown">Lưu việc làm</a>
+            </div>
+            <p class="job-detail-action-note">Gửi hồ sơ nhanh để Diệu Tâm hỗ trợ kết nối với vị trí phù hợp.</p>
           </div>
         </div>
       </div>
@@ -3218,24 +3551,29 @@ def render_detail_page(job: Job, related_jobs: list[Job]) -> str:
       <div class="container job-detail-grid">
         <article class="job-detail-main">
           <div class="job-detail-prose">
-{job.body_html}
+{body_html}
           </div>
-          {related_section}
           {apply_bottom_block}
         </article>
         <aside class="job-detail-side">
-          <div class="job-detail-box">
+          <div class="job-detail-box job-detail-info-card">
             <h2>Thông tin nhanh</h2>
             <div class="job-detail-facts">
 {info_html}
             </div>
+            {report_link}
           </div>
+          {keywords_section}
+          {share_box}
           {support_box}
         </aside>
       </div>
+      <div class="container job-detail-related-container">
+        {related_section}
+      </div>
     </section>
     <div class="job-detail-mobile-bar" aria-label="Tác vụ nhanh">
-      <a href="../ung-tuyen.html" class="btn-primary-orange">Ứng tuyển nhanh</a>
+      <a href="{escape(primary_apply_href)}" class="btn-primary-orange">{escape(primary_apply_label)}</a>
       <a href="../viec-lam-da-luu.html" class="btn-outline-brown">Lưu việc làm</a>
     </div>
   </main>
@@ -3280,8 +3618,6 @@ def build_json_payload(jobs: list[Job]) -> list[dict[str, Any]]:
                 "urgent": bool(job.meta.get("urgent")),
                 "summary": job.meta["summary"],
                 "href": job.meta["href"],
-                "sourceSite": job.meta["sourceSite"],
-                "sourceUrl": job.meta["sourceUrl"],
             }
         )
     return payload
@@ -3349,7 +3685,7 @@ def main() -> None:
     cleanup_stale_candidate_pages(candidates_feed)
 
     for job in public_jobs:
-        related_jobs = select_related_jobs(job, public_jobs, limit=3)
+        related_jobs = select_related_jobs(job, public_jobs, limit=4)
         job.detail_path.write_text(render_detail_page(job, related_jobs), encoding="utf-8")
     for candidate in candidates_feed:
         slug = clean_text(candidate.get("slug"))

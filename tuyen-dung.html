@@ -7,7 +7,7 @@
   <meta name="description" content="Việc làm kế toán, thuế và HCNS dành cho người đang tìm cơ hội phù hợp theo khu vực, vai trò và mức kinh nghiệm.">
   <link rel="canonical" href="https://ketoandieutam.vn/tuyen-dung.html">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/jobs.css">
+  <link rel="stylesheet" href="assets/css/jobs.css?v=20260429-job-detail-v8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="jobs-page jobs-list-page" data-root="" data-nav="tuyen-dung">
@@ -115,6 +115,22 @@
 <option value="ke-toan-truong">Kế toán trưởng</option>
 <option value="ke-toan-tong-hop">Kế toán tổng hợp</option>
 <option value="nhan-vien-ke-toan">Nhân viên kế toán</option>
+                  </select>
+                </label>
+
+                <label class="jobs-filter-field">
+                  <span>Hình thức</span>
+                  <select id="jobsFilterEmployment">
+<option value="">Tất cả hình thức</option>
+<option value="full-time">Toàn thời gian</option>
+                  </select>
+                </label>
+
+                <label class="jobs-filter-field">
+                  <span>Cách làm việc</span>
+                  <select id="jobsFilterWorkMode">
+<option value="">Tất cả cách làm việc</option>
+<option value="onsite">Làm việc tại văn phòng</option>
                   </select>
                 </label>
 
@@ -1817,6 +1833,35 @@
           }
         }
 
+        function filterOptionExists(select, value) {
+          if (!select || !value) return false;
+          return Array.prototype.some.call(select.options || [], function (option) {
+            return option.value === value;
+          });
+        }
+
+        function hydrateFiltersFromUrl() {
+          if (!window.URLSearchParams) return;
+          var params = new URLSearchParams(window.location.search || '');
+          var keyword = params.get('tu-khoa') || params.get('q') || '';
+          var role = params.get('nganh') || params.get('role') || '';
+          var province = params.get('tinh') || params.get('location') || '';
+          var employment = params.get('hinh-thuc') || params.get('employment') || '';
+          var workMode = params.get('cach-lam-viec') || params.get('work-mode') || '';
+          var experience = params.get('kinh-nghiem') || params.get('experience') || '';
+
+          if (keyword && searchInput) searchInput.value = keyword;
+          if (role && filterOptionExists(roleSelect, role)) roleSelect.value = role;
+          if (employment && filterOptionExists(employmentSelect, employment)) employmentSelect.value = employment;
+          if (workMode && filterOptionExists(workModeSelect, workMode)) workModeSelect.value = workMode;
+          if (experience && filterOptionExists(experienceSelect, experience)) experienceSelect.value = experience;
+          if (province && filterOptionExists(locationSelect, province)) {
+            locationSelect.value = province;
+            locationSelect.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+
+        hydrateFiltersFromUrl();
         syncDiscoverySticky();
         syncQuickFilterNav();
         window.addEventListener('scroll', syncDiscoverySticky, { passive: true });

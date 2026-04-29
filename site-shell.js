@@ -379,11 +379,6 @@
     var body = document.body;
     if (!body || !body.classList.contains('job-detail-page')) return;
 
-    var topActions = document.querySelector('.job-detail-actions');
-    if (topActions && topActions.parentNode) {
-      topActions.parentNode.removeChild(topActions);
-    }
-
     var applyBottom = document.querySelector('.job-apply-bottom');
     var relatedSection = document.querySelector('.jobs-related-section');
     if (applyBottom) {
@@ -393,7 +388,7 @@
 
       var message = applyBottom.querySelector('p');
       if (message) {
-        message.textContent = 'Đã xem xong mô tả? Nếu vị trí này phù hợp, bạn có thể nộp đơn hoặc lưu lại để xem sau.';
+        message.textContent = 'Gửi hồ sơ hoặc thông tin liên hệ. Diệu Tâm sẽ hỗ trợ kiểm tra và kết nối vị trí phù hợp.';
       }
 
       var actionWrap = applyBottom.querySelector('.job-apply-bottom-actions');
@@ -439,17 +434,12 @@
     if (!slug) return;
     body.dataset.jobIdSlug = slug;
 
-    var isExpired = !!document.querySelector('.job-badge.expired');
-    var applyTargets = document.querySelectorAll('.job-apply-bottom-actions .btn-primary-orange, .job-detail-mobile-bar .btn-primary-orange');
+    var applyTargets = document.querySelectorAll('.job-detail-actions .btn-primary-orange, .job-detail-cta-stack .btn-primary-orange, .job-apply-bottom-actions .btn-primary-orange, .job-detail-mobile-bar .btn-primary-orange');
     var saveTargets = document.querySelectorAll('.job-apply-bottom-actions .btn-outline-brown, .job-detail-mobile-bar .btn-outline-brown');
 
     Array.prototype.forEach.call(applyTargets, function (anchor) {
       if (!anchor || !anchor.getAttribute) return;
-      if (isExpired) {
-        anchor.setAttribute('href', buildUrlWithQuery(root, 'tuyen-dung.html', {}, 'job-list'));
-        anchor.textContent = 'Xem tin tương tự';
-        return;
-      }
+      anchor.textContent = 'Nộp đơn ứng tuyển';
       anchor.setAttribute('href', buildUrlWithQuery(root, 'ung-tuyen.html', {
         job_id: slug,
         mode: 'nop-moi',
@@ -460,25 +450,13 @@
     Array.prototype.forEach.call(saveTargets, function (anchor) {
       if (!anchor || !anchor.getAttribute) return;
       var label = (anchor.textContent || '').toLowerCase();
-      if (label.indexOf('lưu việc làm') === -1 && label.indexOf('luu viec lam') === -1) return;
+      if (label.indexOf('lưu việc làm') === -1 && label.indexOf('lưu tin') === -1 && label.indexOf('luu viec lam') === -1) return;
+      anchor.textContent = 'Lưu việc làm';
       anchor.setAttribute('href', buildUrlWithQuery(root, 'viec-lam-da-luu.html', {
         action: 'luu-viec',
         job_id: slug,
         from: 'chi-tiet-tin'
       }));
-    });
-
-    if (!isExpired) return;
-
-    var hintTargets = [
-      document.querySelector('.job-apply-bottom')
-    ];
-    hintTargets.forEach(function (target) {
-      if (!target || target.querySelector('.jobs-expired-hint')) return;
-      var hint = document.createElement('p');
-      hint.className = 'jobs-dashboard-note jobs-expired-hint';
-      hint.textContent = 'Tin này đã hết hạn nhận hồ sơ. Bạn có thể xem các tin còn đang tuyển.';
-      target.appendChild(hint);
     });
   }
 
