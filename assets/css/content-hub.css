@@ -1153,6 +1153,61 @@ body.is-filter-open .catalog-filter-panel {
   line-height: 1.72;
 }
 
+.article-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 760px;
+  margin: 26px auto 0;
+  padding-top: 16px;
+  border-top: 1px dashed #e5d8c7;
+}
+
+.article-tags__label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 2px;
+  color: #7b8494;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.article-tags__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.article-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 6px 10px;
+  border: 1px solid #eadfcf;
+  border-radius: 999px;
+  background: #fffdf9;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.article-tag::before {
+  content: "#";
+  margin-right: 3px;
+  color: #b68d40;
+  font-weight: 800;
+}
+
+.article-tag:hover {
+  border-color: rgba(182, 141, 64, 0.42);
+  background: #fff8ea;
+  color: #8d633c;
+}
+
 .article-top-nav {
   max-width: 860px;
   margin-top: 18px;

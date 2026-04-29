@@ -613,6 +613,7 @@
       hubLabel: article.sectionLabel,
       canonicalUrl: article.canonical || '',
       topicLabel: article.topicLv2Label,
+      tags: normalizeArticleTags(article.tags || meta.tags || []),
       currentTitle: article.title,
       authorName: meta.authorName || '',
       publishDate: meta.publishDate || '',
@@ -675,6 +676,7 @@
       hubLabel: hubLabel,
       canonicalUrl: canonicalArticleUrl({ canonicalUrl: '', articleId: meta.id }),
       topicLabel: meta.topicLabel || '',
+      tags: normalizeArticleTags(meta.tags || []),
       currentTitle: meta.title || '',
       authorName: meta.authorName || '',
       publishDate: meta.publishDate || '',
@@ -728,6 +730,18 @@
     var m = raw.match(/^(\d{4})-(\d{2})-(\d{2})/);
     if (!m) return raw;
     return [m[3], m[2], m[1]].join('/');
+  }
+
+  function normalizeArticleTags(tags) {
+    var seen = {};
+    return (tags || []).map(function (tag) {
+      return String(tag || '').trim();
+    }).filter(function (tag) {
+      var key = tag.toLowerCase();
+      if (!tag || seen[key]) return false;
+      seen[key] = true;
+      return true;
+    });
   }
 
   function renderSidebar(data, returnHref) {
@@ -812,6 +826,21 @@
           '<i class="fa-solid fa-arrow-left"></i>' +
           '<span>Về danh sách</span>' +
         '</a>' +
+      '</div>';
+  }
+
+  function renderArticleTags(data) {
+    var tags = normalizeArticleTags(data.tags || []);
+    if (!tags.length) return '';
+    var sectionKey = data.sectionKey === 'ban-tin' ? 'ban-tin' : 'thu-vien';
+    var hubHref = data.hubHref || sitePath(sectionKey + '.html');
+
+    return '' +
+      '<span class="article-tags__label">Tags:</span>' +
+      '<div class="article-tags__list">' +
+        tags.map(function (tag) {
+          return '<a class="article-tag" href="' + escapeHtml(appendQueryParam(hubHref, 'tag', tag)) + '" rel="tag">' + escapeHtml(tag) + '</a>';
+        }).join('') +
       '</div>';
   }
 
@@ -1036,6 +1065,32 @@
     return host;
   }
 
+  function ensureArticleTagsHost(bottomNavHost, recommendationsHost) {
+    var existing = document.getElementById('articleTags') || document.querySelector('.article-main > .article-tags');
+    if (existing) {
+      if (!existing.id) existing.id = 'articleTags';
+      return existing;
+    }
+
+    var main = document.querySelector('.article-main');
+    if (!main) return null;
+
+    var host = document.createElement('nav');
+    host.id = 'articleTags';
+    host.className = 'article-tags';
+    host.setAttribute('aria-label', 'Tags bài viết');
+
+    if (bottomNavHost && bottomNavHost.parentNode === main) {
+      main.insertBefore(host, bottomNavHost);
+    } else if (recommendationsHost && recommendationsHost.parentNode === main) {
+      main.insertBefore(host, recommendationsHost);
+    } else {
+      main.appendChild(host);
+    }
+
+    return host;
+  }
+
   function isStackedArticleLayout() {
     return window.matchMedia && window.matchMedia('(max-width: 1180px)').matches;
   }
@@ -1077,10 +1132,16 @@
       var topNavHost = document.getElementById('articleTopNav');
       var bottomNavHost = document.getElementById('articleBottomNav');
       var recommendationsHost = document.getElementById('articleRecommendations');
+      var tagsHost = ensureArticleTagsHost(bottomNavHost, recommendationsHost);
       var mobileNavHost = ensureMobileNavHost();
 
       sidebarHost.innerHTML = renderSidebar(data, returnHref);
       if (topNavHost) topNavHost.innerHTML = renderTopNav(data, returnHref);
+      if (tagsHost) {
+        var tagHtml = renderArticleTags(data);
+        tagsHost.innerHTML = tagHtml;
+        tagsHost.hidden = !tagHtml;
+      }
       if (bottomNavHost) bottomNavHost.innerHTML = renderArticleTools(data) + renderBottomNav(data, returnHref);
       if (recommendationsHost) recommendationsHost.innerHTML = renderRecommendations(data, returnHref);
       syncArticleAuxLayout(sidebarHost, recommendationsHost);
