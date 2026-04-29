@@ -39,6 +39,180 @@ function article_public_url_detail(array $article): string
 }
 
 /**
+ * Read full public taxonomy for the editor selector.
+ *
+ * Phase 2 validates and persists the selected category into admin drafts.
+ *
+ * @return array<string,mixed>
+ */
+function read_article_editor_taxonomy_payload(): array
+{
+  $path = dirname(__DIR__) . '/data/taxonomy.json';
+  if (!file_exists($path)) {
+    return ['roots' => []];
+  }
+
+  $raw = file_get_contents($path);
+  if ($raw === false || trim($raw) === '') {
+    return ['roots' => []];
+  }
+
+  $decoded = json_decode($raw, true);
+  if (!is_array($decoded) || !is_array($decoded['roots'] ?? null)) {
+    return ['roots' => []];
+  }
+
+  return [
+    'generatedAt' => (string) ($decoded['generatedAt'] ?? ''),
+    'roots' => $decoded['roots'],
+  ];
+}
+
+function article_taxonomy_node_key(array $node): string
+{
+  return trim((string) ($node['key'] ?? ($node['id'] ?? '')));
+}
+
+function article_taxonomy_node_label(array $node): string
+{
+  $label = trim((string) ($node['label'] ?? ''));
+  if ($label !== '') {
+    return $label;
+  }
+  return article_taxonomy_node_key($node);
+}
+
+/**
+ * @return array<int,array<string,mixed>>
+ */
+function article_taxonomy_children(array $node): array
+{
+  return is_array($node['children'] ?? null) ? array_values(array_filter($node['children'], 'is_array')) : [];
+}
+
+/**
+ * @param array<int,array<string,mixed>> $nodes
+ * @return array<string,mixed>|null
+ */
+function article_taxonomy_find_node(array $nodes, string $key): ?array
+{
+  foreach ($nodes as $node) {
+    if (article_taxonomy_node_key($node) === $key) {
+      return $node;
+    }
+  }
+  return null;
+}
+
+function article_taxonomy_post_key(string $value): string
+{
+  $value = trim($value);
+  return $value === '__empty__' ? '' : $value;
+}
+
+/**
+ * Validate category selection against the public taxonomy tree.
+ *
+ * @param array<string,mixed> $payload
+ * @return array{ok:bool,errors:array<string,string>,data:array<string,mixed>}
+ */
+function validate_article_taxonomy_payload(array $payload): array
+{
+  $errors = [];
+  $clean = [
+    'section_key' => '',
+    'section_label' => '',
+    'section_href' => '',
+    'library_kind_key' => '',
+    'library_kind_label' => '',
+    'topic_lv1_key' => '',
+    'topic_lv1_label' => '',
+    'topic_lv2_key' => '',
+    'topic_lv2_label' => '',
+    'topic_lv3_key' => '',
+    'topic_lv3_label' => '',
+  ];
+
+  $taxonomy = read_article_editor_taxonomy_payload();
+  $roots = is_array($taxonomy['roots'] ?? null) ? array_values(array_filter($taxonomy['roots'], 'is_array')) : [];
+  if (empty($roots)) {
+    return [
+      'ok' => false,
+      'errors' => ['taxonomy' => 'Không đọc được cây phân loại public.'],
+      'data' => $clean,
+    ];
+  }
+
+  $sectionKey = article_taxonomy_post_key((string) ($payload['taxonomy_section_key'] ?? ($payload['section_key'] ?? '')));
+  $section = article_taxonomy_find_node($roots, $sectionKey);
+  if ($section === null || !in_array($sectionKey, ['thu-vien', 'ban-tin'], true)) {
+    $errors['taxonomy'] = 'Vui lòng chọn khu vực hợp lệ.';
+    return ['ok' => false, 'errors' => $errors, 'data' => $clean];
+  }
+
+  $clean['section_key'] = $sectionKey;
+  $clean['section_label'] = article_taxonomy_node_label($section);
+  $clean['section_href'] = $sectionKey . '.html';
+
+  $lv1Source = article_taxonomy_children($section);
+  if ($sectionKey === 'thu-vien') {
+    $kindRaw = trim((string) ($payload['taxonomy_library_kind_key'] ?? ($payload['library_kind_key'] ?? '')));
+    $kindKey = article_taxonomy_post_key($kindRaw);
+    $kind = $kindRaw !== '' ? article_taxonomy_find_node(article_taxonomy_children($section), $kindKey) : null;
+    if ($kind === null) {
+      $errors['taxonomy'] = 'Vui lòng chọn loại tài liệu hợp lệ cho Thư viện.';
+      return ['ok' => false, 'errors' => $errors, 'data' => $clean];
+    }
+    $clean['library_kind_key'] = $kindKey;
+    $clean['library_kind_label'] = article_taxonomy_node_label($kind);
+    $lv1Source = article_taxonomy_children($kind);
+  }
+
+  $lv1Raw = trim((string) ($payload['taxonomy_topic_lv1_key'] ?? ($payload['topic_lv1_key'] ?? '')));
+  $lv1Key = article_taxonomy_post_key($lv1Raw);
+  $lv1 = $lv1Raw !== '' ? article_taxonomy_find_node($lv1Source, $lv1Key) : null;
+  if ($lv1 === null) {
+    $errors['taxonomy'] = 'Vui lòng chọn phân loại Cấp 1 hợp lệ.';
+    return ['ok' => false, 'errors' => $errors, 'data' => $clean];
+  }
+  $clean['topic_lv1_key'] = $lv1Key;
+  $clean['topic_lv1_label'] = article_taxonomy_node_label($lv1);
+
+  $lv2Raw = trim((string) ($payload['taxonomy_topic_lv2_key'] ?? ($payload['topic_lv2_key'] ?? '')));
+  $lv2Key = article_taxonomy_post_key($lv2Raw);
+  $lv2Source = article_taxonomy_children($lv1);
+  $lv2 = $lv2Raw !== '' ? article_taxonomy_find_node($lv2Source, $lv2Key) : null;
+  if ($lv2 === null) {
+    $errors['taxonomy'] = 'Vui lòng chọn phân loại Cấp 2 hợp lệ.';
+    return ['ok' => false, 'errors' => $errors, 'data' => $clean];
+  }
+  $clean['topic_lv2_key'] = $lv2Key;
+  $clean['topic_lv2_label'] = article_taxonomy_node_label($lv2);
+
+  $lv3Source = article_taxonomy_children($lv2);
+  $lv3Raw = trim((string) ($payload['taxonomy_topic_lv3_key'] ?? ($payload['topic_lv3_key'] ?? '')));
+  $lv3Key = article_taxonomy_post_key($lv3Raw);
+  if (!empty($lv3Source)) {
+    $lv3 = $lv3Raw !== '' ? article_taxonomy_find_node($lv3Source, $lv3Key) : null;
+    if ($lv3 === null) {
+      $errors['taxonomy'] = 'Vui lòng chọn phân loại Cấp 3 hợp lệ.';
+      return ['ok' => false, 'errors' => $errors, 'data' => $clean];
+    }
+    $clean['topic_lv3_key'] = $lv3Key;
+    $clean['topic_lv3_label'] = article_taxonomy_node_label($lv3);
+  } elseif ($lv3Raw !== '') {
+    $errors['taxonomy'] = 'Nhánh Cấp 2 này không có Cấp 3.';
+    return ['ok' => false, 'errors' => $errors, 'data' => $clean];
+  }
+
+  return [
+    'ok' => true,
+    'errors' => [],
+    'data' => $clean,
+  ];
+}
+
+/**
  * Validate editable draft payload.
  *
  * @param array<string,mixed> $payload
@@ -78,11 +252,20 @@ function validate_draft_payload(array $payload): array
   $clean['modified_date'] = $modifiedDate;
 
   $tagsInput = trim((string) ($payload['tags_text'] ?? ''));
-  $tags = array_values(array_unique(array_filter(array_map(static function (string $part): string {
-    return trim($part);
-  }, preg_split('/[,;\n]+/', $tagsInput) ?: []), static function (string $value): bool {
-    return $value !== '';
-  })));
+  $tags = [];
+  $seenTags = [];
+  foreach (preg_split('/[,;\n]+/', $tagsInput) ?: [] as $part) {
+    $tag = trim((string) $part);
+    if ($tag === '') {
+      continue;
+    }
+    $tagKey = function_exists('mb_strtolower') ? mb_strtolower($tag, 'UTF-8') : strtolower($tag);
+    if (isset($seenTags[$tagKey])) {
+      continue;
+    }
+    $seenTags[$tagKey] = true;
+    $tags[] = $tag;
+  }
   if (count($tags) < 2) {
     $errors['tags_text'] = 'Cần tối thiểu 2 tag.';
   }
@@ -91,6 +274,13 @@ function validate_draft_payload(array $payload): array
   }
   $clean['tags'] = $tags;
   $clean['tags_text'] = implode(', ', $tags);
+
+  $taxonomyValidation = validate_article_taxonomy_payload($payload);
+  $clean = array_merge($clean, is_array($taxonomyValidation['data'] ?? null) ? $taxonomyValidation['data'] : []);
+  if (empty($taxonomyValidation['ok'])) {
+    $taxonomyErrors = is_array($taxonomyValidation['errors'] ?? null) ? $taxonomyValidation['errors'] : [];
+    $errors = array_merge($errors, $taxonomyErrors);
+  }
 
   $proseHtml = trim((string) ($payload['prose_html'] ?? ''));
   if ($proseHtml === '') {
@@ -106,6 +296,128 @@ function validate_draft_payload(array $payload): array
     'errors' => $errors,
     'data' => $clean,
   ];
+}
+
+function article_editor_taxonomy_piece(string $label, string $key): string
+{
+  $label = trim($label);
+  $key = trim($key);
+  return $label !== '' ? $label : $key;
+}
+
+/**
+ * @param array<string,mixed> $data
+ */
+function article_editor_taxonomy_path(array $data): string
+{
+  $sectionKey = trim((string) ($data['section_key'] ?? ($data['section'] ?? '')));
+  $sectionLabel = article_editor_taxonomy_piece((string) ($data['section_label'] ?? ''), $sectionKey);
+  if ($sectionLabel === '' && $sectionKey !== '') {
+    $sectionLabel = $sectionKey === 'ban-tin' ? 'Bản tin' : ($sectionKey === 'thu-vien' ? 'Thư viện' : $sectionKey);
+  }
+  $parts = [];
+  if ($sectionLabel !== '') {
+    $parts[] = $sectionLabel;
+  }
+  if ($sectionKey === 'thu-vien') {
+    $kind = article_editor_taxonomy_piece((string) ($data['library_kind_label'] ?? ''), (string) ($data['library_kind_key'] ?? ''));
+    if ($kind !== '') {
+      $parts[] = $kind;
+    }
+  }
+  foreach ([1, 2, 3] as $level) {
+    $part = article_editor_taxonomy_piece(
+      (string) ($data['topic_lv' . $level . '_label'] ?? ''),
+      (string) ($data['topic_lv' . $level . '_key'] ?? '')
+    );
+    if ($part !== '') {
+      $parts[] = $part;
+    }
+  }
+  return !empty($parts) ? implode(' › ', $parts) : '—';
+}
+
+/**
+ * @param array<string,mixed> $data
+ */
+function article_editor_taxonomy_key_path(array $data): string
+{
+  $sectionKey = trim((string) ($data['section_key'] ?? ($data['section'] ?? '')));
+  $keys = [$sectionKey];
+  if ($sectionKey === 'thu-vien') {
+    $keys[] = trim((string) ($data['library_kind_key'] ?? ''));
+  }
+  foreach ([1, 2, 3] as $level) {
+    $keys[] = trim((string) ($data['topic_lv' . $level . '_key'] ?? ''));
+  }
+  return implode('|', $keys);
+}
+
+/**
+ * @param array<int,mixed> $tags
+ * @return array<int,string>
+ */
+function article_editor_normalize_tags(array $tags): array
+{
+  $out = [];
+  $seen = [];
+  foreach ($tags as $tag) {
+    $clean = trim((string) $tag);
+    if ($clean === '') {
+      continue;
+    }
+    $key = function_exists('mb_strtolower') ? mb_strtolower($clean, 'UTF-8') : strtolower($clean);
+    if (isset($seen[$key])) {
+      continue;
+    }
+    $seen[$key] = true;
+    $out[] = $clean;
+  }
+  return $out;
+}
+
+/**
+ * @param array<int,mixed> $tags
+ */
+function article_editor_tags_label(array $tags): string
+{
+  $clean = article_editor_normalize_tags($tags);
+  return !empty($clean) ? implode(', ', array_map(static fn (string $tag): string => '#' . $tag, $clean)) : '—';
+}
+
+/**
+ * @param array<string,mixed> $published
+ * @param array<string,mixed> $draft
+ * @return array<int,array{label:string,before:string,after:string}>
+ */
+function article_editor_change_summary(array $published, array $draft): array
+{
+  $changes = [];
+  if (
+    article_editor_taxonomy_key_path($published) !== article_editor_taxonomy_key_path($draft)
+    || article_editor_taxonomy_path($published) !== article_editor_taxonomy_path($draft)
+  ) {
+    $changes[] = [
+      'label' => 'Phân loại',
+      'before' => article_editor_taxonomy_path($published),
+      'after' => article_editor_taxonomy_path($draft),
+    ];
+  }
+
+  $beforeTags = is_array($published['tags'] ?? null) ? $published['tags'] : [];
+  $afterTags = is_array($draft['tags'] ?? null) ? $draft['tags'] : [];
+  $beforeCompare = array_map(static fn (string $tag): string => function_exists('mb_strtolower') ? mb_strtolower($tag, 'UTF-8') : strtolower($tag), article_editor_normalize_tags($beforeTags));
+  $afterCompare = array_map(static fn (string $tag): string => function_exists('mb_strtolower') ? mb_strtolower($tag, 'UTF-8') : strtolower($tag), article_editor_normalize_tags($afterTags));
+  sort($beforeCompare);
+  sort($afterCompare);
+  if ($beforeCompare !== $afterCompare) {
+    $changes[] = [
+      'label' => 'Tags',
+      'before' => article_editor_tags_label($beforeTags),
+      'after' => article_editor_tags_label($afterTags),
+    ];
+  }
+  return $changes;
 }
 
 /**
@@ -187,6 +499,12 @@ $recentPublishRecords = [];
 $reviewRow = null;
 $uploads = [];
 $revisions = [];
+$taxonomyEditorData = [
+  'phase' => 3,
+  'note' => 'Validated category selections are saved to draft and published to article-meta/data articles.',
+  'taxonomy' => read_article_editor_taxonomy_payload(),
+  'state' => [],
+];
 
 if ($article !== null) {
   $path = resolve_article_file_path($article);
@@ -209,10 +527,18 @@ if ($article !== null) {
       if ($intent === 'rollback_latest') {
         $result = rollback_latest_publish($article, $currentUser);
           if (!empty($result['ok'])) {
-            $status = [
-              'type' => 'success',
-              'message' => 'Đã khôi phục thành công từ bản sao lưu gần nhất.',
-            ];
+            $rollbackRebuild = is_array($result['public_rebuild'] ?? null) ? $result['public_rebuild'] : [];
+            if (!empty($rollbackRebuild) && empty($rollbackRebuild['ok'])) {
+              $status = [
+                'type' => 'warning',
+                'message' => 'Đã khôi phục file bài, nhưng đồng bộ dữ liệu public chưa xong: ' . (string) ($rollbackRebuild['message'] ?? 'không rõ lỗi'),
+              ];
+            } else {
+              $status = [
+                'type' => 'success',
+                'message' => 'Đã khôi phục thành công và đồng bộ dữ liệu public.',
+              ];
+            }
         } else {
           $status = [
             'type' => 'danger',
@@ -258,12 +584,23 @@ if ($article !== null) {
           'tags_text' => (string) ($_POST['tags_text'] ?? ''),
           'prose_html' => (string) ($_POST['prose_html'] ?? ''),
           'featured_image' => (string) ($_POST['featured_image'] ?? ''),
+          'taxonomy_section_key' => (string) ($_POST['taxonomy_section_key'] ?? ''),
+          'taxonomy_library_kind_key' => (string) ($_POST['taxonomy_library_kind_key'] ?? ''),
+          'taxonomy_topic_lv1_key' => (string) ($_POST['taxonomy_topic_lv1_key'] ?? ''),
+          'taxonomy_topic_lv2_key' => (string) ($_POST['taxonomy_topic_lv2_key'] ?? ''),
+          'taxonomy_topic_lv3_key' => (string) ($_POST['taxonomy_topic_lv3_key'] ?? ''),
+          'section_key' => article_taxonomy_post_key((string) ($_POST['taxonomy_section_key'] ?? '')),
+          'library_kind_key' => article_taxonomy_post_key((string) ($_POST['taxonomy_library_kind_key'] ?? '')),
+          'topic_lv1_key' => article_taxonomy_post_key((string) ($_POST['taxonomy_topic_lv1_key'] ?? '')),
+          'topic_lv2_key' => article_taxonomy_post_key((string) ($_POST['taxonomy_topic_lv2_key'] ?? '')),
+          'topic_lv3_key' => article_taxonomy_post_key((string) ($_POST['taxonomy_topic_lv3_key'] ?? '')),
         ];
         $validated = validate_draft_payload($posted);
-        $form = array_merge($form, $posted);
+        $validatedData = is_array($validated['data'] ?? null) ? $validated['data'] : [];
+        $form = array_merge($form, $posted, $validatedData);
 
         if (!empty($validated['ok'])) {
-          $clean = is_array($validated['data'] ?? null) ? $validated['data'] : [];
+          $clean = $validatedData;
           $currentHtmlForRevision = file_get_contents($path);
           if (is_string($currentHtmlForRevision) && trim($currentHtmlForRevision) !== '') {
             // Backup current HTML before any publish/preview/restore draft mutation.
@@ -287,10 +624,18 @@ if ($article !== null) {
               $reviewRow = mark_article_reviewed((string) ($article['id'] ?? ''), $currentUser, 'publish_now');
               $form = array_merge($form, $clean);
               $forceTopOnReturn = true;
-              $status = [
-                'type' => 'success',
-                'message' => 'Đã cập nhật bài viết ra trang.',
-              ];
+              $publicRebuild = is_array($result['public_rebuild'] ?? null) ? $result['public_rebuild'] : [];
+              if (!empty($publicRebuild) && empty($publicRebuild['ok'])) {
+                $status = [
+                  'type' => 'warning',
+                  'message' => 'Đã cập nhật bài viết, nhưng đồng bộ dữ liệu public chưa xong: ' . (string) ($publicRebuild['message'] ?? 'không rõ lỗi'),
+                ];
+              } else {
+                $status = [
+                  'type' => 'success',
+                  'message' => 'Đã cập nhật bài viết ra trang và đồng bộ dữ liệu public.',
+                ];
+              }
             } else {
               $status = [
                 'type' => 'danger',
@@ -313,17 +658,17 @@ if ($article !== null) {
               'featuredImage' => (string) ($clean['featured_image'] ?? ''),
             ];
 
-            if ($intent === 'save_draft') {
-              $status = [
-                'type' => 'success',
-                'message' => 'Đã lưu nháp.',
-              ];
-            } elseif ($intent === 'preview_only') {
-              $status = [
-                'type' => 'success',
-                'message' => 'Đã lưu nháp.',
-              ];
-            }
+	            if ($intent === 'save_draft') {
+	              $status = [
+	                'type' => 'success',
+	                'message' => 'Đã lưu nháp trong admin. Bản ngoài user chưa đổi; bấm “Đăng ra ngoài” để cập nhật frontend.',
+	              ];
+	            } elseif ($intent === 'preview_only') {
+	              $status = [
+	                'type' => 'success',
+	                'message' => 'Đã lưu nháp trong admin. Bản ngoài user chưa đổi; bấm “Đăng ra ngoài” để cập nhật frontend.',
+	              ];
+	            }
           } else {
             $status = [
               'type' => 'warning',
@@ -377,6 +722,20 @@ if ($article !== null) {
     $recentPublishRecords = list_recent_publish_records((string) ($article['id'] ?? ''), 8);
     $uploads = list_article_uploaded_images((string) ($article['id'] ?? ''));
     $revisions = list_article_revisions((string) ($article['id'] ?? ''));
+    $taxonomyEditorData['state'] = [
+      'sectionKey' => (string) ($form['section_key'] ?? ($article['section'] ?? '')),
+      'sectionValue' => (string) ($form['taxonomy_section_key'] ?? ($form['section_key'] ?? ($article['section'] ?? ''))),
+      'libraryKindKey' => (string) ($form['library_kind_key'] ?? ($article['library_kind_key'] ?? '')),
+      'libraryKindValue' => (string) ($form['taxonomy_library_kind_key'] ?? ($form['library_kind_key'] ?? ($article['library_kind_key'] ?? ''))),
+      'topicLv1Key' => (string) ($form['topic_lv1_key'] ?? ($article['topic_lv1_key'] ?? '')),
+      'topicLv1Value' => (string) ($form['taxonomy_topic_lv1_key'] ?? ($form['topic_lv1_key'] ?? ($article['topic_lv1_key'] ?? ''))),
+      'topicLv2Key' => (string) ($form['topic_lv2_key'] ?? ($article['topic_lv2_key'] ?? '')),
+      'topicLv2Value' => (string) ($form['taxonomy_topic_lv2_key'] ?? ($form['topic_lv2_key'] ?? ($article['topic_lv2_key'] ?? ''))),
+      'topicLv2Label' => (string) ($form['topic_lv2_label'] ?? ($article['topic_lv2_label'] ?? '')),
+      'topicLv3Key' => (string) ($form['topic_lv3_key'] ?? ($article['topic_lv3_key'] ?? '')),
+      'topicLv3Value' => (string) ($form['taxonomy_topic_lv3_key'] ?? ($form['topic_lv3_key'] ?? ($article['topic_lv3_key'] ?? ''))),
+      'topicLv3Label' => (string) ($form['topic_lv3_label'] ?? ($article['topic_lv3_label'] ?? '')),
+    ];
   }
 }
 
@@ -388,6 +747,170 @@ $innerScript = <<<'JS'
   const featuredImageInput = document.getElementById('featuredImageInput');
   const host = document.getElementById('previewHost');
   if (!editor) return;
+
+  const initTaxonomyEditor = () => {
+    const taxonomyHost = document.querySelector('[data-taxonomy-editor]');
+    const dataNode = document.getElementById('editorTaxonomyData');
+    if (!taxonomyHost || !dataNode) return;
+
+    let payload = {};
+    try {
+      payload = JSON.parse(dataNode.textContent || '{}');
+    } catch (error) {
+      payload = {};
+    }
+
+    const roots = Array.isArray(payload.taxonomy && payload.taxonomy.roots) ? payload.taxonomy.roots : [];
+    const state = payload.state || {};
+    const fields = {
+      section: taxonomyHost.querySelector('[data-taxonomy-select="section"]'),
+      kind: taxonomyHost.querySelector('[data-taxonomy-select="library_kind"]'),
+      lv1: taxonomyHost.querySelector('[data-taxonomy-select="topic_lv1"]'),
+      lv2: taxonomyHost.querySelector('[data-taxonomy-select="topic_lv2"]'),
+      lv3: taxonomyHost.querySelector('[data-taxonomy-select="topic_lv3"]'),
+    };
+    const rows = {
+      kind: taxonomyHost.querySelector('[data-taxonomy-row="library_kind"]'),
+      lv3: taxonomyHost.querySelector('[data-taxonomy-row="topic_lv3"]'),
+    };
+    const pathHost = taxonomyHost.querySelector('[data-taxonomy-path]');
+
+    const emptyKeyValue = '__empty__';
+    const keyOf = (node) => String((node && (node.key || node.id)) || '');
+    const labelOf = (node) => String((node && (node.label || node.key || node.id)) || '');
+    const valueOf = (node) => keyOf(node) || emptyKeyValue;
+    const childrenOf = (node) => Array.isArray(node && node.children) ? node.children : [];
+    const findByKey = (nodes, key) => (nodes || []).find((node) => keyOf(node) === key) || null;
+    const findByValue = (nodes, value) => (nodes || []).find((node) => valueOf(node) === value) || null;
+    const preferredValue = (nodes, rawValue, label) => {
+      if (rawValue) return rawValue;
+      const emptyKeyNode = findByKey(nodes, '');
+      if (!emptyKeyNode) return '';
+      if (label && labelOf(emptyKeyNode) === label) return emptyKeyValue;
+      return nodes.length === 1 ? emptyKeyValue : '';
+    };
+
+    let firstRender = true;
+
+    const setOptions = (select, nodes, placeholder, preferredValue) => {
+      if (!select) return null;
+      const current = preferredValue !== undefined ? preferredValue : select.value;
+      select.innerHTML = '';
+      const empty = document.createElement('option');
+      empty.value = '';
+      empty.textContent = placeholder;
+      select.appendChild(empty);
+      (nodes || []).forEach((node) => {
+        const key = keyOf(node);
+        const label = labelOf(node);
+        if (!key && !label) return;
+        const option = document.createElement('option');
+        option.value = valueOf(node);
+        option.textContent = label;
+        select.appendChild(option);
+      });
+      select.value = findByValue(nodes, current) ? current : '';
+      return findByValue(nodes, select.value);
+    };
+
+    const inferKindKey = (root, lv1Key, lv2Key, lv3Key) => {
+      lv2Key = lv2Key === emptyKeyValue ? '' : lv2Key;
+      lv3Key = lv3Key === emptyKeyValue ? '' : lv3Key;
+      if (!root || !lv1Key) return '';
+      const matches = [];
+      childrenOf(root).forEach((kind) => {
+        const lv1 = findByKey(childrenOf(kind), lv1Key);
+        if (!lv1) return;
+        if (lv2Key) {
+          const lv2 = findByKey(childrenOf(lv1), lv2Key);
+          if (!lv2) return;
+          if (lv3Key && !findByKey(childrenOf(lv2), lv3Key)) return;
+        }
+        matches.push(keyOf(kind));
+      });
+      return matches.length === 1 ? matches[0] : '';
+    };
+
+    const renderPath = (nodes) => {
+      if (!pathHost) return;
+      const labels = nodes.map(labelOf).filter(Boolean);
+      pathHost.textContent = labels.length ? labels.join(' › ') : 'Chưa chọn đủ phân loại.';
+    };
+
+    const render = () => {
+      if (!fields.section) return;
+      setOptions(fields.section, roots, 'Chọn khu vực', firstRender ? (state.sectionValue || state.sectionKey || '') : undefined);
+      if (!fields.section.value) {
+        fields.section.value = findByKey(roots, state.sectionKey) ? state.sectionKey : (keyOf(roots[0]) || '');
+      }
+
+      const section = findByKey(roots, fields.section.value);
+      const isLibrary = keyOf(section) === 'thu-vien';
+      let kind = null;
+      let lv1Source = childrenOf(section);
+
+      if (rows.kind) rows.kind.hidden = !isLibrary;
+      if (isLibrary) {
+        const preferredKind = firstRender
+          ? (state.libraryKindValue || state.libraryKindKey || inferKindKey(section, state.topicLv1Value || state.topicLv1Key || '', state.topicLv2Value || state.topicLv2Key || '', state.topicLv3Value || state.topicLv3Key || ''))
+          : undefined;
+        setOptions(fields.kind, childrenOf(section), 'Chọn loại tài liệu', preferredKind);
+        if (!fields.kind.value) {
+          fields.kind.value = inferKindKey(section, fields.lv1 ? fields.lv1.value : '', fields.lv2 ? fields.lv2.value : '', fields.lv3 ? fields.lv3.value : '');
+        }
+        kind = findByKey(childrenOf(section), fields.kind ? fields.kind.value : '');
+        lv1Source = childrenOf(kind);
+      } else if (fields.kind) {
+        fields.kind.value = '';
+      }
+
+      const lv1 = setOptions(fields.lv1, lv1Source, 'Chọn cấp 1', firstRender ? (state.topicLv1Value || state.topicLv1Key || '') : undefined);
+      const lv2Source = childrenOf(lv1);
+      const lv2 = setOptions(
+        fields.lv2,
+        lv2Source,
+        'Chọn cấp 2',
+        firstRender ? preferredValue(lv2Source, state.topicLv2Value || state.topicLv2Key || '', state.topicLv2Label || '') : undefined
+      );
+      const lv3Source = childrenOf(lv2);
+      const lv3 = setOptions(
+        fields.lv3,
+        lv3Source,
+        'Chọn cấp 3',
+        firstRender ? preferredValue(lv3Source, state.topicLv3Value || state.topicLv3Key || '', state.topicLv3Label || '') : undefined
+      );
+      if (rows.lv3) rows.lv3.hidden = lv3Source.length === 0 && !(fields.lv3 && fields.lv3.value);
+
+      renderPath([section, kind, lv1, lv2, lv3].filter(Boolean));
+      firstRender = false;
+    };
+
+    if (fields.section) fields.section.addEventListener('change', () => {
+      if (fields.kind) fields.kind.value = '';
+      if (fields.lv1) fields.lv1.value = '';
+      if (fields.lv2) fields.lv2.value = '';
+      if (fields.lv3) fields.lv3.value = '';
+      render();
+    });
+    if (fields.kind) fields.kind.addEventListener('change', () => {
+      if (fields.lv1) fields.lv1.value = '';
+      if (fields.lv2) fields.lv2.value = '';
+      if (fields.lv3) fields.lv3.value = '';
+      render();
+    });
+    if (fields.lv1) fields.lv1.addEventListener('change', () => {
+      if (fields.lv2) fields.lv2.value = '';
+      if (fields.lv3) fields.lv3.value = '';
+      render();
+    });
+    if (fields.lv2) fields.lv2.addEventListener('change', () => {
+      if (fields.lv3) fields.lv3.value = '';
+      render();
+    });
+    if (fields.lv3) fields.lv3.addEventListener('change', render);
+
+    render();
+  };
 
   const getEditorHtml = () => {
     if (window.tinymce && typeof window.tinymce.get === 'function') {
@@ -489,6 +1012,7 @@ $innerScript = <<<'JS'
     });
   });
 
+  initTaxonomyEditor();
   syncPreview();
 })();
 JS;
@@ -562,8 +1086,8 @@ admin_layout_header([
     $reviewHasActor = $reviewStatusKey !== 'unreviewed';
     if ($reviewStatusKey === 'edited') {
       $reviewStatusLabel = 'Đã sửa';
-    } elseif ($reviewStatusKey === 'draft_saved') {
-      $reviewStatusLabel = 'Lưu nháp';
+	    } elseif ($reviewStatusKey === 'draft_saved') {
+	      $reviewStatusLabel = 'Nháp admin';
     } else {
       $reviewStatusLabel = 'Chưa sửa';
     }
@@ -608,8 +1132,13 @@ admin_layout_header([
       $appendTaxonomyItem('Cấp 1', (string) ($form['topic_lv1_label'] ?? ''), (string) ($form['topic_lv1_key'] ?? ''));
       $appendTaxonomyItem('Cấp 2', (string) ($form['topic_lv2_label'] ?? ''), (string) ($form['topic_lv2_key'] ?? ''));
       $appendTaxonomyItem('Cấp 3', (string) ($form['topic_lv3_label'] ?? ''), (string) ($form['topic_lv3_key'] ?? ''));
+	    }
+	    $currentTags = is_array($form['tags'] ?? null) ? array_values(array_filter(array_map('strval', $form['tags']))) : [];
+    $draftChangeSummary = article_editor_change_summary($baseEditable, $form);
+	    $taxonomyEditorJson = json_encode($taxonomyEditorData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+    if ($taxonomyEditorJson === false) {
+      $taxonomyEditorJson = '{"taxonomy":{"roots":[]},"state":{}}';
     }
-    $currentTags = is_array($form['tags'] ?? null) ? array_values(array_filter(array_map('strval', $form['tags']))) : [];
     ?>
 
     <div class="editor-top-actions">
@@ -653,7 +1182,8 @@ admin_layout_header([
     $infoPanelOpen = !empty($validationErrors['excerpt'])
       || !empty($validationErrors['publish_date'])
       || !empty($validationErrors['modified_date'])
-      || !empty($validationErrors['tags_text']);
+      || !empty($validationErrors['tags_text'])
+      || !empty($validationErrors['taxonomy']);
     ?>
     <div class="editor-workspace">
       <article class="admin-panel">
@@ -669,12 +1199,12 @@ admin_layout_header([
           <div class="editor-action-bar">
             <button type="submit" class="filter-submit-btn" onclick="document.getElementById('articleIntent').value='save_draft'">
               <i class="fa-solid fa-floppy-disk"></i>
-              <span>Lưu nháp</span>
-            </button>
-            <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận cập nhật bài này ra trang? Hệ thống sẽ sao lưu trước khi ghi file thật.');">
-              <i class="fa-solid fa-paper-plane"></i>
-              <span>Đăng ngay</span>
-            </button>
+	              <span>Lưu nháp admin</span>
+	            </button>
+	            <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận ĐĂNG RA NGOÀI USER?\\nHệ thống sẽ ghi HTML thật, cập nhật data/articles.json và rebuild frontend.');">
+	              <i class="fa-solid fa-paper-plane"></i>
+	              <span>Đăng ra ngoài</span>
+	            </button>
             <a class="clear-filter-btn inline" href="<?= h(article_public_url_detail($article)) ?>" target="_blank" rel="noopener">
               <i class="fa-solid fa-up-right-from-square"></i>
               <span>Xem bài</span>
@@ -702,8 +1232,8 @@ admin_layout_header([
 
             <div class="editor-taxonomy-card">
               <div class="editor-taxonomy-card__head">
-                <strong>Phân loại hiện tại</strong>
-                <small>Đọc từ article-meta/data articles, dùng để đối chiếu cây menu 4 cấp.</small>
+                <strong>Phân loại hiện tại / nháp</strong>
+                <small>Nếu đã lưu nháp Phase 2, khu vực này hiển thị phân loại nháp đang giữ trong admin.</small>
               </div>
               <?php if (!empty($taxonomyItems)): ?>
                 <div class="editor-pill-row editor-taxonomy-row">
@@ -724,7 +1254,64 @@ admin_layout_header([
                     <span>#<?= h($tag) ?></span>
                   <?php endforeach; ?>
                 </div>
+	              <?php endif; ?>
+	            </div>
+
+            <div class="editor-change-card <?= !empty($draftChangeSummary) ? 'has-changes' : 'is-clean' ?>">
+              <div class="editor-taxonomy-card__head">
+                <strong>So sánh nháp với bản đang publish</strong>
+                <small>Chỉ theo dõi nhanh phân loại và tags trước khi bấm “Đăng ngay”.</small>
+              </div>
+              <?php if (!empty($draftChangeSummary)): ?>
+                <div class="editor-change-list">
+                  <?php foreach ($draftChangeSummary as $change): ?>
+                    <div class="editor-change-row">
+                      <small><?= h((string) ($change['label'] ?? '')) ?></small>
+                      <p><span>Từ:</span> <?= h((string) ($change['before'] ?? '—')) ?></p>
+                      <p><span>Thành:</span> <?= h((string) ($change['after'] ?? '—')) ?></p>
+                    </div>
+                  <?php endforeach; ?>
+                </div>
+              <?php else: ?>
+                <p class="editor-change-clean">Chưa có thay đổi phân loại hoặc tags so với bản đang publish.</p>
               <?php endif; ?>
+            </div>
+
+            <script id="editorTaxonomyData" type="application/json"><?= $taxonomyEditorJson ?></script>
+            <div class="editor-taxonomy-card editor-taxonomy-card--edit" data-taxonomy-editor>
+              <div class="editor-taxonomy-card__head">
+                <strong>Chỉnh phân loại bài viết</strong>
+	                <small>Lưu nháp chỉ giữ trong admin; “Đăng ra ngoài” mới cập nhật trang user và rebuild frontend.</small>
+              </div>
+              <div class="editor-taxonomy-select-grid">
+                <label class="filter-field">
+                  <span>Khu vực</span>
+                  <select name="taxonomy_section_key" data-taxonomy-select="section"></select>
+                </label>
+                <label class="filter-field" data-taxonomy-row="library_kind">
+                  <span>Loại tài liệu</span>
+                  <select name="taxonomy_library_kind_key" data-taxonomy-select="library_kind"></select>
+                </label>
+                <label class="filter-field">
+                  <span>Cấp 1</span>
+                  <select name="taxonomy_topic_lv1_key" data-taxonomy-select="topic_lv1"></select>
+                </label>
+                <label class="filter-field">
+                  <span>Cấp 2</span>
+                  <select name="taxonomy_topic_lv2_key" data-taxonomy-select="topic_lv2"></select>
+                </label>
+                <label class="filter-field" data-taxonomy-row="topic_lv3">
+                  <span>Cấp 3</span>
+                  <select name="taxonomy_topic_lv3_key" data-taxonomy-select="topic_lv3"></select>
+                </label>
+              </div>
+              <div class="editor-taxonomy-path" data-taxonomy-path>Đang tải cây phân loại...</div>
+              <?php if (!empty($validationErrors['taxonomy'])): ?>
+                <small class="field-error"><?= h((string) $validationErrors['taxonomy']) ?></small>
+              <?php endif; ?>
+              <p class="editor-taxonomy-phase-note">
+	                Tags vẫn sửa ở ô “Thẻ” bên dưới. Chỉ khi bấm “Đăng ra ngoài”, phân loại và tags mới ghi ra trang user.
+              </p>
             </div>
 
 	            <div class="editor-meta-grid">
@@ -769,12 +1356,12 @@ admin_layout_header([
           <div class="editor-bottom-actions">
             <button type="submit" class="filter-submit-btn" onclick="document.getElementById('articleIntent').value='save_draft'">
               <i class="fa-solid fa-floppy-disk"></i>
-              <span>Lưu nháp</span>
-            </button>
-            <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận cập nhật bài này ra trang? Hệ thống sẽ sao lưu trước khi ghi file thật.');">
-              <i class="fa-solid fa-paper-plane"></i>
-              <span>Đăng ngay</span>
-            </button>
+	              <span>Lưu nháp admin</span>
+	            </button>
+	            <button type="submit" class="publish-btn inline" onclick="document.getElementById('articleIntent').value='publish_now'; return confirm('Xác nhận ĐĂNG RA NGOÀI USER?\\nHệ thống sẽ ghi HTML thật, cập nhật data/articles.json và rebuild frontend.');">
+	              <i class="fa-solid fa-paper-plane"></i>
+	              <span>Đăng ra ngoài</span>
+	            </button>
             <a class="clear-filter-btn inline" href="<?= h(article_public_url_detail($article)) ?>" target="_blank" rel="noopener">
               <i class="fa-solid fa-up-right-from-square"></i>
               <span>Xem bài</span>
@@ -871,17 +1458,48 @@ admin_layout_header([
                       : ($event === 'revision_restore' ? 'Restore revision' : ucfirst($event)));
                   $eventAt = format_admin_datetime((string) ($record['published_at'] ?? $record['rolled_back_at'] ?? $record['restored_at'] ?? ''));
                   $eventBy = (string) (($record['actor']['username'] ?? '') ?: ($record['actor']['display_name'] ?? ''));
-                  if ($eventBy === '') {
-                    $eventBy = '—';
-                  }
-                  ?>
-                  <article class="editor-history-item">
-                    <div class="editor-history-head">
-                      <strong><?= h($eventLabel) ?></strong>
-                      <span><?= h($eventAt) ?></span>
-                    </div>
-                    <p>Người thao tác: <?= h($eventBy) ?></p>
-                  </article>
+	                  if ($eventBy === '') {
+	                    $eventBy = '—';
+	                  }
+                    $historyTaxonomyBefore = is_array($record['taxonomy_before'] ?? null) ? $record['taxonomy_before'] : [];
+                    $historyTaxonomyAfter = is_array($record['taxonomy_after'] ?? null) ? $record['taxonomy_after'] : [];
+                    $historyTagsBefore = is_array($record['tags_before'] ?? null) ? $record['tags_before'] : [];
+                    $historyTagsAfter = is_array($record['tags_after'] ?? null) ? $record['tags_after'] : [];
+                    $historyTaxonomyChanged = !empty($record['taxonomy_changed']);
+                    $historyTagsChanged = !empty($record['tags_changed']);
+                    $historyPublicRebuild = is_array($record['public_rebuild'] ?? null) ? $record['public_rebuild'] : [];
+	                  ?>
+	                  <article class="editor-history-item">
+	                    <div class="editor-history-head">
+	                      <strong><?= h($eventLabel) ?></strong>
+	                      <span><?= h($eventAt) ?></span>
+	                    </div>
+	                    <p>Người thao tác: <?= h($eventBy) ?></p>
+                      <?php if ($historyTaxonomyChanged || $historyTagsChanged || !empty($historyPublicRebuild)): ?>
+                        <div class="editor-history-diff">
+                          <?php if ($historyTaxonomyChanged): ?>
+                            <div>
+                              <small>Phân loại</small>
+                              <p><span>Trước:</span> <?= h(article_editor_taxonomy_path($historyTaxonomyBefore)) ?></p>
+                              <p><span>Sau:</span> <?= h(article_editor_taxonomy_path($historyTaxonomyAfter)) ?></p>
+                            </div>
+                          <?php endif; ?>
+                          <?php if ($historyTagsChanged): ?>
+                            <div>
+                              <small>Tags</small>
+                              <p><span>Trước:</span> <?= h(article_editor_tags_label($historyTagsBefore)) ?></p>
+                              <p><span>Sau:</span> <?= h(article_editor_tags_label($historyTagsAfter)) ?></p>
+                            </div>
+                          <?php endif; ?>
+                          <?php if (!empty($historyPublicRebuild)): ?>
+                            <div class="<?= !empty($historyPublicRebuild['ok']) ? 'is-ok' : 'is-warning' ?>">
+                              <small>Public data</small>
+                              <p><?= !empty($historyPublicRebuild['ok']) ? 'Đã đồng bộ frontend.' : h((string) ($historyPublicRebuild['message'] ?? 'Chưa đồng bộ public data.')) ?></p>
+                            </div>
+                          <?php endif; ?>
+                        </div>
+                      <?php endif; ?>
+	                  </article>
                 <?php endforeach; ?>
               </div>
             <?php endif; ?>
