@@ -229,6 +229,27 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
   }
 
   $metaPayload['title'] = $newTitle;
+  $metaPayload['section'] = (string) ($article['section'] ?? ($metaPayload['section'] ?? ''));
+  $metaPayload['sectionKey'] = (string) ($article['section'] ?? ($metaPayload['sectionKey'] ?? ''));
+  $metaPayload['sectionLabel'] = (string) ($article['section_label'] ?? ($metaPayload['sectionLabel'] ?? ''));
+  if (!empty($article['section_href'])) {
+    $metaPayload['sectionHref'] = (string) $article['section_href'];
+  }
+  $metaPayload['libraryKindKey'] = (string) ($article['library_kind_key'] ?? ($metaPayload['libraryKindKey'] ?? ''));
+  $metaPayload['libraryKindLabel'] = (string) ($article['library_kind_label'] ?? ($metaPayload['libraryKindLabel'] ?? ''));
+  $metaPayload['topicLv1Key'] = (string) ($article['topic_lv1_key'] ?? ($metaPayload['topicLv1Key'] ?? ''));
+  $metaPayload['topicLv1Label'] = (string) ($article['topic_lv1_label'] ?? ($metaPayload['topicLv1Label'] ?? ''));
+  $metaPayload['topicLv2Key'] = (string) ($article['topic_lv2_key'] ?? ($metaPayload['topicLv2Key'] ?? ''));
+  $metaPayload['topicLv2Label'] = (string) ($article['topic_lv2_label'] ?? ($metaPayload['topicLv2Label'] ?? ''));
+  $metaPayload['topicLv3Key'] = (string) ($article['topic_lv3_key'] ?? ($metaPayload['topicLv3Key'] ?? ''));
+  $metaPayload['topicLv3Label'] = (string) ($article['topic_lv3_label'] ?? ($metaPayload['topicLv3Label'] ?? ''));
+  $topicLabel = trim((string) ($article['topic_lv2_label'] ?? ''));
+  if ($topicLabel === '') {
+    $topicLabel = trim((string) ($article['topic_lv1_label'] ?? ''));
+  }
+  if ($topicLabel !== '') {
+    $metaPayload['topicLabel'] = $topicLabel;
+  }
   $metaPayload['publishDate'] = $newPublish;
   $metaPayload['modifiedDate'] = $newModified !== '' ? $newModified : null;
   $metaPayload['tags'] = $newTags;
@@ -348,9 +369,10 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
   // Keep article index in sync for card-like fields
   $indexSynced = sync_article_index_entry($articleId, [
     'title' => $newTitle,
+    'excerpt' => $newExcerpt,
     'publishDate' => $newPublish,
     'modifiedDate' => $newModified,
-    'cardBadgeLabel' => $newExcerpt,
+    'tags' => $newTags,
     'image' => $newImage,
   ]);
 

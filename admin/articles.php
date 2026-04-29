@@ -21,7 +21,10 @@ if (!$syncResult['synced']) {
 
 $cache = read_articles_index_cache();
 $facets = is_array($cache['facets'] ?? null) ? $cache['facets'] : default_articles_facets();
-$tree = is_array($facets['tree'] ?? null) ? $facets['tree'] : ['sections' => []];
+$publicTaxonomyTree = read_public_taxonomy_tree();
+$tree = !empty($publicTaxonomyTree['sections'])
+  ? $publicTaxonomyTree
+  : (is_array($facets['tree'] ?? null) ? $facets['tree'] : ['sections' => []]);
 $sectionTreeMap = [];
 foreach (($tree['sections'] ?? []) as $node) {
   if (!is_array($node)) {
@@ -39,6 +42,8 @@ $filters = [
   'library_kind_key' => (string) ($_GET['library_kind_key'] ?? ''),
   'topic_lv1_key' => (string) ($_GET['topic_lv1_key'] ?? ''),
   'topic_lv2_key' => (string) ($_GET['topic_lv2_key'] ?? ''),
+  'topic_lv3_key' => (string) ($_GET['topic_lv3_key'] ?? ''),
+  'tag' => (string) ($_GET['tag'] ?? ''),
   'review_status' => (string) ($_GET['review_status'] ?? ''),
   'tree_node_type' => (string) ($_GET['tree_node_type'] ?? ''), // backward compatibility
   'tree_node_key' => (string) ($_GET['tree_node_key'] ?? ''), // backward compatibility
@@ -72,6 +77,8 @@ if (is_post_request()) {
     'library_kind_key' => (string) ($_POST['library_kind_key'] ?? ''),
     'topic_lv1_key' => (string) ($_POST['topic_lv1_key'] ?? ''),
     'topic_lv2_key' => (string) ($_POST['topic_lv2_key'] ?? ''),
+    'topic_lv3_key' => (string) ($_POST['topic_lv3_key'] ?? ''),
+    'tag' => (string) ($_POST['tag'] ?? ''),
     'review_status' => (string) ($_POST['review_status'] ?? ''),
     'q' => (string) ($_POST['q'] ?? ''),
     'sort' => (string) ($_POST['sort'] ?? ''),
@@ -88,16 +95,22 @@ if ($filters['tree_node_type'] !== '' && $filters['tree_node_key'] !== '') {
     $filters['library_kind_key'] = '';
     $filters['topic_lv1_key'] = '';
     $filters['topic_lv2_key'] = '';
+    $filters['topic_lv3_key'] = '';
   } elseif ($filters['tree_node_type'] === 'library_kind') {
     $filters['section'] = 'thu-vien';
     $filters['library_kind_key'] = $filters['tree_node_key'];
     $filters['topic_lv1_key'] = '';
     $filters['topic_lv2_key'] = '';
+    $filters['topic_lv3_key'] = '';
   } elseif ($filters['tree_node_type'] === 'topic_lv1') {
     $filters['topic_lv1_key'] = $filters['tree_node_key'];
     $filters['topic_lv2_key'] = '';
+    $filters['topic_lv3_key'] = '';
   } elseif ($filters['tree_node_type'] === 'topic_lv2') {
     $filters['topic_lv2_key'] = $filters['tree_node_key'];
+    $filters['topic_lv3_key'] = '';
+  } elseif ($filters['tree_node_type'] === 'topic_lv3') {
+    $filters['topic_lv3_key'] = $filters['tree_node_key'];
   }
 }
 $filters['tree_node_type'] = '';
@@ -110,6 +123,7 @@ if (!in_array($activeSection, ['thu-vien', 'ban-tin'], true)) {
 $filters['section'] = $activeSection;
 $scopeParams = [
   'q' => (string) $filters['q'],
+  'tag' => (string) $filters['tag'],
   'review_status' => (string) $filters['review_status'],
   'sort' => (string) $filters['sort'],
   'per_page' => (int) $filters['per_page'],
@@ -150,16 +164,46 @@ function node_label(array $node): string
   return (string) ($node['label'] ?? ($node['key'] ?? ''));
 }
 
+/**
+ * @param array<string,mixed> $kindNode
+ */
+function kind_node_contains_topic(array $kindNode, string $lv1Key, string $lv2Key): bool
+{
+  foreach (($kindNode['children'] ?? []) as $lv1Node) {
+    if (!is_array($lv1Node)) {
+      continue;
+    }
+    $nodeLv1Key = (string) ($lv1Node['key'] ?? '');
+    if ($lv1Key !== '' && $nodeLv1Key !== $lv1Key) {
+      continue;
+    }
+    if ($lv2Key === '') {
+      return true;
+    }
+    foreach (($lv1Node['children'] ?? []) as $lv2Node) {
+      if (is_array($lv2Node) && (string) ($lv2Node['key'] ?? '') === $lv2Key) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 $activeSectionNode = $sectionTreeMap[$activeSection] ?? null;
 $sectionChildren = is_array($activeSectionNode['children'] ?? null) ? $activeSectionNode['children'] : [];
 
 $sectionCountMap = [];
+foreach ($sectionTreeMap as $key => $node) {
+  if (is_array($node) && $key !== '') {
+    $sectionCountMap[(string) $key] = (int) ($node['count'] ?? 0);
+  }
+}
 foreach (($facets['sections'] ?? []) as $entry) {
   if (!is_array($entry)) {
     continue;
   }
   $key = (string) ($entry['key'] ?? '');
-  if ($key !== '') {
+  if ($key !== '' && !isset($sectionCountMap[$key])) {
     $sectionCountMap[$key] = (int) ($entry['count'] ?? 0);
   }
 }
@@ -167,12 +211,15 @@ foreach (($facets['sections'] ?? []) as $entry) {
 $kindNodes = [];
 $topicLv1Nodes = [];
 $topicLv2Nodes = [];
+$topicLv3Nodes = [];
 $activeKindKey = '';
 $activeTopicLv1Key = '';
 $activeTopicLv2Key = '';
+$activeTopicLv3Key = '';
 $activeKindLabel = '';
 $activeTopicLv1Label = '';
 $activeTopicLv2Label = '';
+$activeTopicLv3Label = '';
 
 if ($activeSection === 'thu-vien') {
   foreach ($sectionChildren as $node) {
@@ -184,89 +231,104 @@ if ($activeSection === 'thu-vien') {
       $kindNodes[$key] = $node;
     }
   }
+  if (empty($kindNodes)) {
+    foreach (($facets['library_kinds'] ?? []) as $node) {
+      if (!is_array($node)) {
+        continue;
+      }
+      $key = (string) ($node['key'] ?? '');
+      if ($key !== '') {
+        $kindNodes[$key] = $node;
+      }
+    }
+  }
 
   $candidateKind = trim((string) $filters['library_kind_key']);
   if ($candidateKind !== '' && isset($kindNodes[$candidateKind])) {
     $activeKindKey = $candidateKind;
     $activeKindLabel = node_label($kindNodes[$candidateKind]);
+  } else {
+    $candidateLv1 = trim((string) $filters['topic_lv1_key']);
+    $candidateLv2 = trim((string) $filters['topic_lv2_key']);
+    if ($candidateLv1 !== '' || $candidateLv2 !== '') {
+      $matchedKinds = [];
+      foreach ($kindNodes as $kindKey => $kindNode) {
+        if (is_array($kindNode) && kind_node_contains_topic($kindNode, $candidateLv1, $candidateLv2)) {
+          $matchedKinds[] = (string) $kindKey;
+        }
+      }
+      if (count($matchedKinds) === 1) {
+        $activeKindKey = $matchedKinds[0];
+        $activeKindLabel = node_label($kindNodes[$activeKindKey]);
+      }
+    }
   }
   $filters['library_kind_key'] = $activeKindKey;
-
-  if ($activeKindKey !== '') {
-    foreach (($kindNodes[$activeKindKey]['children'] ?? []) as $node) {
-      if (!is_array($node)) {
-        continue;
-      }
-      $key = (string) ($node['key'] ?? '');
-      if ($key !== '') {
-        $topicLv1Nodes[$key] = $node;
-      }
-    }
-  }
-
-  $candidateLv1 = trim((string) $filters['topic_lv1_key']);
-  if ($candidateLv1 !== '' && isset($topicLv1Nodes[$candidateLv1])) {
-    $activeTopicLv1Key = $candidateLv1;
-    $activeTopicLv1Label = node_label($topicLv1Nodes[$candidateLv1]);
-  }
-  $filters['topic_lv1_key'] = $activeTopicLv1Key;
-
-  if ($activeTopicLv1Key !== '') {
-    foreach (($topicLv1Nodes[$activeTopicLv1Key]['children'] ?? []) as $node) {
-      if (!is_array($node)) {
-        continue;
-      }
-      $key = (string) ($node['key'] ?? '');
-      if ($key !== '') {
-        $topicLv2Nodes[$key] = $node;
-      }
-    }
-  }
-
-  $candidateLv2 = trim((string) $filters['topic_lv2_key']);
-  if ($candidateLv2 !== '' && isset($topicLv2Nodes[$candidateLv2])) {
-    $activeTopicLv2Key = $candidateLv2;
-    $activeTopicLv2Label = node_label($topicLv2Nodes[$candidateLv2]);
-  }
-  $filters['topic_lv2_key'] = $activeTopicLv2Key;
 } else {
   $filters['library_kind_key'] = '';
-  foreach ($sectionChildren as $node) {
+}
+
+$topicSourceChildren = $sectionChildren;
+if ($activeSection === 'thu-vien') {
+  $topicSourceChildren = ($activeKindKey !== '' && is_array($kindNodes[$activeKindKey]['children'] ?? null))
+    ? $kindNodes[$activeKindKey]['children']
+    : [];
+}
+
+foreach ($topicSourceChildren as $node) {
+  if (!is_array($node)) {
+    continue;
+  }
+  $key = (string) ($node['key'] ?? '');
+  if ($key !== '') {
+    $topicLv1Nodes[$key] = $node;
+  }
+}
+
+$candidateLv1 = trim((string) $filters['topic_lv1_key']);
+if ($candidateLv1 !== '' && isset($topicLv1Nodes[$candidateLv1])) {
+  $activeTopicLv1Key = $candidateLv1;
+  $activeTopicLv1Label = node_label($topicLv1Nodes[$candidateLv1]);
+}
+$filters['topic_lv1_key'] = $activeTopicLv1Key;
+
+if ($activeTopicLv1Key !== '') {
+  foreach (($topicLv1Nodes[$activeTopicLv1Key]['children'] ?? []) as $node) {
+    if (!is_array($node)) {
+      continue;
+    }
+    $key = (string) ($node['key'] ?? '');
+    if ($key !== '' || node_label($node) !== '') {
+      $topicLv2Nodes[$key] = $node;
+    }
+  }
+}
+
+$candidateLv2 = trim((string) $filters['topic_lv2_key']);
+if ($candidateLv2 !== '' && isset($topicLv2Nodes[$candidateLv2])) {
+  $activeTopicLv2Key = $candidateLv2;
+  $activeTopicLv2Label = node_label($topicLv2Nodes[$candidateLv2]);
+}
+$filters['topic_lv2_key'] = $activeTopicLv2Key;
+
+if ($activeTopicLv2Key !== '' && isset($topicLv2Nodes[$activeTopicLv2Key])) {
+  foreach (($topicLv2Nodes[$activeTopicLv2Key]['children'] ?? []) as $node) {
     if (!is_array($node)) {
       continue;
     }
     $key = (string) ($node['key'] ?? '');
     if ($key !== '') {
-      $topicLv1Nodes[$key] = $node;
+      $topicLv3Nodes[$key] = $node;
     }
   }
-
-  $candidateLv1 = trim((string) $filters['topic_lv1_key']);
-  if ($candidateLv1 !== '' && isset($topicLv1Nodes[$candidateLv1])) {
-    $activeTopicLv1Key = $candidateLv1;
-    $activeTopicLv1Label = node_label($topicLv1Nodes[$candidateLv1]);
-  }
-  $filters['topic_lv1_key'] = $activeTopicLv1Key;
-
-  if ($activeTopicLv1Key !== '') {
-    foreach (($topicLv1Nodes[$activeTopicLv1Key]['children'] ?? []) as $node) {
-      if (!is_array($node)) {
-        continue;
-      }
-      $key = (string) ($node['key'] ?? '');
-      if ($key !== '') {
-        $topicLv2Nodes[$key] = $node;
-      }
-    }
-  }
-
-  $candidateLv2 = trim((string) $filters['topic_lv2_key']);
-  if ($candidateLv2 !== '' && isset($topicLv2Nodes[$candidateLv2])) {
-    $activeTopicLv2Key = $candidateLv2;
-    $activeTopicLv2Label = node_label($topicLv2Nodes[$candidateLv2]);
-  }
-  $filters['topic_lv2_key'] = $activeTopicLv2Key;
 }
+
+$candidateLv3 = trim((string) $filters['topic_lv3_key']);
+if ($candidateLv3 !== '' && isset($topicLv3Nodes[$candidateLv3])) {
+  $activeTopicLv3Key = $candidateLv3;
+  $activeTopicLv3Label = node_label($topicLv3Nodes[$candidateLv3]);
+}
+$filters['topic_lv3_key'] = $activeTopicLv3Key;
 
 $query = query_articles_index($filters);
 $items = $query['items'];
@@ -319,89 +381,106 @@ if ($activeTopicLv1Label !== '') {
 if ($activeTopicLv2Label !== '') {
   $contextParts[] = $activeTopicLv2Label;
 }
+if ($activeTopicLv3Label !== '') {
+  $contextParts[] = $activeTopicLv3Label;
+}
+if (trim((string) ($filters['tag'] ?? '')) !== '') {
+  $contextParts[] = 'Tag: ' . trim((string) $filters['tag']);
+}
 $contextSummary = implode(' › ', $contextParts);
 
-$sidebarTreeMode = $activeSection === 'thu-vien' ? 'library' : 'news';
 $sidebarTreeRoots = [];
-if ($sidebarTreeMode === 'library') {
+if ($activeSection === 'thu-vien') {
   foreach ($kindNodes as $kindKey => $kindNode) {
+    if (!is_array($kindNode)) {
+      continue;
+    }
+    $kindKey = (string) $kindKey;
     $kindActive = $activeKindKey === $kindKey;
     $groupEntries = [];
-    foreach (($kindNode['children'] ?? []) as $lv1Node) {
-      if (!is_array($lv1Node)) {
-        continue;
-      }
-      $lv1Key = (string) ($lv1Node['key'] ?? '');
-      if ($lv1Key === '') {
-        continue;
-      }
-      $lv1Active = $kindActive && $activeTopicLv1Key === $lv1Key;
-      $childEntries = [];
-      if ($lv1Active) {
-        foreach (($lv1Node['children'] ?? []) as $lv2Node) {
-          if (!is_array($lv2Node)) {
-            continue;
-          }
-          $lv2Key = (string) ($lv2Node['key'] ?? '');
-          if ($lv2Key === '') {
-            continue;
-          }
-          $childEntries[] = [
-            'label' => node_label($lv2Node),
-            'count' => (int) ($lv2Node['count'] ?? 0),
-            'active' => $activeTopicLv2Key === $lv2Key,
-            'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
-              'section' => 'thu-vien',
-              'library_kind_key' => $kindKey,
-              'topic_lv1_key' => $lv1Key,
-              'topic_lv2_key' => $lv2Key,
-            ])),
-          ];
+    $kindBaseParams = $scopeParams + [
+      'section' => 'thu-vien',
+      'library_kind_key' => $kindKey,
+    ];
+
+    if ($kindActive) {
+      foreach (($kindNode['children'] ?? []) as $lv1Node) {
+        if (!is_array($lv1Node)) {
+          continue;
         }
+        $lv1Key = (string) ($lv1Node['key'] ?? '');
+        $lv1Label = node_label($lv1Node);
+        if ($lv1Key === '' && $lv1Label === '') {
+          continue;
+        }
+        $lv1Expanded = $activeTopicLv1Key === $lv1Key;
+        $lv2Entries = [];
+        if ($lv1Expanded) {
+          foreach (($lv1Node['children'] ?? []) as $lv2Node) {
+            if (!is_array($lv2Node)) {
+              continue;
+            }
+            $lv2Key = (string) ($lv2Node['key'] ?? '');
+            $lv2Label = node_label($lv2Node);
+            if ($lv2Key === '' && $lv2Label === '') {
+              continue;
+            }
+            $lv2Entries[] = [
+              'label' => $lv2Label,
+              'count' => (int) ($lv2Node['count'] ?? 0),
+              'active' => $activeTopicLv2Key === $lv2Key,
+              'href' => admin_url('articles.php' . build_articles_query($kindBaseParams + [
+                'topic_lv1_key' => $lv1Key,
+                'topic_lv2_key' => $lv2Key,
+              ])),
+            ];
+          }
+        }
+        $groupEntries[] = [
+          'label' => $lv1Label,
+          'count' => (int) ($lv1Node['count'] ?? 0),
+          'active' => $lv1Expanded && $activeTopicLv2Key === '',
+          'expanded' => $lv1Expanded,
+          'href' => admin_url('articles.php' . build_articles_query($kindBaseParams + [
+            'topic_lv1_key' => $lv1Key,
+          ])),
+          'children' => $lv2Entries,
+        ];
       }
-      $groupEntries[] = [
-        'label' => node_label($lv1Node),
-        'count' => (int) ($lv1Node['count'] ?? 0),
-        'active' => $lv1Active,
-        'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
-          'section' => 'thu-vien',
-          'library_kind_key' => $kindKey,
-          'topic_lv1_key' => $lv1Key,
-        ])),
-        'children' => $childEntries,
-      ];
     }
 
     $sidebarTreeRoots[] = [
       'label' => node_label($kindNode),
       'count' => (int) ($kindNode['count'] ?? 0),
       'active' => $kindActive,
-      'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
-        'section' => 'thu-vien',
-        'library_kind_key' => $kindKey,
-      ])),
-      'groups' => $groupEntries,
+      'expanded' => $kindActive,
+      'href' => admin_url('articles.php' . build_articles_query($kindBaseParams)),
+      'children' => $groupEntries,
     ];
   }
 } else {
   foreach ($topicLv1Nodes as $lv1Key => $lv1Node) {
     $lv1Active = $activeTopicLv1Key === $lv1Key;
     $childEntries = [];
+    $treeBaseParams = $scopeParams + [
+      'section' => 'ban-tin',
+    ];
+
     if ($lv1Active) {
       foreach (($lv1Node['children'] ?? []) as $lv2Node) {
         if (!is_array($lv2Node)) {
           continue;
         }
         $lv2Key = (string) ($lv2Node['key'] ?? '');
-        if ($lv2Key === '') {
+        $lv2Label = node_label($lv2Node);
+        if ($lv2Key === '' && $lv2Label === '') {
           continue;
         }
         $childEntries[] = [
-          'label' => node_label($lv2Node),
+          'label' => $lv2Label,
           'count' => (int) ($lv2Node['count'] ?? 0),
           'active' => $activeTopicLv2Key === $lv2Key,
-          'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
-            'section' => 'ban-tin',
+          'href' => admin_url('articles.php' . build_articles_query($treeBaseParams + [
             'topic_lv1_key' => $lv1Key,
             'topic_lv2_key' => $lv2Key,
           ])),
@@ -411,9 +490,9 @@ if ($sidebarTreeMode === 'library') {
     $sidebarTreeRoots[] = [
       'label' => node_label($lv1Node),
       'count' => (int) ($lv1Node['count'] ?? 0),
-      'active' => $lv1Active,
-      'href' => admin_url('articles.php' . build_articles_query($scopeParams + [
-        'section' => 'ban-tin',
+      'active' => $lv1Active && $activeTopicLv2Key === '',
+      'expanded' => $lv1Active,
+      'href' => admin_url('articles.php' . build_articles_query($treeBaseParams + [
         'topic_lv1_key' => $lv1Key,
       ])),
       'children' => $childEntries,
@@ -446,73 +525,21 @@ ob_start();
       $rootCount = (int) ($root['count'] ?? 0);
       $rootHref = (string) ($root['href'] ?? '#');
       $rootActive = !empty($root['active']);
+      $rootExpanded = array_key_exists('expanded', $root) ? !empty($root['expanded']) : $rootActive;
       if ($rootLabel === '') {
         continue;
       }
       ?>
-      <section class="sidebar-tree-node <?= $rootActive ? 'is-active' : '' ?>">
+      <section class="sidebar-tree-node <?= $rootExpanded ? 'is-active' : '' ?>">
         <a class="sidebar-tree-root <?= $rootActive ? 'is-active' : '' ?>" href="<?= h($rootHref) ?>">
           <span><?= h($rootLabel) ?></span>
           <small><?= h((string) $rootCount) ?></small>
         </a>
 
-        <?php if ($sidebarTreeMode === 'library'): ?>
-          <?php
-          $groupEntries = is_array($root['groups'] ?? null) ? $root['groups'] : [];
-          ?>
-          <?php if ($rootActive && !empty($groupEntries)): ?>
-            <div class="sidebar-tree-groups">
-              <?php foreach ($groupEntries as $group): ?>
-                <?php
-                if (!is_array($group)) {
-                  continue;
-                }
-                $groupLabel = (string) ($group['label'] ?? '');
-                $groupCount = (int) ($group['count'] ?? 0);
-                $groupHref = (string) ($group['href'] ?? '#');
-                $groupActive = !empty($group['active']);
-                $childEntries = is_array($group['children'] ?? null) ? $group['children'] : [];
-                if ($groupLabel === '') {
-                  continue;
-                }
-                ?>
-                <div class="sidebar-tree-group-wrap">
-                  <a class="sidebar-tree-group <?= $groupActive ? 'is-active' : '' ?>" href="<?= h($groupHref) ?>">
-                    <span><?= h($groupLabel) ?></span>
-                    <small><?= h((string) $groupCount) ?></small>
-                  </a>
-
-                  <?php if ($groupActive && !empty($childEntries)): ?>
-                    <div class="sidebar-tree-children">
-                      <?php foreach ($childEntries as $child): ?>
-                        <?php
-                        if (!is_array($child)) {
-                          continue;
-                        }
-                        $childLabel = (string) ($child['label'] ?? '');
-                        $childCount = (int) ($child['count'] ?? 0);
-                        $childHref = (string) ($child['href'] ?? '#');
-                        $childActive = !empty($child['active']);
-                        if ($childLabel === '') {
-                          continue;
-                        }
-                        ?>
-                        <a class="sidebar-tree-child <?= $childActive ? 'is-active' : '' ?>" href="<?= h($childHref) ?>">
-                          <span><?= h($childLabel) ?></span>
-                          <small><?= h((string) $childCount) ?></small>
-                        </a>
-                      <?php endforeach; ?>
-                    </div>
-                  <?php endif; ?>
-                </div>
-              <?php endforeach; ?>
-            </div>
-          <?php endif; ?>
-        <?php else: ?>
           <?php
           $childEntries = is_array($root['children'] ?? null) ? $root['children'] : [];
           ?>
-          <?php if ($rootActive && !empty($childEntries)): ?>
+          <?php if ($rootExpanded && !empty($childEntries)): ?>
             <div class="sidebar-tree-children">
               <?php foreach ($childEntries as $child): ?>
                 <?php
@@ -523,6 +550,8 @@ ob_start();
                 $childCount = (int) ($child['count'] ?? 0);
                 $childHref = (string) ($child['href'] ?? '#');
                 $childActive = !empty($child['active']);
+                $childExpanded = array_key_exists('expanded', $child) ? !empty($child['expanded']) : $childActive;
+                $grandchildEntries = is_array($child['children'] ?? null) ? $child['children'] : [];
                 if ($childLabel === '') {
                   continue;
                 }
@@ -531,10 +560,31 @@ ob_start();
                   <span><?= h($childLabel) ?></span>
                   <small><?= h((string) $childCount) ?></small>
                 </a>
+                <?php if ($childExpanded && !empty($grandchildEntries)): ?>
+                  <div class="sidebar-tree-grandchildren">
+                    <?php foreach ($grandchildEntries as $grandchild): ?>
+                      <?php
+                      if (!is_array($grandchild)) {
+                        continue;
+                      }
+                      $grandchildLabel = (string) ($grandchild['label'] ?? '');
+                      $grandchildCount = (int) ($grandchild['count'] ?? 0);
+                      $grandchildHref = (string) ($grandchild['href'] ?? '#');
+                      $grandchildActive = !empty($grandchild['active']);
+                      if ($grandchildLabel === '') {
+                        continue;
+                      }
+                      ?>
+                      <a class="sidebar-tree-grandchild <?= $grandchildActive ? 'is-active' : '' ?>" href="<?= h($grandchildHref) ?>">
+                        <span><?= h($grandchildLabel) ?></span>
+                        <small><?= h((string) $grandchildCount) ?></small>
+                      </a>
+                    <?php endforeach; ?>
+                  </div>
+                <?php endif; ?>
               <?php endforeach; ?>
             </div>
           <?php endif; ?>
-        <?php endif; ?>
       </section>
     <?php endforeach; ?>
     <?php if (empty($sidebarTreeRoots)): ?>
@@ -571,9 +621,10 @@ admin_layout_header([
 
   <form method="get" class="article-filter-form compact single-row" novalidate data-instant-filter="1">
     <input type="hidden" name="section" value="<?= h($activeSection) ?>">
-    <input type="hidden" name="library_kind_key" value="<?= h((string) $filters['library_kind_key']) ?>">
     <input type="hidden" name="topic_lv1_key" value="<?= h((string) $filters['topic_lv1_key']) ?>">
     <input type="hidden" name="topic_lv2_key" value="<?= h((string) $filters['topic_lv2_key']) ?>">
+    <input type="hidden" name="topic_lv3_key" value="<?= h((string) $filters['topic_lv3_key']) ?>">
+    <input type="hidden" name="tag" value="<?= h((string) $filters['tag']) ?>">
     <div class="editor-toolbar-row">
       <input
         class="toolbar-search"
@@ -583,6 +634,20 @@ admin_layout_header([
         placeholder="Tìm tiêu đề, mã bài..."
         aria-label="Tìm nhanh"
       >
+
+      <select class="toolbar-select" name="library_kind_key" aria-label="Loại tài liệu">
+        <?php if ($activeSection === 'thu-vien'): ?>
+          <option value="">Tất cả loại tài liệu</option>
+          <?php foreach ($kindNodes as $kindKey => $kindNode): ?>
+            <?php if (!is_array($kindNode)) continue; ?>
+            <option value="<?= h((string) $kindKey) ?>" <?= $activeKindKey === (string) $kindKey ? 'selected' : '' ?>>
+              <?= h(node_label($kindNode)) ?>
+            </option>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <option value="">Loại tài liệu: không áp dụng</option>
+        <?php endif; ?>
+      </select>
 
       <select class="toolbar-select" name="sort" aria-label="Sắp xếp">
         <?php
@@ -659,6 +724,8 @@ admin_layout_header([
               'library_kind_key' => (string) $filters['library_kind_key'],
               'topic_lv1_key' => (string) $filters['topic_lv1_key'],
               'topic_lv2_key' => (string) $filters['topic_lv2_key'],
+              'topic_lv3_key' => (string) $filters['topic_lv3_key'],
+              'tag' => (string) $filters['tag'],
               'review_status' => (string) $filters['review_status'],
               'q' => (string) $filters['q'],
               'sort' => (string) $filters['sort'],
@@ -692,13 +759,13 @@ admin_layout_header([
                   if (!empty($article['topic_lv2_label'])) {
                     $contextTokens[] = (string) $article['topic_lv2_label'];
                   }
+                  if (!empty($article['topic_lv3_label'])) {
+                    $contextTokens[] = (string) $article['topic_lv3_label'];
+                  }
+                  $contextLine = implode(' · ', $contextTokens);
                   ?>
-                  <?php if (!empty($contextTokens)): ?>
-                    <div class="article-context-badges">
-                      <?php foreach ($contextTokens as $token): ?>
-                        <span class="article-context-badge"><?= h($token) ?></span>
-                      <?php endforeach; ?>
-                    </div>
+                  <?php if ($contextLine !== ''): ?>
+                    <div class="article-context-line"><?= h($contextLine) ?></div>
                   <?php endif; ?>
                 </div>
               </td>
@@ -743,6 +810,8 @@ admin_layout_header([
                       <input type="hidden" name="library_kind_key" value="<?= h((string) $filters['library_kind_key']) ?>">
                       <input type="hidden" name="topic_lv1_key" value="<?= h((string) $filters['topic_lv1_key']) ?>">
                       <input type="hidden" name="topic_lv2_key" value="<?= h((string) $filters['topic_lv2_key']) ?>">
+                      <input type="hidden" name="topic_lv3_key" value="<?= h((string) $filters['topic_lv3_key']) ?>">
+                      <input type="hidden" name="tag" value="<?= h((string) $filters['tag']) ?>">
                       <input type="hidden" name="review_status" value="<?= h((string) $filters['review_status']) ?>">
                       <input type="hidden" name="q" value="<?= h((string) $filters['q']) ?>">
                       <input type="hidden" name="sort" value="<?= h((string) $filters['sort']) ?>">
@@ -770,6 +839,8 @@ admin_layout_header([
                       <input type="hidden" name="library_kind_key" value="<?= h((string) $filters['library_kind_key']) ?>">
                       <input type="hidden" name="topic_lv1_key" value="<?= h((string) $filters['topic_lv1_key']) ?>">
                       <input type="hidden" name="topic_lv2_key" value="<?= h((string) $filters['topic_lv2_key']) ?>">
+                      <input type="hidden" name="topic_lv3_key" value="<?= h((string) $filters['topic_lv3_key']) ?>">
+                      <input type="hidden" name="tag" value="<?= h((string) $filters['tag']) ?>">
                       <input type="hidden" name="review_status" value="<?= h((string) $filters['review_status']) ?>">
                       <input type="hidden" name="q" value="<?= h((string) $filters['q']) ?>">
                       <input type="hidden" name="sort" value="<?= h((string) $filters['sort']) ?>">
@@ -800,6 +871,8 @@ admin_layout_header([
         'library_kind_key' => (string) $filters['library_kind_key'],
         'topic_lv1_key' => (string) $filters['topic_lv1_key'],
         'topic_lv2_key' => (string) $filters['topic_lv2_key'],
+        'topic_lv3_key' => (string) $filters['topic_lv3_key'],
+        'tag' => (string) $filters['tag'],
         'review_status' => (string) $filters['review_status'],
         'q' => (string) $filters['q'],
         'sort' => (string) $filters['sort'],

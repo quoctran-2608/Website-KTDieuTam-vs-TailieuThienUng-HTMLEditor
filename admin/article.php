@@ -125,6 +125,16 @@ function build_editable_payload(array $article, array $parseResult): array
     'excerpt' => (string) ($summaryFromHtml !== '' ? $summaryFromHtml : ($article['card_badge_label'] ?? '')),
     'publish_date' => (string) ($metaPayload['publishDate'] ?? ''),
     'modified_date' => (string) (($metaPayload['modifiedDate'] ?? '') ?: ''),
+    'section_key' => (string) ($metaPayload['section'] ?? $metaPayload['sectionKey'] ?? ($article['section'] ?? '')),
+    'section_label' => (string) ($metaPayload['sectionLabel'] ?? ($article['section_label'] ?? '')),
+    'library_kind_key' => (string) ($metaPayload['libraryKindKey'] ?? ($article['library_kind_key'] ?? '')),
+    'library_kind_label' => (string) ($metaPayload['libraryKindLabel'] ?? ($article['library_kind_label'] ?? '')),
+    'topic_lv1_key' => (string) ($metaPayload['topicLv1Key'] ?? ($article['topic_lv1_key'] ?? '')),
+    'topic_lv1_label' => (string) ($metaPayload['topicLv1Label'] ?? ($article['topic_lv1_label'] ?? '')),
+    'topic_lv2_key' => (string) ($metaPayload['topicLv2Key'] ?? ($article['topic_lv2_key'] ?? '')),
+    'topic_lv2_label' => (string) ($metaPayload['topicLv2Label'] ?? ($article['topic_lv2_label'] ?? '')),
+    'topic_lv3_key' => (string) ($metaPayload['topicLv3Key'] ?? ($article['topic_lv3_key'] ?? '')),
+    'topic_lv3_label' => (string) ($metaPayload['topicLv3Label'] ?? ($article['topic_lv3_label'] ?? '')),
     'tags' => is_array($metaPayload['tags'] ?? null) ? array_values(array_filter(array_map('strval', $metaPayload['tags']))) : [],
     'tags_text' => is_array($metaPayload['tags'] ?? null) ? implode(', ', array_values(array_filter(array_map('strval', $metaPayload['tags'])))) : '',
     'prose_html' => (string) (($parseResult['prose']['inner'] ?? '') ?: ''),
@@ -145,6 +155,8 @@ $listContext = [
   'library_kind_key' => trim((string) ($_GET['library_kind_key'] ?? '')),
   'topic_lv1_key' => trim((string) ($_GET['topic_lv1_key'] ?? '')),
   'topic_lv2_key' => trim((string) ($_GET['topic_lv2_key'] ?? '')),
+  'topic_lv3_key' => trim((string) ($_GET['topic_lv3_key'] ?? '')),
+  'tag' => trim((string) ($_GET['tag'] ?? '')),
   'review_status' => trim((string) ($_GET['review_status'] ?? '')),
   'q' => trim((string) ($_GET['q'] ?? '')),
   'sort' => trim((string) ($_GET['sort'] ?? '')),
@@ -567,6 +579,37 @@ admin_layout_header([
     if ($reviewStatusBy === '') {
       $reviewStatusBy = '—';
     }
+
+    $taxonomyItems = [];
+    $appendTaxonomyItem = static function (string $level, string $label, string $key) use (&$taxonomyItems): void {
+      $label = trim($label);
+      $key = trim($key);
+      if ($label === '' && $key === '') {
+        return;
+      }
+      $taxonomyItems[] = [
+        'level' => $level,
+        'label' => $label !== '' ? $label : $key,
+        'key' => $key,
+      ];
+    };
+    $sectionKey = (string) ($form['section_key'] ?? ($article['section'] ?? ''));
+    $sectionLabel = (string) ($form['section_label'] ?? ($article['section_label'] ?? ''));
+    if ($sectionLabel === '' && $sectionKey !== '') {
+      $sectionLabel = $sectionKey === 'ban-tin' ? 'Bản tin' : ($sectionKey === 'thu-vien' ? 'Thư viện' : $sectionKey);
+    }
+    $appendTaxonomyItem('Section', $sectionLabel, $sectionKey);
+    if ($sectionKey === 'thu-vien') {
+      $appendTaxonomyItem('Cấp 1', (string) ($form['library_kind_label'] ?? ''), (string) ($form['library_kind_key'] ?? ''));
+      $appendTaxonomyItem('Cấp 2', (string) ($form['topic_lv1_label'] ?? ''), (string) ($form['topic_lv1_key'] ?? ''));
+      $appendTaxonomyItem('Cấp 3', (string) ($form['topic_lv2_label'] ?? ''), (string) ($form['topic_lv2_key'] ?? ''));
+      $appendTaxonomyItem('Cấp 4', (string) ($form['topic_lv3_label'] ?? ''), (string) ($form['topic_lv3_key'] ?? ''));
+    } else {
+      $appendTaxonomyItem('Cấp 1', (string) ($form['topic_lv1_label'] ?? ''), (string) ($form['topic_lv1_key'] ?? ''));
+      $appendTaxonomyItem('Cấp 2', (string) ($form['topic_lv2_label'] ?? ''), (string) ($form['topic_lv2_key'] ?? ''));
+      $appendTaxonomyItem('Cấp 3', (string) ($form['topic_lv3_label'] ?? ''), (string) ($form['topic_lv3_key'] ?? ''));
+    }
+    $currentTags = is_array($form['tags'] ?? null) ? array_values(array_filter(array_map('strval', $form['tags']))) : [];
     ?>
 
     <div class="editor-top-actions">
@@ -583,6 +626,8 @@ admin_layout_header([
             <input type="hidden" name="library_kind_key" value="<?= h((string) ($listContext['library_kind_key'] ?? '')) ?>">
             <input type="hidden" name="topic_lv1_key" value="<?= h((string) ($listContext['topic_lv1_key'] ?? '')) ?>">
             <input type="hidden" name="topic_lv2_key" value="<?= h((string) ($listContext['topic_lv2_key'] ?? '')) ?>">
+            <input type="hidden" name="topic_lv3_key" value="<?= h((string) ($listContext['topic_lv3_key'] ?? '')) ?>">
+            <input type="hidden" name="tag" value="<?= h((string) ($listContext['tag'] ?? '')) ?>">
             <input type="hidden" name="review_status" value="<?= h((string) ($listContext['review_status'] ?? '')) ?>">
             <input type="hidden" name="q" value="<?= h((string) ($listContext['q'] ?? '')) ?>">
             <input type="hidden" name="sort" value="<?= h((string) ($listContext['sort'] ?? '')) ?>">
@@ -649,13 +694,40 @@ admin_layout_header([
             <?php if (!empty($validationErrors['prose_html'])): ?><small class="field-error"><?= h((string) $validationErrors['prose_html']) ?></small><?php endif; ?>
           </label>
 
-          <details class="editor-info-panel" <?= $infoPanelOpen ? 'open' : '' ?>>
-            <summary>
-              <i class="fa-solid fa-circle-info"></i>
-              <span>Thông tin bài & tác vụ phụ</span>
-            </summary>
+	          <details class="editor-info-panel" <?= $infoPanelOpen ? 'open' : '' ?>>
+	            <summary>
+	              <i class="fa-solid fa-circle-info"></i>
+	              <span>Thông tin bài & tác vụ phụ</span>
+	            </summary>
 
-            <div class="editor-meta-grid">
+            <div class="editor-taxonomy-card">
+              <div class="editor-taxonomy-card__head">
+                <strong>Phân loại hiện tại</strong>
+                <small>Đọc từ article-meta/data articles, dùng để đối chiếu cây menu 4 cấp.</small>
+              </div>
+              <?php if (!empty($taxonomyItems)): ?>
+                <div class="editor-pill-row editor-taxonomy-row">
+                  <?php foreach ($taxonomyItems as $item): ?>
+                    <span class="editor-pill editor-pill--taxonomy">
+                      <small><?= h((string) ($item['level'] ?? '')) ?></small>
+                      <span><?= h((string) ($item['label'] ?? '')) ?></span>
+                      <?php if (!empty($item['key'])): ?><code><?= h((string) $item['key']) ?></code><?php endif; ?>
+                    </span>
+                  <?php endforeach; ?>
+                </div>
+              <?php else: ?>
+                <p class="editor-taxonomy-empty">Chưa đọc được phân loại từ dữ liệu bài viết.</p>
+              <?php endif; ?>
+              <?php if (!empty($currentTags)): ?>
+                <div class="editor-tag-preview" aria-label="Tags hiện tại">
+                  <?php foreach ($currentTags as $tag): ?>
+                    <span>#<?= h($tag) ?></span>
+                  <?php endforeach; ?>
+                </div>
+              <?php endif; ?>
+            </div>
+
+	            <div class="editor-meta-grid">
               <label class="filter-field span-2">
                 <span>Mô tả ngắn *</span>
                 <input type="text" name="excerpt" value="<?= h((string) ($form['excerpt'] ?? '')) ?>" required>
