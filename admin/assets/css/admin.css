@@ -2116,20 +2116,29 @@ a {
 
 .editor-info-panel {
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background: #fafafa;
-  padding: 10px;
+  border-radius: 14px;
+  background: #fbfaf8;
+  padding: 10px 12px;
 }
 
 .editor-info-panel > summary {
   list-style: none;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   cursor: pointer;
-  font-size: 13px;
-  font-weight: 700;
+  min-height: 36px;
+  border-radius: 10px;
+  padding: 0 6px;
+  font-size: 14px;
+  font-weight: 800;
   color: #374151;
+  transition: background 0.16s ease, color 0.16s ease;
+}
+
+.editor-info-panel > summary:hover {
+  background: #f3f4f6;
+  color: #111827;
 }
 
 .editor-info-panel > summary::-webkit-details-marker {
@@ -2137,7 +2146,19 @@ a {
 }
 
 .editor-info-panel > summary i {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #f3f4f6;
   color: #6b7280;
+  font-size: 13px;
+}
+
+.editor-info-panel[open] > summary i {
+  background: #ede9df;
+  color: #7c5c2e;
 }
 
 .editor-info-panel .editor-meta-grid {
