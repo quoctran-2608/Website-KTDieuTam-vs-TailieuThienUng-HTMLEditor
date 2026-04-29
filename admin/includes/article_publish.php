@@ -349,18 +349,18 @@ function rebuild_public_content_after_publish(string $articleId): array
   $root = dirname(dirname(__DIR__));
   $script = $root . '/tools/rebuild_public_from_articles.py';
   if (!file_exists($script)) {
-    return [
+    return rebuild_public_content_native($articleId, [
       'ok' => false,
       'code' => 'missing_rebuild_tool',
-      'message' => 'Không tìm thấy tools/rebuild_public_from_articles.py.',
-    ];
+      'message' => 'Không tìm thấy tools/rebuild_public_from_articles.py, đã chuyển sang PHP native rebuild.',
+    ]);
   }
   if (!function_exists('exec')) {
-    return [
+    return rebuild_public_content_native($articleId, [
       'ok' => false,
       'code' => 'exec_disabled',
-      'message' => 'PHP exec() đang bị tắt, không thể tự rebuild dữ liệu public.',
-    ];
+      'message' => 'PHP exec() đang bị tắt, đã chuyển sang PHP native rebuild.',
+    ]);
   }
 
   $candidates = [];
@@ -402,11 +402,651 @@ function rebuild_public_content_after_publish(string $articleId): array
     }
   }
 
-  return $last ?? [
+  return rebuild_public_content_native($articleId, $last ?? [
     'ok' => false,
     'code' => 'python_not_found',
     'message' => 'Không tìm thấy python/python3 để rebuild dữ liệu public.',
+  ]);
+}
+
+function public_rebuild_root_path(string $relative = ''): string
+{
+  $root = dirname(dirname(__DIR__));
+  return $relative === '' ? $root : $root . '/' . ltrim($relative, '/');
+}
+
+/**
+ * @param mixed $value
+ * @return array<int,mixed>
+ */
+function public_rebuild_list($value): array
+{
+  return is_array($value) ? array_values($value) : [];
+}
+
+function public_rebuild_text($value): string
+{
+  return trim((string) ($value ?? ''));
+}
+
+function public_rebuild_fold(string $value): string
+{
+  $value = html_entity_decode($value, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+  $value = function_exists('mb_strtolower') ? mb_strtolower($value, 'UTF-8') : strtolower($value);
+  if (class_exists('Normalizer')) {
+    $normalized = Normalizer::normalize($value, Normalizer::FORM_D);
+    if (is_string($normalized)) {
+      $value = preg_replace('/\p{Mn}+/u', '', $normalized) ?? $value;
+    }
+  }
+  $value = str_replace('đ', 'd', $value);
+  return trim((string) preg_replace('/[^a-z0-9]+/u', ' ', $value));
+}
+
+/**
+ * @return array<string,array<string,string>>
+ */
+function public_rebuild_library_meta(): array
+{
+  return [
+    'huong-dan' => [
+      'label' => 'Hướng dẫn',
+      'icon' => 'fa-compass-drafting',
+      'description' => 'Quy trình, cách làm, nghiệp vụ thực tế',
+    ],
+    'bieu-mau' => [
+      'label' => 'Biểu mẫu',
+      'icon' => 'fa-file-lines',
+      'description' => 'Mẫu biểu, hồ sơ, tờ khai dùng ngay',
+    ],
+    'cong-cu' => [
+      'label' => 'Công cụ',
+      'icon' => 'fa-screwdriver-wrench',
+      'description' => 'Excel, HTKK, MISA và file hỗ trợ',
+    ],
+    'van-ban' => [
+      'label' => 'Văn bản',
+      'icon' => 'fa-scale-balanced',
+      'description' => 'Luật, nghị định, thông tư, công văn và cập nhật pháp lý',
+    ],
   ];
+}
+
+function public_rebuild_write_json(string $path, array $data): bool
+{
+  $dir = dirname($path);
+  if (!is_dir($dir) && !mkdir($dir, 0775, true) && !is_dir($dir)) {
+    return false;
+  }
+  $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+  return $json !== false && file_put_contents($path, $json . PHP_EOL) !== false;
+}
+
+function public_rebuild_write_js_store(string $path, string $global, string $key, array $data): bool
+{
+  $dir = dirname($path);
+  if (!is_dir($dir) && !mkdir($dir, 0775, true) && !is_dir($dir)) {
+    return false;
+  }
+  $json = json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+  if ($json === false) {
+    return false;
+  }
+  $content = 'window.' . $global . '=window.' . $global . '||{};window.' . $global . '[' . json_encode($key) . ']=' . $json . ";\n";
+  return file_put_contents($path, $content) !== false;
+}
+
+/**
+ * @return array<int,array<string,mixed>>
+ */
+function public_rebuild_read_articles(): array
+{
+  if (!file_exists(ADMIN_ARTICLES_SOURCE_PATH)) {
+    return [];
+  }
+  $raw = file_get_contents(ADMIN_ARTICLES_SOURCE_PATH);
+  if ($raw === false || trim($raw) === '') {
+    return [];
+  }
+  $decoded = json_decode($raw, true);
+  return is_array($decoded) ? array_values(array_filter($decoded, 'is_array')) : [];
+}
+
+/**
+ * @param array<string,mixed> $item
+ * @return array<string,mixed>
+ */
+function public_rebuild_hub_item(array $item): array
+{
+  $href = public_rebuild_text($item['href'] ?? ($item['id'] ?? ''));
+  return [
+    'file' => basename($href, '.html') . '.htm',
+    'title' => public_rebuild_text($item['title'] ?? ''),
+    'excerpt' => public_rebuild_text($item['excerpt'] ?? ''),
+    'topic_lv1_key' => public_rebuild_text($item['topicLv1Key'] ?? ''),
+    'topic_lv1_label' => public_rebuild_text($item['topicLv1Label'] ?? ''),
+    'topic_lv2_key' => public_rebuild_text($item['topicLv2Key'] ?? ''),
+    'topic_lv2_label' => public_rebuild_text($item['topicLv2Label'] ?? ''),
+    'topic_lv3_key' => public_rebuild_text($item['topicLv3Key'] ?? ''),
+    'topic_lv3_label' => public_rebuild_text($item['topicLv3Label'] ?? ''),
+    'tags' => public_rebuild_list($item['tags'] ?? []),
+    'badge_label' => public_rebuild_text($item['cardBadgeLabel'] ?? ''),
+    'topic_label' => public_rebuild_text($item['cardTopicLabel'] ?? ''),
+    'library_kind_key' => public_rebuild_text($item['libraryKindKey'] ?? ''),
+    'library_kind_label' => public_rebuild_text($item['libraryKindLabel'] ?? ''),
+    'tool_lv3_key' => public_rebuild_text($item['toolLv3Key'] ?? ''),
+    'tool_lv3_label' => public_rebuild_text($item['toolLv3Label'] ?? ''),
+    'publish_date' => public_rebuild_text($item['publishDate'] ?? ''),
+    'image' => public_rebuild_text($item['image'] ?? 'assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg'),
+    'href' => $href,
+  ];
+}
+
+/**
+ * @param array<int,array<string,mixed>> $articles
+ * @return array<string,array<int,array<string,mixed>>>
+ */
+function public_rebuild_group_articles(array $articles): array
+{
+  $grouped = ['thu-vien' => [], 'ban-tin' => []];
+  foreach ($articles as $item) {
+    $section = public_rebuild_text($item['section'] ?? '');
+    if (!isset($grouped[$section])) {
+      continue;
+    }
+    $grouped[$section][] = $item;
+  }
+  foreach ($grouped as &$items) {
+    usort($items, static function (array $a, array $b): int {
+      return strcmp(public_rebuild_fold(public_rebuild_text($a['title'] ?? '')), public_rebuild_fold(public_rebuild_text($b['title'] ?? '')));
+    });
+  }
+  unset($items);
+  return $grouped;
+}
+
+/**
+ * @param array<int,array<string,mixed>> $items
+ * @return array<int,array<string,mixed>>
+ */
+function public_rebuild_taxonomy(array $items): array
+{
+  $tree = [];
+  foreach ($items as $item) {
+    $lv1Key = public_rebuild_text($item['topicLv1Key'] ?? '');
+    if ($lv1Key === '') {
+      continue;
+    }
+    if (!isset($tree[$lv1Key])) {
+      $tree[$lv1Key] = [
+        'key' => $lv1Key,
+        'label' => public_rebuild_text($item['topicLv1Label'] ?? $lv1Key),
+        'count' => 0,
+        'children' => [],
+      ];
+    }
+    $tree[$lv1Key]['count']++;
+    $lv2Key = public_rebuild_text($item['topicLv2Key'] ?? '');
+    $lv2Label = public_rebuild_text($item['topicLv2Label'] ?? $lv2Key);
+    if (!isset($tree[$lv1Key]['children'][$lv2Key])) {
+      $tree[$lv1Key]['children'][$lv2Key] = [
+        'key' => $lv2Key,
+        'label' => $lv2Label,
+        'count' => 0,
+        'children' => [],
+      ];
+    }
+    $tree[$lv1Key]['children'][$lv2Key]['count']++;
+    $lv3Key = public_rebuild_text($item['topicLv3Key'] ?? '');
+    if ($lv3Key !== '') {
+      if (!isset($tree[$lv1Key]['children'][$lv2Key]['children'][$lv3Key])) {
+        $tree[$lv1Key]['children'][$lv2Key]['children'][$lv3Key] = [
+          'key' => $lv3Key,
+          'label' => public_rebuild_text($item['topicLv3Label'] ?? $lv3Key),
+          'count' => 0,
+        ];
+      }
+      $tree[$lv1Key]['children'][$lv2Key]['children'][$lv3Key]['count']++;
+    }
+  }
+
+  $sortNodes = static function (array $nodes) use (&$sortNodes): array {
+    $list = array_values($nodes);
+    foreach ($list as &$node) {
+      if (isset($node['children']) && is_array($node['children'])) {
+        $children = $sortNodes($node['children']);
+        if (!empty($children)) {
+          $node['children'] = $children;
+        } else {
+          unset($node['children']);
+        }
+      }
+    }
+    unset($node);
+    usort($list, static function (array $a, array $b): int {
+      $countCmp = ((int) ($b['count'] ?? 0)) <=> ((int) ($a['count'] ?? 0));
+      return $countCmp !== 0 ? $countCmp : strcmp((string) ($a['label'] ?? ''), (string) ($b['label'] ?? ''));
+    });
+    return $list;
+  };
+
+  return $sortNodes($tree);
+}
+
+/**
+ * @param array<int,array<string,mixed>> $items
+ * @return array<int,array<string,mixed>>
+ */
+function public_rebuild_library_kinds(array $items): array
+{
+  $meta = public_rebuild_library_meta();
+  $counts = [];
+  foreach ($items as $item) {
+    $key = public_rebuild_text($item['libraryKindKey'] ?? '');
+    if ($key !== '') {
+      $counts[$key] = ($counts[$key] ?? 0) + 1;
+    }
+  }
+  $out = [];
+  foreach ($meta as $key => $row) {
+    $count = (int) ($counts[$key] ?? 0);
+    if ($count <= 0) {
+      continue;
+    }
+    $out[] = [
+      'key' => $key,
+      'label' => $row['label'],
+      'count' => $count,
+      'href' => 'thu-vien.html?kind=' . $key,
+      'icon' => $row['icon'],
+      'description' => $row['description'],
+    ];
+  }
+  return $out;
+}
+
+/**
+ * @param array<int,array<string,mixed>> $items
+ * @return array<int,array<string,mixed>>
+ */
+function public_rebuild_feed(array $items): array
+{
+  usort($items, static function (array $a, array $b): int {
+    $dateCmp = strcmp(public_rebuild_text($b['publishDate'] ?? ''), public_rebuild_text($a['publishDate'] ?? ''));
+    return $dateCmp !== 0 ? $dateCmp : strcmp(public_rebuild_text($a['title'] ?? ''), public_rebuild_text($b['title'] ?? ''));
+  });
+  $items = array_slice($items, 0, 12);
+  return array_map(static function (array $item): array {
+    $href = public_rebuild_text($item['href'] ?? ($item['id'] ?? ''));
+    return [
+      'title' => public_rebuild_text($item['title'] ?? ''),
+      'href' => $href,
+      'canonical' => 'https://ketoandieutam.vn/' . $href,
+      'publishDate' => public_rebuild_text($item['publishDate'] ?? ''),
+      'modifiedDate' => $item['modifiedDate'] ?? null,
+      'image' => public_rebuild_text($item['image'] ?? ''),
+      'badgeLabel' => public_rebuild_text($item['cardBadgeLabel'] ?? ''),
+      'topicLabel' => public_rebuild_text($item['cardTopicLabel'] ?? ''),
+      'libraryKindKey' => public_rebuild_text($item['libraryKindKey'] ?? ''),
+      'libraryKindLabel' => public_rebuild_text($item['libraryKindLabel'] ?? ''),
+      'toolLv3Key' => public_rebuild_text($item['toolLv3Key'] ?? ''),
+      'toolLv3Label' => public_rebuild_text($item['toolLv3Label'] ?? ''),
+      'tags' => public_rebuild_list($item['tags'] ?? []),
+    ];
+  }, $items);
+}
+
+/**
+ * @return array<string,mixed>
+ */
+function public_rebuild_existing_index(): array
+{
+  $path = public_rebuild_root_path('content-index.js');
+  if (!file_exists($path)) {
+    return [];
+  }
+  $raw = trim((string) file_get_contents($path));
+  $prefix = 'window.KetoanDieuTamContentIndex=';
+  if (str_starts_with($raw, $prefix)) {
+    $raw = substr($raw, strlen($prefix));
+  }
+  $raw = rtrim($raw, ";\r\n\t ");
+  $decoded = json_decode($raw, true);
+  return is_array($decoded) ? $decoded : [];
+}
+
+/**
+ * @param array<string,array<int,array<string,mixed>>> $grouped
+ * @return array<string,mixed>
+ */
+function public_rebuild_content_index(array $grouped, string $targetArticleId): array
+{
+  $existing = public_rebuild_existing_index();
+  $existingViews = is_array($existing['articleViews'] ?? null) ? $existing['articleViews'] : [];
+  $articles = [];
+  $views = [];
+  foreach ($grouped as $section => $items) {
+    $ids = array_map(static fn (array $item): string => public_rebuild_text($item['href'] ?? ($item['id'] ?? '')), $items);
+    foreach ($items as $idx => $item) {
+      $href = public_rebuild_text($item['href'] ?? ($item['id'] ?? ''));
+      $articles[$href] = [
+        'id' => $href,
+        'section' => $section,
+        'sectionLabel' => $section === 'ban-tin' ? 'Bản tin' : 'Thư viện',
+        'sectionHref' => $section . '.html',
+        'href' => $href,
+        'canonical' => 'https://ketoandieutam.vn/' . $href,
+        'title' => public_rebuild_text($item['title'] ?? ''),
+        'excerpt' => public_rebuild_text($item['excerpt'] ?? ''),
+        'topicLv1Key' => public_rebuild_text($item['topicLv1Key'] ?? ''),
+        'topicLv1Label' => public_rebuild_text($item['topicLv1Label'] ?? ''),
+        'topicLv2Key' => public_rebuild_text($item['topicLv2Key'] ?? ''),
+        'topicLv2Label' => public_rebuild_text($item['topicLv2Label'] ?? ''),
+        'topicLv3Key' => public_rebuild_text($item['topicLv3Key'] ?? ''),
+        'topicLv3Label' => public_rebuild_text($item['topicLv3Label'] ?? ''),
+        'tags' => public_rebuild_list($item['tags'] ?? []),
+        'primarySection' => public_rebuild_text($item['primarySection'] ?? $section),
+        'secondarySections' => public_rebuild_list($item['secondarySections'] ?? []),
+        'classificationReasons' => is_array($item['classificationReasons'] ?? null) ? $item['classificationReasons'] : [],
+        'legacyPrimarySection' => $item['legacyPrimarySection'] ?? null,
+        'legacySecondarySections' => public_rebuild_list($item['legacySecondarySections'] ?? []),
+        'libraryKindKey' => public_rebuild_text($item['libraryKindKey'] ?? ''),
+        'libraryKindLabel' => public_rebuild_text($item['libraryKindLabel'] ?? ''),
+        'toolLv3Key' => public_rebuild_text($item['toolLv3Key'] ?? ''),
+        'toolLv3Label' => public_rebuild_text($item['toolLv3Label'] ?? ''),
+        'cardBadgeLabel' => public_rebuild_text($item['cardBadgeLabel'] ?? ''),
+        'cardTopicLabel' => public_rebuild_text($item['cardTopicLabel'] ?? ''),
+        'image' => public_rebuild_text($item['image'] ?? ''),
+        'publishDate' => public_rebuild_text($item['publishDate'] ?? ''),
+        'modifiedDate' => $item['modifiedDate'] ?? null,
+        'authorName' => public_rebuild_text($item['authorName'] ?? 'Kế Toán Diệu Tâm'),
+        'authorType' => public_rebuild_text($item['authorType'] ?? 'Organization'),
+      ];
+      if (isset($existingViews[$href]) && is_array($existingViews[$href]) && $href !== $targetArticleId) {
+        $views[$href] = $existingViews[$href];
+        continue;
+      }
+      $views[$href] = [
+        'currentIndex' => $idx + 1,
+        'totalCount' => count($items),
+        'prev' => $ids[$idx - 1] ?? null,
+        'next' => $ids[$idx + 1] ?? null,
+        'newsLatest' => array_slice(array_values(array_filter(array_map(static fn (array $row): string => public_rebuild_text($row['href'] ?? ($row['id'] ?? '')), $grouped['ban-tin'] ?? []), static fn (string $id): bool => $id !== $href)), 0, 3),
+        'libraryLatest' => array_slice(array_values(array_filter(array_map(static fn (array $row): string => public_rebuild_text($row['href'] ?? ($row['id'] ?? '')), $grouped['thu-vien'] ?? []), static fn (string $id): bool => $id !== $href)), 0, 3),
+        'related' => [],
+        'latestOther' => [],
+        'fastView' => true,
+      ];
+    }
+  }
+  return [
+    'generatedAt' => gmdate('c'),
+    'sections' => [
+      'thu-vien' => ['label' => 'Thư viện', 'href' => 'thu-vien.html'],
+      'ban-tin' => ['label' => 'Bản tin', 'href' => 'ban-tin.html'],
+    ],
+    'articles' => $articles,
+    'articleViews' => $views,
+  ];
+}
+
+/**
+ * @param array<string,mixed> $index
+ */
+function public_rebuild_expand_article(array $index, ?string $articleId): ?array
+{
+  if ($articleId === null || $articleId === '' || !isset($index['articles'][$articleId]) || !is_array($index['articles'][$articleId])) {
+    return null;
+  }
+  $article = $index['articles'][$articleId];
+  return [
+    'id' => $article['id'],
+    'section' => $article['section'],
+    'sectionLabel' => $article['sectionLabel'],
+    'sectionHref' => $article['sectionHref'],
+    'href' => $article['href'],
+    'canonical' => $article['canonical'],
+    'title' => $article['title'],
+    'excerpt' => $article['excerpt'],
+    'topicLabel' => $article['topicLv2Label'],
+    'tags' => public_rebuild_list($article['tags'] ?? []),
+    'image' => public_rebuild_text($article['image'] ?? ''),
+    'libraryKindLabel' => public_rebuild_text($article['libraryKindLabel'] ?? ''),
+    'publishDate' => $article['publishDate'] ?? null,
+    'modifiedDate' => $article['modifiedDate'] ?? null,
+  ];
+}
+
+/**
+ * @param array<string,mixed> $index
+ * @param array<int,string> $ids
+ * @return array<int,array<string,mixed>>
+ */
+function public_rebuild_expand_group(array $index, array $ids): array
+{
+  $out = [];
+  foreach ($ids as $id) {
+    $expanded = public_rebuild_expand_article($index, $id);
+    if ($expanded !== null) {
+      $out[] = $expanded;
+    }
+  }
+  return $out;
+}
+
+/**
+ * @param array<string,mixed> $index
+ */
+function public_rebuild_write_target_view(array $index, string $articleId): bool
+{
+  if ($articleId === '' || !isset($index['articleViews'][$articleId]) || !is_array($index['articleViews'][$articleId])) {
+    return false;
+  }
+  $view = $index['articleViews'][$articleId];
+  $expanded = [
+    'currentIndex' => (int) ($view['currentIndex'] ?? 0),
+    'totalCount' => (int) ($view['totalCount'] ?? 0),
+    'prev' => public_rebuild_expand_article($index, is_string($view['prev'] ?? null) ? $view['prev'] : null),
+    'next' => public_rebuild_expand_article($index, is_string($view['next'] ?? null) ? $view['next'] : null),
+    'newsLatest' => public_rebuild_expand_group($index, public_rebuild_list($view['newsLatest'] ?? [])),
+    'libraryLatest' => public_rebuild_expand_group($index, public_rebuild_list($view['libraryLatest'] ?? [])),
+    'related' => public_rebuild_expand_group($index, public_rebuild_list($view['related'] ?? [])),
+    'latestOther' => public_rebuild_expand_group($index, public_rebuild_list($view['latestOther'] ?? [])),
+  ];
+  $path = public_rebuild_root_path('data/article-views/' . $articleId . '.json');
+  return public_rebuild_write_json($path, $expanded)
+    && public_rebuild_write_js_store(substr($path, 0, -5) . '.js', 'KetoanDieuTamArticleViewStore', $articleId, $expanded);
+}
+
+/**
+ * @param array<string,array<int,array<string,mixed>>> $grouped
+ */
+function public_rebuild_write_taxonomy_artifacts(array $grouped): bool
+{
+  $meta = public_rebuild_library_meta();
+  $thuVien = $grouped['thu-vien'] ?? [];
+  $banTin = $grouped['ban-tin'] ?? [];
+  $kindChildren = [];
+  $editorKindChildren = [];
+  foreach ($meta as $kind => $row) {
+    $kindItems = array_values(array_filter($thuVien, static fn (array $item): bool => public_rebuild_text($item['libraryKindKey'] ?? '') === $kind));
+    $tree = public_rebuild_taxonomy($kindItems);
+    $kindChildren[] = [
+      'key' => $kind,
+      'label' => $row['label'],
+      'count' => count($kindItems),
+      'children' => $tree,
+    ];
+    $editorKindChildren[] = [
+      'id' => $kind,
+      'label' => $row['label'],
+      'children' => $tree,
+    ];
+  }
+  $generated = gmdate('c');
+  $taxonomy = [
+    'generatedAt' => $generated,
+    'roots' => [
+      ['key' => 'thu-vien', 'label' => 'Thư viện', 'count' => count($thuVien), 'children' => $kindChildren],
+      ['key' => 'ban-tin', 'label' => 'Bản tin', 'count' => count($banTin), 'children' => public_rebuild_taxonomy($banTin)],
+    ],
+    'toolVariants' => [],
+  ];
+  $editor = [
+    'generatedAt' => $generated,
+    'roots' => [
+      ['id' => 'thu-vien', 'label' => 'Thư viện', 'children' => $editorKindChildren],
+      ['id' => 'ban-tin', 'label' => 'Bản tin', 'children' => public_rebuild_taxonomy($banTin)],
+    ],
+    'variants' => ['cong-cu' => []],
+    'fieldMap' => [
+      'section' => 'primary_category_id',
+      'library_kind' => 'library_kind',
+      'topic_lv1' => 'domain',
+      'topic_lv2' => 'subdomain',
+      'tool_lv3' => 'variant',
+    ],
+  ];
+  $menu = [
+    'generatedAt' => $generated,
+    'items' => [
+      ['key' => 'home', 'label' => 'Trang Chủ', 'href' => 'index.html'],
+      ['key' => 'gioi-thieu', 'label' => 'Giới Thiệu', 'href' => 'gioi-thieu.html'],
+      ['key' => 'giai-phap', 'label' => 'Giải Pháp', 'href' => 'giai-phap.html'],
+      ['key' => 'dao-tao', 'label' => 'Đào Tạo', 'href' => 'dao-tao.html'],
+      [
+        'key' => 'thu-vien',
+        'label' => 'Thư Viện',
+        'href' => 'thu-vien.html',
+        'category' => 'thu-vien',
+        'children' => array_map(static fn (string $kind, array $row): array => [
+          'key' => 'thu-vien-' . $kind,
+          'label' => $row['label'],
+          'href' => 'thu-vien.html?kind=' . $kind,
+          'category' => $kind,
+        ], array_keys($meta), array_values($meta)),
+      ],
+      ['key' => 'ban-tin', 'label' => 'Bản Tin', 'href' => 'ban-tin.html', 'category' => 'ban-tin'],
+      ['key' => 'lien-he', 'label' => 'Liên Hệ', 'href' => 'lien-he.html'],
+    ],
+  ];
+  return public_rebuild_write_json(public_rebuild_root_path('data/taxonomy.json'), $taxonomy)
+    && public_rebuild_write_json(public_rebuild_root_path('data/editor-taxonomy.json'), $editor)
+    && public_rebuild_write_json(public_rebuild_root_path('data/menu-config.json'), $menu);
+}
+
+/**
+ * @param array<string,array<int,array<string,mixed>>> $grouped
+ * @param array<string,mixed> $index
+ */
+function public_rebuild_write_sitemap(array $grouped, array $index): bool
+{
+  $today = gmdate('Y-m-d');
+  $urls = ['  <url><loc>https://ketoandieutam.vn/index.html</loc></url>'];
+  foreach (['thu-vien', 'ban-tin'] as $section) {
+    $count = count($grouped[$section] ?? []);
+    $pages = max(1, (int) ceil($count / 12));
+    for ($page = 1; $page <= $pages; $page++) {
+      $href = $page === 1 ? $section . '.html' : $section . '/trang/' . $page . '/index.html';
+      $urls[] = '  <url><loc>https://ketoandieutam.vn/' . htmlspecialchars($href, ENT_XML1) . '</loc><lastmod>' . $today . '</lastmod></url>';
+    }
+  }
+  foreach (($index['articles'] ?? []) as $article) {
+    if (!is_array($article)) {
+      continue;
+    }
+    $href = public_rebuild_text($article['href'] ?? '');
+    if ($href !== '') {
+      $lastmod = public_rebuild_text($article['modifiedDate'] ?? ($article['publishDate'] ?? $today)) ?: $today;
+      $urls[] = '  <url><loc>https://ketoandieutam.vn/' . htmlspecialchars($href, ENT_XML1) . '</loc><lastmod>' . htmlspecialchars($lastmod, ENT_XML1) . '</lastmod></url>';
+    }
+  }
+  $xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" . implode("\n", $urls) . "\n</urlset>\n";
+  return file_put_contents(public_rebuild_root_path('sitemap.xml'), $xml) !== false;
+}
+
+/**
+ * PHP-native public rebuild fallback. This avoids relying on disabled exec()/python on hosting.
+ *
+ * @param array<string,mixed> $previousAttempt
+ * @return array<string,mixed>
+ */
+function rebuild_public_content_native(string $articleId, array $previousAttempt = []): array
+{
+  try {
+    $articles = public_rebuild_read_articles();
+    if (empty($articles)) {
+      return [
+        'ok' => false,
+        'code' => 'native_empty_articles',
+        'message' => 'PHP native rebuild không đọc được data/articles.json.',
+        'previous_attempt' => $previousAttempt,
+      ];
+    }
+    $grouped = public_rebuild_group_articles($articles);
+    $index = public_rebuild_content_index($grouped, $articleId);
+
+    $contentIndexJson = json_encode($index, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    if ($contentIndexJson === false || file_put_contents(public_rebuild_root_path('content-index.js'), 'window.KetoanDieuTamContentIndex=' . $contentIndexJson . ";\n") === false) {
+      throw new RuntimeException('Không ghi được content-index.js');
+    }
+
+    $pageCounts = [];
+    foreach (['thu-vien', 'ban-tin'] as $section) {
+      $items = $grouped[$section] ?? [];
+      $pages = max(1, (int) ceil(count($items) / 12));
+      $pageMap = [];
+      for ($page = 1; $page <= $pages; $page++) {
+        $pageMap[(string) $page] = $page === 1 ? $section . '.html' : $section . '/trang/' . $page . '/index.html';
+      }
+      $hub = [
+        'section' => $section,
+        'sectionLabel' => $section === 'ban-tin' ? 'Bản tin' : 'Thư viện',
+        'sectionHref' => $section . '.html',
+        'pageMap' => $pageMap,
+        'libraryKinds' => $section === 'thu-vien' ? public_rebuild_library_kinds($items) : [],
+        'taxonomy' => public_rebuild_taxonomy($items),
+        'count' => count($items),
+        'articles' => array_map('public_rebuild_hub_item', $items),
+      ];
+      if (!public_rebuild_write_json(public_rebuild_root_path('data/hubs/' . $section . '.json'), $hub)
+        || !public_rebuild_write_js_store(public_rebuild_root_path('data/hubs/' . $section . '.js'), 'KetoanDieuTamHubStore', $section, $hub)
+        || !public_rebuild_write_json(public_rebuild_root_path('data/feeds/latest-' . $section . '.json'), public_rebuild_feed($items))) {
+        throw new RuntimeException('Không ghi được hub/feed cho ' . $section);
+      }
+      $pageCounts[$section] = $pages;
+    }
+
+    if (!public_rebuild_write_taxonomy_artifacts($grouped)) {
+      throw new RuntimeException('Không ghi được taxonomy/menu artifacts');
+    }
+    $targetViewWritten = public_rebuild_write_target_view($index, $articleId);
+    public_rebuild_write_sitemap($grouped, $index);
+
+    return [
+      'ok' => true,
+      'code' => 'ok_native',
+      'message' => 'Đã đồng bộ dữ liệu public bằng PHP native rebuild.',
+      'mode' => 'php-native-fast',
+      'previous_attempt' => $previousAttempt,
+      'summary' => [
+        'articles' => count($articles),
+        'thu_vien_count' => count($grouped['thu-vien'] ?? []),
+        'ban_tin_count' => count($grouped['ban-tin'] ?? []),
+        'thu_vien_pages' => $pageCounts['thu-vien'] ?? 0,
+        'ban_tin_pages' => $pageCounts['ban-tin'] ?? 0,
+        'target_article_view' => $articleId,
+        'target_article_view_written' => $targetViewWritten,
+      ],
+    ];
+  } catch (Throwable $error) {
+    return [
+      'ok' => false,
+      'code' => 'native_rebuild_failed',
+      'message' => 'PHP native rebuild thất bại: ' . $error->getMessage(),
+      'previous_attempt' => $previousAttempt,
+    ];
+  }
 }
 
 /**
@@ -562,6 +1202,37 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
   // Update article summary paragraph
   $summaryEscaped = htmlspecialchars($newExcerpt, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
   $htmlNew = preg_replace('/(<p\b[^>]*class=(["\'])(?:(?!\2).)*\barticle-summary\b(?:(?!\2).)*\2[^>]*>).*?(<\/p>)/is', '$1' . $summaryEscaped . '$3', $htmlNew, 1) ?? $htmlNew;
+
+  // Bust cached article JS for the published article page.
+  $assetVersion = date('YmdHis');
+  $htmlNew = preg_replace_callback(
+    '/<script\b([^>]*\bsrc=(["\'])([^"\']*article-layout\.js)(?:\?[^"\']*)?\2[^>]*)><\/script>/i',
+    static function (array $match) use ($assetVersion): string {
+      $attrs = preg_replace(
+        '/src=(["\'])([^"\']*article-layout\.js)(?:\?[^"\']*)?\1/i',
+        'src=$1$2?v=' . $assetVersion . '$1',
+        (string) ($match[1] ?? ''),
+        1
+      );
+      return '<script' . ($attrs ?? (string) ($match[1] ?? '')) . '></script>';
+    },
+    $htmlNew,
+    1
+  ) ?? $htmlNew;
+  $htmlNew = preg_replace_callback(
+    '/<script\b([^>]*\bsrc=(["\'])([^"\']*data\/article-views\/[^"\']+\.js)(?:\?[^"\']*)?\2[^>]*)><\/script>/i',
+    static function (array $match) use ($assetVersion): string {
+      $attrs = preg_replace(
+        '/src=(["\'])([^"\']*data\/article-views\/[^"\']+\.js)(?:\?[^"\']*)?\1/i',
+        'src=$1$2?v=' . $assetVersion . '$1',
+        (string) ($match[1] ?? ''),
+        1
+      );
+      return '<script' . ($attrs ?? (string) ($match[1] ?? '')) . '></script>';
+    },
+    $htmlNew,
+    1
+  ) ?? $htmlNew;
 
   $contentHashBefore = hash('sha256', $html);
 

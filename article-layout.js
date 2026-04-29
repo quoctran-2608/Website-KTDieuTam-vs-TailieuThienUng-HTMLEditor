@@ -56,10 +56,15 @@
   }
 
   function fetchJson(url) {
-    return fetch(url).then(function (response) {
+    return fetch(freshDataUrl(url), { cache: 'no-store' }).then(function (response) {
       if (!response.ok) throw new Error('Fetch failed: ' + url);
       return response.json();
     });
+  }
+
+  function freshDataUrl(url) {
+    var stamp = String(Date.now());
+    return String(url || '') + (String(url || '').indexOf('?') === -1 ? '?' : '&') + 'v=' + encodeURIComponent(stamp);
   }
 
   function loadScript(url) {
@@ -702,7 +707,7 @@
     var root = getRootPrefix();
     var viewUrl = root + 'data/article-views/' + meta.id + '.json';
     var loadFromScript = function () {
-      var scriptUrl = viewUrl.replace(/\.json$/, '.js');
+      var scriptUrl = freshDataUrl(viewUrl.replace(/\.json$/, '.js'));
       return loadScript(scriptUrl).then(function () {
         var store = window.KetoanDieuTamArticleViewStore || {};
         return resolveDataFromViewJson(meta, store[meta.id]);

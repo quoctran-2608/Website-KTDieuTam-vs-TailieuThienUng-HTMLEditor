@@ -155,14 +155,14 @@ function validate_article_taxonomy_payload(array $payload): array
   $clean['section_href'] = $sectionKey . '.html';
 
   $lv1Source = article_taxonomy_children($section);
-  if ($sectionKey === 'thu-vien') {
-    $kindRaw = trim((string) ($payload['taxonomy_library_kind_key'] ?? ($payload['library_kind_key'] ?? '')));
-    $kindKey = article_taxonomy_post_key($kindRaw);
-    $kind = $kindRaw !== '' ? article_taxonomy_find_node(article_taxonomy_children($section), $kindKey) : null;
-    if ($kind === null) {
-      $errors['taxonomy'] = 'Vui lòng chọn loại tài liệu hợp lệ cho Thư viện.';
-      return ['ok' => false, 'errors' => $errors, 'data' => $clean];
-    }
+	  if ($sectionKey === 'thu-vien') {
+	    $kindRaw = trim((string) ($payload['taxonomy_library_kind_key'] ?? ($payload['library_kind_key'] ?? '')));
+	    $kindKey = article_taxonomy_post_key($kindRaw);
+	    $kind = $kindRaw !== '' ? article_taxonomy_find_node(article_taxonomy_children($section), $kindKey) : null;
+	    if ($kind === null) {
+	      $errors['taxonomy'] = 'Vui lòng chọn phân loại Cấp 1 hợp lệ cho Thư viện.';
+	      return ['ok' => false, 'errors' => $errors, 'data' => $clean];
+	    }
     $clean['library_kind_key'] = $kindKey;
     $clean['library_kind_label'] = article_taxonomy_node_label($kind);
     $lv1Source = article_taxonomy_children($kind);
@@ -171,25 +171,50 @@ function validate_article_taxonomy_payload(array $payload): array
   $lv1Raw = trim((string) ($payload['taxonomy_topic_lv1_key'] ?? ($payload['topic_lv1_key'] ?? '')));
   $lv1Key = article_taxonomy_post_key($lv1Raw);
   $lv1 = $lv1Raw !== '' ? article_taxonomy_find_node($lv1Source, $lv1Key) : null;
-  if ($lv1 === null) {
-    $errors['taxonomy'] = 'Vui lòng chọn phân loại Cấp 1 hợp lệ.';
-    return ['ok' => false, 'errors' => $errors, 'data' => $clean];
-  }
+	  if ($lv1 === null) {
+	    $errors['taxonomy'] = $sectionKey === 'thu-vien'
+        ? 'Vui lòng chọn phân loại Cấp 2 hợp lệ cho Thư viện.'
+        : 'Vui lòng chọn phân loại Cấp 1 hợp lệ.';
+	    return ['ok' => false, 'errors' => $errors, 'data' => $clean];
+	  }
   $clean['topic_lv1_key'] = $lv1Key;
   $clean['topic_lv1_label'] = article_taxonomy_node_label($lv1);
 
   $lv2Raw = trim((string) ($payload['taxonomy_topic_lv2_key'] ?? ($payload['topic_lv2_key'] ?? '')));
   $lv2Key = article_taxonomy_post_key($lv2Raw);
   $lv2Source = article_taxonomy_children($lv1);
-  $lv2 = $lv2Raw !== '' ? article_taxonomy_find_node($lv2Source, $lv2Key) : null;
-  if ($lv2 === null) {
-    $errors['taxonomy'] = 'Vui lòng chọn phân loại Cấp 2 hợp lệ.';
-    return ['ok' => false, 'errors' => $errors, 'data' => $clean];
-  }
-  $clean['topic_lv2_key'] = $lv2Key;
-  $clean['topic_lv2_label'] = article_taxonomy_node_label($lv2);
+	  $lv2 = $lv2Raw !== '' ? article_taxonomy_find_node($lv2Source, $lv2Key) : null;
+	  if ($lv2 === null) {
+	    $errors['taxonomy'] = $sectionKey === 'thu-vien'
+        ? 'Vui lòng chọn phân loại Cấp 3 hợp lệ cho Thư viện.'
+        : 'Vui lòng chọn phân loại Cấp 2 hợp lệ.';
+	    return ['ok' => false, 'errors' => $errors, 'data' => $clean];
+	  }
+	  $clean['topic_lv2_key'] = $lv2Key;
+	  $clean['topic_lv2_label'] = article_taxonomy_node_label($lv2);
 
-  $lv3Source = article_taxonomy_children($lv2);
+	  // Frontend Thư viện chỉ hiển thị 3 cấp: Cấp 1 → Cấp 2 → Cấp 3.
+	  // topic_lv3 là cấp sâu nội bộ cũ, không cho sửa trong admin để tránh lệch menu user.
+	  if ($sectionKey === 'thu-vien') {
+      $preserveKindKey = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_library_kind_key'] ?? ''));
+      $preserveLv1Key = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv1_key'] ?? ''));
+      $preserveLv2Key = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv2_key'] ?? ''));
+      $preserveLv3Key = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv3_key'] ?? ''));
+      if ($preserveKindKey === $kindKey && $preserveLv1Key === $lv1Key && $preserveLv2Key === $lv2Key && $preserveLv3Key !== '') {
+        $preserveLv3 = article_taxonomy_find_node(article_taxonomy_children($lv2), $preserveLv3Key);
+        if ($preserveLv3 !== null) {
+          $clean['topic_lv3_key'] = $preserveLv3Key;
+          $clean['topic_lv3_label'] = article_taxonomy_node_label($preserveLv3);
+        }
+      }
+	    return [
+	      'ok' => true,
+      'errors' => [],
+      'data' => $clean,
+    ];
+  }
+
+	  $lv3Source = article_taxonomy_children($lv2);
   $lv3Raw = trim((string) ($payload['taxonomy_topic_lv3_key'] ?? ($payload['topic_lv3_key'] ?? '')));
   $lv3Key = article_taxonomy_post_key($lv3Raw);
   if (!empty($lv3Source)) {
@@ -325,7 +350,8 @@ function article_editor_taxonomy_path(array $data): string
       $parts[] = $kind;
     }
   }
-  foreach ([1, 2, 3] as $level) {
+  $levels = $sectionKey === 'thu-vien' ? [1, 2] : [1, 2, 3];
+  foreach ($levels as $level) {
     $part = article_editor_taxonomy_piece(
       (string) ($data['topic_lv' . $level . '_label'] ?? ''),
       (string) ($data['topic_lv' . $level . '_key'] ?? '')
@@ -347,7 +373,8 @@ function article_editor_taxonomy_key_path(array $data): string
   if ($sectionKey === 'thu-vien') {
     $keys[] = trim((string) ($data['library_kind_key'] ?? ''));
   }
-  foreach ([1, 2, 3] as $level) {
+  $levels = $sectionKey === 'thu-vien' ? [1, 2] : [1, 2, 3];
+  foreach ($levels as $level) {
     $keys[] = trim((string) ($data['topic_lv' . $level . '_key'] ?? ''));
   }
   return implode('|', $keys);
@@ -586,10 +613,14 @@ if ($article !== null) {
           'featured_image' => (string) ($_POST['featured_image'] ?? ''),
           'taxonomy_section_key' => (string) ($_POST['taxonomy_section_key'] ?? ''),
           'taxonomy_library_kind_key' => (string) ($_POST['taxonomy_library_kind_key'] ?? ''),
-          'taxonomy_topic_lv1_key' => (string) ($_POST['taxonomy_topic_lv1_key'] ?? ''),
-          'taxonomy_topic_lv2_key' => (string) ($_POST['taxonomy_topic_lv2_key'] ?? ''),
-          'taxonomy_topic_lv3_key' => (string) ($_POST['taxonomy_topic_lv3_key'] ?? ''),
-          'section_key' => article_taxonomy_post_key((string) ($_POST['taxonomy_section_key'] ?? '')),
+	          'taxonomy_topic_lv1_key' => (string) ($_POST['taxonomy_topic_lv1_key'] ?? ''),
+	          'taxonomy_topic_lv2_key' => (string) ($_POST['taxonomy_topic_lv2_key'] ?? ''),
+	          'taxonomy_topic_lv3_key' => (string) ($_POST['taxonomy_topic_lv3_key'] ?? ''),
+	          'taxonomy_preserve_library_kind_key' => (string) ($_POST['taxonomy_preserve_library_kind_key'] ?? ''),
+	          'taxonomy_preserve_topic_lv1_key' => (string) ($_POST['taxonomy_preserve_topic_lv1_key'] ?? ''),
+	          'taxonomy_preserve_topic_lv2_key' => (string) ($_POST['taxonomy_preserve_topic_lv2_key'] ?? ''),
+	          'taxonomy_preserve_topic_lv3_key' => (string) ($_POST['taxonomy_preserve_topic_lv3_key'] ?? ''),
+	          'section_key' => article_taxonomy_post_key((string) ($_POST['taxonomy_section_key'] ?? '')),
           'library_kind_key' => article_taxonomy_post_key((string) ($_POST['taxonomy_library_kind_key'] ?? '')),
           'topic_lv1_key' => article_taxonomy_post_key((string) ($_POST['taxonomy_topic_lv1_key'] ?? '')),
           'topic_lv2_key' => article_taxonomy_post_key((string) ($_POST['taxonomy_topic_lv2_key'] ?? '')),
@@ -769,11 +800,17 @@ $innerScript = <<<'JS'
       lv2: taxonomyHost.querySelector('[data-taxonomy-select="topic_lv2"]'),
       lv3: taxonomyHost.querySelector('[data-taxonomy-select="topic_lv3"]'),
     };
-    const rows = {
-      kind: taxonomyHost.querySelector('[data-taxonomy-row="library_kind"]'),
-      lv3: taxonomyHost.querySelector('[data-taxonomy-row="topic_lv3"]'),
-    };
-    const pathHost = taxonomyHost.querySelector('[data-taxonomy-path]');
+	    const rows = {
+	      kind: taxonomyHost.querySelector('[data-taxonomy-row="library_kind"]'),
+	      lv3: taxonomyHost.querySelector('[data-taxonomy-row="topic_lv3"]'),
+	    };
+	    const labels = {
+	      kind: taxonomyHost.querySelector('[data-taxonomy-label="library_kind"]'),
+	      lv1: taxonomyHost.querySelector('[data-taxonomy-label="topic_lv1"]'),
+	      lv2: taxonomyHost.querySelector('[data-taxonomy-label="topic_lv2"]'),
+	      lv3: taxonomyHost.querySelector('[data-taxonomy-label="topic_lv3"]'),
+	    };
+	    const pathHost = taxonomyHost.querySelector('[data-taxonomy-path]');
 
     const emptyKeyValue = '__empty__';
     const keyOf = (node) => String((node && (node.key || node.id)) || '');
@@ -844,44 +881,54 @@ $innerScript = <<<'JS'
         fields.section.value = findByKey(roots, state.sectionKey) ? state.sectionKey : (keyOf(roots[0]) || '');
       }
 
-      const section = findByKey(roots, fields.section.value);
-      const isLibrary = keyOf(section) === 'thu-vien';
-      let kind = null;
-      let lv1Source = childrenOf(section);
+	      const section = findByKey(roots, fields.section.value);
+	      const isLibrary = keyOf(section) === 'thu-vien';
+	      let kind = null;
+	      let lv1Source = childrenOf(section);
+	      if (labels.kind) labels.kind.textContent = 'Cấp 1';
+	      if (labels.lv1) labels.lv1.textContent = isLibrary ? 'Cấp 2' : 'Cấp 1';
+	      if (labels.lv2) labels.lv2.textContent = isLibrary ? 'Cấp 3' : 'Cấp 2';
+	      if (labels.lv3) labels.lv3.textContent = 'Cấp 3';
 
-      if (rows.kind) rows.kind.hidden = !isLibrary;
-      if (isLibrary) {
+	      if (rows.kind) rows.kind.hidden = !isLibrary;
+	      if (isLibrary) {
         const preferredKind = firstRender
           ? (state.libraryKindValue || state.libraryKindKey || inferKindKey(section, state.topicLv1Value || state.topicLv1Key || '', state.topicLv2Value || state.topicLv2Key || '', state.topicLv3Value || state.topicLv3Key || ''))
           : undefined;
-        setOptions(fields.kind, childrenOf(section), 'Chọn loại tài liệu', preferredKind);
-        if (!fields.kind.value) {
-          fields.kind.value = inferKindKey(section, fields.lv1 ? fields.lv1.value : '', fields.lv2 ? fields.lv2.value : '', fields.lv3 ? fields.lv3.value : '');
-        }
+	        setOptions(fields.kind, childrenOf(section), 'Chọn cấp 1', preferredKind);
+	        if (!fields.kind.value) {
+	          fields.kind.value = inferKindKey(section, fields.lv1 ? fields.lv1.value : '', fields.lv2 ? fields.lv2.value : '', fields.lv3 ? fields.lv3.value : '');
+	        }
         kind = findByKey(childrenOf(section), fields.kind ? fields.kind.value : '');
         lv1Source = childrenOf(kind);
       } else if (fields.kind) {
         fields.kind.value = '';
       }
 
-      const lv1 = setOptions(fields.lv1, lv1Source, 'Chọn cấp 1', firstRender ? (state.topicLv1Value || state.topicLv1Key || '') : undefined);
-      const lv2Source = childrenOf(lv1);
-      const lv2 = setOptions(
-        fields.lv2,
-        lv2Source,
-        'Chọn cấp 2',
-        firstRender ? preferredValue(lv2Source, state.topicLv2Value || state.topicLv2Key || '', state.topicLv2Label || '') : undefined
-      );
-      const lv3Source = childrenOf(lv2);
-      const lv3 = setOptions(
-        fields.lv3,
-        lv3Source,
-        'Chọn cấp 3',
-        firstRender ? preferredValue(lv3Source, state.topicLv3Value || state.topicLv3Key || '', state.topicLv3Label || '') : undefined
-      );
-      if (rows.lv3) rows.lv3.hidden = lv3Source.length === 0 && !(fields.lv3 && fields.lv3.value);
+	      const lv1 = setOptions(fields.lv1, lv1Source, isLibrary ? 'Chọn cấp 2' : 'Chọn cấp 1', firstRender ? (state.topicLv1Value || state.topicLv1Key || '') : undefined);
+	      const lv2Source = childrenOf(lv1);
+	      const lv2 = setOptions(
+	        fields.lv2,
+	        lv2Source,
+	        isLibrary ? 'Chọn cấp 3' : 'Chọn cấp 2',
+	        firstRender ? preferredValue(lv2Source, state.topicLv2Value || state.topicLv2Key || '', state.topicLv2Label || '') : undefined
+	      );
+	      const lv3Source = childrenOf(lv2);
+	      let lv3 = null;
+	      if (isLibrary) {
+	        if (fields.lv3) fields.lv3.value = '';
+	        if (rows.lv3) rows.lv3.hidden = true;
+	      } else {
+	        lv3 = setOptions(
+	          fields.lv3,
+	          lv3Source,
+	          'Chọn cấp 3',
+	          firstRender ? preferredValue(lv3Source, state.topicLv3Value || state.topicLv3Key || '', state.topicLv3Label || '') : undefined
+	        );
+	        if (rows.lv3) rows.lv3.hidden = lv3Source.length === 0 && !(fields.lv3 && fields.lv3.value);
+	      }
 
-      renderPath([section, kind, lv1, lv2, lv3].filter(Boolean));
+	      renderPath([section, kind, lv1, lv2, isLibrary ? null : lv3].filter(Boolean));
       firstRender = false;
     };
 
@@ -1122,13 +1169,12 @@ admin_layout_header([
     if ($sectionLabel === '' && $sectionKey !== '') {
       $sectionLabel = $sectionKey === 'ban-tin' ? 'Bản tin' : ($sectionKey === 'thu-vien' ? 'Thư viện' : $sectionKey);
     }
-    $appendTaxonomyItem('Section', $sectionLabel, $sectionKey);
-    if ($sectionKey === 'thu-vien') {
-      $appendTaxonomyItem('Cấp 1', (string) ($form['library_kind_label'] ?? ''), (string) ($form['library_kind_key'] ?? ''));
-      $appendTaxonomyItem('Cấp 2', (string) ($form['topic_lv1_label'] ?? ''), (string) ($form['topic_lv1_key'] ?? ''));
-      $appendTaxonomyItem('Cấp 3', (string) ($form['topic_lv2_label'] ?? ''), (string) ($form['topic_lv2_key'] ?? ''));
-      $appendTaxonomyItem('Cấp 4', (string) ($form['topic_lv3_label'] ?? ''), (string) ($form['topic_lv3_key'] ?? ''));
-    } else {
+	    $appendTaxonomyItem('Section', $sectionLabel, $sectionKey);
+	    if ($sectionKey === 'thu-vien') {
+	      $appendTaxonomyItem('Cấp 1', (string) ($form['library_kind_label'] ?? ''), (string) ($form['library_kind_key'] ?? ''));
+	      $appendTaxonomyItem('Cấp 2', (string) ($form['topic_lv1_label'] ?? ''), (string) ($form['topic_lv1_key'] ?? ''));
+	      $appendTaxonomyItem('Cấp 3', (string) ($form['topic_lv2_label'] ?? ''), (string) ($form['topic_lv2_key'] ?? ''));
+	    } else {
       $appendTaxonomyItem('Cấp 1', (string) ($form['topic_lv1_label'] ?? ''), (string) ($form['topic_lv1_key'] ?? ''));
       $appendTaxonomyItem('Cấp 2', (string) ($form['topic_lv2_label'] ?? ''), (string) ($form['topic_lv2_key'] ?? ''));
       $appendTaxonomyItem('Cấp 3', (string) ($form['topic_lv3_label'] ?? ''), (string) ($form['topic_lv3_key'] ?? ''));
@@ -1193,10 +1239,14 @@ admin_layout_header([
         </div>
         <form method="post" class="article-editor-form editor-v4-form" id="articleEditorForm" novalidate>
           <?= csrf_input_html() ?>
-          <input type="hidden" name="_intent" value="save_draft" id="articleIntent">
-          <input type="hidden" name="article_id" value="<?= h((string) ($article['id'] ?? '')) ?>" id="articleIdInput">
+	          <input type="hidden" name="_intent" value="save_draft" id="articleIntent">
+	          <input type="hidden" name="article_id" value="<?= h((string) ($article['id'] ?? '')) ?>" id="articleIdInput">
+	          <input type="hidden" name="taxonomy_preserve_library_kind_key" value="<?= h((string) ($form['library_kind_key'] ?? ($article['library_kind_key'] ?? ''))) ?>">
+	          <input type="hidden" name="taxonomy_preserve_topic_lv1_key" value="<?= h((string) ($form['topic_lv1_key'] ?? ($article['topic_lv1_key'] ?? ''))) ?>">
+	          <input type="hidden" name="taxonomy_preserve_topic_lv2_key" value="<?= h((string) ($form['topic_lv2_key'] ?? ($article['topic_lv2_key'] ?? ''))) ?>">
+	          <input type="hidden" name="taxonomy_preserve_topic_lv3_key" value="<?= h((string) ($form['topic_lv3_key'] ?? ($article['topic_lv3_key'] ?? ''))) ?>">
 
-          <div class="editor-action-bar">
+	          <div class="editor-action-bar">
             <button type="submit" class="filter-submit-btn" onclick="document.getElementById('articleIntent').value='save_draft'">
               <i class="fa-solid fa-floppy-disk"></i>
 	              <span>Lưu nháp admin</span>
@@ -1287,23 +1337,23 @@ admin_layout_header([
                 <label class="filter-field">
                   <span>Khu vực</span>
                   <select name="taxonomy_section_key" data-taxonomy-select="section"></select>
-                </label>
-                <label class="filter-field" data-taxonomy-row="library_kind">
-                  <span>Loại tài liệu</span>
-                  <select name="taxonomy_library_kind_key" data-taxonomy-select="library_kind"></select>
-                </label>
-                <label class="filter-field">
-                  <span>Cấp 1</span>
-                  <select name="taxonomy_topic_lv1_key" data-taxonomy-select="topic_lv1"></select>
-                </label>
-                <label class="filter-field">
-                  <span>Cấp 2</span>
-                  <select name="taxonomy_topic_lv2_key" data-taxonomy-select="topic_lv2"></select>
-                </label>
-                <label class="filter-field" data-taxonomy-row="topic_lv3">
-                  <span>Cấp 3</span>
-                  <select name="taxonomy_topic_lv3_key" data-taxonomy-select="topic_lv3"></select>
-                </label>
+	                </label>
+	                <label class="filter-field" data-taxonomy-row="library_kind">
+	                  <span data-taxonomy-label="library_kind">Cấp 1</span>
+	                  <select name="taxonomy_library_kind_key" data-taxonomy-select="library_kind"></select>
+	                </label>
+	                <label class="filter-field">
+	                  <span data-taxonomy-label="topic_lv1">Cấp 2</span>
+	                  <select name="taxonomy_topic_lv1_key" data-taxonomy-select="topic_lv1"></select>
+	                </label>
+	                <label class="filter-field">
+	                  <span data-taxonomy-label="topic_lv2">Cấp 3</span>
+	                  <select name="taxonomy_topic_lv2_key" data-taxonomy-select="topic_lv2"></select>
+	                </label>
+	                <label class="filter-field" data-taxonomy-row="topic_lv3">
+	                  <span data-taxonomy-label="topic_lv3">Cấp 3</span>
+	                  <select name="taxonomy_topic_lv3_key" data-taxonomy-select="topic_lv3"></select>
+	                </label>
               </div>
               <div class="editor-taxonomy-path" data-taxonomy-path>Đang tải cây phân loại...</div>
               <?php if (!empty($validationErrors['taxonomy'])): ?>

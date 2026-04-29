@@ -20,6 +20,11 @@
     return getRootPrefix() + path.replace(/^\.\//, '');
   }
 
+  function freshDataUrl(url) {
+    var stamp = String(Date.now());
+    return String(url || '') + (String(url || '').indexOf('?') === -1 ? '?' : '&') + 'v=' + encodeURIComponent(stamp);
+  }
+
   function getHubData() {
     var script = document.getElementById('hub-data');
     if (!script) return null;
@@ -73,7 +78,7 @@
       return merged;
     };
     var loadFromScript = function () {
-      var scriptUrl = inlineData.dataUrl.replace(/\.json$/, '.js');
+      var scriptUrl = freshDataUrl(inlineData.dataUrl.replace(/\.json$/, '.js'));
       return loadScript(scriptUrl).then(function () {
         var store = window.KetoanDieuTamHubStore || {};
         return mergeRemote(store[inlineData.section]);
@@ -85,7 +90,7 @@
         return inlineData;
       });
     }
-    return fetch(inlineData.dataUrl)
+    return fetch(freshDataUrl(inlineData.dataUrl), { cache: 'no-store' })
       .then(function (response) {
         if (!response.ok) throw new Error('Không tải được hub data');
         return response.json();
