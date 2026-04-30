@@ -32,6 +32,10 @@ Thư mục này chứa code admin panel cho luồng:
   - backup trước khi ghi file thật
   - rollback từ backup gần nhất
   - publish history + audit log
+- đã mở luồng xóa an toàn:
+  - `admin/delete_article.php`
+  - quét inbound internal links trước khi xóa
+  - nếu còn bài khác trỏ tới thì hiển thị danh sách cảnh báo và yêu cầu xác nhận cưỡng bức
 - đã hardening vận hành:
   - publish/rollback hash trace
   - recent publish history per article

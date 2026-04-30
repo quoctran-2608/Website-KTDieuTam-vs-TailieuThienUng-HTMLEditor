@@ -832,7 +832,7 @@ admin_layout_header([
                     <span>Sửa</span>
                   </a>
                   <?php if (($currentUser['role'] ?? '') === 'admin'): ?>
-                    <form method="post" action="<?= h(admin_url('delete_article.php')) ?>" class="inline-action-form" onsubmit="return confirm('Xác nhận xóa bài này?\\n- Bài viết HTML sẽ bị xóa\\n- Ảnh upload liên quan cũng sẽ bị xóa\\n- Hành động này không hoàn tác tự động.');">
+                    <form method="post" action="<?= h(admin_url('delete_article.php')) ?>" class="inline-action-form" onsubmit="return confirm('Xác nhận kiểm tra và xóa bài này?\nHệ thống sẽ quét internal link trước. Nếu có bài khác đang trỏ tới, bạn sẽ thấy danh sách cảnh báo trước khi xóa.');">
                       <?= csrf_input_html() ?>
                       <input type="hidden" name="article_id" value="<?= h((string) ($article['id'] ?? '')) ?>">
                       <input type="hidden" name="section" value="<?= h($activeSection) ?>">

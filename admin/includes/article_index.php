@@ -31,7 +31,7 @@ function sync_articles_index(bool $force = false): array
     !$force
     && !empty($cache['items'])
     && $cacheMTime === $sourceMTime
-    && $cacheVersion >= 4
+    && $cacheVersion >= 5
     && $hasTree
     && $hasLv3
     && $hasTags
@@ -84,7 +84,7 @@ function sync_articles_index(bool $force = false): array
       'source_mtime' => $sourceMTime,
       'synced_at' => date('c'),
       'count' => count($items),
-      'version' => 4,
+      'version' => 5,
     ],
     'items' => $items,
     'facets' => build_articles_facets($items),
@@ -362,6 +362,8 @@ function normalize_article_index_item(array $item): ?array
     'id' => $id,
     'title' => $title,
     'href' => (string) ($item['href'] ?? ''),
+    'article_href' => (string) ($item['articleHref'] ?? ''),
+    'legacy_href' => (string) ($item['legacyHref'] ?? ''),
     'canonical' => (string) ($item['canonical'] ?? ''),
     'section' => $section,
     'section_label' => (string) ($item['sectionLabel'] ?? ''),

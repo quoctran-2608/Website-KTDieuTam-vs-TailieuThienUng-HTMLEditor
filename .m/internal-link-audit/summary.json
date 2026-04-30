@@ -1,0 +1,24 @@
+{
+  "summary": {
+    "articles_total": 2809,
+    "article_files_scanned": 2809,
+    "anchors_total": 13511,
+    "internal_anchors": 12397,
+    "ok_root_article": 6205,
+    "ok_static": 6192,
+    "legacy_prefixed_article": 0,
+    "prefixed_non_article_existing": 0,
+    "missing_internal": 0,
+    "external_skipped": 1104,
+    "empty_fragment_skipped": 6,
+    "source_file_missing": 0
+  },
+  "section_counts": {
+    "ban-tin": 115,
+    "thu-vien": 2694
+  },
+  "source_files_with_issues": 0,
+  "top_sources_with_issues": [],
+  "report_csv": ".m/internal-link-audit/internal-link-audit.csv",
+  "report_json": ".m/internal-link-audit/internal-link-audit.json"
+}

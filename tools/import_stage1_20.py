@@ -912,7 +912,20 @@ def write_taxonomy_data(records_by_section: Dict[str, List[Dict]]) -> None:
 
 
 def write_content_index(index_data: Dict) -> None:
-    payload = json.dumps(index_data, ensure_ascii=False, separators=(",", ":"))
+    public_data = dict(index_data)
+    articles = index_data.get("articles")
+    if isinstance(articles, dict):
+        # Keep migration-only URLs in data/articles.json, but do not ship them in the public index.
+        private_article_keys = {"articleHref", "legacyHref"}
+        public_data["articles"] = {
+            article_id: (
+                {key: value for key, value in article.items() if key not in private_article_keys}
+                if isinstance(article, dict)
+                else article
+            )
+            for article_id, article in articles.items()
+        }
+    payload = json.dumps(public_data, ensure_ascii=False, separators=(",", ":"))
     (ROOT / "content-index.js").write_text("window.KetoanDieuTamContentIndex=" + payload + ";\n", encoding="utf-8")
 
 

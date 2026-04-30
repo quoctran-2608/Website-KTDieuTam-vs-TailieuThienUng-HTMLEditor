@@ -49,7 +49,7 @@ Post-apply hardening:
 
 - Updated `article-layout.js` hardcoded dense-table preserve IDs from old `thu-vien/...` article IDs to root article IDs.
 - Scanned live HTML `href/src/action/data-href` attributes: no stale `/article/*.html`, `/thu-vien/*.html`, or `/ban-tin/*.html` article links found.
-- Admin/public rebuild path now resolves articles from root `href` values in `data/articles.json`; `articleHref` and `legacyHref` remain metadata only for redirects/history.
+- Admin/public rebuild path now resolves articles from root `href` values in `data/articles.json`; `articleHref` and `legacyHref` remain source metadata for redirects/history and are stripped from the public `content-index.js`.
 - Added taxonomy verifier: `tools/verify_admin_public_taxonomy.py`.
 - Latest taxonomy report: `docs/admin-public-taxonomy-verify.json` (OK for Thư viện visible depth 3 and Bản tin visible depth 2).
 
