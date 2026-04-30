@@ -1011,6 +1011,22 @@
     });
   }
 
+  function syncArticleHeaderMeta(data) {
+    if (!data) return;
+    if (data.sectionKey && document.body) {
+      document.body.setAttribute('data-nav', data.sectionKey);
+    }
+    var hubBreadcrumb = document.getElementById('articleHubBreadcrumb');
+    if (hubBreadcrumb) {
+      hubBreadcrumb.textContent = data.hubLabel || sectionLabelFromKey(data.sectionKey);
+      hubBreadcrumb.setAttribute('href', data.hubHref || sitePath((data.sectionKey || 'thu-vien') + '.html'));
+    }
+    var kicker = document.querySelector('.article-kicker');
+    if (kicker && data.topicLabel) {
+      kicker.textContent = data.topicLabel;
+    }
+  }
+
   function setButtonLabel(button, label, iconClass) {
     if (!button) return;
     var icon = button.querySelector('i');
@@ -1150,10 +1166,11 @@
       if (bottomNavHost) bottomNavHost.innerHTML = renderArticleTools(data) + renderBottomNav(data, returnHref);
       if (recommendationsHost) recommendationsHost.innerHTML = renderRecommendations(data, returnHref);
       syncArticleAuxLayout(sidebarHost, recommendationsHost);
-      if (mobileNavHost) mobileNavHost.innerHTML = renderMobileNav(data, returnHref);
+	      if (mobileNavHost) mobileNavHost.innerHTML = renderMobileNav(data, returnHref);
 
-      attachReturnHandlers(data, returnHref);
-      attachArticleToolHandlers(data);
+	      syncArticleHeaderMeta(data);
+	      attachReturnHandlers(data, returnHref);
+	      attachArticleToolHandlers(data);
     });
   }
 

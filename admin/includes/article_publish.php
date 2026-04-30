@@ -266,6 +266,73 @@ function publish_taxonomy_badge_label(array $taxonomy): string
   return trim((string) ($taxonomy['topic_lv1_label'] ?? ($taxonomy['section_label'] ?? '')));
 }
 
+function publish_article_root_prefix_from_html(string $html, string $articleId): string
+{
+  if (preg_match('/<body\b[^>]*\sdata-root=(["\'])(.*?)\1/i', $html, $match)) {
+    return (string) ($match[2] ?? '');
+  }
+  return str_contains($articleId, '/') ? '../' : '';
+}
+
+function publish_update_body_nav(string $html, string $sectionKey): string
+{
+  $sectionAttr = htmlspecialchars($sectionKey, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+  return preg_replace_callback('/<body\b([^>]*)>/i', static function (array $match) use ($sectionAttr): string {
+    $attrs = (string) ($match[1] ?? '');
+    $count = 0;
+    $attrs = preg_replace('/\sdata-nav=(["\']).*?\1/i', ' data-nav="' . $sectionAttr . '"', $attrs, 1, $count) ?? $attrs;
+    if ($count === 0) {
+      $attrs .= ' data-nav="' . $sectionAttr . '"';
+    }
+    return '<body' . $attrs . '>';
+  }, $html, 1) ?? $html;
+}
+
+function publish_update_hub_breadcrumb(string $html, string $href, string $label): string
+{
+  $hrefAttr = htmlspecialchars($href, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+  $labelText = htmlspecialchars($label, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+  return preg_replace_callback('/<a\b([^>]*\bid=(["\'])articleHubBreadcrumb\2[^>]*)>.*?<\/a>/is', static function (array $match) use ($hrefAttr, $labelText): string {
+    $attrs = (string) ($match[1] ?? '');
+    $count = 0;
+    $attrs = preg_replace('/\shref=(["\']).*?\1/i', ' href="' . $hrefAttr . '"', $attrs, 1, $count) ?? $attrs;
+    if ($count === 0) {
+      $attrs .= ' href="' . $hrefAttr . '"';
+    }
+    return '<a' . $attrs . '>' . $labelText . '</a>';
+  }, $html, 1) ?? $html;
+}
+
+function publish_update_article_kicker(string $html, string $topicLabel): string
+{
+  $topicLabel = trim($topicLabel);
+  if ($topicLabel === '') {
+    return $html;
+  }
+  $topicText = htmlspecialchars($topicLabel, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+  return preg_replace('/(<span\b[^>]*class=(["\'])(?:(?!\2).)*\barticle-kicker\b(?:(?!\2).)*\2[^>]*>).*?(<\/span>)/is', '$1' . $topicText . '$3', $html, 1) ?? $html;
+}
+
+/**
+ * Keep visible static article chrome in sync with metadata after section/category changes.
+ *
+ * @param array<string,string> $taxonomy
+ */
+function publish_update_static_article_header(string $html, array $taxonomy, string $topicLabel, string $articleId): string
+{
+  $sectionKey = trim((string) ($taxonomy['section_key'] ?? ''));
+  $sectionHref = trim((string) ($taxonomy['section_href'] ?? ''));
+  $sectionLabel = trim((string) ($taxonomy['section_label'] ?? ''));
+  if ($sectionKey !== '') {
+    $html = publish_update_body_nav($html, $sectionKey);
+  }
+  if ($sectionHref !== '' && $sectionLabel !== '') {
+    $rootPrefix = publish_article_root_prefix_from_html($html, $articleId);
+    $html = publish_update_hub_breadcrumb($html, $rootPrefix . $sectionHref, $sectionLabel);
+  }
+  return publish_update_article_kicker($html, $topicLabel);
+}
+
 /**
  * @param array<int,mixed> $tags
  * @return array<int,string>
@@ -1202,6 +1269,7 @@ function publish_article_draft(array $article, array $draftData, ?array $actor =
   // Update article summary paragraph
   $summaryEscaped = htmlspecialchars($newExcerpt, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
   $htmlNew = preg_replace('/(<p\b[^>]*class=(["\'])(?:(?!\2).)*\barticle-summary\b(?:(?!\2).)*\2[^>]*>).*?(<\/p>)/is', '$1' . $summaryEscaped . '$3', $htmlNew, 1) ?? $htmlNew;
+  $htmlNew = publish_update_static_article_header($htmlNew, $taxonomy, $displayTopicLabel, $articleId);
 
   // Bust cached article JS for the published article page.
   $assetVersion = date('YmdHis');
