@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "reports": [
+    {
+      "section": "thu-vien",
+      "ok": true,
+      "visible_depth": 3,
+      "admin_top": 4,
+      "public_top": 4,
+      "first_diff": null
+    },
+    {
+      "section": "ban-tin",
+      "ok": true,
+      "visible_depth": 2,
+      "admin_top": 4,
+      "public_top": 4,
+      "first_diff": null
+    }
+  ]
+}

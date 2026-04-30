@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cách sử dụng hàm Subtotal trong Excel khi làm kế toán | Thư viện | Kế Toán Diệu Tâm</title>
+  <meta name="description" content="Hướng dẫn cách sử dụng hàm Subtotal trong Excel: Hàm tính tổng của các tổng trong Excel kế toán như tính tổng phát sinh…">
+  <meta name="robots" content="index,follow">
+  
+  <link rel="canonical" href="https://ketoandieutam.vn/article/cach-su-dung-ham-subtotal-trong-excel-khi-lam-ke-toan.html">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/content-hub.css">
+</head>
+<body class="article-page" data-root="../" data-nav="thu-vien">
+<div id="siteHeader"></div>
+
+	<section class="article-hero">
+	  <div class="container">
+	    <div class="article-breadcrumbs">
+	      <a href="../index.html">Trang chủ</a>
+	      <span>/</span>
+	      <a id="articleHubBreadcrumb" href="../thu-vien.html">Thư viện</a>
+	    </div>
+	    <span class="article-kicker">Excel - Công cụ khác</span>
+	    <h1 class="article-title">Cách sử dụng hàm Subtotal trong Excel khi làm kế toán</h1>
+    <p class="article-summary">Hướng dẫn cách sử dụng hàm Subtotal trong Excel: Hàm tính tổng của các tổng trong Excel kế toán như tính tổng phát sinh…</p>
+    <div id="articleTopNav" class="article-top-nav"></div>
+  </div>
+</section>
+
+<section class="article-shell">
+  <div class="container article-grid">
+    <article class="article-main">
+      <div class="article-prose">
+        <h2>
+	<br />
+	<span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">Hướng dẫn c&aacute;ch sử dụng h&agrave;m Subtotal trong Excel: H&agrave;m t&iacute;nh tổng của c&aacute;c tổng trong Excel kế to&aacute;n như t&iacute;nh tổng ph&aacute;t sinh trong kỳ, t&iacute;nh tổng cho từng t&agrave;i khoản...</span></span></h2>
+<div style="text-align: center;">
+	<br />
+	<img alt="sử dụng hàm subtotal trong excel kế toán" class="sử dụng hàm subtotal trong excel kế toán" longdesc="sử dụng hàm subtotal trong excel kế toán" src="../assets/images/content/pic/Service/images/su-dung-ham-subtotal-trong-excel-ke-toan.png" style="width: 480px; height: 254px; border-width: 1px; border-style: solid;" title="sử dụng hàm subtotal trong excel kế toán" /><br />
+	<br />
+	-------------------------------------------------------------------------------------------</div>
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="font-size:18px;"><strong><span style="background-color:#ccffff;">1. C&ocirc;ng dụng của h&agrave;m Subtotal trong Excel đối với kế to&aacute;n:</span></strong></span><br />
+<br />
+- T&iacute;nh tổng d&atilde;y &ocirc; c&oacute; điều kiện như:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T&iacute;nh tổng ph&aacute;t sinh trong kỳ.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T&iacute;nh tổng cho từng t&agrave;i khoản cấp 1.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T&iacute;nh tổng tiền tồn cuối ng&agrave;y.</span></span></span>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong><span style="background-color:#ccffff;">2. T&aacute;c dụng h&agrave;m SUBTOTAL:</span></strong><br />
+&nbsp;<br />
+- H&agrave;m Subtotal l&agrave; h&agrave;m t&iacute;nh to&aacute;n cho một nh&oacute;m con trong một danh s&aacute;ch hoặc bảng dữ liệu tuỳ theo ph&eacute;p t&iacute;nh m&agrave; bạn chọn lựa trong đối số thứ nhất.</span></span></span>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>C&uacute; ph&aacute;p: <span style="color:#ff0000;">=SUBTOTAL(function_num,ref1,ref2,...)</span></strong></span></span></span></div>
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>C&aacute;c tham số:</strong><br />
+- <strong>Function_num</strong>: l&agrave; c&aacute;c con số từ 1 đến 11 (hay c&oacute; th&ecirc;m 101 đến 111 trong phi&ecirc;n bản Excel 2003, 2007) qui định h&agrave;m n&agrave;o sẽ được d&ugrave;ng để t&iacute;nh to&aacute;n trong subtotal<br />
+- <strong>Ref1, ref2,..</strong>. l&agrave; c&aacute;c v&ugrave;ng địa chỉ tham chiếu m&agrave; bạn muốn thực hiện ph&eacute;p t&iacute;nh tr&ecirc;n đ&oacute;.<br />
+&nbsp;<br />
+- Đối số thứ nhất của h&agrave;m SUBTOTAL bắt buộc bạn phải nhớ con số đại diện cho ph&eacute;p t&iacute;nh cần thực hiện tr&ecirc;n tập số liệu. Đối số đ&oacute; được x&aacute;c định h&agrave;m thực sự n&agrave;o sẽ được sử dụng khi t&iacute;nh to&aacute;n trong danh s&aacute;ch b&ecirc;n dưới.</span></span></span><br />
+<br />
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><img alt="hướng dẫn sử dụng hàm subtotal trong excel" class="hướng dẫn sử dụng hàm subtotal trong excel" longdesc="hướng dẫn sử dụng hàm subtotal trong excel" src="../assets/images/content/pic/Service/images/huong-dan-su-dung-ham-subtotal-trong-excel.jpg" style="width: 422px; height: 338px;" title="hướng dẫn sử dụng hàm subtotal trong excel" /></span></span></span></div>
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;</span></span></span><br />
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>V&iacute; dụ:</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">- Nếu <span style="background-color:#ffff99;">đối số l&agrave; 1</span> th&igrave; h&agrave;m SUBTOTAL hoạt động giống như <span style="background-color:#fff0f5;">h&agrave;m AVERAGE</span>, nếu <span style="background-color:#ffff99;">đối số thứ nhất l&agrave; 9</span> th&igrave; h&agrave;m h&agrave;m SUBTOTAL hoạt động giống <span style="background-color:#fff0f5;">như h&agrave;m SUM.</span></span></span></span><br />
+<br />
+<span style="font-size:18px;"><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><strong>Ch&uacute; &yacute;: </strong></span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">Tuy c&oacute; nhiều đối số l&agrave; từ 1 &ndash; 11 nhưng trong kế to&aacute;n ch&uacute;ng ta thường sử dụng </span></span></span><strong><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">đối số 9 </span></span></span></strong><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">v&agrave; thường sử dụng trong việc </span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">t&iacute;nh tổng </span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">cho từng t&agrave;i khoản, t&iacute;nh tổng ph&aacute;t sinh b&ecirc;n Nợ, C&oacute;, tỉnh tổng số tiền cuối ng&agrave;y.<br />
+<br />
+- C&uacute; ph&aacute;p h&agrave;m: </span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>= SUBTOTAL(<span style="background-color:#ffff00;">9</span>; d&atilde;y &ocirc; cần t&iacute;nh tổng)</strong></span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"> ( <em>Số 9 l&agrave; c&uacute; ph&aacute;p mặc định của h&agrave;m cho việc t&iacute;nh tổng).</em></span></span></span><br />
+<br />
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>V&iacute; dụ 1</strong></span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">: Muốn cộng Tổng số tiền thu được trong th&aacute;ng tr&ecirc;n sổ Qũy tiền mặt, ta d&ugrave;ng h&agrave;m subtotal như sau:<br />
+- <span style="background-color:#fff0f5;">Bấm chuột tr&aacute;i</span> -&gt; Sau đ&oacute; c&uacute; ph&aacute;m: <strong><span style="background-color:#fff0f5;">=Subtotal(</span></strong></span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong><span style="background-color:#fff0f5;">9</span></strong></span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong><span style="background-color:#fff0f5;">;G14:G442)</span></strong><br />
+<em>(G14:G442) -&gt; L&agrave; d&atilde;y &ocirc; cần t&iacute;nh tổng, chi tiết như h&igrave;nh ảnh b&ecirc;n dưới</em><br />
+<br />
+<img alt="cách sử dụng hàm subtotal trong excel" class="cách sử dụng hàm subtotal trong excel" longdesc="cách sử dụng hàm subtotal trong excel" src="../assets/images/content/pic/Service/images/cach-su-dung-ham-subtotal-trong-excel.png" style="width: 560px; height: 293px; border-width: 1px; border-style: solid;" title="cách sử dụng hàm subtotal trong excel" />&nbsp;</span></span></span>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">---------------------------------------------------------------------</span></span></span></div>
+<br />
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>V&iacute; dụ 2:</strong></span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"> Muốn cộng Tổng số ph&aacute;t sinh b&ecirc;n Nợ tr&ecirc;n sổ Nhật k&yacute; chung:<br />
+<br />
+<img alt="hàm subtotal trong excel" class="hàm subtotal trong excel" longdesc="hàm subtotal trong excel" src="../assets/images/content/pic/Service/images/ham-subtotal-trong-excel.png" style="width: 560px; height: 309px; border-width: 1px; border-style: solid;" title="hàm subtotal trong excel" /></span></span></span><br />
+<div style="text-align: center;">
+	<br />
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">-----------------------------------------------------------------------</span></span></span></div>
+<div>
+	<br />
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="color: rgb(255, 0, 0);"><strong>V&iacute; Dụ 3: </strong></span>Muốn t&iacute;nh được số tiền tồn cuối ng&agrave;y:<br />
+	- Số tồn ng&agrave;y h&ocirc;m trước: <strong>$I$14</strong></span></span></span><br />
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">- Tổng số b&ecirc;n Cột Thu:&nbsp;<strong> = Subtotal&nbsp;</strong></span></span></span><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;">(9</span></span></strong></span><span style="text-align: center; color: rgb(255, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;">;</span></span></strong></span><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;">$G$15:G15)</span></span></strong></span><br />
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">- Tổng số b&ecirc;n Cột Chi: <strong>= Subtotal&nbsp;</strong></span></span></span><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;">(9</span></span></strong></span><span style="text-align: center; color: rgb(255, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;">;</span></span></strong></span><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;">$H$15:H15)</span></span></strong></span><br />
+	<br />
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&ocirc;ng thức t&iacute;nh số tồn cuối ng&agrave;y:&nbsp;</span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">= Tồn ng&agrave;y h&ocirc;m trước + Thu - Chi:</span></span></span><br />
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">-&gt; Cột tồn tiền cuối ng&agrave;y d&ugrave;ng h&agrave;m Subtotal&nbsp;</span></span></span><span style="font-size: 16px; font-family: &quot;times new roman&quot;, times, serif; color: rgb(0, 0, 0); text-align: center;">=&gt; C&uacute; ph&aacute;p h&agrave;m:</span></div>
+<div style="text-align: center;">
+	<span style="color:#000000;"><strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#f0ffff;">=$I$14</span></span></span></strong></span><span style="color:#ff0000;"><strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#f0ffff;">+</span></span></span></strong></span><span style="color:#000000;"><strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#f0ffff;">SUBTOTAL(9</span></span></span></strong></span><span style="color:#ff0000;"><strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#f0ffff;">;</span></span></span></strong></span><span style="color:#000000;"><strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#f0ffff;">$G$15:G15)</span></span></span></strong></span><span style="color:#ff0000;"><strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#f0ffff;">-</span></span></span></strong></span><span style="color:#000000;"><strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#f0ffff;">SUBTOTAL(9</span></span></span></strong></span><span style="color:#ff0000;"><strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#f0ffff;">;</span></span></span></strong></span><span style="color:#000000;"><strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#f0ffff;">$H$15:H15)</span></span></span></strong></span></div>
+<br />
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>C&aacute;ch thực hiện chi tiết</strong></span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">:</span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">- Sau khi bấm v&agrave;o &Ocirc; số tồn ng&agrave;y h&ocirc;m trước (b&ecirc;n tr&ecirc;n) tức l&agrave; &ocirc;: =<strong>I14</strong> -&gt; C&aacute;c bạn bấm ph&iacute;m</span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong> </strong><span style="background-color:#fff0f5;"><strong>F4 </strong></span></span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#fff0f5;">(1 lần)</span> để cố định -&gt; Kết quả sẽ l&agrave;: <span style="background-color:#fff0f5;">=</span></span></span></span><strong style="color: rgb(0, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;"><span style="background-color:#fff0f5;">$I$14</span></strong><br />
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">- Tiếp đ&oacute; sau khi g&otilde; h&agrave;m subtotal v&agrave; bấm v&agrave;o &ocirc; G15 (tức l&agrave; b&ecirc;n Cột Thu):&nbsp;</span></span></span><strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#fff0f5;">=$I$14+SUBTOTAL(9;G15</span></span></span></strong><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;-&gt; C&aacute;c bạn cũng bấm ph&iacute;m F4 (1 lần) để c&oacute; định &ocirc; <strong>G15</strong>.&nbsp; -&gt; kết quả:&nbsp;</span></span></span><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color:#fff0f5;">=$I$14+SUBTOTAL</span></span></span></strong><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color:#fff0f5;">(9</span></span></span></strong></span><span style="text-align: center; color: rgb(255, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color:#fff0f5;">;</span></span></span></strong></span><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color:#fff0f5;">$G$15&nbsp;</span></span></span></strong></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">-&gt; Tiếp đ&oacute; c&aacute;c bạn bấm tiếp 1 lần nữa v&agrave;o &ocirc; <span style="background-color:#fff0f5;">G15 </span>-&gt; Kết quả:&nbsp;</span></span></span><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(255, 240, 245);">=$I$14+SUBTOTAL</span></span></span></strong><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(255, 240, 245);">(9</span></span></span></strong></span><span style="text-align: center; color: rgb(255, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(255, 240, 245);">;</span></span></span></strong></span><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(255, 240, 245);">$G$15:G15)</span></span></span></strong></span><br />
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">- Tiếp theo H&agrave;m subtotal b&ecirc;n </span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">cột Chi</span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"> c&aacute;c bạn cũng l&agrave;m như vậy nh&eacute;, c&ocirc;ng thức cuối c&ugrave;ng phải như sau:</span></span></span><br />
+<div style="text-align: center;">
+	<span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(240, 255, 255);">=$I$14</span></span></span></strong></span><span style="text-align: center; color: rgb(255, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(240, 255, 255);">+</span></span></span></strong></span><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(240, 255, 255);">SUBTOTAL(9</span></span></span></strong></span><span style="text-align: center; color: rgb(255, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(240, 255, 255);">;</span></span></span></strong></span><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(240, 255, 255);">$G$15:G15)</span></span></span></strong></span><span style="text-align: center; color: rgb(255, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(240, 255, 255);">-</span></span></span></strong></span><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(240, 255, 255);">SUBTOTAL(9</span></span></span></strong></span><span style="text-align: center; color: rgb(255, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(240, 255, 255);">;</span></span></span></strong></span><span style="text-align: center; color: rgb(0, 0, 0);"><strong><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="background-color: rgb(240, 255, 255);">$H$15:H15)</span></span></span></strong></span></div>
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;<img alt="cách sử dụng hàm subtotal" class="cách sử dụng hàm subtotal" longdesc="cách sử dụng hàm subtotal" src="../assets/images/content/pic/Service/images/cach-su-dung-ham-subtotal.png" style="width: 560px; border-width: 1px; border-style: solid;" title="cách sử dụng hàm subtotal" /></span></span></span><br />
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>Ghi ch&uacute;:</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">- Nếu c&oacute; h&agrave;m subtotal kh&aacute;c lồng đặt tại c&aacute;c đối số ref1, ref2,&hellip; th&igrave; c&aacute;c h&agrave;m lồng n&agrave;y sẽ bị bỏ qua kh&ocirc;ng được t&iacute;nh nhằm tr&aacute;nh trường hợp t&iacute;nh to&aacute;n 2 lần.<br />
+- Đối số function_num nếu từ 1 đến 11 th&igrave; h&agrave;m SUBTOTAL t&iacute;nh to&aacute;n <span style="background-color:#fff0f5;">bao gồm cả c&aacute;c gi&aacute; trị ẩn</span> trong tập số liệu (h&agrave;ng ẩn).<br />
+- Đối số function_num nếu từ 101 đến 111 th&igrave; h&agrave;m SUBTOTAL chỉ t&iacute;nh to&aacute;n cho <span style="background-color:#fff0f5;">c&aacute;c gi&aacute; trị kh&ocirc;ng ẩn </span>trong tập số liệu (bỏ qua c&aacute;c gi&aacute; trị ẩn).</span></span></span><br />
+<div style="text-align: center;">
+	<br />
+	--------------------------------------------------------------------------------<br />
+	<br />
+	&nbsp;</div>
+<span style="font-family:times new roman,times,serif;"><span style="color: rgb(0, 0, 0);"><span style="font-size: 16px;"><span style="background-color:#f0ffff;">Để c&oacute; thể l&agrave;m tốt c&ocirc;ng việc kế to&aacute;n tr&ecirc;n Excel,c&aacute;c bạn xem th&ecirc;m:&nbsp;</span></span></span><span style="font-size: 16px;"><a href="../article/cach-lam-so-sach-ke-toan-tren-excel-doanh-nghiep.html" name="cách làm sổ sách kế toán trên excel" target="_blank" title="cách làm sổ sách kế toán trên excel" type="cách làm sổ sách kế toán trên excel"><span style="color: rgb(0, 0, 255);"><strong><span style="background-color:#f0ffff;">C&aacute;ch l&agrave;m sổ s&aacute;ch kế to&aacute;n tr&ecirc;n Excel</span></strong></span></a></span></span><br />
+<br />
+<div style="text-align: center;">
+	<span style="font-family:times new roman,times,serif;"><span style="color:#000080;"><span style="font-size:16px;">Kế toán Diệu Tâm ch&uacute;c c&aacute;c bạn th&agrave;nh c&ocirc;ng</span></span></span></div>
+<div style="text-align: center;">
+	<strong><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">__________________________________________________</span></span></span></strong></div>
+      </div>
+      <div id="articleBottomNav" class="article-bottom-nav"></div>
+      <div id="articleRecommendations" class="article-recommendations"></div>
+    </article>
+
+    <aside id="articleSidebar" class="article-side"></aside>
+  </div>
+</section>
+
+<div id="siteFooter"></div>
+<script id="article-meta" type="application/json">{"id": "article/cach-su-dung-ham-subtotal-trong-excel-khi-lam-ke-toan.html","sectionKey": "thu-vien","title": "Cách sử dụng hàm Subtotal trong Excel khi làm kế toán","topicLabel": "Excel - Công cụ khác","tags": ["Excel","Công cụ khác","Phần mềm","Công cụ","Hướng dẫn"],"publishDate": "2026-04-02","modifiedDate": null,"authorName": "Kế Toán Diệu Tâm","authorType": "Organization","section": "thu-vien","sectionLabel": "Thư viện","sectionHref": "thu-vien.html","libraryKindKey": "cong-cu","libraryKindLabel": "Công cụ","cardBadgeLabel": "Công cụ","topicLv1Key": "phan-mem-cong-cu","topicLv1Label": "Phần mềm - Công cụ","topicLv2Key": "excel-va-cong-cu-khac","topicLv2Label": "Excel - Công cụ khác","topicLv3Key": "excel-cong-cu-khac","topicLv3Label": "Excel/công cụ khác","cardTopicLabel": "Excel - Công cụ khác","legacyHref": "thu-vien/cach-su-dung-ham-subtotal-trong-excel-khi-lam-ke-toan.html"}</script>
+<script src="../data/article-views/article/cach-su-dung-ham-subtotal-trong-excel-khi-lam-ke-toan.html.js"></script>
+<script src="../site-shell.js"></script>
+<script src="../article-layout.js"></script>
+</body>
+</html>

@@ -39,6 +39,15 @@ function delete_article_with_assets(array $article, ?array $actor = null): array
     ];
   }
 
+  $legacyHref = trim((string) ($article['legacyHref'] ?? ''));
+  $legacyPath = '';
+  if ($legacyHref !== '') {
+    $legacyRelative = ltrim(strtok($legacyHref, '?') ?: '', '/');
+    if ($legacyRelative !== '' && preg_match('/^(thu-vien|ban-tin)\/[^\/]+\.html$/', $legacyRelative) === 1) {
+      $legacyPath = dirname(ADMIN_BASE_PATH) . '/' . $legacyRelative;
+    }
+  }
+
   $sourceRaw = file_get_contents(ADMIN_ARTICLES_SOURCE_PATH);
   if ($sourceRaw === false || trim($sourceRaw) === '') {
     return [
@@ -102,12 +111,23 @@ function delete_article_with_assets(array $article, ?array $actor = null): array
       'message' => 'Không xóa được file HTML bài viết.',
     ];
   }
+  $legacyStubRemoved = false;
+  $legacyBackupPath = '';
+  if ($legacyPath !== '' && file_exists($legacyPath) && is_writable($legacyPath)) {
+    $legacyBackupPath = build_backup_file_path($articleId . '-legacy-redirect-delete');
+    if (@copy($legacyPath, $legacyBackupPath) && @unlink($legacyPath)) {
+      $legacyStubRemoved = true;
+    }
+  }
 
   // Step 2: write source without article.
   $json = json_encode($filtered, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
   if ($json === false || file_put_contents(ADMIN_ARTICLES_SOURCE_PATH, $json . PHP_EOL) === false) {
     // Rollback HTML if source write fails.
     @copy($backupPath, $targetPath);
+    if ($legacyStubRemoved && $legacyBackupPath !== '') {
+      @copy($legacyBackupPath, $legacyPath);
+    }
     return [
       'ok' => false,
       'code' => 'write_source_failed',
@@ -140,6 +160,8 @@ function delete_article_with_assets(array $article, ?array $actor = null): array
       'media_removed_files' => (int) ($mediaPurge['removed_files'] ?? 0),
       'media_missing_files' => (int) ($mediaPurge['missing_files'] ?? 0),
       'media_failed_files' => is_array($mediaPurge['failed_files'] ?? null) ? $mediaPurge['failed_files'] : [],
+      'legacy_redirect_stub_removed' => $legacyStubRemoved,
+      'legacy_redirect_backup_path' => $legacyBackupPath,
     ],
     'actor' => [
       'user_id' => (string) (($actor['user_id'] ?? '') ?: ''),
@@ -158,6 +180,8 @@ function delete_article_with_assets(array $article, ?array $actor = null): array
     'role' => (string) (($actor['role'] ?? '') ?: ''),
     'backup' => $backupPath,
     'source_backup' => $sourceBackupPath,
+    'legacy_redirect_stub_removed' => $legacyStubRemoved,
+    'legacy_redirect_backup' => $legacyBackupPath,
     'media_removed_items' => (int) ($mediaPurge['removed_items'] ?? 0),
     'media_failed_count' => count(is_array($mediaPurge['failed_files'] ?? null) ? $mediaPurge['failed_files'] : []),
   ]);

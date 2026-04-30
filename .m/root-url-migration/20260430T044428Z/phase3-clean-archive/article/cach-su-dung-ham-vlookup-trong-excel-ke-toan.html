@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cách sử dụng hàm VLOOKUP trong Excel kế toán | Thư viện | Kế Toán Diệu Tâm</title>
+  <meta name="description" content="Hướng dẫn sử dụng hàm Vlookup trong Excel kế toán; Tác dụng của hàm Vlookup khi làm sổ sách kế toán trên Excel, cú pháp…">
+  <meta name="robots" content="index,follow">
+  
+  <link rel="canonical" href="https://ketoandieutam.vn/article/cach-su-dung-ham-vlookup-trong-excel-ke-toan.html">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/content-hub.css">
+</head>
+<body class="article-page" data-root="../" data-nav="thu-vien">
+<div id="siteHeader"></div>
+
+	<section class="article-hero">
+	  <div class="container">
+	    <div class="article-breadcrumbs">
+	      <a href="../index.html">Trang chủ</a>
+	      <span>/</span>
+	      <a id="articleHubBreadcrumb" href="../thu-vien.html">Thư viện</a>
+	    </div>
+	    <span class="article-kicker">Excel - Công cụ khác</span>
+	    <h1 class="article-title">Cách sử dụng hàm VLOOKUP trong Excel kế toán</h1>
+    <p class="article-summary">Hướng dẫn sử dụng hàm Vlookup trong Excel kế toán; Tác dụng của hàm Vlookup khi làm sổ sách kế toán trên Excel, cú pháp…</p>
+    <div id="articleTopNav" class="article-top-nav"></div>
+  </div>
+</section>
+
+<section class="article-shell">
+  <div class="container article-grid">
+    <article class="article-main">
+      <div class="article-prose">
+        <h2>
+	<br />
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">Hướng dẫn sử dụng h&agrave;m Vlookup trong Excel kế to&aacute;n; T&aacute;c dụng của h&agrave;m Vlookup khi l&agrave;m sổ s&aacute;ch kế to&aacute;n tr&ecirc;n Excel, c&uacute; ph&aacute;p thực hiện h&agrave;m Vlookup.</span></span></span></h2>
+<div style="text-align: center;">
+	<br />
+	<br />
+	<img alt="hàm vlookup trong excel" class="hàm vlookup trong excel" longdesc="hàm vlookup trong excel" src="../assets/images/content/pic/Service/images/ham-vlookup-trong-excel.png" style="width: 480px; height: 249px; border-width: 1px; border-style: solid;" title="hàm vlookup trong excel" /></div>
+<div style="text-align: center;">
+	<br />
+	---------------------------------------------------------------------------------------<br />
+	&nbsp;</div>
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong><span style="background-color:#ccffff;">1. C&ocirc;ng dụng của h&agrave;m VLOOKUP trong Excel kế to&aacute;n:</span></strong><br />
+&nbsp;<br />
+- T&igrave;m đơn gi&aacute; Xuất kho từ b&ecirc;n Bảng Nhập Xuất Tồn về Phiếu Xuất kho.<br />
+- T&igrave;m M&atilde; TK, T&ecirc;n TK từ Danh mục t&agrave;i khoản về bảng CĐPS, về Sổ 131, 331&hellip;<br />
+- T&igrave;m M&atilde; h&agrave;ng ho&aacute;, t&ecirc;n h&agrave;ng ho&aacute; từ Danh mục h&agrave;ng ho&aacute; về Bảng Nhập Xuất Tồn<br />
+- T&Igrave;m số dư của đầu th&aacute;ng N căn cứ vao cột số dư của th&aacute;ng N-1<br />
+- T&igrave;m số Khấu hao (Ph&acirc;n bổ) luỹ kế từ kỳ trước, căn cứ v&agrave;o Gi&aacute; trị khấu hao (ph&acirc;n bổ) luỹ kế (của bảng 242, 214)<br />
+- V&agrave; c&aacute;c bảng kh&aacute;c li&ecirc;n quan&hellip;.</span></span></span>
+<div style="text-align: center;">
+	<br />
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">----------------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong><span style="background-color:#ccffff;">2. C&aacute;ch sử dụng h&agrave;m VLOOKUP trong Excel kế to&aacute;n:</span></strong><br />
+<br />
+- H&agrave;m Vlookup l&agrave; h&agrave;m t&igrave;m kiếm theo một điều kiện (gi&aacute; trị) đ&atilde; c&oacute;: ( Điều kiện đ&atilde; c&oacute; gọi l&agrave; &quot;Gi&aacute; trị để t&igrave;m kiếm&quot;.<br />
+<br />
+C&uacute; ph&aacute;p của h&agrave;m: H&agrave;m c&oacute; 4 tham số gồm:</span></span></span><br />
+<br />
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>=Vlookup (Gi&aacute; trị để t&igrave;m kiếm<span style="background-color:#ffff00;">;</span>V&ugrave;ng dữ liệu t&igrave;m kiếm<span style="background-color:#ffff00;">;</span>Cột trả về gi&aacute; trị t&igrave;m kiếm<span style="background-color:#ffff00;">;</span>0)</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#fff0f5;">&nbsp;(Dấu chấm phẩy (</span></span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#fff0f5;">;</span></span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#fff0f5;">) hay dấu (</span></span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#fff0f5;">,</span></span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#fff0f5;">) l&agrave; phụ thuộc v&agrave;o từng m&aacute;y t&iacute;nh )</span></span></span></span><br />
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>- Gi&aacute; trị để t&igrave;m kiếm:</strong> Gi&aacute; trị để t&igrave;m kiếm chỉ l&agrave; một &Ocirc; v&agrave; phải c&oacute; T&ecirc;n trong V&ugrave;ng dữ liệu t&igrave;m kiếm ( L&agrave; &Ocirc; m&atilde; h&agrave;ng ho&aacute;, M&atilde; t&agrave;i khoản, M&atilde; t&agrave;i sản, M&atilde; C&ocirc;ng Cụ dụng cụ&hellip;.)<br />
+&nbsp;<br />
+<strong>-&nbsp; V&ugrave;ng dữ liệu t&igrave;m kiếm:</strong> &ldquo;V&ugrave;ng dữ liệu t&igrave;m kiếm&rdquo; phải chứa t&ecirc;n của &ldquo; Gi&aacute; trị để t&igrave;m kiếm&rdquo;. (Cụ thể: l&agrave; bảng dữ liệu của th&aacute;ng trước hoặc dữ liệu của Sheet kh&aacute;c )<br />
+&nbsp;<br />
+<strong>-&nbsp; Cột trả về gi&aacute; trị t&igrave;m kiếm:</strong> L&agrave; số thứ tự cột, t&iacute;nh từ b&ecirc;n tr&aacute;i sang của v&ugrave;ng dữ liệu t&igrave;m kiếm (V&iacute; dụ:&nbsp;</span></span><strong style="color: rgb(255, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;">=Vlookup (Gi&aacute; trị để t&igrave;m kiếm<span style="background-color: rgb(255, 255, 0);">;</span>V&ugrave;ng dữ liệu t&igrave;m kiếm<span style="background-color: rgb(255, 255, 0);">;</span>2<span style="background-color: rgb(255, 255, 0);">;</span>0)&nbsp;</strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">L&agrave; cột thứ 2 t&iacute;nh từ b&ecirc;n tr&aacute;i sang của v&ugrave;ng dữ liệu)<br />
+<br />
+<strong>-&nbsp; Tham số &ldquo; 0&rdquo;</strong><em><strong>: </strong></em>Kh&ocirc;ng thực hiện sắp xếp theo thứ tự n&agrave;o.</span></span></span><br />
+<br />
+<span style="color: rgb(0, 0, 0);"><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><strong><span style="background-color: rgb(255, 240, 245);">Tại sạo phải bấm ph&iacute;m F4:</span></strong><br />
+<strong>- Bấn F4 (</strong></span></span></span><strong><span style="color: rgb(255, 0, 0);"><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;">1 lần</span></span></span></strong><span style="color: rgb(0, 0, 0);"><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><strong>)</strong>: Để c&oacute; g&aacute;i trị tuyệt đối (tuyệt đối được hiểu l&agrave;&nbsp;<span style="background-color: rgb(255, 240, 245);">cố định cột v&agrave; cố định d&ograve;ng&nbsp;</span>&ndash; ($cột$d&ograve;ng);&nbsp;<br />
+<strong>V&iacute; dụ:</strong>&nbsp;$E$12 &ndash; tức l&agrave; cố định cột E v&agrave; cố định d&ograve;ng 12.<br />
+<br />
+<strong>- Bấm F4 (</strong></span></span></span><span style="color: rgb(255, 0, 0);"><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><strong>2 lần</strong></span></span></span><span style="color: rgb(0, 0, 0);"><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><strong>):</strong>&nbsp;Để c&oacute; gi&aacute; trị tương đối cột v&agrave; tuyệt đối d&ograve;ng &ndash; được hiểu l&agrave;&nbsp;<span style="background-color: rgb(255, 240, 245);">cố định d&ograve;ng thay đổi cột</span>&nbsp;&ndash; (cột$d&ograve;ng);<br />
+<strong>V&iacute; dụ</strong>: E$12 &ndash; tức l&agrave; cố định D&ograve;ng 12, kh&ocirc;ng cố định cột E.<br />
+<br />
+<strong>- Bấm F4(</strong></span></span></span><span style="color:#ff0000;"><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><strong>3 lần</strong></span></span></span><span style="color: rgb(0, 0, 0);"><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><strong>)</strong>: Để c&oacute; gi&aacute; trị tương đối d&ograve;ng v&agrave; tuyệt đối cột &ndash; được hiểu l&agrave;&nbsp;<span style="background-color: rgb(255, 240, 245);">cố định cột thay đổi d&ograve;ng</span>&nbsp;&ndash; ($cột d&ograve;ng) ;&nbsp;<br />
+<strong>V&iacute; dụ:</strong>&nbsp;$E12 &ndash; tức l&agrave; cố định Cột E, kh&ocirc;ng cố định d&ograve;ng 12.</span></span></span><br />
+<div style="text-align: center;">
+	<br />
+	-----------------------------------------------------------------------------------------</div>
+<br />
+<span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong><span style="color:#000000;">Sau đ&acirc;y C&ocirc;ng ty </span><a href="../index.html" name="kế toán diệu tâm" target="_blank" title="kế toán diệu tâm" type="kế toán diệu tâm"><span style="color:#000080;">Kế toán Diệu Tâm</span></a><span style="color:#000000;"> xin lấy v&iacute; dụ về c&aacute;ch sử dụng h&agrave;m Vlookup trong Excel khi l&agrave;m kế to&aacute;n, để c&aacute;c bạn hiểu d&otilde; hơn:</span></strong></span></span><br />
+<br />
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>V&iacute; dụ:</strong></span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"> - T&igrave;m T&ecirc;n h&agrave;ng h&oacute;a, vật tư của m&atilde; h&agrave;ng ĐH-P24-2C từ Danh mục h&agrave;ng h&oacute;a (DMHH) về Bảng Nhập Xuất Tồn:</span></span></span><br />
+<div style="text-align: center;">
+	<strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p <span style="color:#ff0000;">=VLOOKUP($B12<span style="background-color:#ffff00;">;</span>DMHH!$D$10:$F$23<span style="background-color:#ffff00;">;</span>2<span style="background-color:#ffff00;">;</span>0)</span></span></span></strong><br />
+	&nbsp;</div>
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>&nbsp; &nbsp; +) Gi&aacute; trị t&igrave;m kiếm:</strong> l&agrave; &Ocirc; chữa m&atilde; h&agrave;ng&nbsp;</span></span></span><span style="color: rgb(0, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;">ĐH-P24-2C tr&ecirc;n Bảng Nhập xuất tồn <em>(theo v&iacute; dụ h&igrave;nh ảnh b&ecirc;n dưới l&agrave; </em></span><em><span style="color:#ff0000;"><span style="font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;">&ocirc; B12</span></span></em><span style="color: rgb(0, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;"><em>).</em></span><br />
+<strong style="color: rgb(0, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;">&nbsp; &nbsp; +) V&ugrave;ng dữ liệu t&igrave;m kiếm:&nbsp;</strong><span style="color: rgb(0, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;">L&agrave; Bảng Danh mục h&agrave;ng h&oacute;a (DMHH) điểm bắt đầu của V&ugrave;ng được t&iacute;nh từ d&atilde;y &Ocirc; c&oacute; chứa m&atilde; h&agrave;ng&nbsp;</span><span style="color: rgb(0, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;">ĐH-P24-2C đến d&atilde;y &Ocirc; c&oacute; chứa gi&aacute; trị cần t&igrave;m.<em> (theo v&iacute; dụ h&igrave;nh ảnh b&ecirc;n dưới l&agrave; V&ugrave;ng </em></span><span style="color:#ff0000;"><span style="font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;"><em>từ D10 đến F23</em></span></span><span style="color: rgb(0, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;"><em>)</em></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>&nbsp; &nbsp; +) Cột trả về gi&aacute; trị t&igrave;m kiếm:</strong> l&agrave; Cột &quot;T&ecirc;n h&agrave;ng h&oacute;a&quot; tr&ecirc;n Bảng DMHH v&agrave; được đếm từ b&ecirc;n tr&aacute;i của V&ugrave;ng sang. <em>(theo v&iacute; dụ h&igrave;nh ảnh b&ecirc;n dưới l&agrave; </em></span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><em>Cột thứ 2 của V&ugrave;ng t&igrave;m kiếm</em></span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><em>)</em><br />
+<br />
+<strong><span style="background-color:#ffff99;">Tr&igrave;nh tự cụ thể như sau:</span></strong><br />
+<br />
+<strong>- Bắt đầu</strong>: Tr&ecirc;n Bảng Nhập xuất tồn g&otilde; h&agrave;m<strong>&nbsp;</strong></span></span></span><strong style="text-align: center;"><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="color: rgb(255, 0, 0);">=VLOOKUP(</span></span></span></strong><br style="color: rgb(0, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;" />
+<br />
+<span style="color: rgb(0, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;"><strong>- Tiếp đ&oacute;:</strong> Khi c&aacute;c bạn bấm chọn v&agrave;o chọn &Ocirc; B12 th&igrave; phải <span style="background-color:#fff0f5;">bấm ph&iacute;m F4 1 lần</span> để cố định.<br />
+-&gt; Cụ thể khi g&otilde; đến<span style="background-color:#fff0f5;"> =Vlookup(B12</span> -&gt; Th&igrave; phải bấm ph&iacute;m F4 1 lần: -&gt; Kết quả sẽ l&agrave;:&nbsp;</span><strong style="text-align: center;"><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="color: rgb(255, 0, 0);">=VLOOKUP($B12</span></span></span></strong><br />
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>- Tiếp đ&oacute;</strong>: Khi k&eacute;o chuột chọn v&ugrave;ng dữ liệu tr&ecirc;n bảng DMHH th&igrave; phải bấm ph&iacute;m F4 1 lần để cố định:<br />
+-&gt; Cụ thể khi g&otilde; đến <span style="background-color:#fff0f5;">=VLOOKUP($B12;DMHH!D10:F23</span> -&gt; Thi phải <span style="background-color:#fff0f5;">bấm ph&iacute;m F4 1 lần</span>: Kết quả:&nbsp;</span></span></span><strong style="text-align: center;"><span style="font-family: &quot;times new roman&quot;, times, serif;"><span style="font-size: 16px;"><span style="color: rgb(255, 0, 0);">=VLOOKUP($B12;DMHH!$D$10:$F$23</span></span></span></strong><br />
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>-&gt; Cuối c&ugrave;ng</strong> c&aacute;c bạn g&otilde; tiếp&nbsp;</span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>=VLOOKUP($B$12;DMHH!$D$10:$F$23;2;0)</strong></span></span></span><br />
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong><img alt="cách sử dụng hàm vlookup trong excel kế toán" class="cách sử dụng hàm vlookup trong excel kế toán" longdesc="cách sử dụng hàm vlookup trong excel kế toán" src="../assets/images/content/pic/Service/images/cach-su-dung-ham-vlookup-trong-excel-ke-toan.png" style="width: 560px; height: 320px; border-width: 1px; border-style: solid;" title="cách sử dụng hàm vlookup trong excel kế toán" /></strong><br />
+<br />
+Tr&ecirc;n Bảng Danh mục h&agrave;ng h&oacute;a (DMHH) <span style="background-color:#fff0f5;">k&eacute;o chuột</span>&nbsp;</span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">từ D10 đến F23.</span></span></span><br />
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><img alt="hướng dẫn sử dụng hàm vlookup trong excel kế toán" class="hướng dẫn sử dụng hàm vlookup trong excel kế toán" longdesc="hướng dẫn sử dụng hàm vlookup trong excel kế toán" src="../assets/images/content/pic/Service/images/huong-dan-su-dung-ham-vlookup-trong-excel-ke-toan.png" style="width: 560px; height: 404px; border-width: 1px; border-style: solid;" title="hướng dẫn sử dụng hàm vlookup trong excel kế toán" /></span></span></span><br />
+<div style="text-align: center;">
+	<br />
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">------------------------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<div style="text-align: right;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><em>xem th&ecirc;m</em>: </span></span></span><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><a href="../article/cach-lam-so-sach-ke-toan-tren-excel-doanh-nghiep.html" name="cách làm sổ sách kế toán trên excle" target="_blank" title="cách làm sổ sách kế toán trên excle" type="cách làm sổ sách kế toán trên excle"><span style="color:#0000ff;"><strong>C&aacute;ch l&agrave;m sổ s&aacute;ch kế to&aacute;n tr&ecirc;n Excel</strong></span></a></span></span></div>
+<div style="text-align: center;">
+	<strong><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">__________________________________________________</span></span></span></strong></div>
+      </div>
+      <div id="articleBottomNav" class="article-bottom-nav"></div>
+      <div id="articleRecommendations" class="article-recommendations"></div>
+    </article>
+
+    <aside id="articleSidebar" class="article-side"></aside>
+  </div>
+</section>
+
+<div id="siteFooter"></div>
+<script id="article-meta" type="application/json">{"id": "article/cach-su-dung-ham-vlookup-trong-excel-ke-toan.html","sectionKey": "thu-vien","title": "Cách sử dụng hàm VLOOKUP trong Excel kế toán","topicLabel": "Excel - Công cụ khác","tags": ["Excel","Công cụ khác","Phần mềm","Công cụ","Hướng dẫn"],"publishDate": "2026-04-02","modifiedDate": null,"authorName": "Kế Toán Diệu Tâm","authorType": "Organization","section": "thu-vien","sectionLabel": "Thư viện","sectionHref": "thu-vien.html","libraryKindKey": "cong-cu","libraryKindLabel": "Công cụ","cardBadgeLabel": "Công cụ","topicLv1Key": "phan-mem-cong-cu","topicLv1Label": "Phần mềm - Công cụ","topicLv2Key": "excel-va-cong-cu-khac","topicLv2Label": "Excel - Công cụ khác","topicLv3Key": "excel-cong-cu-khac","topicLv3Label": "Excel/công cụ khác","cardTopicLabel": "Excel - Công cụ khác","legacyHref": "thu-vien/cach-su-dung-ham-vlookup-trong-excel-ke-toan.html"}</script>
+<script src="../data/article-views/article/cach-su-dung-ham-vlookup-trong-excel-ke-toan.html.js"></script>
+<script src="../site-shell.js"></script>
+<script src="../article-layout.js"></script>
+</body>
+</html>

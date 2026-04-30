@@ -803,6 +803,8 @@ function public_rebuild_content_index(array $grouped, string $targetArticleId): 
         'sectionHref' => $section . '.html',
         'href' => $href,
         'canonical' => 'https://ketoandieutam.vn/' . $href,
+        'articleHref' => public_rebuild_text($item['articleHref'] ?? ''),
+        'legacyHref' => public_rebuild_text($item['legacyHref'] ?? ''),
         'title' => public_rebuild_text($item['title'] ?? ''),
         'excerpt' => public_rebuild_text($item['excerpt'] ?? ''),
         'topicLv1Key' => public_rebuild_text($item['topicLv1Key'] ?? ''),

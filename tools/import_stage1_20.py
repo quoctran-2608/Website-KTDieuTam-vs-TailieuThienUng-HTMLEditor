@@ -517,6 +517,8 @@ def build_content_index(records_by_section: Dict[str, List[Dict]]) -> Dict:
                 "sectionHref": f"{section}.html",
                 "href": article_id,
                 "canonical": f"{SITE_BASE_URL}/{article_id}",
+                "articleHref": record.get("article_href", ""),
+                "legacyHref": record.get("legacy_href", ""),
                 "title": record["title"],
                 "excerpt": record["excerpt"],
                 "topicLv1Key": record["topic_lv1_key"],

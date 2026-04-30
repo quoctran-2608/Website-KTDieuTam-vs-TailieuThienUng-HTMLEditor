@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "reason_old_article_views_not_pruned": "data/article-views/thu-vien and data/article-views/ban-tin are tracked legacy files; deleting/moving them would create 5633 deletes. They are no longer referenced by article HTML, content-index, or hubs.",
+  "safe_current_state": {
+    "new_article_view_json": 2809,
+    "legacy_article_view_json_left": 2824,
+    "verifier_ok": true
+  },
+  "future_cleanup_options": [
+    "Keep legacy article-view dirs until the migration has run in production for a while.",
+    "If repository size becomes a problem, remove data/article-views/thu-vien and data/article-views/ban-tin in a separate cleanup commit after confirming no old HTML references them.",
+    "If host supports real redirects, convert docs/article-url-migration-phase5-redirect-map.json to server rules, then keep redirect stubs as fallback or remove them later in a separate phase."
+  ]
+}

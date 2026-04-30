@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "archive_dir": ".m/root-url-migration/20260430T044428Z/phase3-clean-archive",
+  "archived": [
+    {
+      "from": "article",
+      "to": ".m/root-url-migration/20260430T044428Z/phase3-clean-archive/article"
+    },
+    {
+      "from": "data/article-views/article",
+      "to": ".m/root-url-migration/20260430T044428Z/phase3-clean-archive/data/article-views/article"
+    }
+  ]
+}

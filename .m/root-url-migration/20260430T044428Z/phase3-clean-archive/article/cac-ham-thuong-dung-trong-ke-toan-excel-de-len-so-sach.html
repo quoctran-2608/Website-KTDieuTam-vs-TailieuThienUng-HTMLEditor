@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Các hàm Excel trong kế toán thường dùng | Thư viện | Kế Toán Diệu Tâm</title>
+  <meta name="description" content="Các hàm Excel thông dụng trong kế toán thường dùng lên sổ sách, tính lương, kho, nhập xuất tồn, công nợ: Hướng dẫn cách…">
+  <meta name="robots" content="index,follow">
+  
+  <link rel="canonical" href="https://ketoandieutam.vn/article/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/content-hub.css">
+</head>
+<body class="article-page" data-root="../" data-nav="thu-vien">
+<div id="siteHeader"></div>
+
+	<section class="article-hero">
+	  <div class="container">
+	    <div class="article-breadcrumbs">
+	      <a href="../index.html">Trang chủ</a>
+	      <span>/</span>
+	      <a id="articleHubBreadcrumb" href="../thu-vien.html">Thư viện</a>
+	    </div>
+	    <span class="article-kicker">Excel - Công cụ khác</span>
+	    <h1 class="article-title">Các hàm Excel trong kế toán thường dùng</h1>
+    <p class="article-summary">Các hàm Excel thông dụng trong kế toán thường dùng lên sổ sách, tính lương, kho, nhập xuất tồn, công nợ: Hướng dẫn cách…</p>
+    <div id="articleTopNav" class="article-top-nav"></div>
+  </div>
+</section>
+
+<section class="article-shell">
+  <div class="container article-grid">
+    <article class="article-main">
+      <div class="article-prose">
+        <h2>
+	<br />
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&aacute;c h&agrave;m Excel th&ocirc;ng dụng trong kế to&aacute;n thường d&ugrave;ng l&ecirc;n sổ s&aacute;ch, t&iacute;nh lương, kho, nhập xuất tồn, c&ocirc;ng nợ: Hướng dẫn c&aacute;ch sử dụng c&aacute;c h&agrave;m trong Excel như: Vlookup, sumif, subtotal...</span></span></span></h2>
+<br />
+<br />
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>1. H&agrave;m LEFT</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p: LEFT(text,số k&yacute; tự cần lấy)<br />
+<br />
+<strong>VD:</strong> LEFT(&ldquo;ketoandieutam&rdquo;,</span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">6</span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">)=&rdquo;ketoan&rdquo;<br />
+Nghĩa l&agrave;: <span style="background-color:#fff0f5;">T&ocirc;i muốn lấy 6 k&yacute; tự trong chữ &quot;ketoandieutam&quot;</span><br />
+<br />
+<strong>VD</strong>: LEFT(&ldquo;ketoandieutam&rdquo;,14)=&rdquo;ketoandieutam&rdquo;</span></span></span><br />
+<span style="color: rgb(0, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px;">Nghĩa l&agrave;:&nbsp;</span><span style="color: rgb(0, 0, 0); font-family: &quot;times new roman&quot;, times, serif; font-size: 16px; background-color: rgb(255, 240, 245);">T&ocirc;i muốn lấy 14 k&yacute; tự trong chữ &quot;ketoandieutam&quot;</span><br />
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>VD</strong> tr&ecirc;n Excel: LEFT(B3,2)</span></span></span>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;-------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>2. H&agrave;m VLOOKUP</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p: <strong>=VLOOKUP(gi&aacute; trị d&ograve;, bảng d&ograve;, cột gi&aacute; trị trả về, kiểu d&ograve;)</strong><br />
+<br />
+- H&agrave;m Vlookup l&agrave; h&agrave;m trả về gi&aacute; trị d&ograve; t&igrave;m theo cột đưa từ bảng tham chiếu l&ecirc;n bảng cơ sở dữ liệu theo đ&uacute;ng gi&aacute; trị d&ograve; t&igrave;m. X=</span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">0</span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"> l&agrave; <span style="background-color:#fff0f5;">d&ograve; t&igrave;m một c&aacute;ch ch&iacute;nh x&aacute;c</span>. X=</span></span></span><span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">1</span></span></span><span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"> l&agrave; <span style="background-color:#fff0f5;">d&ograve; t&igrave;m một c&aacute;ch tương đối.</span><br />
+<br />
+<strong>V&iacute; dụ như d&ugrave;ng để:</strong><br />
+- T&igrave;m M&atilde; h&agrave;ng ho&aacute;, t&ecirc;n h&agrave;ng ho&aacute; từ Danh mục h&agrave;ng ho&aacute; về Bảng Nhập Xuất Tồn.<br />
+- T&igrave;m đơn gi&aacute; Xuất kho từ b&ecirc;n Bảng Nhập Xuất Tồn về Phiếu Xuất kho.<br />
+- T&igrave;m M&atilde; TK, T&ecirc;n TK từ Danh mục t&agrave;i khoản về bảng CĐPS, về Sổ 131, 331&hellip;<br />
+- T&igrave;m số Khấu hao (Ph&acirc;n bổ) luỹ kế từ kỳ trước, căn cứ v&agrave;o Gi&aacute; trị khấu hao( ph&acirc;n bổ) luỹ kế (của bảng , 242, 214 )</span></span></span><br />
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><em>Chi tiết mời c&aacute;c bạn xem tại đ&acirc;y</em>: </span></span></span><a href="../article/cach-su-dung-ham-vlookup-trong-excel-ke-toan.html" name="cách sử dụng hàm vlookup trong excel kế toán" target="_blank" title="cách sử dụng hàm vlookup trong excel kế toán" type="cách sử dụng hàm vlookup trong excel kế toán"><span style="color:#0000ff;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>C&aacute;ch sử dụng h&agrave;m Vlookup trong Excel kế to&aacute;n</strong></span></span></span></a>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;-----------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>3. H&agrave;m LEN</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p: LEN(text).<br />
+<br />
+C&ocirc;ng dụng l&agrave; đếm số k&yacute; tự trong chuỗi text.<br />
+<br />
+<strong>VD</strong>: LEN(&ldquo;ketoan&rdquo;)=6<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LEN(&ldquo;ketoandieutam&rdquo;)=14</span></span></span><br />
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;----------------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>4. H&agrave;m SUMIF:</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p: <strong>=SUMIF(V&ugrave;ng chứa điều kiện, Điều kiện, V&ugrave;ng cần t&iacute;nh tổng).</strong><br />
+<br />
+- H&agrave;m n&agrave;y trả về gi&aacute; trị t&iacute;nh tổng của c&aacute;c &ocirc; trong v&ugrave;ng cần t&iacute;nh thoả m&atilde;n một điều kiện đưa v&agrave;o.<br />
+<br />
+<strong>V&iacute; dụ như d&ugrave;ng để:</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">- Tổng hợp số liệu từ sổ NKC l&ecirc;n Ph&aacute;t sinh Nợ Ph&aacute;t sinh C&oacute; tr&ecirc;n Bảng c&acirc;n đối số ph&aacute;t sinh T&agrave;i khoản<br />
+- Tổng hợp số liệu từ PNK, PXK l&ecirc;n &ldquo;Bảng NHập Xuất Tồn&quot;<br />
+- Tổng hợp số liệu từ sổ NKC l&ecirc;n cột PS Nợ, PS C&oacute; của &ldquo;Bảng tổng hợp phải thu, phải trả kh&aacute;ch h&agrave;ng&rdquo;<br />
+- Kết chuyển c&aacute;c b&uacute;t to&aacute;n cuối kỳ.</span></span></span><br />
+<br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>V&iacute; dụ&nbsp;</strong>&nbsp;&nbsp; = SUMIF(B3:B8,&rdquo;&lt;=8&Prime;)<br />
+- T&iacute;nh tổng của c&aacute;c gi&aacute; trị trong v&ugrave;ng từ B3 đến B8 với điều kiện l&agrave; c&aacute;c gi&aacute; trị nhỏ hơn hoặc bằng 8.<br />
+<br />
+<em>Chi tiết mời c&aacute;c bạn xem tại đ&acirc;y: </em></span></span></span><a href="../article/cach-su-dung-ham-sumif-trong-excel-ke-toan.html" name="cách sử dụng hàm sumif trong excel kế toán" target="_blank" title="cách sử dụng hàm sumif trong excel kế toán" type="cách sử dụng hàm sumif trong excel kế toán"><span style="color:#0000ff;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>C&aacute;ch sử dụng h&agrave;m SUMIF trong Excel</strong></span></span></span></a>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;-----------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>5. H&agrave;m SUBTOTAL:</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p: =<strong>SUBTOTAL(function_num,ref1,ref2,...)</strong><br />
+<br />
+- H&agrave;m Subtotal l&agrave; h&agrave;m t&iacute;nh to&aacute;n cho một nh&oacute;m con trong một danh s&aacute;ch hoặc bảng dữ liệu tuỳ theo ph&eacute;p t&iacute;nh m&agrave; bạn chọn lựa trong đối số thứ nhất.<br />
+<br />
+<strong>V&iacute; dụ như d&ugrave;ng để:</strong></span></span></span><br />
+<span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">- T&iacute;nh tổng ph&aacute;t sinh trong kỳ.<br />
+- T&iacute;nh tổng cho từng t&agrave;i khoản cấp 1.<br />
+- T&iacute;nh tổng tiền tồn cuối ng&agrave;y...</span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;<br />
+<em>Chi tiết mời c&aacute;c bạn xem tại đ&acirc;y</em>: </span></span></span><a href="../article/cach-su-dung-ham-subtotal-trong-excel-khi-lam-ke-toan.html" name="cách sử dụng hàm subtotal trong excel" target="_blank" title="cách sử dụng hàm subtotal trong excel" type="cách sử dụng hàm subtotal trong excel"><span style="color:#0000ff;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>C&aacute;ch sử dụng h&agrave;m SUBTOTAL trong Excel</strong></span></span></span></a>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;------------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>6. H&agrave;m MID</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p: <strong>MID(chuỗi k&yacute; tự, vị tr&iacute; k&yacute; tự bắt đầu, số k&yacute; tự cần lấy)</strong><br />
+<br />
+<strong>VD:</strong> MID(&ldquo;ketoandieutam&rdquo;,7,8) = dieutam<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MID(&ldquo;ketoandieutam&rdquo;,3,4) = toan</span></span></span>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;------------------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>7. H&agrave;m IF</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p: =<strong>If(Điều kiện, Gi&aacute; trị 1, Gi&aacute; trị 2).</strong><br />
+<br />
+- H&agrave;m IF l&agrave; h&agrave;m trả về gi&aacute; trị 1 nếu điều kiện đ&uacute;ng, H&agrave;m trả về gi&aacute; trị 2 nếu điều kiện sai.<br />
+<br />
+<strong>V&iacute; dụ:&nbsp;</strong><br />
+= IF(B2&gt;=4,&ldquo;DUNG&rdquo;,&ldquo;SAI&rdquo;) = DUNG.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+= IF(B2&gt;=5,&ldquo;DUNG&rdquo;,&ldquo;SAI&rdquo;) = SAI</span></span></span>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;------------------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>8. H&agrave;m SUM:</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p:&nbsp; &nbsp;=<strong>SUM(Number1, Number2&hellip;)</strong><br />
+<br />
+- H&agrave;m Sum l&agrave; h&agrave;m cộng tất cả c&aacute;c số trong một v&ugrave;ng dữ liệu được chọn.<br />
+- C&aacute;c tham số: Number1, Number2&hellip; l&agrave; c&aacute;c số cần t&iacute;nh tổng.</span></span></span>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;----------------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>9. H&agrave;m MAX:</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p:&nbsp; <strong>&nbsp;=MAX(Number1, Number2&hellip;)</strong><br />
+<br />
+- H&agrave;m MAX l&agrave; h&agrave;m trả về số lớn nhất trong d&atilde;y được nhập.</span></span></span>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;--------------------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>10. H&agrave;m MIN:</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p:&nbsp; &nbsp;<strong>=MIN(Number1, Number2&hellip;)</strong><br />
+<br />
+H&agrave;m MIN l&agrave; h&agrave;m trả về số nhỏ nhất trong d&atilde;y được nhập v&agrave;o.</span></span></span><br />
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;--------------------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>11. H&agrave;m AND:</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p:&nbsp; &nbsp;<strong>=AND(đối 1, đối 2,..).</strong><br />
+- C&aacute;c đối số:&nbsp;&nbsp; Logical1, Logical2&hellip; l&agrave; c&aacute;c biểu thức điều kiện.<br />
+- H&agrave;m n&agrave;y l&agrave; Ph&eacute;p V&Agrave;, chỉ đ&uacute;ng khi tất cả c&aacute;c đối số c&oacute; gi&aacute; trị đ&uacute;ng. C&aacute;c đối số l&agrave; c&aacute;c hằng, biểu thức logic. H&agrave;m trả về gi&aacute; trị TRUE (1) nếu tất cả c&aacute;c đối số của n&oacute; l&agrave; đ&uacute;ng, trả về gi&aacute; trị FALSE (0) nếu một hay nhiều đối số của n&oacute; l&agrave; sai.<br />
+&nbsp;<br />
+<strong>V&iacute; dụ:&nbsp;&nbsp;&nbsp;</strong> =AND(D7&gt;0,D7&lt;5000)</span></span></span><br />
+<br />
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">Lưu &yacute;:</span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp; - C&aacute;c đối số phải l&agrave; gi&aacute; trị logic hoặc mảng hay tham chiếu c&oacute; chứa gi&aacute; trị logic.<br />
+&nbsp; - Nếu đối số tham chiếu l&agrave; gi&aacute; trị text hoặc Null (rỗng) th&igrave; những gi&aacute; trị đ&oacute; bị bỏ qua.<br />
+&nbsp; - Nếu v&ugrave;ng tham chiếu kh&ocirc;ng chứa gi&aacute; trị logic th&igrave; h&agrave;m trả về lỗi #VALUE!</span></span></span>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">&nbsp;--------------------------------------------------------------------</span></span></span><br />
+	&nbsp;</div>
+<span style="color:#ff0000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>12. H&agrave;m OR:</strong></span></span></span><br />
+<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">C&uacute; ph&aacute;p:&nbsp;&nbsp; OR(đối 1, đối 2,..).<br />
+- C&aacute;c đối số: Logical1, Logical2&hellip; l&agrave; c&aacute;c biểu thức điều kiện.<br />
+- H&agrave;m n&agrave;y l&agrave; Ph&eacute;p HOẶC, chỉ sai khi tất cả c&aacute;c đối số c&oacute; gi&aacute; trị sai. H&agrave;m trả về gi&aacute; trị TRUE (1) nếu bất cứ một đối số n&agrave;o của n&oacute; l&agrave; đ&uacute;ng, trả về gi&aacute; trị FALSE (0) nếu tất cả c&aacute;c đối số của n&oacute; l&agrave; sai.<br />
+<br />
+<strong>- V&iacute; dụ:</strong>&nbsp; =OR(F7&gt;03/02/74,F7&gt;01/01/2013)<br />
+&nbsp;</span></span></span><br />
+<br />
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;">------------------------------------------------------------------------------</span></span></span></div>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><span style="background-color:#f0ffff;">Để c&aacute;c bạn c&oacute; thể hiểu r&otilde; hơn v&agrave; chi tiết hơn khi sử dụng c&aacute;c h&agrave;m n&agrave;y v&agrave;o c&ocirc;ng việc kế to&aacute;n tr&ecirc;n Excel, mời c&aacute;c bạn xem th&ecirc;m: </span></span></span></span><strong><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><a href="../article/cach-lam-so-sach-ke-toan-tren-excel-doanh-nghiep.html" name="cách làm sổ sách kế toán trên excel" target="_blank" title="cách làm sổ sách kế toán trên excel" type="cách làm sổ sách kế toán trên excel"><span style="color:#0000ff;"><span style="background-color:#f0ffff;">C&aacute;ch l&agrave;m sổ s&aacute;ch kế to&aacute;n tr&ecirc;n Excel</span></span></a></span></span></strong></div>
+<div style="text-align: center;">
+	<span style="color:#000000;"><span style="font-family:times new roman,times,serif;"><span style="font-size:16px;"><strong>__________________________________________________<br />
+	<br />
+	<img alt="các hàm excel thông dụng trong kế toán" class="các hàm excel thông dụng trong kế toán" longdesc="các hàm excel thông dụng trong kế toán" src="../assets/images/content/pic/Service/images/cac-ham-excel-thong-dung-trong-ke-toan.png" style="width: 480px; height: 255px; border-width: 1px; border-style: solid;" title="các hàm excel thông dụng trong kế toán" /></strong></span></span></span></div>
+      </div>
+      <div id="articleBottomNav" class="article-bottom-nav"></div>
+      <div id="articleRecommendations" class="article-recommendations"></div>
+    </article>
+
+    <aside id="articleSidebar" class="article-side"></aside>
+  </div>
+</section>
+
+<div id="siteFooter"></div>
+<script id="article-meta" type="application/json">{"id": "article/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html","sectionKey": "thu-vien","title": "Các hàm Excel trong kế toán thường dùng","topicLabel": "Excel - Công cụ khác","tags": ["Excel","Công cụ khác","Kế toán","Hướng dẫn"],"publishDate": "2013-01-01","modifiedDate": null,"authorName": "Kế Toán Diệu Tâm","authorType": "Organization","section": "thu-vien","sectionLabel": "Thư viện","sectionHref": "thu-vien.html","libraryKindKey": "cong-cu","libraryKindLabel": "Công cụ","cardBadgeLabel": "Công cụ","topicLv1Key": "phan-mem-cong-cu","topicLv1Label": "Phần mềm - Công cụ","topicLv2Key": "excel-va-cong-cu-khac","topicLv2Label": "Excel - Công cụ khác","topicLv3Key": "excel-cong-cu-khac","topicLv3Label": "Excel/công cụ khác","cardTopicLabel": "Excel - Công cụ khác","legacyHref": "thu-vien/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html"}</script>
+<script src="../data/article-views/article/cac-ham-thuong-dung-trong-ke-toan-excel-de-len-so-sach.html.js"></script>
+<script src="../site-shell.js"></script>
+<script src="../article-layout.js"></script>
+</body>
+</html>

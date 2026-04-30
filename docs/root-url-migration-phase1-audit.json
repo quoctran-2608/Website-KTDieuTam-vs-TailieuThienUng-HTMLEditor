@@ -1,0 +1,254 @@
+{
+  "phase": "root-url-migration-audit",
+  "target": "/article/slug.html -> /slug.html",
+  "articles_total": 2809,
+  "article_entries": 2809,
+  "slug_conflicts": {},
+  "missing_article_files": [],
+  "missing_article_files_count": 0,
+  "root_path_conflicts": [
+    {
+      "slug": "lien-he.html",
+      "old": "article/lien-he.html",
+      "existing_type": "file"
+    }
+  ],
+  "root_path_conflicts_count": 1,
+  "root_html_reserved_pages": [
+    "ban-tin.html",
+    "chi-tiet-tin-tuyen-dung.html",
+    "dang-nhap-tuyen-dung.html",
+    "dang-nhap-ung-vien.html",
+    "dang-tin-tuyen-dung.html",
+    "dang-tin-viec-lam.html",
+    "danh-sach-ung-vien.html",
+    "dao-tao.html",
+    "don-ung-tuyen.html",
+    "giai-phap.html",
+    "gioi-thieu.html",
+    "ho-so-ung-vien.html",
+    "index.html",
+    "lien-he.html",
+    "nha-tuyen-dung.html",
+    "quan-ly-tin-tuyen-dung.html",
+    "tai-khoan-ung-vien.html",
+    "thu-vien.html",
+    "tuyen-dung.html",
+    "ung-tuyen.html",
+    "ung-vien-tuyen-dung.html",
+    "viec-lam-da-luu.html"
+  ],
+  "old_direct_html_in_thu_vien_ban_tin": 0,
+  "current_redirect_lines": 2809,
+  "current_htaccess_lines": 2809,
+  "internal_article_link_files": 1775,
+  "internal_article_links": 6205,
+  "internal_article_link_samples": [
+    {
+      "file": "article/bai-bo-le-phi-mon-bai-tu-nam-2026.html",
+      "count": 2,
+      "sample": [
+        "../article/mien-thue-tndn-3-nam-cho-doanh-nghiep-moi-thanh-lap.html",
+        "../article/nghi-quyet-198-2025-qh15-chinh-sach-mien-giam-thue-tndn-tncn-mon-bai.html"
+      ]
+    },
+    {
+      "file": "article/bai-tap-dinh-khoan-ke-toan-co-ban-co-loi-giai.html",
+      "count": 4,
+      "sample": [
+        "../article/cac-dieu-kien-ghi-nhan-tai-san-co-dinh-moi-nhat.html",
+        "../article/cach-hach-toan-trich-khau-hao-tai-san-co-dinh.html",
+        "../article/cach-hach-toan-tien-luong-va-cac-khoan-trich-theo-luong.html",
+        "../article/hoc-thuc-hanh-ke-toan-tong-hop-thuc-te-tai-ha-noi.html"
+      ]
+    },
+    {
+      "file": "article/bai-tap-dinh-khoan-nguyen-ly-ke-toan-co-loi-giai.html",
+      "count": 1,
+      "sample": [
+        "../article/khoa-hoc-thuc-hanh-ke-toan-tong-hop-thuc-te.html"
+      ]
+    },
+    {
+      "file": "article/bai-tap-hach-toan-tien-luong-co-loi-giai.html",
+      "count": 8,
+      "sample": [
+        "../article/ty-le-dong-bao-hiem-xh-bhyt-bh-that-nghiep-moi-nhat.html",
+        "../article/hop-dong-thu-viec-co-phai-dong-bhxh-khong.html",
+        "../article/cach-tinh-thue-tncn-hop-dong-thu-viec-cua-nhan-vien-thu-viec.html",
+        "../article/cach-tinh-thue-tncn-theo-bieu-luy-tien-tung-phan.html",
+        "../article/cach-lam-bang-tinh-luong-tren-excel.html"
+      ]
+    },
+    {
+      "file": "article/bai-tap-ke-toan-tai-san-co-dinh-co-dap-an.html",
+      "count": 7,
+      "sample": [
+        "../article/cach-tinh-khau-hao-tai-san-co-dinh-theo-duong-thang.html",
+        "../article/phuong-phap-trich-khau-hao-tscd-theo-so-du-giam-dan.html",
+        "../article/phuong-phap-trich-khau-hao-tscd-theo-san-luong.html",
+        "../article/cac-dieu-kien-ghi-nhan-tai-san-co-dinh-moi-nhat.html",
+        "../article/thu-tuc-thanh-ly-tai-san-co-dinh-da-va-chua-het-khau-hao.html"
+      ]
+    },
+    {
+      "file": "article/bai-tap-ke-toan-thue-gia-tri-gia-tang-co-loi-giai.html",
+      "count": 6,
+      "sample": [
+        "../article/cach-tinh-thue-gtgt-theo-phuong-phap-khau-tru.html",
+        "../article/cach-viet-hoa-don-chiet-khau-thuong-mai-giam-gia-hang-ban.html",
+        "../article/cach-ke-khai-thue-gtgt-theo-phuong-phap-khau-tru.html",
+        "../article/cach-tinh-thue-gtgt-theo-phuong-phap-truc-tiep-co-bai-tap-vi-du.html",
+        "../article/danh-muc-nganh-nghe-tinh-thue-gtgt-theo-ty-le-tren-doanh-thu.html"
+      ]
+    },
+    {
+      "file": "article/bai-tap-ke-toan-thue-tieu-thu-dac-biet-co-loi-giai.html",
+      "count": 4,
+      "sample": [
+        "../article/cach-hach-toan-hang-nhap-khau.html",
+        "../article/hach-toan-ty-gia-doanh-thu-hang-xuat-khau.html",
+        "../article/huong-dan-cach-hach-toan-hang-ban-bi-tra-lai.html",
+        "../article/huong-dan-ke-khai-thue-tieu-thu-dac-biet.html"
+      ]
+    },
+    {
+      "file": "article/bai-tap-ke-toan-thue-xuat-nhap-khau-co-loi-giai.html",
+      "count": 3,
+      "sample": [
+        "../article/bieu-thue-xuat-khau-moi-nhat-hien-nay.html",
+        "../article/cach-hach-toan-hang-nhap-khau.html",
+        "../article/hach-toan-ty-gia-doanh-thu-hang-xuat-khau.html"
+      ]
+    },
+    {
+      "file": "article/bai-tap-tinh-gia-thanh-san-pham-hoan-thanh-co-loi-giai.html",
+      "count": 5,
+      "sample": [
+        "../article/ty-le-trich-cac-khoan-theo-luong-moi-nhat.html",
+        "../article/cach-hach-toan-tien-luong-va-cac-khoan-trich-theo-luong.html",
+        "../article/cach-hach-toan-chiet-khau-thanh-toan.html",
+        "../article/cac-phuong-phap-tinh-gia-hang-nhap-kho-nvl-thanh-pham.html",
+        "../article/hoc-thuc-hanh-ke-toan-tong-hop-thuc-te-tai-ha-noi.html"
+      ]
+    },
+    {
+      "file": "article/bai-tap-tinh-thue-thu-nhap-ca-nhan-co-loi-giai-nhap-moi.html",
+      "count": 1,
+      "sample": [
+        "../article/cach-tinh-tinh-thue-thu-nhap-ca-nhan-moi-nhat.html"
+      ]
+    },
+    {
+      "file": "article/bai-tap-tinh-thue-thu-nhap-ca-nhan-co-loi-giai.html",
+      "count": 10,
+      "sample": [
+        "../article/cach-tinh-thue-tncn-theo-bieu-luy-tien-tung-phan.html",
+        "../article/cac-khoan-thu-nhap-duoc-mien-giam-thue-thu-nhap-ca-nhan.html",
+        "../article/quy-dinh-phu-cap-tien-an-giua-ca-moi-nhat.html",
+        "../article/cac-khoan-duoc-giam-tru-khi-tinh-thue-tncn.html",
+        "../article/cach-tinh-thue-thu-nhap-ca-nhan-nam-moi-nhat.html"
+      ]
+    },
+    {
+      "file": "article/bai-tap-tinh-thue-thu-nhap-doanh-nghiep-co-loi-giai.html",
+      "count": 2,
+      "sample": [
+        "../article/cach-tinh-thue-thu-nhap-doanh-nghiep-theo-quy.html",
+        "../article/hoc-thuc-hanh-ke-toan-tong-hop-thuc-te-tai-ha-noi.html"
+      ]
+    },
+    {
+      "file": "article/ban-hang-co-gia-tri-duoi-200-000-khong-phai-lap-hoa-don.html",
+      "count": 2,
+      "sample": [
+        "../article/mau-bang-ke-ban-le-hang-hoa-dich-vu-co-duoi-200-000-dong-theo-tt-39.html",
+        "../article/cach-viet-hoa-don-gia-tri-gia-tang-khi-ban-hang.html"
+      ]
+    },
+    {
+      "file": "article/ban-hang-hoa-thap-hon-gia-von.html",
+      "count": 2,
+      "sample": [
+        "../article/cach-hach-toan-hang-khuyen-mai-quang-cao-hang-mau.html",
+        "../article/cach-hach-toan-hang-hoa-het-han-su-dung-bi-hu-hong.html"
+      ]
+    },
+    {
+      "file": "article/ban-hang-tai-kho-ngoai-tinh-co-phai-nop-thue-vang-lai.html",
+      "count": 2,
+      "sample": [
+        "../article/thue-gtgt-vang-lai-co-duoc-khau-tru.html",
+        "../article/cach-ke-khai-thue-gtgt-vang-lai-ngoai-tinh.html"
+      ]
+    },
+    {
+      "file": "article/bang-bang-cham-cong-mau-so-01a-ldtl.html",
+      "count": 1,
+      "sample": [
+        "../article/mau-bang-cham-cong-tren-excel-cho-nhan-vien.html"
+      ]
+    },
+    {
+      "file": "article/bang-cham-cong-lam-them-gio-mau-so-01b-ldtl.html",
+      "count": 2,
+      "sample": [
+        "../article/bang-thanh-toan-tien-lam-them-gio-mau-so-06-ldtl.html",
+        "../article/mau-bang-cham-cong-lam-them-gio-excel-2025-moi-nhat.html"
+      ]
+    },
+    {
+      "file": "article/bang-dang-ky-phuong-phap-trich-khau-hao-tai-san-co-dinh-theo-tt-45.html",
+      "count": 2,
+      "sample": [
+        "../article/khung-thoi-gian-trich-khau-hao-cac-loai-tai-san-co-dinh.html",
+        "../article/cach-tinh-khau-hao-tai-san-co-dinh-theo-duong-thang.html"
+      ]
+    },
+    {
+      "file": "article/bang-ke-chi-tien-mau-so-09-tt.html",
+      "count": 1,
+      "sample": [
+        "../article/phieu-chi-mau-so-02-tt.html"
+      ]
+    },
+    {
+      "file": "article/bang-ke-chi-tiet-ca-nhan-kinh-doanh-mau-01-1-bk-cnkd.html",
+      "count": 1,
+      "sample": [
+        "../article/to-khai-thue-doi-voi-ca-nhan-kinh-doanh-mau-01-cnkd.html"
+      ]
+    }
+  ],
+  "article_ref_summary": [
+    {
+      "file": "data/articles.json",
+      "article_ref_count": 8427
+    },
+    {
+      "file": "content-index.js",
+      "article_ref_count": 54347
+    },
+    {
+      "file": "data/hubs/thu-vien.json",
+      "article_ref_count": 2694
+    },
+    {
+      "file": "data/hubs/ban-tin.json",
+      "article_ref_count": 115
+    },
+    {
+      "file": "sitemap.xml",
+      "article_ref_count": 2809
+    },
+    {
+      "file": "thu-vien.html",
+      "article_ref_count": 36
+    },
+    {
+      "file": "ban-tin.html",
+      "article_ref_count": 36
+    }
+  ],
+  "article_view_json_under_article": 2809
+}

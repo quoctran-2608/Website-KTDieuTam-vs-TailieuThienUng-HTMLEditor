@@ -71,6 +71,8 @@ def article_to_record(item: Dict[str, Any], catalog_index: int, feature_image_pa
         "classification_reasons": item.get("classificationReasons") if isinstance(item.get("classificationReasons"), dict) else {},
         "classification_legacy_primary": item.get("legacyPrimarySection"),
         "classification_legacy_secondary": as_list(item.get("legacySecondarySections")),
+        "legacy_href": as_text(item.get("legacyHref")).strip(),
+        "article_href": as_text(item.get("articleHref")).strip(),
         "catalog_index": catalog_index,
     }
 
@@ -169,6 +171,8 @@ def build_fast_content_index(tool, records_by_section: Dict[str, List[Dict[str, 
                 "sectionHref": f"{section}.html",
                 "href": article_id,
                 "canonical": f"{tool.SITE_BASE_URL}/{article_id}",
+                "articleHref": record.get("article_href") or "",
+                "legacyHref": record.get("legacy_href") or "",
                 "title": record["title"],
                 "excerpt": record["excerpt"],
                 "topicLv1Key": record["topic_lv1_key"],

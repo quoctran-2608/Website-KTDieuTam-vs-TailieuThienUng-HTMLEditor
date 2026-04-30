@@ -282,14 +282,14 @@
     return Array.prototype.slice.call(prose.querySelectorAll('table')).some(shouldPreserveLegacyTableLayout);
   }
 
-  function shouldForcePreserveByArticleId(articleId) {
-    var forcePreserveArticleIds = [
-      'thu-vien/bieu-thue-xuat-khau-moi-nhat-hien-nay.html',
-      // Keep dense legacy forms readable by preserving their source layout, then scale on mobile.
-      'thu-vien/mau-to-khai-le-phi-mon-bai-theo-thong-tu-80.html'
-    ];
-    return forcePreserveArticleIds.indexOf(articleId) !== -1;
-  }
+	  function shouldForcePreserveByArticleId(articleId) {
+	    var forcePreserveArticleIds = [
+	      'bieu-thue-xuat-khau-moi-nhat-hien-nay.html',
+	      // Keep dense legacy forms readable by preserving their source layout, then scale on mobile.
+	      'mau-to-khai-le-phi-mon-bai-theo-thong-tu-80.html'
+	    ];
+	    return forcePreserveArticleIds.indexOf(articleId) !== -1;
+	  }
 
   function ensureLegacyTableFitWrap(table) {
     if (!table || !table.parentNode) return;
