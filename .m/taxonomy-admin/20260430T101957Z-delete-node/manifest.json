@@ -1,0 +1,21 @@
+{
+  "createdAt": "2026-04-30T10:19:58Z",
+  "action": "delete-node",
+  "backups": [
+    "data/taxonomy-master.json",
+    "data/taxonomy.json",
+    "data/editor-taxonomy.json",
+    "data/menu-config.json",
+    "data/hubs/thu-vien.json",
+    "data/hubs/ban-tin.json"
+  ],
+  "details": {
+    "ok": true,
+    "action": "delete-node",
+    "dryRun": false,
+    "path": "ban-tin/co-so-dia-diem/slug-da-sua-tu-ui",
+    "label": "Kiểm tra sửa slug",
+    "articleCount": 0,
+    "deleteMode": "remove"
+  }
+}

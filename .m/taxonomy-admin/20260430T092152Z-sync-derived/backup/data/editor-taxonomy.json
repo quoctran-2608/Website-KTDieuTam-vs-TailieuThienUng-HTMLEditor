@@ -1,15 +1,13 @@
 {
-  "generatedAt": "2026-04-30T10:19:58Z",
+  "generatedAt": "2026-04-30T04:46:28.988257+00:00",
   "roots": [
     {
-      "key": "thu-vien",
+      "id": "thu-vien",
       "label": "Thư viện",
-      "count": 2694,
       "children": [
         {
-          "key": "huong-dan",
+          "id": "huong-dan",
           "label": "Hướng dẫn",
-          "count": 1272,
           "children": [
             {
               "key": "ke-toan",
@@ -660,9 +658,8 @@
           ]
         },
         {
-          "key": "bieu-mau",
+          "id": "bieu-mau",
           "label": "Biểu mẫu",
-          "count": 669,
           "children": [
             {
               "key": "thue",
@@ -982,9 +979,8 @@
           ]
         },
         {
-          "key": "cong-cu",
+          "id": "cong-cu",
           "label": "Công cụ",
-          "count": 351,
           "children": [
             {
               "key": "phan-mem-cong-cu",
@@ -1104,9 +1100,8 @@
           ]
         },
         {
-          "key": "van-ban",
+          "id": "van-ban",
           "label": "Văn bản",
-          "count": 402,
           "children": [
             {
               "key": "thue",
@@ -1629,9 +1624,8 @@
       ]
     },
     {
-      "key": "ban-tin",
+      "id": "ban-tin",
       "label": "Bản tin",
-      "count": 115,
       "children": [
         {
           "key": "thong-bao-tuyen-dung",
@@ -1706,22 +1700,31 @@
       ]
     }
   ],
-  "toolVariants": {
-    "excel-va-cong-cu-khac": {
-      "label": "Excel - Công cụ khác",
-      "children": []
-    },
-    "htkk-etax-thue-dien-tu": {
-      "label": "HTKK - eTax - Thuế điện tử",
-      "children": []
-    },
-    "misa": {
-      "label": "MISA",
-      "children": []
-    },
-    "fast": {
-      "label": "FAST",
-      "children": []
+  "variants": {
+    "cong-cu": {
+      "excel-va-cong-cu-khac": {
+        "label": "Excel - Công cụ khác",
+        "children": []
+      },
+      "htkk-etax-thue-dien-tu": {
+        "label": "HTKK - eTax - Thuế điện tử",
+        "children": []
+      },
+      "misa": {
+        "label": "MISA",
+        "children": []
+      },
+      "fast": {
+        "label": "FAST",
+        "children": []
+      }
     }
+  },
+  "fieldMap": {
+    "section": "primary_category_id",
+    "library_kind": "library_kind",
+    "topic_lv1": "domain",
+    "topic_lv2": "subdomain",
+    "tool_lv3": "variant"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T10:19:58Z",
+  "generatedAt": "2026-04-30T10:19:57Z",
   "roots": [
     {
       "key": "thu-vien",
@@ -1681,6 +1681,11 @@
               "key": "co-so-dao-tao",
               "label": "Cơ sở đào tạo",
               "count": 9
+            },
+            {
+              "key": "slug-da-sua-tu-ui",
+              "label": "Kiểm tra sửa slug",
+              "count": 0
             }
           ]
         },

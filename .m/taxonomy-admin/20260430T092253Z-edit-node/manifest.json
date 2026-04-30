@@ -1,0 +1,24 @@
+{
+  "createdAt": "2026-04-30T09:22:53Z",
+  "action": "edit-node",
+  "backups": [
+    "data/taxonomy-master.json",
+    "data/articles.json",
+    "data/taxonomy.json",
+    "data/editor-taxonomy.json",
+    "data/menu-config.json",
+    "data/hubs/thu-vien.json",
+    "data/hubs/ban-tin.json"
+  ],
+  "details": {
+    "ok": true,
+    "action": "edit-node",
+    "dryRun": false,
+    "path": "ban-tin/co-so-dia-diem/phase2-test-node",
+    "oldLabel": "Phase 2 test node",
+    "newLabel": "Phase 2 test node edited",
+    "articleCount": 0,
+    "description": null,
+    "icon": null
+  }
+}

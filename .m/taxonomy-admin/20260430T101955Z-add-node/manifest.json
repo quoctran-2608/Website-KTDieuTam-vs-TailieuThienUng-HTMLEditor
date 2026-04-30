@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-04-30T10:19:55Z",
+  "action": "add-node",
+  "backups": [
+    "data/taxonomy-master.json",
+    "data/taxonomy.json",
+    "data/editor-taxonomy.json",
+    "data/menu-config.json",
+    "data/hubs/thu-vien.json",
+    "data/hubs/ban-tin.json"
+  ],
+  "details": {
+    "ok": true,
+    "action": "add-node",
+    "dryRun": false,
+    "parent": "ban-tin/co-so-dia-diem",
+    "path": "ban-tin/co-so-dia-diem/kiem-tra-tu-sinh-slug",
+    "key": "kiem-tra-tu-sinh-slug",
+    "label": "Kiểm tra tự sinh Slug",
+    "autoKey": true
+  }
+}
