@@ -193,14 +193,19 @@ function validate_article_taxonomy_payload(array $payload): array
 	  $clean['topic_lv2_key'] = $lv2Key;
 	  $clean['topic_lv2_label'] = article_taxonomy_node_label($lv2);
 
-	  // Frontend Thư viện chỉ hiển thị 3 cấp: Cấp 1 → Cấp 2 → Cấp 3.
-	  // topic_lv3 là cấp sâu nội bộ cũ, không cho sửa trong admin để tránh lệch menu user.
-	  if ($sectionKey === 'thu-vien') {
+		  // Frontend chỉ hiển thị category public tới cấp cuối của menu user:
+      // - Thư viện: Cấp 1 → Cấp 2 → Cấp 3
+      // - Bản tin: Cấp 1 → Cấp 2
+      // topic_lv3 là cấp sâu nội bộ cũ, không cho sửa trực tiếp trong admin.
+	  if (in_array($sectionKey, ['thu-vien', 'ban-tin'], true)) {
       $preserveKindKey = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_library_kind_key'] ?? ''));
       $preserveLv1Key = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv1_key'] ?? ''));
       $preserveLv2Key = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv2_key'] ?? ''));
       $preserveLv3Key = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv3_key'] ?? ''));
-      if ($preserveKindKey === $kindKey && $preserveLv1Key === $lv1Key && $preserveLv2Key === $lv2Key && $preserveLv3Key !== '') {
+      $sameVisiblePath = $sectionKey === 'thu-vien'
+        ? ($preserveKindKey === $kindKey && $preserveLv1Key === $lv1Key && $preserveLv2Key === $lv2Key)
+        : ($preserveLv1Key === $lv1Key && $preserveLv2Key === $lv2Key);
+      if ($sameVisiblePath && $preserveLv3Key !== '') {
         $preserveLv3 = article_taxonomy_find_node(article_taxonomy_children($lv2), $preserveLv3Key);
         if ($preserveLv3 !== null) {
           $clean['topic_lv3_key'] = $preserveLv3Key;
@@ -350,7 +355,7 @@ function article_editor_taxonomy_path(array $data): string
       $parts[] = $kind;
     }
   }
-  $levels = $sectionKey === 'thu-vien' ? [1, 2] : [1, 2, 3];
+  $levels = [1, 2];
   foreach ($levels as $level) {
     $part = article_editor_taxonomy_piece(
       (string) ($data['topic_lv' . $level . '_label'] ?? ''),
@@ -373,7 +378,7 @@ function article_editor_taxonomy_key_path(array $data): string
   if ($sectionKey === 'thu-vien') {
     $keys[] = trim((string) ($data['library_kind_key'] ?? ''));
   }
-  $levels = $sectionKey === 'thu-vien' ? [1, 2] : [1, 2, 3];
+  $levels = [1, 2];
   foreach ($levels as $level) {
     $keys[] = trim((string) ($data['topic_lv' . $level . '_key'] ?? ''));
   }
@@ -881,10 +886,11 @@ $innerScript = <<<'JS'
         fields.section.value = findByKey(roots, state.sectionKey) ? state.sectionKey : (keyOf(roots[0]) || '');
       }
 
-	      const section = findByKey(roots, fields.section.value);
-	      const isLibrary = keyOf(section) === 'thu-vien';
-	      let kind = null;
-	      let lv1Source = childrenOf(section);
+		      const section = findByKey(roots, fields.section.value);
+		      const isLibrary = keyOf(section) === 'thu-vien';
+		      const hideDeepLevel = isLibrary || keyOf(section) === 'ban-tin';
+		      let kind = null;
+		      let lv1Source = childrenOf(section);
 	      if (labels.kind) labels.kind.textContent = 'Cấp 1';
 	      if (labels.lv1) labels.lv1.textContent = isLibrary ? 'Cấp 2' : 'Cấp 1';
 	      if (labels.lv2) labels.lv2.textContent = isLibrary ? 'Cấp 3' : 'Cấp 2';
@@ -913,12 +919,12 @@ $innerScript = <<<'JS'
 	        isLibrary ? 'Chọn cấp 3' : 'Chọn cấp 2',
 	        firstRender ? preferredValue(lv2Source, state.topicLv2Value || state.topicLv2Key || '', state.topicLv2Label || '') : undefined
 	      );
-	      const lv3Source = childrenOf(lv2);
-	      let lv3 = null;
-	      if (isLibrary) {
-	        if (fields.lv3) fields.lv3.value = '';
-	        if (rows.lv3) rows.lv3.hidden = true;
-	      } else {
+		      const lv3Source = childrenOf(lv2);
+		      let lv3 = null;
+		      if (hideDeepLevel) {
+		        if (fields.lv3) fields.lv3.value = '';
+		        if (rows.lv3) rows.lv3.hidden = true;
+		      } else {
 	        lv3 = setOptions(
 	          fields.lv3,
 	          lv3Source,
@@ -928,7 +934,7 @@ $innerScript = <<<'JS'
 	        if (rows.lv3) rows.lv3.hidden = lv3Source.length === 0 && !(fields.lv3 && fields.lv3.value);
 	      }
 
-	      renderPath([section, kind, lv1, lv2, isLibrary ? null : lv3].filter(Boolean));
+	      renderPath([section, kind, lv1, lv2, hideDeepLevel ? null : lv3].filter(Boolean));
       firstRender = false;
     };
 
@@ -1174,11 +1180,10 @@ admin_layout_header([
 	      $appendTaxonomyItem('Cấp 1', (string) ($form['library_kind_label'] ?? ''), (string) ($form['library_kind_key'] ?? ''));
 	      $appendTaxonomyItem('Cấp 2', (string) ($form['topic_lv1_label'] ?? ''), (string) ($form['topic_lv1_key'] ?? ''));
 	      $appendTaxonomyItem('Cấp 3', (string) ($form['topic_lv2_label'] ?? ''), (string) ($form['topic_lv2_key'] ?? ''));
-	    } else {
-      $appendTaxonomyItem('Cấp 1', (string) ($form['topic_lv1_label'] ?? ''), (string) ($form['topic_lv1_key'] ?? ''));
-      $appendTaxonomyItem('Cấp 2', (string) ($form['topic_lv2_label'] ?? ''), (string) ($form['topic_lv2_key'] ?? ''));
-      $appendTaxonomyItem('Cấp 3', (string) ($form['topic_lv3_label'] ?? ''), (string) ($form['topic_lv3_key'] ?? ''));
-	    }
+		    } else {
+	      $appendTaxonomyItem('Cấp 1', (string) ($form['topic_lv1_label'] ?? ''), (string) ($form['topic_lv1_key'] ?? ''));
+	      $appendTaxonomyItem('Cấp 2', (string) ($form['topic_lv2_label'] ?? ''), (string) ($form['topic_lv2_key'] ?? ''));
+		    }
 	    $currentTags = is_array($form['tags'] ?? null) ? array_values(array_filter(array_map('strval', $form['tags']))) : [];
     $draftChangeSummary = article_editor_change_summary($baseEditable, $form);
 	    $taxonomyEditorJson = json_encode($taxonomyEditorData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
@@ -1225,11 +1230,9 @@ admin_layout_header([
     <?php endif; ?>
 
     <?php
-    $infoPanelOpen = !empty($validationErrors['excerpt'])
-      || !empty($validationErrors['publish_date'])
-      || !empty($validationErrors['modified_date'])
-      || !empty($validationErrors['tags_text'])
-      || !empty($validationErrors['taxonomy']);
+	    $infoPanelOpen = !empty($validationErrors['excerpt'])
+	      || !empty($validationErrors['publish_date'])
+	      || !empty($validationErrors['modified_date']);
     ?>
     <div class="editor-workspace">
       <article class="admin-panel">
@@ -1280,10 +1283,10 @@ admin_layout_header([
 	              <span>Thông tin bài & tác vụ phụ</span>
 	            </summary>
 
-            <div class="editor-taxonomy-card">
-              <div class="editor-taxonomy-card__head">
-                <strong>Phân loại hiện tại / nháp</strong>
-                <small>Nếu đã lưu nháp Phase 2, khu vực này hiển thị phân loại nháp đang giữ trong admin.</small>
+	            <div class="editor-taxonomy-card">
+	              <div class="editor-taxonomy-card__head">
+	                <strong>Phân loại hiện tại / nháp</strong>
+	                <small>Khu vực này chỉ tóm tắt nhanh. Phần chỉnh phân loại và tags nằm ở sidebar bên phải.</small>
               </div>
               <?php if (!empty($taxonomyItems)): ?>
                 <div class="editor-pill-row editor-taxonomy-row">
@@ -1308,9 +1311,9 @@ admin_layout_header([
 	            </div>
 
             <div class="editor-change-card <?= !empty($draftChangeSummary) ? 'has-changes' : 'is-clean' ?>">
-              <div class="editor-taxonomy-card__head">
-                <strong>So sánh nháp với bản đang publish</strong>
-                <small>Chỉ theo dõi nhanh phân loại và tags trước khi bấm “Đăng ngay”.</small>
+	              <div class="editor-taxonomy-card__head">
+	                <strong>So sánh nháp với bản đang publish</strong>
+	                <small>Chỉ theo dõi nhanh phân loại và tags trước khi bấm “Đăng ra ngoài”.</small>
               </div>
               <?php if (!empty($draftChangeSummary)): ?>
                 <div class="editor-change-list">
@@ -1327,44 +1330,7 @@ admin_layout_header([
               <?php endif; ?>
             </div>
 
-            <script id="editorTaxonomyData" type="application/json"><?= $taxonomyEditorJson ?></script>
-            <div class="editor-taxonomy-card editor-taxonomy-card--edit" data-taxonomy-editor>
-              <div class="editor-taxonomy-card__head">
-                <strong>Chỉnh phân loại bài viết</strong>
-	                <small>Lưu nháp chỉ giữ trong admin; “Đăng ra ngoài” mới cập nhật trang user và rebuild frontend.</small>
-              </div>
-              <div class="editor-taxonomy-select-grid">
-                <label class="filter-field">
-                  <span>Khu vực</span>
-                  <select name="taxonomy_section_key" data-taxonomy-select="section"></select>
-	                </label>
-	                <label class="filter-field" data-taxonomy-row="library_kind">
-	                  <span data-taxonomy-label="library_kind">Cấp 1</span>
-	                  <select name="taxonomy_library_kind_key" data-taxonomy-select="library_kind"></select>
-	                </label>
-	                <label class="filter-field">
-	                  <span data-taxonomy-label="topic_lv1">Cấp 2</span>
-	                  <select name="taxonomy_topic_lv1_key" data-taxonomy-select="topic_lv1"></select>
-	                </label>
-	                <label class="filter-field">
-	                  <span data-taxonomy-label="topic_lv2">Cấp 3</span>
-	                  <select name="taxonomy_topic_lv2_key" data-taxonomy-select="topic_lv2"></select>
-	                </label>
-	                <label class="filter-field" data-taxonomy-row="topic_lv3">
-	                  <span data-taxonomy-label="topic_lv3">Cấp 3</span>
-	                  <select name="taxonomy_topic_lv3_key" data-taxonomy-select="topic_lv3"></select>
-	                </label>
-              </div>
-              <div class="editor-taxonomy-path" data-taxonomy-path>Đang tải cây phân loại...</div>
-              <?php if (!empty($validationErrors['taxonomy'])): ?>
-                <small class="field-error"><?= h((string) $validationErrors['taxonomy']) ?></small>
-              <?php endif; ?>
-              <p class="editor-taxonomy-phase-note">
-	                Tags vẫn sửa ở ô “Thẻ” bên dưới. Chỉ khi bấm “Đăng ra ngoài”, phân loại và tags mới ghi ra trang user.
-              </p>
-            </div>
-
-	            <div class="editor-meta-grid">
+		            <div class="editor-meta-grid">
               <label class="filter-field span-2">
                 <span>Mô tả ngắn *</span>
                 <input type="text" name="excerpt" value="<?= h((string) ($form['excerpt'] ?? '')) ?>" required>
@@ -1383,13 +1349,7 @@ admin_layout_header([
                 <?php if (!empty($validationErrors['modified_date'])): ?><small class="field-error"><?= h((string) $validationErrors['modified_date']) ?></small><?php endif; ?>
               </label>
 
-              <label class="filter-field span-2">
-                <span>Thẻ (2-7 thẻ, ngăn cách bằng dấu phẩy) *</span>
-                <input type="text" name="tags_text" value="<?= h((string) ($form['tags_text'] ?? '')) ?>" required>
-                <?php if (!empty($validationErrors['tags_text'])): ?><small class="field-error"><?= h((string) $validationErrors['tags_text']) ?></small><?php endif; ?>
-              </label>
-
-              <label class="filter-field span-2">
+	              <label class="filter-field span-2">
                 <span>Ảnh đại diện (Featured image)</span>
                 <input type="text" name="featured_image" id="featuredImageInput" value="<?= h((string) ($form['featured_image'] ?? '')) ?>" placeholder="VD: assets/images/content/abc.jpg hoặc uploads/articles/2026/04/anh.jpg">
                 <small>Có thể nhập thủ công, hoặc bấm “Dùng làm ảnh đại diện” từ danh sách ảnh upload mới ở sidebar.</small>
@@ -1440,11 +1400,56 @@ admin_layout_header([
               <span>Đánh dấu chưa sửa</span>
             </button>
           </div>
-        </section>
+	        </section>
 
-        <section class="admin-panel editor-side-card">
-          <div class="panel-head">
-            <h3>Ảnh upload mới</h3>
+	        <section class="admin-panel editor-side-card editor-sidebar-meta-card">
+	          <div class="panel-head">
+	            <h3>Phân loại & thẻ</h3>
+	            <p>Sửa category/tags tại đây. Bấm “Đăng ra ngoài” để frontend nhận thay đổi.</p>
+	          </div>
+	          <script id="editorTaxonomyData" type="application/json"><?= $taxonomyEditorJson ?></script>
+	          <div class="editor-taxonomy-card editor-taxonomy-card--edit" data-taxonomy-editor>
+	            <div class="editor-taxonomy-card__head">
+	              <strong>Chỉnh phân loại bài viết</strong>
+	              <small>Lưu nháp chỉ giữ trong admin; “Đăng ra ngoài” mới cập nhật trang user và rebuild frontend.</small>
+	            </div>
+	            <div class="editor-taxonomy-select-grid">
+	              <label class="filter-field">
+	                <span>Khu vực</span>
+	                <select name="taxonomy_section_key" form="articleEditorForm" data-taxonomy-select="section"></select>
+	              </label>
+	              <label class="filter-field" data-taxonomy-row="library_kind">
+	                <span data-taxonomy-label="library_kind">Cấp 1</span>
+	                <select name="taxonomy_library_kind_key" form="articleEditorForm" data-taxonomy-select="library_kind"></select>
+	              </label>
+	              <label class="filter-field">
+		                <span data-taxonomy-label="topic_lv1"><?= $sectionKey === 'thu-vien' ? 'Cấp 2' : 'Cấp 1' ?></span>
+	                <select name="taxonomy_topic_lv1_key" form="articleEditorForm" data-taxonomy-select="topic_lv1"></select>
+	              </label>
+	              <label class="filter-field">
+		                <span data-taxonomy-label="topic_lv2"><?= $sectionKey === 'thu-vien' ? 'Cấp 3' : 'Cấp 2' ?></span>
+	                <select name="taxonomy_topic_lv2_key" form="articleEditorForm" data-taxonomy-select="topic_lv2"></select>
+	              </label>
+	              <label class="filter-field" data-taxonomy-row="topic_lv3" hidden>
+	                <span data-taxonomy-label="topic_lv3">Cấp 3</span>
+	                <select name="taxonomy_topic_lv3_key" form="articleEditorForm" data-taxonomy-select="topic_lv3"></select>
+	              </label>
+	            </div>
+	            <div class="editor-taxonomy-path" data-taxonomy-path>Đang tải cây phân loại...</div>
+	            <?php if (!empty($validationErrors['taxonomy'])): ?>
+	              <small class="field-error"><?= h((string) $validationErrors['taxonomy']) ?></small>
+	            <?php endif; ?>
+	          </div>
+	          <label class="filter-field editor-sidebar-tags-field">
+	            <span>Thẻ (2-7 thẻ, ngăn cách bằng dấu phẩy) *</span>
+	            <input type="text" name="tags_text" form="articleEditorForm" value="<?= h((string) ($form['tags_text'] ?? '')) ?>" required>
+	            <?php if (!empty($validationErrors['tags_text'])): ?><small class="field-error"><?= h((string) $validationErrors['tags_text']) ?></small><?php endif; ?>
+	          </label>
+	        </section>
+
+	        <section class="admin-panel editor-side-card">
+	          <div class="panel-head">
+	            <h3>Ảnh upload mới</h3>
             <p>Dùng nút chèn ảnh trong editor để upload. Ảnh thuộc riêng bài này.</p>
           </div>
           <?php if (empty($uploads)): ?>

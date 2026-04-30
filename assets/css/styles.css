@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--dark); l
 
 .top-header { background: #FFF; padding: 16px 0; position: relative; z-index: 101; }
 .header-row { display: flex; align-items: center; justify-content: space-between; }
-.brand-block { display: flex; align-items: center; gap: 24px; }
+.brand-block { display: flex; align-items: center; gap: 14px; }
 .brand-logo img {
   height: 90px;
   width: auto;
