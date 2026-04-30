@@ -25,13 +25,78 @@ HUBS_DIR = DATA_DIR / "hubs"
 FEEDS_DIR = DATA_DIR / "feeds"
 VIEWS_DIR = DATA_DIR / "article-views"
 CONTENT_IMAGES_DIR = ROOT / "assets" / "images" / "content"
-BUILDER_PATH = ROOT.parent / ".m" / "build_sample_sections.py"
+BUILDER_CANDIDATES = [
+    ROOT / ".m" / "build_sample_sections.py",
+    ROOT.parent / ".m" / "build_sample_sections.py",
+]
+BUILDER_PATH = next((path for path in BUILDER_CANDIDATES if path.exists()), BUILDER_CANDIDATES[0])
 PAGE_SIZE = 12
 SITE_BASE_URL = "https://ketoandieutam.vn"
 FEATURE_IMAGE_PATH = "assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg"
 
 
+class FallbackBuilder:
+    """Minimal builder for admin rebuilds that only refresh data artifacts."""
+
+    SECTION_CONFIG = {
+        "thu-vien": {"label": "Thư viện"},
+        "ban-tin": {"label": "Bản tin"},
+    }
+    LIBRARY_KIND_META = {
+        "huong-dan": {"label": "Hướng dẫn", "icon": "fa-book-open", "description": "Hướng dẫn nghiệp vụ kế toán, thuế và bảo hiểm."},
+        "bieu-mau": {"label": "Biểu mẫu", "icon": "fa-file-lines", "description": "Mẫu biểu, hồ sơ và file tham khảo."},
+        "cong-cu": {"label": "Công cụ", "icon": "fa-screwdriver-wrench", "description": "Công cụ, phần mềm và bảng tính hỗ trợ."},
+        "van-ban": {"label": "Văn bản", "icon": "fa-scale-balanced", "description": "Văn bản pháp luật, thông tư và nghị định."},
+    }
+    LIBRARY_KIND_LABELS = {key: str(meta["label"]) for key, meta in LIBRARY_KIND_META.items()}
+    TOKEN_RE = re.compile(r"[a-z0-9]+")
+    STOPWORDS = {"va", "cua", "cho", "theo", "moi", "nhat", "nam", "cac", "khi", "can"}
+
+    @staticmethod
+    def strip_tags(text: str) -> str:
+        return re.sub(r"<[^>]+>", " ", html.unescape(text or "")).strip()
+
+    @staticmethod
+    def extract_title(doc: str, fallback: str) -> str:
+        match = re.search(r"<title[^>]*>(.*?)</title>", doc or "", re.I | re.S)
+        return FallbackBuilder.strip_tags(match.group(1)) if match else fallback
+
+    @staticmethod
+    def extract_main_content(doc: str) -> str:
+        return doc
+
+    @staticmethod
+    def infer_publish_date(title: str, content_html: str, source_path: Path) -> str:
+        return datetime.now(UTC).strftime("%Y-%m-%d")
+
+    @staticmethod
+    def infer_news_topic(record: Dict) -> str:
+        return record.get("topic_lv2_label") or record.get("topic_lv1_label") or "Bản tin"
+
+    @staticmethod
+    def infer_news_badge(record: Dict) -> str:
+        return record.get("topic_lv1_label") or "Bản tin"
+
+    @staticmethod
+    def normalize_library_display_topic(record: Dict, topic: str) -> str:
+        return topic
+
+    @staticmethod
+    def hub_nav_href(section: str, page: int, output_file: Path) -> str:
+        raise RuntimeError("Fallback builder không hỗ trợ dựng HTML hub pages.")
+
+    @staticmethod
+    def render_hub_page(**kwargs) -> str:
+        raise RuntimeError("Fallback builder không hỗ trợ dựng HTML hub pages.")
+
+    @staticmethod
+    def render_article_page(record: Dict) -> str:
+        raise RuntimeError("Fallback builder không hỗ trợ dựng HTML article pages.")
+
+
 def load_builder():
+    if not BUILDER_PATH.exists():
+        return FallbackBuilder()
     spec = importlib.util.spec_from_file_location("builder", BUILDER_PATH)
     if spec is None or spec.loader is None:
         raise RuntimeError(f"Không thể load builder từ {BUILDER_PATH}")

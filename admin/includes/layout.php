@@ -44,6 +44,12 @@ function admin_layout_header(array $options = []): void
       'icon' => 'fa-solid fa-file-lines',
       'badge' => $articleCount !== null ? number_format($articleCount, 0, ',', '.') : null,
     ],
+    [
+      'key' => 'taxonomy',
+      'label' => 'Phân loại',
+      'href' => admin_url('taxonomy.php'),
+      'icon' => 'fa-solid fa-sitemap',
+    ],
   ];
 
   $innerScript = $options['inner_script'] ?? '';

@@ -331,9 +331,7 @@
 
     var scopedTaxonomy = data.taxonomy || [];
     if (data.section === 'thu-vien' && next.kind) {
-      scopedTaxonomy = buildTaxonomyFromArticles((data.articles || []).filter(function (article) {
-        return article.library_kind_key === next.kind;
-      }));
+      scopedTaxonomy = taxonomyForLibraryKind(data, next.kind);
     }
 
 	    var lv1 = scopedTaxonomy.find(function (item) { return item.key === next.lv1; });
@@ -418,6 +416,15 @@
     }).sort(function (a, b) {
       return b.count - a.count || a.label.localeCompare(b.label, 'vi');
     });
+  }
+
+  function taxonomyForLibraryKind(data, kind) {
+    if (data && data.taxonomyByKind && Array.isArray(data.taxonomyByKind[kind])) {
+      return data.taxonomyByKind[kind];
+    }
+    return buildTaxonomyFromArticles(((data && data.articles) || []).filter(function (article) {
+      return article.library_kind_key === kind;
+    }));
   }
 
   function initHubPage(data) {
@@ -540,7 +547,7 @@
 
     function getScopedTaxonomy() {
       if (!(data.section === 'thu-vien' && state.kind)) return data.taxonomy || [];
-      return buildTaxonomyFromArticles(getKindScopedArticles());
+      return taxonomyForLibraryKind(data, state.kind);
     }
 
     function getLibraryLevel2Options() {
@@ -988,10 +995,7 @@
       var sections = [];
       if (data.section === 'thu-vien') {
         (data.libraryKinds || []).forEach(function (kind) {
-          var subset = (data.articles || []).filter(function (article) {
-            return article.library_kind_key === kind.key;
-          });
-          var taxonomy = buildTaxonomyFromArticles(subset);
+          var taxonomy = taxonomyForLibraryKind(data, kind.key);
           var rootActive = state.kind === kind.key;
           var groups = taxonomy.map(function (lv1) {
             var groupActive = rootActive && state.lv1 === lv1.key;

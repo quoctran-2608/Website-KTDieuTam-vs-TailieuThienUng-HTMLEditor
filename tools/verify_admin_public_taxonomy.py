@@ -74,15 +74,20 @@ def expected_public_tree(section: str, hub: Dict[str, Any]) -> Tree:
     articles = [x for x in hub.get("articles", []) if isinstance(x, dict)]
     if section == "thu-vien":
         tree: Tree = []
+        taxonomy_by_kind = hub.get("taxonomyByKind")
         for kind in [x for x in hub.get("libraryKinds", []) if isinstance(x, dict)]:
             kind_key = str(kind.get("key") or "")
-            subset = [article for article in articles if str(article.get("library_kind_key") or "") == kind_key]
+            if isinstance(taxonomy_by_kind, dict) and isinstance(taxonomy_by_kind.get(kind_key), list):
+                children = prune_tree([x for x in taxonomy_by_kind[kind_key] if isinstance(x, dict)], 2)
+            else:
+                subset = [article for article in articles if str(article.get("library_kind_key") or "") == kind_key]
+                children = build_public_taxonomy_from_articles(subset)
             tree.append(
                 {
                     "key": kind_key,
                     "label": str(kind.get("label") or ""),
                     "count": int(kind.get("count") or 0),
-                    "children": build_public_taxonomy_from_articles(subset),
+                    "children": children,
                 }
             )
         return tree
@@ -116,7 +121,7 @@ def main() -> int:
             }
         )
     report = {"ok": all(item.get("ok") for item in reports), "reports": reports}
-    print(json.dumps(report, ensure_ascii=False, indent=2))
+    print(json.dumps(report, ensure_ascii=True, indent=2))
     return 0 if report["ok"] else 2
 
 

@@ -12,6 +12,7 @@ from typing import Any, Dict, List
 
 ROOT = Path(__file__).resolve().parents[1]
 IMPORT_TOOL = ROOT / "tools" / "import_stage1_20.py"
+TAXONOMY_ADMIN_TOOL = ROOT / "tools" / "manage_taxonomy.py"
 sys.dont_write_bytecode = True
 
 
@@ -19,6 +20,15 @@ def load_import_tool():
     spec = importlib.util.spec_from_file_location("kdt_import_stage1_20", IMPORT_TOOL)
     if spec is None or spec.loader is None:
         raise RuntimeError(f"Không thể load tool import từ {IMPORT_TOOL}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_taxonomy_admin_tool():
+    spec = importlib.util.spec_from_file_location("kdt_manage_taxonomy", TAXONOMY_ADMIN_TOOL)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Không thể load tool taxonomy từ {TAXONOMY_ADMIN_TOOL}")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -279,6 +289,22 @@ def write_fast_public_artifacts(tool, records_by_section: Dict[str, List[Dict[st
     return write_target_article_view(tool, index_data, article_id)
 
 
+def sync_taxonomy_master_if_available(dry_run: bool) -> Dict[str, Any]:
+    master_path = ROOT / "data" / "taxonomy-master.json"
+    if not master_path.exists():
+        return {"enabled": False, "reason": "missing data/taxonomy-master.json"}
+    taxonomy_tool = load_taxonomy_admin_tool()
+    master = taxonomy_tool.load_master()
+    articles = taxonomy_tool.load_articles()
+    validation = taxonomy_tool.validate_master(master, articles)
+    if not validation.get("ok"):
+        raise RuntimeError("taxonomy-master không hợp lệ: " + "; ".join(validation.get("errors", [])[:5]))
+    if dry_run:
+        return {"enabled": True, "dry_run": True, "nodes": validation.get("nodes")}
+    result = taxonomy_tool.write_derived_artifacts(master, articles, True)
+    return {"enabled": True, "dry_run": False, **result}
+
+
 def rebuild_public_artifacts(include_hub_pages: bool, dry_run: bool, mode: str, article_id: str = "") -> Dict[str, Any]:
     tool = load_import_tool()
     records_by_section = build_records_by_section(tool)
@@ -289,6 +315,7 @@ def rebuild_public_artifacts(include_hub_pages: bool, dry_run: bool, mode: str, 
         index_data = build_fast_content_index(tool, records_by_section, target_article_id=article_id)
 
     target_view_written = False
+    taxonomy_master_sync: Dict[str, Any] = sync_taxonomy_master_if_available(True) if dry_run else {"enabled": False}
     if not dry_run:
         if include_hub_pages:
             tool.rebuild_hub_pages(records_by_section, page_maps)
@@ -300,6 +327,7 @@ def rebuild_public_artifacts(include_hub_pages: bool, dry_run: bool, mode: str, 
             target_view_written = bool(article_id and article_id in index_data.get("articleViews", {}))
         else:
             target_view_written = write_fast_public_artifacts(tool, records_by_section, index_data, page_maps, article_id=article_id)
+        taxonomy_master_sync = sync_taxonomy_master_if_available(False)
 
     artifacts = [
         "content-index.js",
@@ -337,6 +365,7 @@ def rebuild_public_artifacts(include_hub_pages: bool, dry_run: bool, mode: str, 
         "ban_tin_pages": len(page_maps["ban-tin"]),
         "target_article_view": article_id,
         "target_article_view_written": target_view_written,
+        "taxonomy_master_sync": taxonomy_master_sync,
         "artifacts": artifacts,
     }
 
@@ -357,10 +386,10 @@ def main() -> int:
         summary = rebuild_public_artifacts(include_hub_pages=bool(args.include_hub_pages), dry_run=bool(args.dry_run), mode=str(args.mode), article_id=str(args.article_id))
         summary["source"] = args.source
         summary["article_id"] = args.article_id
-        print(json.dumps(summary, ensure_ascii=False, indent=2))
+        print(json.dumps(summary, ensure_ascii=True, indent=2))
         return 0
     except Exception as exc:  # noqa: BLE001 - CLI must return a structured failure.
-        print(json.dumps({"ok": False, "error": str(exc), "source": args.source, "article_id": args.article_id}, ensure_ascii=False, indent=2), file=sys.stderr)
+        print(json.dumps({"ok": False, "error": str(exc), "source": args.source, "article_id": args.article_id}, ensure_ascii=True, indent=2), file=sys.stderr)
         return 1
 
 
