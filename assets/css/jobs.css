@@ -313,8 +313,8 @@
 .jobs-list-page .jobs-list-hero-copy {
   display: grid;
   align-content: center;
-  gap: 12px;
-  min-height: 190px;
+  gap: 10px;
+  min-height: 170px;
 }
 
 .jobs-list-page .jobs-list-hero-label {

@@ -109,3 +109,4 @@
 {"ts":1777556413.6889119,"message":"micro-compact running (context_length_exceeded)","extra":{"stage":"micro"}}
 {"ts":1777556413.6933699,"message":"auto-compact running (context_length_exceeded)","extra":{"stage":"auto"}}
 {"ts":1777556443.0058949,"message":"auto-compact triggered (context_length_exceeded)","extra":{"stage":"auto"}}
+{"ts": 1777560424.0149584, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
