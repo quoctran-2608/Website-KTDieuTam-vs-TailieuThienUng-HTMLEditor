@@ -2786,6 +2786,312 @@ a {
   }
 }
 
+/* ===== Fullscreen Editor Mode ===== */
+
+.editor-fullscreen-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 9px;
+  border: 1px solid #d1d5db;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8ecf8 100%);
+  color: #3b4a7c;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+}
+
+.editor-fullscreen-toggle:hover {
+  background: linear-gradient(135deg, #dbeafe 0%, #c7d2fe 100%);
+  border-color: #93a3e4;
+  color: #2b3a6b;
+  box-shadow: 0 2px 8px rgba(59, 74, 124, 0.13);
+  transform: translateY(-1px);
+}
+
+.editor-fullscreen-toggle i {
+  font-size: 14px;
+  transition: transform 0.25s ease;
+}
+
+.editor-fullscreen-toggle:hover i {
+  transform: scale(1.12);
+}
+
+.editor-fullscreen-toggle .fs-label-expand {
+  display: inline;
+}
+
+.editor-fullscreen-toggle .fs-label-collapse {
+  display: none;
+}
+
+/* === Active fullscreen state === */
+
+.editor-fullscreen-active {
+  overflow: hidden !important;
+}
+
+.editor-fullscreen-active .admin-sidebar,
+.editor-fullscreen-active .admin-topbar,
+.editor-fullscreen-active .editor-workspace-side,
+.editor-fullscreen-active .editor-top-actions,
+.editor-fullscreen-active .admin-panel > .panel-head {
+  display: none !important;
+}
+
+.editor-fullscreen-active .admin-shell {
+  display: block !important;
+  grid-template-columns: 1fr !important;
+}
+
+.editor-fullscreen-active .admin-content {
+  padding: 0 !important;
+  gap: 0 !important;
+  max-width: 100% !important;
+}
+
+.editor-fullscreen-active .admin-panel > .admin-panel,
+.editor-fullscreen-active section.admin-panel {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.editor-fullscreen-active .editor-workspace {
+  display: block !important;
+  margin-top: 0 !important;
+  gap: 0 !important;
+}
+
+.editor-fullscreen-active .editor-workspace > article.admin-panel {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.editor-fullscreen-active .article-editor-form {
+  gap: 0 !important;
+}
+
+/* Fullscreen floating toolbar */
+.editor-fullscreen-active .editor-action-bar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid #d1d5db !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%) !important;
+  padding: 8px 20px !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  animation: fsToolbarSlideIn 0.28s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes fsToolbarSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title input in fullscreen */
+.editor-fullscreen-active .filter-field:has(input[name="title"]) {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin: 0;
+  padding: 10px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #eef0f4;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  animation: fsFieldFadeIn 0.32s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.editor-fullscreen-active .filter-field:has(input[name="title"]) > span {
+  display: none;
+}
+
+.editor-fullscreen-active .filter-field:has(input[name="title"]) input {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 6px;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+.editor-fullscreen-active .filter-field:has(input[name="title"]) input:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.editor-fullscreen-active .filter-field:has(input[name="title"]) input::placeholder {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+@keyframes fsFieldFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Prose editor textarea / TinyMCE in fullscreen */
+.editor-fullscreen-active .filter-field:has(#proseEditor) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.editor-fullscreen-active .filter-field:has(#proseEditor) > span {
+  display: none;
+}
+
+.editor-fullscreen-active #proseEditor {
+  position: fixed !important;
+  top: 94px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100% !important;
+  height: calc(100vh - 94px) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  resize: none !important;
+  padding: 28px 60px !important;
+  font-size: 16px;
+  line-height: 1.75;
+  background: #ffffff;
+  z-index: 9998;
+}
+
+/* TinyMCE container in fullscreen */
+.editor-fullscreen-active .tox.tox-tinymce {
+  position: fixed !important;
+  top: 94px !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: calc(100vh - 94px) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  z-index: 9998 !important;
+  animation: fsEditorFadeIn 0.35s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.editor-fullscreen-active .tox .tox-toolbar-overlord,
+.editor-fullscreen-active .tox .tox-toolbar__primary {
+  background: #f8f9fb !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+@keyframes fsEditorFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hide all other form fields and panels in fullscreen */
+.editor-fullscreen-active .editor-info-panel,
+.editor-fullscreen-active .editor-bottom-actions,
+.editor-fullscreen-active .editor-status-inline {
+  display: none !important;
+}
+
+/* Toggle button label swap in fullscreen */
+.editor-fullscreen-active .editor-fullscreen-toggle {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border-color: #f87171;
+  color: #991b1b;
+}
+
+.editor-fullscreen-active .editor-fullscreen-toggle:hover {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.13);
+}
+
+.editor-fullscreen-active .editor-fullscreen-toggle .fs-label-expand {
+  display: none;
+}
+
+.editor-fullscreen-active .editor-fullscreen-toggle .fs-label-collapse {
+  display: inline;
+}
+
+/* Fullscreen backdrop overlay beneath the fixed elements */
+.editor-fullscreen-backdrop {
+  display: none;
+}
+
+.editor-fullscreen-active .editor-fullscreen-backdrop {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 9990;
+}
+
+/* Floating status indicator in fullscreen */
+.editor-fs-status {
+  display: none;
+}
+
+.editor-fullscreen-active .editor-fs-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  z-index: 10001;
+  padding: 8px 16px;
+  background: rgba(17, 24, 39, 0.82);
+  backdrop-filter: blur(8px);
+  color: #e5e7eb;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+  animation: fsBadgeFadeIn 0.5s ease 0.3s both;
+}
+
+.editor-fs-status i {
+  font-size: 11px;
+  color: #60a5fa;
+}
+
+@keyframes fsBadgeFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== End Fullscreen Editor Mode ===== */
+
 @media (max-width: 900px) {
   .admin-grid-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));

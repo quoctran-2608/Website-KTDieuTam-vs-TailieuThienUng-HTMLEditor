@@ -1052,6 +1052,97 @@ $innerScript = <<<'JS'
     }
   });
 
+  /* === Fullscreen editor toggle === */
+  const fsToggle = document.getElementById('editorFullscreenToggle');
+  const fsBackdrop = document.getElementById('editorFullscreenBackdrop');
+  const fsStatus = document.getElementById('editorFsStatus');
+  let isFullscreen = false;
+
+  const enterFullscreen = () => {
+    isFullscreen = true;
+    document.body.classList.add('editor-fullscreen-active');
+    if (fsToggle) {
+      fsToggle.querySelector('i').className = 'fa-solid fa-compress';
+    }
+    /* Resize TinyMCE if available */
+    requestAnimationFrame(() => {
+      if (window.tinymce && typeof window.tinymce.get === 'function') {
+        const inst = window.tinymce.get('proseEditor');
+        if (inst) {
+          const editorArea = document.querySelector('.tox.tox-tinymce');
+          if (editorArea) {
+            const toolbarH = editorArea.querySelector('.tox-editor-header');
+            const toolbarHeight = toolbarH ? toolbarH.offsetHeight : 0;
+            const availH = window.innerHeight - 94 - toolbarHeight;
+            inst.getBody().style.minHeight = availH + 'px';
+          }
+        }
+      }
+    });
+  };
+
+  const exitFullscreen = () => {
+    isFullscreen = false;
+    document.body.classList.remove('editor-fullscreen-active');
+    if (fsToggle) {
+      fsToggle.querySelector('i').className = 'fa-solid fa-expand';
+    }
+    /* Reset TinyMCE sizing */
+    if (window.tinymce && typeof window.tinymce.get === 'function') {
+      const inst = window.tinymce.get('proseEditor');
+      if (inst) {
+        inst.getBody().style.minHeight = '';
+      }
+    }
+  };
+
+  const toggleFullscreen = () => {
+    if (isFullscreen) {
+      exitFullscreen();
+    } else {
+      enterFullscreen();
+    }
+  };
+
+  if (fsToggle) {
+    fsToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleFullscreen();
+    });
+  }
+
+  document.addEventListener('keydown', (event) => {
+    /* Escape to exit fullscreen */
+    if (event.key === 'Escape' && isFullscreen) {
+      event.preventDefault();
+      exitFullscreen();
+      return;
+    }
+    /* F11 to toggle fullscreen */
+    if (event.key === 'F11') {
+      event.preventDefault();
+      toggleFullscreen();
+      return;
+    }
+  });
+
+  /* Handle window resize in fullscreen */
+  window.addEventListener('resize', () => {
+    if (!isFullscreen) return;
+    if (window.tinymce && typeof window.tinymce.get === 'function') {
+      const inst = window.tinymce.get('proseEditor');
+      if (inst) {
+        const editorArea = document.querySelector('.tox.tox-tinymce');
+        if (editorArea) {
+          const toolbarH = editorArea.querySelector('.tox-editor-header');
+          const toolbarHeight = toolbarH ? toolbarH.offsetHeight : 0;
+          const availH = window.innerHeight - 94 - toolbarHeight;
+          inst.getBody().style.minHeight = availH + 'px';
+        }
+      }
+    }
+  });
+
   if (window.tinymce && typeof window.tinymce.init === 'function') {
     window.tinymce.init({
       selector: '#proseEditor',
@@ -1306,7 +1397,17 @@ admin_layout_header([
               <i class="fa-solid fa-up-right-from-square"></i>
               <span>Xem bài</span>
             </a>
-            <span class="editor-shortcut-hint">Ctrl+S để lưu nháp nhanh.</span>
+            <button type="button" class="editor-fullscreen-toggle" id="editorFullscreenToggle">
+              <i class="fa-solid fa-expand"></i>
+              <span class="fs-label-expand">Toàn màn hình</span>
+              <span class="fs-label-collapse">Thu nhỏ</span>
+            </button>
+            <span class="editor-shortcut-hint">Ctrl+S lưu nháp · F11 toàn màn hình</span>
+          </div>
+          <div class="editor-fullscreen-backdrop" id="editorFullscreenBackdrop"></div>
+          <div class="editor-fs-status" id="editorFsStatus">
+            <i class="fa-solid fa-keyboard"></i>
+            <span>Esc hoặc F11 để thoát toàn màn hình</span>
           </div>
 
 	          <label class="filter-field">
