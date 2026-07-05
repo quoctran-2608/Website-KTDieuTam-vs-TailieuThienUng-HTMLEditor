@@ -811,6 +811,9 @@ $innerScript = <<<'JS'
   const host = document.getElementById('previewHost');
   if (!editor) return;
 
+  /* Compute site base URL (one level up from /admin/) for resolving relative image paths */
+  const siteBaseUrl = window.location.origin + window.location.pathname.replace(/\/admin\/.*$/, '/');
+
   const initTaxonomyEditor = () => {
     const taxonomyHost = document.querySelector('[data-taxonomy-editor]');
     const dataNode = document.getElementById('editorTaxonomyData');
@@ -1023,8 +1026,20 @@ $innerScript = <<<'JS'
 
   const syncPreview = () => {
     if (!host) return;
-    const html = getEditorHtml().trim();
-    host.innerHTML = html !== '' ? html : '<p><em>Chưa có nội dung preview.</em></p>';
+    let html = getEditorHtml().trim();
+    if (html === '') {
+      host.innerHTML = '<p><em>Chưa có nội dung preview.</em></p>';
+      return;
+    }
+    /* Resolve relative image/source URLs so they display correctly in the preview panel.
+       Relative paths like "assets/images/..." or "uploads/articles/..." are stored relative
+       to the site root, but the admin page is at /admin/ so the browser would resolve them
+       to /admin/assets/... which doesn't exist. We prefix them with the site base URL. */
+    html = html.replace(
+      /(src=["'])(?!https?:\/\/|\/|data:|blob:)([^"']+)(["'])/gi,
+      (_, pre, url, post) => pre + siteBaseUrl + url + post
+    );
+    host.innerHTML = html;
   };
 
   editor.addEventListener('input', () => {
@@ -1183,6 +1198,7 @@ $innerScript = <<<'JS'
       height: 620,
       branding: false,
       images_file_types: 'jpg,jpeg,png,gif,webp',
+      document_base_url: siteBaseUrl,
       relative_urls: false,
       remove_script_host: false,
       convert_urls: false,
