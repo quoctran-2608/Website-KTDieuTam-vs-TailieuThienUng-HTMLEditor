@@ -1064,6 +1064,10 @@ $innerScript = <<<'JS'
     if (fsToggle) {
       fsToggle.querySelector('i').className = 'fa-solid fa-compress';
     }
+    if (fsToggleBottom) {
+      fsToggleBottom.querySelector('i').className = 'fa-solid fa-compress';
+      fsToggleBottom.title = 'Thu nhỏ (Ctrl+Shift+F)';
+    }
     /* Resize TinyMCE if available */
     requestAnimationFrame(() => {
       if (window.tinymce && typeof window.tinymce.get === 'function') {
@@ -1086,6 +1090,10 @@ $innerScript = <<<'JS'
     document.body.classList.remove('editor-fullscreen-active');
     if (fsToggle) {
       fsToggle.querySelector('i').className = 'fa-solid fa-expand';
+    }
+    if (fsToggleBottom) {
+      fsToggleBottom.querySelector('i').className = 'fa-solid fa-expand';
+      fsToggleBottom.title = 'Toàn màn hình (Ctrl+Shift+F)';
     }
     /* Reset TinyMCE sizing */
     if (window.tinymce && typeof window.tinymce.get === 'function') {
@@ -1111,6 +1119,15 @@ $innerScript = <<<'JS'
     });
   }
 
+  /* Bottom fullscreen toggle button */
+  const fsToggleBottom = document.getElementById('editorFullscreenToggleBottom');
+  if (fsToggleBottom) {
+    fsToggleBottom.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleFullscreen();
+    });
+  }
+
   document.addEventListener('keydown', (event) => {
     /* Escape to exit fullscreen */
     if (event.key === 'Escape' && isFullscreen) {
@@ -1118,8 +1135,8 @@ $innerScript = <<<'JS'
       exitFullscreen();
       return;
     }
-    /* F11 to toggle fullscreen */
-    if (event.key === 'F11') {
+    /* Ctrl+Shift+F to toggle fullscreen */
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === 'f') {
       event.preventDefault();
       toggleFullscreen();
       return;
@@ -1402,12 +1419,12 @@ admin_layout_header([
               <span class="fs-label-expand">Toàn màn hình</span>
               <span class="fs-label-collapse">Thu nhỏ</span>
             </button>
-            <span class="editor-shortcut-hint">Ctrl+S lưu nháp · F11 toàn màn hình</span>
+            <span class="editor-shortcut-hint">Ctrl+S lưu nháp · Ctrl+Shift+F toàn màn hình</span>
           </div>
           <div class="editor-fullscreen-backdrop" id="editorFullscreenBackdrop"></div>
           <div class="editor-fs-status" id="editorFsStatus">
             <i class="fa-solid fa-keyboard"></i>
-            <span>Esc hoặc F11 để thoát toàn màn hình</span>
+            <span>Esc hoặc Ctrl+Shift+F để thoát toàn màn hình</span>
           </div>
 
 	          <label class="filter-field">
@@ -1421,6 +1438,11 @@ admin_layout_header([
             <textarea id="proseEditor" name="prose_html" rows="20" class="prose-textarea" required><?= h((string) ($form['prose_html'] ?? '')) ?></textarea>
             <?php if (!empty($validationErrors['prose_html'])): ?><small class="field-error"><?= h((string) $validationErrors['prose_html']) ?></small><?php endif; ?>
           </label>
+          <div class="editor-bottom-fs-bar">
+            <button type="button" class="editor-fullscreen-toggle-bottom" id="editorFullscreenToggleBottom" title="Toàn màn hình (Ctrl+Shift+F)">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
 
 	          <details class="editor-info-panel" <?= $infoPanelOpen ? 'open' : '' ?>>
 	            <summary>
