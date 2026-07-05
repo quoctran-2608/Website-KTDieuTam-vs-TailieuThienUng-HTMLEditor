@@ -166,6 +166,20 @@ function validate_article_taxonomy_payload(array $payload): array
     $clean['library_kind_key'] = $kindKey;
     $clean['library_kind_label'] = article_taxonomy_node_label($kind);
     $lv1Source = article_taxonomy_children($kind);
+
+    // Kind has no sub-categories yet (e.g. phan-loai-moi) — accept at kind level
+    if (empty($lv1Source)) {
+      $lv1Raw = trim((string) ($payload['taxonomy_topic_lv1_key'] ?? ($payload['topic_lv1_key'] ?? '')));
+      if ($lv1Raw !== '') {
+        $errors['taxonomy'] = 'Phân loại Cấp 1 này chưa có Cấp 2.';
+        return ['ok' => false, 'errors' => $errors, 'data' => $clean];
+      }
+      return [
+        'ok' => true,
+        'errors' => [],
+        'data' => $clean,
+      ];
+    }
   }
 
   $lv1Raw = trim((string) ($payload['taxonomy_topic_lv1_key'] ?? ($payload['topic_lv1_key'] ?? '')));
@@ -919,6 +933,16 @@ $innerScript = <<<'JS'
 	        }
         kind = findByKey(childrenOf(section), fields.kind ? fields.kind.value : '');
         lv1Source = childrenOf(kind);
+        if (kind && lv1Source.length === 0) {
+          if (fields.lv1) { fields.lv1.innerHTML = '<option value="">Chưa có cấp 2</option>'; fields.lv1.value = ''; }
+          if (fields.lv2) { fields.lv2.innerHTML = ''; fields.lv2.value = ''; }
+          if (fields.lv3) { fields.lv3.value = ''; }
+          if (rows.lv2) rows.lv2.hidden = true;
+          if (rows.lv3) rows.lv3.hidden = true;
+          renderPath([section, kind].filter(Boolean));
+          firstRender = false;
+          return;
+        }
       } else if (fields.kind) {
         fields.kind.value = '';
       }

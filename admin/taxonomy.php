@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/taxonomy_native.php';
 
 require_role(['admin']);
 
@@ -262,40 +263,21 @@ if (is_post_request()) {
 
   $action = trim((string) ($_POST['taxonomy_action'] ?? ''));
   $result = ['ok' => false, 'error' => 'Hành động không hợp lệ.'];
+
+  // Use PHP-native taxonomy operations (works on Hostinger without exec())
   if ($action === 'edit-node') {
     $label = trim((string) ($_POST['taxonomy_label'] ?? ''));
-    $args = ['edit-node', '--path', $selectedPath, '--label', $label];
     $key = trim((string) ($_POST['taxonomy_key'] ?? ''));
-    if ($key !== '') {
-      $args[] = '--key';
-      $args[] = $key;
-    }
-    if (array_key_exists('taxonomy_description', $_POST)) {
-      $args[] = '--description';
-      $args[] = trim((string) $_POST['taxonomy_description']);
-    }
-    if (array_key_exists('taxonomy_icon', $_POST)) {
-      $args[] = '--icon';
-      $args[] = trim((string) $_POST['taxonomy_icon']);
-    }
-    $args[] = '--apply';
-    $result = taxonomy_admin_run_cli($args);
+    $description = array_key_exists('taxonomy_description', $_POST) ? trim((string) $_POST['taxonomy_description']) : '';
+    $icon = array_key_exists('taxonomy_icon', $_POST) ? trim((string) $_POST['taxonomy_icon']) : '';
+    $result = taxonomy_native_op_edit($selectedPath, $label, $key, $description, $icon);
   } elseif ($action === 'add-node') {
     $selectedPath = trim((string) ($_POST['taxonomy_parent'] ?? ''));
-    $args = [
-      'add-node',
-      '--parent',
-      $selectedPath,
-      '--key',
-      trim((string) ($_POST['taxonomy_key'] ?? '')),
-      '--label',
-      trim((string) ($_POST['taxonomy_label'] ?? '')),
-      '--apply',
-    ];
-    $result = taxonomy_admin_run_cli($args);
+    $key = trim((string) ($_POST['taxonomy_key'] ?? ''));
+    $label = trim((string) ($_POST['taxonomy_label'] ?? ''));
+    $result = taxonomy_native_op_add($selectedPath, $key, $label);
   } elseif ($action === 'delete-node') {
-    $args = ['delete-node', '--path', $selectedPath, '--apply'];
-    $result = taxonomy_admin_run_cli($args);
+    $result = taxonomy_native_op_delete($selectedPath);
     if (!empty($result['ok'])) {
       $parts = taxonomy_admin_split_path($selectedPath);
       array_pop($parts);
