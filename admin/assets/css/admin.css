@@ -3000,6 +3000,12 @@ a {
   animation: fsEditorFadeIn 0.35s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
+/* TinyMCE floating dropdowns (font, size, color pickers) must sit above fullscreen */
+.editor-fullscreen-active .tox-tinymce-aux,
+.tox-tinymce-aux {
+  z-index: 10100 !important;
+}
+
 .editor-fullscreen-active .tox .tox-toolbar-overlord,
 .editor-fullscreen-active .tox .tox-toolbar__primary {
   background: #f8f9fb !important;
@@ -3077,7 +3083,7 @@ a {
   border-radius: 999px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   pointer-events: none;
-  animation: fsBadgeFadeIn 0.5s ease 0.3s both;
+  animation: fsBadgeFadeIn 0.4s ease 0.2s both, fsBadgeFadeOut 0.5s ease 3s both;
 }
 
 .editor-fs-status i {
@@ -3088,6 +3094,11 @@ a {
 @keyframes fsBadgeFadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fsBadgeFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(6px); }
 }
 
 /* Bottom fullscreen toggle (icon-only, below editor) */

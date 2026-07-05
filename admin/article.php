@@ -1070,6 +1070,7 @@ $innerScript = <<<'JS'
 
   /* === Fullscreen editor toggle === */
   const fsToggle = document.getElementById('editorFullscreenToggle');
+  const fsToggleBottom = document.getElementById('editorFullscreenToggleBottom');
   const fsBackdrop = document.getElementById('editorFullscreenBackdrop');
   const fsStatus = document.getElementById('editorFsStatus');
   let isFullscreen = false;
@@ -1136,7 +1137,6 @@ $innerScript = <<<'JS'
   }
 
   /* Bottom fullscreen toggle button */
-  const fsToggleBottom = document.getElementById('editorFullscreenToggleBottom');
   if (fsToggleBottom) {
     fsToggleBottom.addEventListener('click', (e) => {
       e.preventDefault();
@@ -1220,6 +1220,19 @@ $innerScript = <<<'JS'
         instance.on('input change keyup setcontent', () => {
           if (window.__previewTimer) window.clearTimeout(window.__previewTimer);
           window.__previewTimer = window.setTimeout(syncPreview, 100);
+        });
+        /* Keyboard shortcuts inside TinyMCE iframe */
+        instance.on('keydown', (e) => {
+          if (e.key === 'Escape' && isFullscreen) {
+            e.preventDefault();
+            exitFullscreen();
+            return;
+          }
+          if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'f') {
+            e.preventDefault();
+            toggleFullscreen();
+            return;
+          }
         });
       }
     });
