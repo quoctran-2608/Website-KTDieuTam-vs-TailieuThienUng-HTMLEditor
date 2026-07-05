@@ -1,5 +1,13 @@
 (function () {
   var PAGE_SIZE = 12;
+  var CUSTOM_LIBRARY_KIND = {
+    key: 'phan-loai-moi',
+    label: 'Phân loại mới',
+    count: 0,
+    href: 'thu-vien.html?kind=phan-loai-moi',
+    icon: 'fa-layer-group',
+    description: 'Nhóm phân loại mới đang chuẩn bị nội dung'
+  };
 
   function defaultFeatureImage() {
     return sitePath('assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg');
@@ -18,6 +26,25 @@
       return path;
     }
     return getRootPrefix() + path.replace(/^\.\//, '');
+  }
+
+  function ensureCustomLibraryKinds(data) {
+    if (!data || data.section !== 'thu-vien') return data;
+    var kinds = Array.isArray(data.libraryKinds) ? data.libraryKinds : [];
+    var existing = kinds.find(function (item) {
+      return item && item.key === CUSTOM_LIBRARY_KIND.key;
+    });
+    var customKind = Object.assign({}, CUSTOM_LIBRARY_KIND, existing || {});
+    customKind.count = Number(customKind.count || 0);
+    customKind.href = sitePath(customKind.href);
+    data.libraryKinds = [customKind].concat(kinds.filter(function (item) {
+      return !item || item.key !== CUSTOM_LIBRARY_KIND.key;
+    }));
+    data.taxonomyByKind = data.taxonomyByKind || {};
+    if (!Array.isArray(data.taxonomyByKind[CUSTOM_LIBRARY_KIND.key])) {
+      data.taxonomyByKind[CUSTOM_LIBRARY_KIND.key] = [];
+    }
+    return data;
   }
 
   function freshDataUrl(url) {
@@ -521,6 +548,15 @@
           title: 'Công cụ',
           description: 'Kho công cụ, file Excel, phần mềm kế toán và tài nguyên hỗ trợ để triển khai công việc thực tế thuận tiện hơn.',
           searchPlaceholder: 'Tìm công cụ, Excel, HTKK, MISA...'
+        };
+      }
+      var activeKind = getLibraryKind(state.kind);
+      if (activeKind) {
+        return {
+          kickerHtml: '<i class="fa-solid ' + escapeHtml(activeKind.icon || 'fa-layer-group') + '"></i> ' + escapeHtml(activeKind.label),
+          title: activeKind.label,
+          description: activeKind.description || baseHero.description,
+          searchPlaceholder: 'Tìm trong ' + String(activeKind.label || 'phân loại').toLowerCase() + '...'
         };
       }
       return baseHero;
@@ -1532,6 +1568,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    loadHubData().then(initHubPage);
+    loadHubData().then(ensureCustomLibraryKinds).then(initHubPage);
   });
 })();

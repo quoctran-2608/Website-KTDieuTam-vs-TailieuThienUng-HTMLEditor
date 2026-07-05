@@ -231,6 +231,14 @@
   },
   "libraryKinds": [
     {
+      "key": "phan-loai-moi",
+      "label": "Phân loại mới",
+      "count": 0,
+      "href": "thu-vien.html?kind=phan-loai-moi",
+      "icon": "fa-layer-group",
+      "description": "Nhóm phân loại mới đang chuẩn bị nội dung"
+    },
+    {
       "key": "huong-dan",
       "label": "Hướng dẫn",
       "count": 1272,
@@ -71890,6 +71898,7 @@
     }
   ],
   "taxonomyByKind": {
+    "phan-loai-moi": [],
     "huong-dan": [
       {
         "key": "ke-toan",

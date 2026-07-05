@@ -37,6 +37,10 @@ FIELD_MAP = {
     "tool_lv3": "variant",
 }
 KIND_DEFAULT_META = {
+    "phan-loai-moi": {
+        "icon": "fa-layer-group",
+        "description": "Nhóm phân loại mới đang chuẩn bị nội dung",
+    },
     "huong-dan": {
         "icon": "fa-compass-drafting",
         "description": "Quy trình, cách làm, nghiệp vụ thực tế",
@@ -166,8 +170,17 @@ def article_path_parts(article: dict[str, Any], master: dict[str, Any] | None = 
     section = str(article.get("section") or "").strip()
     parts = [section]
     if section == "thu-vien":
-        for field in ("libraryKindKey", "topicLv1Key", "topicLv2Key"):
-            parts.append(str(article.get(field) or "").strip())
+        parts.append(str(article.get("libraryKindKey") or "").strip())
+        parts.append(str(article.get("topicLv1Key") or "").strip())
+        lv2 = str(article.get("topicLv2Key") or "").strip()
+        lv1_node: dict[str, Any] | None = None
+        if master is not None:
+            try:
+                lv1_node = find_node(master, parts)
+            except TaxonomyError:
+                lv1_node = None
+        if lv2 or (lv1_node is not None and any(node_key(child) == "" for child in child_nodes(lv1_node))):
+            parts.append(lv2)
         lv3 = str(article.get("topicLv3Key") or "").strip()
         if lv3:
             parts.append(lv3)
@@ -362,12 +375,15 @@ def validate_master(master: dict[str, Any], articles: list[dict[str, Any]] | Non
             if section not in ("thu-vien", "ban-tin"):
                 continue
             parts = article_path_parts(article, master)
-            missing_required = section == "thu-vien" and (len(parts) < 4 or any(part == "" for part in parts[:4]))
+            missing_required = section == "thu-vien" and (len(parts) < 3 or any(part == "" for part in parts[:3]))
             if missing_required:
                 errors.append(f"Article thiếu path bắt buộc: {article.get('href')}")
                 continue
             if fmt_path(parts) not in paths:
                 errors.append(f"Article path không có trong master: {article.get('href')} -> {fmt_path(parts)}")
+                continue
+            if section == "thu-vien" and len(parts) == 3 and child_nodes(paths[fmt_path(parts)]):
+                errors.append(f"Article thiếu Cấp 3 cho nhánh có category con: {article.get('href')} -> {fmt_path(parts)}")
     return {
         "ok": not errors,
         "errors": errors,

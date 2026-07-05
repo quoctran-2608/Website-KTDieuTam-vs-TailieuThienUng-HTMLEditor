@@ -395,7 +395,7 @@ body[data-nav="ban-tin"] .catalog-search-input:focus {
 
 .catalog-primary-row--library {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px;
   overflow: visible;
 }
@@ -2220,6 +2220,12 @@ body.is-filter-open .catalog-filter-panel {
 
   .article-main > .article-side {
     margin-top: 28px;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 981px) {
+  .catalog-primary-row--library {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

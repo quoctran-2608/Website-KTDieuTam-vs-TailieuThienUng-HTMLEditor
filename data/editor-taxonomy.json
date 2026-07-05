@@ -6,6 +6,10 @@
       "label": "Thư viện",
       "children": [
         {
+          "id": "phan-loai-moi",
+          "label": "Phân loại mới"
+        },
+        {
           "id": "huong-dan",
           "label": "Hướng dẫn",
           "children": [

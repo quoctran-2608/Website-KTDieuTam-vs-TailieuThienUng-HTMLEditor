@@ -32,6 +32,15 @@
       "locked": true,
       "children": [
         {
+          "key": "phan-loai-moi",
+          "label": "Phân loại mới",
+          "system": true,
+          "lockedKey": true,
+          "icon": "fa-layer-group",
+          "description": "Nhóm phân loại mới đang chuẩn bị nội dung",
+          "children": []
+        },
+        {
           "key": "huong-dan",
           "label": "Hướng dẫn",
           "system": true,

@@ -43,6 +43,12 @@ class FallbackBuilder:
         "ban-tin": {"label": "Bản tin"},
     }
     LIBRARY_KIND_META = {
+        "phan-loai-moi": {
+            "label": "Phân loại mới",
+            "icon": "fa-layer-group",
+            "description": "Nhóm phân loại mới đang chuẩn bị nội dung",
+            "show_empty": True,
+        },
         "huong-dan": {"label": "Hướng dẫn", "icon": "fa-book-open", "description": "Hướng dẫn nghiệp vụ kế toán, thuế và bảo hiểm."},
         "bieu-mau": {"label": "Biểu mẫu", "icon": "fa-file-lines", "description": "Mẫu biểu, hồ sơ và file tham khảo."},
         "cong-cu": {"label": "Công cụ", "icon": "fa-screwdriver-wrench", "description": "Công cụ, phần mềm và bảng tính hỗ trợ."},
@@ -694,6 +700,8 @@ def build_taxonomy(records: List[Dict]) -> List[Dict]:
         )
         lv1["count"] += 1
         lv2_key = rec["topic_lv2_key"]
+        if not lv2_key:
+            continue
         lv2 = lv1["children"].setdefault(
             lv2_key,
             {"key": lv2_key, "label": rec["topic_lv2_label"], "count": 0, "children": OrderedDict()},
@@ -717,7 +725,10 @@ def build_taxonomy(records: List[Dict]) -> List[Dict]:
                 node["children"] = lv3_children
             lv2_out.append(node)
         lv2_out.sort(key=lambda x: (-x["count"], x["label"]))
-        out.append({"key": lv1["key"], "label": lv1["label"], "count": lv1["count"], "children": lv2_out})
+        node = {"key": lv1["key"], "label": lv1["label"], "count": lv1["count"]}
+        if lv2_out:
+            node["children"] = lv2_out
+        out.append(node)
     out.sort(key=lambda x: (-x["count"], x["label"]))
     return out
 
@@ -732,7 +743,7 @@ def build_library_kinds(records: List[Dict]) -> List[Dict]:
     items = []
     for key, meta in LIBRARY_KIND_META.items():
         count = counts.get(key, 0)
-        if count <= 0:
+        if count <= 0 and not meta.get("show_empty"):
             continue
         items.append(
             {
@@ -783,6 +794,8 @@ def build_lv1_tree(records: List[Dict]) -> List[Dict]:
         )
         lv1["count"] += 1
         lv2_key = rec["topic_lv2_key"]
+        if not lv2_key:
+            continue
         lv2 = lv1["children"].setdefault(
             lv2_key,
             {"key": lv2_key, "label": rec["topic_lv2_label"], "count": 0, "children": OrderedDict()},
@@ -806,7 +819,10 @@ def build_lv1_tree(records: List[Dict]) -> List[Dict]:
                 node["children"] = lv3_children
             lv2_out.append(node)
         lv2_out.sort(key=lambda x: (-x["count"], x["label"]))
-        out.append({"key": lv1["key"], "label": lv1["label"], "count": lv1["count"], "children": lv2_out})
+        node = {"key": lv1["key"], "label": lv1["label"], "count": lv1["count"]}
+        if lv2_out:
+            node["children"] = lv2_out
+        out.append(node)
     out.sort(key=lambda x: (-x["count"], x["label"]))
     return out
 

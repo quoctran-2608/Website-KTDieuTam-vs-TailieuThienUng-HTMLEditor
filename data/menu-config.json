@@ -28,6 +28,12 @@
       "category": "thu-vien",
       "children": [
         {
+          "key": "thu-vien-phan-loai-moi",
+          "label": "Phân loại mới",
+          "href": "thu-vien.html?kind=phan-loai-moi",
+          "category": "phan-loai-moi"
+        },
+        {
           "key": "thu-vien-huong-dan",
           "label": "Hướng dẫn",
           "href": "thu-vien.html?kind=huong-dan",

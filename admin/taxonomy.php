@@ -143,7 +143,7 @@ function taxonomy_admin_flatten(array $nodes, array $prefix, array $countMap, ar
  */
 function taxonomy_admin_default_path(array $rows, string $section): string
 {
-  $preferred = $section === 'ban-tin' ? 'ban-tin' : 'thu-vien/huong-dan';
+  $preferred = $section === 'ban-tin' ? 'ban-tin' : 'thu-vien/phan-loai-moi';
   foreach ($rows as $row) {
     if (($row['path'] ?? '') === $preferred) {
       return $preferred;

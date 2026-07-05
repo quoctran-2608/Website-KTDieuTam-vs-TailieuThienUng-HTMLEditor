@@ -183,6 +183,17 @@ function validate_article_taxonomy_payload(array $payload): array
   $lv2Raw = trim((string) ($payload['taxonomy_topic_lv2_key'] ?? ($payload['topic_lv2_key'] ?? '')));
   $lv2Key = article_taxonomy_post_key($lv2Raw);
   $lv2Source = article_taxonomy_children($lv1);
+  if ($sectionKey === 'thu-vien' && empty($lv2Source)) {
+    if ($lv2Raw !== '') {
+      $errors['taxonomy'] = 'Phân loại Cấp 2 này không có Cấp 3.';
+      return ['ok' => false, 'errors' => $errors, 'data' => $clean];
+    }
+    return [
+      'ok' => true,
+      'errors' => [],
+      'data' => $clean,
+    ];
+  }
 	  $lv2 = $lv2Raw !== '' ? article_taxonomy_find_node($lv2Source, $lv2Key) : null;
 	  if ($lv2 === null) {
 	    $errors['taxonomy'] = $sectionKey === 'thu-vien'
@@ -807,6 +818,7 @@ $innerScript = <<<'JS'
     };
 	    const rows = {
 	      kind: taxonomyHost.querySelector('[data-taxonomy-row="library_kind"]'),
+	      lv2: taxonomyHost.querySelector('[data-taxonomy-row="topic_lv2"]'),
 	      lv3: taxonomyHost.querySelector('[data-taxonomy-row="topic_lv3"]'),
 	    };
 	    const labels = {
@@ -911,14 +923,22 @@ $innerScript = <<<'JS'
         fields.kind.value = '';
       }
 
-	      const lv1 = setOptions(fields.lv1, lv1Source, isLibrary ? 'Chọn cấp 2' : 'Chọn cấp 1', firstRender ? (state.topicLv1Value || state.topicLv1Key || '') : undefined);
-	      const lv2Source = childrenOf(lv1);
-	      const lv2 = setOptions(
-	        fields.lv2,
-	        lv2Source,
-	        isLibrary ? 'Chọn cấp 3' : 'Chọn cấp 2',
-	        firstRender ? preferredValue(lv2Source, state.topicLv2Value || state.topicLv2Key || '', state.topicLv2Label || '') : undefined
-	      );
+		      const lv1 = setOptions(fields.lv1, lv1Source, isLibrary ? 'Chọn cấp 2' : 'Chọn cấp 1', firstRender ? (state.topicLv1Value || state.topicLv1Key || '') : undefined);
+		      const lv2Source = childrenOf(lv1);
+		      const canSelectLv2 = !isLibrary || lv2Source.length > 0;
+		      if (rows.lv2) rows.lv2.hidden = !canSelectLv2;
+		      let lv2 = null;
+		      if (canSelectLv2) {
+		        lv2 = setOptions(
+		          fields.lv2,
+		          lv2Source,
+		          isLibrary ? 'Chọn cấp 3' : 'Chọn cấp 2',
+		          firstRender ? preferredValue(lv2Source, state.topicLv2Value || state.topicLv2Key || '', state.topicLv2Label || '') : undefined
+		        );
+		      } else if (fields.lv2) {
+		        fields.lv2.innerHTML = '<option value="">Không có cấp 3</option>';
+		        fields.lv2.value = '';
+		      }
 		      const lv3Source = childrenOf(lv2);
 		      let lv3 = null;
 		      if (hideDeepLevel) {
@@ -1265,13 +1285,13 @@ admin_layout_header([
             <span class="editor-shortcut-hint">Ctrl+S để lưu nháp nhanh.</span>
           </div>
 
-          <label class="filter-field">
+	          <label class="filter-field">
             <span>Tiêu đề *</span>
             <input type="text" name="title" value="<?= h((string) ($form['title'] ?? '')) ?>" required>
             <?php if (!empty($validationErrors['title'])): ?><small class="field-error"><?= h((string) $validationErrors['title']) ?></small><?php endif; ?>
           </label>
 
-          <label class="filter-field">
+	          <label class="filter-field">
             <span>Nội dung bài viết *</span>
             <textarea id="proseEditor" name="prose_html" rows="20" class="prose-textarea" required><?= h((string) ($form['prose_html'] ?? '')) ?></textarea>
             <?php if (!empty($validationErrors['prose_html'])): ?><small class="field-error"><?= h((string) $validationErrors['prose_html']) ?></small><?php endif; ?>
@@ -1426,8 +1446,8 @@ admin_layout_header([
 		                <span data-taxonomy-label="topic_lv1"><?= $sectionKey === 'thu-vien' ? 'Cấp 2' : 'Cấp 1' ?></span>
 	                <select name="taxonomy_topic_lv1_key" form="articleEditorForm" data-taxonomy-select="topic_lv1"></select>
 	              </label>
-	              <label class="filter-field">
-		                <span data-taxonomy-label="topic_lv2"><?= $sectionKey === 'thu-vien' ? 'Cấp 3' : 'Cấp 2' ?></span>
+		              <label class="filter-field" data-taxonomy-row="topic_lv2">
+			                <span data-taxonomy-label="topic_lv2"><?= $sectionKey === 'thu-vien' ? 'Cấp 3' : 'Cấp 2' ?></span>
 	                <select name="taxonomy_topic_lv2_key" form="articleEditorForm" data-taxonomy-select="topic_lv2"></select>
 	              </label>
 	              <label class="filter-field" data-taxonomy-row="topic_lv3" hidden>
