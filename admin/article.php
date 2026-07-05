@@ -639,7 +639,9 @@ if ($article !== null) {
           'publish_date' => (string) ($_POST['publish_date'] ?? ''),
           'modified_date' => (string) ($_POST['modified_date'] ?? ''),
           'tags_text' => (string) ($_POST['tags_text'] ?? ''),
-          'prose_html' => (string) ($_POST['prose_html'] ?? ''),
+          'prose_html' => (isset($_POST['prose_html_b64']) && $_POST['prose_html_b64'] !== '')
+            ? (string) base64_decode($_POST['prose_html_b64'])
+            : (string) ($_POST['prose_html'] ?? ''),
           'featured_image' => (string) ($_POST['featured_image'] ?? ''),
           'taxonomy_section_key' => (string) ($_POST['taxonomy_section_key'] ?? ''),
           'taxonomy_library_kind_key' => (string) ($_POST['taxonomy_library_kind_key'] ?? ''),
@@ -1034,6 +1036,20 @@ $innerScript = <<<'JS'
     form.addEventListener('submit', () => {
       if (window.tinymce && typeof window.tinymce.triggerSave === 'function') {
         window.tinymce.triggerSave();
+      }
+      /* Base64 encode prose_html to bypass Hostinger ModSecurity/WAF 406 */
+      const b64Field = document.getElementById('proseHtmlB64');
+      if (b64Field && editor) {
+        try {
+          const raw = editor.value || '';
+          b64Field.value = btoa(unescape(encodeURIComponent(raw)));
+          editor.removeAttribute('name');
+        } catch (e) {
+          /* Fallback: keep original name so normal POST works */
+          console.warn('Base64 encode failed, falling back to raw POST', e);
+          editor.setAttribute('name', 'prose_html');
+          b64Field.value = '';
+        }
       }
       syncPreview();
     });
@@ -1436,6 +1452,7 @@ admin_layout_header([
 	          <label class="filter-field">
             <span>Nội dung bài viết *</span>
             <textarea id="proseEditor" name="prose_html" rows="20" class="prose-textarea" required><?= h((string) ($form['prose_html'] ?? '')) ?></textarea>
+            <input type="hidden" name="prose_html_b64" id="proseHtmlB64" value="">
             <?php if (!empty($validationErrors['prose_html'])): ?><small class="field-error"><?= h((string) $validationErrors['prose_html']) ?></small><?php endif; ?>
           </label>
           <div class="editor-bottom-fs-bar">
