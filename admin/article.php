@@ -919,13 +919,15 @@ $innerScript = <<<'JS'
 
 		      const section = findByKey(roots, fields.section.value);
 		      const isLibrary = keyOf(section) === 'thu-vien';
-		      const hideDeepLevel = isLibrary || keyOf(section) === 'ban-tin';
+		      // hideDeepLevel chỉ áp dụng cho thu-vien (dùng kind thay lv3)
+		      // ban-tin giờ hỗ trợ lv3 đầy đủ
+		      const hideDeepLevel = isLibrary;
 		      let kind = null;
 		      let lv1Source = childrenOf(section);
 	      if (labels.kind) labels.kind.textContent = 'Cấp 1';
 	      if (labels.lv1) labels.lv1.textContent = isLibrary ? 'Cấp 2' : 'Cấp 1';
 	      if (labels.lv2) labels.lv2.textContent = isLibrary ? 'Cấp 3' : 'Cấp 2';
-	      if (labels.lv3) labels.lv3.textContent = 'Cấp 3';
+	      if (labels.lv3) labels.lv3.textContent = isLibrary ? 'Không dùng' : 'Cấp 3';
 
 	      if (rows.kind) rows.kind.hidden = !isLibrary;
 	      if (isLibrary) {
@@ -983,7 +985,7 @@ $innerScript = <<<'JS'
 	        if (rows.lv3) rows.lv3.hidden = lv3Source.length === 0 && !(fields.lv3 && fields.lv3.value);
 	      }
 
-	      renderPath([section, kind, lv1, lv2, hideDeepLevel ? null : lv3].filter(Boolean));
+	      renderPath([section, kind, lv1, lv2, lv3].filter(Boolean));
       firstRender = false;
     };
 
