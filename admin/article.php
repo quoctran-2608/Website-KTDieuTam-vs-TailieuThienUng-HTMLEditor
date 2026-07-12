@@ -218,31 +218,30 @@ function validate_article_taxonomy_payload(array $payload): array
 	  $clean['topic_lv2_key'] = $lv2Key;
 	  $clean['topic_lv2_label'] = article_taxonomy_node_label($lv2);
 
-		  // Frontend chỉ hiển thị category public tới cấp cuối của menu user:
-      // - Thư viện: Cấp 1 → Cấp 2 → Cấp 3
-      // - Bản tin: Cấp 1 → Cấp 2
-      // topic_lv3 là cấp sâu nội bộ cũ, không cho sửa trực tiếp trong admin.
-	  if (in_array($sectionKey, ['thu-vien', 'ban-tin'], true)) {
+		  // Phân loại cấp cuối theo từng section:
+      // - Thư viện: dùng lv2 làm cấp cuối (kind→lv1→lv2), return sớm sau lv2.
+      // - Bản tin: hỗ trợ lv3 → tiếp tục xử lý bên dưới.
+	  if ($sectionKey === 'thu-vien') {
+      // Thu-vien: lv2 là cấp cuối, preserve lv3 cũ nếu path không đổi.
       $preserveKindKey = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_library_kind_key'] ?? ''));
-      $preserveLv1Key = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv1_key'] ?? ''));
-      $preserveLv2Key = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv2_key'] ?? ''));
-      $preserveLv3Key = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv3_key'] ?? ''));
-      $sameVisiblePath = $sectionKey === 'thu-vien'
-        ? ($preserveKindKey === $kindKey && $preserveLv1Key === $lv1Key && $preserveLv2Key === $lv2Key)
-        : ($preserveLv1Key === $lv1Key && $preserveLv2Key === $lv2Key);
+      $preserveLv1Key  = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv1_key']  ?? ''));
+      $preserveLv2Key  = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv2_key']  ?? ''));
+      $preserveLv3Key  = article_taxonomy_post_key((string) ($payload['taxonomy_preserve_topic_lv3_key']  ?? ''));
+      $sameVisiblePath = ($preserveKindKey === $kindKey && $preserveLv1Key === $lv1Key && $preserveLv2Key === $lv2Key);
       if ($sameVisiblePath && $preserveLv3Key !== '') {
         $preserveLv3 = article_taxonomy_find_node(article_taxonomy_children($lv2), $preserveLv3Key);
         if ($preserveLv3 !== null) {
-          $clean['topic_lv3_key'] = $preserveLv3Key;
+          $clean['topic_lv3_key']   = $preserveLv3Key;
           $clean['topic_lv3_label'] = article_taxonomy_node_label($preserveLv3);
         }
       }
 	    return [
-	      'ok' => true,
-      'errors' => [],
-      'data' => $clean,
-    ];
+	      'ok'     => true,
+        'errors' => [],
+        'data'   => $clean,
+      ];
   }
+  // Ban-tin: tiếp tục xử lý lv3 bên dưới (không return sớm).
 
 	  $lv3Source = article_taxonomy_children($lv2);
   $lv3Raw = trim((string) ($payload['taxonomy_topic_lv3_key'] ?? ($payload['topic_lv3_key'] ?? '')));
