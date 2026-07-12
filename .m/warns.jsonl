@@ -113,3 +113,52 @@
 {"ts": 1777562239.9674778, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
 {"ts": 1777562779.0791664, "message": "environment_context refreshed (removed stale items)", "extra": {"removed": 1, "workdir": "/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
 {"ts":1777564184.9584465,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1783217167.4150615,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":264390,"source":"usage.input_tokens"}}
+{"ts":1783217167.4214473,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":264390,"source":"usage.input_tokens"}}
+{"ts":1783217215.5849447,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1783217256.4621463,"message":"pre-compact running (session overwrite)"}
+{"ts":1783217278.08918,"message":"pre-compact applied (session overwritten)"}
+{"ts":1783217278.1014357,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1783217517.2009456,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":232688,"source":"usage.input_tokens"}}
+{"ts":1783217517.2052042,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":232688,"source":"usage.input_tokens"}}
+{"ts":1783217526.1391306,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":234869,"source":"usage.input_tokens"}}
+{"ts":1783217526.1432629,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":234869,"source":"usage.input_tokens"}}
+{"ts":1783217534.9713354,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":236318,"source":"usage.input_tokens"}}
+{"ts":1783217534.9762816,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":236318,"source":"usage.input_tokens"}}
+{"ts":1783217542.7385364,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":236535,"source":"usage.input_tokens"}}
+{"ts":1783217542.7418232,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":236535,"source":"usage.input_tokens"}}
+{"ts":1783217555.9804895,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":237276,"source":"usage.input_tokens"}}
+{"ts":1783217555.9844012,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":237276,"source":"usage.input_tokens"}}
+{"ts":1783217676.292057,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18312834618758797,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783217798.2758851,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18406795039962415,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783217849.5439024,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":238270,"source":"usage.input_tokens"}}
+{"ts":1783217849.5465553,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":238270,"source":"usage.input_tokens"}}
+{"ts":1783217968.4709287,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20421293291459464,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783218090.5005174,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19604864814134718,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783218094.8215687,"message":"micro-compact running (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":242233,"source":"usage.input_tokens"}}
+{"ts":1783218094.8241436,"message":"micro-compact skipped (input_tokens threshold)","extra":{"threshold":230000,"input_tokens":242233,"source":"usage.input_tokens"}}
+{"ts":1783218213.7584279,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19534503186836141,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783218335.7722049,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20243438533620647,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783218454.8798926,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18316441401986611,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783218576.8967245,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19423917664878032,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783218695.9817839,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19931174219553904,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783218818.0257092,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19786310485464664,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783218937.106751,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20533211379560273,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783219057.6363394,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.19460772906178969,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783219176.7544291,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18194559585393666,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783219297.1691303,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18389225119906116,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783219419.1680744,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.21652149775834822,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783219538.2860396,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.18790813979129686,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783219660.2431772,"message":"retryable error; retrying","extra":{"attempt":1,"max_retries":9,"delay":0.20052897113399998,"terminal_event":"stream_end","last_event_type":"response.custom_tool_call_input.delta"}}
+{"ts":1783219661.6008859,"message":"pre-compact running (session overwrite)"}
+{"ts":1783219663.2017107,"message":"pre-compact skipped (session unchanged)","extra":{"reason":"http_error [429] usage_limit_reached"}}
+{"ts":1783219663.2213206,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1783219697.9904685,"message":"pre-compact running (session overwrite)"}
+{"ts":1783219699.8405821,"message":"pre-compact skipped (session unchanged)","extra":{"reason":"http_error [429] usage_limit_reached"}}
+{"ts":1783219699.8606942,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1783219735.2906609,"message":"pre-compact running (session overwrite)"}
+{"ts":1783219736.8813236,"message":"pre-compact skipped (session unchanged)","extra":{"reason":"http_error [429] usage_limit_reached"}}
+{"ts":1783219736.9037294,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
+{"ts":1783219770.7855742,"message":"pre-compact running (session overwrite)"}
+{"ts":1783219772.4467256,"message":"pre-compact skipped (session unchanged)","extra":{"reason":"http_error [429] usage_limit_reached"}}
+{"ts":1783219772.4651322,"message":"environment_context refreshed (removed stale items)","extra":{"removed":1,"workdir":"/mnt/d/WORKING/KetoanThienUng/Ketoandieutam.com"}}
