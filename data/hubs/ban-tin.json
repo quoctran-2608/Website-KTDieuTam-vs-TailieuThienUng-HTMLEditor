@@ -85,6 +85,374 @@
           ]
         }
       ]
+    },
+    {
+      "key": "chinh-sach-moi",
+      "label": "Chính sách mới",
+      "count": 0,
+      "children": [
+        {
+          "key": "tin-thue-moi",
+          "label": "Tin thuế mới",
+          "count": 0
+        },
+        {
+          "key": "tin-hoa-don-moi",
+          "label": "Tin hóa đơn mới",
+          "count": 0
+        },
+        {
+          "key": "tin-ke-toan-moi",
+          "label": "Tin kế toán mới",
+          "count": 0
+        },
+        {
+          "key": "tin-bhxh-lao-dong-moi",
+          "label": "Tin BHXH – lao động mới",
+          "count": 0
+        },
+        {
+          "key": "van-ban-moi-can-biet",
+          "label": "Văn bản mới cần biết",
+          "count": 0
+        },
+        {
+          "key": "chinh-sach-sap-co-hieu-luc",
+          "label": "Chính sách sắp có hiệu lực",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "kien-thuc-thue",
+      "label": "Kiến thức thuế",
+      "count": 0,
+      "children": [
+        {
+          "key": "thue-gtgt",
+          "label": "Thuế GTGT",
+          "count": 0
+        },
+        {
+          "key": "thue-tndn",
+          "label": "Thuế TNDN",
+          "count": 0
+        },
+        {
+          "key": "thue-tncn",
+          "label": "Thuế TNCN",
+          "count": 0
+        },
+        {
+          "key": "le-phi-mon-bai",
+          "label": "Lệ phí môn bài",
+          "count": 0
+        },
+        {
+          "key": "thue-nha-thau",
+          "label": "Thuế nhà thầu",
+          "count": 0
+        },
+        {
+          "key": "hoan-thue",
+          "label": "Hoàn thuế",
+          "count": 0
+        },
+        {
+          "key": "xu-phat-thue",
+          "label": "Xử phạt thuế",
+          "count": 0
+        },
+        {
+          "key": "quan-ly-thue",
+          "label": "Quản lý thuế",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "kien-thuc-ke-toan",
+      "label": "Kiến thức kế toán",
+      "count": 0,
+      "children": [
+        {
+          "key": "hach-toan-ke-toan",
+          "label": "Hạch toán kế toán",
+          "count": 0
+        },
+        {
+          "key": "so-sach-ke-toan",
+          "label": "Sổ sách kế toán",
+          "count": 0
+        },
+        {
+          "key": "bao-cao-tai-chinh",
+          "label": "Báo cáo tài chính",
+          "count": 0
+        },
+        {
+          "key": "chi-phi-doanh-thu",
+          "label": "Chi phí – doanh thu",
+          "count": 0
+        },
+        {
+          "key": "cong-no",
+          "label": "Công nợ",
+          "count": 0
+        },
+        {
+          "key": "hang-ton-kho",
+          "label": "Hàng tồn kho",
+          "count": 0
+        },
+        {
+          "key": "tai-san-co-dinh",
+          "label": "Tài sản cố định",
+          "count": 0
+        },
+        {
+          "key": "gia-thanh",
+          "label": "Giá thành",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "huong-dan-thuc-hanh",
+      "label": "Hướng dẫn thực hành",
+      "count": 0,
+      "children": [
+        {
+          "key": "huong-dan-ke-khai-thue",
+          "label": "Hướng dẫn kê khai thuế",
+          "count": 0
+        },
+        {
+          "key": "huong-dan-xuat-hoa-don",
+          "label": "Hướng dẫn xuất hóa đơn",
+          "count": 0
+        },
+        {
+          "key": "huong-dan-xu-ly-sai-sot-hoa-don",
+          "label": "Hướng dẫn xử lý sai sót hóa đơn",
+          "count": 0
+        },
+        {
+          "key": "huong-dan-lap-bang-luong",
+          "label": "Hướng dẫn lập bảng lương",
+          "count": 0
+        },
+        {
+          "key": "huong-dan-lam-bao-cao-tai-chinh",
+          "label": "Hướng dẫn làm báo cáo tài chính",
+          "count": 0
+        },
+        {
+          "key": "huong-dan-quyet-toan-thue",
+          "label": "Hướng dẫn quyết toán thuế",
+          "count": 0
+        },
+        {
+          "key": "huong-dan-su-dung-phan-mem",
+          "label": "Hướng dẫn sử dụng phần mềm",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "kinh-nghiem-lam-nghe",
+      "label": "Kinh nghiệm làm nghề",
+      "count": 0,
+      "children": [
+        {
+          "key": "kinh-nghiem-ke-toan-moi",
+          "label": "Kinh nghiệm cho kế toán mới",
+          "count": 0
+        },
+        {
+          "key": "kinh-nghiem-quyet-toan-thue",
+          "label": "Kinh nghiệm quyết toán thuế",
+          "count": 0
+        },
+        {
+          "key": "kinh-nghiem-xu-ly-ho-so",
+          "label": "Kinh nghiệm xử lý hồ sơ",
+          "count": 0
+        },
+        {
+          "key": "kinh-nghiem-lam-viec-co-quan-thue",
+          "label": "Kinh nghiệm làm việc với cơ quan thuế",
+          "count": 0
+        },
+        {
+          "key": "kinh-nghiem-phong-van-ke-toan",
+          "label": "Kinh nghiệm phỏng vấn kế toán",
+          "count": 0
+        },
+        {
+          "key": "mo-ta-cong-viec-ke-toan",
+          "label": "Mô tả công việc kế toán",
+          "count": 0
+        },
+        {
+          "key": "loi-ke-toan-thuong-gap",
+          "label": "Lỗi kế toán thường gặp",
+          "count": 0
+        },
+        {
+          "key": "ky-nang-nghe-ke-toan",
+          "label": "Kỹ năng nghề kế toán",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "tinh-huong-thuc-te",
+      "label": "Tình huống thực tế",
+      "count": 0,
+      "children": [
+        {
+          "key": "tinh-huong-hoa-don",
+          "label": "Tình huống về hóa đơn",
+          "count": 0
+        },
+        {
+          "key": "tinh-huong-chi-phi",
+          "label": "Tình huống về chi phí",
+          "count": 0
+        },
+        {
+          "key": "tinh-huong-thue",
+          "label": "Tình huống về thuế",
+          "count": 0
+        },
+        {
+          "key": "tinh-huong-luong-bhxh",
+          "label": "Tình huống về lương – BHXH",
+          "count": 0
+        },
+        {
+          "key": "tinh-huong-cong-no",
+          "label": "Tình huống về công nợ",
+          "count": 0
+        },
+        {
+          "key": "tinh-huong-thanh-tra-kiem-tra",
+          "label": "Tình huống thanh tra – kiểm tra",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "goc-chu-doanh-nghiep",
+      "label": "Góc chủ doanh nghiệp",
+      "count": 0,
+      "children": [
+        {
+          "key": "hieu-doanh-thu-loi-nhuan-dong-tien",
+          "label": "Hiểu doanh thu – lợi nhuận – dòng tiền",
+          "count": 0
+        },
+        {
+          "key": "kiem-soat-chi-phi",
+          "label": "Kiểm soát chi phí",
+          "count": 0
+        },
+        {
+          "key": "quan-ly-cong-no",
+          "label": "Quản lý công nợ",
+          "count": 0
+        },
+        {
+          "key": "rui-ro-thue-thuong-gap",
+          "label": "Rủi ro thuế thường gặp",
+          "count": 0
+        },
+        {
+          "key": "doc-bao-cao-tai-chinh",
+          "label": "Đọc báo cáo tài chính",
+          "count": 0
+        },
+        {
+          "key": "quan-tri-tai-chinh-doanh-nghiep-nho",
+          "label": "Quản trị tài chính doanh nghiệp nhỏ",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "hoi-dap-giai-dap",
+      "label": "Hỏi đáp – Giải đáp",
+      "count": 0,
+      "children": [
+        {
+          "key": "hoi-dap-thue",
+          "label": "Hỏi đáp thuế",
+          "count": 0
+        },
+        {
+          "key": "hoi-dap-ke-toan",
+          "label": "Hỏi đáp kế toán",
+          "count": 0
+        },
+        {
+          "key": "hoi-dap-hoa-don",
+          "label": "Hỏi đáp hóa đơn",
+          "count": 0
+        },
+        {
+          "key": "hoi-dap-bhxh-lao-dong",
+          "label": "Hỏi đáp BHXH – lao động",
+          "count": 0
+        },
+        {
+          "key": "hoi-dap-ho-kinh-doanh",
+          "label": "Hỏi đáp hộ kinh doanh",
+          "count": 0
+        },
+        {
+          "key": "hoi-dap-doanh-nghiep-moi",
+          "label": "Hỏi đáp doanh nghiệp mới thành lập",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "hoc-lieu-thuc-hanh",
+      "label": "Học liệu – Thực hành",
+      "count": 0,
+      "children": [
+        {
+          "key": "bai-tap-ke-toan",
+          "label": "Bài tập kế toán",
+          "count": 0
+        },
+        {
+          "key": "bai-tap-thue",
+          "label": "Bài tập thuế",
+          "count": 0
+        },
+        {
+          "key": "bai-tap-hach-toan",
+          "label": "Bài tập hạch toán",
+          "count": 0
+        },
+        {
+          "key": "bao-cao-thuc-tap-ke-toan",
+          "label": "Báo cáo thực tập kế toán",
+          "count": 0
+        },
+        {
+          "key": "tu-hoc-ke-toan-thuc-te",
+          "label": "Tự học kế toán thực tế",
+          "count": 0
+        },
+        {
+          "key": "tai-lieu-on-tap-nghe-ke-toan",
+          "label": "Tài liệu ôn tập nghề kế toán",
+          "count": 0
+        }
+      ]
     }
   ],
   "count": 115,

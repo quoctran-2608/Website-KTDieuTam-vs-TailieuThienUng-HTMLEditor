@@ -1426,6 +1426,46 @@
               "count": 4
             }
           ]
+        },
+        {
+          "key": "giai-the-doanh-nghiep",
+          "label": "Giải thể doanh nghiệp",
+          "count": 0
+        },
+        {
+          "key": "mau-bieu-doanh-nghiep",
+          "label": "Mẫu biểu doanh nghiệp",
+          "count": 0
+        },
+        {
+          "key": "thay-doi-dang-ky-kinh-doanh",
+          "label": "Thay đổi đăng ký kinh doanh",
+          "count": 0
+        },
+        {
+          "key": "thanh-lap-doanh-nghiep",
+          "label": "Thành lập doanh nghiệp",
+          "count": 0
+        },
+        {
+          "key": "thu-tuc-khuyen-mai-thuong-mai",
+          "label": "Thủ tục khuyến mại – thương mại",
+          "count": 0
+        },
+        {
+          "key": "thu-tuc-tai-chinh-vay-von",
+          "label": "Thủ tục tài chính – vay vốn",
+          "count": 0
+        },
+        {
+          "key": "tam-ngung-kinh-doanh",
+          "label": "Tạm ngừng kinh doanh",
+          "count": 0
+        },
+        {
+          "key": "dang-ky-thue-ban-dau",
+          "label": "Đăng ký thuế ban đầu",
+          "count": 0
         }
       ]
     },
@@ -1543,6 +1583,441 @@
               "count": 1
             }
           ]
+        }
+      ]
+    },
+    {
+      "key": "cong-cu-tien-ich",
+      "label": "Công cụ – Tiện ích",
+      "count": 0,
+      "children": [
+        {
+          "key": "tinh-bhxh-bat-buoc",
+          "label": "Tính BHXH bắt buộc",
+          "count": 0
+        },
+        {
+          "key": "tinh-khau-hao-tscd",
+          "label": "Tính khấu hao TSCĐ",
+          "count": 0
+        },
+        {
+          "key": "tinh-luong-gross-sang-net",
+          "label": "Tính lương Gross sang Net",
+          "count": 0
+        },
+        {
+          "key": "tinh-phan-bo-cong-cu-dung-cu",
+          "label": "Tính phân bổ công cụ dụng cụ",
+          "count": 0
+        },
+        {
+          "key": "tinh-thue-gtgt",
+          "label": "Tính thuế GTGT",
+          "count": 0
+        },
+        {
+          "key": "tinh-thue-tncn",
+          "label": "Tính thuế TNCN",
+          "count": 0
+        },
+        {
+          "key": "tinh-tien-cham-nop-thue",
+          "label": "Tính tiền chậm nộp thuế",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "hoa-don-chung-tu",
+      "label": "Hóa đơn – Chứng từ",
+      "count": 0,
+      "children": [
+        {
+          "key": "chung-tu-ke-toan",
+          "label": "Chứng từ kế toán",
+          "count": 0
+        },
+        {
+          "key": "hoa-don-may-tinh-tien",
+          "label": "Hóa đơn máy tính tiền",
+          "count": 0
+        },
+        {
+          "key": "hoa-don-dien-tu",
+          "label": "Hóa đơn điện tử",
+          "count": 0
+        },
+        {
+          "key": "hoa-don-dau-vao-dau-ra",
+          "label": "Hóa đơn đầu vào / đầu ra",
+          "count": 0
+        },
+        {
+          "key": "luu-tru-ho-so",
+          "label": "Lưu trữ hồ sơ",
+          "count": 0
+        },
+        {
+          "key": "lap-xuat-hoa-don",
+          "label": "Lập / xuất hóa đơn",
+          "count": 0
+        },
+        {
+          "key": "xu-ly-sai-sot-hoa-don",
+          "label": "Xử lý sai sót hóa đơn",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "ho-kinh-doanh",
+      "label": "Hộ kinh doanh",
+      "count": 0,
+      "children": [
+        {
+          "key": "chuyen-doi-len-doanh-nghiep",
+          "label": "Chuyển đổi lên doanh nghiệp",
+          "count": 0
+        },
+        {
+          "key": "chung-tu-ho-kinh-doanh",
+          "label": "Chứng từ hộ kinh doanh",
+          "count": 0
+        },
+        {
+          "key": "hoa-don-ho-kinh-doanh",
+          "label": "Hóa đơn hộ kinh doanh",
+          "count": 0
+        },
+        {
+          "key": "ke-khai-nop-thue",
+          "label": "Kê khai – nộp thuế",
+          "count": 0
+        },
+        {
+          "key": "so-sach-ho-kinh-doanh",
+          "label": "Sổ sách hộ kinh doanh",
+          "count": 0
+        },
+        {
+          "key": "thue-ho-kinh-doanh",
+          "label": "Thuế hộ kinh doanh",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "lao-dong-bhxh",
+      "label": "Lao động – BHXH",
+      "count": 0,
+      "children": [
+        {
+          "key": "bhxh-bhyt-bhtn",
+          "label": "BHXH – BHYT – BHTN",
+          "count": 0
+        },
+        {
+          "key": "cham-cong",
+          "label": "Chấm công",
+          "count": 0
+        },
+        {
+          "key": "cong-doan",
+          "label": "Công đoàn",
+          "count": 0
+        },
+        {
+          "key": "ho-so-nhan-su",
+          "label": "Hồ sơ nhân sự",
+          "count": 0
+        },
+        {
+          "key": "hop-dong-lao-dong",
+          "label": "Hợp đồng lao động",
+          "count": 0
+        },
+        {
+          "key": "thue-tncn-tien-luong",
+          "label": "Thuế TNCN tiền lương",
+          "count": 0
+        },
+        {
+          "key": "tien-luong-bang-luong",
+          "label": "Tiền lương – bảng lương",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "phan-mem-cong-cu-nghiep-vu",
+      "label": "Phần mềm – Công cụ nghiệp vụ",
+      "count": 0,
+      "children": [
+        {
+          "key": "cong-cu-ho-tro-ke-khai",
+          "label": "Công cụ hỗ trợ kê khai",
+          "count": 0
+        },
+        {
+          "key": "excel-ke-toan",
+          "label": "Excel kế toán",
+          "count": 0
+        },
+        {
+          "key": "fast",
+          "label": "FAST",
+          "count": 0
+        },
+        {
+          "key": "htkk",
+          "label": "HTKK",
+          "count": 0
+        },
+        {
+          "key": "hoa-don-dien-tu-pm",
+          "label": "Hóa đơn điện tử",
+          "count": 0
+        },
+        {
+          "key": "misa",
+          "label": "MISA",
+          "count": 0
+        },
+        {
+          "key": "thue-dien-tu-etax",
+          "label": "Thuế điện tử / eTax",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "tra-cuu",
+      "label": "Tra cứu",
+      "count": 0,
+      "children": [
+        {
+          "key": "bieu-thue-tncn",
+          "label": "Biểu thuế TNCN",
+          "count": 0
+        },
+        {
+          "key": "he-thong-tai-khoan-ke-toan",
+          "label": "Hệ thống tài khoản kế toán",
+          "count": 0
+        },
+        {
+          "key": "ma-nganh-nghe-kinh-doanh",
+          "label": "Mã ngành nghề kinh doanh",
+          "count": 0
+        },
+        {
+          "key": "ma-so-thue",
+          "label": "Mã số thuế",
+          "count": 0
+        },
+        {
+          "key": "muc-luong-toi-thieu-vung",
+          "label": "Mức lương tối thiểu vùng",
+          "count": 0
+        },
+        {
+          "key": "muc-phat-thue-hoa-don",
+          "label": "Mức phạt thuế – hóa đơn",
+          "count": 0
+        },
+        {
+          "key": "thoi-han-nop-to-khai",
+          "label": "Thời hạn nộp tờ khai",
+          "count": 0
+        },
+        {
+          "key": "van-ban-con-hieu-luc",
+          "label": "Văn bản còn hiệu lực / hết hiệu lực",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "tai-lieu-ke-toan",
+      "label": "Tài liệu kế toán",
+      "count": 0,
+      "children": [
+        {
+          "key": "bao-cao-tai-chinh",
+          "label": "Báo cáo tài chính",
+          "count": 0
+        },
+        {
+          "key": "chuan-muc-ke-toan",
+          "label": "Chuẩn mực kế toán",
+          "count": 0
+        },
+        {
+          "key": "che-do-ke-toan",
+          "label": "Chế độ kế toán",
+          "count": 0
+        },
+        {
+          "key": "he-thong-tai-khoan",
+          "label": "Hệ thống tài khoản",
+          "count": 0
+        },
+        {
+          "key": "ke-toan-theo-phan-hanh",
+          "label": "Kế toán theo phần hành",
+          "count": 0
+        },
+        {
+          "key": "so-sach-ke-toan",
+          "label": "Sổ sách kế toán",
+          "count": 0
+        },
+        {
+          "key": "dinh-khoan-hach-toan",
+          "label": "Định khoản – hạch toán",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "tai-lieu-thue",
+      "label": "Tài liệu thuế",
+      "count": 0,
+      "children": [
+        {
+          "key": "hoan-thue",
+          "label": "Hoàn thuế",
+          "count": 0
+        },
+        {
+          "key": "le-phi-mon-bai",
+          "label": "Lệ phí môn bài",
+          "count": 0
+        },
+        {
+          "key": "thue-gtgt",
+          "label": "Thuế GTGT",
+          "count": 0
+        },
+        {
+          "key": "thue-tncn",
+          "label": "Thuế TNCN",
+          "count": 0
+        },
+        {
+          "key": "thue-tndn",
+          "label": "Thuế TNDN",
+          "count": 0
+        },
+        {
+          "key": "thue-nha-thau",
+          "label": "Thuế nhà thầu",
+          "count": 0
+        },
+        {
+          "key": "thue-xuat-nhap-khau",
+          "label": "Thuế xuất nhập khẩu",
+          "count": 0
+        },
+        {
+          "key": "xu-phat-thue",
+          "label": "Xử phạt thuế",
+          "count": 0
+        },
+        {
+          "key": "dang-ky-thue-ma-so-thue",
+          "label": "Đăng ký thuế – Mã số thuế",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "tai-ve",
+      "label": "Tải về",
+      "count": 0,
+      "children": [
+        {
+          "key": "bieu-mau-ke-toan",
+          "label": "Biểu mẫu kế toán",
+          "count": 0
+        },
+        {
+          "key": "checklist-ke-toan-thue",
+          "label": "Checklist kế toán – thuế",
+          "count": 0
+        },
+        {
+          "key": "file-excel-ke-toan",
+          "label": "File Excel kế toán",
+          "count": 0
+        },
+        {
+          "key": "file-word-pdf",
+          "label": "File Word / PDF",
+          "count": 0
+        },
+        {
+          "key": "mau-hoa-don-chung-tu",
+          "label": "Mẫu hóa đơn – chứng từ",
+          "count": 0
+        },
+        {
+          "key": "mau-lao-dong-bhxh",
+          "label": "Mẫu lao động – BHXH",
+          "count": 0
+        },
+        {
+          "key": "mau-thue",
+          "label": "Mẫu thuế",
+          "count": 0
+        },
+        {
+          "key": "phan-mem-ung-dung",
+          "label": "Phần mềm / ứng dụng hỗ trợ",
+          "count": 0
+        },
+        {
+          "key": "tai-lieu-ke-toan",
+          "label": "Tài liệu kế toán",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "van-ban-phap-luat",
+      "label": "Văn bản pháp luật",
+      "count": 0,
+      "children": [
+        {
+          "key": "cong-van",
+          "label": "Công văn",
+          "count": 0
+        },
+        {
+          "key": "luat",
+          "label": "Luật",
+          "count": 0
+        },
+        {
+          "key": "nghi-quyet-quyet-dinh",
+          "label": "Nghị quyết – Quyết định",
+          "count": 0
+        },
+        {
+          "key": "nghi-dinh",
+          "label": "Nghị định",
+          "count": 0
+        },
+        {
+          "key": "thong-tu",
+          "label": "Thông tư",
+          "count": 0
+        },
+        {
+          "key": "van-ban-hieu-luc",
+          "label": "Văn bản còn hiệu lực / hết hiệu lực",
+          "count": 0
         }
       ]
     }
@@ -71898,7 +72373,490 @@
     }
   ],
   "taxonomyByKind": {
-    "phan-loai-moi": [],
+    "phan-loai-moi": [
+      {
+        "key": "tai-ve",
+        "label": "Tải về",
+        "count": 0,
+        "children": [
+          {
+            "key": "tai-lieu-ke-toan",
+            "label": "Tài liệu kế toán",
+            "count": 0
+          },
+          {
+            "key": "bieu-mau-ke-toan",
+            "label": "Biểu mẫu kế toán",
+            "count": 0
+          },
+          {
+            "key": "mau-thue",
+            "label": "Mẫu thuế",
+            "count": 0
+          },
+          {
+            "key": "mau-hoa-don-chung-tu",
+            "label": "Mẫu hóa đơn – chứng từ",
+            "count": 0
+          },
+          {
+            "key": "mau-lao-dong-bhxh",
+            "label": "Mẫu lao động – BHXH",
+            "count": 0
+          },
+          {
+            "key": "file-excel-ke-toan",
+            "label": "File Excel kế toán",
+            "count": 0
+          },
+          {
+            "key": "file-word-pdf",
+            "label": "File Word / PDF",
+            "count": 0
+          },
+          {
+            "key": "checklist-ke-toan-thue",
+            "label": "Checklist kế toán – thuế",
+            "count": 0
+          },
+          {
+            "key": "phan-mem-ung-dung",
+            "label": "Phần mềm / ứng dụng hỗ trợ",
+            "count": 0
+          }
+        ]
+      },
+      {
+        "key": "van-ban-phap-luat",
+        "label": "Văn bản pháp luật",
+        "count": 0,
+        "children": [
+          {
+            "key": "luat",
+            "label": "Luật",
+            "count": 0
+          },
+          {
+            "key": "nghi-dinh",
+            "label": "Nghị định",
+            "count": 0
+          },
+          {
+            "key": "thong-tu",
+            "label": "Thông tư",
+            "count": 0
+          },
+          {
+            "key": "cong-van",
+            "label": "Công văn",
+            "count": 0
+          },
+          {
+            "key": "nghi-quyet-quyet-dinh",
+            "label": "Nghị quyết – Quyết định",
+            "count": 0
+          },
+          {
+            "key": "van-ban-hieu-luc",
+            "label": "Văn bản còn hiệu lực / hết hiệu lực",
+            "count": 0
+          }
+        ]
+      },
+      {
+        "key": "tai-lieu-thue",
+        "label": "Tài liệu thuế",
+        "count": 0,
+        "children": [
+          {
+            "key": "thue-gtgt",
+            "label": "Thuế GTGT",
+            "count": 0
+          },
+          {
+            "key": "thue-tndn",
+            "label": "Thuế TNDN",
+            "count": 0
+          },
+          {
+            "key": "thue-tncn",
+            "label": "Thuế TNCN",
+            "count": 0
+          },
+          {
+            "key": "le-phi-mon-bai",
+            "label": "Lệ phí môn bài",
+            "count": 0
+          },
+          {
+            "key": "thue-nha-thau",
+            "label": "Thuế nhà thầu",
+            "count": 0
+          },
+          {
+            "key": "thue-xuat-nhap-khau",
+            "label": "Thuế xuất nhập khẩu",
+            "count": 0
+          },
+          {
+            "key": "dang-ky-thue-ma-so-thue",
+            "label": "Đăng ký thuế – Mã số thuế",
+            "count": 0
+          },
+          {
+            "key": "hoan-thue",
+            "label": "Hoàn thuế",
+            "count": 0
+          },
+          {
+            "key": "xu-phat-thue",
+            "label": "Xử phạt thuế",
+            "count": 0
+          }
+        ]
+      },
+      {
+        "key": "tai-lieu-ke-toan",
+        "label": "Tài liệu kế toán",
+        "count": 0,
+        "children": [
+          {
+            "key": "che-do-ke-toan",
+            "label": "Chế độ kế toán",
+            "count": 0
+          },
+          {
+            "key": "chuan-muc-ke-toan",
+            "label": "Chuẩn mực kế toán",
+            "count": 0
+          },
+          {
+            "key": "he-thong-tai-khoan",
+            "label": "Hệ thống tài khoản",
+            "count": 0
+          },
+          {
+            "key": "dinh-khoan-hach-toan",
+            "label": "Định khoản – hạch toán",
+            "count": 0
+          },
+          {
+            "key": "so-sach-ke-toan",
+            "label": "Sổ sách kế toán",
+            "count": 0
+          },
+          {
+            "key": "bao-cao-tai-chinh",
+            "label": "Báo cáo tài chính",
+            "count": 0
+          },
+          {
+            "key": "ke-toan-theo-phan-hanh",
+            "label": "Kế toán theo phần hành",
+            "count": 0
+          }
+        ]
+      },
+      {
+        "key": "hoa-don-chung-tu",
+        "label": "Hóa đơn – Chứng từ",
+        "count": 0,
+        "children": [
+          {
+            "key": "hoa-don-dien-tu",
+            "label": "Hóa đơn điện tử",
+            "count": 0
+          },
+          {
+            "key": "hoa-don-may-tinh-tien",
+            "label": "Hóa đơn máy tính tiền",
+            "count": 0
+          },
+          {
+            "key": "lap-xuat-hoa-don",
+            "label": "Lập / xuất hóa đơn",
+            "count": 0
+          },
+          {
+            "key": "xu-ly-sai-sot-hoa-don",
+            "label": "Xử lý sai sót hóa đơn",
+            "count": 0
+          },
+          {
+            "key": "hoa-don-dau-vao-dau-ra",
+            "label": "Hóa đơn đầu vào / đầu ra",
+            "count": 0
+          },
+          {
+            "key": "chung-tu-ke-toan",
+            "label": "Chứng từ kế toán",
+            "count": 0
+          },
+          {
+            "key": "luu-tru-ho-so",
+            "label": "Lưu trữ hồ sơ",
+            "count": 0
+          }
+        ]
+      },
+      {
+        "key": "lao-dong-bhxh",
+        "label": "Lao động – BHXH",
+        "count": 0,
+        "children": [
+          {
+            "key": "hop-dong-lao-dong",
+            "label": "Hợp đồng lao động",
+            "count": 0
+          },
+          {
+            "key": "tien-luong-bang-luong",
+            "label": "Tiền lương – bảng lương",
+            "count": 0
+          },
+          {
+            "key": "cham-cong",
+            "label": "Chấm công",
+            "count": 0
+          },
+          {
+            "key": "bhxh-bhyt-bhtn",
+            "label": "BHXH – BHYT – BHTN",
+            "count": 0
+          },
+          {
+            "key": "cong-doan",
+            "label": "Công đoàn",
+            "count": 0
+          },
+          {
+            "key": "thue-tncn-tien-luong",
+            "label": "Thuế TNCN tiền lương",
+            "count": 0
+          },
+          {
+            "key": "ho-so-nhan-su",
+            "label": "Hồ sơ nhân sự",
+            "count": 0
+          }
+        ]
+      },
+      {
+        "key": "ho-kinh-doanh",
+        "label": "Hộ kinh doanh",
+        "count": 0,
+        "children": [
+          {
+            "key": "thue-ho-kinh-doanh",
+            "label": "Thuế hộ kinh doanh",
+            "count": 0
+          },
+          {
+            "key": "hoa-don-ho-kinh-doanh",
+            "label": "Hóa đơn hộ kinh doanh",
+            "count": 0
+          },
+          {
+            "key": "so-sach-ho-kinh-doanh",
+            "label": "Sổ sách hộ kinh doanh",
+            "count": 0
+          },
+          {
+            "key": "ke-khai-nop-thue",
+            "label": "Kê khai – nộp thuế",
+            "count": 0
+          },
+          {
+            "key": "chung-tu-ho-kinh-doanh",
+            "label": "Chứng từ hộ kinh doanh",
+            "count": 0
+          },
+          {
+            "key": "chuyen-doi-len-doanh-nghiep",
+            "label": "Chuyển đổi lên doanh nghiệp",
+            "count": 0
+          }
+        ]
+      },
+      {
+        "key": "doanh-nghiep-thu-tuc",
+        "label": "Doanh nghiệp – Thủ tục",
+        "count": 0,
+        "children": [
+          {
+            "key": "thanh-lap-doanh-nghiep",
+            "label": "Thành lập doanh nghiệp",
+            "count": 0
+          },
+          {
+            "key": "thay-doi-dang-ky-kinh-doanh",
+            "label": "Thay đổi đăng ký kinh doanh",
+            "count": 0
+          },
+          {
+            "key": "dang-ky-thue-ban-dau",
+            "label": "Đăng ký thuế ban đầu",
+            "count": 0
+          },
+          {
+            "key": "tam-ngung-kinh-doanh",
+            "label": "Tạm ngừng kinh doanh",
+            "count": 0
+          },
+          {
+            "key": "giai-the-doanh-nghiep",
+            "label": "Giải thể doanh nghiệp",
+            "count": 0
+          },
+          {
+            "key": "thu-tuc-khuyen-mai-thuong-mai",
+            "label": "Thủ tục khuyến mại – thương mại",
+            "count": 0
+          },
+          {
+            "key": "thu-tuc-tai-chinh-vay-von",
+            "label": "Thủ tục tài chính – vay vốn",
+            "count": 0
+          },
+          {
+            "key": "mau-bieu-doanh-nghiep",
+            "label": "Mẫu biểu doanh nghiệp",
+            "count": 0
+          }
+        ]
+      },
+      {
+        "key": "tra-cuu",
+        "label": "Tra cứu",
+        "count": 0,
+        "children": [
+          {
+            "key": "he-thong-tai-khoan-ke-toan",
+            "label": "Hệ thống tài khoản kế toán",
+            "count": 0
+          },
+          {
+            "key": "bieu-thue-tncn",
+            "label": "Biểu thuế TNCN",
+            "count": 0
+          },
+          {
+            "key": "muc-luong-toi-thieu-vung",
+            "label": "Mức lương tối thiểu vùng",
+            "count": 0
+          },
+          {
+            "key": "muc-phat-thue-hoa-don",
+            "label": "Mức phạt thuế – hóa đơn",
+            "count": 0
+          },
+          {
+            "key": "thoi-han-nop-to-khai",
+            "label": "Thời hạn nộp tờ khai",
+            "count": 0
+          },
+          {
+            "key": "ma-nganh-nghe-kinh-doanh",
+            "label": "Mã ngành nghề kinh doanh",
+            "count": 0
+          },
+          {
+            "key": "ma-so-thue",
+            "label": "Mã số thuế",
+            "count": 0
+          },
+          {
+            "key": "van-ban-con-hieu-luc",
+            "label": "Văn bản còn hiệu lực / hết hiệu lực",
+            "count": 0
+          }
+        ]
+      },
+      {
+        "key": "cong-cu-tien-ich",
+        "label": "Công cụ – Tiện ích",
+        "count": 0,
+        "children": [
+          {
+            "key": "tinh-thue-tncn",
+            "label": "Tính thuế TNCN",
+            "count": 0
+          },
+          {
+            "key": "tinh-luong-gross-sang-net",
+            "label": "Tính lương Gross sang Net",
+            "count": 0
+          },
+          {
+            "key": "tinh-bhxh-bat-buoc",
+            "label": "Tính BHXH bắt buộc",
+            "count": 0
+          },
+          {
+            "key": "tinh-thue-gtgt",
+            "label": "Tính thuế GTGT",
+            "count": 0
+          },
+          {
+            "key": "tinh-tien-cham-nop-thue",
+            "label": "Tính tiền chậm nộp thuế",
+            "count": 0
+          },
+          {
+            "key": "tinh-khau-hao-tscd",
+            "label": "Tính khấu hao TSCĐ",
+            "count": 0
+          },
+          {
+            "key": "tinh-phan-bo-cong-cu-dung-cu",
+            "label": "Tính phân bổ công cụ dụng cụ",
+            "count": 0
+          }
+        ]
+      },
+      {
+        "key": "phan-mem-cong-cu-nghiep-vu",
+        "label": "Phần mềm – Công cụ nghiệp vụ",
+        "count": 0,
+        "children": [
+          {
+            "key": "htkk",
+            "label": "HTKK",
+            "count": 0
+          },
+          {
+            "key": "thue-dien-tu-etax",
+            "label": "Thuế điện tử / eTax",
+            "count": 0
+          },
+          {
+            "key": "hoa-don-dien-tu-pm",
+            "label": "Hóa đơn điện tử",
+            "count": 0
+          },
+          {
+            "key": "misa",
+            "label": "MISA",
+            "count": 0
+          },
+          {
+            "key": "fast",
+            "label": "FAST",
+            "count": 0
+          },
+          {
+            "key": "excel-ke-toan",
+            "label": "Excel kế toán",
+            "count": 0
+          },
+          {
+            "key": "cong-cu-ho-tro-ke-khai",
+            "label": "Công cụ hỗ trợ kê khai",
+            "count": 0
+          }
+        ]
+      }
+    ],
     "huong-dan": [
       {
         "key": "ke-toan",
