@@ -393,6 +393,31 @@ body[data-nav="ban-tin"] .catalog-search-input:focus {
   color: #6a4421;
 }
 
+/* ── LV3 chips trong secondary row (Bản tin) ─────────────────── */
+.catalog-secondary-lv3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 100%;
+  padding-left: 26px;
+  margin-top: 4px;
+}
+
+.catalog-secondary-btn--lv3 {
+  font-size: 10.5px;
+  padding: 4px 10px;
+  border-color: rgba(141, 99, 60, 0.18);
+  background: rgba(254, 255, 220, 0.15);
+  color: #8a6030;
+}
+
+.catalog-secondary-btn--lv3.is-active {
+  background: rgba(254, 255, 220, 0.36);
+  border-color: rgba(141, 99, 60, 0.38);
+  color: #5c3b10;
+  font-weight: 700;
+}
+
 .catalog-primary-row--library {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -599,6 +624,25 @@ body[data-nav="ban-tin"] .catalog-search-input:focus {
 .catalog-tree__child.is-active {
   background: #f6efe2;
   color: #6a4421;
+}
+
+/* ── Grandchildren (lv3) trong sidebar tree Bản tin ─────────── */
+.catalog-tree__children .catalog-tree__children {
+  padding-left: 14px;
+  margin-top: 4px;
+  border-left: 1px solid rgba(182, 141, 64, 0.09);
+}
+
+.catalog-tree__children .catalog-tree__child {
+  font-size: 11.5px;
+  padding: 5px 9px;
+  color: #7b8694;
+}
+
+.catalog-tree__children .catalog-tree__child:hover,
+.catalog-tree__children .catalog-tree__child.is-active {
+  background: #f2ebd8;
+  color: #5f3d16;
 }
 
 .catalog-main,
@@ -1074,6 +1118,24 @@ body.is-filter-open .catalog-filter-panel {
 .catalog-filter-btn.is-active {
   background: #f4ede1;
   color: #6a4421;
+}
+
+/* ── LV3 trong mobile filter panel ──────────────────────────── */
+.catalog-filter-btn--lv3 {
+  padding-left: 24px;
+  font-size: 12px;
+  color: #6b7280;
+  border-left: 2px solid rgba(182, 141, 64, 0.18);
+  border-radius: 0 10px 10px 0;
+  margin-left: 8px;
+  margin-bottom: 2px;
+}
+
+.catalog-filter-btn--lv3:hover,
+.catalog-filter-btn--lv3.is-active {
+  background: #f0e8d6;
+  color: #5f3d16;
+  border-left-color: rgba(182, 141, 64, 0.45);
 }
 
 .catalog-filter-panel__reset {
