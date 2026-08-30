@@ -1204,7 +1204,7 @@ $innerScript = <<<'JS'
       remove_script_host: false,
       convert_urls: false,
       plugins: 'advlist autolink lists link image table code charmap preview searchreplace visualblocks wordcount paste',
-      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table link image | removeformat code preview',
+      toolbar: 'code | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table link image | removeformat preview',
       content_style: 'body { font-family: Arial, sans-serif; font-size: 16px; line-height: 1.65; padding: 14px; } img { max-width: 100%; height: auto; }',
       images_upload_handler: async (blobInfo, progress) => {
         const articleIdInput = document.getElementById('articleIdInput');
