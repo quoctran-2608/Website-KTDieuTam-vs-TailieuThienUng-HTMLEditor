@@ -1,0 +1,198 @@
+/* ==========================================================================
+   EDITORIAL DESIGN SYSTEM v2.1 — Fresh Editorial
+   File: article-editorial-system.css
+   Owns: Article H1/H2/H3/H4 scale, heading rhythm, H2 gold accent,
+         list rhythm, prose ↔ callout relationship, end-of-article spacing,
+         article mobile typography.
+   Depends on: editorial-content.css (color tokens)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ARTICLE BODY — Desktop reading scale
+   -------------------------------------------------------------------------- */
+.article-prose {
+  font-size: 17.5px;
+  line-height: 1.78;
+}
+
+/* --------------------------------------------------------------------------
+   2. HEADING — shared base
+   -------------------------------------------------------------------------- */
+.article-prose h2,
+.article-prose h3,
+.article-prose h4 {
+  font-family: var(--ct-font-sans);
+  color: var(--ct-ink);
+  margin-bottom: 0.55em;
+}
+
+/* --------------------------------------------------------------------------
+   3. H2 — Major section
+   -------------------------------------------------------------------------- */
+.article-prose h2 {
+  font-size: clamp(24px, 2.2vw, 29px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.36;
+  margin-top: clamp(44px, 4.6vw, 58px);
+}
+
+/* H2 gold accent underline */
+.article-prose h2::after {
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: 9px;
+  content: "";
+  background: var(--ct-gold);
+  border-radius: 999px;
+  opacity: 0.86;
+}
+
+/* First H2 in article — reduced top margin */
+.article-prose > h2:first-child {
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. H3 — Subsection
+   -------------------------------------------------------------------------- */
+.article-prose h3 {
+  font-size: clamp(19px, 1.65vw, 21px);
+  font-weight: 600;
+  letter-spacing: -0.008em;
+  line-height: 1.4;
+  margin-top: clamp(28px, 2.9vw, 34px);
+}
+
+/* --------------------------------------------------------------------------
+   5. H4 — Sub-subsection
+   -------------------------------------------------------------------------- */
+.article-prose h4 {
+  font-size: clamp(17px, 1.4vw, 18.5px);
+  font-weight: 600;
+  line-height: 1.42;
+  margin-top: clamp(22px, 2.25vw, 28px);
+}
+
+/* --------------------------------------------------------------------------
+   6. H2 → H3 RELATIONSHIP
+   When H3 follows immediately after H2, reduce gap.
+   -------------------------------------------------------------------------- */
+.article-prose h2:has(+ h3) {
+  margin-bottom: 0;
+}
+
+.article-prose h2 + h3 {
+  margin-top: clamp(15px, 1.8vw, 18px);
+}
+
+/* --------------------------------------------------------------------------
+   7. BLOCK → HEADING SPACING
+   Block before heading doesn't add extra margin.
+   Heading owns the section break.
+   -------------------------------------------------------------------------- */
+.article-prose > :where(
+  p,
+  ul,
+  ol,
+  blockquote,
+  aside,
+  section,
+  figure,
+  table,
+  dl,
+  div
+):has(+ :is(h2, h3, h4)) {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. PARAGRAPH SPACING
+   -------------------------------------------------------------------------- */
+.article-prose > p + p {
+  margin-top: 1.1em;
+}
+
+/* --------------------------------------------------------------------------
+   9. PROSE ↔ CALLOUT RELATIONSHIP
+   -------------------------------------------------------------------------- */
+.article-prose > .ct-content-box {
+  margin-top: 22px;
+  margin-bottom: 26px;
+}
+
+.article-prose > .ct-content-box + .ct-content-box {
+  margin-top: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   10. END-OF-ARTICLE NOTE
+   -------------------------------------------------------------------------- */
+.article-prose > .ct-end-note {
+  margin-top: clamp(28px, 3.2vw, 34px);
+  padding-top: 18px;
+  border-top: 1px dashed var(--ct-border);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ct-caption);
+}
+
+/* --------------------------------------------------------------------------
+   11. ARTICLE PAGE BACKGROUND
+   -------------------------------------------------------------------------- */
+.article-page {
+  --ct-paper-bg: #F4F4F1;
+  --ct-paper-surface: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   12. ARTICLE DETAIL — Chrome tokens (consume EDS tokens)
+   -------------------------------------------------------------------------- */
+:root {
+  --ct-article-green: var(--ct-green);
+  --ct-article-green-dark: var(--ct-green-dark);
+  --ct-article-gold-text: var(--ct-gold-dark);
+}
+
+/* --------------------------------------------------------------------------
+   13. MOBILE TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .article-prose {
+    font-size: 16.5px;
+    line-height: 1.76;
+  }
+
+  .article-prose h2 {
+    font-size: clamp(21px, 5.8vw, 24px);
+    line-height: 1.38;
+    margin-top: clamp(32px, 5vw, 40px);
+  }
+
+  .article-prose h2::after {
+    width: 34px;
+    margin-top: 8px;
+  }
+
+  .article-prose h3 {
+    font-size: clamp(18px, 4.8vw, 19.5px);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: clamp(22px, 3.5vw, 28px);
+  }
+
+  .article-prose h4 {
+    font-size: clamp(16.5px, 4.2vw, 17.5px);
+    margin-top: clamp(18px, 3vw, 22px);
+  }
+
+  .article-prose h2 + h3 {
+    margin-top: 14px;
+  }
+
+  /* End-of-article note mobile */
+  .article-prose > .ct-end-note {
+    margin-top: 26px;
+  }
+}

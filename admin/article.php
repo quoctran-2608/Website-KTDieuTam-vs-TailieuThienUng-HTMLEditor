@@ -1205,7 +1205,12 @@ $innerScript = <<<'JS'
       convert_urls: false,
       plugins: 'advlist autolink lists link image table code charmap preview searchreplace visualblocks wordcount paste',
       toolbar: 'code | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table link image | removeformat preview',
-      content_style: 'body { font-family: Arial, sans-serif; font-size: 16px; line-height: 1.65; padding: 14px; } img { max-width: 100%; height: auto; }',
+      content_css: [
+        siteBaseUrl + 'assets/css/editorial-content.css',
+        siteBaseUrl + 'assets/css/editorial-structured-content.css',
+        siteBaseUrl + 'assets/css/article-editorial-system.css',
+      ],
+      content_style: 'body { font-family: "Google Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 17px; line-height: 1.78; color: #33322C; padding: 18px 22px; -webkit-font-smoothing: antialiased; } img { max-width: 100%; height: auto; }',
       images_upload_handler: async (blobInfo, progress) => {
         const articleIdInput = document.getElementById('articleIdInput');
         const csrfInput = form ? form.querySelector('input[name="_csrf_token"]') : null;

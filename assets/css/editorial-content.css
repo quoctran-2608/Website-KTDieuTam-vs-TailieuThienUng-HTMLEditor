@@ -1,0 +1,564 @@
+/* ==========================================================================
+   EDITORIAL DESIGN SYSTEM v2.1 — Fresh Editorial
+   File: editorial-content.css
+   Owns: Color tokens, typography base, links, lists, blockquote,
+         content boxes, checklist, steps, FAQ, related content.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FONT IMPORT
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   2. CSS CUSTOM PROPERTIES — CANONICAL COLOR TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+  /* — Brand — */
+  --ct-green:      #176B4D;
+  --ct-green-dark: #0F5138;
+
+  --ct-gold:       #D0A13A;
+  --ct-gold-dark:  #8A611A;
+  --ct-gold-soft:  #FFF7DF;
+
+  --ct-navy:       #30486B;
+  --ct-slate:      #2E5961;
+
+  /* — Text — */
+  --ct-ink:        #172038;
+  --ct-text:       #33322C;
+  --ct-text-soft:  #626862;
+  --ct-caption:    #74766F;
+  --ct-muted:      #858983;
+
+  /* — Surfaces — */
+  --ct-surface:       #FFFFFF;
+  --ct-paper:         #FCFBF7;
+  --ct-page:          #FAFBF9;
+  --ct-surface-muted: #F5F8F6;
+
+  --ct-border:      #E6DFCF;
+  --ct-border-cool: #D8E2DD;
+
+  /* — Semantic — */
+  --ct-info:    #4F8DB8;
+  --ct-warning: #D66C4A;
+  --ct-legal:   #6576B6;
+  --ct-example: #5E9D70;
+  --ct-insight: #D0A13A;
+
+  /* — Font stack — */
+  --ct-font-sans:
+    'Google Sans',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY BASE (shared EDS reading scale)
+   -------------------------------------------------------------------------- */
+.article-prose {
+  font-family: var(--ct-font-sans);
+  font-size: 17px;
+  line-height: 1.82;
+  color: var(--ct-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   4. LINKS
+   -------------------------------------------------------------------------- */
+.article-prose a {
+  color: var(--ct-gold-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(138, 97, 26, 0.35);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.article-prose a:hover {
+  color: #6B4C12;
+  text-decoration-color: rgba(107, 76, 18, 0.55);
+}
+
+/* --------------------------------------------------------------------------
+   5. LISTS — UL / OL
+   -------------------------------------------------------------------------- */
+
+/* 5.1 UL bullets — gold */
+.article-prose ul {
+  list-style: none;
+  padding-left: 1.5em;
+}
+
+.article-prose ul > li {
+  position: relative;
+}
+
+.article-prose ul > li::before {
+  content: "";
+  position: absolute;
+  left: -1.3em;
+  top: 0.72em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ct-gold);
+  opacity: 0.88;
+}
+
+/* 5.2 OL numbers — green */
+.article-prose ol {
+  list-style: none;
+  padding-left: 1.7em;
+  counter-reset: ct-ol;
+}
+
+.article-prose ol > li {
+  position: relative;
+  counter-increment: ct-ol;
+}
+
+.article-prose ol > li::before {
+  content: counter(ct-ol) ".";
+  position: absolute;
+  left: -1.55em;
+  color: var(--ct-green);
+  font-weight: 700;
+  font-size: 0.95em;
+}
+
+/* 5.3 List rhythm */
+.article-prose ul,
+.article-prose ol {
+  margin: 0.4em 0 1em;
+}
+
+.article-prose li {
+  margin: 0.08em 0;
+  line-height: 1.58;
+}
+
+/* Nested lists */
+.article-prose ul ul,
+.article-prose ol ol,
+.article-prose ul ol,
+.article-prose ol ul {
+  margin: 0.3em 0 0.4em;
+}
+
+/* Lead paragraph before list — tighter coupling */
+.article-prose > p:has(+ ul),
+.article-prose > p:has(+ ol) {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. BLOCKQUOTE — genuine quotation only
+   -------------------------------------------------------------------------- */
+.article-prose blockquote {
+  margin: 24px 0;
+  padding: 12px 0 12px 20px;
+  border-left: 3px solid rgba(208, 161, 58, 0.55);
+  background: var(--ct-paper);
+  border-radius: 0 8px 8px 0;
+  color: var(--ct-text-soft);
+  font-style: italic;
+}
+
+.article-prose blockquote p,
+.article-prose blockquote li {
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   7. STRONG
+   -------------------------------------------------------------------------- */
+.article-prose strong {
+  color: var(--ct-ink);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   8. CONTENT BOX — Base
+   -------------------------------------------------------------------------- */
+.ct-content-box {
+  position: relative;
+  margin: 22px 0 26px;
+  padding: 20px 22px;
+  border: 1px solid var(--ct-border-cool);
+  border-left-width: 4px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.ct-content-box__title {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.ct-content-box__body {
+  color: var(--ct-text);
+}
+
+.ct-content-box__body > * + * {
+  margin-top: 0.7em;
+}
+
+.ct-content-box__body ul,
+.ct-content-box__body ol {
+  margin: 0.35em 0 0.6em;
+}
+
+.ct-content-box__body li {
+  margin: 0.05em 0;
+}
+
+/* Paragraph/list before content box — tighter */
+.article-prose > :where(p, ul, ol):has(+ .ct-content-box) {
+  margin-bottom: 0;
+}
+
+/* Two consecutive callouts */
+.ct-content-box + .ct-content-box {
+  margin-top: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   9. CONTENT BOX — is-note (Key Insight)
+   -------------------------------------------------------------------------- */
+.ct-content-box.is-note {
+  border-color: #CFE2D5;
+  border-left-color: var(--ct-insight);
+  background: linear-gradient(135deg, #F1F8F3 0%, #FFFAF0 100%);
+}
+
+.ct-content-box.is-note .ct-content-box__title {
+  color: #154C36;
+}
+
+.ct-content-box.is-note .ct-content-box__body {
+  color: #2A3D32;
+}
+
+/* Opening statement emphasis */
+.ct-content-box.is-note .ct-content-box__body > p:first-child {
+  color: #154C36;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   10. CONTENT BOX — is-info
+   -------------------------------------------------------------------------- */
+.ct-content-box.is-info {
+  border-color: #BDD5E5;
+  border-left-color: var(--ct-info);
+  background: #F2F8FC;
+}
+
+.ct-content-box.is-info .ct-content-box__title {
+  color: #3C6E91;
+}
+
+/* A/B tint for repeated info boxes */
+:nth-child(even of .ct-content-box.is-info) {
+  background: #EEF5FA;
+}
+
+/* --------------------------------------------------------------------------
+   11. CONTENT BOX — is-warning
+   -------------------------------------------------------------------------- */
+.ct-content-box.is-warning {
+  border-color: #EFC5B7;
+  border-left-color: var(--ct-warning);
+  background: #FFF5F0;
+}
+
+.ct-content-box.is-warning .ct-content-box__title {
+  color: #A9492F;
+}
+
+/* A/B tint */
+:nth-child(even of .ct-content-box.is-warning) {
+  background: #FFF0E9;
+}
+
+/* --------------------------------------------------------------------------
+   12. CONTENT BOX — is-legal
+   -------------------------------------------------------------------------- */
+.ct-content-box.is-legal {
+  border-color: #C8CEE7;
+  border-left-color: var(--ct-legal);
+  background: #F4F5FB;
+}
+
+.ct-content-box.is-legal .ct-content-box__title {
+  color: #4F60A0;
+}
+
+/* A/B tint */
+:nth-child(even of .ct-content-box.is-legal) {
+  background: #EEEFFB;
+}
+
+/* --------------------------------------------------------------------------
+   13. CONTENT BOX — is-example
+   -------------------------------------------------------------------------- */
+.ct-content-box.is-example {
+  border-color: #BFDEC6;
+  border-left-color: var(--ct-example);
+  background: #F2F8F3;
+}
+
+.ct-content-box.is-example .ct-content-box__title {
+  color: #3F7A50;
+}
+
+/* A/B tint */
+:nth-child(even of .ct-content-box.is-example) {
+  background: #EDF6EE;
+}
+
+/* --------------------------------------------------------------------------
+   14. CHECKLIST — ct-checklist
+   -------------------------------------------------------------------------- */
+.ct-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 24px;
+}
+
+.ct-checklist > li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.ct-checklist > li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: #F8E3A0;
+  color: #5A4716;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   15. STEPS — ct-steps
+   -------------------------------------------------------------------------- */
+.ct-steps {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 24px;
+  counter-reset: ct-step;
+}
+
+.ct-steps > li {
+  position: relative;
+  padding-left: 42px;
+  margin-bottom: 14px;
+  line-height: 1.62;
+  counter-increment: ct-step;
+}
+
+.ct-steps > li::before {
+  content: counter(ct-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: #F8E3A0;
+  color: #5A4716;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Connector line between steps */
+.ct-steps > li + li::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: -14px;
+  width: 2px;
+  height: 14px;
+  background: #F0D988;
+  opacity: 0.5;
+}
+
+/* --------------------------------------------------------------------------
+   16. FAQ — ct-faq
+   -------------------------------------------------------------------------- */
+.ct-faq {
+  margin: 24px 0;
+  border: 1px solid var(--ct-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ct-faq summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16.5px;
+  color: var(--ct-ink);
+  background: var(--ct-surface-muted);
+  list-style: none;
+  transition: background 0.2s ease;
+}
+
+.ct-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.ct-faq summary::before {
+  content: "\25B8";
+  display: inline-block;
+  color: var(--ct-gold);
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.ct-faq[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.ct-faq summary:hover {
+  background: #EEF3F0;
+}
+
+.ct-faq > div,
+.ct-faq > p {
+  padding: 14px 18px;
+  font-size: 16px;
+  line-height: 1.72;
+  color: var(--ct-text);
+}
+
+/* --------------------------------------------------------------------------
+   17. RELATED CONTENT — ct-related-content
+   -------------------------------------------------------------------------- */
+.ct-related-content {
+  margin: 28px 0;
+  padding: 18px 22px;
+  border: 1px solid var(--ct-border-cool);
+  border-radius: 10px;
+  background: var(--ct-surface-muted);
+}
+
+.ct-related-content__title {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ct-green);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ct-related-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ct-related-content li {
+  margin: 6px 0;
+}
+
+.ct-related-content a {
+  color: var(--ct-gold-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.ct-related-content a:hover {
+  color: #6B4C12;
+}
+
+/* --------------------------------------------------------------------------
+   18. EDITORIAL MEDIA — ct-editorial-media
+   -------------------------------------------------------------------------- */
+.ct-editorial-media {
+  margin: 22px 0;
+}
+
+.ct-editorial-media img {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+.ct-editorial-media figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--ct-caption);
+  text-align: center;
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   19. MOBILE ADJUSTMENTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .ct-content-box {
+    margin: 18px 0 22px;
+    padding: 16px 16px;
+    border-radius: 8px;
+  }
+
+  .ct-content-box__title {
+    font-size: 13.5px;
+  }
+
+  .ct-checklist > li,
+  .ct-steps > li {
+    padding-left: 36px;
+    margin-bottom: 8px;
+  }
+
+  .ct-checklist > li::before,
+  .ct-steps > li::before {
+    width: 23px;
+    height: 23px;
+    font-size: 12px;
+  }
+
+  .article-prose {
+    font-size: 16.5px;
+    line-height: 1.76;
+  }
+}

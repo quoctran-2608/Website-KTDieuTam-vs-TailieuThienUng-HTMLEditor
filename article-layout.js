@@ -78,6 +78,23 @@
     });
   }
 
+  /* --- EDS v2.1 CSS injection --- */
+  (function loadEditorialCSS() {
+    var root = rootPath();
+    var cssFiles = [
+      root + 'assets/css/editorial-content.css',
+      root + 'assets/css/editorial-structured-content.css',
+      root + 'assets/css/article-editorial-system.css'
+    ];
+    cssFiles.forEach(function (href) {
+      if (document.querySelector('link[href="' + href + '"]')) return;
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      document.head.appendChild(link);
+    });
+  })();
+
   function upsertMeta(name, content) {
     var meta = document.querySelector('meta[name="' + name + '"]');
     if (!meta) {

@@ -1,0 +1,379 @@
+/* ==========================================================================
+   EDITORIAL DESIGN SYSTEM v2.1 — Fresh Editorial
+   File: editorial-structured-content.css
+   Owns: Tables, key-lines, accounting entries, definition list, fact list.
+   Depends on: editorial-content.css (color tokens)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TABLE — Base .ct-data-table
+   -------------------------------------------------------------------------- */
+.ct-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 22px 0;
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+.ct-data-table caption {
+  caption-side: top;
+  text-align: left;
+  padding: 0 0 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ct-ink);
+}
+
+/* Table header */
+.ct-data-table thead th {
+  background: var(--ct-slate);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14.5px;
+  letter-spacing: 0.01em;
+  padding: 12px 14px;
+  text-align: left;
+  border: none;
+  white-space: nowrap;
+}
+
+.ct-data-table thead th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+.ct-data-table thead th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+/* Table body cells */
+.ct-data-table tbody td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--ct-border-cool);
+  vertical-align: top;
+  color: var(--ct-text);
+}
+
+/* Even row tint */
+.ct-data-table tbody tr:nth-child(even) {
+  background: var(--ct-surface-muted);
+}
+
+/* Hover */
+.ct-data-table tbody tr:hover {
+  background: #EEF6F1;
+}
+
+/* Last row no border */
+.ct-data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLE — is-simple
+   -------------------------------------------------------------------------- */
+.ct-data-table.is-simple {
+  border: 1px solid var(--ct-border-cool);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ct-data-table.is-simple th,
+.ct-data-table.is-simple td {
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLE — is-complex
+   -------------------------------------------------------------------------- */
+.ct-data-table.is-complex {
+  min-width: 600px;
+  border: 1px solid var(--ct-border-cool);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ct-data-table.is-complex th {
+  font-size: 13.5px;
+  padding: 10px 12px;
+}
+
+.ct-data-table.is-complex td {
+  font-size: 14.5px;
+  padding: 9px 12px;
+}
+
+/* --------------------------------------------------------------------------
+   4. TABLE SCROLL WRAPPER
+   -------------------------------------------------------------------------- */
+.ct-table-scroll {
+  width: 100%;
+  margin: 22px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
+}
+
+.ct-table-scroll .ct-data-table {
+  margin: 0;
+}
+
+/* Scroll hint shadow */
+.ct-table-scroll::after {
+  content: "";
+  position: sticky;
+  right: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. KEY LINE — Base
+   -------------------------------------------------------------------------- */
+.ct-key-line {
+  margin: 20px 0;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 16.5px;
+  line-height: 1.55;
+}
+
+.ct-key-line strong {
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   6. KEY LINE — is-process
+   -------------------------------------------------------------------------- */
+.ct-key-line.is-process {
+  border-left: 3px solid var(--ct-info);
+  background: linear-gradient(90deg, rgba(79,141,184,0.13), rgba(79,141,184,0.03));
+  color: var(--ct-ink);
+}
+
+/* --------------------------------------------------------------------------
+   7. KEY LINE — is-formula
+   -------------------------------------------------------------------------- */
+.ct-key-line.is-formula {
+  border-left: 3px solid var(--ct-gold);
+  background: linear-gradient(90deg, rgba(208,161,58,0.14), rgba(208,161,58,0.035));
+  color: var(--ct-ink);
+}
+
+/* --------------------------------------------------------------------------
+   8. ACCOUNTING ENTRY
+   -------------------------------------------------------------------------- */
+.ct-accounting-entry {
+  margin: 20px 0;
+  padding: 18px 20px;
+  border: 1px solid var(--ct-border-cool);
+  border-radius: 10px;
+  background: var(--ct-surface-muted);
+}
+
+.ct-accounting-entry__title {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ct-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ct-accounting-entry__line {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ct-text);
+}
+
+.ct-accounting-entry__line + .ct-accounting-entry__line {
+  border-top: 1px dashed var(--ct-border-cool);
+}
+
+.ct-accounting-entry__side {
+  display: inline-block;
+  min-width: 28px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Debit — green */
+.ct-accounting-entry__line.is-debit .ct-accounting-entry__side {
+  color: var(--ct-green);
+}
+
+.ct-accounting-entry__line.is-debit {
+  color: var(--ct-text);
+}
+
+/* Credit — gold-dark */
+.ct-accounting-entry__line.is-credit .ct-accounting-entry__side {
+  color: var(--ct-gold-dark);
+}
+
+.ct-accounting-entry__line.is-credit {
+  padding-left: 28px;
+  color: var(--ct-text);
+}
+
+/* --------------------------------------------------------------------------
+   9. ACCOUNTING GROUP
+   -------------------------------------------------------------------------- */
+.ct-accounting-group {
+  margin: 26px 0;
+  padding: 22px 22px;
+  border: 1px solid var(--ct-border);
+  border-radius: 12px;
+  background: var(--ct-paper);
+}
+
+.ct-accounting-group__title {
+  margin: 0 0 16px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ct-green);
+  line-height: 1.35;
+}
+
+.ct-accounting-group .ct-accounting-entry {
+  margin: 12px 0;
+}
+
+.ct-accounting-group .ct-accounting-entry:first-of-type {
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. DEFINITION LIST
+   -------------------------------------------------------------------------- */
+.ct-definition-list {
+  margin: 20px 0;
+  padding: 0;
+}
+
+.ct-definition-list dt {
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 16.5px;
+  color: var(--ct-green);
+  line-height: 1.4;
+}
+
+.ct-definition-list dt:first-child {
+  margin-top: 0;
+}
+
+.ct-definition-list dd {
+  margin: 4px 0 0 0;
+  padding-left: 18px;
+  border-left: 2px solid var(--ct-border-cool);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ct-text);
+}
+
+/* --------------------------------------------------------------------------
+   11. FACT LIST
+   -------------------------------------------------------------------------- */
+.ct-fact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 28px;
+  margin: 20px 0;
+  padding: 18px 20px;
+  border: 1px solid var(--ct-border-cool);
+  border-radius: 10px;
+  background: var(--ct-surface-muted);
+}
+
+.ct-fact-list dt {
+  grid-column: 1;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ct-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 10px;
+  border-top: 1px solid var(--ct-border-cool);
+}
+
+.ct-fact-list dt:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.ct-fact-list dd {
+  grid-column: 2;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ct-ink);
+  padding-top: 10px;
+  border-top: 1px solid var(--ct-border-cool);
+}
+
+.ct-fact-list dd:first-of-type,
+.ct-fact-list dt:first-of-type + dd {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   12. MOBILE ADJUSTMENTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .ct-data-table {
+    font-size: 14.5px;
+  }
+
+  .ct-data-table thead th {
+    font-size: 13px;
+    padding: 10px 10px;
+  }
+
+  .ct-data-table tbody td {
+    padding: 9px 10px;
+  }
+
+  .ct-key-line {
+    padding: 12px 14px;
+    font-size: 15.5px;
+  }
+
+  .ct-accounting-entry {
+    padding: 14px 16px;
+  }
+
+  .ct-accounting-entry__line {
+    font-size: 15px;
+  }
+
+  .ct-accounting-entry__line.is-credit {
+    padding-left: 20px;
+  }
+
+  /* Fact list — single column on mobile */
+  .ct-fact-list {
+    grid-template-columns: 1fr;
+    gap: 2px 0;
+  }
+
+  .ct-fact-list dt {
+    grid-column: 1;
+  }
+
+  .ct-fact-list dd {
+    grid-column: 1;
+    padding-top: 2px;
+    border-top: none;
+  }
+}
