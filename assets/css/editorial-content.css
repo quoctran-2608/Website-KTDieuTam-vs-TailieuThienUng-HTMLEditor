@@ -1,564 +1,473 @@
 /* ==========================================================================
    EDITORIAL DESIGN SYSTEM v2.1 — Fresh Editorial
    File: editorial-content.css
-   Owns: Color tokens, typography base, links, lists, blockquote,
-         content boxes, checklist, steps, FAQ, related content.
+   Owns: Color tokens, typography base, links, blockquote, code/pre,
+         content boxes, checklist, steps, editorial media, FAQ,
+         related content, accessibility, print.
+   Source: ketoandieutam.vn production runtime 2026-08-30
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. FONT IMPORT
-   -------------------------------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap');
 
 /* --------------------------------------------------------------------------
-   2. CSS CUSTOM PROPERTIES — CANONICAL COLOR TOKENS
+   1. CSS CUSTOM PROPERTIES
    -------------------------------------------------------------------------- */
 :root {
-  /* — Brand — */
-  --ct-green:      #176B4D;
-  --ct-green-dark: #0F5138;
+  --ct-font-sans: 'Google Sans', system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  --ct-gold:       #D0A13A;
-  --ct-gold-dark:  #8A611A;
-  --ct-gold-soft:  #FFF7DF;
+  /* Brand */
+  --ct-green: #176b4d;
+  --ct-green-dark: #0f5138;
+  --ct-gold: #d0a13a;
+  --ct-gold-dark: #8a611a;
+  --ct-gold-soft: #fff7df;
+  --ct-navy: #30486b;
+  --ct-slate: #2e5961;
 
-  --ct-navy:       #30486B;
-  --ct-slate:      #2E5961;
+  /* Text */
+  --ct-ink: #172038;
+  --ct-text: #33322c;
+  --ct-text-soft: #626862;
+  --ct-caption: #74766f;
+  --ct-muted: #858983;
 
-  /* — Text — */
-  --ct-ink:        #172038;
-  --ct-text:       #33322C;
-  --ct-text-soft:  #626862;
-  --ct-caption:    #74766F;
-  --ct-muted:      #858983;
+  /* Surfaces */
+  --ct-surface: #ffffff;
+  --ct-paper: #fcfbf7;
+  --ct-page: #fafbf9;
+  --ct-surface-muted: #f5f8f6;
+  --ct-border: #e6dfcf;
+  --ct-border-cool: #d8e2dd;
 
-  /* — Surfaces — */
-  --ct-surface:       #FFFFFF;
-  --ct-paper:         #FCFBF7;
-  --ct-page:          #FAFBF9;
-  --ct-surface-muted: #F5F8F6;
+  /* Semantic accents */
+  --ct-info: #4f8db8;
+  --ct-warning: #d66c4a;
+  --ct-legal: #6576b6;
+  --ct-example: #5e9d70;
+  --ct-insight: #d0a13a;
 
-  --ct-border:      #E6DFCF;
-  --ct-border-cool: #D8E2DD;
-
-  /* — Semantic — */
-  --ct-info:    #4F8DB8;
-  --ct-warning: #D66C4A;
-  --ct-legal:   #6576B6;
-  --ct-example: #5E9D70;
-  --ct-insight: #D0A13A;
-
-  /* — Font stack — */
-  --ct-font-sans:
-    'Google Sans',
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
+  /* Compatibility aliases */
+  --ct-editorial-gold: var(--ct-gold);
+  --ct-editorial-gold-soft: var(--ct-gold-soft);
+  --ct-editorial-green: var(--ct-green);
+  --ct-editorial-green-dark: var(--ct-green-dark);
+  --ct-editorial-navy: var(--ct-navy);
+  --ct-editorial-border: var(--ct-border);
+  --ct-editorial-text: var(--ct-text);
+  --ct-editorial-info: var(--ct-info);
+  --ct-editorial-warning: var(--ct-warning);
+  --ct-editorial-legal: var(--ct-legal);
+  --ct-editorial-example: var(--ct-example);
 }
 
 /* --------------------------------------------------------------------------
-   3. TYPOGRAPHY BASE (shared EDS reading scale)
+   2. PROSE BASE
    -------------------------------------------------------------------------- */
-.article-prose {
-  font-family: var(--ct-font-sans);
-  font-size: 17px;
-  line-height: 1.82;
-  color: var(--ct-text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.ct-prose p {
+  margin: 0 0 1.15em;
+}
+
+.ct-prose strong {
+  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
-   4. LINKS
+   3. LINKS
    -------------------------------------------------------------------------- */
-.article-prose a {
+:where(.ct-prose, body.mce-content-body) a {
   color: var(--ct-gold-dark);
   font-weight: 600;
-  text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(138, 97, 26, 0.35);
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  text-decoration-color: rgba(208, 161, 58, 0.52);
 }
 
-.article-prose a:hover {
-  color: #6B4C12;
-  text-decoration-color: rgba(107, 76, 18, 0.55);
+:where(.ct-prose, body.mce-content-body) a:hover {
+  color: #6f4d12;
+  text-decoration-thickness: 2px;
+  text-decoration-color: currentColor;
 }
 
 /* --------------------------------------------------------------------------
-   5. LISTS — UL / OL
+   4. BLOCKQUOTE
    -------------------------------------------------------------------------- */
-
-/* 5.1 UL bullets — gold */
-.article-prose ul {
-  list-style: none;
-  padding-left: 1.5em;
+:where(.ct-prose, body.mce-content-body) blockquote {
+  margin: 1.45em 0;
+  padding: 13px 18px;
+  color: #465149;
+  border-left: 3px solid #e1c568;
+  border-radius: 0 8px 8px 0;
+  background: var(--ct-paper);
 }
 
-.article-prose ul > li {
-  position: relative;
-}
-
-.article-prose ul > li::before {
-  content: "";
-  position: absolute;
-  left: -1.3em;
-  top: 0.72em;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--ct-gold);
-  opacity: 0.88;
-}
-
-/* 5.2 OL numbers — green */
-.article-prose ol {
-  list-style: none;
-  padding-left: 1.7em;
-  counter-reset: ct-ol;
-}
-
-.article-prose ol > li {
-  position: relative;
-  counter-increment: ct-ol;
-}
-
-.article-prose ol > li::before {
-  content: counter(ct-ol) ".";
-  position: absolute;
-  left: -1.55em;
-  color: var(--ct-green);
-  font-weight: 700;
-  font-size: 0.95em;
-}
-
-/* 5.3 List rhythm */
-.article-prose ul,
-.article-prose ol {
-  margin: 0.4em 0 1em;
-}
-
-.article-prose li {
-  margin: 0.08em 0;
-  line-height: 1.58;
-}
-
-/* Nested lists */
-.article-prose ul ul,
-.article-prose ol ol,
-.article-prose ul ol,
-.article-prose ol ul {
-  margin: 0.3em 0 0.4em;
-}
-
-/* Lead paragraph before list — tighter coupling */
-.article-prose > p:has(+ ul),
-.article-prose > p:has(+ ol) {
+:where(.ct-prose, body.mce-content-body) blockquote p:last-child {
   margin-bottom: 0;
 }
 
 /* --------------------------------------------------------------------------
-   6. BLOCKQUOTE — genuine quotation only
+   5. CODE / PRE
    -------------------------------------------------------------------------- */
-.article-prose blockquote {
-  margin: 24px 0;
-  padding: 12px 0 12px 20px;
-  border-left: 3px solid rgba(208, 161, 58, 0.55);
-  background: var(--ct-paper);
-  border-radius: 0 8px 8px 0;
-  color: var(--ct-text-soft);
-  font-style: italic;
+:where(.ct-prose, body.mce-content-body) pre {
+  margin: 0 0 18px;
+  padding: 15px 17px;
+  overflow: auto;
+  border-radius: 12px;
+  background: #14181f;
+  color: #e8e6df;
+  font-size: 13px;
 }
 
-.article-prose blockquote p,
-.article-prose blockquote li {
-  color: inherit;
+:where(.ct-prose, body.mce-content-body) code {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: #f1f3ef;
+  font-size: 0.92em;
+}
+
+:where(.ct-prose, body.mce-content-body) pre code {
+  padding: 0;
+  background: transparent;
 }
 
 /* --------------------------------------------------------------------------
-   7. STRONG
+   6. LIST MARKERS (shared)
    -------------------------------------------------------------------------- */
-.article-prose strong {
-  color: var(--ct-ink);
-  font-weight: 600;
+.ct-prose ul:not(.ct-checklist) > li::marker {
+  color: var(--ct-gold);
+  font-size: 0.76em;
+}
+
+.ct-prose ol:not(.ct-steps) > li::marker {
+  color: var(--ct-green);
+  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
-   8. CONTENT BOX — Base
+   7. CONTENT BOX — Base
    -------------------------------------------------------------------------- */
 .ct-content-box {
-  position: relative;
-  margin: 22px 0 26px;
-  padding: 20px 22px;
+  margin: 28px 0;
+  padding: 19px 21px;
   border: 1px solid var(--ct-border-cool);
   border-left-width: 4px;
   border-radius: 10px;
-  font-size: 16px;
-  line-height: 1.72;
+  background: var(--ct-surface-muted);
 }
 
+/* --------------------------------------------------------------------------
+   8. CONTENT BOX — Title
+   -------------------------------------------------------------------------- */
 .ct-content-box__title {
-  margin: 0 0 10px;
-  font-size: 15px;
+  margin: 0 0 9px;
+  color: var(--ct-green);
+  font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.075em;
+  line-height: 1.4;
   text-transform: uppercase;
-  line-height: 1.3;
 }
 
-.ct-content-box__body {
-  color: var(--ct-text);
-}
-
-.ct-content-box__body > * + * {
-  margin-top: 0.7em;
-}
-
-.ct-content-box__body ul,
-.ct-content-box__body ol {
-  margin: 0.35em 0 0.6em;
-}
-
-.ct-content-box__body li {
-  margin: 0.05em 0;
-}
-
-/* Paragraph/list before content box — tighter */
-.article-prose > :where(p, ul, ol):has(+ .ct-content-box) {
-  margin-bottom: 0;
-}
-
-/* Two consecutive callouts */
-.ct-content-box + .ct-content-box {
-  margin-top: 16px;
-}
+.is-info .ct-content-box__title  { color: #3c6e91; }
+.is-warning .ct-content-box__title { color: #a9492f; }
+.is-legal .ct-content-box__title { color: #4f60a0; }
+.is-example .ct-content-box__title { color: #3f7a50; }
 
 /* --------------------------------------------------------------------------
    9. CONTENT BOX — is-note (Key Insight)
    -------------------------------------------------------------------------- */
 .ct-content-box.is-note {
-  border-color: #CFE2D5;
+  border-color: #cfe2d5;
   border-left-color: var(--ct-insight);
-  background: linear-gradient(135deg, #F1F8F3 0%, #FFFAF0 100%);
+  background: linear-gradient(135deg, #f1f8f3 0%, #fffaf0 100%);
+  box-shadow: 0 10px 28px rgba(15, 81, 56, 0.05);
 }
 
-.ct-content-box.is-note .ct-content-box__title {
-  color: #154C36;
-}
-
-.ct-content-box.is-note .ct-content-box__body {
-  color: #2A3D32;
-}
-
-/* Opening statement emphasis */
 .ct-content-box.is-note .ct-content-box__body > p:first-child {
-  color: #154C36;
+  color: #154c36;
   font-size: 18px;
   font-weight: 600;
-  line-height: 1.55;
+  line-height: 1.68;
 }
 
 /* --------------------------------------------------------------------------
    10. CONTENT BOX — is-info
    -------------------------------------------------------------------------- */
 .ct-content-box.is-info {
-  border-color: #BDD5E5;
+  border-color: #bdd5e5;
   border-left-color: var(--ct-info);
-  background: #F2F8FC;
-}
-
-.ct-content-box.is-info .ct-content-box__title {
-  color: #3C6E91;
-}
-
-/* A/B tint for repeated info boxes */
-:nth-child(even of .ct-content-box.is-info) {
-  background: #EEF5FA;
+  background: #f2f8fc;
 }
 
 /* --------------------------------------------------------------------------
    11. CONTENT BOX — is-warning
    -------------------------------------------------------------------------- */
 .ct-content-box.is-warning {
-  border-color: #EFC5B7;
+  border-color: #efc5b7;
   border-left-color: var(--ct-warning);
-  background: #FFF5F0;
-}
-
-.ct-content-box.is-warning .ct-content-box__title {
-  color: #A9492F;
-}
-
-/* A/B tint */
-:nth-child(even of .ct-content-box.is-warning) {
-  background: #FFF0E9;
+  background: #fff5f0;
 }
 
 /* --------------------------------------------------------------------------
    12. CONTENT BOX — is-legal
    -------------------------------------------------------------------------- */
 .ct-content-box.is-legal {
-  border-color: #C8CEE7;
+  border-color: #c8cee7;
   border-left-color: var(--ct-legal);
-  background: #F4F5FB;
-}
-
-.ct-content-box.is-legal .ct-content-box__title {
-  color: #4F60A0;
-}
-
-/* A/B tint */
-:nth-child(even of .ct-content-box.is-legal) {
-  background: #EEEFFB;
+  background: #f4f5fb;
 }
 
 /* --------------------------------------------------------------------------
    13. CONTENT BOX — is-example
    -------------------------------------------------------------------------- */
 .ct-content-box.is-example {
-  border-color: #BFDEC6;
+  border-color: #bfdec6;
   border-left-color: var(--ct-example);
-  background: #F2F8F3;
-}
-
-.ct-content-box.is-example .ct-content-box__title {
-  color: #3F7A50;
-}
-
-/* A/B tint */
-:nth-child(even of .ct-content-box.is-example) {
-  background: #EDF6EE;
+  background: #f2f8f3;
 }
 
 /* --------------------------------------------------------------------------
-   14. CHECKLIST — ct-checklist
+   14. A/B TINT — Repeated callout alternation
    -------------------------------------------------------------------------- */
-.ct-checklist {
-  list-style: none;
-  padding: 0;
-  margin: 18px 0 24px;
+.ct-content-box:nth-child(even of .ct-content-box.is-note) {
+  background: linear-gradient(135deg, #f6faf5 0%, #fffcf5 100%);
+  border-color: #d8e8dc;
+  border-left-color: var(--ct-insight);
 }
 
-.ct-checklist > li {
-  position: relative;
-  padding-left: 40px;
-  margin-bottom: 10px;
-  line-height: 1.6;
+.ct-content-box:nth-child(even of .ct-content-box.is-info) {
+  background: #f7fbfe;
+  border-color: #cbdde9;
+  border-left-color: var(--ct-info);
 }
 
-.ct-checklist > li::before {
-  content: "\2713";
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  background: #F8E3A0;
-  color: #5A4716;
-  border-radius: 50%;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1;
+.ct-content-box:nth-child(even of .ct-content-box.is-warning) {
+  background: #fff9f6;
+  border-color: #f2d2c7;
+  border-left-color: var(--ct-warning);
+}
+
+.ct-content-box:nth-child(even of .ct-content-box.is-legal) {
+  background: #f8f8fd;
+  border-color: #d4d8eb;
+  border-left-color: var(--ct-legal);
+}
+
+.ct-content-box:nth-child(even of .ct-content-box.is-example) {
+  background: #f7faf7;
+  border-color: #d1e5d5;
+  border-left-color: var(--ct-example);
 }
 
 /* --------------------------------------------------------------------------
-   15. STEPS — ct-steps
+   15. CHECKLIST / STEPS
    -------------------------------------------------------------------------- */
+.ct-checklist,
 .ct-steps {
   list-style: none;
-  padding: 0;
-  margin: 18px 0 24px;
+  padding-left: 0;
   counter-reset: ct-step;
 }
 
-.ct-steps > li {
+.ct-checklist li,
+.ct-steps li {
   position: relative;
-  padding-left: 42px;
-  margin-bottom: 14px;
-  line-height: 1.62;
-  counter-increment: ct-step;
+  min-height: 30px;
+  padding-left: 39px;
 }
 
-.ct-steps > li::before {
-  content: counter(ct-step);
+.ct-checklist li::before,
+.ct-steps li::before {
   position: absolute;
+  top: 0.05em;
   left: 0;
-  top: 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 26px;
   height: 26px;
-  background: #F8E3A0;
-  color: #5A4716;
   border-radius: 50%;
-  font-size: 13px;
+  background: #f8e3a0;
+  color: #5a4716;
+  font-size: 12px;
   font-weight: 700;
-  line-height: 1;
 }
 
-/* Connector line between steps */
-.ct-steps > li + li::after {
-  content: "";
-  position: absolute;
-  left: 12px;
-  top: -14px;
-  width: 2px;
-  height: 14px;
-  background: #F0D988;
-  opacity: 0.5;
+.ct-checklist li::before {
+  content: '\2713';
+}
+
+.ct-steps li {
+  counter-increment: ct-step;
+}
+
+.ct-steps li::before {
+  content: counter(ct-step);
 }
 
 /* --------------------------------------------------------------------------
-   16. FAQ — ct-faq
+   16. EDITORIAL MEDIA
+   -------------------------------------------------------------------------- */
+figure.ct-editorial-media {
+  width: 100%;
+  max-width: 100%;
+  margin: 26px 0;
+}
+
+figure.ct-editorial-media.is-left   { margin-right: auto; }
+figure.ct-editorial-media.is-center { margin-right: auto; margin-left: auto; }
+figure.ct-editorial-media.is-right  { margin-left: auto; }
+
+figure.ct-editorial-media.is-content-width { width: 100%; }
+figure.ct-editorial-media.is-medium  { width: min(100%, 560px); }
+figure.ct-editorial-media.is-natural { width: max-content; }
+figure.ct-editorial-media.is-custom  { width: max-content; max-width: 100%; }
+
+figure.ct-editorial-media img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+figure.ct-editorial-media.is-content-width img {
+  width: 100%;
+}
+
+figcaption {
+  margin-top: 8px;
+  color: var(--ct-caption);
+  font-size: 12.5px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   17. FAQ
    -------------------------------------------------------------------------- */
 .ct-faq {
   margin: 24px 0;
-  border: 1px solid var(--ct-border);
-  border-radius: 10px;
-  overflow: hidden;
+  border-top: 1px solid var(--ct-border);
 }
 
-.ct-faq summary {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 18px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 16.5px;
+.ct-faq__item {
+  border-bottom: 1px solid var(--ct-border);
+}
+
+.ct-faq__item summary {
+  min-height: 48px;
+  padding: 13px 34px 13px 4px;
   color: var(--ct-ink);
-  background: var(--ct-surface-muted);
+  font-weight: 700;
+  cursor: pointer;
   list-style: none;
-  transition: background 0.2s ease;
 }
 
-.ct-faq summary::-webkit-details-marker {
+.ct-faq__item summary::-webkit-details-marker {
   display: none;
 }
 
-.ct-faq summary::before {
-  content: "\25B8";
-  display: inline-block;
-  color: var(--ct-gold);
-  font-size: 14px;
-  transition: transform 0.2s ease;
+.ct-faq__answer {
+  padding: 0 4px 14px;
 }
 
-.ct-faq[open] summary::before {
-  transform: rotate(90deg);
-}
-
-.ct-faq summary:hover {
-  background: #EEF3F0;
-}
-
-.ct-faq > div,
-.ct-faq > p {
-  padding: 14px 18px;
-  font-size: 16px;
-  line-height: 1.72;
-  color: var(--ct-text);
+.ct-faq__item:nth-child(even) {
+  background: var(--ct-page);
 }
 
 /* --------------------------------------------------------------------------
-   17. RELATED CONTENT — ct-related-content
+   18. RELATED CONTENT
    -------------------------------------------------------------------------- */
 .ct-related-content {
-  margin: 28px 0;
-  padding: 18px 22px;
-  border: 1px solid var(--ct-border-cool);
-  border-radius: 10px;
-  background: var(--ct-surface-muted);
+  margin: 25px 0;
+  padding: 15px 17px;
+  border: 1px solid #e7d39b;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #fffdf8, #fff8e8);
+}
+
+.ct-related-content__label {
+  margin: 0 0 8px;
+  color: #8c6720;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ct-related-content__link {
+  display: grid;
+  gap: 3px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ct-related-content__type {
+  color: #8c6720;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .ct-related-content__title {
-  margin: 0 0 12px;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--ct-green);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  color: var(--ct-ink);
+  font-size: 16px;
+  line-height: 1.45;
 }
 
-.ct-related-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.ct-related-content li {
-  margin: 6px 0;
-}
-
-.ct-related-content a {
-  color: var(--ct-gold-dark);
-  font-weight: 600;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-.ct-related-content a:hover {
-  color: #6B4C12;
+.ct-related-content__summary {
+  color: var(--ct-text-soft);
+  font-size: 13px;
+  line-height: 1.55;
 }
 
 /* --------------------------------------------------------------------------
-   18. EDITORIAL MEDIA — ct-editorial-media
+   19. FOCUS / ACCESSIBILITY
    -------------------------------------------------------------------------- */
-.ct-editorial-media {
-  margin: 22px 0;
-}
-
-.ct-editorial-media img {
-  border-radius: 10px;
-  max-width: 100%;
-  height: auto;
-}
-
-.ct-editorial-media figcaption {
-  margin-top: 8px;
-  font-size: 14px;
-  color: var(--ct-caption);
-  text-align: center;
-  font-style: italic;
+.ct-prose a:focus-visible,
+.ct-prose summary:focus-visible {
+  outline: 3px solid rgba(208, 161, 58, 0.46);
+  outline-offset: 3px;
 }
 
 /* --------------------------------------------------------------------------
-   19. MOBILE ADJUSTMENTS
+   20. PRINT
    -------------------------------------------------------------------------- */
-@media (max-width: 768px) {
-  .ct-content-box {
-    margin: 18px 0 22px;
-    padding: 16px 16px;
-    border-radius: 8px;
+@media print {
+  figure.ct-editorial-media,
+  .ct-content-box,
+  .ct-related-content,
+  .ct-accounting-entry,
+  .ct-accounting-group,
+  .ct-definition-list,
+  .ct-fact-list {
+    break-inside: avoid;
   }
 
-  .ct-content-box__title {
-    font-size: 13.5px;
+  .ct-content-box.is-note {
+    box-shadow: none;
   }
 
-  .ct-checklist > li,
-  .ct-steps > li {
-    padding-left: 36px;
-    margin-bottom: 8px;
+  .ct-table-scroll {
+    overflow: visible;
   }
 
-  .ct-checklist > li::before,
-  .ct-steps > li::before {
-    width: 23px;
-    height: 23px;
-    font-size: 12px;
+  .ct-table-scroll > table.ct-data-table.is-complex {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   21. MOBILE — Editorial media
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  figure.ct-editorial-media {
+    width: 100%;
+    margin: 21px 0;
   }
 
-  .article-prose {
-    font-size: 16.5px;
-    line-height: 1.76;
+  .ct-content-box.is-note .ct-content-box__body > p:first-child {
+    font-size: 17px;
   }
 }

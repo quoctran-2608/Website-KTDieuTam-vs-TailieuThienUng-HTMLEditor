@@ -2,43 +2,84 @@
    EDITORIAL DESIGN SYSTEM v2.1 — Fresh Editorial
    File: article-editorial-system.css
    Owns: Article H1/H2/H3/H4 scale, heading rhythm, H2 gold accent,
-         list rhythm, prose ↔ callout relationship, end-of-article spacing,
-         article mobile typography.
-   Depends on: editorial-content.css (color tokens)
+         list rhythm, prose-callout relationship, HR, 3-lane grid,
+         end-of-article note, all mobile typography.
+   Source: ketoandieutam.vn production runtime 2026-08-30
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. ARTICLE BODY — Desktop reading scale
+   1. PAGE-LEVEL TOKENS
    -------------------------------------------------------------------------- */
-.article-prose {
+.ct-news-detail-page {
+  --font-heading: var(--ct-font-sans);
+  --font-body: var(--ct-font-sans);
+  --ct-v3-prose: 780px;
+  font-family: var(--font-body);
+}
+
+/* --------------------------------------------------------------------------
+   2. H1 — Article title (outside prose)
+   -------------------------------------------------------------------------- */
+.ct-news-detail-page .ct-article .ct-article-title {
+  color: #222824;
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 2.45vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.17;
+  max-width: 100%;
+  text-wrap: balance;
+}
+
+/* --------------------------------------------------------------------------
+   3. ARTICLE BODY
+   -------------------------------------------------------------------------- */
+.ct-news-detail-page .ct-prose.is-article {
+  color: var(--ct-text);
+  font-family: var(--font-body);
   font-size: 17.5px;
   line-height: 1.78;
+  overflow-wrap: anywhere;
+}
+
+.ct-news-detail-page .ct-prose.is-article p {
+  margin: 0 0 1.15em;
+}
+
+.ct-news-detail-page .ct-prose.is-article strong {
+  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
-   2. HEADING — shared base
+   4. HEADINGS — Shared base
    -------------------------------------------------------------------------- */
-.article-prose h2,
-.article-prose h3,
-.article-prose h4 {
-  font-family: var(--ct-font-sans);
+.ct-news-detail-page .ct-prose.is-article h2,
+.ct-news-detail-page .ct-prose.is-article h3,
+.ct-news-detail-page .ct-prose.is-article h4 {
   color: var(--ct-ink);
-  margin-bottom: 0.55em;
+  font-family: var(--font-heading);
+  text-wrap: pretty;
 }
 
 /* --------------------------------------------------------------------------
-   3. H2 — Major section
+   5. H2 — Major section
    -------------------------------------------------------------------------- */
-.article-prose h2 {
+.ct-news-detail-page .ct-prose.is-article h2 {
+  margin: clamp(44px, 4.6vw, 58px) 0 0.52em;
   font-size: clamp(24px, 2.2vw, 29px);
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.36;
-  margin-top: clamp(44px, 4.6vw, 58px);
 }
 
-/* H2 gold accent underline */
-.article-prose h2::after {
+/* H2 ::before suppression */
+.ct-news-detail-page .ct-prose.is-article h2::before {
+  content: none;
+  display: none;
+}
+
+/* H2 gold accent signature */
+.ct-news-detail-page .ct-prose.is-article h2::after {
   display: block;
   width: 40px;
   height: 2px;
@@ -49,150 +90,382 @@
   opacity: 0.86;
 }
 
-/* First H2 in article — reduced top margin */
-.article-prose > h2:first-child {
-  margin-top: 0;
-}
-
 /* --------------------------------------------------------------------------
-   4. H3 — Subsection
+   6. H3 — Subsection
    -------------------------------------------------------------------------- */
-.article-prose h3 {
+.ct-news-detail-page .ct-prose.is-article h3 {
+  margin: clamp(28px, 2.9vw, 34px) 0 0.42em;
   font-size: clamp(19px, 1.65vw, 21px);
   font-weight: 600;
   letter-spacing: -0.008em;
   line-height: 1.4;
-  margin-top: clamp(28px, 2.9vw, 34px);
+}
+
+.ct-news-detail-page .ct-prose.is-article h3::before {
+  content: none;
+  display: none;
 }
 
 /* --------------------------------------------------------------------------
-   5. H4 — Sub-subsection
+   7. H4 — Sub-subsection
    -------------------------------------------------------------------------- */
-.article-prose h4 {
+.ct-news-detail-page .ct-prose.is-article h4 {
+  margin: clamp(22px, 2.25vw, 28px) 0 0.45em;
   font-size: clamp(17px, 1.4vw, 18.5px);
   font-weight: 600;
   line-height: 1.42;
-  margin-top: clamp(22px, 2.25vw, 28px);
 }
 
 /* --------------------------------------------------------------------------
-   6. H2 → H3 RELATIONSHIP
-   When H3 follows immediately after H2, reduce gap.
+   8. HEADING RHYTHM
    -------------------------------------------------------------------------- */
-.article-prose h2:has(+ h3) {
+/* Block before heading: no extra bottom margin */
+.ct-news-detail-page .ct-prose.is-article
+  > :where(p, ul, ol, blockquote, aside, section, figure, table, dl, div):has(+ :is(h2, h3, h4)) {
   margin-bottom: 0;
 }
 
-.article-prose h2 + h3 {
+/* H2 directly followed by H3 */
+.ct-news-detail-page .ct-prose.is-article h2:has(+ h3) {
+  margin-bottom: 0;
+}
+
+.ct-news-detail-page .ct-prose.is-article h2 + h3 {
   margin-top: clamp(15px, 1.8vw, 18px);
 }
 
+/* Heading anchor offset */
+.ct-news-detail-page .ct-prose.is-article h2,
+.ct-news-detail-page .ct-prose.is-article h3 {
+  scroll-margin-top: calc(var(--ct-detail-sticky-offset, 72px) + 24px);
+}
+
 /* --------------------------------------------------------------------------
-   7. BLOCK → HEADING SPACING
-   Block before heading doesn't add extra margin.
-   Heading owns the section break.
+   9. LISTS — Article-specific
    -------------------------------------------------------------------------- */
-.article-prose > :where(
-  p,
-  ul,
-  ol,
-  blockquote,
-  aside,
-  section,
-  figure,
-  table,
-  dl,
-  div
-):has(+ :is(h2, h3, h4)) {
+.ct-news-detail-page .ct-prose.is-article
+  > p:has(+ :is(ul:not(.ct-checklist), ol:not(.ct-steps))) {
   margin-bottom: 0;
 }
 
-/* --------------------------------------------------------------------------
-   8. PARAGRAPH SPACING
-   -------------------------------------------------------------------------- */
-.article-prose > p + p {
-  margin-top: 1.1em;
+.ct-news-detail-page .ct-prose.is-article ul:not(.ct-checklist),
+.ct-news-detail-page .ct-prose.is-article ol:not(.ct-steps) {
+  margin: 0.4em 0 1em;
+  padding-inline-start: 1.24em;
+}
+
+.ct-news-detail-page .ct-prose.is-article ul:not(.ct-checklist) > li,
+.ct-news-detail-page .ct-prose.is-article ol:not(.ct-steps) > li {
+  margin: 0.08em 0;
+  padding-inline-start: 0.16em;
+  line-height: 1.58;
+}
+
+.ct-news-detail-page .ct-prose.is-article ul:not(.ct-checklist) > li::marker {
+  color: var(--ct-gold);
+  font-size: 0.76em;
+}
+
+.ct-news-detail-page .ct-prose.is-article ol:not(.ct-steps) > li::marker {
+  color: var(--ct-green);
+  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
-   9. PROSE ↔ CALLOUT RELATIONSHIP
+   10. LINKS — Article-specific
    -------------------------------------------------------------------------- */
-.article-prose > .ct-content-box {
-  margin-top: 22px;
-  margin-bottom: 26px;
+.ct-news-detail-page .ct-prose.is-article a {
+  color: var(--ct-gold-dark);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(208, 161, 58, 0.52);
 }
 
-.article-prose > .ct-content-box + .ct-content-box {
+/* --------------------------------------------------------------------------
+   11. BLOCKQUOTE — Article-specific
+   -------------------------------------------------------------------------- */
+.ct-news-detail-page .ct-prose.is-article blockquote {
+  margin: 1.45em 0;
+  padding: 13px 18px;
+  color: #465149;
+  border-left: 3px solid #e1c568;
+  border-radius: 0 8px 8px 0;
+  background: var(--ct-paper);
+}
+
+/* --------------------------------------------------------------------------
+   12. HR / DIVIDER
+   -------------------------------------------------------------------------- */
+.ct-news-detail-page .ct-prose.is-article hr {
+  margin: clamp(34px, 3.8vw, 46px) 0 0;
+  border: 0;
+  border-top: 1px solid var(--ct-border);
+}
+
+.ct-news-detail-page .ct-prose.is-article hr + h2 {
+  margin-top: clamp(22px, 2.2vw, 28px);
+}
+
+/* --------------------------------------------------------------------------
+   13. PROSE ↔ CALLOUT RELATIONSHIP
+   -------------------------------------------------------------------------- */
+.ct-news-detail-page .ct-prose.is-article
+  > :where(p, ul, ol):has(+ .ct-content-box) {
+  margin-bottom: 0;
+}
+
+.ct-news-detail-page .ct-prose.is-article > .ct-content-box {
+  margin: clamp(20px, 2.2vw, 22px) 0 clamp(24px, 2.8vw, 28px);
+}
+
+.ct-news-detail-page .ct-prose.is-article > .ct-content-box + .ct-content-box {
   margin-top: 16px;
 }
 
+/* Article-scoped content box padding for is-note */
+.ct-news-detail-page .ct-prose.is-article > .ct-content-box.is-note {
+  padding: clamp(19px, 2.4vw, 23px) clamp(20px, 2.8vw, 25px);
+}
+
+/* Article-scoped content box title */
+.ct-news-detail-page .ct-prose.is-article .ct-content-box__title {
+  margin: 0 0 9px;
+  color: var(--ct-green);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* Article-scoped semantic variants */
+.ct-news-detail-page .ct-prose.is-article .ct-content-box.is-note {
+  border-color: #cfe2d5;
+  border-left-color: var(--ct-insight);
+  background: linear-gradient(135deg, #f1f8f3 0%, #fffaf0 100%);
+  box-shadow: 0 10px 28px rgba(15, 81, 56, 0.05);
+}
+
+.ct-news-detail-page .ct-prose.is-article .ct-content-box.is-info {
+  border-color: #bdd5e5;
+  border-left-color: var(--ct-info);
+  background: #f2f8fc;
+}
+
+.ct-news-detail-page .ct-prose.is-article .ct-content-box.is-warning {
+  border-color: #efc5b7;
+  border-left-color: var(--ct-warning);
+  background: #fff5f0;
+}
+
+.ct-news-detail-page .ct-prose.is-article .ct-content-box.is-legal {
+  border-color: #c8cee7;
+  border-left-color: var(--ct-legal);
+  background: #f4f5fb;
+}
+
+.ct-news-detail-page .ct-prose.is-article .ct-content-box.is-example {
+  border-color: #bfdec6;
+  border-left-color: var(--ct-example);
+  background: #f2f8f3;
+}
+
+/* Article-scoped accounting */
+.ct-news-detail-page .ct-prose.is-article p:has(+ .ct-accounting-entry) {
+  margin-bottom: 0;
+}
+
+.ct-news-detail-page .ct-prose.is-article .ct-accounting-entry {
+  margin: 1em 0 1.4em;
+  padding: 14px 18px;
+  border: 1px solid var(--ct-border-cool);
+  border-radius: 8px;
+  background: #fbfefc;
+}
+
+.ct-news-detail-page .ct-prose.is-article .ct-accounting-entry__line {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 6px 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ct-news-detail-page .ct-prose.is-article .ct-accounting-entry__line + .ct-accounting-entry__line {
+  border-top: 1px solid #e8f0eb;
+}
+
+.ct-news-detail-page .ct-prose.is-article .ct-accounting-entry__side {
+  flex: 0 0 auto;
+  min-width: 28px;
+  color: var(--ct-slate);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.ct-news-detail-page .ct-prose.is-article .is-debit .ct-accounting-entry__side {
+  color: var(--ct-green);
+}
+
+.ct-news-detail-page .ct-prose.is-article .is-credit .ct-accounting-entry__side {
+  color: var(--ct-gold-dark);
+}
+
 /* --------------------------------------------------------------------------
-   10. END-OF-ARTICLE NOTE
+   14. END-OF-ARTICLE NOTE
    -------------------------------------------------------------------------- */
-.article-prose > .ct-end-note {
-  margin-top: clamp(28px, 3.2vw, 34px);
-  padding-top: 18px;
-  border-top: 1px dashed var(--ct-border);
-  font-size: 14.5px;
+.ct-news-detail-page .ct-content-note {
+  display: flex;
+  gap: 12px;
+  padding: 18px 20px;
+  color: #5b4b1c;
+  background: #fff8e8;
+  border: 1px solid #ead9a7;
+  border-radius: 6px;
+}
+
+.ct-news-detail-page .ct-content-note p {
+  margin: 0;
   line-height: 1.65;
-  color: var(--ct-caption);
+}
+
+.ct-news-detail-page .ct-article .ct-content-note {
+  margin-top: clamp(28px, 3.2vw, 34px);
 }
 
 /* --------------------------------------------------------------------------
-   11. ARTICLE PAGE BACKGROUND
+   15. DESKTOP 3-LANE GRID (>=856px)
    -------------------------------------------------------------------------- */
-.article-page {
-  --ct-paper-bg: #F4F4F1;
-  --ct-paper-surface: #FFFFFF;
+@media (min-width: 856px) {
+  .ct-news-detail-page .ct-article-paper .ct-prose.is-article {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, var(--ct-v3-prose))
+      minmax(0, 1fr);
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  .ct-news-detail-page .ct-article-paper .ct-prose.is-article > * {
+    grid-column: 2;
+    min-width: 0;
+  }
+
+  .ct-news-detail-page .ct-article-paper .ct-prose.is-article > :is(h2, h3, h4) {
+    grid-column: 2 / 4;
+    width: auto;
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
+    justify-self: stretch;
+    text-align: left;
+    text-wrap: pretty;
+  }
 }
 
 /* --------------------------------------------------------------------------
-   12. ARTICLE DETAIL — Chrome tokens (consume EDS tokens)
+   16. MOBILE — H1 (<=767px)
    -------------------------------------------------------------------------- */
-:root {
-  --ct-article-green: var(--ct-green);
-  --ct-article-green-dark: var(--ct-green-dark);
-  --ct-article-gold-text: var(--ct-gold-dark);
+@media (max-width: 767px) {
+  .ct-news-detail-page .ct-article .ct-article-title {
+    font-size: clamp(28px, 7.1vw, 31px);
+    letter-spacing: -0.016em;
+    line-height: 1.2;
+  }
 }
 
 /* --------------------------------------------------------------------------
-   13. MOBILE TYPOGRAPHY
+   17. MOBILE — Article body + headings (<=640px)
    -------------------------------------------------------------------------- */
-@media (max-width: 768px) {
-  .article-prose {
+@media (max-width: 640px) {
+  .ct-news-detail-page .ct-prose.is-article {
     font-size: 16.5px;
     line-height: 1.76;
   }
 
-  .article-prose h2 {
+  .ct-news-detail-page .ct-prose.is-article h2 {
+    margin: 36px 0 0.54em;
     font-size: clamp(21px, 5.8vw, 24px);
     line-height: 1.38;
-    margin-top: clamp(32px, 5vw, 40px);
   }
 
-  .article-prose h2::after {
+  .ct-news-detail-page .ct-prose.is-article h2::after {
     width: 34px;
+    height: 2px;
     margin-top: 8px;
   }
 
-  .article-prose h3 {
-    font-size: clamp(18px, 4.8vw, 19.5px);
-    font-weight: 600;
-    line-height: 1.4;
-    margin-top: clamp(22px, 3.5vw, 28px);
-  }
-
-  .article-prose h4 {
-    font-size: clamp(16.5px, 4.2vw, 17.5px);
-    margin-top: clamp(18px, 3vw, 22px);
-  }
-
-  .article-prose h2 + h3 {
+  .ct-news-detail-page .ct-prose.is-article h2 + h3 {
     margin-top: 14px;
   }
 
+  .ct-news-detail-page .ct-prose.is-article h3 {
+    margin: 25px 0 0.44em;
+    font-size: clamp(18px, 4.8vw, 19.5px);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .ct-news-detail-page .ct-prose.is-article h4 {
+    margin-top: 20px;
+    font-size: clamp(17px, 1.4vw, 18.5px);
+    font-weight: 600;
+  }
+
+  /* HR mobile */
+  .ct-news-detail-page .ct-prose.is-article hr {
+    margin-top: 30px;
+  }
+
+  .ct-news-detail-page .ct-prose.is-article hr + h2 {
+    margin-top: 18px;
+  }
+
+  /* Lists mobile */
+  .ct-news-detail-page .ct-prose.is-article ul:not(.ct-checklist),
+  .ct-news-detail-page .ct-prose.is-article ol:not(.ct-steps) {
+    margin-top: 0.36em;
+    margin-bottom: 0.95em;
+    padding-inline-start: 1.18em;
+  }
+
+  .ct-news-detail-page .ct-prose.is-article ul:not(.ct-checklist) > li,
+  .ct-news-detail-page .ct-prose.is-article ol:not(.ct-steps) > li {
+    margin: 0.08em 0;
+    line-height: 1.56;
+  }
+
+  /* Callout mobile */
+  .ct-news-detail-page .ct-prose.is-article > .ct-content-box {
+    margin-top: 18px;
+    margin-bottom: 22px;
+  }
+
+  .ct-news-detail-page .ct-prose.is-article > .ct-content-box + .ct-content-box {
+    margin-top: 14px;
+  }
+
+  .ct-news-detail-page .ct-prose.is-article > .ct-content-box.is-note {
+    padding: 17px 18px;
+  }
+
+  /* Accounting mobile */
+  .ct-news-detail-page .ct-prose.is-article .ct-accounting-entry {
+    padding: 12px 14px;
+  }
+
+  .ct-news-detail-page .ct-prose.is-article .ct-accounting-entry__line {
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    font-size: 14.5px;
+  }
+
   /* End-of-article note mobile */
-  .article-prose > .ct-end-note {
+  .ct-news-detail-page .ct-article .ct-content-note {
     margin-top: 26px;
   }
 }

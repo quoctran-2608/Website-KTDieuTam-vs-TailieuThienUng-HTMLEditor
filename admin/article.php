@@ -1210,7 +1210,8 @@ $innerScript = <<<'JS'
         siteBaseUrl + 'assets/css/editorial-structured-content.css',
         siteBaseUrl + 'assets/css/article-editorial-system.css',
       ],
-      content_style: 'body { font-family: "Google Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 17px; line-height: 1.78; color: #33322C; padding: 18px 22px; -webkit-font-smoothing: antialiased; } img { max-width: 100%; height: auto; }',
+      body_class: 'ct-prose is-article mce-content-body',
+      content_style: 'body { font-family: "Google Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 17.5px; line-height: 1.78; color: #33322C; padding: 18px 22px; -webkit-font-smoothing: antialiased; } img { max-width: 100%; height: auto; }',
       images_upload_handler: async (blobInfo, progress) => {
         const articleIdInput = document.getElementById('articleIdInput');
         const csrfInput = form ? form.querySelector('input[name="_csrf_token"]') : null;

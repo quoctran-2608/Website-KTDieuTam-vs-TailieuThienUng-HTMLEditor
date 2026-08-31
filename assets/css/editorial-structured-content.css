@@ -2,378 +2,413 @@
    EDITORIAL DESIGN SYSTEM v2.1 — Fresh Editorial
    File: editorial-structured-content.css
    Owns: Tables, key-lines, accounting entries, definition list, fact list.
-   Depends on: editorial-content.css (color tokens)
+   Source: ketoandieutam.vn production runtime 2026-08-30
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. TABLE — Base .ct-data-table
-   -------------------------------------------------------------------------- */
-.ct-data-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin: 22px 0;
-  font-size: 15.5px;
-  line-height: 1.55;
-}
-
-.ct-data-table caption {
-  caption-side: top;
-  text-align: left;
-  padding: 0 0 10px;
-  font-weight: 600;
-  font-size: 16px;
-  color: var(--ct-ink);
-}
-
-/* Table header */
-.ct-data-table thead th {
-  background: var(--ct-slate);
-  color: #FFFFFF;
-  font-weight: 600;
-  font-size: 14.5px;
-  letter-spacing: 0.01em;
-  padding: 12px 14px;
-  text-align: left;
-  border: none;
-  white-space: nowrap;
-}
-
-.ct-data-table thead th:first-child {
-  border-radius: 8px 0 0 0;
-}
-
-.ct-data-table thead th:last-child {
-  border-radius: 0 8px 0 0;
-}
-
-/* Table body cells */
-.ct-data-table tbody td {
-  padding: 11px 14px;
-  border-bottom: 1px solid var(--ct-border-cool);
-  vertical-align: top;
-  color: var(--ct-text);
-}
-
-/* Even row tint */
-.ct-data-table tbody tr:nth-child(even) {
-  background: var(--ct-surface-muted);
-}
-
-/* Hover */
-.ct-data-table tbody tr:hover {
-  background: #EEF6F1;
-}
-
-/* Last row no border */
-.ct-data-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-/* --------------------------------------------------------------------------
-   2. TABLE — is-simple
-   -------------------------------------------------------------------------- */
-.ct-data-table.is-simple {
-  border: 1px solid var(--ct-border-cool);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.ct-data-table.is-simple th,
-.ct-data-table.is-simple td {
-  white-space: normal;
-  word-break: break-word;
-}
-
-/* --------------------------------------------------------------------------
-   3. TABLE — is-complex
-   -------------------------------------------------------------------------- */
-.ct-data-table.is-complex {
-  min-width: 600px;
-  border: 1px solid var(--ct-border-cool);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.ct-data-table.is-complex th {
-  font-size: 13.5px;
-  padding: 10px 12px;
-}
-
-.ct-data-table.is-complex td {
-  font-size: 14.5px;
-  padding: 9px 12px;
-}
-
-/* --------------------------------------------------------------------------
-   4. TABLE SCROLL WRAPPER
-   -------------------------------------------------------------------------- */
-.ct-table-scroll {
-  width: 100%;
-  margin: 22px 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 10px;
-}
-
-.ct-table-scroll .ct-data-table {
-  margin: 0;
-}
-
-/* Scroll hint shadow */
-.ct-table-scroll::after {
-  content: "";
-  position: sticky;
-  right: 0;
-  display: block;
-  width: 0;
-  height: 0;
-}
-
-/* --------------------------------------------------------------------------
-   5. KEY LINE — Base
+   1. KEY LINE — Base
    -------------------------------------------------------------------------- */
 .ct-key-line {
-  margin: 20px 0;
-  padding: 14px 18px;
-  border-radius: 8px;
-  font-size: 16.5px;
-  line-height: 1.55;
+  display: block;
+  margin: 1.35em 0 1.55em;
+  padding: 11px 14px 11px 16px;
+  border: 0;
+  border-radius: 7px;
+  color: #343b3d;
+  font-size: 0.98em;
+  font-weight: 500;
+  line-height: 1.62;
 }
 
 .ct-key-line strong {
+  color: inherit;
   font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
-   6. KEY LINE — is-process
+   2. KEY LINE — is-process
    -------------------------------------------------------------------------- */
 .ct-key-line.is-process {
   border-left: 3px solid var(--ct-info);
-  background: linear-gradient(90deg, rgba(79,141,184,0.13), rgba(79,141,184,0.03));
-  color: var(--ct-ink);
+  background: linear-gradient(90deg, rgba(79, 141, 184, .13), rgba(79, 141, 184, .03));
 }
 
 /* --------------------------------------------------------------------------
-   7. KEY LINE — is-formula
+   3. KEY LINE — is-formula
    -------------------------------------------------------------------------- */
 .ct-key-line.is-formula {
   border-left: 3px solid var(--ct-gold);
-  background: linear-gradient(90deg, rgba(208,161,58,0.14), rgba(208,161,58,0.035));
-  color: var(--ct-ink);
+  background: linear-gradient(90deg, rgba(208, 161, 58, .14), rgba(208, 161, 58, .035));
 }
 
 /* --------------------------------------------------------------------------
-   8. ACCOUNTING ENTRY
+   4. TABLE — Base
    -------------------------------------------------------------------------- */
-.ct-accounting-entry {
-  margin: 20px 0;
-  padding: 18px 20px;
+table,
+table.ct-data-table {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 22px;
+  overflow: visible;
   border: 1px solid var(--ct-border-cool);
-  border-radius: 10px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  background: var(--ct-surface);
+  color: #303632;
+  font-size: 14px;
+  line-height: 1.5;
+  table-layout: auto;
+}
+
+table caption {
+  padding: 8px;
+  color: var(--ct-slate);
+  font-weight: 700;
+  text-align: left;
+}
+
+table th,
+table td {
+  min-width: 0;
+  padding: 10px 12px;
+  border: 0;
+  border-right: 1px solid #d9e3de;
+  border-bottom: 1px solid #e2e9e5;
+  text-align: left;
+  vertical-align: top;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+table th {
+  background: var(--ct-slate);
+  color: #fff;
+  font-weight: 700;
+}
+
+table tbody tr:nth-child(even) td {
   background: var(--ct-surface-muted);
 }
 
+@media (hover: hover) {
+  table tbody tr:hover td {
+    background: #eef6f1;
+  }
+}
+
+/* Header radii */
+table thead tr:first-child th:first-child {
+  border-top-left-radius: 7px;
+}
+
+table thead tr:first-child th:last-child {
+  border-top-right-radius: 7px;
+}
+
+/* --------------------------------------------------------------------------
+   5. SIMPLE TABLE
+   -------------------------------------------------------------------------- */
+table.ct-data-table.is-simple {
+  table-layout: auto;
+}
+
+/* --------------------------------------------------------------------------
+   6. COMPLEX TABLE / SCROLL WRAPPER
+   -------------------------------------------------------------------------- */
+.ct-table-scroll {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 0 22px;
+}
+
+.ct-table-scroll.is-complex {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.ct-table-scroll.is-complex:focus-visible {
+  outline: 3px solid rgba(208, 161, 58, .36);
+  outline-offset: 3px;
+}
+
+.ct-table-scroll > table {
+  margin-bottom: 0;
+}
+
+.ct-table-scroll > table.ct-data-table.is-complex {
+  width: max-content;
+  min-width: 100%;
+  max-width: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. ACCOUNTING ENTRY
+   -------------------------------------------------------------------------- */
+p:has(+ .ct-accounting-entry) {
+  margin-bottom: 0;
+}
+
+.ct-accounting-entry {
+  margin: 1em 0 1.4em;
+  padding: 14px 18px;
+  border: 1px solid var(--ct-border-cool);
+  border-radius: 8px;
+  background: #fbfefc;
+}
+
 .ct-accounting-entry__title {
-  margin: 0 0 12px;
-  font-size: 15px;
+  margin: 0 0 10px;
+  color: var(--ct-slate);
+  font-size: 12px;
   font-weight: 700;
-  color: var(--ct-ink);
+  letter-spacing: 0.06em;
+  line-height: 1.4;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
 }
 
 .ct-accounting-entry__line {
   display: flex;
-  align-items: baseline;
   gap: 10px;
+  align-items: baseline;
   padding: 6px 0;
-  font-size: 16px;
-  line-height: 1.55;
-  color: var(--ct-text);
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .ct-accounting-entry__line + .ct-accounting-entry__line {
-  border-top: 1px dashed var(--ct-border-cool);
+  border-top: 1px solid #e8f0eb;
 }
 
 .ct-accounting-entry__side {
-  display: inline-block;
+  flex: 0 0 auto;
   min-width: 28px;
+  color: var(--ct-slate);
+  font-size: 13.5px;
   font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
-/* Debit — green */
-.ct-accounting-entry__line.is-debit .ct-accounting-entry__side {
+.is-debit .ct-accounting-entry__side {
   color: var(--ct-green);
 }
 
-.ct-accounting-entry__line.is-debit {
-  color: var(--ct-text);
-}
-
-/* Credit — gold-dark */
-.ct-accounting-entry__line.is-credit .ct-accounting-entry__side {
+.is-credit .ct-accounting-entry__side {
   color: var(--ct-gold-dark);
 }
 
-.ct-accounting-entry__line.is-credit {
-  padding-left: 28px;
+.ct-accounting-entry__line > span {
+  flex: 1 1 auto;
+  min-width: 0;
   color: var(--ct-text);
 }
 
+.ct-accounting-entry + .ct-accounting-entry {
+  margin-top: 10px;
+}
+
 /* --------------------------------------------------------------------------
-   9. ACCOUNTING GROUP
+   8. ACCOUNTING GROUP
    -------------------------------------------------------------------------- */
 .ct-accounting-group {
-  margin: 26px 0;
-  padding: 22px 22px;
-  border: 1px solid var(--ct-border);
-  border-radius: 12px;
-  background: var(--ct-paper);
+  margin: 1.8em 0 2em;
+  padding: 16px 18px;
+  border: 1px solid #dce9e0;
+  border-radius: 10px;
+  background: #f7fbf8;
+}
+
+.ct-accounting-group > .ct-accounting-entry {
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 1px solid var(--ct-border-cool);
+}
+
+.ct-accounting-group > .ct-accounting-entry + .ct-accounting-entry {
+  margin-top: 10px;
+}
+
+.ct-accounting-group > .ct-accounting-entry:nth-child(even of .ct-accounting-entry) {
+  background: #f2f8f4;
+  border-color: #cfe0d4;
 }
 
 .ct-accounting-group__title {
-  margin: 0 0 16px;
-  font-size: 17px;
+  margin: 0 0 12px;
+  color: var(--ct-slate);
+  font-size: 14.5px;
   font-weight: 700;
-  color: var(--ct-green);
-  line-height: 1.35;
-}
-
-.ct-accounting-group .ct-accounting-entry {
-  margin: 12px 0;
-}
-
-.ct-accounting-group .ct-accounting-entry:first-of-type {
-  margin-top: 0;
+  line-height: 1.45;
 }
 
 /* --------------------------------------------------------------------------
-   10. DEFINITION LIST
+   9. DEFINITION LIST
    -------------------------------------------------------------------------- */
 .ct-definition-list {
-  margin: 20px 0;
+  margin: 1.4em 0 1.6em;
   padding: 0;
 }
 
 .ct-definition-list dt {
-  margin-top: 16px;
-  font-weight: 700;
-  font-size: 16.5px;
+  margin: 0;
+  padding: 10px 0 4px;
   color: var(--ct-green);
-  line-height: 1.4;
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.45;
+  border-top: 1px solid var(--ct-border);
 }
 
 .ct-definition-list dt:first-child {
-  margin-top: 0;
+  border-top: 0;
+  padding-top: 0;
 }
 
 .ct-definition-list dd {
-  margin: 4px 0 0 0;
-  padding-left: 18px;
-  border-left: 2px solid var(--ct-border-cool);
-  font-size: 16px;
-  line-height: 1.7;
+  margin: 0 0 2px;
+  padding: 0 0 10px;
   color: var(--ct-text);
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+/* Alternate even term/value surface */
+.ct-definition-list dt:nth-of-type(even) {
+  background: #f5faf6;
+  margin-inline: -8px;
+  padding-inline: 8px;
+  border-radius: 4px 4px 0 0;
+}
+
+.ct-definition-list dt:nth-of-type(even) + dd {
+  background: #f5faf6;
+  margin-inline: -8px;
+  padding-inline: 8px;
+  border-radius: 0 0 4px 4px;
 }
 
 /* --------------------------------------------------------------------------
-   11. FACT LIST
+   10. FACT LIST
    -------------------------------------------------------------------------- */
 .ct-fact-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px 28px;
-  margin: 20px 0;
-  padding: 18px 20px;
-  border: 1px solid var(--ct-border-cool);
-  border-radius: 10px;
-  background: var(--ct-surface-muted);
+  grid-template-columns: minmax(120px, auto) 1fr;
+  gap: 0;
+  margin: 1.4em 0 1.6em;
+  padding: 12px 16px;
+  border: 1px solid #eadcad;
+  border-radius: 8px;
+  background: #fffaf0;
 }
 
 .ct-fact-list dt {
   grid-column: 1;
+  padding: 8px 12px 8px 0;
+  color: #6f602f;
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--ct-caption);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding-top: 10px;
-  border-top: 1px solid var(--ct-border-cool);
-}
-
-.ct-fact-list dt:first-of-type {
-  border-top: none;
-  padding-top: 0;
+  line-height: 1.5;
+  border-bottom: 1px solid #eee1bd;
 }
 
 .ct-fact-list dd {
   grid-column: 2;
   margin: 0;
-  font-size: 16px;
-  font-weight: 500;
+  padding: 8px 0;
   color: var(--ct-ink);
-  padding-top: 10px;
-  border-top: 1px solid var(--ct-border-cool);
-}
-
-.ct-fact-list dd:first-of-type,
-.ct-fact-list dt:first-of-type + dd {
-  border-top: none;
-  padding-top: 0;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  border-bottom: 1px solid #eee1bd;
 }
 
 /* --------------------------------------------------------------------------
-   12. MOBILE ADJUSTMENTS
+   11. MOBILE
    -------------------------------------------------------------------------- */
-@media (max-width: 768px) {
-  .ct-data-table {
-    font-size: 14.5px;
-  }
-
-  .ct-data-table thead th {
-    font-size: 13px;
-    padding: 10px 10px;
-  }
-
-  .ct-data-table tbody td {
-    padding: 9px 10px;
-  }
-
+@media (max-width: 640px) {
+  /* Key line */
   .ct-key-line {
-    padding: 12px 14px;
-    font-size: 15.5px;
+    margin: 1.2em 0 1.4em;
+    padding: 10px 12px 10px 14px;
+    font-size: 0.96em;
   }
 
+  /* Tables */
+  table,
+  table.ct-data-table.is-simple {
+    font-size: 12.75px;
+    line-height: 1.45;
+  }
+
+  table th,
+  table td {
+    padding: 8px;
+  }
+
+  .ct-table-scroll.is-complex {
+    margin-inline: -2px;
+    padding: 0 2px 5px;
+  }
+
+  .ct-table-scroll > table.ct-data-table.is-complex {
+    width: max-content;
+    min-width: 680px;
+    max-width: none;
+    font-size: 12.75px;
+  }
+
+  .ct-table-scroll > table.ct-data-table.is-complex th,
+  .ct-table-scroll > table.ct-data-table.is-complex td {
+    min-width: 120px;
+    overflow-wrap: normal;
+  }
+
+  /* Accounting */
   .ct-accounting-entry {
-    padding: 14px 16px;
+    padding: 12px 14px;
   }
 
   .ct-accounting-entry__line {
-    font-size: 15px;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    font-size: 14.5px;
   }
 
-  .ct-accounting-entry__line.is-credit {
-    padding-left: 20px;
+  .ct-accounting-entry__side {
+    font-size: 13px;
   }
 
-  /* Fact list — single column on mobile */
+  .ct-accounting-group {
+    padding: 12px 14px;
+  }
+
+  /* Definition list */
+  .ct-definition-list dt { font-size: 15px; }
+  .ct-definition-list dd { font-size: 14.5px; }
+
+  /* Fact list */
   .ct-fact-list {
     grid-template-columns: 1fr;
-    gap: 2px 0;
+    padding: 10px 14px;
   }
 
   .ct-fact-list dt {
     grid-column: 1;
+    padding: 8px 0 2px;
+    border-bottom: 0;
+    font-size: 12.5px;
   }
 
   .ct-fact-list dd {
     grid-column: 1;
-    padding-top: 2px;
-    border-top: none;
+    padding: 0 0 8px;
+    font-size: 14px;
   }
 }
