@@ -1,62 +1,83 @@
 /* ==========================================================================
-   EDITORIAL DESIGN SYSTEM v2.1 — Fresh Editorial
+   EDITORIAL DESIGN SYSTEM v2.4.3
    File: article-editorial-system.css
-   Owns: Article H1/H2/H3/H4 scale, heading rhythm, H2 gold accent,
-         list rhythm, prose-callout relationship, HR, 3-lane grid,
-         end-of-article note, all mobile typography.
-   Source: ketoandieutam.vn production runtime 2026-08-30
+   Owns: Page tokens, font system, H1/H2/H3/H4, heading rhythm,
+         H2 gold accent, article list/link/blockquote overrides, HR,
+         callout relationship, prose grid, end-of-article note,
+         paper composition, article lead/cover, Quick Answer, TOC,
+         category badge, breadcrumbs/meta, end matter, sidebar,
+         related section, all mobile typography.
+   Source: ketoandieutam.vn — EDS v2.4.3
+   Selector strategy: dual — .article-page/.article-prose for demo;
+                       .ct-news-detail-page/.ct-prose.is-article for production.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. PAGE-LEVEL TOKENS
    -------------------------------------------------------------------------- */
-.ct-news-detail-page {
+:is(.article-page, .ct-news-detail-page) {
   --font-heading: var(--ct-font-sans);
   --font-body: var(--ct-font-sans);
   --ct-v3-prose: 780px;
+  --ct-paper-bg: #f4f4f1;
+  --ct-paper-surface: #fff;
+  --ct-paper-border: rgba(54, 63, 59, 0.09);
+  --ct-paper-shadow: 0 14px 38px rgba(45, 50, 47, 0.075);
+  --ct-paper-radius: 12px;
+  --ct-v3-main: 820px;
+  --ct-v3-sidebar: 300px;
+  --ct-v3-gap: 40px;
+  --ct-v3-frame: 1160px;
+  --ct-v3-hairline: #e2e7e3;
+  --ct-v3-hairline-subtle: #eff2ef;
+  --ct-v3-muted: #626d66;
+  --ct-v3-ink: #222824;
+  --ct-article-green: var(--ct-green);
+  --ct-article-green-dark: var(--ct-green-dark);
+  --ct-article-green-soft: #f5f9f6;
+  --ct-article-section-soft: #f7faf8;
+  --ct-article-gold-accent: #c69a38;
+  --ct-article-gold-text: var(--ct-gold-dark);
   font-family: var(--font-body);
+  color: var(--ct-v3-ink);
+}
+
+.ct-news-detail-page {
+  background: var(--ct-paper-bg);
 }
 
 /* --------------------------------------------------------------------------
-   2. H1 — Article title (outside prose)
+   2. H1 — ARTICLE TITLE
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-article .ct-article-title {
-  color: #222824;
+:is(.ct-news-detail-page, .article-page) :is(.ct-article, .article-hero) :is(.ct-article-title, .article-title) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  color: inherit;
   font-family: var(--font-heading);
   font-size: clamp(36px, 2.45vw, 40px);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.17;
-  max-width: 100%;
-  text-wrap: balance;
+  text-wrap: wrap;
 }
 
 /* --------------------------------------------------------------------------
-   3. ARTICLE BODY
+   3. ARTICLE BODY — Higher-specificity override
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-prose.is-article {
-  color: var(--ct-text);
-  font-family: var(--font-body);
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) {
+  font-family: var(--ct-font-sans);
   font-size: 17.5px;
   line-height: 1.78;
-  overflow-wrap: anywhere;
-}
-
-.ct-news-detail-page .ct-prose.is-article p {
-  margin: 0 0 1.15em;
-}
-
-.ct-news-detail-page .ct-prose.is-article strong {
-  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
    4. HEADINGS — Shared base
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-prose.is-article h2,
-.ct-news-detail-page .ct-prose.is-article h3,
-.ct-news-detail-page .ct-prose.is-article h4 {
-  color: var(--ct-ink);
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h2,
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h3,
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h4 {
+  color: #172038;
   font-family: var(--font-heading);
   text-wrap: pretty;
 }
@@ -64,44 +85,55 @@
 /* --------------------------------------------------------------------------
    5. H2 — Major section
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-prose.is-article h2 {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h2 {
   margin: clamp(44px, 4.6vw, 58px) 0 0.52em;
   font-size: clamp(24px, 2.2vw, 29px);
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.36;
+  scroll-margin-top: calc(var(--ct-detail-sticky-offset, 72px) + 24px);
 }
 
 /* H2 ::before suppression */
-.ct-news-detail-page .ct-prose.is-article h2::before {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h2::before {
   content: none;
   display: none;
 }
 
-/* H2 gold accent signature */
-.ct-news-detail-page .ct-prose.is-article h2::after {
+/* H2 gold accent */
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h2::after {
   display: block;
   width: 40px;
   height: 2px;
   margin-top: 9px;
   content: "";
-  background: var(--ct-gold);
+  background: #d0a13a;
   border-radius: 999px;
   opacity: 0.86;
+}
+
+/* H2→H3 relationship */
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h2:has(+ h3) {
+  margin-bottom: 0;
+}
+
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h2 + h3 {
+  margin-top: clamp(15px, 1.8vw, 18px);
 }
 
 /* --------------------------------------------------------------------------
    6. H3 — Subsection
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-prose.is-article h3 {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h3 {
   margin: clamp(28px, 2.9vw, 34px) 0 0.42em;
   font-size: clamp(19px, 1.65vw, 21px);
   font-weight: 600;
   letter-spacing: -0.008em;
   line-height: 1.4;
+  scroll-margin-top: calc(var(--ct-detail-sticky-offset, 72px) + 24px);
 }
 
-.ct-news-detail-page .ct-prose.is-article h3::before {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h3::before {
   content: none;
   display: none;
 }
@@ -109,7 +141,7 @@
 /* --------------------------------------------------------------------------
    7. H4 — Sub-subsection
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-prose.is-article h4 {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h4 {
   margin: clamp(22px, 2.25vw, 28px) 0 0.45em;
   font-size: clamp(17px, 1.4vw, 18.5px);
   font-weight: 600;
@@ -119,63 +151,47 @@
 /* --------------------------------------------------------------------------
    8. HEADING RHYTHM
    -------------------------------------------------------------------------- */
-/* Block before heading: no extra bottom margin */
-.ct-news-detail-page .ct-prose.is-article
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article)
   > :where(p, ul, ol, blockquote, aside, section, figure, table, dl, div):has(+ :is(h2, h3, h4)) {
   margin-bottom: 0;
 }
 
-/* H2 directly followed by H3 */
-.ct-news-detail-page .ct-prose.is-article h2:has(+ h3) {
-  margin-bottom: 0;
-}
-
-.ct-news-detail-page .ct-prose.is-article h2 + h3 {
-  margin-top: clamp(15px, 1.8vw, 18px);
-}
-
-/* Heading anchor offset */
-.ct-news-detail-page .ct-prose.is-article h2,
-.ct-news-detail-page .ct-prose.is-article h3 {
-  scroll-margin-top: calc(var(--ct-detail-sticky-offset, 72px) + 24px);
-}
-
 /* --------------------------------------------------------------------------
-   9. LISTS — Article-specific
+   9. LISTS — Article-specific overrides
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-prose.is-article
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article)
   > p:has(+ :is(ul:not(.ct-checklist), ol:not(.ct-steps))) {
   margin-bottom: 0;
 }
 
-.ct-news-detail-page .ct-prose.is-article ul:not(.ct-checklist),
-.ct-news-detail-page .ct-prose.is-article ol:not(.ct-steps) {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) ul:not(.ct-checklist),
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) ol:not(.ct-steps) {
   margin: 0.4em 0 1em;
   padding-inline-start: 1.24em;
 }
 
-.ct-news-detail-page .ct-prose.is-article ul:not(.ct-checklist) > li,
-.ct-news-detail-page .ct-prose.is-article ol:not(.ct-steps) > li {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) ul:not(.ct-checklist) > li,
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) ol:not(.ct-steps) > li {
   margin: 0.08em 0;
   padding-inline-start: 0.16em;
   line-height: 1.58;
 }
 
-.ct-news-detail-page .ct-prose.is-article ul:not(.ct-checklist) > li::marker {
-  color: var(--ct-gold);
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) ul:not(.ct-checklist) > li::marker {
+  color: #d0a13a;
   font-size: 0.76em;
 }
 
-.ct-news-detail-page .ct-prose.is-article ol:not(.ct-steps) > li::marker {
-  color: var(--ct-green);
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) ol:not(.ct-steps) > li::marker {
+  color: #176b4d;
   font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
    10. LINKS — Article-specific
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-prose.is-article a {
-  color: var(--ct-gold-dark);
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) a {
+  color: #8a611a;
   font-weight: 600;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -185,138 +201,60 @@
 /* --------------------------------------------------------------------------
    11. BLOCKQUOTE — Article-specific
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-prose.is-article blockquote {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) blockquote {
   margin: 1.45em 0;
   padding: 13px 18px;
   color: #465149;
   border-left: 3px solid #e1c568;
   border-radius: 0 8px 8px 0;
-  background: var(--ct-paper);
+  background: #fcfbf7;
 }
 
 /* --------------------------------------------------------------------------
-   12. HR / DIVIDER
+   12. HR — Article-specific override
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-prose.is-article hr {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) hr {
   margin: clamp(34px, 3.8vw, 46px) 0 0;
-  border: 0;
-  border-top: 1px solid var(--ct-border);
+  border-top: 1px solid #e6dfcf;
 }
 
-.ct-news-detail-page .ct-prose.is-article hr + h2 {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) hr + h2 {
   margin-top: clamp(22px, 2.2vw, 28px);
 }
 
 /* --------------------------------------------------------------------------
    13. PROSE ↔ CALLOUT RELATIONSHIP
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-prose.is-article
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article)
   > :where(p, ul, ol):has(+ .ct-content-box) {
   margin-bottom: 0;
 }
 
-.ct-news-detail-page .ct-prose.is-article > .ct-content-box {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) > .ct-content-box {
   margin: clamp(20px, 2.2vw, 22px) 0 clamp(24px, 2.8vw, 28px);
 }
 
-.ct-news-detail-page .ct-prose.is-article > .ct-content-box + .ct-content-box {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) > .ct-content-box + .ct-content-box {
   margin-top: 16px;
 }
 
-/* Article-scoped content box padding for is-note */
-.ct-news-detail-page .ct-prose.is-article > .ct-content-box.is-note {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) > .ct-content-box.is-note {
   padding: clamp(19px, 2.4vw, 23px) clamp(20px, 2.8vw, 25px);
 }
 
-/* Article-scoped content box title */
-.ct-news-detail-page .ct-prose.is-article .ct-content-box__title {
-  margin: 0 0 9px;
-  color: var(--ct-green);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
-/* Article-scoped semantic variants */
-.ct-news-detail-page .ct-prose.is-article .ct-content-box.is-note {
-  border-color: #cfe2d5;
-  border-left-color: var(--ct-insight);
-  background: linear-gradient(135deg, #f1f8f3 0%, #fffaf0 100%);
-  box-shadow: 0 10px 28px rgba(15, 81, 56, 0.05);
-}
-
-.ct-news-detail-page .ct-prose.is-article .ct-content-box.is-info {
-  border-color: #bdd5e5;
-  border-left-color: var(--ct-info);
-  background: #f2f8fc;
-}
-
-.ct-news-detail-page .ct-prose.is-article .ct-content-box.is-warning {
-  border-color: #efc5b7;
-  border-left-color: var(--ct-warning);
-  background: #fff5f0;
-}
-
-.ct-news-detail-page .ct-prose.is-article .ct-content-box.is-legal {
-  border-color: #c8cee7;
-  border-left-color: var(--ct-legal);
-  background: #f4f5fb;
-}
-
-.ct-news-detail-page .ct-prose.is-article .ct-content-box.is-example {
-  border-color: #bfdec6;
-  border-left-color: var(--ct-example);
-  background: #f2f8f3;
-}
-
 /* Article-scoped accounting */
-.ct-news-detail-page .ct-prose.is-article p:has(+ .ct-accounting-entry) {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) p:has(+ .ct-accounting-entry) {
   margin-bottom: 0;
 }
 
-.ct-news-detail-page .ct-prose.is-article .ct-accounting-entry {
+:is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) .ct-accounting-entry {
   margin: 1em 0 1.4em;
-  padding: 14px 18px;
-  border: 1px solid var(--ct-border-cool);
-  border-radius: 8px;
-  background: #fbfefc;
-}
-
-.ct-news-detail-page .ct-prose.is-article .ct-accounting-entry__line {
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
-  padding: 6px 0;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.ct-news-detail-page .ct-prose.is-article .ct-accounting-entry__line + .ct-accounting-entry__line {
-  border-top: 1px solid #e8f0eb;
-}
-
-.ct-news-detail-page .ct-prose.is-article .ct-accounting-entry__side {
-  flex: 0 0 auto;
-  min-width: 28px;
-  color: var(--ct-slate);
-  font-size: 13.5px;
-  font-weight: 700;
-}
-
-.ct-news-detail-page .ct-prose.is-article .is-debit .ct-accounting-entry__side {
-  color: var(--ct-green);
-}
-
-.ct-news-detail-page .ct-prose.is-article .is-credit .ct-accounting-entry__side {
-  color: var(--ct-gold-dark);
 }
 
 /* --------------------------------------------------------------------------
    14. END-OF-ARTICLE NOTE
    -------------------------------------------------------------------------- */
-.ct-news-detail-page .ct-content-note {
+.ct-content-note {
   display: flex;
   gap: 12px;
   padding: 18px 20px;
@@ -326,12 +264,12 @@
   border-radius: 6px;
 }
 
-.ct-news-detail-page .ct-content-note p {
+.ct-content-note p {
   margin: 0;
   line-height: 1.65;
 }
 
-.ct-news-detail-page .ct-article .ct-content-note {
+:is(.ct-news-detail-page, .article-page) :is(.ct-article, .article-main) .ct-content-note {
   margin-top: clamp(28px, 3.2vw, 34px);
 }
 
@@ -339,23 +277,23 @@
    15. DESKTOP 3-LANE GRID (>=856px)
    -------------------------------------------------------------------------- */
 @media (min-width: 856px) {
-  .ct-news-detail-page .ct-article-paper .ct-prose.is-article {
+  :is(.ct-news-detail-page .ct-article-paper, .article-main) :is(.ct-prose.is-article, .article-prose) {
     display: grid;
     grid-template-columns:
       minmax(0, 1fr)
-      minmax(0, var(--ct-v3-prose))
+      minmax(0, var(--ct-v3-prose, 780px))
       minmax(0, 1fr);
     width: 100%;
     max-width: none;
     margin-inline: 0;
   }
 
-  .ct-news-detail-page .ct-article-paper .ct-prose.is-article > * {
+  :is(.ct-news-detail-page .ct-article-paper, .article-main) :is(.ct-prose.is-article, .article-prose) > * {
     grid-column: 2;
     min-width: 0;
   }
 
-  .ct-news-detail-page .ct-article-paper .ct-prose.is-article > :is(h2, h3, h4) {
+  :is(.ct-news-detail-page .ct-article-paper, .article-main) :is(.ct-prose.is-article, .article-prose) > :is(h2, h3, h4) {
     grid-column: 2 / 4;
     width: auto;
     max-width: none;
@@ -367,105 +305,666 @@
   }
 }
 
+/* ==========================================================================
+   PRODUCTION-ONLY COMPOSITION — Dormant on demo (requires production DOM)
+   ========================================================================== */
+
 /* --------------------------------------------------------------------------
-   16. MOBILE — H1 (<=767px)
+   P1. PAPER COMPOSITION
    -------------------------------------------------------------------------- */
+.ct-news-detail-page,
+.ct-news-detail-page .ct-detail-shell,
+.ct-news-detail-page .ct-article {
+  background: #f4f4f1;
+}
+
+.ct-news-detail-page .ct-article-masthead {
+  position: relative;
+  box-sizing: border-box;
+  padding: 30px 34px 0;
+  background: #fff;
+  border: 1px solid rgba(54, 63, 59, 0.09);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  box-shadow:
+    0 -5px 22px rgba(45, 50, 47, 0.035),
+    10px 0 26px rgba(45, 50, 47, 0.025),
+    -10px 0 26px rgba(45, 50, 47, 0.025);
+}
+
+.ct-news-detail-page .ct-article-reading-main.ct-article-paper {
+  position: relative;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 0 34px 48px;
+  background: #fff;
+  border: 1px solid rgba(54, 63, 59, 0.09);
+  border-top: 0;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 14px 38px rgba(45, 50, 47, 0.075);
+}
+
+/* --------------------------------------------------------------------------
+   P2. ARTICLE LEAD
+   -------------------------------------------------------------------------- */
+.ct-news-detail-page .ct-article-lead {
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+  padding-left: 34px;
+  color: #59625d;
+  font-size: clamp(16px, 1.05vw, 16.75px);
+  font-weight: 400;
+  letter-spacing: -0.003em;
+  line-height: 1.66;
+  text-wrap: pretty;
+}
+
+.ct-article-lead::before {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  content: "\201C";
+  color: rgba(208, 161, 58, 0.62);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   P3. COVER IMAGE
+   -------------------------------------------------------------------------- */
+.ct-article-cover {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.ct-article-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  box-shadow: none;
+}
+
+.ct-article-cover figcaption {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding: 7px 1px 0;
+  color: #7b837f;
+  font-size: 10.75px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   P4. QUICK ANSWER
+   -------------------------------------------------------------------------- */
+.ct-news-detail-page .ct-article-quick-answer {
+  box-sizing: border-box;
+  width: min(100%, 780px);
+  margin: 22px auto 0;
+  padding: 16px 18px 17px;
+  background: linear-gradient(180deg, rgba(249, 251, 249, 0.98), rgba(246, 249, 247, 0.92));
+  border: 1px solid rgba(23, 107, 77, 0.11);
+  border-left: 2px solid rgba(208, 161, 58, 0.86);
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.ct-article-quick-answer .ct-article-eyebrow {
+  width: 100%;
+  margin: 0 0 8px;
+  color: #8a611a;
+  font-size: 9.75px;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+}
+
+.ct-article-quick-answer p,
+.ct-article-quick-answer ul {
+  color: #39413d;
+  font-size: 15.75px;
+  line-height: 1.62;
+}
+
+/* --------------------------------------------------------------------------
+   P5. INLINE TOC
+   -------------------------------------------------------------------------- */
+.ct-article-toc-slot {
+  width: min(100%, 780px);
+  margin: 24px auto 28px;
+}
+
+.ct-toc-inline[data-ct-inline-toc] {
+  overflow: hidden;
+  color: #34423b;
+  background: #f7f7f7;
+  border: 1px solid rgba(23, 107, 77, 0.10);
+  border-radius: 8px;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.ct-toc-inline[data-ct-inline-toc] .ct-toc-header {
+  display: flex;
+  min-height: 0;
+  align-items: center;
+  padding: 15px 18px 7px;
+  color: #26342e;
+  background: transparent;
+  border-bottom: 0;
+}
+
+.ct-toc-heading-icon {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  color: #8a611a;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.ct-toc-heading-copy strong {
+  color: #26342e;
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.ct-toc-heading-copy small {
+  display: none;
+}
+
+.ct-toc-inline[data-ct-inline-toc] nav {
+  max-height: none;
+  padding: 3px 18px 15px;
+  overflow: visible;
+  background: transparent;
+}
+
+.ct-toc-inline[data-ct-inline-toc] a {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: start;
+  gap: 6px;
+  padding: 5px 0;
+  color: #144734;
+  background: transparent;
+  border-left: 0;
+  border-radius: 0;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.ct-toc-index {
+  color: #8a611a;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  line-height: 1.8;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.ct-toc-inline li.is-level-3 {
+  padding-left: 22px;
+}
+
+.ct-toc-inline a:hover {
+  color: #0f5138;
+  background: transparent;
+  text-decoration: underline;
+  text-decoration-color: rgba(208, 161, 58, 0.55);
+  text-underline-offset: 3px;
+}
+
+.ct-toc-inline a.is-active,
+.ct-toc-inline a.is-active .ct-toc-label {
+  color: #144734;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   P6. CATEGORY BADGE
+   -------------------------------------------------------------------------- */
+.ct-news-detail-page .ct-news-category.is-large {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  margin: 0 0 14px;
+  padding: 6px 10px;
+  color: #8a611a;
+  background: rgba(208, 161, 58, 0.10);
+  border: 1px solid rgba(208, 161, 58, 0.24);
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  font-size: 10.25px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   P7. BREADCRUMBS / META
+   -------------------------------------------------------------------------- */
+.ct-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13.5px;
+}
+
+.ct-news-detail-page .ct-breadcrumbs {
+  margin-bottom: 14px;
+  color: #626d66;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.ct-article-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ct-news-detail-page .ct-article-meta {
+  gap: 8px 24px;
+  margin-top: 18px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(182, 141, 64, 0.26);
+  border-bottom: 0;
+  color: #626d66;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   P8. END MATTER
+   -------------------------------------------------------------------------- */
+.ct-article-sources,
+.ct-article-faq,
+.ct-article-people {
+  margin-top: clamp(38px, 6vw, 64px);
+}
+
+.ct-article-faq-list {
+  border-top: 1px solid #e2e7e3;
+}
+
+.ct-article-faq-item {
+  border-bottom: 1px solid #e2e7e3;
+}
+
+.ct-article-faq-item summary {
+  position: relative;
+  min-height: 48px;
+  padding: 18px 34px 18px 0;
+  color: #0f5138;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.ct-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 30px;
+}
+
+.ct-tag-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid #efece6;
+}
+
+.ct-detail-tags .ct-tag-chip {
+  min-height: 30px;
+  padding: 4px 10px;
+  color: #58625c;
+  background: transparent;
+  border-color: #e2e7e3;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.ct-article-share {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid #e2e7e3;
+}
+
+.ct-article-share a,
+.ct-article-share button {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  color: #176b4d;
+  background: #fff;
+  border: 1px solid #e2e7e3;
+  border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   P9. SIDEBAR
+   -------------------------------------------------------------------------- */
+.ct-news-detail-page .ct-article-sidebar {
+  box-sizing: border-box;
+  align-self: start;
+  padding: 21px 22px 23px;
+  background: #fff;
+  border: 1px solid rgba(54, 63, 59, 0.09);
+  border-radius: 11px;
+  box-shadow: 0 12px 32px rgba(45, 50, 47, 0.055);
+}
+
+.ct-article-side-heading h2 {
+  margin: 0;
+  color: #36444b;
+  font-size: 15.25px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.ct-article-side-heading-rule {
+  display: block;
+  width: 44px;
+  height: 2px;
+  margin: 9px 0 16px;
+  background: #d0a13a;
+  border-radius: 999px;
+  opacity: 0.9;
+}
+
+/* --------------------------------------------------------------------------
+   P10. RELATED SECTION
+   -------------------------------------------------------------------------- */
+.ct-related-section {
+  margin-top: 56px;
+  padding: 48px 0;
+  background: #f7faf8;
+  border-top: 1px solid #e2e7e3;
+  border-bottom: 1px solid #e2e7e3;
+}
+
+/* ==========================================================================
+   WIDE DESKTOP (>=1200px)
+   ========================================================================== */
+@media (min-width: 1200px) {
+  :is(.ct-news-detail-page, .article-page) {
+    --ct-v3-main: 900px;
+    --ct-v3-sidebar: 300px;
+    --ct-v3-gap: 36px;
+    --ct-v3-frame: 1236px;
+  }
+
+  .ct-news-detail-page .ct-article {
+    display: grid;
+    grid-template-columns: minmax(0, 900px) minmax(250px, 300px);
+    column-gap: 36px;
+    width: min(calc(100% - 48px), 1236px);
+    max-width: 1236px;
+    align-items: start;
+    margin-inline: auto;
+  }
+
+  .ct-news-detail-page .ct-article-header,
+  .ct-news-detail-page .ct-article-header .ct-article-frame,
+  .ct-news-detail-page .ct-article-reading-layout {
+    display: contents;
+  }
+
+  .ct-news-detail-page .ct-article-masthead {
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 64px;
+  }
+
+  .ct-news-detail-page .ct-article-reading-main.ct-article-paper {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .ct-news-detail-page .ct-article-sidebar {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    position: sticky;
+    top: calc(var(--ct-detail-sticky-offset, 72px) + 24px);
+    margin-top: 64px;
+  }
+
+  .ct-article-masthead .ct-breadcrumbs {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    z-index: 2;
+    margin: 0;
+    color: #818985;
+    font-size: 11.5px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP < 1200px
+   ========================================================================== */
+@media (max-width: 1199px) {
+  .ct-news-detail-page .ct-article-masthead {
+    padding: 26px 30px 0;
+  }
+
+  .ct-news-detail-page .ct-article-reading-main.ct-article-paper {
+    padding: 0 30px 44px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE <=767px
+   ========================================================================== */
 @media (max-width: 767px) {
-  .ct-news-detail-page .ct-article .ct-article-title {
+  :is(.ct-news-detail-page, .article-page) {
+    --ct-paper-radius: 10px;
+  }
+
+  :is(.ct-news-detail-page, .article-page) :is(.ct-article, .article-hero) :is(.ct-article-title, .article-title) {
     font-size: clamp(28px, 7.1vw, 31px);
     letter-spacing: -0.016em;
     line-height: 1.2;
   }
+
+  .ct-news-detail-page .ct-article-header {
+    padding-top: 14px;
+  }
+
+  .ct-news-detail-page .ct-article-masthead {
+    padding: 22px 18px 0;
+    box-shadow:
+      0 -4px 18px rgba(45, 50, 47, 0.028),
+      7px 0 18px rgba(45, 50, 47, 0.02),
+      -7px 0 18px rgba(45, 50, 47, 0.02);
+  }
+
+  .ct-news-detail-page .ct-article-reading-main.ct-article-paper {
+    padding: 0 18px 34px;
+    box-shadow: 0 10px 28px rgba(45, 50, 47, 0.05);
+  }
+
+  .ct-article-lead {
+    padding-left: 28px;
+    font-size: 15.75px;
+    line-height: 1.64;
+  }
+
+  .ct-article-lead::before {
+    top: -2px;
+    font-size: 30px;
+  }
+
+  .ct-article-quick-answer {
+    width: 100%;
+    margin: 18px 0 0;
+    padding: 15px 15px 16px;
+  }
+
+  .ct-article-quick-answer p,
+  .ct-article-quick-answer ul {
+    font-size: 15.25px;
+    line-height: 1.58;
+  }
+
+  .ct-article-toc-slot {
+    width: 100%;
+    margin: 20px 0 23px;
+  }
+
+  .ct-toc-inline[data-ct-inline-toc] {
+    border-radius: 7px;
+  }
+
+  .ct-toc-header {
+    padding: 13px 14px 6px;
+  }
+
+  .ct-toc-heading-copy strong {
+    font-size: 15px;
+  }
+
+  .ct-toc-inline nav {
+    padding: 2px 14px 13px;
+  }
+
+  .ct-toc-inline li.is-level-3 {
+    padding-left: 18px;
+  }
+
+  .ct-toc-inline a {
+    grid-template-columns: 25px minmax(0, 1fr);
+    gap: 5px;
+    padding: 4px 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .ct-toc-index {
+    font-size: 11.5px;
+  }
 }
 
-/* --------------------------------------------------------------------------
-   17. MOBILE — Article body + headings (<=640px)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   MOBILE <=640px — Article body + headings
+   ========================================================================== */
 @media (max-width: 640px) {
-  .ct-news-detail-page .ct-prose.is-article {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) {
     font-size: 16.5px;
     line-height: 1.76;
   }
 
-  .ct-news-detail-page .ct-prose.is-article h2 {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h2 {
     margin: 36px 0 0.54em;
     font-size: clamp(21px, 5.8vw, 24px);
     line-height: 1.38;
   }
 
-  .ct-news-detail-page .ct-prose.is-article h2::after {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h2::after {
     width: 34px;
     height: 2px;
     margin-top: 8px;
   }
 
-  .ct-news-detail-page .ct-prose.is-article h2 + h3 {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h2 + h3 {
     margin-top: 14px;
   }
 
-  .ct-news-detail-page .ct-prose.is-article h3 {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h3 {
     margin: 25px 0 0.44em;
     font-size: clamp(18px, 4.8vw, 19.5px);
     font-weight: 600;
     line-height: 1.4;
   }
 
-  .ct-news-detail-page .ct-prose.is-article h4 {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) h4 {
     margin-top: 20px;
-    font-size: clamp(17px, 1.4vw, 18.5px);
     font-weight: 600;
   }
 
   /* HR mobile */
-  .ct-news-detail-page .ct-prose.is-article hr {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) hr {
     margin-top: 30px;
   }
 
-  .ct-news-detail-page .ct-prose.is-article hr + h2 {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) hr + h2 {
     margin-top: 18px;
   }
 
   /* Lists mobile */
-  .ct-news-detail-page .ct-prose.is-article ul:not(.ct-checklist),
-  .ct-news-detail-page .ct-prose.is-article ol:not(.ct-steps) {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) ul:not(.ct-checklist),
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) ol:not(.ct-steps) {
     margin-top: 0.36em;
     margin-bottom: 0.95em;
     padding-inline-start: 1.18em;
   }
 
-  .ct-news-detail-page .ct-prose.is-article ul:not(.ct-checklist) > li,
-  .ct-news-detail-page .ct-prose.is-article ol:not(.ct-steps) > li {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) ul:not(.ct-checklist) > li,
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) ol:not(.ct-steps) > li {
     margin: 0.08em 0;
     line-height: 1.56;
   }
 
   /* Callout mobile */
-  .ct-news-detail-page .ct-prose.is-article > .ct-content-box {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) > .ct-content-box {
     margin-top: 18px;
     margin-bottom: 22px;
   }
 
-  .ct-news-detail-page .ct-prose.is-article > .ct-content-box + .ct-content-box {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) > .ct-content-box + .ct-content-box {
     margin-top: 14px;
   }
 
-  .ct-news-detail-page .ct-prose.is-article > .ct-content-box.is-note {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) > .ct-content-box.is-note {
     padding: 17px 18px;
   }
 
   /* Accounting mobile */
-  .ct-news-detail-page .ct-prose.is-article .ct-accounting-entry {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) .ct-accounting-entry {
     padding: 12px 14px;
   }
 
-  .ct-news-detail-page .ct-prose.is-article .ct-accounting-entry__line {
+  :is(.article-page, .ct-news-detail-page) :is(.article-prose, .ct-prose.is-article) .ct-accounting-entry__line {
     flex-wrap: wrap;
     gap: 4px 10px;
     font-size: 14.5px;
   }
 
   /* End-of-article note mobile */
-  .ct-news-detail-page .ct-article .ct-content-note {
+  :is(.ct-news-detail-page, .article-page) :is(.ct-article, .article-main) .ct-content-note {
     margin-top: 26px;
   }
 }

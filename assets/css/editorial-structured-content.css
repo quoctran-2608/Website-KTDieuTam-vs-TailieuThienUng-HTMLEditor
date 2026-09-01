@@ -1,8 +1,10 @@
 /* ==========================================================================
-   EDITORIAL DESIGN SYSTEM v2.1 — Fresh Editorial
+   EDITORIAL DESIGN SYSTEM v2.4.3
    File: editorial-structured-content.css
-   Owns: Tables, key-lines, accounting entries, definition list, fact list.
-   Source: ketoandieutam.vn production runtime 2026-08-30
+   Owns: Key lines, global table contract (simple/complex/nested/form-slot/
+         span/density), table wrapper, official document (surface/header/
+         signature/tables), accounting entries, definition list, fact list.
+   Source: ketoandieutam.vn — EDS v2.4.3
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -26,51 +28,52 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. KEY LINE — is-process
+   2. KEY LINE — Variants
    -------------------------------------------------------------------------- */
 .ct-key-line.is-process {
-  border-left: 3px solid var(--ct-info);
-  background: linear-gradient(90deg, rgba(79, 141, 184, .13), rgba(79, 141, 184, .03));
+  border-left: 3px solid #4f8db8;
+  background: linear-gradient(90deg, rgba(79, 141, 184, 0.13), rgba(79, 141, 184, 0.03));
 }
 
-/* --------------------------------------------------------------------------
-   3. KEY LINE — is-formula
-   -------------------------------------------------------------------------- */
 .ct-key-line.is-formula {
-  border-left: 3px solid var(--ct-gold);
-  background: linear-gradient(90deg, rgba(208, 161, 58, .14), rgba(208, 161, 58, .035));
+  border-left: 3px solid #d0a13a;
+  background: linear-gradient(90deg, rgba(208, 161, 58, 0.14), rgba(208, 161, 58, 0.035));
+}
+
+.ct-key-line.is-result {
+  color: #144734;
+  border-left: 3px solid #176b4d;
+  background: linear-gradient(90deg, rgba(23, 107, 77, 0.12), rgba(23, 107, 77, 0.025));
+  font-weight: 600;
 }
 
 /* --------------------------------------------------------------------------
-   4. TABLE — Base
+   3. TABLE — Global contract (FIT-ONLY)
    -------------------------------------------------------------------------- */
-table,
-table.ct-data-table {
+:is(.ct-prose, .article-prose) table,
+:is(.ct-prose, .article-prose) table.ct-data-table {
   display: table;
   width: 100%;
+  min-width: 0;
   max-width: 100%;
   margin: 0 0 22px;
   overflow: visible;
-  border: 1px solid var(--ct-border-cool);
+  border: 1px solid #d8e2dd;
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 8px;
-  background: var(--ct-surface);
+  background: #fff;
   color: #303632;
   font-size: 14px;
   line-height: 1.5;
-  table-layout: auto;
+  table-layout: fixed;
 }
 
-table caption {
-  padding: 8px;
-  color: var(--ct-slate);
-  font-weight: 700;
-  text-align: left;
-}
-
-table th,
-table td {
+/* --------------------------------------------------------------------------
+   4. TABLE — Cells
+   -------------------------------------------------------------------------- */
+:is(.ct-prose, .article-prose) table th,
+:is(.ct-prose, .article-prose) table td {
   min-width: 0;
   padding: 10px 12px;
   border: 0;
@@ -81,76 +84,455 @@ table td {
   white-space: normal;
   overflow-wrap: anywhere;
   word-break: normal;
+  hyphens: auto;
 }
 
-table th {
-  background: var(--ct-slate);
-  color: #fff;
+:is(.ct-prose, .article-prose) table tr > :last-child {
+  border-right: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. TABLE — Caption
+   -------------------------------------------------------------------------- */
+:is(.ct-prose, .article-prose) table caption {
+  padding: 8px;
+  color: #2e5961;
   font-weight: 700;
+  text-align: left;
 }
 
-table tbody tr:nth-child(even) td {
-  background: var(--ct-surface-muted);
+/* --------------------------------------------------------------------------
+   6. TABLE — Zebra + hover
+   -------------------------------------------------------------------------- */
+:is(.ct-prose, .article-prose) table tbody tr:nth-child(even) td {
+  background: #f5f8f6;
 }
 
 @media (hover: hover) {
-  table tbody tr:hover td {
+  :is(.ct-prose, .article-prose) table tbody tr:hover td {
     background: #eef6f1;
   }
 }
 
-/* Header radii */
-table thead tr:first-child th:first-child {
+/* --------------------------------------------------------------------------
+   7. SIMPLE TABLE HEADER
+   -------------------------------------------------------------------------- */
+:is(.ct-prose, .article-prose) table th {
+  background: #2e5961;
+  color: #fff;
+  font-weight: 700;
+}
+
+:is(.ct-prose, .article-prose) table th *:not(img) {
+  color: inherit !important;
+}
+
+:is(.ct-prose, .article-prose) table thead tr:first-child th:first-child {
   border-top-left-radius: 7px;
 }
 
-table thead tr:first-child th:last-child {
+:is(.ct-prose, .article-prose) table thead tr:first-child th:last-child {
   border-top-right-radius: 7px;
 }
 
 /* --------------------------------------------------------------------------
-   5. SIMPLE TABLE
+   8. COMPLEX TABLE HEADER HIERARCHY
    -------------------------------------------------------------------------- */
-table.ct-data-table.is-simple {
-  table-layout: auto;
+:is(.ct-prose, .article-prose)
+  table.ct-data-table.is-complex > thead > tr > th {
+  background: #fff;
+  color: #33433d;
+  border-color: #c8d6cf;
+  font-weight: 600;
+  line-height: 1.3;
+  vertical-align: middle;
+}
+
+:is(.ct-prose, .article-prose)
+  table.ct-data-table.is-complex > thead > tr:first-child > th {
+  background: #eaf2ee;
+  color: #244d45;
+  font-weight: 700;
+}
+
+:is(.ct-prose, .article-prose)
+  table.ct-data-table.is-complex
+  > thead > tr:not(:first-child):not(:last-child) > th {
+  background: #f5f8f6;
+  color: #30463f;
+  font-weight: 600;
+}
+
+:is(.ct-prose, .article-prose)
+  table.ct-data-table.is-complex
+  > thead > tr:not(:first-child):last-child > th {
+  background: #fff;
+  color: #33433d;
+  font-weight: 700;
+}
+
+:is(.ct-prose, .article-prose)
+  table.ct-data-table.is-complex
+  > thead:has(> tr:nth-child(4)) > tr:last-child > th {
+  background: #eef4f1;
+  color: #315a50;
+  font-weight: 700;
+}
+
+:is(.ct-prose, .article-prose)
+  table.ct-data-table.is-complex > tbody > tr > th {
+  background: #f5f8f6;
+  color: #30463f;
+  border-color: #c8d6cf;
+  font-weight: 700;
+}
+
+:is(.ct-prose, .article-prose)
+  table.ct-data-table.is-complex > tfoot > tr > th {
+  background: #eaf2ee;
+  color: #244d45;
+  border-color: #c8d6cf;
+  font-weight: 700;
+}
+
+:is(.ct-prose, .article-prose)
+  table.ct-data-table :is(th, td)
+  > table.ct-data-table.is-simple thead th {
+  background: #eef4f1;
+  color: #2e5961;
+  font-size: 0.96em;
+  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
-   6. COMPLEX TABLE / SCROLL WRAPPER
+   9. TABLE DENSITY BY COLUMN COUNT
+   -------------------------------------------------------------------------- */
+table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(5)) {
+  font-size: 12px;
+  line-height: 1.38;
+}
+
+table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(5))
+  > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+  padding: 6px;
+}
+
+table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(8)) {
+  font-size: 10.5px;
+  line-height: 1.3;
+}
+
+table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(8))
+  > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+  padding: 4px;
+}
+
+table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(11)) {
+  font-size: 9px;
+  line-height: 1.24;
+}
+
+table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(11))
+  > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+  padding: 3px 2px;
+}
+
+/* --------------------------------------------------------------------------
+   10. SPAN-SAFE ROWSPAN / COLSPAN
+   -------------------------------------------------------------------------- */
+table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :is(th, td)[rowspan]),
+table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :is(th, td)[colspan]) {
+  border-collapse: collapse;
+}
+
+table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :is(th, td)[rowspan])
+  > :is(thead, tbody, tfoot) > tr > :is(th, td),
+table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :is(th, td)[colspan])
+  > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+  border: 1px solid #d9e3de;
+}
+
+/* --------------------------------------------------------------------------
+   11. TABLE WRAPPER
    -------------------------------------------------------------------------- */
 .ct-table-scroll {
   box-sizing: border-box;
   width: 100%;
-  max-width: 100%;
   min-width: 0;
+  max-width: 100%;
   margin: 0 0 22px;
+  overflow: clip;
+  border-radius: 8px;
+  scrollbar-width: none;
 }
 
-.ct-table-scroll.is-complex {
-  overflow-x: auto;
-  overflow-y: hidden;
-  overscroll-behavior-inline: contain;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-}
-
-.ct-table-scroll.is-complex:focus-visible {
-  outline: 3px solid rgba(208, 161, 58, .36);
-  outline-offset: 3px;
+.ct-table-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .ct-table-scroll > table {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   margin-bottom: 0;
+  table-layout: fixed;
 }
 
-.ct-table-scroll > table.ct-data-table.is-complex {
-  width: max-content;
-  min-width: 100%;
-  max-width: none;
+.ct-table-scroll table > :is(thead, tbody, tfoot) > tr > :first-child {
+  position: static;
+  left: auto;
+  z-index: auto;
+  box-shadow: none;
 }
 
 /* --------------------------------------------------------------------------
-   7. ACCOUNTING ENTRY
+   12. SEGMENTED FORM-SLOT TABLE
+   -------------------------------------------------------------------------- */
+table.ct-data-table.is-form-slot {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+table.ct-data-table.is-form-slot :is(th, td) {
+  height: 38px;
+  padding: 7px 0;
+  vertical-align: middle;
+  text-align: center;
+}
+
+table.ct-data-table.is-form-slot > :is(thead, tbody, tfoot) > tr > :first-child {
+  width: 32%;
+  padding: 7px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   13. NESTED TABLE
+   -------------------------------------------------------------------------- */
+:is(.ct-prose, .article-prose)
+  table.ct-data-table :is(th, td) > table.ct-data-table {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0.62em 0 0.72em;
+  border: 1px solid #dfe7e3;
+  border-radius: 6px;
+  background: #fbfcfb;
+  color: inherit;
+  font-size: 0.94em;
+  line-height: 1.42;
+  table-layout: fixed;
+}
+
+:is(.ct-prose, .article-prose)
+  table.ct-data-table :is(th, td) > table.ct-data-table :is(th, td) {
+  padding: 7px 9px;
+  border-right: 1px solid #e1e8e4;
+  border-bottom: 1px solid #e7ece9;
+  background: transparent;
+  color: inherit;
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   14. TABLE INTERNAL PROSE RHYTHM
+   -------------------------------------------------------------------------- */
+table :is(th, td) > p {
+  margin: 0;
+}
+
+table :is(th, td) > p + p {
+  margin-top: 0.62em;
+}
+
+table :is(th, td) > :is(ul, ol) {
+  margin: 0.55em 0;
+  padding-inline-start: 1.2em;
+}
+
+table :is(th, td) > :last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   OFFICIAL DOCUMENT
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   15. OFFICIAL DOCUMENT — Surface
+   -------------------------------------------------------------------------- */
+.ct-official-document {
+  box-sizing: border-box;
+  margin: 1.8em 0 2.1em;
+  padding: clamp(22px, 3.5vw, 32px);
+  border: 1px solid #cfd8d3;
+  border-radius: 3px;
+  background: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   16. OFFICIAL HEADER
+   -------------------------------------------------------------------------- */
+.ct-official-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(18px, 4vw, 44px);
+  align-items: start;
+  margin: 0 0 1.6em;
+  padding: 0 0 1.15em;
+  border-bottom: 1px solid #d8e2dd;
+}
+
+.ct-official-header__issuer,
+.ct-official-header__authority {
+  min-width: 0;
+  text-align: center;
+}
+
+.ct-official-header strong {
+  color: #172038;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   17. SIGNATURE GRID
+   -------------------------------------------------------------------------- */
+.ct-signature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: clamp(22px, 5vw, 56px);
+  align-items: start;
+  margin: 2em 0 1.6em;
+  padding-top: 0.35em;
+}
+
+.ct-signature-party {
+  min-width: 0;
+  text-align: center;
+}
+
+.ct-signature-grid > .ct-signature-party:only-child {
+  width: min(52%, 380px);
+  margin-left: auto;
+}
+
+.ct-official-document > .ct-signature-grid {
+  margin-top: 2.2em;
+  padding-top: 1.35em;
+  border-top: 1px solid #e0e5e2;
+}
+
+/* --------------------------------------------------------------------------
+   18. OFFICIAL DOCUMENT — Tables (formal-neutral palette)
+   -------------------------------------------------------------------------- */
+.ct-official-document table,
+.ct-official-document table.ct-data-table {
+  border-color: #c9d2cd;
+  border-radius: 2px;
+  background: #fff;
+  color: #293730;
+}
+
+.ct-official-document table :is(th, td) {
+  border-right-color: #c9d2cd;
+  border-bottom-color: #cfd7d3;
+}
+
+/* Simple official header */
+.ct-official-document table th {
+  background: #e8eeeb;
+  color: #293730;
+  font-weight: 700;
+}
+
+/* Complex official header hierarchy */
+.ct-official-document table.ct-data-table.is-complex > thead > tr > th {
+  background: #fafbfa;
+  color: #293730;
+  font-weight: 600;
+}
+
+.ct-official-document table.ct-data-table.is-complex > thead > tr:first-child > th {
+  background: #e8eeeb;
+  color: #293730;
+  font-weight: 700;
+}
+
+.ct-official-document table.ct-data-table.is-complex
+  > thead > tr:not(:first-child):not(:last-child) > th {
+  background: #f1f4f2;
+  color: #293730;
+  font-weight: 600;
+}
+
+.ct-official-document table.ct-data-table.is-complex
+  > thead > tr:not(:first-child):last-child > th {
+  background: #fafbfa;
+  color: #293730;
+  font-weight: 700;
+}
+
+.ct-official-document table.ct-data-table.is-complex
+  > thead:has(> tr:nth-child(4)) > tr:last-child > th {
+  background: #f1f4f2;
+  color: #293730;
+  font-weight: 700;
+}
+
+.ct-official-document table.ct-data-table.is-complex > tbody > tr > th,
+.ct-official-document table.ct-data-table.is-complex > tfoot > tr > th {
+  background: #eef1ef;
+  color: #293730;
+  font-weight: 700;
+}
+
+/* Official body — NO zebra, NO hover */
+.ct-official-document table tbody td,
+.ct-official-document table tfoot td {
+  background: #fff;
+}
+
+@media (hover: hover) {
+  .ct-official-document table tbody tr:hover td {
+    background: #fff;
+  }
+}
+
+/* Official table top corners */
+.ct-official-document table thead tr:first-child th:first-child {
+  border-top-left-radius: 1px;
+}
+
+.ct-official-document table thead tr:first-child th:last-child {
+  border-top-right-radius: 1px;
+}
+
+/* Nested official table */
+.ct-official-document table.ct-data-table :is(th, td) > table.ct-data-table {
+  border-color: #c9d2cd;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.ct-official-document table.ct-data-table :is(th, td)
+  > table.ct-data-table.is-simple thead th {
+  background: #eef1ef;
+  color: #293730;
+}
+
+/* Official form-slot */
+.ct-official-document table.ct-data-table.is-form-slot
+  > :is(thead, tbody, tfoot) > tr > :first-child {
+  background: #fafbfa;
+}
+
+.ct-official-document table.ct-data-table.is-form-slot :is(th, td) {
+  background: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   19. ACCOUNTING ENTRY
    -------------------------------------------------------------------------- */
 p:has(+ .ct-accounting-entry) {
   margin-bottom: 0;
@@ -159,14 +541,14 @@ p:has(+ .ct-accounting-entry) {
 .ct-accounting-entry {
   margin: 1em 0 1.4em;
   padding: 14px 18px;
-  border: 1px solid var(--ct-border-cool);
+  border: 1px solid #d8e2dd;
   border-radius: 8px;
   background: #fbfefc;
 }
 
 .ct-accounting-entry__title {
   margin: 0 0 10px;
-  color: var(--ct-slate);
+  color: #2e5961;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -190,24 +572,24 @@ p:has(+ .ct-accounting-entry) {
 .ct-accounting-entry__side {
   flex: 0 0 auto;
   min-width: 28px;
-  color: var(--ct-slate);
+  color: #2e5961;
   font-size: 13.5px;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
 
 .is-debit .ct-accounting-entry__side {
-  color: var(--ct-green);
+  color: #176b4d;
 }
 
 .is-credit .ct-accounting-entry__side {
-  color: var(--ct-gold-dark);
+  color: #8a611a;
 }
 
 .ct-accounting-entry__line > span {
   flex: 1 1 auto;
   min-width: 0;
-  color: var(--ct-text);
+  color: #33322c;
 }
 
 .ct-accounting-entry + .ct-accounting-entry {
@@ -215,7 +597,7 @@ p:has(+ .ct-accounting-entry) {
 }
 
 /* --------------------------------------------------------------------------
-   8. ACCOUNTING GROUP
+   20. ACCOUNTING GROUP
    -------------------------------------------------------------------------- */
 .ct-accounting-group {
   margin: 1.8em 0 2em;
@@ -228,7 +610,7 @@ p:has(+ .ct-accounting-entry) {
 .ct-accounting-group > .ct-accounting-entry {
   margin-top: 0;
   margin-bottom: 0;
-  border: 1px solid var(--ct-border-cool);
+  border: 1px solid #d8e2dd;
 }
 
 .ct-accounting-group > .ct-accounting-entry + .ct-accounting-entry {
@@ -240,16 +622,17 @@ p:has(+ .ct-accounting-entry) {
   border-color: #cfe0d4;
 }
 
-.ct-accounting-group__title {
+.ct-accounting-group__title,
+.ct-accounting-group > p:first-child {
   margin: 0 0 12px;
-  color: var(--ct-slate);
+  color: #2e5961;
   font-size: 14.5px;
   font-weight: 700;
   line-height: 1.45;
 }
 
 /* --------------------------------------------------------------------------
-   9. DEFINITION LIST
+   21. DEFINITION LIST
    -------------------------------------------------------------------------- */
 .ct-definition-list {
   margin: 1.4em 0 1.6em;
@@ -259,11 +642,11 @@ p:has(+ .ct-accounting-entry) {
 .ct-definition-list dt {
   margin: 0;
   padding: 10px 0 4px;
-  color: var(--ct-green);
+  color: #176b4d;
   font-size: 15.5px;
   font-weight: 700;
   line-height: 1.45;
-  border-top: 1px solid var(--ct-border);
+  border-top: 1px solid #e6dfcf;
 }
 
 .ct-definition-list dt:first-child {
@@ -274,28 +657,27 @@ p:has(+ .ct-accounting-entry) {
 .ct-definition-list dd {
   margin: 0 0 2px;
   padding: 0 0 10px;
-  color: var(--ct-text);
+  color: #33322c;
   font-size: 15px;
   line-height: 1.68;
 }
 
-/* Alternate even term/value surface */
 .ct-definition-list dt:nth-of-type(even) {
-  background: #f5faf6;
   margin-inline: -8px;
   padding-inline: 8px;
+  background: #f5faf6;
   border-radius: 4px 4px 0 0;
 }
 
 .ct-definition-list dt:nth-of-type(even) + dd {
-  background: #f5faf6;
   margin-inline: -8px;
   padding-inline: 8px;
+  background: #f5faf6;
   border-radius: 0 0 4px 4px;
 }
 
 /* --------------------------------------------------------------------------
-   10. FACT LIST
+   22. FACT LIST
    -------------------------------------------------------------------------- */
 .ct-fact-list {
   display: grid;
@@ -322,7 +704,7 @@ p:has(+ .ct-accounting-entry) {
   grid-column: 2;
   margin: 0;
   padding: 8px 0;
-  color: var(--ct-ink);
+  color: #172038;
   font-size: 14.5px;
   font-weight: 500;
   line-height: 1.5;
@@ -330,47 +712,103 @@ p:has(+ .ct-accounting-entry) {
 }
 
 /* --------------------------------------------------------------------------
-   11. MOBILE
+   23. MOBILE
    -------------------------------------------------------------------------- */
 @media (max-width: 640px) {
-  /* Key line */
   .ct-key-line {
     margin: 1.2em 0 1.4em;
     padding: 10px 12px 10px 14px;
     font-size: 0.96em;
   }
 
-  /* Tables */
-  table,
-  table.ct-data-table.is-simple {
-    font-size: 12.75px;
-    line-height: 1.45;
+  :is(.ct-prose, .article-prose) table,
+  :is(.ct-prose, .article-prose) table.ct-data-table {
+    font-size: 12.5px;
+    line-height: 1.4;
   }
 
-  table th,
-  table td {
-    padding: 8px;
+  :is(.ct-prose, .article-prose) table th,
+  :is(.ct-prose, .article-prose) table td {
+    padding: 7px 6px;
   }
 
-  .ct-table-scroll.is-complex {
-    margin-inline: -2px;
-    padding: 0 2px 5px;
+  table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(5)) {
+    font-size: 9.5px;
+    line-height: 1.28;
   }
 
-  .ct-table-scroll > table.ct-data-table.is-complex {
-    width: max-content;
-    min-width: 680px;
-    max-width: none;
-    font-size: 12.75px;
+  table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(5))
+    > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+    padding: 4px 3px;
   }
 
-  .ct-table-scroll > table.ct-data-table.is-complex th,
-  .ct-table-scroll > table.ct-data-table.is-complex td {
-    min-width: 120px;
-    overflow-wrap: normal;
+  table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(8)) {
+    font-size: 8.5px;
+    line-height: 1.22;
   }
 
-  /* Accounting */
+  table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(8))
+    > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+    padding: 3px 2px;
+  }
+
+  table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(11)) {
+    font-size: 7.5px;
+    line-height: 1.18;
+  }
+
+  table.ct-data-table:has(> :is(thead, tbody, tfoot) > tr > :nth-child(11))
+    > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+    padding: 2px 1px;
+  }
+
+  table.ct-data-table.is-form-slot {
+    font-size: 10.5px;
+    line-height: 1.25;
+  }
+
+  table.ct-data-table.is-form-slot :is(th, td) {
+    height: 32px;
+    padding: 5px 0;
+  }
+
+  table.ct-data-table.is-form-slot > :is(thead, tbody, tfoot) > tr > :first-child {
+    width: 36%;
+    padding: 5px 6px;
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  table :is(th, td) > p + p {
+    margin-top: 0.52em;
+  }
+
+  .ct-official-document {
+    padding: 16px 14px;
+    border-radius: 3px;
+  }
+
+  .ct-official-header {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-bottom: 1em;
+  }
+
+  .ct-signature-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 1.65em;
+  }
+
+  .ct-official-document > .ct-signature-grid {
+    padding-top: 1.1em;
+  }
+
+  .ct-signature-grid > .ct-signature-party:only-child {
+    width: 100%;
+    margin-left: 0;
+  }
+
   .ct-accounting-entry {
     padding: 12px 14px;
   }
@@ -389,11 +827,9 @@ p:has(+ .ct-accounting-entry) {
     padding: 12px 14px;
   }
 
-  /* Definition list */
   .ct-definition-list dt { font-size: 15px; }
   .ct-definition-list dd { font-size: 14.5px; }
 
-  /* Fact list */
   .ct-fact-list {
     grid-template-columns: 1fr;
     padding: 10px 14px;

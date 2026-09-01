@@ -1,10 +1,12 @@
 /* ==========================================================================
-   EDITORIAL DESIGN SYSTEM v2.1 — Fresh Editorial
+   EDITORIAL DESIGN SYSTEM v2.4.3
    File: editorial-content.css
-   Owns: Color tokens, typography base, links, blockquote, code/pre,
-         content boxes, checklist, steps, editorial media, FAQ,
-         related content, accessibility, print.
-   Source: ketoandieutam.vn production runtime 2026-08-30
+   Owns: Color tokens, prose base (:where pattern), intro, emphasis,
+         source note, shared list/HR defaults, links, blockquote, code/pre,
+         text alignment, content boxes (reset + 5 variants + A/B tint),
+         checklist/steps, editorial media, FAQ, related content,
+         accessibility, print.
+   Source: ketoandieutam.vn — EDS v2.4.3
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap');
@@ -16,7 +18,6 @@
   --ct-font-sans: 'Google Sans', system-ui, -apple-system,
     BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  /* Brand */
   --ct-green: #176b4d;
   --ct-green-dark: #0f5138;
   --ct-gold: #d0a13a;
@@ -25,14 +26,12 @@
   --ct-navy: #30486b;
   --ct-slate: #2e5961;
 
-  /* Text */
   --ct-ink: #172038;
   --ct-text: #33322c;
   --ct-text-soft: #626862;
   --ct-caption: #74766f;
   --ct-muted: #858983;
 
-  /* Surfaces */
   --ct-surface: #ffffff;
   --ct-paper: #fcfbf7;
   --ct-page: #fafbf9;
@@ -40,14 +39,12 @@
   --ct-border: #e6dfcf;
   --ct-border-cool: #d8e2dd;
 
-  /* Semantic accents */
   --ct-info: #4f8db8;
   --ct-warning: #d66c4a;
   --ct-legal: #6576b6;
   --ct-example: #5e9d70;
   --ct-insight: #d0a13a;
 
-  /* Compatibility aliases */
   --ct-editorial-gold: var(--ct-gold);
   --ct-editorial-gold-soft: var(--ct-gold-soft);
   --ct-editorial-green: var(--ct-green);
@@ -62,53 +59,153 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. PROSE BASE
+   2. PROSE BASE — :where() for zero specificity
    -------------------------------------------------------------------------- */
-.ct-prose p {
+:where(.ct-prose, .article-prose, body.mce-content-body) {
+  color: #33322c;
+  font-family: var(--ct-font-sans);
+  font-size: 15.5px;
+  line-height: 1.78;
+  overflow-wrap: anywhere;
+}
+
+:where(.ct-prose, .article-prose, body.mce-content-body) p {
   margin: 0 0 1.15em;
 }
 
-.ct-prose strong {
+:where(.ct-prose, .article-prose, body.mce-content-body) strong {
+  font-weight: 700;
+}
+
+:where(.ct-prose, .article-prose, body.mce-content-body) :is(h2, h3, h4, p):first-child {
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. ARTICLE INTRO
+   -------------------------------------------------------------------------- */
+:is(.ct-prose, .article-prose) p.ct-article-intro {
+  margin: 0 0 1.55em;
+  color: #4f5954;
+  font-size: 1.055em;
+  font-weight: 400;
+  line-height: 1.72;
+}
+
+:is(.ct-prose, .article-prose) p.ct-article-intro strong {
+  color: #294c3d;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   4. INLINE EMPHASIS
+   -------------------------------------------------------------------------- */
+.ct-key-emphasis {
+  color: #765419;
+  font-weight: 600;
+}
+
+mark.ct-key-highlight {
+  padding: 0.05em 0.22em 0.08em;
+  color: #144734;
+  background: #fff3c9;
+  border-radius: 3px;
+  font-weight: 600;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* --------------------------------------------------------------------------
+   5. SOURCE NOTE
+   -------------------------------------------------------------------------- */
+p.ct-source-note {
+  margin: -0.3em 0 1.35em;
+  color: #74766f;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.55;
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   6. SHARED LIST DEFAULTS
+   -------------------------------------------------------------------------- */
+:where(.ct-prose, .article-prose, body.mce-content-body) ul:not(.ct-checklist),
+:where(.ct-prose, .article-prose, body.mce-content-body) ol:not(.ct-steps) {
+  margin: 0.65em 0 1.35em;
+  padding-inline-start: 1.32em;
+}
+
+:where(.ct-prose, .article-prose, body.mce-content-body) ul:not(.ct-checklist) {
+  list-style: disc outside;
+}
+
+:where(.ct-prose, .article-prose, body.mce-content-body) ol:not(.ct-steps) {
+  list-style: decimal outside;
+}
+
+:where(.ct-prose, .article-prose, body.mce-content-body) ul:not(.ct-checklist) > li,
+:where(.ct-prose, .article-prose, body.mce-content-body) ol:not(.ct-steps) > li {
+  margin: 0.22em 0;
+  padding-inline-start: 0.14em;
+  line-height: 1.68;
+}
+
+:where(.ct-prose, .article-prose, body.mce-content-body) ul:not(.ct-checklist) > li::marker {
+  color: #d0a13a;
+  font-size: 0.76em;
+}
+
+:where(.ct-prose, .article-prose, body.mce-content-body) ol:not(.ct-steps) > li::marker {
+  color: #176b4d;
   font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
-   3. LINKS
+   7. LINKS
    -------------------------------------------------------------------------- */
-:where(.ct-prose, body.mce-content-body) a {
-  color: var(--ct-gold-dark);
+:is(.ct-prose, .article-prose) a {
+  color: #8a611a;
   font-weight: 600;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   text-decoration-color: rgba(208, 161, 58, 0.52);
 }
 
-:where(.ct-prose, body.mce-content-body) a:hover {
+:is(.ct-prose, .article-prose) a:hover {
   color: #6f4d12;
   text-decoration-thickness: 2px;
   text-decoration-color: currentColor;
 }
 
+body.mce-content-body a {
+  color: #8a611a;
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(208, 161, 58, 0.52);
+}
+
 /* --------------------------------------------------------------------------
-   4. BLOCKQUOTE
+   8. BLOCKQUOTE
    -------------------------------------------------------------------------- */
-:where(.ct-prose, body.mce-content-body) blockquote {
+:is(.ct-prose, .article-prose) blockquote {
   margin: 1.45em 0;
   padding: 13px 18px;
   color: #465149;
   border-left: 3px solid #e1c568;
   border-radius: 0 8px 8px 0;
-  background: var(--ct-paper);
+  background: #fcfbf7;
 }
 
-:where(.ct-prose, body.mce-content-body) blockquote p:last-child {
+:is(.ct-prose, .article-prose) blockquote p:last-child {
   margin-bottom: 0;
 }
 
 /* --------------------------------------------------------------------------
-   5. CODE / PRE
+   9. CODE / PRE
    -------------------------------------------------------------------------- */
-:where(.ct-prose, body.mce-content-body) pre {
+:is(.ct-prose, .article-prose) pre {
   margin: 0 0 18px;
   padding: 15px 17px;
   overflow: auto;
@@ -118,49 +215,52 @@
   font-size: 13px;
 }
 
-:where(.ct-prose, body.mce-content-body) code {
+:is(.ct-prose, .article-prose) code {
   padding: 1px 6px;
   border-radius: 6px;
   background: #f1f3ef;
   font-size: 0.92em;
 }
 
-:where(.ct-prose, body.mce-content-body) pre code {
+:is(.ct-prose, .article-prose) pre code {
   padding: 0;
   background: transparent;
 }
 
 /* --------------------------------------------------------------------------
-   6. LIST MARKERS (shared)
+   10. HR — Shared default
    -------------------------------------------------------------------------- */
-.ct-prose ul:not(.ct-checklist) > li::marker {
-  color: var(--ct-gold);
-  font-size: 0.76em;
-}
-
-.ct-prose ol:not(.ct-steps) > li::marker {
-  color: var(--ct-green);
-  font-weight: 700;
+:where(.ct-prose, .article-prose, body.mce-content-body) hr {
+  margin: 30px 0;
+  border: 0;
+  border-top: 1px solid #e6dfcf;
 }
 
 /* --------------------------------------------------------------------------
-   7. CONTENT BOX — Base
+   11. TEXT ALIGNMENT HELPERS
+   -------------------------------------------------------------------------- */
+.ct-align-left   { text-align: left; }
+.ct-align-center { text-align: center; }
+.ct-align-right  { text-align: right; }
+
+/* --------------------------------------------------------------------------
+   12. CONTENT BOX — Base (RESET)
    -------------------------------------------------------------------------- */
 .ct-content-box {
   margin: 28px 0;
   padding: 19px 21px;
-  border: 1px solid var(--ct-border-cool);
-  border-left-width: 4px;
-  border-radius: 10px;
-  background: var(--ct-surface-muted);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 /* --------------------------------------------------------------------------
-   8. CONTENT BOX — Title
+   13. CONTENT BOX — Titles
    -------------------------------------------------------------------------- */
 .ct-content-box__title {
   margin: 0 0 9px;
-  color: var(--ct-green);
+  color: #176b4d;
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.075em;
@@ -168,17 +268,30 @@
   text-transform: uppercase;
 }
 
-.is-info .ct-content-box__title  { color: #3c6e91; }
+.is-info .ct-content-box__title    { color: #3c6e91; }
 .is-warning .ct-content-box__title { color: #a9492f; }
-.is-legal .ct-content-box__title { color: #4f60a0; }
 .is-example .ct-content-box__title { color: #3f7a50; }
 
+/* Legal title — distinct style */
+.is-legal .ct-content-box__title {
+  color: #7d641e;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/* Body last child */
+.ct-content-box__body > :last-child {
+  margin-bottom: 0;
+}
+
 /* --------------------------------------------------------------------------
-   9. CONTENT BOX — is-note (Key Insight)
+   14. CONTENT BOX — is-note (Key Insight)
    -------------------------------------------------------------------------- */
 .ct-content-box.is-note {
-  border-color: #cfe2d5;
-  border-left-color: var(--ct-insight);
+  border: 1px solid #cfe2d5;
+  border-left: 4px solid #d0a13a;
+  border-radius: 10px;
   background: linear-gradient(135deg, #f1f8f3 0%, #fffaf0 100%);
   box-shadow: 0 10px 28px rgba(15, 81, 56, 0.05);
 }
@@ -191,76 +304,89 @@
 }
 
 /* --------------------------------------------------------------------------
-   10. CONTENT BOX — is-info
+   15. CONTENT BOX — is-info
    -------------------------------------------------------------------------- */
 .ct-content-box.is-info {
-  border-color: #bdd5e5;
-  border-left-color: var(--ct-info);
-  background: #f2f8fc;
+  border: 1px solid #c7dce9;
+  border-left: 4px solid #4f8db8;
+  border-radius: 8px 11px 11px 8px;
+  background: #f3f8fc;
 }
 
 /* --------------------------------------------------------------------------
-   11. CONTENT BOX — is-warning
+   16. CONTENT BOX — is-warning
    -------------------------------------------------------------------------- */
 .ct-content-box.is-warning {
-  border-color: #efc5b7;
-  border-left-color: var(--ct-warning);
+  border: 1px solid #efc5b7;
+  border-top: 3px solid #d66c4a;
+  border-radius: 10px;
   background: #fff5f0;
+  box-shadow: 0 7px 20px rgba(119, 57, 37, 0.035);
 }
 
 /* --------------------------------------------------------------------------
-   12. CONTENT BOX — is-legal
+   17. CONTENT BOX — is-legal
    -------------------------------------------------------------------------- */
 .ct-content-box.is-legal {
-  border-color: #c8cee7;
-  border-left-color: var(--ct-legal);
-  background: #f4f5fb;
+  color: #444b54;
+  border: 0;
+  border-left: 3px solid #e1c568;
+  border-radius: 0 10px 10px 0;
+  background: #fbfaf6;
+  box-shadow: none;
+}
+
+.ct-content-box.is-legal .ct-content-box__body > p:first-child {
+  color: #444b54;
+  font-size: 1.02em;
+  font-weight: 400;
+  line-height: 1.76;
 }
 
 /* --------------------------------------------------------------------------
-   13. CONTENT BOX — is-example
+   18. CONTENT BOX — is-example
    -------------------------------------------------------------------------- */
 .ct-content-box.is-example {
-  border-color: #bfdec6;
-  border-left-color: var(--ct-example);
-  background: #f2f8f3;
+  border: 1px solid #c8decf;
+  border-bottom: 3px solid #5e9d70;
+  border-radius: 10px 10px 7px 7px;
+  background: linear-gradient(180deg, #f7fbf8 0%, #f2f8f3 100%);
 }
 
 /* --------------------------------------------------------------------------
-   14. A/B TINT — Repeated callout alternation
+   19. A/B TINT — Even occurrence alternation
    -------------------------------------------------------------------------- */
 .ct-content-box:nth-child(even of .ct-content-box.is-note) {
   background: linear-gradient(135deg, #f6faf5 0%, #fffcf5 100%);
   border-color: #d8e8dc;
-  border-left-color: var(--ct-insight);
+  border-left-color: #d0a13a;
 }
 
 .ct-content-box:nth-child(even of .ct-content-box.is-info) {
-  background: #f7fbfe;
-  border-color: #cbdde9;
-  border-left-color: var(--ct-info);
+  background: #f8fbfd;
+  border-color: #cfdee8;
+  border-left-color: #4f8db8;
 }
 
 .ct-content-box:nth-child(even of .ct-content-box.is-warning) {
   background: #fff9f6;
   border-color: #f2d2c7;
-  border-left-color: var(--ct-warning);
+  border-top-color: #d66c4a;
 }
 
 .ct-content-box:nth-child(even of .ct-content-box.is-legal) {
-  background: #f8f8fd;
-  border-color: #d4d8eb;
-  border-left-color: var(--ct-legal);
+  background: #fffaf0;
+  border-left-color: #c9962e;
 }
 
 .ct-content-box:nth-child(even of .ct-content-box.is-example) {
-  background: #f7faf7;
-  border-color: #d1e5d5;
-  border-left-color: var(--ct-example);
+  background: linear-gradient(180deg, #fbfdfb 0%, #f6faf7 100%);
+  border-color: #d2e4d6;
+  border-bottom-color: #5e9d70;
 }
 
 /* --------------------------------------------------------------------------
-   15. CHECKLIST / STEPS
+   20. CHECKLIST / STEPS
    -------------------------------------------------------------------------- */
 .ct-checklist,
 .ct-steps {
@@ -306,7 +432,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   16. EDITORIAL MEDIA
+   21. EDITORIAL MEDIA
    -------------------------------------------------------------------------- */
 figure.ct-editorial-media {
   width: 100%;
@@ -337,28 +463,28 @@ figure.ct-editorial-media.is-content-width img {
 
 figcaption {
   margin-top: 8px;
-  color: var(--ct-caption);
+  color: #74766f;
   font-size: 12.5px;
   line-height: 1.55;
   text-align: center;
 }
 
 /* --------------------------------------------------------------------------
-   17. FAQ
+   22. FAQ
    -------------------------------------------------------------------------- */
 .ct-faq {
   margin: 24px 0;
-  border-top: 1px solid var(--ct-border);
+  border-top: 1px solid #e6dfcf;
 }
 
 .ct-faq__item {
-  border-bottom: 1px solid var(--ct-border);
+  border-bottom: 1px solid #e6dfcf;
 }
 
 .ct-faq__item summary {
   min-height: 48px;
   padding: 13px 34px 13px 4px;
-  color: var(--ct-ink);
+  color: #172038;
   font-weight: 700;
   cursor: pointer;
   list-style: none;
@@ -372,12 +498,16 @@ figcaption {
   padding: 0 4px 14px;
 }
 
+.ct-faq__answer > :last-child {
+  margin-bottom: 0;
+}
+
 .ct-faq__item:nth-child(even) {
-  background: var(--ct-page);
+  background: #fafbf9;
 }
 
 /* --------------------------------------------------------------------------
-   18. RELATED CONTENT
+   23. RELATED CONTENT
    -------------------------------------------------------------------------- */
 .ct-related-content {
   margin: 25px 0;
@@ -410,28 +540,28 @@ figcaption {
 }
 
 .ct-related-content__title {
-  color: var(--ct-ink);
+  color: #172038;
   font-size: 16px;
   line-height: 1.45;
 }
 
 .ct-related-content__summary {
-  color: var(--ct-text-soft);
+  color: #626862;
   font-size: 13px;
   line-height: 1.55;
 }
 
 /* --------------------------------------------------------------------------
-   19. FOCUS / ACCESSIBILITY
+   24. FOCUS / ACCESSIBILITY
    -------------------------------------------------------------------------- */
-.ct-prose a:focus-visible,
-.ct-prose summary:focus-visible {
+:is(.ct-prose, .article-prose) a:focus-visible,
+:is(.ct-prose, .article-prose) summary:focus-visible {
   outline: 3px solid rgba(208, 161, 58, 0.46);
   outline-offset: 3px;
 }
 
 /* --------------------------------------------------------------------------
-   20. PRINT
+   25. PRINT
    -------------------------------------------------------------------------- */
 @media print {
   figure.ct-editorial-media,
@@ -440,11 +570,15 @@ figcaption {
   .ct-accounting-entry,
   .ct-accounting-group,
   .ct-definition-list,
-  .ct-fact-list {
+  .ct-fact-list,
+  .ct-official-document,
+  .ct-official-header,
+  .ct-signature-grid {
     break-inside: avoid;
   }
 
-  .ct-content-box.is-note {
+  .ct-content-box.is-note,
+  .ct-content-box.is-warning {
     box-shadow: none;
   }
 
@@ -452,16 +586,38 @@ figcaption {
     overflow: visible;
   }
 
-  .ct-table-scroll > table.ct-data-table.is-complex {
+  .ct-table-scroll > table.ct-data-table,
+  table.ct-data-table :is(th, td) > table.ct-data-table {
     width: 100%;
     min-width: 0;
+    max-width: 100%;
+    table-layout: fixed;
+  }
+
+  .ct-article-sidebar,
+  .ct-related-section,
+  .ct-floating-toc-trigger,
+  .ct-floating-toc-panel,
+  .ct-floating-toc-backdrop {
+    display: none !important;
   }
 }
 
 /* --------------------------------------------------------------------------
-   21. MOBILE — Editorial media
+   26. MOBILE
    -------------------------------------------------------------------------- */
 @media (max-width: 640px) {
+  p.ct-source-note {
+    margin-top: -0.18em;
+    font-size: 12.75px;
+  }
+
+  :is(.ct-prose, .article-prose) p.ct-article-intro {
+    margin-bottom: 1.4em;
+    font-size: 1.03em;
+    line-height: 1.7;
+  }
+
   figure.ct-editorial-media {
     width: 100%;
     margin: 21px 0;
@@ -470,4 +626,29 @@ figcaption {
   .ct-content-box.is-note .ct-content-box__body > p:first-child {
     font-size: 17px;
   }
+
+  .ct-content-box.is-legal .ct-content-box__body > p:first-child {
+    font-size: 1.01em;
+    line-height: 1.72;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   27. REDUCED MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .ct-floating-toc-panel,
+  .ct-floating-toc-trigger,
+  .ct-floating-toc-backdrop {
+    transition: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   28. HIDDEN CONTRACT
+   -------------------------------------------------------------------------- */
+.ct-floating-toc-trigger[hidden],
+.ct-floating-toc-panel[hidden],
+.ct-floating-toc-backdrop[hidden] {
+  display: none !important;
 }
