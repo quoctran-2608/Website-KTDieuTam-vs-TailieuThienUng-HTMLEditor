@@ -1,0 +1,104 @@
+/* ==========================================================================
+   EDITORIAL DESIGN SYSTEM v2.4.3 — Official Form Body Rhythm
+   File: editorial-official-form-rhythm.css
+   Snapshot: 2026-09-01b
+   Purpose: Final presentation sublayer for official-form complex table bodies.
+            Locks direct complex-table body cells to paper white (no zebra,
+            no hover). Restores meaningful body rhythm for all-blank input
+            rows and full-width section/description rows.
+   Load order: MUST load AFTER article-editorial-system.css and any other
+               article composition CSS. On Thư Viện / TinyMCE, load
+               immediately after editorial-structured-content.css.
+   Source: ketoandieutam.vn — EDS v2.4.3
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. OFFICIAL COMPLEX TABLE BODY — No zebra, no hover
+   --------------------------------------------------------------------------
+   :where() wrapper keeps the .ct-prose / .article-prose / body.mce-content-body
+   part at zero specificity, but the rest of the selector chain is high enough
+   to override generic editorial zebra/hover from structured-content.css.
+   Direct-child scoped so nested tables keep their own contextual treatment.
+   -------------------------------------------------------------------------- */
+
+:where(.ct-prose, .article-prose, body.mce-content-body)
+  .ct-official-document
+  table.ct-data-table.is-complex
+  > tbody
+  > tr
+  > td {
+  background: #fff;
+}
+
+@media (hover: hover) {
+  :where(.ct-prose, .article-prose, body.mce-content-body)
+    .ct-official-document
+    table.ct-data-table.is-complex
+    > tbody
+    > tr:hover
+    > td {
+    background: #fff;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. ALL-BLANK INPUT ROW
+   --------------------------------------------------------------------------
+   Pattern: direct tbody > tr with at least two direct td cells and
+   NO non-empty direct td. These rows represent writable form-owned
+   input slots, not compressed separators.
+   -------------------------------------------------------------------------- */
+
+/* Desktop / tablet */
+:where(.ct-prose, .article-prose, body.mce-content-body)
+  .ct-official-document
+  table.ct-data-table.is-complex
+  > tbody
+  > tr:has(> td:nth-child(2)):not(:has(> td:not(:empty)))
+  > td {
+  height: 24px;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+/* --------------------------------------------------------------------------
+   3. FULL-WIDTH SECTION / DESCRIPTION BAND
+   --------------------------------------------------------------------------
+   Pattern: the row has one direct td with colspan, such as
+   "1. Hàng hóa, dịch vụ ..." — a section label or long description.
+   Source typography/italics remain authoritative; no invented fill or bold.
+   -------------------------------------------------------------------------- */
+
+/* Desktop / tablet */
+.ct-official-document
+  table.ct-data-table.is-complex
+  > tbody > tr > td:only-child[colspan] {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   4. MOBILE (max-width: 640px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  /* All-blank input row — smaller height */
+  :where(.ct-prose, .article-prose, body.mce-content-body)
+    .ct-official-document
+    table.ct-data-table.is-complex
+    > tbody
+    > tr:has(> td:nth-child(2)):not(:has(> td:not(:empty)))
+    > td {
+    height: 20px;
+  }
+
+  /* Full-width section / description band */
+  .ct-official-document
+    table.ct-data-table.is-complex
+    > tbody > tr > td:only-child[colspan] {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    line-height: 1.35;
+  }
+}

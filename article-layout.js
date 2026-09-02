@@ -78,13 +78,14 @@
     });
   }
 
-  /* --- EDS v2.1 CSS injection --- */
+  /* --- EDS v2.4.3 CSS injection --- */
   (function loadEditorialCSS() {
     var root = rootPath();
     var cssFiles = [
       root + 'assets/css/editorial-content.css',
       root + 'assets/css/editorial-structured-content.css',
-      root + 'assets/css/article-editorial-system.css'
+      root + 'assets/css/article-editorial-system.css',
+      root + 'assets/css/editorial-official-form-rhythm.css'
     ];
     cssFiles.forEach(function (href) {
       if (document.querySelector('link[href="' + href + '"]')) return;
