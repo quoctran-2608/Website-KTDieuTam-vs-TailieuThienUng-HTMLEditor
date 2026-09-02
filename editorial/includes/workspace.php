@@ -1,10 +1,18 @@
 <?php
 /**
  * Workspace / Editing Lock / Draft Service Module
- * Editorial V2 - Phase 4
+ * Editorial V2 — Phase 4 + Phase 5 corrective fixes
  *
  * Parser functions adapted from admin/includes/article_parser.php.
  * Lock/draft business logic for multi-user editing safety.
+ *
+ * Phase 5 fixes:
+ * - A1: Taxonomy preserved server-side, not from POST
+ * - A2: Strict base64 decode
+ * - A3: Release lock requires token
+ * - A4: Lock validation inside draft save transaction
+ * - A5: JSON encode failure handled
+ * - A6: Heartbeat rowCount check
  */
 declare(strict_types=1);
 
@@ -94,8 +102,6 @@ function editorial_parse_article_file(string $path): array
 /**
  * Acquire or reuse editing lock for article.
  * Uses editorial_transaction() with BEGIN IMMEDIATE.
- *
- * @return array{ok: bool, lock_token?: string, expires_at?: string, message: string}
  */
 function editorial_acquire_article_lock(string $articleId, string $userId): array
 {
@@ -124,16 +130,14 @@ function editorial_acquire_article_lock(string $articleId, string $userId): arra
         if ($lock) {
             $lockExpiry = strtotime((string) $lock['expires_at']);
             if ($lockExpiry !== false && $lockExpiry < time()) {
-                // Expired — delete
                 $db->prepare('DELETE FROM editorial_locks WHERE article_id = :aid')->execute(['aid' => $articleId]);
                 $lock = null;
             } elseif ((string) $lock['user_id'] !== $userId) {
-                // Active lock by other user
                 $otherUser = editorial_find_user_by_id((string) $lock['user_id']);
                 $name = $otherUser ? (string) $otherUser['display_name'] : 'người khác';
                 return ['ok' => false, 'message' => 'Bài viết đang được chỉnh sửa bởi ' . $name . '.'];
             } else {
-                // Active lock by same user — reuse, extend TTL
+                // Same user — reuse, extend TTL
                 $db->prepare('UPDATE editorial_locks SET heartbeat_at = :hb, expires_at = :exp WHERE article_id = :aid')
                     ->execute(['hb' => $now, 'exp' => $expiresAt, 'aid' => $articleId]);
                 return ['ok' => true, 'lock_token' => (string) $lock['lock_token'], 'expires_at' => $expiresAt, 'message' => 'Tiếp tục phiên chỉnh sửa.'];
@@ -164,9 +168,7 @@ function editorial_get_article_lock(string $articleId): ?array
 }
 
 /**
- * Validate a lock token.
- *
- * @return array{ok: bool, code: string, message: string}
+ * Validate a lock token (for UI pre-checks, NOT final authority for writes).
  */
 function editorial_validate_article_lock(string $articleId, string $userId, string $lockToken): array
 {
@@ -189,6 +191,7 @@ function editorial_validate_article_lock(string $articleId, string $userId, stri
 
 /**
  * Extend lock TTL (heartbeat).
+ * FIX A6: check rowCount after UPDATE.
  */
 function editorial_heartbeat_article_lock(string $articleId, string $userId, string $lockToken): array
 {
@@ -199,24 +202,31 @@ function editorial_heartbeat_article_lock(string $articleId, string $userId, str
     $now = date('c');
     $expiresAt = date('c', time() + EDITORIAL_ARTICLE_LOCK_TTL);
 
-    $db->prepare('UPDATE editorial_locks SET heartbeat_at = :hb, expires_at = :exp WHERE article_id = :aid AND user_id = :uid AND lock_token = :token')
-        ->execute(['hb' => $now, 'exp' => $expiresAt, 'aid' => $articleId, 'uid' => $userId, 'token' => $lockToken]);
+    $stmt = $db->prepare('UPDATE editorial_locks SET heartbeat_at = :hb, expires_at = :exp WHERE article_id = :aid AND user_id = :uid AND lock_token = :token');
+    $stmt->execute(['hb' => $now, 'exp' => $expiresAt, 'aid' => $articleId, 'uid' => $userId, 'token' => $lockToken]);
+
+    if ($stmt->rowCount() === 0) {
+        return ['ok' => false, 'code' => 'lock_gone', 'message' => 'Phiên chỉnh sửa không còn hợp lệ.'];
+    }
 
     return ['ok' => true, 'expires_at' => $expiresAt];
 }
 
 /**
  * Release editing lock. Does NOT release assignment or delete draft.
+ * FIX A3: requires lock_token. DELETE must match token to prevent
+ * stale tab from deleting a newer tab's lock.
  */
-function editorial_release_article_lock(string $articleId, string $userId): void
+function editorial_release_article_lock(string $articleId, string $userId, string $lockToken): void
 {
     $db = editorial_db();
-    $stmt = $db->prepare('DELETE FROM editorial_locks WHERE article_id = :aid AND user_id = :uid');
-    $stmt->execute(['aid' => $articleId, 'uid' => $userId]);
+    $stmt = $db->prepare('DELETE FROM editorial_locks WHERE article_id = :aid AND user_id = :uid AND lock_token = :token');
+    $stmt->execute(['aid' => $articleId, 'uid' => $userId, 'token' => $lockToken]);
 
     if ($stmt->rowCount() > 0) {
         editorial_log_activity('article.lock.released', $articleId, $userId);
     }
+    // If token didn't match (stale tab), silently ignore — not an error.
 }
 
 // ─── Draft ──────────────────────────────────────────────────────
@@ -242,21 +252,54 @@ function editorial_get_draft(string $articleId, string $userId): ?array
 /**
  * Save draft with optimistic concurrency (version check).
  *
+ * FIX A4: ALL authorization (assignment, status, lock) checked INSIDE transaction.
+ * FIX A5: JSON encode failure blocks save.
+ *
  * @return array{ok: bool, version?: int, message: string}
  */
 function editorial_save_draft(string $articleId, string $userId, array $payload, string $baseLiveHash, int $expectedVersion, string $lockToken): array
 {
-    // Validate lock first
-    $val = editorial_validate_article_lock($articleId, $userId, $lockToken);
-    if (!$val['ok']) return $val;
+    // FIX A5: Pre-validate JSON encode
+    $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    if ($payloadJson === false) {
+        return ['ok' => false, 'code' => 'json_error', 'message' => 'Không thể mã hóa dữ liệu bản nháp. Bản nháp chưa được lưu.'];
+    }
 
-    return editorial_transaction(function () use ($articleId, $userId, $payload, $baseLiveHash, $expectedVersion): array {
+    // FIX A4: All authorization inside transaction
+    return editorial_transaction(function () use ($articleId, $userId, $payloadJson, $baseLiveHash, $expectedVersion, $lockToken): array {
         $db = editorial_db();
         $now = date('c');
-        $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 
+        // Step 1-3: Verify assignment + status
+        $state = editorial_get_article_state($articleId);
+        if (!$state || (string) ($state['assigned_user_id'] ?? '') !== $userId) {
+            return ['ok' => false, 'code' => 'not_owner', 'message' => 'Bạn không phải người phụ trách bài viết này.'];
+        }
+        if (!in_array((string) $state['status'], ['editing', 'returned'], true)) {
+            return ['ok' => false, 'code' => 'invalid_status', 'message' => 'Bài viết không ở trạng thái cho phép chỉnh sửa.'];
+        }
+
+        // Step 4-5: Verify lock inside transaction (authoritative check)
+        $lockStmt = $db->prepare('SELECT * FROM editorial_locks WHERE article_id = :aid');
+        $lockStmt->execute(['aid' => $articleId]);
+        $lock = $lockStmt->fetch();
+
+        if (!$lock) {
+            return ['ok' => false, 'code' => 'no_lock', 'message' => 'Không có phiên chỉnh sửa nào đang hoạt động.'];
+        }
+        if ((string) $lock['user_id'] !== $userId) {
+            return ['ok' => false, 'code' => 'wrong_user', 'message' => 'Phiên chỉnh sửa thuộc về người dùng khác.'];
+        }
+        if ((string) $lock['lock_token'] !== $lockToken) {
+            return ['ok' => false, 'code' => 'invalid_token', 'message' => 'Token phiên chỉnh sửa không hợp lệ.'];
+        }
+        $expiry = strtotime((string) $lock['expires_at']);
+        if ($expiry !== false && $expiry < time()) {
+            return ['ok' => false, 'code' => 'lock_expired', 'message' => 'Phiên chỉnh sửa đã hết hạn. Vui lòng tải lại workspace để tiếp tục.'];
+        }
+
+        // Step 6-7: Version check + save
         if ($expectedVersion === 0) {
-            // New draft — check no existing
             $stmt = $db->prepare('SELECT version FROM editorial_drafts WHERE article_id = :aid AND user_id = :uid');
             $stmt->execute(['aid' => $articleId, 'uid' => $userId]);
             if ($stmt->fetch()) {
@@ -267,7 +310,6 @@ function editorial_save_draft(string $articleId, string $userId, array $payload,
                 ->execute(['aid' => $articleId, 'uid' => $userId, 'payload' => $payloadJson, 'hash' => $baseLiveHash, 'now' => $now]);
             $newVersion = 1;
         } else {
-            // Update existing — optimistic version check
             $stmt = $db->prepare('UPDATE editorial_drafts SET payload_json = :payload, updated_at = :now, version = version + 1 WHERE article_id = :aid AND user_id = :uid AND version = :ver');
             $stmt->execute(['payload' => $payloadJson, 'now' => $now, 'aid' => $articleId, 'uid' => $userId, 'ver' => $expectedVersion]);
 
@@ -277,6 +319,7 @@ function editorial_save_draft(string $articleId, string $userId, array $payload,
             $newVersion = $expectedVersion + 1;
         }
 
+        // Step 8: Activity
         editorial_log_activity('article.draft.saved', $articleId, $userId, json_encode(['draft_version' => $newVersion]));
 
         return ['ok' => true, 'version' => $newVersion, 'message' => 'Lưu bản nháp thành công (v' . $newVersion . ').'];
@@ -287,6 +330,7 @@ function editorial_save_draft(string $articleId, string $userId, array $payload,
 
 /**
  * Build initial draft payload from parsed HTML.
+ * FIX A1: includes all taxonomy fields from catalog for preservation.
  */
 function editorial_build_initial_payload(array $parsed, array $article, array $articleMeta): array
 {
@@ -302,11 +346,49 @@ function editorial_build_initial_payload(array $parsed, array $article, array $a
         'featured_image' => (string) ($articleMeta['image'] ?? ''),
         'tags' => $tags,
         'tags_text' => $tagsText,
+        // Taxonomy (read-only, preserved server-side)
         'section_key' => (string) ($article['section'] ?? ''),
         'section_label' => (string) ($article['section_label'] ?? ''),
+        'library_kind_key' => (string) ($article['library_kind_key'] ?? ''),
+        'library_kind_label' => (string) ($article['library_kind_label'] ?? ''),
         'topic_lv1_key' => (string) ($article['topic_lv1_key'] ?? ''),
         'topic_lv1_label' => (string) ($article['topic_lv1_label'] ?? ''),
         'topic_lv2_key' => (string) ($article['topic_lv2_key'] ?? ''),
         'topic_lv2_label' => (string) ($article['topic_lv2_label'] ?? ''),
+        'topic_lv3_key' => (string) ($article['topic_lv3_key'] ?? ''),
+        'topic_lv3_label' => (string) ($article['topic_lv3_label'] ?? ''),
     ];
+}
+
+/**
+ * Build full draft payload merging editable POST data with canonical taxonomy.
+ * FIX A1: taxonomy comes from article catalog/existing draft, NOT from POST.
+ */
+function editorial_merge_draft_payload(array $editablePost, array $article, ?array $existingDraftPayload = null): array
+{
+    // Editable fields from POST
+    $payload = [
+        'title' => (string) ($editablePost['title'] ?? ''),
+        'excerpt' => (string) ($editablePost['excerpt'] ?? ''),
+        'prose_html' => (string) ($editablePost['prose_html'] ?? ''),
+        'publish_date' => (string) ($editablePost['publish_date'] ?? ''),
+        'modified_date' => (string) ($editablePost['modified_date'] ?? ''),
+        'featured_image' => (string) ($editablePost['featured_image'] ?? ''),
+        'tags_text' => (string) ($editablePost['tags_text'] ?? ''),
+    ];
+
+    // Taxonomy — from existing draft if available, else from catalog (never from POST)
+    $taxSource = $existingDraftPayload ?? [];
+    $payload['section_key'] = (string) ($taxSource['section_key'] ?? ($article['section'] ?? ''));
+    $payload['section_label'] = (string) ($taxSource['section_label'] ?? ($article['section_label'] ?? ''));
+    $payload['library_kind_key'] = (string) ($taxSource['library_kind_key'] ?? ($article['library_kind_key'] ?? ''));
+    $payload['library_kind_label'] = (string) ($taxSource['library_kind_label'] ?? ($article['library_kind_label'] ?? ''));
+    $payload['topic_lv1_key'] = (string) ($taxSource['topic_lv1_key'] ?? ($article['topic_lv1_key'] ?? ''));
+    $payload['topic_lv1_label'] = (string) ($taxSource['topic_lv1_label'] ?? ($article['topic_lv1_label'] ?? ''));
+    $payload['topic_lv2_key'] = (string) ($taxSource['topic_lv2_key'] ?? ($article['topic_lv2_key'] ?? ''));
+    $payload['topic_lv2_label'] = (string) ($taxSource['topic_lv2_label'] ?? ($article['topic_lv2_label'] ?? ''));
+    $payload['topic_lv3_key'] = (string) ($taxSource['topic_lv3_key'] ?? ($article['topic_lv3_key'] ?? ''));
+    $payload['topic_lv3_label'] = (string) ($taxSource['topic_lv3_label'] ?? ($article['topic_lv3_label'] ?? ''));
+
+    return $payload;
 }

@@ -189,6 +189,16 @@ function editorial_migration_list(): array
             CREATE INDEX IF NOT EXISTS idx_locks_expires
                 ON editorial_locks(expires_at);
         ',
+
+        4 => '
+            -- Phase 5: Revision traceability
+            ALTER TABLE editorial_revisions ADD COLUMN assignment_id TEXT;
+            ALTER TABLE editorial_revisions ADD COLUMN source_draft_version INTEGER;
+
+            -- Index for assignment-based revision queries
+            CREATE INDEX IF NOT EXISTS idx_revisions_assignment
+                ON editorial_revisions(assignment_id);
+        ',
     ];
 }
 

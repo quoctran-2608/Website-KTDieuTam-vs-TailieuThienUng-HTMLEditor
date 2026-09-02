@@ -161,7 +161,7 @@ published     → Đã xuất bản
 - **Assignment**: ai chịu trách nhiệm bài (persistent, không hết hạn tự động)
 - **Editing Lock**: phiên chỉnh sửa đang hoạt động (TTL 15 phút, heartbeat 60s)
 - **Draft**: nội dung mutable đang chỉnh (SQLite, optimistic versioning)
-- **Revision**: immutable history (Phase 5, chưa làm)
+- **Revision**: immutable history (Phase 5 ✅)
 
 ### Lock TTL
 - `EDITORIAL_ARTICLE_LOCK_TTL = 900` (15 phút)
@@ -196,13 +196,182 @@ published     → Đã xuất bản
 - Draft lưu vào SQLite `editorial_drafts`
 - Không `file_put_contents()` vào HTML bài viết
 
+## Phase 4 Corrective Fixes (applied in Phase 5)
+
+### A1. Taxonomy Preservation
+- Save Draft chỉ lấy editable fields (title, excerpt, prose_html, publish_date, modified_date, featured_image, tags_text) từ POST.
+- Taxonomy fields (section_key/label, library_kind_key/label, topic_lv1–3 key/label) **KHÔNG** lấy từ POST.
+- `editorial_merge_draft_payload()` lấy taxonomy từ existing draft payload hoặc article catalog (server-side).
+- `editorial_build_initial_payload()` bao gồm tất cả taxonomy fields khi tạo payload ban đầu.
+
+### A2. Strict Base64 Decode
+- `base64_decode($value, true)` — nếu trả `false`, block save ngay.
+- Message: "Dữ liệu nội dung gửi lên không hợp lệ. Bản nháp chưa được lưu."
+- Không ghi draft rỗng do decode lỗi.
+
+### A3. Release Lock Requires Token
+- `editorial_release_article_lock(articleId, userId, lockToken)` — DELETE yêu cầu match cả 3 điều kiện.
+- Stale tab (token cũ) KHÔNG xóa được lock mới của tab khác.
+- Nếu token không match: silently ignore, không log `article.lock.released`.
+- `exit_workspace` gửi `lock_token` hiện tại.
+
+### A4. Lock Validation Inside Draft Save Transaction
+- `editorial_save_draft()` dùng `BEGIN IMMEDIATE` transaction.
+- Bên trong transaction: (1) verify assignment+status, (2) verify lock user/token/expiry, (3) version check, (4) save.
+- TOCTOU window được loại bỏ.
+
+### A5. JSON Encode Failure
+- `json_encode($payload)` trả `false` → block save, không bind `false` vào SQLite.
+- Message: "Không thể mã hóa dữ liệu bản nháp. Bản nháp chưa được lưu."
+
+### A6. Heartbeat Safety
+- `editorial_heartbeat_article_lock()` UPDATE match cả article_id + user_id + lock_token.
+- `rowCount() === 0` → response `{ok: false}`, không trả `{ok: true}` nếu lock biến mất.
+
+## Phase 5 — Revision History & Compare
+
+### Revision vs Draft
+- **Draft** = mutable working copy, save nhiều lần, optimistic version locking.
+- **Revision** = immutable snapshot, lịch sử chính thức, không sửa sau khi tạo.
+- Không tạo revision mỗi lần Save Draft.
+
+### Snapshot Storage
+- Path: `editorial/storage/revisions/<2-char-prefix>/<sha256-article-id>/rev_<id>.json`
+- SHA-256 sharding của article_id cho filesystem path.
+- Server tự tạo path, không nhận từ request.
+- `.gitignore` đã exclude `editorial/storage/revisions/`.
+- `.htaccess` deny web access (nằm dưới `editorial/storage/`).
+- Snapshot chỉ đọc qua authenticated PHP (`editorial_read_revision_snapshot()`).
+
+### Snapshot Format
+```json
+{
+  "schema_version": 1,
+  "article_id": "...",
+  "payload": {
+    "title": "...",
+    "excerpt": "...",
+    "prose_html": "...",
+    "publish_date": "...",
+    "modified_date": "...",
+    "featured_image": "...",
+    "tags_text": "...",
+    "section_key": "...",
+    "section_label": "...",
+    "library_kind_key": "...",
+    "library_kind_label": "...",
+    "topic_lv1_key": "...",
+    "topic_lv1_label": "...",
+    "topic_lv2_key": "...",
+    "topic_lv2_label": "...",
+    "topic_lv3_key": "...",
+    "topic_lv3_label": "..."
+  }
+}
+```
+
+### Canonical Content Hash
+- `editorial_revision_content_hash()` = SHA-256 of canonical JSON.
+- `editorial_stable_sort_keys()` → recursive stable key ordering.
+- `JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES`.
+- Cùng payload → cùng hash. Không hash metadata (created_at, revision_id).
+
+### Migration V4
+- `ALTER TABLE editorial_revisions ADD COLUMN assignment_id TEXT`
+- `ALTER TABLE editorial_revisions ADD COLUMN source_draft_version INTEGER`
+- Index: `idx_revisions_assignment ON editorial_revisions(assignment_id)`
+
+### Active Assignment Helper
+- `editorial_get_active_assignment(articleId)` — query `editorial_assignments WHERE released_at IS NULL`.
+- Return null nếu 0 hoặc >1 active rows.
+- Log diagnostic `article.assignment.conflict_detected` nếu >1.
+
+### Baseline Revision
+- Type: `revision_type = 'baseline'` — đại diện live content trước editorial.
+- Lazy-create khi workspace mở và assignment chưa có baseline.
+- Điều kiện: `current_live_hash === base_live_hash`.
+- Nếu hash khác → skip, log `article.baseline.skipped_conflict`.
+- Không bulk tạo baseline cho 2.000 bài, chỉ lazy khi workspace mở.
+
+### Editorial Revision
+- Action: "Tạo phiên bản" trong workspace (không gọi Publish).
+- Snapshot từ **draft đã lưu trong SQLite**, KHÔNG từ POST data.
+- Flow: POST `create_revision` → verify owner/lock/status/draft_version → load draft từ DB → snapshot → insert revision.
+- Duplicate prevention: compare `content_hash` với latest editorial revision.
+- Note: optional, max 500 ký tự, escaped khi render.
+
+### Revision Numbering
+- Mỗi article: 1, 2, 3, ...
+- `MAX(revision_no) + 1` bên trong `BEGIN IMMEDIATE`.
+- Schema UNIQUE `(article_id, revision_no)`.
+
+### Atomic Snapshot Write
+1. Generate random revision id.
+2. Canonicalize snapshot.
+3. Write temp file cùng filesystem.
+4. Atomic rename → final path.
+5. DB transaction insert revision metadata.
+6. Nếu DB fail → best-effort unlink snapshot.
+7. Nếu final path đã tồn tại → idempotent return.
+
+### Snapshot Path Validation
+- Read snapshot: resolve dưới `EDITORIAL_STORAGE_PATH/revisions`.
+- `realpath()` containment check.
+- Nếu snapshot missing/corrupt → UI báo "Snapshot không khả dụng", không fatal.
+
+### Revision Immutability
+- Không có `UPDATE editorial_revisions SET snapshot...`.
+- Không có action "Edit revision".
+- Restore về sau tạo revision mới, không sửa cũ.
+
+### Article State Update
+- Sau tạo editorial revision: set `editorial_article_state.current_revision_id` = latest.
+- Status giữ editing/returned. Không tự chuyển ready_review/approved/published.
+
+### Revision History UI (`editorial/revisions.php`)
+- Authorization: Admin xem mọi article; Editor chỉ xem nếu là current owner.
+- Hiển thị: Revision #, Loại, Người tạo, Thời gian, Draft version, Ghi chú, Hash ngắn, Actions.
+- Loại: baseline → Bản gốc, editorial → Bản biên tập, published → Đã xuất bản, restore → Khôi phục.
+- CTA: "So sánh với bản trước" link tới compare.php.
+
+### Workspace Revision Panel
+- Trong article.php: panel "Lịch sử phiên bản" hiển thị 5 revision gần nhất.
+- Link "Xem toàn bộ lịch sử" tới revisions.php.
+
+### Compare UI (`editorial/compare.php`)
+- Query: `?id=<article_id>&from=<revision_id>&to=<revision_id>`.
+- Server verify: cả hai revision thuộc article_id, user có quyền, snapshot tồn tại.
+- Side-by-side revision headers: BẢN TRƯỚC / BẢN SAU.
+- Metadata compare: field-level, chỉ highlight thay đổi.
+- Prose diff: normalize thành text (strip_tags), line-based diff.
+- HTML nguồn: escaped, side-by-side (collapsed mặc định).
+
+### Diff Algorithm
+- LCS line-based diff cho content nhỏ.
+- Performance guard: `m + n > maxTokens/10` → fallback del-all/add-all.
+- Không dùng unbounded O(n*m) trên article lớn.
+
+### Activity Events
+- `article.revision.baseline_created` — revision_id, revision_no, revision_type, content_hash.
+- `article.revision.created` — revision_id, revision_no, revision_type, source_draft_version, content_hash.
+- Không log full prose, full snapshot JSON, hoặc lock token.
+
+### Dashboard
+- "Revision & so sánh" → Đã sẵn sàng.
+
+### Không sửa
+- `/admin/` — chỉ đọc/tham khảo.
+- Public HTML — không ghi file bài viết.
+- Status không tự chuyển ready_review/approved/published.
+- Không review, approve, publish.
+
 ## Roadmap
 
 1. **Foundation** (Phase 1) ✅ — Schema, auth, bootstrap, dashboard shell
 2. **Users** (Phase 2) ✅ — Quản lý thành viên, auth revalidation, must_change_password
 3. **Assignment** (Phase 3) ✅ — Article catalog, atomic claim, my-work, dashboard metrics
 4. **Workspace/Lock/Draft** (Phase 4) ✅ — TinyMCE editor, lock, heartbeat, draft versioning
-5. **Revisions/Compare** — Snapshot, diff bản cũ/mới
+5. **Revisions/Compare** (Phase 5) ✅ — Baseline, editorial revision, immutable snapshot, content hash, compare, diff
 6. **Review** — Gửi duyệt, trả lại, approve
 7. **Safe Publish** — Optimistic lock, backup, ghi HTML gốc
 8. **Hardening** — Audit dashboard, bulk ops, performance

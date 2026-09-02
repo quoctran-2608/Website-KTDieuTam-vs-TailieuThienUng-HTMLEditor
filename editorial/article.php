@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ . '/includes/workspace.php';
+require_once __DIR__ . '/includes/revision.php';
 require_once __DIR__ . '/includes/layout.php';
 
 editorial_require_auth();
@@ -65,10 +66,18 @@ if (editorial_is_post()) {
         $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
         $expectedVersion = (int) ($_POST['expected_draft_version'] ?? 0);
 
-        // Decode prose_html (base64 workaround for WAF)
-        $proseHtml = (isset($_POST['prose_html_b64']) && $_POST['prose_html_b64'] !== '')
-            ? (string) base64_decode((string) $_POST['prose_html_b64'], true)
-            : (string) ($_POST['prose_html'] ?? '');
+        // FIX A2: Strict base64 decode
+        $proseHtml = null;
+        if (isset($_POST['prose_html_b64']) && $_POST['prose_html_b64'] !== '') {
+            $decoded = base64_decode((string) $_POST['prose_html_b64'], true);
+            if ($decoded === false) {
+                editorial_flash_set('danger', 'Dữ liệu nội dung gửi lên không hợp lệ. Bản nháp chưa được lưu.');
+                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+            }
+            $proseHtml = $decoded;
+        } else {
+            $proseHtml = (string) ($_POST['prose_html'] ?? '');
+        }
 
         $title = trim((string) ($_POST['title'] ?? ''));
         if ($title === '') {
@@ -76,7 +85,8 @@ if (editorial_is_post()) {
             editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
         }
 
-        $payload = [
+        // FIX A1: Editable fields only from POST. Taxonomy from server-side.
+        $editablePost = [
             'title' => $title,
             'excerpt' => trim((string) ($_POST['excerpt'] ?? '')),
             'prose_html' => $proseHtml,
@@ -84,10 +94,13 @@ if (editorial_is_post()) {
             'modified_date' => trim((string) ($_POST['modified_date'] ?? '')),
             'featured_image' => trim((string) ($_POST['featured_image'] ?? '')),
             'tags_text' => trim((string) ($_POST['tags_text'] ?? '')),
-            'section_key' => trim((string) ($_POST['section_key'] ?? '')),
-            'topic_lv1_key' => trim((string) ($_POST['topic_lv1_key'] ?? '')),
-            'topic_lv2_key' => trim((string) ($_POST['topic_lv2_key'] ?? '')),
         ];
+
+        // Get existing draft payload for taxonomy preservation
+        $existingDraft = editorial_get_draft($articleId, $currentUserId);
+        $existingPayload = $existingDraft ? ($existingDraft['payload'] ?? null) : null;
+
+        $payload = editorial_merge_draft_payload($editablePost, $article, $existingPayload);
 
         $baseLiveHash = (string) ($state['base_live_hash'] ?? '');
         $result = editorial_save_draft($articleId, $currentUserId, $payload, $baseLiveHash, $expectedVersion, $lockToken);
@@ -96,10 +109,24 @@ if (editorial_is_post()) {
         editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
     }
 
+    // FIX A3: exit_workspace must send lock_token
     if ($intent === 'exit_workspace') {
-        editorial_release_article_lock($articleId, $currentUserId);
+        $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
+        editorial_release_article_lock($articleId, $currentUserId, $lockToken);
         editorial_flash_set('info', 'Đã thoát workspace biên tập.');
         editorial_redirect(editorial_url('my-work.php'));
+    }
+
+    // Phase 5: Create revision from saved draft
+    if ($intent === 'create_revision') {
+        $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
+        $expectedVersion = (int) ($_POST['expected_draft_version'] ?? 0);
+        $revisionNote = trim((string) ($_POST['revision_note'] ?? ''));
+
+        $result = editorial_create_editorial_revision($articleId, $currentUserId, $lockToken, $expectedVersion, $revisionNote);
+
+        editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message'] ?? ($result['ok'] ? 'Tạo phiên bản thành công.' : 'Không thể tạo phiên bản.'));
+        editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
     }
 
     editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
@@ -115,6 +142,24 @@ if (!$lockResult['ok']) {
 $lockToken = $lockResult['lock_token'];
 $lockExpires = $lockResult['expires_at'];
 
+// ─── Lazy baseline creation (Phase 5) ───────────────────────────
+
+$assignment = editorial_get_active_assignment($articleId);
+if ($assignment) {
+    $existingBaseline = editorial_get_article_revisions($articleId, 50);
+    $hasBaseline = false;
+    foreach ($existingBaseline as $rev) {
+        if (($rev['assignment_id'] ?? '') === $assignment['id'] && $rev['revision_type'] === 'baseline') {
+            $hasBaseline = true;
+            break;
+        }
+    }
+    if (!$hasBaseline) {
+        $baselineResult = editorial_create_baseline_revision($articleId, $currentUserId, $assignment['id']);
+        // Silently log if skipped due to conflict (no flash spam)
+    }
+}
+
 // ─── Load draft or parse live HTML ───────────────────────────────
 
 $draft = editorial_get_draft($articleId, $currentUserId);
@@ -126,7 +171,6 @@ if ($draft !== null) {
     $draftVersion = (int) ($draft['version'] ?? 0);
     $draftSavedAt = (string) ($draft['updated_at'] ?? '');
 } else {
-    // Parse live HTML to create initial form data
     $parsed = editorial_parse_article_file($htmlPath);
     if (!$parsed['ok']) {
         editorial_flash_set('danger', 'Không thể parse file HTML: ' . ($parsed['message'] ?? ''));
@@ -140,6 +184,10 @@ if ($draft !== null) {
 $currentLiveHash = editorial_live_hash($htmlPath);
 $baseLiveHash = (string) ($state['base_live_hash'] ?? '');
 $liveHashConflict = ($baseLiveHash !== '' && $currentLiveHash !== null && $currentLiveHash !== $baseLiveHash);
+
+// ─── Recent revisions (Phase 5) ─────────────────────────────────
+
+$recentRevisions = editorial_get_article_revisions($articleId, 5);
 
 // ─── Public article URL ──────────────────────────────────────────
 
@@ -185,6 +233,8 @@ $innerScript = <<<JS
 
   /* ── Base64 encode on submit ──────────────────────── */
   form.addEventListener('submit', (e) => {
+    const currentIntent = intent ? intent.value : '';
+    if (currentIntent === 'create_revision' || currentIntent === 'exit_workspace') return;
     if (window.tinymce && typeof window.tinymce.triggerSave === 'function') {
       window.tinymce.triggerSave();
     }
@@ -396,7 +446,7 @@ editorial_layout_header([
         <input type="hidden" name="_intent" id="editorialIntent" value="save_draft">
         <input type="hidden" name="article_id" id="articleIdField" value="<?= editorial_h($articleId) ?>">
         <input type="hidden" name="lock_token" id="lockTokenField" value="<?= editorial_h($lockToken) ?>">
-        <input type="hidden" name="expected_draft_version" value="<?= editorial_h((string) $draftVersion) ?>">
+        <input type="hidden" name="expected_draft_version" id="expectedDraftVersion" value="<?= editorial_h((string) $draftVersion) ?>">
         <input type="hidden" name="prose_html_b64" id="proseHtmlB64" value="">
 
         <!-- Action bar -->
@@ -405,6 +455,13 @@ editorial_layout_header([
                 <i class="fa-solid fa-floppy-disk"></i>
                 <span>Lưu nháp</span>
             </button>
+
+            <?php if ($draftVersion > 0): ?>
+            <button type="submit" class="editorial-revision-btn" onclick="document.getElementById('editorialIntent').value='create_revision'; return confirm('Tạo phiên bản từ bản nháp đã lưu?');">
+                <i class="fa-solid fa-code-branch"></i>
+                <span>Tạo phiên bản</span>
+            </button>
+            <?php endif; ?>
 
             <button type="button" class="editorial-fullscreen-btn" id="editorFullscreenToggle" title="Toàn màn hình (Ctrl+Shift+F)">
                 <i class="fa-solid fa-expand"></i>
@@ -434,6 +491,12 @@ editorial_layout_header([
 
         <!-- TinyMCE editor -->
         <textarea id="proseEditor" name="prose_html" class="prose-textarea" required style="min-height:400px;"><?= editorial_h((string) ($form['prose_html'] ?? '')) ?></textarea>
+
+        <!-- Revision note (Phase 5) -->
+        <div class="filter-field" style="margin-top:12px;">
+            <label for="revisionNote">Ghi chú phiên bản (tùy chọn, tối đa 500 ký tự)</label>
+            <input type="text" id="revisionNote" name="revision_note" value="" class="field-input" maxlength="500" placeholder="VD: Đã chỉnh lại phần thuế GTGT">
+        </div>
 
         <!-- Preview -->
         <details class="editor-info-panel" style="margin-top:16px;">
@@ -466,9 +529,47 @@ editorial_layout_header([
                     <input type="text" name="featured_image" value="<?= editorial_h((string) ($form['featured_image'] ?? '')) ?>" class="field-input" placeholder="Đường dẫn ảnh">
                 </div>
                 <div class="filter-field">
-                    <label>Mục (section)</label>
-                    <input type="text" name="section_key" value="<?= editorial_h((string) ($form['section_key'] ?? '')) ?>" class="field-input" readonly style="background:#f8f9fa;">
+                    <label>Mục (section) — chỉ đọc</label>
+                    <input type="text" value="<?= editorial_h((string) ($form['section_label'] ?? ($form['section_key'] ?? ''))) ?>" class="field-input" readonly style="background:#f8f9fa;">
                 </div>
+            </div>
+        </details>
+
+        <!-- Revision history panel (Phase 5) -->
+        <details class="editor-info-panel" style="margin-top:12px;">
+            <summary><i class="fa-solid fa-clock-rotate-left"></i> Lịch sử phiên bản</summary>
+            <div style="padding:14px;">
+                <?php if (empty($recentRevisions)): ?>
+                    <p style="color:#868e96;">Chưa có phiên bản nào. Lưu nháp rồi bấm "Tạo phiên bản" để tạo.</p>
+                <?php else: ?>
+                    <table class="admin-table" style="font-size:0.85rem;">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Loại</th>
+                                <th>Người tạo</th>
+                                <th>Thời gian</th>
+                                <th>Hash</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($recentRevisions as $rev): ?>
+                                <tr>
+                                    <td><?= editorial_h((string) $rev['revision_no']) ?></td>
+                                    <td><?= editorial_h(editorial_revision_type_label((string) $rev['revision_type'])) ?></td>
+                                    <td><?= editorial_h((string) ($rev['creator_name'] ?? $rev['created_by'])) ?></td>
+                                    <td><?= editorial_h(editorial_format_datetime((string) $rev['created_at'])) ?></td>
+                                    <td><code><?= editorial_h(substr((string) ($rev['content_hash'] ?? ''), 0, 8)) ?></code></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <p style="margin-top:8px;">
+                        <a href="<?= editorial_h(editorial_url('revisions.php?id=' . urlencode($articleId))) ?>">
+                            <i class="fa-solid fa-list"></i> Xem toàn bộ lịch sử
+                        </a>
+                    </p>
+                <?php endif; ?>
             </div>
         </details>
 
@@ -477,6 +578,11 @@ editorial_layout_header([
             <button type="submit" class="editorial-save-btn" onclick="document.getElementById('editorialIntent').value='save_draft'">
                 <i class="fa-solid fa-floppy-disk"></i> Lưu nháp
             </button>
+            <?php if ($draftVersion > 0): ?>
+            <button type="submit" class="editorial-revision-btn" onclick="document.getElementById('editorialIntent').value='create_revision'; return confirm('Tạo phiên bản?');">
+                <i class="fa-solid fa-code-branch"></i> Tạo phiên bản
+            </button>
+            <?php endif; ?>
             <button type="submit" class="editorial-exit-btn" onclick="document.getElementById('editorialIntent').value='exit_workspace'; return confirm('Thoát workspace?');">
                 <i class="fa-solid fa-right-from-bracket"></i> Thoát
             </button>
