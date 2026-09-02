@@ -22,27 +22,39 @@ if ($articleId === '') {
 if (editorial_is_post()) {
     editorial_enforce_csrf();
     $intent = trim((string) ($_POST['_intent'] ?? ''));
-    
+
     if ($intent === 'publish') {
+        // Server-side checkbox confirmation check (UX safety)
+        if (empty($_POST['confirm_publish'])) {
+            editorial_flash_set('danger', 'Vui lòng xác nhận trước khi Publish.');
+            editorial_redirect(editorial_url('publish.php?id=' . urlencode($articleId)));
+        }
+
         $result = editorial_publish_approved_revision($articleId, $adminUserId);
-        
+
         if ($result['ok']) {
-            // Post-commit: public rebuild (best-effort)
+            // Post-commit: public rebuild (best-effort, non-fatal)
             $rebuildResult = editorial_public_rebuild_after_publish($articleId);
             $rebuildWarning = !$rebuildResult['ok'];
-            
+
             if ($rebuildWarning) {
                 editorial_flash_set('warning', 'Bài đã được Publish nhưng đồng bộ dữ liệu public phụ trợ chưa hoàn tất. ' . ($rebuildResult['message'] ?? ''));
                 editorial_log_activity('article.publish.public_rebuild_failed', $articleId, $adminUserId, json_encode([
+                    'code' => $rebuildResult['code'] ?? 'unknown',
                     'message' => $rebuildResult['message'] ?? 'Unknown error',
+                    'exit_code' => $rebuildResult['exit_code'] ?? null,
+                    'output_tail' => $rebuildResult['output_tail'] ?? null,
                 ]));
             } else {
+                editorial_log_activity('article.publish.public_rebuild_succeeded', $articleId, $adminUserId, json_encode([
+                    'exit_code' => $rebuildResult['exit_code'] ?? 0,
+                ]));
                 editorial_flash_set('success', $result['message']);
             }
         } else {
             editorial_flash_set('danger', $result['message']);
         }
-        
+
         editorial_redirect(editorial_url('publish.php?id=' . urlencode($articleId)));
     }
 }
@@ -58,6 +70,8 @@ $state = editorial_get_article_state($articleId);
 $status = $state['status'] ?? 'available';
 
 $preflight = editorial_publish_preflight($articleId, $adminUserId);
+$preflightChecks = $preflight['checks'] ?? [];
+
 $approvedRevision = null;
 if (!empty($state['approved_revision_id'])) {
     $approvedRevision = editorial_get_revision($state['approved_revision_id']);
@@ -103,7 +117,12 @@ editorial_layout_header([
                 </tr>
                 <tr>
                     <td>Người xuất bản</td>
-                    <td><?= editorial_h((string) ($state['published_by'] ?? '')) ?></td>
+                    <td>
+                        <?php
+                        $publisher = !empty($state['published_by']) ? editorial_find_user_by_id((string) $state['published_by']) : null;
+                        echo editorial_h($publisher ? (string) ($publisher['display_name'] ?? $publisher['username']) : (string) ($state['published_by'] ?? ''));
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Thời điểm xuất bản</td>
@@ -125,66 +144,18 @@ editorial_layout_header([
 
         <table class="editorial-preflight-table">
             <tbody>
+                <?php foreach ($preflightChecks as $key => $check): ?>
                 <tr>
-                    <td>Trạng thái</td>
+                    <td><?= editorial_h($check['label']) ?></td>
                     <td>
-                        <?php if ($status === 'approved'): ?>
-                            <span class="editorial-preflight-pass">approved ✔</span>
-                        <?php else: ?>
-                            <span class="editorial-preflight-fail"><?= editorial_h($status) ?> ✘</span>
-                        <?php endif; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Phiên bản đã duyệt</td>
-                    <td>
-                        <?php if ($approvedRevision): ?>
-                            <span class="editorial-preflight-pass">#<?= editorial_h((string) $approvedRevision['revision_no']) ?> ✔</span>
-                        <?php else: ?>
-                            <span class="editorial-preflight-fail">Không có ✘</span>
-                        <?php endif; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Snapshot toàn vẹn</td>
-                    <td>
-                        <?php if ($preflight['ok'] || !empty($preflight['payload'])): ?>
+                        <?php if ($check['pass']): ?>
                             <span class="editorial-preflight-pass">✔</span>
                         <?php else: ?>
                             <span class="editorial-preflight-fail">✘</span>
                         <?php endif; ?>
                     </td>
                 </tr>
-                <tr>
-                    <td>Phân công hợp lệ</td>
-                    <td>
-                        <?php if ($preflight['ok'] || !empty($preflight['assignment'])): ?>
-                            <span class="editorial-preflight-pass">✔</span>
-                        <?php else: ?>
-                            <span class="editorial-preflight-fail">✘</span>
-                        <?php endif; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Live hash khớp</td>
-                    <td>
-                        <?php if ($preflight['ok']): ?>
-                            <span class="editorial-preflight-pass">✔</span>
-                        <?php else: ?>
-                            <span class="editorial-preflight-fail">✘</span>
-                        <?php endif; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Không có khóa chỉnh sửa</td>
-                    <td>
-                        <?php if ($preflight['ok']): ?>
-                            <span class="editorial-preflight-pass">✔</span>
-                        <?php else: ?>
-                            <span class="editorial-preflight-fail">✘</span>
-                        <?php endif; ?>
-                    </td>
-                </tr>
+                <?php endforeach; ?>
                 <tr>
                     <td>File HTML target</td>
                     <td><?= editorial_h((string) ($article['href'] ?? '')) ?></td>
@@ -197,13 +168,8 @@ editorial_layout_header([
                     <td>Live hash</td>
                     <td><code><?= editorial_h(substr((string) ($preflight['live_hash'] ?? $state['base_live_hash'] ?? ''), 0, 8)) ?></code></td>
                 </tr>
-                <tr>
-                    <td>Backup sẵn sàng</td>
-                    <td><span class="editorial-preflight-pass">✔</span></td>
-                </tr>
             </tbody>
         </table>
-
 
         <?php if ($preflight['ok']): ?>
             <form method="post">
@@ -212,11 +178,11 @@ editorial_layout_header([
                 <?= editorial_csrf_input() ?>
                 <div class="editorial-publish-confirm">
                     <label style="display:flex; align-items:center; gap:8px; cursor:pointer; width:100%;">
-                        <input type="checkbox" id="publishConfirm" required>
-                        Tôi xác nhận Publish revision đã duyệt vào file HTML gốc.
+                        <input type="checkbox" name="confirm_publish" value="1" id="publishConfirm" required>
+                        Tôi xác nhận Publish revision đã duyệt vào file HTML gốc. Backup sẽ được tạo tự động trước khi ghi.
                     </label>
                 </div>
-                <button type="submit" class="editorial-publish-btn" 
+                <button type="submit" class="editorial-publish-btn"
                         onclick="return confirm('Bạn sắp cập nhật trực tiếp file HTML đang phục vụ website. Tiếp tục?');">
                     <i class="fa-solid fa-rocket"></i> XUẤT BẢN
                 </button>
@@ -237,16 +203,25 @@ editorial_layout_header([
             <table class="editorial-preflight-table">
                 <tbody>
                     <tr>
+                        <td>Revision #</td>
+                        <td>#<?= editorial_h((string) $approvedRevision['revision_no']) ?></td>
+                    </tr>
+                    <tr>
                         <td>Mã Revision</td>
                         <td><?= editorial_h($approvedRevision['id']) ?></td>
                     </tr>
                     <tr>
                         <td>Người tạo</td>
-                        <td><?= editorial_h($approvedRevision['created_by']) ?></td>
+                        <td>
+                            <?php
+                            $revCreator = editorial_find_user_by_id((string) $approvedRevision['created_by']);
+                            echo editorial_h($revCreator ? (string) ($revCreator['display_name'] ?? $revCreator['username']) : $approvedRevision['created_by']);
+                            ?>
+                        </td>
                     </tr>
                     <tr>
                         <td>Ngày tạo</td>
-                        <td><?= editorial_h($approvedRevision['created_at']) ?></td>
+                        <td><?= editorial_h(editorial_format_datetime($approvedRevision['created_at'])) ?></td>
                     </tr>
                     <tr>
                         <td>Hash nội dung</td>
