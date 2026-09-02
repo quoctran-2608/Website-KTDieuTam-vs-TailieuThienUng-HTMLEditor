@@ -52,6 +52,12 @@ function editorial_layout_header(array $options = []): void
     ];
     if ($isAdmin) {
         $menu[] = [
+            'key' => 'review',
+            'label' => 'Duyệt bài',
+            'href' => editorial_url('review.php'),
+            'icon' => 'fa-solid fa-clipboard-check',
+        ];
+        $menu[] = [
             'key' => 'members',
             'label' => 'Thành viên',
             'href' => editorial_url('users.php'),

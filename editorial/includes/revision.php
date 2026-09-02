@@ -86,13 +86,14 @@ function editorial_stable_sort_keys(mixed $data): mixed
 /**
  * Compute canonical SHA-256 content hash for a payload.
  * Same payload always produces same hash.
+ * A5 fix: throws RuntimeException on JSON encode failure instead of hashing '{}'.
  */
 function editorial_revision_content_hash(array $payload): string
 {
     $canonical = editorial_stable_sort_keys($payload);
     $json = json_encode($canonical, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     if ($json === false) {
-        $json = '{}';
+        throw new RuntimeException('Không thể tạo mã kiểm tra cho nội dung phiên bản.');
     }
     return hash('sha256', $json);
 }
@@ -152,8 +153,9 @@ function editorial_write_revision_snapshot(string $revisionId, string $articleId
     // Atomic write: temp file → rename
     $tempFile = $dir . '/.tmp_rev_' . $revisionId . '_' . uniqid('', true);
     $written = file_put_contents($tempFile, $json);
-    if ($written === false) {
-        throw new RuntimeException('Không thể ghi snapshot tạm.');
+    if ($written === false || $written !== strlen($json)) {
+        @unlink($tempFile);
+        throw new RuntimeException('Không thể ghi đầy đủ snapshot tạm.');
     }
 
     if (!rename($tempFile, $finalPath)) {
@@ -207,6 +209,64 @@ function editorial_read_revision_snapshot(string $snapshotPath): ?array
     return $data;
 }
 
+/**
+ * Get and verify a revision snapshot.
+ * A4: Validates path containment, JSON, schema_version, article_id match,
+ * payload structure, and recomputed content_hash.
+ *
+ * @param array $revision The revision row from editorial_revisions
+ * @return array{ok: bool, payload?: array, message: string}
+ */
+function editorial_get_verified_revision_snapshot(array $revision): array
+{
+    $snapshotPath = (string) ($revision['snapshot_path'] ?? '');
+    if ($snapshotPath === '') {
+        return ['ok' => false, 'message' => 'Snapshot phiên bản không hợp lệ hoặc đã bị thay đổi.'];
+    }
+
+    $snapshot = editorial_read_revision_snapshot($snapshotPath);
+    if ($snapshot === null) {
+        return ['ok' => false, 'message' => 'Snapshot phiên bản không hợp lệ hoặc đã bị thay đổi.'];
+    }
+
+    // Verify schema_version
+    $schemaVersion = $snapshot['schema_version'] ?? null;
+    if ($schemaVersion !== 1) {
+        return ['ok' => false, 'message' => 'Snapshot phiên bản không hợp lệ hoặc đã bị thay đổi.'];
+    }
+
+    // Verify article_id matches
+    $snapshotArticleId = (string) ($snapshot['article_id'] ?? '');
+    $revisionArticleId = (string) ($revision['article_id'] ?? '');
+    if ($snapshotArticleId === '' || $snapshotArticleId !== $revisionArticleId) {
+        return ['ok' => false, 'message' => 'Snapshot phiên bản không hợp lệ hoặc đã bị thay đổi.'];
+    }
+
+    // Verify payload is array
+    $payload = $snapshot['payload'] ?? null;
+    if (!is_array($payload)) {
+        return ['ok' => false, 'message' => 'Snapshot phiên bản không hợp lệ hoặc đã bị thay đổi.'];
+    }
+
+    // Recompute content hash and verify
+    $revisionContentHash = (string) ($revision['content_hash'] ?? '');
+    if ($revisionContentHash === '') {
+        return ['ok' => false, 'message' => 'Snapshot phiên bản không hợp lệ hoặc đã bị thay đổi.'];
+    }
+
+    try {
+        $recomputedHash = editorial_revision_content_hash($payload);
+    } catch (RuntimeException $e) {
+        return ['ok' => false, 'message' => 'Snapshot phiên bản không hợp lệ hoặc đã bị thay đổi.'];
+    }
+
+    if ($recomputedHash !== $revisionContentHash) {
+        return ['ok' => false, 'message' => 'Snapshot phiên bản không hợp lệ hoặc đã bị thay đổi.'];
+    }
+
+    return ['ok' => true, 'payload' => $payload, 'message' => 'Snapshot hợp lệ.'];
+}
+
 // ─── Revision Queries ───────────────────────────────────────────
 
 /**
@@ -252,11 +312,10 @@ function editorial_get_revision(string $revisionId): ?array
 
 /**
  * Create baseline revision from live HTML.
- *
- * Only creates if current_live_hash matches base_live_hash.
- * Skips silently (with diagnostic log) on conflict.
+ * A2 fix: reads exact bytes once, hashes those bytes, parses same bytes.
+ * A3 fix: self-queries and verifies active assignment internally.
  */
-function editorial_create_baseline_revision(string $articleId, string $userId, string $assignmentId): array
+function editorial_create_baseline_revision(string $articleId, string $userId): array
 {
     // Resolve article
     $article = editorial_find_article($articleId);
@@ -269,17 +328,42 @@ function editorial_create_baseline_revision(string $articleId, string $userId, s
         return ['ok' => false, 'message' => 'Không tìm thấy file bài viết.'];
     }
 
-    // Check live hash vs base hash
+    // Check article state
     $state = editorial_get_article_state($articleId);
     if (!$state) {
         return ['ok' => false, 'message' => 'Trạng thái bài viết không hợp lệ.'];
     }
 
-    $currentLiveHash = editorial_live_hash($filePath);
+    // A3: Self-verify active assignment
+    $assignment = editorial_get_active_assignment($articleId);
+    if ($assignment === null) {
+        return ['ok' => false, 'message' => 'Dữ liệu phân công bài viết không nhất quán. Không thể tạo baseline.'];
+    }
+    if ((string) $assignment['user_id'] !== $userId) {
+        return ['ok' => false, 'message' => 'Dữ liệu phân công bài viết không nhất quán. Không thể tạo baseline.'];
+    }
+    if ((string) ($state['assigned_user_id'] ?? '') !== $userId) {
+        return ['ok' => false, 'message' => 'Dữ liệu phân công bài viết không nhất quán. Không thể tạo baseline.'];
+    }
+    $assignmentId = (string) $assignment['id'];
+
+    // A2: Read exact HTML bytes ONCE
+    $htmlBytes = file_get_contents($filePath);
+    if ($htmlBytes === false || trim($htmlBytes) === '') {
+        return ['ok' => false, 'message' => 'Không thể đọc file bài viết.'];
+    }
+
+    // A2: Hash exact bytes
+    $currentLiveHash = hash('sha256', $htmlBytes);
     $baseLiveHash = (string) ($state['base_live_hash'] ?? '');
 
-    if ($baseLiveHash !== '' && $currentLiveHash !== null && $currentLiveHash !== $baseLiveHash) {
-        // Live content changed — cannot safely create baseline
+    // base_live_hash must not be empty
+    if ($baseLiveHash === '') {
+        return ['ok' => false, 'message' => 'Dữ liệu hash cơ sở không hợp lệ. Không thể tạo baseline an toàn.'];
+    }
+
+    // A2: Hash of exact bytes must match base_live_hash
+    if ($currentLiveHash !== $baseLiveHash) {
         editorial_log_activity('article.baseline.skipped_conflict', $articleId, $userId, json_encode([
             'assignment_id' => $assignmentId,
             'base_live_hash' => $baseLiveHash,
@@ -288,14 +372,19 @@ function editorial_create_baseline_revision(string $articleId, string $userId, s
         return ['ok' => false, 'message' => 'File HTML đã thay đổi kể từ khi nhận bài. Không thể tạo baseline an toàn.'];
     }
 
-    // Parse HTML
-    $parsed = editorial_parse_article_file($filePath);
+    // A2: Parse the SAME exact bytes
+    $parsed = editorial_parse_article_html($htmlBytes, $filePath);
     if (!$parsed['ok']) {
         return ['ok' => false, 'message' => 'Không thể phân tích file bài viết.'];
     }
 
     $payload = editorial_build_initial_payload($parsed, $article, $parsed['meta_payload'] ?? []);
-    $contentHash = editorial_revision_content_hash($payload);
+
+    try {
+        $contentHash = editorial_revision_content_hash($payload);
+    } catch (RuntimeException $e) {
+        return ['ok' => false, 'message' => $e->getMessage()];
+    }
 
     // Create inside transaction
     return editorial_transaction(function () use ($articleId, $userId, $assignmentId, $payload, $contentHash): array {
@@ -345,7 +434,6 @@ function editorial_create_baseline_revision(string $articleId, string $userId, s
 
             return ['ok' => true, 'revision_id' => $revisionId, 'revision_no' => $revisionNo];
         } catch (\Throwable $e) {
-            // Best-effort cleanup
             $fullPath = editorial_revisions_base_path() . '/' . $snapshotPath;
             if (file_exists($fullPath)) {
                 @unlink($fullPath);
@@ -421,8 +509,12 @@ function editorial_create_editorial_revision(string $articleId, string $userId, 
             return ['ok' => false, 'message' => 'Dữ liệu bản nháp không hợp lệ.'];
         }
 
-        // 6. Content hash
-        $contentHash = editorial_revision_content_hash($payload);
+        // 6. Content hash — A5 fail-closed
+        try {
+            $contentHash = editorial_revision_content_hash($payload);
+        } catch (RuntimeException $e) {
+            return ['ok' => false, 'message' => $e->getMessage()];
+        }
 
         // 7. Duplicate check
         $stmt = $db->prepare("
@@ -437,9 +529,18 @@ function editorial_create_editorial_revision(string $articleId, string $userId, 
             return ['ok' => false, 'message' => 'Nội dung không thay đổi so với phiên bản gần nhất.'];
         }
 
-        // 8. Get assignment
+        // 8. A1: Verify exactly one active assignment — fail-closed
         $assignment = editorial_get_active_assignment($articleId);
-        $assignmentId = $assignment ? (string) $assignment['id'] : null;
+        if ($assignment === null) {
+            return ['ok' => false, 'message' => 'Dữ liệu phân công bài viết không nhất quán. Không thể tạo phiên bản.'];
+        }
+        if ((string) $assignment['user_id'] !== $userId) {
+            return ['ok' => false, 'message' => 'Dữ liệu phân công bài viết không nhất quán. Không thể tạo phiên bản.'];
+        }
+        if ((string) ($state['assigned_user_id'] ?? '') !== $userId) {
+            return ['ok' => false, 'message' => 'Dữ liệu phân công bài viết không nhất quán. Không thể tạo phiên bản.'];
+        }
+        $assignmentId = (string) $assignment['id'];
 
         // 9. Next revision number
         $stmt = $db->prepare('SELECT MAX(revision_no) FROM editorial_revisions WHERE article_id = :aid');

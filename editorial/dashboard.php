@@ -29,6 +29,10 @@ $recentActivity = $db->query('
 // Schema version
 $schemaVersion = editorial_schema_version();
 
+// Review counts
+$reviewCount = (int) $db->query("SELECT COUNT(*) FROM editorial_article_state WHERE status = 'ready_review'")->fetchColumn();
+$approvedCount = (int) $db->query("SELECT COUNT(*) FROM editorial_article_state WHERE status = 'approved'")->fetchColumn();
+
 editorial_layout_header([
     'title' => 'Tổng quan',
     'active' => 'dashboard',
@@ -84,6 +88,26 @@ editorial_layout_header([
             <p>Schema version</p>
         </div>
     </article>
+
+    <?php if ($reviewCount > 0): ?>
+    <article class="metric-card">
+        <span class="metric-icon warning"><i class="fa-solid fa-clipboard-check"></i></span>
+        <div class="metric-body">
+            <h3><?= editorial_h((string) $reviewCount) ?></h3>
+            <p>Chờ duyệt</p>
+        </div>
+    </article>
+    <?php endif; ?>
+
+    <?php if ($approvedCount > 0): ?>
+    <article class="metric-card">
+        <span class="metric-icon success"><i class="fa-solid fa-circle-check"></i></span>
+        <div class="metric-body">
+            <h3><?= editorial_h((string) $approvedCount) ?></h3>
+            <p>Đã duyệt chờ Publish</p>
+        </div>
+    </article>
+    <?php endif; ?>
 </section>
 
 <section class="admin-panel">
@@ -117,10 +141,10 @@ editorial_layout_header([
             <strong>Revision &amp; so sánh</strong>
             <span>Đã sẵn sàng</span>
         </div>
-        <div class="editorial-module-card">
-            <i class="fa-solid fa-clock"></i>
+        <div class="editorial-module-card is-ready">
+            <i class="fa-solid fa-circle-check"></i>
             <strong>Review &amp; duyệt bài</strong>
-            <span>Sắp mở</span>
+            <span>Đã sẵn sàng</span>
         </div>
         <div class="editorial-module-card">
             <i class="fa-solid fa-clock"></i>

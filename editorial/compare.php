@@ -57,16 +57,18 @@ if ((string) $fromRev['article_id'] !== $articleId || (string) $toRev['article_i
 
 // ─── Load snapshots ──────────────────────────────────────────────
 
-$fromSnapshot = editorial_read_revision_snapshot((string) ($fromRev['snapshot_path'] ?? ''));
-$toSnapshot = editorial_read_revision_snapshot((string) ($toRev['snapshot_path'] ?? ''));
+// A4: Use verified snapshot helper
+$fromVerified = editorial_get_verified_revision_snapshot($fromRev);
+$toVerified = editorial_get_verified_revision_snapshot($toRev);
 
-if (!$fromSnapshot || !$toSnapshot) {
-    editorial_flash_set('danger', 'Snapshot không khả dụng. Không thể so sánh phiên bản.');
+if (!$fromVerified['ok'] || !$toVerified['ok']) {
+    $failMsg = !$fromVerified['ok'] ? $fromVerified['message'] : $toVerified['message'];
+    editorial_flash_set('danger', $failMsg);
     editorial_redirect(editorial_url('revisions.php?id=' . urlencode($articleId)));
 }
 
-$fromPayload = $fromSnapshot['payload'] ?? [];
-$toPayload = $toSnapshot['payload'] ?? [];
+$fromPayload = $fromVerified['payload'];
+$toPayload = $toVerified['payload'];
 
 // ─── Enrich revision with creator name ───────────────────────────
 

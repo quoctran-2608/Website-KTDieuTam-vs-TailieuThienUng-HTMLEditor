@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/review.php';
 
 editorial_require_auth();
 
@@ -13,6 +14,39 @@ $currentUserId = (string) $currentUser['user_id'];
 
 if (editorial_is_post()) {
     editorial_enforce_csrf();
+
+    $adminAction = trim((string) ($_POST['_admin_action'] ?? ''));
+    $targetArticleId = trim((string) ($_POST['target_article_id'] ?? ''));
+
+    if ($adminAction !== '' && $targetArticleId !== '' && (($currentUser['role'] ?? '') === 'admin')) {
+        if ($adminAction === 'force_unlock') {
+            $result = editorial_force_unlock($targetArticleId, $currentUserId);
+            editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
+        } elseif ($adminAction === 'release') {
+            $result = editorial_release_assignment($targetArticleId, $currentUserId);
+            editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
+        } elseif ($adminAction === 'force_release') {
+            $result = editorial_release_assignment($targetArticleId, $currentUserId, true);
+            editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
+        } elseif ($adminAction === 'reassign') {
+            $newUserId = trim((string) ($_POST['new_user_id'] ?? ''));
+            $result = editorial_reassign_article($targetArticleId, $currentUserId, $newUserId);
+            editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
+        } elseif ($adminAction === 'force_reassign') {
+            $newUserId = trim((string) ($_POST['new_user_id'] ?? ''));
+            $result = editorial_reassign_article($targetArticleId, $currentUserId, $newUserId, true);
+            editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
+        }
+
+        $returnParams = [];
+        foreach (['q', 'section', 'topic_lv1', 'assignment', 'page'] as $key) {
+            $val = trim((string) ($_POST[$key] ?? $_GET[$key] ?? ''));
+            if ($val !== '') $returnParams[$key] = $val;
+        }
+        $returnUrl = editorial_url('articles.php');
+        if (!empty($returnParams)) $returnUrl .= '?' . http_build_query($returnParams);
+        editorial_redirect($returnUrl);
+    }
 
     $claimArticleId = trim((string) ($_POST['claim_article_id'] ?? ''));
     if ($claimArticleId !== '') {
@@ -96,6 +130,9 @@ $ownerNames = editorial_preload_user_names($ownerIds);
 
 // Sections for filter dropdown
 $sections = editorial_article_sections();
+$isAdmin = (($currentUser['role'] ?? '') === 'admin');
+$activeUsers = $isAdmin ? editorial_list_users() : [];
+$activeUsers = array_filter($activeUsers, fn($u) => !empty($u['is_active']));
 
 // Build filter query string helper
 $filterParams = [];
@@ -236,6 +273,21 @@ editorial_layout_header([
                                     <?php endif; ?>
                                 <?php else: ?>
                                     <span style="color:#868e96;">—</span>
+                                <?php endif; ?>
+                                <?php if ($isAdmin && $ownerId !== ''): ?>
+                                    <div class="editorial-admin-actions" style="margin-top:4px;">
+                                        <?php if (in_array($status, ['editing', 'returned'], true)): ?>
+                                            <form method="post" style="display:inline;">
+                                                <?= editorial_csrf_input() ?>
+                                                <input type="hidden" name="_admin_action" value="release">
+                                                <input type="hidden" name="target_article_id" value="<?= editorial_h($aid) ?>">
+                                                <?php foreach ($filterParams as $k => $v): ?><input type="hidden" name="<?= editorial_h($k) ?>" value="<?= editorial_h($v) ?>"><?php endforeach; ?>
+                                                <button type="submit" class="editorial-admin-btn" onclick="return confirm('Giải phóng bài viết này?');" title="Giải phóng">
+                                                    <i class="fa-solid fa-unlock"></i>
+                                                </button>
+                                            </form>
+                                        <?php endif; ?>
+                                    </div>
                                 <?php endif; ?>
                             </td>
                         </tr>

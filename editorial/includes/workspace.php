@@ -83,11 +83,13 @@ function editorial_extract_summary_text(string $html): string
   return trim((string) preg_replace('/\s+/', ' ', $plain));
 }
 
-function editorial_parse_article_file(string $path): array
+/**
+ * Parse article HTML from string.
+ * A2 fix: accepts HTML string directly so caller controls exact bytes.
+ */
+function editorial_parse_article_html(string $html, string $path = ''): array
 {
-  if ($path === '' || !file_exists($path)) return ['ok' => false, 'code' => 'missing_file', 'message' => 'Không tìm thấy file bài viết.', 'path' => $path];
-  $html = file_get_contents($path);
-  if ($html === false || trim($html) === '') return ['ok' => false, 'code' => 'empty_file', 'message' => 'File rỗng hoặc không đọc được.', 'path' => $path];
+  if (trim($html) === '') return ['ok' => false, 'code' => 'empty_html', 'message' => 'Nội dung HTML rỗng.', 'path' => $path];
   $proseRegion = editorial_extract_prose_region($html);
   if (!$proseRegion['ok']) return ['ok' => false, 'code' => $proseRegion['code'], 'message' => $proseRegion['message'], 'path' => $path];
   $metaRegion = editorial_extract_meta_region($html);
@@ -95,6 +97,18 @@ function editorial_parse_article_file(string $path): array
   $metaDecoded = json_decode((string) $metaRegion['inner'], true);
   if (!is_array($metaDecoded)) return ['ok' => false, 'code' => 'invalid_article_meta_json', 'message' => 'JSON trong script#article-meta không hợp lệ.', 'path' => $path];
   return ['ok' => true, 'code' => 'ok', 'message' => 'Parse thành công.', 'path' => $path, 'html' => $html, 'prose' => $proseRegion, 'meta' => $metaRegion, 'meta_payload' => $metaDecoded, 'summary_text' => editorial_extract_summary_text($html)];
+}
+
+/**
+ * Parse article from file path (convenience wrapper).
+ * Reads file then delegates to editorial_parse_article_html().
+ */
+function editorial_parse_article_file(string $path): array
+{
+  if ($path === '' || !file_exists($path)) return ['ok' => false, 'code' => 'missing_file', 'message' => 'Không tìm thấy file bài viết.', 'path' => $path];
+  $html = file_get_contents($path);
+  if ($html === false || trim($html) === '') return ['ok' => false, 'code' => 'empty_file', 'message' => 'File rỗng hoặc không đọc được.', 'path' => $path];
+  return editorial_parse_article_html($html, $path);
 }
 
 // ─── Editing Lock ───────────────────────────────────────────────
@@ -362,7 +376,7 @@ function editorial_build_initial_payload(array $parsed, array $article, array $a
 
 /**
  * Build full draft payload merging editable POST data with canonical taxonomy.
- * FIX A1: taxonomy comes from article catalog/existing draft, NOT from POST.
+ * A7 fix: article catalog is authority for taxonomy. Draft fallback only if catalog empty.
  */
 function editorial_merge_draft_payload(array $editablePost, array $article, ?array $existingDraftPayload = null): array
 {
@@ -377,18 +391,25 @@ function editorial_merge_draft_payload(array $editablePost, array $article, ?arr
         'tags_text' => (string) ($editablePost['tags_text'] ?? ''),
     ];
 
-    // Taxonomy — from existing draft if available, else from catalog (never from POST)
+    // A7: Taxonomy — catalog is canonical authority, draft is fallback only if catalog empty
     $taxSource = $existingDraftPayload ?? [];
-    $payload['section_key'] = (string) ($taxSource['section_key'] ?? ($article['section'] ?? ''));
-    $payload['section_label'] = (string) ($taxSource['section_label'] ?? ($article['section_label'] ?? ''));
-    $payload['library_kind_key'] = (string) ($taxSource['library_kind_key'] ?? ($article['library_kind_key'] ?? ''));
-    $payload['library_kind_label'] = (string) ($taxSource['library_kind_label'] ?? ($article['library_kind_label'] ?? ''));
-    $payload['topic_lv1_key'] = (string) ($taxSource['topic_lv1_key'] ?? ($article['topic_lv1_key'] ?? ''));
-    $payload['topic_lv1_label'] = (string) ($taxSource['topic_lv1_label'] ?? ($article['topic_lv1_label'] ?? ''));
-    $payload['topic_lv2_key'] = (string) ($taxSource['topic_lv2_key'] ?? ($article['topic_lv2_key'] ?? ''));
-    $payload['topic_lv2_label'] = (string) ($taxSource['topic_lv2_label'] ?? ($article['topic_lv2_label'] ?? ''));
-    $payload['topic_lv3_key'] = (string) ($taxSource['topic_lv3_key'] ?? ($article['topic_lv3_key'] ?? ''));
-    $payload['topic_lv3_label'] = (string) ($taxSource['topic_lv3_label'] ?? ($article['topic_lv3_label'] ?? ''));
+    $taxFields = [
+        ['section_key', 'section'],
+        ['section_label', 'section_label'],
+        ['library_kind_key', 'library_kind_key'],
+        ['library_kind_label', 'library_kind_label'],
+        ['topic_lv1_key', 'topic_lv1_key'],
+        ['topic_lv1_label', 'topic_lv1_label'],
+        ['topic_lv2_key', 'topic_lv2_key'],
+        ['topic_lv2_label', 'topic_lv2_label'],
+        ['topic_lv3_key', 'topic_lv3_key'],
+        ['topic_lv3_label', 'topic_lv3_label'],
+    ];
+    foreach ($taxFields as [$payloadKey, $catalogKey]) {
+        $catalogVal = (string) ($article[$catalogKey] ?? '');
+        $draftVal = (string) ($taxSource[$payloadKey] ?? '');
+        $payload[$payloadKey] = $catalogVal !== '' ? $catalogVal : $draftVal;
+    }
 
     return $payload;
 }

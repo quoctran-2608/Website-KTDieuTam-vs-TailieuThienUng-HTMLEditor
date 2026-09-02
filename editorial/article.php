@@ -4,6 +4,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ . '/includes/workspace.php';
 require_once __DIR__ . '/includes/revision.php';
+require_once __DIR__ . '/includes/review.php';
 require_once __DIR__ . '/includes/layout.php';
 
 editorial_require_auth();
@@ -117,6 +118,17 @@ if (editorial_is_post()) {
         editorial_redirect(editorial_url('my-work.php'));
     }
 
+    // Phase 6: Send for review
+    if ($intent === 'send_for_review') {
+        $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
+        $result = editorial_send_for_review($articleId, $currentUserId, $lockToken);
+        editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
+        if ($result['ok']) {
+            editorial_redirect(editorial_url('my-work.php'));
+        }
+        editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+    }
+
     // Phase 5: Create revision from saved draft
     if ($intent === 'create_revision') {
         $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
@@ -155,7 +167,7 @@ if ($assignment) {
         }
     }
     if (!$hasBaseline) {
-        $baselineResult = editorial_create_baseline_revision($articleId, $currentUserId, $assignment['id']);
+        $baselineResult = editorial_create_baseline_revision($articleId, $currentUserId);
         // Silently log if skipped due to conflict (no flash spam)
     }
 }
@@ -463,6 +475,13 @@ editorial_layout_header([
             </button>
             <?php endif; ?>
 
+            <?php if ($draftVersion > 0 && !empty($recentRevisions)): ?>
+            <button type="submit" class="editorial-review-submit-btn" onclick="document.getElementById('editorialIntent').value='send_for_review'; return confirm('Gửi bài viết để duyệt? Bạn sẽ không thể chỉnh sửa cho đến khi reviewer phản hồi.');">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Gửi duyệt</span>
+            </button>
+            <?php endif; ?>
+
             <button type="button" class="editorial-fullscreen-btn" id="editorFullscreenToggle" title="Toàn màn hình (Ctrl+Shift+F)">
                 <i class="fa-solid fa-expand"></i>
             </button>
@@ -581,6 +600,11 @@ editorial_layout_header([
             <?php if ($draftVersion > 0): ?>
             <button type="submit" class="editorial-revision-btn" onclick="document.getElementById('editorialIntent').value='create_revision'; return confirm('Tạo phiên bản?');">
                 <i class="fa-solid fa-code-branch"></i> Tạo phiên bản
+            </button>
+            <?php endif; ?>
+            <?php if ($draftVersion > 0 && !empty($recentRevisions)): ?>
+            <button type="submit" class="editorial-review-submit-btn" onclick="document.getElementById('editorialIntent').value='send_for_review'; return confirm('Gửi duyệt?');">
+                <i class="fa-solid fa-paper-plane"></i> Gửi duyệt
             </button>
             <?php endif; ?>
             <button type="submit" class="editorial-exit-btn" onclick="document.getElementById('editorialIntent').value='exit_workspace'; return confirm('Thoát workspace?');">

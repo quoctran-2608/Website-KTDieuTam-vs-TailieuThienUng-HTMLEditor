@@ -199,6 +199,18 @@ function editorial_migration_list(): array
             CREATE INDEX IF NOT EXISTS idx_revisions_assignment
                 ON editorial_revisions(assignment_id);
         ',
+        5 => '
+            -- Phase 6: Review/approval workflow columns
+            ALTER TABLE editorial_article_state ADD COLUMN review_revision_id TEXT;
+            ALTER TABLE editorial_article_state ADD COLUMN review_requested_by TEXT;
+            ALTER TABLE editorial_article_state ADD COLUMN review_requested_at TEXT;
+            ALTER TABLE editorial_article_state ADD COLUMN approved_revision_id TEXT;
+            ALTER TABLE editorial_article_state ADD COLUMN approved_by TEXT;
+            ALTER TABLE editorial_article_state ADD COLUMN approved_at TEXT;
+
+            CREATE INDEX IF NOT EXISTS idx_article_state_review
+                ON editorial_article_state(status) WHERE status IN (\'ready_review\', \'approved\');
+        ',
     ];
 }
 

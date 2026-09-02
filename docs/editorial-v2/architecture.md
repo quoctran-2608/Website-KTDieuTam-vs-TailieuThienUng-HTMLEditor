@@ -326,7 +326,7 @@ published     → Đã xuất bản
 
 ### Article State Update
 - Sau tạo editorial revision: set `editorial_article_state.current_revision_id` = latest.
-- Status giữ editing/returned. Không tự chuyển ready_review/approved/published.
+- Status giữ editing/returned trừ khi editor gửi duyệt hoặc admin approve/return.
 
 ### Revision History UI (`editorial/revisions.php`)
 - Authorization: Admin xem mọi article; Editor chỉ xem nếu là current owner.
@@ -345,6 +345,7 @@ published     → Đã xuất bản
 - Metadata compare: field-level, chỉ highlight thay đổi.
 - Prose diff: normalize thành text (strip_tags), line-based diff.
 - HTML nguồn: escaped, side-by-side (collapsed mặc định).
+- **Phase 6**: Snapshot verification dùng `editorial_get_verified_revision_snapshot()`.
 
 ### Diff Algorithm
 - LCS line-based diff cho content nhỏ.
@@ -354,16 +355,115 @@ published     → Đã xuất bản
 ### Activity Events
 - `article.revision.baseline_created` — revision_id, revision_no, revision_type, content_hash.
 - `article.revision.created` — revision_id, revision_no, revision_type, source_draft_version, content_hash.
+- `article.review.submitted` — revision_id, revision_no, assignment_id.
+- `article.review.approved` — revision_id, revision_no, editor_user_id.
+- `article.review.returned` — revision_id, note.
+- `article.assignment.reassigned` — old_user_id, new_user_id, old_assignment_id, new_assignment_id.
+- `article.assignment.released` — old_user_id, assignment_id.
+- `article.lock.force_released` — previous_lock_user_id.
 - Không log full prose, full snapshot JSON, hoặc lock token.
 
 ### Dashboard
 - "Revision & so sánh" → Đã sẵn sàng.
+- "Review & duyệt bài" → Đã sẵn sàng.
+- Admin dashboard hiển thị đếm "Chờ duyệt" và "Đã duyệt chờ Publish".
+
+---
+
+## Phase 6 — Review & Duyệt bài
+
+### Migration v5
+- `editorial_article_state` thêm columns: `review_revision_id`, `review_requested_by`, `review_requested_at`, `approved_revision_id`, `approved_by`, `approved_at`.
+- Partial index trên `status IN ('ready_review', 'approved')`.
+
+### Corrective Fixes (A1–A7)
+- **A1**: `editorial_create_editorial_revision()` fail-closed nếu assignment null hoặc không khớp user.
+- **A2**: Parser refactored thành `editorial_parse_article_html()` nhận string. Baseline đọc file 1 lần duy nhất, hash cùng bytes đó, parse cùng bytes đó.
+- **A3**: `editorial_create_baseline_revision()` tự verify active assignment bên trong, không tin caller.
+- **A4**: `editorial_get_verified_revision_snapshot()` — verify path, JSON, schema_version, article_id match, payload structure, recomputed content_hash.
+- **A5**: `editorial_revision_content_hash()` throw RuntimeException thay vì hash '{}' khi json_encode fail.
+- **A6**: `editorial_write_revision_snapshot()` verify `$written === strlen($json)`, không chỉ `!== false`.
+- **A7**: `editorial_merge_draft_payload()` ưu tiên article catalog cho taxonomy, draft chỉ fallback khi catalog empty.
+
+### Status Transitions
+```text
+editorial_can_transition(from, to):
+  available → editing
+  editing → ready_review, available, editing
+  returned → ready_review, available, editing
+  ready_review → returned, approved
+  approved → (terminal trước publish)
+  published → (terminal)
+```
+
+### Review Service Module (`editorial/includes/review.php`)
+
+#### Gửi duyệt — `editorial_send_for_review()`
+- Editor action, cần lock token hợp lệ.
+- Pre-checks: article catalog, HTML file, live hash ≠ base_live_hash → BLOCK.
+- Inside transaction: verify owner, status, active assignment, lock, draft-revision sync.
+- Update state: status='ready_review', set review fields, clear approval fields.
+- Release editing lock.
+- Log `article.review.submitted`.
+
+#### Phê duyệt — `editorial_approve_review()`
+- Admin action, verify live hash conflict.
+- Inside transaction: status='ready_review', verify revision, assignment, verified snapshot.
+- Update state: status='approved', set approval fields.
+- Log `article.review.approved`.
+
+#### Trả lại — `editorial_return_review()`
+- Admin action, mandatory note (1–2000 chars).
+- Inside transaction: status='ready_review', transition to 'returned'.
+- Clear approval fields, keep review_revision_id for trace.
+- Log `article.review.returned` with note.
+
+#### Phân công lại — `editorial_reassign_article()`
+- Admin action, target user must be active admin/editor.
+- Draft handoff safety: nếu draft khác latest revision, cần force=true.
+- Close old assignment (release_reason='reassigned'), delete lock.
+- Create new assignment, reset state (editing, clear review/approval).
+- Log `article.assignment.reassigned`.
+
+#### Thu hồi — `editorial_release_assignment()`
+- Admin action, same draft safety as reassign.
+- Close assignment (release_reason='admin_release'), delete lock.
+- Reset state to available, clear all fields.
+- Log `article.assignment.released`.
+
+#### Mở khóa — `editorial_force_unlock()`
+- Admin action, chỉ xóa lock row.
+- Không thay đổi assignment, status, draft, revision.
+- Log `article.lock.force_released`.
+
+### Review Queue UI (`editorial/review.php`)
+- Admin-only page.
+- **Queue mode**: hiển thị articles status='ready_review', chỉ ra live conflict, revision #, requester.
+- **Detail mode**: hiển thị metadata, content preview (sandboxed iframe), hash, compare link.
+- Admin actions: Approve, Return (with note), Force Unlock, Reassign, Release.
+- Draft handoff safety: nếu release/reassign fail do unsaved changes, hiển thị force button.
+
+### Workspace Updates (`editorial/article.php`)
+- Nút "Gửi duyệt" hiển thị khi có draft version > 0 và có revision.
+- Confirm dialog cảnh báo editor sẽ không thể chỉnh sửa cho đến khi reviewer phản hồi.
+- Baseline creation gọi `editorial_create_baseline_revision(articleId, userId)` (không truyền assignmentId).
+
+### My Work Updates (`editorial/my-work.php`)
+- Hiển thị return note cho articles status='returned'.
+- Dùng `editorial_get_latest_return_note()` từ activity log.
+
+### Article List Updates (`editorial/articles.php`)
+- Admin controls: Release button cho articles status editing/returned.
+- POST handlers cho: force_unlock, release, force_release, reassign, force_reassign.
+
+### Sidebar
+- Thêm "Duyệt bài" (fa-clipboard-check) cho admin.
 
 ### Không sửa
 - `/admin/` — chỉ đọc/tham khảo.
 - Public HTML — không ghi file bài viết.
-- Status không tự chuyển ready_review/approved/published.
-- Không review, approve, publish.
+- Không publish revision.
+- Không backup/restore HTML.
 
 ## Roadmap
 
@@ -372,7 +472,10 @@ published     → Đã xuất bản
 3. **Assignment** (Phase 3) ✅ — Article catalog, atomic claim, my-work, dashboard metrics
 4. **Workspace/Lock/Draft** (Phase 4) ✅ — TinyMCE editor, lock, heartbeat, draft versioning
 5. **Revisions/Compare** (Phase 5) ✅ — Baseline, editorial revision, immutable snapshot, content hash, compare, diff
-6. **Review** — Gửi duyệt, trả lại, approve
+6. **Review** (Phase 6) ✅ — Gửi duyệt, trả lại, approve, reassign, release, force unlock, revision hardening
 7. **Safe Publish** — Optimistic lock, backup, ghi HTML gốc
 8. **Hardening** — Audit dashboard, bulk ops, performance
+
+
+
 

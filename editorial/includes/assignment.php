@@ -235,13 +235,20 @@ function editorial_claim_article(string $articleId, string $userId, string $html
             'created_at' => $now,
         ]);
 
-        // Step 5: Update article state
+        // Step 5: Update article state — reset work-cycle fields
         $stmt = $db->prepare('
             UPDATE editorial_article_state
             SET status = \'editing\',
                 assigned_user_id = :user_id,
                 assigned_at = :assigned_at,
                 base_live_hash = :hash,
+                current_revision_id = NULL,
+                review_revision_id = NULL,
+                review_requested_by = NULL,
+                review_requested_at = NULL,
+                approved_revision_id = NULL,
+                approved_by = NULL,
+                approved_at = NULL,
                 updated_at = :updated_at
             WHERE article_id = :article_id
         ');
@@ -265,4 +272,25 @@ function editorial_claim_article(string $articleId, string $userId, string $html
             'message' => 'Đã nhận biên tập bài viết thành công.',
         ];
     });
+}
+
+// ─── Status Transition ──────────────────────────────────────────
+
+/**
+ * Check if a workflow status transition is allowed.
+ * Phase 6: Centralized transition validation.
+ */
+function editorial_can_transition(string $from, string $to): bool
+{
+    $allowed = [
+        'available' => ['editing'],
+        'editing' => ['ready_review', 'available', 'editing'],
+        'returned' => ['ready_review', 'available', 'editing'],
+        'ready_review' => ['returned', 'approved'],
+        'approved' => [],
+        'published' => [],
+    ];
+
+    $transitions = $allowed[$from] ?? [];
+    return in_array($to, $transitions, true);
 }

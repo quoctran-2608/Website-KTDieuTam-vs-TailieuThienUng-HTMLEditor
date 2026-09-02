@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/review.php';
 
 editorial_require_auth();
 
@@ -129,6 +130,12 @@ editorial_layout_header([
                                     <span class="editorial-badge editorial-status-<?= editorial_h(editorial_status_css($statusKey)) ?>">
                                         <?= editorial_h(editorial_status_label($statusKey)) ?>
                                     </span>
+                                    <?php if ($statusKey === 'returned'): ?>
+                                        <?php $returnNote = editorial_get_latest_return_note($article['id']); ?>
+                                        <?php if ($returnNote !== null): ?>
+                                            <br><small class="editorial-return-note"><i class="fa-solid fa-comment-dots"></i> <?= editorial_h($returnNote) ?></small>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
                                 </td>
                                 <td>
                                     <?php if ($isEditable): ?>
