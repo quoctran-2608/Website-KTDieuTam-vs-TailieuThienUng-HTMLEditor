@@ -211,6 +211,14 @@ function editorial_migration_list(): array
             CREATE INDEX IF NOT EXISTS idx_article_state_review
                 ON editorial_article_state(status) WHERE status IN (\'ready_review\', \'approved\');
         ',
+        6 => '
+            -- Phase 7: Publish columns
+            ALTER TABLE editorial_article_state ADD COLUMN published_revision_id TEXT;
+            ALTER TABLE editorial_article_state ADD COLUMN published_by TEXT;
+            ALTER TABLE editorial_article_state ADD COLUMN published_at TEXT;
+            ALTER TABLE editorial_article_state ADD COLUMN published_live_hash TEXT;
+            ALTER TABLE editorial_article_state ADD COLUMN publish_backup_path TEXT;
+        ',
     ];
 }
 

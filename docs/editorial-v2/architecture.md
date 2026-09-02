@@ -461,9 +461,158 @@ editorial_can_transition(from, to):
 
 ### Không sửa
 - `/admin/` — chỉ đọc/tham khảo.
-- Public HTML — không ghi file bài viết.
-- Không publish revision.
-- Không backup/restore HTML.
+- Không publish revision (trước Phase 7).
+
+## Phase 6 Corrective Fixes
+
+### A1: Draft handoff fail-closed
+`editorial_check_draft_handoff_safety()` — central helper kiểm tra draft có được bảo toàn trong immutable revision trước khi cho phép normal reassign/release. Fail-closed khi: draft tồn tại nhưng chưa có revision, revision không phải editorial type, không thuộc active assignment, snapshot không valid, content hash không khớp, hoặc source_draft_version không khớp.
+
+### A2: Stale draft cleanup
+Reassign/release (cả normal và force) xóa draft của old owner sau khi close assignment.
+
+### A3: Normal handoff preserves data
+Normal handoff chỉ delete draft khi đã verified là draft == latest immutable editorial revision (via A1 check).
+
+### A4: Force handoff audit
+Force reassign/release log `article.draft.force_discarded` với draft_version và draft_hash trước khi xóa.
+
+### A5: Verified snapshot truthy fix
+`editorial/review.php` sử dụng `!empty($snapshot['ok'])` thay vì `if ($snapshot)` để tránh false positive khi `['ok'=>false]` vẫn truthy.
+
+### A6: Return note from activity
+Sử dụng `editorial_get_latest_return_note()` từ activity log thay vì query `revision_type='returned'` (loại revision này không tồn tại).
+
+---
+
+## Phase 7 — Safe Publish
+
+### Migration v6
+- `editorial_article_state` thêm columns: `published_revision_id`, `published_by`, `published_at`, `published_live_hash`, `publish_backup_path`.
+
+### Publish Service Module (`editorial/includes/publish.php`)
+
+#### Tags Parser — `editorial_parse_tags_text()`
+Split comma, trim, remove empty, dedupe case-insensitive (preserve first spelling), preserve order.
+
+#### Preflight — `editorial_publish_preflight()`
+Checks (ordered):
+1. Admin actor re-verified (active, role=admin)
+2. Article in catalog, file exists, path inside repo root (realpath containment)
+3. Status = approved, approved_revision_id exists
+4. Revision type = editorial, article_id matches
+5. Verified snapshot (path, JSON, schema, article_id, content_hash)
+6. Exactly one active assignment matching revision
+7. current_revision_id == approved_revision_id
+8. base_live_hash exists
+9. Live HTML read once, hash matches base_live_hash (CRITICAL optimistic lock)
+10. No active editing lock
+
+#### Pure Render — `editorial_render_approved_html()`
+- Nhận live HTML bytes + article + approved payload → trả new HTML bytes
+- Replace `.article-prose` inner HTML bằng offset-based substr (không regex greedy)
+- Update `script#article-meta` JSON: chỉ editable keys (title, publishDate, modifiedDate, tags, excerpt, image)
+- Update `<title>`, `meta description`, `.article-summary`
+- Cache busting trên JS files (article-layout.js, article-views/*.js)
+- **KHÔNG touch taxonomy** (section, topic, library, breadcrumb, kicker, body data-nav)
+
+#### Editable Field Contract
+```text
+title, excerpt, prose_html, publish_date, modified_date, featured_image, tags_text
+```
+Không thay: article_id, href, canonical, taxonomy fields.
+
+#### Pre-write Validation — `editorial_validate_rendered_html()`
+Parse rendered HTML, verify prose region, meta region, meta JSON valid, title not empty.
+
+#### Backup — `editorial_create_publish_backup()`
+- Storage: `editorial/storage/backups/<2-char>/<article-hash>/<timestamp>-<random>.html`
+- Exact bytes của live HTML trước mutation
+- Atomic temp+rename, verify byte count, verify hash
+
+#### Atomic Replace — `editorial_atomic_replace_file()`
+- Temp file SAME directory as target (same filesystem for rename atomicity)
+- Write, verify byte count
+- **Final optimistic lock**: immediately before rename, re-read target, re-hash, verify
+- Rename temp → target
+
+#### Compensation — `editorial_restore_backup()`
+- Best-effort restore backup to target
+- Atomic temp+rename, verify hash
+- Log `article.publish.compensation_failed` nếu restore thất bại
+
+#### Catalog Sync — `editorial_update_article_source()`
+- Update `data/articles.json`: chỉ editable fields (title, excerpt, publishDate, modifiedDate, tags, image)
+- Preserve tất cả field khác (id, href, canonical, section, taxonomy, classification, author, etc.)
+- Race protection: re-hash source trước rename, abort nếu đã thay đổi
+- Atomic temp+rename
+
+#### Public Rebuild — `editorial_public_rebuild_after_publish()`
+- Best-effort gọi `tools/rebuild_public_from_articles.py`
+- Non-fatal: core publish đã thành công tại thời điểm này
+
+#### Core Publish — `editorial_publish_approved_revision()`
+Flow inside `editorial_transaction(BEGIN IMMEDIATE)`:
+1. Re-verify all preflight inside transaction
+2. Re-read live HTML, verify hash (double-check optimistic lock)
+3. Render new HTML
+4. Pre-write validation
+5. Create backup + verify
+6. **Point of no return** — atomic replace live file
+7. Post-write verification (re-read, re-hash, re-parse)
+8. Update data/articles.json (with compensation on failure)
+9. Create published revision (type=published, same payload as approved)
+10. Verify published revision snapshot
+11. Close assignment (release_reason=published)
+12. Delete lock (defensive)
+13. Delete old draft
+14. Update article state (status=published, base_live_hash=new hash)
+15. Log `article.publish.succeeded`
+
+Compensation: sau point-of-return, mọi failure → restore backup + rollback DB.
+
+After transaction commit: caller gọi `editorial_public_rebuild_after_publish()` (best-effort).
+
+### Publish Page (`editorial/publish.php`)
+- Admin-only, POST + CSRF
+- Preflight display: bảng kiểm tra status, revision, snapshot, assignment, live hash, lock
+- Confirmation: checkbox + confirm dialog
+- POST handler gọi `editorial_publish_approved_revision()` rồi `editorial_public_rebuild_after_publish()`
+- Rebuild warning: "Bài đã được Publish nhưng đồng bộ dữ liệu public phụ trợ chưa hoàn tất."
+
+### Status Transitions (Updated)
+```text
+published → editing (chỉ qua fresh claim/new work cycle)
+```
+
+### Claim Published Article
+- `editorial_claim_article()` cho phép status published (assigned_user_id=NULL sau publish)
+- Reset tất cả work-cycle fields: review_*, approved_*, published_*
+- Historical revisions/activity giữ nguyên
+
+### Review Page Updates
+- Approved articles: "Chuẩn bị Publish" CTA link tới publish.php
+
+### Dashboard Updates
+- "Safe Publish" → "Đã sẵn sàng"
+- Metric card "Đã xuất bản" (count published articles)
+
+### Activity Events
+- `article.publish.succeeded` — approved_revision_id, published_revision_id, assignment_id, hash_before, hash_after, backup_path, bytes_written
+- `article.publish.failed` — stage, reason, hashes nếu có
+- `article.publish.public_rebuild_failed` — message
+- `article.publish.compensation_failed` — reason, hashes, backup_path
+- `article.draft.force_discarded` — forced, discarded_draft_version, discarded_draft_hash
+
+### Backup ≠ Revision
+- Backup = exact previous public HTML bytes = operational recovery
+- Revision = semantic editorial content snapshot = history/workflow
+
+### Không sửa
+- `/admin/` — chỉ đọc/tham khảo
+- Không user-facing rollback/restore (Phase 8)
+- Không refactor legacy publish
+- Không taxonomy mutation
 
 ## Roadmap
 
@@ -473,8 +622,9 @@ editorial_can_transition(from, to):
 4. **Workspace/Lock/Draft** (Phase 4) ✅ — TinyMCE editor, lock, heartbeat, draft versioning
 5. **Revisions/Compare** (Phase 5) ✅ — Baseline, editorial revision, immutable snapshot, content hash, compare, diff
 6. **Review** (Phase 6) ✅ — Gửi duyệt, trả lại, approve, reassign, release, force unlock, revision hardening
-7. **Safe Publish** — Optimistic lock, backup, ghi HTML gốc
-8. **Hardening** — Audit dashboard, bulk ops, performance
+7. **Safe Publish** (Phase 7) ✅ — Optimistic lock, backup, pure render, atomic replace, post-write verify, compensation, catalog sync, published revision
+8. **Hardening** — Audit dashboard, bulk ops, performance, rollback/restore
+
 
 
 

@@ -108,6 +108,19 @@ editorial_layout_header([
         </div>
     </article>
     <?php endif; ?>
+
+    <?php
+    $publishedCount = (int) $db->query("SELECT COUNT(*) FROM editorial_article_state WHERE status = 'published'")->fetchColumn();
+    ?>
+    <?php if ($publishedCount > 0): ?>
+    <article class="metric-card">
+        <span class="metric-icon"><i class="fa-solid fa-rocket"></i></span>
+        <div class="metric-body">
+            <h3><?= editorial_h((string) $publishedCount) ?></h3>
+            <p>Đã xuất bản</p>
+        </div>
+    </article>
+    <?php endif; ?>
 </section>
 
 <section class="admin-panel">
@@ -146,10 +159,10 @@ editorial_layout_header([
             <strong>Review &amp; duyệt bài</strong>
             <span>Đã sẵn sàng</span>
         </div>
-        <div class="editorial-module-card">
-            <i class="fa-solid fa-clock"></i>
-            <strong>Publish an toàn</strong>
-            <span>Sắp mở</span>
+        <div class="editorial-module-card is-ready">
+            <i class="fa-solid fa-circle-check"></i>
+            <strong>Safe Publish</strong>
+            <span>Đã sẵn sàng</span>
         </div>
     </div>
 </section>

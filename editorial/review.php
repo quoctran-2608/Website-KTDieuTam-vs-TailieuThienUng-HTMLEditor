@@ -91,7 +91,7 @@ if ($articleId !== '') {
         $revision = editorial_get_revision($revisionId);
         if ($revision) {
             $snapshot = editorial_get_verified_revision_snapshot($revision);
-            if ($snapshot) {
+            if (!empty($snapshot['ok'])) {
                 $payload = $snapshot['payload'] ?? [];
                 $isVerified = true;
             }
@@ -123,13 +123,8 @@ if ($articleId !== '') {
 
     $latestReturnNote = '';
     if ($status === 'returned') {
-        $db = editorial_db();
-        $stmt = $db->prepare("SELECT note FROM editorial_revisions WHERE article_id = :aid AND revision_type = 'returned' ORDER BY created_at DESC LIMIT 1");
-        $stmt->execute(['aid' => $articleId]);
-        $returnRev = $stmt->fetch();
-        if ($returnRev) {
-            $latestReturnNote = (string) $returnRev['note'];
-        }
+        $note = editorial_get_latest_return_note($articleId);
+        $latestReturnNote = $note ?? '';
     }
 
     editorial_layout_header([
@@ -297,6 +292,23 @@ if ($articleId !== '') {
                 </details>
             </div>
             <?php endif; ?>
+
+        <?php if ($status === 'approved'): ?>
+            <div class="editorial-review-actions">
+                <p style="margin:0;">
+                    <i class="fa-solid fa-circle-check" style="color:#2e7d32;"></i>
+                    <strong>Đã duyệt</strong> — chờ Publish.
+                    <?php if (!empty($state['approved_by'])): ?>
+                        <?php $approver = editorial_find_user_by_id((string) $state['approved_by']); ?>
+                        Bởi: <?= editorial_h($approver ? (string) ($approver['display_name'] ?? $approver['username']) : (string) $state['approved_by']) ?>
+                        vào <?= editorial_h(editorial_format_datetime((string) ($state['approved_at'] ?? ''))) ?>
+                    <?php endif; ?>
+                </p>
+                <a href="<?= editorial_h(editorial_url('publish.php?id=' . urlencode($articleId))) ?>" class="editorial-approve-btn">
+                    <i class="fa-solid fa-rocket"></i> Chuẩn bị Publish
+                </a>
+            </div>
+        <?php endif; ?>
         </div>
 
         <?php if ($payload): ?>

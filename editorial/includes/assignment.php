@@ -249,6 +249,11 @@ function editorial_claim_article(string $articleId, string $userId, string $html
                 approved_revision_id = NULL,
                 approved_by = NULL,
                 approved_at = NULL,
+                published_revision_id = NULL,
+                published_by = NULL,
+                published_at = NULL,
+                published_live_hash = NULL,
+                publish_backup_path = NULL,
                 updated_at = :updated_at
             WHERE article_id = :article_id
         ');
@@ -288,7 +293,7 @@ function editorial_can_transition(string $from, string $to): bool
         'returned' => ['ready_review', 'available', 'editing'],
         'ready_review' => ['returned', 'approved'],
         'approved' => [],
-        'published' => [],
+        'published' => ['editing'],
     ];
 
     $transitions = $allowed[$from] ?? [];

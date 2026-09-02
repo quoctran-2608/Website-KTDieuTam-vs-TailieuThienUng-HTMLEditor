@@ -363,6 +363,75 @@ function editorial_review_queue(array $params = []): array
     return $results;
 }
 
+/**
+ * Check if draft handoff is safe for normal (non-force) reassign/release.
+ * A1 fix: fail-closed when draft exists but no valid matching revision.
+ *
+ * @return array{safe: bool, has_draft: bool, draft_version: ?int, draft_hash: ?string, message: string}
+ */
+function editorial_check_draft_handoff_safety(string $articleId, string $ownerUserId): array
+{
+    $draft = editorial_get_draft($articleId, $ownerUserId);
+    
+    // Case 1: No draft — safe
+    if (!$draft) {
+        return ['safe' => true, 'has_draft' => false, 'draft_version' => null, 'draft_hash' => null, 'message' => ''];
+    }
+    
+    // Draft exists — must verify it’s fully preserved in an immutable revision
+    $draftVersion = (int) ($draft['version'] ?? 0);
+    
+    try {
+        $draftHash = editorial_revision_content_hash($draft['payload']);
+    } catch (RuntimeException $e) {
+        // Can't compute hash — fail-closed
+        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => null,
+            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
+    }
+    
+    // Must have current_revision_id
+    $state = editorial_get_article_state($articleId);
+    if (!$state || empty($state['current_revision_id'])) {
+        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
+            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
+    }
+    
+    // Revision must exist, be editorial type, belong to active assignment
+    $revision = editorial_get_revision($state['current_revision_id']);
+    if (!$revision || $revision['revision_type'] !== 'editorial') {
+        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
+            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
+    }
+    
+    $assignment = editorial_get_active_assignment($articleId);
+    if (!$assignment || $revision['assignment_id'] !== $assignment['id']) {
+        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
+            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
+    }
+    
+    // Verified snapshot
+    $snap = editorial_get_verified_revision_snapshot($revision);
+    if (!$snap['ok']) {
+        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
+            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
+    }
+    
+    // Content hash must match
+    if ($revision['content_hash'] !== $draftHash) {
+        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
+            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
+    }
+    
+    // source_draft_version must match
+    if ((int) $revision['source_draft_version'] !== $draftVersion) {
+        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
+            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
+    }
+    
+    // All checks passed — draft is fully preserved in revision
+    return ['safe' => true, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash, 'message' => ''];
+}
+
 function editorial_reassign_article(string $articleId, string $adminUserId, string $newUserId, bool $force = false): array
 {
     $newUser = editorial_find_user_by_id($newUserId);
@@ -401,20 +470,12 @@ function editorial_reassign_article(string $articleId, string $adminUserId, stri
             return ['ok' => false, 'message' => 'Người dùng này đã được phân công cho bài viết này.'];
         }
 
-        if (!$force) {
-            $draft = editorial_get_draft($articleId, $assignment['user_id']);
-            if ($draft && !empty($state['current_revision_id'])) {
-                try {
-                    $draftHash = editorial_revision_content_hash($draft['payload']);
-                } catch (RuntimeException $e) {
-                    return ['ok' => false, 'message' => 'Lỗi khi tạo mã băm cho bản nháp.'];
-                }
-                
-                $revision = editorial_get_revision($state['current_revision_id']);
-                if ($revision && $revision['content_hash'] !== $draftHash) {
-                    return ['ok' => false, 'message' => 'Biên tập viên hiện tại có thay đổi chưa lưu thành phiên bản. Cần sử dụng tùy chọn ép buộc (force) để tiếp tục.'];
-                }
-            }
+        // A1: Central draft handoff safety check
+        $oldOwnerUserId = (string) $assignment['user_id'];
+        $handoff = editorial_check_draft_handoff_safety($articleId, $oldOwnerUserId);
+        
+        if (!$force && !$handoff['safe']) {
+            return ['ok' => false, 'message' => $handoff['message']];
         }
 
         $db = editorial_db();
@@ -468,6 +529,22 @@ function editorial_reassign_article(string $articleId, string $adminUserId, stri
             ':aid' => $articleId
         ]);
 
+        // A2+A3+A4: Draft cleanup
+        if ($handoff['has_draft']) {
+            if ($force && !$handoff['safe']) {
+                // A4: Force discard — audit before delete
+                editorial_log_activity('article.draft.force_discarded', $articleId, $adminUserId, json_encode([
+                    'forced' => true,
+                    'discarded_draft' => true,
+                    'discarded_draft_version' => $handoff['draft_version'],
+                    'discarded_draft_hash' => $handoff['draft_hash'],
+                ]));
+            }
+            // A2+A3: Delete old owner's draft (safe if preserved in revision, or force-discarded)
+            $db->prepare('DELETE FROM editorial_drafts WHERE article_id = :aid AND user_id = :uid')
+               ->execute([':aid' => $articleId, ':uid' => $oldOwnerUserId]);
+        }
+
         editorial_log_activity('article.assignment.reassigned', $articleId, $adminUserId, json_encode([
             'old_user_id' => $assignment['user_id'],
             'new_user_id' => $newUserId,
@@ -493,20 +570,12 @@ function editorial_release_assignment(string $articleId, string $adminUserId, bo
             return ['ok' => false, 'message' => 'Không tìm thấy phân công hiện tại.'];
         }
 
-        if (!$force) {
-            $draft = editorial_get_draft($articleId, $assignment['user_id']);
-            if ($draft && !empty($state['current_revision_id'])) {
-                try {
-                    $draftHash = editorial_revision_content_hash($draft['payload']);
-                } catch (RuntimeException $e) {
-                    return ['ok' => false, 'message' => 'Lỗi khi tạo mã băm cho bản nháp.'];
-                }
-                
-                $revision = editorial_get_revision($state['current_revision_id']);
-                if ($revision && $revision['content_hash'] !== $draftHash) {
-                    return ['ok' => false, 'message' => 'Biên tập viên hiện tại có thay đổi chưa lưu thành phiên bản. Cần sử dụng tùy chọn ép buộc (force) để tiếp tục.'];
-                }
-            }
+        // A1: Central draft handoff safety check
+        $oldOwnerUserId = (string) $assignment['user_id'];
+        $handoff = editorial_check_draft_handoff_safety($articleId, $oldOwnerUserId);
+        
+        if (!$force && !$handoff['safe']) {
+            return ['ok' => false, 'message' => $handoff['message']];
         }
 
         $db = editorial_db();
@@ -544,6 +613,20 @@ function editorial_release_assignment(string $articleId, string $adminUserId, bo
             ':upd' => $now,
             ':aid' => $articleId
         ]);
+
+        // A2+A3+A4: Draft cleanup
+        if ($handoff['has_draft']) {
+            if ($force && !$handoff['safe']) {
+                editorial_log_activity('article.draft.force_discarded', $articleId, $adminUserId, json_encode([
+                    'forced' => true,
+                    'discarded_draft' => true,
+                    'discarded_draft_version' => $handoff['draft_version'],
+                    'discarded_draft_hash' => $handoff['draft_hash'],
+                ]));
+            }
+            $db->prepare('DELETE FROM editorial_drafts WHERE article_id = :aid AND user_id = :uid')
+               ->execute([':aid' => $articleId, ':uid' => $oldOwnerUserId]);
+        }
 
         editorial_log_activity('article.assignment.released', $articleId, $adminUserId, json_encode([
             'old_user_id' => $assignment['user_id'],
