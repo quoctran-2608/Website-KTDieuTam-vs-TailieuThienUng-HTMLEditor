@@ -180,6 +180,15 @@ function editorial_migration_list(): array
             CREATE INDEX IF NOT EXISTS idx_assignments_user_active
                 ON editorial_assignments(user_id, released_at);
         ',
+
+        3 => '
+            -- Phase 4: Draft optimistic concurrency versioning
+            ALTER TABLE editorial_drafts ADD COLUMN version INTEGER NOT NULL DEFAULT 0;
+
+            -- Index for lock expiry queries
+            CREATE INDEX IF NOT EXISTS idx_locks_expires
+                ON editorial_locks(expires_at);
+        ',
     ];
 }
 

@@ -225,9 +225,15 @@ editorial_layout_header([
                                         </button>
                                     </form>
                                 <?php elseif ($isMe): ?>
-                                    <a href="<?= editorial_h(editorial_url('my-work.php')) ?>" class="editorial-mywork-link">
-                                        <i class="fa-solid fa-clipboard-list"></i> Công việc của tôi
-                                    </a>
+                                    <?php if (in_array($status, ['editing', 'returned'], true)): ?>
+                                        <a href="<?= editorial_h(editorial_url('article.php?id=' . urlencode($aid))) ?>" class="editorial-workspace-btn">
+                                            <i class="fa-solid fa-pen-to-square"></i> Tiếp tục biên tập
+                                        </a>
+                                    <?php else: ?>
+                                        <a href="<?= editorial_h(editorial_url('my-work.php')) ?>" class="editorial-mywork-link">
+                                            <i class="fa-solid fa-clipboard-list"></i> Công việc của tôi
+                                        </a>
+                                    <?php endif; ?>
                                 <?php else: ?>
                                     <span style="color:#868e96;">—</span>
                                 <?php endif; ?>

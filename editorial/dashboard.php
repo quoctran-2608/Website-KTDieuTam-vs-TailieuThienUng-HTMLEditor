@@ -107,10 +107,10 @@ editorial_layout_header([
             <strong>Nhận bài biên tập</strong>
             <span>Đã sẵn sàng</span>
         </div>
-        <div class="editorial-module-card">
-            <i class="fa-solid fa-clock"></i>
+        <div class="editorial-module-card is-ready">
+            <i class="fa-solid fa-circle-check"></i>
             <strong>Editing workspace</strong>
-            <span>Sắp mở</span>
+            <span>Đã sẵn sàng</span>
         </div>
         <div class="editorial-module-card">
             <i class="fa-solid fa-clock"></i>

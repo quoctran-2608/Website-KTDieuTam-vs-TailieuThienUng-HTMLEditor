@@ -99,6 +99,7 @@ editorial_layout_header([
                             <th>Mục</th>
                             <th>Nhận lúc</th>
                             <th>Trạng thái</th>
+                            <th>Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,6 +107,7 @@ editorial_layout_header([
                             <?php
                             $article = $entry['article'];
                             $state = $entry['state'];
+                            $isEditable = in_array($statusKey, ['editing', 'returned'], true);
                             ?>
                             <tr>
                                 <td>
@@ -127,6 +129,15 @@ editorial_layout_header([
                                     <span class="editorial-badge editorial-status-<?= editorial_h(editorial_status_css($statusKey)) ?>">
                                         <?= editorial_h(editorial_status_label($statusKey)) ?>
                                     </span>
+                                </td>
+                                <td>
+                                    <?php if ($isEditable): ?>
+                                        <a href="<?= editorial_h(editorial_url('article.php?id=' . urlencode($article['id']))) ?>" class="editorial-workspace-btn">
+                                            <i class="fa-solid fa-pen-to-square"></i> Tiếp tục biên tập
+                                        </a>
+                                    <?php else: ?>
+                                        <span style="color:#868e96;">—</span>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

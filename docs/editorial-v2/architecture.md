@@ -155,13 +155,55 @@ approved      → Đã duyệt
 published     → Đã xuất bản
 ```
 
+## Phase 4 — Workspace biên tập + Lock + Draft an toàn
+
+### Assignment vs Lock vs Draft vs Revision
+- **Assignment**: ai chịu trách nhiệm bài (persistent, không hết hạn tự động)
+- **Editing Lock**: phiên chỉnh sửa đang hoạt động (TTL 15 phút, heartbeat 60s)
+- **Draft**: nội dung mutable đang chỉnh (SQLite, optimistic versioning)
+- **Revision**: immutable history (Phase 5, chưa làm)
+
+### Lock TTL
+- `EDITORIAL_ARTICLE_LOCK_TTL = 900` (15 phút)
+- Browser heartbeat mỗi 60 giây via `lock-heartbeat.php`
+- Lock hết hạn → KHÔNG mất assignment, KHÔNG xóa draft
+- Lock reuse: cùng user mở lại workspace → reuse lock hiện tại, extend TTL
+
+### Draft Versioning (Migration v3)
+- `editorial_drafts.version INTEGER NOT NULL DEFAULT 0`
+- Insert: version = 1, UPDATE: `version = version + 1 WHERE version = expectedVersion`
+- `rowCount = 0` → conflict: "Bản nháp đã thay đổi ở phiên/tab khác"
+- Chống same-user multi-tab overwrite
+
+### Parser (adapted from admin)
+- `editorial_parse_article_file()` — copy stateless functions từ `admin/includes/article_parser.php`
+- Functions: `editorial_extract_prose_region`, `editorial_find_matching_div_close`, `editorial_extract_meta_region`, `editorial_extract_summary_text`
+- Prefix `editorial_*` tránh collision
+
+### TinyMCE
+- CDN: `cdn.jsdelivr.net/npm/tinymce@7`
+- Giữ nguyên: plugins, toolbar, content_css (4 EDS CSS files), body_class, content_style
+- Image upload: disabled trong V2 (throw error message), ảnh có sẵn vẫn hiển thị
+- Base64 encode prose_html trước submit (WAF workaround)
+
+### Live Hash Conflict Warning
+- So sánh `current_live_hash` vs `article_state.base_live_hash` khi mở workspace
+- Khác → hiển thị warning, KHÔNG reset base_hash, KHÔNG merge
+- Phase 7 sẽ xử lý conflict resolution
+
+### HTML live không thay đổi
+- Phase 4 chỉ ĐỌC HTML gốc
+- Draft lưu vào SQLite `editorial_drafts`
+- Không `file_put_contents()` vào HTML bài viết
+
 ## Roadmap
 
 1. **Foundation** (Phase 1) ✅ — Schema, auth, bootstrap, dashboard shell
 2. **Users** (Phase 2) ✅ — Quản lý thành viên, auth revalidation, must_change_password
 3. **Assignment** (Phase 3) ✅ — Article catalog, atomic claim, my-work, dashboard metrics
-4. **Workspace/Lock/Draft** — TinyMCE editor, heartbeat, auto-save
+4. **Workspace/Lock/Draft** (Phase 4) ✅ — TinyMCE editor, lock, heartbeat, draft versioning
 5. **Revisions/Compare** — Snapshot, diff bản cũ/mới
 6. **Review** — Gửi duyệt, trả lại, approve
 7. **Safe Publish** — Optimistic lock, backup, ghi HTML gốc
 8. **Hardening** — Audit dashboard, bulk ops, performance
+

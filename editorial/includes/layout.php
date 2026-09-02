@@ -20,10 +20,12 @@ declare(strict_types=1);
  */
 function editorial_layout_header(array $options = []): void
 {
+    global $_editorial_inner_script;
     $title = $options['title'] ?? 'Editorial Admin';
     $active = $options['active'] ?? '';
     $description = $options['description'] ?? '';
     $bodyClass = trim((string) ($options['body_class'] ?? ''));
+    $_editorial_inner_script = $options['inner_script'] ?? '';
     $user = editorial_current_user();
 
     $isAdmin = ($user !== null && ($user['role'] ?? '') === 'admin');
@@ -147,11 +149,15 @@ function editorial_layout_header(array $options = []): void
  */
 function editorial_layout_footer(): void
 {
+    global $_editorial_inner_script;
     ?>
                 </main>
             </div>
         </div>
         <script src="<?= editorial_h(editorial_url('assets/js/editorial.js')) ?>"></script>
+        <?php if (!empty($_editorial_inner_script)): ?>
+            <script><?= $_editorial_inner_script ?></script>
+        <?php endif; ?>
     </body>
     </html>
     <?php
