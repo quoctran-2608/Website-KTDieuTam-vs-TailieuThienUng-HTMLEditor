@@ -2,11 +2,14 @@
 declare(strict_types=1);
 
 /**
- * Editorial V2 — Authentication.
+ * Editorial V2 — Authentication & User Management.
  *
  * Adapted from admin/includes/auth.php.
  * All functions prefixed editorial_ to avoid collision.
  * Uses SQLite (editorial_users table) instead of JSON storage.
+ *
+ * Phase 2: DB revalidation, must_change_password enforcement,
+ *          user CRUD helpers.
  */
 
 if (!defined('EDITORIAL_SESSION_TTL')) {
@@ -19,6 +22,10 @@ if (!defined('EDITORIAL_LOCK_WINDOW')) {
 
 if (!defined('EDITORIAL_LOCK_ATTEMPTS')) {
     define('EDITORIAL_LOCK_ATTEMPTS', 5);
+}
+
+if (!defined('EDITORIAL_PASSWORD_MIN_LENGTH')) {
+    define('EDITORIAL_PASSWORD_MIN_LENGTH', 8);
 }
 
 /**
@@ -105,6 +112,8 @@ function editorial_seed_admin_user(): void
     editorial_log_activity('system.seed_admin', null, null, json_encode(['source' => file_exists($legacyPath) ? 'legacy_import' : 'default_seed']));
 }
 
+// ─── User lookup ────────────────────────────────────────────────
+
 /**
  * Find editorial user by username.
  *
@@ -137,9 +146,263 @@ function editorial_find_user_by_id(string $id): ?array
 }
 
 /**
- * Check login lock status.
+ * List all editorial users.
  *
- * Uses editorial_activity table to count recent failed logins.
+ * @return array<int, array<string,mixed>>
+ */
+function editorial_list_users(): array
+{
+    $db = editorial_db();
+    return $db->query('SELECT * FROM editorial_users ORDER BY created_at ASC')->fetchAll();
+}
+
+/**
+ * Count active admins.
+ */
+function editorial_count_active_admins(): int
+{
+    $db = editorial_db();
+    $stmt = $db->query("SELECT COUNT(*) FROM editorial_users WHERE role = 'admin' AND is_active = 1");
+    return (int) $stmt->fetchColumn();
+}
+
+// ─── User CRUD ──────────────────────────────────────────────────
+
+/**
+ * Create a new editorial user.
+ *
+ * @return array{ok: bool, message: string, user_id?: string}
+ */
+function editorial_create_user(string $displayName, string $username, string $role, string $password, string $confirmPassword, bool $mustChangePassword, string $actorUserId): array
+{
+    $displayName = trim($displayName);
+    $username = trim($username);
+
+    if ($displayName === '') {
+        return ['ok' => false, 'message' => 'Tên hiển thị không được để trống.'];
+    }
+    if ($username === '') {
+        return ['ok' => false, 'message' => 'Tên đăng nhập không được để trống.'];
+    }
+    if (!in_array($role, ['admin', 'editor'], true)) {
+        return ['ok' => false, 'message' => 'Vai trò không hợp lệ.'];
+    }
+    if (strlen($password) < EDITORIAL_PASSWORD_MIN_LENGTH) {
+        return ['ok' => false, 'message' => 'Mật khẩu phải có ít nhất ' . EDITORIAL_PASSWORD_MIN_LENGTH . ' ký tự.'];
+    }
+    if ($password !== $confirmPassword) {
+        return ['ok' => false, 'message' => 'Xác nhận mật khẩu không khớp.'];
+    }
+
+    // Check unique username
+    $existing = editorial_find_user($username);
+    if ($existing !== null) {
+        return ['ok' => false, 'message' => 'Tên đăng nhập "' . $username . '" đã tồn tại.'];
+    }
+
+    $now = date('c');
+    $userId = editorial_generate_id('usr');
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+
+    $db = editorial_db();
+    $stmt = $db->prepare('
+        INSERT INTO editorial_users (id, username, display_name, password_hash, role, is_active, must_change_password, created_at, updated_at)
+        VALUES (:id, :username, :display_name, :password_hash, :role, 1, :mcp, :created_at, :updated_at)
+    ');
+    $stmt->execute([
+        'id' => $userId,
+        'username' => $username,
+        'display_name' => $displayName,
+        'password_hash' => $hash,
+        'role' => $role,
+        'mcp' => $mustChangePassword ? 1 : 0,
+        'created_at' => $now,
+        'updated_at' => $now,
+    ]);
+
+    editorial_log_activity('user.created', null, $actorUserId, json_encode([
+        'target_user_id' => $userId,
+        'username' => $username,
+        'display_name' => $displayName,
+        'role' => $role,
+    ]));
+
+    return ['ok' => true, 'message' => 'Đã tạo thành viên "' . $displayName . '" thành công.', 'user_id' => $userId];
+}
+
+/**
+ * Update editorial user profile (display_name, role, is_active).
+ *
+ * @return array{ok: bool, message: string}
+ */
+function editorial_update_user(string $targetUserId, string $displayName, string $role, bool $isActive, string $actorUserId): array
+{
+    $displayName = trim($displayName);
+    if ($displayName === '') {
+        return ['ok' => false, 'message' => 'Tên hiển thị không được để trống.'];
+    }
+    if (!in_array($role, ['admin', 'editor'], true)) {
+        return ['ok' => false, 'message' => 'Vai trò không hợp lệ.'];
+    }
+
+    return editorial_transaction(function () use ($targetUserId, $displayName, $role, $isActive, $actorUserId): array {
+        $target = editorial_find_user_by_id($targetUserId);
+        if ($target === null) {
+            return ['ok' => false, 'message' => 'Không tìm thấy thành viên.'];
+        }
+
+        $oldRole = (string) $target['role'];
+        $oldActive = (bool) $target['is_active'];
+        $oldDisplayName = (string) $target['display_name'];
+
+        // Safety: cannot deactivate self
+        if (!$isActive && $targetUserId === $actorUserId) {
+            return ['ok' => false, 'message' => 'Bạn không thể khóa tài khoản đang sử dụng.'];
+        }
+
+        // Safety: cannot remove last active admin
+        if ($oldRole === 'admin' && $oldActive) {
+            $wouldLoseAdmin = (!$isActive || $role !== 'admin');
+            if ($wouldLoseAdmin) {
+                $activeAdmins = editorial_count_active_admins();
+                if ($activeAdmins <= 1) {
+                    return ['ok' => false, 'message' => 'Không thể thực hiện. Hệ thống cần ít nhất một quản trị viên đang hoạt động.'];
+                }
+            }
+        }
+
+        $now = date('c');
+        $db = editorial_db();
+        $stmt = $db->prepare('
+            UPDATE editorial_users
+            SET display_name = :display_name, role = :role, is_active = :is_active, updated_at = :updated_at
+            WHERE id = :id
+        ');
+        $stmt->execute([
+            'display_name' => $displayName,
+            'role' => $role,
+            'is_active' => $isActive ? 1 : 0,
+            'updated_at' => $now,
+            'id' => $targetUserId,
+        ]);
+
+        // Log changes
+        $changes = [];
+        if ($oldDisplayName !== $displayName) $changes['display_name'] = ['old' => $oldDisplayName, 'new' => $displayName];
+        if ($oldRole !== $role) $changes['role'] = ['old' => $oldRole, 'new' => $role];
+        if ($oldActive !== $isActive) $changes['is_active'] = ['old' => $oldActive, 'new' => $isActive];
+
+        if (!empty($changes)) {
+            editorial_log_activity('user.updated', null, $actorUserId, json_encode([
+                'target_user_id' => $targetUserId,
+                'username' => $target['username'],
+                'changes' => $changes,
+            ]));
+        }
+
+        // Specific activation/deactivation events
+        if ($oldActive && !$isActive) {
+            editorial_log_activity('user.deactivated', null, $actorUserId, json_encode([
+                'target_user_id' => $targetUserId,
+                'username' => $target['username'],
+            ]));
+        }
+        if (!$oldActive && $isActive) {
+            editorial_log_activity('user.activated', null, $actorUserId, json_encode([
+                'target_user_id' => $targetUserId,
+                'username' => $target['username'],
+            ]));
+        }
+
+        return ['ok' => true, 'message' => 'Đã cập nhật thành viên "' . $displayName . '" thành công.'];
+    });
+}
+
+/**
+ * Reset user password (admin action).
+ *
+ * @return array{ok: bool, message: string}
+ */
+function editorial_reset_user_password(string $targetUserId, string $newPassword, string $confirmPassword, string $actorUserId): array
+{
+    if (strlen($newPassword) < EDITORIAL_PASSWORD_MIN_LENGTH) {
+        return ['ok' => false, 'message' => 'Mật khẩu phải có ít nhất ' . EDITORIAL_PASSWORD_MIN_LENGTH . ' ký tự.'];
+    }
+    if ($newPassword !== $confirmPassword) {
+        return ['ok' => false, 'message' => 'Xác nhận mật khẩu không khớp.'];
+    }
+
+    $target = editorial_find_user_by_id($targetUserId);
+    if ($target === null) {
+        return ['ok' => false, 'message' => 'Không tìm thấy thành viên.'];
+    }
+
+    $now = date('c');
+    $hash = password_hash($newPassword, PASSWORD_DEFAULT);
+    $db = editorial_db();
+    $stmt = $db->prepare('
+        UPDATE editorial_users
+        SET password_hash = :hash, must_change_password = 1, updated_at = :updated_at
+        WHERE id = :id
+    ');
+    $stmt->execute(['hash' => $hash, 'updated_at' => $now, 'id' => $targetUserId]);
+
+    editorial_log_activity('user.password_reset', null, $actorUserId, json_encode([
+        'target_user_id' => $targetUserId,
+        'username' => $target['username'],
+    ]));
+
+    return ['ok' => true, 'message' => 'Đã đặt lại mật khẩu cho "' . $target['display_name'] . '". Thành viên sẽ phải đổi mật khẩu khi đăng nhập.'];
+}
+
+/**
+ * Change own password (self-service).
+ *
+ * @return array{ok: bool, message: string}
+ */
+function editorial_change_own_password(string $userId, string $currentPassword, string $newPassword, string $confirmPassword): array
+{
+    if (strlen($newPassword) < EDITORIAL_PASSWORD_MIN_LENGTH) {
+        return ['ok' => false, 'message' => 'Mật khẩu mới phải có ít nhất ' . EDITORIAL_PASSWORD_MIN_LENGTH . ' ký tự.'];
+    }
+    if ($newPassword !== $confirmPassword) {
+        return ['ok' => false, 'message' => 'Xác nhận mật khẩu mới không khớp.'];
+    }
+
+    $user = editorial_find_user_by_id($userId);
+    if ($user === null) {
+        return ['ok' => false, 'message' => 'Không tìm thấy tài khoản.'];
+    }
+
+    $hash = (string) ($user['password_hash'] ?? '');
+    if ($hash === '' || !password_verify($currentPassword, $hash)) {
+        return ['ok' => false, 'message' => 'Mật khẩu hiện tại không đúng.'];
+    }
+
+    $now = date('c');
+    $newHash = password_hash($newPassword, PASSWORD_DEFAULT);
+    $db = editorial_db();
+    $stmt = $db->prepare('
+        UPDATE editorial_users
+        SET password_hash = :hash, must_change_password = 0, updated_at = :updated_at
+        WHERE id = :id
+    ');
+    $stmt->execute(['hash' => $newHash, 'updated_at' => $now, 'id' => $userId]);
+
+    // Update session immediately
+    if (isset($_SESSION['editorial_auth'])) {
+        $_SESSION['editorial_auth']['must_change_password'] = false;
+    }
+
+    editorial_log_activity('user.password_changed', null, $userId);
+
+    return ['ok' => true, 'message' => 'Đổi mật khẩu thành công.'];
+}
+
+// ─── Login lock ─────────────────────────────────────────────────
+
+/**
+ * Check login lock status.
  *
  * @return array{locked: bool, remaining: int, attempts: int}
  */
@@ -179,6 +442,8 @@ function editorial_lock_status(string $identity): array
         'attempts' => $count,
     ];
 }
+
+// ─── Login / Logout ─────────────────────────────────────────────
 
 /**
  * Attempt login.
@@ -228,10 +493,6 @@ function editorial_attempt_login(string $username, string $password): array
     session_regenerate_id(true);
     $_SESSION['editorial_auth'] = [
         'user_id' => $user['id'],
-        'username' => $user['username'],
-        'display_name' => $user['display_name'],
-        'role' => $user['role'],
-        'must_change_password' => (bool) ($user['must_change_password'] ?? false),
         'login_at' => date('c'),
         'last_seen' => time(),
     ];
@@ -280,8 +541,14 @@ function editorial_logout(): void
     session_destroy();
 }
 
+// ─── Authentication & Revalidation ──────────────────────────────
+
 /**
  * Is there an authenticated editorial user.
+ *
+ * Phase 2: Revalidates user from database every request.
+ * Database is source of truth for is_active, role, display_name, must_change_password.
+ * Session only holds identity (user_id) and session state (login_at, last_seen).
  */
 function editorial_is_authenticated(): bool
 {
@@ -290,18 +557,34 @@ function editorial_is_authenticated(): bool
         return false;
     }
 
+    // Check session TTL
     $lastSeen = (int) ($auth['last_seen'] ?? 0);
     if ($lastSeen <= 0 || (time() - $lastSeen) > EDITORIAL_SESSION_TTL) {
         editorial_logout();
         return false;
     }
 
+    // Revalidate from database
+    $dbUser = editorial_find_user_by_id((string) $auth['user_id']);
+    if ($dbUser === null || empty($dbUser['is_active'])) {
+        editorial_logout();
+        return false;
+    }
+
+    // Refresh session with current DB state
     $_SESSION['editorial_auth']['last_seen'] = time();
+    $_SESSION['editorial_auth']['username'] = $dbUser['username'];
+    $_SESSION['editorial_auth']['display_name'] = $dbUser['display_name'];
+    $_SESSION['editorial_auth']['role'] = $dbUser['role'];
+    $_SESSION['editorial_auth']['must_change_password'] = (bool) $dbUser['must_change_password'];
+
     return true;
 }
 
 /**
  * Get current editorial user session payload.
+ *
+ * Returns revalidated state from DB (via editorial_is_authenticated).
  *
  * @return array<string,mixed>|null
  */
@@ -316,14 +599,34 @@ function editorial_current_user(): ?array
 
 /**
  * Require editorial authentication, redirect to login.
+ *
+ * Phase 2: Also enforces must_change_password redirect.
  */
 function editorial_require_auth(): void
 {
-    if (editorial_is_authenticated()) {
-        return;
+    if (!editorial_is_authenticated()) {
+        editorial_flash_set('warning', 'Vui lòng đăng nhập để tiếp tục.');
+        editorial_redirect(editorial_url('login.php'));
     }
-    editorial_flash_set('warning', 'Vui lòng đăng nhập để tiếp tục.');
-    editorial_redirect(editorial_url('login.php'));
+
+    // Enforce must_change_password
+    $user = $_SESSION['editorial_auth'] ?? null;
+    if (is_array($user) && !empty($user['must_change_password'])) {
+        // Allow access only to change-password.php and logout.php
+        $script = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? ''));
+        $allowed = ['/change-password.php', '/logout.php'];
+        $isAllowed = false;
+        foreach ($allowed as $suffix) {
+            if (str_ends_with($script, $suffix)) {
+                $isAllowed = true;
+                break;
+            }
+        }
+        if (!$isAllowed) {
+            editorial_flash_set('warning', 'Bạn cần đổi mật khẩu trước khi tiếp tục sử dụng hệ thống.');
+            editorial_redirect(editorial_url('change-password.php'));
+        }
+    }
 }
 
 /**

@@ -84,13 +84,46 @@ Không dùng SQLite autoincrement làm article identity.
 10. Ghi revision published + activity
 ```
 
+## Phase 2 — Quản lý tài khoản thành viên
+
+### Trang quản lý (`editorial/users.php`)
+- Chỉ role `admin` truy cập (server-side `editorial_require_role`).
+- Danh sách, tạo, sửa (display_name/role/is_active), đặt lại mật khẩu.
+- Không physical delete — chỉ deactivate.
+
+### Auth revalidation mỗi request
+- `editorial_is_authenticated()` đọc user từ DB mỗi request.
+- Session chỉ giữ `user_id` + session state (`login_at`, `last_seen`).
+- `role`, `display_name`, `is_active`, `must_change_password` luôn lấy từ DB.
+- Nếu user bị khóa → logout ngay ở request tiếp theo.
+- Nếu role đổi → có hiệu lực ngay.
+
+### must_change_password
+- Sau login, nếu `must_change_password = 1`:
+  chỉ cho truy cập `change-password.php` và `logout.php`.
+- Các trang khác redirect về `change-password.php`.
+- Sau đổi mật khẩu thành công: `must_change_password = 0`.
+
+### Bảo vệ admin cuối cùng
+- Không cho deactivate nếu chỉ còn 1 active admin.
+- Không cho đổi role admin → editor nếu chỉ còn 1 active admin.
+- Không cho admin tự khóa chính mình.
+- Kiểm tra trong `editorial_transaction()` để đảm bảo atomic.
+
+### Permissions cơ bản
+- `admin`: quản lý users, toàn quyền.
+- `editor`: chỉ xem dashboard, đổi mật khẩu.
+- Server-side enforce qua `editorial_require_role()`.
+- Sidebar ẩn mục Thành viên cho editor (nhưng server là lớp bảo vệ thật).
+
 ## Roadmap
 
 1. **Foundation** (Phase 1) ✅ — Schema, auth, bootstrap, dashboard shell
-2. **Users** — Quản lý thành viên, thêm/sửa/deactivate
+2. **Users** (Phase 2) ✅ — Quản lý thành viên, auth revalidation, must_change_password
 3. **Assignment** — Nhận bài, atomic claim, assignment history
 4. **Workspace/Lock/Draft** — TinyMCE editor, heartbeat, auto-save
 5. **Revisions/Compare** — Snapshot, diff bản cũ/mới
 6. **Review** — Gửi duyệt, trả lại, approve
 7. **Safe Publish** — Optimistic lock, backup, ghi HTML gốc
 8. **Hardening** — Audit dashboard, bulk ops, performance
+

@@ -26,6 +26,8 @@ function editorial_layout_header(array $options = []): void
     $bodyClass = trim((string) ($options['body_class'] ?? ''));
     $user = editorial_current_user();
 
+    $isAdmin = ($user !== null && ($user['role'] ?? '') === 'admin');
+
     $menu = [
         [
             'key' => 'dashboard',
@@ -47,14 +49,15 @@ function editorial_layout_header(array $options = []): void
             'icon' => 'fa-solid fa-clipboard-list',
             'disabled' => true,
         ],
-        [
+    ];
+    if ($isAdmin) {
+        $menu[] = [
             'key' => 'members',
             'label' => 'Thành viên',
-            'href' => '#',
+            'href' => editorial_url('users.php'),
             'icon' => 'fa-solid fa-users',
-            'disabled' => true,
-        ],
-    ];
+        ];
+    }
     ?>
     <!DOCTYPE html>
     <html lang="vi">
@@ -122,6 +125,9 @@ function editorial_layout_header(array $options = []): void
                                 <span><?= editorial_h((string) ($user['role'] ?? '')) ?></span>
                             </div>
                         </div>
+                        <a class="editorial-change-pw-btn" href="<?= editorial_h(editorial_url('change-password.php')) ?>" title="Đổi mật khẩu">
+                            <i class="fa-solid fa-key"></i>
+                        </a>
                         <a class="admin-logout-btn" href="<?= editorial_h(editorial_url('logout.php')) ?>">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             <span>Đăng xuất</span>
