@@ -874,11 +874,15 @@ function editorial_retry_public_rebuild(string $articleId, string $adminUserId):
     $eventType = !empty($result['ok'])
         ? 'article.publish.public_rebuild_retry_succeeded'
         : 'article.publish.public_rebuild_retry_failed';
-    editorial_log_activity($eventType, $articleId, $adminUserId, json_encode([
-        'code' => $result['code'] ?? ($result['ok'] ? 'rebuild_succeeded' : 'unknown'),
-        'exit_code' => $result['exit_code'] ?? null,
-        'message' => $result['message'] ?? '',
-    ]));
+    try {
+        editorial_log_activity($eventType, $articleId, $adminUserId, json_encode([
+            'code' => $result['code'] ?? ($result['ok'] ? 'rebuild_succeeded' : 'unknown'),
+            'exit_code' => $result['exit_code'] ?? null,
+            'message' => $result['message'] ?? '',
+        ]));
+    } catch (\Throwable $e) {
+        // Best-effort audit: rebuild result remains the core result.
+    }
 
     return $result;
 }

@@ -163,6 +163,12 @@ function editorial_integrity_check_article_state(array $state): array
             if ($activeAssignmentCount !== 1) {
                 $issues[] = editorial_integrity_issue('critical', $status . '_assignment_count', $articleId, 'assignment', 'Bài ' . $status . ' phải có đúng 1 assignment. Hiện có: ' . $activeAssignmentCount);
             }
+            if ($activeAssignmentCount === 1 && !empty($assignedUserId)) {
+                $asgn = editorial_get_active_assignment($articleId);
+                if ($asgn && $asgn['user_id'] !== $assignedUserId) {
+                    $issues[] = editorial_integrity_issue('critical', $status . '_assignment_user_mismatch', $articleId, 'assignment', 'Assignment user không khớp state.assigned_user_id.');
+                }
+            }
             if (empty($state['current_revision_id'])) {
                 $issues[] = editorial_integrity_issue('critical', $status . '_no_current_revision', $articleId, 'revision', 'Bài ' . $status . ' không có current_revision_id.');
             }
@@ -484,24 +490,40 @@ function editorial_integrity_check_backups(array $state): array
         return $issues;
     }
 
-    // Resolve relative to storage/backups
-    $backupBase = dirname(__DIR__) . '/storage/backups';
-    $absolutePath = $backupBase . '/' . ltrim($backupPath, '/');
-
-    // Containment check
-    $realBase = realpath($backupBase);
-    $realPath = realpath($absolutePath);
-    if ($realBase === false) {
-        $issues[] = editorial_integrity_issue('warning', 'backup_dir_missing', $articleId, 'backup', 'Thư mục backup không tồn tại.');
+    // publish_backup_path is relative to editorial/storage, not storage/backups.
+    $backupPath = trim((string) $backupPath);
+    $pathParts = explode('/', $backupPath);
+    $invalidShape = $backupPath === ''
+        || str_starts_with($backupPath, '/')
+        || str_contains($backupPath, '\\')
+        || str_contains($backupPath, "\0")
+        || !str_starts_with($backupPath, 'backups/')
+        || count($pathParts) < 2
+        || array_filter($pathParts, static fn(string $part): bool => $part === '' || $part === '.' || $part === '..') !== [];
+    if ($invalidShape) {
+        $issues[] = editorial_integrity_issue('critical', 'backup_path_invalid', $articleId, 'backup', 'publish_backup_path không đúng contract relative-to-storage/backups.');
         return $issues;
     }
-    if ($realPath === false || strpos($realPath, $realBase . DIRECTORY_SEPARATOR) !== 0) {
+
+    $storageRoot = dirname(__DIR__) . '/storage';
+    $backupBase = $storageRoot . '/backups';
+    $absolutePath = $storageRoot . '/' . $backupPath;
+
+    // A missing backup is operationally different from a path escape.
+    if (!file_exists($absolutePath)) {
+        $issues[] = editorial_integrity_issue('warning', 'backup_file_missing', $articleId, 'backup', 'File backup không tồn tại.');
+        return $issues;
+    }
+
+    $realBase = realpath($backupBase);
+    $realPath = realpath($absolutePath);
+    if ($realBase === false || $realPath === false
+        || !str_starts_with($realPath, $realBase . DIRECTORY_SEPARATOR)) {
         $issues[] = editorial_integrity_issue('critical', 'backup_path_escape', $articleId, 'backup', 'Backup path nằm ngoài thư mục backup.');
         return $issues;
     }
-
-    if (!file_exists($absolutePath) || !is_file($absolutePath)) {
-        $issues[] = editorial_integrity_issue('warning', 'backup_file_missing', $articleId, 'backup', 'File backup không tồn tại.');
+    if (!is_file($realPath)) {
+        $issues[] = editorial_integrity_issue('warning', 'backup_file_invalid', $articleId, 'backup', 'Backup path không trỏ tới file hợp lệ.');
     }
 
     return $issues;
