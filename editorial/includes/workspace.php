@@ -357,7 +357,7 @@ function editorial_build_initial_payload(array $parsed, array $article, array $a
         'prose_html' => (string) ($parsed['prose']['inner'] ?? ''),
         'publish_date' => (string) ($articleMeta['publishDate'] ?? ''),
         'modified_date' => (string) ($articleMeta['modifiedDate'] ?? ''),
-        'featured_image' => (string) ($articleMeta['image'] ?? ''),
+        'featured_image' => (string) ($articleMeta['image'] ?? $article['image'] ?? ''),
         'tags' => $tags,
         'tags_text' => $tagsText,
         // Taxonomy (read-only, preserved server-side)

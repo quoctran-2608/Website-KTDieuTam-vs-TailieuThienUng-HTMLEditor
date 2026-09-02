@@ -107,6 +107,7 @@ function editorial_normalize_article(array $item): ?array
         'topic_lv3_key' => (string) ($item['topicLv3Key'] ?? ''),
         'topic_lv3_label' => (string) ($item['topicLv3Label'] ?? ''),
         'tags' => $tags,
+        'image' => (string) ($item['image'] ?? ''),
         'publish_date' => (string) ($item['publishDate'] ?? ''),
         'search_index' => $searchIndex,
     ];

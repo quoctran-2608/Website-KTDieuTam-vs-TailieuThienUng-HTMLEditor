@@ -405,11 +405,12 @@ function editorial_validate_rendered_html(string $newHtml, array $normalized): a
         return ['ok' => false, 'message' => 'Rendered meta description không khớp approved excerpt.'];
     }
 
-    // Verify .article-summary exists and matches excerpt
-    $summaryText = $parsed['summary_text'] ?? null;
-    if ($summaryText === null || $summaryText === false) {
-        return ['ok' => false, 'message' => 'Rendered HTML thiếu .article-summary.'];
+    // Verify .article-summary EXISTS (explicit regex detection, not relying on empty string)
+    if (!preg_match('/<p\b[^>]*class=(["\'])(?:(?!\1).)*\barticle-summary\b(?:(?!\1).)*\1[^>]*>/is', $newHtml)) {
+        return ['ok' => false, 'message' => 'Rendered HTML thiếu .article-summary element.'];
     }
+    // Extract and compare text content
+    $summaryText = $parsed['summary_text'] ?? '';
     $normalizedSummary = trim(html_entity_decode(strip_tags((string) $summaryText), ENT_QUOTES, 'UTF-8'));
     $normalizedExcerpt = trim($normalized['excerpt']);
     if ($normalizedSummary !== $normalizedExcerpt) {
@@ -694,8 +695,15 @@ function editorial_update_article_source(string $articleId, array $normalized): 
         return ['ok' => false, 'message' => 'Lỗi đổi tên file tạm articles.json.'];
     }
 
-    return ['ok' => true, 'source_hash' => $sourceHash, 'source_bytes' => $sourceBytes,
-            'catalog_backup_path' => $backupResult['path']];
+    // Verify written catalog hash
+    $newHash = hash_file('sha256', $catalogPath);
+    $plannedHash = hash('sha256', $newSourceBytes);
+    if ($newHash !== $plannedHash) {
+        return ['ok' => false, 'message' => 'Hash catalog sau ghi không khớp planned.'];
+    }
+
+    return ['ok' => true, 'source_hash' => $sourceHash, 'new_hash' => $newHash,
+            'source_bytes' => $sourceBytes, 'catalog_backup_path' => $backupResult['path']];
 }
 
 // ─── Public Rebuild ──────────────────────────────────────────────────────────
@@ -748,9 +756,9 @@ function editorial_public_rebuild_after_publish(string $articleId): array
         $lastExitCode = $exitCode;
         $lastPython = $pythonBin;
 
-        // If exit code indicates the binary itself wasn't found (127 on unix, 9009 on win),
-        // try next candidate
-        if ($exitCode === 127 || $exitCode === 9009) {
+        // If exit code indicates the binary wasn't found or not executable
+        // (127=not found on unix, 9009=not found on win, 126=not executable)
+        if ($exitCode === 127 || $exitCode === 9009 || $exitCode === 126) {
             continue;
         }
 
@@ -779,7 +787,7 @@ function editorial_public_rebuild_after_publish(string $articleId): array
     // Failure
     $failCode = 'rebuild_failed';
     $failMsg = 'Rebuild script thất bại.';
-    if ($lastExitCode === 127 || $lastExitCode === 9009) {
+    if ($lastExitCode === 127 || $lastExitCode === 9009 || $lastExitCode === 126) {
         $failCode = 'python_not_found';
         $failMsg = 'Không tìm thấy Python. Cần rebuild thủ công.';
     } elseif ($lastExitCode !== 0) {
@@ -809,34 +817,82 @@ function editorial_compensate_publish(array $ctx): array
 {
     $failures = [];
 
-    // 1. Restore live HTML if replaced
+    // 1. Restore live HTML if replaced — with optimistic guard
     if (!empty($ctx['live_replaced']) && !empty($ctx['live_target_path'])
         && !empty($ctx['live_backup_absolute_path']) && !empty($ctx['live_hash_before'])) {
         try {
-            $restoreResult = editorial_restore_backup(
-                $ctx['live_target_path'],
-                $ctx['live_backup_absolute_path'],
-                $ctx['live_hash_before']
-            );
-            if (!$restoreResult['ok']) {
-                $failures[] = ['component' => 'live_html', 'message' => $restoreResult['message']];
+            // Guard: only restore if current file is exactly what WE wrote
+            // If someone else changed it after our write, do NOT overwrite their change
+            if (!empty($ctx['live_hash_after'])) {
+                $currentLiveHash = hash_file('sha256', $ctx['live_target_path']);
+                if ($currentLiveHash !== $ctx['live_hash_after']) {
+                    $failures[] = [
+                        'component' => 'live_html',
+                        'code' => 'concurrent_change_detected',
+                        'message' => 'File HTML đã bị thay đổi bởi process khác sau publish. Không restore tự động.',
+                        'expected_owned_hash' => $ctx['live_hash_after'],
+                        'current_hash' => $currentLiveHash,
+                    ];
+                } else {
+                    $restoreResult = editorial_restore_backup(
+                        $ctx['live_target_path'],
+                        $ctx['live_backup_absolute_path'],
+                        $ctx['live_hash_before']
+                    );
+                    if (!$restoreResult['ok']) {
+                        $failures[] = ['component' => 'live_html', 'message' => $restoreResult['message']];
+                    }
+                }
+            } else {
+                // No hash_after tracked — fallback to unconditional restore
+                $restoreResult = editorial_restore_backup(
+                    $ctx['live_target_path'],
+                    $ctx['live_backup_absolute_path'],
+                    $ctx['live_hash_before']
+                );
+                if (!$restoreResult['ok']) {
+                    $failures[] = ['component' => 'live_html', 'message' => $restoreResult['message']];
+                }
             }
         } catch (\Throwable $e) {
             $failures[] = ['component' => 'live_html', 'message' => 'Exception: ' . $e->getMessage()];
         }
     }
 
-    // 2. Restore data/articles.json if replaced
+    // 2. Restore data/articles.json if replaced — with optimistic guard
     if (!empty($ctx['catalog_replaced']) && !empty($ctx['catalog_target_path'])
         && !empty($ctx['catalog_source_bytes']) && !empty($ctx['catalog_hash_before'])) {
         try {
-            $restoreResult = editorial_atomic_restore_bytes(
-                $ctx['catalog_target_path'],
-                $ctx['catalog_source_bytes'],
-                $ctx['catalog_hash_before']
-            );
-            if (!$restoreResult['ok']) {
-                $failures[] = ['component' => 'catalog', 'message' => $restoreResult['message']];
+            // Guard: only restore if current catalog is exactly what WE wrote
+            if (!empty($ctx['catalog_hash_after'])) {
+                $currentCatalogHash = hash_file('sha256', $ctx['catalog_target_path']);
+                if ($currentCatalogHash !== $ctx['catalog_hash_after']) {
+                    $failures[] = [
+                        'component' => 'catalog',
+                        'code' => 'concurrent_change_detected',
+                        'message' => 'articles.json đã bị thay đổi bởi process khác sau publish. Không restore tự động.',
+                        'expected_owned_hash' => $ctx['catalog_hash_after'],
+                        'current_hash' => $currentCatalogHash,
+                    ];
+                } else {
+                    $restoreResult = editorial_atomic_restore_bytes(
+                        $ctx['catalog_target_path'],
+                        $ctx['catalog_source_bytes'],
+                        $ctx['catalog_hash_before']
+                    );
+                    if (!$restoreResult['ok']) {
+                        $failures[] = ['component' => 'catalog', 'message' => $restoreResult['message']];
+                    }
+                }
+            } else {
+                $restoreResult = editorial_atomic_restore_bytes(
+                    $ctx['catalog_target_path'],
+                    $ctx['catalog_source_bytes'],
+                    $ctx['catalog_hash_before']
+                );
+                if (!$restoreResult['ok']) {
+                    $failures[] = ['component' => 'catalog', 'message' => $restoreResult['message']];
+                }
             }
         } catch (\Throwable $e) {
             $failures[] = ['component' => 'catalog', 'message' => 'Exception: ' . $e->getMessage()];
@@ -887,10 +943,13 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
         'live_target_path' => $filePath,
         'live_backup_absolute_path' => null,
         'live_hash_before' => null,
+        'live_hash_after' => null,
         'catalog_target_path' => dirname(dirname(__DIR__)) . '/data/articles.json',
         'catalog_source_bytes' => null,
         'catalog_hash_before' => null,
+        'catalog_hash_after' => null,
         'published_snapshot_path' => null,
+        'published_revision_id' => null,
     ];
 
     // Single compensation result — exactly one attempt allowed
@@ -1023,6 +1082,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                 return $replaceResult;
             }
             $compCtx['live_replaced'] = true;
+            $compCtx['live_hash_after'] = $newHtmlHash;
 
             // From here on: ALL failures → compensation + throw
 
@@ -1050,9 +1110,11 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                 $compCtx['catalog_replaced'] = true;
                 $compCtx['catalog_source_bytes'] = $updateSrcResult['source_bytes'];
                 $compCtx['catalog_hash_before'] = $updateSrcResult['source_hash'];
+                $compCtx['catalog_hash_after'] = $updateSrcResult['new_hash'];
 
                 // ── CREATE PUBLISHED REVISION ──
                 $publishedRevisionId = editorial_generate_id('rev');
+                $compCtx['published_revision_id'] = $publishedRevisionId;
                 $stmt = $db->prepare('SELECT MAX(revision_no) FROM editorial_revisions WHERE article_id = :aid');
                 $stmt->execute(['aid' => $articleId]);
                 $publishedRevisionNo = (int) $stmt->fetchColumn() + 1;
@@ -1207,6 +1269,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
         }
 
         // Report compensation result (NO second compensation attempt)
+        $compOk = ($compensationResult !== null && $compensationResult['ok']);
         if ($compensationResult !== null && !$compensationResult['ok']) {
             try {
                 editorial_log_activity('article.publish.compensation_failed', $articleId, $adminUserId, json_encode([
@@ -1221,13 +1284,98 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
             }
         }
 
-        return ['ok' => false, 'message' => 'Publish thất bại và đã được khôi phục: ' . $e->getMessage()];
+        if ($compOk) {
+            return ['ok' => false,
+                    'message' => 'Publish thất bại nhưng hệ thống đã khôi phục trạng thái file trước đó.',
+                    'recovery_required' => false];
+        } else {
+            return ['ok' => false,
+                    'message' => 'Publish thất bại và việc khôi phục tự động KHÔNG hoàn tất. Không tiếp tục thao tác trên bài này cho đến khi kiểm tra recovery.',
+                    'recovery_required' => true];
+        }
 
     } catch (\Throwable $e) {
-        // Unexpected pre-commit error (DB error, etc.)
+        // This catch handles:
+        // - Pre-destructive unexpected errors (live_replaced=false)
+        // - COMMIT failure AFTER callback returned success (live_replaced=true, compensationResult=null)
+
+        // Case B: COMMIT threw after destructive point — inner catch never ran
+        if ($compCtx['live_replaced'] && $compensationResult === null) {
+            // Before compensating, check if DB actually committed despite exception
+            // (edge case: PDO may throw after successful COMMIT)
+            $shouldCompensate = true;
+            try {
+                $postState = editorial_get_article_state($articleId);
+                if ($postState
+                    && $postState['status'] === 'published'
+                    && !empty($compCtx['published_revision_id'])
+                    && ($postState['published_revision_id'] ?? '') === $compCtx['published_revision_id']
+                    && ($postState['published_live_hash'] ?? '') === $compCtx['live_hash_after']) {
+                    // COMMIT actually succeeded despite exception — do NOT undo a successful publish
+                    $shouldCompensate = false;
+                }
+            } catch (\Throwable $checkErr) {
+                // Cannot verify — fail-safe: assume COMMIT failed, compensate
+            }
+
+            if ($shouldCompensate) {
+                $compensationResult = editorial_compensate_publish($compCtx);
+
+                try {
+                    editorial_log_activity('article.publish.failed', $articleId, $adminUserId, json_encode([
+                        'stage' => 'commit_failure',
+                        'message' => $e->getMessage(),
+                        'exception' => get_class($e),
+                        'hash_before' => $compCtx['live_hash_before'],
+                        'backup_path' => $compCtx['live_backup_absolute_path'],
+                    ]));
+                } catch (\Throwable $logErr) {
+                    // Best-effort
+                }
+
+                if ($compensationResult !== null && !$compensationResult['ok']) {
+                    try {
+                        editorial_log_activity('article.publish.compensation_failed', $articleId, $adminUserId, json_encode([
+                            'stage' => 'commit_failure_compensation',
+                            'article_id' => $articleId,
+                            'failures' => $compensationResult['failures'],
+                        ]));
+                    } catch (\Throwable $logErr) {
+                        // Best-effort
+                    }
+                }
+
+                $compOk = ($compensationResult !== null && $compensationResult['ok']);
+                if ($compOk) {
+                    return ['ok' => false,
+                            'message' => 'Publish thất bại (lỗi COMMIT) nhưng hệ thống đã khôi phục trạng thái file trước đó.',
+                            'recovery_required' => false];
+                } else {
+                    return ['ok' => false,
+                            'message' => 'Publish thất bại (lỗi COMMIT) và việc khôi phục tự động KHÔNG hoàn tất. Không tiếp tục thao tác trên bài này cho đến khi kiểm tra recovery.',
+                            'recovery_required' => true];
+                }
+            } else {
+                // COMMIT actually succeeded — treat as success
+                try {
+                    editorial_log_activity('article.publish.succeeded', $articleId, $adminUserId, json_encode([
+                        'note' => 'COMMIT succeeded despite exception',
+                        'exception' => get_class($e),
+                        'published_revision_id' => $compCtx['published_revision_id'],
+                    ]));
+                } catch (\Throwable $logErr) {
+                    // Best-effort
+                }
+                return ['ok' => true,
+                        'message' => 'Xuất bản thành công.',
+                        'audit_warning' => 'COMMIT threw exception but state verified as committed: ' . $e->getMessage()];
+            }
+        }
+
+        // Case C: Pre-destructive failure — no compensation needed
         try {
             editorial_log_activity('article.publish.failed', $articleId, $adminUserId, json_encode([
-                'stage' => 'unexpected',
+                'stage' => 'unexpected_pre_destructive',
                 'message' => $e->getMessage(),
                 'exception' => get_class($e),
             ]));
