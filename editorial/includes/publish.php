@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 /**
- * Editorial V2 Phase 7 — Publish Service Module (Hardened 7.1).
+ * Editorial V2 Phase 7 — Publish Service Module (Hardened 7.2).
  *
  * Handles safe publish of approved revisions to original live HTML files.
  * Only admin can publish. Only approved revision can be published.
@@ -15,6 +15,8 @@ declare(strict_types=1);
  * - Automatic compensation + DB rollback (throw) on failure after destructive point
  * - Taxonomy fields NOT overwritten
  * - Permission preservation on replaced files
+ * - Exactly one compensation attempt per failed publish
+ * - Post-commit audit is best-effort (never converts success to failure)
  *
  * Failure strategy:
  * - BEFORE live file replace: return ['ok'=>false] (no destructive state)
@@ -54,6 +56,55 @@ function editorial_parse_tags_text(string $tagsText): array
         }
     }
     return $result;
+}
+
+// ─── Normalized Publish Payload ──────────────────────────────────────────────
+
+/**
+ * Build normalized expected publish payload from approved payload + live meta + article.
+ * Renderer and validator use the SAME normalized contract.
+ * No taxonomy fields.
+ */
+function editorial_normalize_publish_payload(array $approvedPayload, array $liveMeta, array $article): array
+{
+    $title = (string) ($approvedPayload['title'] ?? '');
+    $excerpt = (string) ($approvedPayload['excerpt'] ?? '');
+    $proseHtml = (string) ($approvedPayload['prose_html'] ?? '');
+    $publishDate = (string) ($approvedPayload['publish_date'] ?? '');
+
+    // modifiedDate: legacy semantics — empty string → null
+    $rawModified = (string) ($approvedPayload['modified_date'] ?? '');
+    $modifiedDate = $rawModified !== '' ? $rawModified : null;
+
+    $tags = editorial_parse_tags_text((string) ($approvedPayload['tags_text'] ?? ''));
+
+    // featured_image: legacy fallback — empty → preserve current article image
+    $rawImage = trim((string) ($approvedPayload['featured_image'] ?? ''));
+    if ($rawImage === '') {
+        $rawImage = trim((string) ($liveMeta['image'] ?? $article['image'] ?? ''));
+    }
+    $image = $rawImage;
+
+    // Section label from current live meta (canonical), NOT from client/approved
+    $sectionLabel = (string) ($liveMeta['sectionLabel'] ?? $article['section_label'] ?? '');
+
+    // Expected <title> tag: {title} | {sectionLabel} | Kế Toán Diệu Tâm
+    $expectedTitleTag = $title;
+    if ($sectionLabel !== '') {
+        $expectedTitleTag .= ' | ' . $sectionLabel . ' | Kế Toán Diệu Tâm';
+    }
+
+    return [
+        'title' => $title,
+        'excerpt' => $excerpt,
+        'prose_html' => $proseHtml,
+        'publishDate' => $publishDate,
+        'modifiedDate' => $modifiedDate,
+        'tags' => $tags,
+        'image' => $image,
+        'sectionLabel' => $sectionLabel,
+        'expectedTitleTag' => $expectedTitleTag,
+    ];
 }
 
 // ─── Structured Preflight ────────────────────────────────────────────────────
@@ -195,14 +246,13 @@ function editorial_publish_preflight(string $articleId, string $adminUserId): ar
 
 // ─── Pure Render ─────────────────────────────────────────────────────────────
 
-function editorial_render_approved_html(string $liveHtml, array $article, array $approvedPayload): array
+function editorial_render_approved_html(string $liveHtml, array $article, array $normalized): array
 {
     // 1. Parse liveHtml
     $parsed = editorial_parse_article_html($liveHtml, '');
     if (!$parsed['ok']) {
         return ['ok' => false, 'message' => 'Lỗi parse HTML hiện tại: ' . ($parsed['message'] ?? '')];
     }
-
     if (!isset($parsed['prose']['open_tag_end'], $parsed['prose']['close_tag_start'])) {
         return ['ok' => false, 'message' => 'Không tìm thấy vùng article-prose.'];
     }
@@ -210,29 +260,25 @@ function editorial_render_approved_html(string $liveHtml, array $article, array 
     // 2. Replace .article-prose inner HTML (offset-based, not regex)
     $proseOpenEnd = $parsed['prose']['open_tag_end'];
     $proseCloseStart = $parsed['prose']['close_tag_start'];
-    $newProse = $approvedPayload['prose_html'] ?? '';
-    $html = substr($liveHtml, 0, $proseOpenEnd) . "\n" . $newProse . "\n" . substr($liveHtml, $proseCloseStart);
+    $html = substr($liveHtml, 0, $proseOpenEnd) . "\n" . $normalized['prose_html'] . "\n" . substr($liveHtml, $proseCloseStart);
 
     // 3. Update script#article-meta JSON — re-parse after prose replacement
     $parsed2 = editorial_parse_article_html($html, '');
     if (!$parsed2['ok'] || !isset($parsed2['meta']['open_tag_end'], $parsed2['meta']['close_tag_start'])) {
         return ['ok' => false, 'message' => 'Lỗi parse HTML sau khi chèn prose.'];
     }
-
     $currentMeta = $parsed2['meta_payload'] ?? [];
     if (!is_array($currentMeta)) {
         return ['ok' => false, 'message' => 'Meta JSON hiện tại không hợp lệ.'];
     }
 
     // Only update editable keys — NEVER touch taxonomy
-    $currentMeta['title'] = $approvedPayload['title'] ?? '';
-    $currentMeta['publishDate'] = $approvedPayload['publish_date'] ?? '';
-    $currentMeta['modifiedDate'] = $approvedPayload['modified_date'] ?? '';
-    $currentMeta['tags'] = editorial_parse_tags_text($approvedPayload['tags_text'] ?? '');
-    $currentMeta['excerpt'] = $approvedPayload['excerpt'] ?? '';
-    if (isset($approvedPayload['featured_image'])) {
-        $currentMeta['image'] = $approvedPayload['featured_image'];
-    }
+    $currentMeta['title'] = $normalized['title'];
+    $currentMeta['publishDate'] = $normalized['publishDate'];
+    $currentMeta['modifiedDate'] = $normalized['modifiedDate'];
+    $currentMeta['tags'] = $normalized['tags'];
+    $currentMeta['excerpt'] = $normalized['excerpt'];
+    $currentMeta['image'] = $normalized['image'];
 
     $newMetaJson = json_encode($currentMeta, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     if ($newMetaJson === false) {
@@ -243,34 +289,41 @@ function editorial_render_approved_html(string $liveHtml, array $article, array 
     $metaCloseStart = $parsed2['meta']['close_tag_start'];
     $html = substr($html, 0, $metaOpenEnd) . "\n" . $newMetaJson . "\n" . substr($html, $metaCloseStart);
 
-    // 4. Update <title> — legacy contract: {title} | {section_label} | Kế Toán Diệu Tâm
-    $newTitle = $approvedPayload['title'] ?? '';
-    $sectionLabel = (string) ($currentMeta['sectionLabel'] ?? $article['sectionLabel'] ?? '');
-    $titleTag = $newTitle;
-    if ($sectionLabel !== '') {
-        $titleTag .= ' | ' . $sectionLabel . ' | Kế Toán Diệu Tâm';
-    }
+    // 4. Update <title> — legacy contract with replacement count validation
+    $titleEscaped = htmlspecialchars($normalized['expectedTitleTag'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+    $titleCount = 0;
     $html = preg_replace(
         '/<title>.*?<\/title>/is',
-        '<title>' . htmlspecialchars($titleTag, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '</title>',
-        $html, 1
-    ) ?? $html;
+        '<title>' . $titleEscaped . '</title>',
+        $html, 1, $titleCount
+    );
+    if ($titleCount !== 1) {
+        return ['ok' => false, 'message' => 'Không tìm thấy <title> trong HTML để cập nhật.'];
+    }
 
-    // 5. Update meta description — legacy contract: exact attribute reconstruction
-    $descEscaped = htmlspecialchars($approvedPayload['excerpt'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+    // 5. Update meta description — legacy contract with replacement count validation
+    $descEscaped = htmlspecialchars($normalized['excerpt'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+    $descCount = 0;
     $html = preg_replace(
         '/<meta\s+name="description"\s+content=".*?">/is',
         '<meta name="description" content="' . $descEscaped . '">',
-        $html, 1
-    ) ?? $html;
+        $html, 1, $descCount
+    );
+    if ($descCount !== 1) {
+        return ['ok' => false, 'message' => 'Không tìm thấy meta description trong HTML để cập nhật.'];
+    }
 
-    // 6. Update .article-summary — legacy contract with proper capture groups
-    $summaryEscaped = htmlspecialchars($approvedPayload['excerpt'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+    // 6. Update .article-summary — legacy contract with replacement count validation
+    $summaryEscaped = htmlspecialchars($normalized['excerpt'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+    $summaryCount = 0;
     $html = preg_replace(
         '/(<p\b[^>]*class=(["\'])(?:(?!\2).)*\barticle-summary\b(?:(?!\2).)*\2[^>]*>).*?(<\/p>)/is',
         '$1' . $summaryEscaped . '$3',
-        $html, 1
-    ) ?? $html;
+        $html, 1, $summaryCount
+    );
+    if ($summaryCount !== 1) {
+        return ['ok' => false, 'message' => 'Không tìm thấy .article-summary trong HTML để cập nhật.'];
+    }
 
     // 7. Cache busting on JS files
     $assetVersion = date('YmdHis');
@@ -287,7 +340,7 @@ function editorial_render_approved_html(string $liveHtml, array $article, array 
 
 // ─── Pre-write Validation (Enhanced) ─────────────────────────────────────────
 
-function editorial_validate_rendered_html(string $newHtml, array $approvedPayload): array
+function editorial_validate_rendered_html(string $newHtml, array $normalized): array
 {
     $parsed = editorial_parse_article_html($newHtml, '');
     if (!$parsed['ok']) {
@@ -296,55 +349,71 @@ function editorial_validate_rendered_html(string $newHtml, array $approvedPayloa
 
     // Verify prose region exists and contains expected content
     $renderedProse = trim($parsed['prose']['inner'] ?? '');
-    $expectedProse = trim($approvedPayload['prose_html'] ?? '');
+    $expectedProse = trim($normalized['prose_html']);
     if ($renderedProse !== $expectedProse) {
-        return ['ok' => false, 'message' => 'Rendered prose mismatch: nội dung prose sau render không khớp approved.'];
+        return ['ok' => false, 'message' => 'Rendered prose mismatch.'];
     }
 
-    // Verify meta region exists and JSON is valid with correct editable fields
+    // Verify meta region exists and JSON valid with correct editable fields
     $metaPayload = $parsed['meta_payload'] ?? null;
     if (!is_array($metaPayload)) {
         return ['ok' => false, 'message' => 'Rendered HTML meta JSON invalid.'];
     }
-    if (($metaPayload['title'] ?? '') !== ($approvedPayload['title'] ?? '')) {
+    if (($metaPayload['title'] ?? '') !== $normalized['title']) {
         return ['ok' => false, 'message' => 'Rendered meta title mismatch.'];
     }
-    if (($metaPayload['excerpt'] ?? '') !== ($approvedPayload['excerpt'] ?? '')) {
+    if (($metaPayload['excerpt'] ?? '') !== $normalized['excerpt']) {
         return ['ok' => false, 'message' => 'Rendered meta excerpt mismatch.'];
     }
-    if (($metaPayload['publishDate'] ?? '') !== ($approvedPayload['publish_date'] ?? '')) {
+    if (($metaPayload['publishDate'] ?? '') !== $normalized['publishDate']) {
         return ['ok' => false, 'message' => 'Rendered meta publishDate mismatch.'];
     }
-    if (($metaPayload['modifiedDate'] ?? '') !== ($approvedPayload['modified_date'] ?? '')) {
-        return ['ok' => false, 'message' => 'Rendered meta modifiedDate mismatch.'];
+    // modifiedDate: '' ↔ null normalize
+    $renderedMod = $metaPayload['modifiedDate'] ?? null;
+    $expectedMod = $normalized['modifiedDate'];
+    if ($renderedMod !== $expectedMod) {
+        // Also accept '' ↔ null equivalence
+        $normRendered = ($renderedMod === '' || $renderedMod === null) ? null : $renderedMod;
+        $normExpected = ($expectedMod === '' || $expectedMod === null) ? null : $expectedMod;
+        if ($normRendered !== $normExpected) {
+            return ['ok' => false, 'message' => 'Rendered meta modifiedDate mismatch.'];
+        }
     }
-    $expectedTags = editorial_parse_tags_text($approvedPayload['tags_text'] ?? '');
     $renderedTags = $metaPayload['tags'] ?? [];
-    if ($renderedTags !== $expectedTags) {
+    if ($renderedTags !== $normalized['tags']) {
         return ['ok' => false, 'message' => 'Rendered meta tags mismatch.'];
     }
-    if (isset($approvedPayload['featured_image']) && ($metaPayload['image'] ?? '') !== $approvedPayload['featured_image']) {
+    if (($metaPayload['image'] ?? '') !== $normalized['image']) {
         return ['ok' => false, 'message' => 'Rendered meta image mismatch.'];
     }
 
-    // Verify .article-summary text matches excerpt
-    $summaryText = $parsed['summary_text'] ?? '';
-    $expectedExcerpt = $approvedPayload['excerpt'] ?? '';
-    if ($summaryText !== '' && $expectedExcerpt !== '') {
-        $normalizedSummary = trim(html_entity_decode(strip_tags($summaryText), ENT_QUOTES, 'UTF-8'));
-        $normalizedExcerpt = trim($expectedExcerpt);
-        if ($normalizedSummary !== $normalizedExcerpt) {
-            return ['ok' => false, 'message' => 'Rendered article-summary text mismatch.'];
-        }
+    // Verify <title> exists and matches exact expected title contract
+    if (!preg_match('/<title>(.*?)<\/title>/is', $newHtml, $tm)) {
+        return ['ok' => false, 'message' => 'Rendered HTML thiếu <title>.'];
+    }
+    $renderedTitle = html_entity_decode($tm[1], ENT_QUOTES, 'UTF-8');
+    if ($renderedTitle !== $normalized['expectedTitleTag']) {
+        return ['ok' => false, 'message' => 'Rendered <title> không khớp expected title contract.'];
     }
 
-    // Verify <title> contains the approved title
-    if (preg_match('/<title>(.*?)<\/title>/is', $newHtml, $tm)) {
-        $renderedTitle = html_entity_decode($tm[1], ENT_QUOTES, 'UTF-8');
-        $expectedTitle = $approvedPayload['title'] ?? '';
-        if ($expectedTitle !== '' && strpos($renderedTitle, $expectedTitle) === false) {
-            return ['ok' => false, 'message' => 'Rendered <title> không chứa approved title.'];
-        }
+    // Verify meta description exists and matches excerpt
+    if (!preg_match('/<meta\s+name="description"\s+content="(.*?)"/is', $newHtml, $dm)) {
+        return ['ok' => false, 'message' => 'Rendered HTML thiếu meta description.'];
+    }
+    $renderedDesc = html_entity_decode($dm[1], ENT_QUOTES, 'UTF-8');
+    if ($renderedDesc !== $normalized['excerpt']) {
+        return ['ok' => false, 'message' => 'Rendered meta description không khớp approved excerpt.'];
+    }
+
+    // Verify .article-summary exists and matches excerpt
+    $summaryText = $parsed['summary_text'] ?? null;
+    if ($summaryText === null || $summaryText === false) {
+        return ['ok' => false, 'message' => 'Rendered HTML thiếu .article-summary.'];
+    }
+    $normalizedSummary = trim(html_entity_decode(strip_tags((string) $summaryText), ENT_QUOTES, 'UTF-8'));
+    $normalizedExcerpt = trim($normalized['excerpt']);
+    if ($normalizedSummary !== $normalizedExcerpt) {
+        return ['ok' => false, 'message' => 'Rendered article-summary text không khớp excerpt.'];
     }
 
     return ['ok' => true];
@@ -446,6 +515,9 @@ function editorial_restore_backup(string $targetPath, string $backupAbsolutePath
         return ['ok' => false, 'message' => 'Lỗi đọc file backup.'];
     }
 
+    // Preserve permissions of current target before restore
+    $currentPerms = @fileperms($targetPath);
+
     $dir = dirname($targetPath);
     $tempPath = $dir . '/.restore_tmp_' . bin2hex(random_bytes(8)) . '.html';
     $written = file_put_contents($tempPath, $backupBytes);
@@ -454,9 +526,24 @@ function editorial_restore_backup(string $targetPath, string $backupAbsolutePath
         return ['ok' => false, 'message' => 'Lỗi ghi file restore.'];
     }
 
+    // Best-effort: preserve permissions
+    if ($currentPerms !== false) {
+        @chmod($tempPath, $currentPerms & 0777);
+    }
+
     if (!rename($tempPath, $targetPath)) {
         @unlink($tempPath);
         return ['ok' => false, 'message' => 'Lỗi đổi tên file restore.'];
+    }
+
+    // Verify final hash after restore
+    $finalBytes = file_get_contents($targetPath);
+    if ($finalBytes === false) {
+        return ['ok' => false, 'message' => 'Lỗi đọc file HTML sau restore.'];
+    }
+    $finalHash = hash('sha256', $finalBytes);
+    if ($finalHash !== $expectedBackupHash) {
+        return ['ok' => false, 'message' => 'Hash file HTML sau restore không khớp.'];
     }
 
     return ['ok' => true];
@@ -532,7 +619,7 @@ function editorial_create_catalog_backup(string $catalogBytes, string $expectedH
 
 // ─── Catalog Update ──────────────────────────────────────────────────────────
 
-function editorial_update_article_source(string $articleId, array $approvedPayload): array
+function editorial_update_article_source(string $articleId, array $normalized): array
 {
     $catalogPath = dirname(dirname(__DIR__)) . '/data/articles.json';
     if (!file_exists($catalogPath)) {
@@ -574,25 +661,13 @@ function editorial_update_article_source(string $articleId, array $approvedPaylo
         return ['ok' => false, 'message' => 'data/articles.json có article_id trùng lặp. Publish bị chặn.'];
     }
 
-    // Update ONLY editable fields
-    if (isset($approvedPayload['title'])) {
-        $catalog[$foundIndex]['title'] = $approvedPayload['title'];
-    }
-    if (isset($approvedPayload['excerpt'])) {
-        $catalog[$foundIndex]['excerpt'] = $approvedPayload['excerpt'];
-    }
-    if (isset($approvedPayload['publish_date'])) {
-        $catalog[$foundIndex]['publishDate'] = $approvedPayload['publish_date'];
-    }
-    if (isset($approvedPayload['modified_date'])) {
-        $catalog[$foundIndex]['modifiedDate'] = $approvedPayload['modified_date'];
-    }
-    if (isset($approvedPayload['tags_text'])) {
-        $catalog[$foundIndex]['tags'] = editorial_parse_tags_text($approvedPayload['tags_text']);
-    }
-    if (isset($approvedPayload['featured_image'])) {
-        $catalog[$foundIndex]['image'] = $approvedPayload['featured_image'];
-    }
+    // Update ONLY editable fields using normalized payload
+    $catalog[$foundIndex]['title'] = $normalized['title'];
+    $catalog[$foundIndex]['excerpt'] = $normalized['excerpt'];
+    $catalog[$foundIndex]['publishDate'] = $normalized['publishDate'];
+    $catalog[$foundIndex]['modifiedDate'] = $normalized['modifiedDate'];
+    $catalog[$foundIndex]['tags'] = $normalized['tags'];
+    $catalog[$foundIndex]['image'] = $normalized['image'];
 
     $newSourceBytes = json_encode($catalog, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     if ($newSourceBytes === false) {
@@ -638,86 +713,97 @@ function editorial_public_rebuild_after_publish(string $articleId): array
                 'message' => 'Article ID bắt buộc cho public rebuild.'];
     }
 
-    // Determine python binary
-    $pythonBin = null;
-    $envPython = getenv('KDTD_PYTHON_BIN');
-    if ($envPython !== false && $envPython !== '') {
-        $pythonBin = $envPython;
-    } else {
-        // Try python3 first, then python
-        foreach (['python3', 'python'] as $candidate) {
-            $testCmd = $candidate . ' --version 2>&1';
-            $testOutput = null;
-            $testCode = -1;
-            @exec($testCmd, $testOutput, $testCode);
-            if ($testCode === 0) {
-                $pythonBin = $candidate;
-                break;
-            }
-        }
-    }
-
-    if ($pythonBin === null) {
-        // Check if exec is available at all
-        if (!function_exists('exec')) {
-            return ['ok' => false, 'code' => 'exec_unavailable',
-                    'message' => 'Hàm exec() không khả dụng. Cần rebuild thủ công.'];
-        }
-        return ['ok' => false, 'code' => 'python_not_found',
-                'message' => 'Không tìm thấy Python. Cần rebuild thủ công.'];
-    }
-
-    // Check exec availability
+    // exec() availability MUST be checked BEFORE any exec call
     if (!function_exists('exec')) {
         return ['ok' => false, 'code' => 'exec_unavailable',
                 'message' => 'Hàm exec() không khả dụng. Cần rebuild thủ công.'];
     }
 
-    $cmd = escapeshellarg($pythonBin) . ' '
-         . escapeshellarg($scriptPath)
-         . ' --mode fast'
-         . ' --source editorial-publish'
-         . ' --article-id ' . escapeshellarg($articleId)
-         . ' 2>&1';
+    // Build candidate list: env override first, then standard names
+    $candidates = [];
+    $envPython = getenv('KDTD_PYTHON_BIN');
+    if ($envPython !== false && $envPython !== '') {
+        $candidates[] = $envPython;
+    }
+    $candidates[] = 'python3';
+    $candidates[] = 'python';
 
-    $output = [];
-    $exitCode = -1;
-    @exec($cmd, $output, $exitCode);
+    // Try each candidate with the actual rebuild command
+    $lastOutput = [];
+    $lastExitCode = -1;
+    $lastPython = null;
 
-    $outputStr = implode("\n", $output);
+    foreach ($candidates as $pythonBin) {
+        $cmd = escapeshellarg($pythonBin) . ' '
+             . escapeshellarg($scriptPath)
+             . ' --mode fast'
+             . ' --source editorial-publish'
+             . ' --article-id ' . escapeshellarg($articleId)
+             . ' 2>&1';
+
+        $output = [];
+        $exitCode = -1;
+        @exec($cmd, $output, $exitCode);
+        $lastOutput = $output;
+        $lastExitCode = $exitCode;
+        $lastPython = $pythonBin;
+
+        // If exit code indicates the binary itself wasn't found (127 on unix, 9009 on win),
+        // try next candidate
+        if ($exitCode === 127 || $exitCode === 9009) {
+            continue;
+        }
+
+        // Binary was found — this is our result regardless of script success/failure
+        break;
+    }
+
+    $outputStr = implode("\n", $lastOutput);
     $outputTail = mb_substr($outputStr, -500);
 
-    // Try parse JSON result
+    // Parse JSON result
     $summary = null;
     $jsonResult = json_decode($outputStr, true);
     if (is_array($jsonResult)) {
         $summary = $jsonResult;
-        if (($jsonResult['ok'] ?? null) === false) {
-            return ['ok' => false, 'code' => 'rebuild_failed',
-                    'message' => $jsonResult['message'] ?? 'Rebuild script returned failure.',
-                    'exit_code' => $exitCode, 'summary' => $summary,
-                    'output_tail' => $outputTail, 'python' => $pythonBin];
-        }
     }
 
-    if ($exitCode !== 0) {
-        return ['ok' => false, 'code' => 'rebuild_exit_nonzero',
-                'message' => 'Rebuild script exit code: ' . $exitCode,
-                'exit_code' => $exitCode, 'summary' => $summary,
-                'output_tail' => $outputTail, 'python' => $pythonBin];
+    // Success requires ALL of: exit code 0 AND valid JSON AND summary.ok === true
+    if ($lastExitCode === 0 && is_array($summary) && ($summary['ok'] ?? null) === true) {
+        return ['ok' => true, 'code' => 'rebuild_succeeded',
+                'message' => 'Đã rebuild dữ liệu public thành công.',
+                'exit_code' => 0, 'summary' => $summary,
+                'output_tail' => $outputTail, 'python' => $lastPython];
     }
 
-    return ['ok' => true, 'code' => 'rebuild_succeeded',
-            'message' => 'Đã rebuild dữ liệu public thành công.',
-            'exit_code' => 0, 'summary' => $summary,
-            'output_tail' => $outputTail, 'python' => $pythonBin];
+    // Failure
+    $failCode = 'rebuild_failed';
+    $failMsg = 'Rebuild script thất bại.';
+    if ($lastExitCode === 127 || $lastExitCode === 9009) {
+        $failCode = 'python_not_found';
+        $failMsg = 'Không tìm thấy Python. Cần rebuild thủ công.';
+    } elseif ($lastExitCode !== 0) {
+        $failCode = 'rebuild_exit_nonzero';
+        $failMsg = 'Rebuild script exit code: ' . $lastExitCode;
+    } elseif (!is_array($summary)) {
+        $failCode = 'rebuild_invalid_json';
+        $failMsg = 'Rebuild script không trả về JSON hợp lệ.';
+    } elseif (($summary['ok'] ?? null) !== true) {
+        $failMsg = $summary['message'] ?? 'Rebuild script returned ok !== true.';
+    }
+
+    return ['ok' => false, 'code' => $failCode,
+            'message' => $failMsg,
+            'exit_code' => $lastExitCode, 'summary' => $summary,
+            'output_tail' => $outputTail, 'python' => $lastPython];
 }
 
 // ─── Central Compensation Helper ─────────────────────────────────────────────
 
 /**
  * Attempt filesystem compensation after a failed publish.
- * Returns structured result; never throws.
+ * Returns structured result; GUARANTEED never throws.
+ * Each component restoration is wrapped in try-catch.
  */
 function editorial_compensate_publish(array $ctx): array
 {
@@ -726,35 +812,51 @@ function editorial_compensate_publish(array $ctx): array
     // 1. Restore live HTML if replaced
     if (!empty($ctx['live_replaced']) && !empty($ctx['live_target_path'])
         && !empty($ctx['live_backup_absolute_path']) && !empty($ctx['live_hash_before'])) {
-        $restoreResult = editorial_restore_backup(
-            $ctx['live_target_path'],
-            $ctx['live_backup_absolute_path'],
-            $ctx['live_hash_before']
-        );
-        if (!$restoreResult['ok']) {
-            $failures[] = ['component' => 'live_html', 'message' => $restoreResult['message']];
+        try {
+            $restoreResult = editorial_restore_backup(
+                $ctx['live_target_path'],
+                $ctx['live_backup_absolute_path'],
+                $ctx['live_hash_before']
+            );
+            if (!$restoreResult['ok']) {
+                $failures[] = ['component' => 'live_html', 'message' => $restoreResult['message']];
+            }
+        } catch (\Throwable $e) {
+            $failures[] = ['component' => 'live_html', 'message' => 'Exception: ' . $e->getMessage()];
         }
     }
 
     // 2. Restore data/articles.json if replaced
     if (!empty($ctx['catalog_replaced']) && !empty($ctx['catalog_target_path'])
         && !empty($ctx['catalog_source_bytes']) && !empty($ctx['catalog_hash_before'])) {
-        $restoreResult = editorial_atomic_restore_bytes(
-            $ctx['catalog_target_path'],
-            $ctx['catalog_source_bytes'],
-            $ctx['catalog_hash_before']
-        );
-        if (!$restoreResult['ok']) {
-            $failures[] = ['component' => 'catalog', 'message' => $restoreResult['message']];
+        try {
+            $restoreResult = editorial_atomic_restore_bytes(
+                $ctx['catalog_target_path'],
+                $ctx['catalog_source_bytes'],
+                $ctx['catalog_hash_before']
+            );
+            if (!$restoreResult['ok']) {
+                $failures[] = ['component' => 'catalog', 'message' => $restoreResult['message']];
+            }
+        } catch (\Throwable $e) {
+            $failures[] = ['component' => 'catalog', 'message' => 'Exception: ' . $e->getMessage()];
         }
     }
 
     // 3. Remove orphaned published snapshot if created
     if (!empty($ctx['published_snapshot_path'])) {
-        $storageRoot = dirname(__DIR__) . '/storage/revisions';
-        $absSnapshotPath = $storageRoot . '/' . ltrim($ctx['published_snapshot_path'], '/');
-        if (strpos(realpath($absSnapshotPath) ?: '', realpath($storageRoot) ?: '__never__') === 0) {
-            @unlink($absSnapshotPath);
+        try {
+            $storageRoot = dirname(__DIR__) . '/storage/revisions';
+            $absSnapshotPath = $storageRoot . '/' . ltrim($ctx['published_snapshot_path'], '/');
+            $realSnapshot = realpath($absSnapshotPath);
+            $realStorage = realpath($storageRoot);
+            if ($realSnapshot !== false && $realStorage !== false
+                && strpos($realSnapshot, $realStorage . DIRECTORY_SEPARATOR) === 0) {
+                @unlink($absSnapshotPath);
+            }
+            // If file doesn't exist, cleanup is idempotent — not a failure
+        } catch (\Throwable $e) {
+            $failures[] = ['component' => 'snapshot_cleanup', 'message' => 'Exception: ' . $e->getMessage()];
         }
     }
 
@@ -791,9 +893,12 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
         'published_snapshot_path' => null,
     ];
 
+    // Single compensation result — exactly one attempt allowed
+    $compensationResult = null;
+
     try {
         $txResult = editorial_transaction(function() use (
-            $articleId, $adminUserId, $article, $filePath, &$compCtx
+            $articleId, $adminUserId, $article, $filePath, &$compCtx, &$compensationResult
         ) {
             $db = editorial_db();
             $now = date('c');
@@ -864,24 +969,17 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
             }
             $compCtx['live_hash_before'] = $currentLiveHash;
 
-            // ── RENDER ──
-
-            $renderResult = editorial_render_approved_html($txLiveHtml, $article, $verifiedPayload);
-            if (!$renderResult['ok']) {
-                return $renderResult;
+            // ── PARSE LIVE META FOR NORMALIZATION ──
+            $liveParsed = editorial_parse_article_html($txLiveHtml, '');
+            if (!$liveParsed['ok']) {
+                return ['ok' => false, 'message' => 'Lỗi parse live HTML trong transaction.'];
             }
-            $newHtml = $renderResult['html'];
+            $liveMeta = $liveParsed['meta_payload'] ?? [];
 
-            // ── PRE-WRITE VALIDATION ──
-
-            $valResult = editorial_validate_rendered_html($newHtml, $verifiedPayload);
-            if (!$valResult['ok']) {
-                return $valResult;
-            }
+            // ── NORMALIZE PUBLISH PAYLOAD ──
+            $normalized = editorial_normalize_publish_payload($verifiedPayload, $liveMeta, $article);
 
             // ── VERIFY PUBLISHED CONTENT HASH EQUALITY ──
-            // Published revision will have same payload as approved.
-            // Verify content hashes match before doing anything destructive.
             try {
                 $approvedContentHash = editorial_revision_content_hash($verifiedPayload);
             } catch (RuntimeException $e) {
@@ -891,8 +989,20 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                 return ['ok' => false, 'message' => 'Content hash approved revision không khớp verified payload.'];
             }
 
-            // ── CREATE BACKUP ── (non-destructive)
+            // ── RENDER ──
+            $renderResult = editorial_render_approved_html($txLiveHtml, $article, $normalized);
+            if (!$renderResult['ok']) {
+                return $renderResult;
+            }
+            $newHtml = $renderResult['html'];
 
+            // ── PRE-WRITE VALIDATION ──
+            $valResult = editorial_validate_rendered_html($newHtml, $normalized);
+            if (!$valResult['ok']) {
+                return $valResult;
+            }
+
+            // ── CREATE BACKUP ── (non-destructive)
             $backupResult = editorial_create_publish_backup($txLiveHtml, $articleId, $currentLiveHash);
             if (!$backupResult['ok']) {
                 return $backupResult;
@@ -907,7 +1017,6 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
             // ════════════════════════════════════════════════════
 
             // ── ATOMIC REPLACE LIVE FILE ──
-
             $replaceResult = editorial_atomic_replace_file($filePath, $newHtml, $currentLiveHash);
             if (!$replaceResult['ok']) {
                 // Atomic replace itself failed (temp couldn't rename) — no destructive change
@@ -915,7 +1024,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
             }
             $compCtx['live_replaced'] = true;
 
-            // From here on: ALL failures must go through compensation + throw
+            // From here on: ALL failures → compensation + throw
 
             try {
                 // ── POST-WRITE VERIFICATION ──
@@ -924,7 +1033,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                     throw new EditorialPublishCompensationException('Post-write hash verification failed.');
                 }
                 // Full parse + field validation of what was actually written
-                $postValResult = editorial_validate_rendered_html($postWriteHtml, $verifiedPayload);
+                $postValResult = editorial_validate_rendered_html($postWriteHtml, $normalized);
                 if (!$postValResult['ok']) {
                     throw new EditorialPublishCompensationException(
                         'Post-write field validation failed: ' . $postValResult['message']
@@ -932,7 +1041,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                 }
 
                 // ── UPDATE DATA/ARTICLES.JSON ──
-                $updateSrcResult = editorial_update_article_source($articleId, $verifiedPayload);
+                $updateSrcResult = editorial_update_article_source($articleId, $normalized);
                 if (!$updateSrcResult['ok']) {
                     throw new EditorialPublishCompensationException(
                         'Catalog update failed: ' . $updateSrcResult['message']
@@ -1036,9 +1145,8 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                 ]);
 
             } catch (\Throwable $innerEx) {
-                // ── CENTRAL COMPENSATION ──
-                // Must compensate filesystem BEFORE re-throwing for DB rollback
-                editorial_compensate_publish($compCtx);
+                // ── SINGLE COMPENSATION ATTEMPT ──
+                $compensationResult = editorial_compensate_publish($compCtx);
 
                 // Re-throw as compensation exception to trigger ROLLBACK
                 if ($innerEx instanceof EditorialPublishCompensationException) {
@@ -1064,52 +1172,68 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
             ];
         });
 
-        // Transaction COMMITTED successfully — log success OUTSIDE transaction
+        // Transaction COMMITTED — log success OUTSIDE transaction (best-effort)
         if ($txResult['ok']) {
-            editorial_log_activity('article.publish.succeeded', $articleId, $adminUserId, json_encode([
-                'approved_revision_id' => $txResult['approved_revision_id'] ?? '',
-                'published_revision_id' => $txResult['published_revision_id'] ?? '',
-                'assignment_id' => $txResult['assignment_id'] ?? '',
-                'hash_before' => $txResult['hash_before'] ?? '',
-                'hash_after' => $txResult['hash_after'] ?? '',
-                'backup_path' => $txResult['backup_path'] ?? '',
-            ]));
+            try {
+                editorial_log_activity('article.publish.succeeded', $articleId, $adminUserId, json_encode([
+                    'approved_revision_id' => $txResult['approved_revision_id'] ?? '',
+                    'published_revision_id' => $txResult['published_revision_id'] ?? '',
+                    'assignment_id' => $txResult['assignment_id'] ?? '',
+                    'hash_before' => $txResult['hash_before'] ?? '',
+                    'hash_after' => $txResult['hash_after'] ?? '',
+                    'backup_path' => $txResult['backup_path'] ?? '',
+                ]));
+            } catch (\Throwable $logError) {
+                // Best-effort: never convert core success to failure
+                $txResult['audit_warning'] = 'Success activity log failed: ' . $logError->getMessage();
+            }
         }
 
         return $txResult;
 
     } catch (EditorialPublishCompensationException $e) {
         // DB was ROLLED BACK by editorial_transaction().
-        // Filesystem compensation already ran inside the catch block.
+        // Filesystem compensation already ran ONCE inside the inner catch.
         // Log failure OUTSIDE the rolled-back transaction so it persists.
-        editorial_log_activity('article.publish.failed', $articleId, $adminUserId, json_encode([
-            'stage' => 'post_destructive',
-            'message' => $e->getMessage(),
-            'hash_before' => $compCtx['live_hash_before'],
-            'backup_path' => $compCtx['live_backup_absolute_path'],
-        ]));
-
-        // Check if compensation had issues
-        $compResult = editorial_compensate_publish($compCtx);
-        if (!$compResult['ok']) {
-            editorial_log_activity('article.publish.compensation_failed', $articleId, $adminUserId, json_encode([
-                'stage' => 'post_rollback_recheck',
-                'article_id' => $articleId,
+        try {
+            editorial_log_activity('article.publish.failed', $articleId, $adminUserId, json_encode([
+                'stage' => 'post_destructive',
+                'message' => $e->getMessage(),
                 'hash_before' => $compCtx['live_hash_before'],
                 'backup_path' => $compCtx['live_backup_absolute_path'],
-                'failures' => $compResult['failures'],
             ]));
+        } catch (\Throwable $logErr) {
+            // Best-effort logging
+        }
+
+        // Report compensation result (NO second compensation attempt)
+        if ($compensationResult !== null && !$compensationResult['ok']) {
+            try {
+                editorial_log_activity('article.publish.compensation_failed', $articleId, $adminUserId, json_encode([
+                    'stage' => 'post_rollback',
+                    'article_id' => $articleId,
+                    'hash_before' => $compCtx['live_hash_before'],
+                    'backup_path' => $compCtx['live_backup_absolute_path'],
+                    'failures' => $compensationResult['failures'],
+                ]));
+            } catch (\Throwable $logErr) {
+                // Best-effort logging
+            }
         }
 
         return ['ok' => false, 'message' => 'Publish thất bại và đã được khôi phục: ' . $e->getMessage()];
 
     } catch (\Throwable $e) {
-        // Unexpected error (DB error, etc.)
-        editorial_log_activity('article.publish.failed', $articleId, $adminUserId, json_encode([
-            'stage' => 'unexpected',
-            'message' => $e->getMessage(),
-            'exception' => get_class($e),
-        ]));
+        // Unexpected pre-commit error (DB error, etc.)
+        try {
+            editorial_log_activity('article.publish.failed', $articleId, $adminUserId, json_encode([
+                'stage' => 'unexpected',
+                'message' => $e->getMessage(),
+                'exception' => get_class($e),
+            ]));
+        } catch (\Throwable $logErr) {
+            // Best-effort logging
+        }
 
         return ['ok' => false, 'message' => 'Lỗi không mong đợi: ' . $e->getMessage()];
     }

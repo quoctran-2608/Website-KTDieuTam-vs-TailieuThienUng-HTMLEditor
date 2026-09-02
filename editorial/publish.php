@@ -39,16 +39,24 @@ if (editorial_is_post()) {
 
             if ($rebuildWarning) {
                 editorial_flash_set('warning', 'Bài đã được Publish nhưng đồng bộ dữ liệu public phụ trợ chưa hoàn tất. ' . ($rebuildResult['message'] ?? ''));
-                editorial_log_activity('article.publish.public_rebuild_failed', $articleId, $adminUserId, json_encode([
-                    'code' => $rebuildResult['code'] ?? 'unknown',
-                    'message' => $rebuildResult['message'] ?? 'Unknown error',
-                    'exit_code' => $rebuildResult['exit_code'] ?? null,
-                    'output_tail' => $rebuildResult['output_tail'] ?? null,
-                ]));
+                try {
+                    editorial_log_activity('article.publish.public_rebuild_failed', $articleId, $adminUserId, json_encode([
+                        'code' => $rebuildResult['code'] ?? 'unknown',
+                        'message' => $rebuildResult['message'] ?? 'Unknown error',
+                        'exit_code' => $rebuildResult['exit_code'] ?? null,
+                        'output_tail' => $rebuildResult['output_tail'] ?? null,
+                    ]));
+                } catch (\Throwable $logErr) {
+                    // Best-effort: don't crash page over logging failure
+                }
             } else {
-                editorial_log_activity('article.publish.public_rebuild_succeeded', $articleId, $adminUserId, json_encode([
-                    'exit_code' => $rebuildResult['exit_code'] ?? 0,
-                ]));
+                try {
+                    editorial_log_activity('article.publish.public_rebuild_succeeded', $articleId, $adminUserId, json_encode([
+                        'exit_code' => $rebuildResult['exit_code'] ?? 0,
+                    ]));
+                } catch (\Throwable $logErr) {
+                    // Best-effort
+                }
                 editorial_flash_set('success', $result['message']);
             }
         } else {
