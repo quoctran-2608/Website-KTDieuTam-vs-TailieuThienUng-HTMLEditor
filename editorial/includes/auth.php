@@ -52,64 +52,69 @@ function editorial_bootstrap_session(): void
 }
 
 /**
- * Seed initial admin user from legacy admin storage if DB is empty.
+ * Seed the required Editorial V2 accounts when they do not exist yet.
  *
- * Reads admin/storage/admin-data.json to import the admin password_hash
- * so the admin can log in with the same credentials.
- * Falls back to default admin/admin123 if legacy data not available.
+ * Passwords are stored here only as precomputed bcrypt hashes. Existing
+ * accounts are never changed, so a deployed site's credentials stay intact.
  */
 function editorial_seed_admin_user(): void
 {
-    $db = editorial_db();
-    $stmt = $db->query('SELECT COUNT(*) as cnt FROM editorial_users');
-    $count = (int) $stmt->fetch()['cnt'];
-    if ($count > 0) {
+    $seedUsers = [
+        [
+            'username' => 'admin',
+            'display_name' => 'Quản trị viên',
+            'role' => 'admin',
+            'password_hash' => '$2y$12$01v7sCE1vOdtZ5SZxyomBuwJxigIM1dpUsFQfb5OZMIOLW9KqK8.m',
+        ],
+        [
+            'username' => 'Thanhthuytran2266@gmail.com',
+            'display_name' => 'Thanh Thủy Trần',
+            'role' => 'editor',
+            'password_hash' => '$2y$12$zeW8Tymnp5VWUSkwBexEDePe2VSBeiuCeMMNq3fQPLENfeSKTipXm',
+        ],
+    ];
+
+    $hasMissingUser = false;
+    foreach ($seedUsers as $seedUser) {
+        if (editorial_find_user($seedUser['username']) === null) {
+            $hasMissingUser = true;
+            break;
+        }
+    }
+    if (!$hasMissingUser) {
         return;
     }
 
-    $now = date('c');
-    $passwordHash = null;
-    $displayName = 'Quản trị viên';
+    editorial_transaction(function () use ($seedUsers): void {
+        $db = editorial_db();
+        $stmt = $db->prepare('
+            INSERT INTO editorial_users (id, username, display_name, password_hash, role, is_active, must_change_password, created_at, updated_at)
+            VALUES (:id, :username, :display_name, :password_hash, :role, 1, 0, :created_at, :updated_at)
+        ');
 
-    // Try to import from legacy admin storage
-    $legacyPath = dirname(__DIR__, 2) . '/admin/storage/admin-data.json';
-    if (file_exists($legacyPath)) {
-        $raw = file_get_contents($legacyPath);
-        if ($raw !== false) {
-            $legacyData = json_decode($raw, true);
-            if (is_array($legacyData) && !empty($legacyData['users'])) {
-                foreach ($legacyData['users'] as $user) {
-                    if (!is_array($user)) continue;
-                    if (($user['role'] ?? '') === 'admin' && !empty($user['is_active'])) {
-                        $passwordHash = $user['password_hash'] ?? null;
-                        $displayName = $user['display_name'] ?? $displayName;
-                        break;
-                    }
-                }
+        foreach ($seedUsers as $seedUser) {
+            // Recheck inside BEGIN IMMEDIATE to avoid duplicate seed accounts.
+            if (editorial_find_user($seedUser['username']) !== null) {
+                continue;
             }
+
+            $now = date('c');
+            $stmt->execute([
+                'id' => editorial_generate_id('usr'),
+                'username' => $seedUser['username'],
+                'display_name' => $seedUser['display_name'],
+                'password_hash' => $seedUser['password_hash'],
+                'role' => $seedUser['role'],
+                'created_at' => $now,
+                'updated_at' => $now,
+            ]);
+
+            editorial_log_activity('system.seed_user', null, null, json_encode([
+                'username' => $seedUser['username'],
+                'role' => $seedUser['role'],
+            ]));
         }
-    }
-
-    // Fallback to default credentials
-    if ($passwordHash === null || $passwordHash === '') {
-        $passwordHash = password_hash('admin123', PASSWORD_DEFAULT);
-    }
-
-    $stmt = $db->prepare('
-        INSERT INTO editorial_users (id, username, display_name, password_hash, role, is_active, must_change_password, created_at, updated_at)
-        VALUES (:id, :username, :display_name, :password_hash, :role, 1, 1, :created_at, :updated_at)
-    ');
-    $stmt->execute([
-        'id' => editorial_generate_id('usr'),
-        'username' => 'admin',
-        'display_name' => $displayName,
-        'password_hash' => $passwordHash,
-        'role' => 'admin',
-        'created_at' => $now,
-        'updated_at' => $now,
-    ]);
-
-    editorial_log_activity('system.seed_admin', null, null, json_encode(['source' => file_exists($legacyPath) ? 'legacy_import' : 'default_seed']));
+    });
 }
 
 // ─── User lookup ────────────────────────────────────────────────

@@ -63,6 +63,12 @@ function editorial_layout_header(array $options = []): void
             'href' => editorial_url('users.php'),
             'icon' => 'fa-solid fa-users',
         ];
+        $menu[] = [
+            'key' => 'integrity',
+            'label' => 'Toàn vẹn hệ thống',
+            'href' => editorial_url('integrity.php'),
+            'icon' => 'fa-solid fa-shield-halved',
+        ];
     }
     ?>
     <!DOCTYPE html>

@@ -65,6 +65,17 @@ if (editorial_is_post()) {
 
         editorial_redirect(editorial_url('publish.php?id=' . urlencode($articleId)));
     }
+
+    if ($intent === 'retry_public_rebuild') {
+        $result = editorial_retry_public_rebuild($articleId, $adminUserId);
+        editorial_flash_set(
+            !empty($result['ok']) ? 'success' : 'warning',
+            !empty($result['ok'])
+                ? 'Đã rebuild lại dữ liệu public.'
+                : 'Không thể rebuild lại dữ liệu public: ' . ($result['message'] ?? 'Lỗi không xác định.')
+        );
+        editorial_redirect(editorial_url('publish.php?id=' . urlencode($articleId)));
+    }
 }
 
 // GET rendering — Preflight + Detail
@@ -142,6 +153,14 @@ editorial_layout_header([
                 </tr>
             </tbody>
         </table>
+        <form method="post" style="margin-top:16px;">
+            <?= editorial_csrf_input() ?>
+            <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
+            <input type="hidden" name="_intent" value="retry_public_rebuild">
+            <button type="submit" class="editorial-publish-btn" onclick="return confirm('Chỉ rebuild dữ liệu public phụ trợ. File HTML và trạng thái bài viết sẽ không bị sửa. Tiếp tục?');">
+                <i class="fa-solid fa-arrows-rotate"></i> Thử rebuild lại dữ liệu public
+            </button>
+        </form>
     </section>
 <?php elseif ($status === 'approved'): ?>
     <section class="admin-panel" style="margin-top:24px;">

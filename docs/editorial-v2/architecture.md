@@ -610,9 +610,41 @@ published → editing (chỉ qua fresh claim/new work cycle)
 
 ### Không sửa
 - `/admin/` — chỉ đọc/tham khảo
-- Không user-facing rollback/restore (Phase 8)
 - Không refactor legacy publish
 - Không taxonomy mutation
+
+## Crash Window và Recovery
+
+### Filesystem + SQLite không phải atomic transaction
+
+Safe Publish ghi vào 3 resource độc lập:
+1. **Live HTML file** (filesystem)
+2. **data/articles.json** (filesystem)
+3. **editorial_article_state** (SQLite)
+
+Không có native 2-phase commit giữa filesystem và SQLite. Do đó:
+- Sau destructive write thành công, nếu COMMIT fail → filesystem đã thay đổi nhưng DB rollback
+- Nếu PHP process bị kill giữa chừng → trạng thái không nhất quán
+
+### Safe Publish mitigation
+
+- **Optimistic hashes**: detect concurrent changes trước và sau write
+- **Backup trước write**: bản sao live HTML trước destructive point
+- **Compensation**: tự động restore khi có lỗi, với ownership verification guard
+- **COMMIT failure detection**: re-read DB state để detect PDO throw sau successful COMMIT
+- **Exactly-one compensation**: tối đa 1 filesystem compensation attempt per request
+
+### Integrity Center (Phase 8)
+
+Admin-only diagnostic page (`editorial/integrity.php`):
+- Scan state vs assignment consistency
+- Verify revision pointers, snapshot integrity
+- Check live hash drift
+- Detect expired locks and orphan drafts
+- Retry derived public rebuild (chỉ cho published articles với live hash khớp)
+- Cleanup expired locks
+
+Integrity Center là **diagnostic**, không phải auto-fix tool.
 
 ## Roadmap
 
@@ -623,9 +655,24 @@ published → editing (chỉ qua fresh claim/new work cycle)
 5. **Revisions/Compare** (Phase 5) ✅ — Baseline, editorial revision, immutable snapshot, content hash, compare, diff
 6. **Review** (Phase 6) ✅ — Gửi duyệt, trả lại, approve, reassign, release, force unlock, revision hardening
 7. **Safe Publish** (Phase 7) ✅ — Optimistic lock, backup, pure render, atomic replace, post-write verify, compensation, catalog sync, published revision
-8. **Hardening** — Audit dashboard, bulk ops, performance, rollback/restore
+8. **Operational finish** (Phase 8) ✅ — account seed, system check, rebuild retry, expired lock cleanup, user guide
 
+## Final operational finish
 
+Editorial V2 là công cụ tạm thời cho một đợt biên tập nội dung. Hệ thống giữ
+PHP + SQLite + filesystem, không mở rộng thành CMS hoặc nền tảng vận hành dài hạn.
 
+- Bootstrap tạo hai tài khoản vận hành khi username chưa tồn tại; không ghi đè
+  tài khoản đã có.
+- `editorial/integrity.php` là màn hình kiểm tra read-only mặc định cho các bài
+  đã có Editorial state: assignment, revision/snapshot, lock và live hash.
+- Admin có thể dọn riêng các lock đã hết hạn qua POST + CSRF.
+- Với bài `published`, admin có thể retry public rebuild. Retry chỉ chạy derived
+  rebuild sau khi hash exact bytes của HTML live vẫn khớp `published_live_hash`;
+  không publish lại, không sửa HTML, không tạo revision và không đổi state.
+- Safe Publish vẫn là luồng canonical: approved snapshot, live hash, backup,
+  atomic replace, xác minh sau ghi, catalog guard và compensation giữ nguyên.
 
+Không bổ sung recovery journal hoặc màn hình manual restore mới trong phần hoàn
+thiện vận hành này.
 

@@ -829,6 +829,60 @@ function editorial_public_rebuild_after_publish(string $articleId): array
             'output_tail' => $outputTail, 'python' => $lastPython];
 }
 
+/**
+ * Retry only the derived public rebuild for a verified published article.
+ *
+ * This never rewrites HTML, creates revisions, reopens assignments, or changes
+ * workflow state. The live bytes must still match published_live_hash exactly.
+ */
+function editorial_retry_public_rebuild(string $articleId, string $adminUserId): array
+{
+    $admin = editorial_find_user_by_id($adminUserId);
+    if (!$admin || empty($admin['is_active']) || ($admin['role'] ?? '') !== 'admin') {
+        return ['ok' => false, 'code' => 'invalid_admin', 'message' => 'Người dùng không hợp lệ hoặc không có quyền admin.'];
+    }
+
+    $article = editorial_find_article($articleId);
+    if (!$article) {
+        return ['ok' => false, 'code' => 'article_not_found', 'message' => 'Không tìm thấy bài viết trong danh mục.'];
+    }
+
+    $state = editorial_get_article_state($articleId);
+    if (!$state || ($state['status'] ?? '') !== 'published') {
+        return ['ok' => false, 'code' => 'not_published', 'message' => 'Chỉ có thể rebuild lại dữ liệu cho bài đã published.'];
+    }
+
+    $publishedLiveHash = trim((string) ($state['published_live_hash'] ?? ''));
+    if ($publishedLiveHash === '') {
+        return ['ok' => false, 'code' => 'missing_published_hash', 'message' => 'Không có published_live_hash để xác minh.'];
+    }
+
+    $filePath = editorial_resolve_article_path($article);
+    if ($filePath === null) {
+        return ['ok' => false, 'code' => 'live_file_missing', 'message' => 'Không tìm thấy file HTML live.'];
+    }
+
+    $liveHtml = file_get_contents($filePath);
+    if ($liveHtml === false) {
+        return ['ok' => false, 'code' => 'live_file_unreadable', 'message' => 'Không thể đọc file HTML live.'];
+    }
+    if (hash('sha256', $liveHtml) !== $publishedLiveHash) {
+        return ['ok' => false, 'code' => 'live_hash_mismatch', 'message' => 'Live hash không khớp published_live_hash. Không thể rebuild từ trạng thái không nhất quán.'];
+    }
+
+    $result = editorial_public_rebuild_after_publish($articleId);
+    $eventType = !empty($result['ok'])
+        ? 'article.publish.public_rebuild_retry_succeeded'
+        : 'article.publish.public_rebuild_retry_failed';
+    editorial_log_activity($eventType, $articleId, $adminUserId, json_encode([
+        'code' => $result['code'] ?? ($result['ok'] ? 'rebuild_succeeded' : 'unknown'),
+        'exit_code' => $result['exit_code'] ?? null,
+        'message' => $result['message'] ?? '',
+    ]));
+
+    return $result;
+}
+
 // ─── Central Compensation Helper ─────────────────────────────────────────────
 
 /**
@@ -1128,6 +1182,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                     $compCtx['catalog_source_bytes'] = $updateSrcResult['source_bytes'];
                     $compCtx['catalog_hash_before'] = $updateSrcResult['source_hash'];
                     $compCtx['catalog_hash_after'] = $updateSrcResult['planned_new_hash'];
+
                 }
 
                 if (!$updateSrcResult['ok']) {
@@ -1232,6 +1287,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
 
             } catch (\Throwable $innerEx) {
                 // ── SINGLE COMPENSATION ATTEMPT ──
+
                 $compensationResult = editorial_compensate_publish($compCtx);
 
                 // Re-throw as compensation exception to trigger ROLLBACK
@@ -1370,6 +1426,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                 }
 
                 $compOk = ($compensationResult !== null && $compensationResult['ok']);
+
                 if ($compOk) {
                     return ['ok' => false,
                             'message' => 'Publish thất bại (lỗi COMMIT) nhưng hệ thống đã khôi phục trạng thái file trước đó.',

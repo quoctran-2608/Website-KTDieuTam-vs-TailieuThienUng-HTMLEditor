@@ -763,3 +763,65 @@ body.editor-fullscreen-active .editor-fs-status button {
     height: 18px;
     accent-color: #1565c0;
 }
+
+/* ─── Integrity Center ─────────────────────────────────────── */
+
+.integrity-card-critical {
+    border-left: 4px solid #dc3545 !important;
+}
+.integrity-card-warning {
+    border-left: 4px solid #ffc107 !important;
+}
+
+.integrity-sev-critical {
+    background: #dc3545;
+    color: #fff;
+}
+.integrity-sev-warning {
+    background: #ffc107;
+    color: #333;
+}
+.integrity-sev-info {
+    background: #17a2b8;
+    color: #fff;
+}
+
+.editorial-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.editorial-badge-ok {
+    background: #d4edda;
+    color: #155724;
+}
+
+.editorial-filter-form label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #555;
+}
+.editorial-filter-form select,
+.editorial-filter-form input[type="text"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    min-width: 140px;
+}
+
+.editorial-empty-state {
+    text-align: center;
+    padding: 48px 16px;
+    color: #666;
+}
+
+.editorial-btn-sm {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+}
