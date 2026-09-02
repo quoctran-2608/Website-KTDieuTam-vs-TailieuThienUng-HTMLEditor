@@ -79,14 +79,19 @@ function editorial_normalize_publish_payload(array $approvedPayload, array $live
     $tags = editorial_parse_tags_text((string) ($approvedPayload['tags_text'] ?? ''));
 
     // featured_image: legacy fallback — empty → preserve current article image
-    $rawImage = trim((string) ($approvedPayload['featured_image'] ?? ''));
-    if ($rawImage === '') {
-        $rawImage = trim((string) ($liveMeta['image'] ?? $article['image'] ?? ''));
-    }
-    $image = $rawImage;
+    // Explicit non-empty chain: approved → live meta → catalog
+    $approvedImage = trim((string) ($approvedPayload['featured_image'] ?? ''));
+    $liveImage = trim((string) ($liveMeta['image'] ?? ''));
+    $catalogImage = trim((string) ($article['image'] ?? ''));
+    $image = $approvedImage !== ''
+        ? $approvedImage
+        : ($liveImage !== '' ? $liveImage : $catalogImage);
 
     // Section label from current live meta (canonical), NOT from client/approved
-    $sectionLabel = (string) ($liveMeta['sectionLabel'] ?? $article['section_label'] ?? '');
+    // Explicit non-empty: live meta → catalog
+    $liveSectionLabel = trim((string) ($liveMeta['sectionLabel'] ?? ''));
+    $catalogSectionLabel = trim((string) ($article['section_label'] ?? ''));
+    $sectionLabel = $liveSectionLabel !== '' ? $liveSectionLabel : $catalogSectionLabel;
 
     // Expected <title> tag: {title} | {sectionLabel} | Kế Toán Diệu Tâm
     $expectedTitleTag = $title;
@@ -672,38 +677,56 @@ function editorial_update_article_source(string $articleId, array $normalized): 
 
     $newSourceBytes = json_encode($catalog, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     if ($newSourceBytes === false) {
-        return ['ok' => false, 'message' => 'Lỗi encode JSON cho articles.json.'];
+        return ['ok' => false, 'mutated' => false, 'message' => 'Lỗi encode JSON cho articles.json.'];
     }
+
+    // Pre-compute planned hash before any destructive action
+    $plannedNewHash = hash('sha256', $newSourceBytes);
 
     // Write temp first
     $tempPath = dirname($catalogPath) . '/.articles_tmp_' . bin2hex(random_bytes(8)) . '.json';
     $written = file_put_contents($tempPath, $newSourceBytes);
     if ($written !== strlen($newSourceBytes)) {
         @unlink($tempPath);
-        return ['ok' => false, 'message' => 'Lỗi ghi file tạm articles.json.'];
+        return ['ok' => false, 'mutated' => false, 'message' => 'Lỗi ghi file tạm articles.json.'];
     }
 
     // Race protection: re-hash IMMEDIATELY before rename
     $currentHash = hash_file('sha256', $catalogPath);
     if ($currentHash !== $sourceHash) {
         @unlink($tempPath);
-        return ['ok' => false, 'message' => 'articles.json đã thay đổi (Race condition).'];
+        return ['ok' => false, 'mutated' => false, 'message' => 'articles.json đã thay đổi (Race condition).'];
     }
 
     if (!rename($tempPath, $catalogPath)) {
         @unlink($tempPath);
-        return ['ok' => false, 'message' => 'Lỗi đổi tên file tạm articles.json.'];
+        return ['ok' => false, 'mutated' => false, 'message' => 'Lỗi đổi tên file tạm articles.json.'];
     }
 
-    // Verify written catalog hash
-    $newHash = hash_file('sha256', $catalogPath);
-    $plannedHash = hash('sha256', $newSourceBytes);
-    if ($newHash !== $plannedHash) {
-        return ['ok' => false, 'message' => 'Hash catalog sau ghi không khớp planned.'];
+    // ── FILESYSTEM IS NOW DESTRUCTIVE — all returns must carry mutation context ──
+
+    // Mutation context shared by both success and failure paths
+    $mutationCtx = [
+        'mutated' => true,
+        'source_hash' => $sourceHash,
+        'source_bytes' => $sourceBytes,
+        'planned_new_hash' => $plannedNewHash,
+        'catalog_backup_path' => $backupResult['path'],
+    ];
+
+    // Verify written catalog hash using exact bytes read
+    $finalBytes = file_get_contents($catalogPath);
+    if ($finalBytes === false) {
+        return array_merge(['ok' => false, 'message' => 'Lỗi đọc catalog sau ghi.',
+                            'current_hash' => null], $mutationCtx);
+    }
+    $finalHash = hash('sha256', $finalBytes);
+    if ($finalHash !== $plannedNewHash) {
+        return array_merge(['ok' => false, 'message' => 'Hash catalog sau ghi không khớp planned.',
+                            'current_hash' => $finalHash], $mutationCtx);
     }
 
-    return ['ok' => true, 'source_hash' => $sourceHash, 'new_hash' => $newHash,
-            'source_bytes' => $sourceBytes, 'catalog_backup_path' => $backupResult['path']];
+    return array_merge(['ok' => true, 'new_hash' => $finalHash], $mutationCtx);
 }
 
 // ─── Public Rebuild ──────────────────────────────────────────────────────────
@@ -844,15 +867,12 @@ function editorial_compensate_publish(array $ctx): array
                     }
                 }
             } else {
-                // No hash_after tracked — fallback to unconditional restore
-                $restoreResult = editorial_restore_backup(
-                    $ctx['live_target_path'],
-                    $ctx['live_backup_absolute_path'],
-                    $ctx['live_hash_before']
-                );
-                if (!$restoreResult['ok']) {
-                    $failures[] = ['component' => 'live_html', 'message' => $restoreResult['message']];
-                }
+                // No hash_after tracked — ownership unverifiable, do NOT restore
+                $failures[] = [
+                    'component' => 'live_html',
+                    'code' => 'ownership_unverifiable',
+                    'message' => 'Không có live_hash_after để xác minh quyền sở hữu file. Không restore tự động.',
+                ];
             }
         } catch (\Throwable $e) {
             $failures[] = ['component' => 'live_html', 'message' => 'Exception: ' . $e->getMessage()];
@@ -885,14 +905,12 @@ function editorial_compensate_publish(array $ctx): array
                     }
                 }
             } else {
-                $restoreResult = editorial_atomic_restore_bytes(
-                    $ctx['catalog_target_path'],
-                    $ctx['catalog_source_bytes'],
-                    $ctx['catalog_hash_before']
-                );
-                if (!$restoreResult['ok']) {
-                    $failures[] = ['component' => 'catalog', 'message' => $restoreResult['message']];
-                }
+                // No hash_after tracked — ownership unverifiable, do NOT restore
+                $failures[] = [
+                    'component' => 'catalog',
+                    'code' => 'ownership_unverifiable',
+                    'message' => 'Không có catalog_hash_after để xác minh quyền sở hữu. Không restore tự động.',
+                ];
             }
         } catch (\Throwable $e) {
             $failures[] = ['component' => 'catalog', 'message' => 'Exception: ' . $e->getMessage()];
@@ -1102,15 +1120,21 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
 
                 // ── UPDATE DATA/ARTICLES.JSON ──
                 $updateSrcResult = editorial_update_article_source($articleId, $normalized);
+
+                // ALWAYS copy mutation context BEFORE checking ok
+                // If rename succeeded but verify failed, filesystem is still destructive
+                if (!empty($updateSrcResult['mutated'])) {
+                    $compCtx['catalog_replaced'] = true;
+                    $compCtx['catalog_source_bytes'] = $updateSrcResult['source_bytes'];
+                    $compCtx['catalog_hash_before'] = $updateSrcResult['source_hash'];
+                    $compCtx['catalog_hash_after'] = $updateSrcResult['planned_new_hash'];
+                }
+
                 if (!$updateSrcResult['ok']) {
                     throw new EditorialPublishCompensationException(
                         'Catalog update failed: ' . $updateSrcResult['message']
                     );
                 }
-                $compCtx['catalog_replaced'] = true;
-                $compCtx['catalog_source_bytes'] = $updateSrcResult['source_bytes'];
-                $compCtx['catalog_hash_before'] = $updateSrcResult['source_hash'];
-                $compCtx['catalog_hash_after'] = $updateSrcResult['new_hash'];
 
                 // ── CREATE PUBLISHED REVISION ──
                 $publishedRevisionId = editorial_generate_id('rev');
