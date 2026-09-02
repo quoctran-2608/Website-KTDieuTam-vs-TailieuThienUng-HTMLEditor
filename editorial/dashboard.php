@@ -7,10 +7,14 @@ require_once __DIR__ . '/includes/layout.php';
 editorial_require_auth();
 
 $user = editorial_current_user();
+$currentUserId = (string) $user['user_id'];
 $db = editorial_db();
 
 // Count users
 $userCount = (int) $db->query('SELECT COUNT(*) FROM editorial_users WHERE is_active = 1')->fetchColumn();
+
+// Article assignment counts
+$counts = editorial_assignment_counts($currentUserId);
 
 // Count recent activity
 $activityCount = (int) $db->query('SELECT COUNT(*) FROM editorial_activity')->fetchColumn();
@@ -34,26 +38,42 @@ editorial_layout_header([
 
 <section class="admin-grid-cards">
     <article class="metric-card">
+        <span class="metric-icon info"><i class="fa-solid fa-file-lines"></i></span>
+        <div class="metric-body">
+            <h3><?= editorial_h(number_format($counts['total'], 0, ',', '.')) ?></h3>
+            <p>Tổng bài viết</p>
+        </div>
+    </article>
+
+    <article class="metric-card">
+        <span class="metric-icon success"><i class="fa-solid fa-folder-open"></i></span>
+        <div class="metric-body">
+            <h3><?= editorial_h((string) $counts['available']) ?></h3>
+            <p>Chưa có người nhận</p>
+        </div>
+    </article>
+
+    <article class="metric-card">
+        <span class="metric-icon warning"><i class="fa-solid fa-pen"></i></span>
+        <div class="metric-body">
+            <h3><?= editorial_h((string) $counts['assigned']) ?></h3>
+            <p>Đang được phân công</p>
+        </div>
+    </article>
+
+    <article class="metric-card">
+        <span class="metric-icon"><i class="fa-solid fa-clipboard-list"></i></span>
+        <div class="metric-body">
+            <h3><?= editorial_h((string) $counts['mine']) ?></h3>
+            <p>Công việc của tôi</p>
+        </div>
+    </article>
+
+    <article class="metric-card">
         <span class="metric-icon"><i class="fa-solid fa-user-check"></i></span>
         <div class="metric-body">
             <h3><?= editorial_h((string) $userCount) ?></h3>
-            <p>Thành viên đang hoạt động</p>
-        </div>
-    </article>
-
-    <article class="metric-card">
-        <span class="metric-icon info"><i class="fa-solid fa-clock-rotate-left"></i></span>
-        <div class="metric-body">
-            <h3><?= editorial_h((string) $activityCount) ?></h3>
-            <p>Sự kiện đã ghi nhận</p>
-        </div>
-    </article>
-
-    <article class="metric-card">
-        <span class="metric-icon success"><i class="fa-solid fa-id-card-clip"></i></span>
-        <div class="metric-body">
-            <h3><?= editorial_h((string) ($user['role'] ?? '')) ?></h3>
-            <p>Vai trò của bạn</p>
+            <p>Thành viên hoạt động</p>
         </div>
     </article>
 
@@ -74,7 +94,7 @@ editorial_layout_header([
     <div class="editorial-module-grid">
         <div class="editorial-module-card is-ready">
             <i class="fa-solid fa-circle-check"></i>
-            <strong>Đăng nhập & phân quyền</strong>
+            <strong>Đăng nhập &amp; phân quyền</strong>
             <span>Đã sẵn sàng</span>
         </div>
         <div class="editorial-module-card is-ready">
@@ -82,10 +102,10 @@ editorial_layout_header([
             <strong>Tài khoản thành viên</strong>
             <span>Đã sẵn sàng</span>
         </div>
-        <div class="editorial-module-card">
-            <i class="fa-solid fa-clock"></i>
+        <div class="editorial-module-card is-ready">
+            <i class="fa-solid fa-circle-check"></i>
             <strong>Nhận bài biên tập</strong>
-            <span>Sắp mở</span>
+            <span>Đã sẵn sàng</span>
         </div>
         <div class="editorial-module-card">
             <i class="fa-solid fa-clock"></i>
@@ -94,12 +114,12 @@ editorial_layout_header([
         </div>
         <div class="editorial-module-card">
             <i class="fa-solid fa-clock"></i>
-            <strong>Revision & so sánh</strong>
+            <strong>Revision &amp; so sánh</strong>
             <span>Sắp mở</span>
         </div>
         <div class="editorial-module-card">
             <i class="fa-solid fa-clock"></i>
-            <strong>Review & duyệt bài</strong>
+            <strong>Review &amp; duyệt bài</strong>
             <span>Sắp mở</span>
         </div>
         <div class="editorial-module-card">
@@ -137,6 +157,7 @@ editorial_layout_header([
                             if (!empty($payload['username'])) $details[] = 'tài khoản: ' . (string) $payload['username'];
                             if (!empty($payload['role'])) $details[] = 'vai trò: ' . (string) $payload['role'];
                             if (!empty($payload['source'])) $details[] = 'nguồn: ' . (string) $payload['source'];
+                            if (!empty($log['article_id'])) $details[] = 'bài: ' . (string) $log['article_id'];
                             ?>
                             <?= editorial_h($details ? implode(' | ', $details) : '—') ?>
                         </td>

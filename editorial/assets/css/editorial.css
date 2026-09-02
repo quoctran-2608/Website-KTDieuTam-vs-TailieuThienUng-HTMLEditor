@@ -190,3 +190,174 @@
     color: #1565c0;
 }
 
+/* ─── Phase 3: Article List & Assignment ───────────────────────── */
+
+/* Filter bar */
+.editorial-filter-bar {
+    margin-bottom: 16px;
+}
+.editorial-filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.editorial-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+.editorial-filter-search {
+    flex: 1 1 220px;
+    min-width: 180px;
+}
+.editorial-filter-search input {
+    width: 100%;
+}
+.editorial-filter-select {
+    padding: 9px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    background: #fff;
+    color: #212529;
+    min-width: 140px;
+}
+.editorial-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #1565c0;
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.editorial-filter-btn:hover {
+    background: #0d47a1;
+}
+.editorial-filter-clear {
+    font-size: 0.85rem;
+    color: #868e96;
+    text-decoration: none;
+}
+.editorial-filter-clear:hover {
+    color: #e53935;
+}
+
+/* Result count */
+.editorial-result-count {
+    font-size: 0.85rem;
+    color: #868e96;
+    margin-bottom: 8px;
+}
+
+/* Status badges */
+.editorial-status-available {
+    background: #f1f3f5;
+    color: #868e96;
+}
+.editorial-status-editing {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+.editorial-status-review {
+    background: #fff8e1;
+    color: #f57f17;
+}
+.editorial-status-returned {
+    background: #fce4ec;
+    color: #c62828;
+}
+.editorial-status-approved {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+.editorial-status-published {
+    background: #e0f2f1;
+    color: #00695c;
+}
+
+/* Section badge */
+.editorial-badge-section {
+    background: #f3e5f5;
+    color: #6a1b9a;
+}
+
+/* Owner chips */
+.editorial-owner-me {
+    color: #1565c0;
+    font-weight: 600;
+}
+.editorial-owner-other {
+    color: #868e96;
+}
+
+/* Claim button */
+.editorial-claim-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    border: 1px solid #1565c0;
+    border-radius: 6px;
+    background: #fff;
+    color: #1565c0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+}
+.editorial-claim-btn:hover {
+    background: #1565c0;
+    color: #fff;
+}
+
+/* My work link in article list */
+.editorial-mywork-link {
+    font-size: 0.82rem;
+    color: #1565c0;
+    text-decoration: none;
+    font-weight: 500;
+}
+.editorial-mywork-link:hover {
+    text-decoration: underline;
+}
+
+/* Pagination */
+.editorial-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 16px;
+    justify-content: center;
+}
+.editorial-page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #495057;
+    background: #f8f9fa;
+    text-decoration: none;
+    border: 1px solid #dee2e6;
+    transition: background 0.15s, color 0.15s;
+}
+.editorial-page-link:hover {
+    background: #e9ecef;
+}
+.editorial-page-link.is-active {
+    background: #1565c0;
+    color: #fff;
+    border-color: #1565c0;
+}

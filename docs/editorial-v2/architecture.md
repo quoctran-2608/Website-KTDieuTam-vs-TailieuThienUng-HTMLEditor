@@ -116,14 +116,52 @@ Không dùng SQLite autoincrement làm article identity.
 - Server-side enforce qua `editorial_require_role()`.
 - Sidebar ẩn mục Thành viên cho editor (nhưng server là lớp bảo vệ thật).
 
+## Phase 3 — Danh sách bài + Nhận biên tập + Công việc của tôi
+
+### Article Catalog (`editorial/includes/article_catalog.php`)
+- Đọc `data/articles.json` — canonical source, cached in-memory per request.
+- Canonical `article_id` = field `id` trong articles.json (e.g. `bai-tap-dinh-khoan...html`).
+- Không import articles vào SQLite. Không tạo `article_state` rows cho bài chưa có collaboration.
+- Absent state = `available`, `assigned_user_id = NULL`.
+- Filter: text search, section, topic_lv1, assignment status. Pagination 30/page.
+- Safe HTML file resolution: strip query, reject `..`, `\0`, scheme, verify `realpath()` inside repo root.
+
+### Atomic Claim (`editorial/includes/assignment.php`)
+- `editorial_claim_article()` dùng `editorial_transaction()` → `BEGIN IMMEDIATE`.
+- Trong transaction: ensure state row → check current owner → verify no orphaned assignment → insert assignment history → update state → activity log → COMMIT.
+- Race condition: `BEGIN IMMEDIATE` serialize writes. Người thứ hai đọc state mới và nhận message tên người đã nhận.
+- `base_live_hash = hash_file('sha256', html_path)` — set lúc claim, không tự reset khi refresh.
+
+### DB Invariant (Migration v2)
+- `UNIQUE INDEX idx_assignments_active_article ON editorial_assignments(article_id) WHERE released_at IS NULL` — chống 2 active assignment cùng article.
+- Indexes trên `article_state(status)`, `article_state(assigned_user_id)`, `assignments(user_id, released_at)`.
+
+### My Work (`editorial/my-work.php`)
+- Hiển thị bài đang assigned cho current user (`editorial_article_state.assigned_user_id`).
+- Grouped by status: editing → returned → ready_review → approved.
+- Enriched với metadata từ article catalog.
+
+### Dashboard Metrics
+- Tổng bài viết (từ catalog), Chưa có người nhận, Đang phân công, Công việc của tôi.
+- Tính `available = total - assigned` (không tạo state rows cho mọi bài).
+
+### Status Labels (centralized)
+```
+available     → Chưa có người nhận
+editing       → Đang biên tập
+ready_review  → Chờ duyệt
+returned      → Cần chỉnh lại
+approved      → Đã duyệt
+published     → Đã xuất bản
+```
+
 ## Roadmap
 
 1. **Foundation** (Phase 1) ✅ — Schema, auth, bootstrap, dashboard shell
 2. **Users** (Phase 2) ✅ — Quản lý thành viên, auth revalidation, must_change_password
-3. **Assignment** — Nhận bài, atomic claim, assignment history
+3. **Assignment** (Phase 3) ✅ — Article catalog, atomic claim, my-work, dashboard metrics
 4. **Workspace/Lock/Draft** — TinyMCE editor, heartbeat, auto-save
 5. **Revisions/Compare** — Snapshot, diff bản cũ/mới
 6. **Review** — Gửi duyệt, trả lại, approve
 7. **Safe Publish** — Optimistic lock, backup, ghi HTML gốc
 8. **Hardening** — Audit dashboard, bulk ops, performance
-

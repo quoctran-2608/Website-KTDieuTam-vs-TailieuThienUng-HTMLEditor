@@ -38,16 +38,14 @@ function editorial_layout_header(array $options = []): void
         [
             'key' => 'articles',
             'label' => 'Bài viết',
-            'href' => '#',
+            'href' => editorial_url('articles.php'),
             'icon' => 'fa-solid fa-file-lines',
-            'disabled' => true,
         ],
         [
             'key' => 'my-work',
             'label' => 'Công việc của tôi',
-            'href' => '#',
+            'href' => editorial_url('my-work.php'),
             'icon' => 'fa-solid fa-clipboard-list',
-            'disabled' => true,
         ],
     ];
     if ($isAdmin) {

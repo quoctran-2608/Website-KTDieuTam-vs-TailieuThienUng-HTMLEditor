@@ -165,5 +165,21 @@ function editorial_migration_list(): array
             CREATE INDEX IF NOT EXISTS idx_revisions_article
                 ON editorial_revisions(article_id);
         ',
+
+        2 => '
+            -- Phase 3: Assignment invariant — at most one active assignment per article
+            CREATE UNIQUE INDEX IF NOT EXISTS idx_assignments_active_article
+                ON editorial_assignments(article_id)
+                WHERE released_at IS NULL;
+
+            -- Useful indexes for article state queries
+            CREATE INDEX IF NOT EXISTS idx_article_state_status
+                ON editorial_article_state(status);
+            CREATE INDEX IF NOT EXISTS idx_article_state_assigned
+                ON editorial_article_state(assigned_user_id);
+            CREATE INDEX IF NOT EXISTS idx_assignments_user_active
+                ON editorial_assignments(user_id, released_at);
+        ',
     ];
 }
+

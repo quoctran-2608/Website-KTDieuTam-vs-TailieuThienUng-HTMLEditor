@@ -29,6 +29,8 @@ require_once __DIR__ . '/helpers.php';
 require_once __DIR__ . '/database.php';
 require_once __DIR__ . '/migrations.php';
 require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/article_catalog.php';
+require_once __DIR__ . '/assignment.php';
 
 // Guard: only serve /editorial/ requests
 editorial_enforce_request_context();
