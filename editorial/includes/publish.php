@@ -4,8 +4,9 @@ declare(strict_types=1);
 /**
  * Editorial V2 Phase 7 — Publish Service Module (Hardened 7.2).
  *
- * Handles safe publish of approved revisions to original live HTML files.
- * Only admin can publish. Only approved revision can be published.
+ * Handles safe publish of original live HTML files for two policies:
+ * - admin-approved revision
+ * - editor-owned current milestone
  *
  * Key invariants:
  * - Writes to THE ORIGINAL HTML file (not a copy)
@@ -116,115 +117,49 @@ function editorial_normalize_publish_payload(array $approvedPayload, array $live
 
 function editorial_publish_preflight(string $articleId, string $adminUserId): array
 {
+    return editorial_publish_policy_preflight($articleId, $adminUserId, 'admin_approved', null);
+}
+
+function editorial_publish_direct_preflight(string $articleId, string $editorUserId, string $lockToken): array
+{
+    return editorial_publish_policy_preflight($articleId, $editorUserId, 'editor_direct', $lockToken);
+}
+
+function editorial_publish_policy_preflight(string $articleId, string $actorUserId, string $policy, ?string $lockToken): array
+{
     $checks = [
-        'actor'      => ['pass' => false, 'label' => 'Admin hợp lệ'],
+        'actor'      => ['pass' => false, 'label' => $policy === 'editor_direct' ? 'Biên tập viên hợp lệ' : 'Admin hợp lệ'],
         'article'    => ['pass' => false, 'label' => 'Bài viết tồn tại'],
         'path'       => ['pass' => false, 'label' => 'File HTML hợp lệ'],
-        'status'     => ['pass' => false, 'label' => 'Trạng thái approved'],
-        'revision'   => ['pass' => false, 'label' => 'Phiên bản đã duyệt'],
+        'status'     => ['pass' => false, 'label' => $policy === 'editor_direct' ? 'Trạng thái đang biên tập' : 'Trạng thái approved'],
+        'revision'   => ['pass' => false, 'label' => $policy === 'editor_direct' ? 'Milestone hiện tại' : 'Phiên bản đã duyệt'],
         'snapshot'   => ['pass' => false, 'label' => 'Snapshot toàn vẹn'],
         'assignment' => ['pass' => false, 'label' => 'Phân công hợp lệ'],
         'live_hash'  => ['pass' => false, 'label' => 'Live hash khớp'],
-        'lock'       => ['pass' => false, 'label' => 'Không có khóa chỉnh sửa'],
+        'lock'       => ['pass' => false, 'label' => $policy === 'editor_direct' ? 'Khóa workspace hợp lệ' : 'Không có khóa chỉnh sửa'],
         'backup_dir' => ['pass' => false, 'label' => 'Thư mục backup ghi được'],
     ];
+    if ($policy === 'editor_direct') {
+        $checks['draft_sync'] = ['pass' => false, 'label' => 'Bản nháp khớp milestone'];
+    }
 
     $failResult = function(string $failedCheck, string $message) use (&$checks): array {
         return ['ok' => false, 'message' => $message, 'checks' => $checks,
                 'failed_at' => $failedCheck];
     };
 
-    // 1. Re-verify admin actor
-    $admin = editorial_find_user_by_id($adminUserId);
-    if (!$admin || empty($admin['is_active']) || $admin['role'] !== 'admin') {
-        return $failResult('actor', 'Người dùng không hợp lệ hoặc không có quyền admin.');
+    $resolved = editorial_resolve_publish_context($articleId, $actorUserId, $policy, $lockToken);
+    if (!$resolved['ok']) {
+        return $failResult((string) ($resolved['failed_at'] ?? 'actor'), (string) $resolved['message']);
     }
-    $checks['actor']['pass'] = true;
+    foreach (array_keys($checks) as $key) {
+        if ($key === 'backup_dir') {
+            continue;
+        }
+        $checks[$key]['pass'] = true;
+    }
 
-    // 2. Find article in catalog
-    $article = editorial_find_article($articleId);
-    if (!$article) {
-        return $failResult('article', 'Bài viết không tồn tại trong danh mục.');
-    }
-    $checks['article']['pass'] = true;
-
-    // 3. Resolve article file path with boundary containment
-    $filePath = editorial_resolve_article_path($article);
-    if (!$filePath || !file_exists($filePath)) {
-        return $failResult('path', 'Không tìm thấy file HTML bài viết.');
-    }
-    $realRepoRoot = realpath(dirname(dirname(__DIR__)));
-    $realFilePath = realpath($filePath);
-    if ($realFilePath === false || $realRepoRoot === false
-        || strpos($realFilePath, $realRepoRoot . DIRECTORY_SEPARATOR) !== 0) {
-        return $failResult('path', 'Đường dẫn file HTML nằm ngoài repo.');
-    }
-    $checks['path']['pass'] = true;
-
-    // 4. Get article state, verify status='approved'
-    $state = editorial_get_article_state($articleId);
-    if (!$state || $state['status'] !== 'approved') {
-        return $failResult('status', 'Bài viết chưa được duyệt.');
-    }
-    $approvedRevisionId = $state['approved_revision_id'] ?? '';
-    if ($approvedRevisionId === '') {
-        return $failResult('status', 'Không tìm thấy phiên bản đã duyệt.');
-    }
-    if (($state['current_revision_id'] ?? '') !== $approvedRevisionId) {
-        return $failResult('status', 'Phiên bản hiện tại không khớp phiên bản đã duyệt.');
-    }
-    $checks['status']['pass'] = true;
-
-    // 5. Load revision, verify type & article_id
-    $revision = editorial_get_revision($approvedRevisionId);
-    if (!$revision || $revision['revision_type'] !== 'editorial' || $revision['article_id'] !== $articleId) {
-        return $failResult('revision', 'Phiên bản đã duyệt không hợp lệ.');
-    }
-    $checks['revision']['pass'] = true;
-
-    // 6. Verified snapshot
-    $snapshotResult = editorial_get_verified_revision_snapshot($revision);
-    if (!$snapshotResult['ok']) {
-        return $failResult('snapshot', 'Snapshot không hợp lệ: ' . $snapshotResult['message']);
-    }
-    $verifiedPayload = $snapshotResult['payload'];
-    $checks['snapshot']['pass'] = true;
-
-    // 7. Active assignment matching revision
-    $assignment = editorial_get_active_assignment($articleId);
-    if (!$assignment || $assignment['id'] !== $revision['assignment_id']) {
-        return $failResult('assignment', 'Assignment không khớp với phiên bản đã duyệt.');
-    }
-    if ($assignment['user_id'] !== ($state['assigned_user_id'] ?? '')) {
-        return $failResult('assignment', 'Assignment user không khớp state.');
-    }
-    $checks['assignment']['pass'] = true;
-
-    // 8. Verify base_live_hash and read live HTML ONCE
-    $baseLiveHash = $state['base_live_hash'] ?? '';
-    if ($baseLiveHash === '') {
-        return $failResult('live_hash', 'Không có base live hash.');
-    }
-    $liveHtml = file_get_contents($filePath);
-    if ($liveHtml === false) {
-        return $failResult('live_hash', 'Lỗi đọc nội dung file HTML hiện tại.');
-    }
-    $currentLiveHash = hash('sha256', $liveHtml);
-    if ($currentLiveHash !== $baseLiveHash) {
-        return $failResult('live_hash', 'File HTML đã bị thay đổi bên ngoài (hash mismatch).');
-    }
-    $checks['live_hash']['pass'] = true;
-
-    // 9. No active editing lock
-    $db = editorial_db();
-    $stmt = $db->prepare('SELECT 1 FROM editorial_locks WHERE article_id = :aid LIMIT 1');
-    $stmt->execute([':aid' => $articleId]);
-    if ($stmt->fetch()) {
-        return $failResult('lock', 'Bài viết đang bị khóa chỉnh sửa.');
-    }
-    $checks['lock']['pass'] = true;
-
-    // 10. Backup directory writable
+    // Backup directory is operational, not an authorization input.
     $backupBase = editorial_publish_backup_base_path();
     if (!is_dir($backupBase)) {
         @mkdir($backupBase, 0755, true);
@@ -238,14 +173,145 @@ function editorial_publish_preflight(string $articleId, string $adminUserId): ar
         'ok' => true,
         'message' => 'Preflight passed.',
         'checks' => $checks,
+        'policy' => $policy,
+        'article' => $resolved['article'],
+        'state' => $resolved['state'],
+        'revision' => $resolved['revision'],
+        'payload' => $resolved['payload'],
+        'assignment' => $resolved['assignment'],
+        'live_html' => $resolved['live_html'],
+        'live_hash' => $resolved['live_hash'],
+        'file_path' => $resolved['file_path'],
+    ];
+}
+
+/**
+ * Resolve and verify all policy-sensitive publish inputs. This runs both before
+ * the transaction and again inside it; callers must not trust old results.
+ */
+function editorial_resolve_publish_context(string $articleId, string $actorUserId, string $policy, ?string $lockToken): array
+{
+    if (!in_array($policy, ['admin_approved', 'editor_direct'], true)) {
+        return ['ok' => false, 'failed_at' => 'actor', 'message' => 'Publish policy không hợp lệ.'];
+    }
+
+    $actor = editorial_find_user_by_id($actorUserId);
+    $requiredRole = $policy === 'editor_direct' ? 'editor' : 'admin';
+    if (!$actor || empty($actor['is_active']) || ($actor['role'] ?? '') !== $requiredRole) {
+        return ['ok' => false, 'failed_at' => 'actor', 'message' => 'Người dùng không hợp lệ hoặc không có quyền cho publish policy này.'];
+    }
+
+    $article = editorial_find_article($articleId);
+    if (!$article) {
+        return ['ok' => false, 'failed_at' => 'article', 'message' => 'Bài viết không tồn tại trong danh mục.'];
+    }
+    $filePath = editorial_resolve_article_path($article);
+    $realRepoRoot = realpath(dirname(dirname(__DIR__)));
+    $realFilePath = $filePath ? realpath($filePath) : false;
+    if (!$filePath || $realFilePath === false || $realRepoRoot === false
+        || !str_starts_with($realFilePath, $realRepoRoot . DIRECTORY_SEPARATOR)) {
+        return ['ok' => false, 'failed_at' => 'path', 'message' => 'File HTML bài viết không hợp lệ hoặc nằm ngoài repo.'];
+    }
+
+    $state = editorial_get_article_state($articleId);
+    if (!$state) {
+        return ['ok' => false, 'failed_at' => 'status', 'message' => 'Không tìm thấy trạng thái bài viết.'];
+    }
+
+    $candidateRevisionId = '';
+    if ($policy === 'admin_approved') {
+        if (($state['status'] ?? '') !== 'approved') {
+            return ['ok' => false, 'failed_at' => 'status', 'message' => 'Bài viết chưa được duyệt.'];
+        }
+        $candidateRevisionId = (string) ($state['approved_revision_id'] ?? '');
+        if ($candidateRevisionId === '' || ($state['current_revision_id'] ?? '') !== $candidateRevisionId) {
+            return ['ok' => false, 'failed_at' => 'status', 'message' => 'Phiên bản hiện tại không khớp phiên bản đã duyệt.'];
+        }
+    } else {
+        if (!in_array((string) ($state['status'] ?? ''), ['editing', 'returned'], true)) {
+            return ['ok' => false, 'failed_at' => 'status', 'message' => 'Editor chỉ có thể Publish khi bài đang biên tập hoặc cần chỉnh lại.'];
+        }
+        if ((string) ($state['assigned_user_id'] ?? '') !== $actorUserId) {
+            return ['ok' => false, 'failed_at' => 'assignment', 'message' => 'Bạn không phải người phụ trách bài viết này.'];
+        }
+        $candidateRevisionId = (string) ($state['current_revision_id'] ?? '');
+        if ($candidateRevisionId === '') {
+            return ['ok' => false, 'failed_at' => 'revision', 'message' => 'Không tìm thấy milestone hiện tại để Publish.'];
+        }
+    }
+
+    $revision = editorial_get_revision($candidateRevisionId);
+    if (!$revision || ($revision['revision_type'] ?? '') !== 'editorial'
+        || ($revision['article_id'] ?? '') !== $articleId) {
+        return ['ok' => false, 'failed_at' => 'revision', 'message' => 'Phiên bản publish không hợp lệ.'];
+    }
+    if ($policy === 'editor_direct'
+        && !in_array((string) ($revision['milestone_key'] ?? ''), ['stage1', 'stage2'], true)) {
+        return ['ok' => false, 'failed_at' => 'revision', 'message' => 'Editor chỉ có thể Publish milestone Chặng 1 hoặc Chặng 2.'];
+    }
+
+    $snapshotResult = editorial_get_verified_revision_snapshot($revision);
+    if (!$snapshotResult['ok']) {
+        return ['ok' => false, 'failed_at' => 'snapshot', 'message' => 'Snapshot không hợp lệ: ' . $snapshotResult['message']];
+    }
+
+    $assignment = editorial_get_active_assignment($articleId);
+    if (!$assignment || ($assignment['id'] ?? '') !== ($revision['assignment_id'] ?? '')
+        || ($assignment['user_id'] ?? '') !== ($state['assigned_user_id'] ?? '')) {
+        return ['ok' => false, 'failed_at' => 'assignment', 'message' => 'Assignment không khớp với state hoặc phiên bản publish.'];
+    }
+    if ($policy === 'editor_direct' && ($assignment['user_id'] ?? '') !== $actorUserId) {
+        return ['ok' => false, 'failed_at' => 'assignment', 'message' => 'Assignment không thuộc editor đang Publish.'];
+    }
+
+    $baseLiveHash = (string) ($state['base_live_hash'] ?? '');
+    $liveHtml = file_get_contents($filePath);
+    if ($baseLiveHash === '' || $liveHtml === false || hash('sha256', $liveHtml) !== $baseLiveHash) {
+        return ['ok' => false, 'failed_at' => 'live_hash', 'message' => 'File HTML đã bị thay đổi bên ngoài hoặc thiếu base live hash.'];
+    }
+
+    $db = editorial_db();
+    $lockStmt = $db->prepare('SELECT * FROM editorial_locks WHERE article_id = :aid');
+    $lockStmt->execute([':aid' => $articleId]);
+    $lock = $lockStmt->fetch(PDO::FETCH_ASSOC);
+    if ($policy === 'admin_approved') {
+        if ($lock) {
+            return ['ok' => false, 'failed_at' => 'lock', 'message' => 'Bài viết đang bị khóa chỉnh sửa.'];
+        }
+    } else {
+        if (!$lock || ($lock['user_id'] ?? '') !== $actorUserId
+            || ($lock['lock_token'] ?? '') !== (string) $lockToken
+            || strtotime((string) ($lock['expires_at'] ?? '')) <= time()) {
+            return ['ok' => false, 'failed_at' => 'lock', 'message' => 'Khóa workspace không hợp lệ, không khớp token hoặc đã hết hạn.'];
+        }
+
+        $draft = editorial_get_draft($articleId, $actorUserId);
+        if (!$draft) {
+            return ['ok' => false, 'failed_at' => 'draft_sync', 'message' => 'Không tìm thấy bản nháp để đối chiếu milestone.'];
+        }
+        try {
+            $draftHash = editorial_revision_content_hash($draft['payload']);
+        } catch (RuntimeException $e) {
+            return ['ok' => false, 'failed_at' => 'draft_sync', 'message' => 'Không thể kiểm tra hash bản nháp.'];
+        }
+        if ($draftHash !== ($revision['content_hash'] ?? '')
+            || (int) ($draft['version'] ?? 0) !== (int) ($revision['source_draft_version'] ?? -1)) {
+            return ['ok' => false, 'failed_at' => 'draft_sync', 'message' => 'Bản nháp đã thay đổi sau bản đã chốt. Hãy hoàn tất lại Chặng 1 hoặc Chặng 2 trước khi Publish.'];
+        }
+    }
+
+    return [
+        'ok' => true,
+        'actor' => $actor,
         'article' => $article,
         'state' => $state,
         'revision' => $revision,
-        'payload' => $verifiedPayload,
+        'payload' => $snapshotResult['payload'],
         'assignment' => $assignment,
         'live_html' => $liveHtml,
-        'live_hash' => $currentLiveHash,
+        'live_hash' => hash('sha256', $liveHtml),
         'file_path' => $filePath,
+        'candidate_revision_id' => $candidateRevisionId,
     ];
 }
 
@@ -1002,8 +1068,32 @@ function editorial_compensate_publish(array $ctx): array
 
 function editorial_publish_approved_revision(string $articleId, string $adminUserId): array
 {
+    return editorial_publish_revision_core($articleId, $adminUserId, 'admin_approved', null);
+}
+
+/**
+ * Backend-only direct publish entry point. Phase 9B.1 intentionally exposes no
+ * editor UI for this service.
+ */
+function editorial_publish_editor_revision(string $articleId, string $editorUserId, string $lockToken): array
+{
+    return editorial_publish_revision_core($articleId, $editorUserId, 'editor_direct', $lockToken);
+}
+
+/**
+ * The sole destructive Safe Publish pipeline for approved admin and direct editor
+ * policies. Policy-sensitive state is resolved before and inside the transaction.
+ */
+function editorial_publish_revision_core(string $articleId, string $actorUserId, string $policy, ?string $lockToken): array
+{
+    if (!in_array($policy, ['admin_approved', 'editor_direct'], true)) {
+        return ['ok' => false, 'message' => 'Publish policy không hợp lệ.'];
+    }
+
     // 1. Defense in depth: pre-transaction preflight
-    $preflight = editorial_publish_preflight($articleId, $adminUserId);
+    $preflight = $policy === 'editor_direct'
+        ? editorial_publish_direct_preflight($articleId, $actorUserId, (string) $lockToken)
+        : editorial_publish_preflight($articleId, $actorUserId);
     if (!$preflight['ok']) {
         return $preflight;
     }
@@ -1026,6 +1116,9 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
         'catalog_hash_after' => null,
         'published_snapshot_path' => null,
         'published_revision_id' => null,
+        'source_revision_id' => null,
+        'milestone_key' => null,
+        'assignment_id' => null,
     ];
 
     // Single compensation result — exactly one attempt allowed
@@ -1033,76 +1126,30 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
 
     try {
         $txResult = editorial_transaction(function() use (
-            $articleId, $adminUserId, $article, $filePath, &$compCtx, &$compensationResult
+            $articleId, $actorUserId, $policy, $lockToken, $article, &$compCtx, &$compensationResult
         ) {
             $db = editorial_db();
             $now = date('c');
 
             // ── RE-VERIFY ALL SECURITY STATE INSIDE TRANSACTION ──
-
-            // Re-verify admin actor
-            $admin = editorial_find_user_by_id($adminUserId);
-            if (!$admin || empty($admin['is_active']) || $admin['role'] !== 'admin') {
-                return ['ok' => false, 'message' => 'Admin không hợp lệ trong transaction.'];
+            $context = editorial_resolve_publish_context($articleId, $actorUserId, $policy, $lockToken);
+            if (!$context['ok']) {
+                return ['ok' => false, 'message' => $context['message']];
             }
-
-            // Re-read state
-            $state = editorial_get_article_state($articleId);
-            if (!$state || $state['status'] !== 'approved') {
-                return ['ok' => false, 'message' => 'Trạng thái không phải approved trong transaction.'];
-            }
-
-            $approvedRevisionId = $state['approved_revision_id'] ?? '';
-            if ($approvedRevisionId === '' || ($state['current_revision_id'] ?? '') !== $approvedRevisionId) {
-                return ['ok' => false, 'message' => 'Revision IDs không hợp lệ trong transaction.'];
-            }
-
-            $baseLiveHash = $state['base_live_hash'] ?? '';
-            if ($baseLiveHash === '') {
-                return ['ok' => false, 'message' => 'Không có base_live_hash trong transaction.'];
-            }
-
-            // Re-load and verify approved revision
-            $revision = editorial_get_revision($approvedRevisionId);
-            if (!$revision || $revision['revision_type'] !== 'editorial'
-                || $revision['article_id'] !== $articleId) {
-                return ['ok' => false, 'message' => 'Approved revision không hợp lệ trong transaction.'];
-            }
-
-            // Re-verify snapshot INSIDE transaction
-            $snapshotResult = editorial_get_verified_revision_snapshot($revision);
-            if (!$snapshotResult['ok']) {
-                return ['ok' => false, 'message' => 'Snapshot verification failed trong transaction.'];
-            }
-            $verifiedPayload = $snapshotResult['payload'];
-
-            // Re-verify active assignment
-            $assignment = editorial_get_active_assignment($articleId);
-            if (!$assignment || $assignment['id'] !== $revision['assignment_id']) {
-                return ['ok' => false, 'message' => 'Assignment không khớp trong transaction.'];
-            }
-            if ($assignment['user_id'] !== ($state['assigned_user_id'] ?? '')) {
-                return ['ok' => false, 'message' => 'Assignment user không khớp state trong transaction.'];
-            }
-
-            // Re-check no editing lock
-            $lockStmt = $db->prepare('SELECT 1 FROM editorial_locks WHERE article_id = :aid LIMIT 1');
-            $lockStmt->execute([':aid' => $articleId]);
-            if ($lockStmt->fetch()) {
-                return ['ok' => false, 'message' => 'Bài viết đang bị khóa trong transaction.'];
-            }
-
-            // ── RE-READ LIVE HTML BYTES (authoritative read) ──
-
-            $txLiveHtml = file_get_contents($filePath);
-            if ($txLiveHtml === false) {
-                return ['ok' => false, 'message' => 'Lỗi đọc HTML file trong transaction.'];
-            }
-            $currentLiveHash = hash('sha256', $txLiveHtml);
-            if ($currentLiveHash !== $baseLiveHash) {
-                return ['ok' => false, 'message' => 'File HTML đã bị thay đổi (hash mismatch trong transaction).'];
-            }
+            $state = $context['state'];
+            $article = $context['article'];
+            $revision = $context['revision'];
+            $candidateRevisionId = $context['candidate_revision_id'];
+            $assignment = $context['assignment'];
+            $verifiedPayload = $context['payload'];
+            $txLiveHtml = $context['live_html'];
+            $currentLiveHash = $context['live_hash'];
+            $txFilePath = $context['file_path'];
+            $compCtx['live_target_path'] = $txFilePath;
             $compCtx['live_hash_before'] = $currentLiveHash;
+            $compCtx['source_revision_id'] = $candidateRevisionId;
+            $compCtx['milestone_key'] = $revision['milestone_key'] ?? null;
+            $compCtx['assignment_id'] = $assignment['id'];
 
             // ── PARSE LIVE META FOR NORMALIZATION ──
             $liveParsed = editorial_parse_article_html($txLiveHtml, '');
@@ -1152,7 +1199,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
             // ════════════════════════════════════════════════════
 
             // ── ATOMIC REPLACE LIVE FILE ──
-            $replaceResult = editorial_atomic_replace_file($filePath, $newHtml, $currentLiveHash);
+            $replaceResult = editorial_atomic_replace_file($txFilePath, $newHtml, $currentLiveHash);
             if (!$replaceResult['ok']) {
                 // Atomic replace itself failed (temp couldn't rename) — no destructive change
                 return $replaceResult;
@@ -1164,7 +1211,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
 
             try {
                 // ── POST-WRITE VERIFICATION ──
-                $postWriteHtml = file_get_contents($filePath);
+                $postWriteHtml = file_get_contents($txFilePath);
                 if ($postWriteHtml === false || hash('sha256', $postWriteHtml) !== $newHtmlHash) {
                     throw new EditorialPublishCompensationException('Post-write hash verification failed.');
                 }
@@ -1207,7 +1254,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                 );
                 $compCtx['published_snapshot_path'] = $publishedSnapshotPath;
 
-                // Published content hash MUST equal approved content hash
+                // Published content hash MUST equal the verified candidate hash.
                 $publishedContentHash = $approvedContentHash;
 
                 $stmt = $db->prepare('
@@ -1224,8 +1271,8 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                     'rtype' => 'published',
                     'spath' => $publishedSnapshotPath,
                     'chash' => $publishedContentHash,
-                    'brid' => $approvedRevisionId,
-                    'cby' => $adminUserId,
+                    'brid' => $candidateRevisionId,
+                    'cby' => $actorUserId,
                     'cat' => $now,
                     'asgn' => $assignment['id'],
                     'sdv' => $revision['source_draft_version'],
@@ -1247,9 +1294,14 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                 $db->prepare("UPDATE editorial_assignments SET released_at = :r, release_reason = 'published' WHERE id = :id")
                    ->execute([':r' => $now, ':id' => $assignment['id']]);
 
-                // ── DELETE LOCK (defensive) ──
-                $db->prepare('DELETE FROM editorial_locks WHERE article_id = :aid')
-                   ->execute([':aid' => $articleId]);
+                // ── DELETE LOCK ──
+                if ($policy === 'editor_direct') {
+                    $db->prepare('DELETE FROM editorial_locks WHERE article_id = :aid AND user_id = :uid AND lock_token = :token')
+                       ->execute([':aid' => $articleId, ':uid' => $actorUserId, ':token' => $lockToken]);
+                } else {
+                    $db->prepare('DELETE FROM editorial_locks WHERE article_id = :aid')
+                       ->execute([':aid' => $articleId]);
+                }
 
                 // ── DELETE OLD DRAFT ──
                 $db->prepare('DELETE FROM editorial_drafts WHERE article_id = :aid AND user_id = :uid')
@@ -1280,7 +1332,7 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                 $stmtState->execute([
                     ':pub_rev_id' => $publishedRevisionId,
                     ':pub_rev_id2' => $publishedRevisionId,
-                    ':pub_by' => $adminUserId,
+                    ':pub_by' => $actorUserId,
                     ':pub_at' => $now,
                     ':pub_hash' => $newHtmlHash,
                     ':backup_path' => $backupResult['path'],
@@ -1314,20 +1366,30 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                 'hash_after' => $newHtmlHash,
                 'backup_path' => $backupResult['path'],
                 'assignment_id' => $assignment['id'],
-                'approved_revision_id' => $approvedRevisionId,
+                'source_revision_id' => $candidateRevisionId,
+                'approved_revision_id' => $policy === 'admin_approved' ? $candidateRevisionId : null,
+                'milestone_key' => $revision['milestone_key'] ?? null,
+                'publish_mode' => $policy,
             ];
         });
 
         // Transaction COMMITTED — log success OUTSIDE transaction (best-effort)
         if ($txResult['ok']) {
             try {
-                editorial_log_activity('article.publish.succeeded', $articleId, $adminUserId, json_encode([
+                editorial_log_activity(
+                    $policy === 'editor_direct' ? 'article.publish.editor_direct_succeeded' : 'article.publish.succeeded',
+                    $articleId,
+                    $actorUserId,
+                    json_encode([
+                    'source_revision_id' => $txResult['source_revision_id'] ?? '',
                     'approved_revision_id' => $txResult['approved_revision_id'] ?? '',
                     'published_revision_id' => $txResult['published_revision_id'] ?? '',
                     'assignment_id' => $txResult['assignment_id'] ?? '',
                     'hash_before' => $txResult['hash_before'] ?? '',
                     'hash_after' => $txResult['hash_after'] ?? '',
                     'backup_path' => $txResult['backup_path'] ?? '',
+                    'publish_mode' => $txResult['publish_mode'] ?? $policy,
+                    'milestone_key' => $txResult['milestone_key'] ?? null,
                 ]));
             } catch (\Throwable $logError) {
                 // Best-effort: never convert core success to failure
@@ -1342,11 +1404,12 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
         // Filesystem compensation already ran ONCE inside the inner catch.
         // Log failure OUTSIDE the rolled-back transaction so it persists.
         try {
-            editorial_log_activity('article.publish.failed', $articleId, $adminUserId, json_encode([
+            editorial_log_activity('article.publish.failed', $articleId, $actorUserId, json_encode([
                 'stage' => 'post_destructive',
                 'message' => $e->getMessage(),
                 'hash_before' => $compCtx['live_hash_before'],
                 'backup_path' => $compCtx['live_backup_absolute_path'],
+                'publish_mode' => $policy,
             ]));
         } catch (\Throwable $logErr) {
             // Best-effort logging
@@ -1356,12 +1419,13 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
         $compOk = ($compensationResult !== null && $compensationResult['ok']);
         if ($compensationResult !== null && !$compensationResult['ok']) {
             try {
-                editorial_log_activity('article.publish.compensation_failed', $articleId, $adminUserId, json_encode([
+                editorial_log_activity('article.publish.compensation_failed', $articleId, $actorUserId, json_encode([
                     'stage' => 'post_rollback',
                     'article_id' => $articleId,
                     'hash_before' => $compCtx['live_hash_before'],
                     'backup_path' => $compCtx['live_backup_absolute_path'],
                     'failures' => $compensationResult['failures'],
+                    'publish_mode' => $policy,
                 ]));
             } catch (\Throwable $logErr) {
                 // Best-effort logging
@@ -1406,12 +1470,13 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
                 $compensationResult = editorial_compensate_publish($compCtx);
 
                 try {
-                    editorial_log_activity('article.publish.failed', $articleId, $adminUserId, json_encode([
+                    editorial_log_activity('article.publish.failed', $articleId, $actorUserId, json_encode([
                         'stage' => 'commit_failure',
                         'message' => $e->getMessage(),
                         'exception' => get_class($e),
                         'hash_before' => $compCtx['live_hash_before'],
                         'backup_path' => $compCtx['live_backup_absolute_path'],
+                        'publish_mode' => $policy,
                     ]));
                 } catch (\Throwable $logErr) {
                     // Best-effort
@@ -1419,10 +1484,11 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
 
                 if ($compensationResult !== null && !$compensationResult['ok']) {
                     try {
-                        editorial_log_activity('article.publish.compensation_failed', $articleId, $adminUserId, json_encode([
+                        editorial_log_activity('article.publish.compensation_failed', $articleId, $actorUserId, json_encode([
                             'stage' => 'commit_failure_compensation',
                             'article_id' => $articleId,
                             'failures' => $compensationResult['failures'],
+                            'publish_mode' => $policy,
                         ]));
                     } catch (\Throwable $logErr) {
                         // Best-effort
@@ -1443,10 +1509,18 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
             } else {
                 // COMMIT actually succeeded — treat as success
                 try {
-                    editorial_log_activity('article.publish.succeeded', $articleId, $adminUserId, json_encode([
+                    editorial_log_activity(
+                        $policy === 'editor_direct' ? 'article.publish.editor_direct_succeeded' : 'article.publish.succeeded',
+                        $articleId,
+                        $actorUserId,
+                        json_encode([
                         'note' => 'COMMIT succeeded despite exception',
                         'exception' => get_class($e),
                         'published_revision_id' => $compCtx['published_revision_id'],
+                        'source_revision_id' => $compCtx['source_revision_id'],
+                        'assignment_id' => $compCtx['assignment_id'],
+                        'milestone_key' => $compCtx['milestone_key'],
+                        'publish_mode' => $policy,
                     ]));
                 } catch (\Throwable $logErr) {
                     // Best-effort
@@ -1459,10 +1533,11 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
 
         // Case C: Pre-destructive failure — no compensation needed
         try {
-            editorial_log_activity('article.publish.failed', $articleId, $adminUserId, json_encode([
+            editorial_log_activity('article.publish.failed', $articleId, $actorUserId, json_encode([
                 'stage' => 'unexpected_pre_destructive',
                 'message' => $e->getMessage(),
                 'exception' => get_class($e),
+                'publish_mode' => $policy,
             ]));
         } catch (\Throwable $logErr) {
             // Best-effort logging
