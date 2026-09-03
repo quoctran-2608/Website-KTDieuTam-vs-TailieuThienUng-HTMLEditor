@@ -116,6 +116,7 @@ $currentPage = $result['page'];
 // Batch load states for displayed articles only
 $displayedIds = array_map(fn($a) => $a['id'], $items);
 $pageStates = editorial_get_states_for_articles($displayedIds);
+$pageContributors = editorial_get_article_contributors($displayedIds);
 
 // Preload owner names
 $ownerIds = [];
@@ -230,10 +231,22 @@ editorial_layout_header([
                         $ownerId = $state ? (string) ($state['assigned_user_id'] ?? '') : '';
                         $ownerName = $ownerId !== '' ? ($ownerNames[$ownerId] ?? 'Không rõ') : '';
                         $isMe = ($ownerId === $currentUserId);
+                        $isEditableByMe = $isMe && in_array($status, ['editing', 'returned'], true);
+                        $contributors = $pageContributors[$aid] ?? [];
+                        $contributorNames = array_map(
+                            static fn(array $contributor): string => (string) $contributor['display_name'],
+                            $contributors
+                        );
                         ?>
                         <tr>
                             <td>
-                                <strong><?= editorial_h($article['title']) ?></strong>
+                                <?php if ($isEditableByMe): ?>
+                                    <a class="editorial-article-title-link" href="<?= editorial_h(editorial_url('article.php?id=' . urlencode($aid))) ?>">
+                                        <strong><?= editorial_h($article['title']) ?></strong>
+                                    </a>
+                                <?php else: ?>
+                                    <strong><?= editorial_h($article['title']) ?></strong>
+                                <?php endif; ?>
                                 <br><small style="color:#868e96;">
                                     <a href="<?= editorial_h(editorial_public_article_url($article)) ?>" target="_blank" rel="noopener" title="Xem bài trên website">
                                         <?= editorial_h($article['id']) ?>
@@ -254,9 +267,16 @@ editorial_layout_header([
                                     <?= editorial_h(editorial_status_label($status)) ?>
                                 </span>
                                 <?php if ($isMe): ?>
-                                    <br><small class="editorial-owner-me"><i class="fa-solid fa-user"></i> Bài của tôi</small>
+                                    <br><small class="editorial-owner-me"><i class="fa-solid fa-user"></i> Đang phụ trách: <?= editorial_h($ownerName !== '' ? $ownerName : 'Bạn') ?></small>
                                 <?php elseif ($ownerName !== ''): ?>
-                                    <br><small class="editorial-owner-other"><i class="fa-solid fa-user"></i> <?= editorial_h($ownerName) ?></small>
+                                    <br><small class="editorial-owner-other"><i class="fa-solid fa-user"></i> Đang phụ trách: <?= editorial_h($ownerName) ?></small>
+                                <?php endif; ?>
+                                <?php if ($contributorNames !== []): ?>
+                                    <br><small class="editorial-contributor-history">
+                                        <i class="fa-solid fa-pen"></i>
+                                        <?= $status === 'published' ? 'Đã được biên tập bởi:' : 'Biên tập bởi:' ?>
+                                        <?= editorial_h(implode(', ', $contributorNames)) ?>
+                                    </small>
                                 <?php endif; ?>
                             </td>
                             <td>
@@ -273,7 +293,7 @@ editorial_layout_header([
                                         </button>
                                     </form>
                                 <?php elseif ($isMe): ?>
-                                    <?php if (in_array($status, ['editing', 'returned'], true)): ?>
+                                    <?php if ($isEditableByMe): ?>
                                         <a href="<?= editorial_h(editorial_url('article.php?id=' . urlencode($aid))) ?>" class="editorial-workspace-btn">
                                             <i class="fa-solid fa-pen-to-square"></i> Tiếp tục biên tập
                                         </a>

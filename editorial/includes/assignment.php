@@ -149,6 +149,63 @@ function editorial_preload_user_names(array $userIds): array
     return $map;
 }
 
+/**
+ * Batch-load permanent editorial contributors for displayed articles.
+ *
+ * A contributor is an assignment with at least one successful Saved Draft.
+ * The assignment table preserves this history after release/reassign/publish.
+ *
+ * @param array<int, string> $articleIds
+ * @return array<string, array<int, array{user_id:string,display_name:string,first_saved_at:string,last_saved_at:string}>>
+ */
+function editorial_get_article_contributors(array $articleIds): array
+{
+    $articleIds = array_values(array_unique(array_filter(
+        array_map(static fn(mixed $id): string => trim((string) $id), $articleIds),
+        static fn(string $id): bool => $id !== ''
+    )));
+    if ($articleIds === []) {
+        return [];
+    }
+
+    $contributors = array_fill_keys($articleIds, []);
+    $db = editorial_db();
+    $placeholders = implode(',', array_fill(0, count($articleIds), '?'));
+    $stmt = $db->prepare("
+        SELECT
+            a.article_id,
+            a.user_id,
+            COALESCE(NULLIF(TRIM(u.display_name), ''), u.username) AS display_name,
+            a.first_saved_at,
+            a.last_saved_at,
+            a.assigned_at
+        FROM editorial_assignments a
+        INNER JOIN editorial_users u ON u.id = a.user_id
+        WHERE a.article_id IN ($placeholders)
+          AND a.first_saved_at IS NOT NULL
+        ORDER BY a.article_id ASC, a.first_saved_at ASC, a.assigned_at ASC
+    ");
+    $stmt->execute($articleIds);
+
+    $seenUsers = [];
+    while ($row = $stmt->fetch()) {
+        $articleId = (string) $row['article_id'];
+        $userId = (string) $row['user_id'];
+        if (isset($seenUsers[$articleId][$userId])) {
+            continue;
+        }
+        $seenUsers[$articleId][$userId] = true;
+        $contributors[$articleId][] = [
+            'user_id' => $userId,
+            'display_name' => (string) $row['display_name'],
+            'first_saved_at' => (string) $row['first_saved_at'],
+            'last_saved_at' => (string) ($row['last_saved_at'] ?? ''),
+        ];
+    }
+
+    return $contributors;
+}
+
 // ─── Atomic Claim ───────────────────────────────────────────────
 
 /**

@@ -225,5 +225,50 @@ function editorial_migration_list(): array
             CREATE INDEX IF NOT EXISTS idx_revisions_assignment_milestone
                 ON editorial_revisions(assignment_id, milestone_key, revision_no DESC);
         ',
+        8 => '
+            -- Phase 11B: permanent evidence that an assignment actually edited.
+            ALTER TABLE editorial_assignments ADD COLUMN first_saved_at TEXT;
+            ALTER TABLE editorial_assignments ADD COLUMN last_saved_at TEXT;
+
+            -- Backfill only when existing drafts or draft-derived revisions
+            -- provide evidence. A claim by itself is never a contributor mark.
+            UPDATE editorial_assignments
+            SET
+                first_saved_at = COALESCE(
+                    first_saved_at,
+                    (
+                        SELECT MIN(r.created_at)
+                        FROM editorial_revisions r
+                        WHERE r.assignment_id = editorial_assignments.id
+                          AND r.source_draft_version IS NOT NULL
+                          AND r.source_draft_version > 0
+                    ),
+                    (
+                        SELECT d.updated_at
+                        FROM editorial_drafts d
+                        WHERE editorial_assignments.released_at IS NULL
+                          AND d.article_id = editorial_assignments.article_id
+                          AND d.user_id = editorial_assignments.user_id
+                    )
+                ),
+                last_saved_at = COALESCE(
+                    (
+                        SELECT d.updated_at
+                        FROM editorial_drafts d
+                        WHERE editorial_assignments.released_at IS NULL
+                          AND d.article_id = editorial_assignments.article_id
+                          AND d.user_id = editorial_assignments.user_id
+                    ),
+                    (
+                        SELECT MAX(r.created_at)
+                        FROM editorial_revisions r
+                        WHERE r.assignment_id = editorial_assignments.id
+                          AND r.source_draft_version IS NOT NULL
+                          AND r.source_draft_version > 0
+                    ),
+                    last_saved_at
+                )
+            WHERE first_saved_at IS NULL OR last_saved_at IS NULL;
+        ',
     ];
 }

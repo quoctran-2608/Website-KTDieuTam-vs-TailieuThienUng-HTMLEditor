@@ -416,7 +416,8 @@ function editorial_save_draft(string $articleId, string $userId, array $payload,
     }
 
     // FIX A4: All authorization inside transaction
-    return editorial_transaction(function () use ($articleId, $userId, $payloadJson, $baseLiveHash, $expectedVersion, $lockToken): array {
+    try {
+        return editorial_transaction(function () use ($articleId, $userId, $payloadJson, $baseLiveHash, $expectedVersion, $lockToken): array {
         $db = editorial_db();
         $now = date('c');
 
@@ -448,7 +449,22 @@ function editorial_save_draft(string $articleId, string $userId, array $payload,
             return ['ok' => false, 'code' => 'lock_expired', 'message' => 'Phiên chỉnh sửa đã hết hạn. Vui lòng tải lại workspace để tiếp tục.'];
         }
 
-        // Step 6-7: Version check + save
+        // Step 6: Resolve the exact active assignment before any draft write.
+        // State ownership alone is not permanent contributor evidence.
+        $assignmentStmt = $db->prepare('
+            SELECT id FROM editorial_assignments
+            WHERE article_id = :aid
+              AND user_id = :uid
+              AND released_at IS NULL
+        ');
+        $assignmentStmt->execute(['aid' => $articleId, 'uid' => $userId]);
+        $assignment = $assignmentStmt->fetch();
+        if (!$assignment || empty($assignment['id'])) {
+            return ['ok' => false, 'code' => 'missing_active_assignment', 'message' => 'Không tìm thấy phân công đang hoạt động. Bản nháp chưa được lưu.'];
+        }
+        $assignmentId = (string) $assignment['id'];
+
+        // Step 7-8: Version check + save
         if ($expectedVersion === 0) {
             $stmt = $db->prepare('SELECT version FROM editorial_drafts WHERE article_id = :aid AND user_id = :uid');
             $stmt->execute(['aid' => $articleId, 'uid' => $userId]);
@@ -469,11 +485,40 @@ function editorial_save_draft(string $articleId, string $userId, array $payload,
             $newVersion = $expectedVersion + 1;
         }
 
-        // Step 8: Activity
+        // Step 9: Mark this assignment as a real editorial contribution.
+        // Throw on an impossible exact-row mismatch so the enclosing draft
+        // transaction rolls back instead of leaving an unattributed save.
+        $markContributor = $db->prepare('
+            UPDATE editorial_assignments
+            SET first_saved_at = COALESCE(first_saved_at, :now),
+                last_saved_at = :now
+            WHERE id = :id
+              AND article_id = :aid
+              AND user_id = :uid
+              AND released_at IS NULL
+        ');
+        $markContributor->execute([
+            'now' => $now,
+            'id' => $assignmentId,
+            'aid' => $articleId,
+            'uid' => $userId,
+        ]);
+        if ($markContributor->rowCount() !== 1) {
+            throw new RuntimeException('Không thể đánh dấu dấu vết biên tập cho phân công đang hoạt động.');
+        }
+
+        // Step 10: Activity
         editorial_log_activity('article.draft.saved', $articleId, $userId, json_encode(['draft_version' => $newVersion]));
 
         return ['ok' => true, 'version' => $newVersion, 'message' => 'Lưu bản nháp thành công (v' . $newVersion . ').'];
-    });
+        });
+    } catch (\Throwable $e) {
+        error_log('Editorial draft save failed: article_id=' . $articleId
+            . ' user_id=' . $userId
+            . ' exception=' . get_class($e)
+            . ' message=' . $e->getMessage());
+        return ['ok' => false, 'code' => 'draft_save_failed', 'message' => 'Không thể lưu bản nháp an toàn. Vui lòng thử lại.'];
+    }
 }
 
 // ─── Initial payload builder ────────────────────────────────────

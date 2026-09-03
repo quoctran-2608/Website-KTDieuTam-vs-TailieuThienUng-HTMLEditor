@@ -986,6 +986,17 @@ body.editor-fullscreen-active .editor-fs-status button {
     border-color: #93c5fd;
     background: #eff6ff;
 }
+.editorial-article-title-link {
+    color: #1e3a5f;
+    text-decoration: none;
+}
+.editorial-article-title-link:hover strong {
+    color: #1565c0;
+    text-decoration: underline;
+}
+.editorial-contributor-history {
+    color: #526579;
+}
 .editorial-workspace-preview-frame {
     display: block;
     width: 100%;
