@@ -5,7 +5,6 @@ require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ . '/includes/workspace.php';
 require_once __DIR__ . '/includes/revision.php';
 require_once __DIR__ . '/includes/review.php';
-require_once __DIR__ . '/includes/publish.php';
 require_once __DIR__ . '/includes/layout.php';
 
 editorial_require_auth();
@@ -13,6 +12,7 @@ editorial_require_auth();
 $currentUser = editorial_current_user();
 $currentUserId = (string) $currentUser['user_id'];
 $articleId = trim((string) ($_GET['id'] ?? $_POST['article_id'] ?? ''));
+$workspaceLockToken = '';
 
 // ─── Validate article ────────────────────────────────────────────
 
@@ -27,34 +27,42 @@ if ($article === null) {
     editorial_redirect(editorial_url('my-work.php'));
 }
 
-// ─── Authorization: must be owner, editable status ───────────────
+// ─── Authorization and path initialization ───────────────────────
 
-$state = editorial_get_article_state($articleId);
-if ($state === null || (string) ($state['assigned_user_id'] ?? '') !== $currentUserId) {
-    $ownerName = '';
-    if ($state !== null && !empty($state['assigned_user_id'])) {
-        $owner = editorial_find_user_by_id((string) $state['assigned_user_id']);
-        $ownerName = $owner ? (string) $owner['display_name'] : 'người khác';
+try {
+    $state = editorial_get_article_state($articleId);
+    if ($state === null || (string) ($state['assigned_user_id'] ?? '') !== $currentUserId) {
+        $ownerName = '';
+        if ($state !== null && !empty($state['assigned_user_id'])) {
+            $owner = editorial_find_user_by_id((string) $state['assigned_user_id']);
+            $ownerName = $owner ? (string) $owner['display_name'] : 'người khác';
+        }
+        $msg = $ownerName !== ''
+            ? 'Bài viết hiện đang được ' . $ownerName . ' phụ trách.'
+            : 'Bạn chưa nhận biên tập bài này.';
+        editorial_flash_set('warning', $msg);
+        editorial_redirect(editorial_url('articles.php'));
     }
-    $msg = $ownerName !== ''
-        ? 'Bài viết hiện đang được ' . $ownerName . ' phụ trách.'
-        : 'Bạn chưa nhận biên tập bài này.';
-    editorial_flash_set('warning', $msg);
-    editorial_redirect(editorial_url('articles.php'));
-}
 
-$articleStatus = (string) ($state['status'] ?? 'available');
-$editableStatuses = ['editing', 'returned'];
-if (!in_array($articleStatus, $editableStatuses, true)) {
-    editorial_flash_set('info', 'Bài viết ở trạng thái "' . editorial_status_label($articleStatus) . '" không thể chỉnh sửa.');
-    editorial_redirect(editorial_url('my-work.php'));
-}
+    $articleStatus = (string) ($state['status'] ?? 'available');
+    $editableStatuses = ['editing', 'returned'];
+    if (!in_array($articleStatus, $editableStatuses, true)) {
+        editorial_flash_set('info', 'Bài viết ở trạng thái "' . editorial_status_label($articleStatus) . '" không thể chỉnh sửa.');
+        editorial_redirect(editorial_url('my-work.php'));
+    }
 
-// ─── Resolve HTML file ───────────────────────────────────────────
-
-$htmlPath = editorial_resolve_article_path($article);
-if ($htmlPath === null) {
-    editorial_flash_set('danger', 'Không thể đọc file HTML gốc.');
+    $htmlPath = editorial_resolve_article_path($article);
+    if ($htmlPath === null) {
+        editorial_flash_set('danger', 'Không thể đọc file HTML gốc.');
+        editorial_redirect(editorial_url('my-work.php'));
+    }
+} catch (\Throwable $e) {
+    error_log('Editorial workspace initialization failed: article_id=' . $articleId
+        . ' user_id=' . $currentUserId
+        . ' operation=authorization_or_path'
+        . ' exception=' . get_class($e)
+        . ' message=' . $e->getMessage());
+    editorial_flash_set('danger', 'Không thể mở Workspace do lỗi khởi tạo. Chi tiết đã được ghi vào log hệ thống.');
     editorial_redirect(editorial_url('my-work.php'));
 }
 
@@ -129,6 +137,7 @@ if (editorial_is_post()) {
     }
 
     if ($intent === 'publish_direct') {
+        require_once __DIR__ . '/includes/publish.php';
         if (empty($_POST['confirm_direct_publish'])) {
             editorial_flash_set('danger', 'Vui lòng xác nhận trước khi Publish trực tiếp.');
             editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
@@ -185,20 +194,55 @@ if (editorial_is_post()) {
     editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
 }
 
-// ─── Acquire lock ────────────────────────────────────────────────
+// ─── Workspace initialization ────────────────────────────────────
 
-$lockResult = editorial_acquire_article_lock($articleId, $currentUserId);
-if (!$lockResult['ok']) {
-    editorial_flash_set('warning', $lockResult['message']);
+$abortWorkspaceInitialization = static function (string $operation, string $message, ?\Throwable $exception = null) use (
+    $articleId,
+    $currentUserId,
+    &$workspaceLockToken
+): void {
+    $log = 'Editorial workspace initialization failed: article_id=' . $articleId
+        . ' user_id=' . $currentUserId
+        . ' operation=' . $operation;
+    if ($exception !== null) {
+        $log .= ' exception=' . get_class($exception) . ' message=' . $exception->getMessage();
+    }
+    error_log($log);
+
+    if ($workspaceLockToken !== '') {
+        try {
+            editorial_release_article_lock($articleId, $currentUserId, $workspaceLockToken);
+        } catch (\Throwable $releaseError) {
+            error_log('Editorial workspace lock cleanup failed: article_id=' . $articleId
+                . ' user_id=' . $currentUserId
+                . ' operation=' . $operation
+                . ' exception=' . get_class($releaseError)
+                . ' message=' . $releaseError->getMessage());
+        }
+    }
+
+    editorial_flash_set('danger', $message);
     editorial_redirect(editorial_url('my-work.php'));
-}
-$lockToken = $lockResult['lock_token'];
-$lockExpires = $lockResult['expires_at'];
+};
 
-// ─── Lazy baseline creation (Phase 5) ───────────────────────────
+try {
+    $lockResult = editorial_acquire_article_lock($articleId, $currentUserId);
+    if (!$lockResult['ok']) {
+        editorial_flash_set('warning', $lockResult['message']);
+        editorial_redirect(editorial_url('my-work.php'));
+    }
+    $workspaceLockToken = (string) $lockResult['lock_token'];
+    $lockToken = $workspaceLockToken;
+    $lockExpires = $lockResult['expires_at'];
 
-$assignment = editorial_get_active_assignment($articleId);
-if ($assignment) {
+    $assignment = editorial_get_active_assignment($articleId);
+    if ($assignment === null || (string) ($assignment['user_id'] ?? '') !== $currentUserId) {
+        $abortWorkspaceInitialization(
+            'assignment_initialization',
+            'Không thể xác minh phân công an toàn cho bài viết này. Vui lòng thử lại hoặc báo Admin.'
+        );
+    }
+
     $existingBaseline = editorial_get_article_revisions($articleId, 50);
     $hasBaseline = false;
     foreach ($existingBaseline as $rev) {
@@ -209,43 +253,53 @@ if ($assignment) {
     }
     if (!$hasBaseline) {
         $baselineResult = editorial_create_baseline_revision($articleId, $currentUserId);
-        // Silently log if skipped due to conflict (no flash spam)
+        if (!$baselineResult['ok']) {
+            // A concurrent request may have created the baseline after our first check.
+            $hasBaseline = false;
+            foreach (editorial_get_article_revisions($articleId, 50) as $rev) {
+                if (($rev['assignment_id'] ?? '') === $assignment['id'] && $rev['revision_type'] === 'baseline') {
+                    $hasBaseline = true;
+                    break;
+                }
+            }
+            if (!$hasBaseline) {
+                error_log('Editorial workspace initialization failed: article_id=' . $articleId
+                    . ' user_id=' . $currentUserId
+                    . ' operation=baseline_initialization'
+                    . ' result=baseline_not_created');
+                $abortWorkspaceInitialization(
+                    'baseline_initialization',
+                    'Không thể khởi tạo Bản gốc an toàn cho bài viết này. Vui lòng thử lại hoặc báo Admin.'
+                );
+            }
+        }
     }
-}
 
-// ─── Load draft or parse live HTML ───────────────────────────────
-
-$draft = editorial_get_draft($articleId, $currentUserId);
-$draftVersion = 0;
-$draftSavedAt = null;
-
-if ($draft !== null) {
-    $form = $draft['payload'];
-    $draftVersion = (int) ($draft['version'] ?? 0);
-    $draftSavedAt = (string) ($draft['updated_at'] ?? '');
-} else {
-    $parsed = editorial_parse_article_file($htmlPath);
-    if (!$parsed['ok']) {
-        editorial_flash_set('danger', 'Không thể parse file HTML: ' . ($parsed['message'] ?? ''));
-        editorial_redirect(editorial_url('my-work.php'));
+    $draft = editorial_get_draft($articleId, $currentUserId);
+    $draftVersion = 0;
+    $draftSavedAt = null;
+    if ($draft !== null) {
+        $form = $draft['payload'];
+        $draftVersion = (int) ($draft['version'] ?? 0);
+        $draftSavedAt = (string) ($draft['updated_at'] ?? '');
+    } else {
+        $parsed = editorial_parse_article_file($htmlPath);
+        if (!$parsed['ok']) {
+            $abortWorkspaceInitialization(
+                'draft_or_live_initialization',
+                'Không thể khởi tạo nội dung Workspace an toàn. Vui lòng thử lại hoặc báo Admin.'
+            );
+        }
+        $form = editorial_build_initial_payload($parsed, $article, $parsed['meta_payload'] ?? []);
     }
-    $form = editorial_build_initial_payload($parsed, $article, $parsed['meta_payload'] ?? []);
-}
 
-// ─── Live hash conflict check ────────────────────────────────────
+    $currentLiveHash = editorial_live_hash($htmlPath);
+    $baseLiveHash = (string) ($state['base_live_hash'] ?? '');
+    $liveHashConflict = ($baseLiveHash !== '' && $currentLiveHash !== null && $currentLiveHash !== $baseLiveHash);
 
-$currentLiveHash = editorial_live_hash($htmlPath);
-$baseLiveHash = (string) ($state['base_live_hash'] ?? '');
-$liveHashConflict = ($baseLiveHash !== '' && $currentLiveHash !== null && $currentLiveHash !== $baseLiveHash);
-
-// ─── Recent revisions (Phase 5) ─────────────────────────────────
-
-$recentRevisions = editorial_get_article_revisions($articleId, 5);
-$assignmentMilestones = $assignment
-    ? editorial_get_assignment_milestones($articleId, (string) $assignment['id'])
-    : ['stage1' => null, 'stage2' => null];
-$currentMilestone = null;
-if ($assignment) {
+    $recentRevisions = editorial_get_article_revisions($articleId, 5);
+    $assignmentMilestones = editorial_get_assignment_milestones($articleId, (string) $assignment['id']);
+    $currentMilestone = null;
     $currentRevisionId = (string) ($state['current_revision_id'] ?? '');
     foreach ($assignmentMilestones as $milestone) {
         if ($milestone !== null && (string) $milestone['id'] === $currentRevisionId) {
@@ -253,17 +307,23 @@ if ($assignment) {
             break;
         }
     }
-}
-$canPublishDirect = $draftVersion > 0
-    && $currentMilestone !== null
-    && (($currentUser['role'] ?? '') === 'editor');
-$assignmentBaseline = null;
-foreach (editorial_get_article_revisions($articleId, 50) as $revision) {
-    if (($revision['assignment_id'] ?? '') === ($assignment['id'] ?? '')
-        && ($revision['revision_type'] ?? '') === 'baseline') {
-        $assignmentBaseline = $revision;
-        break;
+    $canPublishDirect = $draftVersion > 0
+        && $currentMilestone !== null
+        && (($currentUser['role'] ?? '') === 'editor');
+    $assignmentBaseline = null;
+    foreach (editorial_get_article_revisions($articleId, 50) as $revision) {
+        if (($revision['assignment_id'] ?? '') === $assignment['id']
+            && ($revision['revision_type'] ?? '') === 'baseline') {
+            $assignmentBaseline = $revision;
+            break;
+        }
     }
+} catch (\Throwable $e) {
+    $abortWorkspaceInitialization(
+        'workspace_initialization',
+        'Không thể mở Workspace do lỗi khởi tạo. Chi tiết đã được ghi vào log hệ thống.',
+        $e
+    );
 }
 
 // ─── Public article URL ──────────────────────────────────────────

@@ -346,10 +346,6 @@ function editorial_render_taxonomy_tree(array $filters, string $route, array $op
 {
     $tree = editorial_read_public_taxonomy_tree();
     $sections = $tree['sections'];
-    if ($sections === []) {
-        return '';
-    }
-
     $selectedSection = $filters['section'] ?? '';
     $selectedKind = $filters['library_kind_key'] ?? '';
     $selectedLv1 = $filters['topic_lv1_key'] ?? '';
@@ -361,12 +357,12 @@ function editorial_render_taxonomy_tree(array $filters, string $route, array $op
 
     ob_start();
     ?>
-    <section class="editorial-taxonomy-tree">
-        <h2>Phân loại bài viết</h2>
-        <div class="editorial-taxonomy-sections">
+    <section class="sidebar-tree">
+        <h3 class="sidebar-tree-title">Cây mục bài viết</h3>
+        <div class="sidebar-section-switch">
             <?php foreach ($sections as $section): ?>
                 <?php $sectionKey = (string) ($section['key'] ?? ''); ?>
-                <a class="editorial-taxonomy-section <?= $displaySection === $sectionKey ? 'is-active' : '' ?>"
+                <a class="sidebar-section-btn <?= $displaySection === $sectionKey ? 'is-active' : '' ?>"
                    href="<?= editorial_h(editorial_taxonomy_url($route, $scope + ['section' => $sectionKey])) ?>">
                     <span><?= editorial_h((string) ($section['label'] ?? '')) ?></span>
                     <?php if ($showCounts): ?><small><?= editorial_h((string) ($section['count'] ?? 0)) ?></small><?php endif; ?>
@@ -374,63 +370,84 @@ function editorial_render_taxonomy_tree(array $filters, string $route, array $op
             <?php endforeach; ?>
         </div>
 
-        <?php foreach ($sections as $section): ?>
+        <div class="sidebar-tree-area">
             <?php
-            $sectionKey = (string) ($section['key'] ?? '');
-            if ($sectionKey !== $displaySection) continue;
-            foreach ((array) ($section['children'] ?? []) as $root):
-                $rootKey = (string) ($root['key'] ?? '');
-                $isLibrary = $sectionKey === 'thu-vien';
-                $rootActive = $isLibrary ? $selectedKind === $rootKey : $selectedLv1 === $rootKey;
-                $rootParams = $scope + ['section' => $sectionKey];
-                if ($isLibrary) {
-                    $rootParams['library_kind_key'] = $rootKey;
-                } else {
-                    $rootParams['topic_lv1_key'] = $rootKey;
+            $activeSectionNode = null;
+            foreach ($sections as $section) {
+                if ((string) ($section['key'] ?? '') === $displaySection) {
+                    $activeSectionNode = $section;
+                    break;
                 }
+            }
             ?>
-                <div class="editorial-taxonomy-node <?= $rootActive ? 'is-open' : '' ?>">
-                    <a class="editorial-taxonomy-root <?= $rootActive && $selectedLv2 === '' ? 'is-active' : '' ?>"
-                       href="<?= editorial_h(editorial_taxonomy_url($route, $rootParams)) ?>">
-                        <span><?= editorial_h((string) ($root['label'] ?? '')) ?></span>
-                        <?php if ($showCounts): ?><small><?= editorial_h((string) ($root['count'] ?? 0)) ?></small><?php endif; ?>
-                    </a>
-                    <?php if ($rootActive): ?>
-                        <div class="editorial-taxonomy-children">
-                            <?php foreach ((array) ($root['children'] ?? []) as $lv1): ?>
-                                <?php
-                                $lv1Key = (string) ($lv1['key'] ?? '');
-                                $lv1Active = $isLibrary ? $selectedLv1 === $lv1Key : $selectedLv2 === $lv1Key;
-                                $lv1Params = $isLibrary
-                                    ? $rootParams + ['topic_lv1_key' => $lv1Key]
-                                    : $rootParams + ['topic_lv2_key' => $lv1Key];
-                                ?>
-                                <a class="editorial-taxonomy-child <?= $lv1Active && ($isLibrary ? $selectedLv2 === '' : true) ? 'is-active' : '' ?>"
-                                   href="<?= editorial_h(editorial_taxonomy_url($route, $lv1Params)) ?>">
-                                    <span><?= editorial_h((string) ($lv1['label'] ?? '')) ?></span>
-                                    <?php if ($showCounts): ?><small><?= editorial_h((string) ($lv1['count'] ?? 0)) ?></small><?php endif; ?>
-                                </a>
-                                <?php if ($isLibrary && $lv1Active): ?>
-                                    <div class="editorial-taxonomy-grandchildren">
-                                        <?php foreach ((array) ($lv1['children'] ?? []) as $lv2): ?>
-                                            <?php
-                                            $lv2Key = (string) ($lv2['key'] ?? '');
-                                            $lv2Params = $lv1Params + ['topic_lv2_key' => $lv2Key];
-                                            ?>
-                                            <a class="editorial-taxonomy-grandchild <?= $selectedLv2 === $lv2Key ? 'is-active' : '' ?>"
-                                               href="<?= editorial_h(editorial_taxonomy_url($route, $lv2Params)) ?>">
-                                                <span><?= editorial_h((string) ($lv2['label'] ?? '')) ?></span>
-                                                <?php if ($showCounts): ?><small><?= editorial_h((string) ($lv2['count'] ?? 0)) ?></small><?php endif; ?>
-                                            </a>
-                                        <?php endforeach; ?>
-                                    </div>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?>
-        <?php endforeach; ?>
+            <?php if ($activeSectionNode === null): ?>
+                <p class="sidebar-tree-empty">Chưa có dữ liệu cây mục.</p>
+            <?php else: ?>
+                <?php $isLibrary = $displaySection === 'thu-vien'; ?>
+                <?php foreach ((array) ($activeSectionNode['children'] ?? []) as $root): ?>
+                    <?php
+                    $rootKey = (string) ($root['key'] ?? '');
+                    $rootExpanded = $isLibrary ? $selectedKind === $rootKey : $selectedLv1 === $rootKey;
+                    $rootActive = $isLibrary
+                        ? $rootExpanded
+                        : ($rootExpanded && $selectedLv2 === '');
+                    $rootParams = $scope + ['section' => $displaySection];
+                    if ($isLibrary) {
+                        $rootParams['library_kind_key'] = $rootKey;
+                    } else {
+                        $rootParams['topic_lv1_key'] = $rootKey;
+                    }
+                    ?>
+                    <section class="sidebar-tree-node <?= $rootExpanded ? 'is-active' : '' ?>">
+                        <a class="sidebar-tree-root <?= $rootActive ? 'is-active' : '' ?>"
+                           href="<?= editorial_h(editorial_taxonomy_url($route, $rootParams)) ?>">
+                            <span><?= editorial_h((string) ($root['label'] ?? '')) ?></span>
+                            <?php if ($showCounts): ?><small><?= editorial_h((string) ($root['count'] ?? 0)) ?></small><?php endif; ?>
+                        </a>
+
+                        <?php if ($rootExpanded && !empty($root['children'])): ?>
+                            <div class="sidebar-tree-children">
+                                <?php foreach ((array) $root['children'] as $child): ?>
+                                    <?php
+                                    $childKey = (string) ($child['key'] ?? '');
+                                    $childExpanded = $isLibrary
+                                        ? $selectedLv1 === $childKey
+                                        : false;
+                                    $childActive = $isLibrary
+                                        ? ($childExpanded && $selectedLv2 === '')
+                                        : $selectedLv2 === $childKey;
+                                    $childParams = $isLibrary
+                                        ? $rootParams + ['topic_lv1_key' => $childKey]
+                                        : $rootParams + ['topic_lv2_key' => $childKey];
+                                    ?>
+                                    <a class="sidebar-tree-child <?= $childActive ? 'is-active' : '' ?>"
+                                       href="<?= editorial_h(editorial_taxonomy_url($route, $childParams)) ?>">
+                                        <span><?= editorial_h((string) ($child['label'] ?? '')) ?></span>
+                                        <?php if ($showCounts): ?><small><?= editorial_h((string) ($child['count'] ?? 0)) ?></small><?php endif; ?>
+                                    </a>
+
+                                    <?php if ($isLibrary && $childExpanded && !empty($child['children'])): ?>
+                                        <div class="sidebar-tree-grandchildren">
+                                            <?php foreach ((array) $child['children'] as $grandchild): ?>
+                                                <?php
+                                                $grandchildKey = (string) ($grandchild['key'] ?? '');
+                                                $grandchildParams = $childParams + ['topic_lv2_key' => $grandchildKey];
+                                                ?>
+                                                <a class="sidebar-tree-grandchild <?= $selectedLv2 === $grandchildKey ? 'is-active' : '' ?>"
+                                                   href="<?= editorial_h(editorial_taxonomy_url($route, $grandchildParams)) ?>">
+                                                    <span><?= editorial_h((string) ($grandchild['label'] ?? '')) ?></span>
+                                                    <?php if ($showCounts): ?><small><?= editorial_h((string) ($grandchild['count'] ?? 0)) ?></small><?php endif; ?>
+                                                </a>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+                    </section>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
     </section>
     <?php
     return (string) ob_get_clean();

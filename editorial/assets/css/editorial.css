@@ -939,69 +939,6 @@ body.editor-fullscreen-active .editor-fs-status button {
     border-color: #93c5fd;
 }
 
-/* ─── Phase 9A: Read-only taxonomy tree ─────────────────────────── */
-
-.editorial-taxonomy-tree {
-    margin-top: 18px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
-}
-.editorial-taxonomy-tree h2 {
-    margin: 0 0 10px;
-    color: inherit;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-}
-.editorial-taxonomy-sections,
-.editorial-taxonomy-children,
-.editorial-taxonomy-grandchildren {
-    display: grid;
-    gap: 2px;
-}
-.editorial-taxonomy-sections { margin-bottom: 8px; }
-.editorial-taxonomy-section,
-.editorial-taxonomy-root,
-.editorial-taxonomy-child,
-.editorial-taxonomy-grandchild {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    padding: 7px 8px;
-    border-radius: 6px;
-    color: inherit;
-    font-size: 0.82rem;
-    line-height: 1.3;
-    text-decoration: none;
-}
-.editorial-taxonomy-section small,
-.editorial-taxonomy-root small,
-.editorial-taxonomy-child small,
-.editorial-taxonomy-grandchild small {
-    color: inherit;
-    font-size: 0.72rem;
-    opacity: 0.72;
-}
-.editorial-taxonomy-section:hover,
-.editorial-taxonomy-root:hover,
-.editorial-taxonomy-child:hover,
-.editorial-taxonomy-grandchild:hover,
-.editorial-taxonomy-section.is-active,
-.editorial-taxonomy-root.is-active,
-.editorial-taxonomy-child.is-active,
-.editorial-taxonomy-grandchild.is-active {
-    background: rgba(255, 255, 255, 0.13);
-    color: #fff;
-}
-.editorial-taxonomy-node { margin-top: 3px; }
-.editorial-taxonomy-root { font-weight: 600; }
-.editorial-taxonomy-children { padding: 2px 0 3px 12px; }
-.editorial-taxonomy-grandchildren { padding: 2px 0 3px 14px; }
-.editorial-taxonomy-child,
-.editorial-taxonomy-grandchild { font-size: 0.78rem; }
-
 /* ─── Phase 9A: Verified split comparison ───────────────────────── */
 
 .editorial-split-compare {
