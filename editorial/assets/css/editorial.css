@@ -385,41 +385,86 @@
     color: #fff;
 }
 
-/* Editor action bar */
-.editor-action-bar {
+/* Editor workflow bars */
+.editorial-workflow-bar {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 18px;
+    gap: 14px;
     align-items: flex-start;
-    padding: 12px 0;
-    margin-bottom: 0;
-    border-bottom: 1px solid #dee2e6;
+    padding: 14px;
+    border: 1px solid #dbe4ee;
+    border-radius: 10px;
+    background: #f8fbff;
+}
+.editorial-workflow-top {
     position: sticky;
     top: 0;
-    background: #fff;
-    z-index: 10;
+    z-index: 20;
+    margin-bottom: 12px;
 }
-.editorial-action-primary,
-.editorial-action-utilities {
+.editorial-workflow-groups {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 12px;
+    flex: 1 1 760px;
 }
-.editorial-action-primary { flex: 1 1 520px; }
-.editorial-action-utilities {
+.editorial-workflow-group {
+    display: grid;
+    align-content: start;
+    justify-items: start;
+    gap: 6px;
+    min-width: 168px;
+    padding: 10px;
+    border: 1px solid #e1e9f2;
+    border-radius: 8px;
+    background: #fff;
+}
+.editorial-workflow-publish {
+    min-width: 230px;
+    border-color: #b7dfd7;
+    background: #f5fcfa;
+}
+.editorial-workflow-label {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.editorial-workflow-utilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-left: auto;
     align-items: center;
 }
-.editorial-action-group {
-    display: grid;
-    gap: 5px;
-    justify-items: start;
-}
-.editorial-action-group small {
+.editorial-save-status,
+.editorial-stage-helper,
+.editorial-stage-status,
+.editorial-publish-status {
     color: #868e96;
     font-size: 0.74rem;
     line-height: 1.25;
+}
+.editorial-save-status.is-saved,
+.editorial-stage-status {
+    color: #2e7d32;
+    font-weight: 600;
+}
+.editorial-save-status.is-dirty {
+    color: #c62828;
+    font-weight: 600;
+}
+.editorial-publish-status { color: #397267; }
+.editorial-workflow-bar button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+.editorial-workflow-bar button[disabled]:hover {
+    background: inherit;
+    color: inherit;
 }
 .editorial-save-btn {
     display: inline-flex;
@@ -484,13 +529,17 @@
     .editorial-meta-grid { grid-template-columns: 1fr; }
 }
 
-/* Bottom actions */
-.editorial-bottom-actions {
-    display: flex;
+/* Bottom workflow bar */
+.editorial-workflow-bottom {
     gap: 8px;
-    padding: 16px 0 8px;
+    padding: 14px 0 4px;
     margin-top: 16px;
     border-top: 1px solid #dee2e6;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0;
+    background: transparent;
 }
 
 /* Editor info panel */
@@ -865,71 +914,11 @@ body.editor-fullscreen-active .editor-fs-status button {
     color: #6a1b9a;
 }
 .editorial-stage2-btn:hover { background: #6a1b9a; color: #fff; }
-.editorial-stage-helper {
-    color: #868e96;
-}
 .editorial-workflow-help {
     margin: 12px 0 16px;
     color: #5f7184;
     font-size: 0.82rem;
     line-height: 1.45;
-}
-.editorial-final-decision {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 14px 18px;
-    margin-top: 16px;
-    padding: 16px 18px;
-    border: 1px solid #bfdbfe;
-    border-left: 4px solid #1565c0;
-    border-radius: 10px;
-    background: #f8fbff;
-}
-.editorial-final-decision-kicker {
-    margin: 0 0 3px;
-    color: #64748b;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-}
-.editorial-final-decision strong {
-    color: #1e3a5f;
-    font-size: 0.94rem;
-}
-.editorial-final-decision span {
-    display: inline-block;
-    margin-left: 6px;
-    color: #64748b;
-    font-size: 0.8rem;
-}
-.editorial-final-decision-meta { min-width: 220px; }
-.editorial-final-compare {
-    display: flex;
-    flex: 1 1 300px;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-}
-.editorial-final-compare > span {
-    margin: 0;
-    color: #64748b;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-.editorial-final-decision-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-left: auto;
-}
-.editorial-final-decision-restricted {
-    max-width: 260px;
-    margin: 0;
-    color: #64748b;
-    font-size: 0.78rem;
-    line-height: 1.35;
 }
 .editorial-direct-publish-btn {
     display: inline-flex;
@@ -945,13 +934,6 @@ body.editor-fullscreen-active .editor-fs-status button {
     cursor: pointer;
 }
 .editorial-direct-publish-btn:hover { background: #115e59; }
-.editorial-final-decision-help {
-    flex-basis: 100%;
-    margin: -4px 0 0;
-    color: #5f7184;
-    font-size: 0.82rem;
-    line-height: 1.45;
-}
 .editorial-milestone-links {
     display: flex;
     flex-wrap: wrap;
@@ -973,6 +955,24 @@ body.editor-fullscreen-active .editor-fs-status button {
 .editorial-milestone-links a:hover {
     background: #eff6ff;
     border-color: #93c5fd;
+}
+.editorial-compare-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    color: #155e9d;
+    background: #fff;
+    font-size: 0.76rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+}
+.editorial-compare-btn:hover {
+    border-color: #93c5fd;
+    background: #eff6ff;
 }
 
 /* ─── Phase 9A: Verified split comparison ───────────────────────── */
@@ -1037,8 +1037,9 @@ body.editor-fullscreen-active .editor-fs-status button {
     .editorial-split-pane iframe { min-height: 520px; }
 }
 @media (max-width: 640px) {
-    .editorial-bottom-actions { flex-wrap: wrap; }
-    .editorial-action-utilities { width: 100%; margin-left: 0; }
-    .editorial-final-decision-actions { width: 100%; margin-left: 0; }
-    .editorial-final-decision-actions > button { flex: 1 1 auto; justify-content: center; }
+    .editorial-workflow-top { position: static; }
+    .editorial-workflow-groups { flex-basis: 100%; }
+    .editorial-workflow-group { flex: 1 1 100%; }
+    .editorial-workflow-utilities { width: 100%; margin-left: 0; }
+    .editorial-workflow-bottom > * { flex: 1 1 auto; justify-content: center; }
 }
