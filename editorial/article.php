@@ -307,9 +307,8 @@ try {
             break;
         }
     }
-    $canPublishDirect = $draftVersion > 0
-        && $currentMilestone !== null
-        && (($currentUser['role'] ?? '') === 'editor');
+$canPublishDirect = $draftVersion > 0
+    && (($currentUser['role'] ?? '') === 'editor');
     $assignmentBaseline = null;
     foreach (editorial_get_article_revisions($articleId, 50) as $revision) {
         if (($revision['assignment_id'] ?? '') === $assignment['id']
@@ -651,15 +650,21 @@ editorial_layout_header([
             </div>
         </div>
 
-        <?php if ($currentMilestone !== null): ?>
+        <?php if ($currentMilestone !== null || $canPublishDirect): ?>
             <section class="editorial-final-decision">
                 <div class="editorial-final-decision-meta">
-                    <p class="editorial-final-decision-kicker">Bản cuối đã chốt</p>
-                    <strong><?= editorial_h(editorial_revision_label($currentMilestone)) ?></strong>
-                    <span>Revision #<?= editorial_h((string) $currentMilestone['revision_no']) ?></span>
+                    <?php if ($currentMilestone !== null): ?>
+                        <p class="editorial-final-decision-kicker">Bản cuối đã chốt</p>
+                        <strong><?= editorial_h(editorial_revision_label($currentMilestone)) ?></strong>
+                        <span>Revision #<?= editorial_h((string) $currentMilestone['revision_no']) ?></span>
+                    <?php else: ?>
+                        <p class="editorial-final-decision-kicker">Bản nháp đã lưu</p>
+                        <strong>Sẵn sàng tạo bản cố định để Publish</strong>
+                        <span>Nháp v<?= editorial_h((string) $draftVersion) ?></span>
+                    <?php endif; ?>
                 </div>
 
-                <?php if ($assignmentBaseline || $assignmentMilestones['stage1'] || $assignmentMilestones['stage2']): ?>
+                <?php if ($currentMilestone !== null && ($assignmentBaseline || $assignmentMilestones['stage1'] || $assignmentMilestones['stage2'])): ?>
                     <div class="editorial-final-compare">
                         <span>So sánh:</span>
                         <div class="editorial-milestone-links">
@@ -681,15 +686,17 @@ editorial_layout_header([
                         <button type="submit" form="directPublishForm" data-direct-publish="1" class="editorial-direct-publish-btn">
                             <i class="fa-solid fa-rocket"></i> Publish trực tiếp
                         </button>
-                    <?php elseif (($currentUser['role'] ?? '') !== 'editor'): ?>
+                    <?php elseif ($currentMilestone !== null && ($currentUser['role'] ?? '') !== 'editor'): ?>
                         <span class="editorial-final-decision-restricted">Publish trực tiếp từ Workspace dành cho tài khoản Editor.</span>
                     <?php endif; ?>
-                    <button type="submit" form="sendReviewForm" class="editorial-review-submit-btn" onclick="return confirm('Gửi phiên bản đã chốt để duyệt? Bạn sẽ không thể chỉnh sửa cho đến khi reviewer phản hồi.');">
-                        <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
-                    </button>
+                    <?php if ($currentMilestone !== null): ?>
+                        <button type="submit" form="sendReviewForm" class="editorial-review-submit-btn" onclick="return confirm('Gửi phiên bản đã chốt để duyệt? Bạn sẽ không thể chỉnh sửa cho đến khi reviewer phản hồi.');">
+                            <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
+                        </button>
+                    <?php endif; ?>
                 </div>
                 <p class="editorial-final-decision-help">
-                    Hoàn tất Chặng 1/2 chỉ tạo bản cố định để đối chiếu. Website chỉ thay đổi sau khi Publish.
+                    Publish luôn tạo bản cố định từ nháp đã lưu. Hoàn tất Chặng 1/2 vẫn là checkpoint để đối chiếu.
                 </p>
             </section>
         <?php endif; ?>

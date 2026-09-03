@@ -6,7 +6,7 @@ declare(strict_types=1);
  *
  * Handles safe publish of original live HTML files for two policies:
  * - admin-approved revision
- * - editor-owned current milestone
+ * - editor-owned immutable candidate prepared from the current saved draft
  *
  * Key invariants:
  * - Writes to THE ORIGINAL HTML file (not a copy)
@@ -120,19 +120,30 @@ function editorial_publish_preflight(string $articleId, string $adminUserId): ar
     return editorial_publish_policy_preflight($articleId, $adminUserId, 'admin_approved', null);
 }
 
-function editorial_publish_direct_preflight(string $articleId, string $editorUserId, string $lockToken): array
+function editorial_publish_direct_preflight(
+    string $articleId,
+    string $editorUserId,
+    string $lockToken,
+    ?string $candidateRevisionId = null
+): array
 {
-    return editorial_publish_policy_preflight($articleId, $editorUserId, 'editor_direct', $lockToken);
+    return editorial_publish_policy_preflight($articleId, $editorUserId, 'editor_direct', $lockToken, $candidateRevisionId);
 }
 
-function editorial_publish_policy_preflight(string $articleId, string $actorUserId, string $policy, ?string $lockToken): array
+function editorial_publish_policy_preflight(
+    string $articleId,
+    string $actorUserId,
+    string $policy,
+    ?string $lockToken,
+    ?string $candidateRevisionId = null
+): array
 {
     $checks = [
         'actor'      => ['pass' => false, 'label' => $policy === 'editor_direct' ? 'Biên tập viên hợp lệ' : 'Admin hợp lệ'],
         'article'    => ['pass' => false, 'label' => 'Bài viết tồn tại'],
         'path'       => ['pass' => false, 'label' => 'File HTML hợp lệ'],
         'status'     => ['pass' => false, 'label' => $policy === 'editor_direct' ? 'Trạng thái đang biên tập' : 'Trạng thái approved'],
-        'revision'   => ['pass' => false, 'label' => $policy === 'editor_direct' ? 'Milestone hiện tại' : 'Phiên bản đã duyệt'],
+        'revision'   => ['pass' => false, 'label' => $policy === 'editor_direct' ? 'Bản cố định từ nháp đã lưu' : 'Phiên bản đã duyệt'],
         'snapshot'   => ['pass' => false, 'label' => 'Snapshot toàn vẹn'],
         'assignment' => ['pass' => false, 'label' => 'Phân công hợp lệ'],
         'live_hash'  => ['pass' => false, 'label' => 'Live hash khớp'],
@@ -140,7 +151,7 @@ function editorial_publish_policy_preflight(string $articleId, string $actorUser
         'backup_dir' => ['pass' => false, 'label' => 'Thư mục backup ghi được'],
     ];
     if ($policy === 'editor_direct') {
-        $checks['draft_sync'] = ['pass' => false, 'label' => 'Bản nháp khớp milestone'];
+        $checks['draft_sync'] = ['pass' => false, 'label' => 'Bản nháp khớp revision candidate'];
     }
 
     $failResult = function(string $failedCheck, string $message) use (&$checks): array {
@@ -148,7 +159,7 @@ function editorial_publish_policy_preflight(string $articleId, string $actorUser
                 'failed_at' => $failedCheck];
     };
 
-    $resolved = editorial_resolve_publish_context($articleId, $actorUserId, $policy, $lockToken);
+    $resolved = editorial_resolve_publish_context($articleId, $actorUserId, $policy, $lockToken, $candidateRevisionId);
     if (!$resolved['ok']) {
         return $failResult((string) ($resolved['failed_at'] ?? 'actor'), (string) $resolved['message']);
     }
@@ -189,7 +200,13 @@ function editorial_publish_policy_preflight(string $articleId, string $actorUser
  * Resolve and verify all policy-sensitive publish inputs. This runs both before
  * the transaction and again inside it; callers must not trust old results.
  */
-function editorial_resolve_publish_context(string $articleId, string $actorUserId, string $policy, ?string $lockToken): array
+function editorial_resolve_publish_context(
+    string $articleId,
+    string $actorUserId,
+    string $policy,
+    ?string $lockToken,
+    ?string $candidateRevisionId = null
+): array
 {
     if (!in_array($policy, ['admin_approved', 'editor_direct'], true)) {
         return ['ok' => false, 'failed_at' => 'actor', 'message' => 'Publish policy không hợp lệ.'];
@@ -218,7 +235,6 @@ function editorial_resolve_publish_context(string $articleId, string $actorUserI
         return ['ok' => false, 'failed_at' => 'status', 'message' => 'Không tìm thấy trạng thái bài viết.'];
     }
 
-    $candidateRevisionId = '';
     if ($policy === 'admin_approved') {
         if (($state['status'] ?? '') !== 'approved') {
             return ['ok' => false, 'failed_at' => 'status', 'message' => 'Bài viết chưa được duyệt.'];
@@ -234,9 +250,8 @@ function editorial_resolve_publish_context(string $articleId, string $actorUserI
         if ((string) ($state['assigned_user_id'] ?? '') !== $actorUserId) {
             return ['ok' => false, 'failed_at' => 'assignment', 'message' => 'Bạn không phải người phụ trách bài viết này.'];
         }
-        $candidateRevisionId = (string) ($state['current_revision_id'] ?? '');
-        if ($candidateRevisionId === '') {
-            return ['ok' => false, 'failed_at' => 'revision', 'message' => 'Không tìm thấy milestone hiện tại để Publish.'];
+        if ($candidateRevisionId === null || $candidateRevisionId === '') {
+            return ['ok' => false, 'failed_at' => 'revision', 'message' => 'Không thể chuẩn bị bản cố định từ nháp đã lưu để Publish.'];
         }
     }
 
@@ -245,11 +260,6 @@ function editorial_resolve_publish_context(string $articleId, string $actorUserI
         || ($revision['article_id'] ?? '') !== $articleId) {
         return ['ok' => false, 'failed_at' => 'revision', 'message' => 'Phiên bản publish không hợp lệ.'];
     }
-    if ($policy === 'editor_direct'
-        && !in_array((string) ($revision['milestone_key'] ?? ''), ['stage1', 'stage2'], true)) {
-        return ['ok' => false, 'failed_at' => 'revision', 'message' => 'Editor chỉ có thể Publish milestone Chặng 1 hoặc Chặng 2.'];
-    }
-
     $snapshotResult = editorial_get_verified_revision_snapshot($revision);
     if (!$snapshotResult['ok']) {
         return ['ok' => false, 'failed_at' => 'snapshot', 'message' => 'Snapshot không hợp lệ: ' . $snapshotResult['message']];
@@ -287,7 +297,7 @@ function editorial_resolve_publish_context(string $articleId, string $actorUserI
 
         $draft = editorial_get_draft($articleId, $actorUserId);
         if (!$draft) {
-            return ['ok' => false, 'failed_at' => 'draft_sync', 'message' => 'Không tìm thấy bản nháp để đối chiếu milestone.'];
+            return ['ok' => false, 'failed_at' => 'draft_sync', 'message' => 'Bạn cần Lưu nháp trước khi Publish.'];
         }
         try {
             $draftHash = editorial_revision_content_hash($draft['payload']);
@@ -296,7 +306,7 @@ function editorial_resolve_publish_context(string $articleId, string $actorUserI
         }
         if ($draftHash !== ($revision['content_hash'] ?? '')
             || (int) ($draft['version'] ?? 0) !== (int) ($revision['source_draft_version'] ?? -1)) {
-            return ['ok' => false, 'failed_at' => 'draft_sync', 'message' => 'Bản nháp đã thay đổi sau bản đã chốt. Hãy hoàn tất lại Chặng 1 hoặc Chặng 2 trước khi Publish.'];
+            return ['ok' => false, 'failed_at' => 'draft_sync', 'message' => 'Bản nháp đã thay đổi sau khi chuẩn bị bản cố định để Publish. Vui lòng thử lại.'];
         }
     }
 
@@ -1077,14 +1087,32 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
  */
 function editorial_publish_editor_revision(string $articleId, string $editorUserId, string $lockToken): array
 {
-    return editorial_publish_revision_core($articleId, $editorUserId, 'editor_direct', $lockToken);
+    $candidate = editorial_prepare_saved_draft_publish_candidate($articleId, $editorUserId, $lockToken);
+    if (!$candidate['ok']) {
+        return $candidate;
+    }
+    return editorial_publish_revision_core(
+        $articleId,
+        $editorUserId,
+        'editor_direct',
+        $lockToken,
+        (string) $candidate['revision_id'],
+        (string) ($candidate['candidate_origin'] ?? 'saved_draft_snapshot')
+    );
 }
 
 /**
  * The sole destructive Safe Publish pipeline for approved admin and direct editor
  * policies. Policy-sensitive state is resolved before and inside the transaction.
  */
-function editorial_publish_revision_core(string $articleId, string $actorUserId, string $policy, ?string $lockToken): array
+function editorial_publish_revision_core(
+    string $articleId,
+    string $actorUserId,
+    string $policy,
+    ?string $lockToken,
+    ?string $candidateRevisionId = null,
+    ?string $candidateOrigin = null
+): array
 {
     if (!in_array($policy, ['admin_approved', 'editor_direct'], true)) {
         return ['ok' => false, 'message' => 'Publish policy không hợp lệ.'];
@@ -1092,7 +1120,7 @@ function editorial_publish_revision_core(string $articleId, string $actorUserId,
 
     // 1. Defense in depth: pre-transaction preflight
     $preflight = $policy === 'editor_direct'
-        ? editorial_publish_direct_preflight($articleId, $actorUserId, (string) $lockToken)
+        ? editorial_publish_direct_preflight($articleId, $actorUserId, (string) $lockToken, $candidateRevisionId)
         : editorial_publish_preflight($articleId, $actorUserId);
     if (!$preflight['ok']) {
         return $preflight;
@@ -1119,6 +1147,7 @@ function editorial_publish_revision_core(string $articleId, string $actorUserId,
         'source_revision_id' => null,
         'milestone_key' => null,
         'assignment_id' => null,
+        'candidate_origin' => $candidateOrigin,
     ];
 
     // Single compensation result — exactly one attempt allowed
@@ -1126,13 +1155,13 @@ function editorial_publish_revision_core(string $articleId, string $actorUserId,
 
     try {
         $txResult = editorial_transaction(function() use (
-            $articleId, $actorUserId, $policy, $lockToken, $article, &$compCtx, &$compensationResult
+            $articleId, $actorUserId, $policy, $lockToken, $candidateRevisionId, $candidateOrigin, $article, &$compCtx, &$compensationResult
         ) {
             $db = editorial_db();
             $now = date('c');
 
             // ── RE-VERIFY ALL SECURITY STATE INSIDE TRANSACTION ──
-            $context = editorial_resolve_publish_context($articleId, $actorUserId, $policy, $lockToken);
+            $context = editorial_resolve_publish_context($articleId, $actorUserId, $policy, $lockToken, $candidateRevisionId);
             if (!$context['ok']) {
                 return ['ok' => false, 'message' => $context['message']];
             }
@@ -1150,6 +1179,7 @@ function editorial_publish_revision_core(string $articleId, string $actorUserId,
             $compCtx['source_revision_id'] = $candidateRevisionId;
             $compCtx['milestone_key'] = $revision['milestone_key'] ?? null;
             $compCtx['assignment_id'] = $assignment['id'];
+            $compCtx['candidate_origin'] = $candidateOrigin;
 
             // ── PARSE LIVE META FOR NORMALIZATION ──
             $liveParsed = editorial_parse_article_html($txLiveHtml, '');
@@ -1369,6 +1399,7 @@ function editorial_publish_revision_core(string $articleId, string $actorUserId,
                 'source_revision_id' => $candidateRevisionId,
                 'approved_revision_id' => $policy === 'admin_approved' ? $candidateRevisionId : null,
                 'milestone_key' => $revision['milestone_key'] ?? null,
+                'candidate_origin' => $candidateOrigin,
                 'publish_mode' => $policy,
             ];
         });
@@ -1390,6 +1421,7 @@ function editorial_publish_revision_core(string $articleId, string $actorUserId,
                     'backup_path' => $txResult['backup_path'] ?? '',
                     'publish_mode' => $txResult['publish_mode'] ?? $policy,
                     'milestone_key' => $txResult['milestone_key'] ?? null,
+                    'candidate_origin' => $txResult['candidate_origin'] ?? null,
                 ]));
             } catch (\Throwable $logError) {
                 // Best-effort: never convert core success to failure
