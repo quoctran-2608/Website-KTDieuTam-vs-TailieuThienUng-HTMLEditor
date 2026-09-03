@@ -1072,8 +1072,8 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
 }
 
 /**
- * Backend-only direct publish entry point. Phase 9B.1 intentionally exposes no
- * editor UI for this service.
+ * Editor direct publish entry point. The Workspace submits only an action
+ * marker, article ID, CSRF token and lock token; this service remains authoritative.
  */
 function editorial_publish_editor_revision(string $articleId, string $editorUserId, string $lockToken): array
 {

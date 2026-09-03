@@ -377,7 +377,7 @@ if ($articleId !== '') {
         }
     }
     $userNames = editorial_preload_user_names($userIdsToPreload);
-    $sidebarTreeHtml = editorial_render_taxonomy_tree($filters, 'review.php');
+    $sidebarTreeHtml = editorial_render_taxonomy_tree($filters, 'review.php', ['show_counts' => false]);
 
     editorial_layout_header([
         'title' => 'Danh sách chờ duyệt',

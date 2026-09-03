@@ -154,7 +154,7 @@ editorial_layout_header([
                 <input type="text" name="q" value="<?= editorial_h($q) ?>" placeholder="Tìm theo tiêu đề, từ khóa…">
             </div>
 
-            <select name="section" class="editorial-filter-select">
+            <select name="section" id="articleSectionFilter" class="editorial-filter-select">
                 <option value="">Tất cả mục</option>
                 <?php foreach ($sections as $sec): ?>
                     <option value="<?= editorial_h($sec['key']) ?>" <?= $section === $sec['key'] ? 'selected' : '' ?>>
@@ -182,6 +182,18 @@ editorial_layout_header([
         </div>
     </form>
 </section>
+<script>
+(() => {
+    const section = document.getElementById('articleSectionFilter');
+    if (!section) return;
+    section.addEventListener('change', () => {
+        ['library_kind_key', 'topic_lv1_key', 'topic_lv2_key', 'topic_lv3_key'].forEach((name) => {
+            const field = section.form.querySelector('[name="' + name + '"]');
+            if (field) field.value = '';
+        });
+    });
+})();
+</script>
 
 <!-- Results info -->
 <p class="editorial-result-count">

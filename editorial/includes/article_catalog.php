@@ -342,7 +342,7 @@ function editorial_taxonomy_url(string $route, array $params): string
 /**
  * Render a compact read-only taxonomy tree for article and review queues.
  */
-function editorial_render_taxonomy_tree(array $filters, string $route): string
+function editorial_render_taxonomy_tree(array $filters, string $route, array $options = []): string
 {
     $tree = editorial_read_public_taxonomy_tree();
     $sections = $tree['sections'];
@@ -355,6 +355,7 @@ function editorial_render_taxonomy_tree(array $filters, string $route): string
     $selectedLv1 = $filters['topic_lv1_key'] ?? '';
     $selectedLv2 = $filters['topic_lv2_key'] ?? '';
     $displaySection = $selectedSection !== '' ? $selectedSection : 'thu-vien';
+    $showCounts = !array_key_exists('show_counts', $options) || !empty($options['show_counts']);
     $scope = $filters;
     unset($scope['section'], $scope['library_kind_key'], $scope['topic_lv1_key'], $scope['topic_lv2_key'], $scope['topic_lv3_key']);
 
@@ -368,7 +369,7 @@ function editorial_render_taxonomy_tree(array $filters, string $route): string
                 <a class="editorial-taxonomy-section <?= $displaySection === $sectionKey ? 'is-active' : '' ?>"
                    href="<?= editorial_h(editorial_taxonomy_url($route, $scope + ['section' => $sectionKey])) ?>">
                     <span><?= editorial_h((string) ($section['label'] ?? '')) ?></span>
-                    <small><?= editorial_h((string) ($section['count'] ?? 0)) ?></small>
+                    <?php if ($showCounts): ?><small><?= editorial_h((string) ($section['count'] ?? 0)) ?></small><?php endif; ?>
                 </a>
             <?php endforeach; ?>
         </div>
@@ -392,7 +393,7 @@ function editorial_render_taxonomy_tree(array $filters, string $route): string
                     <a class="editorial-taxonomy-root <?= $rootActive && $selectedLv2 === '' ? 'is-active' : '' ?>"
                        href="<?= editorial_h(editorial_taxonomy_url($route, $rootParams)) ?>">
                         <span><?= editorial_h((string) ($root['label'] ?? '')) ?></span>
-                        <small><?= editorial_h((string) ($root['count'] ?? 0)) ?></small>
+                        <?php if ($showCounts): ?><small><?= editorial_h((string) ($root['count'] ?? 0)) ?></small><?php endif; ?>
                     </a>
                     <?php if ($rootActive): ?>
                         <div class="editorial-taxonomy-children">
@@ -407,7 +408,7 @@ function editorial_render_taxonomy_tree(array $filters, string $route): string
                                 <a class="editorial-taxonomy-child <?= $lv1Active && ($isLibrary ? $selectedLv2 === '' : true) ? 'is-active' : '' ?>"
                                    href="<?= editorial_h(editorial_taxonomy_url($route, $lv1Params)) ?>">
                                     <span><?= editorial_h((string) ($lv1['label'] ?? '')) ?></span>
-                                    <small><?= editorial_h((string) ($lv1['count'] ?? 0)) ?></small>
+                                    <?php if ($showCounts): ?><small><?= editorial_h((string) ($lv1['count'] ?? 0)) ?></small><?php endif; ?>
                                 </a>
                                 <?php if ($isLibrary && $lv1Active): ?>
                                     <div class="editorial-taxonomy-grandchildren">
@@ -419,7 +420,7 @@ function editorial_render_taxonomy_tree(array $filters, string $route): string
                                             <a class="editorial-taxonomy-grandchild <?= $selectedLv2 === $lv2Key ? 'is-active' : '' ?>"
                                                href="<?= editorial_h(editorial_taxonomy_url($route, $lv2Params)) ?>">
                                                 <span><?= editorial_h((string) ($lv2['label'] ?? '')) ?></span>
-                                                <small><?= editorial_h((string) ($lv2['count'] ?? 0)) ?></small>
+                                                <?php if ($showCounts): ?><small><?= editorial_h((string) ($lv2['count'] ?? 0)) ?></small><?php endif; ?>
                                             </a>
                                         <?php endforeach; ?>
                                     </div>
