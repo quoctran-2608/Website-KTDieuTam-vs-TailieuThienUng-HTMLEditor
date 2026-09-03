@@ -72,7 +72,7 @@ if (editorial_is_post()) {
     editorial_enforce_csrf();
     $intent = trim((string) ($_POST['_intent'] ?? ''));
 
-    if ($intent === 'save_draft') {
+    if (in_array($intent, ['save_draft', 'save_draft_stage_compare'], true)) {
         $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
         $expectedVersion = (int) ($_POST['expected_draft_version'] ?? 0);
 
@@ -115,7 +115,56 @@ if (editorial_is_post()) {
         $baseLiveHash = (string) ($state['base_live_hash'] ?? '');
         $result = editorial_save_draft($articleId, $currentUserId, $payload, $baseLiveHash, $expectedVersion, $lockToken);
 
-        editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
+        if (!$result['ok']) {
+            editorial_flash_set('danger', $result['message']);
+            editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+        }
+
+        if ($intent === 'save_draft_stage_compare') {
+            $milestoneKey = trim((string) ($_POST['compare_stage'] ?? ''));
+            if (!in_array($milestoneKey, ['stage1', 'stage2'], true)) {
+                editorial_flash_set('danger', 'Mốc phiên bản để so sánh không hợp lệ.');
+                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+            }
+
+            $stageResult = editorial_create_stage_milestone_revision(
+                $articleId,
+                $currentUserId,
+                $lockToken,
+                (int) ($result['version'] ?? 0),
+                $milestoneKey
+            );
+            $stageRevisionId = (string) ($stageResult['revision_id'] ?? $stageResult['duplicate_revision_id'] ?? '');
+            if ($stageRevisionId === '') {
+                editorial_flash_set('danger', $stageResult['message'] ?? 'Không thể lưu mốc phiên bản để so sánh.');
+                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+            }
+
+            $assignment = editorial_get_active_assignment($articleId);
+            $baselineRevisionId = '';
+            if ($assignment !== null) {
+                foreach (editorial_get_article_revisions($articleId, 50) as $revision) {
+                    if ((string) ($revision['assignment_id'] ?? '') === (string) $assignment['id']
+                        && (string) ($revision['revision_type'] ?? '') === 'baseline') {
+                        $baselineRevisionId = (string) $revision['id'];
+                        break;
+                    }
+                }
+            }
+            if ($baselineRevisionId === '') {
+                editorial_flash_set('danger', 'Không tìm thấy Bản gốc an toàn để so sánh.');
+                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+            }
+
+            editorial_redirect(editorial_url(
+                'compare.php?id=' . urlencode($articleId)
+                . '&from=' . urlencode($baselineRevisionId)
+                . '&to=' . urlencode($stageRevisionId)
+                . '&auto_compare=1'
+            ));
+        }
+
+        editorial_flash_set('success', $result['message']);
         editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
     }
 
@@ -357,6 +406,8 @@ $innerScript = <<<JS
 (() => {
   const form = document.getElementById('editorialEditorForm');
   const editor = document.getElementById('proseEditor');
+  const formIntent = document.getElementById('editorialFormIntent');
+  const autoCompareStage = document.getElementById('autoCompareStage');
   const previewFrame = document.getElementById('previewFrame');
   const previewTemplate = $previewTemplateJson;
   if (!editor) return;
@@ -442,6 +493,33 @@ $innerScript = <<<JS
         event.preventDefault();
       }
     }, true);
+  });
+
+  document.querySelectorAll('button[data-auto-stage-compare]').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      if (!form || !formIntent || !autoCompareStage) return;
+
+      const stage = button.dataset.autoStageCompare;
+      if (stage !== 'stage1' && stage !== 'stage2') return;
+
+      const originalIntent = formIntent.value;
+      const originalTarget = form.target;
+      const b64Field = document.getElementById('proseHtmlB64');
+      formIntent.value = 'save_draft_stage_compare';
+      autoCompareStage.value = stage;
+      form.target = '_blank';
+      form.requestSubmit();
+
+      // The new tab redirects to Compare after saving the draft and stage.
+      window.setTimeout(() => {
+        formIntent.value = originalIntent;
+        autoCompareStage.value = '';
+        form.target = originalTarget;
+        editor.setAttribute('name', 'prose_html');
+        if (b64Field) b64Field.value = '';
+      }, 0);
+    });
   });
 
   /* ── Ctrl+S save draft ────────────────────────────── */
@@ -645,11 +723,12 @@ editorial_layout_header([
 
     <form id="editorialEditorForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
         <?= editorial_csrf_input() ?>
-        <input type="hidden" name="_intent" value="save_draft">
+        <input type="hidden" name="_intent" id="editorialFormIntent" value="save_draft">
         <input type="hidden" name="article_id" id="articleIdField" value="<?= editorial_h($articleId) ?>">
         <input type="hidden" name="lock_token" id="lockTokenField" value="<?= editorial_h($lockToken) ?>">
         <input type="hidden" name="expected_draft_version" id="expectedDraftVersion" value="<?= editorial_h((string) $draftVersion) ?>">
         <input type="hidden" name="prose_html_b64" id="proseHtmlB64" value="">
+        <input type="hidden" name="compare_stage" id="autoCompareStage" value="">
 
         <!-- Action bar -->
         <section class="editorial-workflow-bar editorial-workflow-top">
@@ -679,12 +758,10 @@ editorial_layout_header([
                     <small class="editorial-stage-helper">Chuẩn hóa trình bày</small>
                     <?php if ($assignmentMilestones['stage1']): ?>
                         <small class="editorial-stage-status">✓ Chặng 1 đã lưu · Revision #<?= editorial_h((string) $assignmentMilestones['stage1']['revision_no']) ?></small>
-                        <?php if ($assignmentBaseline): ?>
-                            <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage1']['id']))) ?>" target="_blank" rel="noopener">
-                                <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
-                            </a>
-                        <?php endif; ?>
                     <?php endif; ?>
+                    <button type="button" class="editorial-compare-btn" data-auto-stage-compare="stage1" title="Tự động lưu nháp, lưu Chặng 1 rồi mở so sánh ở tab mới.">
+                        <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
+                    </button>
                 </div>
 
                 <div class="editorial-workflow-group">
@@ -703,12 +780,10 @@ editorial_layout_header([
                     <small class="editorial-stage-helper">Biên tập nội dung · nếu cần</small>
                     <?php if ($assignmentMilestones['stage2']): ?>
                         <small class="editorial-stage-status">✓ Chặng 2 đã lưu · Revision #<?= editorial_h((string) $assignmentMilestones['stage2']['revision_no']) ?></small>
-                        <?php if ($assignmentBaseline): ?>
-                            <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>" target="_blank" rel="noopener">
-                                <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
-                            </a>
-                        <?php endif; ?>
                     <?php endif; ?>
+                    <button type="button" class="editorial-compare-btn" data-auto-stage-compare="stage2" title="Tự động lưu nháp, lưu Chặng 2 rồi mở so sánh ở tab mới.">
+                        <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
+                    </button>
                 </div>
 
                 <div class="editorial-workflow-group editorial-workflow-publish">
@@ -858,11 +933,9 @@ editorial_layout_header([
                     <i class="fa-solid fa-code-branch"></i> Hoàn tất Chặng 1
                 </button>
             <?php endif; ?>
-            <?php if ($assignmentBaseline && $assignmentMilestones['stage1']): ?>
-                <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage1']['id']))) ?>" target="_blank" rel="noopener">
-                    <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
-                </a>
-            <?php endif; ?>
+            <button type="button" class="editorial-compare-btn" data-auto-stage-compare="stage1" title="Tự động lưu nháp, lưu Chặng 1 rồi mở so sánh ở tab mới.">
+                <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
+            </button>
             <?php if ($hasSavedDraft): ?>
                 <button type="submit" form="stage2MilestoneForm" class="editorial-revision-btn editorial-stage2-btn" onclick="return confirm('Lưu Chặng 2 từ bản nháp đã lưu?');">
                     <i class="fa-solid fa-pen-to-square"></i> Hoàn tất Chặng 2
@@ -872,11 +945,9 @@ editorial_layout_header([
                     <i class="fa-solid fa-pen-to-square"></i> Hoàn tất Chặng 2
                 </button>
             <?php endif; ?>
-            <?php if ($assignmentBaseline && $assignmentMilestones['stage2']): ?>
-                <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>" target="_blank" rel="noopener">
-                    <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
-                </a>
-            <?php endif; ?>
+            <button type="button" class="editorial-compare-btn" data-auto-stage-compare="stage2" title="Tự động lưu nháp, lưu Chặng 2 rồi mở so sánh ở tab mới.">
+                <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
+            </button>
             <?php if ($isEditorWorkspace): ?>
                 <button type="<?= $canPublishDirect ? 'submit' : 'button' ?>" <?= $canPublishDirect ? 'form="directPublishForm" data-direct-publish="1"' : 'disabled title="Hãy Lưu nháp trước khi Publish."' ?> class="editorial-direct-publish-btn">
                     <i class="fa-solid fa-rocket"></i> Publish trực tiếp

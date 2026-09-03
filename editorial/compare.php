@@ -14,6 +14,7 @@ $isAdmin = (($currentUser['role'] ?? '') === 'admin');
 $articleId = trim((string) ($_GET['id'] ?? ''));
 $fromId = trim((string) ($_GET['from'] ?? ''));
 $toId = trim((string) ($_GET['to'] ?? ''));
+$refreshWorkspaceOpener = ((string) ($_GET['auto_compare'] ?? '') === '1');
 
 // ─── Validate params ─────────────────────────────────────────────
 
@@ -142,5 +143,12 @@ $toPreview = editorial_build_public_article_preview_document(
             </section>
         </div>
     </main>
+    <?php if ($refreshWorkspaceOpener): ?>
+        <script>
+            if (window.opener && !window.opener.closed) {
+                try { window.opener.location.reload(); } catch (error) {}
+            }
+        </script>
+    <?php endif; ?>
 </body>
 </html>

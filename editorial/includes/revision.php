@@ -555,7 +555,7 @@ function editorial_create_editorial_revision(
         // workflow's current_revision_id pointer.
         if ($milestoneKey !== null) {
             $stmt = $db->prepare("
-                SELECT content_hash FROM editorial_revisions
+                SELECT id, content_hash FROM editorial_revisions
                 WHERE assignment_id = :assignment_id
                   AND revision_type = 'editorial'
                   AND milestone_key = :milestone_key
@@ -565,9 +565,14 @@ function editorial_create_editorial_revision(
                 ':assignment_id' => $assignmentId,
                 ':milestone_key' => $milestoneKey,
             ]);
-            if ($stmt->fetchColumn() === $contentHash) {
+            $latestStage = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (is_array($latestStage) && (string) ($latestStage['content_hash'] ?? '') === $contentHash) {
                 $stageLabel = $milestoneKey === 'stage1' ? 'Chặng 1' : 'Chặng 2';
-                return ['ok' => false, 'message' => 'Nội dung không thay đổi so với bản ' . $stageLabel . ' gần nhất.'];
+                return [
+                    'ok' => false,
+                    'duplicate_revision_id' => (string) ($latestStage['id'] ?? ''),
+                    'message' => 'Nội dung không thay đổi so với bản ' . $stageLabel . ' gần nhất.',
+                ];
             }
         } elseif (!$updateCurrentRevision) {
             $stmt = $db->prepare("

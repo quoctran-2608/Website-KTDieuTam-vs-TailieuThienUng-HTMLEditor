@@ -980,6 +980,7 @@ body.editor-fullscreen-active .editor-fs-status button {
     font-weight: 600;
     line-height: 1.2;
     text-decoration: none;
+    cursor: pointer;
 }
 .editorial-compare-btn:hover {
     border-color: #93c5fd;
