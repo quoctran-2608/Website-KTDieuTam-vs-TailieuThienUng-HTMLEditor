@@ -219,6 +219,11 @@ function editorial_migration_list(): array
             ALTER TABLE editorial_article_state ADD COLUMN published_live_hash TEXT;
             ALTER TABLE editorial_article_state ADD COLUMN publish_backup_path TEXT;
         ',
+        7 => '
+            -- Phase 9A: semantic milestones keep workflow revision_type backward-compatible.
+            ALTER TABLE editorial_revisions ADD COLUMN milestone_key TEXT;
+            CREATE INDEX IF NOT EXISTS idx_revisions_assignment_milestone
+                ON editorial_revisions(assignment_id, milestone_key, revision_no DESC);
+        ',
     ];
 }
-

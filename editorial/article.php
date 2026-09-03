@@ -110,7 +110,6 @@ if (editorial_is_post()) {
         editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
     }
 
-    // FIX A3: exit_workspace must send lock_token
     if ($intent === 'exit_workspace') {
         $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
         editorial_release_article_lock($articleId, $currentUserId, $lockToken);
@@ -118,7 +117,6 @@ if (editorial_is_post()) {
         editorial_redirect(editorial_url('my-work.php'));
     }
 
-    // Phase 6: Send for review
     if ($intent === 'send_for_review') {
         $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
         $result = editorial_send_for_review($articleId, $currentUserId, $lockToken);
@@ -129,15 +127,15 @@ if (editorial_is_post()) {
         editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
     }
 
-    // Phase 5: Create revision from saved draft
-    if ($intent === 'create_revision') {
+    if (in_array($intent, ['create_stage1_revision', 'create_stage2_revision'], true)) {
         $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
         $expectedVersion = (int) ($_POST['expected_draft_version'] ?? 0);
         $revisionNote = trim((string) ($_POST['revision_note'] ?? ''));
+        $milestoneKey = $intent === 'create_stage1_revision' ? 'stage1' : 'stage2';
 
-        $result = editorial_create_editorial_revision($articleId, $currentUserId, $lockToken, $expectedVersion, $revisionNote);
+        $result = editorial_create_stage_milestone_revision($articleId, $currentUserId, $lockToken, $expectedVersion, $milestoneKey, $revisionNote);
 
-        editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message'] ?? ($result['ok'] ? 'Tạo phiên bản thành công.' : 'Không thể tạo phiên bản.'));
+        editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message'] ?? 'Không thể lưu mốc phiên bản.');
         editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
     }
 
@@ -200,6 +198,17 @@ $liveHashConflict = ($baseLiveHash !== '' && $currentLiveHash !== null && $curre
 // ─── Recent revisions (Phase 5) ─────────────────────────────────
 
 $recentRevisions = editorial_get_article_revisions($articleId, 5);
+$assignmentMilestones = $assignment
+    ? editorial_get_assignment_milestones($articleId, (string) $assignment['id'])
+    : ['stage1' => null, 'stage2' => null];
+$assignmentBaseline = null;
+foreach (editorial_get_article_revisions($articleId, 50) as $revision) {
+    if (($revision['assignment_id'] ?? '') === ($assignment['id'] ?? '')
+        && ($revision['revision_type'] ?? '') === 'baseline') {
+        $assignmentBaseline = $revision;
+        break;
+    }
+}
 
 // ─── Public article URL ──────────────────────────────────────────
 
@@ -212,10 +221,13 @@ $siteBaseUrl = editorial_site_url('');
 $innerScript = <<<JS
 (() => {
   const form = document.getElementById('editorialEditorForm');
-  const intent = document.getElementById('editorialIntent');
   const editor = document.getElementById('proseEditor');
   const host = document.getElementById('previewHost');
   if (!editor) return;
+  let draftDirty = false;
+  let editorReady = false;
+
+  function markDraftDirty() { draftDirty = true; }
 
   const siteBaseUrl = window.location.origin + window.location.pathname.replace(/\/editorial\/.*$/, '/');
 
@@ -245,8 +257,6 @@ $innerScript = <<<JS
 
   /* ── Base64 encode on submit ──────────────────────── */
   form.addEventListener('submit', (e) => {
-    const currentIntent = intent ? intent.value : '';
-    if (currentIntent === 'create_revision' || currentIntent === 'exit_workspace') return;
     if (window.tinymce && typeof window.tinymce.triggerSave === 'function') {
       window.tinymce.triggerSave();
     }
@@ -261,11 +271,22 @@ $innerScript = <<<JS
     }
   });
 
+  form.querySelectorAll('input:not([type="hidden"]), textarea:not(#proseEditor)').forEach((field) => {
+    field.addEventListener('input', markDraftDirty);
+    field.addEventListener('change', markDraftDirty);
+  });
+  document.querySelectorAll('button[form="stage1MilestoneForm"], button[form="stage2MilestoneForm"], button[form="sendReviewForm"]').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      if (!draftDirty) return;
+      event.preventDefault();
+      window.alert('Nội dung trên màn hình có thể chưa được lưu. Hãy Lưu nháp trước khi hoàn tất chặng hoặc gửi duyệt.');
+    });
+  });
+
   /* ── Ctrl+S save draft ────────────────────────────── */
   document.addEventListener('keydown', (event) => {
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
       event.preventDefault();
-      if (intent) intent.value = 'save_draft';
       form.requestSubmit();
     }
   });
@@ -355,14 +376,16 @@ $innerScript = <<<JS
         throw new Error('Upload ảnh chưa được hỗ trợ trong Editorial V2. Vui lòng sử dụng Admin legacy hoặc URL ảnh có sẵn.');
       },
       setup: (instance) => {
-        instance.on('input change keyup setcontent', () => {
+        instance.on('init', () => { editorReady = true; });
+        instance.on('input change keyup', () => {
+          if (editorReady) markDraftDirty();
           if (window.__previewTimer) window.clearTimeout(window.__previewTimer);
           window.__previewTimer = window.setTimeout(syncPreview, 100);
         });
         instance.on('keydown', (e) => {
           if (e.key === 'Escape' && isFullscreen) { e.preventDefault(); exitFullscreen(); return; }
           if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'f') { e.preventDefault(); toggleFullscreen(); return; }
-          if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); intent.value = 'save_draft'; form.requestSubmit(); }
+          if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); form.requestSubmit(); }
         });
       }
     });
@@ -455,7 +478,7 @@ editorial_layout_header([
 
     <form id="editorialEditorForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
         <?= editorial_csrf_input() ?>
-        <input type="hidden" name="_intent" id="editorialIntent" value="save_draft">
+        <input type="hidden" name="_intent" value="save_draft">
         <input type="hidden" name="article_id" id="articleIdField" value="<?= editorial_h($articleId) ?>">
         <input type="hidden" name="lock_token" id="lockTokenField" value="<?= editorial_h($lockToken) ?>">
         <input type="hidden" name="expected_draft_version" id="expectedDraftVersion" value="<?= editorial_h((string) $draftVersion) ?>">
@@ -463,20 +486,26 @@ editorial_layout_header([
 
         <!-- Action bar -->
         <div class="editor-action-bar">
-            <button type="submit" class="editorial-save-btn" onclick="document.getElementById('editorialIntent').value='save_draft'">
+            <button type="submit" class="editorial-save-btn">
                 <i class="fa-solid fa-floppy-disk"></i>
                 <span>Lưu nháp</span>
             </button>
 
             <?php if ($draftVersion > 0): ?>
-            <button type="submit" class="editorial-revision-btn" onclick="document.getElementById('editorialIntent').value='create_revision'; return confirm('Tạo phiên bản từ bản nháp đã lưu?');">
+            <button type="submit" form="stage1MilestoneForm" class="editorial-revision-btn editorial-stage1-btn" title="Lưu một bản cố định sau khi đã làm sạch và chuẩn hóa HTML/trình bày." onclick="return confirm('Lưu Chặng 1 từ bản nháp đã lưu?');">
                 <i class="fa-solid fa-code-branch"></i>
-                <span>Tạo phiên bản</span>
+                <span>Hoàn tất Chặng 1</span>
             </button>
+            <span class="editorial-stage-helper">Chuẩn hóa trình bày</span>
+            <button type="submit" form="stage2MilestoneForm" class="editorial-revision-btn editorial-stage2-btn" title="Lưu một bản cố định sau khi đã research, cập nhật và biên tập nội dung." onclick="return confirm('Lưu Chặng 2 từ bản nháp đã lưu?');">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <span>Hoàn tất Chặng 2</span>
+            </button>
+            <span class="editorial-stage-helper">Biên tập nội dung</span>
             <?php endif; ?>
 
-            <?php if ($draftVersion > 0 && !empty($recentRevisions)): ?>
-            <button type="submit" class="editorial-review-submit-btn" onclick="document.getElementById('editorialIntent').value='send_for_review'; return confirm('Gửi bài viết để duyệt? Bạn sẽ không thể chỉnh sửa cho đến khi reviewer phản hồi.');">
+            <?php if ($draftVersion > 0 && ($assignmentMilestones['stage1'] || $assignmentMilestones['stage2'])): ?>
+            <button type="submit" form="sendReviewForm" class="editorial-review-submit-btn" onclick="return confirm('Gửi phiên bản đã chốt để duyệt? Bạn sẽ không thể chỉnh sửa cho đến khi reviewer phản hồi.');">
                 <i class="fa-solid fa-paper-plane"></i>
                 <span>Gửi duyệt</span>
             </button>
@@ -488,7 +517,7 @@ editorial_layout_header([
 
             <span class="editor-shortcut-hint">Ctrl+S lưu nháp · Ctrl+Shift+F toàn màn hình</span>
 
-            <button type="submit" class="editorial-exit-btn" onclick="document.getElementById('editorialIntent').value='exit_workspace'; return confirm('Thoát workspace? Nội dung chưa lưu sẽ mất.');">
+            <button type="submit" form="exitWorkspaceForm" class="editorial-exit-btn" onclick="return confirm('Thoát workspace? Nội dung chưa lưu sẽ mất.');">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span>Thoát workspace</span>
             </button>
@@ -510,12 +539,6 @@ editorial_layout_header([
 
         <!-- TinyMCE editor -->
         <textarea id="proseEditor" name="prose_html" class="prose-textarea" required style="min-height:400px;"><?= editorial_h((string) ($form['prose_html'] ?? '')) ?></textarea>
-
-        <!-- Revision note (Phase 5) -->
-        <div class="filter-field" style="margin-top:12px;">
-            <label for="revisionNote">Ghi chú phiên bản (tùy chọn, tối đa 500 ký tự)</label>
-            <input type="text" id="revisionNote" name="revision_note" value="" class="field-input" maxlength="500" placeholder="VD: Đã chỉnh lại phần thuế GTGT">
-        </div>
 
         <!-- Preview -->
         <details class="editor-info-panel" style="margin-top:16px;">
@@ -559,7 +582,7 @@ editorial_layout_header([
             <summary><i class="fa-solid fa-clock-rotate-left"></i> Lịch sử phiên bản</summary>
             <div style="padding:14px;">
                 <?php if (empty($recentRevisions)): ?>
-                    <p style="color:#868e96;">Chưa có phiên bản nào. Lưu nháp rồi bấm "Tạo phiên bản" để tạo.</p>
+                    <p style="color:#868e96;">Chưa có phiên bản nào. Lưu nháp rồi hoàn tất Chặng 1 hoặc Chặng 2 để tạo bản cố định.</p>
                 <?php else: ?>
                     <table class="admin-table" style="font-size:0.85rem;">
                         <thead>
@@ -575,7 +598,7 @@ editorial_layout_header([
                             <?php foreach ($recentRevisions as $rev): ?>
                                 <tr>
                                     <td><?= editorial_h((string) $rev['revision_no']) ?></td>
-                                    <td><?= editorial_h(editorial_revision_type_label((string) $rev['revision_type'])) ?></td>
+                                    <td><?= editorial_h(editorial_revision_label($rev)) ?></td>
                                     <td><?= editorial_h((string) ($rev['creator_name'] ?? $rev['created_by'])) ?></td>
                                     <td><?= editorial_h(editorial_format_datetime((string) $rev['created_at'])) ?></td>
                                     <td><code><?= editorial_h(substr((string) ($rev['content_hash'] ?? ''), 0, 8)) ?></code></td>
@@ -594,24 +617,74 @@ editorial_layout_header([
 
         <!-- Bottom actions -->
         <div class="editorial-bottom-actions">
-            <button type="submit" class="editorial-save-btn" onclick="document.getElementById('editorialIntent').value='save_draft'">
+            <button type="submit" class="editorial-save-btn">
                 <i class="fa-solid fa-floppy-disk"></i> Lưu nháp
             </button>
             <?php if ($draftVersion > 0): ?>
-            <button type="submit" class="editorial-revision-btn" onclick="document.getElementById('editorialIntent').value='create_revision'; return confirm('Tạo phiên bản?');">
-                <i class="fa-solid fa-code-branch"></i> Tạo phiên bản
+            <button type="submit" form="stage1MilestoneForm" class="editorial-revision-btn editorial-stage1-btn" onclick="return confirm('Lưu Chặng 1 từ bản nháp đã lưu?');">
+                <i class="fa-solid fa-code-branch"></i> Hoàn tất Chặng 1
+            </button>
+            <button type="submit" form="stage2MilestoneForm" class="editorial-revision-btn editorial-stage2-btn" onclick="return confirm('Lưu Chặng 2 từ bản nháp đã lưu?');">
+                <i class="fa-solid fa-pen-to-square"></i> Hoàn tất Chặng 2
             </button>
             <?php endif; ?>
-            <?php if ($draftVersion > 0 && !empty($recentRevisions)): ?>
-            <button type="submit" class="editorial-review-submit-btn" onclick="document.getElementById('editorialIntent').value='send_for_review'; return confirm('Gửi duyệt?');">
+            <?php if ($draftVersion > 0 && ($assignmentMilestones['stage1'] || $assignmentMilestones['stage2'])): ?>
+            <button type="submit" form="sendReviewForm" class="editorial-review-submit-btn" onclick="return confirm('Gửi duyệt?');">
                 <i class="fa-solid fa-paper-plane"></i> Gửi duyệt
             </button>
             <?php endif; ?>
-            <button type="submit" class="editorial-exit-btn" onclick="document.getElementById('editorialIntent').value='exit_workspace'; return confirm('Thoát workspace?');">
+            <button type="submit" form="exitWorkspaceForm" class="editorial-exit-btn" onclick="return confirm('Thoát workspace?');">
                 <i class="fa-solid fa-right-from-bracket"></i> Thoát
             </button>
         </div>
     </form>
+
+    <div class="editorial-workflow-help">
+        <strong>Quy trình:</strong> 1. Lưu nháp · 2. Hoàn tất Chặng 1 — Chuẩn hóa trình bày ·
+        3. Hoàn tất Chặng 2 — Biên tập nội dung · 4. Gửi Admin duyệt.
+        <span>Sau khi chốt bản cuối, bài có thể gửi Admin duyệt.</span>
+    </div>
+
+    <form id="stage1MilestoneForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
+        <?= editorial_csrf_input() ?>
+        <input type="hidden" name="_intent" value="create_stage1_revision">
+        <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
+        <input type="hidden" name="lock_token" value="<?= editorial_h($lockToken) ?>">
+        <input type="hidden" name="expected_draft_version" value="<?= editorial_h((string) $draftVersion) ?>">
+    </form>
+    <form id="stage2MilestoneForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
+        <?= editorial_csrf_input() ?>
+        <input type="hidden" name="_intent" value="create_stage2_revision">
+        <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
+        <input type="hidden" name="lock_token" value="<?= editorial_h($lockToken) ?>">
+        <input type="hidden" name="expected_draft_version" value="<?= editorial_h((string) $draftVersion) ?>">
+    </form>
+    <form id="sendReviewForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
+        <?= editorial_csrf_input() ?>
+        <input type="hidden" name="_intent" value="send_for_review">
+        <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
+        <input type="hidden" name="lock_token" value="<?= editorial_h($lockToken) ?>">
+    </form>
+    <form id="exitWorkspaceForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
+        <?= editorial_csrf_input() ?>
+        <input type="hidden" name="_intent" value="exit_workspace">
+        <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
+        <input type="hidden" name="lock_token" value="<?= editorial_h($lockToken) ?>">
+    </form>
+
+    <?php if ($assignmentBaseline || $assignmentMilestones['stage1'] || $assignmentMilestones['stage2']): ?>
+        <div class="editorial-milestone-links">
+            <?php if ($assignmentBaseline && $assignmentMilestones['stage1']): ?>
+                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage1']['id'])) ?>">So với bản gốc</a>
+            <?php endif; ?>
+            <?php if ($assignmentBaseline && $assignmentMilestones['stage2']): ?>
+                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id'])) ?>">Bản gốc ↔ Chặng 2</a>
+            <?php endif; ?>
+            <?php if ($assignmentMilestones['stage1'] && $assignmentMilestones['stage2']): ?>
+                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentMilestones['stage1']['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id'])) ?>">So Chặng 1 với Chặng 2</a>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
 </section>
 
 <?php editorial_layout_footer(); ?>

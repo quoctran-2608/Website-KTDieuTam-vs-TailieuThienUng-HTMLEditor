@@ -162,7 +162,7 @@ if ($articleId !== '') {
             <div class="editor-info-panel" style="margin-bottom:20px; padding:16px; background:#f8f9fa; border:1px solid #dee2e6; border-radius:8px;">
                 <h3 style="margin-top:0; font-size:1rem;">Thông tin phiên bản gửi duyệt</h3>
                 <p><strong>Revision #:</strong> <?= editorial_h((string) $revision['revision_no']) ?></p>
-                <p><strong>Loại:</strong> <?= editorial_h(editorial_revision_type_label((string) $revision['revision_type'])) ?></p>
+                <p><strong>Loại:</strong> <?= editorial_h(editorial_revision_label($revision)) ?></p>
                 <p><strong>Người gửi:</strong> <?= editorial_h($requester ? (string) ($requester['display_name'] ?? $requester['username']) : (string) $revision['created_by']) ?></p>
                 <p><strong>Thời gian gửi:</strong> <?= editorial_h(editorial_format_datetime((string) $revision['created_at'])) ?></p>
                 <p><strong>Ghi chú:</strong> <?= editorial_h((string) ($revision['note'] ?? '')) ?: '<span style="color:#868e96;">—</span>' ?></p>
@@ -348,7 +348,8 @@ if ($articleId !== '') {
 
 } else {
     // Queue Mode
-    $q = trim((string) ($_GET['q'] ?? ''));
+    $filters = editorial_taxonomy_filter_params($_GET);
+    $q = $filters['q'];
 
     $db = editorial_db();
     $stmt = $db->query("SELECT * FROM editorial_article_state WHERE status IN ('ready_review','approved') ORDER BY review_requested_at ASC");
@@ -362,6 +363,9 @@ if ($articleId !== '') {
         
         $art = editorial_find_article((string) $s['article_id']);
         if ($art !== null) {
+            if (!editorial_article_matches_taxonomy($art, $filters)) {
+                continue;
+            }
             if ($q !== '') {
                 $qLower = mb_strtolower($q, 'UTF-8');
                 $titleLower = mb_strtolower($art['title'], 'UTF-8');
@@ -373,11 +377,14 @@ if ($articleId !== '') {
         }
     }
     $userNames = editorial_preload_user_names($userIdsToPreload);
+    $sidebarTreeHtml = editorial_render_taxonomy_tree($filters, 'review.php');
 
     editorial_layout_header([
         'title' => 'Danh sách chờ duyệt',
         'active' => 'review',
         'description' => 'Các bài viết đang chờ phê duyệt hoặc đã duyệt gần đây.',
+        'sidebar_extra_html' => $sidebarTreeHtml,
+        'sidebar_note' => 'Lọc hàng đợi theo phân loại',
     ]);
     ?>
     <section class="editorial-filter-bar">
@@ -387,8 +394,13 @@ if ($articleId !== '') {
                     <i class="fa-solid fa-search"></i>
                     <input type="text" name="q" value="<?= editorial_h($q) ?>" placeholder="Tìm theo tiêu đề, ID bài viết…">
                 </div>
+                <input type="hidden" name="section" value="<?= editorial_h($filters['section']) ?>">
+                <input type="hidden" name="library_kind_key" value="<?= editorial_h($filters['library_kind_key']) ?>">
+                <input type="hidden" name="topic_lv1_key" value="<?= editorial_h($filters['topic_lv1_key']) ?>">
+                <input type="hidden" name="topic_lv2_key" value="<?= editorial_h($filters['topic_lv2_key']) ?>">
+                <input type="hidden" name="topic_lv3_key" value="<?= editorial_h($filters['topic_lv3_key']) ?>">
                 <button type="submit" class="editorial-filter-btn"><i class="fa-solid fa-filter"></i> Lọc</button>
-                <?php if ($q !== ''): ?>
+                <?php if (array_filter($filters, static fn(string $value): bool => $value !== '')): ?>
                     <a href="<?= editorial_h(editorial_url('review.php')) ?>" class="editorial-filter-clear">Xóa bộ lọc</a>
                 <?php endif; ?>
             </div>
@@ -446,7 +458,13 @@ if ($articleId !== '') {
                             <td><?= editorial_h($ownerName) ?></td>
                             <td>
                                 <?php if ($s['review_revision_id']): ?>
-                                    <code><?= editorial_h(substr((string)$s['review_revision_id'], 0, 8)) ?></code>
+                                    <?php $queueRevision = editorial_get_revision((string) $s['review_revision_id']); ?>
+                                    <?php if ($queueRevision): ?>
+                                        <span class="editorial-badge"><?= editorial_h(editorial_revision_label($queueRevision)) ?></span>
+                                        <br><code><?= editorial_h(substr((string) $queueRevision['id'], 0, 8)) ?></code>
+                                    <?php else: ?>
+                                        <code><?= editorial_h(substr((string) $s['review_revision_id'], 0, 8)) ?></code>
+                                    <?php endif; ?>
                                 <?php else: ?>
                                     —
                                 <?php endif; ?>

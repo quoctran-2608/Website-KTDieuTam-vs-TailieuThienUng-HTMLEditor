@@ -15,6 +15,8 @@ declare(strict_types=1);
  *   title?: string,
  *   active?: string,
  *   description?: string,
+ *   sidebar_extra_html?: string,
+ *   sidebar_note?: string,
  *   body_class?: string
  * } $options
  */
@@ -25,6 +27,8 @@ function editorial_layout_header(array $options = []): void
     $active = $options['active'] ?? '';
     $description = $options['description'] ?? '';
     $bodyClass = trim((string) ($options['body_class'] ?? ''));
+    $sidebarExtraHtml = (string) ($options['sidebar_extra_html'] ?? '');
+    $sidebarNote = (string) ($options['sidebar_note'] ?? 'Biên tập nội dung đa người dùng');
     $_editorial_inner_script = $options['inner_script'] ?? '';
     $user = editorial_current_user();
 
@@ -115,9 +119,14 @@ function editorial_layout_header(array $options = []): void
                         </a>
                     <?php endforeach; ?>
                 </nav>
+                <?php if ($sidebarExtraHtml !== ''): ?>
+                    <div class="admin-sidebar-extra">
+                        <?= $sidebarExtraHtml ?>
+                    </div>
+                <?php endif; ?>
                 <div class="admin-sidebar-foot">
                     <p><strong>Kế Toán Diệu Tâm</strong></p>
-                    <p>Biên tập nội dung đa người dùng</p>
+                    <p><?= editorial_h($sidebarNote) ?></p>
                 </div>
             </aside>
 

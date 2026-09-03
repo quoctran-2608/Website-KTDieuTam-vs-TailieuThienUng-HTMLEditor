@@ -451,14 +451,17 @@ function editorial_create_baseline_revision(string $articleId, string $userId): 
  * Snapshots from the SAVED draft in SQLite, NOT from POST data.
  * All authorization checked inside transaction.
  */
-function editorial_create_editorial_revision(string $articleId, string $userId, string $lockToken, int $expectedDraftVersion, string $note = ''): array
+function editorial_create_editorial_revision(string $articleId, string $userId, string $lockToken, int $expectedDraftVersion, string $note = '', ?string $milestoneKey = null): array
 {
     $note = trim($note);
     if (mb_strlen($note) > 500) {
         return ['ok' => false, 'message' => 'Ghi chú không được vượt quá 500 ký tự.'];
     }
+    if ($milestoneKey !== null && !in_array($milestoneKey, ['stage1', 'stage2'], true)) {
+        return ['ok' => false, 'message' => 'Mốc phiên bản không hợp lệ.'];
+    }
 
-    return editorial_transaction(function () use ($articleId, $userId, $lockToken, $expectedDraftVersion, $note): array {
+    return editorial_transaction(function () use ($articleId, $userId, $lockToken, $expectedDraftVersion, $note, $milestoneKey): array {
         $db = editorial_db();
 
         // 1. Verify assignment + status
@@ -497,7 +500,7 @@ function editorial_create_editorial_revision(string $articleId, string $userId, 
 
         // 4. Verify draft version
         if ((int) ($draft['version'] ?? 0) !== $expectedDraftVersion) {
-            return ['ok' => false, 'message' => 'Hãy lưu nháp trước khi tạo phiên bản.'];
+            return ['ok' => false, 'message' => 'Nội dung trên màn hình có thể chưa được lưu. Hãy Lưu nháp trước khi hoàn tất chặng.'];
         }
 
         // 5. Get payload (already decoded by editorial_get_draft)
@@ -516,20 +519,7 @@ function editorial_create_editorial_revision(string $articleId, string $userId, 
             return ['ok' => false, 'message' => $e->getMessage()];
         }
 
-        // 7. Duplicate check
-        $stmt = $db->prepare("
-            SELECT content_hash FROM editorial_revisions
-            WHERE article_id = :aid AND revision_type = 'editorial'
-            ORDER BY revision_no DESC LIMIT 1
-        ");
-        $stmt->execute(['aid' => $articleId]);
-        $latestHash = $stmt->fetchColumn();
-
-        if ($latestHash !== false && $latestHash === $contentHash) {
-            return ['ok' => false, 'message' => 'Nội dung không thay đổi so với phiên bản gần nhất.'];
-        }
-
-        // 8. A1: Verify exactly one active assignment — fail-closed
+        // 7. A1: Verify exactly one active assignment — fail-closed
         $assignment = editorial_get_active_assignment($articleId);
         if ($assignment === null) {
             return ['ok' => false, 'message' => 'Dữ liệu phân công bài viết không nhất quán. Không thể tạo phiên bản.'];
@@ -542,6 +532,25 @@ function editorial_create_editorial_revision(string $articleId, string $userId, 
         }
         $assignmentId = (string) $assignment['id'];
 
+        // 8. Duplicate check applies only within the same semantic milestone.
+        if ($milestoneKey !== null) {
+            $stmt = $db->prepare("
+                SELECT content_hash FROM editorial_revisions
+                WHERE assignment_id = :assignment_id
+                  AND revision_type = 'editorial'
+                  AND milestone_key = :milestone_key
+                ORDER BY revision_no DESC LIMIT 1
+            ");
+            $stmt->execute([
+                ':assignment_id' => $assignmentId,
+                ':milestone_key' => $milestoneKey,
+            ]);
+            if ($stmt->fetchColumn() === $contentHash) {
+                $stageLabel = $milestoneKey === 'stage1' ? 'Chặng 1' : 'Chặng 2';
+                return ['ok' => false, 'message' => 'Nội dung không thay đổi so với bản ' . $stageLabel . ' gần nhất.'];
+            }
+        }
+
         // 9. Next revision number
         $stmt = $db->prepare('SELECT MAX(revision_no) FROM editorial_revisions WHERE article_id = :aid');
         $stmt->execute(['aid' => $articleId]);
@@ -553,11 +562,11 @@ function editorial_create_editorial_revision(string $articleId, string $userId, 
         $snapshotPath = editorial_write_revision_snapshot($revisionId, $articleId, $payload);
 
         try {
-            // 11. Insert revision
+            // 11. Insert immutable revision from the saved draft.
             $stmt = $db->prepare('
                 INSERT INTO editorial_revisions
-                (id, article_id, revision_no, revision_type, snapshot_path, content_hash, created_by, created_at, assignment_id, source_draft_version, note)
-                VALUES (:id, :aid, :rno, :rtype, :spath, :chash, :cby, :cat, :asgn, :sdv, :note)
+                (id, article_id, revision_no, revision_type, snapshot_path, content_hash, created_by, created_at, assignment_id, source_draft_version, note, milestone_key)
+                VALUES (:id, :aid, :rno, :rtype, :spath, :chash, :cby, :cat, :asgn, :sdv, :note, :milestone_key)
             ');
             $stmt->execute([
                 'id' => $revisionId,
@@ -571,6 +580,7 @@ function editorial_create_editorial_revision(string $articleId, string $userId, 
                 'asgn' => $assignmentId,
                 'sdv' => (int) $draft['version'],
                 'note' => $note !== '' ? $note : null,
+                'milestone_key' => $milestoneKey,
             ]);
 
             // 12. Update article state
@@ -578,19 +588,25 @@ function editorial_create_editorial_revision(string $articleId, string $userId, 
             $stmt->execute(['rid' => $revisionId, 'aid' => $articleId]);
 
             // 13. Activity log (no full prose, no token)
-            editorial_log_activity('article.revision.created', $articleId, $userId, json_encode([
+            editorial_log_activity($milestoneKey === null ? 'article.revision.created' : 'article.revision.' . $milestoneKey . '_created', $articleId, $userId, json_encode([
                 'revision_id' => $revisionId,
                 'revision_no' => $revisionNo,
                 'revision_type' => 'editorial',
+                'milestone_key' => $milestoneKey,
                 'source_draft_version' => (int) $draft['version'],
                 'content_hash' => $contentHash,
             ]));
 
+            $message = $milestoneKey === 'stage1'
+                ? 'Đã lưu Chặng 1 — bản sau chuẩn hóa trình bày.'
+                : ($milestoneKey === 'stage2'
+                    ? 'Đã lưu Chặng 2 — bản sau biên tập nội dung.'
+                    : 'Tạo phiên bản #' . $revisionNo . ' thành công.');
             return [
                 'ok' => true,
                 'revision_id' => $revisionId,
                 'revision_no' => $revisionNo,
-                'message' => 'Tạo phiên bản #' . $revisionNo . ' thành công.',
+                'message' => $message,
             ];
         } catch (\Throwable $e) {
             $fullPath = editorial_revisions_base_path() . '/' . $snapshotPath;
@@ -600,6 +616,42 @@ function editorial_create_editorial_revision(string $articleId, string $userId, 
             throw $e;
         }
     });
+}
+
+function editorial_create_stage_milestone_revision(string $articleId, string $userId, string $lockToken, int $expectedDraftVersion, string $milestoneKey, string $note = ''): array
+{
+    return editorial_create_editorial_revision($articleId, $userId, $lockToken, $expectedDraftVersion, $note, $milestoneKey);
+}
+
+/**
+ * Return the newest stage1/stage2 revisions for one active assignment.
+ *
+ * @return array{stage1:?array,stage2:?array}
+ */
+function editorial_get_assignment_milestones(string $articleId, string $assignmentId): array
+{
+    $result = ['stage1' => null, 'stage2' => null];
+    if ($assignmentId === '') {
+        return $result;
+    }
+
+    $db = editorial_db();
+    $stmt = $db->prepare("
+        SELECT * FROM editorial_revisions
+        WHERE article_id = :article_id
+          AND assignment_id = :assignment_id
+          AND revision_type = 'editorial'
+          AND milestone_key IN ('stage1', 'stage2')
+        ORDER BY revision_no DESC
+    ");
+    $stmt->execute([':article_id' => $articleId, ':assignment_id' => $assignmentId]);
+    foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $revision) {
+        $key = (string) ($revision['milestone_key'] ?? '');
+        if (isset($result[$key]) && $result[$key] === null) {
+            $result[$key] = $revision;
+        }
+    }
+    return $result;
 }
 
 // ─── Revision Type Label ────────────────────────────────────────
@@ -615,6 +667,15 @@ function editorial_revision_type_label(string $type): string
         'published' => 'Đã xuất bản',
         'restore' => 'Khôi phục',
         default => $type,
+    };
+}
+
+function editorial_revision_label(array $revision): string
+{
+    return match ((string) ($revision['milestone_key'] ?? '')) {
+        'stage1' => 'Chặng 1 — Chuẩn hóa trình bày',
+        'stage2' => 'Chặng 2 — Biên tập nội dung',
+        default => editorial_revision_type_label((string) ($revision['revision_type'] ?? '')),
     };
 }
 

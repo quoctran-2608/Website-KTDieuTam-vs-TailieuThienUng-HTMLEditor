@@ -142,7 +142,7 @@ function editorial_article_count(): int
 /**
  * Filter and paginate articles.
  *
- * @param array{q?: string, section?: string, topic_lv1?: string, assignment?: string, page?: int, per_page?: int} $params
+ * @param array{q?: string, section?: string, library_kind_key?: string, topic_lv1?: string, topic_lv1_key?: string, topic_lv2_key?: string, topic_lv3_key?: string, assignment?: string, page?: int, per_page?: int} $params
  * @param array<string, array<string,mixed>> $states Map of article_id => state row
  * @param string|null $currentUserId For 'mine' filter
  * @return array{items: array, total: int, page: int, per_page: int, total_pages: int}
@@ -152,25 +152,26 @@ function editorial_filter_articles(array $params, array $states = [], ?string $c
     $articles = editorial_load_articles();
     $q = strtolower(trim((string) ($params['q'] ?? '')));
     $section = trim((string) ($params['section'] ?? ''));
-    $topicLv1 = trim((string) ($params['topic_lv1'] ?? ''));
+    $libraryKindKey = trim((string) ($params['library_kind_key'] ?? ''));
+    $topicLv1 = trim((string) ($params['topic_lv1_key'] ?? ($params['topic_lv1'] ?? '')));
+    $topicLv2 = trim((string) ($params['topic_lv2_key'] ?? ''));
+    $topicLv3 = trim((string) ($params['topic_lv3_key'] ?? ''));
     $assignment = trim((string) ($params['assignment'] ?? ''));
     $page = max(1, (int) ($params['page'] ?? 1));
     $perPage = max(10, min(100, (int) ($params['per_page'] ?? 30)));
 
     $filtered = [];
     foreach ($articles as $article) {
-        // Text search
-        if ($q !== '' && strpos($article['search_index'], $q) === false) {
+        if (!editorial_article_matches_taxonomy($article, [
+            'section' => $section,
+            'library_kind_key' => $libraryKindKey,
+            'topic_lv1_key' => $topicLv1,
+            'topic_lv2_key' => $topicLv2,
+            'topic_lv3_key' => $topicLv3,
+        ])) {
             continue;
         }
-        // Section filter
-        if ($section !== '' && $article['section'] !== $section) {
-            continue;
-        }
-        // Topic Lv1 filter
-        if ($topicLv1 !== '' && $article['topic_lv1_key'] !== $topicLv1) {
-            continue;
-        }
+        if ($q !== '' && strpos($article['search_index'], $q) === false) continue;
         // Assignment filter
         if ($assignment !== '') {
             $state = $states[$article['id']] ?? null;
@@ -197,6 +198,241 @@ function editorial_filter_articles(array $params, array $states = [], ?string $c
         'per_page' => $perPage,
         'total_pages' => $totalPages,
     ];
+}
+
+function editorial_article_matches_taxonomy(array $article, array $filters): bool
+{
+    $checks = [
+        'section' => 'section',
+        'library_kind_key' => 'library_kind_key',
+        'topic_lv1_key' => 'topic_lv1_key',
+        'topic_lv2_key' => 'topic_lv2_key',
+        'topic_lv3_key' => 'topic_lv3_key',
+    ];
+    foreach ($checks as $filterKey => $articleKey) {
+        $selected = trim((string) ($filters[$filterKey] ?? ''));
+        if ($selected !== '' && (string) ($article[$articleKey] ?? '') !== $selected) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// ─── Read-only Public Taxonomy ───────────────────────────────────────────────
+
+/**
+ * Read the same public taxonomy hierarchy used by the website hubs.
+ *
+ * Thư viện: library kind → topic level 1 → topic level 2.
+ * Bản tin: topic level 1 → topic level 2.
+ *
+ * @return array{sections:array<int,array<string,mixed>>}
+ */
+function editorial_read_public_taxonomy_tree(): array
+{
+    static $cache = null;
+    if ($cache !== null) {
+        return $cache;
+    }
+
+    $path = dirname(EDITORIAL_BASE_PATH) . '/data/taxonomy.json';
+    if (!is_file($path)) {
+        return $cache = ['sections' => []];
+    }
+    $raw = file_get_contents($path);
+    $decoded = $raw === false ? null : json_decode($raw, true);
+    if (!is_array($decoded) || !is_array($decoded['roots'] ?? null)) {
+        return $cache = ['sections' => []];
+    }
+
+    $sections = [];
+    foreach ($decoded['roots'] as $root) {
+        if (!is_array($root)) {
+            continue;
+        }
+        $key = trim((string) ($root['key'] ?? ($root['id'] ?? '')));
+        if (!in_array($key, ['thu-vien', 'ban-tin'], true)) {
+            continue;
+        }
+        $section = editorial_taxonomy_base_node($root, 'section');
+        $section['children'] = [];
+        foreach ((array) ($root['children'] ?? []) as $child) {
+            if (!is_array($child)) {
+                continue;
+            }
+            $section['children'][] = editorial_normalize_public_taxonomy_branch(
+                $child,
+                $key === 'thu-vien' ? 'library_kind' : 'topic_lv1',
+                $key === 'thu-vien' ? 2 : 1
+            );
+        }
+        $sections[] = $section;
+    }
+
+    return $cache = ['sections' => $sections];
+}
+
+/** @return array<string,mixed> */
+function editorial_taxonomy_base_node(array $node, string $type): array
+{
+    return [
+        'key' => trim((string) ($node['key'] ?? ($node['id'] ?? ''))),
+        'label' => (string) ($node['label'] ?? ($node['key'] ?? ($node['id'] ?? ''))),
+        'type' => $type,
+        'count' => (int) ($node['count'] ?? 0),
+    ];
+}
+
+/** @return array<string,mixed> */
+function editorial_normalize_public_taxonomy_branch(array $node, string $type, int $childLevels): array
+{
+    $out = editorial_taxonomy_base_node($node, $type);
+    if ($childLevels <= 0) {
+        return $out;
+    }
+
+    $nextType = [
+        'library_kind' => 'topic_lv1',
+        'topic_lv1' => 'topic_lv2',
+    ][$type] ?? 'topic';
+    $out['children'] = [];
+    foreach ((array) ($node['children'] ?? []) as $child) {
+        if (is_array($child)) {
+            $out['children'][] = editorial_normalize_public_taxonomy_branch($child, $nextType, $childLevels - 1);
+        }
+    }
+    return $out;
+}
+
+/**
+ * Normalize supported taxonomy/filter query params and map old topic_lv1 URLs.
+ *
+ * @return array<string,string>
+ */
+function editorial_taxonomy_filter_params(array $source): array
+{
+    $topicLv1 = trim((string) ($source['topic_lv1_key'] ?? ($source['topic_lv1'] ?? '')));
+    $filters = [
+        'q' => trim((string) ($source['q'] ?? '')),
+        'section' => trim((string) ($source['section'] ?? '')),
+        'library_kind_key' => trim((string) ($source['library_kind_key'] ?? '')),
+        'topic_lv1_key' => $topicLv1,
+        'topic_lv2_key' => trim((string) ($source['topic_lv2_key'] ?? '')),
+        'topic_lv3_key' => trim((string) ($source['topic_lv3_key'] ?? '')),
+        'assignment' => trim((string) ($source['assignment'] ?? '')),
+    ];
+    if ($filters['section'] === 'ban-tin') {
+        $filters['library_kind_key'] = '';
+    }
+    return $filters;
+}
+
+/** @return string */
+function editorial_taxonomy_url(string $route, array $params): string
+{
+    $clean = [];
+    foreach ($params as $key => $value) {
+        if ($value !== '' && $value !== null && $key !== 'page') {
+            $clean[$key] = $value;
+        }
+    }
+    return editorial_url($route) . ($clean ? '?' . http_build_query($clean) : '');
+}
+
+/**
+ * Render a compact read-only taxonomy tree for article and review queues.
+ */
+function editorial_render_taxonomy_tree(array $filters, string $route): string
+{
+    $tree = editorial_read_public_taxonomy_tree();
+    $sections = $tree['sections'];
+    if ($sections === []) {
+        return '';
+    }
+
+    $selectedSection = $filters['section'] ?? '';
+    $selectedKind = $filters['library_kind_key'] ?? '';
+    $selectedLv1 = $filters['topic_lv1_key'] ?? '';
+    $selectedLv2 = $filters['topic_lv2_key'] ?? '';
+    $displaySection = $selectedSection !== '' ? $selectedSection : 'thu-vien';
+    $scope = $filters;
+    unset($scope['section'], $scope['library_kind_key'], $scope['topic_lv1_key'], $scope['topic_lv2_key'], $scope['topic_lv3_key']);
+
+    ob_start();
+    ?>
+    <section class="editorial-taxonomy-tree">
+        <h2>Phân loại bài viết</h2>
+        <div class="editorial-taxonomy-sections">
+            <?php foreach ($sections as $section): ?>
+                <?php $sectionKey = (string) ($section['key'] ?? ''); ?>
+                <a class="editorial-taxonomy-section <?= $displaySection === $sectionKey ? 'is-active' : '' ?>"
+                   href="<?= editorial_h(editorial_taxonomy_url($route, $scope + ['section' => $sectionKey])) ?>">
+                    <span><?= editorial_h((string) ($section['label'] ?? '')) ?></span>
+                    <small><?= editorial_h((string) ($section['count'] ?? 0)) ?></small>
+                </a>
+            <?php endforeach; ?>
+        </div>
+
+        <?php foreach ($sections as $section): ?>
+            <?php
+            $sectionKey = (string) ($section['key'] ?? '');
+            if ($sectionKey !== $displaySection) continue;
+            foreach ((array) ($section['children'] ?? []) as $root):
+                $rootKey = (string) ($root['key'] ?? '');
+                $isLibrary = $sectionKey === 'thu-vien';
+                $rootActive = $isLibrary ? $selectedKind === $rootKey : $selectedLv1 === $rootKey;
+                $rootParams = $scope + ['section' => $sectionKey];
+                if ($isLibrary) {
+                    $rootParams['library_kind_key'] = $rootKey;
+                } else {
+                    $rootParams['topic_lv1_key'] = $rootKey;
+                }
+            ?>
+                <div class="editorial-taxonomy-node <?= $rootActive ? 'is-open' : '' ?>">
+                    <a class="editorial-taxonomy-root <?= $rootActive && $selectedLv2 === '' ? 'is-active' : '' ?>"
+                       href="<?= editorial_h(editorial_taxonomy_url($route, $rootParams)) ?>">
+                        <span><?= editorial_h((string) ($root['label'] ?? '')) ?></span>
+                        <small><?= editorial_h((string) ($root['count'] ?? 0)) ?></small>
+                    </a>
+                    <?php if ($rootActive): ?>
+                        <div class="editorial-taxonomy-children">
+                            <?php foreach ((array) ($root['children'] ?? []) as $lv1): ?>
+                                <?php
+                                $lv1Key = (string) ($lv1['key'] ?? '');
+                                $lv1Active = $isLibrary ? $selectedLv1 === $lv1Key : $selectedLv2 === $lv1Key;
+                                $lv1Params = $isLibrary
+                                    ? $rootParams + ['topic_lv1_key' => $lv1Key]
+                                    : $rootParams + ['topic_lv2_key' => $lv1Key];
+                                ?>
+                                <a class="editorial-taxonomy-child <?= $lv1Active && ($isLibrary ? $selectedLv2 === '' : true) ? 'is-active' : '' ?>"
+                                   href="<?= editorial_h(editorial_taxonomy_url($route, $lv1Params)) ?>">
+                                    <span><?= editorial_h((string) ($lv1['label'] ?? '')) ?></span>
+                                    <small><?= editorial_h((string) ($lv1['count'] ?? 0)) ?></small>
+                                </a>
+                                <?php if ($isLibrary && $lv1Active): ?>
+                                    <div class="editorial-taxonomy-grandchildren">
+                                        <?php foreach ((array) ($lv1['children'] ?? []) as $lv2): ?>
+                                            <?php
+                                            $lv2Key = (string) ($lv2['key'] ?? '');
+                                            $lv2Params = $lv1Params + ['topic_lv2_key' => $lv2Key];
+                                            ?>
+                                            <a class="editorial-taxonomy-grandchild <?= $selectedLv2 === $lv2Key ? 'is-active' : '' ?>"
+                                               href="<?= editorial_h(editorial_taxonomy_url($route, $lv2Params)) ?>">
+                                                <span><?= editorial_h((string) ($lv2['label'] ?? '')) ?></span>
+                                                <small><?= editorial_h((string) ($lv2['count'] ?? 0)) ?></small>
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+        <?php endforeach; ?>
+    </section>
+    <?php
+    return (string) ob_get_clean();
 }
 
 /**

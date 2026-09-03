@@ -40,6 +40,20 @@ if (!$isAdmin) {
 // ─── Load revisions ─────────────────────────────────────────────
 
 $revisions = editorial_get_article_revisions($articleId);
+$milestones = ['baseline' => null, 'stage1' => null, 'stage2' => null];
+$activeAssignment = editorial_get_active_assignment($articleId);
+foreach ($revisions as $revision) {
+    if ($activeAssignment === null || ($revision['assignment_id'] ?? '') !== $activeAssignment['id']) {
+        continue;
+    }
+    $key = (string) ($revision['milestone_key'] ?? '');
+    if (($revision['revision_type'] ?? '') === 'baseline' && $milestones['baseline'] === null) {
+        $milestones['baseline'] = $revision;
+    }
+    if (in_array($key, ['stage1', 'stage2'], true) && $milestones[$key] === null) {
+        $milestones[$key] = $revision;
+    }
+}
 
 $articleStatus = (string) ($state['status'] ?? 'available');
 $isOwner = ($state !== null && (string) ($state['assigned_user_id'] ?? '') === $currentUserId);
@@ -77,9 +91,22 @@ editorial_layout_header([
     <?php if (empty($revisions)): ?>
         <div class="empty-state" style="padding:24px;">
             <i class="fa-regular fa-folder-open"></i>
-            <p>Chưa có phiên bản nào. Lưu nháp rồi bấm "Tạo phiên bản" trong workspace để tạo.</p>
+            <p>Chưa có phiên bản nào. Lưu nháp rồi hoàn tất Chặng 1 hoặc Chặng 2 trong workspace.</p>
         </div>
     <?php else: ?>
+        <?php if ($milestones['baseline'] && ($milestones['stage1'] || $milestones['stage2'])): ?>
+            <div class="editorial-milestone-links" style="margin-bottom:16px;">
+                <?php if ($milestones['stage1']): ?>
+                    <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $milestones['baseline']['id']) . '&to=' . urlencode((string) $milestones['stage1']['id'])) ?>">Bản gốc ↔ Chặng 1</a>
+                <?php endif; ?>
+                <?php if ($milestones['stage2']): ?>
+                    <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $milestones['baseline']['id']) . '&to=' . urlencode((string) $milestones['stage2']['id'])) ?>">Bản gốc ↔ Chặng 2</a>
+                <?php endif; ?>
+                <?php if ($milestones['stage1'] && $milestones['stage2']): ?>
+                    <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $milestones['stage1']['id']) . '&to=' . urlencode((string) $milestones['stage2']['id'])) ?>">Chặng 1 ↔ Chặng 2</a>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
         <div class="table-wrap">
             <table class="admin-table">
                 <thead>
@@ -100,7 +127,7 @@ editorial_layout_header([
                             <td><strong><?= editorial_h((string) $rev['revision_no']) ?></strong></td>
                             <td>
                                 <span class="editorial-badge">
-                                    <?= editorial_h(editorial_revision_type_label((string) $rev['revision_type'])) ?>
+                                    <?= editorial_h(editorial_revision_label($rev)) ?>
                                 </span>
                             </td>
                             <td><?= editorial_h((string) ($rev['creator_name'] ?? $rev['created_by'])) ?></td>

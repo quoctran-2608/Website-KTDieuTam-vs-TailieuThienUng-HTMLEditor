@@ -78,6 +78,18 @@ $fromRev['creator_name'] = $fromCreator ? (string) ($fromCreator['display_name']
 $toCreator = editorial_find_user_by_id((string) $toRev['created_by']);
 $toRev['creator_name'] = $toCreator ? (string) ($toCreator['display_name'] ?? $toCreator['username']) : $toRev['created_by'];
 
+// Render snapshots in sandboxed documents so content never executes in this page.
+$buildPreviewDocument = static function (array $payload): string {
+    $prose = (string) ($payload['prose_html'] ?? '');
+    return '<!DOCTYPE html><html><head><meta charset="utf-8"><style>'
+        . 'body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7;color:#292929;padding:18px;margin:0;}'
+        . 'img,table{max-width:100%;height:auto;}table{display:block;overflow-x:auto;}'
+        . 'h1,h2,h3{line-height:1.3;}pre{white-space:pre-wrap;word-break:break-word;}'
+        . '</style></head><body>' . $prose . '</body></html>';
+};
+$fromPreview = $buildPreviewDocument($fromPayload);
+$toPreview = $buildPreviewDocument($toPayload);
+
 // ─── Field-level metadata compare ────────────────────────────────
 
 $metaFields = [
@@ -122,18 +134,6 @@ editorial_layout_header([
 ]);
 ?>
 
-<style>
-.compare-sides { display: flex; gap: 16px; margin-bottom: 20px; }
-.compare-side { flex: 1; border: 1px solid #dee2e6; border-radius: 8px; padding: 16px; background: #f8f9fa; }
-.compare-side h3 { margin: 0 0 8px; font-size: 0.95rem; color: #495057; }
-.compare-side p { margin: 2px 0; font-size: 0.85rem; color: #868e96; }
-.diff-line-same { padding: 1px 8px; font-family: monospace; font-size: 0.85rem; white-space: pre-wrap; word-break: break-word; }
-.diff-line-add { padding: 1px 8px; font-family: monospace; font-size: 0.85rem; white-space: pre-wrap; word-break: break-word; background: #d4edda; color: #155724; }
-.diff-line-del { padding: 1px 8px; font-family: monospace; font-size: 0.85rem; white-space: pre-wrap; word-break: break-word; background: #f8d7da; color: #721c24; }
-.meta-old { background: #fff3f3; }
-.meta-new { background: #f0fff4; }
-</style>
-
 <section class="admin-panel">
     <div class="panel-head">
         <h2>So sánh phiên bản — <?= editorial_h($article['title']) ?></h2>
@@ -144,23 +144,35 @@ editorial_layout_header([
         </p>
     </div>
 
-    <!-- Side-by-side revision headers -->
-    <div class="compare-sides">
-        <div class="compare-side">
-            <h3>BẢN TRƯỚC</h3>
-            <p><strong>Revision #<?= editorial_h((string) $fromRev['revision_no']) ?></strong>
-                (<?= editorial_h(editorial_revision_type_label((string) $fromRev['revision_type'])) ?>)</p>
-            <p>Người tạo: <?= editorial_h((string) $fromRev['creator_name']) ?></p>
-            <p>Thời gian: <?= editorial_h(editorial_format_datetime((string) $fromRev['created_at'])) ?></p>
-        </div>
-        <div class="compare-side">
-            <h3>BẢN SAU</h3>
-            <p><strong>Revision #<?= editorial_h((string) $toRev['revision_no']) ?></strong>
-                (<?= editorial_h(editorial_revision_type_label((string) $toRev['revision_type'])) ?>)</p>
-            <p>Người tạo: <?= editorial_h((string) $toRev['creator_name']) ?></p>
-            <p>Thời gian: <?= editorial_h(editorial_format_datetime((string) $toRev['created_at'])) ?></p>
-        </div>
+    <div class="editorial-split-compare">
+        <article class="editorial-split-pane">
+            <header>
+                <h3><?= editorial_h(editorial_revision_label($fromRev)) ?></h3>
+                <p><strong>Revision #<?= editorial_h((string) $fromRev['revision_no']) ?></strong>
+                    (<?= editorial_h(editorial_revision_label($fromRev)) ?>)</p>
+                <p>Người tạo: <?= editorial_h((string) $fromRev['creator_name']) ?></p>
+                <p>Thời gian: <?= editorial_h(editorial_format_datetime((string) $fromRev['created_at'])) ?></p>
+            </header>
+            <iframe sandbox="" srcdoc="<?= editorial_h($fromPreview) ?>" title="<?= editorial_h(editorial_revision_label($fromRev)) ?>"></iframe>
+        </article>
+        <article class="editorial-split-pane">
+            <header>
+                <h3><?= editorial_h(editorial_revision_label($toRev)) ?></h3>
+                <p><strong>Revision #<?= editorial_h((string) $toRev['revision_no']) ?></strong>
+                    (<?= editorial_h(editorial_revision_label($toRev)) ?>)</p>
+                <p>Người tạo: <?= editorial_h((string) $toRev['creator_name']) ?></p>
+                <p>Thời gian: <?= editorial_h(editorial_format_datetime((string) $toRev['created_at'])) ?></p>
+            </header>
+            <iframe sandbox="" srcdoc="<?= editorial_h($toPreview) ?>" title="<?= editorial_h(editorial_revision_label($toRev)) ?>"></iframe>
+        </article>
     </div>
+
+    <details class="editor-info-panel" style="margin-bottom:16px;">
+        <summary><i class="fa-solid fa-eye"></i> So sánh hai bản hiển thị cạnh nhau</summary>
+        <div style="padding:14px;">
+            <p style="margin:0;color:#868e96;">Hai pane dùng snapshot đã xác thực và iframe sandbox, không cho script chạy trong trang so sánh.</p>
+        </div>
+    </details>
 
     <!-- Metadata changes -->
     <details class="editor-info-panel" style="margin-bottom:16px;" <?= !empty($changedMeta) ? 'open' : '' ?>>
@@ -192,13 +204,13 @@ editorial_layout_header([
     </details>
 
     <!-- Prose diff -->
-    <details class="editor-info-panel" style="margin-bottom:16px;" open>
-        <summary><i class="fa-solid fa-file-lines"></i> Thay đổi nội dung</summary>
+    <details class="editor-info-panel" style="margin-bottom:16px;">
+        <summary><i class="fa-solid fa-file-lines"></i> Diff văn bản</summary>
         <div style="padding:14px;">
             <?php if (!$proseChanged): ?>
                 <p style="color:#868e96;">Nội dung không thay đổi.</p>
             <?php else: ?>
-                <div style="border:1px solid #dee2e6; border-radius:6px; overflow:hidden; max-height:600px; overflow-y:auto;">
+                <div class="editorial-diff-lines">
                     <?php foreach ($proseDiff as $line): ?>
                         <div class="diff-line-<?= editorial_h($line['type']) ?>"><?= editorial_h($line['line']) ?></div>
                     <?php endforeach; ?>

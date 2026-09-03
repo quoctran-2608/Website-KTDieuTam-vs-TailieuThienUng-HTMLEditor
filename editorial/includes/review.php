@@ -38,9 +38,13 @@ function editorial_check_draft_revision_sync(string $articleId, string $userId):
     if (!$revision) {
         return ['ok' => false, 'message' => 'Không tìm thấy chi tiết phiên bản hiện tại.'];
     }
+    if (($revision['revision_type'] ?? '') !== 'editorial'
+        || !in_array((string) ($revision['milestone_key'] ?? ''), ['stage1', 'stage2'], true)) {
+        return ['ok' => false, 'message' => 'Hãy hoàn tất Chặng 1 hoặc Chặng 2 trước khi gửi duyệt.'];
+    }
 
     if ($draftHash !== $revision['content_hash'] || (int)$draft['version'] !== (int)$revision['source_draft_version']) {
-        return ['ok' => false, 'message' => 'Bản nháp đã thay đổi sau phiên bản gần nhất. Hãy tạo phiên bản mới trước khi gửi duyệt.'];
+        return ['ok' => false, 'message' => 'Bản nháp đã thay đổi sau phiên bản đã chốt. Hãy hoàn tất lại Chặng 1 hoặc Chặng 2 trước khi gửi duyệt.'];
     }
 
     return ['ok' => true, 'revision' => $revision, 'draft' => $draft];
@@ -111,7 +115,9 @@ function editorial_send_for_review(string $articleId, string $userId, string $lo
         }
 
         $revision = editorial_get_revision($state['current_revision_id']);
-        if (!$revision || $revision['revision_type'] !== 'editorial' || $revision['assignment_id'] !== $assignment['id']) {
+        if (!$revision || $revision['revision_type'] !== 'editorial'
+            || !in_array((string) ($revision['milestone_key'] ?? ''), ['stage1', 'stage2'], true)
+            || $revision['assignment_id'] !== $assignment['id']) {
             return ['ok' => false, 'message' => 'Phiên bản không hợp lệ để gửi duyệt.'];
         }
 
@@ -127,7 +133,7 @@ function editorial_send_for_review(string $articleId, string $userId, string $lo
         }
 
         if ($draftHash !== $revision['content_hash'] || (int)$draft['version'] !== (int)$revision['source_draft_version']) {
-            return ['ok' => false, 'message' => 'Bản nháp đã thay đổi sau phiên bản gần nhất. Hãy tạo phiên bản mới trước khi gửi duyệt.'];
+            return ['ok' => false, 'message' => 'Bản nháp đã thay đổi sau phiên bản đã chốt. Hãy hoàn tất lại Chặng 1 hoặc Chặng 2 trước khi gửi duyệt.'];
         }
 
         $now = date('c');
@@ -207,7 +213,9 @@ function editorial_approve_review(string $articleId, string $adminUserId): array
         }
 
         $revision = editorial_get_revision($state['review_revision_id']);
-        if (!$revision || $revision['revision_type'] !== 'editorial' || $revision['article_id'] !== $articleId) {
+        if (!$revision || $revision['revision_type'] !== 'editorial'
+            || !in_array((string) ($revision['milestone_key'] ?? ''), ['stage1', 'stage2'], true)
+            || $revision['article_id'] !== $articleId) {
             return ['ok' => false, 'message' => 'Phiên bản duyệt không hợp lệ.'];
         }
 

@@ -39,7 +39,7 @@ if (editorial_is_post()) {
         }
 
         $returnParams = [];
-        foreach (['q', 'section', 'topic_lv1', 'assignment', 'page'] as $key) {
+        foreach (['q', 'section', 'library_kind_key', 'topic_lv1_key', 'topic_lv2_key', 'topic_lv3_key', 'assignment', 'page'] as $key) {
             $val = trim((string) ($_POST[$key] ?? $_GET[$key] ?? ''));
             if ($val !== '') $returnParams[$key] = $val;
         }
@@ -75,7 +75,7 @@ if (editorial_is_post()) {
 
     // PRG: rebuild current filter URL and redirect
     $returnParams = [];
-    foreach (['q', 'section', 'topic_lv1', 'assignment', 'page'] as $key) {
+    foreach (['q', 'section', 'library_kind_key', 'topic_lv1_key', 'topic_lv2_key', 'topic_lv3_key', 'assignment', 'page'] as $key) {
         $val = trim((string) ($_POST[$key] ?? ''));
         if ($val !== '') $returnParams[$key] = $val;
     }
@@ -88,10 +88,10 @@ if (editorial_is_post()) {
 
 // ─── Filters ────────────────────────────────────────────────────
 
-$q = trim((string) ($_GET['q'] ?? ''));
-$section = trim((string) ($_GET['section'] ?? ''));
-$topicLv1 = trim((string) ($_GET['topic_lv1'] ?? ''));
-$assignment = trim((string) ($_GET['assignment'] ?? ''));
+$filters = editorial_taxonomy_filter_params($_GET);
+$q = $filters['q'];
+$section = $filters['section'];
+$assignment = $filters['assignment'];
 $page = max(1, (int) ($_GET['page'] ?? 1));
 
 // Load states for assignment filter — need all assigned article IDs
@@ -103,14 +103,10 @@ foreach ($stateRows as $row) {
 }
 
 // Filter and paginate
-$result = editorial_filter_articles([
-    'q' => $q,
-    'section' => $section,
-    'topic_lv1' => $topicLv1,
-    'assignment' => $assignment,
+$result = editorial_filter_articles(array_merge($filters, [
     'page' => $page,
     'per_page' => 30,
-], $allStates, $currentUserId);
+]), $allStates, $currentUserId);
 
 $items = $result['items'];
 $total = $result['total'];
@@ -135,11 +131,8 @@ $activeUsers = $isAdmin ? editorial_list_users() : [];
 $activeUsers = array_filter($activeUsers, fn($u) => !empty($u['is_active']));
 
 // Build filter query string helper
-$filterParams = [];
-if ($q !== '') $filterParams['q'] = $q;
-if ($section !== '') $filterParams['section'] = $section;
-if ($topicLv1 !== '') $filterParams['topic_lv1'] = $topicLv1;
-if ($assignment !== '') $filterParams['assignment'] = $assignment;
+$filterParams = array_filter($filters, static fn(string $value): bool => $value !== '');
+$sidebarTreeHtml = editorial_render_taxonomy_tree($filters, 'articles.php');
 
 // ─── Render ─────────────────────────────────────────────────────
 
@@ -147,6 +140,8 @@ editorial_layout_header([
     'title' => 'Bài viết',
     'active' => 'articles',
     'description' => 'Danh sách bài viết — nhận biên tập bài chưa có người phụ trách.',
+    'sidebar_extra_html' => $sidebarTreeHtml,
+    'sidebar_note' => 'Cây phân loại chỉ đọc',
 ]);
 ?>
 
@@ -167,6 +162,10 @@ editorial_layout_header([
                     </option>
                 <?php endforeach; ?>
             </select>
+            <input type="hidden" name="library_kind_key" value="<?= editorial_h($filters['library_kind_key']) ?>">
+            <input type="hidden" name="topic_lv1_key" value="<?= editorial_h($filters['topic_lv1_key']) ?>">
+            <input type="hidden" name="topic_lv2_key" value="<?= editorial_h($filters['topic_lv2_key']) ?>">
+            <input type="hidden" name="topic_lv3_key" value="<?= editorial_h($filters['topic_lv3_key']) ?>">
 
             <select name="assignment" class="editorial-filter-select">
                 <option value="" <?= $assignment === '' ? 'selected' : '' ?>>Tất cả trạng thái</option>
