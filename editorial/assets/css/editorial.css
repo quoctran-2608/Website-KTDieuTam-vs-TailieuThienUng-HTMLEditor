@@ -389,15 +389,37 @@
 .editor-action-bar {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    align-items: center;
-    padding: 10px 0;
-    margin-bottom: 12px;
+    gap: 12px 18px;
+    align-items: flex-start;
+    padding: 12px 0;
+    margin-bottom: 0;
     border-bottom: 1px solid #dee2e6;
     position: sticky;
     top: 0;
     background: #fff;
     z-index: 10;
+}
+.editorial-action-primary,
+.editorial-action-utilities {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px;
+}
+.editorial-action-primary { flex: 1 1 520px; }
+.editorial-action-utilities {
+    margin-left: auto;
+    align-items: center;
+}
+.editorial-action-group {
+    display: grid;
+    gap: 5px;
+    justify-items: start;
+}
+.editorial-action-group small {
+    color: #868e96;
+    font-size: 0.74rem;
+    line-height: 1.25;
 }
 .editorial-save-btn {
     display: inline-flex;
@@ -425,11 +447,14 @@
     color: #495057;
     font-size: 0.85rem;
     cursor: pointer;
-    margin-left: auto;
+    margin-left: 0;
     transition: background 0.15s;
 }
 .editorial-exit-btn:hover { background: #e9ecef; }
 .editorial-fullscreen-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     padding: 9px 12px;
     border: 1px solid #dee2e6;
     border-radius: 8px;
@@ -842,32 +867,22 @@ body.editor-fullscreen-active .editor-fs-status button {
 .editorial-stage2-btn:hover { background: #6a1b9a; color: #fff; }
 .editorial-stage-helper {
     color: #868e96;
-    font-size: 0.76rem;
-    margin-left: -4px;
 }
 .editorial-workflow-help {
-    margin-top: 14px;
-    padding: 12px 14px;
-    border: 1px solid #dbeafe;
-    border-radius: 8px;
-    background: #f8fbff;
-    color: #35506e;
-    font-size: 0.86rem;
-    line-height: 1.55;
-}
-.editorial-workflow-help span {
-    display: block;
-    margin-top: 3px;
+    margin: 12px 0 16px;
     color: #5f7184;
+    font-size: 0.82rem;
+    line-height: 1.45;
 }
 .editorial-final-decision {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 14px 20px;
+    gap: 14px 18px;
     margin-top: 16px;
-    padding: 16px;
+    padding: 16px 18px;
     border: 1px solid #bfdbfe;
+    border-left: 4px solid #1565c0;
     border-radius: 10px;
     background: #f8fbff;
 }
@@ -889,11 +904,32 @@ body.editor-fullscreen-active .editor-fs-status button {
     color: #64748b;
     font-size: 0.8rem;
 }
+.editorial-final-decision-meta { min-width: 220px; }
+.editorial-final-compare {
+    display: flex;
+    flex: 1 1 300px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+.editorial-final-compare > span {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
 .editorial-final-decision-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-left: auto;
+}
+.editorial-final-decision-restricted {
+    max-width: 260px;
+    margin: 0;
+    color: #64748b;
+    font-size: 0.78rem;
+    line-height: 1.35;
 }
 .editorial-direct-publish-btn {
     display: inline-flex;
@@ -920,7 +956,7 @@ body.editor-fullscreen-active .editor-fs-status button {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 14px;
+    margin-top: 0;
 }
 .editorial-milestone-links a {
     display: inline-flex;
@@ -1001,7 +1037,8 @@ body.editor-fullscreen-active .editor-fs-status button {
     .editorial-split-pane iframe { min-height: 520px; }
 }
 @media (max-width: 640px) {
-    .editorial-stage-helper { width: 100%; margin: -5px 0 2px; }
     .editorial-bottom-actions { flex-wrap: wrap; }
-    .editorial-final-decision-actions { margin-left: 0; }
+    .editorial-action-utilities { width: 100%; margin-left: 0; }
+    .editorial-final-decision-actions { width: 100%; margin-left: 0; }
+    .editorial-final-decision-actions > button { flex: 1 1 auto; justify-content: center; }
 }

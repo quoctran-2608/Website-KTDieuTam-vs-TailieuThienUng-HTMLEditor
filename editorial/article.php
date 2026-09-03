@@ -588,8 +588,8 @@ editorial_layout_header([
                 <span style="color:#868e96;">Chưa lưu nháp</span>
             <?php endif; ?>
             &nbsp;
-            <a href="<?= editorial_h($publicUrl) ?>" target="_blank" rel="noopener" style="font-size:0.85rem;">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem trên website
+            <a href="<?= editorial_h($publicUrl) ?>" target="_blank" rel="noopener" style="font-size:0.85rem;" title="Chỉ hiển thị nội dung đã Publish, không hiển thị bản nháp hoặc milestone chưa xuất bản.">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem bản đang xuất bản
             </a>
         </p>
     </div>
@@ -611,34 +611,91 @@ editorial_layout_header([
 
         <!-- Action bar -->
         <div class="editor-action-bar">
-            <button type="submit" class="editorial-save-btn">
-                <i class="fa-solid fa-floppy-disk"></i>
-                <span>Lưu nháp</span>
-            </button>
+            <div class="editorial-action-primary">
+                <div class="editorial-action-group">
+                    <button type="submit" class="editorial-save-btn">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        <span>Lưu nháp</span>
+                    </button>
+                    <small>Lưu công việc hiện tại</small>
+                </div>
 
-            <?php if ($draftVersion > 0): ?>
-            <button type="submit" form="stage1MilestoneForm" class="editorial-revision-btn editorial-stage1-btn" title="Lưu một bản cố định sau khi đã làm sạch và chuẩn hóa HTML/trình bày." onclick="return confirm('Lưu Chặng 1 từ bản nháp đã lưu?');">
-                <i class="fa-solid fa-code-branch"></i>
-                <span>Hoàn tất Chặng 1</span>
-            </button>
-            <span class="editorial-stage-helper">Chuẩn hóa trình bày</span>
-            <button type="submit" form="stage2MilestoneForm" class="editorial-revision-btn editorial-stage2-btn" title="Tùy chọn: lưu bản cố định sau khi đã research, cập nhật và biên tập nội dung." onclick="return confirm('Lưu Chặng 2 từ bản nháp đã lưu?');">
-                <i class="fa-solid fa-pen-to-square"></i>
-                <span>Hoàn tất Chặng 2 (nếu cần)</span>
-            </button>
-            <span class="editorial-stage-helper">Biên tập nội dung (nếu cần)</span>
-            <?php endif; ?>
+                <?php if ($draftVersion > 0): ?>
+                    <div class="editorial-action-group">
+                        <button type="submit" form="stage1MilestoneForm" class="editorial-revision-btn editorial-stage1-btn" title="Lưu một bản cố định sau khi đã làm sạch và chuẩn hóa HTML/trình bày." onclick="return confirm('Lưu Chặng 1 từ bản nháp đã lưu?');">
+                            <i class="fa-solid fa-code-branch"></i>
+                            <span>Hoàn tất Chặng 1</span>
+                        </button>
+                        <small class="editorial-stage-helper">Chuẩn hóa trình bày</small>
+                    </div>
+                    <div class="editorial-action-group">
+                        <button type="submit" form="stage2MilestoneForm" class="editorial-revision-btn editorial-stage2-btn" title="Tùy chọn: lưu bản cố định sau khi đã research, cập nhật và biên tập nội dung." onclick="return confirm('Lưu Chặng 2 từ bản nháp đã lưu?');">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span>Hoàn tất Chặng 2</span>
+                        </button>
+                        <small class="editorial-stage-helper">Biên tập nội dung · nếu cần</small>
+                    </div>
+                <?php endif; ?>
+            </div>
 
-            <button type="button" class="editorial-fullscreen-btn" id="editorFullscreenToggle" title="Toàn màn hình (Ctrl+Shift+F)">
-                <i class="fa-solid fa-expand"></i>
-            </button>
+            <div class="editorial-action-utilities">
+                <button type="button" class="editorial-fullscreen-btn" id="editorFullscreenToggle" title="Toàn màn hình (Ctrl+Shift+F)">
+                    <i class="fa-solid fa-expand"></i>
+                    <span>Toàn màn hình</span>
+                </button>
 
-            <span class="editor-shortcut-hint">Ctrl+S lưu nháp · Ctrl+Shift+F toàn màn hình</span>
+                <button type="submit" form="exitWorkspaceForm" class="editorial-exit-btn" onclick="return confirm('Thoát workspace? Nội dung chưa lưu sẽ mất.');">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Thoát</span>
+                </button>
+            </div>
+        </div>
 
-            <button type="submit" form="exitWorkspaceForm" class="editorial-exit-btn" onclick="return confirm('Thoát workspace? Nội dung chưa lưu sẽ mất.');">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Thoát workspace</span>
-            </button>
+        <?php if ($currentMilestone !== null): ?>
+            <section class="editorial-final-decision">
+                <div class="editorial-final-decision-meta">
+                    <p class="editorial-final-decision-kicker">Bản cuối đã chốt</p>
+                    <strong><?= editorial_h(editorial_revision_label($currentMilestone)) ?></strong>
+                    <span>Revision #<?= editorial_h((string) $currentMilestone['revision_no']) ?></span>
+                </div>
+
+                <?php if ($assignmentBaseline || $assignmentMilestones['stage1'] || $assignmentMilestones['stage2']): ?>
+                    <div class="editorial-final-compare">
+                        <span>So sánh:</span>
+                        <div class="editorial-milestone-links">
+                            <?php if ($assignmentBaseline && $assignmentMilestones['stage1']): ?>
+                                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage1']['id']))) ?>">Bản gốc ↔ Chặng 1</a>
+                            <?php endif; ?>
+                            <?php if ($assignmentBaseline && $assignmentMilestones['stage2']): ?>
+                                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>">Bản gốc ↔ Chặng 2</a>
+                            <?php endif; ?>
+                            <?php if ($assignmentMilestones['stage1'] && $assignmentMilestones['stage2']): ?>
+                                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentMilestones['stage1']['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>">Chặng 1 ↔ Chặng 2</a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <div class="editorial-final-decision-actions">
+                    <?php if ($canPublishDirect): ?>
+                        <button type="submit" form="directPublishForm" data-direct-publish="1" class="editorial-direct-publish-btn">
+                            <i class="fa-solid fa-rocket"></i> Publish trực tiếp
+                        </button>
+                    <?php elseif (($currentUser['role'] ?? '') !== 'editor'): ?>
+                        <span class="editorial-final-decision-restricted">Publish trực tiếp từ Workspace dành cho tài khoản Editor.</span>
+                    <?php endif; ?>
+                    <button type="submit" form="sendReviewForm" class="editorial-review-submit-btn" onclick="return confirm('Gửi phiên bản đã chốt để duyệt? Bạn sẽ không thể chỉnh sửa cho đến khi reviewer phản hồi.');">
+                        <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
+                    </button>
+                </div>
+                <p class="editorial-final-decision-help">
+                    Hoàn tất Chặng 1/2 chỉ tạo bản cố định để đối chiếu. Website chỉ thay đổi sau khi Publish.
+                </p>
+            </section>
+        <?php endif; ?>
+
+        <div class="editorial-workflow-help">
+            <strong>Quy trình:</strong> Lưu nháp → Hoàn tất Chặng 1 → nếu cần Hoàn tất Chặng 2 → Publish trực tiếp hoặc Gửi Admin duyệt.
         </div>
 
         <div class="editor-fullscreen-backdrop" id="editorFullscreenBackdrop"></div>
@@ -743,7 +800,7 @@ editorial_layout_header([
                 <i class="fa-solid fa-code-branch"></i> Hoàn tất Chặng 1
             </button>
             <button type="submit" form="stage2MilestoneForm" class="editorial-revision-btn editorial-stage2-btn" onclick="return confirm('Lưu Chặng 2 từ bản nháp đã lưu?');">
-                <i class="fa-solid fa-pen-to-square"></i> Hoàn tất Chặng 2 (nếu cần)
+                <i class="fa-solid fa-pen-to-square"></i> Hoàn tất Chặng 2
             </button>
             <?php endif; ?>
             <button type="submit" form="exitWorkspaceForm" class="editorial-exit-btn" onclick="return confirm('Thoát workspace?');">
@@ -751,35 +808,6 @@ editorial_layout_header([
             </button>
         </div>
     </form>
-
-    <?php if ($currentMilestone !== null): ?>
-        <section class="editorial-final-decision">
-            <div>
-                <p class="editorial-final-decision-kicker">Bản cuối đã chốt</p>
-                <strong><?= editorial_h(editorial_revision_label($currentMilestone)) ?></strong>
-                <span>Revision #<?= editorial_h((string) $currentMilestone['revision_no']) ?></span>
-            </div>
-            <div class="editorial-final-decision-actions">
-                <?php if ($canPublishDirect): ?>
-                    <button type="submit" form="directPublishForm" data-direct-publish="1" class="editorial-direct-publish-btn">
-                        <i class="fa-solid fa-rocket"></i> Publish trực tiếp
-                    </button>
-                <?php endif; ?>
-                <button type="submit" form="sendReviewForm" class="editorial-review-submit-btn" onclick="return confirm('Gửi phiên bản đã chốt để duyệt? Bạn sẽ không thể chỉnh sửa cho đến khi reviewer phản hồi.');">
-                    <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
-                </button>
-            </div>
-            <p class="editorial-final-decision-help">
-                Publish trực tiếp khi bạn tự tin bài đã hoàn tất. Bài khó hoặc chưa chắc chắn nên gửi Admin kiểm tra trước.
-            </p>
-        </section>
-    <?php endif; ?>
-
-    <div class="editorial-workflow-help">
-        <strong>Quy trình:</strong> 1. Lưu nháp · 2. Hoàn tất Chặng 1 — Chuẩn hóa trình bày ·
-        3. Nếu cần, hoàn tất Chặng 2 — Biên tập nội dung · 4. Publish trực tiếp hoặc Gửi Admin duyệt.
-        <span>Bài đơn giản có thể Publish trực tiếp. Bài khó hoặc chưa chắc chắn nên gửi Admin duyệt.</span>
-    </div>
 
     <form id="stage1MilestoneForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
         <?= editorial_csrf_input() ?>
@@ -815,19 +843,6 @@ editorial_layout_header([
         <input type="hidden" name="lock_token" value="<?= editorial_h($lockToken) ?>">
     </form>
 
-    <?php if ($assignmentBaseline || $assignmentMilestones['stage1'] || $assignmentMilestones['stage2']): ?>
-        <div class="editorial-milestone-links">
-            <?php if ($assignmentBaseline && $assignmentMilestones['stage1']): ?>
-                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage1']['id']))) ?>">So với bản gốc</a>
-            <?php endif; ?>
-            <?php if ($assignmentBaseline && $assignmentMilestones['stage2']): ?>
-                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>">Bản gốc ↔ Chặng 2</a>
-            <?php endif; ?>
-            <?php if ($assignmentMilestones['stage1'] && $assignmentMilestones['stage2']): ?>
-                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentMilestones['stage1']['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>">So Chặng 1 với Chặng 2</a>
-            <?php endif; ?>
-        </div>
-    <?php endif; ?>
 </section>
 
 <?php editorial_layout_footer(); ?>
