@@ -818,13 +818,13 @@ editorial_layout_header([
     <?php if ($assignmentBaseline || $assignmentMilestones['stage1'] || $assignmentMilestones['stage2']): ?>
         <div class="editorial-milestone-links">
             <?php if ($assignmentBaseline && $assignmentMilestones['stage1']): ?>
-                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage1']['id'])) ?>">So với bản gốc</a>
+                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage1']['id']))) ?>">So với bản gốc</a>
             <?php endif; ?>
             <?php if ($assignmentBaseline && $assignmentMilestones['stage2']): ?>
-                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id'])) ?>">Bản gốc ↔ Chặng 2</a>
+                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>">Bản gốc ↔ Chặng 2</a>
             <?php endif; ?>
             <?php if ($assignmentMilestones['stage1'] && $assignmentMilestones['stage2']): ?>
-                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentMilestones['stage1']['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id'])) ?>">So Chặng 1 với Chặng 2</a>
+                <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentMilestones['stage1']['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>">So Chặng 1 với Chặng 2</a>
             <?php endif; ?>
         </div>
     <?php endif; ?>
