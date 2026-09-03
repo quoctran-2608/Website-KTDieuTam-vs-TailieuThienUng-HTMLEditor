@@ -1,3 +1,6 @@
+/* Public article/demo runtime loads the canonical Editorial Design System. */
+@import url("editorial-design-system.css");
+
 .catalog-hero {
   padding: 26px 0 10px;
   background:

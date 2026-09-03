@@ -141,6 +141,8 @@ function editorial_extract_public_stylesheet_links(string $liveHtml): string
   }
 
   $links = [];
+  $shellLoadsEdsViaContentHub = false;
+  $hasExplicitCanonicalEds = false;
   if ($headHtml !== '' && preg_match_all('/<link\b[^>]*>/is', $headHtml, $linkMatches)) {
     foreach ($linkMatches[0] as $tag) {
       $rel = editorial_preview_extract_attribute((string) $tag, 'rel');
@@ -152,21 +154,45 @@ function editorial_extract_public_stylesheet_links(string $liveHtml): string
         continue;
       }
       $media = editorial_preview_extract_attribute((string) $tag, 'media');
-      $links[] = '<link rel="stylesheet" href="' . htmlspecialchars($href, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"'
+      $hrefPath = strtolower((string) parse_url($href, PHP_URL_PATH));
+      $links[] = [
+        'href_path' => $hrefPath,
+        'tag' => '<link rel="stylesheet" href="' . htmlspecialchars($href, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"'
         . ($media !== '' ? ' media="' . htmlspecialchars($media, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"' : '')
-        . '>';
+        . '>',
+      ];
+      if (preg_match('/(?:^|\/)content-hub\.css$/', $hrefPath)) {
+        $shellLoadsEdsViaContentHub = true;
+      }
+      if (preg_match('/(?:^|\/)editorial-design-system\.css$/', $hrefPath)) {
+        $hasExplicitCanonicalEds = true;
+      }
     }
   }
 
   // A readable fail-safe when a malformed legacy article has no extractable head.
   if ($links === []) {
     $links = [
-      '<link rel="stylesheet" href="assets/css/styles.css">',
-      '<link rel="stylesheet" href="assets/css/content-hub.css">',
+      ['href_path' => 'assets/css/styles.css', 'tag' => '<link rel="stylesheet" href="assets/css/styles.css">'],
+      ['href_path' => 'assets/css/content-hub.css', 'tag' => '<link rel="stylesheet" href="assets/css/content-hub.css">'],
     ];
+    $shellLoadsEdsViaContentHub = true;
   }
 
-  return implode("\n", $links);
+  // content-hub.css imports the canonical EDS. Articles outside that shell
+  // still get the same content contract without duplicating the bundle.
+  if (!$shellLoadsEdsViaContentHub && !$hasExplicitCanonicalEds) {
+    $links[] = [
+      'href_path' => 'assets/css/editorial-design-system.css',
+      'tag' => '<link rel="stylesheet" href="assets/css/editorial-design-system.css">',
+    ];
+  } elseif ($shellLoadsEdsViaContentHub) {
+    $links = array_values(array_filter($links, static function (array $link): bool {
+      return !preg_match('/(?:^|\/)editorial-design-system\.css$/', (string) $link['href_path']);
+    }));
+  }
+
+  return implode("\n", array_column($links, 'tag'));
 }
 
 /**

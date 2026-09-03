@@ -4,7 +4,6 @@ declare(strict_types=1);
 require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ . '/includes/workspace.php';
 require_once __DIR__ . '/includes/revision.php';
-require_once __DIR__ . '/includes/layout.php';
 
 editorial_require_auth();
 
@@ -88,159 +87,60 @@ $toPreview = editorial_build_public_article_preview_document(
     $siteBaseUrl
 );
 
-// ─── Enrich revision with creator name ───────────────────────────
-
-$fromCreator = editorial_find_user_by_id((string) $fromRev['created_by']);
-$fromRev['creator_name'] = $fromCreator ? (string) ($fromCreator['display_name'] ?? $fromCreator['username']) : $fromRev['created_by'];
-
-$toCreator = editorial_find_user_by_id((string) $toRev['created_by']);
-$toRev['creator_name'] = $toCreator ? (string) ($toCreator['display_name'] ?? $toCreator['username']) : $toRev['created_by'];
-
-// ─── Field-level metadata compare ────────────────────────────────
-
-$metaFields = [
-    'title' => 'Tiêu đề',
-    'excerpt' => 'Mô tả',
-    'publish_date' => 'Ngày đăng',
-    'modified_date' => 'Ngày sửa',
-    'featured_image' => 'Ảnh đại diện',
-    'tags_text' => 'Tags',
-    'section_label' => 'Mục',
-    'library_kind_label' => 'Loại thư viện',
-    'topic_lv1_label' => 'Chủ đề cấp 1',
-    'topic_lv2_label' => 'Chủ đề cấp 2',
-    'topic_lv3_label' => 'Chủ đề cấp 3',
-];
-
-$changedMeta = [];
-foreach ($metaFields as $field => $label) {
-    $oldVal = (string) ($fromPayload[$field] ?? '');
-    $newVal = (string) ($toPayload[$field] ?? '');
-    if ($oldVal !== $newVal) {
-        $changedMeta[] = ['label' => $label, 'old' => $oldVal, 'new' => $newVal];
-    }
-}
-
-// ─── Prose diff ──────────────────────────────────────────────────
-
-$oldProse = strip_tags((string) ($fromPayload['prose_html'] ?? ''));
-$newProse = strip_tags((string) ($toPayload['prose_html'] ?? ''));
-$proseDiff = [];
-$proseChanged = ($oldProse !== $newProse);
-if ($proseChanged) {
-    $proseDiff = editorial_simple_diff($oldProse, $newProse);
-}
-
-// ─── Render ──────────────────────────────────────────────────────
-
-editorial_layout_header([
-    'title' => 'So sánh phiên bản',
-    'active' => 'my-work',
-    'description' => $article['title'],
-]);
+// ─── Standalone visual comparison ─────────────────────────────────
 ?>
-
-<section class="admin-panel">
-    <div class="panel-head">
-        <h2>So sánh phiên bản — <?= editorial_h($article['title']) ?></h2>
-        <p>
-            <a href="<?= editorial_h(editorial_url('revisions.php?id=' . urlencode($articleId))) ?>">
-                <i class="fa-solid fa-arrow-left"></i> Quay lại lịch sử phiên bản
-            </a>
-        </p>
-    </div>
-
-    <div class="editorial-split-compare">
-        <article class="editorial-split-pane">
-            <header>
-                <h3><?= editorial_h(editorial_revision_label($fromRev)) ?></h3>
-                <p><strong>Revision #<?= editorial_h((string) $fromRev['revision_no']) ?></strong>
-                    (<?= editorial_h(editorial_revision_label($fromRev)) ?>)</p>
-                <p>Người tạo: <?= editorial_h((string) $fromRev['creator_name']) ?></p>
-                <p>Thời gian: <?= editorial_h(editorial_format_datetime((string) $fromRev['created_at'])) ?></p>
-            </header>
-            <iframe sandbox="" srcdoc="<?= editorial_h($fromPreview) ?>" title="<?= editorial_h(editorial_revision_label($fromRev)) ?>"></iframe>
-        </article>
-        <article class="editorial-split-pane">
-            <header>
-                <h3><?= editorial_h(editorial_revision_label($toRev)) ?></h3>
-                <p><strong>Revision #<?= editorial_h((string) $toRev['revision_no']) ?></strong>
-                    (<?= editorial_h(editorial_revision_label($toRev)) ?>)</p>
-                <p>Người tạo: <?= editorial_h((string) $toRev['creator_name']) ?></p>
-                <p>Thời gian: <?= editorial_h(editorial_format_datetime((string) $toRev['created_at'])) ?></p>
-            </header>
-            <iframe sandbox="" srcdoc="<?= editorial_h($toPreview) ?>" title="<?= editorial_h(editorial_revision_label($toRev)) ?>"></iframe>
-        </article>
-    </div>
-
-    <details class="editor-info-panel" style="margin-bottom:16px;">
-        <summary><i class="fa-solid fa-eye"></i> So sánh hai bản hiển thị cạnh nhau</summary>
-        <div style="padding:14px;">
-            <p style="margin:0;color:#868e96;">Hai pane dùng snapshot đã xác thực và iframe sandbox, không cho script chạy trong trang so sánh.</p>
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>So sánh phiên bản | <?= editorial_h($article['title']) ?></title>
+    <style>
+        :root { color-scheme: light; }
+        * { box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+        body { background: #edf2f7; color: #172038; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+        .compare-standalone { display: grid; grid-template-rows: auto minmax(0, 1fr); width: 100vw; height: 100vh; }
+        .compare-standalone-note { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 42px; padding: 8px 14px; background: #172038; color: #dbe7f2; font-size: 0.78rem; }
+        .compare-standalone-note strong { color: #fff; }
+        .compare-standalone-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: 0; }
+        .compare-pane { display: grid; grid-template-rows: auto minmax(0, 1fr); min-width: 0; min-height: 0; background: #fff; border-right: 1px solid #cbd5e1; }
+        .compare-pane:last-child { border-right: 0; }
+        .compare-pane header { position: sticky; top: 0; z-index: 1; padding: 11px 14px; border-bottom: 1px solid #dbe4ee; background: #f8fbff; }
+        .compare-pane h1 { margin: 0; color: #1e3a5f; font-size: 0.92rem; line-height: 1.25; }
+        .compare-pane p { margin: 3px 0 0; color: #64748b; font-size: 0.75rem; }
+        .compare-pane iframe { display: block; width: 100%; height: 100%; min-height: 0; border: 0; background: #fff; }
+        @media (max-width: 820px) {
+            html, body { overflow: auto; }
+            .compare-standalone { height: auto; min-height: 100vh; }
+            .compare-standalone-grid { grid-template-columns: 1fr; }
+            .compare-pane { min-height: 72vh; border-right: 0; border-bottom: 1px solid #cbd5e1; }
+            .compare-pane:last-child { border-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+    <main class="compare-standalone">
+        <div class="compare-standalone-note">
+            <span><strong>So sánh trực quan</strong> · Đóng tab để quay lại Workspace.</span>
+            <span><?= editorial_h($article['title']) ?></span>
         </div>
-    </details>
-
-    <!-- Metadata changes -->
-    <details class="editor-info-panel" style="margin-bottom:16px;" <?= !empty($changedMeta) ? 'open' : '' ?>>
-        <summary><i class="fa-solid fa-list-check"></i> Thay đổi metadata</summary>
-        <div style="padding:14px;">
-            <?php if (empty($changedMeta)): ?>
-                <p style="color:#868e96;">Không có thay đổi metadata.</p>
-            <?php else: ?>
-                <table class="admin-table" style="font-size:0.85rem;">
-                    <thead>
-                        <tr>
-                            <th>Trường</th>
-                            <th>Bản trước</th>
-                            <th>Bản sau</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($changedMeta as $change): ?>
-                            <tr>
-                                <td><strong><?= editorial_h($change['label']) ?></strong></td>
-                                <td class="meta-old"><?= editorial_h($change['old'] !== '' ? $change['old'] : '(trống)') ?></td>
-                                <td class="meta-new"><?= editorial_h($change['new'] !== '' ? $change['new'] : '(trống)') ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            <?php endif; ?>
+        <div class="compare-standalone-grid">
+            <section class="compare-pane">
+                <header>
+                    <h1><?= editorial_h(editorial_revision_label($fromRev)) ?></h1>
+                    <p>Revision #<?= editorial_h((string) $fromRev['revision_no']) ?></p>
+                </header>
+                <iframe sandbox="" srcdoc="<?= editorial_h($fromPreview) ?>" title="<?= editorial_h(editorial_revision_label($fromRev)) ?>"></iframe>
+            </section>
+            <section class="compare-pane">
+                <header>
+                    <h1><?= editorial_h(editorial_revision_label($toRev)) ?></h1>
+                    <p>Revision #<?= editorial_h((string) $toRev['revision_no']) ?></p>
+                </header>
+                <iframe sandbox="" srcdoc="<?= editorial_h($toPreview) ?>" title="<?= editorial_h(editorial_revision_label($toRev)) ?>"></iframe>
+            </section>
         </div>
-    </details>
-
-    <!-- Prose diff -->
-    <details class="editor-info-panel" style="margin-bottom:16px;">
-        <summary><i class="fa-solid fa-file-lines"></i> Diff văn bản</summary>
-        <div style="padding:14px;">
-            <?php if (!$proseChanged): ?>
-                <p style="color:#868e96;">Nội dung không thay đổi.</p>
-            <?php else: ?>
-                <div class="editorial-diff-lines">
-                    <?php foreach ($proseDiff as $line): ?>
-                        <div class="diff-line-<?= editorial_h($line['type']) ?>"><?= editorial_h($line['line']) ?></div>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
-        </div>
-    </details>
-
-    <!-- HTML source (collapsed) -->
-    <details class="editor-info-panel" style="margin-bottom:16px;">
-        <summary><i class="fa-solid fa-code"></i> HTML nguồn</summary>
-        <div style="padding:14px;">
-            <div style="display:flex; gap:16px;">
-                <div style="flex:1; overflow-x:auto;">
-                    <h4 style="font-size:0.85rem; color:#495057;">Bản trước</h4>
-                    <pre style="background:#f8f9fa; border:1px solid #dee2e6; border-radius:6px; padding:12px; font-size:0.8rem; white-space:pre-wrap; word-break:break-word; max-height:400px; overflow-y:auto;"><?= editorial_h((string) ($fromPayload['prose_html'] ?? '')) ?></pre>
-                </div>
-                <div style="flex:1; overflow-x:auto;">
-                    <h4 style="font-size:0.85rem; color:#495057;">Bản sau</h4>
-                    <pre style="background:#f8f9fa; border:1px solid #dee2e6; border-radius:6px; padding:12px; font-size:0.8rem; white-space:pre-wrap; word-break:break-word; max-height:400px; overflow-y:auto;"><?= editorial_h((string) ($toPayload['prose_html'] ?? '')) ?></pre>
-                </div>
-            </div>
-        </div>
-    </details>
-</section>
-
-<?php editorial_layout_footer(); ?>
+    </main>
+</body>
+</html>

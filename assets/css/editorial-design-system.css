@@ -1,0 +1,17 @@
+/* ==========================================================================
+   EDITORIAL DESIGN SYSTEM — CANONICAL ENTRY POINT
+
+   Consumers:
+   - TinyMCE
+   - Workspace Preview
+   - Split Compare
+   - Public article/demo runtime
+
+   Keep module order aligned with the Editorial content contract. Do not copy
+   module contents here; add future EDS modules to this single entry point.
+   ========================================================================== */
+
+@import url("editorial-content.css");
+@import url("editorial-structured-content.css");
+@import url("article-editorial-system.css");
+@import url("editorial-official-form-rhythm.css");

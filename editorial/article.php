@@ -535,10 +535,7 @@ $innerScript = <<<JS
       plugins: 'advlist autolink lists link image table code charmap preview searchreplace visualblocks wordcount paste',
       toolbar: 'code | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table link image | removeformat preview',
       content_css: [
-        siteBaseUrl + 'assets/css/editorial-content.css',
-        siteBaseUrl + 'assets/css/editorial-structured-content.css',
-        siteBaseUrl + 'assets/css/article-editorial-system.css',
-        siteBaseUrl + 'assets/css/editorial-official-form-rhythm.css',
+        siteBaseUrl + 'assets/css/editorial-design-system.css',
       ],
       body_class: 'ct-prose is-article mce-content-body',
       content_style: 'body { font-family: "Google Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 17.5px; line-height: 1.78; color: #33322C; padding: 18px 22px; -webkit-font-smoothing: antialiased; } img { max-width: 100%; height: auto; }',
@@ -683,7 +680,7 @@ editorial_layout_header([
                     <?php if ($assignmentMilestones['stage1']): ?>
                         <small class="editorial-stage-status">✓ Chặng 1 đã lưu · Revision #<?= editorial_h((string) $assignmentMilestones['stage1']['revision_no']) ?></small>
                         <?php if ($assignmentBaseline): ?>
-                            <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage1']['id']))) ?>">
+                            <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage1']['id']))) ?>" target="_blank" rel="noopener">
                                 <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
                             </a>
                         <?php endif; ?>
@@ -707,7 +704,7 @@ editorial_layout_header([
                     <?php if ($assignmentMilestones['stage2']): ?>
                         <small class="editorial-stage-status">✓ Chặng 2 đã lưu · Revision #<?= editorial_h((string) $assignmentMilestones['stage2']['revision_no']) ?></small>
                         <?php if ($assignmentBaseline): ?>
-                            <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>">
+                            <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>" target="_blank" rel="noopener">
                                 <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
                             </a>
                         <?php endif; ?>
@@ -862,7 +859,7 @@ editorial_layout_header([
                 </button>
             <?php endif; ?>
             <?php if ($assignmentBaseline && $assignmentMilestones['stage1']): ?>
-                <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage1']['id']))) ?>">
+                <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage1']['id']))) ?>" target="_blank" rel="noopener">
                     <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
                 </a>
             <?php endif; ?>
@@ -876,7 +873,7 @@ editorial_layout_header([
                 </button>
             <?php endif; ?>
             <?php if ($assignmentBaseline && $assignmentMilestones['stage2']): ?>
-                <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>">
+                <a class="editorial-compare-btn" href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $assignmentBaseline['id']) . '&to=' . urlencode((string) $assignmentMilestones['stage2']['id']))) ?>" target="_blank" rel="noopener">
                     <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
                 </a>
             <?php endif; ?>
