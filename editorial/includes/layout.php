@@ -73,6 +73,12 @@ function editorial_layout_header(array $options = []): void
             'href' => editorial_url('integrity.php'),
             'icon' => 'fa-solid fa-shield-halved',
         ];
+        $menu[] = [
+            'key' => 'handoff-settings',
+            'label' => 'Google Handoff',
+            'href' => editorial_url('google-handoff-settings.php'),
+            'icon' => 'fa-brands fa-google-drive',
+        ];
     }
     ?>
     <!DOCTYPE html>

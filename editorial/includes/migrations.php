@@ -270,5 +270,15 @@ function editorial_migration_list(): array
                 )
             WHERE first_saved_at IS NULL OR last_saved_at IS NULL;
         ',
+        9 => '
+            -- Phase 12A: server-side Google Handoff configuration.
+            CREATE TABLE IF NOT EXISTS editorial_settings (
+                setting_key   TEXT PRIMARY KEY,
+                setting_value TEXT,
+                is_secret     INTEGER NOT NULL DEFAULT 0,
+                updated_by    TEXT,
+                updated_at    TEXT NOT NULL
+            );
+        ',
     ];
 }

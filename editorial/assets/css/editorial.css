@@ -997,6 +997,58 @@ body.editor-fullscreen-active .editor-fs-status button {
 .editorial-contributor-history {
     color: #526579;
 }
+
+/* ─── Phase 12A: Google Handoff settings ───────────────────────── */
+.editorial-handoff-status {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 16px 18px;
+    border: 1px solid #dbe4ee;
+    border-left: 4px solid #64748b;
+    border-radius: 10px;
+    background: #f8fbff;
+}
+.editorial-handoff-status.is-verified { border-left-color: #16866f; background: #f2fcf8; }
+.editorial-handoff-status.is-failed { border-left-color: #c0392b; background: #fff7f5; }
+.editorial-handoff-status.is-unverified { border-left-color: #c98712; background: #fffbef; }
+.editorial-handoff-status p { margin: 4px 0 0; color: #526579; font-size: 0.86rem; }
+.editorial-handoff-kicker {
+    margin: 0 !important;
+    color: #64748b !important;
+    font-size: 0.72rem !important;
+    font-weight: 800;
+    letter-spacing: .05em;
+}
+.editorial-handoff-status-meta { display: grid; gap: 5px; color: #526579; font-size: .8rem; }
+.editorial-handoff-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 20px;
+    padding: 4px 0;
+}
+.editorial-handoff-grid .form-field { margin: 0; }
+.editorial-handoff-grid small,
+.editorial-handoff-verify-form small { display: block; margin-top: 6px; color: #64748b; font-size: .8rem; line-height: 1.4; }
+.editorial-mono-input { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.editorial-handoff-actions { margin: 4px 0 22px; }
+.editorial-handoff-verify-form { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.editorial-handoff-header-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.editorial-handoff-header-list span {
+    padding: 6px 9px;
+    border: 1px solid #dbe4ee;
+    border-radius: 999px;
+    background: #f8fafc;
+    color: #475569;
+    font-size: .8rem;
+}
+@media (max-width: 720px) {
+    .editorial-handoff-grid { grid-template-columns: 1fr; }
+    .editorial-handoff-status { align-items: flex-start; }
+}
 .editorial-workspace-preview-frame {
     display: block;
     width: 100%;
