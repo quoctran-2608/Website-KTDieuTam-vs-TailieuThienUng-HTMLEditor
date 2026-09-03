@@ -752,7 +752,7 @@ function editorial_get_assignment_milestones(string $articleId, string $assignme
     $stmt->execute([':article_id' => $articleId, ':assignment_id' => $assignmentId]);
     foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $revision) {
         $key = (string) ($revision['milestone_key'] ?? '');
-        if (isset($result[$key]) && $result[$key] === null) {
+        if (array_key_exists($key, $result) && $result[$key] === null) {
             $result[$key] = $revision;
         }
     }

@@ -333,6 +333,21 @@ $saveStatusText = $hasSavedDraft
 // ─── Public article URL ──────────────────────────────────────────
 
 $publicUrl = editorial_public_article_url($article);
+$liveArticleHtml = file_get_contents($htmlPath);
+if ($liveArticleHtml === false) {
+    $liveArticleHtml = '';
+}
+$previewPlaceholder = '__EDITORIAL_PREVIEW_PROSE__';
+$previewTemplate = editorial_build_public_article_preview_document(
+    $liveArticleHtml,
+    $previewPlaceholder,
+    editorial_site_url('')
+);
+$initialPreviewDocument = str_replace($previewPlaceholder, (string) ($form['prose_html'] ?? ''), $previewTemplate);
+$previewTemplateJson = json_encode($previewTemplate, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+if ($previewTemplateJson === false) {
+    $previewTemplateJson = '""';
+}
 
 // ─── Render ──────────────────────────────────────────────────────
 
@@ -342,7 +357,8 @@ $innerScript = <<<JS
 (() => {
   const form = document.getElementById('editorialEditorForm');
   const editor = document.getElementById('proseEditor');
-  const host = document.getElementById('previewHost');
+  const previewFrame = document.getElementById('previewFrame');
+  const previewTemplate = $previewTemplateJson;
   if (!editor) return;
   let draftDirty = false;
   let editorReady = false;
@@ -364,7 +380,7 @@ $innerScript = <<<JS
 
   /* ── Preview sync ─────────────────────────────────── */
   function syncPreview() {
-    if (!host) return;
+    if (!previewFrame || !previewTemplate) return;
     let html = '';
     if (window.tinymce && typeof window.tinymce.get === 'function') {
       const instance = window.tinymce.get('proseEditor');
@@ -376,14 +392,10 @@ $innerScript = <<<JS
       html = editor.value || '';
     }
     if (!html) {
-      host.innerHTML = '<p><em>Chưa có nội dung preview.</em></p>';
-      return;
+      html = '<p><em>Chưa có nội dung preview.</em></p>';
     }
-    html = html.replace(
-      /(src=["'])(?!https?:\/\/|\/|data:|blob:)([^"']+)(["'])/gi,
-      (_, pre, url, post) => pre + siteBaseUrl + url + post
-    );
-    host.innerHTML = html;
+    html = html.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, '');
+    previewFrame.srcdoc = previewTemplate.replace('__EDITORIAL_PREVIEW_PROSE__', () => html);
   }
 
   /* ── Base64 encode on submit ──────────────────────── */
@@ -443,11 +455,21 @@ $innerScript = <<<JS
   /* ── Fullscreen toggle ────────────────────────────── */
   let isFullscreen = false;
   const fsToggle = document.getElementById('editorFullscreenToggle');
+  const fsToggleIcon = fsToggle ? fsToggle.querySelector('i') : null;
+  const fsToggleText = fsToggle ? fsToggle.querySelector('span') : null;
+  const fsToggleBottom = document.getElementById('editorFullscreenToggleBottom');
+
+  function setFullscreenControls(fullscreen) {
+    if (fsToggleIcon) fsToggleIcon.className = fullscreen ? 'fa-solid fa-compress' : 'fa-solid fa-expand';
+    if (fsToggleText) fsToggleText.textContent = fullscreen ? 'Thu nhỏ' : 'Toàn màn hình';
+    if (fsToggle) fsToggle.title = fullscreen ? 'Thu nhỏ (Ctrl+Shift+F)' : 'Toàn màn hình (Ctrl+Shift+F)';
+    if (fsToggleBottom) fsToggleBottom.title = fullscreen ? 'Thu nhỏ (Ctrl+Shift+F)' : 'Toàn màn hình (Ctrl+Shift+F)';
+  }
 
   function enterFullscreen() {
     isFullscreen = true;
     document.body.classList.add('editor-fullscreen-active');
-    if (fsToggle) fsToggle.title = 'Thu nhỏ (Ctrl+Shift+F)';
+    setFullscreenControls(true);
     if (window.tinymce && typeof window.tinymce.get === 'function') {
       const inst = window.tinymce.get('proseEditor');
       if (inst) {
@@ -465,7 +487,7 @@ $innerScript = <<<JS
   function exitFullscreen() {
     isFullscreen = false;
     document.body.classList.remove('editor-fullscreen-active');
-    if (fsToggle) fsToggle.title = 'Toàn màn hình (Ctrl+Shift+F)';
+    setFullscreenControls(false);
     if (window.tinymce && typeof window.tinymce.get === 'function') {
       const inst = window.tinymce.get('proseEditor');
       if (inst) inst.getBody().style.minHeight = '';
@@ -475,7 +497,6 @@ $innerScript = <<<JS
   function toggleFullscreen() { isFullscreen ? exitFullscreen() : enterFullscreen(); }
 
   if (fsToggle) fsToggle.addEventListener('click', toggleFullscreen);
-  const fsToggleBottom = document.getElementById('editorFullscreenToggleBottom');
   if (fsToggleBottom) fsToggleBottom.addEventListener('click', toggleFullscreen);
 
   document.addEventListener('keydown', (e) => {
@@ -736,9 +757,9 @@ editorial_layout_header([
 
         <div class="editor-fullscreen-backdrop" id="editorFullscreenBackdrop"></div>
         <div class="editor-fs-status" id="editorFsStatus">
-            <span>Esc hoặc Ctrl+Shift+F để thoát toàn màn hình</span>
+            <span>Đang ở chế độ toàn màn hình</span>
             <button type="button" id="editorFullscreenToggleBottom" title="Thu nhỏ">
-                <i class="fa-solid fa-compress"></i>
+                <i class="fa-solid fa-compress"></i> <span>Thu nhỏ</span>
             </button>
         </div>
 
@@ -754,7 +775,7 @@ editorial_layout_header([
         <!-- Preview -->
         <details class="editor-info-panel" style="margin-top:16px;">
             <summary><i class="fa-solid fa-eye"></i> Xem trước nội dung</summary>
-            <div id="previewHost" class="ct-prose is-article" style="padding:16px;border:1px solid #dee2e6;border-radius:8px;margin-top:8px;"></div>
+            <iframe id="previewFrame" class="editorial-workspace-preview-frame" sandbox="" srcdoc="<?= editorial_h($initialPreviewDocument) ?>" title="Xem trước nội dung theo giao diện website"></iframe>
         </details>
 
         <!-- Meta fields -->

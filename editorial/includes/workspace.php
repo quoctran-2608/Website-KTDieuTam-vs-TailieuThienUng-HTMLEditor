@@ -111,6 +111,116 @@ function editorial_parse_article_file(string $path): array
   return editorial_parse_article_html($html, $path);
 }
 
+// ─── Public-fidelity preview ─────────────────────────────────────
+
+/**
+ * Extract the value of a simple HTML attribute from an already captured tag.
+ */
+function editorial_preview_extract_attribute(string $attributes, string $name): string
+{
+  $quotedPattern = '/\b' . preg_quote($name, '/') . '\s*=\s*(["\'])(.*?)\1/is';
+  if (preg_match($quotedPattern, $attributes, $match)) {
+    return trim((string) $match[2]);
+  }
+  $barePattern = '/\b' . preg_quote($name, '/') . '\s*=\s*([^\s>"\']+)/i';
+  if (preg_match($barePattern, $attributes, $match)) {
+    return trim((string) $match[1]);
+  }
+  return '';
+}
+
+/**
+ * Build the public stylesheet contract from the current live article head.
+ * Scripts are intentionally never copied into preview documents.
+ */
+function editorial_extract_public_stylesheet_links(string $liveHtml): string
+{
+  $headHtml = '';
+  if (preg_match('/<head\b[^>]*>(.*?)<\/head>/is', $liveHtml, $headMatch)) {
+    $headHtml = (string) $headMatch[1];
+  }
+
+  $links = [];
+  if ($headHtml !== '' && preg_match_all('/<link\b[^>]*>/is', $headHtml, $linkMatches)) {
+    foreach ($linkMatches[0] as $tag) {
+      $rel = editorial_preview_extract_attribute((string) $tag, 'rel');
+      $href = editorial_preview_extract_attribute((string) $tag, 'href');
+      if ($href === '' || !preg_match('/(?:^|\s)stylesheet(?:\s|$)/i', $rel)) {
+        continue;
+      }
+      if (preg_match('/^\s*javascript:/i', $href)) {
+        continue;
+      }
+      $media = editorial_preview_extract_attribute((string) $tag, 'media');
+      $links[] = '<link rel="stylesheet" href="' . htmlspecialchars($href, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"'
+        . ($media !== '' ? ' media="' . htmlspecialchars($media, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"' : '')
+        . '>';
+    }
+  }
+
+  // A readable fail-safe when a malformed legacy article has no extractable head.
+  if ($links === []) {
+    $links = [
+      '<link rel="stylesheet" href="assets/css/styles.css">',
+      '<link rel="stylesheet" href="assets/css/content-hub.css">',
+    ];
+  }
+
+  return implode("\n", $links);
+}
+
+/**
+ * Preserve only body styling attributes needed by the public article contract.
+ */
+function editorial_extract_public_body_attributes(string $liveHtml): string
+{
+  if (!preg_match('/<body\b([^>]*)>/is', $liveHtml, $match)) {
+    return 'class="article-page"';
+  }
+
+  $rawAttributes = (string) $match[1];
+  $attributes = [];
+  $bodyClass = editorial_preview_extract_attribute($rawAttributes, 'class');
+  if ($bodyClass !== '') {
+    $attributes[] = 'class="' . htmlspecialchars($bodyClass, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"';
+  }
+
+  if (preg_match_all('/\b(data-[a-zA-Z0-9_-]+)\s*=\s*(["\'])(.*?)\2/is', $rawAttributes, $dataMatches, PREG_SET_ORDER)) {
+    foreach ($dataMatches as $dataMatch) {
+      $attributes[] = strtolower((string) $dataMatch[1]) . '="'
+        . htmlspecialchars((string) $dataMatch[3], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"';
+    }
+  }
+
+  return $attributes === [] ? 'class="article-page"' : implode(' ', $attributes);
+}
+
+/**
+ * Build an isolated public-content document for Workspace Preview and Compare.
+ *
+ * The live article provides CSS/body context only. Prose always comes from the
+ * caller (draft or verified immutable snapshot), and scripts are never copied.
+ */
+function editorial_build_public_article_preview_document(string $liveHtml, string $proseHtml, string $siteBaseUrl): string
+{
+  $baseUrl = rtrim($siteBaseUrl, '/') . '/';
+  $bodyAttributes = editorial_extract_public_body_attributes($liveHtml);
+  $stylesheetLinks = editorial_extract_public_stylesheet_links($liveHtml);
+  $safeProse = preg_replace('/<script\b[^>]*>.*?<\/script\s*>/is', '', $proseHtml);
+  if ($safeProse === null) {
+    $safeProse = '';
+  }
+
+  return '<!doctype html><html lang="vi"><head><meta charset="utf-8">'
+    . '<meta name="viewport" content="width=device-width, initial-scale=1">'
+    . '<base href="' . htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '">'
+    . $stylesheetLinks
+    . '</head><body ' . $bodyAttributes . '>'
+    . '<section class="article-shell"><div class="container article-grid"><article class="article-main">'
+    . '<div class="article-prose">' . $safeProse . '</div>'
+    . '</article></div></section></body></html>';
+}
+
 // ─── Editing Lock ───────────────────────────────────────────────
 
 /**

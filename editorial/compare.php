@@ -70,6 +70,24 @@ if (!$fromVerified['ok'] || !$toVerified['ok']) {
 $fromPayload = $fromVerified['payload'];
 $toPayload = $toVerified['payload'];
 
+// Live HTML is presentation context only; compared prose remains immutable snapshots.
+$articlePath = editorial_resolve_article_path($article);
+$liveArticleHtml = $articlePath ? file_get_contents($articlePath) : false;
+if ($liveArticleHtml === false) {
+    $liveArticleHtml = '';
+}
+$siteBaseUrl = editorial_site_url('');
+$fromPreview = editorial_build_public_article_preview_document(
+    $liveArticleHtml,
+    (string) ($fromPayload['prose_html'] ?? ''),
+    $siteBaseUrl
+);
+$toPreview = editorial_build_public_article_preview_document(
+    $liveArticleHtml,
+    (string) ($toPayload['prose_html'] ?? ''),
+    $siteBaseUrl
+);
+
 // ─── Enrich revision with creator name ───────────────────────────
 
 $fromCreator = editorial_find_user_by_id((string) $fromRev['created_by']);
@@ -77,18 +95,6 @@ $fromRev['creator_name'] = $fromCreator ? (string) ($fromCreator['display_name']
 
 $toCreator = editorial_find_user_by_id((string) $toRev['created_by']);
 $toRev['creator_name'] = $toCreator ? (string) ($toCreator['display_name'] ?? $toCreator['username']) : $toRev['created_by'];
-
-// Render snapshots in sandboxed documents so content never executes in this page.
-$buildPreviewDocument = static function (array $payload): string {
-    $prose = (string) ($payload['prose_html'] ?? '');
-    return '<!DOCTYPE html><html><head><meta charset="utf-8"><style>'
-        . 'body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7;color:#292929;padding:18px;margin:0;}'
-        . 'img,table{max-width:100%;height:auto;}table{display:block;overflow-x:auto;}'
-        . 'h1,h2,h3{line-height:1.3;}pre{white-space:pre-wrap;word-break:break-word;}'
-        . '</style></head><body>' . $prose . '</body></html>';
-};
-$fromPreview = $buildPreviewDocument($fromPayload);
-$toPreview = $buildPreviewDocument($toPayload);
 
 // ─── Field-level metadata compare ────────────────────────────────
 
