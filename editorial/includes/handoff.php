@@ -398,7 +398,9 @@ function editorial_handoff_archive_filename(string $articleId): string
     if ($safeArticle === '') {
         throw new RuntimeException('Không thể tạo tên archive an toàn.');
     }
-    return $safeArticle . '.html';
+    return preg_match('/\.html$/i', $safeArticle) === 1
+        ? $safeArticle
+        : $safeArticle . '.html';
 }
 
 /**

@@ -349,6 +349,9 @@ $hasSavedDraft = $draftVersion > 0;
 $handoffConfigStatus = editorial_handoff_config_status();
 $handoffSettingsReady = !empty($handoffConfigStatus['ok']);
 $handoffEnabled = $handoffSettingsReady && $activeStages['stage1'] !== null;
+$handoffDisabledReason = !$handoffSettingsReady
+    ? (string) ($handoffConfigStatus['message'] ?? 'Drive + Sheet cần kiểm tra cấu hình.')
+    : 'Hãy hoàn tất Chặng 1 trước khi lưu Drive + Sheet.';
 $hasPublication = trim((string) ($state['published_revision_id'] ?? '')) !== '';
 $publishedAt = trim((string) ($state['published_at'] ?? ''));
 $saveStatusText = $hasSavedDraft
@@ -754,27 +757,33 @@ editorial_layout_header([
                 </div>
 
                 <section class="editorial-stage-card editorial-stage-card--stage1">
-                    <p class="editorial-stage-card__label">Chặng 1</p>
+                    <p class="editorial-stage-card__label">Chặng 1 <span>· Chuẩn hóa trình bày</span></p>
                     <button type="button" class="editorial-revision-btn editorial-stage1-btn" data-editor-action="save_then_stage1" title="Hoàn tất Chặng 1 — tự lưu nội dung hiện tại rồi lưu mốc chuẩn hóa trình bày.">
                         <i class="fa-solid fa-code-branch"></i>
                         <span>Hoàn tất Chặng 1</span>
                     </button>
-                    <small class="editorial-stage-card__helper">Chuẩn hóa trình bày</small>
-                    <?php if ($activeStages['stage1'] !== null): ?>
-                        <small class="editorial-stage-status">✓ Chặng 1 đã lưu · Revision #<?= editorial_h((string) $activeStages['stage1']['revision_no']) ?></small>
+                    <div class="editorial-stage-card__footer">
+                    <?php if ($activeStages['stage1'] !== null && $stage1CompareUrl !== ''): ?>
+                        <small class="editorial-stage-status">✓ Revision #<?= editorial_h((string) $activeStages['stage1']['revision_no']) ?></small>
                         <a class="editorial-compare-btn" href="<?= editorial_h($stage1CompareUrl) ?>" target="_blank" rel="noopener">
                             <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
                         </a>
+                    <?php elseif ($activeStages['stage1'] !== null): ?>
+                        <small class="editorial-stage-status">✓ Revision #<?= editorial_h((string) $activeStages['stage1']['revision_no']) ?></small>
+                        <button type="button" class="editorial-compare-btn" disabled title="Không tìm thấy Bản gốc hợp lệ để so sánh.">
+                            <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
+                        </button>
                     <?php else: ?>
-                        <small class="editorial-stage-card__pending">Chưa lưu Chặng 1</small>
+                        <small class="editorial-stage-card__pending">Chưa lưu</small>
                         <button type="button" class="editorial-compare-btn" disabled title="Hoàn tất Chặng 1 trước khi xem so sánh.">
                             <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
                         </button>
                     <?php endif; ?>
+                    </div>
                 </section>
 
                 <section class="editorial-stage-card editorial-stage-card--stage2 <?= $activeStages['stage1'] === null ? 'is-disabled' : '' ?>">
-                    <p class="editorial-stage-card__label">Chặng 2</p>
+                    <p class="editorial-stage-card__label">Chặng 2 <span>· Biên tập nội dung</span></p>
                     <button
                         type="button"
                         class="editorial-revision-btn editorial-stage2-btn"
@@ -785,23 +794,29 @@ editorial_layout_header([
                         <i class="fa-solid fa-pen-to-square"></i>
                         <span>Hoàn tất Chặng 2</span>
                     </button>
-                    <small class="editorial-stage-card__helper">Biên tập nội dung</small>
-                    <?php if ($activeStages['stage2'] !== null): ?>
-                        <small class="editorial-stage-status">✓ Chặng 2 đã lưu · Revision #<?= editorial_h((string) $activeStages['stage2']['revision_no']) ?></small>
+                    <div class="editorial-stage-card__footer">
+                    <?php if ($activeStages['stage2'] !== null && $stage2CompareUrl !== ''): ?>
+                        <small class="editorial-stage-status">✓ Revision #<?= editorial_h((string) $activeStages['stage2']['revision_no']) ?></small>
                         <a class="editorial-compare-btn" href="<?= editorial_h($stage2CompareUrl) ?>" target="_blank" rel="noopener">
                             <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
                         </a>
+                    <?php elseif ($activeStages['stage2'] !== null): ?>
+                        <small class="editorial-stage-status">✓ Revision #<?= editorial_h((string) $activeStages['stage2']['revision_no']) ?></small>
+                        <button type="button" class="editorial-compare-btn" disabled title="Không tìm thấy Bản gốc hợp lệ để so sánh.">
+                            <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
+                        </button>
                     <?php elseif ($activeStages['stage1'] !== null): ?>
-                        <small class="editorial-stage-card__pending">Chưa lưu lại sau Chặng 1 hiện tại</small>
+                        <small class="editorial-stage-card__pending">Chưa lưu lại</small>
                         <button type="button" class="editorial-compare-btn" disabled title="Hoàn tất Chặng 2 trước khi xem so sánh.">
                             <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
                         </button>
                     <?php else: ?>
-                        <small class="editorial-stage-card__pending">Cần hoàn tất Chặng 1 trước</small>
+                        <small class="editorial-stage-card__pending">Cần Chặng 1</small>
                         <button type="button" class="editorial-compare-btn" disabled title="Hoàn tất Chặng 1 trước khi xem so sánh.">
                             <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
                         </button>
                     <?php endif; ?>
+                    </div>
                 </section>
 
                 <div class="editorial-workflow-group editorial-workflow-publish">
@@ -823,7 +838,7 @@ editorial_layout_header([
                 </div>
 
                 <div class="editorial-workflow-group editorial-workflow-handoff">
-                    <button type="button" class="editorial-handoff-btn" data-editor-action="handoff_active_stage" <?= $handoffEnabled ? 'title="Lưu Chặng đang active lên Google Drive và cập nhật Google Sheet."' : 'disabled title="' . editorial_h((string) ($handoffConfigStatus['message'] ?? 'Hãy hoàn tất Chặng 1 trước khi lưu Drive + Sheet.')) . '"' ?>>
+                    <button type="button" class="editorial-handoff-btn" data-editor-action="handoff_active_stage" <?= $handoffEnabled ? 'title="Lưu Chặng đang active lên Google Drive và cập nhật Google Sheet."' : 'disabled title="' . editorial_h($handoffDisabledReason) . '"' ?>>
                         <i class="fa-solid fa-cloud-arrow-up"></i> Lưu Drive + Sheet
                     </button>
                     <details class="editorial-handoff-note-menu">
@@ -836,12 +851,15 @@ editorial_layout_header([
                         </div>
                     </details>
                     <?php if (!$handoffEnabled): ?>
-                        <small class="editorial-handoff-status-note">
-                            <?= editorial_h($handoffSettingsReady ? 'Hãy hoàn tất Chặng 1 trước khi lưu Drive + Sheet.' : (string) ($handoffConfigStatus['message'] ?? 'Drive + Sheet chưa sẵn sàng.')) ?>
-                            <?php if (!$handoffSettingsReady && ($currentUser['role'] ?? '') === 'admin'): ?>
-                                <a href="<?= editorial_h(editorial_url('google-handoff-settings.php')) ?>">Kiểm tra cấu hình</a>
-                            <?php endif; ?>
-                        </small>
+                        <?php if (!$handoffSettingsReady && ($currentUser['role'] ?? '') === 'admin'): ?>
+                            <a class="editorial-handoff-config-hint" href="<?= editorial_h(editorial_url('google-handoff-settings.php')) ?>" title="<?= editorial_h($handoffDisabledReason) ?>" aria-label="<?= editorial_h($handoffDisabledReason) ?>">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </a>
+                        <?php else: ?>
+                            <span class="editorial-handoff-config-hint" title="<?= editorial_h($handoffDisabledReason) ?>" aria-label="<?= editorial_h($handoffDisabledReason) ?>">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </span>
+                        <?php endif; ?>
                     <?php endif; ?>
                 </div>
             </div>
@@ -963,7 +981,7 @@ editorial_layout_header([
             <?php if ($stage1CompareUrl !== ''): ?>
                 <a class="editorial-compare-btn editorial-icon-btn" href="<?= editorial_h($stage1CompareUrl) ?>" target="_blank" rel="noopener" title="Bản gốc ↔ Chặng 1" aria-label="Bản gốc ↔ Chặng 1"><i class="fa-solid fa-code-compare"></i></a>
             <?php else: ?>
-                <button type="button" class="editorial-compare-btn editorial-icon-btn" disabled title="Hoàn tất Chặng 1 trước khi xem so sánh." aria-label="Bản gốc ↔ Chặng 1 chưa sẵn sàng"><i class="fa-solid fa-code-compare"></i></button>
+                <button type="button" class="editorial-compare-btn editorial-icon-btn" disabled title="<?= $activeStages['stage1'] !== null ? 'Không tìm thấy Bản gốc hợp lệ để so sánh.' : 'Hoàn tất Chặng 1 trước khi xem so sánh.' ?>" aria-label="Bản gốc ↔ Chặng 1 chưa sẵn sàng"><i class="fa-solid fa-code-compare"></i></button>
             <?php endif; ?>
             <button type="button" class="editorial-revision-btn editorial-stage2-btn" data-editor-action="save_then_stage2" title="<?= $activeStages['stage1'] === null ? 'Bạn cần hoàn tất Chặng 1 trước khi lưu Chặng 2.' : 'Hoàn tất Chặng 2 — tự lưu nội dung hiện tại rồi lưu mốc biên tập nội dung.' ?>" <?= $activeStages['stage1'] === null ? 'disabled' : '' ?>>
                 <i class="fa-solid fa-pen-to-square"></i> Chặng 2
@@ -971,7 +989,7 @@ editorial_layout_header([
             <?php if ($stage2CompareUrl !== ''): ?>
                 <a class="editorial-compare-btn editorial-icon-btn" href="<?= editorial_h($stage2CompareUrl) ?>" target="_blank" rel="noopener" title="Bản gốc ↔ Chặng 2" aria-label="Bản gốc ↔ Chặng 2"><i class="fa-solid fa-code-compare"></i></a>
             <?php else: ?>
-                <button type="button" class="editorial-compare-btn editorial-icon-btn" disabled title="Hoàn tất Chặng 2 trước khi xem so sánh." aria-label="Bản gốc ↔ Chặng 2 chưa sẵn sàng"><i class="fa-solid fa-code-compare"></i></button>
+                <button type="button" class="editorial-compare-btn editorial-icon-btn" disabled title="<?= $activeStages['stage2'] !== null ? 'Không tìm thấy Bản gốc hợp lệ để so sánh.' : 'Hoàn tất Chặng 2 trước khi xem so sánh.' ?>" aria-label="Bản gốc ↔ Chặng 2 chưa sẵn sàng"><i class="fa-solid fa-code-compare"></i></button>
             <?php endif; ?>
             <?php if ($isEditorWorkspace): ?>
                 <button type="button" data-editor-action="save_then_publish" class="editorial-direct-publish-btn" title="Tự lưu nội dung hiện tại rồi Publish lên website.">

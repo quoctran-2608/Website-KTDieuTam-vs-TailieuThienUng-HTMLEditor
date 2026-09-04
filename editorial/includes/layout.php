@@ -61,25 +61,28 @@ function editorial_layout_header(array $options = []): void
             'href' => editorial_url('review.php'),
             'icon' => 'fa-solid fa-clipboard-check',
         ];
-        $menu[] = [
+    }
+    $settingsMenu = [
+        [
             'key' => 'members',
             'label' => 'Thành viên',
             'href' => editorial_url('users.php'),
             'icon' => 'fa-solid fa-users',
-        ];
-        $menu[] = [
+        ],
+        [
             'key' => 'integrity',
             'label' => 'Toàn vẹn hệ thống',
             'href' => editorial_url('integrity.php'),
             'icon' => 'fa-solid fa-shield-halved',
-        ];
-        $menu[] = [
+        ],
+        [
             'key' => 'handoff-settings',
-            'label' => 'Google Handoff',
+            'label' => 'Drive + Sheet',
             'href' => editorial_url('google-handoff-settings.php'),
             'icon' => 'fa-brands fa-google-drive',
-        ];
-    }
+        ],
+    ];
+    $settingsOpen = $isAdmin && in_array($active, array_column($settingsMenu, 'key'), true);
     ?>
     <!DOCTYPE html>
     <html lang="vi">
@@ -124,6 +127,26 @@ function editorial_layout_header(array $options = []): void
                             <?php endif; ?>
                         </a>
                     <?php endforeach; ?>
+                    <?php if ($isAdmin): ?>
+                        <details class="editorial-nav-settings <?= $settingsOpen ? 'is-active' : '' ?>" <?= $settingsOpen ? 'open' : '' ?>>
+                            <summary>
+                                <span class="editorial-nav-settings-label">
+                                    <i class="fa-solid fa-gear"></i>
+                                    <span>Cài đặt</span>
+                                </span>
+                                <i class="fa-solid fa-chevron-down editorial-nav-settings-chevron" aria-hidden="true"></i>
+                            </summary>
+                            <div class="editorial-nav-settings-children">
+                                <?php foreach ($settingsMenu as $item): ?>
+                                    <?php $isActive = $active === $item['key']; ?>
+                                    <a class="editorial-nav-settings-link <?= $isActive ? 'is-active' : '' ?>" href="<?= editorial_h($item['href']) ?>">
+                                        <i class="<?= editorial_h($item['icon']) ?>"></i>
+                                        <span><?= editorial_h($item['label']) ?></span>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        </details>
+                    <?php endif; ?>
                 </nav>
                 <?php if ($sidebarExtraHtml !== ''): ?>
                     <div class="admin-sidebar-extra">

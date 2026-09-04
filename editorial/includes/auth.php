@@ -65,12 +65,21 @@ function editorial_seed_admin_user(): void
             'display_name' => 'Quản trị viên',
             'role' => 'admin',
             'password_hash' => '$2y$12$01v7sCE1vOdtZ5SZxyomBuwJxigIM1dpUsFQfb5OZMIOLW9KqK8.m',
+            'must_change_password' => false,
         ],
         [
             'username' => 'Thanhthuytran2266@gmail.com',
             'display_name' => 'Thanh Thủy Trần',
             'role' => 'editor',
             'password_hash' => '$2y$12$zeW8Tymnp5VWUSkwBexEDePe2VSBeiuCeMMNq3fQPLENfeSKTipXm',
+            'must_change_password' => false,
+        ],
+        [
+            'username' => 'tduyquoc@gmail.com',
+            'display_name' => 'Duy Quốc',
+            'role' => 'editor',
+            'password_hash' => '$2y$12$blhr4CvEOMV.93tt8sScouttP9V5bqbuwKpLvEqaBVRcJcQBJZzpO',
+            'must_change_password' => true,
         ],
     ];
 
@@ -89,7 +98,7 @@ function editorial_seed_admin_user(): void
         $db = editorial_db();
         $stmt = $db->prepare('
             INSERT INTO editorial_users (id, username, display_name, password_hash, role, is_active, must_change_password, created_at, updated_at)
-            VALUES (:id, :username, :display_name, :password_hash, :role, 1, 0, :created_at, :updated_at)
+            VALUES (:id, :username, :display_name, :password_hash, :role, 1, :must_change_password, :created_at, :updated_at)
         ');
 
         foreach ($seedUsers as $seedUser) {
@@ -105,6 +114,7 @@ function editorial_seed_admin_user(): void
                 'display_name' => $seedUser['display_name'],
                 'password_hash' => $seedUser['password_hash'],
                 'role' => $seedUser['role'],
+                'must_change_password' => !empty($seedUser['must_change_password']) ? 1 : 0,
                 'created_at' => $now,
                 'updated_at' => $now,
             ]);
