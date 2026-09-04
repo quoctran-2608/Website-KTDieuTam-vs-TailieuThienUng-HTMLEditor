@@ -10,6 +10,7 @@ declare(strict_types=1);
 const EDITORIAL_HANDOFF_SETTING_KEYS = [
     'composio_api_key',
     'composio_connected_account_id',
+    'composio_connected_user_id',
     'handoff_drive_folder_id',
     'handoff_spreadsheet_id',
     'handoff_sheet_name',
@@ -49,7 +50,7 @@ function editorial_setting_set(string $key, string $value, string $userId, bool 
 }
 
 /**
- * @return array{api_key:string,api_key_configured:bool,connected_account_id:string,drive_folder_id:string,spreadsheet_id:string,sheet_name:string,public_base_url:string,pinned_toolkit_version:string,last_verified_at:string,last_verify_status:string,last_verify_message:string}
+ * @return array{api_key:string,api_key_configured:bool,connected_account_id:string,connected_user_id:string,drive_folder_id:string,spreadsheet_id:string,sheet_name:string,public_base_url:string,pinned_toolkit_version:string,last_verified_at:string,last_verify_status:string,last_verify_message:string}
  */
 function editorial_handoff_settings(bool $includeSecret = false): array
 {
@@ -60,6 +61,7 @@ function editorial_handoff_settings(bool $includeSecret = false): array
         'api_key' => $includeSecret ? $apiKey : '',
         'api_key_configured' => $apiKey !== '',
         'connected_account_id' => $read('composio_connected_account_id'),
+        'connected_user_id' => $read('composio_connected_user_id'),
         'drive_folder_id' => $read('handoff_drive_folder_id'),
         'spreadsheet_id' => $read('handoff_spreadsheet_id'),
         'sheet_name' => $read('handoff_sheet_name'),
@@ -135,7 +137,8 @@ function editorial_handoff_save_settings(array $input, string $userId): array
     $values['handoff_public_base_url'] = (string) $urlResult['value'];
 
     $apiKey = $apiKeyInput !== '' ? $apiKeyInput : $current['api_key'];
-    $changed = ($apiKeyInput !== '' && !hash_equals($current['api_key'], $apiKeyInput));
+    $apiKeyChanged = ($apiKeyInput !== '' && !hash_equals($current['api_key'], $apiKeyInput));
+    $changed = $apiKeyChanged;
     $comparison = [
         'composio_connected_account_id' => 'connected_account_id',
         'handoff_drive_folder_id' => 'drive_folder_id',
@@ -149,7 +152,7 @@ function editorial_handoff_save_settings(array $input, string $userId): array
         }
     }
 
-    editorial_transaction(function () use ($values, $apiKey, $apiKeyInput, $current, $changed, $userId): void {
+    editorial_transaction(function () use ($values, $apiKey, $apiKeyInput, $apiKeyChanged, $current, $changed, $userId): void {
         if ($apiKeyInput !== '') {
             editorial_setting_set('composio_api_key', $apiKey, $userId, true);
         }
@@ -160,8 +163,9 @@ function editorial_handoff_save_settings(array $input, string $userId): array
             editorial_setting_set('composio_last_verify_status', 'unverified', $userId);
             editorial_setting_set('composio_last_verify_message', 'Cấu hình đã thay đổi và cần kiểm tra lại.', $userId);
             editorial_setting_set('composio_last_verified_at', '', $userId);
-            if ($apiKeyInput !== '' || $values['composio_connected_account_id'] !== $current['connected_account_id']) {
+            if ($apiKeyChanged || $values['composio_connected_account_id'] !== $current['connected_account_id']) {
                 editorial_setting_set('composio_pinned_toolkit_version', '', $userId);
+                editorial_setting_set('composio_connected_user_id', '', $userId);
             }
         }
     });
@@ -178,14 +182,18 @@ function editorial_handoff_record_verification(array $result, string $userId): v
     $ok = !empty($result['ok']);
     $message = trim((string) ($result['message'] ?? ''));
     $version = trim((string) ($result['version'] ?? ''));
+    $connectedUserId = trim((string) ($result['user_id'] ?? ''));
     $now = date('c');
 
-    editorial_transaction(function () use ($ok, $message, $version, $now, $userId): void {
+    editorial_transaction(function () use ($ok, $message, $version, $connectedUserId, $now, $userId): void {
         editorial_setting_set('composio_last_verified_at', $now, $userId);
         editorial_setting_set('composio_last_verify_status', $ok ? 'verified' : 'failed', $userId);
         editorial_setting_set('composio_last_verify_message', $message, $userId);
         if ($ok && $version !== '') {
             editorial_setting_set('composio_pinned_toolkit_version', $version, $userId);
+            if ($connectedUserId !== '') {
+                editorial_setting_set('composio_connected_user_id', $connectedUserId, $userId);
+            }
         }
     });
 }

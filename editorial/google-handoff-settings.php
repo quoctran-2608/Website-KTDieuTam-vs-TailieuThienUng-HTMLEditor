@@ -33,6 +33,7 @@ if (editorial_is_post()) {
         $safePayload = [
             'toolkit' => EDITORIAL_GOOGLE_SUPER_TOOLKIT,
             'version' => (string) ($result['version'] ?? ''),
+            'connected_user_id' => (string) ($result['user_id'] ?? ''),
             'connected_account_id' => (string) (editorial_setting_get('composio_connected_account_id', '') ?? ''),
             'drive_folder_id' => (string) (editorial_setting_get('handoff_drive_folder_id', '') ?? ''),
             'spreadsheet_id' => (string) (editorial_setting_get('handoff_spreadsheet_id', '') ?? ''),
@@ -110,6 +111,9 @@ editorial_layout_header([
     <div class="editorial-handoff-status-meta">
         <?php if ($settings['pinned_toolkit_version'] !== ''): ?>
             <span><i class="fa-solid fa-thumbtack"></i> Pinned: <?= editorial_h($settings['pinned_toolkit_version']) ?></span>
+        <?php endif; ?>
+        <?php if ($settings['connected_user_id'] !== ''): ?>
+            <span><i class="fa-solid fa-user-link"></i> Composio User: <?= editorial_h($settings['connected_user_id']) ?></span>
         <?php endif; ?>
         <?php if ($settings['last_verified_at'] !== ''): ?>
             <span><i class="fa-solid fa-clock"></i> <?= editorial_h(editorial_format_datetime($settings['last_verified_at'])) ?></span>

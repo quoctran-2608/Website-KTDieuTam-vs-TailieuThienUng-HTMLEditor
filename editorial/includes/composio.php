@@ -108,10 +108,11 @@ function editorial_composio_get_tool(string $toolSlug, ?string $version = null):
 /**
  * @return array{ok:bool,http_status:int,json:?array,error:string,log_id:string}
  */
-function editorial_composio_execute(string $toolSlug, string $connectedAccountId, string $version, array $arguments): array
+function editorial_composio_execute(string $toolSlug, string $connectedAccountId, string $userId, string $version, array $arguments): array
 {
     $response = editorial_composio_request('POST', '/tools/execute/' . rawurlencode($toolSlug), [], [
         'connected_account_id' => $connectedAccountId,
+        'user_id' => $userId,
         'version' => $version,
         'arguments' => $arguments,
     ]);
@@ -397,6 +398,7 @@ function editorial_verify_google_handoff(): array
     }
     $account = $accountResponse['json'] ?? [];
     $accountId = (string) ($account['id'] ?? ($account['data']['id'] ?? ''));
+    $connectedUserId = trim((string) ($account['user_id'] ?? ($account['data']['user_id'] ?? '')));
     $toolkit = strtolower((string) ($account['toolkit']['slug'] ?? ($account['data']['toolkit']['slug'] ?? '')));
     $status = strtoupper((string) ($account['status'] ?? ($account['data']['status'] ?? '')));
     $disabled = !empty($account['is_disabled']) || !empty($account['auth_config']['is_disabled'])
@@ -406,6 +408,9 @@ function editorial_verify_google_handoff(): array
     }
     if ($status !== 'ACTIVE' || $disabled) {
         return ['ok' => false, 'message' => 'Google Super Connected Account chưa ACTIVE (trạng thái: ' . ($status !== '' ? $status : 'không rõ') . ').', 'steps' => $steps];
+    }
+    if ($connectedUserId === '') {
+        return ['ok' => false, 'message' => 'Connected Account hợp lệ nhưng Composio không trả về User ID của tài khoản.', 'steps' => $steps];
     }
     $steps[] = ['label' => 'Google Super Connected Account', 'ok' => true, 'message' => 'ACTIVE'];
 
@@ -457,7 +462,7 @@ function editorial_verify_google_handoff(): array
     if (!$folderArgs['ok']) {
         return ['ok' => false, 'message' => $folderArgs['error'], 'steps' => $steps];
     }
-    $folderResponse = editorial_composio_execute('GOOGLESUPER_GET_FILE_METADATA', $settings['connected_account_id'], $version, $folderArgs['arguments']);
+    $folderResponse = editorial_composio_execute('GOOGLESUPER_GET_FILE_METADATA', $settings['connected_account_id'], $connectedUserId, $version, $folderArgs['arguments']);
     if (!$folderResponse['ok']) {
         return ['ok' => false, 'message' => editorial_composio_execution_error('Không thể đọc Drive Folder', $folderResponse), 'steps' => $steps];
     }
@@ -475,7 +480,7 @@ function editorial_verify_google_handoff(): array
     if (!$spreadsheetArgs['ok']) {
         return ['ok' => false, 'message' => $spreadsheetArgs['error'], 'steps' => $steps];
     }
-    $spreadsheetResponse = editorial_composio_execute('GOOGLESUPER_GET_SPREADSHEET_INFO', $settings['connected_account_id'], $version, $spreadsheetArgs['arguments']);
+    $spreadsheetResponse = editorial_composio_execute('GOOGLESUPER_GET_SPREADSHEET_INFO', $settings['connected_account_id'], $connectedUserId, $version, $spreadsheetArgs['arguments']);
     if (!$spreadsheetResponse['ok']) {
         return ['ok' => false, 'message' => editorial_composio_execution_error('Không thể đọc Spreadsheet', $spreadsheetResponse), 'steps' => $steps];
     }
@@ -489,7 +494,7 @@ function editorial_verify_google_handoff(): array
     if (!$sheetArgs['ok']) {
         return ['ok' => false, 'message' => $sheetArgs['error'], 'steps' => $steps];
     }
-    $sheetResponse = editorial_composio_execute('GOOGLESUPER_GET_SHEET_NAMES', $settings['connected_account_id'], $version, $sheetArgs['arguments']);
+    $sheetResponse = editorial_composio_execute('GOOGLESUPER_GET_SHEET_NAMES', $settings['connected_account_id'], $connectedUserId, $version, $sheetArgs['arguments']);
     if (!$sheetResponse['ok']) {
         return ['ok' => false, 'message' => editorial_composio_execution_error('Không thể đọc danh sách tab Sheet', $sheetResponse), 'steps' => $steps];
     }
@@ -502,6 +507,7 @@ function editorial_verify_google_handoff(): array
     return [
         'ok' => true,
         'version' => $version,
+        'user_id' => $connectedUserId,
         'message' => 'Kết nối Google Handoff đã được xác minh đầy đủ.',
         'steps' => $steps,
     ];
