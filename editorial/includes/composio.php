@@ -203,37 +203,89 @@ function editorial_composio_metadata_toolkit_slug(array $metadata): string
     return '';
 }
 
+function editorial_composio_normalize_schema_text(string $value): string
+{
+    // Make camelCase parameter names semantic tokens before lowercasing:
+    // fileId -> file Id -> file id; spreadsheetId -> spreadsheet id.
+    $value = preg_replace('/([a-z0-9])([A-Z])/', '$1 $2', $value) ?? $value;
+    $value = str_replace(['_', '-'], ' ', $value);
+    $value = strtolower($value);
+    return trim((string) preg_replace('/\s+/', ' ', $value));
+}
+
 /**
- * @return array<string,array<string,mixed>>
+ * Normalize Composio's current flat input_parameters map and JSON-Schema
+ * properties/required variants into one deterministic representation.
+ *
+ * @return array<string,array{schema:array<string,mixed>,required:bool}>
  */
-function editorial_composio_schema_properties(array $metadata): array
+function editorial_composio_schema_parameters(array $metadata): array
 {
     $candidates = [
-        $metadata['input_parameters']['properties'] ?? null,
         $metadata['input_parameters'] ?? null,
-        $metadata['input_schema']['properties'] ?? null,
-        $metadata['inputSchema']['properties'] ?? null,
-        $metadata['parameters']['properties'] ?? null,
-        $metadata['input_parameters']['properties'] ?? null,
-        $metadata['data']['input_schema']['properties'] ?? null,
+        $metadata['input_schema'] ?? null,
+        $metadata['inputSchema'] ?? null,
+        $metadata['parameters'] ?? null,
+        $metadata['data']['input_schema'] ?? null,
     ];
-    foreach ($candidates as $properties) {
-        if (is_array($properties)) {
-            return $properties;
+    $structuralKeys = [
+        'type', 'title', 'description', 'required', 'properties',
+        'additionalproperties', 'definitions', '$schema',
+    ];
+
+    foreach ($candidates as $candidate) {
+        if (!is_array($candidate)) {
+            continue;
+        }
+        $properties = isset($candidate['properties']) && is_array($candidate['properties'])
+            ? $candidate['properties']
+            : $candidate;
+        $rootRequired = isset($candidate['required']) && is_array($candidate['required'])
+            ? array_map(static fn(mixed $name): string => (string) $name, $candidate['required'])
+            : [];
+        $parameters = [];
+        foreach ($properties as $name => $schema) {
+            if (!is_string($name)
+                || in_array(strtolower($name), $structuralKeys, true)
+                || !is_array($schema)) {
+                continue;
+            }
+            $parameters[$name] = [
+                'schema' => $schema,
+                'required' => (($schema['required'] ?? false) === true)
+                    || in_array($name, $rootRequired, true),
+            ];
+        }
+        if ($parameters !== []) {
+            return $parameters;
         }
     }
     return [];
 }
 
+/**
+ * @return array<string,array<string,mixed>>
+ */
+function editorial_composio_schema_properties(array $metadata): array
+{
+    $properties = [];
+    foreach (editorial_composio_schema_parameters($metadata) as $name => $parameter) {
+        $properties[$name] = $parameter['schema'];
+    }
+    return $properties;
+}
+
 function editorial_composio_schema_text(string $name, mixed $schema): string
 {
     $data = is_array($schema) ? $schema : [];
-    return strtolower(str_replace(['_', '-'], ' ', $name . ' ' . (string) ($data['title'] ?? '') . ' ' . (string) ($data['description'] ?? '')));
+    return editorial_composio_normalize_schema_text(
+        $name . ' ' . (string) ($data['title'] ?? '') . ' ' . (string) ($data['description'] ?? '')
+    );
 }
 
 function editorial_composio_schema_matches_term(string $text, string $term): bool
 {
-    $term = strtolower(str_replace(['_', '-'], ' ', trim($term)));
+    $term = editorial_composio_normalize_schema_text($term);
     if ($term === '') {
         return false;
     }
@@ -280,34 +332,94 @@ function editorial_composio_schema_field(array $properties, array $mustContainAn
  */
 function editorial_composio_readonly_arguments(array $metadata, string $resourceType, string $resourceId): array
 {
-    $properties = editorial_composio_schema_properties($metadata);
-    if ($properties === []) {
+    $parameters = editorial_composio_schema_parameters($metadata);
+    if ($parameters === []) {
         return ['ok' => false, 'arguments' => [], 'error' => 'Tool schema không công bố input properties để xác minh ' . $resourceType . '.'];
     }
-    $terms = match ($resourceType) {
-        'folder' => ['folder', 'file', 'resource'],
-        'spreadsheet', 'sheet_names' => ['spreadsheet'],
+    $selection = match ($resourceType) {
+        'folder' => [
+            'exact_name' => ['file id'],
+            'resource_terms' => ['file', 'folder', 'resource'],
+        ],
+        'spreadsheet', 'sheet_names' => [
+            'exact_name' => ['spreadsheet id'],
+            'resource_terms' => ['spreadsheet'],
+        ],
         default => [],
     };
-    $field = '';
-    foreach ($properties as $name => $schema) {
-        $text = editorial_composio_schema_text((string) $name, $schema);
-        $hasResourceTerm = false;
-        foreach ($terms as $term) {
+
+    if ($selection === []) {
+        return ['ok' => false, 'arguments' => [], 'error' => 'Loại resource cần xác minh không hợp lệ.'];
+    }
+
+    $hasResourceAndId = static function (string $text, array $resourceTerms): bool {
+        if (!editorial_composio_schema_matches_term($text, 'id')) {
+            return false;
+        }
+        foreach ($resourceTerms as $term) {
             if (editorial_composio_schema_matches_term($text, (string) $term)) {
-                $hasResourceTerm = true;
-                break;
+                return true;
             }
         }
-        if ($hasResourceTerm && editorial_composio_schema_matches_term($text, 'id')) {
-            $field = (string) $name;
-            break;
+        return false;
+    };
+
+    // Priority: exact required parameter name; exact non-required name;
+    // required name with resource+id; required semantic metadata; last
+    // semantic fallback. Parameter insertion order remains deterministic.
+    foreach ([true, false] as $requiredOnly) {
+        foreach ($parameters as $name => $parameter) {
+            if ($requiredOnly && !$parameter['required']) {
+                continue;
+            }
+            if (in_array(editorial_composio_normalize_schema_text($name), $selection['exact_name'], true)) {
+                return ['ok' => true, 'arguments' => [$name => $resourceId], 'error' => ''];
+            }
         }
     }
-    if ($field === '') {
-        return ['ok' => false, 'arguments' => [], 'error' => 'Không thể map ' . $resourceType . ' ID theo schema Composio hiện tại.'];
+    foreach ($parameters as $name => $parameter) {
+        if ($parameter['required']
+            && $hasResourceAndId(editorial_composio_normalize_schema_text($name), $selection['resource_terms'])) {
+            return ['ok' => true, 'arguments' => [$name => $resourceId], 'error' => ''];
+        }
     }
-    return ['ok' => true, 'arguments' => [$field => $resourceId], 'error' => ''];
+    foreach ($parameters as $name => $parameter) {
+        if ($parameter['required']
+            && $hasResourceAndId(editorial_composio_schema_text($name, $parameter['schema']), $selection['resource_terms'])) {
+            return ['ok' => true, 'arguments' => [$name => $resourceId], 'error' => ''];
+        }
+    }
+    foreach ($parameters as $name => $parameter) {
+        if ($hasResourceAndId(editorial_composio_schema_text($name, $parameter['schema']), $selection['resource_terms'])) {
+            return ['ok' => true, 'arguments' => [$name => $resourceId], 'error' => ''];
+        }
+    }
+    return ['ok' => false, 'arguments' => [], 'error' => 'Không thể map ' . $resourceType . ' ID theo schema Composio hiện tại.'];
+}
+
+/**
+ * @return array{ok:bool,missing:array<int,string>,error:string}
+ */
+function editorial_composio_validate_required_arguments(array $metadata, array $arguments): array
+{
+    $missing = [];
+    foreach (editorial_composio_schema_parameters($metadata) as $name => $parameter) {
+        if (!$parameter['required']) {
+            continue;
+        }
+        $value = $arguments[$name] ?? null;
+        if ($value === null || (is_string($value) && trim($value) === '')) {
+            $missing[] = $name;
+        }
+    }
+    if ($missing !== []) {
+        return [
+            'ok' => false,
+            'missing' => $missing,
+            'error' => 'Không thể xây request theo schema tool. Thiếu required argument: ' . implode(', ', $missing) . '.',
+        ];
+    }
+    return ['ok' => true, 'missing' => [], 'error' => ''];
 }
 
 /**
@@ -320,7 +432,8 @@ function editorial_composio_extract_mime_types(mixed $value): array
         return $types;
     }
     foreach ($value as $key => $child) {
-        if (is_string($child) && in_array(strtolower((string) $key), ['mimetype', 'mime_type', 'type'], true)) {
+        $normalizedKey = editorial_composio_normalize_schema_text((string) $key);
+        if (is_string($child) && in_array($normalizedKey, ['mime type', 'mimetype'], true)) {
             $types[] = $child;
         }
         if (is_array($child)) {
@@ -462,6 +575,13 @@ function editorial_verify_google_handoff(): array
     if (!$folderArgs['ok']) {
         return ['ok' => false, 'message' => $folderArgs['error'], 'steps' => $steps];
     }
+    $folderRequired = editorial_composio_validate_required_arguments(
+        $toolMetadata['GOOGLESUPER_GET_FILE_METADATA'],
+        $folderArgs['arguments']
+    );
+    if (!$folderRequired['ok']) {
+        return ['ok' => false, 'message' => $folderRequired['error'], 'steps' => $steps];
+    }
     $folderResponse = editorial_composio_execute('GOOGLESUPER_GET_FILE_METADATA', $settings['connected_account_id'], $connectedUserId, $version, $folderArgs['arguments']);
     if (!$folderResponse['ok']) {
         return ['ok' => false, 'message' => editorial_composio_execution_error('Không thể đọc Drive Folder', $folderResponse), 'steps' => $steps];
@@ -480,6 +600,13 @@ function editorial_verify_google_handoff(): array
     if (!$spreadsheetArgs['ok']) {
         return ['ok' => false, 'message' => $spreadsheetArgs['error'], 'steps' => $steps];
     }
+    $spreadsheetRequired = editorial_composio_validate_required_arguments(
+        $toolMetadata['GOOGLESUPER_GET_SPREADSHEET_INFO'],
+        $spreadsheetArgs['arguments']
+    );
+    if (!$spreadsheetRequired['ok']) {
+        return ['ok' => false, 'message' => $spreadsheetRequired['error'], 'steps' => $steps];
+    }
     $spreadsheetResponse = editorial_composio_execute('GOOGLESUPER_GET_SPREADSHEET_INFO', $settings['connected_account_id'], $connectedUserId, $version, $spreadsheetArgs['arguments']);
     if (!$spreadsheetResponse['ok']) {
         return ['ok' => false, 'message' => editorial_composio_execution_error('Không thể đọc Spreadsheet', $spreadsheetResponse), 'steps' => $steps];
@@ -493,6 +620,13 @@ function editorial_verify_google_handoff(): array
     $sheetArgs = editorial_composio_readonly_arguments($toolMetadata['GOOGLESUPER_GET_SHEET_NAMES'], 'sheet_names', $settings['spreadsheet_id']);
     if (!$sheetArgs['ok']) {
         return ['ok' => false, 'message' => $sheetArgs['error'], 'steps' => $steps];
+    }
+    $sheetRequired = editorial_composio_validate_required_arguments(
+        $toolMetadata['GOOGLESUPER_GET_SHEET_NAMES'],
+        $sheetArgs['arguments']
+    );
+    if (!$sheetRequired['ok']) {
+        return ['ok' => false, 'message' => $sheetRequired['error'], 'steps' => $steps];
     }
     $sheetResponse = editorial_composio_execute('GOOGLESUPER_GET_SHEET_NAMES', $settings['connected_account_id'], $connectedUserId, $version, $sheetArgs['arguments']);
     if (!$sheetResponse['ok']) {
