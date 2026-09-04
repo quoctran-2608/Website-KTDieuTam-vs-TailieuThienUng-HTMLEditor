@@ -240,8 +240,8 @@ function editorial_resolve_publish_context(
             return ['ok' => false, 'failed_at' => 'status', 'message' => 'Bài viết chưa được duyệt.'];
         }
         $candidateRevisionId = (string) ($state['approved_revision_id'] ?? '');
-        if ($candidateRevisionId === '' || ($state['current_revision_id'] ?? '') !== $candidateRevisionId) {
-            return ['ok' => false, 'failed_at' => 'status', 'message' => 'Phiên bản hiện tại không khớp phiên bản đã duyệt.'];
+        if ($candidateRevisionId === '') {
+            return ['ok' => false, 'failed_at' => 'status', 'message' => 'Không tìm thấy phiên bản đã duyệt để Publish.'];
         }
     } else {
         if (!in_array((string) ($state['status'] ?? ''), ['editing', 'returned'], true)) {
@@ -1320,56 +1320,80 @@ function editorial_publish_revision_core(
                     );
                 }
 
-                // ── CLOSE ASSIGNMENT ──
-                $db->prepare("UPDATE editorial_assignments SET released_at = :r, release_reason = 'published' WHERE id = :id")
-                   ->execute([':r' => $now, ':id' => $assignment['id']]);
-
-                // ── DELETE LOCK ──
-                if ($policy === 'editor_direct') {
-                    $db->prepare('DELETE FROM editorial_locks WHERE article_id = :aid AND user_id = :uid AND lock_token = :token')
-                       ->execute([':aid' => $articleId, ':uid' => $actorUserId, ':token' => $lockToken]);
-                } else {
+                if ($policy === 'admin_approved') {
+                    // Admin-approved Publish remains terminal.
+                    $db->prepare("UPDATE editorial_assignments SET released_at = :r, release_reason = 'published' WHERE id = :id")
+                       ->execute([':r' => $now, ':id' => $assignment['id']]);
                     $db->prepare('DELETE FROM editorial_locks WHERE article_id = :aid')
                        ->execute([':aid' => $articleId]);
+                    $db->prepare('DELETE FROM editorial_drafts WHERE article_id = :aid AND user_id = :uid')
+                       ->execute([':aid' => $articleId, ':uid' => $assignment['user_id']]);
+
+                    $stmtState = $db->prepare("
+                        UPDATE editorial_article_state SET
+                            status = 'published',
+                            assigned_user_id = NULL,
+                            assigned_at = NULL,
+                            current_revision_id = :pub_rev_id,
+                            published_revision_id = :pub_rev_id2,
+                            published_by = :pub_by,
+                            published_at = :pub_at,
+                            published_live_hash = :pub_hash,
+                            publish_backup_path = :backup_path,
+                            base_live_hash = :new_hash,
+                            review_revision_id = NULL,
+                            review_requested_by = NULL,
+                            review_requested_at = NULL,
+                            approved_revision_id = NULL,
+                            approved_by = NULL,
+                            approved_at = NULL,
+                            updated_at = :upd
+                        WHERE article_id = :aid
+                    ");
+                    $stmtState->execute([
+                        ':pub_rev_id' => $publishedRevisionId,
+                        ':pub_rev_id2' => $publishedRevisionId,
+                        ':pub_by' => $actorUserId,
+                        ':pub_at' => $now,
+                        ':pub_hash' => $newHtmlHash,
+                        ':backup_path' => $backupResult['path'],
+                        ':new_hash' => $newHtmlHash,
+                        ':upd' => $now,
+                        ':aid' => $articleId,
+                    ]);
+                } else {
+                    // Editor-direct Publish is a non-terminal publication side
+                    // effect. Keep workflow, assignment, draft, lock, milestone
+                    // pointer and review history intact.
+                    $stmtState = $db->prepare("
+                        UPDATE editorial_article_state SET
+                            published_revision_id = :pub_rev_id,
+                            published_by = :pub_by,
+                            published_at = :pub_at,
+                            published_live_hash = :pub_hash,
+                            publish_backup_path = :backup_path,
+                            base_live_hash = :new_hash,
+                            updated_at = :upd
+                        WHERE article_id = :aid
+                          AND status = :status
+                          AND assigned_user_id = :assigned_user_id
+                    ");
+                    $stmtState->execute([
+                        ':pub_rev_id' => $publishedRevisionId,
+                        ':pub_by' => $actorUserId,
+                        ':pub_at' => $now,
+                        ':pub_hash' => $newHtmlHash,
+                        ':backup_path' => $backupResult['path'],
+                        ':new_hash' => $newHtmlHash,
+                        ':upd' => $now,
+                        ':aid' => $articleId,
+                        ':status' => (string) $state['status'],
+                        ':assigned_user_id' => $actorUserId,
+                    ]);
+                    if ($stmtState->rowCount() !== 1) {
+                        throw new EditorialPublishCompensationException('Editor-direct workflow state changed during Publish.');
+                    }
                 }
-
-                // ── DELETE OLD DRAFT ──
-                $db->prepare('DELETE FROM editorial_drafts WHERE article_id = :aid AND user_id = :uid')
-                   ->execute([':aid' => $articleId, ':uid' => $assignment['user_id']]);
-
-                // ── UPDATE ARTICLE STATE ──
-                $stmtState = $db->prepare("
-                    UPDATE editorial_article_state SET
-                        status = 'published',
-                        assigned_user_id = NULL,
-                        assigned_at = NULL,
-                        current_revision_id = :pub_rev_id,
-                        published_revision_id = :pub_rev_id2,
-                        published_by = :pub_by,
-                        published_at = :pub_at,
-                        published_live_hash = :pub_hash,
-                        publish_backup_path = :backup_path,
-                        base_live_hash = :new_hash,
-                        review_revision_id = NULL,
-                        review_requested_by = NULL,
-                        review_requested_at = NULL,
-                        approved_revision_id = NULL,
-                        approved_by = NULL,
-                        approved_at = NULL,
-                        updated_at = :upd
-                    WHERE article_id = :aid
-                ");
-                $stmtState->execute([
-                    ':pub_rev_id' => $publishedRevisionId,
-                    ':pub_rev_id2' => $publishedRevisionId,
-                    ':pub_by' => $actorUserId,
-                    ':pub_at' => $now,
-                    ':pub_hash' => $newHtmlHash,
-                    ':backup_path' => $backupResult['path'],
-                    ':new_hash' => $newHtmlHash,
-                    ':upd' => $now,
-                    ':aid' => $articleId,
-                ]);
 
             } catch (\Throwable $innerEx) {
                 // ── SINGLE COMPENSATION ATTEMPT ──

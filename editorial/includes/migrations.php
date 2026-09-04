@@ -302,5 +302,59 @@ function editorial_migration_list(): array
             CREATE INDEX IF NOT EXISTS idx_handoff_sync_status
                 ON editorial_handoff_sync(sync_status);
         ',
+        11 => '
+            -- Phase 12C: general handoff source identity, independent from Publish.
+            ALTER TABLE editorial_handoff_sync RENAME TO editorial_handoff_sync_v10;
+
+            CREATE TABLE editorial_handoff_sync (
+                id                    TEXT PRIMARY KEY,
+                article_id            TEXT NOT NULL,
+                source_key            TEXT NOT NULL,
+                source_revision_id    TEXT,
+                source_kind           TEXT NOT NULL,
+                published_revision_id TEXT,
+                drive_file_id         TEXT,
+                drive_file_url        TEXT,
+                handoff_note          TEXT,
+                sheet_synced_at       TEXT,
+                synced_by             TEXT,
+                sync_status           TEXT NOT NULL DEFAULT \'pending\',
+                last_error            TEXT,
+                created_at            TEXT NOT NULL,
+                updated_at            TEXT NOT NULL,
+                UNIQUE(article_id, source_key)
+            );
+
+            INSERT INTO editorial_handoff_sync (
+                id, article_id, source_key, source_revision_id, source_kind,
+                published_revision_id, drive_file_id, drive_file_url,
+                handoff_note, sheet_synced_at, synced_by, sync_status,
+                last_error, created_at, updated_at
+            )
+            SELECT
+                id,
+                article_id,
+                \'revision:\' || published_revision_id,
+                published_revision_id,
+                \'published\',
+                published_revision_id,
+                drive_file_id,
+                drive_file_url,
+                handoff_note,
+                sheet_synced_at,
+                synced_by,
+                sync_status,
+                last_error,
+                created_at,
+                updated_at
+            FROM editorial_handoff_sync_v10;
+
+            DROP TABLE editorial_handoff_sync_v10;
+
+            CREATE INDEX idx_handoff_sync_article
+                ON editorial_handoff_sync(article_id, source_key);
+            CREATE INDEX idx_handoff_sync_status
+                ON editorial_handoff_sync(sync_status);
+        ',
     ];
 }

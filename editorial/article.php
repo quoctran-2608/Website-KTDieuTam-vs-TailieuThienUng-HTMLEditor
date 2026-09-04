@@ -72,7 +72,16 @@ if (editorial_is_post()) {
     editorial_enforce_csrf();
     $intent = trim((string) ($_POST['_intent'] ?? ''));
 
-    if (in_array($intent, ['save_draft', 'save_draft_stage_compare'], true)) {
+    $saveThenIntents = [
+        'save_draft',
+        'save_then_stage1',
+        'save_then_stage2',
+        'save_draft_stage_compare',
+        'save_then_review',
+        'save_then_publish',
+        'save_then_handoff',
+    ];
+    if (in_array($intent, $saveThenIntents, true)) {
         $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
         $expectedVersion = (int) ($_POST['expected_draft_version'] ?? 0);
 
@@ -120,10 +129,12 @@ if (editorial_is_post()) {
             editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
         }
 
-        if ($intent === 'save_draft_stage_compare') {
-            $milestoneKey = trim((string) ($_POST['compare_stage'] ?? ''));
+        if (in_array($intent, ['save_then_stage1', 'save_then_stage2', 'save_draft_stage_compare'], true)) {
+            $milestoneKey = $intent === 'save_then_stage1'
+                ? 'stage1'
+                : ($intent === 'save_then_stage2' ? 'stage2' : trim((string) ($_POST['compare_stage'] ?? '')));
             if (!in_array($milestoneKey, ['stage1', 'stage2'], true)) {
-                editorial_flash_set('danger', 'Mốc phiên bản để so sánh không hợp lệ.');
+                editorial_flash_set('danger', 'Mốc phiên bản không hợp lệ.');
                 editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
             }
 
@@ -135,8 +146,12 @@ if (editorial_is_post()) {
                 $milestoneKey
             );
             $stageRevisionId = (string) ($stageResult['revision_id'] ?? $stageResult['duplicate_revision_id'] ?? '');
-            if ($stageRevisionId === '') {
-                editorial_flash_set('danger', $stageResult['message'] ?? 'Không thể lưu mốc phiên bản để so sánh.');
+            if (empty($stageResult['ok']) || $stageRevisionId === '') {
+                editorial_flash_set('danger', $stageResult['message'] ?? 'Không thể lưu mốc phiên bản.');
+                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+            }
+            if ($intent !== 'save_draft_stage_compare') {
+                editorial_flash_set('success', (string) ($stageResult['message'] ?? 'Đã lưu mốc phiên bản.'));
                 editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
             }
 
@@ -164,6 +179,55 @@ if (editorial_is_post()) {
             ));
         }
 
+        if ($intent === 'save_then_review') {
+            $candidate = editorial_prepare_saved_draft_review_candidate($articleId, $currentUserId, $lockToken);
+            if (!$candidate['ok']) {
+                editorial_flash_set('danger', (string) ($candidate['message'] ?? 'Không thể chuẩn bị bản duyệt.'));
+                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+            }
+            $reviewResult = editorial_send_for_review(
+                $articleId,
+                $currentUserId,
+                $lockToken,
+                (string) ($candidate['revision_id'] ?? '')
+            );
+            editorial_flash_set($reviewResult['ok'] ? 'success' : 'danger', (string) ($reviewResult['message'] ?? 'Không thể gửi duyệt.'));
+            editorial_redirect($reviewResult['ok']
+                ? editorial_url('my-work.php')
+                : editorial_url('article.php?id=' . urlencode($articleId)));
+        }
+
+        if ($intent === 'save_then_publish') {
+            require_once __DIR__ . '/includes/publish.php';
+            if (empty($_POST['confirm_direct_publish'])) {
+                editorial_flash_set('danger', 'Vui lòng xác nhận trước khi Publish trực tiếp.');
+                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+            }
+            $publishResult = editorial_publish_editor_revision($articleId, $currentUserId, $lockToken);
+            if (!$publishResult['ok']) {
+                editorial_flash_set('danger', (string) ($publishResult['message'] ?? 'Không thể Publish trực tiếp.'));
+                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+            }
+            $rebuildResult = editorial_public_rebuild_after_publish($articleId);
+            if (!empty($rebuildResult['ok'])) {
+                editorial_flash_set('success', 'Đã Publish bài viết. Bạn có thể tiếp tục biên tập, gửi duyệt hoặc Google Handoff.');
+            } else {
+                editorial_flash_set('warning', 'Bài đã được Publish, nhưng dữ liệu public phụ trợ chưa rebuild hoàn tất.');
+            }
+            editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+        }
+
+        if ($intent === 'save_then_handoff') {
+            require_once __DIR__ . '/includes/handoff.php';
+            $handoffResult = editorial_handoff_article(
+                $articleId,
+                trim((string) ($_POST['handoff_note'] ?? '')),
+                $currentUser
+            );
+            editorial_flash_set($handoffResult['ok'] ? 'success' : 'danger', (string) ($handoffResult['message'] ?? 'Không thể Google Handoff.'));
+            editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+        }
+
         editorial_flash_set('success', $result['message']);
         editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
     }
@@ -173,71 +237,6 @@ if (editorial_is_post()) {
         editorial_release_article_lock($articleId, $currentUserId, $lockToken);
         editorial_flash_set('info', 'Đã thoát workspace biên tập.');
         editorial_redirect(editorial_url('my-work.php'));
-    }
-
-    if ($intent === 'send_for_review') {
-        $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
-        $result = editorial_send_for_review($articleId, $currentUserId, $lockToken);
-        editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
-        if ($result['ok']) {
-            editorial_redirect(editorial_url('my-work.php'));
-        }
-        editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
-    }
-
-    if ($intent === 'publish_direct') {
-        require_once __DIR__ . '/includes/publish.php';
-        if (empty($_POST['confirm_direct_publish'])) {
-            editorial_flash_set('danger', 'Vui lòng xác nhận trước khi Publish trực tiếp.');
-            editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
-        }
-
-        $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
-        $result = editorial_publish_editor_revision($articleId, $currentUserId, $lockToken);
-        if (!$result['ok']) {
-            editorial_flash_set('danger', $result['message'] ?? 'Không thể Publish trực tiếp.');
-            editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
-        }
-
-        // Core Publish has committed. Rebuild is derived, best-effort work only.
-        $rebuildResult = editorial_public_rebuild_after_publish($articleId);
-        if (!empty($rebuildResult['ok'])) {
-            try {
-                editorial_log_activity('article.publish.public_rebuild_succeeded', $articleId, $currentUserId, json_encode([
-                    'exit_code' => $rebuildResult['exit_code'] ?? 0,
-                    'publish_mode' => 'editor_direct',
-                ]));
-            } catch (\Throwable $logErr) {
-                // Best-effort: Publish success must remain success.
-            }
-            editorial_flash_set('success', 'Đã Publish bài viết thành công.');
-        } else {
-            try {
-                editorial_log_activity('article.publish.public_rebuild_failed', $articleId, $currentUserId, json_encode([
-                    'code' => $rebuildResult['code'] ?? 'unknown',
-                    'message' => $rebuildResult['message'] ?? 'Unknown error',
-                    'exit_code' => $rebuildResult['exit_code'] ?? null,
-                    'output_tail' => $rebuildResult['output_tail'] ?? null,
-                    'publish_mode' => 'editor_direct',
-                ]));
-            } catch (\Throwable $logErr) {
-                // Best-effort: Publish success must remain success.
-            }
-            editorial_flash_set('warning', 'Bài đã được Publish thành công, nhưng dữ liệu public phụ trợ chưa rebuild hoàn tất.');
-        }
-        editorial_redirect(editorial_url('articles.php'));
-    }
-
-    if (in_array($intent, ['create_stage1_revision', 'create_stage2_revision'], true)) {
-        $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
-        $expectedVersion = (int) ($_POST['expected_draft_version'] ?? 0);
-        $revisionNote = trim((string) ($_POST['revision_note'] ?? ''));
-        $milestoneKey = $intent === 'create_stage1_revision' ? 'stage1' : 'stage2';
-
-        $result = editorial_create_stage_milestone_revision($articleId, $currentUserId, $lockToken, $expectedVersion, $milestoneKey, $revisionNote);
-
-        editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message'] ?? 'Không thể lưu mốc phiên bản.');
-        editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
     }
 
     editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
@@ -358,8 +357,14 @@ try {
     }
 $isEditorWorkspace = (($currentUser['role'] ?? '') === 'editor');
 $hasSavedDraft = $draftVersion > 0;
-$canPublishDirect = $hasSavedDraft && $isEditorWorkspace;
-$canSendReview = $currentMilestone !== null;
+$canPublishDirect = $isEditorWorkspace;
+$canSendReview = true;
+$handoffConfig = editorial_handoff_settings();
+$handoffSettingsReady = ($handoffConfig['last_verify_status'] ?? '') === 'verified'
+    && trim((string) ($handoffConfig['pinned_toolkit_version'] ?? '')) !== ''
+    && trim((string) ($handoffConfig['connected_user_id'] ?? '')) !== '';
+$hasPublication = trim((string) ($state['published_revision_id'] ?? '')) !== '';
+$publishedAt = trim((string) ($state['published_at'] ?? ''));
 $saveStatusText = $hasSavedDraft
     ? '✓ Đã lưu nháp v' . $draftVersion
     : 'Chưa có bản nháp đã lưu';
@@ -408,6 +413,7 @@ $innerScript = <<<JS
   const editor = document.getElementById('proseEditor');
   const formIntent = document.getElementById('editorialFormIntent');
   const autoCompareStage = document.getElementById('autoCompareStage');
+  const publishConfirmField = document.getElementById('confirmDirectPublish');
   const previewFrame = document.getElementById('previewFrame');
   const previewTemplate = $previewTemplateJson;
   if (!editor) return;
@@ -469,21 +475,22 @@ $innerScript = <<<JS
     field.addEventListener('input', markDraftDirty);
     field.addEventListener('change', markDraftDirty);
   });
-  document.querySelectorAll('button[form="stage1MilestoneForm"], button[form="stage2MilestoneForm"], button[form="sendReviewForm"], button[data-direct-publish="1"]').forEach((button) => {
+  document.querySelectorAll('button[data-editor-action]').forEach((button) => {
     button.addEventListener('click', (event) => {
-      if (draftDirty) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        window.alert(button.dataset.directPublish === '1'
-          ? 'Nội dung trên màn hình chưa được lưu. Hãy Lưu nháp trước khi Publish.'
-          : 'Hãy Lưu nháp trước khi thực hiện thao tác này.');
+      event.preventDefault();
+      if (!form || !formIntent || form.dataset.submitting === '1') return;
+      const action = button.dataset.editorAction || 'save_draft';
+      if (action === 'save_then_publish'
+        && !window.confirm('Bạn sắp lưu nội dung hiện tại rồi Publish lên website. Tiếp tục?')) {
         return;
       }
-      if (button.dataset.directPublish === '1'
-        && !window.confirm('Bạn sắp Publish bản nháp đã lưu hiện tại lên website. Tiếp tục?')) {
-        event.preventDefault();
+      formIntent.value = action;
+      autoCompareStage.value = '';
+      if (publishConfirmField) {
+        publishConfirmField.value = action === 'save_then_publish' ? '1' : '';
       }
-    }, true);
+      form.requestSubmit();
+    });
   });
 
   document.querySelectorAll('button[form="exitWorkspaceForm"]').forEach((button) => {
@@ -498,7 +505,7 @@ $innerScript = <<<JS
   document.querySelectorAll('button[data-auto-stage-compare]').forEach((button) => {
     button.addEventListener('click', (event) => {
       event.preventDefault();
-      if (!form || !formIntent || !autoCompareStage) return;
+      if (!form || !formIntent || !autoCompareStage || form.dataset.submitting === '1') return;
 
       const stage = button.dataset.autoStageCompare;
       if (stage !== 'stage1' && stage !== 'stage2') return;
@@ -526,6 +533,10 @@ $innerScript = <<<JS
   document.addEventListener('keydown', (event) => {
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
       event.preventDefault();
+      if (!form || !formIntent || form.dataset.submitting === '1') return;
+      formIntent.value = 'save_draft';
+      autoCompareStage.value = '';
+      if (publishConfirmField) publishConfirmField.value = '';
       form.requestSubmit();
     }
   });
@@ -630,7 +641,14 @@ $innerScript = <<<JS
         instance.on('keydown', (e) => {
           if (e.key === 'Escape' && isFullscreen) { e.preventDefault(); exitFullscreen(); return; }
           if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'f') { e.preventDefault(); toggleFullscreen(); return; }
-          if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); form.requestSubmit(); }
+          if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+            e.preventDefault();
+            if (!form || !formIntent || form.dataset.submitting === '1') return;
+            formIntent.value = 'save_draft';
+            autoCompareStage.value = '';
+            if (publishConfirmField) publishConfirmField.value = '';
+            form.requestSubmit();
+          }
         });
       }
     });

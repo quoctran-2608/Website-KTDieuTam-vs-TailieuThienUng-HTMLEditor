@@ -12,6 +12,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/workspace.php';
 require_once __DIR__ . '/revision.php';
 require_once __DIR__ . '/composio.php';
+require_once __DIR__ . '/publish.php';
 
 const EDITORIAL_HANDOFF_HEADERS = [
     'Article ID',
@@ -34,55 +35,42 @@ const EDITORIAL_HANDOFF_UPSERT_ROWS = 'GOOGLESUPER_UPSERT_ROWS';
 /**
  * @return array<string,mixed>|null
  */
-function editorial_handoff_get_sync(string $articleId, string $publishedRevisionId): ?array
+function editorial_handoff_get_sync(string $articleId, string $sourceKey): ?array
 {
     $stmt = editorial_db()->prepare('
         SELECT * FROM editorial_handoff_sync
-        WHERE article_id = :article_id AND published_revision_id = :revision_id
+        WHERE article_id = :article_id AND source_key = :source_key
     ');
-    $stmt->execute(['article_id' => $articleId, 'revision_id' => $publishedRevisionId]);
+    $stmt->execute(['article_id' => $articleId, 'source_key' => $sourceKey]);
     $row = $stmt->fetch();
     return $row ?: null;
 }
 
 /**
- * Batch-load sync state for displayed current published revisions.
+ * Batch-load the newest handoff state per displayed article.
  *
- * @param array<string,array<string,mixed>> $states
+ * @param array<int,string> $articleIds
  * @return array<string,array<string,mixed>>
  */
-function editorial_get_handoff_sync_for_published_states(array $states): array
+function editorial_get_handoff_sync_for_articles(array $articleIds): array
 {
-    $revisionIds = [];
-    $articleByRevision = [];
-    foreach ($states as $articleId => $state) {
-        if (($state['status'] ?? '') !== 'published') {
-            continue;
-        }
-        $revisionId = trim((string) ($state['published_revision_id'] ?? ''));
-        if ($revisionId === '') {
-            continue;
-        }
-        $revisionIds[] = $revisionId;
-        $articleByRevision[$revisionId] = (string) $articleId;
-    }
-    if ($revisionIds === []) {
+    $articleIds = array_values(array_unique(array_filter(array_map('strval', $articleIds))));
+    if ($articleIds === []) {
         return [];
     }
 
-    $revisionIds = array_values(array_unique($revisionIds));
-    $placeholders = implode(',', array_fill(0, count($revisionIds), '?'));
+    $placeholders = implode(',', array_fill(0, count($articleIds), '?'));
     $stmt = editorial_db()->prepare("
         SELECT * FROM editorial_handoff_sync
-        WHERE published_revision_id IN ($placeholders)
+        WHERE article_id IN ($placeholders)
+        ORDER BY updated_at DESC
     ");
-    $stmt->execute($revisionIds);
+    $stmt->execute($articleIds);
 
     $result = [];
     while ($row = $stmt->fetch()) {
-        $revisionId = (string) ($row['published_revision_id'] ?? '');
         $articleId = (string) ($row['article_id'] ?? '');
-        if ($revisionId !== '' && ($articleByRevision[$revisionId] ?? '') === $articleId) {
+        if ($articleId !== '' && !isset($result[$articleId])) {
             $result[$articleId] = $row;
         }
     }
@@ -92,24 +80,29 @@ function editorial_get_handoff_sync_for_published_states(array $states): array
 /**
  * @return array<string,mixed>
  */
-function editorial_handoff_ensure_sync(string $articleId, string $publishedRevisionId): array
+function editorial_handoff_ensure_sync(string $articleId, array $source): array
 {
-    return editorial_transaction(function () use ($articleId, $publishedRevisionId): array {
+    return editorial_transaction(function () use ($articleId, $source): array {
         $db = editorial_db();
         $now = date('c');
         $stmt = $db->prepare('
             INSERT OR IGNORE INTO editorial_handoff_sync
-            (id, article_id, published_revision_id, sync_status, created_at, updated_at)
-            VALUES (:id, :article_id, :revision_id, \'pending\', :created_at, :updated_at)
+            (id, article_id, source_key, source_revision_id, source_kind,
+             published_revision_id, sync_status, created_at, updated_at)
+            VALUES (:id, :article_id, :source_key, :source_revision_id, :source_kind,
+                    :published_revision_id, \'pending\', :created_at, :updated_at)
         ');
         $stmt->execute([
             'id' => editorial_generate_id('handoff'),
             'article_id' => $articleId,
-            'revision_id' => $publishedRevisionId,
+            'source_key' => (string) $source['source_key'],
+            'source_revision_id' => $source['source_revision_id'] ?? null,
+            'source_kind' => (string) $source['source_kind'],
+            'published_revision_id' => $source['published_revision_id'] ?? null,
             'created_at' => $now,
             'updated_at' => $now,
         ]);
-        $sync = editorial_handoff_get_sync($articleId, $publishedRevisionId);
+        $sync = editorial_handoff_get_sync($articleId, (string) $source['source_key']);
         if ($sync === null) {
             throw new RuntimeException('Không thể tạo trạng thái bàn giao Google.');
         }
@@ -154,6 +147,9 @@ function editorial_handoff_log(string $event, string $articleId, string $actorUs
 {
     $safe = array_intersect_key($payload, array_flip([
         'article_id',
+        'source_key',
+        'source_revision_id',
+        'source_kind',
         'published_revision_id',
         'sheet_match_count',
         'drive_file_id',
@@ -197,6 +193,10 @@ function editorial_handoff_user_can_sync(string $articleId, array $actor): bool
     $actorId = (string) ($actor['user_id'] ?? '');
     if ($actorId === '') {
         return false;
+    }
+    $state = editorial_get_article_state($articleId);
+    if ($state && (string) ($state['assigned_user_id'] ?? '') === $actorId) {
+        return true;
     }
     foreach (editorial_get_article_contributors([$articleId])[$articleId] ?? [] as $contributor) {
         if ((string) ($contributor['user_id'] ?? '') === $actorId) {
@@ -336,6 +336,179 @@ function editorial_handoff_archive_filename(string $articleId, string $revisionI
     return $safeArticle . '__' . $safeRevision . '.html';
 }
 
+/**
+ * Build complete HTML for an immutable editorial/review/approved source
+ * without writing public files.
+ *
+ * @return array{ok:bool,html?:string,message:string}
+ */
+function editorial_handoff_render_revision_html(array $article, array $state, array $revision): array
+{
+    $snapshot = editorial_get_verified_revision_snapshot($revision);
+    if (!$snapshot['ok']) {
+        return ['ok' => false, 'message' => 'Snapshot nguồn bàn giao không hợp lệ: ' . $snapshot['message']];
+    }
+    $htmlPath = editorial_resolve_article_path($article);
+    if ($htmlPath === null) {
+        return ['ok' => false, 'message' => 'Không tìm thấy HTML shell hiện tại để dựng archive.'];
+    }
+    $liveHtml = file_get_contents($htmlPath);
+    if ($liveHtml === false || $liveHtml === '') {
+        return ['ok' => false, 'message' => 'Không thể đọc HTML shell hiện tại để dựng archive.'];
+    }
+    $baseLiveHash = trim((string) ($state['base_live_hash'] ?? ''));
+    if ($baseLiveHash === '' || hash('sha256', $liveHtml) !== $baseLiveHash) {
+        return ['ok' => false, 'message' => 'HTML public hiện tại không còn khớp base live hash của workflow.'];
+    }
+    $parsed = editorial_parse_article_html($liveHtml, '');
+    if (!$parsed['ok']) {
+        return ['ok' => false, 'message' => 'Không thể phân tích HTML shell hiện tại.'];
+    }
+    $normalized = editorial_normalize_publish_payload(
+        (array) $snapshot['payload'],
+        (array) ($parsed['meta_payload'] ?? []),
+        $article
+    );
+    $rendered = editorial_render_approved_html($liveHtml, $article, $normalized);
+    if (!$rendered['ok']) {
+        return ['ok' => false, 'message' => 'Không thể dựng full HTML bàn giao: ' . $rendered['message']];
+    }
+    $validated = editorial_validate_rendered_html((string) $rendered['html'], $normalized);
+    if (!$validated['ok']) {
+        return ['ok' => false, 'message' => 'Full HTML bàn giao không đạt kiểm tra: ' . $validated['message']];
+    }
+    return ['ok' => true, 'html' => (string) $rendered['html'], 'message' => ''];
+}
+
+/**
+ * Resolve the current server-authoritative Handoff source for every workflow
+ * state. Browser input never supplies revision IDs/source keys.
+ *
+ * @return array{ok:bool,message:string,source?:array<string,mixed>}
+ */
+function editorial_handoff_resolve_source(array $article, ?array $state): array
+{
+    $articleId = (string) $article['id'];
+    $status = (string) ($state['status'] ?? 'available');
+    $htmlPath = editorial_resolve_article_path($article);
+    if ($htmlPath === null) {
+        return ['ok' => false, 'message' => 'Không tìm thấy HTML nguồn của bài viết.'];
+    }
+
+    if (in_array($status, ['editing', 'returned'], true)) {
+        $ownerId = trim((string) ($state['assigned_user_id'] ?? ''));
+        if ($ownerId === '') {
+            return ['ok' => false, 'message' => 'Bài đang biên tập nhưng không có người phụ trách hợp lệ.'];
+        }
+        $candidate = editorial_prepare_saved_draft_handoff_candidate($articleId, $ownerId);
+        if (!$candidate['ok']) {
+            return ['ok' => false, 'message' => $candidate['message']];
+        }
+        $revisionId = (string) ($candidate['revision_id'] ?? '');
+        $revision = editorial_get_revision($revisionId);
+        if (!$revision || (string) ($revision['assignment_id'] ?? '') !== (string) (editorial_get_active_assignment($articleId)['id'] ?? '')) {
+            return ['ok' => false, 'message' => 'Nguồn bản nháp bàn giao không khớp active assignment.'];
+        }
+        $rendered = editorial_handoff_render_revision_html($article, $state, $revision);
+        if (!$rendered['ok']) {
+            return $rendered;
+        }
+        return [
+            'ok' => true,
+            'message' => '',
+            'source' => [
+                'source_key' => 'revision:' . $revisionId,
+                'source_revision_id' => $revisionId,
+                'source_kind' => 'draft',
+                'published_revision_id' => null,
+                'source_identifier' => $revisionId,
+                'archive_identity' => $revisionId,
+                'html' => $rendered['html'],
+            ],
+        ];
+    }
+
+    $pointerField = match ($status) {
+        'ready_review' => 'review_revision_id',
+        'approved' => 'approved_revision_id',
+        default => '',
+    };
+    if ($pointerField !== '') {
+        $revisionId = trim((string) ($state[$pointerField] ?? ''));
+        $revision = $revisionId !== '' ? editorial_get_revision($revisionId) : null;
+        $assignment = editorial_get_active_assignment($articleId);
+        if (!$revision || ($revision['revision_type'] ?? '') !== 'editorial'
+            || (string) ($revision['article_id'] ?? '') !== $articleId
+            || !$assignment
+            || (string) ($revision['assignment_id'] ?? '') !== (string) $assignment['id']) {
+            return ['ok' => false, 'message' => 'Revision nguồn bàn giao không hợp lệ hoặc không khớp assignment.'];
+        }
+        $rendered = editorial_handoff_render_revision_html($article, $state, $revision);
+        if (!$rendered['ok']) {
+            return $rendered;
+        }
+        return [
+            'ok' => true,
+            'message' => '',
+            'source' => [
+                'source_key' => 'revision:' . $revisionId,
+                'source_revision_id' => $revisionId,
+                'source_kind' => $status === 'ready_review' ? 'review' : 'approved',
+                'published_revision_id' => null,
+                'source_identifier' => $revisionId,
+                'archive_identity' => $revisionId,
+                'html' => $rendered['html'],
+            ],
+        ];
+    }
+
+    $liveHtml = file_get_contents($htmlPath);
+    if ($liveHtml === false || $liveHtml === '') {
+        return ['ok' => false, 'message' => 'Không thể đọc HTML live để bàn giao.'];
+    }
+    $liveHash = hash('sha256', $liveHtml);
+    if ($status === 'published') {
+        $publishedRevisionId = trim((string) ($state['published_revision_id'] ?? ''));
+        $publishedHash = trim((string) ($state['published_live_hash'] ?? ''));
+        $revision = $publishedRevisionId !== '' ? editorial_get_revision($publishedRevisionId) : null;
+        if (!$revision || ($revision['revision_type'] ?? '') !== 'published'
+            || (string) ($revision['article_id'] ?? '') !== $articleId
+            || $publishedHash === ''
+            || $liveHash !== $publishedHash) {
+            return ['ok' => false, 'message' => 'Published source không hợp lệ hoặc live hash đã thay đổi.'];
+        }
+        return [
+            'ok' => true,
+            'message' => '',
+            'source' => [
+                'source_key' => 'revision:' . $publishedRevisionId,
+                'source_revision_id' => $publishedRevisionId,
+                'source_kind' => 'published',
+                'published_revision_id' => $publishedRevisionId,
+                'source_identifier' => $publishedRevisionId,
+                'archive_identity' => $publishedRevisionId,
+                'html' => $liveHtml,
+            ],
+        ];
+    }
+
+    // No active workflow source: authorized Admin/contributors may archive the
+    // exact current live file using a deterministic hash identity.
+    return [
+        'ok' => true,
+        'message' => '',
+        'source' => [
+            'source_key' => 'live:' . $liveHash,
+            'source_revision_id' => null,
+            'source_kind' => 'live',
+            'published_revision_id' => null,
+            'source_identifier' => 'live:' . $liveHash,
+            'archive_identity' => 'live-' . $liveHash,
+            'html' => $liveHtml,
+        ],
+    ];
+}
+
 function editorial_handoff_safe_drive_url(string $value): string
 {
     $parts = parse_url(trim($value));
@@ -352,7 +525,7 @@ function editorial_handoff_safe_drive_url(string $value): string
 /**
  * @return array{ok:bool,metadata?:array<string,string>,message:string}
  */
-function editorial_handoff_build_metadata(array $article, string $html, string $publicBaseUrl, string $publishedRevisionId, string $note, string $handoffDate): array
+function editorial_handoff_build_metadata(array $article, string $html, string $publicBaseUrl, string $sourceIdentifier, string $note, string $handoffDate): array
 {
     $parsed = editorial_parse_article_html($html, '');
     if (!$parsed['ok']) {
@@ -399,7 +572,7 @@ function editorial_handoff_build_metadata(array $article, string $html, string $
             'Biên tập bởi' => implode(', ', array_values(array_unique($names))),
             'HTML Archive' => '',
             'Ghi chú' => $note,
-            'Published Revision' => $publishedRevisionId,
+            'Published Revision' => $sourceIdentifier,
             'Ngày bàn giao' => $handoffDate,
         ],
     ];
@@ -831,6 +1004,9 @@ function editorial_handoff_fail(array $sync, string $articleId, string $actorUse
     }
     editorial_handoff_log('handoff.failed', $articleId, $actorUserId, [
         'article_id' => $articleId,
+        'source_key' => (string) ($sync['source_key'] ?? ''),
+        'source_revision_id' => (string) ($sync['source_revision_id'] ?? ''),
+        'source_kind' => (string) ($sync['source_kind'] ?? ''),
         'published_revision_id' => (string) ($sync['published_revision_id'] ?? ''),
         'drive_file_id' => (string) ($sync['drive_file_id'] ?? ''),
         'sync_status' => 'failed',
@@ -840,7 +1016,7 @@ function editorial_handoff_fail(array $sync, string $articleId, string $actorUse
 }
 
 /**
- * Perform an idempotent handoff for the current published revision only.
+ * Perform an idempotent handoff for the current server-resolved source.
  *
  * @return array{ok:bool,code:string,message:string}
  */
@@ -850,9 +1026,8 @@ function editorial_handoff_article(string $articleId, string $note, array $actor
     if (!is_dir($lockDirectory) && !mkdir($lockDirectory, 0775, true) && !is_dir($lockDirectory)) {
         return ['ok' => false, 'code' => 'handoff_lock_storage_failed', 'message' => 'Không thể chuẩn bị khóa bàn giao Google an toàn.'];
     }
-    // Serialize all handoffs for an article. A new published revision cannot
-    // appear without a separate Safe Publish, so this safely covers its
-    // article+revision sync identity while preventing double-click archives.
+    // Serialize all handoffs for an article so two concurrent requests cannot
+    // create duplicate archives for the same server-resolved source.
     $lockPath = $lockDirectory . '/' . hash('sha256', $articleId) . '.lock';
     $handle = @fopen($lockPath, 'c');
     if ($handle === false || !flock($handle, LOCK_EX | LOCK_NB)) {
@@ -870,7 +1045,7 @@ function editorial_handoff_article(string $articleId, string $note, array $actor
 }
 
 /**
- * The caller holds a per article/revision handoff lock across external calls.
+ * The caller holds a per-article handoff lock across external calls.
  *
  * @return array{ok:bool,code:string,message:string}
  */
@@ -890,17 +1065,6 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
         return ['ok' => false, 'code' => 'not_contributor', 'message' => 'Bạn không có quyền bàn giao bài viết này.'];
     }
     $state = editorial_get_article_state($articleId);
-    $publishedRevisionId = trim((string) ($state['published_revision_id'] ?? ''));
-    $publishedHash = trim((string) ($state['published_live_hash'] ?? ''));
-    if (!$state || ($state['status'] ?? '') !== 'published' || $publishedRevisionId === '' || $publishedHash === '') {
-        return ['ok' => false, 'code' => 'not_published', 'message' => 'Chỉ có thể bàn giao bài đã Publish hợp lệ.'];
-    }
-    $publishedRevision = editorial_get_revision($publishedRevisionId);
-    if (!$publishedRevision
-        || (string) ($publishedRevision['article_id'] ?? '') !== $articleId
-        || (string) ($publishedRevision['revision_type'] ?? '') !== 'published') {
-        return ['ok' => false, 'code' => 'published_revision_invalid', 'message' => 'Published revision không hợp lệ để bàn giao.'];
-    }
     $settingsResult = editorial_handoff_verified_settings();
     if (!$settingsResult['ok']) {
         return [
@@ -914,21 +1078,24 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
     if (mb_strlen($note) > 2000) {
         return ['ok' => false, 'code' => 'note_too_long', 'message' => 'Ghi chú bàn giao tối đa 2000 ký tự.'];
     }
-    $htmlPath = editorial_resolve_article_path($article);
-    if ($htmlPath === null) {
-        return ['ok' => false, 'code' => 'live_file_missing', 'message' => 'Không tìm thấy HTML public để bàn giao.'];
+    $sourceResult = editorial_handoff_resolve_source($article, $state);
+    if (!$sourceResult['ok']) {
+        return ['ok' => false, 'code' => 'source_unavailable', 'message' => $sourceResult['message']];
     }
-    $html = file_get_contents($htmlPath);
-    if ($html === false || $html === '') {
-        return ['ok' => false, 'code' => 'live_html_empty', 'message' => 'Không thể đọc HTML public để bàn giao.'];
-    }
-    if (hash('sha256', $html) !== $publishedHash) {
-        return ['ok' => false, 'code' => 'live_hash_mismatch', 'message' => 'Nội dung public hiện tại không còn khớp bản Publish đã ghi nhận. Vui lòng kiểm tra lại trước khi lưu hồ sơ.'];
-    }
+    $source = $sourceResult['source'];
+    $html = (string) $source['html'];
+    $sourceKey = (string) $source['source_key'];
+    $sourceRevisionId = (string) ($source['source_revision_id'] ?? '');
+    $sourceKind = (string) $source['source_kind'];
+    $publishedRevisionId = (string) ($source['published_revision_id'] ?? '');
+    $sourceIdentifier = (string) $source['source_identifier'];
 
-    $sync = editorial_handoff_ensure_sync($articleId, $publishedRevisionId);
+    $sync = editorial_handoff_ensure_sync($articleId, $source);
     editorial_handoff_log('handoff.started', $articleId, $actorId, [
         'article_id' => $articleId,
+        'source_key' => $sourceKey,
+        'source_revision_id' => $sourceRevisionId,
+        'source_kind' => $sourceKind,
         'published_revision_id' => $publishedRevisionId,
         'drive_file_id' => (string) ($sync['drive_file_id'] ?? ''),
         'sync_status' => (string) ($sync['sync_status'] ?? 'pending'),
@@ -955,6 +1122,9 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
             $actorId,
             [
                 'article_id' => $articleId,
+                'source_key' => $sourceKey,
+                'source_revision_id' => $sourceRevisionId,
+                'source_kind' => $sourceKind,
                 'published_revision_id' => $publishedRevisionId,
                 'sheet_match_count' => (int) ($preflight['count'] ?? 0),
                 'sync_status' => 'failed',
@@ -965,6 +1135,9 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
     }
     editorial_handoff_log('handoff.sheet_preflight', $articleId, $actorId, [
         'article_id' => $articleId,
+        'source_key' => $sourceKey,
+        'source_revision_id' => $sourceRevisionId,
+        'source_kind' => $sourceKind,
         'published_revision_id' => $publishedRevisionId,
         'sheet_match_count' => (int) $preflight['count'],
         'intent' => (string) $preflight['intent'],
@@ -980,7 +1153,7 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
         }
     } else {
         try {
-            $filename = editorial_handoff_archive_filename($articleId, $publishedRevisionId);
+            $filename = editorial_handoff_archive_filename($articleId, (string) $source['archive_identity']);
         } catch (RuntimeException $e) {
             return editorial_handoff_fail($sync, $articleId, $actorId, 'archive_filename_invalid', $e->getMessage());
         }
@@ -1003,9 +1176,12 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
             'sync_status' => 'drive_uploaded',
             'last_error' => null,
         ]);
-        $sync = editorial_handoff_get_sync($articleId, $publishedRevisionId) ?? $sync;
+        $sync = editorial_handoff_get_sync($articleId, $sourceKey) ?? $sync;
         editorial_handoff_log('handoff.drive_uploaded', $articleId, $actorId, [
             'article_id' => $articleId,
+            'source_key' => $sourceKey,
+            'source_revision_id' => $sourceRevisionId,
+            'source_kind' => $sourceKind,
             'published_revision_id' => $publishedRevisionId,
             'drive_file_id' => $driveId,
             'sync_status' => 'drive_uploaded',
@@ -1016,7 +1192,7 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
         $article,
         $html,
         (string) $settings['public_base_url'],
-        $publishedRevisionId,
+        $sourceIdentifier,
         $note,
         date('d/m/Y H:i', strtotime($sheetSyncAt))
     );
@@ -1040,6 +1216,9 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
     }
     editorial_handoff_log('handoff.sheet_upserted', $articleId, $actorId, [
         'article_id' => $articleId,
+        'source_key' => $sourceKey,
+        'source_revision_id' => $sourceRevisionId,
+        'source_kind' => $sourceKind,
         'published_revision_id' => $publishedRevisionId,
         'drive_file_id' => $driveId,
         'sheet_match_count' => (int) $preflight['count'],
@@ -1067,6 +1246,9 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
     ]);
     editorial_handoff_log('handoff.sheet_verified', $articleId, $actorId, [
         'article_id' => $articleId,
+        'source_key' => $sourceKey,
+        'source_revision_id' => $sourceRevisionId,
+        'source_kind' => $sourceKind,
         'published_revision_id' => $publishedRevisionId,
         'drive_file_id' => $driveId,
         'sheet_match_count' => 1,

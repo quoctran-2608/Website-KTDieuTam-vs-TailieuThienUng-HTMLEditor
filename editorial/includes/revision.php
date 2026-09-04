@@ -458,7 +458,9 @@ function editorial_create_editorial_revision(
     int $expectedDraftVersion,
     string $note = '',
     ?string $milestoneKey = null,
-    bool $updateCurrentRevision = true
+    bool $updateCurrentRevision = true,
+    bool $requireLock = true,
+    string $candidatePurpose = ''
 ): array
 {
     $note = trim($note);
@@ -469,7 +471,7 @@ function editorial_create_editorial_revision(
         return ['ok' => false, 'message' => 'Mốc phiên bản không hợp lệ.'];
     }
 
-    return editorial_transaction(function () use ($articleId, $userId, $lockToken, $expectedDraftVersion, $note, $milestoneKey, $updateCurrentRevision): array {
+    return editorial_transaction(function () use ($articleId, $userId, $lockToken, $expectedDraftVersion, $note, $milestoneKey, $updateCurrentRevision, $requireLock, $candidatePurpose): array {
         $db = editorial_db();
 
         // 1. Verify assignment + status
@@ -481,23 +483,26 @@ function editorial_create_editorial_revision(
             return ['ok' => false, 'message' => 'Bài viết không ở trạng thái cho phép tạo phiên bản.'];
         }
 
-        // 2. Validate lock inside transaction
-        $lockStmt = $db->prepare('SELECT * FROM editorial_locks WHERE article_id = :aid');
-        $lockStmt->execute(['aid' => $articleId]);
-        $lock = $lockStmt->fetch();
+        // 2. Workspace actions require the exact active lock. External handoff
+        // may snapshot an already-saved draft without trusting browser state.
+        if ($requireLock) {
+            $lockStmt = $db->prepare('SELECT * FROM editorial_locks WHERE article_id = :aid');
+            $lockStmt->execute(['aid' => $articleId]);
+            $lock = $lockStmt->fetch();
 
-        if (!$lock) {
-            return ['ok' => false, 'message' => 'Không có phiên chỉnh sửa nào đang hoạt động.'];
-        }
-        if ((string) $lock['user_id'] !== $userId) {
-            return ['ok' => false, 'message' => 'Phiên chỉnh sửa thuộc về người dùng khác.'];
-        }
-        if ((string) $lock['lock_token'] !== $lockToken) {
-            return ['ok' => false, 'message' => 'Token phiên chỉnh sửa không hợp lệ.'];
-        }
-        $expiry = strtotime((string) $lock['expires_at']);
-        if ($expiry !== false && $expiry < time()) {
-            return ['ok' => false, 'message' => 'Phiên chỉnh sửa đã hết hạn. Vui lòng tải lại workspace.'];
+            if (!$lock) {
+                return ['ok' => false, 'message' => 'Không có phiên chỉnh sửa nào đang hoạt động.'];
+            }
+            if ((string) $lock['user_id'] !== $userId) {
+                return ['ok' => false, 'message' => 'Phiên chỉnh sửa thuộc về người dùng khác.'];
+            }
+            if ((string) $lock['lock_token'] !== $lockToken) {
+                return ['ok' => false, 'message' => 'Token phiên chỉnh sửa không hợp lệ.'];
+            }
+            $expiry = strtotime((string) $lock['expires_at']);
+            if ($expiry !== false && $expiry < time()) {
+                return ['ok' => false, 'message' => 'Phiên chỉnh sửa đã hết hạn. Vui lòng tải lại workspace.'];
+            }
         }
 
         // 3. Load saved draft
@@ -506,7 +511,7 @@ function editorial_create_editorial_revision(
             return [
                 'ok' => false,
                 'message' => !$updateCurrentRevision
-                    ? 'Bạn cần Lưu nháp trước khi Publish.'
+                    ? 'Bạn cần Lưu nháp trước khi thực hiện thao tác này.'
                     : 'Không tìm thấy bản nháp. Hãy lưu nháp trước khi tạo phiên bản.',
             ];
         }
@@ -516,7 +521,7 @@ function editorial_create_editorial_revision(
             return [
                 'ok' => false,
                 'message' => !$updateCurrentRevision
-                    ? 'Bản nháp đã thay đổi trong khi chuẩn bị Publish. Vui lòng thử lại.'
+                    ? 'Bản nháp đã thay đổi trong khi chuẩn bị bản cố định. Vui lòng thử lại.'
                     : 'Nội dung trên màn hình có thể chưa được lưu. Hãy Lưu nháp trước khi hoàn tất chặng.',
             ];
         }
@@ -651,7 +656,7 @@ function editorial_create_editorial_revision(
             // 13. Activity log (no full prose, no token)
             editorial_log_activity(
                 $milestoneKey === null && !$updateCurrentRevision
-                    ? 'article.revision.publish_candidate_created'
+                    ? 'article.revision.' . ($candidatePurpose !== '' ? $candidatePurpose : 'external') . '_candidate_created'
                     : ($milestoneKey === null ? 'article.revision.created' : 'article.revision.' . $milestoneKey . '_created'),
                 $articleId,
                 $userId,
@@ -663,6 +668,7 @@ function editorial_create_editorial_revision(
                 'source_draft_version' => (int) $draft['version'],
                 'content_hash' => $contentHash,
                 'candidate_origin' => $milestoneKey === null && !$updateCurrentRevision ? 'saved_draft_snapshot' : null,
+                'candidate_purpose' => $candidatePurpose !== '' ? $candidatePurpose : null,
             ]));
 
             $message = $milestoneKey === 'stage1'
@@ -692,11 +698,53 @@ function editorial_create_editorial_revision(
  * draft. It reuses an exact verified revision when possible and otherwise
  * creates a revision without changing current_revision_id.
  */
-function editorial_prepare_saved_draft_publish_candidate(string $articleId, string $userId, string $lockToken): array
+function editorial_prepare_saved_draft_candidate(
+    string $articleId,
+    string $userId,
+    string $lockToken,
+    string $purpose,
+    bool $requireLock = true
+): array
 {
     $draft = editorial_get_draft($articleId, $userId);
     if (!$draft) {
-        return ['ok' => false, 'message' => 'Bạn cần Lưu nháp trước khi Publish.'];
+        return ['ok' => false, 'message' => 'Bạn cần Lưu nháp trước khi thực hiện thao tác này.'];
+    }
+    if ($purpose !== 'publish') {
+        try {
+            $draftHash = editorial_revision_content_hash($draft['payload']);
+        } catch (RuntimeException $e) {
+            return ['ok' => false, 'message' => 'Không thể băm bản nháp đã lưu.'];
+        }
+        $assignment = editorial_get_active_assignment($articleId);
+        if (!$assignment || (string) ($assignment['user_id'] ?? '') !== $userId) {
+            return ['ok' => false, 'message' => 'Phân công không hợp lệ hoặc không khớp.'];
+        }
+        $stmt = editorial_db()->prepare('
+            SELECT * FROM editorial_revisions
+            WHERE article_id = :article_id
+              AND assignment_id = :assignment_id
+              AND revision_type = \'editorial\'
+              AND content_hash = :content_hash
+            ORDER BY revision_no DESC
+        ');
+        $stmt->execute([
+            'article_id' => $articleId,
+            'assignment_id' => (string) $assignment['id'],
+            'content_hash' => $draftHash,
+        ]);
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $existingRevision) {
+            $snapshot = editorial_get_verified_revision_snapshot($existingRevision);
+            if ($snapshot['ok']) {
+                return [
+                    'ok' => true,
+                    'revision_id' => (string) $existingRevision['id'],
+                    'candidate_origin' => (string) ($existingRevision['milestone_key'] ?? '') !== ''
+                        ? (string) $existingRevision['milestone_key']
+                        : 'reused_editorial',
+                ];
+            }
+        }
     }
 
     $result = editorial_create_editorial_revision(
@@ -706,7 +754,9 @@ function editorial_prepare_saved_draft_publish_candidate(string $articleId, stri
         (int) ($draft['version'] ?? 0),
         '',
         null,
-        false
+        false,
+        $requireLock,
+        $purpose
     );
     if (!$result['ok']) {
         return $result;
@@ -714,7 +764,7 @@ function editorial_prepare_saved_draft_publish_candidate(string $articleId, stri
 
     $revision = editorial_get_revision((string) ($result['revision_id'] ?? ''));
     if (!$revision) {
-        return ['ok' => false, 'message' => 'Không tìm thấy bản cố định để Publish.'];
+        return ['ok' => false, 'message' => 'Không tìm thấy bản cố định từ nháp đã lưu.'];
     }
     $snapshotResult = editorial_get_verified_revision_snapshot($revision);
     if (!$snapshotResult['ok']) {
@@ -728,9 +778,51 @@ function editorial_prepare_saved_draft_publish_candidate(string $articleId, stri
     ];
 }
 
+function editorial_prepare_saved_draft_publish_candidate(string $articleId, string $userId, string $lockToken): array
+{
+    return editorial_prepare_saved_draft_candidate($articleId, $userId, $lockToken, 'publish', true);
+}
+
+function editorial_prepare_saved_draft_review_candidate(string $articleId, string $userId, string $lockToken): array
+{
+    return editorial_prepare_saved_draft_candidate($articleId, $userId, $lockToken, 'review', true);
+}
+
+function editorial_prepare_saved_draft_handoff_candidate(string $articleId, string $userId): array
+{
+    return editorial_prepare_saved_draft_candidate($articleId, $userId, '', 'handoff', false);
+}
+
 function editorial_create_stage_milestone_revision(string $articleId, string $userId, string $lockToken, int $expectedDraftVersion, string $milestoneKey, string $note = ''): array
 {
-    return editorial_create_editorial_revision($articleId, $userId, $lockToken, $expectedDraftVersion, $note, $milestoneKey);
+    $result = editorial_create_editorial_revision($articleId, $userId, $lockToken, $expectedDraftVersion, $note, $milestoneKey);
+    $duplicateRevisionId = (string) ($result['duplicate_revision_id'] ?? '');
+    if (!empty($result['ok']) || $duplicateRevisionId === '') {
+        return $result;
+    }
+    return editorial_transaction(function () use ($articleId, $userId, $milestoneKey, $duplicateRevisionId, $result): array {
+        $state = editorial_get_article_state($articleId);
+        $assignment = editorial_get_active_assignment($articleId);
+        $revision = editorial_get_revision($duplicateRevisionId);
+        if (!$state || !$assignment || !$revision
+            || (string) ($state['assigned_user_id'] ?? '') !== $userId
+            || !in_array((string) ($state['status'] ?? ''), ['editing', 'returned'], true)
+            || (string) ($revision['article_id'] ?? '') !== $articleId
+            || (string) ($revision['assignment_id'] ?? '') !== (string) $assignment['id']
+            || (string) ($revision['milestone_key'] ?? '') !== $milestoneKey
+            || empty(editorial_get_verified_revision_snapshot($revision)['ok'])) {
+            return $result;
+        }
+        editorial_db()->prepare('UPDATE editorial_article_state SET current_revision_id = :rid, updated_at = :updated_at WHERE article_id = :aid')
+            ->execute(['rid' => $duplicateRevisionId, 'updated_at' => date('c'), 'aid' => $articleId]);
+        return [
+            'ok' => true,
+            'revision_id' => $duplicateRevisionId,
+            'revision_no' => (int) ($revision['revision_no'] ?? 0),
+            'reused' => true,
+            'message' => $result['message'] ?? 'Đã dùng lại milestone hiện có.',
+        ];
+    });
 }
 
 /**
