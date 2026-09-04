@@ -373,7 +373,9 @@ function editorial_handoff_build_metadata(array $article, string $html, string $
             $images[] = $featuredUrl;
         }
     }
-    $contributors = editorial_get_article_contributors([(string) $article['id'])[(string) $article['id']] ?? [];
+    $contributors = editorial_get_article_contributors(
+        [(string) $article['id']]
+    )[(string) $article['id']] ?? [];
     $names = [];
     foreach ($contributors as $contributor) {
         $name = trim((string) ($contributor['display_name'] ?? ''));
