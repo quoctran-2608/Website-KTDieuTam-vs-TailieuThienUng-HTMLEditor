@@ -4,6 +4,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ . '/includes/layout.php';
 require_once __DIR__ . '/includes/review.php';
+require_once __DIR__ . '/includes/handoff.php';
 
 editorial_require_auth();
 
@@ -117,6 +118,8 @@ $currentPage = $result['page'];
 $displayedIds = array_map(fn($a) => $a['id'], $items);
 $pageStates = editorial_get_states_for_articles($displayedIds);
 $pageContributors = editorial_get_article_contributors($displayedIds);
+$pageHandoffSync = editorial_get_handoff_sync_for_published_states($pageStates);
+$handoffSettingsReady = editorial_handoff_verified_settings()['ok'];
 
 // Preload owner names
 $ownerIds = [];
@@ -237,6 +240,16 @@ editorial_layout_header([
                             static fn(array $contributor): string => (string) $contributor['display_name'],
                             $contributors
                         );
+                        $isHandoffContributor = false;
+                        foreach ($contributors as $contributor) {
+                            if ((string) ($contributor['user_id'] ?? '') === $currentUserId) {
+                                $isHandoffContributor = true;
+                                break;
+                            }
+                        }
+                        $canHandoff = $status === 'published' && ($isAdmin || $isHandoffContributor);
+                        $handoffSync = $pageHandoffSync[$aid] ?? null;
+                        $handoffStatus = (string) ($handoffSync['sync_status'] ?? '');
                         ?>
                         <tr>
                             <td>
@@ -280,7 +293,7 @@ editorial_layout_header([
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <?php if ($ownerId === ''): ?>
+                                <?php if ($ownerId === '' && $status !== 'published'): ?>
                                     <form method="post" action="<?= editorial_h(editorial_url('articles.php')) ?>" style="display:inline;">
                                         <?= editorial_csrf_input() ?>
                                         <input type="hidden" name="claim_article_id" value="<?= editorial_h($aid) ?>">
@@ -317,6 +330,46 @@ editorial_layout_header([
                                                     <i class="fa-solid fa-unlock"></i>
                                                 </button>
                                             </form>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($status === 'published'): ?>
+                                    <div class="editorial-handoff-action">
+                                        <?php if ($canHandoff && $handoffSettingsReady): ?>
+                                            <form method="post" action="<?= editorial_h(editorial_url('handoff.php')) ?>" class="editorial-handoff-form-inline">
+                                                <?= editorial_csrf_input() ?>
+                                                <input type="hidden" name="article_id" value="<?= editorial_h($aid) ?>">
+                                                <?php foreach ($filterParams as $k => $v): ?>
+                                                    <input type="hidden" name="<?= editorial_h($k) ?>" value="<?= editorial_h($v) ?>">
+                                                <?php endforeach; ?>
+                                                <input type="hidden" name="page" value="<?= $currentPage ?>">
+                                                <input type="text" name="handoff_note" maxlength="2000" value="<?= editorial_h((string) ($handoffSync['handoff_note'] ?? '')) ?>" placeholder="Ghi chú bàn giao (nếu có)" aria-label="Ghi chú bàn giao">
+                                                <?php if ($handoffStatus === 'synced'): ?>
+                                                    <span class="editorial-handoff-synced"><i class="fa-solid fa-circle-check"></i> Đã lưu Google</span>
+                                                    <button type="submit" class="editorial-handoff-btn is-resync" title="Cập nhật lại dòng Google Sheet, giữ HTML archive hiện có">
+                                                        <i class="fa-solid fa-rotate"></i> Lưu lại
+                                                    </button>
+                                                <?php elseif (in_array($handoffStatus, ['failed', 'drive_uploaded'], true)): ?>
+                                                    <button type="submit" class="editorial-handoff-btn is-retry">
+                                                        <i class="fa-solid fa-rotate"></i> Thử lại Google Handoff
+                                                    </button>
+                                                <?php else: ?>
+                                                    <button type="submit" class="editorial-handoff-btn">
+                                                        <i class="fa-solid fa-cloud-arrow-up"></i> Lưu hồ sơ Google Drive
+                                                    </button>
+                                                <?php endif; ?>
+                                                <?php if (!empty($handoffSync['drive_file_url'])): ?>
+                                                    <a class="editorial-handoff-drive-link" href="<?= editorial_h((string) $handoffSync['drive_file_url']) ?>" target="_blank" rel="noopener">
+                                                        <i class="fa-solid fa-file-code"></i> Mở HTML
+                                                    </a>
+                                                <?php endif; ?>
+                                            </form>
+                                        <?php elseif ($isAdmin): ?>
+                                            <a class="editorial-handoff-unavailable" href="<?= editorial_h(editorial_url('google-handoff-settings.php')) ?>">
+                                                <i class="fa-solid fa-triangle-exclamation"></i> Google Handoff cần kiểm tra lại
+                                            </a>
+                                        <?php elseif ($isHandoffContributor): ?>
+                                            <span class="editorial-handoff-unavailable"><i class="fa-solid fa-cloud"></i> Google Handoff chưa sẵn sàng.</span>
                                         <?php endif; ?>
                                     </div>
                                 <?php endif; ?>

@@ -280,5 +280,27 @@ function editorial_migration_list(): array
                 updated_at    TEXT NOT NULL
             );
         ',
+        10 => '
+            -- Phase 12B: idempotent Google Drive/Sheet handoff state.
+            CREATE TABLE IF NOT EXISTS editorial_handoff_sync (
+                id                    TEXT PRIMARY KEY,
+                article_id            TEXT NOT NULL,
+                published_revision_id TEXT NOT NULL,
+                drive_file_id         TEXT,
+                drive_file_url        TEXT,
+                handoff_note          TEXT,
+                sheet_synced_at       TEXT,
+                synced_by             TEXT,
+                sync_status           TEXT NOT NULL DEFAULT \'pending\',
+                last_error            TEXT,
+                created_at            TEXT NOT NULL,
+                updated_at            TEXT NOT NULL,
+                UNIQUE(article_id, published_revision_id)
+            );
+            CREATE INDEX IF NOT EXISTS idx_handoff_sync_article
+                ON editorial_handoff_sync(article_id, published_revision_id);
+            CREATE INDEX IF NOT EXISTS idx_handoff_sync_status
+                ON editorial_handoff_sync(sync_status);
+        ',
     ];
 }

@@ -1045,6 +1045,56 @@ body.editor-fullscreen-active .editor-fs-status button {
     color: #475569;
     font-size: .8rem;
 }
+.editorial-handoff-action { margin-top: 8px; }
+.editorial-handoff-form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+.editorial-handoff-form-inline input[type="text"] {
+    width: min(220px, 100%);
+    padding: 6px 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    color: #334155;
+    font-size: .76rem;
+}
+.editorial-handoff-btn,
+.editorial-handoff-drive-link,
+.editorial-handoff-unavailable,
+.editorial-handoff-synced {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 30px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: .75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.editorial-handoff-btn {
+    border: 1px solid #0f766e;
+    background: #0f766e;
+    color: #fff;
+    cursor: pointer;
+}
+.editorial-handoff-btn:hover { background: #115e59; }
+.editorial-handoff-btn.is-retry { border-color: #b45309; background: #b45309; }
+.editorial-handoff-btn.is-resync { border-color: #475569; background: #fff; color: #475569; }
+.editorial-handoff-drive-link {
+    border: 1px solid #93c5fd;
+    background: #eff6ff;
+    color: #155e9d;
+    text-decoration: none;
+}
+.editorial-handoff-synced { color: #087f5b; background: #ecfdf5; }
+.editorial-handoff-unavailable { color: #9a6700; font-size: .76rem; text-decoration: none; }
+@media (max-width: 720px) {
+    .editorial-handoff-form-inline { align-items: stretch; }
+    .editorial-handoff-form-inline input[type="text"] { width: 100%; }
+}
 @media (max-width: 720px) {
     .editorial-handoff-grid { grid-template-columns: 1fr; }
     .editorial-handoff-status { align-items: flex-start; }
