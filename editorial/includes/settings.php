@@ -106,6 +106,33 @@ function editorial_handoff_settings_is_complete(): bool
 }
 
 /**
+ * Single non-network readiness authority for Workspace, article list and the
+ * Handoff service. The secret API key is read server-side only.
+ *
+ * @return array{ok:bool,message:string,settings?:array<string,mixed>}
+ */
+function editorial_handoff_config_status(): array
+{
+    $settings = editorial_handoff_settings(true);
+    if (($settings['last_verify_status'] ?? '') !== 'verified'
+        || trim((string) ($settings['api_key'] ?? '')) === ''
+        || trim((string) ($settings['pinned_toolkit_version'] ?? '')) === ''
+        || trim((string) ($settings['connected_user_id'] ?? '')) === ''
+        || trim((string) ($settings['connected_account_id'] ?? '')) === ''
+        || trim((string) ($settings['drive_folder_id'] ?? '')) === ''
+        || trim((string) ($settings['spreadsheet_id'] ?? '')) === ''
+        || trim((string) ($settings['sheet_name'] ?? '')) === '') {
+        return ['ok' => false, 'message' => 'Drive + Sheet cần kiểm tra cấu hình.'];
+    }
+    $base = editorial_handoff_normalize_public_base_url((string) ($settings['public_base_url'] ?? ''));
+    if (empty($base['ok']) || trim((string) ($base['value'] ?? '')) === '') {
+        return ['ok' => false, 'message' => 'Drive + Sheet cần Public Base URL hợp lệ và đã được kiểm tra lại.'];
+    }
+    $settings['public_base_url'] = (string) $base['value'];
+    return ['ok' => true, 'message' => 'Cấu hình Drive + Sheet hợp lệ.', 'settings' => $settings];
+}
+
+/**
  * Save connection/destination configuration. A blank API-key input retains
  * an existing server-side key and never exposes it to the caller.
  *

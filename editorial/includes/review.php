@@ -59,47 +59,23 @@ function editorial_resolve_review_submission_stage_bundle(string $articleId, str
         return ['ok' => false, 'message' => 'Không tìm thấy Bản gốc hợp lệ cho phiên biên tập này.'];
     }
 
-    $allStage1 = editorial_get_verified_revisions_for_review(
-        $articleId,
-        $assignmentId,
-        'AND revision_type = \'editorial\' AND milestone_key = \'stage1\''
-    );
-    if ($allStage1 === []) {
+    $activeStages = editorial_get_active_stage_bundle($articleId, $assignmentId);
+    $stage1 = $activeStages['stage1'];
+    if ($stage1 === null) {
         return ['ok' => false, 'message' => 'Chưa có Chặng 1 để Admin đối chiếu. Hãy hoàn tất Chặng 1 trước khi gửi duyệt.'];
     }
-
-    $allStage2 = editorial_get_verified_revisions_for_review(
-        $articleId,
-        $assignmentId,
-        'AND revision_type = \'editorial\' AND milestone_key = \'stage2\''
-    );
-    if ($allStage2 === []) {
+    $stage2 = $activeStages['stage2'];
+    if ($stage2 === null) {
         return ['ok' => false, 'message' => 'Chưa có Chặng 2 để Admin đối chiếu. Hãy hoàn tất Chặng 2 trước khi gửi duyệt.'];
     }
-
-    $stage2 = null;
-    foreach ($allStage2 as $candidate) {
-        if (hash_equals((string) ($candidate['content_hash'] ?? ''), $draftHash)) {
-            $stage2 = $candidate;
-            break;
-        }
-    }
-    if ($stage2 === null) {
+    if (!hash_equals((string) ($stage2['content_hash'] ?? ''), $draftHash)) {
         return ['ok' => false, 'message' => 'Nội dung đã thay đổi sau Chặng 2. Hãy hoàn tất Chặng 2 lại trước khi gửi Admin duyệt.'];
-    }
-
-    $stage1s = array_values(array_filter(
-        $allStage1,
-        static fn(array $revision): bool => (int) ($revision['revision_no'] ?? 0) < (int) ($stage2['revision_no'] ?? 0)
-    ));
-    if ($stage1s === []) {
-        return ['ok' => false, 'message' => 'Chưa có Chặng 1 để Admin đối chiếu. Hãy hoàn tất Chặng 1 trước khi gửi duyệt.'];
     }
 
     return [
         'ok' => true,
         'baseline' => $baselines[0],
-        'stage1' => $stage1s[0],
+        'stage1' => $stage1,
         'stage2' => $stage2,
         'message' => 'Đủ Bản gốc, Chặng 1 và Chặng 2 để gửi duyệt.',
     ];
@@ -159,13 +135,13 @@ function editorial_resolve_review_stage_bundle(string $articleId, array $reviewR
         ];
     }
 
-    $stage1s = editorial_get_verified_revisions_for_review(
-        $articleId,
-        $assignmentId,
-        'AND revision_type = \'editorial\' AND milestone_key = \'stage1\' AND revision_no < :stage2_no',
-        ['stage2_no' => (int) $stage2['revision_no']]
-    );
-    if ($stage1s === []) {
+    $activeStages = editorial_get_active_stage_bundle($articleId, $assignmentId);
+    $stage1 = $activeStages['stage1'];
+    $activeStage2 = $activeStages['stage2'];
+    if ($stage1 === null
+        || $activeStage2 === null
+        || (string) ($activeStage2['id'] ?? '') !== (string) ($stage2['id'] ?? '')
+        || (int) ($stage1['revision_no'] ?? 0) >= (int) ($stage2['revision_no'] ?? 0)) {
         return [
             'ok' => false,
             'legacy' => $legacy,
@@ -179,7 +155,7 @@ function editorial_resolve_review_stage_bundle(string $articleId, array $reviewR
         'ok' => true,
         'legacy' => $legacy,
         'baseline' => $baselines[0],
-        'stage1' => $stage1s[0],
+        'stage1' => $stage1,
         'stage2' => $stage2,
         'message' => 'Đủ dữ liệu so sánh biên tập.',
     ];

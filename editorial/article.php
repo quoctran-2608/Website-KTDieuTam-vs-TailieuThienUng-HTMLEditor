@@ -76,15 +76,36 @@ if (editorial_is_post()) {
         'save_draft',
         'save_then_stage1',
         'save_then_stage2',
-        'save_draft_stage_compare',
         'save_then_review',
         'save_then_publish',
-        'save_then_handoff',
     ];
+    if ($intent === 'handoff_active_stage') {
+        require_once __DIR__ . '/includes/handoff.php';
+        $handoffResult = editorial_handoff_article(
+            $articleId,
+            trim((string) ($_POST['handoff_note'] ?? '')),
+            $currentUser
+        );
+        editorial_flash_set(
+            $handoffResult['ok'] ? 'success' : 'danger',
+            (string) ($handoffResult['message'] ?? 'Không thể lưu Drive + Sheet.')
+        );
+        editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+    }
     if (in_array($intent, $saveThenIntents, true)) {
         $lockToken = trim((string) ($_POST['lock_token'] ?? ''));
         $expectedVersion = (int) ($_POST['expected_draft_version'] ?? 0);
         $expectedDraftHash = trim((string) ($_POST['expected_draft_hash'] ?? ''));
+        if ($intent === 'save_then_stage2') {
+            $assignment = editorial_get_active_assignment($articleId);
+            $activeStages = $assignment === null
+                ? ['stage1' => null, 'stage2' => null]
+                : editorial_get_active_stage_bundle($articleId, (string) $assignment['id']);
+            if ($activeStages['stage1'] === null) {
+                editorial_flash_set('danger', 'Bạn cần hoàn tất Chặng 1 trước khi lưu Chặng 2.');
+                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
+            }
+        }
 
         // FIX A2: Strict base64 decode
         $proseHtml = null;
@@ -138,14 +159,8 @@ if (editorial_is_post()) {
             editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
         }
 
-        if (in_array($intent, ['save_then_stage1', 'save_then_stage2', 'save_draft_stage_compare'], true)) {
-            $milestoneKey = $intent === 'save_then_stage1'
-                ? 'stage1'
-                : ($intent === 'save_then_stage2' ? 'stage2' : trim((string) ($_POST['compare_stage'] ?? '')));
-            if (!in_array($milestoneKey, ['stage1', 'stage2'], true)) {
-                editorial_flash_set('danger', 'Mốc phiên bản không hợp lệ.');
-                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
-            }
+        if (in_array($intent, ['save_then_stage1', 'save_then_stage2'], true)) {
+            $milestoneKey = $intent === 'save_then_stage1' ? 'stage1' : 'stage2';
 
             $stageResult = editorial_create_stage_milestone_revision(
                 $articleId,
@@ -159,33 +174,8 @@ if (editorial_is_post()) {
                 editorial_flash_set('danger', $stageResult['message'] ?? 'Không thể lưu mốc phiên bản.');
                 editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
             }
-            if ($intent !== 'save_draft_stage_compare') {
-                editorial_flash_set('success', (string) ($stageResult['message'] ?? 'Đã lưu mốc phiên bản.'));
-                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
-            }
-
-            $assignment = editorial_get_active_assignment($articleId);
-            $baselineRevisionId = '';
-            if ($assignment !== null) {
-                foreach (editorial_get_article_revisions($articleId, 50) as $revision) {
-                    if ((string) ($revision['assignment_id'] ?? '') === (string) $assignment['id']
-                        && (string) ($revision['revision_type'] ?? '') === 'baseline') {
-                        $baselineRevisionId = (string) $revision['id'];
-                        break;
-                    }
-                }
-            }
-            if ($baselineRevisionId === '') {
-                editorial_flash_set('danger', 'Không tìm thấy Bản gốc an toàn để so sánh.');
-                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
-            }
-
-            editorial_redirect(editorial_url(
-                'compare.php?id=' . urlencode($articleId)
-                . '&from=' . urlencode($baselineRevisionId)
-                . '&to=' . urlencode($stageRevisionId)
-                . '&auto_compare=1'
-            ));
+            editorial_flash_set('success', (string) ($stageResult['message'] ?? 'Đã lưu mốc phiên bản.'));
+            editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
         }
 
         if ($intent === 'save_then_review') {
@@ -230,17 +220,6 @@ if (editorial_is_post()) {
                 }
                 editorial_flash_set('warning', 'Bài đã được Publish, nhưng dữ liệu public phụ trợ chưa rebuild hoàn tất.');
             }
-            editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
-        }
-
-        if ($intent === 'save_then_handoff') {
-            require_once __DIR__ . '/includes/handoff.php';
-            $handoffResult = editorial_handoff_article(
-                $articleId,
-                trim((string) ($_POST['handoff_note'] ?? '')),
-                $currentUser
-            );
-            editorial_flash_set($handoffResult['ok'] ? 'success' : 'danger', (string) ($handoffResult['message'] ?? 'Không thể lưu Drive + Sheet.'));
             editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
         }
 
@@ -364,20 +343,12 @@ try {
     $liveHashConflict = ($baseLiveHash !== '' && $currentLiveHash !== null && $currentLiveHash !== $baseLiveHash);
 
     $recentRevisions = editorial_get_article_revisions($articleId, 5);
-    $assignmentMilestones = editorial_get_assignment_milestones($articleId, (string) $assignment['id']);
+    $activeStages = editorial_get_active_stage_bundle($articleId, (string) $assignment['id']);
 $isEditorWorkspace = (($currentUser['role'] ?? '') === 'editor');
 $hasSavedDraft = $draftVersion > 0;
-$handoffConfig = editorial_handoff_settings();
-$handoffSettingsReady = ($handoffConfig['last_verify_status'] ?? '') === 'verified'
-    && !empty($handoffConfig['api_key_configured'])
-    && trim((string) ($handoffConfig['pinned_toolkit_version'] ?? '')) !== ''
-    && trim((string) ($handoffConfig['connected_user_id'] ?? '')) !== ''
-    && trim((string) ($handoffConfig['connected_account_id'] ?? '')) !== ''
-    && trim((string) ($handoffConfig['drive_folder_id'] ?? '')) !== ''
-    && trim((string) ($handoffConfig['spreadsheet_id'] ?? '')) !== ''
-    && trim((string) ($handoffConfig['sheet_name'] ?? '')) !== ''
-    && trim((string) ($handoffConfig['public_base_url'] ?? '')) !== ''
-    && !empty(editorial_handoff_normalize_public_base_url((string) ($handoffConfig['public_base_url'] ?? ''))['ok']);
+$handoffConfigStatus = editorial_handoff_config_status();
+$handoffSettingsReady = !empty($handoffConfigStatus['ok']);
+$handoffEnabled = $handoffSettingsReady && $activeStages['stage1'] !== null;
 $hasPublication = trim((string) ($state['published_revision_id'] ?? '')) !== '';
 $publishedAt = trim((string) ($state['published_at'] ?? ''));
 $saveStatusText = $hasSavedDraft
@@ -386,11 +357,26 @@ $saveStatusText = $hasSavedDraft
     $assignmentBaseline = null;
     foreach (editorial_get_article_revisions($articleId, 50) as $revision) {
         if (($revision['assignment_id'] ?? '') === $assignment['id']
-            && ($revision['revision_type'] ?? '') === 'baseline') {
+            && ($revision['revision_type'] ?? '') === 'baseline'
+            && !empty(editorial_get_verified_revision_snapshot($revision)['ok'])) {
             $assignmentBaseline = $revision;
             break;
         }
     }
+    $stage1CompareUrl = $assignmentBaseline !== null && $activeStages['stage1'] !== null
+        ? editorial_url(
+            'compare.php?id=' . urlencode($articleId)
+            . '&from=' . urlencode((string) $assignmentBaseline['id'])
+            . '&to=' . urlencode((string) $activeStages['stage1']['id'])
+        )
+        : '';
+    $stage2CompareUrl = $assignmentBaseline !== null && $activeStages['stage2'] !== null
+        ? editorial_url(
+            'compare.php?id=' . urlencode($articleId)
+            . '&from=' . urlencode((string) $assignmentBaseline['id'])
+            . '&to=' . urlencode((string) $activeStages['stage2']['id'])
+        )
+        : '';
 } catch (\Throwable $e) {
     $abortWorkspaceInitialization(
         'workspace_initialization',
@@ -427,17 +413,12 @@ $innerScript = <<<JS
   const form = document.getElementById('editorialEditorForm');
   const editor = document.getElementById('proseEditor');
   const formIntent = document.getElementById('editorialFormIntent');
-  const autoCompareStage = document.getElementById('autoCompareStage');
   const publishConfirmField = document.getElementById('confirmDirectPublish');
-  const expectedDraftVersionField = document.getElementById('expectedDraftVersion');
-  const expectedDraftHashField = document.getElementById('expectedDraftHash');
-  const articleIdField = document.getElementById('articleIdField');
   const previewFrame = document.getElementById('previewFrame');
   const previewTemplate = $previewTemplateJson;
   if (!editor) return;
   let draftDirty = false;
   let editorReady = false;
-  let pendingCompareSubmission = null;
 
   function updateSaveStatus() {
     document.querySelectorAll('[data-save-status]').forEach((status) => {
@@ -467,29 +448,6 @@ $innerScript = <<<JS
       if (instance) return instance.getContent();
     }
     return editor.value || '';
-  }
-
-  function currentDraftFingerprint() {
-    const valueOf = (name) => {
-      const field = form ? form.querySelector('[name="' + name + '"]') : null;
-      return field ? field.value : '';
-    };
-    return JSON.stringify({
-      title: valueOf('title'),
-      excerpt: valueOf('excerpt'),
-      prose_html: currentEditorContent(),
-      publish_date: valueOf('publish_date'),
-      modified_date: valueOf('modified_date'),
-      featured_image: valueOf('featured_image'),
-      tags_text: valueOf('tags_text'),
-    });
-  }
-
-  function updateStageStatus(stage, revisionNo) {
-    document.querySelectorAll('[data-stage-status="' + stage + '"]').forEach((status) => {
-      status.textContent = '✓ #' + revisionNo;
-      status.hidden = false;
-    });
   }
 
   const siteBaseUrl = window.location.origin + window.location.pathname.replace(/\/editorial\/.*$/, '/');
@@ -539,8 +497,11 @@ $innerScript = <<<JS
         && !window.confirm('Bạn sắp lưu nội dung hiện tại rồi Publish lên website. Tiếp tục?')) {
         return;
       }
+      if (action === 'handoff_active_stage' && draftDirty
+        && !window.confirm('Có thay đổi hiện tại chưa được lưu vào Chặng. Drive + Sheet sẽ dùng Chặng đã lưu gần nhất. Tiếp tục?')) {
+        return;
+      }
       formIntent.value = action;
-      autoCompareStage.value = '';
       if (publishConfirmField) {
         publishConfirmField.value = action === 'save_then_publish' ? '1' : '';
       }
@@ -557,73 +518,12 @@ $innerScript = <<<JS
     }, true);
   });
 
-  document.querySelectorAll('button[data-auto-stage-compare]').forEach((button) => {
-    button.addEventListener('click', (event) => {
-      event.preventDefault();
-      if (!form || !formIntent || !autoCompareStage || form.dataset.submitting === '1') return;
-
-      const stage = button.dataset.autoStageCompare;
-      if (stage !== 'stage1' && stage !== 'stage2') return;
-
-      if (window.tinymce && typeof window.tinymce.triggerSave === 'function') {
-        window.tinymce.triggerSave();
-      }
-      const originalIntent = formIntent.value;
-      const originalTarget = form.target;
-      const b64Field = document.getElementById('proseHtmlB64');
-      pendingCompareSubmission = {
-        stage: stage,
-        fingerprint: currentDraftFingerprint(),
-      };
-      formIntent.value = 'save_draft_stage_compare';
-      autoCompareStage.value = stage;
-      form.target = '_blank';
-      form.requestSubmit();
-
-      // The new tab redirects to Compare after saving the draft and stage.
-      window.setTimeout(() => {
-        formIntent.value = originalIntent;
-        autoCompareStage.value = '';
-        form.target = originalTarget;
-        editor.setAttribute('name', 'prose_html');
-        if (b64Field) b64Field.value = '';
-        form.dataset.submitting = '0';
-      }, 0);
-    });
-  });
-
-  window.addEventListener('message', (event) => {
-    if (event.origin !== window.location.origin) return;
-    const data = event.data;
-    if (!data || data.type !== 'editorial-stage-saved') return;
-    if (!articleIdField || data.articleId !== articleIdField.value) return;
-    if (!Number.isInteger(data.draftVersion) || data.draftVersion <= 0) return;
-    if (typeof data.draftHash !== 'string' || data.draftHash === '') return;
-    if (data.stage !== 'stage1' && data.stage !== 'stage2') return;
-    if (typeof data.revisionId !== 'string' || data.revisionId === '') return;
-    if (!Number.isInteger(data.revisionNo) || data.revisionNo <= 0) return;
-
-    if (expectedDraftVersionField) expectedDraftVersionField.value = String(data.draftVersion);
-    if (expectedDraftHashField) expectedDraftHashField.value = data.draftHash;
-    updateStageStatus(data.stage, data.revisionNo);
-
-    // The comparison may return after the editor has changed again. Persisted
-    // version/hash must advance, but never hide those newer local edits.
-    const submitted = pendingCompareSubmission;
-    if (submitted && submitted.stage === data.stage && currentDraftFingerprint() === submitted.fingerprint) {
-      draftDirty = false;
-      updateSavedStatus(data.draftVersion);
-    }
-    pendingCompareSubmission = null;
-  });
-
   /* ── Ctrl+S save draft ────────────────────────────── */
   document.addEventListener('keydown', (event) => {
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
       event.preventDefault();
       if (!form || !formIntent || form.dataset.submitting === '1') return;
       formIntent.value = 'save_draft';
-      autoCompareStage.value = '';
       if (publishConfirmField) publishConfirmField.value = '';
       form.requestSubmit();
     }
@@ -733,7 +633,6 @@ $innerScript = <<<JS
             e.preventDefault();
             if (!form || !formIntent || form.dataset.submitting === '1') return;
             formIntent.value = 'save_draft';
-            autoCompareStage.value = '';
             if (publishConfirmField) publishConfirmField.value = '';
             form.requestSubmit();
           }
@@ -841,7 +740,6 @@ editorial_layout_header([
         <input type="hidden" name="expected_draft_version" id="expectedDraftVersion" value="<?= editorial_h((string) $draftVersion) ?>">
         <input type="hidden" name="expected_draft_hash" id="expectedDraftHash" value="<?= editorial_h($draftContentHash) ?>">
         <input type="hidden" name="prose_html_b64" id="proseHtmlB64" value="">
-        <input type="hidden" name="compare_stage" id="autoCompareStage" value="">
         <input type="hidden" name="confirm_direct_publish" id="confirmDirectPublish" value="">
 
         <!-- Action bar -->
@@ -855,31 +753,56 @@ editorial_layout_header([
                     <small class="editorial-save-status <?= $hasSavedDraft ? 'is-saved' : '' ?>" data-save-status><?= editorial_h($saveStatusText) ?></small>
                 </div>
 
-                <div class="editorial-workflow-group">
+                <section class="editorial-stage-card editorial-stage-card--stage1">
+                    <p class="editorial-stage-card__label">Chặng 1</p>
                     <button type="button" class="editorial-revision-btn editorial-stage1-btn" data-editor-action="save_then_stage1" title="Hoàn tất Chặng 1 — tự lưu nội dung hiện tại rồi lưu mốc chuẩn hóa trình bày.">
                         <i class="fa-solid fa-code-branch"></i>
-                        <span>Chặng 1</span>
+                        <span>Hoàn tất Chặng 1</span>
                     </button>
-                    <small class="editorial-stage-status" data-stage-status="stage1" <?= $assignmentMilestones['stage1'] ? '' : 'hidden' ?>>
-                        <?= $assignmentMilestones['stage1'] ? '✓ #' . editorial_h((string) $assignmentMilestones['stage1']['revision_no']) : '' ?>
-                    </small>
-                    <button type="button" class="editorial-compare-btn editorial-icon-btn" data-auto-stage-compare="stage1" title="Bản gốc ↔ Chặng 1" aria-label="Bản gốc ↔ Chặng 1">
-                        <i class="fa-solid fa-code-compare"></i>
-                    </button>
-                </div>
+                    <small class="editorial-stage-card__helper">Chuẩn hóa trình bày</small>
+                    <?php if ($activeStages['stage1'] !== null): ?>
+                        <small class="editorial-stage-status">✓ Chặng 1 đã lưu · Revision #<?= editorial_h((string) $activeStages['stage1']['revision_no']) ?></small>
+                        <a class="editorial-compare-btn" href="<?= editorial_h($stage1CompareUrl) ?>" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
+                        </a>
+                    <?php else: ?>
+                        <small class="editorial-stage-card__pending">Chưa lưu Chặng 1</small>
+                        <button type="button" class="editorial-compare-btn" disabled title="Hoàn tất Chặng 1 trước khi xem so sánh.">
+                            <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
+                        </button>
+                    <?php endif; ?>
+                </section>
 
-                <div class="editorial-workflow-group">
-                    <button type="button" class="editorial-revision-btn editorial-stage2-btn" data-editor-action="save_then_stage2" title="Hoàn tất Chặng 2 — tự lưu nội dung hiện tại rồi lưu mốc biên tập nội dung.">
+                <section class="editorial-stage-card editorial-stage-card--stage2 <?= $activeStages['stage1'] === null ? 'is-disabled' : '' ?>">
+                    <p class="editorial-stage-card__label">Chặng 2</p>
+                    <button
+                        type="button"
+                        class="editorial-revision-btn editorial-stage2-btn"
+                        data-editor-action="save_then_stage2"
+                        title="<?= $activeStages['stage1'] === null ? 'Bạn cần hoàn tất Chặng 1 trước khi lưu Chặng 2.' : 'Hoàn tất Chặng 2 — tự lưu nội dung hiện tại rồi lưu mốc biên tập nội dung.' ?>"
+                        <?= $activeStages['stage1'] === null ? 'disabled' : '' ?>
+                    >
                         <i class="fa-solid fa-pen-to-square"></i>
-                        <span>Chặng 2</span>
+                        <span>Hoàn tất Chặng 2</span>
                     </button>
-                    <small class="editorial-stage-status" data-stage-status="stage2" <?= $assignmentMilestones['stage2'] ? '' : 'hidden' ?>>
-                        <?= $assignmentMilestones['stage2'] ? '✓ #' . editorial_h((string) $assignmentMilestones['stage2']['revision_no']) : '' ?>
-                    </small>
-                    <button type="button" class="editorial-compare-btn editorial-icon-btn" data-auto-stage-compare="stage2" title="Bản gốc ↔ Chặng 2" aria-label="Bản gốc ↔ Chặng 2">
-                        <i class="fa-solid fa-code-compare"></i>
-                    </button>
-                </div>
+                    <small class="editorial-stage-card__helper">Biên tập nội dung</small>
+                    <?php if ($activeStages['stage2'] !== null): ?>
+                        <small class="editorial-stage-status">✓ Chặng 2 đã lưu · Revision #<?= editorial_h((string) $activeStages['stage2']['revision_no']) ?></small>
+                        <a class="editorial-compare-btn" href="<?= editorial_h($stage2CompareUrl) ?>" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
+                        </a>
+                    <?php elseif ($activeStages['stage1'] !== null): ?>
+                        <small class="editorial-stage-card__pending">Chưa lưu lại sau Chặng 1 hiện tại</small>
+                        <button type="button" class="editorial-compare-btn" disabled title="Hoàn tất Chặng 2 trước khi xem so sánh.">
+                            <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
+                        </button>
+                    <?php else: ?>
+                        <small class="editorial-stage-card__pending">Cần hoàn tất Chặng 1 trước</small>
+                        <button type="button" class="editorial-compare-btn" disabled title="Hoàn tất Chặng 1 trước khi xem so sánh.">
+                            <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
+                        </button>
+                    <?php endif; ?>
+                </section>
 
                 <div class="editorial-workflow-group editorial-workflow-publish">
                     <?php if ($isEditorWorkspace): ?>
@@ -900,7 +823,7 @@ editorial_layout_header([
                 </div>
 
                 <div class="editorial-workflow-group editorial-workflow-handoff">
-                    <button type="button" class="editorial-handoff-btn" data-editor-action="save_then_handoff" <?= $handoffSettingsReady ? 'title="Lưu bản hiện tại lên Google Drive và cập nhật Google Sheet."' : 'disabled title="Drive + Sheet chưa sẵn sàng."' ?>>
+                    <button type="button" class="editorial-handoff-btn" data-editor-action="handoff_active_stage" <?= $handoffEnabled ? 'title="Lưu Chặng đang active lên Google Drive và cập nhật Google Sheet."' : 'disabled title="' . editorial_h((string) ($handoffConfigStatus['message'] ?? 'Hãy hoàn tất Chặng 1 trước khi lưu Drive + Sheet.')) . '"' ?>>
                         <i class="fa-solid fa-cloud-arrow-up"></i> Lưu Drive + Sheet
                     </button>
                     <details class="editorial-handoff-note-menu">
@@ -912,6 +835,14 @@ editorial_layout_header([
                             <input id="handoffNote" type="text" name="handoff_note" maxlength="2000" data-nondraft-field class="editorial-workspace-handoff-note" placeholder="Ghi chú bàn giao (nếu có)">
                         </div>
                     </details>
+                    <?php if (!$handoffEnabled): ?>
+                        <small class="editorial-handoff-status-note">
+                            <?= editorial_h($handoffSettingsReady ? 'Hãy hoàn tất Chặng 1 trước khi lưu Drive + Sheet.' : (string) ($handoffConfigStatus['message'] ?? 'Drive + Sheet chưa sẵn sàng.')) ?>
+                            <?php if (!$handoffSettingsReady && ($currentUser['role'] ?? '') === 'admin'): ?>
+                                <a href="<?= editorial_h(editorial_url('google-handoff-settings.php')) ?>">Kiểm tra cấu hình</a>
+                            <?php endif; ?>
+                        </small>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -1029,15 +960,19 @@ editorial_layout_header([
             <button type="button" class="editorial-revision-btn editorial-stage1-btn" data-editor-action="save_then_stage1" title="Hoàn tất Chặng 1 — tự lưu nội dung hiện tại rồi lưu mốc chuẩn hóa trình bày.">
                 <i class="fa-solid fa-code-branch"></i> Chặng 1
             </button>
-            <button type="button" class="editorial-compare-btn editorial-icon-btn" data-auto-stage-compare="stage1" title="Bản gốc ↔ Chặng 1" aria-label="Bản gốc ↔ Chặng 1">
-                <i class="fa-solid fa-code-compare"></i>
-            </button>
-            <button type="button" class="editorial-revision-btn editorial-stage2-btn" data-editor-action="save_then_stage2" title="Hoàn tất Chặng 2 — tự lưu nội dung hiện tại rồi lưu mốc biên tập nội dung.">
+            <?php if ($stage1CompareUrl !== ''): ?>
+                <a class="editorial-compare-btn editorial-icon-btn" href="<?= editorial_h($stage1CompareUrl) ?>" target="_blank" rel="noopener" title="Bản gốc ↔ Chặng 1" aria-label="Bản gốc ↔ Chặng 1"><i class="fa-solid fa-code-compare"></i></a>
+            <?php else: ?>
+                <button type="button" class="editorial-compare-btn editorial-icon-btn" disabled title="Hoàn tất Chặng 1 trước khi xem so sánh." aria-label="Bản gốc ↔ Chặng 1 chưa sẵn sàng"><i class="fa-solid fa-code-compare"></i></button>
+            <?php endif; ?>
+            <button type="button" class="editorial-revision-btn editorial-stage2-btn" data-editor-action="save_then_stage2" title="<?= $activeStages['stage1'] === null ? 'Bạn cần hoàn tất Chặng 1 trước khi lưu Chặng 2.' : 'Hoàn tất Chặng 2 — tự lưu nội dung hiện tại rồi lưu mốc biên tập nội dung.' ?>" <?= $activeStages['stage1'] === null ? 'disabled' : '' ?>>
                 <i class="fa-solid fa-pen-to-square"></i> Chặng 2
             </button>
-            <button type="button" class="editorial-compare-btn editorial-icon-btn" data-auto-stage-compare="stage2" title="Bản gốc ↔ Chặng 2" aria-label="Bản gốc ↔ Chặng 2">
-                <i class="fa-solid fa-code-compare"></i>
-            </button>
+            <?php if ($stage2CompareUrl !== ''): ?>
+                <a class="editorial-compare-btn editorial-icon-btn" href="<?= editorial_h($stage2CompareUrl) ?>" target="_blank" rel="noopener" title="Bản gốc ↔ Chặng 2" aria-label="Bản gốc ↔ Chặng 2"><i class="fa-solid fa-code-compare"></i></a>
+            <?php else: ?>
+                <button type="button" class="editorial-compare-btn editorial-icon-btn" disabled title="Hoàn tất Chặng 2 trước khi xem so sánh." aria-label="Bản gốc ↔ Chặng 2 chưa sẵn sàng"><i class="fa-solid fa-code-compare"></i></button>
+            <?php endif; ?>
             <?php if ($isEditorWorkspace): ?>
                 <button type="button" data-editor-action="save_then_publish" class="editorial-direct-publish-btn" title="Tự lưu nội dung hiện tại rồi Publish lên website.">
                     <i class="fa-solid fa-rocket"></i> Publish
@@ -1050,7 +985,7 @@ editorial_layout_header([
             <button type="button" data-editor-action="save_then_review" class="editorial-review-submit-btn" title="Tự lưu nội dung hiện tại. Yêu cầu Chặng 1 và Chặng 2 đầy đủ; Chặng 2 phải khớp bản hiện tại.">
                 <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
             </button>
-            <button type="button" class="editorial-handoff-btn" data-editor-action="save_then_handoff" <?= $handoffSettingsReady ? 'title="Lưu bản hiện tại lên Google Drive và cập nhật Google Sheet."' : 'disabled title="Drive + Sheet chưa sẵn sàng."' ?>>
+            <button type="button" class="editorial-handoff-btn" data-editor-action="handoff_active_stage" <?= $handoffEnabled ? 'title="Lưu Chặng đang active lên Google Drive và cập nhật Google Sheet."' : 'disabled title="Hãy hoàn tất Chặng 1 và kiểm tra cấu hình Drive + Sheet."' ?>>
                 <i class="fa-solid fa-cloud-arrow-up"></i> Lưu Drive + Sheet
             </button>
             <button type="submit" form="exitWorkspaceForm" class="editorial-exit-btn">

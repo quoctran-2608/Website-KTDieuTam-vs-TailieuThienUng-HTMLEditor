@@ -12,6 +12,7 @@ const EDITORIAL_COMPOSIO_API_BASE = 'https://backend.composio.dev/api/v3.1';
 const EDITORIAL_GOOGLE_SUPER_TOOLKIT = 'googlesuper';
 const EDITORIAL_GOOGLE_HANDOFF_TOOLS = [
     'GOOGLESUPER_CREATE_FILE_FROM_TEXT',
+    'GOOGLESUPER_EDIT_FILE',
     'GOOGLESUPER_UPSERT_ROWS',
     'GOOGLESUPER_GET_FILE_METADATA',
     'GOOGLESUPER_GET_SPREADSHEET_INFO',
@@ -555,11 +556,14 @@ function editorial_verify_google_handoff(): array
     }
 
     $createSchema = $toolMetadata['GOOGLESUPER_CREATE_FILE_FROM_TEXT'];
+    $editSchema = $toolMetadata['GOOGLESUPER_EDIT_FILE'];
     $upsertSchema = $toolMetadata['GOOGLESUPER_UPSERT_ROWS'];
     foreach ([
         ['schema' => $createSchema, 'terms' => ['file', 'filename', 'name'], 'label' => 'tên file'],
         ['schema' => $createSchema, 'terms' => ['text', 'content'], 'label' => 'nội dung text'],
         ['schema' => $createSchema, 'terms' => ['folder', 'parent'], 'label' => 'đích thư mục'],
+        ['schema' => $editSchema, 'terms' => ['file', 'id'], 'label' => 'file ID cần cập nhật'],
+        ['schema' => $editSchema, 'terms' => ['text', 'content'], 'label' => 'nội dung cập nhật'],
         ['schema' => $upsertSchema, 'terms' => ['spreadsheet'], 'label' => 'spreadsheet'],
         ['schema' => $upsertSchema, 'terms' => ['sheet', 'tab'], 'label' => 'sheet/tab'],
         ['schema' => $upsertSchema, 'terms' => ['key', 'column'], 'label' => 'key column'],

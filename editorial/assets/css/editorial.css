@@ -421,6 +421,34 @@
     padding-right: 0;
     border-right: 0;
 }
+.editorial-stage-card {
+    display: grid;
+    min-width: 196px;
+    gap: 5px;
+    align-content: start;
+    padding: 9px 10px;
+    border: 1px solid #dbe4ee;
+    border-radius: 8px;
+    background: #fff;
+}
+.editorial-stage-card--stage1 { border-color: #b8ddf2; background: #f7fcff; }
+.editorial-stage-card--stage2 { border-color: #ddc6e9; background: #fdf9ff; }
+.editorial-stage-card.is-disabled { opacity: .62; }
+.editorial-stage-card__label {
+    margin: 0;
+    color: #64748b;
+    font-size: .69rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+.editorial-stage-card__helper,
+.editorial-stage-card__pending {
+    color: #64748b;
+    font-size: .73rem;
+    line-height: 1.25;
+}
+.editorial-stage-card__pending { color: #9a6700; }
 .editorial-workflow-publish,
 .editorial-workflow-review,
 .editorial-workflow-handoff {
@@ -451,6 +479,16 @@
     font-weight: 600;
 }
 .editorial-publish-status { color: #397267; }
+.editorial-handoff-status-note {
+    max-width: 250px;
+    color: #9a6700;
+    font-size: .72rem;
+    line-height: 1.3;
+}
+.editorial-handoff-status-note a {
+    color: inherit;
+    font-weight: 700;
+}
 .editorial-workflow-bar .editorial-handoff-btn {
     min-height: 36px;
     padding: 7px 11px;
@@ -1276,6 +1314,7 @@ body.editor-fullscreen-active .editor-fs-status button {
     .editorial-workflow-top { position: static; }
     .editorial-workflow-groups { flex-basis: 100%; }
     .editorial-workflow-group { border-right: 0; }
+    .editorial-stage-card { min-width: min(100%, 280px); }
     .editorial-workflow-utilities { width: 100%; margin-left: 0; }
     .editorial-workflow-bottom > * { flex: 1 1 auto; justify-content: center; }
     .editorial-handoff-note-menu > div { position: fixed; top: auto; right: 16px; bottom: 16px; }

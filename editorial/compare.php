@@ -14,7 +14,6 @@ $isAdmin = (($currentUser['role'] ?? '') === 'admin');
 $articleId = trim((string) ($_GET['id'] ?? ''));
 $fromId = trim((string) ($_GET['from'] ?? ''));
 $toId = trim((string) ($_GET['to'] ?? ''));
-$autoCompare = ((string) ($_GET['auto_compare'] ?? '') === '1');
 
 // ─── Validate params ─────────────────────────────────────────────
 
@@ -69,32 +68,6 @@ if (!$fromVerified['ok'] || !$toVerified['ok']) {
 
 $fromPayload = $fromVerified['payload'];
 $toPayload = $toVerified['payload'];
-
-// Compare is opened only after Workspace saved the current draft and stage.
-// Derive sync metadata from server-side rows/snapshots; never trust query input
-// for lock state, payload, or version.
-$openerSync = null;
-if ($autoCompare
-    && in_array((string) ($toRev['milestone_key'] ?? ''), ['stage1', 'stage2'], true)) {
-    $draft = editorial_get_draft($articleId, $currentUserId);
-    if ($draft !== null) {
-        try {
-            $draftHash = editorial_revision_content_hash($draft['payload']);
-        } catch (RuntimeException $e) {
-            $draftHash = '';
-        }
-        if ($draftHash !== '' && hash_equals($draftHash, (string) ($toRev['content_hash'] ?? ''))) {
-            $openerSync = [
-                'articleId' => $articleId,
-                'draftVersion' => (int) ($draft['version'] ?? 0),
-                'draftHash' => $draftHash,
-                'stage' => (string) $toRev['milestone_key'],
-                'revisionId' => (string) $toRev['id'],
-                'revisionNo' => (int) ($toRev['revision_no'] ?? 0),
-            ];
-        }
-    }
-}
 
 // Live HTML is presentation context only; compared prose remains immutable snapshots.
 $articlePath = editorial_resolve_article_path($article);
@@ -169,18 +142,5 @@ $toPreview = editorial_build_public_article_preview_document(
             </section>
         </div>
     </main>
-    <?php if ($openerSync !== null): ?>
-        <script>
-            if (window.opener && !window.opener.closed) {
-                window.opener.postMessage(
-                    <?= json_encode(
-                        ['type' => 'editorial-stage-saved'] + $openerSync,
-                        JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
-                    ) ?>,
-                    window.location.origin
-                );
-            }
-        </script>
-    <?php endif; ?>
 </body>
 </html>

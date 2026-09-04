@@ -119,8 +119,8 @@ $displayedIds = array_map(fn($a) => $a['id'], $items);
 $pageStates = editorial_get_states_for_articles($displayedIds);
 $pageContributors = editorial_get_article_contributors($displayedIds);
 $pageHandoffSync = editorial_get_handoff_sync_for_articles($displayedIds);
-$pageDraftArticles = editorial_get_saved_draft_article_ids($displayedIds);
-$handoffSettingsReady = editorial_handoff_verified_settings()['ok'];
+$handoffConfigStatus = editorial_handoff_config_status();
+$handoffSettingsReady = !empty($handoffConfigStatus['ok']);
 
 // Preload owner names
 $ownerIds = [];
@@ -250,8 +250,16 @@ editorial_layout_header([
                         }
                         $isCurrentHandoffOwner = $ownerId !== '' && $ownerId === $currentUserId;
                         $canHandoff = $isAdmin || $isCurrentHandoffOwner || $isHandoffContributor;
+                        $activeStages = null;
+                        if (in_array($status, ['editing', 'returned'], true) && $ownerId !== '') {
+                            $activeAssignment = editorial_get_active_assignment($aid);
+                            if ($activeAssignment !== null) {
+                                $activeStages = editorial_get_active_stage_bundle($aid, (string) $activeAssignment['id']);
+                            }
+                        }
+                        $activeStage = $activeStages['stage2'] ?? $activeStages['stage1'] ?? null;
                         $hasHandoffSource = match ($status) {
-                            'editing', 'returned' => $ownerId !== '' && !empty($pageDraftArticles[$aid][$ownerId]),
+                            'editing', 'returned' => $activeStage !== null,
                             'ready_review' => !empty($state['review_revision_id']),
                             'approved' => !empty($state['approved_revision_id']),
                             'published' => !empty($state['published_revision_id']),
@@ -259,6 +267,7 @@ editorial_layout_header([
                         };
                         $articleHandoffSync = $pageHandoffSync[$aid] ?? [];
                         $expectedHandoffSourceKey = match ($status) {
+                            'editing', 'returned' => $activeStage !== null ? 'revision:' . $activeStage['id'] : '',
                             'ready_review' => !empty($state['review_revision_id']) ? 'revision:' . $state['review_revision_id'] : '',
                             'approved' => !empty($state['approved_revision_id']) ? 'revision:' . $state['approved_revision_id'] : '',
                             'published' => !empty($state['published_revision_id']) ? 'revision:' . $state['published_revision_id'] : '',

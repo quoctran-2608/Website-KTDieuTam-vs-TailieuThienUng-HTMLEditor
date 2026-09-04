@@ -29,6 +29,7 @@ const EDITORIAL_HANDOFF_HEADERS = [
 
 const EDITORIAL_HANDOFF_VALUES_GET = 'GOOGLESUPER_VALUES_GET';
 const EDITORIAL_HANDOFF_CREATE_FILE = 'GOOGLESUPER_CREATE_FILE_FROM_TEXT';
+const EDITORIAL_HANDOFF_EDIT_FILE = 'GOOGLESUPER_EDIT_FILE';
 const EDITORIAL_HANDOFF_UPSERT_ROWS = 'GOOGLESUPER_UPSERT_ROWS';
 
 /**
@@ -126,15 +127,13 @@ function editorial_handoff_ensure_sync(string $articleId, array $source): array
             UPDATE editorial_handoff_sync
             SET source_revision_id = :source_revision_id,
                 source_kind = :source_kind,
-                published_revision_id = :published_revision_id,
-                updated_at = :updated_at
+                published_revision_id = :published_revision_id
             WHERE article_id = :article_id AND source_key = :source_key
         ');
         $refreshSource->execute([
             'source_revision_id' => $source['source_revision_id'] ?? null,
             'source_kind' => (string) $source['source_kind'],
             'published_revision_id' => $source['published_revision_id'] ?? null,
-            'updated_at' => $now,
             'article_id' => $articleId,
             'source_key' => (string) $source['source_key'],
         ]);
@@ -146,7 +145,7 @@ function editorial_handoff_ensure_sync(string $articleId, array $source): array
     });
 }
 
-function editorial_handoff_update_sync(string $syncId, array $fields): void
+function editorial_handoff_update_sync(string $syncId, array $fields, bool $touchUpdatedAt = true): void
 {
     $allowed = [
         'drive_file_id',
@@ -158,7 +157,7 @@ function editorial_handoff_update_sync(string $syncId, array $fields): void
         'last_error',
     ];
     $sets = [];
-    $params = ['id' => $syncId, 'updated_at' => date('c')];
+    $params = ['id' => $syncId];
     foreach ($fields as $key => $value) {
         if (!in_array($key, $allowed, true)) {
             continue;
@@ -169,9 +168,60 @@ function editorial_handoff_update_sync(string $syncId, array $fields): void
     if ($sets === []) {
         return;
     }
-    $sets[] = 'updated_at = :updated_at';
+    if ($touchUpdatedAt) {
+        $sets[] = 'updated_at = :updated_at';
+        $params['updated_at'] = date('c');
+    }
     $stmt = editorial_db()->prepare('UPDATE editorial_handoff_sync SET ' . implode(', ', $sets) . ' WHERE id = :id');
     $stmt->execute($params);
+}
+
+/**
+ * Select one existing Drive file for an article without deleting legacy files.
+ * A recently successful row is more trustworthy than an arbitrary historical
+ * source row, so it becomes the canonical file for all future stage updates.
+ *
+ * @return array<string,mixed>|null
+ */
+function editorial_handoff_get_canonical_drive_file(string $articleId): ?array
+{
+    $stmt = editorial_db()->prepare("
+        SELECT * FROM editorial_handoff_sync
+        WHERE article_id = :article_id
+          AND TRIM(COALESCE(drive_file_id, '')) <> ''
+        ORDER BY
+          CASE WHEN sync_status IN ('synced', 'drive_uploaded') THEN 0 ELSE 1 END,
+          updated_at DESC,
+          created_at DESC,
+          id DESC
+    ");
+    $stmt->execute(['article_id' => $articleId]);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $row ?: null;
+}
+
+/**
+ * A shared Drive file can be referenced by several source rows. Only the most
+ * recent server-side Drive success identifies which source currently owns bytes.
+ */
+function editorial_handoff_get_drive_content_source_key(string $articleId, string $driveFileId): string
+{
+    if ($driveFileId === '') {
+        return '';
+    }
+    $stmt = editorial_db()->prepare("
+        SELECT source_key FROM editorial_handoff_sync
+        WHERE article_id = :article_id
+          AND drive_file_id = :drive_file_id
+          AND sync_status IN ('synced', 'drive_uploaded')
+        ORDER BY updated_at DESC, created_at DESC, id DESC
+        LIMIT 1
+    ");
+    $stmt->execute([
+        'article_id' => $articleId,
+        'drive_file_id' => $driveFileId,
+    ]);
+    return trim((string) $stmt->fetchColumn());
 }
 
 function editorial_handoff_safe_error(string $message): string
@@ -202,23 +252,7 @@ function editorial_handoff_log(string $event, string $articleId, string $actorUs
  */
 function editorial_handoff_verified_settings(): array
 {
-    $settings = editorial_handoff_settings(true);
-    if (($settings['last_verify_status'] ?? '') !== 'verified'
-        || trim((string) ($settings['api_key'] ?? '')) === ''
-        || trim((string) ($settings['pinned_toolkit_version'] ?? '')) === ''
-        || trim((string) ($settings['connected_user_id'] ?? '')) === ''
-        || trim((string) ($settings['connected_account_id'] ?? '')) === ''
-        || trim((string) ($settings['drive_folder_id'] ?? '')) === ''
-        || trim((string) ($settings['spreadsheet_id'] ?? '')) === ''
-        || trim((string) ($settings['sheet_name'] ?? '')) === '') {
-        return ['ok' => false, 'message' => 'Google Handoff cần được kiểm tra lại.'];
-    }
-    $base = editorial_handoff_normalize_public_base_url((string) ($settings['public_base_url'] ?? ''));
-    if (empty($base['ok']) || trim((string) ($base['value'] ?? '')) === '') {
-        return ['ok' => false, 'message' => 'Google Handoff cần Public Base URL hợp lệ và đã được kiểm tra lại.'];
-    }
-    $settings['public_base_url'] = (string) $base['value'];
-    return ['ok' => true, 'message' => 'Cấu hình Google Handoff hợp lệ.', 'settings' => $settings];
+    return editorial_handoff_config_status();
 }
 
 function editorial_handoff_user_can_sync(string $articleId, array $actor): bool
@@ -357,16 +391,14 @@ function editorial_handoff_category(array $article): string
     return implode(' > ', $labels);
 }
 
-function editorial_handoff_archive_filename(string $articleId, string $revisionId): string
+function editorial_handoff_archive_filename(string $articleId): string
 {
     $safeArticle = preg_replace('/[^A-Za-z0-9._-]+/', '-', $articleId) ?? '';
     $safeArticle = trim($safeArticle, '.-');
-    $safeRevision = preg_replace('/[^A-Za-z0-9._-]+/', '-', $revisionId) ?? '';
-    $safeRevision = trim($safeRevision, '.-');
-    if ($safeArticle === '' || $safeRevision === '') {
+    if ($safeArticle === '') {
         throw new RuntimeException('Không thể tạo tên archive an toàn.');
     }
-    return $safeArticle . '__' . $safeRevision . '.html';
+    return $safeArticle . '.html';
 }
 
 /**
@@ -434,17 +466,14 @@ function editorial_handoff_resolve_source(array $article, ?array $state): array
         if ($ownerId === '') {
             return ['ok' => false, 'message' => 'Bài đang biên tập nhưng không có người phụ trách hợp lệ.'];
         }
-        $candidate = editorial_prepare_saved_draft_handoff_candidate($articleId, $ownerId);
-        if (!$candidate['ok']) {
-            return ['ok' => false, 'message' => $candidate['message']];
-        }
-        $revisionId = (string) ($candidate['revision_id'] ?? '');
-        $revision = editorial_get_revision($revisionId);
         $assignment = editorial_get_active_assignment($articleId);
-        if (!$revision || !$assignment
-            || (string) ($assignment['user_id'] ?? '') !== $ownerId
-            || (string) ($revision['assignment_id'] ?? '') !== (string) $assignment['id']) {
-            return ['ok' => false, 'message' => 'Nguồn bản nháp bàn giao không khớp active assignment.'];
+        if (!$assignment || (string) ($assignment['user_id'] ?? '') !== $ownerId) {
+            return ['ok' => false, 'message' => 'Nguồn Chặng bàn giao không khớp active assignment.'];
+        }
+        $stages = editorial_get_active_stage_bundle($articleId, (string) $assignment['id']);
+        $revision = $stages['stage2'] ?? $stages['stage1'] ?? null;
+        if ($revision === null) {
+            return ['ok' => false, 'message' => 'Hãy hoàn tất Chặng 1 trước khi lưu Drive + Sheet.'];
         }
         $rendered = editorial_handoff_render_revision_html($article, $state, $revision);
         if (!$rendered['ok']) {
@@ -454,12 +483,11 @@ function editorial_handoff_resolve_source(array $article, ?array $state): array
             'ok' => true,
             'message' => '',
             'source' => [
-                'source_key' => 'revision:' . $revisionId,
-                'source_revision_id' => $revisionId,
-                'source_kind' => 'draft',
+                'source_key' => 'revision:' . (string) $revision['id'],
+                'source_revision_id' => (string) $revision['id'],
+                'source_kind' => (string) $revision['milestone_key'],
                 'published_revision_id' => null,
-                'source_identifier' => $revisionId,
-                'archive_identity' => $revisionId,
+                'source_identifier' => (string) $revision['id'],
                 'html' => $rendered['html'],
             ],
         ];
@@ -494,7 +522,6 @@ function editorial_handoff_resolve_source(array $article, ?array $state): array
                 'source_kind' => $status === 'ready_review' ? 'review' : 'approved',
                 'published_revision_id' => null,
                 'source_identifier' => $revisionId,
-                'archive_identity' => $revisionId,
                 'html' => $rendered['html'],
             ],
         ];
@@ -524,7 +551,6 @@ function editorial_handoff_resolve_source(array $article, ?array $state): array
                 'source_kind' => 'published',
                 'published_revision_id' => $publishedRevisionId,
                 'source_identifier' => $publishedRevisionId,
-                'archive_identity' => $publishedRevisionId,
                 'html' => $liveHtml,
             ],
         ];
@@ -541,7 +567,6 @@ function editorial_handoff_resolve_source(array $article, ?array $state): array
             'source_kind' => 'live',
             'published_revision_id' => null,
             'source_identifier' => 'live:' . $liveHash,
-            'archive_identity' => 'live-' . $liveHash,
             'html' => $liveHtml,
         ],
     ];
@@ -896,6 +921,69 @@ function editorial_handoff_create_html_archive(array $settings, string $version,
 }
 
 /**
+ * @return array{ok:bool,file_id?:string,file_url?:string,message:string}
+ */
+function editorial_handoff_edit_html_file(array $settings, string $version, array $metadata, string $fileId, string $html): array
+{
+    if ($fileId === '' || $html === '') {
+        return ['ok' => false, 'message' => 'Thiếu file Drive hoặc HTML để cập nhật.'];
+    }
+    $arguments = [];
+    $fields = [
+        ['exact' => ['file id', 'drive file id'], 'terms' => ['file', 'id'], 'value' => $fileId],
+        ['exact' => ['text content', 'content', 'text'], 'terms' => ['content'], 'value' => $html],
+    ];
+    foreach ($fields as $fieldSpec) {
+        $field = editorial_handoff_select_parameter($metadata, $fieldSpec['exact'], $fieldSpec['terms'], true);
+        if (!$field['ok']) {
+            $field = editorial_handoff_select_parameter($metadata, $fieldSpec['exact'], $fieldSpec['terms']);
+        }
+        if (!$field['ok']) {
+            return ['ok' => false, 'message' => 'Không thể map schema EDIT_FILE.'];
+        }
+        $fieldName = (string) $field['field'];
+        $fieldSchema = (array) (editorial_composio_schema_parameters($metadata)[$fieldName]['schema'] ?? []);
+        if ($fieldSpec['exact'] === ['text content', 'content', 'text']
+            && isset($fieldSchema['maxLength'])
+            && is_numeric($fieldSchema['maxLength'])
+            && strlen($html) > (int) $fieldSchema['maxLength']) {
+            return ['ok' => false, 'message' => 'HTML archive vượt giới hạn kích thước mà schema tool cho phép.'];
+        }
+        $arguments[$fieldName] = $fieldSpec['value'];
+    }
+    $mime = editorial_handoff_select_parameter($metadata, ['mime type', 'content type'], ['mime'], false);
+    if ($mime['ok']) {
+        $arguments[(string) $mime['field']] = 'text/html';
+    }
+    $validation = editorial_composio_validate_required_arguments($metadata, $arguments);
+    if (!$validation['ok']) {
+        return ['ok' => false, 'message' => $validation['error']];
+    }
+    $response = editorial_composio_execute(
+        EDITORIAL_HANDOFF_EDIT_FILE,
+        (string) $settings['connected_account_id'],
+        (string) $settings['connected_user_id'],
+        $version,
+        $arguments
+    );
+    if (!$response['ok']) {
+        return ['ok' => false, 'message' => editorial_composio_execution_error('Không thể cập nhật HTML Drive', $response)];
+    }
+    $data = $response['json']['data'] ?? $response['json'];
+    $responseFileId = editorial_handoff_extract_response_value($data, ['file id', 'id']);
+    if ($responseFileId !== '' && $responseFileId !== $fileId) {
+        return ['ok' => false, 'message' => 'Google Drive trả về file ID không khớp file canonical.'];
+    }
+    $fileUrl = editorial_handoff_safe_drive_url(
+        editorial_handoff_extract_response_value($data, ['web view link', 'webviewlink', 'url'])
+    );
+    if ($fileUrl === '') {
+        $fileUrl = 'https://drive.google.com/file/d/' . rawurlencode($fileId) . '/view';
+    }
+    return ['ok' => true, 'file_id' => $fileId, 'file_url' => $fileUrl, 'message' => ''];
+}
+
+/**
  * @return 'object'|'array'|''
  */
 function editorial_handoff_rows_shape(array $schema): string
@@ -1035,10 +1123,14 @@ function editorial_handoff_fail(array $sync, string $articleId, string $actorUse
 {
     $safeMessage = editorial_handoff_safe_error($message);
     if (!empty($sync['id'])) {
-        editorial_handoff_update_sync((string) $sync['id'], [
-            'sync_status' => 'failed',
-            'last_error' => $safeMessage,
-        ]);
+        $fields = ['last_error' => $safeMessage];
+        // A Drive success is durable evidence that this source owns the shared
+        // canonical file bytes. Preserve drive_uploaded when only Sheet or a
+        // later step fails so retrying this same source can safely skip Drive.
+        if ((string) ($sync['sync_status'] ?? '') !== 'drive_uploaded') {
+            $fields['sync_status'] = 'failed';
+        }
+        editorial_handoff_update_sync((string) $sync['id'], $fields, false);
     }
     editorial_handoff_log('handoff.failed', $articleId, $actorUserId, [
         'article_id' => $articleId,
@@ -1047,7 +1139,9 @@ function editorial_handoff_fail(array $sync, string $articleId, string $actorUse
         'source_kind' => (string) ($sync['source_kind'] ?? ''),
         'published_revision_id' => (string) ($sync['published_revision_id'] ?? ''),
         'drive_file_id' => (string) ($sync['drive_file_id'] ?? ''),
-        'sync_status' => 'failed',
+        'sync_status' => (string) ($sync['sync_status'] ?? '') === 'drive_uploaded'
+            ? 'drive_uploaded'
+            : 'failed',
         'code' => $code,
     ]);
     return ['ok' => false, 'code' => $code, 'message' => $safeMessage];
@@ -1139,7 +1233,11 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
         'sync_status' => (string) ($sync['sync_status'] ?? 'pending'),
     ]);
 
-    foreach ([EDITORIAL_HANDOFF_VALUES_GET, EDITORIAL_HANDOFF_CREATE_FILE, EDITORIAL_HANDOFF_UPSERT_ROWS] as $toolSlug) {
+    $canonicalDrive = editorial_handoff_get_canonical_drive_file($articleId);
+    $driveTool = $canonicalDrive === null
+        ? EDITORIAL_HANDOFF_CREATE_FILE
+        : EDITORIAL_HANDOFF_EDIT_FILE;
+    foreach ([EDITORIAL_HANDOFF_VALUES_GET, $driveTool, EDITORIAL_HANDOFF_UPSERT_ROWS] as $toolSlug) {
         $schema = editorial_handoff_load_pinned_tool_schema($toolSlug, (string) $settings['pinned_toolkit_version']);
         if (!$schema['ok']) {
             return editorial_handoff_fail($sync, $articleId, $actorId, 'schema_unavailable', $schema['message']);
@@ -1182,16 +1280,39 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
         'sync_status' => (string) ($sync['sync_status'] ?? 'pending'),
     ]);
 
-    $driveReused = trim((string) ($sync['drive_file_id'] ?? '')) !== '';
-    if ($driveReused) {
-        $driveId = (string) $sync['drive_file_id'];
-        $driveUrl = trim((string) ($sync['drive_file_url'] ?? ''));
-        if ($driveUrl === '') {
-            $driveUrl = 'https://drive.google.com/file/d/' . rawurlencode($driveId) . '/view';
+    $driveSkipped = false;
+    if ($canonicalDrive !== null) {
+        $driveId = trim((string) ($canonicalDrive['drive_file_id'] ?? ''));
+        $driveUrl = trim((string) ($canonicalDrive['drive_file_url'] ?? ''));
+        $latestDriveSourceKey = editorial_handoff_get_drive_content_source_key($articleId, $driveId);
+        if ($latestDriveSourceKey === $sourceKey) {
+            $driveSkipped = true;
+            if ($driveUrl === '') {
+                $driveUrl = 'https://drive.google.com/file/d/' . rawurlencode($driveId) . '/view';
+            }
+        } else {
+            $drive = editorial_handoff_edit_html_file(
+                $settings,
+                (string) $settings['pinned_toolkit_version'],
+                $schemas[EDITORIAL_HANDOFF_EDIT_FILE],
+                $driveId,
+                $html
+            );
+            if (!$drive['ok']) {
+                return editorial_handoff_fail(
+                    $sync,
+                    $articleId,
+                    $actorId,
+                    'drive_edit_failed',
+                    'Không thể cập nhật file HTML Drive hiện có. Không tạo file mới để tránh trùng hồ sơ.'
+                );
+            }
+            $driveId = (string) $drive['file_id'];
+            $driveUrl = (string) $drive['file_url'];
         }
     } else {
         try {
-            $filename = editorial_handoff_archive_filename($articleId, (string) $source['archive_identity']);
+            $filename = editorial_handoff_archive_filename($articleId);
         } catch (RuntimeException $e) {
             return editorial_handoff_fail($sync, $articleId, $actorId, 'archive_filename_invalid', $e->getMessage());
         }
@@ -1207,6 +1328,9 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
         }
         $driveId = (string) $drive['file_id'];
         $driveUrl = (string) $drive['file_url'];
+    }
+
+    if (!$driveSkipped) {
         editorial_handoff_update_sync((string) $sync['id'], [
             'drive_file_id' => $driveId,
             'drive_file_url' => $driveUrl,
@@ -1247,9 +1371,9 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
         $metadata
     );
     if (!$upsert['ok']) {
-        $message = $driveReused
-            ? 'HTML archive hiện có được giữ nguyên nhưng Google Sheet chưa cập nhật. ' . $upsert['message']
-            : 'HTML đã được lưu lên Google Drive nhưng Google Sheet chưa cập nhật. Bạn có thể thử lại mà không tạo file HTML trùng.';
+        $message = $driveSkipped
+            ? 'HTML Drive hiện đã khớp Chặng này nhưng Google Sheet chưa cập nhật. ' . $upsert['message']
+            : 'HTML đã được cập nhật lên Google Drive nhưng Google Sheet chưa cập nhật. Bạn có thể thử lại mà không tạo file HTML trùng.';
         return editorial_handoff_fail($sync, $articleId, $actorId, 'sheet_upsert_failed', $message);
     }
     editorial_handoff_log('handoff.sheet_upserted', $articleId, $actorId, [
@@ -1293,8 +1417,8 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
         'sync_status' => 'synced',
     ]);
 
-    if ($driveReused) {
-        $message = 'Đã cập nhật Google Sheet thành công; HTML archive hiện có được giữ nguyên.';
+    if ($driveSkipped) {
+        $message = 'Đã cập nhật Google Sheet thành công; HTML Drive hiện đã khớp Chặng đang chọn.';
     } elseif (($preflight['intent'] ?? '') === 'UPDATE_EXISTING') {
         $message = 'Đã lưu HTML lên Google Drive và cập nhật dòng bài hiện có trong Google Sheet.';
     } else {

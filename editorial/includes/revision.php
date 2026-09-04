@@ -555,29 +555,26 @@ function editorial_create_editorial_revision(
         }
         $assignmentId = (string) $assignment['id'];
 
-        // 8. Duplicate check for milestones; direct Publish may reuse any exact
-        // immutable revision for the current saved draft without moving the
-        // workflow's current_revision_id pointer.
+        // 8. Stage state is derived from verified revision chronology. A Stage2
+        // only belongs to the active chain when it follows the current Stage1.
+        // Re-saving Stage1 while Stage2 is active deliberately creates a new
+        // immutable marker, which resets the active chain back to Stage1.
         if ($milestoneKey !== null) {
-            $stmt = $db->prepare("
-                SELECT * FROM editorial_revisions
-                WHERE assignment_id = :assignment_id
-                  AND revision_type = 'editorial'
-                  AND milestone_key = :milestone_key
-                ORDER BY revision_no DESC LIMIT 1
-            ");
-            $stmt->execute([
-                ':assignment_id' => $assignmentId,
-                ':milestone_key' => $milestoneKey,
-            ]);
-            $latestStage = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (is_array($latestStage)
-                && (string) ($latestStage['content_hash'] ?? '') === $contentHash
-                && !empty(editorial_get_verified_revision_snapshot($latestStage)['ok'])) {
+            $activeStages = editorial_get_active_stage_bundle($articleId, $assignmentId);
+            if ($milestoneKey === 'stage2' && $activeStages['stage1'] === null) {
+                return ['ok' => false, 'message' => 'Bạn cần hoàn tất Chặng 1 trước khi lưu Chặng 2.'];
+            }
+
+            $activeSameStage = $activeStages[$milestoneKey];
+            $isStage1Reset = $milestoneKey === 'stage1' && $activeStages['stage2'] !== null;
+            if (!$isStage1Reset
+                && is_array($activeSameStage)
+                && (string) ($activeSameStage['content_hash'] ?? '') === $contentHash
+                && !empty(editorial_get_verified_revision_snapshot($activeSameStage)['ok'])) {
                 $stageLabel = $milestoneKey === 'stage1' ? 'Chặng 1' : 'Chặng 2';
                 return [
                     'ok' => false,
-                    'duplicate_revision_id' => (string) ($latestStage['id'] ?? ''),
+                    'duplicate_revision_id' => (string) ($activeSameStage['id'] ?? ''),
                     'message' => 'Nội dung không thay đổi so với bản ' . $stageLabel . ' gần nhất.',
                 ];
             }
@@ -712,46 +709,6 @@ function editorial_prepare_saved_draft_candidate(
     if (!$draft) {
         return ['ok' => false, 'message' => 'Bạn cần Lưu nháp trước khi thực hiện thao tác này.'];
     }
-    // Handoff identity is content-based: saving identical browser content can
-    // advance optimistic draft version but must not create another archive.
-    // Review and Publish retain their existing candidate-selection semantics.
-    if ($purpose === 'handoff') {
-        try {
-            $draftHash = editorial_revision_content_hash($draft['payload']);
-        } catch (RuntimeException $e) {
-            return ['ok' => false, 'message' => 'Không thể băm bản nháp đã lưu.'];
-        }
-        $assignment = editorial_get_active_assignment($articleId);
-        if (!$assignment || (string) ($assignment['user_id'] ?? '') !== $userId) {
-            return ['ok' => false, 'message' => 'Phân công không hợp lệ hoặc không khớp.'];
-        }
-        $stmt = editorial_db()->prepare('
-            SELECT * FROM editorial_revisions
-            WHERE article_id = :article_id
-              AND assignment_id = :assignment_id
-              AND revision_type = \'editorial\'
-              AND content_hash = :content_hash
-            ORDER BY revision_no DESC
-        ');
-        $stmt->execute([
-            'article_id' => $articleId,
-            'assignment_id' => (string) $assignment['id'],
-            'content_hash' => $draftHash,
-        ]);
-        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $existingRevision) {
-            $snapshot = editorial_get_verified_revision_snapshot($existingRevision);
-            if ($snapshot['ok']) {
-                return [
-                    'ok' => true,
-                    'revision_id' => (string) $existingRevision['id'],
-                    'candidate_origin' => (string) ($existingRevision['milestone_key'] ?? '') !== ''
-                        ? (string) $existingRevision['milestone_key']
-                        : 'reused_editorial',
-                ];
-            }
-        }
-    }
-
     $result = editorial_create_editorial_revision(
         $articleId,
         $userId,
@@ -793,11 +750,6 @@ function editorial_prepare_saved_draft_review_candidate(string $articleId, strin
     return editorial_prepare_saved_draft_candidate($articleId, $userId, $lockToken, 'review', true);
 }
 
-function editorial_prepare_saved_draft_handoff_candidate(string $articleId, string $userId): array
-{
-    return editorial_prepare_saved_draft_candidate($articleId, $userId, '', 'handoff', false);
-}
-
 function editorial_create_stage_milestone_revision(string $articleId, string $userId, string $lockToken, int $expectedDraftVersion, string $milestoneKey, string $note = ''): array
 {
     $result = editorial_create_editorial_revision($articleId, $userId, $lockToken, $expectedDraftVersion, $note, $milestoneKey);
@@ -837,11 +789,15 @@ function editorial_create_stage_milestone_revision(string $articleId, string $us
 }
 
 /**
- * Return the newest stage1/stage2 revisions for one active assignment.
+ * Return the coherent active stage chain for one assignment.
+ *
+ * Active Stage1 is the newest verified Stage1. Active Stage2 is the newest
+ * verified Stage2 created after that Stage1. Historical snapshots remain
+ * immutable but are excluded when their chronology no longer forms a chain.
  *
  * @return array{stage1:?array,stage2:?array}
  */
-function editorial_get_assignment_milestones(string $articleId, string $assignmentId): array
+function editorial_get_active_stage_bundle(string $articleId, string $assignmentId): array
 {
     $result = ['stage1' => null, 'stage2' => null];
     if ($assignmentId === '') {
@@ -854,17 +810,53 @@ function editorial_get_assignment_milestones(string $articleId, string $assignme
         WHERE article_id = :article_id
           AND assignment_id = :assignment_id
           AND revision_type = 'editorial'
-          AND milestone_key IN ('stage1', 'stage2')
+          AND milestone_key = 'stage1'
         ORDER BY revision_no DESC
     ");
     $stmt->execute([':article_id' => $articleId, ':assignment_id' => $assignmentId]);
     foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $revision) {
-        $key = (string) ($revision['milestone_key'] ?? '');
-        if (array_key_exists($key, $result) && $result[$key] === null) {
-            $result[$key] = $revision;
+        if (!empty(editorial_get_verified_revision_snapshot($revision)['ok'])) {
+            $result['stage1'] = $revision;
+            break;
         }
     }
+
+    if ($result['stage1'] === null) {
+        return $result;
+    }
+
+    $stage2Stmt = $db->prepare("
+        SELECT * FROM editorial_revisions
+        WHERE article_id = :article_id
+          AND assignment_id = :assignment_id
+          AND revision_type = 'editorial'
+          AND milestone_key = 'stage2'
+          AND revision_no > :stage1_revision_no
+        ORDER BY revision_no DESC
+    ");
+    $stage2Stmt->execute([
+        ':article_id' => $articleId,
+        ':assignment_id' => $assignmentId,
+        ':stage1_revision_no' => (int) $result['stage1']['revision_no'],
+    ]);
+    foreach ($stage2Stmt->fetchAll(PDO::FETCH_ASSOC) as $revision) {
+        if (!empty(editorial_get_verified_revision_snapshot($revision)['ok'])) {
+            $result['stage2'] = $revision;
+            break;
+        }
+    }
+
     return $result;
+}
+
+/**
+ * Backward-compatible name for callers that need the active workflow state.
+ *
+ * @return array{stage1:?array,stage2:?array}
+ */
+function editorial_get_assignment_milestones(string $articleId, string $assignmentId): array
+{
+    return editorial_get_active_stage_bundle($articleId, $assignmentId);
 }
 
 // ─── Revision Type Label ────────────────────────────────────────
