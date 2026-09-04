@@ -32,7 +32,12 @@ function editorial_run_migrations(): void
         }
         $db->exec('BEGIN IMMEDIATE');
         try {
-            $db->exec($sql);
+            $alreadyApplied = $version === 11
+                ? editorial_prepare_handoff_v11_migration($db)
+                : false;
+            if (!$alreadyApplied) {
+                $db->exec($sql);
+            }
             $stmt = $db->prepare('
                 INSERT INTO editorial_schema_meta (key, value)
                 VALUES (:key, :value)
@@ -41,14 +46,203 @@ function editorial_run_migrations(): void
             $stmt->execute(['key' => 'schema_version', 'value' => (string) $version]);
             $db->exec('COMMIT');
         } catch (\Throwable $e) {
-            $db->exec('ROLLBACK');
-            throw new RuntimeException(
-                "Editorial migration v{$version} thất bại: " . $e->getMessage(),
-                0,
+            try {
+                $db->exec('ROLLBACK');
+            } catch (\Throwable $rollbackError) {
+                // Original migration exception remains authoritative.
+            }
+            throw new EditorialMigrationException(
+                $currentVersion,
+                $version,
+                get_class($e),
+                editorial_migration_safe_message($e->getMessage()),
                 $e
             );
         }
     }
+}
+
+final class EditorialMigrationException extends RuntimeException
+{
+    public int $currentSchemaVersion;
+    public int $targetSchemaVersion;
+    public string $causeClass;
+
+    public function __construct(
+        int $currentSchemaVersion,
+        int $targetSchemaVersion,
+        string $causeClass,
+        string $safeMessage,
+        \Throwable $previous
+    ) {
+        $this->currentSchemaVersion = $currentSchemaVersion;
+        $this->targetSchemaVersion = $targetSchemaVersion;
+        $this->causeClass = $causeClass;
+        parent::__construct(
+            'Editorial migration failed: current_schema=' . $currentSchemaVersion
+            . ' target_schema=' . $targetSchemaVersion
+            . ' exception=' . $causeClass
+            . ' message=' . $safeMessage,
+            0,
+            $previous
+        );
+    }
+}
+
+function editorial_migration_safe_message(string $message): string
+{
+    $message = preg_replace('/\s+/', ' ', trim($message)) ?? '';
+    $message = preg_replace('/(api[_ -]?key|password|token)\s*=\s*\S+/i', '$1=[redacted]', $message) ?? $message;
+    return substr($message, 0, 500);
+}
+
+function editorial_migration_table_exists(PDO $db, string $table): bool
+{
+    $stmt = $db->prepare("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = :name");
+    $stmt->execute(['name' => $table]);
+    return $stmt->fetchColumn() !== false;
+}
+
+/**
+ * @return array<string,bool>
+ */
+function editorial_migration_table_columns(PDO $db, string $table): array
+{
+    if (!preg_match('/^[a-z_][a-z0-9_]*$/', $table)) {
+        throw new RuntimeException('Tên bảng migration không hợp lệ.');
+    }
+    $rows = $db->query('PRAGMA table_info(' . $table . ')')->fetchAll(PDO::FETCH_ASSOC);
+    $columns = [];
+    foreach ($rows as $row) {
+        $columns[(string) ($row['name'] ?? '')] = true;
+    }
+    return $columns;
+}
+
+/**
+ * @return array<string,array{unique:bool,columns:array<int,string>}>
+ */
+function editorial_migration_table_indexes(PDO $db, string $table): array
+{
+    if (!preg_match('/^[a-z_][a-z0-9_]*$/', $table)) {
+        throw new RuntimeException('Tên bảng migration không hợp lệ.');
+    }
+    $indexes = [];
+    foreach ($db->query('PRAGMA index_list(' . $table . ')')->fetchAll(PDO::FETCH_ASSOC) as $row) {
+        $name = (string) ($row['name'] ?? '');
+        if ($name === '') {
+            continue;
+        }
+        $columns = [];
+        foreach ($db->query('PRAGMA index_info(' . $name . ')')->fetchAll(PDO::FETCH_ASSOC) as $column) {
+            $columns[] = (string) ($column['name'] ?? '');
+        }
+        $indexes[$name] = [
+            'unique' => !empty($row['unique']),
+            'columns' => $columns,
+        ];
+    }
+    return $indexes;
+}
+
+function editorial_migration_columns_match(array $columns, array $required): bool
+{
+    foreach ($required as $column) {
+        if (empty($columns[$column])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function editorial_migration_handoff_v11_has_required_columns(PDO $db): bool
+{
+    $columns = editorial_migration_table_columns($db, 'editorial_handoff_sync');
+    $required = [
+        'id', 'article_id', 'source_key', 'source_revision_id', 'source_kind',
+        'published_revision_id', 'drive_file_id', 'drive_file_url', 'handoff_note',
+        'sheet_synced_at', 'synced_by', 'sync_status', 'last_error', 'created_at', 'updated_at',
+    ];
+    if (!editorial_migration_columns_match($columns, $required)) {
+        return false;
+    }
+    return true;
+}
+
+function editorial_migration_handoff_v11_has_unique_source(PDO $db): bool
+{
+    $indexes = editorial_migration_table_indexes($db, 'editorial_handoff_sync');
+    foreach ($indexes as $index) {
+        if ($index['unique'] && $index['columns'] === ['article_id', 'source_key']) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function editorial_migration_ensure_handoff_v11_indexes(PDO $db): void
+{
+    // The source-key table is already structurally valid. These named
+    // non-unique indexes are safe to repair without touching handoff rows.
+    $db->exec('DROP INDEX IF EXISTS idx_handoff_sync_article');
+    $db->exec('DROP INDEX IF EXISTS idx_handoff_sync_status');
+    $db->exec('CREATE INDEX IF NOT EXISTS idx_handoff_sync_article ON editorial_handoff_sync(article_id, source_key)');
+    $db->exec('CREATE INDEX IF NOT EXISTS idx_handoff_sync_status ON editorial_handoff_sync(sync_status)');
+}
+
+/**
+ * Normalize clearly recoverable v11 starting states before raw migration SQL.
+ *
+ * @return bool true when v11 schema is already complete and only bookkeeping is needed
+ */
+function editorial_prepare_handoff_v11_migration(PDO $db): bool
+{
+    $mainExists = editorial_migration_table_exists($db, 'editorial_handoff_sync');
+    $legacyExists = editorial_migration_table_exists($db, 'editorial_handoff_sync_v10');
+
+    if ($mainExists && $legacyExists) {
+        $mainColumns = implode(',', array_keys(editorial_migration_table_columns($db, 'editorial_handoff_sync')));
+        $legacyColumns = implode(',', array_keys(editorial_migration_table_columns($db, 'editorial_handoff_sync_v10')));
+        throw new RuntimeException(
+            'Migration v11 ambiguous handoff tables: editorial_handoff_sync=[' . $mainColumns
+            . ']; editorial_handoff_sync_v10=[' . $legacyColumns . '].'
+        );
+    }
+
+    $v10Columns = [
+        'id', 'article_id', 'published_revision_id', 'drive_file_id', 'drive_file_url',
+        'handoff_note', 'sheet_synced_at', 'synced_by', 'sync_status',
+        'last_error', 'created_at', 'updated_at',
+    ];
+
+    if (!$mainExists && $legacyExists) {
+        $legacyColumns = editorial_migration_table_columns($db, 'editorial_handoff_sync_v10');
+        if (!editorial_migration_columns_match($legacyColumns, $v10Columns)
+            || !empty($legacyColumns['source_key'])) {
+            throw new RuntimeException('Migration v11 legacy handoff table có schema không nhận diện được.');
+        }
+        $db->exec('ALTER TABLE editorial_handoff_sync_v10 RENAME TO editorial_handoff_sync');
+        return false;
+    }
+
+    if (!$mainExists) {
+        throw new RuntimeException('Migration v11 không tìm thấy editorial_handoff_sync v10 để nâng cấp.');
+    }
+
+    $columns = editorial_migration_table_columns($db, 'editorial_handoff_sync');
+    if (!empty($columns['source_key'])) {
+        if (!editorial_migration_handoff_v11_has_required_columns($db)
+            || !editorial_migration_handoff_v11_has_unique_source($db)) {
+            throw new RuntimeException('Migration v11 phát hiện bảng source-key dở dang hoặc thiếu unique source identity.');
+        }
+        editorial_migration_ensure_handoff_v11_indexes($db);
+        return true;
+    }
+
+    if (!editorial_migration_columns_match($columns, $v10Columns)) {
+        throw new RuntimeException('Migration v11 editorial_handoff_sync không có schema v10 nhận diện được.');
+    }
+    return false;
 }
 
 /**
@@ -304,9 +498,9 @@ function editorial_migration_list(): array
         ',
         11 => '
             -- Phase 12C: general handoff source identity, independent from Publish.
-            ALTER TABLE editorial_handoff_sync RENAME TO editorial_handoff_sync_v10;
             DROP INDEX IF EXISTS idx_handoff_sync_article;
             DROP INDEX IF EXISTS idx_handoff_sync_status;
+            ALTER TABLE editorial_handoff_sync RENAME TO editorial_handoff_sync_v10;
 
             CREATE TABLE editorial_handoff_sync (
                 id                    TEXT PRIMARY KEY,

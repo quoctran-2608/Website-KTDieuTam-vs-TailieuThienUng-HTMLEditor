@@ -712,7 +712,10 @@ function editorial_prepare_saved_draft_candidate(
     if (!$draft) {
         return ['ok' => false, 'message' => 'Bạn cần Lưu nháp trước khi thực hiện thao tác này.'];
     }
-    if ($purpose !== 'publish') {
+    // Handoff identity is content-based: saving identical browser content can
+    // advance optimistic draft version but must not create another archive.
+    // Review and Publish retain their existing candidate-selection semantics.
+    if ($purpose === 'handoff') {
         try {
             $draftHash = editorial_revision_content_hash($draft['payload']);
         } catch (RuntimeException $e) {
