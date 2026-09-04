@@ -118,7 +118,8 @@ $currentPage = $result['page'];
 $displayedIds = array_map(fn($a) => $a['id'], $items);
 $pageStates = editorial_get_states_for_articles($displayedIds);
 $pageContributors = editorial_get_article_contributors($displayedIds);
-$pageHandoffSync = editorial_get_handoff_sync_for_published_states($pageStates);
+$pageHandoffSync = editorial_get_handoff_sync_for_articles($displayedIds);
+$pageDraftArticles = editorial_get_saved_draft_article_ids($displayedIds);
 $handoffSettingsReady = editorial_handoff_verified_settings()['ok'];
 
 // Preload owner names
@@ -247,8 +248,25 @@ editorial_layout_header([
                                 break;
                             }
                         }
-                        $canHandoff = $status === 'published' && ($isAdmin || $isHandoffContributor);
-                        $handoffSync = $pageHandoffSync[$aid] ?? null;
+                        $isCurrentHandoffOwner = $ownerId !== '' && $ownerId === $currentUserId;
+                        $canHandoff = $isAdmin || $isCurrentHandoffOwner || $isHandoffContributor;
+                        $hasHandoffSource = match ($status) {
+                            'editing', 'returned' => $ownerId !== '' && !empty($pageDraftArticles[$aid][$ownerId]),
+                            'ready_review' => !empty($state['review_revision_id']),
+                            'approved' => !empty($state['approved_revision_id']),
+                            'published' => !empty($state['published_revision_id']),
+                            default => true,
+                        };
+                        $articleHandoffSync = $pageHandoffSync[$aid] ?? [];
+                        $expectedHandoffSourceKey = match ($status) {
+                            'ready_review' => !empty($state['review_revision_id']) ? 'revision:' . $state['review_revision_id'] : '',
+                            'approved' => !empty($state['approved_revision_id']) ? 'revision:' . $state['approved_revision_id'] : '',
+                            'published' => !empty($state['published_revision_id']) ? 'revision:' . $state['published_revision_id'] : '',
+                            default => '',
+                        };
+                        $handoffSync = $expectedHandoffSourceKey !== ''
+                            ? ($articleHandoffSync[$expectedHandoffSourceKey] ?? null)
+                            : null;
                         $handoffStatus = (string) ($handoffSync['sync_status'] ?? '');
                         ?>
                         <tr>
@@ -279,6 +297,12 @@ editorial_layout_header([
                                 <span class="editorial-badge editorial-status-<?= editorial_h(editorial_status_css($status)) ?>">
                                     <?= editorial_h(editorial_status_label($status)) ?>
                                 </span>
+                                <?php if (!empty($state['published_revision_id'])): ?>
+                                    <br><small class="editorial-publication-indicator">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        Đã Publish<?= !empty($state['published_at']) ? ' lúc ' . editorial_h(editorial_format_datetime((string) $state['published_at'])) : ' trước đó' ?>
+                                    </small>
+                                <?php endif; ?>
                                 <?php if ($isMe): ?>
                                     <br><small class="editorial-owner-me"><i class="fa-solid fa-user"></i> Đang phụ trách: <?= editorial_h($ownerName !== '' ? $ownerName : 'Bạn') ?></small>
                                 <?php elseif ($ownerName !== ''): ?>
@@ -333,9 +357,13 @@ editorial_layout_header([
                                         <?php endif; ?>
                                     </div>
                                 <?php endif; ?>
-                                <?php if ($status === 'published'): ?>
+                                <?php if ($canHandoff): ?>
                                     <div class="editorial-handoff-action">
-                                        <?php if ($canHandoff && $handoffSettingsReady): ?>
+                                        <?php if (in_array($status, ['editing', 'returned'], true) && !$hasHandoffSource && $isCurrentHandoffOwner): ?>
+                                            <a class="editorial-handoff-unavailable" href="<?= editorial_h(editorial_url('article.php?id=' . urlencode($aid))) ?>">
+                                                <i class="fa-solid fa-pen-to-square"></i> Mở Editor để lưu &amp; Handoff
+                                            </a>
+                                        <?php elseif ($hasHandoffSource && $handoffSettingsReady): ?>
                                             <form method="post" action="<?= editorial_h(editorial_url('handoff.php')) ?>" class="editorial-handoff-form-inline">
                                                 <?= editorial_csrf_input() ?>
                                                 <input type="hidden" name="article_id" value="<?= editorial_h($aid) ?>">
@@ -364,11 +392,13 @@ editorial_layout_header([
                                                     </a>
                                                 <?php endif; ?>
                                             </form>
+                                        <?php elseif (!$hasHandoffSource): ?>
+                                            <span class="editorial-handoff-unavailable"><i class="fa-solid fa-cloud"></i> Chưa có nguồn đã lưu để Handoff.</span>
                                         <?php elseif ($isAdmin): ?>
                                             <a class="editorial-handoff-unavailable" href="<?= editorial_h(editorial_url('google-handoff-settings.php')) ?>">
                                                 <i class="fa-solid fa-triangle-exclamation"></i> Google Handoff cần kiểm tra lại
                                             </a>
-                                        <?php elseif ($isHandoffContributor): ?>
+                                        <?php else: ?>
                                             <span class="editorial-handoff-unavailable"><i class="fa-solid fa-cloud"></i> Google Handoff chưa sẵn sàng.</span>
                                         <?php endif; ?>
                                     </div>

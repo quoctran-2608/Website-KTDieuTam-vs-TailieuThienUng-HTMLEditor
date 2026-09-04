@@ -74,8 +74,8 @@ function editorial_run_integrity_scan(bool $full = false): array
         // Live hash checks
         $issues = array_merge($issues, editorial_integrity_check_live_hashes($state));
 
-        // Backup path checks for published articles
-        if ($state['status'] === 'published') {
+        // Backup path checks follow publication facts, not only terminal workflow.
+        if (!empty($state['published_revision_id'])) {
             $issues = array_merge($issues, editorial_integrity_check_backups($state));
         }
     }
@@ -169,9 +169,6 @@ function editorial_integrity_check_article_state(array $state): array
                     $issues[] = editorial_integrity_issue('critical', $status . '_assignment_user_mismatch', $articleId, 'assignment', 'Assignment user không khớp state.assigned_user_id.');
                 }
             }
-            if (empty($state['current_revision_id'])) {
-                $issues[] = editorial_integrity_issue('critical', $status . '_no_current_revision', $articleId, 'revision', 'Bài ' . $status . ' không có current_revision_id.');
-            }
             break;
 
         case 'published':
@@ -217,7 +214,7 @@ function editorial_integrity_check_revision_pointers(array $state): array
 
     $pointers = [
         'current_revision_id' => null,
-        'review_revision_id' => null,
+        'review_revision_id' => 'editorial',
         'approved_revision_id' => 'editorial',
         'published_revision_id' => 'published',
     ];
@@ -251,9 +248,11 @@ function editorial_integrity_check_snapshots(array $state): array
     $issues = [];
     $articleId = $state['article_id'];
 
-    // Check current and published revision snapshots only
+    // Check every authoritative revision pointer.
     $revisionIds = array_filter([
         $state['current_revision_id'] ?? '',
+        $state['review_revision_id'] ?? '',
+        $state['approved_revision_id'] ?? '',
         $state['published_revision_id'] ?? '',
     ]);
 
@@ -303,8 +302,9 @@ function editorial_integrity_check_live_hashes(array $state): array
         }
     }
 
-    // For published: check published_live_hash
-    if ($status === 'published') {
+    // Publication facts may coexist with editing/returned after editor-direct
+    // Publish. Verify their live hash independently from workflow status.
+    if (!empty($state['published_revision_id'])) {
         $publishedLiveHash = $state['published_live_hash'] ?? '';
         if ($publishedLiveHash !== '' && $currentHash !== $publishedLiveHash) {
             $issues[] = editorial_integrity_issue('critical', 'published_live_drift', $articleId, 'live', 'File HTML live khác với published_live_hash. Nội dung có thể đã bị sửa bên ngoài.');
@@ -486,7 +486,7 @@ function editorial_integrity_check_backups(array $state): array
     $backupPath = $state['publish_backup_path'] ?? '';
 
     if ($backupPath === '') {
-        $issues[] = editorial_integrity_issue('warning', 'published_no_backup_path', $articleId, 'backup', 'Bài published không có publish_backup_path.');
+        $issues[] = editorial_integrity_issue('warning', 'published_no_backup_path', $articleId, 'backup', 'Bài đã có publication facts nhưng không có publish_backup_path.');
         return $issues;
     }
 

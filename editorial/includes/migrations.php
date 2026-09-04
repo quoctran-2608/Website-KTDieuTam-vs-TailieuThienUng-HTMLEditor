@@ -305,6 +305,8 @@ function editorial_migration_list(): array
         11 => '
             -- Phase 12C: general handoff source identity, independent from Publish.
             ALTER TABLE editorial_handoff_sync RENAME TO editorial_handoff_sync_v10;
+            DROP INDEX IF EXISTS idx_handoff_sync_article;
+            DROP INDEX IF EXISTS idx_handoff_sync_status;
 
             CREATE TABLE editorial_handoff_sync (
                 id                    TEXT PRIMARY KEY,

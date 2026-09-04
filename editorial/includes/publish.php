@@ -327,7 +327,7 @@ function editorial_resolve_publish_context(
 
 // ─── Pure Render ─────────────────────────────────────────────────────────────
 
-function editorial_render_approved_html(string $liveHtml, array $article, array $normalized): array
+function editorial_render_approved_html(string $liveHtml, array $article, array $normalized, bool $cacheBustAssets = true): array
 {
     // 1. Parse liveHtml
     $parsed = editorial_parse_article_html($liveHtml, '');
@@ -406,15 +406,18 @@ function editorial_render_approved_html(string $liveHtml, array $article, array 
         return ['ok' => false, 'message' => 'Không tìm thấy .article-summary trong HTML để cập nhật.'];
     }
 
-    // 7. Cache busting on JS files
-    $assetVersion = date('YmdHis');
-    $html = preg_replace_callback(
-        '/(<script[^>]+src=["\'])([^"\']*(?:article-layout\.js|data\/article-views\/[^"\']*\.js))(\?v=[^"\']*)?(["\'])/i',
-        function($m) use ($assetVersion) {
-            return $m[1] . $m[2] . '?v=' . $assetVersion . $m[4];
-        },
-        $html
-    ) ?? $html;
+    // 7. Safe Publish cache-busts derived JS. External archival rendering
+    // disables this so the same immutable source renders deterministically.
+    if ($cacheBustAssets) {
+        $assetVersion = date('YmdHis');
+        $html = preg_replace_callback(
+            '/(<script[^>]+src=["\'])([^"\']*(?:article-layout\.js|data\/article-views\/[^"\']*\.js))(\?v=[^"\']*)?(["\'])/i',
+            function($m) use ($assetVersion) {
+                return $m[1] . $m[2] . '?v=' . $assetVersion . $m[4];
+            },
+            $html
+        ) ?? $html;
+    }
 
     return ['ok' => true, 'html' => $html];
 }
@@ -1082,8 +1085,8 @@ function editorial_publish_approved_revision(string $articleId, string $adminUse
 }
 
 /**
- * Editor direct publish entry point. The Workspace submits only an action
- * marker, article ID, CSRF token and lock token; this service remains authoritative.
+ * Editor direct publish entry point. Workspace saves browser content first;
+ * this service then selects the immutable candidate from the server-side draft.
  */
 function editorial_publish_editor_revision(string $articleId, string $editorUserId, string $lockToken): array
 {
@@ -1393,6 +1396,25 @@ function editorial_publish_revision_core(
                     if ($stmtState->rowCount() !== 1) {
                         throw new EditorialPublishCompensationException('Editor-direct workflow state changed during Publish.');
                     }
+                    $stmtDraftBase = $db->prepare('
+                        UPDATE editorial_drafts
+                        SET base_live_hash = :new_hash
+                        WHERE article_id = :aid AND user_id = :uid
+                    ');
+                    $stmtDraftBase->execute([
+                        ':new_hash' => $newHtmlHash,
+                        ':aid' => $articleId,
+                        ':uid' => $actorUserId,
+                    ]);
+                    $stmtDraftCheck = $db->prepare('
+                        SELECT base_live_hash
+                        FROM editorial_drafts
+                        WHERE article_id = :aid AND user_id = :uid
+                    ');
+                    $stmtDraftCheck->execute([':aid' => $articleId, ':uid' => $actorUserId]);
+                    if ((string) $stmtDraftCheck->fetchColumn() !== $newHtmlHash) {
+                        throw new EditorialPublishCompensationException('Editor-direct draft base hash was not retained.');
+                    }
                 }
 
             } catch (\Throwable $innerEx) {
@@ -1510,8 +1532,11 @@ function editorial_publish_revision_core(
             $shouldCompensate = true;
             try {
                 $postState = editorial_get_article_state($articleId);
+                $workflowCommitted = $policy === 'admin_approved'
+                    ? (($postState['status'] ?? '') === 'published')
+                    : true;
                 if ($postState
-                    && $postState['status'] === 'published'
+                    && $workflowCommitted
                     && !empty($compCtx['published_revision_id'])
                     && ($postState['published_revision_id'] ?? '') === $compCtx['published_revision_id']
                     && ($postState['published_live_hash'] ?? '') === $compCtx['live_hash_after']) {

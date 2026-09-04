@@ -55,7 +55,7 @@ function editorial_check_draft_revision_sync(string $articleId, string $userId):
     return ['ok' => false, 'message' => 'Bản nháp đã lưu chưa có bản cố định hợp lệ để gửi duyệt.'];
 }
 
-function editorial_send_for_review(string $articleId, string $userId, string $lockToken, ?string $candidateRevisionId = null): array
+function editorial_send_for_review(string $articleId, string $userId, string $lockToken): array
 {
     $article = editorial_find_article($articleId);
     if (!$article) {
@@ -81,15 +81,13 @@ function editorial_send_for_review(string $articleId, string $userId, string $lo
         return ['ok' => false, 'message' => 'Cảnh báo: File HTML gốc đã bị thay đổi bên ngoài hệ thống trong quá trình chỉnh sửa.'];
     }
 
-    if ($candidateRevisionId === null || $candidateRevisionId === '') {
-        $candidate = editorial_prepare_saved_draft_review_candidate($articleId, $userId, $lockToken);
-        if (!$candidate['ok']) {
-            return $candidate;
-        }
-        $candidateRevisionId = (string) ($candidate['revision_id'] ?? '');
+    $candidate = editorial_prepare_saved_draft_review_candidate($articleId, $userId, $lockToken);
+    if (!$candidate['ok']) {
+        return $candidate;
     }
+    $candidateRevisionId = (string) ($candidate['revision_id'] ?? '');
 
-    return editorial_transaction(function() use ($articleId, $userId, $lockToken, $liveHash, $candidateRevisionId) {
+    return editorial_transaction(function() use ($articleId, $userId, $lockToken, $htmlPath, $candidateRevisionId) {
         $state = editorial_get_article_state($articleId);
         
         if ($state['assigned_user_id'] !== $userId) {
@@ -98,6 +96,10 @@ function editorial_send_for_review(string $articleId, string $userId, string $lo
         
         if (!in_array($state['status'], ['editing', 'returned'], true)) {
             return ['ok' => false, 'message' => 'Bài viết không ở trạng thái cho phép gửi duyệt.'];
+        }
+        $currentLiveHash = editorial_live_hash($htmlPath);
+        if ($currentLiveHash === null || $currentLiveHash !== (string) ($state['base_live_hash'] ?? '')) {
+            return ['ok' => false, 'message' => 'File HTML gốc đã thay đổi trong khi chuẩn bị gửi duyệt.'];
         }
 
         if (!editorial_can_transition($state['status'], 'ready_review')) {
@@ -405,47 +407,32 @@ function editorial_check_draft_handoff_safety(string $articleId, string $ownerUs
             'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
     }
     
-    // Must have current_revision_id
-    $state = editorial_get_article_state($articleId);
-    if (!$state || empty($state['current_revision_id'])) {
-        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
-            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
-    }
-    
-    // Revision must exist, be editorial type, belong to active assignment
-    $revision = editorial_get_revision($state['current_revision_id']);
-    if (!$revision || $revision['revision_type'] !== 'editorial') {
-        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
-            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
-    }
-    
     $assignment = editorial_get_active_assignment($articleId);
-    if (!$assignment || $revision['assignment_id'] !== $assignment['id']) {
+    if (!$assignment || (string) ($assignment['user_id'] ?? '') !== $ownerUserId) {
         return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
             'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
     }
-    
-    // Verified snapshot
-    $snap = editorial_get_verified_revision_snapshot($revision);
-    if (!$snap['ok']) {
-        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
-            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
+
+    $stmt = editorial_db()->prepare('
+        SELECT * FROM editorial_revisions
+        WHERE article_id = :article_id
+          AND assignment_id = :assignment_id
+          AND revision_type = \'editorial\'
+          AND content_hash = :content_hash
+        ORDER BY revision_no DESC
+    ');
+    $stmt->execute([
+        'article_id' => $articleId,
+        'assignment_id' => (string) $assignment['id'],
+        'content_hash' => $draftHash,
+    ]);
+    foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $revision) {
+        if (!empty(editorial_get_verified_revision_snapshot($revision)['ok'])) {
+            return ['safe' => true, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash, 'message' => ''];
+        }
     }
-    
-    // Content hash must match
-    if ($revision['content_hash'] !== $draftHash) {
-        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
-            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
-    }
-    
-    // source_draft_version must match
-    if ((int) $revision['source_draft_version'] !== $draftVersion) {
-        return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
-            'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
-    }
-    
-    // All checks passed — draft is fully preserved in revision
-    return ['safe' => true, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash, 'message' => ''];
+    return ['safe' => false, 'has_draft' => true, 'draft_version' => $draftVersion, 'draft_hash' => $draftHash,
+        'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
 }
 
 function editorial_reassign_article(string $articleId, string $adminUserId, string $newUserId, bool $force = false): array

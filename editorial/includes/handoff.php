@@ -4,15 +4,14 @@ declare(strict_types=1);
 /**
  * Editorial V2 — Google Handoff service.
  *
- * Handoff is deliberately independent from Safe Publish: it reads exact
- * published bytes, archives them externally, and never mutates public HTML,
- * catalog data, taxonomy, article workflow, revisions, or assignments.
+ * Handoff is deliberately independent from Safe Publish: it resolves the
+ * current server-authoritative workflow source, renders non-published
+ * revisions without public writes, and archives the result externally.
  */
 
 require_once __DIR__ . '/workspace.php';
 require_once __DIR__ . '/revision.php';
 require_once __DIR__ . '/composio.php';
-require_once __DIR__ . '/publish.php';
 
 const EDITORIAL_HANDOFF_HEADERS = [
     'Article ID',
@@ -50,7 +49,7 @@ function editorial_handoff_get_sync(string $articleId, string $sourceKey): ?arra
  * Batch-load the newest handoff state per displayed article.
  *
  * @param array<int,string> $articleIds
- * @return array<string,array<string,mixed>>
+ * @return array<string,array<string,array<string,mixed>>>
  */
 function editorial_get_handoff_sync_for_articles(array $articleIds): array
 {
@@ -63,16 +62,37 @@ function editorial_get_handoff_sync_for_articles(array $articleIds): array
     $stmt = editorial_db()->prepare("
         SELECT * FROM editorial_handoff_sync
         WHERE article_id IN ($placeholders)
-        ORDER BY updated_at DESC
+        ORDER BY updated_at DESC, created_at DESC
     ");
     $stmt->execute($articleIds);
 
     $result = [];
     while ($row = $stmt->fetch()) {
         $articleId = (string) ($row['article_id'] ?? '');
-        if ($articleId !== '' && !isset($result[$articleId])) {
-            $result[$articleId] = $row;
+        $sourceKey = (string) ($row['source_key'] ?? '');
+        if ($articleId !== '' && $sourceKey !== '' && !isset($result[$articleId][$sourceKey])) {
+            $result[$articleId][$sourceKey] = $row;
         }
+    }
+    return $result;
+}
+
+/**
+ * @param array<int,string> $articleIds
+ * @return array<string,array<string,bool>>
+ */
+function editorial_get_saved_draft_article_ids(array $articleIds): array
+{
+    $articleIds = array_values(array_unique(array_filter(array_map('strval', $articleIds))));
+    if ($articleIds === []) {
+        return [];
+    }
+    $placeholders = implode(',', array_fill(0, count($articleIds), '?'));
+    $stmt = editorial_db()->prepare("SELECT DISTINCT article_id, user_id FROM editorial_drafts WHERE article_id IN ($placeholders)");
+    $stmt->execute($articleIds);
+    $result = [];
+    foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+        $result[(string) $row['article_id']][(string) $row['user_id']] = true;
     }
     return $result;
 }
@@ -101,6 +121,22 @@ function editorial_handoff_ensure_sync(string $articleId, array $source): array
             'published_revision_id' => $source['published_revision_id'] ?? null,
             'created_at' => $now,
             'updated_at' => $now,
+        ]);
+        $refreshSource = $db->prepare('
+            UPDATE editorial_handoff_sync
+            SET source_revision_id = :source_revision_id,
+                source_kind = :source_kind,
+                published_revision_id = :published_revision_id,
+                updated_at = :updated_at
+            WHERE article_id = :article_id AND source_key = :source_key
+        ');
+        $refreshSource->execute([
+            'source_revision_id' => $source['source_revision_id'] ?? null,
+            'source_kind' => (string) $source['source_kind'],
+            'published_revision_id' => $source['published_revision_id'] ?? null,
+            'updated_at' => $now,
+            'article_id' => $articleId,
+            'source_key' => (string) $source['source_key'],
         ]);
         $sync = editorial_handoff_get_sync($articleId, (string) $source['source_key']);
         if ($sync === null) {
@@ -187,9 +223,6 @@ function editorial_handoff_verified_settings(): array
 
 function editorial_handoff_user_can_sync(string $articleId, array $actor): bool
 {
-    if (($actor['role'] ?? '') === 'admin') {
-        return true;
-    }
     $actorId = (string) ($actor['user_id'] ?? '');
     if ($actorId === '') {
         return false;
@@ -344,6 +377,7 @@ function editorial_handoff_archive_filename(string $articleId, string $revisionI
  */
 function editorial_handoff_render_revision_html(array $article, array $state, array $revision): array
 {
+    require_once __DIR__ . '/publish.php';
     $snapshot = editorial_get_verified_revision_snapshot($revision);
     if (!$snapshot['ok']) {
         return ['ok' => false, 'message' => 'Snapshot nguồn bàn giao không hợp lệ: ' . $snapshot['message']];
@@ -369,7 +403,7 @@ function editorial_handoff_render_revision_html(array $article, array $state, ar
         (array) ($parsed['meta_payload'] ?? []),
         $article
     );
-    $rendered = editorial_render_approved_html($liveHtml, $article, $normalized);
+    $rendered = editorial_render_approved_html($liveHtml, $article, $normalized, false);
     if (!$rendered['ok']) {
         return ['ok' => false, 'message' => 'Không thể dựng full HTML bàn giao: ' . $rendered['message']];
     }
@@ -406,7 +440,10 @@ function editorial_handoff_resolve_source(array $article, ?array $state): array
         }
         $revisionId = (string) ($candidate['revision_id'] ?? '');
         $revision = editorial_get_revision($revisionId);
-        if (!$revision || (string) ($revision['assignment_id'] ?? '') !== (string) (editorial_get_active_assignment($articleId)['id'] ?? '')) {
+        $assignment = editorial_get_active_assignment($articleId);
+        if (!$revision || !$assignment
+            || (string) ($assignment['user_id'] ?? '') !== $ownerId
+            || (string) ($revision['assignment_id'] ?? '') !== (string) $assignment['id']) {
             return ['ok' => false, 'message' => 'Nguồn bản nháp bàn giao không khớp active assignment.'];
         }
         $rendered = editorial_handoff_render_revision_html($article, $state, $revision);
@@ -440,6 +477,7 @@ function editorial_handoff_resolve_source(array $article, ?array $state): array
         if (!$revision || ($revision['revision_type'] ?? '') !== 'editorial'
             || (string) ($revision['article_id'] ?? '') !== $articleId
             || !$assignment
+            || (string) ($assignment['user_id'] ?? '') !== (string) ($state['assigned_user_id'] ?? '')
             || (string) ($revision['assignment_id'] ?? '') !== (string) $assignment['id']) {
             return ['ok' => false, 'message' => 'Revision nguồn bàn giao không hợp lệ hoặc không khớp assignment.'];
         }

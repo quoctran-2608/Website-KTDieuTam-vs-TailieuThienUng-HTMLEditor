@@ -560,7 +560,7 @@ function editorial_create_editorial_revision(
         // workflow's current_revision_id pointer.
         if ($milestoneKey !== null) {
             $stmt = $db->prepare("
-                SELECT id, content_hash FROM editorial_revisions
+                SELECT * FROM editorial_revisions
                 WHERE assignment_id = :assignment_id
                   AND revision_type = 'editorial'
                   AND milestone_key = :milestone_key
@@ -571,7 +571,9 @@ function editorial_create_editorial_revision(
                 ':milestone_key' => $milestoneKey,
             ]);
             $latestStage = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (is_array($latestStage) && (string) ($latestStage['content_hash'] ?? '') === $contentHash) {
+            if (is_array($latestStage)
+                && (string) ($latestStage['content_hash'] ?? '') === $contentHash
+                && !empty(editorial_get_verified_revision_snapshot($latestStage)['ok'])) {
                 $stageLabel = $milestoneKey === 'stage1' ? 'Chặng 1' : 'Chặng 2';
                 return [
                     'ok' => false,
@@ -800,15 +802,21 @@ function editorial_create_stage_milestone_revision(string $articleId, string $us
     if (!empty($result['ok']) || $duplicateRevisionId === '') {
         return $result;
     }
-    return editorial_transaction(function () use ($articleId, $userId, $milestoneKey, $duplicateRevisionId, $result): array {
+    return editorial_transaction(function () use ($articleId, $userId, $lockToken, $milestoneKey, $duplicateRevisionId, $result): array {
         $state = editorial_get_article_state($articleId);
         $assignment = editorial_get_active_assignment($articleId);
         $revision = editorial_get_revision($duplicateRevisionId);
+        $lock = editorial_get_article_lock($articleId);
         if (!$state || !$assignment || !$revision
             || (string) ($state['assigned_user_id'] ?? '') !== $userId
             || !in_array((string) ($state['status'] ?? ''), ['editing', 'returned'], true)
+            || !$lock
+            || (string) ($lock['user_id'] ?? '') !== $userId
+            || (string) ($lock['lock_token'] ?? '') !== $lockToken
+            || strtotime((string) ($lock['expires_at'] ?? '')) <= time()
             || (string) ($revision['article_id'] ?? '') !== $articleId
             || (string) ($revision['assignment_id'] ?? '') !== (string) $assignment['id']
+            || (string) ($assignment['user_id'] ?? '') !== $userId
             || (string) ($revision['milestone_key'] ?? '') !== $milestoneKey
             || empty(editorial_get_verified_revision_snapshot($revision)['ok'])) {
             return $result;

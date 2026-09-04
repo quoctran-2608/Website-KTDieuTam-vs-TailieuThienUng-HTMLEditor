@@ -180,17 +180,7 @@ if (editorial_is_post()) {
         }
 
         if ($intent === 'save_then_review') {
-            $candidate = editorial_prepare_saved_draft_review_candidate($articleId, $currentUserId, $lockToken);
-            if (!$candidate['ok']) {
-                editorial_flash_set('danger', (string) ($candidate['message'] ?? 'Không thể chuẩn bị bản duyệt.'));
-                editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
-            }
-            $reviewResult = editorial_send_for_review(
-                $articleId,
-                $currentUserId,
-                $lockToken,
-                (string) ($candidate['revision_id'] ?? '')
-            );
+            $reviewResult = editorial_send_for_review($articleId, $currentUserId, $lockToken);
             editorial_flash_set($reviewResult['ok'] ? 'success' : 'danger', (string) ($reviewResult['message'] ?? 'Không thể gửi duyệt.'));
             editorial_redirect($reviewResult['ok']
                 ? editorial_url('my-work.php')
@@ -210,8 +200,25 @@ if (editorial_is_post()) {
             }
             $rebuildResult = editorial_public_rebuild_after_publish($articleId);
             if (!empty($rebuildResult['ok'])) {
+                try {
+                    editorial_log_activity('article.publish.public_rebuild_succeeded', $articleId, $currentUserId, json_encode([
+                        'exit_code' => $rebuildResult['exit_code'] ?? 0,
+                        'publish_mode' => 'editor_direct',
+                    ]));
+                } catch (\Throwable $logErr) {
+                    // Best-effort: Publish success remains success.
+                }
                 editorial_flash_set('success', 'Đã Publish bài viết. Bạn có thể tiếp tục biên tập, gửi duyệt hoặc Google Handoff.');
             } else {
+                try {
+                    editorial_log_activity('article.publish.public_rebuild_failed', $articleId, $currentUserId, json_encode([
+                        'code' => $rebuildResult['code'] ?? 'unknown',
+                        'exit_code' => $rebuildResult['exit_code'] ?? null,
+                        'publish_mode' => 'editor_direct',
+                    ]));
+                } catch (\Throwable $logErr) {
+                    // Best-effort: Publish success remains success.
+                }
                 editorial_flash_set('warning', 'Bài đã được Publish, nhưng dữ liệu public phụ trợ chưa rebuild hoàn tất.');
             }
             editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
@@ -347,22 +354,19 @@ try {
 
     $recentRevisions = editorial_get_article_revisions($articleId, 5);
     $assignmentMilestones = editorial_get_assignment_milestones($articleId, (string) $assignment['id']);
-    $currentMilestone = null;
-    $currentRevisionId = (string) ($state['current_revision_id'] ?? '');
-    foreach ($assignmentMilestones as $milestone) {
-        if ($milestone !== null && (string) $milestone['id'] === $currentRevisionId) {
-            $currentMilestone = $milestone;
-            break;
-        }
-    }
 $isEditorWorkspace = (($currentUser['role'] ?? '') === 'editor');
 $hasSavedDraft = $draftVersion > 0;
-$canPublishDirect = $isEditorWorkspace;
-$canSendReview = true;
 $handoffConfig = editorial_handoff_settings();
 $handoffSettingsReady = ($handoffConfig['last_verify_status'] ?? '') === 'verified'
+    && !empty($handoffConfig['api_key_configured'])
     && trim((string) ($handoffConfig['pinned_toolkit_version'] ?? '')) !== ''
-    && trim((string) ($handoffConfig['connected_user_id'] ?? '')) !== '';
+    && trim((string) ($handoffConfig['connected_user_id'] ?? '')) !== ''
+    && trim((string) ($handoffConfig['connected_account_id'] ?? '')) !== ''
+    && trim((string) ($handoffConfig['drive_folder_id'] ?? '')) !== ''
+    && trim((string) ($handoffConfig['spreadsheet_id'] ?? '')) !== ''
+    && trim((string) ($handoffConfig['sheet_name'] ?? '')) !== ''
+    && trim((string) ($handoffConfig['public_base_url'] ?? '')) !== ''
+    && !empty(editorial_handoff_normalize_public_base_url((string) ($handoffConfig['public_base_url'] ?? ''))['ok']);
 $hasPublication = trim((string) ($state['published_revision_id'] ?? '')) !== '';
 $publishedAt = trim((string) ($state['published_at'] ?? ''));
 $saveStatusText = $hasSavedDraft
@@ -457,6 +461,11 @@ $innerScript = <<<JS
 
   /* ── Base64 encode on submit ──────────────────────── */
   form.addEventListener('submit', (e) => {
+    if (form.dataset.submitting === '1') {
+      e.preventDefault();
+      return;
+    }
+    form.dataset.submitting = '1';
     if (window.tinymce && typeof window.tinymce.triggerSave === 'function') {
       window.tinymce.triggerSave();
     }
@@ -471,7 +480,7 @@ $innerScript = <<<JS
     }
   });
 
-  form.querySelectorAll('input:not([type="hidden"]), textarea:not(#proseEditor)').forEach((field) => {
+  form.querySelectorAll('input:not([type="hidden"]):not([data-nondraft-field]), textarea:not(#proseEditor):not([data-nondraft-field])').forEach((field) => {
     field.addEventListener('input', markDraftDirty);
     field.addEventListener('change', markDraftDirty);
   });
@@ -525,6 +534,7 @@ $innerScript = <<<JS
         form.target = originalTarget;
         editor.setAttribute('name', 'prose_html');
         if (b64Field) b64Field.value = '';
+        form.dataset.submitting = '0';
       }, 0);
     });
   });
@@ -726,6 +736,13 @@ editorial_layout_header([
                 <span style="color:#868e96;">Chưa lưu nháp</span>
             <?php endif; ?>
             &nbsp;
+            <?php if ($hasPublication): ?>
+                <span class="editorial-publication-indicator">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Đã Publish<?= $publishedAt !== '' ? ' lúc ' . editorial_h(editorial_format_datetime($publishedAt)) : ' trước đó' ?>
+                </span>
+                &nbsp;
+            <?php endif; ?>
             <a href="<?= editorial_h($publicUrl) ?>" target="_blank" rel="noopener" style="font-size:0.85rem;" title="Chỉ hiển thị nội dung đã Publish.">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem bản đang xuất bản
             </a>
@@ -747,13 +764,14 @@ editorial_layout_header([
         <input type="hidden" name="expected_draft_version" id="expectedDraftVersion" value="<?= editorial_h((string) $draftVersion) ?>">
         <input type="hidden" name="prose_html_b64" id="proseHtmlB64" value="">
         <input type="hidden" name="compare_stage" id="autoCompareStage" value="">
+        <input type="hidden" name="confirm_direct_publish" id="confirmDirectPublish" value="">
 
         <!-- Action bar -->
         <section class="editorial-workflow-bar editorial-workflow-top">
             <div class="editorial-workflow-groups">
                 <div class="editorial-workflow-group editorial-workflow-save">
                     <p class="editorial-workflow-label">Lưu</p>
-                    <button type="submit" class="editorial-save-btn">
+                    <button type="button" class="editorial-save-btn" data-editor-action="save_draft">
                         <i class="fa-solid fa-floppy-disk"></i>
                         <span>Lưu nháp</span>
                     </button>
@@ -762,17 +780,10 @@ editorial_layout_header([
 
                 <div class="editorial-workflow-group">
                     <p class="editorial-workflow-label">Chặng 1</p>
-                    <?php if ($hasSavedDraft): ?>
-                        <button type="submit" form="stage1MilestoneForm" class="editorial-revision-btn editorial-stage1-btn" title="Lưu một bản cố định sau khi đã làm sạch và chuẩn hóa HTML/trình bày." onclick="return confirm('Lưu Chặng 1 từ bản nháp đã lưu?');">
-                            <i class="fa-solid fa-code-branch"></i>
-                            <span>Hoàn tất Chặng 1</span>
-                        </button>
-                    <?php else: ?>
-                        <button type="button" class="editorial-revision-btn editorial-stage1-btn" disabled title="Hãy Lưu nháp trước khi hoàn tất Chặng 1.">
-                            <i class="fa-solid fa-code-branch"></i>
-                            <span>Hoàn tất Chặng 1</span>
-                        </button>
-                    <?php endif; ?>
+                    <button type="button" class="editorial-revision-btn editorial-stage1-btn" data-editor-action="save_then_stage1" title="Tự động lưu nội dung hiện tại rồi tạo hoặc dùng lại Chặng 1.">
+                        <i class="fa-solid fa-code-branch"></i>
+                        <span>Hoàn tất Chặng 1</span>
+                    </button>
                     <small class="editorial-stage-helper">Chuẩn hóa trình bày</small>
                     <?php if ($assignmentMilestones['stage1']): ?>
                         <small class="editorial-stage-status">✓ Chặng 1 đã lưu · Revision #<?= editorial_h((string) $assignmentMilestones['stage1']['revision_no']) ?></small>
@@ -784,17 +795,10 @@ editorial_layout_header([
 
                 <div class="editorial-workflow-group">
                     <p class="editorial-workflow-label">Chặng 2</p>
-                    <?php if ($hasSavedDraft): ?>
-                        <button type="submit" form="stage2MilestoneForm" class="editorial-revision-btn editorial-stage2-btn" title="Tùy chọn: lưu bản cố định sau khi đã research, cập nhật và biên tập nội dung." onclick="return confirm('Lưu Chặng 2 từ bản nháp đã lưu?');">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                            <span>Hoàn tất Chặng 2</span>
-                        </button>
-                    <?php else: ?>
-                        <button type="button" class="editorial-revision-btn editorial-stage2-btn" disabled title="Hãy Lưu nháp trước khi hoàn tất Chặng 2.">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                            <span>Hoàn tất Chặng 2</span>
-                        </button>
-                    <?php endif; ?>
+                    <button type="button" class="editorial-revision-btn editorial-stage2-btn" data-editor-action="save_then_stage2" title="Tự động lưu nội dung hiện tại rồi tạo hoặc dùng lại Chặng 2.">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span>Hoàn tất Chặng 2</span>
+                    </button>
                     <small class="editorial-stage-helper">Biên tập nội dung · nếu cần</small>
                     <?php if ($assignmentMilestones['stage2']): ?>
                         <small class="editorial-stage-status">✓ Chặng 2 đã lưu · Revision #<?= editorial_h((string) $assignmentMilestones['stage2']['revision_no']) ?></small>
@@ -807,24 +811,40 @@ editorial_layout_header([
                 <div class="editorial-workflow-group editorial-workflow-publish">
                     <p class="editorial-workflow-label">Xuất bản</p>
                     <?php if ($isEditorWorkspace): ?>
-                        <button type="<?= $canPublishDirect ? 'submit' : 'button' ?>" <?= $canPublishDirect ? 'form="directPublishForm" data-direct-publish="1"' : 'disabled title="Hãy Lưu nháp trước khi Publish."' ?> class="editorial-direct-publish-btn">
+                        <button type="button" data-editor-action="save_then_publish" class="editorial-direct-publish-btn">
                             <i class="fa-solid fa-rocket"></i> Publish trực tiếp
                         </button>
-                        <small class="editorial-publish-status"><?= $hasSavedDraft ? 'Sẽ Publish bản nháp đã lưu v' . editorial_h((string) $draftVersion) . '.' : 'Chưa có bản nháp đã lưu.' ?></small>
+                        <small class="editorial-publish-status">Tự động lưu nội dung hiện tại trước khi Publish.</small>
                     <?php else: ?>
                         <button type="button" class="editorial-direct-publish-btn" disabled title="Publish trực tiếp trong Workspace dành cho Editor.">
                             <i class="fa-solid fa-rocket"></i> Publish trực tiếp
                         </button>
                         <small class="editorial-publish-status">Publish trực tiếp trong Workspace dành cho Editor.</small>
                     <?php endif; ?>
-                    <?php if ($canSendReview): ?>
-                        <button type="submit" form="sendReviewForm" class="editorial-review-submit-btn" onclick="return confirm('Gửi phiên bản đã chốt để duyệt? Bạn sẽ không thể chỉnh sửa cho đến khi reviewer phản hồi.');">
-                            <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
-                        </button>
+                </div>
+
+                <div class="editorial-workflow-group editorial-workflow-review">
+                    <p class="editorial-workflow-label">Duyệt</p>
+                    <button type="button" data-editor-action="save_then_review" class="editorial-review-submit-btn">
+                        <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
+                    </button>
+                    <small class="editorial-publish-status">Gửi bản nháp đã lưu hiện tại cho Admin duyệt.</small>
+                </div>
+
+                <div class="editorial-workflow-group editorial-workflow-handoff">
+                    <p class="editorial-workflow-label">Bàn giao</p>
+                    <input type="text" name="handoff_note" maxlength="2000" data-nondraft-field class="editorial-workspace-handoff-note" placeholder="Ghi chú bàn giao (nếu có)">
+                    <button type="button" class="editorial-handoff-btn" data-editor-action="save_then_handoff" <?= $handoffSettingsReady ? '' : 'disabled title="Google Handoff chưa sẵn sàng."' ?>>
+                        <i class="fa-solid fa-cloud-arrow-up"></i> Google Handoff
+                    </button>
+                    <?php if (!$handoffSettingsReady): ?>
+                        <small class="editorial-publish-status">Google Handoff chưa sẵn sàng.
+                            <?php if (($currentUser['role'] ?? '') === 'admin'): ?>
+                                <a href="<?= editorial_h(editorial_url('google-handoff-settings.php')) ?>">Kiểm tra cấu hình Google</a>
+                            <?php endif; ?>
+                        </small>
                     <?php else: ?>
-                        <button type="button" class="editorial-review-submit-btn" disabled title="Hãy hoàn tất Chặng 1 hoặc Chặng 2 trước khi gửi Admin duyệt.">
-                            <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
-                        </button>
+                        <small class="editorial-publish-status">Tự động lưu nội dung hiện tại rồi bàn giao Drive + Sheet.</small>
                     <?php endif; ?>
                 </div>
             </div>
@@ -842,7 +862,7 @@ editorial_layout_header([
         </section>
 
         <div class="editorial-workflow-help">
-            Bạn có thể Lưu nháp nhiều lần. Chặng 1/2 là các mốc để lưu và so sánh với Bản gốc. Có thể Publish bất kỳ bản nháp đã lưu nào.
+            Bạn có thể Lưu nháp nhiều lần. Chặng 1 và Chặng 2 là mốc tùy chọn để lưu/so sánh. Publish, Gửi Admin duyệt và Google Handoff là các thao tác độc lập.
         </div>
 
         <div class="editor-fullscreen-backdrop" id="editorFullscreenBackdrop"></div>
@@ -939,35 +959,23 @@ editorial_layout_header([
 
         <!-- Bottom workflow actions -->
         <section class="editorial-workflow-bar editorial-workflow-bottom">
-            <button type="submit" class="editorial-save-btn">
+            <button type="button" class="editorial-save-btn" data-editor-action="save_draft">
                 <i class="fa-solid fa-floppy-disk"></i> Lưu nháp
             </button>
-            <?php if ($hasSavedDraft): ?>
-                <button type="submit" form="stage1MilestoneForm" class="editorial-revision-btn editorial-stage1-btn" onclick="return confirm('Lưu Chặng 1 từ bản nháp đã lưu?');">
-                    <i class="fa-solid fa-code-branch"></i> Hoàn tất Chặng 1
-                </button>
-            <?php else: ?>
-                <button type="button" class="editorial-revision-btn editorial-stage1-btn" disabled title="Hãy Lưu nháp trước khi hoàn tất Chặng 1.">
-                    <i class="fa-solid fa-code-branch"></i> Hoàn tất Chặng 1
-                </button>
-            <?php endif; ?>
+            <button type="button" class="editorial-revision-btn editorial-stage1-btn" data-editor-action="save_then_stage1">
+                <i class="fa-solid fa-code-branch"></i> Hoàn tất Chặng 1
+            </button>
             <button type="button" class="editorial-compare-btn" data-auto-stage-compare="stage1" title="Tự động lưu nháp, lưu Chặng 1 rồi mở so sánh ở tab mới.">
                 <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
             </button>
-            <?php if ($hasSavedDraft): ?>
-                <button type="submit" form="stage2MilestoneForm" class="editorial-revision-btn editorial-stage2-btn" onclick="return confirm('Lưu Chặng 2 từ bản nháp đã lưu?');">
-                    <i class="fa-solid fa-pen-to-square"></i> Hoàn tất Chặng 2
-                </button>
-            <?php else: ?>
-                <button type="button" class="editorial-revision-btn editorial-stage2-btn" disabled title="Hãy Lưu nháp trước khi hoàn tất Chặng 2.">
-                    <i class="fa-solid fa-pen-to-square"></i> Hoàn tất Chặng 2
-                </button>
-            <?php endif; ?>
+            <button type="button" class="editorial-revision-btn editorial-stage2-btn" data-editor-action="save_then_stage2">
+                <i class="fa-solid fa-pen-to-square"></i> Hoàn tất Chặng 2
+            </button>
             <button type="button" class="editorial-compare-btn" data-auto-stage-compare="stage2" title="Tự động lưu nháp, lưu Chặng 2 rồi mở so sánh ở tab mới.">
                 <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
             </button>
             <?php if ($isEditorWorkspace): ?>
-                <button type="<?= $canPublishDirect ? 'submit' : 'button' ?>" <?= $canPublishDirect ? 'form="directPublishForm" data-direct-publish="1"' : 'disabled title="Hãy Lưu nháp trước khi Publish."' ?> class="editorial-direct-publish-btn">
+                <button type="button" data-editor-action="save_then_publish" class="editorial-direct-publish-btn">
                     <i class="fa-solid fa-rocket"></i> Publish trực tiếp
                 </button>
             <?php else: ?>
@@ -975,48 +983,18 @@ editorial_layout_header([
                     <i class="fa-solid fa-rocket"></i> Publish trực tiếp
                 </button>
             <?php endif; ?>
-            <?php if ($canSendReview): ?>
-                <button type="submit" form="sendReviewForm" class="editorial-review-submit-btn" onclick="return confirm('Gửi phiên bản đã chốt để duyệt? Bạn sẽ không thể chỉnh sửa cho đến khi reviewer phản hồi.');">
-                    <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
-                </button>
-            <?php else: ?>
-                <button type="button" class="editorial-review-submit-btn" disabled title="Hãy hoàn tất Chặng 1 hoặc Chặng 2 trước khi gửi Admin duyệt.">
-                    <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
-                </button>
-            <?php endif; ?>
+            <button type="button" data-editor-action="save_then_review" class="editorial-review-submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
+            </button>
+            <button type="button" class="editorial-handoff-btn" data-editor-action="save_then_handoff" <?= $handoffSettingsReady ? '' : 'disabled title="Google Handoff chưa sẵn sàng."' ?>>
+                <i class="fa-solid fa-cloud-arrow-up"></i> Google Handoff
+            </button>
             <button type="submit" form="exitWorkspaceForm" class="editorial-exit-btn">
                 <i class="fa-solid fa-right-from-bracket"></i> Thoát
             </button>
         </section>
     </form>
 
-    <form id="stage1MilestoneForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
-        <?= editorial_csrf_input() ?>
-        <input type="hidden" name="_intent" value="create_stage1_revision">
-        <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-        <input type="hidden" name="lock_token" value="<?= editorial_h($lockToken) ?>">
-        <input type="hidden" name="expected_draft_version" value="<?= editorial_h((string) $draftVersion) ?>">
-    </form>
-    <form id="stage2MilestoneForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
-        <?= editorial_csrf_input() ?>
-        <input type="hidden" name="_intent" value="create_stage2_revision">
-        <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-        <input type="hidden" name="lock_token" value="<?= editorial_h($lockToken) ?>">
-        <input type="hidden" name="expected_draft_version" value="<?= editorial_h((string) $draftVersion) ?>">
-    </form>
-    <form id="sendReviewForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
-        <?= editorial_csrf_input() ?>
-        <input type="hidden" name="_intent" value="send_for_review">
-        <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-        <input type="hidden" name="lock_token" value="<?= editorial_h($lockToken) ?>">
-    </form>
-    <form id="directPublishForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
-        <?= editorial_csrf_input() ?>
-        <input type="hidden" name="_intent" value="publish_direct">
-        <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-        <input type="hidden" name="lock_token" value="<?= editorial_h($lockToken) ?>">
-        <input type="hidden" name="confirm_direct_publish" value="1">
-    </form>
     <form id="exitWorkspaceForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
         <?= editorial_csrf_input() ?>
         <input type="hidden" name="_intent" value="exit_workspace">
