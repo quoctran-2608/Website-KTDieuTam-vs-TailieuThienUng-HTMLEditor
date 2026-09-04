@@ -97,6 +97,9 @@ if ($articleId !== '') {
             }
         }
     }
+    $reviewStageBundle = $revision !== null && $isVerified
+        ? editorial_resolve_review_stage_bundle($articleId, $revision)
+        : ['ok' => false, 'legacy' => false, 'message' => 'Không thể xác thực phiên bản gửi duyệt để đối chiếu.'];
 
     $assignedUser = null;
     if (!empty($state['assigned_user_id'])) {
@@ -174,19 +177,41 @@ if ($articleId !== '') {
                         <span style="color:#dc3545;"><i class="fa-solid fa-times-circle"></i> Không thể xác thực hoặc mất dữ liệu</span>
                     <?php endif; ?>
                 </p>
-                
-                <?php
-                $db = editorial_db();
-                $stmt = $db->prepare("SELECT id FROM editorial_revisions WHERE article_id = :aid AND revision_no < :revno ORDER BY revision_no DESC LIMIT 1");
-                $stmt->execute(['aid' => $articleId, 'revno' => $revision['revision_no']]);
-                $prevRev = $stmt->fetch();
-                if ($prevRev): ?>
-                    <p style="margin-top:10px;">
-                        <a href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string)$prevRev['id']) . '&to=' . urlencode((string)$revision['id']))) ?>" class="editorial-workspace-btn" style="display:inline-block; padding:4px 8px; font-size:0.85rem;">
-                            <i class="fa-solid fa-code-compare"></i> So sánh với bản trước
-                        </a>
-                    </p>
-                <?php endif; ?>
+                <div class="editorial-review-stage-compare">
+                    <h3>So sánh biên tập</h3>
+                    <?php if (!empty($reviewStageBundle['ok'])): ?>
+                        <?php
+                        $baseline = $reviewStageBundle['baseline'];
+                        $stage1 = $reviewStageBundle['stage1'];
+                        $stage2 = $reviewStageBundle['stage2'];
+                        ?>
+                        <div class="editorial-review-compare-actions">
+                            <a
+                                href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $baseline['id']) . '&to=' . urlencode((string) $stage1['id'])) ) ?>"
+                                class="editorial-compare-btn"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
+                            </a>
+                            <a
+                                href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $baseline['id']) . '&to=' . urlencode((string) $stage2['id'])) ) ?>"
+                                class="editorial-compare-btn"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
+                            </a>
+                        </div>
+                        <p class="editorial-review-compare-meta">
+                            Chặng 1 · Revision #<?= editorial_h((string) $stage1['revision_no']) ?>
+                            &nbsp;·&nbsp;
+                            Chặng 2 · Revision #<?= editorial_h((string) $stage2['revision_no']) ?>
+                        </p>
+                    <?php else: ?>
+                        <p class="editorial-review-compare-warning"><?= editorial_h((string) ($reviewStageBundle['message'] ?? 'Chưa có đủ dữ liệu để đối chiếu.')) ?></p>
+                    <?php endif; ?>
+                </div>
             </div>
         <?php else: ?>
             <p style="color:#868e96;">Không có thông tin phiên bản gắn với trạng thái duyệt này.</p>

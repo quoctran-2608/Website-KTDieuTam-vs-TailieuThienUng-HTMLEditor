@@ -16,43 +16,173 @@ declare(strict_types=1);
  * - Latest return note helper
  */
 
-function editorial_check_draft_revision_sync(string $articleId, string $userId): array
+/**
+ * @return array<int,array<string,mixed>>
+ */
+function editorial_get_verified_revisions_for_review(string $articleId, string $assignmentId, string $where = '', array $params = []): array
 {
-    $draft = editorial_get_draft($articleId, $userId);
-    if (!$draft) {
-        return ['ok' => false, 'message' => 'Không tìm thấy bản nháp.'];
-    }
-
-    try {
-        $draftHash = editorial_revision_content_hash($draft['payload']);
-    } catch (RuntimeException $e) {
-        return ['ok' => false, 'message' => 'Lỗi khi tạo mã băm cho bản nháp.'];
-    }
-
-    $assignment = editorial_get_active_assignment($articleId);
-    if (!$assignment || (string) ($assignment['user_id'] ?? '') !== $userId) {
-        return ['ok' => false, 'message' => 'Phân công không hợp lệ hoặc không khớp.'];
-    }
-    $stmt = editorial_db()->prepare('
+    $sql = '
         SELECT * FROM editorial_revisions
         WHERE article_id = :article_id
           AND assignment_id = :assignment_id
-          AND revision_type = \'editorial\'
-          AND content_hash = :content_hash
+    ' . $where . '
         ORDER BY revision_no DESC
-    ');
-    $stmt->execute([
+    ';
+    $stmt = editorial_db()->prepare($sql);
+    $stmt->execute(array_merge([
         'article_id' => $articleId,
-        'assignment_id' => (string) $assignment['id'],
-        'content_hash' => $draftHash,
-    ]);
+        'assignment_id' => $assignmentId,
+    ], $params));
+
+    $verified = [];
     foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $revision) {
-        $snapshot = editorial_get_verified_revision_snapshot($revision);
-        if ($snapshot['ok']) {
-            return ['ok' => true, 'revision' => $revision, 'draft' => $draft];
+        if (!empty(editorial_get_verified_revision_snapshot($revision)['ok'])) {
+            $verified[] = $revision;
         }
     }
-    return ['ok' => false, 'message' => 'Bản nháp đã lưu chưa có bản cố định hợp lệ để gửi duyệt.'];
+    return $verified;
+}
+
+/**
+ * Resolve the immutable evidence required for a new review submission.
+ *
+ * @return array{ok:bool,baseline?:array<string,mixed>,stage1?:array<string,mixed>,stage2?:array<string,mixed>,message:string}
+ */
+function editorial_resolve_review_submission_stage_bundle(string $articleId, string $assignmentId, string $draftHash): array
+{
+    $baselines = editorial_get_verified_revisions_for_review(
+        $articleId,
+        $assignmentId,
+        'AND revision_type = \'baseline\''
+    );
+    if (count($baselines) !== 1) {
+        return ['ok' => false, 'message' => 'Không tìm thấy Bản gốc hợp lệ cho phiên biên tập này.'];
+    }
+
+    $allStage1 = editorial_get_verified_revisions_for_review(
+        $articleId,
+        $assignmentId,
+        'AND revision_type = \'editorial\' AND milestone_key = \'stage1\''
+    );
+    if ($allStage1 === []) {
+        return ['ok' => false, 'message' => 'Chưa có Chặng 1 để Admin đối chiếu. Hãy hoàn tất Chặng 1 trước khi gửi duyệt.'];
+    }
+
+    $allStage2 = editorial_get_verified_revisions_for_review(
+        $articleId,
+        $assignmentId,
+        'AND revision_type = \'editorial\' AND milestone_key = \'stage2\''
+    );
+    if ($allStage2 === []) {
+        return ['ok' => false, 'message' => 'Chưa có Chặng 2 để Admin đối chiếu. Hãy hoàn tất Chặng 2 trước khi gửi duyệt.'];
+    }
+
+    $stage2 = null;
+    foreach ($allStage2 as $candidate) {
+        if (hash_equals((string) ($candidate['content_hash'] ?? ''), $draftHash)) {
+            $stage2 = $candidate;
+            break;
+        }
+    }
+    if ($stage2 === null) {
+        return ['ok' => false, 'message' => 'Nội dung đã thay đổi sau Chặng 2. Hãy hoàn tất Chặng 2 lại trước khi gửi Admin duyệt.'];
+    }
+
+    $stage1s = array_values(array_filter(
+        $allStage1,
+        static fn(array $revision): bool => (int) ($revision['revision_no'] ?? 0) < (int) ($stage2['revision_no'] ?? 0)
+    ));
+    if ($stage1s === []) {
+        return ['ok' => false, 'message' => 'Chưa có Chặng 1 để Admin đối chiếu. Hãy hoàn tất Chặng 1 trước khi gửi duyệt.'];
+    }
+
+    return [
+        'ok' => true,
+        'baseline' => $baselines[0],
+        'stage1' => $stage1s[0],
+        'stage2' => $stage2,
+        'message' => 'Đủ Bản gốc, Chặng 1 và Chặng 2 để gửi duyệt.',
+    ];
+}
+
+/**
+ * Resolve the semantic comparison bundle for an existing review revision.
+ * New reviews point directly at Stage2; legacy technical candidates remain
+ * readable only when an equivalent verified Stage2 can be proven.
+ *
+ * @return array{ok:bool,legacy:bool,baseline?:array<string,mixed>,stage1?:array<string,mixed>,stage2?:array<string,mixed>,message:string}
+ */
+function editorial_resolve_review_stage_bundle(string $articleId, array $reviewRevision): array
+{
+    if ((string) ($reviewRevision['article_id'] ?? '') !== $articleId
+        || (string) ($reviewRevision['revision_type'] ?? '') !== 'editorial'
+        || empty(editorial_get_verified_revision_snapshot($reviewRevision)['ok'])) {
+        return ['ok' => false, 'legacy' => false, 'message' => 'Phiên bản gửi duyệt không hợp lệ hoặc snapshot chưa được xác thực.'];
+    }
+
+    $assignmentId = trim((string) ($reviewRevision['assignment_id'] ?? ''));
+    if ($assignmentId === '') {
+        return ['ok' => false, 'legacy' => false, 'message' => 'Phiên bản gửi duyệt thiếu thông tin phân công.'];
+    }
+
+    $baselines = editorial_get_verified_revisions_for_review(
+        $articleId,
+        $assignmentId,
+        'AND revision_type = \'baseline\''
+    );
+    if (count($baselines) !== 1) {
+        return ['ok' => false, 'legacy' => false, 'message' => 'Không có Bản gốc hợp lệ, duy nhất cho phiên duyệt này.'];
+    }
+
+    $milestone = (string) ($reviewRevision['milestone_key'] ?? '');
+    $legacy = $milestone !== 'stage2';
+    $stage2 = null;
+    if ($milestone === 'stage2') {
+        $stage2 = $reviewRevision;
+    } elseif ($milestone === '') {
+        $stage2Candidates = editorial_get_verified_revisions_for_review(
+            $articleId,
+            $assignmentId,
+            'AND revision_type = \'editorial\' AND milestone_key = \'stage2\' AND content_hash = :content_hash',
+            ['content_hash' => (string) ($reviewRevision['content_hash'] ?? '')]
+        );
+        $stage2 = $stage2Candidates[0] ?? null;
+    }
+
+    if ($stage2 === null) {
+        return [
+            'ok' => false,
+            'legacy' => $legacy,
+            'message' => $legacy
+                ? 'Phiên duyệt này được tạo theo luồng cũ và chưa có đủ Chặng 1/Chặng 2 để đối chiếu.'
+                : 'Không tìm thấy Chặng 2 hợp lệ cho phiên duyệt này.',
+        ];
+    }
+
+    $stage1s = editorial_get_verified_revisions_for_review(
+        $articleId,
+        $assignmentId,
+        'AND revision_type = \'editorial\' AND milestone_key = \'stage1\' AND revision_no < :stage2_no',
+        ['stage2_no' => (int) $stage2['revision_no']]
+    );
+    if ($stage1s === []) {
+        return [
+            'ok' => false,
+            'legacy' => $legacy,
+            'message' => $legacy
+                ? 'Phiên duyệt này được tạo theo luồng cũ và chưa có đủ Chặng 1/Chặng 2 để đối chiếu.'
+                : 'Không tìm thấy Chặng 1 hợp lệ trước Chặng 2 cho phiên duyệt này.',
+        ];
+    }
+
+    return [
+        'ok' => true,
+        'legacy' => $legacy,
+        'baseline' => $baselines[0],
+        'stage1' => $stage1s[0],
+        'stage2' => $stage2,
+        'message' => 'Đủ dữ liệu so sánh biên tập.',
+    ];
 }
 
 function editorial_send_for_review(string $articleId, string $userId, string $lockToken): array
@@ -81,13 +211,7 @@ function editorial_send_for_review(string $articleId, string $userId, string $lo
         return ['ok' => false, 'message' => 'Cảnh báo: File HTML gốc đã bị thay đổi bên ngoài hệ thống trong quá trình chỉnh sửa.'];
     }
 
-    $candidate = editorial_prepare_saved_draft_review_candidate($articleId, $userId, $lockToken);
-    if (!$candidate['ok']) {
-        return $candidate;
-    }
-    $candidateRevisionId = (string) ($candidate['revision_id'] ?? '');
-
-    return editorial_transaction(function() use ($articleId, $userId, $lockToken, $htmlPath, $candidateRevisionId) {
+    return editorial_transaction(function() use ($articleId, $userId, $lockToken, $htmlPath) {
         $state = editorial_get_article_state($articleId);
         
         if ($state['assigned_user_id'] !== $userId) {
@@ -125,27 +249,21 @@ function editorial_send_for_review(string $articleId, string $userId, string $lo
             return ['ok' => false, 'message' => 'Không tìm thấy bản nháp.'];
         }
 
-        $revision = editorial_get_revision($candidateRevisionId);
-        if (!$revision || $revision['revision_type'] !== 'editorial'
-            || $revision['article_id'] !== $articleId
-            || $revision['assignment_id'] !== $assignment['id']) {
-            return ['ok' => false, 'message' => 'Phiên bản không hợp lệ để gửi duyệt.'];
-        }
-
-        $snap = editorial_get_verified_revision_snapshot($revision);
-        if (!$snap['ok']) {
-            return ['ok' => false, 'message' => 'Dữ liệu phiên bản bị lỗi: ' . $snap['message']];
-        }
-
         try {
             $draftHash = editorial_revision_content_hash($draft['payload']);
         } catch (RuntimeException $e) {
             return ['ok' => false, 'message' => 'Lỗi khi tạo mã băm cho bản nháp.'];
         }
 
-        if ($draftHash !== $revision['content_hash']) {
-            return ['ok' => false, 'message' => 'Bản nháp đã thay đổi trong khi chuẩn bị gửi duyệt. Vui lòng thử lại.'];
+        $bundle = editorial_resolve_review_submission_stage_bundle(
+            $articleId,
+            (string) $assignment['id'],
+            $draftHash
+        );
+        if (!$bundle['ok']) {
+            return $bundle;
         }
+        $revision = $bundle['stage2'];
 
         $now = date('c');
 
@@ -179,6 +297,8 @@ function editorial_send_for_review(string $articleId, string $userId, string $lo
         editorial_log_activity('article.review.submitted', $articleId, $userId, json_encode([
             'revision_id' => $revision['id'],
             'revision_no' => $revision['revision_no'],
+            'stage1_revision_id' => $bundle['stage1']['id'],
+            'stage1_revision_no' => $bundle['stage1']['revision_no'],
             'assignment_id' => $assignment['id']
         ]));
 
@@ -229,9 +349,18 @@ function editorial_approve_review(string $articleId, string $adminUserId): array
             return ['ok' => false, 'message' => 'Phiên bản duyệt không hợp lệ.'];
         }
 
-        $assignment = editorial_get_active_assignment($articleId);
-        if (!$assignment || $revision['assignment_id'] !== $assignment['id']) {
-            return ['ok' => false, 'message' => 'Phân công không hợp lệ hoặc không khớp với phiên bản.'];
+        $assignmentStmt = editorial_db()->prepare('
+            SELECT * FROM editorial_assignments
+            WHERE id = :assignment_id
+              AND article_id = :article_id
+        ');
+        $assignmentStmt->execute([
+            'assignment_id' => (string) ($revision['assignment_id'] ?? ''),
+            'article_id' => $articleId,
+        ]);
+        $assignment = $assignmentStmt->fetch(PDO::FETCH_ASSOC);
+        if (!$assignment) {
+            return ['ok' => false, 'message' => 'Phân công gắn với phiên bản duyệt không hợp lệ.'];
         }
 
         $snap = editorial_get_verified_revision_snapshot($revision);

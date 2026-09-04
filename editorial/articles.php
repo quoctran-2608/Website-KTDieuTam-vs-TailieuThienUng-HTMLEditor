@@ -361,7 +361,7 @@ editorial_layout_header([
                                     <div class="editorial-handoff-action">
                                         <?php if (in_array($status, ['editing', 'returned'], true) && !$hasHandoffSource && $isCurrentHandoffOwner): ?>
                                             <a class="editorial-handoff-unavailable" href="<?= editorial_h(editorial_url('article.php?id=' . urlencode($aid))) ?>">
-                                                <i class="fa-solid fa-pen-to-square"></i> Mở Editor để lưu &amp; Handoff
+                                                <i class="fa-solid fa-pen-to-square"></i> Mở Editor để lưu Drive + Sheet
                                             </a>
                                         <?php elseif ($hasHandoffSource && $handoffSettingsReady): ?>
                                             <form method="post" action="<?= editorial_h(editorial_url('handoff.php')) ?>" class="editorial-handoff-form-inline">
@@ -373,17 +373,17 @@ editorial_layout_header([
                                                 <input type="hidden" name="page" value="<?= $currentPage ?>">
                                                 <input type="text" name="handoff_note" maxlength="2000" value="<?= editorial_h((string) ($handoffSync['handoff_note'] ?? '')) ?>" placeholder="Ghi chú bàn giao (nếu có)" aria-label="Ghi chú bàn giao">
                                                 <?php if ($handoffStatus === 'synced'): ?>
-                                                    <span class="editorial-handoff-synced"><i class="fa-solid fa-circle-check"></i> Đã lưu Google</span>
+                                                    <span class="editorial-handoff-synced"><i class="fa-solid fa-circle-check"></i> Đã lưu Drive + Sheet</span>
                                                     <button type="submit" class="editorial-handoff-btn is-resync" title="Cập nhật lại dòng Google Sheet, giữ HTML archive hiện có">
-                                                        <i class="fa-solid fa-rotate"></i> Lưu lại
+                                                        <i class="fa-solid fa-rotate"></i> Lưu Drive + Sheet
                                                     </button>
                                                 <?php elseif (in_array($handoffStatus, ['failed', 'drive_uploaded'], true)): ?>
                                                     <button type="submit" class="editorial-handoff-btn is-retry">
-                                                        <i class="fa-solid fa-rotate"></i> Thử lại Google Handoff
+                                                        <i class="fa-solid fa-rotate"></i> Thử lại Drive + Sheet
                                                     </button>
                                                 <?php else: ?>
                                                     <button type="submit" class="editorial-handoff-btn">
-                                                        <i class="fa-solid fa-cloud-arrow-up"></i> Lưu hồ sơ Google Drive
+                                                        <i class="fa-solid fa-cloud-arrow-up"></i> Lưu Drive + Sheet
                                                     </button>
                                                 <?php endif; ?>
                                                 <?php if (!empty($handoffSync['drive_file_url'])): ?>
@@ -393,13 +393,13 @@ editorial_layout_header([
                                                 <?php endif; ?>
                                             </form>
                                         <?php elseif (!$hasHandoffSource): ?>
-                                            <span class="editorial-handoff-unavailable"><i class="fa-solid fa-cloud"></i> Chưa có nguồn đã lưu để Handoff.</span>
+                                            <span class="editorial-handoff-unavailable"><i class="fa-solid fa-cloud"></i> Chưa có nguồn đã lưu để Drive + Sheet.</span>
                                         <?php elseif ($isAdmin): ?>
                                             <a class="editorial-handoff-unavailable" href="<?= editorial_h(editorial_url('google-handoff-settings.php')) ?>">
-                                                <i class="fa-solid fa-triangle-exclamation"></i> Google Handoff cần kiểm tra lại
+                                                <i class="fa-solid fa-triangle-exclamation"></i> Drive + Sheet cần kiểm tra lại
                                             </a>
                                         <?php else: ?>
-                                            <span class="editorial-handoff-unavailable"><i class="fa-solid fa-cloud"></i> Google Handoff chưa sẵn sàng.</span>
+                                            <span class="editorial-handoff-unavailable"><i class="fa-solid fa-cloud"></i> Drive + Sheet chưa sẵn sàng.</span>
                                         <?php endif; ?>
                                     </div>
                                 <?php endif; ?>

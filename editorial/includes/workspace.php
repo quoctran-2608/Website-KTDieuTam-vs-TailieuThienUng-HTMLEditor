@@ -405,19 +405,45 @@ function editorial_get_draft(string $articleId, string $userId): ?array
  * FIX A4: ALL authorization (assignment, status, lock) checked INSIDE transaction.
  * FIX A5: JSON encode failure blocks save.
  *
- * @return array{ok: bool, version?: int, message: string}
+ * $expectedContentHash identifies the content this browser last knew was saved.
+ * It never authorizes a write: assignment and lock checks below remain authority.
+ *
+ * @return array{ok: bool, version?: int, content_hash?: string, reused?: bool, message: string}
  */
-function editorial_save_draft(string $articleId, string $userId, array $payload, string $baseLiveHash, int $expectedVersion, string $lockToken): array
+function editorial_save_draft(
+    string $articleId,
+    string $userId,
+    array $payload,
+    string $baseLiveHash,
+    int $expectedVersion,
+    string $lockToken,
+    string $expectedContentHash = ''
+): array
 {
     // FIX A5: Pre-validate JSON encode
     $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     if ($payloadJson === false) {
         return ['ok' => false, 'code' => 'json_error', 'message' => 'Không thể mã hóa dữ liệu bản nháp. Bản nháp chưa được lưu.'];
     }
+    try {
+        $submittedContentHash = editorial_revision_content_hash($payload);
+    } catch (RuntimeException $e) {
+        return ['ok' => false, 'code' => 'hash_error', 'message' => 'Không thể tạo mã kiểm tra cho bản nháp. Bản nháp chưa được lưu.'];
+    }
+    $expectedContentHash = trim($expectedContentHash);
 
     // FIX A4: All authorization inside transaction
     try {
-        return editorial_transaction(function () use ($articleId, $userId, $payloadJson, $baseLiveHash, $expectedVersion, $lockToken): array {
+        return editorial_transaction(function () use (
+            $articleId,
+            $userId,
+            $payloadJson,
+            $baseLiveHash,
+            $expectedVersion,
+            $lockToken,
+            $expectedContentHash,
+            $submittedContentHash
+        ): array {
         $db = editorial_db();
         $now = date('c');
 
@@ -464,25 +490,79 @@ function editorial_save_draft(string $articleId, string $userId, array $payload,
         }
         $assignmentId = (string) $assignment['id'];
 
-        // Step 7-8: Version check + save
-        if ($expectedVersion === 0) {
-            $stmt = $db->prepare('SELECT version FROM editorial_drafts WHERE article_id = :aid AND user_id = :uid');
-            $stmt->execute(['aid' => $articleId, 'uid' => $userId]);
-            if ($stmt->fetch()) {
+        // Step 7-8: optimistic version check plus safe stale-version recovery.
+        // A version is not enough to distinguish Compare's stale parent tab from
+        // a genuine divergent multi-tab edit, so compare canonical content hashes.
+        $draftStmt = $db->prepare('SELECT version, payload_json FROM editorial_drafts WHERE article_id = :aid AND user_id = :uid');
+        $draftStmt->execute(['aid' => $articleId, 'uid' => $userId]);
+        $currentDraft = $draftStmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$currentDraft) {
+            if ($expectedVersion !== 0) {
                 return ['ok' => false, 'code' => 'conflict', 'message' => 'Bản nháp đã được thay đổi ở một phiên/tab khác. Vui lòng tải lại và đối chiếu trước khi lưu tiếp.'];
             }
-
             $db->prepare('INSERT INTO editorial_drafts (article_id, user_id, payload_json, base_live_hash, updated_at, version) VALUES (:aid, :uid, :payload, :hash, :now, 1)')
                 ->execute(['aid' => $articleId, 'uid' => $userId, 'payload' => $payloadJson, 'hash' => $baseLiveHash, 'now' => $now]);
             $newVersion = 1;
         } else {
-            $stmt = $db->prepare('UPDATE editorial_drafts SET payload_json = :payload, updated_at = :now, version = version + 1 WHERE article_id = :aid AND user_id = :uid AND version = :ver');
-            $stmt->execute(['payload' => $payloadJson, 'now' => $now, 'aid' => $articleId, 'uid' => $userId, 'ver' => $expectedVersion]);
+            $currentVersion = (int) ($currentDraft['version'] ?? 0);
+            if ($currentVersion === $expectedVersion) {
+                $updateStmt = $db->prepare('UPDATE editorial_drafts SET payload_json = :payload, updated_at = :now, version = version + 1 WHERE article_id = :aid AND user_id = :uid AND version = :ver');
+                $updateStmt->execute([
+                    'payload' => $payloadJson,
+                    'now' => $now,
+                    'aid' => $articleId,
+                    'uid' => $userId,
+                    'ver' => $expectedVersion,
+                ]);
+                if ($updateStmt->rowCount() !== 1) {
+                    return ['ok' => false, 'code' => 'conflict', 'message' => 'Bản nháp đã được thay đổi ở một phiên/tab khác. Vui lòng tải lại và đối chiếu trước khi lưu tiếp.'];
+                }
+                $newVersion = $currentVersion + 1;
+            } else {
+                $currentPayload = json_decode((string) ($currentDraft['payload_json'] ?? ''), true);
+                if (!is_array($currentPayload)) {
+                    return ['ok' => false, 'code' => 'draft_corrupt', 'message' => 'Bản nháp đã lưu không hợp lệ. Vui lòng tải lại và liên hệ Admin nếu lỗi tiếp diễn.'];
+                }
+                try {
+                    $currentContentHash = editorial_revision_content_hash($currentPayload);
+                } catch (RuntimeException $e) {
+                    return ['ok' => false, 'code' => 'draft_corrupt', 'message' => 'Bản nháp đã lưu không hợp lệ. Vui lòng tải lại và liên hệ Admin nếu lỗi tiếp diễn.'];
+                }
 
-            if ($stmt->rowCount() === 0) {
-                return ['ok' => false, 'code' => 'conflict', 'message' => 'Bản nháp đã được thay đổi ở một phiên/tab khác. Vui lòng tải lại và đối chiếu trước khi lưu tiếp.'];
+                // Case A: a prior request already saved these exact bytes. Return
+                // the persisted state without creating a needless draft version.
+                if (hash_equals($currentContentHash, $submittedContentHash)) {
+                    return [
+                        'ok' => true,
+                        'version' => $currentVersion,
+                        'content_hash' => $currentContentHash,
+                        'reused' => true,
+                        'message' => 'Bản nháp hiện tại đã được lưu (v' . $currentVersion . ').',
+                    ];
+                }
+
+                // Case B: only the version advanced. The persisted content remains
+                // exactly what this page last saw, so retry once against that
+                // concrete version. The conditional UPDATE still protects a race.
+                if ($expectedContentHash !== '' && hash_equals($currentContentHash, $expectedContentHash)) {
+                    $retryStmt = $db->prepare('UPDATE editorial_drafts SET payload_json = :payload, updated_at = :now, version = version + 1 WHERE article_id = :aid AND user_id = :uid AND version = :ver');
+                    $retryStmt->execute([
+                        'payload' => $payloadJson,
+                        'now' => $now,
+                        'aid' => $articleId,
+                        'uid' => $userId,
+                        'ver' => $currentVersion,
+                    ]);
+                    if ($retryStmt->rowCount() !== 1) {
+                        return ['ok' => false, 'code' => 'conflict', 'message' => 'Bản nháp đã được thay đổi ở một phiên/tab khác. Vui lòng tải lại và đối chiếu trước khi lưu tiếp.'];
+                    }
+                    $newVersion = $currentVersion + 1;
+                } else {
+                    // Case C: another tab saved divergent content. Never overwrite.
+                    return ['ok' => false, 'code' => 'conflict', 'message' => 'Bản nháp đã được thay đổi ở một phiên/tab khác. Vui lòng tải lại và đối chiếu trước khi lưu tiếp.'];
+                }
             }
-            $newVersion = $expectedVersion + 1;
         }
 
         // Step 9: Mark this assignment as a real editorial contribution.
@@ -510,7 +590,12 @@ function editorial_save_draft(string $articleId, string $userId, array $payload,
         // Step 10: Activity
         editorial_log_activity('article.draft.saved', $articleId, $userId, json_encode(['draft_version' => $newVersion]));
 
-        return ['ok' => true, 'version' => $newVersion, 'message' => 'Lưu bản nháp thành công (v' . $newVersion . ').'];
+        return [
+            'ok' => true,
+            'version' => $newVersion,
+            'content_hash' => $submittedContentHash,
+            'message' => 'Lưu bản nháp thành công (v' . $newVersion . ').',
+        ];
         });
     } catch (\Throwable $e) {
         error_log('Editorial draft save failed: article_id=' . $articleId

@@ -389,9 +389,9 @@
 .editorial-workflow-bar {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
-    align-items: flex-start;
-    padding: 14px;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 10px;
     border: 1px solid #dbe4ee;
     border-radius: 10px;
     background: #f8fbff;
@@ -400,53 +400,46 @@
     position: sticky;
     top: 0;
     z-index: 20;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 .editorial-workflow-groups {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 12px;
-    flex: 1 1 760px;
+    align-items: center;
+    gap: 7px;
+    flex: 1 1 auto;
 }
 .editorial-workflow-group {
-    display: grid;
-    align-content: start;
-    justify-items: start;
+    display: inline-flex;
+    align-items: center;
     gap: 6px;
-    min-width: 168px;
-    padding: 10px;
-    border: 1px solid #e1e9f2;
-    border-radius: 8px;
-    background: #fff;
+    min-width: 0;
+    padding-right: 7px;
+    border-right: 1px solid #dbe4ee;
 }
-.editorial-workflow-publish {
-    min-width: 230px;
-    border-color: #b7dfd7;
-    background: #f5fcfa;
+.editorial-workflow-group:last-child {
+    padding-right: 0;
+    border-right: 0;
 }
-.editorial-workflow-label {
-    margin: 0;
-    color: #64748b;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+.editorial-workflow-publish,
+.editorial-workflow-review,
+.editorial-workflow-handoff {
+    background: transparent;
 }
 .editorial-workflow-utilities {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
     margin-left: auto;
     align-items: center;
 }
 .editorial-save-status,
-.editorial-stage-helper,
 .editorial-stage-status,
 .editorial-publish-status {
     color: #868e96;
-    font-size: 0.74rem;
+    font-size: 0.78rem;
     line-height: 1.25;
+    white-space: nowrap;
 }
 .editorial-save-status.is-saved,
 .editorial-stage-status {
@@ -458,20 +451,49 @@
     font-weight: 600;
 }
 .editorial-publish-status { color: #397267; }
-.editorial-workflow-handoff {
-    min-width: 230px;
-    border-color: #c8d9f2;
-    background: #f5f9ff;
-}
-.editorial-workflow-review {
-    min-width: 210px;
-    border-color: #cde5cf;
-    background: #f6fcf6;
-}
 .editorial-workflow-bar .editorial-handoff-btn {
-    min-height: 38px;
-    padding: 9px 14px;
-    font-size: 0.84rem;
+    min-height: 36px;
+    padding: 7px 11px;
+    font-size: 0.8rem;
+}
+.editorial-handoff-note-menu {
+    position: relative;
+    flex: 0 0 auto;
+}
+.editorial-handoff-note-menu > summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #fff;
+    color: #475569;
+    cursor: pointer;
+    list-style: none;
+}
+.editorial-handoff-note-menu > summary::-webkit-details-marker {
+    display: none;
+}
+.editorial-handoff-note-menu > div {
+    position: absolute;
+    z-index: 30;
+    top: calc(100% + 7px);
+    right: 0;
+    width: min(320px, calc(100vw - 32px));
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.16);
+}
+.editorial-handoff-note-menu label {
+    display: block;
+    margin-bottom: 5px;
+    color: #475569;
+    font-size: 0.78rem;
+    font-weight: 700;
 }
 .editorial-workspace-handoff-note {
     width: 100%;
@@ -495,16 +517,20 @@
     background: inherit;
     color: inherit;
 }
+.editorial-workflow-bar button {
+    white-space: nowrap;
+}
 .editorial-save-btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 9px 20px;
+    min-height: 36px;
+    padding: 7px 11px;
     border: none;
-    border-radius: 8px;
+    border-radius: 7px;
     background: #1565c0;
     color: #fff;
-    font-size: 0.88rem;
+    font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.15s;
@@ -514,12 +540,13 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 9px 16px;
+    min-height: 36px;
+    padding: 7px 10px;
     border: 1px solid #dee2e6;
-    border-radius: 8px;
+    border-radius: 7px;
     background: #f8f9fa;
     color: #495057;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     cursor: pointer;
     margin-left: 0;
     transition: background 0.15s;
@@ -529,15 +556,36 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 9px 12px;
+    min-height: 34px;
+    padding: 7px 10px;
     border: 1px solid #dee2e6;
-    border-radius: 8px;
+    border-radius: 7px;
     background: #f8f9fa;
     color: #495057;
     cursor: pointer;
     transition: background 0.15s;
 }
 .editorial-fullscreen-btn:hover { background: #e9ecef; }
+.editorial-workflow-help-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid #dee2e6;
+    border-radius: 7px;
+    background: #fff;
+    color: #64748b;
+    cursor: help;
+}
+.editorial-icon-btn {
+    justify-content: center;
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    padding: 0;
+}
 
 /* Lock indicator */
 .editorial-lock-indicator {
@@ -561,7 +609,7 @@
 /* Bottom workflow bar */
 .editorial-workflow-bottom {
     gap: 8px;
-    padding: 14px 0 4px;
+    padding: 10px 0 2px;
     margin-top: 16px;
     border-top: 1px solid #dee2e6;
     border-right: 0;
@@ -655,12 +703,13 @@ body.editor-fullscreen-active .editor-fs-status button {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 9px 16px;
+    min-height: 36px;
+    padding: 7px 11px;
     border: 1px solid #6a1b9a;
-    border-radius: 8px;
+    border-radius: 7px;
     background: #f3e5f5;
     color: #6a1b9a;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.15s, color 0.15s;
@@ -674,12 +723,13 @@ body.editor-fullscreen-active .editor-fs-status button {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 9px 18px;
+    min-height: 36px;
+    padding: 7px 11px;
     border: none;
-    border-radius: 8px;
+    border-radius: 7px;
     background: #2e7d32;
     color: #fff;
-    font-size: 0.88rem;
+    font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.15s;
@@ -743,6 +793,32 @@ body.editor-fullscreen-active .editor-fs-status button {
 .editorial-review-field span {
     font-size: 0.9rem;
     color: #212529;
+}
+.editorial-review-stage-compare {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #dee2e6;
+}
+.editorial-review-stage-compare h3 {
+    margin: 0 0 8px;
+    color: #334155;
+    font-size: 0.82rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+.editorial-review-compare-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.editorial-review-compare-meta,
+.editorial-review-compare-warning {
+    margin: 8px 0 0;
+    color: #64748b;
+    font-size: 0.78rem;
+}
+.editorial-review-compare-warning {
+    color: #9a6700;
 }
 
 /* Approve/Return action bar */
@@ -954,22 +1030,17 @@ body.editor-fullscreen-active .editor-fs-status button {
     color: #6a1b9a;
 }
 .editorial-stage2-btn:hover { background: #6a1b9a; color: #fff; }
-.editorial-workflow-help {
-    margin: 12px 0 16px;
-    color: #5f7184;
-    font-size: 0.82rem;
-    line-height: 1.45;
-}
 .editorial-direct-publish-btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 10px 18px;
+    min-height: 36px;
+    padding: 7px 11px;
     border: none;
-    border-radius: 8px;
+    border-radius: 7px;
     background: #0f766e;
     color: #fff;
-    font-size: 0.88rem;
+    font-size: 0.8rem;
     font-weight: 700;
     cursor: pointer;
 }
@@ -1000,6 +1071,7 @@ body.editor-fullscreen-active .editor-fs-status button {
     display: inline-flex;
     align-items: center;
     gap: 5px;
+    min-height: 34px;
     padding: 6px 8px;
     border: 1px solid #cbd5e1;
     border-radius: 6px;
@@ -1203,9 +1275,10 @@ body.editor-fullscreen-active .editor-fs-status button {
 @media (max-width: 640px) {
     .editorial-workflow-top { position: static; }
     .editorial-workflow-groups { flex-basis: 100%; }
-    .editorial-workflow-group { flex: 1 1 100%; }
+    .editorial-workflow-group { border-right: 0; }
     .editorial-workflow-utilities { width: 100%; margin-left: 0; }
     .editorial-workflow-bottom > * { flex: 1 1 auto; justify-content: center; }
+    .editorial-handoff-note-menu > div { position: fixed; top: auto; right: 16px; bottom: 16px; }
     body.editor-fullscreen-active .editor-fs-status {
         top: 8px;
         right: 8px;
