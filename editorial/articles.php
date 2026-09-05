@@ -254,7 +254,6 @@ editorial_layout_header([
                         $reviewDetailUrl = editorial_url('review.php?id=' . urlencode($aid));
                         $publicationHandoff = editorial_publication_handoff_status($aid, $state);
                         $hasHandoffSource = !empty($publicationHandoff['eligible']);
-                        $handoffUnavailableMessage = (string) ($publicationHandoff['message'] ?? 'Cần Publish hoàn tất trước khi bàn giao.');
                         $articleHandoffSync = $pageHandoffSync[$aid] ?? [];
                         $expectedHandoffSourceKey = $hasHandoffSource
                             ? 'revision:' . (string) $state['published_revision_id']
@@ -412,10 +411,6 @@ editorial_layout_header([
                                                     </a>
                                                 <?php endif; ?>
                                             </form>
-                                        <?php elseif (!$hasHandoffSource): ?>
-                                            <span class="editorial-handoff-unavailable" title="<?= editorial_h($handoffUnavailableMessage) ?>">
-                                                <i class="fa-solid fa-cloud"></i> <?= editorial_h($handoffUnavailableMessage) ?>
-                                            </span>
                                         <?php elseif ($isAdmin): ?>
                                             <a class="editorial-handoff-unavailable" href="<?= editorial_h(editorial_url('google-handoff-settings.php')) ?>">
                                                 <i class="fa-solid fa-triangle-exclamation"></i> Drive + Sheet cần kiểm tra lại
