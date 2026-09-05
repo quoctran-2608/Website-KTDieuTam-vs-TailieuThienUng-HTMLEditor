@@ -210,16 +210,24 @@ if (editorial_is_post()) {
                 }
                 editorial_flash_set('success', 'Đã Publish và rebuild dữ liệu public thành công.');
             } else {
+                $safeCode = (string) ($rebuildResult['detail_code'] ?? $rebuildResult['code'] ?? 'unknown');
+                if (preg_match('/^[a-z0-9_]+$/', $safeCode) !== 1) {
+                    $safeCode = 'unknown';
+                }
                 try {
                     editorial_log_activity('article.publish.public_rebuild_failed', $articleId, $currentUserId, json_encode([
                         'code' => $rebuildResult['code'] ?? 'unknown',
+                        'detail_code' => $safeCode,
                         'exit_code' => $rebuildResult['exit_code'] ?? null,
                         'publish_mode' => 'editor_direct',
                     ]));
                 } catch (\Throwable $logErr) {
                     // Best-effort: Publish success remains success.
                 }
-                editorial_flash_set('warning', 'Bài đã được Publish, nhưng dữ liệu public phụ trợ chưa rebuild hoàn tất.');
+                editorial_flash_set(
+                    'warning',
+                    'Bài đã được Publish, nhưng dữ liệu public phụ trợ chưa rebuild hoàn tất. Mã: ' . $safeCode
+                );
             }
             editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
         }

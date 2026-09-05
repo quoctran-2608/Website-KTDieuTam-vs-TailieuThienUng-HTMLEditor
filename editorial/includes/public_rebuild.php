@@ -1084,36 +1084,101 @@ function editorial_public_rebuild_native(string $articleId, array $pythonAttempt
     try {
         $articles = editorial_public_rebuild_read_articles();
         if ($articles === []) {
-            throw new RuntimeException('Không đọc được data/articles.json.');
+            return [
+                'ok' => false,
+                'code' => 'native_articles_source_failed',
+                'message' => 'Không đọc được data/articles.json.',
+                'rebuild_method' => 'native',
+                'python_attempt' => $pythonAttempt,
+            ];
         }
-        $targetArticle = null;
-        foreach ($articles as $item) {
-            if (editorial_public_rebuild_text($item['id'] ?? ($item['href'] ?? '')) === $articleId) {
-                $targetArticle = $item;
-                break;
-            }
+        try {
+            $built = editorial_public_rebuild_build_index($articles, $articleId);
+        } catch (\Throwable $error) {
+            return [
+                'ok' => false,
+                'code' => 'native_index_build_failed',
+                'message' => 'Không thể dựng dữ liệu content index bằng PHP native.',
+                'rebuild_method' => 'native',
+                'python_attempt' => $pythonAttempt,
+                'native_error_class' => get_class($error),
+            ];
         }
-        if ($targetArticle === null) {
-            throw new RuntimeException('Article ID không tồn tại trong data/articles.json.');
-        }
-        $built = editorial_public_rebuild_build_index($articles, $articleId);
         $index = $built['index'];
         $grouped = $built['grouped'];
         $indexJson = json_encode($index, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-        if ($indexJson === false
-            || !editorial_public_rebuild_atomic_write(
+        try {
+            $contentIndexWritten = $indexJson !== false && editorial_public_rebuild_atomic_write(
                 editorial_public_rebuild_root('content-index.js'),
                 'window.KetoanDieuTamContentIndex=' . $indexJson . ";\n"
-            )
-            || !editorial_public_rebuild_write_hubs($grouped)
-            || !editorial_public_rebuild_refresh_taxonomy_artifacts($articles)
-            || !editorial_public_rebuild_write_target_view($index, $articleId)
-            || !editorial_public_rebuild_write_sitemap($index, $grouped)) {
-            throw new RuntimeException('Không ghi đầy đủ artifact public.');
+            );
+        } catch (\Throwable $error) {
+            $contentIndexWritten = false;
         }
-        $staticHub = editorial_public_rebuild_sync_static_hub_card($targetArticle);
-        if (empty($staticHub['ok'])) {
-            throw new RuntimeException((string) ($staticHub['message'] ?? 'Không đồng bộ được card hub tĩnh.'));
+        if (!$contentIndexWritten) {
+            return [
+                'ok' => false,
+                'code' => 'native_content_index_failed',
+                'message' => 'Không thể ghi content-index.js bằng PHP native.',
+                'rebuild_method' => 'native',
+                'python_attempt' => $pythonAttempt,
+            ];
+        }
+        try {
+            $hubsWritten = editorial_public_rebuild_write_hubs($grouped);
+        } catch (\Throwable $error) {
+            $hubsWritten = false;
+        }
+        if (!$hubsWritten) {
+            return [
+                'ok' => false,
+                'code' => 'native_hubs_failed',
+                'message' => 'Không thể ghi dữ liệu hub và feed bằng PHP native.',
+                'rebuild_method' => 'native',
+                'python_attempt' => $pythonAttempt,
+            ];
+        }
+        try {
+            $taxonomyWritten = editorial_public_rebuild_refresh_taxonomy_artifacts($articles);
+        } catch (\Throwable $error) {
+            $taxonomyWritten = false;
+        }
+        if (!$taxonomyWritten) {
+            return [
+                'ok' => false,
+                'code' => 'native_taxonomy_failed',
+                'message' => 'Không thể cập nhật taxonomy/menu bằng PHP native.',
+                'rebuild_method' => 'native',
+                'python_attempt' => $pythonAttempt,
+            ];
+        }
+        try {
+            $articleViewWritten = editorial_public_rebuild_write_target_view($index, $articleId);
+        } catch (\Throwable $error) {
+            $articleViewWritten = false;
+        }
+        if (!$articleViewWritten) {
+            return [
+                'ok' => false,
+                'code' => 'native_article_view_failed',
+                'message' => 'Không thể ghi article view mục tiêu bằng PHP native.',
+                'rebuild_method' => 'native',
+                'python_attempt' => $pythonAttempt,
+            ];
+        }
+        try {
+            $sitemapWritten = editorial_public_rebuild_write_sitemap($index, $grouped);
+        } catch (\Throwable $error) {
+            $sitemapWritten = false;
+        }
+        if (!$sitemapWritten) {
+            return [
+                'ok' => false,
+                'code' => 'native_sitemap_failed',
+                'message' => 'Không thể cập nhật sitemap bằng PHP native.',
+                'rebuild_method' => 'native',
+                'python_attempt' => $pythonAttempt,
+            ];
         }
         return [
             'ok' => true,
@@ -1126,13 +1191,12 @@ function editorial_public_rebuild_native(string $articleId, array $pythonAttempt
                 'thu_vien_count' => count($grouped['thu-vien']),
                 'ban_tin_count' => count($grouped['ban-tin']),
                 'target_article_view_written' => true,
-                'target_static_hub_pages' => $staticHub['pages'] ?? [],
             ],
         ];
     } catch (\Throwable $error) {
         return [
             'ok' => false,
-            'code' => 'native_rebuild_failed',
+            'code' => 'native_unexpected_failure',
             'message' => 'PHP native rebuild không hoàn tất.',
             'rebuild_method' => 'native',
             'python_attempt' => $pythonAttempt,
@@ -1231,7 +1295,7 @@ function editorial_public_rebuild_python(string $articleId): array
     $last = ['ok' => false, 'code' => 'python_not_found', 'message' => 'Không tìm thấy Python.'];
     foreach ($candidates as $binary) {
         $command = escapeshellarg($binary) . ' ' . escapeshellarg($scriptPath)
-            . ' --mode fast --include-hub-pages --source editorial-publish --article-id ' . escapeshellarg($articleId)
+            . ' --mode fast --source editorial-publish --article-id ' . escapeshellarg($articleId)
             . ' 2>&1';
         $output = [];
         $exitCode = -1;
@@ -1294,12 +1358,37 @@ function editorial_public_rebuild_run(string $articleId): array
             'ok' => false,
             'code' => 'rebuild_failed_all',
             'message' => 'Python và PHP native đều không rebuild được dữ liệu public.',
+            'detail_code' => (string) ($result['code'] ?? 'native_unexpected_failure'),
             'python_attempt' => $python,
             'native_attempt' => $result,
             'exit_code' => $python['exit_code'] ?? null,
             'output_tail' => $python['output_tail'] ?? null,
         ];
     }
+    $targetArticle = null;
+    foreach (editorial_public_rebuild_read_articles() as $article) {
+        if (editorial_public_rebuild_text($article['id'] ?? ($article['href'] ?? '')) === $articleId) {
+            $targetArticle = $article;
+            break;
+        }
+    }
+    if ($targetArticle === null) {
+        return array_merge($result, [
+            'ok' => false,
+            'code' => 'target_article_missing_after_rebuild',
+            'message' => 'Không tìm thấy bài mục tiêu trong dữ liệu public sau rebuild.',
+        ]);
+    }
+    $staticHub = editorial_public_rebuild_sync_static_hub_card($targetArticle);
+    if (empty($staticHub['ok'])) {
+        return array_merge($result, [
+            'ok' => false,
+            'code' => 'static_hub_sync_failed',
+            'message' => (string) ($staticHub['message'] ?? 'Không thể đồng bộ card hub tĩnh.'),
+            'static_hub_sync' => $staticHub,
+        ]);
+    }
+    $result['static_hub_sync'] = ['pages' => $staticHub['pages'] ?? []];
     $verification = editorial_public_rebuild_verify_target_image($articleId);
     if (empty($verification['ok'])) {
         return array_merge($result, [
