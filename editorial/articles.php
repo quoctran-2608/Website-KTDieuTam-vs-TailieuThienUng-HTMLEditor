@@ -411,11 +411,7 @@ editorial_layout_header([
                                                     </a>
                                                 <?php endif; ?>
                                             </form>
-                                        <?php elseif ($isAdmin): ?>
-                                            <a class="editorial-handoff-unavailable" href="<?= editorial_h(editorial_url('google-handoff-settings.php')) ?>">
-                                                <i class="fa-solid fa-triangle-exclamation"></i> Drive + Sheet cần kiểm tra lại
-                                            </a>
-                                        <?php else: ?>
+                                        <?php elseif (!$isAdmin): ?>
                                             <span class="editorial-handoff-unavailable"><i class="fa-solid fa-cloud"></i> Drive + Sheet chưa sẵn sàng.</span>
                                         <?php endif; ?>
                                     </div>
