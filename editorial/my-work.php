@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/includes/bootstrap.php';
+require_once __DIR__ . '/includes/revision.php';
 require_once __DIR__ . '/includes/layout.php';
 require_once __DIR__ . '/includes/review.php';
 
@@ -110,9 +111,16 @@ editorial_layout_header([
                             $article = $entry['article'];
                             $state = $entry['state'];
                             $isEditable = in_array($statusKey, ['editing', 'returned'], true);
-                            $approvedCheckpoint = $statusKey === 'approved' && !empty($state['approved_revision_id'])
-                                ? editorial_get_revision((string) $state['approved_revision_id'])
-                                : null;
+                            $approvedCheckpoint = null;
+                            if ($statusKey === 'approved' && !empty($state['approved_revision_id'])) {
+                                try {
+                                    $approvedCheckpoint = editorial_get_revision((string) $state['approved_revision_id']);
+                                } catch (\Throwable $e) {
+                                    error_log('Editorial My Work approved checkpoint lookup failed: article_id='
+                                        . (string) $article['id']
+                                        . ' exception=' . get_class($e));
+                                }
+                            }
                             ?>
                             <tr>
                                 <td>
@@ -142,6 +150,8 @@ editorial_layout_header([
                                     <?php endif; ?>
                                     <?php if ($statusKey === 'approved' && $approvedCheckpoint): ?>
                                         <br><small class="editorial-approved-checkpoint"><i class="fa-solid fa-circle-check"></i> Admin đã duyệt Revision #<?= editorial_h((string) $approvedCheckpoint['revision_no']) ?></small>
+                                    <?php elseif ($statusKey === 'approved' && !empty($state['approved_revision_id'])): ?>
+                                        <br><small class="editorial-approved-checkpoint"><i class="fa-solid fa-circle-check"></i> Không tìm thấy thông tin Revision đã duyệt</small>
                                     <?php endif; ?>
                                 </td>
                                 <td>

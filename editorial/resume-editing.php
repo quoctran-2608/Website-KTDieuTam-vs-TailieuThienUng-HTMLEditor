@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ . '/includes/assignment.php';
+require_once __DIR__ . '/includes/revision.php';
 
 editorial_require_auth();
 
@@ -26,7 +27,15 @@ if ($articleId === '') {
     editorial_redirect(editorial_url('my-work.php'));
 }
 
-$result = editorial_resume_approved_editing($articleId, (string) ($currentUser['user_id'] ?? ''));
+try {
+    $result = editorial_resume_approved_editing($articleId, (string) ($currentUser['user_id'] ?? ''));
+} catch (\Throwable $e) {
+    error_log('Editorial resume editing failed: article_id=' . $articleId
+        . ' user_id=' . (string) ($currentUser['user_id'] ?? '')
+        . ' exception=' . get_class($e));
+    editorial_flash_set('danger', 'Không thể mở lại bài để biên tập. Vui lòng thử lại hoặc báo quản trị viên.');
+    editorial_redirect(editorial_url('my-work.php'));
+}
 editorial_flash_set($result['ok'] ? 'success' : 'danger', (string) $result['message']);
 editorial_redirect($result['ok']
     ? editorial_url('article.php?id=' . urlencode($articleId))
