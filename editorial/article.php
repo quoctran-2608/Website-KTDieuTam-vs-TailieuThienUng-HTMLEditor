@@ -463,6 +463,46 @@ $innerScript = <<<JS
 
   const siteBaseUrl = window.location.origin + window.location.pathname.replace(/\/editorial\/.*$/, '/');
 
+  function resolveSitePreviewUrl(value) {
+    const path = String(value || '').trim();
+    if (!path) return '';
+    if (/^(?:https?:)?\/\//i.test(path) || /^(?:data|blob):/i.test(path)) return path;
+    if (path.startsWith('/')) return window.location.origin + path;
+    return siteBaseUrl + path.replace(/^\/+/, '');
+  }
+
+  async function uploadEditorialImage(file, purpose, progress) {
+    const csrfInput = form ? form.querySelector('input[name="_csrf_token"]') : null;
+    const articleInput = document.getElementById('articleIdField');
+    const lockInput = document.getElementById('lockTokenField');
+    if (!file || !csrfInput || !articleInput || !lockInput) {
+      throw new Error('Thiếu thông tin phiên chỉnh sửa để upload ảnh.');
+    }
+    const payload = new FormData();
+    payload.append('_csrf_token', csrfInput.value);
+    payload.append('article_id', articleInput.value);
+    payload.append('lock_token', lockInput.value);
+    payload.append('purpose', purpose || 'content');
+    payload.append('image', file, file.name || 'image');
+
+    const response = await fetch('upload.php', {
+      method: 'POST',
+      body: payload,
+      credentials: 'same-origin',
+    });
+    let json = null;
+    try {
+      json = await response.json();
+    } catch (error) {
+      throw new Error('Máy chủ trả về phản hồi upload không hợp lệ.');
+    }
+    if (!response.ok || !json || !json.ok) {
+      throw new Error((json && json.error) || 'Không thể upload ảnh.');
+    }
+    if (typeof progress === 'function') progress(100);
+    return json;
+  }
+
   /* ── Preview sync ─────────────────────────────────── */
   function syncPreview() {
     if (!previewFrame || !previewTemplate) return;
@@ -628,7 +668,9 @@ $innerScript = <<<JS
       body_class: 'ct-prose is-article mce-content-body',
       content_style: 'body { font-family: "Google Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 17.5px; line-height: 1.78; color: #33322C; padding: 18px 22px; -webkit-font-smoothing: antialiased; } img { max-width: 100%; height: auto; }',
       images_upload_handler: async (blobInfo, progress) => {
-        throw new Error('Upload ảnh chưa được hỗ trợ trong Editorial V2. Vui lòng sử dụng Admin legacy hoặc URL ảnh có sẵn.');
+        const result = await uploadEditorialImage(blobInfo.blob(), 'content', progress);
+        markDraftDirty();
+        return result.location;
       },
       setup: (instance) => {
         instance.on('init', () => { editorReady = true; });
@@ -653,6 +695,77 @@ $innerScript = <<<JS
   }
 
   syncPreview();
+
+  /* ── Featured image upload / preview ──────────────── */
+  const featuredImageInput = document.getElementById('featuredImageInput');
+  const featuredImageFile = document.getElementById('featuredImageFile');
+  const featuredImageUpload = document.getElementById('featuredImageUpload');
+  const featuredImageClear = document.getElementById('featuredImageClear');
+  const featuredImagePreview = document.getElementById('featuredImagePreview');
+  const featuredImagePreviewEmpty = document.getElementById('featuredImagePreviewEmpty');
+
+  function syncFeaturedImagePreview() {
+    if (!featuredImageInput || !featuredImagePreview || !featuredImagePreviewEmpty) return;
+    const previewUrl = resolveSitePreviewUrl(featuredImageInput.value);
+    if (!previewUrl) {
+      featuredImagePreview.removeAttribute('src');
+      featuredImagePreview.hidden = true;
+      featuredImagePreviewEmpty.textContent = 'Chưa chọn ảnh đại diện';
+      featuredImagePreviewEmpty.hidden = false;
+      return;
+    }
+    featuredImagePreview.src = previewUrl;
+    featuredImagePreview.hidden = false;
+    featuredImagePreviewEmpty.hidden = true;
+  }
+
+  if (featuredImageInput) {
+    featuredImageInput.addEventListener('input', syncFeaturedImagePreview);
+    featuredImageInput.addEventListener('change', syncFeaturedImagePreview);
+  }
+  if (featuredImagePreview) {
+    featuredImagePreview.addEventListener('error', () => {
+      featuredImagePreview.hidden = true;
+      if (featuredImagePreviewEmpty) {
+        featuredImagePreviewEmpty.textContent = 'Không tải được ảnh xem trước';
+        featuredImagePreviewEmpty.hidden = false;
+      }
+    });
+    featuredImagePreview.addEventListener('load', () => {
+      if (featuredImagePreviewEmpty) {
+        featuredImagePreviewEmpty.textContent = 'Chưa chọn ảnh đại diện';
+        featuredImagePreviewEmpty.hidden = true;
+      }
+      featuredImagePreview.hidden = false;
+    });
+  }
+  if (featuredImageUpload && featuredImageFile) {
+    featuredImageUpload.addEventListener('click', () => featuredImageFile.click());
+    featuredImageFile.addEventListener('change', async () => {
+      const file = featuredImageFile.files && featuredImageFile.files[0];
+      if (!file || !featuredImageInput) return;
+      featuredImageUpload.disabled = true;
+      try {
+        const result = await uploadEditorialImage(file, 'featured');
+        featuredImageInput.value = result.public_path;
+        markDraftDirty();
+        syncFeaturedImagePreview();
+      } catch (error) {
+        window.alert(error instanceof Error ? error.message : 'Không thể upload ảnh đại diện.');
+      } finally {
+        featuredImageFile.value = '';
+        featuredImageUpload.disabled = false;
+      }
+    });
+  }
+  if (featuredImageClear && featuredImageInput) {
+    featuredImageClear.addEventListener('click', () => {
+      featuredImageInput.value = '';
+      markDraftDirty();
+      syncFeaturedImagePreview();
+    });
+  }
+  syncFeaturedImagePreview();
 
   /* ── Heartbeat ────────────────────────────────────── */
   const lockTokenField = document.getElementById('lockTokenField');
@@ -947,7 +1060,22 @@ editorial_layout_header([
                 </div>
                 <div class="filter-field">
                     <label>Ảnh đại diện</label>
-                    <input type="text" name="featured_image" value="<?= editorial_h((string) ($form['featured_image'] ?? '')) ?>" class="field-input" placeholder="Đường dẫn ảnh">
+                    <div class="editorial-featured-image-control">
+                        <input type="text" id="featuredImageInput" name="featured_image" value="<?= editorial_h((string) ($form['featured_image'] ?? '')) ?>" class="field-input" placeholder="VD: uploads/articles/2026/09/anh.jpg hoặc URL ảnh">
+                        <input type="file" id="featuredImageFile" accept="image/jpeg,image/png,image/gif,image/webp" data-nondraft-field hidden>
+                        <div class="editorial-featured-image-actions">
+                            <button type="button" id="featuredImageUpload" class="editorial-media-button">
+                                <i class="fa-solid fa-upload"></i> Tải ảnh đại diện
+                            </button>
+                            <button type="button" id="featuredImageClear" class="editorial-media-button editorial-media-button--muted">
+                                <i class="fa-solid fa-xmark"></i> Xóa lựa chọn
+                            </button>
+                        </div>
+                        <div class="editorial-featured-image-preview">
+                            <img id="featuredImagePreview" alt="Xem trước ảnh đại diện" hidden>
+                            <span id="featuredImagePreviewEmpty">Chưa chọn ảnh đại diện</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="filter-field">
                     <label>Mục (section) — chỉ đọc</label>
