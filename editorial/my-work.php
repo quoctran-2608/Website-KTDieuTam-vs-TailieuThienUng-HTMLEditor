@@ -112,7 +112,13 @@ editorial_layout_header([
                             ?>
                             <tr>
                                 <td>
-                                    <strong><?= editorial_h($article['title']) ?></strong>
+                                    <?php if ($statusKey === 'approved'): ?>
+                                        <a class="editorial-article-title-link" href="<?= editorial_h(editorial_url('review-preview.php?id=' . urlencode((string) $article['id']))) ?>" target="_blank" rel="noopener">
+                                            <strong><?= editorial_h($article['title']) ?></strong>
+                                        </a>
+                                    <?php else: ?>
+                                        <strong><?= editorial_h($article['title']) ?></strong>
+                                    <?php endif; ?>
                                     <br><small style="color:#868e96;">
                                         <a href="<?= editorial_h(editorial_public_article_url($article)) ?>" target="_blank" rel="noopener">
                                             <?= editorial_h($article['id']) ?>
@@ -141,6 +147,10 @@ editorial_layout_header([
                                     <?php if ($isEditable): ?>
                                         <a href="<?= editorial_h(editorial_url('article.php?id=' . urlencode($article['id']))) ?>" class="editorial-workspace-btn">
                                             <i class="fa-solid fa-pen-to-square"></i> Tiếp tục biên tập
+                                        </a>
+                                    <?php elseif ($statusKey === 'approved'): ?>
+                                        <a href="<?= editorial_h(editorial_url('review-preview.php?id=' . urlencode((string) $article['id']))) ?>" class="editorial-secondary-action" target="_blank" rel="noopener">
+                                            <i class="fa-solid fa-file-circle-check"></i> Xem bản đã duyệt
                                         </a>
                                     <?php else: ?>
                                         <span style="color:#868e96;">—</span>

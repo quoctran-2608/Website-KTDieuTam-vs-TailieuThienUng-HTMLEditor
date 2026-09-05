@@ -250,6 +250,9 @@ editorial_layout_header([
                         }
                         $isCurrentHandoffOwner = $ownerId !== '' && $ownerId === $currentUserId;
                         $canHandoff = $isAdmin || $isCurrentHandoffOwner || $isHandoffContributor;
+                        $canReadonlyReviewPreview = $isAdmin || $isCurrentHandoffOwner || $isHandoffContributor;
+                        $reviewDetailUrl = editorial_url('review.php?id=' . urlencode($aid));
+                        $reviewPreviewUrl = editorial_url('review-preview.php?id=' . urlencode($aid));
                         $activeStages = null;
                         if (in_array($status, ['editing', 'returned'], true) && $ownerId !== '') {
                             $activeAssignment = editorial_get_active_assignment($aid);
@@ -282,6 +285,18 @@ editorial_layout_header([
                             <td>
                                 <?php if ($isEditableByMe): ?>
                                     <a class="editorial-article-title-link" href="<?= editorial_h(editorial_url('article.php?id=' . urlencode($aid))) ?>">
+                                        <strong><?= editorial_h($article['title']) ?></strong>
+                                    </a>
+                                <?php elseif ($status === 'ready_review' && $isAdmin): ?>
+                                    <a class="editorial-article-title-link" href="<?= editorial_h($reviewDetailUrl) ?>">
+                                        <strong><?= editorial_h($article['title']) ?></strong>
+                                    </a>
+                                <?php elseif ($status === 'approved' && $isAdmin): ?>
+                                    <a class="editorial-article-title-link" href="<?= editorial_h($reviewDetailUrl) ?>">
+                                        <strong><?= editorial_h($article['title']) ?></strong>
+                                    </a>
+                                <?php elseif ($status === 'approved' && $canReadonlyReviewPreview): ?>
+                                    <a class="editorial-article-title-link" href="<?= editorial_h($reviewPreviewUrl) ?>" target="_blank" rel="noopener">
                                         <strong><?= editorial_h($article['title']) ?></strong>
                                     </a>
                                 <?php else: ?>
@@ -350,6 +365,31 @@ editorial_layout_header([
                                     <?php endif; ?>
                                 <?php else: ?>
                                     <span style="color:#868e96;">—</span>
+                                <?php endif; ?>
+                                <?php if ($status === 'ready_review' && $isAdmin): ?>
+                                    <div class="editorial-review-navigation">
+                                        <a href="<?= editorial_h($reviewDetailUrl) ?>" class="editorial-review-navigation-primary">
+                                            <i class="fa-solid fa-clipboard-check"></i> Mở duyệt
+                                        </a>
+                                        <a href="<?= editorial_h($reviewPreviewUrl) ?>" class="editorial-secondary-action" target="_blank" rel="noopener">
+                                            <i class="fa-solid fa-eye"></i> Xem bản gửi duyệt
+                                        </a>
+                                    </div>
+                                <?php elseif ($status === 'approved' && $isAdmin): ?>
+                                    <div class="editorial-review-navigation">
+                                        <a href="<?= editorial_h($reviewDetailUrl) ?>" class="editorial-review-navigation-primary">
+                                            <i class="fa-solid fa-clipboard-check"></i> Xem hồ sơ duyệt
+                                        </a>
+                                        <a href="<?= editorial_h($reviewPreviewUrl) ?>" class="editorial-secondary-action" target="_blank" rel="noopener">
+                                            <i class="fa-solid fa-file-circle-check"></i> Xem bản đã duyệt
+                                        </a>
+                                    </div>
+                                <?php elseif ($status === 'approved' && $canReadonlyReviewPreview): ?>
+                                    <div class="editorial-review-navigation">
+                                        <a href="<?= editorial_h($reviewPreviewUrl) ?>" class="editorial-secondary-action" target="_blank" rel="noopener">
+                                            <i class="fa-solid fa-file-circle-check"></i> Xem bản đã duyệt
+                                        </a>
+                                    </div>
                                 <?php endif; ?>
                                 <?php if ($isAdmin && $ownerId !== ''): ?>
                                     <div class="editorial-admin-actions" style="margin-top:4px;">
