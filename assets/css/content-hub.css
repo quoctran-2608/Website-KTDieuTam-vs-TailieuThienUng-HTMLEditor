@@ -1218,6 +1218,23 @@ body.is-filter-open .catalog-filter-panel {
   line-height: 1.72;
 }
 
+.article-featured-media {
+  width: min(100%, 920px);
+  margin: 24px 0 20px;
+  overflow: hidden;
+  border: 1px solid rgba(182, 141, 64, 0.16);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(92, 63, 27, 0.08);
+}
+
+.article-featured-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
 .article-tags {
   display: flex;
   align-items: center;
@@ -2231,6 +2248,11 @@ body.is-filter-open .catalog-filter-panel {
   .article-hero {
     padding-top: 20px;
     padding-bottom: 18px;
+  }
+
+  .article-featured-media {
+    margin: 18px 0 16px;
+    border-radius: 10px;
   }
 
   .article-breadcrumbs {

@@ -2,12 +2,14 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import importlib.util
 import json
 import math
 import re
 import shutil
+import secrets
 import unicodedata
 from collections import OrderedDict
 from datetime import UTC, datetime
@@ -1218,7 +1220,13 @@ def rebuild_hub_pages(records_by_section: Dict[str, List[Dict]], page_maps: Dict
                 page_map=rel_map,
             )
             html_content = html_content.replace("https://ketoandieutam.com", SITE_BASE_URL)
-            out.write_text(html_content, encoding="utf-8")
+            encoded = html_content.encode("utf-8")
+            temporary = out.with_name(f".{out.name}.tmp-{secrets.token_hex(6)}")
+            temporary.write_bytes(encoded)
+            if hashlib.sha256(temporary.read_bytes()).digest() != hashlib.sha256(encoded).digest():
+                temporary.unlink(missing_ok=True)
+                raise RuntimeError(f"Không thể xác minh hub page tạm: {out}")
+            temporary.replace(out)
 
 
 def rebuild_articles(records: List[Dict]) -> None:

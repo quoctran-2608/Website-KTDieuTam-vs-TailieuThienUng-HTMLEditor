@@ -47,6 +47,27 @@
     return readJsonScript('article-meta');
   }
 
+  function explicitCurrentArticleImage(meta, indexArticle) {
+    var generic = 'assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg';
+    var candidates = [
+      meta && meta.image ? String(meta.image).trim() : '',
+      indexArticle && indexArticle.image ? String(indexArticle.image).trim() : ''
+    ];
+    for (var i = 0; i < candidates.length; i += 1) {
+      var value = candidates[i];
+      if (!value) continue;
+      var normalized = value;
+      try {
+        normalized = new URL(value, location.href).pathname.replace(/^\/+/, '');
+      } catch (error) {
+        normalized = value.replace(/^(?:\.\.\/|\.\/)+/, '').replace(/^\/+/, '');
+      }
+      if (normalized === generic || normalized.endsWith('/' + generic)) continue;
+      return value;
+    }
+    return '';
+  }
+
   function getLegacyData() {
     return readJsonScript('article-sidebar-data');
   }
@@ -638,6 +659,7 @@
       topicLabel: article.topicLv2Label,
       tags: normalizeArticleTags(article.tags || meta.tags || []),
       currentTitle: article.title,
+      currentImage: explicitCurrentArticleImage(meta, article),
       authorName: meta.authorName || '',
       publishDate: meta.publishDate || '',
       modifiedDate: meta.modifiedDate || '',
@@ -701,6 +723,7 @@
       topicLabel: meta.topicLabel || '',
       tags: normalizeArticleTags(meta.tags || []),
       currentTitle: meta.title || '',
+      currentImage: explicitCurrentArticleImage(meta, null),
       authorName: meta.authorName || '',
       publishDate: meta.publishDate || '',
       modifiedDate: meta.modifiedDate || '',
@@ -1045,6 +1068,33 @@
     }
   }
 
+  function syncArticleFeaturedMedia(data) {
+    var existing = document.querySelector('.article-featured-media');
+    if (existing) existing.remove();
+    var meta = getArticleMeta();
+    var index = getContentIndex();
+    var indexArticle = meta && index && index.articles ? index.articles[meta.id] : null;
+    var imageValue = explicitCurrentArticleImage(meta, indexArticle)
+      || String(data && data.currentImage || '').trim();
+    if (!imageValue) return;
+
+    var hero = document.querySelector('.article-hero .container');
+    var topNav = document.getElementById('articleTopNav');
+    if (!hero || !topNav) return;
+
+    var figure = document.createElement('figure');
+    figure.className = 'article-featured-media';
+    var image = document.createElement('img');
+    image.src = sitePath(imageValue);
+    image.alt = String(data && data.currentTitle || meta && meta.title || '');
+    image.decoding = 'async';
+    image.addEventListener('error', function () {
+      figure.remove();
+    }, { once: true });
+    figure.appendChild(image);
+    hero.insertBefore(figure, topNav);
+  }
+
   function setButtonLabel(button, label, iconClass) {
     if (!button) return;
     var icon = button.querySelector('i');
@@ -1158,6 +1208,13 @@
   }
 
   function initArticleLayout() {
+    var meta = getArticleMeta();
+    if (meta) {
+      syncArticleFeaturedMedia({
+        currentTitle: meta.title || '',
+        currentImage: explicitCurrentArticleImage(meta, null)
+      });
+    }
     var sidebarHost = document.getElementById('articleSidebar');
     if (!sidebarHost) return;
 
@@ -1184,11 +1241,12 @@
       if (bottomNavHost) bottomNavHost.innerHTML = renderArticleTools(data) + renderBottomNav(data, returnHref);
       if (recommendationsHost) recommendationsHost.innerHTML = renderRecommendations(data, returnHref);
       syncArticleAuxLayout(sidebarHost, recommendationsHost);
-	      if (mobileNavHost) mobileNavHost.innerHTML = renderMobileNav(data, returnHref);
+      if (mobileNavHost) mobileNavHost.innerHTML = renderMobileNav(data, returnHref);
 
-	      syncArticleHeaderMeta(data);
-	      attachReturnHandlers(data, returnHref);
-	      attachArticleToolHandlers(data);
+      syncArticleHeaderMeta(data);
+      syncArticleFeaturedMedia(data);
+      attachReturnHandlers(data, returnHref);
+      attachArticleToolHandlers(data);
     });
   }
 

@@ -761,6 +761,324 @@ function editorial_public_rebuild_write_sitemap(array $index, array $grouped): b
     return editorial_public_rebuild_atomic_write(editorial_public_rebuild_root('sitemap.xml'), $xml);
 }
 
+function editorial_public_rebuild_normalize_article_href(string $href): string
+{
+    $href = html_entity_decode(trim($href), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $href = preg_split('/[?#]/', $href, 2)[0] ?? '';
+    $path = parse_url($href, PHP_URL_PATH);
+    $href = is_string($path) ? $path : $href;
+    $href = ltrim($href, '/');
+    while (str_starts_with($href, '../')) {
+        $href = substr($href, 3);
+    }
+    while (str_starts_with($href, './')) {
+        $href = substr($href, 2);
+    }
+    return $href;
+}
+
+function editorial_public_rebuild_static_image_src(string $image, string $pageHtml): string
+{
+    $image = trim($image);
+    if ($image === ''
+        || preg_match('#^(?:https?:)?//#i', $image) === 1
+        || str_starts_with($image, '/')
+        || preg_match('#^(?:data|blob):#i', $image) === 1) {
+        return $image;
+    }
+    $root = '';
+    if (preg_match('/<body\b[^>]*\bdata-root=(["\'])(.*?)\1/is', $pageHtml, $match) === 1) {
+        $root = html_entity_decode((string) $match[2], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    }
+    return $root . ltrim($image, '/');
+}
+
+function editorial_public_rebuild_replace_html_attribute(string $tag, string $name, string $value): string
+{
+    $escaped = htmlspecialchars($value, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $pattern = '/(\s' . preg_quote($name, '/') . '\s*=\s*)(["\']).*?\2/is';
+    if (preg_match($pattern, $tag) === 1) {
+        return (string) preg_replace_callback(
+            $pattern,
+            static fn(array $match): string => (string) $match[1] . '"' . $escaped . '"',
+            $tag,
+            1
+        );
+    }
+    $closing = str_ends_with(rtrim($tag), '/>') ? ' />' : '>';
+    return (string) preg_replace('/\s*\/?>$/', ' ' . $name . '="' . $escaped . '"' . $closing, $tag, 1);
+}
+
+function editorial_public_rebuild_card_targets_article(string $cardHtml, string $articleId): bool
+{
+    if (preg_match_all('/\bhref\s*=\s*(["\'])(.*?)\1/is', $cardHtml, $matches) !== false) {
+        foreach ($matches[2] as $href) {
+            if (editorial_public_rebuild_normalize_article_href((string) $href) === $articleId) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+/**
+ * @return array{ok:bool,changed:bool,matched:bool,html?:string,image_src?:string,message:string}
+ */
+function editorial_public_rebuild_patch_card_html(
+    string $pageHtml,
+    string $articleId,
+    string $image,
+    string $title
+): array {
+    $matched = false;
+    $changed = false;
+    $matchedImage = '';
+    $result = preg_replace_callback(
+        '/<article\b[^>]*\bclass=(["\'])[^"\']*\bcatalog-card\b[^"\']*\1[^>]*>.*?<\/article>/is',
+        static function (array $cardMatch) use (
+            $articleId,
+            $image,
+            $title,
+            $pageHtml,
+            &$matched,
+            &$changed,
+            &$matchedImage
+        ): string {
+            $card = (string) $cardMatch[0];
+            if (!editorial_public_rebuild_card_targets_article($card, $articleId)) {
+                return $card;
+            }
+            $matched = true;
+            $desiredSrc = editorial_public_rebuild_static_image_src($image, $pageHtml);
+            $patched = preg_replace_callback(
+                '/(<a\b[^>]*\bclass=(["\'])[^"\']*\bcatalog-card__media\b[^"\']*\2[^>]*>)(.*?)(<\/a>)/is',
+                static function (array $mediaMatch) use ($desiredSrc, $title, &$matchedImage): string {
+                    $inside = (string) $mediaMatch[3];
+                    $updated = preg_replace_callback(
+                        '/<img\b[^>]*>/is',
+                        static function (array $imageMatch) use ($desiredSrc, $title, &$matchedImage): string {
+                            $tag = editorial_public_rebuild_replace_html_attribute(
+                                (string) $imageMatch[0],
+                                'src',
+                                $desiredSrc
+                            );
+                            $tag = editorial_public_rebuild_replace_html_attribute($tag, 'alt', $title);
+                            $matchedImage = $desiredSrc;
+                            return $tag;
+                        },
+                        $inside,
+                        1,
+                        $imageCount
+                    );
+                    if ($imageCount !== 1 || !is_string($updated)) {
+                        return (string) $mediaMatch[0];
+                    }
+                    return (string) $mediaMatch[1] . $updated . (string) $mediaMatch[4];
+                },
+                $card,
+                1,
+                $mediaCount
+            );
+            if ($mediaCount !== 1 || !is_string($patched)) {
+                return $card;
+            }
+            if (!hash_equals($card, $patched)) {
+                $changed = true;
+            }
+            return $patched;
+        },
+        $pageHtml
+    );
+    if (!is_string($result)) {
+        return ['ok' => false, 'changed' => false, 'matched' => false, 'message' => 'Không thể xử lý HTML hub tĩnh.'];
+    }
+    if ($matched && $matchedImage === '') {
+        return ['ok' => false, 'changed' => false, 'matched' => true, 'message' => 'Card bài viết không có ảnh media hợp lệ.'];
+    }
+    return [
+        'ok' => true,
+        'changed' => $changed,
+        'matched' => $matched,
+        'html' => $result,
+        'image_src' => $matchedImage,
+        'message' => '',
+    ];
+}
+
+/**
+ * @return array{ok:bool,message:string,pages?:array<int,string>}
+ */
+function editorial_public_rebuild_sync_static_hub_card(array $article): array
+{
+    $articleId = editorial_public_rebuild_text($article['id'] ?? ($article['href'] ?? ''));
+    $section = editorial_public_rebuild_text($article['section'] ?? '');
+    $image = editorial_public_rebuild_text($article['image'] ?? '');
+    $title = editorial_public_rebuild_text($article['title'] ?? '');
+    $hub = editorial_public_rebuild_read_json(editorial_public_rebuild_root('data/hubs/' . $section . '.json'));
+    $pageMap = is_array($hub['pageMap'] ?? null) ? $hub['pageMap'] : [];
+    if ($articleId === '' || !in_array($section, ['thu-vien', 'ban-tin'], true) || $pageMap === []) {
+        return ['ok' => false, 'message' => 'Không xác định được trang hub tĩnh của bài viết.'];
+    }
+    $matchedPages = [];
+    foreach ($pageMap as $relativePath) {
+        $relativePath = editorial_public_rebuild_text($relativePath);
+        $path = editorial_public_rebuild_root($relativePath);
+        $html = @file_get_contents($path);
+        if ($relativePath === '' || $html === false) {
+            continue;
+        }
+        $patched = editorial_public_rebuild_patch_card_html($html, $articleId, $image, $title);
+        if (empty($patched['ok'])) {
+            return ['ok' => false, 'message' => (string) $patched['message']];
+        }
+        if (empty($patched['matched'])) {
+            continue;
+        }
+        if (!empty($patched['changed'])
+            && !editorial_public_rebuild_atomic_write($path, (string) $patched['html'])) {
+            return ['ok' => false, 'message' => 'Không thể ghi atomic card ảnh trên hub tĩnh.'];
+        }
+        $matchedPages[] = $relativePath;
+    }
+    if ($matchedPages === []) {
+        return ['ok' => false, 'message' => 'Không tìm thấy card bài viết trong các trang hub tĩnh.'];
+    }
+    return ['ok' => true, 'message' => '', 'pages' => $matchedPages];
+}
+
+function editorial_public_rebuild_normalize_static_asset(string $value, string $pageRelative): string
+{
+    $value = html_entity_decode(trim($value), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $value = preg_split('/[?#]/', $value, 2)[0] ?? '';
+    if ($value === '' || preg_match('#^(?:https?:)?//#i', $value) === 1 || preg_match('#^(?:data|blob):#i', $value) === 1) {
+        return $value;
+    }
+    if (str_starts_with($value, '/')) {
+        return ltrim($value, '/');
+    }
+    $directory = dirname(str_replace('\\', '/', $pageRelative));
+    $parts = $directory === '.' ? [] : explode('/', $directory);
+    foreach (explode('/', str_replace('\\', '/', $value)) as $part) {
+        if ($part === '' || $part === '.') {
+            continue;
+        }
+        if ($part === '..') {
+            array_pop($parts);
+            continue;
+        }
+        $parts[] = $part;
+    }
+    return implode('/', $parts);
+}
+
+/**
+ * @return array{ok:bool,message:string,pages?:array<int,string>}
+ */
+function editorial_public_rebuild_verify_static_card(array $article): array
+{
+    $articleId = editorial_public_rebuild_text($article['id'] ?? ($article['href'] ?? ''));
+    $section = editorial_public_rebuild_text($article['section'] ?? '');
+    $expectedImage = editorial_public_rebuild_text($article['image'] ?? '');
+    $hub = editorial_public_rebuild_read_json(editorial_public_rebuild_root('data/hubs/' . $section . '.json'));
+    $pageMap = is_array($hub['pageMap'] ?? null) ? $hub['pageMap'] : [];
+    $matchedPages = [];
+    foreach ($pageMap as $relativePath) {
+        $relativePath = editorial_public_rebuild_text($relativePath);
+        $html = $relativePath !== '' ? @file_get_contents(editorial_public_rebuild_root($relativePath)) : false;
+        if ($html === false) {
+            continue;
+        }
+        $actualSrc = '';
+        if (preg_match_all(
+            '/<article\b[^>]*\bclass=(["\'])[^"\']*\bcatalog-card\b[^"\']*\1[^>]*>.*?<\/article>/is',
+            $html,
+            $cards
+        ) === false) {
+            return ['ok' => false, 'message' => 'Không thể đọc card hub tĩnh để xác minh.'];
+        }
+        foreach ($cards[0] as $card) {
+            if (!editorial_public_rebuild_card_targets_article((string) $card, $articleId)) {
+                continue;
+            }
+            if (preg_match(
+                '/<a\b[^>]*\bclass=(["\'])[^"\']*\bcatalog-card__media\b[^"\']*\1[^>]*>.*?<img\b[^>]*\bsrc\s*=\s*(["\'])(.*?)\2/is',
+                (string) $card,
+                $imageMatch
+            ) !== 1) {
+                return ['ok' => false, 'message' => 'Card bài viết không có ảnh media để xác minh.'];
+            }
+            $actualSrc = (string) $imageMatch[3];
+            break;
+        }
+        if ($actualSrc === '') {
+            continue;
+        }
+        $actual = editorial_public_rebuild_normalize_static_asset($actualSrc, $relativePath);
+        $expected = editorial_public_rebuild_normalize_static_asset($expectedImage, '');
+        if (!hash_equals($expected, $actual)) {
+            return ['ok' => false, 'message' => 'Ảnh card hub tĩnh chưa khớp dữ liệu Publish.'];
+        }
+        $matchedPages[] = $relativePath;
+    }
+    if ($matchedPages === []) {
+        return ['ok' => false, 'message' => 'Không tìm thấy card bài viết để xác minh ảnh hub tĩnh.'];
+    }
+    return ['ok' => true, 'message' => '', 'pages' => $matchedPages];
+}
+
+/**
+ * @return array{ok:bool,message:string,summary?:array<string,mixed>}
+ */
+function editorial_public_rebuild_verify_target_image(string $articleId): array
+{
+    $articles = editorial_public_rebuild_read_articles();
+    $target = null;
+    foreach ($articles as $article) {
+        if (editorial_public_rebuild_text($article['id'] ?? ($article['href'] ?? '')) === $articleId) {
+            $target = $article;
+            break;
+        }
+    }
+    if ($target === null) {
+        return ['ok' => false, 'message' => 'Không tìm thấy ảnh bài trong data/articles.json sau rebuild.'];
+    }
+    $expectedImage = editorial_public_rebuild_text($target['image'] ?? '');
+    $index = editorial_public_rebuild_existing_index();
+    $indexArticle = $index['articles'][$articleId] ?? null;
+    if (!is_array($indexArticle)
+        || !hash_equals($expectedImage, editorial_public_rebuild_text($indexArticle['image'] ?? ''))) {
+        return ['ok' => false, 'message' => 'Ảnh bài trong content-index.js chưa khớp dữ liệu Publish.'];
+    }
+    $section = editorial_public_rebuild_text($target['section'] ?? '');
+    $hub = editorial_public_rebuild_read_json(editorial_public_rebuild_root('data/hubs/' . $section . '.json'));
+    $hubArticle = null;
+    foreach (is_array($hub['articles'] ?? null) ? $hub['articles'] : [] as $article) {
+        if (is_array($article)
+            && editorial_public_rebuild_text($article['href'] ?? '') === $articleId) {
+            $hubArticle = $article;
+            break;
+        }
+    }
+    if ($hubArticle === null
+        || !hash_equals($expectedImage, editorial_public_rebuild_text($hubArticle['image'] ?? ''))) {
+        return ['ok' => false, 'message' => 'Ảnh bài trong hub JSON chưa khớp dữ liệu Publish.'];
+    }
+    $static = editorial_public_rebuild_verify_static_card($target);
+    if (empty($static['ok'])) {
+        return ['ok' => false, 'message' => (string) $static['message']];
+    }
+    return [
+        'ok' => true,
+        'message' => '',
+        'summary' => [
+            'article_id' => $articleId,
+            'section' => $section,
+            'image' => $expectedImage,
+            'static_pages' => $static['pages'] ?? [],
+        ],
+    ];
+}
+
 function editorial_public_rebuild_native(string $articleId, array $pythonAttempt = []): array
 {
     try {
@@ -768,14 +1086,14 @@ function editorial_public_rebuild_native(string $articleId, array $pythonAttempt
         if ($articles === []) {
             throw new RuntimeException('Không đọc được data/articles.json.');
         }
-        $found = false;
+        $targetArticle = null;
         foreach ($articles as $item) {
             if (editorial_public_rebuild_text($item['id'] ?? ($item['href'] ?? '')) === $articleId) {
-                $found = true;
+                $targetArticle = $item;
                 break;
             }
         }
-        if (!$found) {
+        if ($targetArticle === null) {
             throw new RuntimeException('Article ID không tồn tại trong data/articles.json.');
         }
         $built = editorial_public_rebuild_build_index($articles, $articleId);
@@ -793,6 +1111,10 @@ function editorial_public_rebuild_native(string $articleId, array $pythonAttempt
             || !editorial_public_rebuild_write_sitemap($index, $grouped)) {
             throw new RuntimeException('Không ghi đầy đủ artifact public.');
         }
+        $staticHub = editorial_public_rebuild_sync_static_hub_card($targetArticle);
+        if (empty($staticHub['ok'])) {
+            throw new RuntimeException((string) ($staticHub['message'] ?? 'Không đồng bộ được card hub tĩnh.'));
+        }
         return [
             'ok' => true,
             'code' => 'native_rebuild_succeeded',
@@ -804,6 +1126,7 @@ function editorial_public_rebuild_native(string $articleId, array $pythonAttempt
                 'thu_vien_count' => count($grouped['thu-vien']),
                 'ban_tin_count' => count($grouped['ban-tin']),
                 'target_article_view_written' => true,
+                'target_static_hub_pages' => $staticHub['pages'] ?? [],
             ],
         ];
     } catch (\Throwable $error) {
@@ -908,7 +1231,7 @@ function editorial_public_rebuild_python(string $articleId): array
     $last = ['ok' => false, 'code' => 'python_not_found', 'message' => 'Không tìm thấy Python.'];
     foreach ($candidates as $binary) {
         $command = escapeshellarg($binary) . ' ' . escapeshellarg($scriptPath)
-            . ' --mode fast --source editorial-publish --article-id ' . escapeshellarg($articleId)
+            . ' --mode fast --include-hub-pages --source editorial-publish --article-id ' . escapeshellarg($articleId)
             . ' 2>&1';
         $output = [];
         $exitCode = -1;
@@ -977,6 +1300,16 @@ function editorial_public_rebuild_run(string $articleId): array
             'output_tail' => $python['output_tail'] ?? null,
         ];
     }
+    $verification = editorial_public_rebuild_verify_target_image($articleId);
+    if (empty($verification['ok'])) {
+        return array_merge($result, [
+            'ok' => false,
+            'code' => 'target_image_verification_failed',
+            'message' => $verification['message'] ?? 'Ảnh bìa public chưa đồng bộ đầy đủ.',
+            'target_image_verification' => $verification,
+        ]);
+    }
+    $result['target_image_verification'] = $verification['summary'] ?? [];
     $marker = editorial_public_ready_write_current_marker(
         $articleId,
         $expectedRevisionId,
