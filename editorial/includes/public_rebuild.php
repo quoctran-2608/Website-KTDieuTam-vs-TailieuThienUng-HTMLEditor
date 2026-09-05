@@ -973,7 +973,8 @@ function editorial_public_rebuild_normalize_static_asset(string $value, string $
         return ltrim($value, '/');
     }
     $directory = dirname(str_replace('\\', '/', $pageRelative));
-    $parts = $directory === '.' ? [] : explode('/', $directory);
+    // PHP returns an empty string for dirname(''); treat it as the site root.
+    $parts = $directory === '' || $directory === '.' ? [] : explode('/', $directory);
     foreach (explode('/', str_replace('\\', '/', $value)) as $part) {
         if ($part === '' || $part === '.') {
             continue;
@@ -1252,7 +1253,11 @@ function editorial_public_rebuild_verify_target_image(string $articleId, array $
     ];
 }
 
-function editorial_public_rebuild_native(string $articleId, array $pythonAttempt = []): array
+function editorial_public_rebuild_native(
+    string $articleId,
+    array $pythonAttempt = [],
+    bool $refreshTaxonomy = true
+): array
 {
     try {
         $articles = editorial_public_rebuild_read_articles();
@@ -1311,19 +1316,21 @@ function editorial_public_rebuild_native(string $articleId, array $pythonAttempt
                 'python_attempt' => $pythonAttempt,
             ];
         }
-        try {
-            $taxonomyWritten = editorial_public_rebuild_refresh_taxonomy_artifacts($articles);
-        } catch (\Throwable $error) {
-            $taxonomyWritten = false;
-        }
-        if (!$taxonomyWritten) {
-            return [
-                'ok' => false,
-                'code' => 'native_taxonomy_failed',
-                'message' => 'Không thể cập nhật taxonomy/menu bằng PHP native.',
-                'rebuild_method' => 'native',
-                'python_attempt' => $pythonAttempt,
-            ];
+        if ($refreshTaxonomy) {
+            try {
+                $taxonomyWritten = editorial_public_rebuild_refresh_taxonomy_artifacts($articles);
+            } catch (\Throwable $error) {
+                $taxonomyWritten = false;
+            }
+            if (!$taxonomyWritten) {
+                return [
+                    'ok' => false,
+                    'code' => 'native_taxonomy_failed',
+                    'message' => 'Không thể cập nhật taxonomy/menu bằng PHP native.',
+                    'rebuild_method' => 'native',
+                    'python_attempt' => $pythonAttempt,
+                ];
+            }
         }
         try {
             $articleViewWritten = editorial_public_rebuild_write_target_view($index, $articleId);
@@ -1364,6 +1371,7 @@ function editorial_public_rebuild_native(string $articleId, array $pythonAttempt
                 'thu_vien_count' => count($grouped['thu-vien']),
                 'ban_tin_count' => count($grouped['ban-tin']),
                 'target_article_view_written' => true,
+                'taxonomy_refreshed' => $refreshTaxonomy,
             ],
         ];
     } catch (\Throwable $error) {
@@ -1511,7 +1519,7 @@ function editorial_public_rebuild_python(string $articleId): array
     return $last;
 }
 
-function editorial_public_rebuild_run(string $articleId): array
+function editorial_public_rebuild_run(string $articleId, bool $refreshTaxonomy = true): array
 {
     if ($articleId === '') {
         return ['ok' => false, 'code' => 'missing_article_id', 'message' => 'Article ID bắt buộc cho public rebuild.'];
@@ -1522,10 +1530,34 @@ function editorial_public_rebuild_run(string $articleId): array
     if ($stateBefore === null || $expectedRevisionId === '' || $expectedLiveHash === '') {
         return ['ok' => false, 'code' => 'publication_facts_missing', 'message' => 'Thiếu dữ liệu Publish để rebuild public.'];
     }
-    $python = editorial_public_rebuild_python($articleId);
-    $result = !empty($python['ok'])
-        ? $python
-        : editorial_public_rebuild_native($articleId, $python);
+    $python = [
+        'ok' => false,
+        'code' => 'not_attempted',
+        'message' => 'Python rebuild chưa được gọi.',
+    ];
+    $native = [
+        'ok' => false,
+        'code' => 'not_attempted',
+        'message' => 'PHP native rebuild chưa được gọi.',
+    ];
+    if ($refreshTaxonomy) {
+        $python = editorial_public_rebuild_python($articleId);
+        $result = !empty($python['ok'])
+            ? $python
+            : ($native = editorial_public_rebuild_native($articleId, $python, true));
+    } else {
+        // Publish cannot edit taxonomy keys. Prefer the native fast path because
+        // it preserves canonical taxonomy artifacts and avoids recomputing them.
+        $native = editorial_public_rebuild_native($articleId, $python, false);
+        if (!empty($native['ok'])) {
+            $result = $native;
+        } else {
+            // A full Python rebuild is slower but repairs any partial native
+            // output and remains the safest fallback on unusual hosting setups.
+            $python = editorial_public_rebuild_python($articleId);
+            $result = $python;
+        }
+    }
     if (empty($result['ok'])) {
         return [
             'ok' => false,
@@ -1533,7 +1565,7 @@ function editorial_public_rebuild_run(string $articleId): array
             'message' => 'Python và PHP native đều không rebuild được dữ liệu public.',
             'detail_code' => (string) ($result['code'] ?? 'native_unexpected_failure'),
             'python_attempt' => $python,
-            'native_attempt' => $result,
+            'native_attempt' => $native,
             'exit_code' => $python['exit_code'] ?? null,
             'output_tail' => $python['output_tail'] ?? null,
         ];

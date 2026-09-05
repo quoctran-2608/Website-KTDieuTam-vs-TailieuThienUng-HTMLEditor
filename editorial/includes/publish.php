@@ -814,7 +814,9 @@ function editorial_update_article_source(string $articleId, array $normalized): 
 
 function editorial_public_rebuild_after_publish(string $articleId): array
 {
-    return editorial_public_rebuild_run($articleId);
+    // Publish only changes editable article fields. Taxonomy keys stay canonical,
+    // so rebuilding the full taxonomy tree here adds seconds without changing it.
+    return editorial_public_rebuild_run($articleId, false);
 }
 
 /**
