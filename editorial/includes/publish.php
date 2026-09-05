@@ -26,6 +26,8 @@ declare(strict_types=1);
  *   Outer code catches → logs article.publish.failed → returns structured failure
  */
 
+require_once __DIR__ . '/public_rebuild.php';
+
 // ─── Exception for post-destructive failures (triggers DB rollback) ──────────
 
 class EditorialPublishCompensationException extends RuntimeException
@@ -812,100 +814,7 @@ function editorial_update_article_source(string $articleId, array $normalized): 
 
 function editorial_public_rebuild_after_publish(string $articleId): array
 {
-    $scriptPath = dirname(dirname(__DIR__)) . '/tools/rebuild_public_from_articles.py';
-    if (!file_exists($scriptPath)) {
-        return ['ok' => false, 'code' => 'script_not_found',
-                'message' => 'Script rebuild không tồn tại. Cần rebuild thủ công.'];
-    }
-
-    if ($articleId === '') {
-        return ['ok' => false, 'code' => 'missing_article_id',
-                'message' => 'Article ID bắt buộc cho public rebuild.'];
-    }
-
-    // exec() availability MUST be checked BEFORE any exec call
-    if (!function_exists('exec')) {
-        return ['ok' => false, 'code' => 'exec_unavailable',
-                'message' => 'Hàm exec() không khả dụng. Cần rebuild thủ công.'];
-    }
-
-    // Build candidate list: env override first, then standard names
-    $candidates = [];
-    $envPython = getenv('KDTD_PYTHON_BIN');
-    if ($envPython !== false && $envPython !== '') {
-        $candidates[] = $envPython;
-    }
-    $candidates[] = 'python3';
-    $candidates[] = 'python';
-
-    // Try each candidate with the actual rebuild command
-    $lastOutput = [];
-    $lastExitCode = -1;
-    $lastPython = null;
-
-    foreach ($candidates as $pythonBin) {
-        $cmd = escapeshellarg($pythonBin) . ' '
-             . escapeshellarg($scriptPath)
-             . ' --mode fast'
-             . ' --source editorial-publish'
-             . ' --article-id ' . escapeshellarg($articleId)
-             . ' 2>&1';
-
-        $output = [];
-        $exitCode = -1;
-        @exec($cmd, $output, $exitCode);
-        $lastOutput = $output;
-        $lastExitCode = $exitCode;
-        $lastPython = $pythonBin;
-
-        // If exit code indicates the binary wasn't found or not executable
-        // (127=not found on unix, 9009=not found on win, 126=not executable)
-        if ($exitCode === 127 || $exitCode === 9009 || $exitCode === 126) {
-            continue;
-        }
-
-        // Binary was found — this is our result regardless of script success/failure
-        break;
-    }
-
-    $outputStr = implode("\n", $lastOutput);
-    $outputTail = mb_substr($outputStr, -500);
-
-    // Parse JSON result
-    $summary = null;
-    $jsonResult = json_decode($outputStr, true);
-    if (is_array($jsonResult)) {
-        $summary = $jsonResult;
-    }
-
-    // Success requires ALL of: exit code 0 AND valid JSON AND summary.ok === true
-    if ($lastExitCode === 0 && is_array($summary) && ($summary['ok'] ?? null) === true) {
-        return ['ok' => true, 'code' => 'rebuild_succeeded',
-                'message' => 'Đã rebuild dữ liệu public thành công.',
-                'exit_code' => 0, 'summary' => $summary,
-                'output_tail' => $outputTail, 'python' => $lastPython];
-    }
-
-    // Failure
-    $failCode = 'rebuild_failed';
-    $failMsg = 'Rebuild script thất bại.';
-    if ($lastExitCode === 127 || $lastExitCode === 9009 || $lastExitCode === 126) {
-        $failCode = 'python_not_found';
-        $failMsg = 'Không tìm thấy Python. Cần rebuild thủ công.';
-    } elseif ($lastExitCode !== 0) {
-        $failCode = 'rebuild_exit_nonzero';
-        $failMsg = 'Rebuild script exit code: ' . $lastExitCode;
-    } elseif (!is_array($summary)) {
-        $failCode = 'rebuild_invalid_json';
-        $failMsg = 'Rebuild script không trả về JSON hợp lệ.';
-    } elseif (($summary['ok'] ?? null) !== true) {
-        $failMsg = $summary['message'] ?? 'Rebuild script returned ok !== true.';
-    }
-
-    return ['ok' => false, 'code' => $failCode,
-            'message' => $failMsg,
-            'exit_code' => $lastExitCode, 'summary' => $summary,
-            'output_tail' => $outputTail, 'python' => $lastPython];
+    return editorial_public_rebuild_run($articleId);
 }
 
 /**
@@ -927,8 +836,14 @@ function editorial_retry_public_rebuild(string $articleId, string $adminUserId):
     }
 
     $state = editorial_get_article_state($articleId);
-    if (!$state || ($state['status'] ?? '') !== 'published') {
-        return ['ok' => false, 'code' => 'not_published', 'message' => 'Chỉ có thể rebuild lại dữ liệu cho bài đã published.'];
+    $publishedRevisionId = trim((string) ($state['published_revision_id'] ?? ''));
+    $publishedRevision = $publishedRevisionId !== '' ? editorial_get_revision($publishedRevisionId) : null;
+    if (!$state
+        || !$publishedRevision
+        || (string) ($publishedRevision['article_id'] ?? '') !== $articleId
+        || (string) ($publishedRevision['revision_type'] ?? '') !== 'published'
+        || empty(editorial_get_verified_revision_snapshot($publishedRevision)['ok'])) {
+        return ['ok' => false, 'code' => 'not_published', 'message' => 'Không có bản Publish hợp lệ để rebuild dữ liệu public.'];
     }
 
     $publishedLiveHash = trim((string) ($state['published_live_hash'] ?? ''));

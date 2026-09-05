@@ -4,14 +4,14 @@ declare(strict_types=1);
 /**
  * Editorial V2 — Google Handoff service.
  *
- * Handoff is deliberately independent from Safe Publish: it resolves the
- * current server-authoritative workflow source and archives only the editor
- * content fragment externally, without public writes.
+ * Handoff is a deliberate post-publication side effect: it resolves only the
+ * current public-ready published revision and archives its editor fragment.
  */
 
 require_once __DIR__ . '/workspace.php';
 require_once __DIR__ . '/revision.php';
 require_once __DIR__ . '/composio.php';
+require_once __DIR__ . '/publication.php';
 
 const EDITORIAL_HANDOFF_HEADERS = [
     'Article ID',
@@ -423,203 +423,37 @@ function editorial_handoff_archive_filename(string $articleId): string
 }
 
 /**
- * Read the editor HTML fragment from a verified immutable snapshot exactly as
- * it was stored. Drive archives must never use the public article shell.
- *
- * @return array{ok:bool,prose_html?:string,title?:string,featured_image?:string,message:string}
- */
-function editorial_handoff_get_revision_prose(array $revision): array
-{
-    $snapshot = editorial_get_verified_revision_snapshot($revision);
-    if (!$snapshot['ok']) {
-        return ['ok' => false, 'message' => 'Snapshot nguồn bàn giao không hợp lệ: ' . $snapshot['message']];
-    }
-    $payload = $snapshot['payload'] ?? null;
-    if (!is_array($payload) || !array_key_exists('prose_html', $payload) || !is_string($payload['prose_html'])) {
-        return ['ok' => false, 'message' => 'Snapshot nguồn bàn giao không có nội dung editor hợp lệ.'];
-    }
-    return [
-        'ok' => true,
-        // Keep the exact persisted editor fragment — no trim, normalization or wrapping.
-        'prose_html' => $payload['prose_html'],
-        'title' => is_string($payload['title'] ?? null) ? $payload['title'] : '',
-        'featured_image' => is_string($payload['featured_image'] ?? null) ? $payload['featured_image'] : '',
-        'message' => '',
-    ];
-}
-
-/**
- * Preserve the existing workflow safety check without using public HTML as
- * Drive content. The public file is read only to verify its base hash.
- *
- * @return array{ok:bool,message:string}
- */
-function editorial_handoff_validate_workflow_live_base(array $article, array $state): array
-{
-    $htmlPath = editorial_resolve_article_path($article);
-    if ($htmlPath === null) {
-        return ['ok' => false, 'message' => 'Không tìm thấy HTML public hiện tại để xác thực workflow.'];
-    }
-    $liveHtml = file_get_contents($htmlPath);
-    $baseLiveHash = trim((string) ($state['base_live_hash'] ?? ''));
-    if ($liveHtml === false || $liveHtml === '' || $baseLiveHash === ''
-        || hash('sha256', $liveHtml) !== $baseLiveHash) {
-        return ['ok' => false, 'message' => 'HTML public hiện tại không còn khớp base live hash của workflow.'];
-    }
-    return ['ok' => true, 'message' => ''];
-}
-
-/**
- * Resolve the current server-authoritative Handoff source for every workflow
- * state. Browser input never supplies revision IDs/source keys.
+ * Resolve only the exact current published revision. Editorial checkpoints,
+ * review state, browser drafts and live fallback are never Handoff authority.
  *
  * @return array{ok:bool,message:string,source?:array<string,mixed>}
  */
 function editorial_handoff_resolve_source(array $article, ?array $state): array
 {
     $articleId = (string) $article['id'];
-    $status = (string) ($state['status'] ?? 'available');
-    $htmlPath = editorial_resolve_article_path($article);
-    if ($htmlPath === null) {
-        return ['ok' => false, 'message' => 'Không tìm thấy HTML nguồn của bài viết.'];
+    $publication = editorial_publication_handoff_status($articleId, $state);
+    if (empty($publication['eligible'])) {
+        return ['ok' => false, 'message' => (string) ($publication['message'] ?? 'Cần Publish hoàn tất trước khi bàn giao.')];
     }
-
-    if (in_array($status, ['editing', 'returned'], true)) {
-        $ownerId = trim((string) ($state['assigned_user_id'] ?? ''));
-        if ($ownerId === '') {
-            return ['ok' => false, 'message' => 'Bài đang biên tập nhưng không có người phụ trách hợp lệ.'];
-        }
-        $assignment = editorial_get_active_assignment($articleId);
-        if (!$assignment || (string) ($assignment['user_id'] ?? '') !== $ownerId) {
-            return ['ok' => false, 'message' => 'Nguồn Chặng bàn giao không khớp active assignment.'];
-        }
-        $stages = editorial_get_active_stage_bundle($articleId, (string) $assignment['id']);
-        $revision = $stages['stage2'] ?? $stages['stage1'] ?? null;
-        if ($revision === null) {
-            return ['ok' => false, 'message' => 'Hãy hoàn tất Chặng 1 trước khi lưu Drive + Sheet.'];
-        }
-        $liveBase = editorial_handoff_validate_workflow_live_base($article, (array) $state);
-        if (!$liveBase['ok']) {
-            return $liveBase;
-        }
-        $content = editorial_handoff_get_revision_prose($revision);
-        if (!$content['ok']) {
-            return $content;
-        }
-        $logicalSourceKey = 'revision:' . (string) $revision['id'];
-        return [
-            'ok' => true,
-            'message' => '',
-            'source' => [
-                'source_key' => editorial_handoff_content_sync_key($logicalSourceKey),
-                'source_revision_id' => (string) $revision['id'],
-                'source_kind' => (string) $revision['milestone_key'],
-                'published_revision_id' => null,
-                'source_identifier' => (string) $revision['id'],
-                'prose_html' => $content['prose_html'],
-                'title' => $content['title'],
-                'featured_image' => $content['featured_image'],
-            ],
-        ];
+    $revision = (array) $publication['published_revision'];
+    $payload = (array) $publication['published_snapshot'];
+    if (!array_key_exists('prose_html', $payload) || !is_string($payload['prose_html'])) {
+        return ['ok' => false, 'message' => 'Bản Publish không có nội dung editor hợp lệ để bàn giao.'];
     }
-
-    $pointerField = match ($status) {
-        'ready_review' => 'review_revision_id',
-        'approved' => 'approved_revision_id',
-        default => '',
-    };
-    if ($pointerField !== '') {
-        $revisionId = trim((string) ($state[$pointerField] ?? ''));
-        $revision = $revisionId !== '' ? editorial_get_revision($revisionId) : null;
-        $assignment = editorial_get_active_assignment($articleId);
-        if (!$revision || ($revision['revision_type'] ?? '') !== 'editorial'
-            || (string) ($revision['article_id'] ?? '') !== $articleId
-            || !$assignment
-            || (string) ($assignment['user_id'] ?? '') !== (string) ($state['assigned_user_id'] ?? '')
-            || (string) ($revision['assignment_id'] ?? '') !== (string) $assignment['id']) {
-            return ['ok' => false, 'message' => 'Revision nguồn bàn giao không hợp lệ hoặc không khớp assignment.'];
-        }
-        $liveBase = editorial_handoff_validate_workflow_live_base($article, (array) $state);
-        if (!$liveBase['ok']) {
-            return $liveBase;
-        }
-        $content = editorial_handoff_get_revision_prose($revision);
-        if (!$content['ok']) {
-            return $content;
-        }
-        $logicalSourceKey = 'revision:' . $revisionId;
-        return [
-            'ok' => true,
-            'message' => '',
-            'source' => [
-                'source_key' => editorial_handoff_content_sync_key($logicalSourceKey),
-                'source_revision_id' => $revisionId,
-                'source_kind' => $status === 'ready_review' ? 'review' : 'approved',
-                'published_revision_id' => null,
-                'source_identifier' => $revisionId,
-                'prose_html' => $content['prose_html'],
-                'title' => $content['title'],
-                'featured_image' => $content['featured_image'],
-            ],
-        ];
-    }
-
-    $liveHtml = file_get_contents($htmlPath);
-    if ($liveHtml === false || $liveHtml === '') {
-        return ['ok' => false, 'message' => 'Không thể đọc HTML live để bàn giao.'];
-    }
-    $liveHash = hash('sha256', $liveHtml);
-    if ($status === 'published') {
-        $publishedRevisionId = trim((string) ($state['published_revision_id'] ?? ''));
-        $publishedHash = trim((string) ($state['published_live_hash'] ?? ''));
-        $revision = $publishedRevisionId !== '' ? editorial_get_revision($publishedRevisionId) : null;
-        if (!$revision || ($revision['revision_type'] ?? '') !== 'published'
-            || (string) ($revision['article_id'] ?? '') !== $articleId
-            || $publishedHash === ''
-            || $liveHash !== $publishedHash) {
-            return ['ok' => false, 'message' => 'Published source không hợp lệ hoặc live hash đã thay đổi.'];
-        }
-        $content = editorial_handoff_get_revision_prose($revision);
-        if (!$content['ok']) {
-            return $content;
-        }
-        $logicalSourceKey = 'revision:' . $publishedRevisionId;
-        return [
-            'ok' => true,
-            'message' => '',
-            'source' => [
-                'source_key' => editorial_handoff_content_sync_key($logicalSourceKey),
-                'source_revision_id' => $publishedRevisionId,
-                'source_kind' => 'published',
-                'published_revision_id' => $publishedRevisionId,
-                'source_identifier' => $publishedRevisionId,
-                'prose_html' => $content['prose_html'],
-                'title' => $content['title'],
-                'featured_image' => $content['featured_image'],
-            ],
-        ];
-    }
-
-    // No immutable source remains: parse only the live editor prose fragment.
-    $parsed = editorial_parse_article_html($liveHtml, '');
-    if (!$parsed['ok'] || !is_string($parsed['prose']['inner'] ?? null)) {
-        return ['ok' => false, 'message' => 'Không thể trích xuất nội dung editor từ HTML live để bàn giao.'];
-    }
-    $liveProse = $parsed['prose']['inner'];
-    $liveMeta = is_array($parsed['meta_payload'] ?? null) ? $parsed['meta_payload'] : [];
-    $logicalSourceKey = 'live:' . $liveHash;
+    $publishedRevisionId = (string) $revision['id'];
+    $logicalSourceKey = 'revision:' . $publishedRevisionId;
     return [
         'ok' => true,
         'message' => '',
         'source' => [
             'source_key' => editorial_handoff_content_sync_key($logicalSourceKey),
-            'source_revision_id' => null,
-            'source_kind' => 'live',
-            'published_revision_id' => null,
-            'source_identifier' => $logicalSourceKey,
-            'prose_html' => $liveProse,
-            'title' => is_string($liveMeta['title'] ?? null) ? $liveMeta['title'] : '',
-            'featured_image' => is_string($liveMeta['image'] ?? null) ? $liveMeta['image'] : '',
+            'source_revision_id' => $publishedRevisionId,
+            'source_kind' => 'published',
+            'published_revision_id' => $publishedRevisionId,
+            'source_identifier' => $publishedRevisionId,
+            'prose_html' => $payload['prose_html'],
+            'title' => is_string($payload['title'] ?? null) ? $payload['title'] : '',
+            'featured_image' => is_string($payload['featured_image'] ?? null) ? $payload['featured_image'] : '',
         ],
     ];
 }
@@ -1253,6 +1087,14 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
         return ['ok' => false, 'code' => 'not_contributor', 'message' => 'Bạn không có quyền bàn giao bài viết này.'];
     }
     $state = editorial_get_article_state($articleId);
+    $publicationStatus = editorial_publication_handoff_status($articleId, $state);
+    if (empty($publicationStatus['eligible'])) {
+        return [
+            'ok' => false,
+            'code' => (string) ($publicationStatus['reason_code'] ?? 'publication_not_ready'),
+            'message' => (string) ($publicationStatus['message'] ?? 'Cần Publish hoàn tất trước khi bàn giao.'),
+        ];
+    }
     $settingsResult = editorial_handoff_verified_settings();
     if (!$settingsResult['ok']) {
         return [
@@ -1426,7 +1268,7 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
     );
     if (!$upsert['ok']) {
         $message = $driveSkipped
-            ? 'HTML Drive hiện đã khớp Chặng này nhưng Google Sheet chưa cập nhật. ' . $upsert['message']
+            ? 'HTML Drive hiện đã khớp bản Publish này nhưng Google Sheet chưa cập nhật. ' . $upsert['message']
             : 'HTML đã được cập nhật lên Google Drive nhưng Google Sheet chưa cập nhật. Bạn có thể thử lại mà không tạo file HTML trùng.';
         return editorial_handoff_fail($sync, $articleId, $actorId, 'sheet_upsert_failed', $message);
     }
@@ -1472,11 +1314,11 @@ function editorial_handoff_article_locked(string $articleId, string $note, array
     ]);
 
     if ($driveSkipped) {
-        $message = 'Đã cập nhật Google Sheet thành công; HTML Drive hiện đã khớp Chặng đang chọn.';
+        $message = 'Đã cập nhật Google Sheet thành công; HTML Drive hiện đã khớp bản Publish hiện tại.';
     } elseif (($preflight['intent'] ?? '') === 'UPDATE_EXISTING') {
-        $message = 'Đã lưu HTML lên Google Drive và cập nhật dòng bài hiện có trong Google Sheet.';
+        $message = 'Đã bàn giao bản Publish lên Google Drive và cập nhật dòng bài hiện có trong Google Sheet.';
     } else {
-        $message = 'Đã lưu HTML lên Google Drive và thêm bài vào Google Sheet.';
+        $message = 'Đã bàn giao bản Publish lên Google Drive và thêm bài vào Google Sheet.';
     }
     return ['ok' => true, 'code' => 'synced', 'message' => $message];
 }

@@ -252,29 +252,13 @@ editorial_layout_header([
                         $isCurrentHandoffOwner = $ownerId !== '' && $ownerId === $currentUserId;
                         $canHandoff = $isAdmin || $isCurrentHandoffOwner || $isHandoffContributor;
                         $reviewDetailUrl = editorial_url('review.php?id=' . urlencode($aid));
-                        $activeStages = null;
-                        if (in_array($status, ['editing', 'returned'], true) && $ownerId !== '') {
-                            $activeAssignment = editorial_get_active_assignment($aid);
-                            if ($activeAssignment !== null) {
-                                $activeStages = editorial_get_active_stage_bundle($aid, (string) $activeAssignment['id']);
-                            }
-                        }
-                        $activeStage = $activeStages['stage2'] ?? $activeStages['stage1'] ?? null;
-                        $hasHandoffSource = match ($status) {
-                            'editing', 'returned' => $activeStage !== null,
-                            'ready_review' => !empty($state['review_revision_id']),
-                            'approved' => !empty($state['approved_revision_id']),
-                            'published' => !empty($state['published_revision_id']),
-                            default => true,
-                        };
+                        $publicationHandoff = editorial_publication_handoff_status($aid, $state);
+                        $hasHandoffSource = !empty($publicationHandoff['eligible']);
+                        $handoffUnavailableMessage = (string) ($publicationHandoff['message'] ?? 'Cần Publish hoàn tất trước khi bàn giao.');
                         $articleHandoffSync = $pageHandoffSync[$aid] ?? [];
-                        $expectedHandoffSourceKey = match ($status) {
-                            'editing', 'returned' => $activeStage !== null ? 'revision:' . $activeStage['id'] : '',
-                            'ready_review' => !empty($state['review_revision_id']) ? 'revision:' . $state['review_revision_id'] : '',
-                            'approved' => !empty($state['approved_revision_id']) ? 'revision:' . $state['approved_revision_id'] : '',
-                            'published' => !empty($state['published_revision_id']) ? 'revision:' . $state['published_revision_id'] : '',
-                            default => '',
-                        };
+                        $expectedHandoffSourceKey = $hasHandoffSource
+                            ? 'revision:' . (string) $state['published_revision_id']
+                            : '';
                         $handoffSync = $expectedHandoffSourceKey !== ''
                             ? ($articleHandoffSync[$expectedHandoffSourceKey] ?? null)
                             : null;
@@ -399,11 +383,7 @@ editorial_layout_header([
                                 <?php endif; ?>
                                 <?php if ($canHandoff): ?>
                                     <div class="editorial-handoff-action">
-                                        <?php if (in_array($status, ['editing', 'returned'], true) && !$hasHandoffSource && $isCurrentHandoffOwner): ?>
-                                            <a class="editorial-handoff-unavailable" href="<?= editorial_h(editorial_url('article.php?id=' . urlencode($aid))) ?>">
-                                                <i class="fa-solid fa-pen-to-square"></i> Mở Editor để lưu Drive + Sheet
-                                            </a>
-                                        <?php elseif ($hasHandoffSource && $handoffSettingsReady): ?>
+                                        <?php if ($hasHandoffSource && $handoffSettingsReady): ?>
                                             <form method="post" action="<?= editorial_h(editorial_url('handoff.php')) ?>" class="editorial-handoff-form-inline">
                                                 <?= editorial_csrf_input() ?>
                                                 <input type="hidden" name="article_id" value="<?= editorial_h($aid) ?>">
@@ -413,17 +393,17 @@ editorial_layout_header([
                                                 <input type="hidden" name="page" value="<?= $currentPage ?>">
                                                 <input type="text" name="handoff_note" maxlength="2000" value="<?= editorial_h((string) ($handoffSync['handoff_note'] ?? '')) ?>" placeholder="Ghi chú bàn giao (nếu có)" aria-label="Ghi chú bàn giao">
                                                 <?php if ($handoffStatus === 'synced'): ?>
-                                                    <span class="editorial-handoff-synced"><i class="fa-solid fa-circle-check"></i> Đã lưu Drive + Sheet</span>
-                                                    <button type="submit" class="editorial-handoff-btn is-resync" title="Cập nhật lại dòng Google Sheet, giữ HTML archive hiện có">
-                                                        <i class="fa-solid fa-rotate"></i> Lưu Drive + Sheet
+                                                    <span class="editorial-handoff-synced"><i class="fa-solid fa-circle-check"></i> Đã bàn giao Drive + Sheet</span>
+                                                    <button type="submit" class="editorial-handoff-btn is-resync" title="Cập nhật lại hồ sơ của bản đã Publish trên cùng file Drive và dòng Sheet">
+                                                        <i class="fa-solid fa-rotate"></i> Bàn giao Drive + Sheet
                                                     </button>
                                                 <?php elseif (in_array($handoffStatus, ['failed', 'drive_uploaded'], true)): ?>
                                                     <button type="submit" class="editorial-handoff-btn is-retry">
-                                                        <i class="fa-solid fa-rotate"></i> Thử lại Drive + Sheet
+                                                        <i class="fa-solid fa-rotate"></i> Thử lại bàn giao Drive + Sheet
                                                     </button>
                                                 <?php else: ?>
                                                     <button type="submit" class="editorial-handoff-btn">
-                                                        <i class="fa-solid fa-cloud-arrow-up"></i> Lưu Drive + Sheet
+                                                        <i class="fa-solid fa-cloud-arrow-up"></i> Bàn giao Drive + Sheet
                                                     </button>
                                                 <?php endif; ?>
                                                 <?php if (!empty($handoffSync['drive_file_url'])): ?>
@@ -433,7 +413,9 @@ editorial_layout_header([
                                                 <?php endif; ?>
                                             </form>
                                         <?php elseif (!$hasHandoffSource): ?>
-                                            <span class="editorial-handoff-unavailable"><i class="fa-solid fa-cloud"></i> Chưa có nguồn đã lưu để Drive + Sheet.</span>
+                                            <span class="editorial-handoff-unavailable" title="<?= editorial_h($handoffUnavailableMessage) ?>">
+                                                <i class="fa-solid fa-cloud"></i> <?= editorial_h($handoffUnavailableMessage) ?>
+                                            </span>
                                         <?php elseif ($isAdmin): ?>
                                             <a class="editorial-handoff-unavailable" href="<?= editorial_h(editorial_url('google-handoff-settings.php')) ?>">
                                                 <i class="fa-solid fa-triangle-exclamation"></i> Drive + Sheet cần kiểm tra lại

@@ -33,10 +33,10 @@ try {
         'code' => 'unexpected_service_error',
         'sync_status' => 'failed',
     ]));
-    $result = ['ok' => false, 'message' => 'Google Handoff gặp lỗi hệ thống. Vui lòng thử lại.'];
+    $result = ['ok' => false, 'message' => 'Bàn giao Drive + Sheet gặp lỗi hệ thống. Vui lòng thử lại.'];
 }
 
-editorial_flash_set(!empty($result['ok']) ? 'success' : 'danger', (string) ($result['message'] ?? 'Không thể bàn giao Google Handoff.'));
+editorial_flash_set(!empty($result['ok']) ? 'success' : 'danger', (string) ($result['message'] ?? 'Không thể bàn giao Drive + Sheet.'));
 
 $return = [];
 foreach (['q', 'section', 'library_kind_key', 'topic_lv1_key', 'topic_lv2_key', 'topic_lv3_key', 'assignment', 'page'] as $key) {

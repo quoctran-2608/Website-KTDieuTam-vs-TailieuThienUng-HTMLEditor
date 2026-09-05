@@ -5,6 +5,7 @@ require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ . '/includes/workspace.php';
 require_once __DIR__ . '/includes/revision.php';
 require_once __DIR__ . '/includes/review.php';
+require_once __DIR__ . '/includes/publication.php';
 require_once __DIR__ . '/includes/layout.php';
 
 editorial_require_auth();
@@ -88,7 +89,7 @@ if (editorial_is_post()) {
         );
         editorial_flash_set(
             $handoffResult['ok'] ? 'success' : 'danger',
-            (string) ($handoffResult['message'] ?? 'Không thể lưu Drive + Sheet.')
+            (string) ($handoffResult['message'] ?? 'Không thể bàn giao Drive + Sheet.')
         );
         editorial_redirect(editorial_url('article.php?id=' . urlencode($articleId)));
     }
@@ -207,7 +208,7 @@ if (editorial_is_post()) {
                 } catch (\Throwable $logErr) {
                     // Best-effort: Publish success remains success.
                 }
-                editorial_flash_set('success', 'Đã Publish bài viết. Bạn có thể tiếp tục biên tập, gửi duyệt hoặc Lưu Drive + Sheet.');
+                editorial_flash_set('success', 'Đã Publish và rebuild dữ liệu public thành công.');
             } else {
                 try {
                     editorial_log_activity('article.publish.public_rebuild_failed', $articleId, $currentUserId, json_encode([
@@ -348,10 +349,14 @@ $isEditorWorkspace = (($currentUser['role'] ?? '') === 'editor');
 $hasSavedDraft = $draftVersion > 0;
 $handoffConfigStatus = editorial_handoff_config_status();
 $handoffSettingsReady = !empty($handoffConfigStatus['ok']);
-$handoffEnabled = $handoffSettingsReady && $activeStages['stage1'] !== null;
-$handoffDisabledReason = !$handoffSettingsReady
-    ? (string) ($handoffConfigStatus['message'] ?? 'Drive + Sheet cần kiểm tra cấu hình.')
-    : 'Hãy hoàn tất Chặng 1 trước khi lưu Drive + Sheet.';
+$handoffPublicationStatus = editorial_publication_handoff_status($articleId, $state);
+$handoffPublicationReady = !empty($handoffPublicationStatus['eligible']);
+$handoffEnabled = $handoffSettingsReady && $handoffPublicationReady;
+$handoffDisabledReason = !$handoffPublicationReady
+    ? (string) ($handoffPublicationStatus['message'] ?? 'Cần Publish hoàn tất trước khi bàn giao.')
+    : (!$handoffSettingsReady
+        ? (string) ($handoffConfigStatus['message'] ?? 'Drive + Sheet cần kiểm tra cấu hình.')
+        : '');
 $hasPublication = trim((string) ($state['published_revision_id'] ?? '')) !== '';
 $publishedAt = trim((string) ($state['published_at'] ?? ''));
 $approvedCheckpoint = null;
@@ -451,6 +456,10 @@ $innerScript = <<<JS
     if (draftDirty) return;
     draftDirty = true;
     updateSaveStatus();
+    document.querySelectorAll('button[data-editor-action="handoff_active_stage"]').forEach((button) => {
+      button.disabled = true;
+      button.title = 'Có thay đổi chưa Publish. Hãy lưu và Publish trước khi bàn giao.';
+    });
   }
 
   function currentEditorContent() {
@@ -548,8 +557,8 @@ $innerScript = <<<JS
         && !window.confirm('Bạn sắp lưu nội dung hiện tại rồi Publish lên website. Tiếp tục?')) {
         return;
       }
-      if (action === 'handoff_active_stage' && draftDirty
-        && !window.confirm('Có thay đổi hiện tại chưa được lưu vào Chặng. Drive + Sheet sẽ dùng Chặng đã lưu gần nhất. Tiếp tục?')) {
+      if (action === 'handoff_active_stage' && draftDirty) {
+        window.alert('Có thay đổi chưa Publish. Hãy lưu và Publish trước khi bàn giao.');
         return;
       }
       formIntent.value = action;
@@ -975,8 +984,8 @@ editorial_layout_header([
                 </div>
 
                 <div class="editorial-workflow-group editorial-workflow-handoff">
-                    <button type="button" class="editorial-handoff-btn" data-editor-action="handoff_active_stage" <?= $handoffEnabled ? 'title="Lưu Chặng đang active lên Google Drive và cập nhật Google Sheet."' : 'disabled title="' . editorial_h($handoffDisabledReason) . '"' ?>>
-                        <i class="fa-solid fa-cloud-arrow-up"></i> Lưu Drive + Sheet
+                    <button type="button" class="editorial-handoff-btn" data-editor-action="handoff_active_stage" <?= $handoffEnabled ? 'title="Bàn giao hồ sơ cuối của bản đã Publish lên Google Drive và Sheet."' : 'disabled title="' . editorial_h($handoffDisabledReason) . '"' ?>>
+                        <i class="fa-solid fa-cloud-arrow-up"></i> Bàn giao Drive + Sheet
                     </button>
                     <details class="editorial-handoff-note-menu">
                         <summary title="Ghi chú bàn giao" aria-label="Ghi chú bàn giao">
@@ -1002,7 +1011,7 @@ editorial_layout_header([
             </div>
 
             <div class="editorial-workflow-utilities">
-                <button type="button" class="editorial-workflow-help-btn" title="Bạn có thể Lưu nháp nhiều lần. Chặng 1 và Chặng 2 là các mốc cố định. Publish và Lưu Drive + Sheet là độc lập. Gửi Admin duyệt cần Chặng 1 + Chặng 2, và Chặng 2 phải khớp nội dung hiện tại." aria-label="Trợ giúp luồng biên tập">
+                <button type="button" class="editorial-workflow-help-btn" title="Chặng 1 và Chặng 2 là mốc biên tập. Publish đưa bản lên website. Bàn giao Drive + Sheet lưu hồ sơ cuối của bản đã Publish và rebuild public thành công." aria-label="Trợ giúp luồng biên tập">
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
                 <button type="button" class="editorial-fullscreen-btn editorial-icon-btn" id="editorFullscreenToggle" title="Toàn màn hình (Ctrl+Shift+F)" aria-label="Toàn màn hình">
@@ -1155,8 +1164,8 @@ editorial_layout_header([
             <button type="button" data-editor-action="save_then_review" class="editorial-review-submit-btn" title="Tự lưu nội dung hiện tại. Yêu cầu Chặng 1 và Chặng 2 đầy đủ; Chặng 2 phải khớp bản hiện tại.">
                 <i class="fa-solid fa-paper-plane"></i> Gửi Admin duyệt
             </button>
-            <button type="button" class="editorial-handoff-btn" data-editor-action="handoff_active_stage" <?= $handoffEnabled ? 'title="Lưu Chặng đang active lên Google Drive và cập nhật Google Sheet."' : 'disabled title="Hãy hoàn tất Chặng 1 và kiểm tra cấu hình Drive + Sheet."' ?>>
-                <i class="fa-solid fa-cloud-arrow-up"></i> Lưu Drive + Sheet
+            <button type="button" class="editorial-handoff-btn" data-editor-action="handoff_active_stage" <?= $handoffEnabled ? 'title="Bàn giao hồ sơ cuối của bản đã Publish lên Google Drive và Sheet."' : 'disabled title="' . editorial_h($handoffDisabledReason) . '"' ?>>
+                <i class="fa-solid fa-cloud-arrow-up"></i> Bàn giao Drive + Sheet
             </button>
             <button type="submit" form="exitWorkspaceForm" class="editorial-exit-btn">
                 <i class="fa-solid fa-right-from-bracket"></i> Thoát
