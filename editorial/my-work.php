@@ -9,6 +9,7 @@ editorial_require_auth();
 
 $currentUser = editorial_current_user();
 $currentUserId = (string) $currentUser['user_id'];
+$isEditor = (($currentUser['role'] ?? '') === 'editor');
 
 // Get articles assigned to current user
 $myStates = editorial_get_user_assignments($currentUserId);
@@ -109,16 +110,13 @@ editorial_layout_header([
                             $article = $entry['article'];
                             $state = $entry['state'];
                             $isEditable = in_array($statusKey, ['editing', 'returned'], true);
+                            $approvedCheckpoint = $statusKey === 'approved' && !empty($state['approved_revision_id'])
+                                ? editorial_get_revision((string) $state['approved_revision_id'])
+                                : null;
                             ?>
                             <tr>
                                 <td>
-                                    <?php if ($statusKey === 'approved'): ?>
-                                        <a class="editorial-article-title-link" href="<?= editorial_h(editorial_url('review-preview.php?id=' . urlencode((string) $article['id']))) ?>" target="_blank" rel="noopener">
-                                            <strong><?= editorial_h($article['title']) ?></strong>
-                                        </a>
-                                    <?php else: ?>
-                                        <strong><?= editorial_h($article['title']) ?></strong>
-                                    <?php endif; ?>
+                                    <strong><?= editorial_h($article['title']) ?></strong>
                                     <br><small style="color:#868e96;">
                                         <a href="<?= editorial_h(editorial_public_article_url($article)) ?>" target="_blank" rel="noopener">
                                             <?= editorial_h($article['id']) ?>
@@ -142,16 +140,23 @@ editorial_layout_header([
                                             <br><small class="editorial-return-note"><i class="fa-solid fa-comment-dots"></i> <?= editorial_h($returnNote) ?></small>
                                         <?php endif; ?>
                                     <?php endif; ?>
+                                    <?php if ($statusKey === 'approved' && $approvedCheckpoint): ?>
+                                        <br><small class="editorial-approved-checkpoint"><i class="fa-solid fa-circle-check"></i> Admin đã duyệt Revision #<?= editorial_h((string) $approvedCheckpoint['revision_no']) ?></small>
+                                    <?php endif; ?>
                                 </td>
                                 <td>
                                     <?php if ($isEditable): ?>
                                         <a href="<?= editorial_h(editorial_url('article.php?id=' . urlencode($article['id']))) ?>" class="editorial-workspace-btn">
                                             <i class="fa-solid fa-pen-to-square"></i> Tiếp tục biên tập
                                         </a>
-                                    <?php elseif ($statusKey === 'approved'): ?>
-                                        <a href="<?= editorial_h(editorial_url('review-preview.php?id=' . urlencode((string) $article['id']))) ?>" class="editorial-secondary-action" target="_blank" rel="noopener">
-                                            <i class="fa-solid fa-file-circle-check"></i> Xem bản đã duyệt
-                                        </a>
+                                    <?php elseif ($statusKey === 'approved' && $isEditor): ?>
+                                        <form method="post" action="<?= editorial_h(editorial_url('resume-editing.php')) ?>" class="editorial-resume-form">
+                                            <?= editorial_csrf_input() ?>
+                                            <input type="hidden" name="article_id" value="<?= editorial_h((string) $article['id']) ?>">
+                                            <button type="submit" class="editorial-workspace-btn">
+                                                <i class="fa-solid fa-pen-to-square"></i> Tiếp tục biên tập
+                                            </button>
+                                        </form>
                                     <?php else: ?>
                                         <span style="color:#868e96;">—</span>
                                     <?php endif; ?>

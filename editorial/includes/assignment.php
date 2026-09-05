@@ -349,10 +349,62 @@ function editorial_can_transition(string $from, string $to): bool
         'editing' => ['ready_review', 'available', 'editing'],
         'returned' => ['ready_review', 'available', 'editing'],
         'ready_review' => ['returned', 'approved'],
-        'approved' => [],
+        'approved' => ['editing'],
         'published' => ['editing'],
     ];
 
     $transitions = $allowed[$from] ?? [];
     return in_array($to, $transitions, true);
+}
+
+/**
+ * Reopen the current owner's approved article for a new editing phase.
+ * The last approval fields remain an immutable checkpoint/history marker.
+ *
+ * @return array{ok:bool,message:string}
+ */
+function editorial_resume_approved_editing(string $articleId, string $userId): array
+{
+    return editorial_transaction(function () use ($articleId, $userId): array {
+        $state = editorial_get_article_state($articleId);
+        if ($state === null || (string) ($state['status'] ?? '') !== 'approved') {
+            return ['ok' => false, 'message' => 'Bài viết không ở trạng thái đã duyệt để tiếp tục biên tập.'];
+        }
+        if ((string) ($state['assigned_user_id'] ?? '') !== $userId) {
+            return ['ok' => false, 'message' => 'Bạn không phải người đang phụ trách bài viết này.'];
+        }
+        if (!editorial_can_transition('approved', 'editing')) {
+            return ['ok' => false, 'message' => 'Trạng thái chuyển đổi không hợp lệ.'];
+        }
+
+        $assignment = editorial_get_active_assignment($articleId);
+        if ($assignment === null || (string) ($assignment['user_id'] ?? '') !== $userId) {
+            return ['ok' => false, 'message' => 'Phân công hiện tại không hợp lệ hoặc không khớp.'];
+        }
+
+        $now = date('c');
+        $stmt = editorial_db()->prepare("
+            UPDATE editorial_article_state
+            SET status = 'editing',
+                updated_at = :updated_at
+            WHERE article_id = :article_id
+              AND status = 'approved'
+              AND assigned_user_id = :user_id
+        ");
+        $stmt->execute([
+            'updated_at' => $now,
+            'article_id' => $articleId,
+            'user_id' => $userId,
+        ]);
+        if ($stmt->rowCount() !== 1) {
+            return ['ok' => false, 'message' => 'Trạng thái bài viết đã thay đổi. Vui lòng tải lại danh sách.'];
+        }
+
+        editorial_log_activity('article.approval.resumed_editing', $articleId, $userId, json_encode([
+            'assignment_id' => (string) $assignment['id'],
+            'approved_revision_id' => (string) ($state['approved_revision_id'] ?? ''),
+        ]));
+
+        return ['ok' => true, 'message' => 'Đã mở lại giai đoạn biên tập.'];
+    });
 }

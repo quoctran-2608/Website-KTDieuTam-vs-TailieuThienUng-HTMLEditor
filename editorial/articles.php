@@ -132,6 +132,7 @@ $ownerNames = editorial_preload_user_names($ownerIds);
 // Sections for filter dropdown
 $sections = editorial_article_sections();
 $isAdmin = (($currentUser['role'] ?? '') === 'admin');
+$isEditor = (($currentUser['role'] ?? '') === 'editor');
 $activeUsers = $isAdmin ? editorial_list_users() : [];
 $activeUsers = array_filter($activeUsers, fn($u) => !empty($u['is_active']));
 
@@ -250,9 +251,7 @@ editorial_layout_header([
                         }
                         $isCurrentHandoffOwner = $ownerId !== '' && $ownerId === $currentUserId;
                         $canHandoff = $isAdmin || $isCurrentHandoffOwner || $isHandoffContributor;
-                        $canReadonlyReviewPreview = $isAdmin || $isCurrentHandoffOwner || $isHandoffContributor;
                         $reviewDetailUrl = editorial_url('review.php?id=' . urlencode($aid));
-                        $reviewPreviewUrl = editorial_url('review-preview.php?id=' . urlencode($aid));
                         $activeStages = null;
                         if (in_array($status, ['editing', 'returned'], true) && $ownerId !== '') {
                             $activeAssignment = editorial_get_active_assignment($aid);
@@ -293,10 +292,6 @@ editorial_layout_header([
                                     </a>
                                 <?php elseif ($status === 'approved' && $isAdmin): ?>
                                     <a class="editorial-article-title-link" href="<?= editorial_h($reviewDetailUrl) ?>">
-                                        <strong><?= editorial_h($article['title']) ?></strong>
-                                    </a>
-                                <?php elseif ($status === 'approved' && $canReadonlyReviewPreview): ?>
-                                    <a class="editorial-article-title-link" href="<?= editorial_h($reviewPreviewUrl) ?>" target="_blank" rel="noopener">
                                         <strong><?= editorial_h($article['title']) ?></strong>
                                     </a>
                                 <?php else: ?>
@@ -358,6 +353,14 @@ editorial_layout_header([
                                         <a href="<?= editorial_h(editorial_url('article.php?id=' . urlencode($aid))) ?>" class="editorial-workspace-btn">
                                             <i class="fa-solid fa-pen-to-square"></i> Tiếp tục biên tập
                                         </a>
+                                    <?php elseif ($status === 'approved' && $isEditor): ?>
+                                        <form method="post" action="<?= editorial_h(editorial_url('resume-editing.php')) ?>" class="editorial-resume-form">
+                                            <?= editorial_csrf_input() ?>
+                                            <input type="hidden" name="article_id" value="<?= editorial_h($aid) ?>">
+                                            <button type="submit" class="editorial-workspace-btn">
+                                                <i class="fa-solid fa-pen-to-square"></i> Tiếp tục biên tập
+                                            </button>
+                                        </form>
                                     <?php else: ?>
                                         <a href="<?= editorial_h(editorial_url('my-work.php')) ?>" class="editorial-mywork-link">
                                             <i class="fa-solid fa-clipboard-list"></i> Công việc của tôi
@@ -371,23 +374,11 @@ editorial_layout_header([
                                         <a href="<?= editorial_h($reviewDetailUrl) ?>" class="editorial-review-navigation-primary">
                                             <i class="fa-solid fa-clipboard-check"></i> Mở duyệt
                                         </a>
-                                        <a href="<?= editorial_h($reviewPreviewUrl) ?>" class="editorial-secondary-action" target="_blank" rel="noopener">
-                                            <i class="fa-solid fa-eye"></i> Xem bản gửi duyệt
-                                        </a>
                                     </div>
                                 <?php elseif ($status === 'approved' && $isAdmin): ?>
                                     <div class="editorial-review-navigation">
                                         <a href="<?= editorial_h($reviewDetailUrl) ?>" class="editorial-review-navigation-primary">
                                             <i class="fa-solid fa-clipboard-check"></i> Xem hồ sơ duyệt
-                                        </a>
-                                        <a href="<?= editorial_h($reviewPreviewUrl) ?>" class="editorial-secondary-action" target="_blank" rel="noopener">
-                                            <i class="fa-solid fa-file-circle-check"></i> Xem bản đã duyệt
-                                        </a>
-                                    </div>
-                                <?php elseif ($status === 'approved' && $canReadonlyReviewPreview): ?>
-                                    <div class="editorial-review-navigation">
-                                        <a href="<?= editorial_h($reviewPreviewUrl) ?>" class="editorial-secondary-action" target="_blank" rel="noopener">
-                                            <i class="fa-solid fa-file-circle-check"></i> Xem bản đã duyệt
                                         </a>
                                     </div>
                                 <?php endif; ?>

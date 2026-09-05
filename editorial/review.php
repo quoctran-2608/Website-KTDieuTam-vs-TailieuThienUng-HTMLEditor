@@ -80,7 +80,7 @@ if ($articleId !== '') {
     }
 
     $status = (string) $state['status'];
-    $detailRevision = editorial_resolve_review_readonly_revision($articleId, $state);
+    $detailRevision = editorial_resolve_review_dossier_revision($articleId, $state);
     $revisionId = !empty($detailRevision['ok'])
         ? (string) (($detailRevision['revision']['id'] ?? ''))
         : '';
@@ -112,6 +112,8 @@ if ($articleId !== '') {
     if (!empty($state['approved_by'])) {
         $approver = editorial_find_user_by_id((string) $state['approved_by']);
     }
+    $isHistoricalApprovedDossier = in_array($status, ['editing', 'returned'], true)
+        && !empty($state['approved_revision_id']);
 
     $htmlPath = editorial_resolve_article_path($article);
     $liveConflict = false;
@@ -149,12 +151,6 @@ if ($articleId !== '') {
                 <a href="<?= editorial_h(editorial_public_article_url($article)) ?>" target="_blank" rel="noopener" style="font-size:0.85rem;">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem trên website
                 </a>
-                <?php if ($isVerified): ?>
-                    &nbsp;
-                    <a href="<?= editorial_h(editorial_url('review-preview.php?id=' . urlencode($articleId))) ?>" target="_blank" rel="noopener" style="font-size:0.85rem;">
-                        <i class="fa-solid fa-file-circle-check"></i> <?= $status === 'approved' ? 'Xem bản đã duyệt' : 'Xem bản gửi duyệt' ?>
-                    </a>
-                <?php endif; ?>
                 &nbsp;
                 <a href="<?= editorial_h(editorial_url('review.php')) ?>" style="font-size:0.85rem;">
                     <i class="fa-solid fa-arrow-left"></i> Về danh sách chờ duyệt
@@ -171,16 +167,19 @@ if ($articleId !== '') {
 
         <?php if ($revision): ?>
             <div class="editor-info-panel" style="margin-bottom:20px; padding:16px; background:#f8f9fa; border:1px solid #dee2e6; border-radius:8px;">
-                <h3 style="margin-top:0; font-size:1rem;"><?= $status === 'approved' ? 'Thông tin phiên bản đã duyệt' : 'Thông tin phiên bản gửi duyệt' ?></h3>
+                <h3 style="margin-top:0; font-size:1rem;"><?= ($status === 'approved' || $isHistoricalApprovedDossier) ? 'Thông tin phiên bản đã duyệt' : 'Thông tin phiên bản gửi duyệt' ?></h3>
                 <p><strong>Revision #:</strong> <?= editorial_h((string) $revision['revision_no']) ?></p>
                 <p><strong>Loại:</strong> <?= editorial_h(editorial_revision_label($revision)) ?></p>
                 <p><strong>Người gửi:</strong> <?= editorial_h($requester ? (string) ($requester['display_name'] ?? $requester['username']) : (string) $revision['created_by']) ?></p>
                 <p><strong>Thời gian gửi:</strong> <?= editorial_h(editorial_format_datetime((string) $revision['created_at'])) ?></p>
-                <?php if ($status === 'approved'): ?>
+                <?php if ($status === 'approved' || $isHistoricalApprovedDossier): ?>
                     <p><strong>Người duyệt:</strong> <?= editorial_h($approver ? (string) ($approver['display_name'] ?? $approver['username']) : (string) ($state['approved_by'] ?? '')) ?></p>
                     <p><strong>Thời gian duyệt:</strong> <?= editorial_h(editorial_format_datetime((string) ($state['approved_at'] ?? ''))) ?></p>
                     <?php if (!empty($detailRevision['legacy'])): ?>
                         <p><strong>Hồ sơ:</strong> <span style="color:#9a6700;">Phiên duyệt cũ</span></p>
+                    <?php endif; ?>
+                    <?php if ($isHistoricalApprovedDossier): ?>
+                        <p><strong>Trạng thái hiện tại:</strong> <?= editorial_h(editorial_status_label($status)) ?></p>
                     <?php endif; ?>
                 <?php endif; ?>
                 <p><strong>Ghi chú:</strong> <?= editorial_h((string) ($revision['note'] ?? '')) ?: '<span style="color:#868e96;">—</span>' ?></p>
@@ -343,9 +342,6 @@ if ($articleId !== '') {
                         vào <?= editorial_h(editorial_format_datetime((string) ($state['approved_at'] ?? ''))) ?>
                     <?php endif; ?>
                 </p>
-                <a href="<?= editorial_h(editorial_url('review-preview.php?id=' . urlencode($articleId))) ?>" class="editorial-secondary-action" target="_blank" rel="noopener">
-                    <i class="fa-solid fa-file-circle-check"></i> Xem bản đã duyệt
-                </a>
                 <a href="<?= editorial_h(editorial_url('publish.php?id=' . urlencode($articleId))) ?>" class="editorial-approve-btn">
                     <i class="fa-solid fa-rocket"></i> Chuẩn bị Publish
                 </a>
@@ -515,9 +511,6 @@ if ($articleId !== '') {
                                     <a href="<?= editorial_h(editorial_url('review.php?id=' . urlencode((string) $a['id']))) ?>" class="admin-btn admin-btn-sm">
                                         <i class="fa-solid fa-clipboard-check"></i> Mở duyệt
                                     </a>
-                                    <a href="<?= editorial_h(editorial_url('review-preview.php?id=' . urlencode((string) $a['id']))) ?>" class="editorial-secondary-action" target="_blank" rel="noopener">
-                                        <i class="fa-solid fa-eye"></i> Xem bản gửi duyệt
-                                    </a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -564,13 +557,15 @@ if ($articleId !== '') {
                                 </td>
                                 <td><?= editorial_h($ownerName) ?></td>
                                 <td><?= editorial_h($approvedByName) ?></td>
-                                <td><?= !empty($s['approved_at']) ? editorial_h(editorial_format_datetime((string) $s['approved_at'])) : '—' ?></td>
+                                <td>
+                                    <?= !empty($s['approved_at']) ? editorial_h(editorial_format_datetime((string) $s['approved_at'])) : '—' ?>
+                                    <?php if ((string) ($s['status'] ?? '') !== 'approved'): ?>
+                                        <br><small style="color:#64748b;">Hiện: <?= editorial_h(editorial_status_label((string) $s['status'])) ?></small>
+                                    <?php endif; ?>
+                                </td>
                                 <td class="editorial-action-cell">
                                     <a href="<?= editorial_h(editorial_url('review.php?id=' . urlencode((string) $a['id']))) ?>" class="admin-btn admin-btn-sm">
                                         <i class="fa-solid fa-clipboard-check"></i> Xem hồ sơ
-                                    </a>
-                                    <a href="<?= editorial_h(editorial_url('review-preview.php?id=' . urlencode((string) $a['id']))) ?>" class="editorial-secondary-action" target="_blank" rel="noopener">
-                                        <i class="fa-solid fa-file-circle-check"></i> Xem bản đã duyệt
                                     </a>
                                 </td>
                             </tr>

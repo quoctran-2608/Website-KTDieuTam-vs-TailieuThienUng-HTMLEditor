@@ -159,7 +159,6 @@
 .editorial-action-cell a:hover {
     color: #1565c0;
 }
-.editorial-secondary-action,
 .editorial-review-navigation-primary {
     display: inline-flex;
     align-items: center;
@@ -173,7 +172,6 @@
     line-height: 1.2;
     text-decoration: none;
 }
-.editorial-secondary-action:hover,
 .editorial-review-navigation-primary:hover {
     border-color: #90b9df;
     background: #f3f8fd;
@@ -190,6 +188,38 @@
 }
 .editorial-recent-approved-empty {
     margin: 0;
+    color: #64748b;
+}
+.editorial-resume-form {
+    display: inline;
+}
+.editorial-approved-checkpoint {
+    color: #26734d;
+    font-size: .8rem;
+}
+.editorial-approved-checkpoint-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 0 0 12px;
+    padding: 9px 11px;
+    border: 1px solid #a7d7ba;
+    border-radius: 8px;
+    background: #f1fbf4;
+    color: #205c3c;
+    font-size: .82rem;
+    line-height: 1.35;
+}
+.editorial-approved-checkpoint-banner > i {
+    margin-top: 2px;
+    color: #2e7d32;
+}
+.editorial-approved-checkpoint-banner strong {
+    color: #185936;
+}
+.editorial-approved-checkpoint-banner small {
+    display: block;
+    margin-top: 2px;
     color: #64748b;
 }
 

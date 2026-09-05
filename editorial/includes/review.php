@@ -135,13 +135,14 @@ function editorial_resolve_review_stage_bundle(string $articleId, array $reviewR
         ];
     }
 
-    $activeStages = editorial_get_active_stage_bundle($articleId, $assignmentId);
-    $stage1 = $activeStages['stage1'];
-    $activeStage2 = $activeStages['stage2'];
-    if ($stage1 === null
-        || $activeStage2 === null
-        || (string) ($activeStage2['id'] ?? '') !== (string) ($stage2['id'] ?? '')
-        || (int) ($stage1['revision_no'] ?? 0) >= (int) ($stage2['revision_no'] ?? 0)) {
+    $stage1Candidates = editorial_get_verified_revisions_for_review(
+        $articleId,
+        $assignmentId,
+        'AND revision_type = \'editorial\' AND milestone_key = \'stage1\' AND revision_no < :stage2_revision_no',
+        ['stage2_revision_no' => (int) ($stage2['revision_no'] ?? 0)]
+    );
+    $stage1 = $stage1Candidates[0] ?? null;
+    if ($stage1 === null) {
         return [
             'ok' => false,
             'legacy' => $legacy,
@@ -162,12 +163,15 @@ function editorial_resolve_review_stage_bundle(string $articleId, array $reviewR
 }
 
 /**
- * Resolve the immutable revision that is authoritative for a read-only review
- * view. Never infer a revision from current/latest pointers.
+ * Resolve the immutable revision shown in Admin's review dossier.
+ *
+ * For active review, review_revision_id remains the authority. For an approved
+ * checkpoint — including an article resumed to editing/returned — the dossier
+ * uses approved_revision_id only and never guesses a latest revision.
  *
  * @return array{ok:bool,revision?:array<string,mixed>,snapshot?:array<string,mixed>,label?:string,legacy?:bool,message:string}
  */
-function editorial_resolve_review_readonly_revision(string $articleId, array $state): array
+function editorial_resolve_review_dossier_revision(string $articleId, array $state): array
 {
     $status = (string) ($state['status'] ?? '');
     $revisionId = '';
@@ -177,10 +181,10 @@ function editorial_resolve_review_readonly_revision(string $articleId, array $st
     if ($status === 'ready_review') {
         $revisionId = trim((string) ($state['review_revision_id'] ?? ''));
         $label = 'Bản gửi duyệt';
-    } elseif ($status === 'approved') {
+    } elseif ($status === 'approved' || in_array($status, ['editing', 'returned'], true)) {
         $revisionId = trim((string) ($state['approved_revision_id'] ?? ''));
-        $label = 'Bản đã duyệt';
-        if ($revisionId === '') {
+        $label = 'Hồ sơ duyệt gần nhất';
+        if ($status === 'approved' && $revisionId === '') {
             $revisionId = trim((string) ($state['review_revision_id'] ?? ''));
             $legacy = $revisionId !== '';
         }
@@ -189,7 +193,7 @@ function editorial_resolve_review_readonly_revision(string $articleId, array $st
     }
 
     if ($revisionId === '') {
-        return ['ok' => false, 'message' => $status === 'approved'
+        return ['ok' => false, 'message' => in_array($status, ['approved', 'editing', 'returned'], true)
             ? 'Không thể xác thực bản đã duyệt.'
             : 'Không thể xác thực bản gửi duyệt.'];
     }
@@ -198,14 +202,14 @@ function editorial_resolve_review_readonly_revision(string $articleId, array $st
     if (!$revision
         || (string) ($revision['article_id'] ?? '') !== $articleId
         || (string) ($revision['revision_type'] ?? '') !== 'editorial') {
-        return ['ok' => false, 'message' => $status === 'approved'
+        return ['ok' => false, 'message' => in_array($status, ['approved', 'editing', 'returned'], true)
             ? 'Không thể xác thực bản đã duyệt.'
             : 'Không thể xác thực bản gửi duyệt.'];
     }
 
     $snapshot = editorial_get_verified_revision_snapshot($revision);
     if (empty($snapshot['ok']) || !is_array($snapshot['payload'] ?? null)) {
-        return ['ok' => false, 'message' => $status === 'approved'
+        return ['ok' => false, 'message' => in_array($status, ['approved', 'editing', 'returned'], true)
             ? 'Không thể xác thực bản đã duyệt.'
             : 'Không thể xác thực bản gửi duyệt.'];
     }
@@ -221,44 +225,6 @@ function editorial_resolve_review_readonly_revision(string $articleId, array $st
 }
 
 /**
- * Render a complete read-only article document from a verified snapshot using
- * the existing Publish renderer. This helper never writes public HTML or DB.
- *
- * @return array{ok:bool,html?:string,message:string}
- */
-function editorial_render_review_readonly_preview(array $article, array $snapshotPayload): array
-{
-    require_once __DIR__ . '/publish.php';
-
-    $htmlPath = editorial_resolve_article_path($article);
-    if ($htmlPath === null) {
-        return ['ok' => false, 'message' => 'Không thể chuẩn bị giao diện bài viết để xem bản lưu.'];
-    }
-    $liveHtml = file_get_contents($htmlPath);
-    if ($liveHtml === false || $liveHtml === '') {
-        return ['ok' => false, 'message' => 'Không thể chuẩn bị giao diện bài viết để xem bản lưu.'];
-    }
-    $parsed = editorial_parse_article_html($liveHtml, '');
-    if (empty($parsed['ok'])) {
-        return ['ok' => false, 'message' => 'Không thể chuẩn bị giao diện bài viết để xem bản lưu.'];
-    }
-    $normalized = editorial_normalize_publish_payload(
-        $snapshotPayload,
-        (array) ($parsed['meta_payload'] ?? []),
-        $article
-    );
-    $rendered = editorial_render_approved_html($liveHtml, $article, $normalized, false);
-    if (empty($rendered['ok'])) {
-        return ['ok' => false, 'message' => 'Không thể dựng bản lưu để xem.'];
-    }
-    $validated = editorial_validate_rendered_html((string) ($rendered['html'] ?? ''), $normalized);
-    if (empty($validated['ok'])) {
-        return ['ok' => false, 'message' => 'Không thể xác thực nội dung bản lưu để xem.'];
-    }
-    return ['ok' => true, 'html' => (string) $rendered['html'], 'message' => ''];
-}
-
-/**
  * Return the newest approved records with an immutable approved revision.
  *
  * @return array<int,array<string,mixed>>
@@ -268,8 +234,8 @@ function editorial_get_recent_approved_reviews(int $limit = 20): array
     $limit = max(1, min($limit, 100));
     $stmt = editorial_db()->prepare("
         SELECT * FROM editorial_article_state
-        WHERE status = 'approved'
-          AND TRIM(COALESCE(approved_revision_id, '')) <> ''
+        WHERE TRIM(COALESCE(approved_revision_id, '')) <> ''
+          AND TRIM(COALESCE(approved_at, '')) <> ''
         ORDER BY approved_at DESC
         LIMIT :limit
     ");
@@ -366,9 +332,6 @@ function editorial_send_for_review(string $articleId, string $userId, string $lo
                 review_revision_id = :rev_id,
                 review_requested_by = :req_by,
                 review_requested_at = :req_at,
-                approved_revision_id = NULL,
-                approved_by = NULL,
-                approved_at = NULL,
                 updated_at = :upd
             WHERE article_id = :aid
         ");
@@ -518,9 +481,6 @@ function editorial_return_review(string $articleId, string $adminUserId, string 
         $stmtUpd = $db->prepare("
             UPDATE editorial_article_state
             SET status = 'returned',
-                approved_revision_id = NULL,
-                approved_by = NULL,
-                approved_at = NULL,
                 updated_at = :upd
             WHERE article_id = :aid
         ");

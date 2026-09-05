@@ -354,6 +354,14 @@ $handoffDisabledReason = !$handoffSettingsReady
     : 'Hãy hoàn tất Chặng 1 trước khi lưu Drive + Sheet.';
 $hasPublication = trim((string) ($state['published_revision_id'] ?? '')) !== '';
 $publishedAt = trim((string) ($state['published_at'] ?? ''));
+$approvedCheckpoint = null;
+$approvedCheckpointUser = null;
+if (trim((string) ($state['approved_revision_id'] ?? '')) !== '') {
+    $approvedCheckpoint = editorial_get_revision((string) $state['approved_revision_id']);
+    if (trim((string) ($state['approved_by'] ?? '')) !== '') {
+        $approvedCheckpointUser = editorial_find_user_by_id((string) $state['approved_by']);
+    }
+}
 $saveStatusText = $hasSavedDraft
     ? '✓ v' . $draftVersion
     : 'Chưa có bản nháp đã lưu';
@@ -732,6 +740,22 @@ editorial_layout_header([
         <div class="flash flash-warning">
             <i class="fa-solid fa-triangle-exclamation"></i>
             File HTML trên website đã thay đổi kể từ khi bạn nhận bài. Bạn vẫn có thể xem/lưu bản nháp, nhưng Publish sau này sẽ phải xử lý xung đột trước.
+        </div>
+    <?php endif; ?>
+
+    <?php if ($approvedCheckpoint !== null): ?>
+        <div class="editorial-approved-checkpoint-banner">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+                <strong>Admin đã duyệt Revision #<?= editorial_h((string) ($approvedCheckpoint['revision_no'] ?? '')) ?></strong>
+                <?php if ($approvedCheckpointUser !== null): ?>
+                    · bởi <?= editorial_h((string) ($approvedCheckpointUser['display_name'] ?? $approvedCheckpointUser['username'])) ?>
+                <?php endif; ?>
+                <?php if (trim((string) ($state['approved_at'] ?? '')) !== ''): ?>
+                    · <?= editorial_h(editorial_format_datetime((string) $state['approved_at'])) ?>
+                <?php endif; ?>
+                <small>Những thay đổi sau lần duyệt này chưa được Admin duyệt lại.</small>
+            </div>
         </div>
     <?php endif; ?>
 
