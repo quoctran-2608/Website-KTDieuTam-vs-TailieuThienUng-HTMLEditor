@@ -950,9 +950,25 @@ function editorial_public_rebuild_normalize_static_asset(string $value, string $
 {
     $value = html_entity_decode(trim($value), ENT_QUOTES | ENT_HTML5, 'UTF-8');
     $value = preg_split('/[?#]/', $value, 2)[0] ?? '';
-    if ($value === '' || preg_match('#^(?:https?:)?//#i', $value) === 1 || preg_match('#^(?:data|blob):#i', $value) === 1) {
+    if ($value === '' || preg_match('#^(?:data|blob):#i', $value) === 1) {
         return $value;
     }
+    if (preg_match('#^(?:https?:)?//#i', $value) === 1) {
+        $absolute = str_starts_with($value, '//') ? 'https:' . $value : $value;
+        $host = strtolower((string) parse_url($absolute, PHP_URL_HOST));
+        if (in_array($host, [
+            'ketoandieutam.vn',
+            'www.ketoandieutam.vn',
+            'ketoandieutam.com',
+            'www.ketoandieutam.com',
+        ], true)) {
+            $path = parse_url($absolute, PHP_URL_PATH);
+            $value = is_string($path) ? $path : $value;
+        } else {
+            return $absolute;
+        }
+    }
+    $value = rawurldecode(str_replace('\\', '/', $value));
     if (str_starts_with($value, '/')) {
         return ltrim($value, '/');
     }
@@ -972,15 +988,126 @@ function editorial_public_rebuild_normalize_static_asset(string $value, string $
 }
 
 /**
+ * Make the target image authoritative in dynamic derived artifacts before
+ * static-card synchronization. This repairs representation drift left by any
+ * successful data builder without weakening final verification.
+ *
+ * @return array{ok:bool,code:string,message:string,summary?:array<string,bool>}
+ */
+function editorial_public_rebuild_sync_target_image_data(array $article): array
+{
+    $articleId = editorial_public_rebuild_text($article['id'] ?? ($article['href'] ?? ''));
+    $section = editorial_public_rebuild_text($article['section'] ?? '');
+    $expectedImage = editorial_public_rebuild_text($article['image'] ?? '');
+    if ($articleId === '' || !in_array($section, ['thu-vien', 'ban-tin'], true)) {
+        return [
+            'ok' => false,
+            'code' => 'target_image_data_invalid',
+            'message' => 'Không xác định được dữ liệu ảnh mục tiêu sau rebuild.',
+        ];
+    }
+
+    $index = editorial_public_rebuild_existing_index();
+    if (!is_array($index['articles'][$articleId] ?? null)) {
+        return [
+            'ok' => false,
+            'code' => 'target_image_index_article_missing',
+            'message' => 'Không tìm thấy bài mục tiêu trong content-index.js.',
+        ];
+    }
+    $indexChanged = !hash_equals(
+        editorial_public_rebuild_normalize_static_asset($expectedImage, ''),
+        editorial_public_rebuild_normalize_static_asset(
+            editorial_public_rebuild_text($index['articles'][$articleId]['image'] ?? ''),
+            ''
+        )
+    );
+    if ($indexChanged) {
+        $index['articles'][$articleId]['image'] = $expectedImage;
+        $indexJson = json_encode($index, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        if ($indexJson === false || !editorial_public_rebuild_atomic_write(
+            editorial_public_rebuild_root('content-index.js'),
+            'window.KetoanDieuTamContentIndex=' . $indexJson . ";\n"
+        )) {
+            return [
+                'ok' => false,
+                'code' => 'target_image_content_index_sync_failed',
+                'message' => 'Không thể đồng bộ ảnh mục tiêu vào content-index.js.',
+            ];
+        }
+    }
+
+    $hubPath = editorial_public_rebuild_root('data/hubs/' . $section . '.json');
+    $hub = editorial_public_rebuild_read_json($hubPath);
+    if (!is_array($hub) || !is_array($hub['articles'] ?? null)) {
+        return [
+            'ok' => false,
+            'code' => 'target_image_hub_data_missing',
+            'message' => 'Không đọc được dữ liệu hub của bài mục tiêu.',
+        ];
+    }
+    $matches = 0;
+    $hubChanged = false;
+    foreach ($hub['articles'] as &$hubArticle) {
+        if (is_array($hubArticle)
+            && editorial_public_rebuild_text($hubArticle['href'] ?? '') === $articleId) {
+            $matches++;
+            if (!hash_equals(
+                editorial_public_rebuild_normalize_static_asset($expectedImage, ''),
+                editorial_public_rebuild_normalize_static_asset(
+                    editorial_public_rebuild_text($hubArticle['image'] ?? ''),
+                    ''
+                )
+            )) {
+                $hubArticle['image'] = $expectedImage;
+                $hubChanged = true;
+            }
+        }
+    }
+    unset($hubArticle);
+    if ($matches !== 1) {
+        return [
+            'ok' => false,
+            'code' => 'target_image_hub_article_match_failed',
+            'message' => 'Không tìm thấy đúng một bài mục tiêu trong hub JSON.',
+        ];
+    }
+    if ($hubChanged && (!editorial_public_rebuild_write_json($hubPath, $hub)
+        || !editorial_public_rebuild_write_js_store(
+            editorial_public_rebuild_root('data/hubs/' . $section . '.js'),
+            'KetoanDieuTamHubStore',
+            $section,
+            $hub
+        ))) {
+        return [
+            'ok' => false,
+            'code' => 'target_image_hub_sync_failed',
+            'message' => 'Không thể đồng bộ ảnh mục tiêu vào hub JSON/JS.',
+        ];
+    }
+    return [
+        'ok' => true,
+        'code' => 'target_image_data_synced',
+        'message' => '',
+        'summary' => [
+            'content_index_changed' => $indexChanged,
+            'hub_changed' => $hubChanged,
+        ],
+    ];
+}
+
+/**
  * @return array{ok:bool,message:string,pages?:array<int,string>}
  */
-function editorial_public_rebuild_verify_static_card(array $article): array
+function editorial_public_rebuild_verify_static_card(array $article, array $knownPages = []): array
 {
     $articleId = editorial_public_rebuild_text($article['id'] ?? ($article['href'] ?? ''));
     $section = editorial_public_rebuild_text($article['section'] ?? '');
     $expectedImage = editorial_public_rebuild_text($article['image'] ?? '');
     $hub = editorial_public_rebuild_read_json(editorial_public_rebuild_root('data/hubs/' . $section . '.json'));
-    $pageMap = is_array($hub['pageMap'] ?? null) ? $hub['pageMap'] : [];
+    $pageMap = $knownPages !== []
+        ? array_values(array_filter($knownPages, 'is_string'))
+        : (is_array($hub['pageMap'] ?? null) ? array_values($hub['pageMap']) : []);
     $matchedPages = [];
     foreach ($pageMap as $relativePath) {
         $relativePath = editorial_public_rebuild_text($relativePath);
@@ -994,7 +1121,11 @@ function editorial_public_rebuild_verify_static_card(array $article): array
             $html,
             $cards
         ) === false) {
-            return ['ok' => false, 'message' => 'Không thể đọc card hub tĩnh để xác minh.'];
+            return [
+                'ok' => false,
+                'code' => 'static_card_parse_failed',
+                'message' => 'Không thể đọc card hub tĩnh để xác minh.',
+            ];
         }
         foreach ($cards[0] as $card) {
             if (!editorial_public_rebuild_card_targets_article((string) $card, $articleId)) {
@@ -1005,7 +1136,11 @@ function editorial_public_rebuild_verify_static_card(array $article): array
                 (string) $card,
                 $imageMatch
             ) !== 1) {
-                return ['ok' => false, 'message' => 'Card bài viết không có ảnh media để xác minh.'];
+                return [
+                    'ok' => false,
+                    'code' => 'static_card_media_missing',
+                    'message' => 'Card bài viết không có ảnh media để xác minh.',
+                ];
             }
             $actualSrc = (string) $imageMatch[3];
             break;
@@ -1016,20 +1151,28 @@ function editorial_public_rebuild_verify_static_card(array $article): array
         $actual = editorial_public_rebuild_normalize_static_asset($actualSrc, $relativePath);
         $expected = editorial_public_rebuild_normalize_static_asset($expectedImage, '');
         if (!hash_equals($expected, $actual)) {
-            return ['ok' => false, 'message' => 'Ảnh card hub tĩnh chưa khớp dữ liệu Publish.'];
+            return [
+                'ok' => false,
+                'code' => 'static_card_image_mismatch',
+                'message' => 'Ảnh card hub tĩnh chưa khớp dữ liệu Publish.',
+            ];
         }
         $matchedPages[] = $relativePath;
     }
     if ($matchedPages === []) {
-        return ['ok' => false, 'message' => 'Không tìm thấy card bài viết để xác minh ảnh hub tĩnh.'];
+        return [
+            'ok' => false,
+            'code' => 'static_card_not_found',
+            'message' => 'Không tìm thấy card bài viết để xác minh ảnh hub tĩnh.',
+        ];
     }
-    return ['ok' => true, 'message' => '', 'pages' => $matchedPages];
+    return ['ok' => true, 'code' => 'static_card_verified', 'message' => '', 'pages' => $matchedPages];
 }
 
 /**
  * @return array{ok:bool,message:string,summary?:array<string,mixed>}
  */
-function editorial_public_rebuild_verify_target_image(string $articleId): array
+function editorial_public_rebuild_verify_target_image(string $articleId, array $knownStaticPages = []): array
 {
     $articles = editorial_public_rebuild_read_articles();
     $target = null;
@@ -1040,14 +1183,29 @@ function editorial_public_rebuild_verify_target_image(string $articleId): array
         }
     }
     if ($target === null) {
-        return ['ok' => false, 'message' => 'Không tìm thấy ảnh bài trong data/articles.json sau rebuild.'];
+        return [
+            'ok' => false,
+            'code' => 'target_article_not_found',
+            'message' => 'Không tìm thấy ảnh bài trong data/articles.json sau rebuild.',
+        ];
     }
     $expectedImage = editorial_public_rebuild_text($target['image'] ?? '');
+    $expectedIdentity = editorial_public_rebuild_normalize_static_asset($expectedImage, '');
     $index = editorial_public_rebuild_existing_index();
     $indexArticle = $index['articles'][$articleId] ?? null;
     if (!is_array($indexArticle)
-        || !hash_equals($expectedImage, editorial_public_rebuild_text($indexArticle['image'] ?? ''))) {
-        return ['ok' => false, 'message' => 'Ảnh bài trong content-index.js chưa khớp dữ liệu Publish.'];
+        || !hash_equals(
+            $expectedIdentity,
+            editorial_public_rebuild_normalize_static_asset(
+                editorial_public_rebuild_text($indexArticle['image'] ?? ''),
+                ''
+            )
+        )) {
+        return [
+            'ok' => false,
+            'code' => 'content_index_image_mismatch',
+            'message' => 'Ảnh bài trong content-index.js chưa khớp dữ liệu Publish.',
+        ];
     }
     $section = editorial_public_rebuild_text($target['section'] ?? '');
     $hub = editorial_public_rebuild_read_json(editorial_public_rebuild_root('data/hubs/' . $section . '.json'));
@@ -1060,15 +1218,30 @@ function editorial_public_rebuild_verify_target_image(string $articleId): array
         }
     }
     if ($hubArticle === null
-        || !hash_equals($expectedImage, editorial_public_rebuild_text($hubArticle['image'] ?? ''))) {
-        return ['ok' => false, 'message' => 'Ảnh bài trong hub JSON chưa khớp dữ liệu Publish.'];
+        || !hash_equals(
+            $expectedIdentity,
+            editorial_public_rebuild_normalize_static_asset(
+                editorial_public_rebuild_text($hubArticle['image'] ?? ''),
+                ''
+            )
+        )) {
+        return [
+            'ok' => false,
+            'code' => 'hub_json_image_mismatch',
+            'message' => 'Ảnh bài trong hub JSON chưa khớp dữ liệu Publish.',
+        ];
     }
-    $static = editorial_public_rebuild_verify_static_card($target);
+    $static = editorial_public_rebuild_verify_static_card($target, $knownStaticPages);
     if (empty($static['ok'])) {
-        return ['ok' => false, 'message' => (string) $static['message']];
+        return [
+            'ok' => false,
+            'code' => (string) ($static['code'] ?? 'static_card_verification_failed'),
+            'message' => (string) $static['message'],
+        ];
     }
     return [
         'ok' => true,
+        'code' => 'target_image_verified',
         'message' => '',
         'summary' => [
             'article_id' => $articleId,
@@ -1379,6 +1552,20 @@ function editorial_public_rebuild_run(string $articleId): array
             'message' => 'Không tìm thấy bài mục tiêu trong dữ liệu public sau rebuild.',
         ]);
     }
+    $targetImageData = editorial_public_rebuild_sync_target_image_data($targetArticle);
+    if (empty($targetImageData['ok'])) {
+        return array_merge($result, [
+            'ok' => false,
+            'code' => 'target_image_data_sync_failed',
+            'detail_code' => (string) ($targetImageData['code'] ?? 'target_image_data_sync_failed'),
+            'message' => (string) ($targetImageData['message'] ?? 'Không thể đồng bộ dữ liệu ảnh mục tiêu.'),
+            'target_image_data_sync' => $targetImageData,
+        ]);
+    }
+    $result['target_image_data_sync'] = [
+        'code' => (string) ($targetImageData['code'] ?? 'target_image_data_synced'),
+        'summary' => $targetImageData['summary'] ?? [],
+    ];
     $staticHub = editorial_public_rebuild_sync_static_hub_card($targetArticle);
     if (empty($staticHub['ok'])) {
         return array_merge($result, [
@@ -1389,11 +1576,15 @@ function editorial_public_rebuild_run(string $articleId): array
         ]);
     }
     $result['static_hub_sync'] = ['pages' => $staticHub['pages'] ?? []];
-    $verification = editorial_public_rebuild_verify_target_image($articleId);
+    $verification = editorial_public_rebuild_verify_target_image(
+        $articleId,
+        is_array($staticHub['pages'] ?? null) ? $staticHub['pages'] : []
+    );
     if (empty($verification['ok'])) {
         return array_merge($result, [
             'ok' => false,
             'code' => 'target_image_verification_failed',
+            'detail_code' => (string) ($verification['code'] ?? 'target_image_verification_failed'),
             'message' => $verification['message'] ?? 'Ảnh bìa public chưa đồng bộ đầy đủ.',
             'target_image_verification' => $verification,
         ]);
