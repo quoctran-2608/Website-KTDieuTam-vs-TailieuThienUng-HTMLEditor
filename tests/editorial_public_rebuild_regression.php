@@ -47,7 +47,8 @@ foreach ([
         $html,
         $articleId,
         $siteImage,
-        'Ảnh kiểm thử'
+        'Ảnh kiểm thử',
+        'Alt kiểm thử'
     );
     if (empty($patched['ok']) || empty($patched['matched'])) {
         $failures[] = 'card patch failed for ' . $case['page'];
@@ -62,6 +63,15 @@ foreach ([
         $case['page']
     );
     $expectSame('patched card identity for ' . $case['page'], $siteImage, $actualIdentity);
+    if (preg_match('/<img\b[^>]*\balt=(["\'])(.*?)\1/i', (string) $patched['html'], $altMatch) !== 1) {
+        $failures[] = 'patched image alt missing for ' . $case['page'];
+        continue;
+    }
+    $expectSame(
+        'patched card alt for ' . $case['page'],
+        'Alt kiểm thử',
+        html_entity_decode((string) $altMatch[2], ENT_QUOTES | ENT_HTML5, 'UTF-8')
+    );
 }
 
 if ($failures !== []) {

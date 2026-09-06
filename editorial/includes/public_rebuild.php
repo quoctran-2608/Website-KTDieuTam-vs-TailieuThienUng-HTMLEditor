@@ -1204,7 +1204,7 @@ function editorial_public_rebuild_verify_static_card(array $article, array $know
                     'message' => 'Card bài viết không có ảnh media để xác minh.',
                 ];
             }
-            $imageTag = (string) $imageMatch[3];
+            $imageTag = (string) $imageMatch[2];
             $actualSrc = editorial_public_rebuild_html_attribute($imageTag, 'src');
             $actualAlt = editorial_public_rebuild_html_attribute($imageTag, 'alt');
             break;
