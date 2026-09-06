@@ -124,7 +124,7 @@ Script này kiểm tra:
 - Windows runner: `tools\admin_phase6_pre_go_live.bat`
 - sign-off mẫu: `docs/editor-php/pre-go-live-signoff-template.md`
 
-## Ghi chú môi trường hiện tại
+## Ghi chú runtime legacy
 
-- Workspace hiện tại chưa có `php` CLI, nên chưa chạy được lint/runtime trực tiếp tại đây.
-- Mã đã được viết theo PHP 8+ syntax, có healthcheck để bạn tự verify nhanh khi chạy ở máy có PHP.
+- Legacy Admin dùng PHP 8+ syntax và có healthcheck để kiểm tra nhanh trên môi
+  trường đã cấu hình PHP phù hợp.

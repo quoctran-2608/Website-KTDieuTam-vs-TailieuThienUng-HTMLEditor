@@ -60,7 +60,7 @@ Do đó workflow ownership và last-publication facts là hai khái niệm độ
 
 ## Ownership model
 
-Current edit authority là:
+Current ownership / assignment pointer là:
 
 ```text
 editorial_article_state.assigned_user_id
@@ -68,6 +68,10 @@ editorial_article_state.assigned_user_id
 
 Assignment history chỉ giải thích ai từng làm bài. Contributor lịch sử không có
 quyền mở Workspace, lưu Draft, upload media, gửi duyệt hay Publish.
+
+`assigned_user_id` xác định current owner, nhưng không tự nó cấp quyền cho mọi
+write. Mỗi service còn kiểm tra tổ hợp phù hợp của workflow status, active
+assignment, role/policy, CSRF và lock token/expiry khi operation yêu cầu lock.
 
 ### Self-claim
 

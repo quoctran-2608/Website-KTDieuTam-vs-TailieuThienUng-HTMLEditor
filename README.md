@@ -80,6 +80,8 @@ Available → Editing → Ready Review → Approved → Published
 - [AGENTS.md](AGENTS.md) — quick context và bất biến an toàn cho AI/agent.
 - [docs/README.md](docs/README.md) — chỉ mục toàn bộ tài liệu.
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — kiến trúc repository.
+- [docs/CHANGE_IMPACT_MAP.md](docs/CHANGE_IMPACT_MAP.md) — muốn sửa tính năng
+  nào, bắt đầu ở file nào và invariant nào có thể bị ảnh hưởng.
 - [docs/EDITORIAL_V2.md](docs/EDITORIAL_V2.md) — reference Editorial V2.
 - [docs/PUBLISH_AND_HANDOFF.md](docs/PUBLISH_AND_HANDOFF.md) — Publish, rebuild, media, Drive/Sheet.
 - [docs/OPERATIONS.md](docs/OPERATIONS.md) — triển khai, runtime và vận hành.

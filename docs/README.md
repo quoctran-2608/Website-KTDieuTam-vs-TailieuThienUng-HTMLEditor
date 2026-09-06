@@ -8,15 +8,18 @@
 1. Đọc [`../AGENTS.md`](../AGENTS.md).
 2. Đọc [`../README.md`](../README.md).
 3. Đọc [ARCHITECTURE.md](ARCHITECTURE.md).
-4. Nếu chạm Editorial V2, đọc [`../editorial/README.md`](../editorial/README.md).
-5. Đọc tài liệu chuyên sâu phù hợp: Editorial, Publish/Handoff hoặc Operations.
-6. Mở module mã tương ứng trước khi sửa; tài liệu không thay thế code.
+4. Dùng [CHANGE_IMPACT_MAP.md](CHANGE_IMPACT_MAP.md) để route thay đổi tới
+   authority và blast radius.
+5. Nếu chạm Editorial V2, đọc [`../editorial/README.md`](../editorial/README.md).
+6. Đọc tài liệu chuyên sâu phù hợp: Editorial, Publish/Handoff hoặc Operations.
+7. Mở module mã tương ứng trước khi sửa; tài liệu không thay thế code.
 
 ## Canonical — current
 
 | Tài liệu | Dùng khi |
 |---|---|
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Cần hiểu boundary giữa public site, data, Editorial, legacy Admin và tools. |
+| [CHANGE_IMPACT_MAP.md](CHANGE_IMPACT_MAP.md) | Cần biết sửa feature nào thì bắt đầu ở file nào, blast radius và invariant nào cần giữ. |
 | [EDITORIAL_V2.md](EDITORIAL_V2.md) | Cần sửa workflow, ownership, draft, revision, stage, review hoặc module Editorial. |
 | [PUBLISH_AND_HANDOFF.md](PUBLISH_AND_HANDOFF.md) | Cần sửa Publish, ảnh, rebuild public, marker hoặc Google Drive/Sheet. |
 | [OPERATIONS.md](OPERATIONS.md) | Cần triển khai, cấu hình, cấp quyền filesystem hoặc xử lý sự cố runtime. |

@@ -29,7 +29,8 @@ article file.
 
 The public site is a filesystem-backed static site:
 
-- root-level `*.html` files are article/detail pages;
+- many root-level `*.html` files are article/detail pages, alongside homepage,
+  hubs and other public pages;
 - `thu-vien.html` and `ban-tin.html` are public content hubs;
 - paginated hub pages live below `thu-vien/trang/` and `ban-tin/trang/`;
 - `assets/`, `article-layout.js` and `article-sidebar.js` provide public

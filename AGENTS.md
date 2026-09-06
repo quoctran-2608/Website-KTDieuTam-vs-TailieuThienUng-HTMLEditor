@@ -10,8 +10,9 @@ Read in this order before changing code:
 1. `AGENTS.md`
 2. `README.md`
 3. `docs/ARCHITECTURE.md`
-4. `editorial/README.md`
-5. The detailed document for the subsystem being changed
+4. `docs/CHANGE_IMPACT_MAP.md` when changing behavior
+5. `editorial/README.md` for Editorial V2 work
+6. The detailed document and implementation module for the subsystem being changed
 
 For a change in Editorial V2, then read the matching implementation module in
 `editorial/includes/`. Do not infer current behavior from old phase documents.
@@ -59,8 +60,11 @@ An empty owner alone never grants claim permission.
 
 ### INV-06 — Current ownership authority
 
-`editorial_article_state.assigned_user_id` is the current edit authority.
-Historical contributor evidence does not grant edit permission.
+`editorial_article_state.assigned_user_id` identifies the current ownership /
+assignment authority. It is not by itself sufficient for every write: the
+operation also enforces the required workflow status, active-assignment
+consistency, role/policy, CSRF and lock/token where applicable. Historical
+contributor evidence does not grant edit permission.
 
 ### INV-07 — Lock is not assignment
 
@@ -204,6 +208,7 @@ Canonical documents are:
 - `README.md`
 - `docs/README.md`
 - `docs/ARCHITECTURE.md`
+- `docs/CHANGE_IMPACT_MAP.md`
 - `docs/EDITORIAL_V2.md`
 - `docs/PUBLISH_AND_HANDOFF.md`
 - `docs/OPERATIONS.md`

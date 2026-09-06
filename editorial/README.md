@@ -87,6 +87,7 @@ Payload và revision lưu public path tương đối site root.
 - [`../README.md`](../README.md)
 - [`../AGENTS.md`](../AGENTS.md)
 - [`../docs/ARCHITECTURE.md`](../docs/ARCHITECTURE.md)
+- [`../docs/CHANGE_IMPACT_MAP.md`](../docs/CHANGE_IMPACT_MAP.md)
 - [`../docs/EDITORIAL_V2.md`](../docs/EDITORIAL_V2.md)
 - [`../docs/PUBLISH_AND_HANDOFF.md`](../docs/PUBLISH_AND_HANDOFF.md)
 - [`../docs/OPERATIONS.md`](../docs/OPERATIONS.md)
