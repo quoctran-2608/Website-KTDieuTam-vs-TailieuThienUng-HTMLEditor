@@ -135,6 +135,10 @@ if (editorial_is_post()) {
             'publish_date' => trim((string) ($_POST['publish_date'] ?? '')),
             'modified_date' => trim((string) ($_POST['modified_date'] ?? '')),
             'featured_image' => trim((string) ($_POST['featured_image'] ?? '')),
+            'featured_image_alt' => trim((string) ($_POST['featured_image_alt'] ?? '')),
+            'featured_image_title' => trim((string) ($_POST['featured_image_title'] ?? '')),
+            'featured_image_caption' => trim((string) ($_POST['featured_image_caption'] ?? '')),
+            'featured_image_credit' => trim((string) ($_POST['featured_image_credit'] ?? '')),
             'tags_text' => trim((string) ($_POST['tags_text'] ?? '')),
         ];
 
@@ -336,6 +340,31 @@ try {
         $draftVersion = (int) ($draft['version'] ?? 0);
         $draftContentHash = editorial_revision_content_hash($draft['payload']);
         $draftSavedAt = (string) ($draft['updated_at'] ?? '');
+        $missingFeaturedMetadata = false;
+        foreach ([
+            'featured_image_alt',
+            'featured_image_title',
+            'featured_image_caption',
+            'featured_image_credit',
+        ] as $field) {
+            if (!array_key_exists($field, $form)) {
+                $missingFeaturedMetadata = true;
+                break;
+            }
+        }
+        if ($missingFeaturedMetadata) {
+            $parsed = editorial_parse_article_file($htmlPath);
+            if (!$parsed['ok']) {
+                $abortWorkspaceInitialization(
+                    'draft_featured_metadata_hydration',
+                    'Không thể khởi tạo thông tin ảnh đại diện an toàn. Vui lòng thử lại hoặc báo Admin.'
+                );
+            }
+            $form = editorial_hydrate_featured_image_metadata(
+                $form,
+                (array) ($parsed['meta_payload'] ?? [])
+            );
+        }
     } else {
         $parsed = editorial_parse_article_file($htmlPath);
         if (!$parsed['ok']) {
@@ -486,6 +515,165 @@ $innerScript = <<<JS
     if (/^(?:https?:)?\/\//i.test(path) || /^(?:data|blob):/i.test(path)) return path;
     if (path.startsWith('/')) return window.location.origin + path;
     return siteBaseUrl + path.replace(/^\/+/, '');
+  }
+
+  function normalizeImageCredit(value) {
+    return String(value || '').trim().replace(/^(?:nguồn|source)\s*:\s*/i, '').trim();
+  }
+
+  function resolveSelectedEditorImage(instance) {
+    const selectedNode = instance && instance.selection ? instance.selection.getNode() : null;
+    const selected = selectedNode && selectedNode.nodeType === 1
+      ? selectedNode
+      : (selectedNode ? selectedNode.parentElement : null);
+    if (!selected) return null;
+    if (selected.nodeName === 'IMG') return selected;
+    const nestedImages = selected.querySelectorAll ? selected.querySelectorAll('img') : [];
+    if (nestedImages.length === 1) return nestedImages[0];
+    const figure = selected.closest ? selected.closest('figure') : null;
+    if (!figure) return null;
+    const image = figure.querySelector('img');
+    return image || null;
+  }
+
+  function readInlineImageMetadata(image) {
+    const figure = image && image.closest ? image.closest('figure.article-image') : null;
+    const compatibleFigure = figure && figure.classList.contains('article-image') ? figure : null;
+    return {
+      alt: image ? String(image.getAttribute('alt') || '') : '',
+      title: image ? String(image.getAttribute('title') || '') : '',
+      caption: compatibleFigure
+        ? String((compatibleFigure.querySelector('.article-image-caption') || {}).textContent || '').trim()
+        : '',
+      credit: compatibleFigure
+        ? normalizeImageCredit(String((compatibleFigure.querySelector('.article-image-credit') || {}).textContent || ''))
+        : ''
+    };
+  }
+
+  function writeInlineImageMetadata(instance, image, values) {
+    const alt = String(values.alt || '').trim();
+    const title = String(values.title || '').trim();
+    const caption = String(values.caption || '').trim();
+    const credit = normalizeImageCredit(values.credit);
+    image.setAttribute('alt', alt);
+    if (title) image.setAttribute('title', title);
+    else image.removeAttribute('title');
+
+    let figure = image.closest ? image.closest('figure.article-image') : null;
+    const legacyFigure = image.closest ? image.closest('figure') : null;
+    if (!figure && (caption || credit)) {
+      if (legacyFigure) {
+        instance.notificationManager.open({
+          text: 'Không thể thêm Caption/Nguồn vào cấu trúc figure cũ. Alt và Title đã được cập nhật.',
+          type: 'warning',
+          timeout: 5000
+        });
+      } else if (image.parentNode) {
+        figure = instance.getDoc().createElement('figure');
+        figure.className = 'article-image';
+        figure.setAttribute('data-editorial-image-meta', '1');
+        image.parentNode.insertBefore(figure, image);
+        figure.appendChild(image);
+      }
+    }
+
+    if (figure) {
+      let figcaption = figure.querySelector(':scope > figcaption');
+      if (caption || credit) {
+        if (!figcaption) {
+          figcaption = instance.getDoc().createElement('figcaption');
+          figure.appendChild(figcaption);
+        }
+        let captionNode = figcaption.querySelector('.article-image-caption');
+        let creditNode = figcaption.querySelector('.article-image-credit');
+        if (caption) {
+          if (!captionNode) {
+            captionNode = instance.getDoc().createElement('span');
+            captionNode.className = 'article-image-caption';
+            figcaption.insertBefore(captionNode, figcaption.firstChild);
+          }
+          captionNode.textContent = caption;
+        } else if (captionNode) {
+          captionNode.remove();
+        }
+        if (credit) {
+          if (!creditNode) {
+            creditNode = instance.getDoc().createElement('span');
+            creditNode.className = 'article-image-credit';
+            figcaption.appendChild(creditNode);
+          }
+          creditNode.textContent = 'Nguồn: ' + credit;
+        } else if (creditNode) {
+          creditNode.remove();
+        }
+      } else {
+        if (figcaption) {
+          const captionNode = figcaption.querySelector('.article-image-caption');
+          const creditNode = figcaption.querySelector('.article-image-credit');
+          if (captionNode) captionNode.remove();
+          if (creditNode) creditNode.remove();
+          if (figure.getAttribute('data-editorial-image-meta') === '1'
+            && !figcaption.textContent.trim()) {
+            figcaption.remove();
+          }
+        }
+        if (figure.getAttribute('data-editorial-image-meta') === '1'
+          && figure.children.length === 1
+          && figure.children[0] === image
+          && figure.parentNode) {
+          figure.parentNode.insertBefore(image, figure);
+          figure.remove();
+        }
+      }
+    }
+
+    instance.nodeChanged();
+    markDraftDirty();
+    syncPreview();
+  }
+
+  function openInlineImageMetadataDialog(instance) {
+    const image = resolveSelectedEditorImage(instance);
+    if (!image) {
+      instance.notificationManager.open({
+        text: 'Vui lòng chọn một ảnh trong nội dung trước.',
+        type: 'warning',
+        timeout: 4000
+      });
+      return;
+    }
+    const current = readInlineImageMetadata(image);
+    instance.windowManager.open({
+      title: 'Thông tin ảnh',
+      body: {
+        type: 'panel',
+        items: [
+          { type: 'input', name: 'alt', label: 'Mô tả ảnh / Alt text *' },
+          { type: 'input', name: 'title', label: 'Title' },
+          { type: 'textarea', name: 'caption', label: 'Caption' },
+          { type: 'input', name: 'credit', label: 'Credit / Nguồn ảnh' }
+        ]
+      },
+      initialData: current,
+      buttons: [
+        { type: 'cancel', text: 'Hủy' },
+        { type: 'submit', text: 'Lưu', primary: true }
+      ],
+      onSubmit: (api) => {
+        const values = api.getData();
+        if (!String(values.alt || '').trim()) {
+          instance.notificationManager.open({
+            text: 'Mô tả ảnh / Alt text không được để trống.',
+            type: 'warning',
+            timeout: 5000
+          });
+          return;
+        }
+        writeInlineImageMetadata(instance, image, values);
+        api.close();
+      }
+    });
   }
 
   async function uploadEditorialImage(file, purpose, progress) {
@@ -678,7 +866,11 @@ $innerScript = <<<JS
       remove_script_host: false,
       convert_urls: false,
       plugins: 'advlist autolink lists link image table code charmap preview searchreplace visualblocks wordcount paste',
-      toolbar: 'code | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table link image | removeformat preview',
+      toolbar: 'code | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table link image imagemeta | removeformat preview',
+      image_description: true,
+      image_title: true,
+      image_caption: false,
+      extended_valid_elements: 'figure[class|data-editorial-image-meta],figcaption,span[class],img[src|alt|title|width|height|loading|decoding]',
       content_css: [
         siteBaseUrl + 'assets/css/editorial-design-system.css',
       ],
@@ -690,6 +882,11 @@ $innerScript = <<<JS
         return result.location;
       },
       setup: (instance) => {
+        instance.ui.registry.addButton('imagemeta', {
+          icon: 'image',
+          tooltip: 'Thông tin ảnh',
+          onAction: () => openInlineImageMetadataDialog(instance)
+        });
         instance.on('init', () => { editorReady = true; });
         instance.on('input change keyup', () => {
           if (editorReady) markDraftDirty();
@@ -720,6 +917,16 @@ $innerScript = <<<JS
   const featuredImageClear = document.getElementById('featuredImageClear');
   const featuredImagePreview = document.getElementById('featuredImagePreview');
   const featuredImagePreviewEmpty = document.getElementById('featuredImagePreviewEmpty');
+  const featuredImageAlt = document.getElementById('featuredImageAlt');
+  const featuredImageTitle = document.getElementById('featuredImageTitle');
+  const featuredImageCaption = document.getElementById('featuredImageCaption');
+  const featuredImageCredit = document.getElementById('featuredImageCredit');
+
+  function clearFeaturedImageMetadata() {
+    [featuredImageAlt, featuredImageTitle, featuredImageCaption, featuredImageCredit].forEach((field) => {
+      if (field) field.value = '';
+    });
+  }
 
   function syncFeaturedImagePreview() {
     if (!featuredImageInput || !featuredImagePreview || !featuredImagePreviewEmpty) return;
@@ -765,8 +972,10 @@ $innerScript = <<<JS
       try {
         const result = await uploadEditorialImage(file, 'featured');
         featuredImageInput.value = result.public_path;
+        clearFeaturedImageMetadata();
         markDraftDirty();
         syncFeaturedImagePreview();
+        if (featuredImageAlt) featuredImageAlt.focus();
       } catch (error) {
         window.alert(error instanceof Error ? error.message : 'Không thể upload ảnh đại diện.');
       } finally {
@@ -778,6 +987,7 @@ $innerScript = <<<JS
   if (featuredImageClear && featuredImageInput) {
     featuredImageClear.addEventListener('click', () => {
       featuredImageInput.value = '';
+      clearFeaturedImageMetadata();
       markDraftDirty();
       syncFeaturedImagePreview();
     });
@@ -1092,6 +1302,27 @@ editorial_layout_header([
                             <img id="featuredImagePreview" alt="Xem trước ảnh đại diện" hidden>
                             <span id="featuredImagePreviewEmpty">Chưa chọn ảnh đại diện</span>
                         </div>
+                        <div class="filter-field editorial-featured-image-alt-field">
+                            <label for="featuredImageAlt">Mô tả ảnh / Alt text</label>
+                            <input type="text" id="featuredImageAlt" name="featured_image_alt" value="<?= editorial_h((string) ($form['featured_image_alt'] ?? '')) ?>" class="field-input">
+                        </div>
+                        <details class="editorial-featured-image-extra">
+                            <summary>Thông tin bổ sung</summary>
+                            <div class="editorial-featured-image-extra__fields">
+                                <div class="filter-field">
+                                    <label for="featuredImageTitle">Title</label>
+                                    <input type="text" id="featuredImageTitle" name="featured_image_title" value="<?= editorial_h((string) ($form['featured_image_title'] ?? '')) ?>" class="field-input">
+                                </div>
+                                <div class="filter-field">
+                                    <label for="featuredImageCaption">Caption</label>
+                                    <textarea id="featuredImageCaption" name="featured_image_caption" rows="2" class="field-input"><?= editorial_h((string) ($form['featured_image_caption'] ?? '')) ?></textarea>
+                                </div>
+                                <div class="filter-field">
+                                    <label for="featuredImageCredit">Credit / Nguồn ảnh</label>
+                                    <input type="text" id="featuredImageCredit" name="featured_image_credit" value="<?= editorial_h((string) ($form['featured_image_credit'] ?? '')) ?>" class="field-input">
+                                </div>
+                            </div>
+                        </details>
                     </div>
                 </div>
                 <div class="filter-field">

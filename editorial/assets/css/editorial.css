@@ -786,6 +786,26 @@
 .editorial-featured-image-preview span[hidden] {
     display: none;
 }
+.editorial-featured-image-alt-field {
+    margin-top: 2px;
+}
+.editorial-featured-image-extra {
+    border: 1px solid #dbe5ef;
+    border-radius: 8px;
+    background: #fbfdff;
+}
+.editorial-featured-image-extra > summary {
+    padding: 8px 10px;
+    color: #475569;
+    font-size: .82rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+.editorial-featured-image-extra__fields {
+    display: grid;
+    gap: 8px;
+    padding: 0 10px 10px;
+}
 @media (max-width: 768px) {
     .editorial-meta-grid { grid-template-columns: 1fr; }
 }

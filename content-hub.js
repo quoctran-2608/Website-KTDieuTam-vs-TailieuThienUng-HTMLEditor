@@ -1527,6 +1527,13 @@
 			            '</div>' +
 			          '</article>';
       }).join('') + '</div>';
+      results.querySelectorAll('.catalog-card__media img').forEach(function (imageNode, index) {
+        var article = visibleItems[index];
+        if (!article) return;
+        imageNode.setAttribute('alt', String(article.image_alt || article.title || ''));
+        if (article.image_title) imageNode.setAttribute('title', String(article.image_title));
+        else imageNode.removeAttribute('title');
+      });
 
       renderPagination(totalPages, items.length);
       updateSeo(totalPages, items.length);

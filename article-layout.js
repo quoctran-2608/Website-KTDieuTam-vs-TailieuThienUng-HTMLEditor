@@ -68,6 +68,34 @@
     return '';
   }
 
+  function imageMetadataValue(meta, indexArticle, data, key) {
+    if (meta && Object.prototype.hasOwnProperty.call(meta, key)) {
+      return String(meta[key] || '').trim();
+    }
+    if (indexArticle && Object.prototype.hasOwnProperty.call(indexArticle, key)) {
+      return String(indexArticle[key] || '').trim();
+    }
+    var viewKey = 'current' + key.charAt(0).toUpperCase() + key.slice(1);
+    return data ? String(data[viewKey] || '').trim() : '';
+  }
+
+  function imageAltValue(meta, indexArticle, data, fallbackTitle) {
+    var metaAlt = meta ? String(meta.imageAlt || '').trim() : '';
+    var indexAlt = indexArticle ? String(indexArticle.imageAlt || '').trim() : '';
+    var viewAlt = data ? String(data.currentImageAlt || '').trim() : '';
+    return String(
+      metaAlt
+      || indexAlt
+      || viewAlt
+      || fallbackTitle
+      || ''
+    ).trim();
+  }
+
+  function normalizedCredit(value) {
+    return String(value || '').trim().replace(/^(?:nguồn|source)\s*:\s*/i, '').trim();
+  }
+
   function getLegacyData() {
     return readJsonScript('article-sidebar-data');
   }
@@ -660,6 +688,10 @@
       tags: normalizeArticleTags(article.tags || meta.tags || []),
       currentTitle: article.title,
       currentImage: explicitCurrentArticleImage(meta, article),
+      currentImageAlt: article.imageAlt || '',
+      currentImageTitle: article.imageTitle || '',
+      currentImageCaption: article.imageCaption || '',
+      currentImageCredit: article.imageCredit || '',
       authorName: meta.authorName || '',
       publishDate: meta.publishDate || '',
       modifiedDate: meta.modifiedDate || '',
@@ -724,6 +756,10 @@
       tags: normalizeArticleTags(meta.tags || []),
       currentTitle: meta.title || '',
       currentImage: explicitCurrentArticleImage(meta, null),
+      currentImageAlt: view.currentImageAlt || '',
+      currentImageTitle: view.currentImageTitle || '',
+      currentImageCaption: view.currentImageCaption || '',
+      currentImageCredit: view.currentImageCredit || '',
       authorName: meta.authorName || '',
       publishDate: meta.publishDate || '',
       modifiedDate: meta.modifiedDate || '',
@@ -1086,12 +1122,35 @@
     figure.className = 'article-featured-media';
     var image = document.createElement('img');
     image.src = sitePath(imageValue);
-    image.alt = String(data && data.currentTitle || meta && meta.title || '');
+    var fallbackTitle = String(data && data.currentTitle || meta && meta.title || '');
+    var imageAlt = imageAltValue(meta, indexArticle, data, fallbackTitle);
+    var imageTitle = imageMetadataValue(meta, indexArticle, data, 'imageTitle');
+    var imageCaption = imageMetadataValue(meta, indexArticle, data, 'imageCaption');
+    var imageCredit = normalizedCredit(imageMetadataValue(meta, indexArticle, data, 'imageCredit'));
+    image.alt = imageAlt;
+    if (imageTitle) image.title = imageTitle;
     image.decoding = 'async';
     image.addEventListener('error', function () {
       figure.remove();
     }, { once: true });
     figure.appendChild(image);
+    if (imageCaption || imageCredit) {
+      var figcaption = document.createElement('figcaption');
+      figcaption.className = 'article-featured-caption';
+      if (imageCaption) {
+        var captionText = document.createElement('span');
+        captionText.className = 'article-featured-caption__text';
+        captionText.textContent = imageCaption;
+        figcaption.appendChild(captionText);
+      }
+      if (imageCredit) {
+        var creditText = document.createElement('span');
+        creditText.className = 'article-featured-caption__credit';
+        creditText.textContent = 'Nguồn: ' + imageCredit;
+        figcaption.appendChild(creditText);
+      }
+      figure.appendChild(figcaption);
+    }
     hero.insertBefore(figure, topNav);
   }
 

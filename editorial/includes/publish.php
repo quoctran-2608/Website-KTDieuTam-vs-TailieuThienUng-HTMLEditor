@@ -90,6 +90,20 @@ function editorial_normalize_publish_payload(array $approvedPayload, array $live
         ? $approvedImage
         : ($liveImage !== '' ? $liveImage : $catalogImage);
 
+    // New Featured metadata is optional for legacy snapshots. A missing key
+    // keeps the current live value; a present empty value intentionally clears it.
+    $featuredMeta = [];
+    foreach ([
+        'featured_image_alt' => 'imageAlt',
+        'featured_image_title' => 'imageTitle',
+        'featured_image_caption' => 'imageCaption',
+        'featured_image_credit' => 'imageCredit',
+    ] as $payloadKey => $metaKey) {
+        $featuredMeta[$metaKey] = array_key_exists($payloadKey, $approvedPayload)
+            ? trim((string) $approvedPayload[$payloadKey])
+            : trim((string) ($liveMeta[$metaKey] ?? ''));
+    }
+
     // Section label from current live meta (canonical), NOT from client/approved
     // Explicit non-empty: live meta → catalog
     $liveSectionLabel = trim((string) ($liveMeta['sectionLabel'] ?? ''));
@@ -110,6 +124,10 @@ function editorial_normalize_publish_payload(array $approvedPayload, array $live
         'modifiedDate' => $modifiedDate,
         'tags' => $tags,
         'image' => $image,
+        'imageAlt' => $featuredMeta['imageAlt'],
+        'imageTitle' => $featuredMeta['imageTitle'],
+        'imageCaption' => $featuredMeta['imageCaption'],
+        'imageCredit' => $featuredMeta['imageCredit'],
         'sectionLabel' => $sectionLabel,
         'expectedTitleTag' => $expectedTitleTag,
     ];
@@ -362,6 +380,10 @@ function editorial_render_approved_html(string $liveHtml, array $article, array 
     $currentMeta['tags'] = $normalized['tags'];
     $currentMeta['excerpt'] = $normalized['excerpt'];
     $currentMeta['image'] = $normalized['image'];
+    $currentMeta['imageAlt'] = $normalized['imageAlt'];
+    $currentMeta['imageTitle'] = $normalized['imageTitle'];
+    $currentMeta['imageCaption'] = $normalized['imageCaption'];
+    $currentMeta['imageCredit'] = $normalized['imageCredit'];
 
     $newMetaJson = json_encode($currentMeta, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     if ($newMetaJson === false) {
@@ -471,6 +493,11 @@ function editorial_validate_rendered_html(string $newHtml, array $normalized): a
     }
     if (($metaPayload['image'] ?? '') !== $normalized['image']) {
         return ['ok' => false, 'message' => 'Rendered meta image mismatch.'];
+    }
+    foreach (['imageAlt', 'imageTitle', 'imageCaption', 'imageCredit'] as $key) {
+        if (($metaPayload[$key] ?? '') !== $normalized[$key]) {
+            return ['ok' => false, 'message' => 'Rendered meta ' . $key . ' mismatch.'];
+        }
     }
 
     // Verify <title> exists and matches exact expected title contract
@@ -755,6 +782,10 @@ function editorial_update_article_source(string $articleId, array $normalized): 
     $catalog[$foundIndex]['modifiedDate'] = $normalized['modifiedDate'];
     $catalog[$foundIndex]['tags'] = $normalized['tags'];
     $catalog[$foundIndex]['image'] = $normalized['image'];
+    $catalog[$foundIndex]['imageAlt'] = $normalized['imageAlt'];
+    $catalog[$foundIndex]['imageTitle'] = $normalized['imageTitle'];
+    $catalog[$foundIndex]['imageCaption'] = $normalized['imageCaption'];
+    $catalog[$foundIndex]['imageCredit'] = $normalized['imageCredit'];
 
     $newSourceBytes = json_encode($catalog, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     if ($newSourceBytes === false) {

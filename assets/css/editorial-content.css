@@ -469,6 +469,37 @@ figcaption {
   text-align: center;
 }
 
+/* Image metadata authored by Editorial V2's TinyMCE dialog. */
+figure.article-image {
+  width: min(100%, 760px);
+  max-width: 100%;
+  margin: 24px auto;
+}
+
+figure.article-image > img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 12px;
+}
+
+figure.article-image > figcaption {
+  display: grid;
+  gap: 4px;
+  padding: 10px 14px 12px;
+}
+
+.article-image-caption {
+  color: #5c5b55;
+}
+
+.article-image-credit {
+  color: #8b7b61;
+  font-size: 0.92em;
+}
+
 /* --------------------------------------------------------------------------
    22. FAQ
    -------------------------------------------------------------------------- */

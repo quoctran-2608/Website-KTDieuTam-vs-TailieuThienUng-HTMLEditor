@@ -281,3 +281,49 @@ ownership.
 - taxonomy preservation;
 - SQLite schema/migrations;
 - public media path contract.
+
+## Image metadata contract
+
+Editorial V2 has no media database or media library. Image binary upload remains
+a physical-file concern; editorial metadata follows the content representation.
+
+### Inline / body image
+
+Inline metadata remains inside `prose_html` and therefore naturally changes the
+draft hash, revision content hash and Stage identity:
+
+```html
+<figure class="article-image" data-editorial-image-meta="1">
+  <img src="..." alt="..." title="...">
+  <figcaption>
+    <span class="article-image-caption">...</span>
+    <span class="article-image-credit">Nguồn: ...</span>
+  </figcaption>
+</figure>
+```
+
+`figcaption`, caption span and credit span are omitted when their corresponding
+plain-text value is empty. The `data-editorial-image-meta` marker identifies a
+wrapper created by the metadata control; only that wrapper may be safely
+unwrapped after both caption and credit are removed. Legacy figure markup is
+not reinterpreted or mass-rewritten.
+
+### Featured Image
+
+Featured metadata has five payload fields:
+
+```text
+featured_image
+featured_image_alt
+featured_image_title
+featured_image_caption
+featured_image_credit
+```
+
+Workspace parses `image`, `imageAlt`, `imageTitle`, `imageCaption` and
+`imageCredit` from `script#article-meta`. Missing values on a legacy article
+become empty strings; Workspace does not fabricate stored metadata.
+
+The metadata control requires non-empty Alt only when an Editor explicitly saves
+that inline-image dialog. Existing untouched legacy images without Alt do not
+globally block Save, Stage, Review or Publish.

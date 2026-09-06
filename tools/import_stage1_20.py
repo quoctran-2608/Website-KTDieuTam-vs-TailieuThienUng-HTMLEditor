@@ -613,6 +613,10 @@ def build_content_index(records_by_section: Dict[str, List[Dict]]) -> Dict:
                 "cardBadgeLabel": record.get("display_badge"),
                 "cardTopicLabel": record.get("display_topic"),
                 "image": record["hub_image"],
+                "imageAlt": record.get("image_alt", ""),
+                "imageTitle": record.get("image_title", ""),
+                "imageCaption": record.get("image_caption", ""),
+                "imageCredit": record.get("image_credit", ""),
                 "publishDate": record.get("publish_date"),
                 "modifiedDate": record.get("modified_date"),
                 "authorName": record.get("author_name") or "Kế Toán Diệu Tâm",
@@ -658,6 +662,7 @@ def expand_view_article(index_data: Dict, article_id: Optional[str]) -> Optional
         "topicLabel": article["topicLv2Label"],
         "tags": article.get("tags", []),
         "image": article.get("image", ""),
+        "imageAlt": article.get("imageAlt", ""),
         "libraryKindLabel": article.get("libraryKindLabel", ""),
         "publishDate": article.get("publishDate"),
         "modifiedDate": article.get("modifiedDate"),
@@ -688,6 +693,8 @@ def build_hub_article_item(record: Dict) -> Dict:
         "tool_lv3_label": record.get("tool_lv3_label"),
         "publish_date": record.get("publish_date"),
         "image": record["hub_image"],
+        "image_alt": record.get("image_alt", ""),
+        "image_title": record.get("image_title", ""),
         "href": record["target_root"],
     }
 
@@ -774,6 +781,7 @@ def build_feed(records: List[Dict], limit: int = 12) -> List[Dict]:
             "publishDate": r.get("publish_date"),
             "modifiedDate": r.get("modified_date"),
             "image": r["hub_image"],
+            "imageAlt": r.get("image_alt", ""),
             "badgeLabel": r["display_badge"],
             "topicLabel": r["display_topic"],
             "libraryKindKey": r.get("library_kind_key"),
@@ -957,6 +965,11 @@ def write_data_artifacts(records_by_section: Dict[str, List[Dict]], index_data: 
         expanded = {
             "currentIndex": view["currentIndex"],
             "totalCount": view["totalCount"],
+            "currentImage": article.get("image", ""),
+            "currentImageAlt": article.get("imageAlt", ""),
+            "currentImageTitle": article.get("imageTitle", ""),
+            "currentImageCaption": article.get("imageCaption", ""),
+            "currentImageCredit": article.get("imageCredit", ""),
             "prev": expand_view_article(index_data, view.get("prev")),
             "next": expand_view_article(index_data, view.get("next")),
             "newsLatest": expand_view_group(index_data, view.get("newsLatest", [])),
@@ -1384,6 +1397,10 @@ def main() -> None:
             "author_name": item.get("authorName") or "Kế Toán Diệu Tâm",
             "author_type": item.get("authorType") or "Organization",
             "hub_image": item.get("image") or FEATURE_IMAGE_PATH,
+            "image_alt": item.get("imageAlt") or "",
+            "image_title": item.get("imageTitle") or "",
+            "image_caption": item.get("imageCaption") or "",
+            "image_credit": item.get("imageCredit") or "",
             "catalog_index": idx,
         }
         records_by_id[section][article_id] = rec

@@ -129,8 +129,27 @@ revision and published live hash, in addition to publication eligibility.
 
 ### INV-16 — Image payload semantics
 
-Body images are references inside `prose_html`. Featured Image is the separate
-`featured_image` field. Both are part of editorial payload/revision semantics.
+Body image metadata is semantic HTML inside `prose_html`:
+
+- `img[src|alt|title]`;
+- optional `figure.article-image > figcaption`;
+- optional plain-text `.article-image-caption` and `.article-image-credit`.
+
+Featured Image payload identity includes:
+
+- `featured_image`;
+- `featured_image_alt`;
+- `featured_image_title`;
+- `featured_image_caption`;
+- `featured_image_credit`.
+
+Safe Publish serializes those fields as `image`, `imageAlt`, `imageTitle`,
+`imageCaption` and `imageCredit` in live `script#article-meta` and the catalog
+record.
+
+These fields naturally participate in draft/revision hashes. Old snapshots may
+omit the four optional metadata keys and must remain hash-valid. Image binaries
+remain path references and are never copied into revision snapshots.
 
 ### INV-17 — Media path contract
 

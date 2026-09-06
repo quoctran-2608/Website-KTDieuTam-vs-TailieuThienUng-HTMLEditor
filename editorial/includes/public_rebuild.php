@@ -138,6 +138,10 @@ function editorial_public_rebuild_article_map(array $item): array
         'cardTopicLabel' => editorial_public_rebuild_text($item['cardTopicLabel'] ?? ''),
         // data/articles.json is the authority. Never infer from body images.
         'image' => editorial_public_rebuild_text($item['image'] ?? ''),
+        'imageAlt' => editorial_public_rebuild_text($item['imageAlt'] ?? ''),
+        'imageTitle' => editorial_public_rebuild_text($item['imageTitle'] ?? ''),
+        'imageCaption' => editorial_public_rebuild_text($item['imageCaption'] ?? ''),
+        'imageCredit' => editorial_public_rebuild_text($item['imageCredit'] ?? ''),
         'publishDate' => editorial_public_rebuild_text($item['publishDate'] ?? ''),
         'modifiedDate' => $item['modifiedDate'] ?? null,
         'authorName' => editorial_public_rebuild_text($item['authorName'] ?? 'Kế Toán Diệu Tâm'),
@@ -167,6 +171,8 @@ function editorial_public_rebuild_hub_item(array $item): array
         'tool_lv3_label' => editorial_public_rebuild_text($item['toolLv3Label'] ?? ''),
         'publish_date' => editorial_public_rebuild_text($item['publishDate'] ?? ''),
         'image' => editorial_public_rebuild_text($item['image'] ?? ''),
+        'image_alt' => editorial_public_rebuild_text($item['imageAlt'] ?? ''),
+        'image_title' => editorial_public_rebuild_text($item['imageTitle'] ?? ''),
         'href' => $href,
     ];
 }
@@ -337,6 +343,7 @@ function editorial_public_rebuild_expand_article(array $index, ?string $articleI
         'topicLabel' => $article['topicLv2Label'],
         'tags' => editorial_public_rebuild_list($article['tags'] ?? []),
         'image' => editorial_public_rebuild_text($article['image'] ?? ''),
+        'imageAlt' => editorial_public_rebuild_text($article['imageAlt'] ?? ''),
         'libraryKindLabel' => editorial_public_rebuild_text($article['libraryKindLabel'] ?? ''),
         'publishDate' => $article['publishDate'] ?? null,
         'modifiedDate' => $article['modifiedDate'] ?? null,
@@ -364,6 +371,11 @@ function editorial_public_rebuild_write_target_view(array $index, string $articl
     $expanded = [
         'currentIndex' => (int) ($view['currentIndex'] ?? 0),
         'totalCount' => (int) ($view['totalCount'] ?? 0),
+        'currentImage' => editorial_public_rebuild_text($index['articles'][$articleId]['image'] ?? ''),
+        'currentImageAlt' => editorial_public_rebuild_text($index['articles'][$articleId]['imageAlt'] ?? ''),
+        'currentImageTitle' => editorial_public_rebuild_text($index['articles'][$articleId]['imageTitle'] ?? ''),
+        'currentImageCaption' => editorial_public_rebuild_text($index['articles'][$articleId]['imageCaption'] ?? ''),
+        'currentImageCredit' => editorial_public_rebuild_text($index['articles'][$articleId]['imageCredit'] ?? ''),
         'prev' => editorial_public_rebuild_expand_article($index, is_string($view['prev'] ?? null) ? $view['prev'] : null),
         'next' => editorial_public_rebuild_expand_article($index, is_string($view['next'] ?? null) ? $view['next'] : null),
         'newsLatest' => editorial_public_rebuild_expand_group($index, editorial_public_rebuild_list($view['newsLatest'] ?? [])),
@@ -809,6 +821,24 @@ function editorial_public_rebuild_replace_html_attribute(string $tag, string $na
     return (string) preg_replace('/\s*\/?>$/', ' ' . $name . '="' . $escaped . '"' . $closing, $tag, 1);
 }
 
+function editorial_public_rebuild_remove_html_attribute(string $tag, string $name): string
+{
+    return (string) preg_replace(
+        '/\s+' . preg_quote($name, '/') . '\s*=\s*(["\']).*?\1/is',
+        '',
+        $tag
+    );
+}
+
+function editorial_public_rebuild_html_attribute(string $tag, string $name): string
+{
+    $pattern = '/\s' . preg_quote($name, '/') . '\s*=\s*(["\'])(.*?)\1/is';
+    if (preg_match($pattern, $tag, $match) !== 1) {
+        return '';
+    }
+    return html_entity_decode((string) $match[2], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+}
+
 function editorial_public_rebuild_card_targets_article(string $cardHtml, string $articleId): bool
 {
     if (preg_match_all('/\bhref\s*=\s*(["\'])(.*?)\1/is', $cardHtml, $matches) !== false) {
@@ -828,7 +858,9 @@ function editorial_public_rebuild_patch_card_html(
     string $pageHtml,
     string $articleId,
     string $image,
-    string $title
+    string $title,
+    string $imageAlt = '',
+    string $imageTitle = ''
 ): array {
     $matched = false;
     $changed = false;
@@ -839,6 +871,8 @@ function editorial_public_rebuild_patch_card_html(
             $articleId,
             $image,
             $title,
+            $imageAlt,
+            $imageTitle,
             $pageHtml,
             &$matched,
             &$changed,
@@ -852,17 +886,24 @@ function editorial_public_rebuild_patch_card_html(
             $desiredSrc = editorial_public_rebuild_static_image_src($image, $pageHtml);
             $patched = preg_replace_callback(
                 '/(<a\b[^>]*\bclass=(["\'])[^"\']*\bcatalog-card__media\b[^"\']*\2[^>]*>)(.*?)(<\/a>)/is',
-                static function (array $mediaMatch) use ($desiredSrc, $title, &$matchedImage): string {
+                static function (array $mediaMatch) use ($desiredSrc, $title, $imageAlt, $imageTitle, &$matchedImage): string {
                     $inside = (string) $mediaMatch[3];
                     $updated = preg_replace_callback(
                         '/<img\b[^>]*>/is',
-                        static function (array $imageMatch) use ($desiredSrc, $title, &$matchedImage): string {
+                        static function (array $imageMatch) use ($desiredSrc, $title, $imageAlt, $imageTitle, &$matchedImage): string {
                             $tag = editorial_public_rebuild_replace_html_attribute(
                                 (string) $imageMatch[0],
                                 'src',
                                 $desiredSrc
                             );
-                            $tag = editorial_public_rebuild_replace_html_attribute($tag, 'alt', $title);
+                            $tag = editorial_public_rebuild_replace_html_attribute(
+                                $tag,
+                                'alt',
+                                $imageAlt !== '' ? $imageAlt : $title
+                            );
+                            $tag = $imageTitle !== ''
+                                ? editorial_public_rebuild_replace_html_attribute($tag, 'title', $imageTitle)
+                                : editorial_public_rebuild_remove_html_attribute($tag, 'title');
                             $matchedImage = $desiredSrc;
                             return $tag;
                         },
@@ -914,6 +955,8 @@ function editorial_public_rebuild_sync_static_hub_card(array $article): array
     $section = editorial_public_rebuild_text($article['section'] ?? '');
     $image = editorial_public_rebuild_text($article['image'] ?? '');
     $title = editorial_public_rebuild_text($article['title'] ?? '');
+    $imageAlt = editorial_public_rebuild_text($article['imageAlt'] ?? '');
+    $imageTitle = editorial_public_rebuild_text($article['imageTitle'] ?? '');
     $hub = editorial_public_rebuild_read_json(editorial_public_rebuild_root('data/hubs/' . $section . '.json'));
     $pageMap = is_array($hub['pageMap'] ?? null) ? $hub['pageMap'] : [];
     if ($articleId === '' || !in_array($section, ['thu-vien', 'ban-tin'], true) || $pageMap === []) {
@@ -927,7 +970,14 @@ function editorial_public_rebuild_sync_static_hub_card(array $article): array
         if ($relativePath === '' || $html === false) {
             continue;
         }
-        $patched = editorial_public_rebuild_patch_card_html($html, $articleId, $image, $title);
+        $patched = editorial_public_rebuild_patch_card_html(
+            $html,
+            $articleId,
+            $image,
+            $title,
+            $imageAlt,
+            $imageTitle
+        );
         if (empty($patched['ok'])) {
             return ['ok' => false, 'message' => (string) $patched['message']];
         }
@@ -1000,6 +1050,7 @@ function editorial_public_rebuild_sync_target_image_data(array $article): array
     $articleId = editorial_public_rebuild_text($article['id'] ?? ($article['href'] ?? ''));
     $section = editorial_public_rebuild_text($article['section'] ?? '');
     $expectedImage = editorial_public_rebuild_text($article['image'] ?? '');
+    $expectedImageAlt = editorial_public_rebuild_text($article['imageAlt'] ?? '');
     if ($articleId === '' || !in_array($section, ['thu-vien', 'ban-tin'], true)) {
         return [
             'ok' => false,
@@ -1022,9 +1073,13 @@ function editorial_public_rebuild_sync_target_image_data(array $article): array
             editorial_public_rebuild_text($index['articles'][$articleId]['image'] ?? ''),
             ''
         )
+    ) || !hash_equals(
+        $expectedImageAlt,
+        editorial_public_rebuild_text($index['articles'][$articleId]['imageAlt'] ?? '')
     );
     if ($indexChanged) {
         $index['articles'][$articleId]['image'] = $expectedImage;
+        $index['articles'][$articleId]['imageAlt'] = $expectedImageAlt;
         $indexJson = json_encode($index, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         if ($indexJson === false || !editorial_public_rebuild_atomic_write(
             editorial_public_rebuild_root('content-index.js'),
@@ -1059,8 +1114,12 @@ function editorial_public_rebuild_sync_target_image_data(array $article): array
                     editorial_public_rebuild_text($hubArticle['image'] ?? ''),
                     ''
                 )
+            ) || !hash_equals(
+                $expectedImageAlt,
+                editorial_public_rebuild_text($hubArticle['image_alt'] ?? '')
             )) {
                 $hubArticle['image'] = $expectedImage;
+                $hubArticle['image_alt'] = $expectedImageAlt;
                 $hubChanged = true;
             }
         }
@@ -1105,6 +1164,7 @@ function editorial_public_rebuild_verify_static_card(array $article, array $know
     $articleId = editorial_public_rebuild_text($article['id'] ?? ($article['href'] ?? ''));
     $section = editorial_public_rebuild_text($article['section'] ?? '');
     $expectedImage = editorial_public_rebuild_text($article['image'] ?? '');
+    $expectedImageAlt = editorial_public_rebuild_text($article['imageAlt'] ?? '');
     $hub = editorial_public_rebuild_read_json(editorial_public_rebuild_root('data/hubs/' . $section . '.json'));
     $pageMap = $knownPages !== []
         ? array_values(array_filter($knownPages, 'is_string'))
@@ -1117,6 +1177,7 @@ function editorial_public_rebuild_verify_static_card(array $article, array $know
             continue;
         }
         $actualSrc = '';
+        $actualAlt = '';
         if (preg_match_all(
             '/<article\b[^>]*\bclass=(["\'])[^"\']*\bcatalog-card\b[^"\']*\1[^>]*>.*?<\/article>/is',
             $html,
@@ -1133,7 +1194,7 @@ function editorial_public_rebuild_verify_static_card(array $article, array $know
                 continue;
             }
             if (preg_match(
-                '/<a\b[^>]*\bclass=(["\'])[^"\']*\bcatalog-card__media\b[^"\']*\1[^>]*>.*?<img\b[^>]*\bsrc\s*=\s*(["\'])(.*?)\2/is',
+                '/<a\b[^>]*\bclass=(["\'])[^"\']*\bcatalog-card__media\b[^"\']*\1[^>]*>.*?(<img\b[^>]*>)/is',
                 (string) $card,
                 $imageMatch
             ) !== 1) {
@@ -1143,7 +1204,9 @@ function editorial_public_rebuild_verify_static_card(array $article, array $know
                     'message' => 'Card bài viết không có ảnh media để xác minh.',
                 ];
             }
-            $actualSrc = (string) $imageMatch[3];
+            $imageTag = (string) $imageMatch[3];
+            $actualSrc = editorial_public_rebuild_html_attribute($imageTag, 'src');
+            $actualAlt = editorial_public_rebuild_html_attribute($imageTag, 'alt');
             break;
         }
         if ($actualSrc === '') {
@@ -1156,6 +1219,16 @@ function editorial_public_rebuild_verify_static_card(array $article, array $know
                 'ok' => false,
                 'code' => 'static_card_image_mismatch',
                 'message' => 'Ảnh card hub tĩnh chưa khớp dữ liệu Publish.',
+            ];
+        }
+        $expectedAlt = $expectedImageAlt !== ''
+            ? $expectedImageAlt
+            : editorial_public_rebuild_text($article['title'] ?? '');
+        if (!hash_equals($expectedAlt, $actualAlt)) {
+            return [
+                'ok' => false,
+                'code' => 'static_card_image_alt_mismatch',
+                'message' => 'Alt ảnh card hub tĩnh chưa khớp dữ liệu Publish.',
             ];
         }
         $matchedPages[] = $relativePath;
@@ -1191,6 +1264,7 @@ function editorial_public_rebuild_verify_target_image(string $articleId, array $
         ];
     }
     $expectedImage = editorial_public_rebuild_text($target['image'] ?? '');
+    $expectedImageAlt = editorial_public_rebuild_text($target['imageAlt'] ?? '');
     $expectedIdentity = editorial_public_rebuild_normalize_static_asset($expectedImage, '');
     $index = editorial_public_rebuild_existing_index();
     $indexArticle = $index['articles'][$articleId] ?? null;
@@ -1206,6 +1280,16 @@ function editorial_public_rebuild_verify_target_image(string $articleId, array $
             'ok' => false,
             'code' => 'content_index_image_mismatch',
             'message' => 'Ảnh bài trong content-index.js chưa khớp dữ liệu Publish.',
+        ];
+    }
+    if (!hash_equals(
+        $expectedImageAlt,
+        editorial_public_rebuild_text($indexArticle['imageAlt'] ?? '')
+    )) {
+        return [
+            'ok' => false,
+            'code' => 'content_index_image_alt_mismatch',
+            'message' => 'Alt ảnh bài trong content-index.js chưa khớp dữ liệu Publish.',
         ];
     }
     $section = editorial_public_rebuild_text($target['section'] ?? '');
@@ -1230,6 +1314,16 @@ function editorial_public_rebuild_verify_target_image(string $articleId, array $
             'ok' => false,
             'code' => 'hub_json_image_mismatch',
             'message' => 'Ảnh bài trong hub JSON chưa khớp dữ liệu Publish.',
+        ];
+    }
+    if (!hash_equals(
+        $expectedImageAlt,
+        editorial_public_rebuild_text($hubArticle['image_alt'] ?? '')
+    )) {
+        return [
+            'ok' => false,
+            'code' => 'hub_json_image_alt_mismatch',
+            'message' => 'Alt ảnh bài trong hub JSON chưa khớp dữ liệu Publish.',
         ];
     }
     $static = editorial_public_rebuild_verify_static_card($target, $knownStaticPages);

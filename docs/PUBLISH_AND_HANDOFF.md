@@ -61,26 +61,46 @@ Featured Image là trường payload riêng:
 
 ```text
 featured_image
+featured_image_alt
+featured_image_title
+featured_image_caption
+featured_image_credit
 ```
 
 Luồng:
 
 ```text
 payload verified
-→ metadata của public article HTML
-→ image trong data/articles.json
+→ `image`, `imageAlt`, `imageTitle`, `imageCaption`, `imageCredit` trong
+  `script#article-meta`
+→ các key cùng tên trong `data/articles.json`
 → public rebuild
 → content index / hub JSON / card hub tĩnh / list-detail public
 ```
 
-Publish giữ ảnh hiện có nếu payload để trống theo contract normalization. Rebuild
-đồng bộ lại target image vào dynamic artifact, patch card hub tĩnh có liên quan
-và xác minh cả các representation trước khi ghi marker ready.
+Publish giữ ảnh hiện có nếu payload `featured_image` để trống theo contract
+normalization. Với bốn key metadata mới, Publish phân biệt:
+
+- key **vắng mặt** trong snapshot legacy → giữ giá trị `article-meta` live;
+- key **có mặt nhưng rỗng** → xóa giá trị live cũ có chủ ý.
+
+Rebuild đồng bộ image và image Alt target vào dynamic artifact, patch ảnh card
+hub tĩnh có liên quan, rồi xác minh representation trước khi ghi marker ready.
+Hub card chỉ mang `image_alt` và optional `image_title`; Caption/Credit chỉ
+hiển thị ở article detail.
 
 ### Body images
 
-Body images là reference trong `prose_html`. Chúng đi cùng payload/revision
-semantics nhưng không phải trường Featured Image.
+Body images và metadata của chúng nằm trong `prose_html`, không phải bảng
+database:
+
+- `src`, `alt`, `title` ở `img`;
+- Caption/Credit plain text trong semantic `figure.article-image` /
+  `figcaption` khi Editor dùng control **Thông tin ảnh**.
+
+Upload endpoint chỉ nhận file và trả public path. Nó không nhận Alt, Title,
+Caption hoặc Credit. Metadata được bảo vệ bởi luồng Workspace Draft Save hiện
+có, không bởi upload transport.
 
 ## Media upload
 
@@ -148,12 +168,14 @@ Editorial Publish không được tự ý thay taxonomy source.
 
 Sau builder, runner:
 
-1. đồng bộ ảnh target vào `content-index.js` và hub data;
-2. patch card ảnh trong hub static có bài target;
-3. so sánh identity ảnh ở catalog, content index, hub JSON và static card;
+1. đồng bộ ảnh/Alt target vào `content-index.js` và hub data;
+2. patch `src`, Alt và optional Title của card ảnh trong hub static có bài target;
+3. so sánh identity ảnh và Alt ở catalog, content index, hub JSON và static card;
 4. trả lỗi rõ ràng nếu representation chưa khớp.
 
-Điều này bảo vệ Featured Image public khỏi thành công một phần.
+Điều này bảo vệ Featured Image public khỏi thành công một phần. Native và Python
+builder đều phải giữ bốn metadata fields trong content index/current article
+view; Python fast path không được tự thêm `--include-hub-pages`.
 
 ## Public-ready marker
 

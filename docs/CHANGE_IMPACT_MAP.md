@@ -72,7 +72,7 @@ route/UI/CSS.
 | Published → Open for team | HIGH | `editorial/includes/review.php` | `assignment.php`, `articles.php`, `integrity.php` | Admin-only; status becomes `available`; future self-claim still exact available only. | `AGENTS.md`, `EDITORIAL_V2.md` |
 | Workspace lock / heartbeat | HIGH | `editorial/includes/workspace.php` | `article.php`, `lock-heartbeat.php`, `upload.php` | Current owner + allowed status + token + expiry; lock is temporary. | `EDITORIAL_V2.md`, `OPERATIONS.md` |
 | Draft save / optimistic concurrency | HIGH | `editorial/includes/workspace.php` | `article.php`, `revision.php`, `database.php` | Owner, state, active assignment, lock, draft version and expected hash; no silent overwrite. | `EDITORIAL_V2.md`, this map |
-| Content payload fields | MEDIUM | `editorial/includes/workspace.php` | `article.php`, `publish.php`, `revision.php` | `title`, `excerpt`, `prose_html`, dates, tags, `featured_image`; taxonomy preserved from catalog. | `EDITORIAL_V2.md`, `PUBLISH_AND_HANDOFF.md` |
+| Content payload fields | MEDIUM | `editorial/includes/workspace.php` | `article.php`, `publish.php`, `revision.php` | `title`, `excerpt`, `prose_html`, dates, tags, `featured_image`, `featured_image_alt`, `featured_image_title`, `featured_image_caption`, `featured_image_credit`; taxonomy preserved from catalog. | `EDITORIAL_V2.md`, `PUBLISH_AND_HANDOFF.md` |
 | Baseline / editorial revision | HIGH | `editorial/includes/revision.php` | `workspace.php`, `assignment.php`, `revisions.php` | Snapshot immutable; `content_hash`; `assignment_id`; `source_draft_version`. | `AGENTS.md`, `EDITORIAL_V2.md` |
 | Stage1 / Stage2 | HIGH | `editorial/includes/revision.php` | `article.php`, `compare.php`, `review.php` | Newest verified Stage1; Stage2 newer than active Stage1; Stage1 recreation deactivates old Stage2 chain. | `AGENTS.md`, `EDITORIAL_V2.md` |
 | Compare UI / snapshot preview | MEDIUM | `editorial/compare.php` | `revision.php`, `workspace.php` | Read-only GET; snapshot authority; live HTML only presentation context. | `AGENTS.md`, `EDITORIAL_V2.md` |
@@ -83,7 +83,7 @@ route/UI/CSS.
 | Admin-approved Publish | HIGH | `editorial/includes/publish.php` | `review.php`, `revision.php`, `editorial/publish.php`, `public_rebuild.php` | Approved revision; live hash; backup; atomic replace; compensation; terminal state. | `AGENTS.md`, `PUBLISH_AND_HANDOFF.md`, `OPERATIONS.md` |
 | Catalog update during Publish | HIGH | `editorial/includes/publish.php` | `article_catalog.php`, `data/articles.json`, `public_rebuild.php` | Backup + hash guard; catalog is metadata source, not prose source. | `ARCHITECTURE.md`, `PUBLISH_AND_HANDOFF.md` |
 | Body-image upload | HIGH | `editorial/upload.php` | `media.php`, `workspace.php`, `article.php` | Editor owner; active assignment; CSRF; lock; MIME/size; path contract. | `PUBLISH_AND_HANDOFF.md`, `OPERATIONS.md` |
-| Featured Image upload/display | HIGH | `article.php` | `workspace.php`, `media.php`, `upload.php`, `publish.php`, `public_rebuild.php`, `article-layout.js`, `content-hub.js`, `assets/css/content-hub.css` | Separate `featured_image`; never infer from first body image; propagation spans live/catalog/rebuild/presentation. | `PUBLISH_AND_HANDOFF.md`, `ARCHITECTURE.md`, this map |
+| Featured Image upload/display | HIGH | `article.php` | `workspace.php`, `media.php`, `upload.php`, `publish.php`, `public_rebuild.php`, `article-layout.js`, `content-hub.js`, public CSS | Five payload fields; absent legacy key differs from explicit blank; never infer from first body image; propagation spans live/catalog/rebuild/presentation. | `PUBLISH_AND_HANDOFF.md`, `ARCHITECTURE.md`, this map |
 | Fast / full public rebuild | HIGH | `editorial/includes/public_rebuild.php` | `tools/rebuild_public_from_articles.py`, `publish.php`, `integrity.php` | Current native/Python selection depends on `refreshTaxonomy`; derived artifacts are not manual source. | `PUBLISH_AND_HANDOFF.md`, `OPERATIONS.md`, `ARCHITECTURE.md` |
 | Hub/static-card image sync | HIGH | `editorial/includes/public_rebuild.php` | `content-index.js`, `data/hubs/*`, static hub HTML, `content-hub.js` | Target image identity must agree across catalog/index/hub/static card before ready marker. | `PUBLISH_AND_HANDOFF.md`, this map |
 | Taxonomy refresh | HIGH | `editorial/includes/public_rebuild.php` | `data/taxonomy-master.json`, `tools/manage_taxonomy.py`, `article_catalog.php` | Identify taxonomy master/source vs derived JSON/JS/menu/hub output first. | `ARCHITECTURE.md`, `EDITORIAL_V2.md`, `PUBLISH_AND_HANDOFF.md` |
@@ -265,21 +265,28 @@ Trace:
 ```text
 featured_image payload
 → published snapshot
-→ live article metadata
-→ data/articles.json image
+→ live `article-meta` image/imageAlt/imageTitle/imageCaption/imageCredit
+→ data/articles.json fields
 → rebuild
 → public detail and hub card presentation
 ```
 
 Do not infer Featured Image from the first body image.
 
+For old snapshots, missing optional `featured_image_alt`,
+`featured_image_title`, `featured_image_caption` or `featured_image_credit`
+means preserve the corresponding live metadata at Publish; a present empty key is
+an explicit clear. Do not add a snapshot migration for these optional fields.
+
 ### Body image
 
 Read `media.php`, `upload.php`, `article.php`, `workspace.php`.
 
-Body image references live in `prose_html`; their physical file path follows
-`uploads/articles/YYYY/MM/`. Uploading a file does not itself save a draft,
-create a stage or Publish it.
+Body image references and Alt/Title/Caption/Credit metadata live in
+`prose_html`; their physical file path follows `uploads/articles/YYYY/MM/`.
+Uploading a file does not itself save a draft, create a stage or Publish it.
+Use TinyMCE `imagemeta` for explicit metadata edits; it must resolve the
+currently selected image/figure, never a global first image.
 
 ### Public rebuild
 

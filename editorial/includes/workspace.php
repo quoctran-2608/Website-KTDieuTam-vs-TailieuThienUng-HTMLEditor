@@ -628,6 +628,10 @@ function editorial_build_initial_payload(array $parsed, array $article, array $a
         'publish_date' => (string) ($articleMeta['publishDate'] ?? ''),
         'modified_date' => (string) ($articleMeta['modifiedDate'] ?? ''),
         'featured_image' => $featuredImage,
+        'featured_image_alt' => (string) ($articleMeta['imageAlt'] ?? ''),
+        'featured_image_title' => (string) ($articleMeta['imageTitle'] ?? ''),
+        'featured_image_caption' => (string) ($articleMeta['imageCaption'] ?? ''),
+        'featured_image_credit' => (string) ($articleMeta['imageCredit'] ?? ''),
         'tags' => $tags,
         'tags_text' => $tagsText,
         // Taxonomy (read-only, preserved server-side)
@@ -645,6 +649,27 @@ function editorial_build_initial_payload(array $parsed, array $article, array $a
 }
 
 /**
+ * Old drafts can predate optional Featured Image metadata. Hydrate only missing
+ * keys from live article-meta so an existing stored value, including an explicit
+ * empty string, always remains authoritative.
+ */
+function editorial_hydrate_featured_image_metadata(array $payload, array $articleMeta): array
+{
+    $fields = [
+        'featured_image_alt' => 'imageAlt',
+        'featured_image_title' => 'imageTitle',
+        'featured_image_caption' => 'imageCaption',
+        'featured_image_credit' => 'imageCredit',
+    ];
+    foreach ($fields as $payloadKey => $metaKey) {
+        if (!array_key_exists($payloadKey, $payload)) {
+            $payload[$payloadKey] = (string) ($articleMeta[$metaKey] ?? '');
+        }
+    }
+    return $payload;
+}
+
+/**
  * Build full draft payload merging editable POST data with canonical taxonomy.
  * A7 fix: article catalog is authority for taxonomy. Draft fallback only if catalog empty.
  */
@@ -658,6 +683,10 @@ function editorial_merge_draft_payload(array $editablePost, array $article, ?arr
         'publish_date' => (string) ($editablePost['publish_date'] ?? ''),
         'modified_date' => (string) ($editablePost['modified_date'] ?? ''),
         'featured_image' => (string) ($editablePost['featured_image'] ?? ''),
+        'featured_image_alt' => (string) ($editablePost['featured_image_alt'] ?? ''),
+        'featured_image_title' => (string) ($editablePost['featured_image_title'] ?? ''),
+        'featured_image_caption' => (string) ($editablePost['featured_image_caption'] ?? ''),
+        'featured_image_credit' => (string) ($editablePost['featured_image_credit'] ?? ''),
         'tags_text' => (string) ($editablePost['tags_text'] ?? ''),
     ];
 
