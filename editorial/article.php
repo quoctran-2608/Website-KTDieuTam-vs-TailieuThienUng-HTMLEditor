@@ -551,6 +551,69 @@ $innerScript = <<<JS
     };
   }
 
+  function isStandaloneImageParagraph(paragraph, image) {
+    if (!paragraph || paragraph.nodeName !== 'P' || image.parentElement !== paragraph) {
+      return false;
+    }
+    let imageCount = 0;
+    for (const child of Array.from(paragraph.childNodes)) {
+      if (child === image) {
+        imageCount += 1;
+        continue;
+      }
+      if (child.nodeType === 3 && !String(child.nodeValue || '').trim()) {
+        continue;
+      }
+      if (child.nodeType === 1 && child.nodeName === 'BR') {
+        continue;
+      }
+      return false;
+    }
+    return imageCount === 1;
+  }
+
+  function canContainMetadataFigure(element) {
+    return Boolean(element && [
+      'ARTICLE', 'ASIDE', 'BLOCKQUOTE', 'BODY', 'DIV', 'LI',
+      'MAIN', 'SECTION', 'TD', 'TH'
+    ].includes(element.nodeName));
+  }
+
+  function createMetadataFigure(instance, image) {
+    const parent = image.parentElement;
+    if (!parent) return null;
+    const doc = instance.getDoc();
+    const createFigure = () => {
+      const figure = doc.createElement('figure');
+      figure.className = 'article-image';
+      figure.setAttribute('data-editorial-image-meta', '1');
+      return figure;
+    };
+
+    if (parent.nodeName === 'P') {
+      if (!isStandaloneImageParagraph(parent, image) || !canContainMetadataFigure(parent.parentElement)) {
+        return null;
+      }
+      // Promote a standalone image paragraph to a sibling figure. A figure may
+      // not be inserted inside <p>.
+      const figure = createFigure();
+      parent.parentElement.insertBefore(figure, parent);
+      figure.appendChild(image);
+      parent.remove();
+      return figure;
+    }
+
+    // This branch is restricted to the block/flow allow-list above, never P or
+    // a phrasing container such as A/SPAN/STRONG/EM.
+    if (!canContainMetadataFigure(parent)) {
+      return null;
+    }
+    const figure = createFigure();
+    parent.insertBefore(figure, image);
+    figure.appendChild(image);
+    return figure;
+  }
+
   function writeInlineImageMetadata(instance, image, values) {
     const alt = String(values.alt || '').trim();
     const title = String(values.title || '').trim();
@@ -569,12 +632,15 @@ $innerScript = <<<JS
           type: 'warning',
           timeout: 5000
         });
-      } else if (image.parentNode) {
-        figure = instance.getDoc().createElement('figure');
-        figure.className = 'article-image';
-        figure.setAttribute('data-editorial-image-meta', '1');
-        image.parentNode.insertBefore(figure, image);
-        figure.appendChild(image);
+      } else {
+        figure = createMetadataFigure(instance, image);
+        if (!figure) {
+          instance.notificationManager.open({
+            text: 'Ảnh cần nằm trên một dòng riêng để thêm Caption/Nguồn. Alt và Title đã được cập nhật.',
+            type: 'warning',
+            timeout: 5000
+          });
+        }
       }
     }
 
