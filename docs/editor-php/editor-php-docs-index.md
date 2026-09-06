@@ -1,3 +1,18 @@
+> ## HISTORICAL / SUPERSEDED
+>
+> Đây là chỉ mục tài liệu của kiến trúc editor PHP trước đây. Nó không phải
+> tài liệu canonical cho Editorial V2 hiện tại.
+>
+> Các tuyên bố như **“DB là source of truth”** và
+> **“static HTML chỉ là artifact build”** mô tả kiến trúc đề xuất/đời trước và
+> **không được áp dụng** cho Editorial V2 hiện tại. Hiện nay nội dung public
+> live nằm trong file HTML bài gốc; SQLite Editorial giữ workflow/state metadata
+> và revision snapshot evidence.
+>
+> Đọc tài liệu current trước:
+> [../ARCHITECTURE.md](../ARCHITECTURE.md) và
+> [../EDITORIAL_V2.md](../EDITORIAL_V2.md).
+
 # Bộ tài liệu chuẩn để build editor PHP
 
 ## Mục tiêu

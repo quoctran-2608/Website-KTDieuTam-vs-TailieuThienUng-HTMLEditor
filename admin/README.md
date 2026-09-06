@@ -1,3 +1,15 @@
+> ## STATUS: LEGACY / FALLBACK
+>
+> README này mô tả `/admin`, subsystem legacy/fallback. Hệ thống biên tập cộng
+> tác hiện tại là [`/editorial`](../editorial/README.md). Không dùng README này
+> làm authority cho kiến trúc Editorial V2, ownership, revision, Publish,
+> rebuild hoặc Google Handoff hiện tại.
+>
+> Tài liệu canonical: [README gốc](../README.md),
+> [Architecture](../docs/ARCHITECTURE.md),
+> [Editorial V2](../docs/EDITORIAL_V2.md) và
+> [Publish/Handoff](../docs/PUBLISH_AND_HANDOFF.md).
+
 # Admin Editor PHP (MVP v1)
 
 Thư mục này chứa code admin panel cho luồng:
@@ -83,7 +95,8 @@ php -S 127.0.0.1:8080 -t .
 Truy cập:
 
 - `http://127.0.0.1:8080/admin/`
-- login mặc định dev: `admin / admin123`
+- dùng tài khoản local được cấu hình an toàn; không ghi hoặc deploy credential
+  mặc định trong tài liệu hay môi trường public.
 
 ## Healthcheck Phase 6
 
