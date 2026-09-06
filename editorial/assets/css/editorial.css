@@ -1165,6 +1165,23 @@ body.editor-fullscreen-active .editor-fs-status button {
     flex-wrap: wrap;
 }
 
+.editorial-admin-reassign-form {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.editorial-admin-reassign-form select {
+    max-width: 180px;
+    min-height: 28px;
+    padding: 3px 6px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    background: #fff;
+    color: #495057;
+    font-size: 0.78rem;
+}
+
 /* --- Phase 7: Publish ----------------------------------- */
 
 .editorial-publish-btn {

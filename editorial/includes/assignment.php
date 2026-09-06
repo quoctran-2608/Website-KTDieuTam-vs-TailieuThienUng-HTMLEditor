@@ -47,7 +47,8 @@ function editorial_status_css(string $status): string
 
 /**
  * Get editorial state for a single article.
- * Returns null if no state exists (= available).
+ * Returns null if no state row exists. Claim handles any historical
+ * assignment evidence separately before treating a missing state as available.
  *
  * @return array<string,mixed>|null
  */
@@ -111,6 +112,7 @@ function editorial_assignment_counts(?string $currentUserId = null): array
     $db = editorial_db();
 
     $assigned = (int) $db->query("SELECT COUNT(*) FROM editorial_article_state WHERE assigned_user_id IS NOT NULL")->fetchColumn();
+    $unavailable = (int) $db->query("SELECT COUNT(*) FROM editorial_article_state WHERE status <> 'available'")->fetchColumn();
     $mine = 0;
     if ($currentUserId !== null) {
         $stmt = $db->prepare("SELECT COUNT(*) FROM editorial_article_state WHERE assigned_user_id = :uid");
@@ -121,7 +123,9 @@ function editorial_assignment_counts(?string $currentUserId = null): array
     return [
         'total' => $totalArticles,
         'assigned' => $assigned,
-        'available' => $totalArticles - $assigned,
+        // A terminal Published article has no owner but is not claimable.
+        // Only a missing state or an explicit available state counts here.
+        'available' => $totalArticles - $unavailable,
         'mine' => $mine,
     ];
 }
@@ -225,10 +229,34 @@ function editorial_claim_article(string $articleId, string $userId, string $html
     return editorial_transaction(function () use ($articleId, $userId, $htmlPath, $liveHash): array {
         $db = editorial_db();
         $now = date('c');
+        $currentLiveHash = editorial_live_hash($htmlPath);
+        if ($currentLiveHash === null) {
+            return [
+                'ok' => false,
+                'code' => 'live_hash_unavailable',
+                'message' => 'Không thể xác minh file HTML gốc để nhận biên tập.',
+            ];
+        }
+        $liveHash = $currentLiveHash;
 
         // Step 1: Ensure article_state row exists
         $state = editorial_get_article_state($articleId);
         if ($state === null) {
+            // A missing state is only safe for a genuinely virgin article.
+            // Never reconstruct ownership from historical assignment evidence.
+            $stmt = $db->prepare('
+                SELECT COUNT(*)
+                FROM editorial_assignments
+                WHERE article_id = :aid
+            ');
+            $stmt->execute(['aid' => $articleId]);
+            if ((int) $stmt->fetchColumn() > 0) {
+                return [
+                    'ok' => false,
+                    'code' => 'historical_state_missing',
+                    'message' => 'Bài viết đã có lịch sử biên tập nhưng thiếu trạng thái hiện tại. Vui lòng để Admin kiểm tra hoặc mở lại bài.',
+                ];
+            }
             $stmt = $db->prepare('
                 INSERT INTO editorial_article_state (article_id, status, assigned_user_id, assigned_at, base_live_hash, updated_at)
                 VALUES (:id, \'available\', NULL, NULL, NULL, :now)
@@ -242,7 +270,16 @@ function editorial_claim_article(string $articleId, string $userId, string $html
             ];
         }
 
-        // Step 2: Check current assignment
+        // Step 2: Only an explicit available state may start an editorial cycle.
+        if ((string) ($state['status'] ?? '') !== 'available') {
+            return [
+                'ok' => false,
+                'code' => 'article_not_available',
+                'message' => 'Bài viết chưa được Admin mở lại để nhận biên tập.',
+            ];
+        }
+
+        // Step 3: Check current assignment
         $currentOwner = $state['assigned_user_id'] ?? null;
         if ($currentOwner !== null && $currentOwner !== '') {
             if ($currentOwner === $userId) {
@@ -262,7 +299,7 @@ function editorial_claim_article(string $articleId, string $userId, string $html
             ];
         }
 
-        // Step 3: Verify no orphaned active assignment (fail-safe)
+        // Step 4: Verify no orphaned active assignment (fail-safe)
         $stmt = $db->prepare('
             SELECT COUNT(*) FROM editorial_assignments
             WHERE article_id = :aid AND released_at IS NULL
@@ -277,7 +314,7 @@ function editorial_claim_article(string $articleId, string $userId, string $html
             ];
         }
 
-        // Step 4: Insert assignment history
+        // Step 5: Insert assignment history
         $assignmentId = editorial_generate_id('asgn');
         $stmt = $db->prepare('
             INSERT INTO editorial_assignments (id, article_id, user_id, assigned_at, released_at, release_reason, created_by, created_at)
@@ -292,7 +329,8 @@ function editorial_claim_article(string $articleId, string $userId, string $html
             'created_at' => $now,
         ]);
 
-        // Step 5: Update article state — reset work-cycle fields
+        // Step 6: Reset only the new work-cycle fields. Publication facts identify
+        // the live version and remain valid across a new assignment.
         $stmt = $db->prepare('
             UPDATE editorial_article_state
             SET status = \'editing\',
@@ -306,13 +344,10 @@ function editorial_claim_article(string $articleId, string $userId, string $html
                 approved_revision_id = NULL,
                 approved_by = NULL,
                 approved_at = NULL,
-                published_revision_id = NULL,
-                published_by = NULL,
-                published_at = NULL,
-                published_live_hash = NULL,
-                publish_backup_path = NULL,
                 updated_at = :updated_at
             WHERE article_id = :article_id
+              AND status = \'available\'
+              AND (assigned_user_id IS NULL OR assigned_user_id = \'\')
         ');
         $stmt->execute([
             'user_id' => $userId,
@@ -321,8 +356,11 @@ function editorial_claim_article(string $articleId, string $userId, string $html
             'updated_at' => $now,
             'article_id' => $articleId,
         ]);
+        if ($stmt->rowCount() !== 1) {
+            throw new RuntimeException('Claim state changed before final assignment update.');
+        }
 
-        // Step 6: Activity log
+        // Step 7: Activity log
         editorial_log_activity('article.claimed', $articleId, $userId, json_encode([
             'assignment_id' => $assignmentId,
             'base_live_hash' => $liveHash,
@@ -350,7 +388,7 @@ function editorial_can_transition(string $from, string $to): bool
         'returned' => ['ready_review', 'available', 'editing'],
         'ready_review' => ['returned', 'approved'],
         'approved' => ['editing'],
-        'published' => ['editing'],
+        'published' => ['editing', 'available'],
     ];
 
     $transitions = $allowed[$from] ?? [];

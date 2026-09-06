@@ -176,8 +176,9 @@ function editorial_filter_articles(array $params, array $states = [], ?string $c
         if ($assignment !== '') {
             $state = $states[$article['id']] ?? null;
             $ownerId = $state ? (string) ($state['assigned_user_id'] ?? '') : '';
+            $status = $state ? (string) ($state['status'] ?? '') : 'available';
 
-            if ($assignment === 'available' && $ownerId !== '') continue;
+            if ($assignment === 'available' && ($status !== 'available' || $ownerId !== '')) continue;
             if ($assignment === 'assigned' && $ownerId === '') continue;
             if ($assignment === 'mine' && $ownerId !== ($currentUserId ?? '')) continue;
         }

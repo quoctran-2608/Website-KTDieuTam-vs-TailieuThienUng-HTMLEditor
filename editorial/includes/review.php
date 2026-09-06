@@ -617,6 +617,23 @@ function editorial_check_draft_handoff_safety(string $articleId, string $ownerUs
         'message' => 'Bản nháp hiện tại chưa được bảo toàn đầy đủ trong một phiên bản. Hãy tạo phiên bản trước khi thay đổi phân công.'];
 }
 
+/**
+ * New ownership-cycle actions must verify the actor on the server, not only
+ * through the Admin-only list UI.
+ *
+ * @return array{ok:bool,message:string}
+ */
+function editorial_verify_active_admin_actor(string $adminUserId): array
+{
+    $adminUser = editorial_find_user_by_id($adminUserId);
+    if ($adminUser === null
+        || empty($adminUser['is_active'])
+        || (string) ($adminUser['role'] ?? '') !== 'admin') {
+        return ['ok' => false, 'message' => 'Chỉ Quản trị viên đang hoạt động mới được thay đổi phân công.'];
+    }
+    return ['ok' => true, 'message' => ''];
+}
+
 function editorial_reassign_article(string $articleId, string $adminUserId, string $newUserId, bool $force = false): array
 {
     $newUser = editorial_find_user_by_id($newUserId);
@@ -639,7 +656,22 @@ function editorial_reassign_article(string $articleId, string $adminUserId, stri
         return ['ok' => false, 'message' => 'Không thể tạo mã băm file HTML.'];
     }
 
-    return editorial_transaction(function() use ($articleId, $adminUserId, $newUserId, $force, $liveHash) {
+    return editorial_transaction(function() use ($articleId, $adminUserId, $newUserId, $force, $htmlPath, $liveHash) {
+        $adminCheck = editorial_verify_active_admin_actor($adminUserId);
+        if (!$adminCheck['ok']) {
+            return $adminCheck;
+        }
+        $newUser = editorial_find_user_by_id($newUserId);
+        if ($newUser === null
+            || empty($newUser['is_active'])
+            || !in_array((string) ($newUser['role'] ?? ''), ['admin', 'editor'], true)) {
+            return ['ok' => false, 'message' => 'Người dùng được phân công không hợp lệ hoặc không có quyền.'];
+        }
+        $currentLiveHash = editorial_live_hash($htmlPath);
+        if ($currentLiveHash === null) {
+            return ['ok' => false, 'message' => 'Không thể xác minh file HTML gốc để phân công lại.'];
+        }
+        $liveHash = $currentLiveHash;
         $state = editorial_get_article_state($articleId);
         
         if (!$state || !in_array($state['status'], ['editing', 'returned'], true)) {
@@ -649,6 +681,9 @@ function editorial_reassign_article(string $articleId, string $adminUserId, stri
         $assignment = editorial_get_active_assignment($articleId);
         if (!$assignment) {
             return ['ok' => false, 'message' => 'Không tìm thấy phân công hiện tại.'];
+        }
+        if ((string) ($state['assigned_user_id'] ?? '') !== (string) ($assignment['user_id'] ?? '')) {
+            return ['ok' => false, 'message' => 'Phân công hiện tại không khớp trạng thái bài viết. Vui lòng để Admin kiểm tra.'];
         }
 
         if ($assignment['user_id'] === $newUserId) {
@@ -705,14 +740,20 @@ function editorial_reassign_article(string $articleId, string $adminUserId, stri
                 approved_at = NULL,
                 updated_at = :upd
             WHERE article_id = :aid
+              AND status IN ('editing', 'returned')
+              AND assigned_user_id = :old_uid
         ");
         $stmtUpdState->execute([
             ':uid' => $newUserId,
             ':assigned_at' => $now,
             ':hash' => $liveHash,
             ':upd' => $now,
-            ':aid' => $articleId
+            ':aid' => $articleId,
+            ':old_uid' => $oldOwnerUserId,
         ]);
+        if ($stmtUpdState->rowCount() !== 1) {
+            throw new RuntimeException('Assignment state changed before final reassignment update.');
+        }
 
         // A2+A3+A4: Draft cleanup
         if ($handoff['has_draft']) {
@@ -744,6 +785,10 @@ function editorial_reassign_article(string $articleId, string $adminUserId, stri
 function editorial_release_assignment(string $articleId, string $adminUserId, bool $force = false): array
 {
     return editorial_transaction(function() use ($articleId, $adminUserId, $force) {
+        $adminCheck = editorial_verify_active_admin_actor($adminUserId);
+        if (!$adminCheck['ok']) {
+            return $adminCheck;
+        }
         $state = editorial_get_article_state($articleId);
         
         if (!$state || !in_array($state['status'], ['editing', 'returned'], true)) {
@@ -753,6 +798,9 @@ function editorial_release_assignment(string $articleId, string $adminUserId, bo
         $assignment = editorial_get_active_assignment($articleId);
         if (!$assignment) {
             return ['ok' => false, 'message' => 'Không tìm thấy phân công hiện tại.'];
+        }
+        if ((string) ($state['assigned_user_id'] ?? '') !== (string) ($assignment['user_id'] ?? '')) {
+            return ['ok' => false, 'message' => 'Phân công hiện tại không khớp trạng thái bài viết. Vui lòng để Admin kiểm tra.'];
         }
 
         // A1: Central draft handoff safety check
@@ -793,11 +841,17 @@ function editorial_release_assignment(string $articleId, string $adminUserId, bo
                 approved_at = NULL,
                 updated_at = :upd
             WHERE article_id = :aid
+              AND status IN ('editing', 'returned')
+              AND assigned_user_id = :old_uid
         ");
         $stmtUpdState->execute([
             ':upd' => $now,
-            ':aid' => $articleId
+            ':aid' => $articleId,
+            ':old_uid' => $oldOwnerUserId,
         ]);
+        if ($stmtUpdState->rowCount() !== 1) {
+            throw new RuntimeException('Assignment state changed before final release update.');
+        }
 
         // A2+A3+A4: Draft cleanup
         if ($handoff['has_draft']) {
@@ -822,8 +876,249 @@ function editorial_release_assignment(string $articleId, string $adminUserId, bo
     });
 }
 
+/**
+ * Resolve and revalidate the live version before a terminal Published article
+ * is intentionally reopened. Publication facts remain untouched by callers.
+ *
+ * @return array{ok:bool,message:string,live_hash?:string,state?:array<string,mixed>}
+ */
+function editorial_prepare_published_reopen(string $articleId, string $adminUserId): array
+{
+    $adminCheck = editorial_verify_active_admin_actor($adminUserId);
+    if (!$adminCheck['ok']) {
+        return $adminCheck;
+    }
+
+    $article = editorial_find_article($articleId);
+    if ($article === null) {
+        return ['ok' => false, 'message' => 'Không tìm thấy bài viết.'];
+    }
+    $htmlPath = editorial_resolve_article_path($article);
+    if ($htmlPath === null) {
+        return ['ok' => false, 'message' => 'Không thể đọc file HTML live của bài viết.'];
+    }
+    $liveHash = editorial_live_hash($htmlPath);
+    if ($liveHash === null) {
+        return ['ok' => false, 'message' => 'Không thể tạo mã băm file HTML live.'];
+    }
+
+    $state = editorial_get_article_state($articleId);
+    if ($state === null
+        || (string) ($state['status'] ?? '') !== 'published'
+        || trim((string) ($state['assigned_user_id'] ?? '')) !== '') {
+        return ['ok' => false, 'message' => 'Chỉ có thể mở lại bài đã Publish và không còn người phụ trách.'];
+    }
+    $publishedLiveHash = trim((string) ($state['published_live_hash'] ?? ''));
+    if ($publishedLiveHash !== '' && !hash_equals($publishedLiveHash, $liveHash)) {
+        return ['ok' => false, 'message' => 'File live đã thay đổi ngoài Editorial. Không thể mở lại bài an toàn.'];
+    }
+
+    return [
+        'ok' => true,
+        'message' => '',
+        'live_hash' => $liveHash,
+        'state' => $state,
+    ];
+}
+
+/**
+ * Admin-only transition: published → editing, assigned to a chosen user.
+ * This starts a fresh editorial cycle while preserving last-publication facts.
+ *
+ * @return array{ok:bool,message:string}
+ */
+function editorial_reopen_published_for_user(string $articleId, string $adminUserId, string $newUserId): array
+{
+    $newUser = editorial_find_user_by_id($newUserId);
+    if ($newUser === null
+        || empty($newUser['is_active'])
+        || !in_array((string) ($newUser['role'] ?? ''), ['admin', 'editor'], true)) {
+        return ['ok' => false, 'message' => 'Người dùng được giao không hợp lệ hoặc không hoạt động.'];
+    }
+
+    $prepared = editorial_prepare_published_reopen($articleId, $adminUserId);
+    if (!$prepared['ok']) {
+        return $prepared;
+    }
+
+    return editorial_transaction(function () use ($articleId, $adminUserId, $newUserId): array {
+        $adminCheck = editorial_verify_active_admin_actor($adminUserId);
+        if (!$adminCheck['ok']) {
+            return $adminCheck;
+        }
+        $newUser = editorial_find_user_by_id($newUserId);
+        if ($newUser === null
+            || empty($newUser['is_active'])
+            || !in_array((string) ($newUser['role'] ?? ''), ['admin', 'editor'], true)) {
+            return ['ok' => false, 'message' => 'Người dùng được giao không hợp lệ hoặc không hoạt động.'];
+        }
+        $state = editorial_get_article_state($articleId);
+        $article = editorial_find_article($articleId);
+        $htmlPath = $article === null ? null : editorial_resolve_article_path($article);
+        $liveHash = $htmlPath === null ? null : editorial_live_hash($htmlPath);
+        if ($state === null
+            || (string) ($state['status'] ?? '') !== 'published'
+            || trim((string) ($state['assigned_user_id'] ?? '')) !== ''
+            || $liveHash === null) {
+            return ['ok' => false, 'message' => 'Trạng thái bài viết đã thay đổi. Vui lòng tải lại danh sách.'];
+        }
+        $publishedLiveHash = trim((string) ($state['published_live_hash'] ?? ''));
+        if ($publishedLiveHash !== '' && !hash_equals($publishedLiveHash, $liveHash)) {
+            return ['ok' => false, 'message' => 'File live đã thay đổi ngoài Editorial. Không thể mở lại bài an toàn.'];
+        }
+
+        $db = editorial_db();
+        $stmt = $db->prepare('
+            SELECT COUNT(*) FROM editorial_assignments
+            WHERE article_id = :aid AND released_at IS NULL
+        ');
+        $stmt->execute(['aid' => $articleId]);
+        if ((int) $stmt->fetchColumn() !== 0) {
+            return ['ok' => false, 'message' => 'Bài viết đang có phân công hoạt động. Vui lòng tải lại danh sách.'];
+        }
+
+        $now = date('c');
+        $assignmentId = editorial_generate_id('asgn');
+        $db->prepare('DELETE FROM editorial_locks WHERE article_id = :aid')->execute(['aid' => $articleId]);
+        $stmt = $db->prepare('
+            INSERT INTO editorial_assignments (id, article_id, user_id, assigned_at, released_at, release_reason, created_by, created_at)
+            VALUES (:id, :article_id, :user_id, :assigned_at, NULL, NULL, :created_by, :created_at)
+        ');
+        $stmt->execute([
+            'id' => $assignmentId,
+            'article_id' => $articleId,
+            'user_id' => $newUserId,
+            'assigned_at' => $now,
+            'created_by' => $adminUserId,
+            'created_at' => $now,
+        ]);
+
+        $stmt = $db->prepare('
+            UPDATE editorial_article_state
+            SET status = \'editing\',
+                assigned_user_id = :user_id,
+                assigned_at = :assigned_at,
+                base_live_hash = :live_hash,
+                current_revision_id = NULL,
+                review_revision_id = NULL,
+                review_requested_by = NULL,
+                review_requested_at = NULL,
+                approved_revision_id = NULL,
+                approved_by = NULL,
+                approved_at = NULL,
+                updated_at = :updated_at
+            WHERE article_id = :article_id
+              AND status = \'published\'
+              AND (assigned_user_id IS NULL OR assigned_user_id = \'\')
+        ');
+        $stmt->execute([
+            'user_id' => $newUserId,
+            'assigned_at' => $now,
+            'live_hash' => $liveHash,
+            'updated_at' => $now,
+            'article_id' => $articleId,
+        ]);
+        if ($stmt->rowCount() !== 1) {
+            throw new RuntimeException('Published article changed before final assignment update.');
+        }
+
+        editorial_log_activity('article.published.reopened_assigned', $articleId, $adminUserId, json_encode([
+            'admin_user_id' => $adminUserId,
+            'new_user_id' => $newUserId,
+            'new_assignment_id' => $assignmentId,
+            'previous_published_revision_id' => (string) ($state['published_revision_id'] ?? ''),
+        ]));
+
+        return ['ok' => true, 'message' => 'Đã mở lại bài và giao người phụ trách mới.'];
+    });
+}
+
+/**
+ * Admin-only transition: published → available for a future self-claim.
+ * This clears the active editorial cycle only; publication facts stay intact.
+ *
+ * @return array{ok:bool,message:string}
+ */
+function editorial_reopen_published_for_team(string $articleId, string $adminUserId): array
+{
+    $prepared = editorial_prepare_published_reopen($articleId, $adminUserId);
+    if (!$prepared['ok']) {
+        return $prepared;
+    }
+
+    return editorial_transaction(function () use ($articleId, $adminUserId): array {
+        $adminCheck = editorial_verify_active_admin_actor($adminUserId);
+        if (!$adminCheck['ok']) {
+            return $adminCheck;
+        }
+        $state = editorial_get_article_state($articleId);
+        $article = editorial_find_article($articleId);
+        $htmlPath = $article === null ? null : editorial_resolve_article_path($article);
+        $liveHash = $htmlPath === null ? null : editorial_live_hash($htmlPath);
+        if ($state === null
+            || (string) ($state['status'] ?? '') !== 'published'
+            || trim((string) ($state['assigned_user_id'] ?? '')) !== ''
+            || $liveHash === null) {
+            return ['ok' => false, 'message' => 'Trạng thái bài viết đã thay đổi. Vui lòng tải lại danh sách.'];
+        }
+        $publishedLiveHash = trim((string) ($state['published_live_hash'] ?? ''));
+        if ($publishedLiveHash !== '' && !hash_equals($publishedLiveHash, $liveHash)) {
+            return ['ok' => false, 'message' => 'File live đã thay đổi ngoài Editorial. Không thể mở lại bài an toàn.'];
+        }
+
+        $db = editorial_db();
+        $stmt = $db->prepare('
+            SELECT COUNT(*) FROM editorial_assignments
+            WHERE article_id = :aid AND released_at IS NULL
+        ');
+        $stmt->execute(['aid' => $articleId]);
+        if ((int) $stmt->fetchColumn() !== 0) {
+            return ['ok' => false, 'message' => 'Bài viết đang có phân công hoạt động. Vui lòng tải lại danh sách.'];
+        }
+
+        $now = date('c');
+        $db->prepare('DELETE FROM editorial_locks WHERE article_id = :aid')->execute(['aid' => $articleId]);
+        $stmt = $db->prepare('
+            UPDATE editorial_article_state
+            SET status = \'available\',
+                assigned_user_id = NULL,
+                assigned_at = NULL,
+                base_live_hash = NULL,
+                current_revision_id = NULL,
+                review_revision_id = NULL,
+                review_requested_by = NULL,
+                review_requested_at = NULL,
+                approved_revision_id = NULL,
+                approved_by = NULL,
+                approved_at = NULL,
+                updated_at = :updated_at
+            WHERE article_id = :article_id
+              AND status = \'published\'
+              AND (assigned_user_id IS NULL OR assigned_user_id = \'\')
+        ');
+        $stmt->execute([
+            'updated_at' => $now,
+            'article_id' => $articleId,
+        ]);
+        if ($stmt->rowCount() !== 1) {
+            throw new RuntimeException('Published article changed before final open-for-team update.');
+        }
+
+        editorial_log_activity('article.published.reopened_available', $articleId, $adminUserId, json_encode([
+            'admin_user_id' => $adminUserId,
+            'previous_published_revision_id' => (string) ($state['published_revision_id'] ?? ''),
+        ]));
+
+        return ['ok' => true, 'message' => 'Đã mở lại bài cho nhóm nhận biên tập.'];
+    });
+}
+
 function editorial_force_unlock(string $articleId, string $adminUserId): array
 {
+    $adminCheck = editorial_verify_active_admin_actor($adminUserId);
+    if (!$adminCheck['ok']) {
+        return $adminCheck;
+    }
     $db = editorial_db();
     
     $stmtLock = $db->prepare("SELECT * FROM editorial_locks WHERE article_id = :aid");

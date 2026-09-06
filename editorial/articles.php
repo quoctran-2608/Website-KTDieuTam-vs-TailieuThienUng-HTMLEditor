@@ -37,6 +37,13 @@ if (editorial_is_post()) {
             $newUserId = trim((string) ($_POST['new_user_id'] ?? ''));
             $result = editorial_reassign_article($targetArticleId, $currentUserId, $newUserId, true);
             editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
+        } elseif ($adminAction === 'reopen_assign') {
+            $newUserId = trim((string) ($_POST['new_user_id'] ?? ''));
+            $result = editorial_reopen_published_for_user($targetArticleId, $currentUserId, $newUserId);
+            editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
+        } elseif ($adminAction === 'reopen_available') {
+            $result = editorial_reopen_published_for_team($targetArticleId, $currentUserId);
+            editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
         }
 
         $returnParams = [];
@@ -95,10 +102,11 @@ $section = $filters['section'];
 $assignment = $filters['assignment'];
 $page = max(1, (int) ($_GET['page'] ?? 1));
 
-// Load states for assignment filter — need all assigned article IDs
+// Load all states so the assignment filter never treats terminal Published
+// articles with no owner as if they were Available.
 $db = editorial_db();
 $allStates = [];
-$stateRows = $db->query('SELECT * FROM editorial_article_state WHERE assigned_user_id IS NOT NULL')->fetchAll();
+$stateRows = $db->query('SELECT * FROM editorial_article_state')->fetchAll();
 foreach ($stateRows as $row) {
     $allStates[(string) $row['article_id']] = $row;
 }
@@ -134,7 +142,11 @@ $sections = editorial_article_sections();
 $isAdmin = (($currentUser['role'] ?? '') === 'admin');
 $isEditor = (($currentUser['role'] ?? '') === 'editor');
 $activeUsers = $isAdmin ? editorial_list_users() : [];
-$activeUsers = array_filter($activeUsers, fn($u) => !empty($u['is_active']));
+$activeUsers = array_filter(
+    $activeUsers,
+    static fn(array $user): bool => !empty($user['is_active'])
+        && in_array((string) ($user['role'] ?? ''), ['admin', 'editor'], true)
+);
 
 // Build filter query string helper
 $filterParams = array_filter($filters, static fn(string $value): bool => $value !== '');
@@ -319,7 +331,7 @@ editorial_layout_header([
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <?php if ($ownerId === '' && $status !== 'published'): ?>
+                                <?php if ($ownerId === '' && $status === 'available'): ?>
                                     <form method="post" action="<?= editorial_h(editorial_url('articles.php')) ?>" style="display:inline;">
                                         <?= editorial_csrf_input() ?>
                                         <input type="hidden" name="claim_article_id" value="<?= editorial_h($aid) ?>">
@@ -365,19 +377,66 @@ editorial_layout_header([
                                         </a>
                                     </div>
                                 <?php endif; ?>
-                                <?php if ($isAdmin && $ownerId !== ''): ?>
+                                <?php if ($isAdmin && in_array($status, ['editing', 'returned'], true) && $ownerId !== ''): ?>
                                     <div class="editorial-admin-actions" style="margin-top:4px;">
-                                        <?php if (in_array($status, ['editing', 'returned'], true)): ?>
-                                            <form method="post" style="display:inline;">
-                                                <?= editorial_csrf_input() ?>
-                                                <input type="hidden" name="_admin_action" value="release">
-                                                <input type="hidden" name="target_article_id" value="<?= editorial_h($aid) ?>">
-                                                <?php foreach ($filterParams as $k => $v): ?><input type="hidden" name="<?= editorial_h($k) ?>" value="<?= editorial_h($v) ?>"><?php endforeach; ?>
-                                                <button type="submit" class="editorial-admin-btn" onclick="return confirm('Giải phóng bài viết này?');" title="Giải phóng">
-                                                    <i class="fa-solid fa-unlock"></i>
-                                                </button>
-                                            </form>
-                                        <?php endif; ?>
+                                        <form method="post" class="editorial-admin-reassign-form">
+                                            <?= editorial_csrf_input() ?>
+                                            <input type="hidden" name="_admin_action" value="reassign">
+                                            <input type="hidden" name="target_article_id" value="<?= editorial_h($aid) ?>">
+                                            <?php foreach ($filterParams as $k => $v): ?><input type="hidden" name="<?= editorial_h($k) ?>" value="<?= editorial_h($v) ?>"><?php endforeach; ?>
+                                            <input type="hidden" name="page" value="<?= $currentPage ?>">
+                                            <select name="new_user_id" required aria-label="Chọn người phụ trách mới">
+                                                <option value="">Chọn người phụ trách…</option>
+                                                <?php foreach ($activeUsers as $activeUser): ?>
+                                                    <?php if ((string) $activeUser['id'] !== $ownerId): ?>
+                                                        <option value="<?= editorial_h((string) $activeUser['id']) ?>"><?= editorial_h((string) $activeUser['display_name']) ?></option>
+                                                    <?php endif; ?>
+                                                <?php endforeach; ?>
+                                            </select>
+                                            <button type="submit" class="editorial-admin-btn" title="Chuyển người phụ trách">
+                                                <i class="fa-solid fa-user-arrow-down"></i> Chuyển phụ trách
+                                            </button>
+                                        </form>
+                                        <form method="post" style="display:inline;">
+                                            <?= editorial_csrf_input() ?>
+                                            <input type="hidden" name="_admin_action" value="release">
+                                            <input type="hidden" name="target_article_id" value="<?= editorial_h($aid) ?>">
+                                            <?php foreach ($filterParams as $k => $v): ?><input type="hidden" name="<?= editorial_h($k) ?>" value="<?= editorial_h($v) ?>"><?php endforeach; ?>
+                                            <input type="hidden" name="page" value="<?= $currentPage ?>">
+                                            <button type="submit" class="editorial-admin-btn" onclick="return confirm('Giải phóng bài viết này?');" title="Giải phóng">
+                                                <i class="fa-solid fa-unlock"></i> Giải phóng
+                                            </button>
+                                        </form>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($isAdmin && $status === 'published' && $ownerId === ''): ?>
+                                    <div class="editorial-admin-actions" style="margin-top:4px;">
+                                        <form method="post" class="editorial-admin-reassign-form">
+                                            <?= editorial_csrf_input() ?>
+                                            <input type="hidden" name="_admin_action" value="reopen_assign">
+                                            <input type="hidden" name="target_article_id" value="<?= editorial_h($aid) ?>">
+                                            <?php foreach ($filterParams as $k => $v): ?><input type="hidden" name="<?= editorial_h($k) ?>" value="<?= editorial_h($v) ?>"><?php endforeach; ?>
+                                            <input type="hidden" name="page" value="<?= $currentPage ?>">
+                                            <select name="new_user_id" required aria-label="Chọn người phụ trách mới">
+                                                <option value="">Chọn người phụ trách…</option>
+                                                <?php foreach ($activeUsers as $activeUser): ?>
+                                                    <option value="<?= editorial_h((string) $activeUser['id']) ?>"><?= editorial_h((string) $activeUser['display_name']) ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                            <button type="submit" class="editorial-admin-btn" onclick="return confirm('Mở lại bài đã Publish và giao cho người này?');">
+                                                <i class="fa-solid fa-user-pen"></i> Mở lại &amp; giao
+                                            </button>
+                                        </form>
+                                        <form method="post" style="display:inline;">
+                                            <?= editorial_csrf_input() ?>
+                                            <input type="hidden" name="_admin_action" value="reopen_available">
+                                            <input type="hidden" name="target_article_id" value="<?= editorial_h($aid) ?>">
+                                            <?php foreach ($filterParams as $k => $v): ?><input type="hidden" name="<?= editorial_h($k) ?>" value="<?= editorial_h($v) ?>"><?php endforeach; ?>
+                                            <input type="hidden" name="page" value="<?= $currentPage ?>">
+                                            <button type="submit" class="editorial-admin-btn" onclick="return confirm('Mở lại bài đã Publish cho nhóm tự nhận biên tập?');">
+                                                <i class="fa-solid fa-users"></i> Mở lại cho nhóm
+                                            </button>
+                                        </form>
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($canHandoff): ?>
