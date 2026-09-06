@@ -114,7 +114,10 @@ save drafts, create revisions, mutate state or alter live HTML.
 ### INV-13 — Review evidence
 
 Sending review requires a coherent verified Baseline, Stage1 and Stage2, with
-the draft content equal to active Stage2. Do not weaken this evidence chain.
+the draft content equal to active Stage2. An optional Editor note is stored in
+the revision-scoped `article.review.submitted` activity event, not in the
+immutable Stage2 snapshot. Admin review must resolve that note by the exact
+`review_revision_id`. Do not weaken or guess this evidence chain.
 
 ### INV-14 — Handoff content authority
 

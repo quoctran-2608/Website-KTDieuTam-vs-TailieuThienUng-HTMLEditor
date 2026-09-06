@@ -17,6 +17,101 @@ declare(strict_types=1);
  */
 
 /**
+ * Normalize the optional note attached to a review submission.
+ *
+ * @return array{ok:bool,note:string,message:string}
+ */
+function editorial_normalize_review_submission_note(string $note): array
+{
+    $note = trim($note);
+    if (mb_strlen($note) > 2000) {
+        return [
+            'ok' => false,
+            'note' => '',
+            'message' => 'Ghi chú gửi duyệt không được vượt quá 2000 ký tự.',
+        ];
+    }
+    return ['ok' => true, 'note' => $note, 'message' => ''];
+}
+
+/**
+ * Resolve submission metadata by immutable review revision ID.
+ *
+ * The event payload is historical and revision-scoped, so a returned article
+ * that is submitted again cannot accidentally show the previous note.
+ *
+ * @param array<int,string> $revisionIds
+ * @return array<string,array{article_id:string,actor_user_id:string,created_at:string,note:string}>
+ */
+function editorial_get_review_submission_contexts(array $revisionIds): array
+{
+    $targets = [];
+    foreach ($revisionIds as $revisionId) {
+        $revisionId = trim($revisionId);
+        if ($revisionId !== '') {
+            $targets[$revisionId] = true;
+        }
+    }
+    if ($targets === []) {
+        return [];
+    }
+
+    $contexts = [];
+    foreach (array_chunk(array_keys($targets), 400) as $chunkIndex => $revisionChunk) {
+        $params = [];
+        $placeholders = [];
+        foreach ($revisionChunk as $index => $revisionId) {
+            $name = 'revision_' . $chunkIndex . '_' . $index;
+            $placeholders[] = ':' . $name;
+            $params[$name] = $revisionId;
+        }
+        $stmt = editorial_db()->prepare("
+            SELECT
+                article_id,
+                actor_user_id,
+                payload_json,
+                created_at,
+                json_extract(payload_json, '$.revision_id') AS revision_id
+            FROM editorial_activity
+            WHERE event_type = 'article.review.submitted'
+              AND json_valid(payload_json) = 1
+              AND json_extract(payload_json, '$.revision_id') IN (" . implode(', ', $placeholders) . ")
+            ORDER BY id DESC
+        ");
+        $stmt->execute($params);
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+            $revisionId = trim((string) ($row['revision_id'] ?? ''));
+            $payload = json_decode((string) ($row['payload_json'] ?? ''), true);
+            if (!is_array($payload)
+                || $revisionId === ''
+                || !isset($targets[$revisionId])
+                || isset($contexts[$revisionId])) {
+                continue;
+            }
+            $contexts[$revisionId] = [
+                'article_id' => (string) ($row['article_id'] ?? ''),
+                'actor_user_id' => (string) ($row['actor_user_id'] ?? ''),
+                'created_at' => (string) ($row['created_at'] ?? ''),
+                'note' => trim((string) ($payload['note'] ?? '')),
+            ];
+        }
+    }
+    return $contexts;
+}
+
+/**
+ * @return array{article_id:string,actor_user_id:string,created_at:string,note:string}|null
+ */
+function editorial_get_review_submission_context(string $articleId, string $revisionId): ?array
+{
+    $context = editorial_get_review_submission_contexts([$revisionId])[$revisionId] ?? null;
+    if ($context === null || !hash_equals($articleId, $context['article_id'])) {
+        return null;
+    }
+    return $context;
+}
+
+/**
  * @return array<int,array<string,mixed>>
  */
 function editorial_get_verified_revisions_for_review(string $articleId, string $assignmentId, string $where = '', array $params = []): array
@@ -244,8 +339,14 @@ function editorial_get_recent_approved_reviews(int $limit = 20): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function editorial_send_for_review(string $articleId, string $userId, string $lockToken): array
+function editorial_send_for_review(string $articleId, string $userId, string $lockToken, string $note = ''): array
 {
+    $normalizedNote = editorial_normalize_review_submission_note($note);
+    if (!$normalizedNote['ok']) {
+        return $normalizedNote;
+    }
+    $note = $normalizedNote['note'];
+
     $article = editorial_find_article($articleId);
     if (!$article) {
         return ['ok' => false, 'message' => 'Không tìm thấy bài viết trong danh mục.'];
@@ -270,7 +371,7 @@ function editorial_send_for_review(string $articleId, string $userId, string $lo
         return ['ok' => false, 'message' => 'Cảnh báo: File HTML gốc đã bị thay đổi bên ngoài hệ thống trong quá trình chỉnh sửa.'];
     }
 
-    return editorial_transaction(function() use ($articleId, $userId, $lockToken, $htmlPath) {
+    return editorial_transaction(function() use ($articleId, $userId, $lockToken, $htmlPath, $note) {
         $state = editorial_get_article_state($articleId);
         
         if ($state['assigned_user_id'] !== $userId) {
@@ -325,6 +426,17 @@ function editorial_send_for_review(string $articleId, string $userId, string $lo
         $revision = $bundle['stage2'];
 
         $now = date('c');
+        $activityPayload = json_encode([
+            'revision_id' => $revision['id'],
+            'revision_no' => $revision['revision_no'],
+            'stage1_revision_id' => $bundle['stage1']['id'],
+            'stage1_revision_no' => $bundle['stage1']['revision_no'],
+            'assignment_id' => $assignment['id'],
+            'note' => $note,
+        ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_INVALID_UTF8_SUBSTITUTE);
+        if ($activityPayload === false) {
+            return ['ok' => false, 'message' => 'Không thể lưu ghi chú gửi duyệt.'];
+        }
 
         $stmtUpdState = $db->prepare("
             UPDATE editorial_article_state
@@ -350,13 +462,19 @@ function editorial_send_for_review(string $articleId, string $userId, string $lo
             ':token' => $lockToken
         ]);
 
-        editorial_log_activity('article.review.submitted', $articleId, $userId, json_encode([
-            'revision_id' => $revision['id'],
-            'revision_no' => $revision['revision_no'],
-            'stage1_revision_id' => $bundle['stage1']['id'],
-            'stage1_revision_no' => $bundle['stage1']['revision_no'],
-            'assignment_id' => $assignment['id']
-        ]));
+        $stmtActivity = $db->prepare('
+            INSERT INTO editorial_activity
+                (event_type, article_id, actor_user_id, payload_json, created_at)
+            VALUES
+                (:event_type, :article_id, :actor_user_id, :payload_json, :created_at)
+        ');
+        $stmtActivity->execute([
+            'event_type' => 'article.review.submitted',
+            'article_id' => $articleId,
+            'actor_user_id' => $userId,
+            'payload_json' => $activityPayload,
+            'created_at' => $now,
+        ]);
 
         return ['ok' => true, 'message' => 'Đã gửi duyệt thành công.'];
     });
@@ -422,6 +540,14 @@ function editorial_approve_review(string $articleId, string $adminUserId): array
         $snap = editorial_get_verified_revision_snapshot($revision);
         if (!$snap['ok']) {
             return ['ok' => false, 'message' => 'Dữ liệu phiên bản bị lỗi: ' . $snap['message']];
+        }
+        $reviewBundle = editorial_resolve_review_stage_bundle($articleId, $revision);
+        if (empty($reviewBundle['ok'])) {
+            return [
+                'ok' => false,
+                'message' => 'Không đủ Bản gốc, Chặng 1 và Chặng 2 hợp lệ để phê duyệt: '
+                    . (string) ($reviewBundle['message'] ?? 'Không xác định.'),
+            ];
         }
 
         $now = date('c');
@@ -516,6 +642,9 @@ function editorial_review_queue(array $params = []): array
     
     $userIds = array_unique(array_filter($userIds));
     $userNames = editorial_preload_user_names($userIds);
+    $submissionContexts = editorial_get_review_submission_contexts(array_values(array_filter(
+        array_map(static fn(array $row): string => (string) ($row['review_revision_id'] ?? ''), $rows)
+    )));
     
     $searchQ = isset($params['q']) ? mb_strtolower(trim($params['q'])) : '';
 
@@ -556,7 +685,8 @@ function editorial_review_queue(array $params = []): array
             'revision_no' => $revisionNo,
             'requested_at' => $row['review_requested_at'],
             'requester_name' => $userNames[$row['review_requested_by']] ?? 'Unknown',
-            'has_live_conflict' => $hasLiveConflict
+            'has_live_conflict' => $hasLiveConflict,
+            'review_note' => (string) (($submissionContexts[(string) ($row['review_revision_id'] ?? '')]['note'] ?? '')),
         ];
     }
     

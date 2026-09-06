@@ -184,7 +184,12 @@ if (editorial_is_post()) {
         }
 
         if ($intent === 'save_then_review') {
-            $reviewResult = editorial_send_for_review($articleId, $currentUserId, $lockToken);
+            $reviewResult = editorial_send_for_review(
+                $articleId,
+                $currentUserId,
+                $lockToken,
+                trim((string) ($_POST['review_note'] ?? ''))
+            );
             editorial_flash_set($reviewResult['ok'] ? 'success' : 'danger', (string) ($reviewResult['message'] ?? 'Không thể gửi duyệt.'));
             editorial_redirect($reviewResult['ok']
                 ? editorial_url('my-work.php')
@@ -815,6 +820,16 @@ $innerScript = <<<JS
       event.preventDefault();
       if (!form || !formIntent || form.dataset.submitting === '1') return;
       const action = button.dataset.editorAction || 'save_draft';
+      if (action === 'save_then_review') {
+        openReviewSubmissionDialog();
+        return;
+      }
+      submitEditorAction(action);
+    });
+  });
+
+  function submitEditorAction(action) {
+      if (!form || !formIntent || form.dataset.submitting === '1') return;
       if (action === 'save_then_publish'
         && !window.confirm('Bạn sắp lưu nội dung hiện tại rồi Publish lên website. Tiếp tục?')) {
         return;
@@ -828,8 +843,38 @@ $innerScript = <<<JS
         publishConfirmField.value = action === 'save_then_publish' ? '1' : '';
       }
       form.requestSubmit();
+  }
+
+  const reviewSubmissionDialog = document.getElementById('reviewSubmissionDialog');
+  const reviewSubmissionNote = document.getElementById('reviewSubmissionNote');
+  const reviewSubmissionNoteField = document.getElementById('reviewSubmissionNoteField');
+  const reviewSubmissionConfirm = document.getElementById('reviewSubmissionConfirm');
+  const reviewSubmissionCancel = document.getElementById('reviewSubmissionCancel');
+
+  function openReviewSubmissionDialog() {
+    if (!reviewSubmissionDialog || !reviewSubmissionNote || !reviewSubmissionNoteField
+      || typeof reviewSubmissionDialog.showModal !== 'function') {
+      const fallbackNote = window.prompt('Ghi chú gửi Admin duyệt (không bắt buộc):', reviewSubmissionNote ? reviewSubmissionNote.value : '');
+      if (fallbackNote === null) return;
+      if (reviewSubmissionNote) reviewSubmissionNote.value = fallbackNote.slice(0, 2000);
+      submitEditorAction('save_then_review');
+      return;
+    }
+    reviewSubmissionNoteField.value = reviewSubmissionNote.value;
+    reviewSubmissionDialog.showModal();
+    window.setTimeout(() => reviewSubmissionNoteField.focus(), 0);
+  }
+
+  if (reviewSubmissionCancel && reviewSubmissionDialog) {
+    reviewSubmissionCancel.addEventListener('click', () => reviewSubmissionDialog.close());
+  }
+  if (reviewSubmissionConfirm && reviewSubmissionDialog && reviewSubmissionNote && reviewSubmissionNoteField) {
+    reviewSubmissionConfirm.addEventListener('click', () => {
+      reviewSubmissionNote.value = reviewSubmissionNoteField.value.trim();
+      reviewSubmissionDialog.close();
+      submitEditorAction('save_then_review');
     });
-  });
+  }
 
   document.querySelectorAll('button[form="exitWorkspaceForm"]').forEach((button) => {
     button.addEventListener('click', (event) => {
@@ -1174,6 +1219,7 @@ editorial_layout_header([
         <input type="hidden" name="expected_draft_hash" id="expectedDraftHash" value="<?= editorial_h($draftContentHash) ?>">
         <input type="hidden" name="prose_html_b64" id="proseHtmlB64" value="">
         <input type="hidden" name="confirm_direct_publish" id="confirmDirectPublish" value="">
+        <input type="hidden" name="review_note" id="reviewSubmissionNote" value="">
 
         <!-- Action bar -->
         <section class="editorial-workflow-bar editorial-workflow-top">
@@ -1476,6 +1522,33 @@ editorial_layout_header([
                 <i class="fa-solid fa-right-from-bracket"></i> Thoát
             </button>
         </section>
+
+        <dialog id="reviewSubmissionDialog" class="editorial-review-submit-dialog">
+            <div class="editorial-review-submit-dialog__head">
+                <div>
+                    <strong>Gửi Admin duyệt bài</strong>
+                    <small>Hệ thống sẽ lưu nội dung hiện tại trước khi gửi.</small>
+                </div>
+                <button type="button" id="reviewSubmissionCancel" class="editorial-dialog-close" aria-label="Đóng">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <label for="reviewSubmissionNoteField">Ghi chú cho Admin <span>(không bắt buộc)</span></label>
+            <textarea
+                id="reviewSubmissionNoteField"
+                rows="5"
+                maxlength="2000"
+                data-nondraft-field
+                placeholder="Ví dụ: Đã cập nhật số liệu 2026, nhờ Admin kiểm tra kỹ bảng ở mục 3..."
+            ></textarea>
+            <small class="editorial-review-submit-dialog__hint">Ghi chú được lưu cùng đúng phiên bản Chặng 2 gửi duyệt.</small>
+            <div class="editorial-review-submit-dialog__actions">
+                <button type="button" class="editorial-return-btn" onclick="document.getElementById('reviewSubmissionDialog').close()">Hủy</button>
+                <button type="button" id="reviewSubmissionConfirm" class="editorial-review-submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i> Lưu và gửi duyệt
+                </button>
+            </div>
+        </dialog>
     </form>
 
     <form id="exitWorkspaceForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">

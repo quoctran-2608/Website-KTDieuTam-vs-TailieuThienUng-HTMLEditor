@@ -98,6 +98,16 @@ if ($articleId !== '') {
     $reviewStageBundle = $revision !== null && $isVerified
         ? editorial_resolve_review_stage_bundle($articleId, $revision)
         : ['ok' => false, 'legacy' => false, 'message' => 'Không thể xác thực phiên bản gửi duyệt để đối chiếu.'];
+    $submissionContext = $revision !== null
+        ? editorial_get_review_submission_context($articleId, (string) ($revision['id'] ?? ''))
+        : null;
+    $reviewNote = trim((string) ($submissionContext['note'] ?? ''));
+    $reviewRequestedAt = (string) (
+        $submissionContext['created_at']
+        ?? $state['review_requested_at']
+        ?? $revision['created_at']
+        ?? ''
+    );
 
     $assignedUser = null;
     if (!empty($state['assigned_user_id'])) {
@@ -105,7 +115,10 @@ if ($articleId !== '') {
     }
 
     $requester = null;
-    if (!empty($state['review_requested_by'])) {
+    if (!empty($submissionContext['actor_user_id'])) {
+        $requester = editorial_find_user_by_id((string) $submissionContext['actor_user_id']);
+    }
+    if ($requester === null && !empty($state['review_requested_by'])) {
         $requester = editorial_find_user_by_id((string) $state['review_requested_by']);
     }
     $approver = null;
@@ -116,17 +129,29 @@ if ($articleId !== '') {
         && !empty($state['approved_revision_id']);
 
     $htmlPath = editorial_resolve_article_path($article);
-    $liveConflict = false;
+    $liveConflict = true;
     $currentLiveHash = null;
     if ($htmlPath !== null) {
         $currentLiveHash = editorial_live_hash($htmlPath);
-        if ($currentLiveHash !== null && $currentLiveHash !== (string)($state['base_live_hash'] ?? '')) {
-            $liveConflict = true;
-        }
+        $liveConflict = $currentLiveHash === null
+            || !hash_equals((string) ($state['base_live_hash'] ?? ''), $currentLiveHash);
     }
 
     $lock = editorial_get_article_lock($articleId);
     $activeUsers = array_filter(editorial_list_users(), fn($u) => !empty($u['is_active']));
+    $baseline = !empty($reviewStageBundle['ok']) ? (array) $reviewStageBundle['baseline'] : null;
+    $stage1 = !empty($reviewStageBundle['ok']) ? (array) $reviewStageBundle['stage1'] : null;
+    $stage2 = !empty($reviewStageBundle['ok']) ? (array) $reviewStageBundle['stage2'] : null;
+    $stage1CompareUrl = $baseline !== null && $stage1 !== null
+        ? editorial_url('compare.php?id=' . urlencode($articleId)
+            . '&from=' . urlencode((string) $baseline['id'])
+            . '&to=' . urlencode((string) $stage1['id']))
+        : '';
+    $stage2CompareUrl = $baseline !== null && $stage2 !== null
+        ? editorial_url('compare.php?id=' . urlencode($articleId)
+            . '&from=' . urlencode((string) $baseline['id'])
+            . '&to=' . urlencode((string) $stage2['id']))
+        : '';
 
     $latestReturnNote = '';
     if ($status === 'returned') {
@@ -140,217 +165,218 @@ if ($articleId !== '') {
         'description' => 'Chi tiết duyệt: ' . $article['title'],
     ]);
     ?>
-    <section class="admin-panel">
-        <div class="panel-head">
-            <h2><?= editorial_h($article['title']) ?></h2>
-            <p>
-                <span class="editorial-badge editorial-status-<?= editorial_h(editorial_status_css($status)) ?>">
-                    <?= editorial_h(editorial_status_label($status)) ?>
-                </span>
-                &nbsp;
-                <a href="<?= editorial_h(editorial_public_article_url($article)) ?>" target="_blank" rel="noopener" style="font-size:0.85rem;">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem trên website
+    <section class="admin-panel editorial-review-dossier">
+        <header class="editorial-review-dossier__header">
+            <div>
+                <a href="<?= editorial_h(editorial_url('review.php')) ?>" class="editorial-review-back">
+                    <i class="fa-solid fa-arrow-left"></i> Danh sách chờ duyệt
                 </a>
-                &nbsp;
-                <a href="<?= editorial_h(editorial_url('review.php')) ?>" style="font-size:0.85rem;">
-                    <i class="fa-solid fa-arrow-left"></i> Về danh sách chờ duyệt
+                <h2><?= editorial_h($article['title']) ?></h2>
+                <div class="editorial-review-header-meta">
+                    <span class="editorial-badge editorial-status-<?= editorial_h(editorial_status_css($status)) ?>">
+                        <?= editorial_h(editorial_status_label($status)) ?>
+                    </span>
+                    <code><?= editorial_h($articleId) ?></code>
+                    <a href="<?= editorial_h(editorial_public_article_url($article)) ?>" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem bài public
+                    </a>
+                </div>
+            </div>
+            <?php if ($status === 'approved'): ?>
+                <a href="<?= editorial_h(editorial_url('publish.php?id=' . urlencode($articleId))) ?>" class="editorial-approve-btn">
+                    <i class="fa-solid fa-rocket"></i> Chuẩn bị Publish
                 </a>
-            </p>
-        </div>
+            <?php endif; ?>
+        </header>
 
         <?php if ($liveConflict): ?>
             <div class="flash flash-warning">
                 <i class="fa-solid fa-triangle-exclamation"></i>
-                <strong>Cảnh báo:</strong> File HTML gốc đã bị thay đổi bên ngoài luồng biên tập. Có thể gây mất dữ liệu nếu phê duyệt.
+                <strong>Không thể duyệt an toàn:</strong> File HTML gốc đã thay đổi hoặc không thể xác thực.
             </div>
         <?php endif; ?>
 
-        <?php if ($revision): ?>
-            <div class="editor-info-panel" style="margin-bottom:20px; padding:16px; background:#f8f9fa; border:1px solid #dee2e6; border-radius:8px;">
-                <h3 style="margin-top:0; font-size:1rem;"><?= ($status === 'approved' || $isHistoricalApprovedDossier) ? 'Thông tin phiên bản đã duyệt' : 'Thông tin phiên bản gửi duyệt' ?></h3>
-                <p><strong>Revision #:</strong> <?= editorial_h((string) $revision['revision_no']) ?></p>
-                <p><strong>Loại:</strong> <?= editorial_h(editorial_revision_label($revision)) ?></p>
-                <p><strong>Người gửi:</strong> <?= editorial_h($requester ? (string) ($requester['display_name'] ?? $requester['username']) : (string) $revision['created_by']) ?></p>
-                <p><strong>Thời gian gửi:</strong> <?= editorial_h(editorial_format_datetime((string) $revision['created_at'])) ?></p>
-                <?php if ($status === 'approved' || $isHistoricalApprovedDossier): ?>
-                    <p><strong>Người duyệt:</strong> <?= editorial_h($approver ? (string) ($approver['display_name'] ?? $approver['username']) : (string) ($state['approved_by'] ?? '')) ?></p>
-                    <p><strong>Thời gian duyệt:</strong> <?= editorial_h(editorial_format_datetime((string) ($state['approved_at'] ?? ''))) ?></p>
-                    <?php if (!empty($detailRevision['legacy'])): ?>
-                        <p><strong>Hồ sơ:</strong> <span style="color:#9a6700;">Phiên duyệt cũ</span></p>
-                    <?php endif; ?>
-                    <?php if ($isHistoricalApprovedDossier): ?>
-                        <p><strong>Trạng thái hiện tại:</strong> <?= editorial_h(editorial_status_label($status)) ?></p>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <p><strong>Ghi chú:</strong> <?= editorial_h((string) ($revision['note'] ?? '')) ?: '<span style="color:#868e96;">—</span>' ?></p>
-                <p><strong>Hash:</strong> <code><?= editorial_h(substr((string) ($revision['content_hash'] ?? ''), 0, 8)) ?></code></p>
-                <p><strong>Snapshot:</strong> 
+        <?php if ($status === 'returned' && $latestReturnNote !== ''): ?>
+            <div class="flash flash-warning">
+                <strong>Lý do trả về gần nhất:</strong> <?= editorial_h($latestReturnNote) ?>
+            </div>
+        <?php endif; ?>
+
+        <div class="editorial-review-cockpit">
+            <section class="editorial-review-summary-card">
+                <div class="editorial-review-summary-card__head">
+                    <div>
+                        <span>Hồ sơ đang xem</span>
+                        <strong><?= editorial_h((string) ($detailRevision['label'] ?? 'Chưa có hồ sơ duyệt')) ?></strong>
+                    </div>
                     <?php if ($isVerified): ?>
-                        <span style="color:#28a745;"><i class="fa-solid fa-check-circle"></i> Đã xác thực toàn vẹn</span>
+                        <span class="editorial-review-integrity is-valid">
+                            <i class="fa-solid fa-circle-check"></i> Snapshot hợp lệ
+                        </span>
                     <?php else: ?>
-                        <span style="color:#dc3545;"><i class="fa-solid fa-times-circle"></i> Không thể xác thực hoặc mất dữ liệu</span>
+                        <span class="editorial-review-integrity is-invalid">
+                            <i class="fa-solid fa-circle-xmark"></i> Không xác thực
+                        </span>
                     <?php endif; ?>
-                </p>
+                </div>
+
+                <div class="editorial-review-key-facts">
+                    <div>
+                        <span>Người gửi</span>
+                        <strong><?= editorial_h($requester ? (string) ($requester['display_name'] ?? $requester['username']) : (string) ($revision['created_by'] ?? 'Không rõ')) ?></strong>
+                    </div>
+                    <div>
+                        <span>Gửi lúc</span>
+                        <strong><?= $reviewRequestedAt !== '' ? editorial_h(editorial_format_datetime($reviewRequestedAt)) : '—' ?></strong>
+                    </div>
+                    <div>
+                        <span>Phiên bản</span>
+                        <strong><?= $revision ? 'Revision #' . editorial_h((string) $revision['revision_no']) : '—' ?></strong>
+                    </div>
+                    <div>
+                        <span>Người phụ trách</span>
+                        <strong><?= editorial_h($assignedUser ? (string) ($assignedUser['display_name'] ?? $assignedUser['username']) : 'Chưa có') ?></strong>
+                    </div>
+                </div>
+
+                <div class="editorial-review-note <?= $reviewNote === '' ? 'is-empty' : '' ?>">
+                    <span><i class="fa-solid fa-message"></i> Ghi chú của biên tập viên</span>
+                    <?php if ($reviewNote !== ''): ?>
+                        <p><?= nl2br(editorial_h($reviewNote)) ?></p>
+                    <?php else: ?>
+                        <p>Không có ghi chú kèm theo lần gửi duyệt này.</p>
+                    <?php endif; ?>
+                </div>
+
                 <div class="editorial-review-stage-compare">
-                    <h3>So sánh biên tập</h3>
-                    <?php if (!empty($reviewStageBundle['ok'])): ?>
-                        <?php
-                        $baseline = $reviewStageBundle['baseline'];
-                        $stage1 = $reviewStageBundle['stage1'];
-                        $stage2 = $reviewStageBundle['stage2'];
-                        ?>
+                    <h3>Đối chiếu bắt buộc</h3>
+                    <?php if ($stage1CompareUrl !== '' && $stage2CompareUrl !== ''): ?>
                         <div class="editorial-review-compare-actions">
-                            <a
-                                href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $baseline['id']) . '&to=' . urlencode((string) $stage1['id'])) ) ?>"
-                                class="editorial-compare-btn"
-                                target="_blank"
-                                rel="noopener"
-                            >
-                                <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 1
+                            <a href="<?= editorial_h($stage1CompareUrl) ?>" class="editorial-compare-btn" target="_blank" rel="noopener">
+                                <i class="fa-solid fa-code-compare"></i>
+                                <span>Bài gốc ↔ Chặng 1<small>Revision #<?= editorial_h((string) ($stage1['revision_no'] ?? '')) ?></small></span>
                             </a>
-                            <a
-                                href="<?= editorial_h(editorial_url('compare.php?id=' . urlencode($articleId) . '&from=' . urlencode((string) $baseline['id']) . '&to=' . urlencode((string) $stage2['id'])) ) ?>"
-                                class="editorial-compare-btn"
-                                target="_blank"
-                                rel="noopener"
-                            >
-                                <i class="fa-solid fa-code-compare"></i> Bản gốc ↔ Chặng 2
+                            <a href="<?= editorial_h($stage2CompareUrl) ?>" class="editorial-compare-btn is-primary" target="_blank" rel="noopener">
+                                <i class="fa-solid fa-code-compare"></i>
+                                <span>Bài gốc ↔ Chặng 2<small>Revision #<?= editorial_h((string) ($stage2['revision_no'] ?? '')) ?></small></span>
                             </a>
                         </div>
-                        <p class="editorial-review-compare-meta">
-                            Chặng 1 · Revision #<?= editorial_h((string) $stage1['revision_no']) ?>
-                            &nbsp;·&nbsp;
-                            Chặng 2 · Revision #<?= editorial_h((string) $stage2['revision_no']) ?>
-                        </p>
                     <?php else: ?>
                         <p class="editorial-review-compare-warning"><?= editorial_h((string) ($reviewStageBundle['message'] ?? 'Chưa có đủ dữ liệu để đối chiếu.')) ?></p>
                     <?php endif; ?>
                 </div>
-            </div>
-        <?php else: ?>
-            <p style="color:#868e96;">Không có thông tin phiên bản gắn với trạng thái duyệt này.</p>
-        <?php endif; ?>
+            </section>
 
-        <?php if ($status === 'returned'): ?>
-            <div class="flash flash-warning">
-                <strong>Lý do trả về (gần nhất):</strong> <?= editorial_h($latestReturnNote) ?>
-            </div>
-        <?php endif; ?>
-
-        <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:20px;">
-            <div style="flex:1; min-width:300px; border:1px solid #dee2e6; border-radius:8px; padding:16px; background:#f8f9fa;">
-                <h3 style="margin-top:0; font-size:0.95rem; border-bottom:1px solid #dee2e6; padding-bottom:8px;">Quản lý Phân công & Khóa</h3>
-                <p><strong>Người phụ trách:</strong> <?= editorial_h($assignedUser ? (string) ($assignedUser['display_name'] ?? $assignedUser['username']) : 'Chưa có') ?></p>
-                <p><strong>Trạng thái khóa:</strong> <?= $lock ? '<span style="color:#dc3545;"><i class="fa-solid fa-lock"></i> Đang bị khóa</span>' : '<span style="color:#28a745;"><i class="fa-solid fa-unlock"></i> Tự do</span>' ?></p>
-                
-                <?php if (in_array($status, ['editing', 'returned'], true)): ?>
-                    <?php if ($lock): ?>
-                        <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>" style="margin-top:10px;">
-                            <?= editorial_csrf_input() ?>
-                            <input type="hidden" name="_intent" value="force_unlock">
-                            <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-                            <button type="submit" class="admin-btn admin-btn-danger" style="padding:4px 8px; font-size:0.85rem;" onclick="return confirm('Bạn có chắc chắn muốn mở khóa bắt buộc?');">
-                                <i class="fa-solid fa-unlock-keyhole"></i> Mở khóa bắt buộc
-                            </button>
-                        </form>
-                    <?php endif; ?>
-
-                    <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>" style="margin-top:10px; display:flex; gap:8px;">
+            <aside class="editorial-review-decision-card">
+                <?php if ($status === 'ready_review'): ?>
+                    <h3>Quyết định duyệt</h3>
+                    <p>Đối chiếu hai chặng trước khi chọn hành động.</p>
+                    <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>">
                         <?= editorial_csrf_input() ?>
-                        <input type="hidden" name="_intent" value="reassign">
+                        <input type="hidden" name="_intent" value="approve">
                         <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-                        <select name="new_user_id" required style="padding:4px; border:1px solid #ccc; border-radius:4px; font-size:0.85rem;">
-                            <option value="">-- Chọn người mới --</option>
-                            <?php foreach ($activeUsers as $u): ?>
-                                <option value="<?= editorial_h($u['id']) ?>"><?= editorial_h($u['display_name'] ?? $u['username']) ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                        <button type="submit" class="admin-btn admin-btn-primary" style="padding:4px 8px; font-size:0.85rem;">Giao việc</button>
-                    </form>
-                    
-                    <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>" style="margin-top:10px;">
-                        <?= editorial_csrf_input() ?>
-                        <input type="hidden" name="_intent" value="release">
-                        <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-                        <button type="submit" class="admin-btn" style="padding:4px 8px; font-size:0.85rem; background:#6c757d; color:white;" onclick="return confirm('Gỡ bỏ phụ trách bài viết này?');">
-                            Gỡ bỏ phụ trách
+                        <button type="submit" class="editorial-review-approve-action" <?= (!$isVerified || empty($reviewStageBundle['ok']) || $liveConflict) ? 'disabled title="Cần snapshot hợp lệ, đủ hai đối chiếu và không có xung đột file gốc."' : 'onclick="return confirm(\'Bạn xác nhận phê duyệt bài viết này?\');"' ?>>
+                            <i class="fa-solid fa-check"></i> Phê duyệt bài
                         </button>
                     </form>
-                    
-                    <details style="margin-top:10px;">
-                        <summary style="font-size:0.85rem; color:#dc3545; cursor:pointer;">Hiển thị tùy chọn ép buộc (Force)</summary>
-                        <div style="padding:10px; border:1px solid #f5c6cb; background:#f8d7da; border-radius:4px; margin-top:8px;">
-                            <p style="font-size:0.85rem; margin-top:0; color:#721c24;">Dùng khi có bản nháp chưa lưu nhưng người dùng cũ không thể tiếp tục.</p>
-                            <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>" style="display:flex; gap:8px; margin-bottom:8px;">
+                    <details class="editorial-review-return-action">
+                        <summary><i class="fa-solid fa-rotate-left"></i> Trả lại để chỉnh sửa</summary>
+                        <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>">
+                            <?= editorial_csrf_input() ?>
+                            <input type="hidden" name="_intent" value="return_review">
+                            <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
+                            <label for="returnReviewNote">Lý do trả lại</label>
+                            <textarea id="returnReviewNote" name="return_note" required minlength="1" maxlength="2000" rows="4" placeholder="Nêu rõ phần cần chỉnh..."></textarea>
+                            <button type="submit" class="editorial-return-btn">Gửi yêu cầu chỉnh lại</button>
+                        </form>
+                    </details>
+                <?php elseif ($status === 'approved' || $isHistoricalApprovedDossier): ?>
+                    <h3>Thông tin phê duyệt</h3>
+                    <dl>
+                        <dt>Người duyệt</dt>
+                        <dd><?= editorial_h($approver ? (string) ($approver['display_name'] ?? $approver['username']) : (string) ($state['approved_by'] ?? 'Không rõ')) ?></dd>
+                        <dt>Thời gian</dt>
+                        <dd><?= !empty($state['approved_at']) ? editorial_h(editorial_format_datetime((string) $state['approved_at'])) : '—' ?></dd>
+                        <?php if ($isHistoricalApprovedDossier): ?>
+                            <dt>Trạng thái hiện tại</dt>
+                            <dd><?= editorial_h(editorial_status_label($status)) ?></dd>
+                        <?php endif; ?>
+                    </dl>
+                <?php else: ?>
+                    <h3>Hồ sơ chỉ đọc</h3>
+                    <p>Trạng thái hiện tại không có hành động duyệt.</p>
+                <?php endif; ?>
+            </aside>
+        </div>
+
+        <details class="editor-info-panel editorial-review-admin-tools">
+            <summary><i class="fa-solid fa-user-gear"></i> Quản lý phân công & khóa</summary>
+            <div class="editorial-review-admin-tools__body">
+                <p><strong>Người phụ trách:</strong> <?= editorial_h($assignedUser ? (string) ($assignedUser['display_name'] ?? $assignedUser['username']) : 'Chưa có') ?></p>
+                <p><strong>Trạng thái khóa:</strong> <?= $lock ? '<span class="editorial-review-lock is-locked"><i class="fa-solid fa-lock"></i> Đang bị khóa</span>' : '<span class="editorial-review-lock"><i class="fa-solid fa-unlock"></i> Tự do</span>' ?></p>
+
+                <?php if (in_array($status, ['editing', 'returned'], true)): ?>
+                    <div class="editorial-review-admin-tool-actions">
+                        <?php if ($lock): ?>
+                            <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>">
+                                <?= editorial_csrf_input() ?>
+                                <input type="hidden" name="_intent" value="force_unlock">
+                                <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
+                                <button type="submit" class="admin-btn admin-btn-danger" onclick="return confirm('Bạn có chắc chắn muốn mở khóa bắt buộc?');">
+                                    <i class="fa-solid fa-unlock-keyhole"></i> Mở khóa
+                                </button>
+                            </form>
+                        <?php endif; ?>
+                        <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>" class="editorial-review-reassign-form">
+                            <?= editorial_csrf_input() ?>
+                            <input type="hidden" name="_intent" value="reassign">
+                            <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
+                            <select name="new_user_id" required>
+                                <option value="">Chọn người phụ trách mới</option>
+                                <?php foreach ($activeUsers as $u): ?>
+                                    <option value="<?= editorial_h((string) $u['id']) ?>"><?= editorial_h((string) ($u['display_name'] ?? $u['username'])) ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <button type="submit" class="admin-btn admin-btn-primary">Giao việc</button>
+                        </form>
+                        <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>">
+                            <?= editorial_csrf_input() ?>
+                            <input type="hidden" name="_intent" value="release">
+                            <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
+                            <button type="submit" class="admin-btn" onclick="return confirm('Gỡ bỏ phụ trách bài viết này?');">Gỡ phụ trách</button>
+                        </form>
+                    </div>
+
+                    <details class="editorial-review-force-tools">
+                        <summary>Tùy chọn ép buộc</summary>
+                        <p>Dùng khi bản nháp cũ không thể tiếp tục và chấp nhận xóa dữ liệu chưa bảo toàn.</p>
+                        <div class="editorial-review-admin-tool-actions">
+                            <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>" class="editorial-review-reassign-form">
                                 <?= editorial_csrf_input() ?>
                                 <input type="hidden" name="_intent" value="force_reassign">
                                 <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-                                <select name="new_user_id" required style="padding:4px; border:1px solid #ccc; border-radius:4px; font-size:0.85rem;">
-                                    <option value="">-- Chọn người mới --</option>
+                                <select name="new_user_id" required>
+                                    <option value="">Chọn người phụ trách mới</option>
                                     <?php foreach ($activeUsers as $u): ?>
-                                        <option value="<?= editorial_h($u['id']) ?>"><?= editorial_h($u['display_name'] ?? $u['username']) ?></option>
+                                        <option value="<?= editorial_h((string) $u['id']) ?>"><?= editorial_h((string) ($u['display_name'] ?? $u['username'])) ?></option>
                                     <?php endforeach; ?>
                                 </select>
-                                <button type="submit" class="admin-btn admin-btn-danger" style="padding:4px 8px; font-size:0.85rem;" onclick="return confirm('Bản nháp sẽ bị xóa. Bạn chắc chắn muốn giao lại bắt buộc?');">Giao lại (Force)</button>
+                                <button type="submit" class="admin-btn admin-btn-danger" onclick="return confirm('Bản nháp sẽ bị xóa. Bạn chắc chắn muốn giao lại bắt buộc?');">Giao lại (Force)</button>
                             </form>
                             <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>">
                                 <?= editorial_csrf_input() ?>
                                 <input type="hidden" name="_intent" value="force_release">
                                 <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-                                <button type="submit" class="admin-btn admin-btn-danger" style="padding:4px 8px; font-size:0.85rem;" onclick="return confirm('Bản nháp sẽ bị xóa. Bạn chắc chắn muốn gỡ bỏ bắt buộc?');">Gỡ bỏ (Force)</button>
+                                <button type="submit" class="admin-btn admin-btn-danger" onclick="return confirm('Bản nháp sẽ bị xóa. Bạn chắc chắn muốn gỡ bỏ bắt buộc?');">Gỡ bỏ (Force)</button>
                             </form>
                         </div>
                     </details>
-                <?php elseif ($status === 'approved'): ?>
-                    <p><strong>Người duyệt:</strong> <?= editorial_h($approver ? (string) ($approver['display_name'] ?? $approver['username']) : (string) ($state['approved_by'] ?? '')) ?></p>
-                    <p><strong>Thời gian duyệt:</strong> <?= editorial_h(editorial_format_datetime((string)($state['approved_at'] ?? ''))) ?></p>
                 <?php endif; ?>
             </div>
-            
-            <?php if ($status === 'ready_review'): ?>
-            <div style="flex:1; min-width:300px; border:1px solid #dee2e6; border-radius:8px; padding:16px; background:#f8f9fa;">
-                <h3 style="margin-top:0; font-size:0.95rem; border-bottom:1px solid #dee2e6; padding-bottom:8px;">Hành động Duyệt</h3>
-                <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>" style="margin-bottom:16px;">
-                    <?= editorial_csrf_input() ?>
-                    <input type="hidden" name="_intent" value="approve">
-                    <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-                    <button type="submit" class="admin-btn admin-btn-primary" style="width:100%; font-size:1rem; padding:10px;" onclick="return confirm('Bạn xác nhận phê duyệt bài viết này?');">
-                        <i class="fa-solid fa-check"></i> Phê duyệt
-                    </button>
-                </form>
-                
-                <details>
-                    <summary style="font-weight:600; cursor:pointer; color:#dc3545;"><i class="fa-solid fa-rotate-left"></i> Yêu cầu chỉnh lại (Return)</summary>
-                    <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>" style="margin-top:10px;">
-                        <?= editorial_csrf_input() ?>
-                        <input type="hidden" name="_intent" value="return_review">
-                        <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-                        <textarea name="return_note" required minlength="1" maxlength="2000" rows="3" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:8px; font-family:inherit;" placeholder="Lý do cần chỉnh lại (bắt buộc)..."></textarea>
-                        <button type="submit" class="admin-btn admin-btn-danger" style="width:100%;">Gửi yêu cầu chỉnh lại</button>
-                    </form>
-                </details>
-            </div>
-            <?php endif; ?>
-
-        <?php if ($status === 'approved'): ?>
-            <div class="editorial-review-actions">
-                <p style="margin:0;">
-                    <i class="fa-solid fa-circle-check" style="color:#2e7d32;"></i>
-                    <strong>Đã duyệt</strong> — chờ Publish.
-                    <?php if (!empty($state['approved_by'])): ?>
-                        Bởi: <?= editorial_h($approver ? (string) ($approver['display_name'] ?? $approver['username']) : (string) $state['approved_by']) ?>
-                        vào <?= editorial_h(editorial_format_datetime((string) ($state['approved_at'] ?? ''))) ?>
-                    <?php endif; ?>
-                </p>
-                <a href="<?= editorial_h(editorial_url('publish.php?id=' . urlencode($articleId))) ?>" class="editorial-approve-btn">
-                    <i class="fa-solid fa-rocket"></i> Chuẩn bị Publish
-                </a>
-            </div>
-        <?php endif; ?>
-        </div>
+        </details>
 
         <?php if ($payload): ?>
-            <details class="editor-info-panel" style="margin-bottom:20px;" open>
+            <details class="editor-info-panel editorial-review-secondary-panel">
                 <summary><i class="fa-solid fa-list"></i> Metadata</summary>
                 <div style="padding:16px;">
                     <table class="admin-table" style="font-size:0.9rem;">
@@ -368,7 +394,7 @@ if ($articleId !== '') {
                 </div>
             </details>
             
-            <details class="editor-info-panel" style="margin-bottom:20px;" open>
+            <details class="editor-info-panel editorial-review-secondary-panel" open>
                 <summary><i class="fa-solid fa-file-lines"></i> Nội dung (Prose Preview)</summary>
                 <div style="padding:16px; background:#fff;">
                     <?php
@@ -397,9 +423,18 @@ if ($articleId !== '') {
     $userIdsToPreload = [];
     foreach (array_merge($readyStates, $recentApprovedStates) as $s) {
         if (!empty($s['assigned_user_id'])) $userIdsToPreload[] = (string) $s['assigned_user_id'];
+        if (!empty($s['review_requested_by'])) $userIdsToPreload[] = (string) $s['review_requested_by'];
         if (!empty($s['approved_by'])) $userIdsToPreload[] = (string) $s['approved_by'];
     }
-    $userNames = editorial_preload_user_names($userIdsToPreload);
+    $queueSubmissionContexts = editorial_get_review_submission_contexts(array_values(array_filter(
+        array_map(static fn(array $state): string => (string) ($state['review_revision_id'] ?? ''), $readyStates)
+    )));
+    foreach ($queueSubmissionContexts as $submissionContext) {
+        if (!empty($submissionContext['actor_user_id'])) {
+            $userIdsToPreload[] = (string) $submissionContext['actor_user_id'];
+        }
+    }
+    $userNames = editorial_preload_user_names(array_values(array_unique($userIdsToPreload)));
     $filterStates = static function (array $states) use ($filters, $q): array {
         $items = [];
         foreach ($states as $state) {
@@ -467,7 +502,7 @@ if ($articleId !== '') {
                     <thead>
                         <tr>
                             <th>Bài viết</th>
-                            <th>Người phụ trách</th>
+                            <th>Người gửi</th>
                             <th>Phiên bản</th>
                             <th>Gửi duyệt lúc</th>
                             <th>Trạng thái</th>
@@ -480,6 +515,19 @@ if ($articleId !== '') {
                             $a = $item['article'];
                             $ownerId = (string) ($s['assigned_user_id'] ?? '');
                             $ownerName = $ownerId !== '' ? ($userNames[$ownerId] ?? $ownerId) : 'Không rõ';
+                            $requesterId = (string) ($s['review_requested_by'] ?? '');
+                            $requesterName = $requesterId !== '' ? ($userNames[$requesterId] ?? $requesterId) : $ownerName;
+                            $queueRevisionId = (string) ($s['review_revision_id'] ?? '');
+                            $queueSubmission = $queueSubmissionContexts[$queueRevisionId] ?? null;
+                            $requesterId = is_array($queueSubmission)
+                                && hash_equals((string) $a['id'], (string) ($queueSubmission['article_id'] ?? ''))
+                                ? (string) ($queueSubmission['actor_user_id'] ?? $requesterId)
+                                : $requesterId;
+                            $requesterName = $requesterId !== '' ? ($userNames[$requesterId] ?? $requesterId) : $ownerName;
+                            $queueNote = is_array($queueSubmission)
+                                && hash_equals((string) $a['id'], (string) ($queueSubmission['article_id'] ?? ''))
+                                ? trim((string) ($queueSubmission['note'] ?? ''))
+                                : '';
                             $htmlPath = editorial_resolve_article_path($a);
                             $liveConflict = $htmlPath !== null
                                 && ($liveHash = editorial_live_hash($htmlPath)) !== null
@@ -491,13 +539,23 @@ if ($articleId !== '') {
                                         <strong><?= editorial_h($a['title']) ?></strong>
                                     </a>
                                     <br><small style="color:#868e96;"><?= editorial_h($a['id']) ?></small>
+                                    <?php if ($queueNote !== ''): ?>
+                                        <span class="editorial-review-queue-note" title="<?= editorial_h($queueNote) ?>">
+                                            <i class="fa-solid fa-message"></i> <?= editorial_h($queueNote) ?>
+                                        </span>
+                                    <?php endif; ?>
                                     <?php if ($liveConflict): ?>
                                         <br><small style="color:#dc3545;"><i class="fa-solid fa-triangle-exclamation"></i> Có thay đổi file gốc</small>
                                     <?php endif; ?>
                                 </td>
-                                <td><?= editorial_h($ownerName) ?></td>
                                 <td>
-                                    <?php $queueRevision = !empty($s['review_revision_id']) ? editorial_get_revision((string) $s['review_revision_id']) : null; ?>
+                                    <?= editorial_h($requesterName) ?>
+                                    <?php if ($ownerName !== $requesterName): ?>
+                                        <br><small style="color:#868e96;">Phụ trách: <?= editorial_h($ownerName) ?></small>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <?php $queueRevision = $queueRevisionId !== '' ? editorial_get_revision($queueRevisionId) : null; ?>
                                     <?php if ($queueRevision): ?>
                                         <span class="editorial-badge"><?= editorial_h(editorial_revision_label($queueRevision)) ?></span>
                                         <br><code><?= editorial_h(substr((string) $queueRevision['id'], 0, 8)) ?></code>

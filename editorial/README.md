@@ -22,7 +22,7 @@ public vẫn là HTML tĩnh tại repository root.
 | `article.php` | Workspace bài owned: draft, revision/stage/review/direct publish actions. |
 | `revisions.php` | Danh sách revision của bài. |
 | `compare.php` | Compare snapshot read-only. |
-| `review.php` | Admin review queue/detail, approve/return/reassign controls. |
+| `review.php` | Admin review queue/cockpit: revision-scoped Editor note, two baseline comparisons, approve/return and secondary assignment controls. |
 | `publish.php` | Admin-approved Publish. |
 | `resume-editing.php` | Same-owner approved resume. |
 | `upload.php` | Endpoint upload ảnh có CSRF/ownership/lock checks. |

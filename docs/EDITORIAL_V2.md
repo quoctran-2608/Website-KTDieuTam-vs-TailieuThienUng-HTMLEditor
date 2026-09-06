@@ -182,7 +182,17 @@ Review service ở `editorial/includes/review.php`:
 2. Hệ thống yêu cầu bundle verified: Baseline, Stage1, Stage2.
 3. Content hash draft phải bằng Active Stage2.
 4. State lưu `review_revision_id`, người yêu cầu và thời điểm.
-5. Admin approve hoặc return với evidence review.
+5. Editor có thể gửi kèm ghi chú tối đa 2.000 ký tự. Ghi chú được lưu trong
+   event `article.review.submitted`, gắn với đúng `revision_id`; nó không sửa
+   snapshot immutable và không tham gia content hash.
+6. Admin review cockpit ưu tiên hiển thị tiêu đề, trạng thái, người gửi, thời
+   điểm, revision, tính toàn vẹn, ghi chú và hai đối chiếu
+   **Bài gốc ↔ Chặng 1** / **Bài gốc ↔ Chặng 2**.
+7. Admin approve hoặc return với evidence review. Return vẫn bắt buộc lý do.
+
+Nếu một bài bị trả rồi gửi lại, UI phải lấy event gửi duyệt mới nhất của chính
+`review_revision_id` đang xem; không dùng ghi chú của lần gửi cũ hoặc revision
+khác.
 
 Approved resume là ngoại lệ có kiểm soát: cùng owner với active assignment mới
 được chuyển `approved → editing`.
