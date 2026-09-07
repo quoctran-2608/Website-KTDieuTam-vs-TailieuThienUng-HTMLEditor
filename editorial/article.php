@@ -562,24 +562,36 @@ $innerScript = <<<JS
   }
 
   function isStandaloneImageParagraph(paragraph, image) {
-    if (!paragraph || paragraph.nodeName !== 'P' || image.parentElement !== paragraph) {
-      return false;
+    if (!paragraph || paragraph.nodeName !== 'P' || !paragraph.contains(image)) {
+        return false;
     }
     let imageCount = 0;
-    for (const child of Array.from(paragraph.childNodes)) {
-      if (child === image) {
+    let safe = true;
+    const inspectNode = (node) => {
+      if (!safe) return;
+      if (node.nodeType === 3) {
+        if (String(node.nodeValue || '').trim()) safe = false;
+        return;
+      }
+      if (node.nodeType !== 1) {
+        safe = false;
+        return;
+      }
+      if (node === image) {
         imageCount += 1;
-        continue;
+        return;
       }
-      if (child.nodeType === 3 && !String(child.nodeValue || '').trim()) {
-        continue;
+      if (node.nodeName === 'BR') {
+        return;
       }
-      if (child.nodeType === 1 && child.nodeName === 'BR') {
-        continue;
+      if (node.nodeName !== 'SPAN') {
+        safe = false;
+        return;
       }
-      return false;
-    }
-    return imageCount === 1;
+      Array.from(node.childNodes).forEach(inspectNode);
+    };
+    Array.from(paragraph.childNodes).forEach(inspectNode);
+    return safe && imageCount === 1;
   }
 
   function canContainMetadataFigure(element) {
@@ -600,16 +612,18 @@ $innerScript = <<<JS
       return figure;
     };
 
-    if (parent.nodeName === 'P') {
-      if (!isStandaloneImageParagraph(parent, image) || !canContainMetadataFigure(parent.parentElement)) {
+    const standaloneParagraph = image.closest ? image.closest('p') : null;
+    if (standaloneParagraph) {
+      if (!isStandaloneImageParagraph(standaloneParagraph, image)
+        || !canContainMetadataFigure(standaloneParagraph.parentElement)) {
         return null;
       }
-      // Promote a standalone image paragraph to a sibling figure. A figure may
-      // not be inserted inside <p>.
+      // Promote only a proven standalone image paragraph. Nested legacy SPAN
+      // wrappers are removed together with the now-empty paragraph.
       const figure = createFigure();
-      parent.parentElement.insertBefore(figure, parent);
+      standaloneParagraph.parentElement.insertBefore(figure, standaloneParagraph);
       figure.appendChild(image);
-      parent.remove();
+      standaloneParagraph.remove();
       return figure;
     }
 
@@ -1138,7 +1152,7 @@ $innerScript = <<<JS
     return normalized.split('/').map((part) => {
       try {
         const decoded = decodeURIComponent(part);
-        if (/[\/\\]/.test(decoded)) {
+        if (decoded.includes('/') || decoded.includes(String.fromCharCode(92))) {
           return part.replace(/%[0-9a-f]{2}/gi, (encoded) => encoded.toUpperCase());
         }
         return decoded.normalize('NFC');
@@ -1263,12 +1277,13 @@ $innerScript = <<<JS
     if (image.closest && image.closest('figure')) {
       return false;
     }
+    const standaloneParagraph = image.closest ? image.closest('p') : null;
+    if (standaloneParagraph) {
+      return isStandaloneImageParagraph(standaloneParagraph, image)
+        && canContainMetadataFigure(standaloneParagraph.parentElement);
+    }
     const parent = image.parentElement;
     if (!parent) return false;
-    if (parent.nodeName === 'P') {
-      return isStandaloneImageParagraph(parent, image)
-        && canContainMetadataFigure(parent.parentElement);
-    }
     return canContainMetadataFigure(parent);
   }
 
