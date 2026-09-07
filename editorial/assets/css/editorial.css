@@ -277,6 +277,12 @@
 .editorial-filter-search input {
     width: 100%;
 }
+.editorial-filter-search-hint {
+    flex: 0 1 auto;
+    color: #748094;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
 .editorial-filter-select {
     padding: 9px 12px;
     border: 1px solid #dee2e6;

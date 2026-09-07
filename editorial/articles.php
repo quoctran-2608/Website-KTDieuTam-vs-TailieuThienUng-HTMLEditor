@@ -165,12 +165,21 @@ editorial_layout_header([
 
 <!-- Filters -->
 <section class="editorial-filter-bar">
-    <form method="get" action="<?= editorial_h(editorial_url('articles.php')) ?>" class="editorial-filter-form">
+    <form method="get" action="<?= editorial_h(editorial_url('articles.php')) ?>" class="editorial-filter-form" id="articleFilterForm">
         <div class="editorial-filter-row">
             <div class="field-input editorial-filter-search">
                 <i class="fa-solid fa-search"></i>
-                <input type="text" name="q" value="<?= editorial_h($q) ?>" placeholder="Tìm theo tiêu đề, từ khóa…">
+                <input
+                    type="search"
+                    id="articleSearchFilter"
+                    name="q"
+                    value="<?= editorial_h($q) ?>"
+                    placeholder="Dán hoặc gõ tên bài viết để tìm ngay…"
+                    autocomplete="off"
+                    aria-describedby="articleSearchHint"
+                >
             </div>
+            <small id="articleSearchHint" class="editorial-filter-search-hint" aria-live="polite">Tự tìm khi dán hoặc gõ.</small>
 
             <select name="section" id="articleSectionFilter" class="editorial-filter-select">
                 <option value="">Tất cả mục</option>
@@ -202,14 +211,45 @@ editorial_layout_header([
 </section>
 <script>
 (() => {
+    const form = document.getElementById('articleFilterForm');
     const section = document.getElementById('articleSectionFilter');
-    if (!section) return;
-    section.addEventListener('change', () => {
-        ['library_kind_key', 'topic_lv1_key', 'topic_lv2_key', 'topic_lv3_key'].forEach((name) => {
-            const field = section.form.querySelector('[name="' + name + '"]');
-            if (field) field.value = '';
+    const search = document.getElementById('articleSearchFilter');
+    const searchHint = document.getElementById('articleSearchHint');
+    let searchTimer = null;
+    let isComposing = false;
+    const initialQuery = search ? search.value.trim() : '';
+
+    if (section) {
+        section.addEventListener('change', () => {
+            ['library_kind_key', 'topic_lv1_key', 'topic_lv2_key', 'topic_lv3_key'].forEach((name) => {
+                const field = section.form.querySelector('[name="' + name + '"]');
+                if (field) field.value = '';
+            });
         });
+    }
+
+    if (!form || !search) return;
+
+    const submitSearch = () => {
+        const query = search.value.trim();
+        if (query === initialQuery) return;
+        if (searchHint) searchHint.textContent = 'Đang tìm bài viết…';
+        form.requestSubmit();
+    };
+    const queueSearch = () => {
+        if (isComposing) return;
+        if (searchTimer !== null) window.clearTimeout(searchTimer);
+        searchTimer = window.setTimeout(submitSearch, 250);
+    };
+
+    search.addEventListener('compositionstart', () => {
+        isComposing = true;
     });
+    search.addEventListener('compositionend', () => {
+        isComposing = false;
+        queueSearch();
+    });
+    search.addEventListener('input', queueSearch);
 })();
 </script>
 
