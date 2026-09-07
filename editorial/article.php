@@ -473,10 +473,14 @@ $innerScript = <<<JS
   const formIntent = document.getElementById('editorialFormIntent');
   const publishConfirmField = document.getElementById('confirmDirectPublish');
   const previewFrame = document.getElementById('previewFrame');
+  const articleIdField = document.getElementById('articleIdField');
+  const lockTokenField = document.getElementById('lockTokenField');
+  const csrfField = form ? form.querySelector('input[name="_csrf_token"]') : null;
   const previewTemplate = $previewTemplateJson;
   if (!editor) return;
   let draftDirty = false;
   let editorReady = false;
+  let suppressDraftSignals = false;
 
   function updateSaveStatus() {
     document.querySelectorAll('[data-save-status]').forEach((status) => {
@@ -495,6 +499,7 @@ $innerScript = <<<JS
   }
 
   function markDraftDirty() {
+    if (suppressDraftSignals) return;
     if (draftDirty) return;
     draftDirty = true;
     updateSaveStatus();
@@ -700,8 +705,10 @@ $innerScript = <<<JS
     }
 
     instance.nodeChanged();
-    markDraftDirty();
-    syncPreview();
+    if (!suppressDraftSignals) {
+      markDraftDirty();
+      syncPreview();
+    }
   }
 
   function openInlineImageMetadataDialog(instance) {
@@ -1000,6 +1007,7 @@ $innerScript = <<<JS
         });
         instance.on('init', () => { editorReady = true; });
         instance.on('input change keyup', () => {
+          if (suppressDraftSignals) return;
           if (editorReady) markDraftDirty();
           if (window.__previewTimer) window.clearTimeout(window.__previewTimer);
           window.__previewTimer = window.setTimeout(syncPreview, 100);
@@ -1105,9 +1113,551 @@ $innerScript = <<<JS
   }
   syncFeaturedImagePreview();
 
+  /* ── KTDT Image Pack import ─────────────────────────── */
+  const imagePackOpen = document.getElementById('imagePackOpen');
+  const imagePackDialog = document.getElementById('imagePackDialog');
+  const imagePackClose = document.getElementById('imagePackClose');
+  const imagePackJsonWrap = document.getElementById('imagePackJsonWrap');
+  const imagePackJson = document.getElementById('imagePackJson');
+  const imagePackToggleJson = document.getElementById('imagePackToggleJson');
+  const imagePackValidate = document.getElementById('imagePackValidate');
+  const imagePackApply = document.getElementById('imagePackApply');
+  const imagePackArticle = document.getElementById('imagePackArticle');
+  const imagePackFeatured = document.getElementById('imagePackFeatured');
+  const imagePackInline = document.getElementById('imagePackInline');
+  const imagePackMatch = document.getElementById('imagePackMatch');
+  const imagePackConflict = document.getElementById('imagePackConflict');
+  const imagePackWarnings = document.getElementById('imagePackWarnings');
+  const imagePackErrors = document.getElementById('imagePackErrors');
+  const imagePackStatus = document.getElementById('imagePackStatus');
+  let currentImagePack = null;
+  let imagePackBusy = false;
+
+  function safeDecodePathname(pathname) {
+    const normalized = String(pathname || '').replace(/\/+/g, '/');
+    return normalized.split('/').map((part) => {
+      try {
+        const decoded = decodeURIComponent(part);
+        if (/[\/\\]/.test(decoded)) {
+          return part.replace(/%[0-9a-f]{2}/gi, (encoded) => encoded.toUpperCase());
+        }
+        return decoded.normalize('NFC');
+      } catch (error) {
+        return part.normalize ? part.normalize('NFC') : part;
+      }
+    }).join('/');
+  }
+
+  function imagePackString(value) {
+    return ['string', 'number', 'boolean'].includes(typeof value) ? String(value) : '';
+  }
+
+  function canonicalImageSrc(value) {
+    const raw = String(value || '').trim();
+    if (!raw) return '';
+    let url;
+    let site;
+    try {
+      site = new URL(siteBaseUrl);
+      url = new URL(raw, site);
+    } catch (error) {
+      return '';
+    }
+    if (!['http:', 'https:'].includes(url.protocol)) return '';
+    const pathname = safeDecodePathname(url.pathname || '/');
+    const basePathRaw = safeDecodePathname(site.pathname || '/').replace(/\/+$/, '');
+    const basePath = basePathRaw === '' ? '/' : basePathRaw;
+    if (url.origin === site.origin) {
+      if (basePath === '/') {
+        return 'site:' + pathname.replace(/^\/+/, '');
+      }
+      if (pathname === basePath) {
+        return 'site:';
+      }
+      if (pathname.startsWith(basePath + '/')) {
+        return 'site:' + pathname.slice(basePath.length).replace(/^\/+/, '');
+      }
+    }
+    return 'origin:' + url.origin.toLowerCase() + pathname;
+  }
+
+  function imagePackHttpUrl(value) {
+    try {
+      const url = new URL(String(value || '').trim());
+      return ['http:', 'https:'].includes(url.protocol) && !url.username && !url.password;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function normalizeImagePackItem(item, inline, index) {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) {
+      throw new Error(inline ? 'Ảnh nội dung #' + (index + 1) + ' không hợp lệ.' : 'Featured không hợp lệ.');
+    }
+    const imageUrl = imagePackString(item.image_url).trim();
+    if (!imagePackHttpUrl(imageUrl)) {
+      throw new Error(inline
+        ? 'Ảnh nội dung #' + (index + 1) + ' có image_url không hợp lệ.'
+        : 'Featured có image_url không hợp lệ.');
+    }
+    const normalized = {
+      image_url: imageUrl,
+      filename: imagePackString(item.filename).trim() || 'image',
+      alt: imagePackString(item.alt),
+      title: imagePackString(item.title),
+      caption: imagePackString(item.caption),
+      credit: imagePackString(item.credit)
+    };
+    if (inline) {
+      normalized.old_src = imagePackString(item.old_src).trim();
+      if (!normalized.old_src) {
+        throw new Error('Ảnh nội dung #' + (index + 1) + ' thiếu old_src.');
+      }
+    }
+    return normalized;
+  }
+
+  function parseImagePack(text) {
+    let raw;
+    try {
+      raw = JSON.parse(String(text || ''));
+    } catch (error) {
+      throw new Error('JSON gói ảnh không hợp lệ.');
+    }
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) {
+      throw new Error('Gói ảnh phải là một JSON object.');
+    }
+    if (raw.protocol !== 'KTDT_IMAGE_PACK' || raw.version !== 1) {
+      throw new Error('Gói ảnh không đúng protocol KTDT_IMAGE_PACK v1.');
+    }
+    if (!raw.article || typeof raw.article !== 'object' || Array.isArray(raw.article)
+      || !imagePackString(raw.article.title).trim()) {
+      throw new Error('Gói ảnh thiếu article.title.');
+    }
+    if (!raw.featured || typeof raw.featured !== 'object' || Array.isArray(raw.featured)) {
+      throw new Error('Gói ảnh thiếu Featured Image.');
+    }
+    if (!Array.isArray(raw.inline_images)) {
+      throw new Error('inline_images phải là một mảng.');
+    }
+    return {
+      protocol: 'KTDT_IMAGE_PACK',
+      version: 1,
+      article: {
+        title: imagePackString(raw.article.title).trim(),
+        slug: imagePackString(raw.article.slug).trim()
+      },
+      featured: normalizeImagePackItem(raw.featured, false, 0),
+      inline_images: raw.inline_images.map((item, index) => normalizeImagePackItem(item, true, index))
+    };
+  }
+
+  function inlineMetadataCompatible(image, item) {
+    if (!String(item.caption || '').trim() && !String(item.credit || '').trim()) {
+      return true;
+    }
+    const articleFigure = image.closest ? image.closest('figure.article-image') : null;
+    if (articleFigure) {
+      return articleFigure.querySelectorAll('img').length === 1;
+    }
+    if (image.closest && image.closest('figure')) {
+      return false;
+    }
+    const parent = image.parentElement;
+    if (!parent) return false;
+    if (parent.nodeName === 'P') {
+      return isStandaloneImageParagraph(parent, image)
+        && canContainMetadataFigure(parent.parentElement);
+    }
+    return canContainMetadataFigure(parent);
+  }
+
+  function normalizeCompareText(value) {
+    return String(value || '').trim().replace(/\s+/g, ' ').toLocaleLowerCase('vi');
+  }
+
+  function normalizeCompareSlug(value) {
+    let slug = String(value || '').trim();
+    if (!slug) return '';
+    try {
+      const url = new URL(slug, siteBaseUrl);
+      slug = url.pathname.split('/').filter(Boolean).pop() || '';
+    } catch (error) {
+      slug = slug.split(/[?#]/, 1)[0].split('/').filter(Boolean).pop() || '';
+    }
+    try {
+      slug = decodeURIComponent(slug);
+    } catch (error) {
+      // Keep the original slug when percent-decoding is invalid.
+    }
+    return slug.replace(/\.html?$/i, '').toLocaleLowerCase('vi');
+  }
+
+  function inspectImagePack(pack) {
+    const instance = window.tinymce && typeof window.tinymce.get === 'function'
+      ? window.tinymce.get('proseEditor')
+      : null;
+    const conflicts = [];
+    const warnings = [];
+    const mappings = [];
+    if (!instance || !instance.getBody()) {
+      conflicts.push('Trình soạn thảo chưa sẵn sàng.');
+      return { ok: false, conflicts, warnings, mappings, instance: null, html: '' };
+    }
+    if (!featuredImageInput || !featuredImageAlt || !featuredImageTitle
+      || !featuredImageCaption || !featuredImageCredit) {
+      conflicts.push('Không tìm thấy đầy đủ trường Featured Image trong Workspace.');
+    }
+
+    const identities = new Map();
+    pack.inline_images.forEach((item, index) => {
+      const identity = canonicalImageSrc(item.old_src);
+      if (!identity) {
+        conflicts.push('Ảnh nội dung #' + (index + 1) + ': old_src không thể chuẩn hóa.');
+        return;
+      }
+      if (identities.has(identity)) {
+        conflicts.push('Gói ảnh có nhiều ảnh mới cùng trỏ tới một ảnh cũ.');
+        return;
+      }
+      identities.set(identity, index);
+    });
+
+    const currentImages = Array.from(instance.getBody().querySelectorAll('img'));
+    pack.inline_images.forEach((item, index) => {
+      const identity = canonicalImageSrc(item.old_src);
+      if (!identity) return;
+      const matches = currentImages.filter((image) => canonicalImageSrc(image.getAttribute('src')) === identity);
+      if (matches.length === 0) {
+        conflicts.push('Ảnh nội dung #' + (index + 1) + ': không tìm thấy old_src trong bài hiện tại.');
+        return;
+      }
+      if (matches.length > 1) {
+        conflicts.push('Ảnh nội dung #' + (index + 1) + ': old_src khớp nhiều ảnh trong bài hiện tại.');
+        return;
+      }
+      if (!inlineMetadataCompatible(matches[0], item)) {
+        conflicts.push('Ảnh nội dung #' + (index + 1) + ': cấu trúc HTML hiện tại không thể thêm Caption/Nguồn an toàn.');
+        return;
+      }
+      mappings.push({
+        index,
+        identity,
+        image: matches[0],
+        raw_src: String(matches[0].getAttribute('src') || '')
+      });
+    });
+
+    const titleInput = document.getElementById('titleInput');
+    if (normalizeCompareText(pack.article.title) !== normalizeCompareText(titleInput ? titleInput.value : '')) {
+      warnings.push('Gói ảnh có vẻ thuộc bài khác.');
+    }
+    const currentSlug = normalizeCompareSlug(articleIdField ? articleIdField.value : '');
+    const packageSlug = normalizeCompareSlug(pack.article.slug);
+    if (packageSlug && currentSlug && packageSlug !== currentSlug
+      && !warnings.includes('Gói ảnh có vẻ thuộc bài khác.')) {
+      warnings.push('Gói ảnh có vẻ thuộc bài khác.');
+    }
+    return {
+      ok: conflicts.length === 0 && mappings.length === pack.inline_images.length,
+      conflicts,
+      warnings,
+      mappings,
+      instance,
+      html: instance.getContent()
+    };
+  }
+
+  function setImagePackStatus(message, type) {
+    if (!imagePackStatus) return;
+    imagePackStatus.textContent = message || '';
+    imagePackStatus.className = 'editorial-image-pack-status' + (type ? ' is-' + type : '');
+  }
+
+  function renderImagePackList(element, messages) {
+    if (!element) return;
+    element.replaceChildren();
+    messages.forEach((message) => {
+      const item = document.createElement('li');
+      item.textContent = message;
+      element.appendChild(item);
+    });
+    element.hidden = messages.length === 0;
+  }
+
+  function renderImagePackPreview(pack, preflight) {
+    if (imagePackArticle) imagePackArticle.textContent = pack.article.title;
+    if (imagePackFeatured) imagePackFeatured.textContent = '✓ Sẵn sàng';
+    if (imagePackInline) imagePackInline.textContent = String(pack.inline_images.length) + ' ảnh';
+    if (imagePackMatch) imagePackMatch.textContent = '✓ Match: ' + preflight.mappings.length + '/' + pack.inline_images.length;
+    if (imagePackConflict) imagePackConflict.textContent = '⚠ Conflict: ' + preflight.conflicts.length;
+    renderImagePackList(imagePackWarnings, preflight.warnings);
+    renderImagePackList(imagePackErrors, preflight.conflicts);
+    if (imagePackApply) imagePackApply.disabled = !preflight.ok || imagePackBusy;
+    setImagePackStatus(preflight.ok ? 'Gói ảnh đã sẵn sàng để tải và áp dụng.' : 'Cần xử lý conflict trước khi áp dụng.', preflight.ok ? 'ready' : 'error');
+  }
+
+  function resetImagePackPreview() {
+    if (imagePackArticle) imagePackArticle.textContent = 'Chưa nhận gói ảnh';
+    if (imagePackFeatured) imagePackFeatured.textContent = '—';
+    if (imagePackInline) imagePackInline.textContent = '0 ảnh';
+    if (imagePackMatch) imagePackMatch.textContent = '✓ Match: 0/0';
+    if (imagePackConflict) imagePackConflict.textContent = '⚠ Conflict: 0';
+    renderImagePackList(imagePackWarnings, []);
+    renderImagePackList(imagePackErrors, []);
+  }
+
+  function prepareImagePack(text) {
+    if (imagePackBusy) return;
+    try {
+      currentImagePack = parseImagePack(text);
+      renderImagePackPreview(currentImagePack, inspectImagePack(currentImagePack));
+    } catch (error) {
+      currentImagePack = null;
+      if (imagePackApply) imagePackApply.disabled = true;
+      renderImagePackList(imagePackWarnings, []);
+      renderImagePackList(imagePackErrors, [error instanceof Error ? error.message : 'Không thể đọc gói ảnh.']);
+      setImagePackStatus('Gói ảnh chưa hợp lệ.', 'error');
+    }
+  }
+
+  function openImagePackDialog() {
+    if (!imagePackDialog) return;
+    if (typeof imagePackDialog.showModal === 'function') {
+      imagePackDialog.showModal();
+    } else {
+      imagePackDialog.setAttribute('open', '');
+    }
+  }
+
+  function closeImagePackDialog() {
+    if (!imagePackDialog || imagePackBusy) return;
+    if (typeof imagePackDialog.close === 'function') {
+      imagePackDialog.close();
+    } else {
+      imagePackDialog.removeAttribute('open');
+    }
+  }
+
+  function setImagePackJsonVisible(visible) {
+    if (imagePackJsonWrap) imagePackJsonWrap.hidden = !visible;
+    if (imagePackToggleJson) imagePackToggleJson.textContent = visible ? 'Ẩn vùng JSON' : 'Dán JSON thủ công';
+    if (visible && imagePackJson) window.setTimeout(() => imagePackJson.focus(), 0);
+  }
+
+  if (imagePackOpen) {
+    imagePackOpen.addEventListener('click', async () => {
+      currentImagePack = null;
+      if (imagePackApply) imagePackApply.disabled = true;
+      resetImagePackPreview();
+      setImagePackStatus('Đang đọc Clipboard...', '');
+      openImagePackDialog();
+      let clipboardText = '';
+      try {
+        if (navigator.clipboard && typeof navigator.clipboard.readText === 'function') {
+          clipboardText = await navigator.clipboard.readText();
+        }
+      } catch (error) {
+        clipboardText = '';
+      }
+      if (clipboardText.trim()) {
+        if (imagePackJson) imagePackJson.value = clipboardText;
+        setImagePackJsonVisible(false);
+        prepareImagePack(clipboardText);
+      } else {
+        if (imagePackJson) imagePackJson.value = '';
+        setImagePackJsonVisible(true);
+        setImagePackStatus('Clipboard không khả dụng. Hãy dán JSON rồi bấm Kiểm tra gói.', '');
+      }
+    });
+  }
+  if (imagePackClose) imagePackClose.addEventListener('click', closeImagePackDialog);
+  if (imagePackDialog) {
+    imagePackDialog.addEventListener('cancel', (event) => {
+      if (imagePackBusy) event.preventDefault();
+    });
+  }
+  if (imagePackToggleJson) {
+    imagePackToggleJson.addEventListener('click', () => {
+      setImagePackJsonVisible(Boolean(imagePackJsonWrap && imagePackJsonWrap.hidden));
+    });
+  }
+  if (imagePackValidate && imagePackJson) {
+    imagePackValidate.addEventListener('click', () => prepareImagePack(imagePackJson.value));
+    imagePackJson.addEventListener('input', () => {
+      if (imagePackBusy) return;
+      currentImagePack = null;
+      if (imagePackApply) imagePackApply.disabled = true;
+      resetImagePackPreview();
+      setImagePackStatus('JSON đã thay đổi. Hãy bấm Kiểm tra gói.', '');
+    });
+  }
+
+  async function transferImagePack(pack) {
+    if (!csrfField || !articleIdField || !lockTokenField) {
+      throw new Error('Thiếu thông tin phiên chỉnh sửa để nhập ảnh.');
+    }
+    const body = new FormData();
+    body.append('_csrf_token', csrfField.value);
+    body.append('article_id', articleIdField.value);
+    body.append('lock_token', lockTokenField.value);
+    body.append('pack_json', JSON.stringify(pack));
+    const response = await fetch('image-pack-import.php', {
+      method: 'POST',
+      body,
+      credentials: 'same-origin'
+    });
+    let json;
+    try {
+      json = await response.json();
+    } catch (error) {
+      throw new Error('Máy chủ trả về phản hồi Image Pack không hợp lệ.');
+    }
+    if (!response.ok || !json || !json.ok) {
+      const suffix = json && json.item
+        ? ' (' + json.item + (Number.isInteger(json.index) ? ' #' + (json.index + 1) : '') + ')'
+        : '';
+      throw new Error(((json && json.error) || 'Không thể tải gói ảnh.') + suffix);
+    }
+    return json;
+  }
+
+  function validateImagePackTransfer(pack, response) {
+    if (!response.featured || !String(response.featured.public_path || '').trim()) {
+      throw new Error('Máy chủ không trả về ảnh đại diện hợp lệ.');
+    }
+    if (!Array.isArray(response.inline_images) || response.inline_images.length !== pack.inline_images.length) {
+      throw new Error('Máy chủ trả về thiếu ảnh nội dung.');
+    }
+    const byIndex = new Map();
+    response.inline_images.forEach((item) => {
+      if (!item || !Number.isInteger(item.index) || !String(item.public_path || '').trim()
+        || byIndex.has(item.index)) {
+        throw new Error('Mapping ảnh nội dung từ máy chủ không hợp lệ.');
+      }
+      byIndex.set(item.index, item);
+    });
+    pack.inline_images.forEach((item, index) => {
+      const mapped = byIndex.get(index);
+      if (!mapped || canonicalImageSrc(mapped.old_src) !== canonicalImageSrc(item.old_src)) {
+        throw new Error('Mapping old_src từ máy chủ không khớp gói ảnh.');
+      }
+    });
+    return byIndex;
+  }
+
+  function featuredImageSnapshot() {
+    return {
+      image: featuredImageInput ? featuredImageInput.value : '',
+      alt: featuredImageAlt ? featuredImageAlt.value : '',
+      title: featuredImageTitle ? featuredImageTitle.value : '',
+      caption: featuredImageCaption ? featuredImageCaption.value : '',
+      credit: featuredImageCredit ? featuredImageCredit.value : ''
+    };
+  }
+
+  function restoreFeaturedImage(snapshot) {
+    if (featuredImageInput) featuredImageInput.value = snapshot.image;
+    if (featuredImageAlt) featuredImageAlt.value = snapshot.alt;
+    if (featuredImageTitle) featuredImageTitle.value = snapshot.title;
+    if (featuredImageCaption) featuredImageCaption.value = snapshot.caption;
+    if (featuredImageCredit) featuredImageCredit.value = snapshot.credit;
+    syncFeaturedImagePreview();
+  }
+
+  function applyFeaturedImagePack(pack, response) {
+    if (featuredImageInput) featuredImageInput.value = String(response.featured.public_path);
+    if (featuredImageAlt) featuredImageAlt.value = pack.featured.alt;
+    if (featuredImageTitle) featuredImageTitle.value = pack.featured.title;
+    if (featuredImageCaption) featuredImageCaption.value = pack.featured.caption;
+    if (featuredImageCredit) featuredImageCredit.value = pack.featured.credit;
+    syncFeaturedImagePreview();
+  }
+
+  if (imagePackApply) {
+    imagePackApply.addEventListener('click', async () => {
+      if (imagePackBusy || !currentImagePack) return;
+      const pack = currentImagePack;
+      const initial = inspectImagePack(pack);
+      renderImagePackPreview(pack, initial);
+      if (!initial.ok || !initial.instance) return;
+
+      const featuredBefore = featuredImageSnapshot();
+      imagePackBusy = true;
+      imagePackApply.disabled = true;
+      if (imagePackClose) imagePackClose.disabled = true;
+      if (imagePackValidate) imagePackValidate.disabled = true;
+      if (imagePackToggleJson) imagePackToggleJson.disabled = true;
+      setImagePackStatus('Đang tải và kiểm tra toàn bộ ảnh...', 'busy');
+      const initialHtml = initial.html;
+      let transferCompleted = false;
+      try {
+        const response = await transferImagePack(pack);
+        transferCompleted = true;
+        const responseByIndex = validateImagePackTransfer(pack, response);
+        const recheck = inspectImagePack(pack);
+        const sameHtml = recheck.instance && recheck.instance.getContent() === initialHtml;
+        const sameMappings = recheck.ok
+          && recheck.mappings.length === initial.mappings.length
+          && recheck.mappings.every((mapping, index) => (
+            mapping.image === initial.mappings[index].image
+            && mapping.raw_src === initial.mappings[index].raw_src
+          ));
+        const featuredUnchanged = JSON.stringify(featuredImageSnapshot()) === JSON.stringify(featuredBefore);
+        if (!sameHtml || !sameMappings || !featuredUnchanged) {
+          throw new Error('Nội dung bài đã thay đổi trong lúc nhập ảnh. Gói chưa được áp dụng vào Draft.');
+        }
+
+        suppressDraftSignals = true;
+        try {
+          recheck.instance.undoManager.transact(() => {
+            recheck.mappings.forEach((mapping) => {
+              const item = pack.inline_images[mapping.index];
+              const remote = responseByIndex.get(mapping.index);
+              mapping.image.setAttribute('src', String(remote.public_path));
+              writeInlineImageMetadata(recheck.instance, mapping.image, item);
+            });
+          });
+          applyFeaturedImagePack(pack, response);
+        } catch (error) {
+          recheck.instance.setContent(initialHtml);
+          restoreFeaturedImage(featuredBefore);
+          throw error;
+        } finally {
+          suppressDraftSignals = false;
+        }
+
+        recheck.instance.nodeChanged();
+        markDraftDirty();
+        syncPreview();
+        currentImagePack = null;
+        const inlineCount = recheck.mappings.length;
+        setImagePackStatus(
+          'Đã áp dụng 1 ảnh đại diện và ' + inlineCount + ' ảnh nội dung. Hãy kiểm tra lại bài rồi Lưu nháp.',
+          'success'
+        );
+        imagePackApply.disabled = true;
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Không thể áp dụng gói ảnh.';
+        renderImagePackList(imagePackErrors, [message]);
+        setImagePackStatus(
+          message + (transferCompleted ? ' Các file đã tải có thể còn lại trên server.' : ''),
+          'error'
+        );
+      } finally {
+        imagePackBusy = false;
+        if (imagePackClose) imagePackClose.disabled = false;
+        if (imagePackValidate) imagePackValidate.disabled = false;
+        if (imagePackToggleJson) imagePackToggleJson.disabled = false;
+        if (currentImagePack) {
+          const latest = inspectImagePack(currentImagePack);
+          if (imagePackApply) imagePackApply.disabled = !latest.ok;
+        }
+      }
+    });
+  }
+
   /* ── Heartbeat ────────────────────────────────────── */
-  const lockTokenField = document.getElementById('lockTokenField');
-  const csrfField = form ? form.querySelector('input[name="_csrf_token"]') : null;
   const lockStatus = document.getElementById('lockStatusText');
   let heartbeatFails = 0;
 
@@ -1369,6 +1919,12 @@ editorial_layout_header([
         </div>
 
         <!-- TinyMCE editor -->
+        <div class="editorial-image-pack-entry">
+            <button type="button" id="imagePackOpen" class="editorial-image-pack-open">
+                <i class="fa-solid fa-images"></i> Nhận ảnh từ Image Creator
+            </button>
+            <small>Tải Featured và thay đúng các ảnh nội dung theo <code>old_src</code>; chưa tự lưu Draft.</small>
+        </div>
         <textarea id="proseEditor" name="prose_html" class="prose-textarea" required style="min-height:400px;"><?= editorial_h((string) ($form['prose_html'] ?? '')) ?></textarea>
 
         <!-- Preview -->
@@ -1522,6 +2078,56 @@ editorial_layout_header([
                 <i class="fa-solid fa-right-from-bracket"></i> Thoát
             </button>
         </section>
+
+        <dialog id="imagePackDialog" class="editorial-image-pack-dialog">
+            <div class="editorial-image-pack-dialog__head">
+                <div>
+                    <strong>NHẬP ẢNH TỪ KTDT IMAGE CREATOR</strong>
+                    <small>Clipboard được đọc trước. Gói chỉ thay ảnh trong Draft hiện tại sau khi kiểm tra toàn bộ.</small>
+                </div>
+                <button type="button" id="imagePackClose" class="editorial-dialog-close" aria-label="Đóng">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="editorial-image-pack-summary">
+                <div class="editorial-image-pack-summary__article">
+                    <span>Bài</span>
+                    <strong id="imagePackArticle">Chưa nhận gói ảnh</strong>
+                </div>
+                <div><span>Featured</span><strong id="imagePackFeatured">—</strong></div>
+                <div><span>Inline</span><strong id="imagePackInline">0 ảnh</strong></div>
+                <div><span>Đối chiếu</span><strong id="imagePackMatch">✓ Match: 0/0</strong></div>
+                <div><span>Xung đột</span><strong id="imagePackConflict">⚠ Conflict: 0</strong></div>
+            </div>
+
+            <ul id="imagePackWarnings" class="editorial-image-pack-messages is-warning" hidden></ul>
+            <ul id="imagePackErrors" class="editorial-image-pack-messages is-error" hidden></ul>
+            <p id="imagePackStatus" class="editorial-image-pack-status">Đang chờ gói ảnh...</p>
+
+            <div id="imagePackJsonWrap" class="editorial-image-pack-json" hidden>
+                <label for="imagePackJson">Dán JSON từ KTDT Image Creator</label>
+                <textarea
+                    id="imagePackJson"
+                    rows="9"
+                    spellcheck="false"
+                    data-nondraft-field
+                    placeholder='{"protocol":"KTDT_IMAGE_PACK","version":1,...}'
+                ></textarea>
+                <button type="button" id="imagePackValidate" class="editorial-media-button">
+                    <i class="fa-solid fa-magnifying-glass"></i> Kiểm tra gói
+                </button>
+            </div>
+
+            <div class="editorial-image-pack-dialog__actions">
+                <button type="button" id="imagePackToggleJson" class="editorial-media-button editorial-media-button--muted">
+                    Dán JSON thủ công
+                </button>
+                <button type="button" id="imagePackApply" class="editorial-image-pack-apply" disabled>
+                    <i class="fa-solid fa-cloud-arrow-down"></i> ÁP DỤNG GÓI ẢNH
+                </button>
+            </div>
+        </dialog>
 
         <dialog id="reviewSubmissionDialog" class="editorial-review-submit-dialog">
             <div class="editorial-review-submit-dialog__head">

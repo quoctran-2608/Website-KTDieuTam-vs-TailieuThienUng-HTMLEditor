@@ -26,6 +26,7 @@ public vẫn là HTML tĩnh tại repository root.
 | `publish.php` | Admin-approved Publish. |
 | `resume-editing.php` | Same-owner approved resume. |
 | `upload.php` | Endpoint upload ảnh có CSRF/ownership/lock checks. |
+| `image-pack-import.php` | Tải trọn gói `KTDT_IMAGE_PACK` v1 về local media; browser mới mutate Draft. |
 | `lock-heartbeat.php` | Endpoint gia hạn workspace lock. |
 | `handoff.php` | POST Google Drive + Sheet handoff. |
 | `google-handoff-settings.php` | Admin settings/verification cho external handoff. |
@@ -47,7 +48,7 @@ public vẫn là HTML tĩnh tại repository root.
 | `publication.php` | Publication eligibility cho Handoff. |
 | `public_rebuild.php` | Artifact rebuild, image verification, public-ready marker. |
 | `handoff.php` | Drive/Sheet archive state machine. |
-| `media.php` | Image storage policy. |
+| `media.php` | Shared image validation/storage policy cho upload và remote Image Pack transfer. |
 | `settings.php`, `composio.php` | Server-side Handoff config và external client. |
 | `integrity.php` | Scanner read-only toàn vẹn. |
 | `database.php`, `migrations.php` | SQLite connection/transaction/schema. |

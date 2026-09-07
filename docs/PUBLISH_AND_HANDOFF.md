@@ -130,6 +130,32 @@ uploads/articles/YYYY/MM/<filename>
 Payload lưu site-root-relative public path, không lưu absolute filesystem path.
 Snapshot revision chỉ lưu references trong payload, không duplicate binary file.
 
+### `KTDT_IMAGE_PACK` v1
+
+Image Pack là luồng import-only từ KTDT Image Creator. Browser nhận JSON qua
+Clipboard hoặc textarea fallback, kiểm tra current TinyMCE DOM và chỉ cho Apply
+khi mọi `old_src` inline match đúng một IMG, không duplicate và tương thích với
+metadata Caption/Credit.
+
+`editorial/image-pack-import.php` tải Featured cùng toàn bộ ảnh inline về server,
+giữ cùng auth/CSRF/ownership/assignment/lock protection như upload thường, chặn
+private/reserved network destinations, không follow redirect, giới hạn 8 MiB
+mỗi ảnh và dùng `finfo` làm MIME authority. Server tải/validate tất cả trước khi
+persist; lỗi giữa request sẽ cleanup file đã tạo trong request đó khi có thể.
+
+Sau response thành công, browser re-check DOM rồi mới:
+
+- map Featured `public_path` vào năm Featured payload fields;
+- thay từng inline `img.src` bằng local `public_path`;
+- gọi lại `writeInlineImageMetadata()` cho Alt/Title/Caption/Credit;
+- đánh dấu Draft dirty.
+
+Luồng này không tự Save, Stage, Review, Publish hoặc Handoff và không trực tiếp
+sửa live HTML, `article-meta`, catalog, derived artifact hay public-ready
+marker. Những thay đổi public vẫn thuộc Safe Publish. Nếu DOM đổi sau khi server
+đã persist file, browser abort Draft apply; V1 chấp nhận residual orphan-file
+risk thay vì thêm cleanup token/endpoint.
+
 ## Public rebuild
 
 `editorial/includes/public_rebuild.php` rebuild dữ liệu public sau Publish.

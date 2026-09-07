@@ -83,6 +83,7 @@ route/UI/CSS.
 | Admin-approved Publish | HIGH | `editorial/includes/publish.php` | `review.php`, `revision.php`, `editorial/publish.php`, `public_rebuild.php` | Approved revision; live hash; backup; atomic replace; compensation; terminal state. | `AGENTS.md`, `PUBLISH_AND_HANDOFF.md`, `OPERATIONS.md` |
 | Catalog update during Publish | HIGH | `editorial/includes/publish.php` | `article_catalog.php`, `data/articles.json`, `public_rebuild.php` | Backup + hash guard; catalog is metadata source, not prose source. | `ARCHITECTURE.md`, `PUBLISH_AND_HANDOFF.md` |
 | Body-image upload | HIGH | `editorial/upload.php` | `media.php`, `workspace.php`, `article.php` | Editor owner; active assignment; CSRF; lock; MIME/size; path contract. | `PUBLISH_AND_HANDOFF.md`, `OPERATIONS.md` |
+| KTDT Image Pack import | HIGH | `editorial/image-pack-import.php` | `article.php`, `media.php`, TinyMCE current DOM | Contract v1 fixed; exact canonical `old_src`; SSRF guard; all assets validated before Draft apply; no auto workflow. | `EDITORIAL_V2.md`, `PUBLISH_AND_HANDOFF.md`, this map |
 | Featured Image upload/display | HIGH | `article.php` | `workspace.php`, `media.php`, `upload.php`, `publish.php`, `public_rebuild.php`, `article-layout.js`, `content-hub.js`, public CSS | Five payload fields; absent legacy key differs from explicit blank; never infer from first body image; propagation spans live/catalog/rebuild/presentation. | `PUBLISH_AND_HANDOFF.md`, `ARCHITECTURE.md`, this map |
 | Fast / full public rebuild | HIGH | `editorial/includes/public_rebuild.php` | `tools/rebuild_public_from_articles.py`, `publish.php`, `integrity.php` | Current native/Python selection depends on `refreshTaxonomy`; derived artifacts are not manual source. | `PUBLISH_AND_HANDOFF.md`, `OPERATIONS.md`, `ARCHITECTURE.md` |
 | Hub/static-card image sync | HIGH | `editorial/includes/public_rebuild.php` | `content-index.js`, `data/hubs/*`, static hub HTML, `content-hub.js` | Target image identity must agree across catalog/index/hub/static card before ready marker. | `PUBLISH_AND_HANDOFF.md`, this map |
@@ -290,6 +291,29 @@ Uploading a file does not itself save a draft, create a stage or Publish it.
 Use TinyMCE `imagemeta` for explicit metadata edits; it must resolve the
 currently selected image/figure, never a global first image.
 
+### KTDT Image Pack import
+
+Read `article.php`, `image-pack-import.php` and `media.php`.
+
+Preserve:
+
+- exact `KTDT_IMAGE_PACK` version 1 fields; no article ID, hash, fingerprint or
+  placement requirement;
+- canonical current-site pathname matching while retaining external
+  `origin + pathname`;
+- 0/2+ matches and duplicate package `old_src` as blocking conflicts;
+- Caption/Credit compatibility preflight before server transfer;
+- auth, CSRF, current owner, active assignment and valid lock at the endpoint;
+- HTTP(S)-only server download with private/reserved IP rejection, no redirect,
+  8 MiB per image and `finfo` MIME authority;
+- all downloads validated before permanent persistence and all browser mappings
+  re-checked before any Draft mutation;
+- `writeInlineImageMetadata()` reuse and one final `markDraftDirty()`;
+- no whole-prose replacement and no automatic Save/Stage/Review/Publish.
+
+Do not log signed source URLs or package JSON. A browser-side race after server
+success may leave orphan files; do not add cleanup architecture casually.
+
 ### Public rebuild
 
 Read `editorial/includes/public_rebuild.php` and
@@ -439,6 +463,7 @@ output as the architectural solution.
 13. Treating UI visibility as authorization.
 14. Adding a migration before proving it is necessary.
 15. Introducing an Editorial V2 runtime dependency on legacy `/admin`.
+16. Treating an Image Pack as prose authority or matching images by basename.
 
 ## Documentation update matrix
 

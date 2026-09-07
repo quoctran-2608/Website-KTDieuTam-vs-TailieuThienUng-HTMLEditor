@@ -256,7 +256,7 @@ ownership.
 | `publication.php` | Determines whether current published state is eligible for external handoff. |
 | `public_rebuild.php` | Rebuild derived public artifacts, target-image sync/verification, public-ready marker. |
 | `handoff.php` | Published-only Drive/Sheet handoff, sync state, Sheet preflight/upsert/verification. |
-| `media.php` | Image validation, safe filename and storage under `uploads/articles/YYYY/MM/`. |
+| `media.php` | Shared image validation, safe filename and storage under `uploads/articles/YYYY/MM/`. |
 | `settings.php` | Server-side handoff settings; prevents exposing secret API key to browser callers. |
 | `composio.php` | Minimal Composio client and Google integration verification/schema handling. |
 | `integrity.php` | Read-only scanner for state, revision, lock, draft, backup and live-hash inconsistencies. |
@@ -272,7 +272,7 @@ ownership.
 | Stage / revision / compare | `revision.php`, `revisions.php`, `compare.php` |
 | Review / reassignment | `review.php`, `review.php` page, `articles.php` |
 | Publish | `publish.php`, `article.php`, admin `editorial/publish.php` |
-| Featured/body images | `media.php`, `upload.php`, `workspace.php`, publish/rebuild docs |
+| Featured/body images / Image Pack | `media.php`, `upload.php`, `image-pack-import.php`, `article.php`, publish/rebuild docs |
 | Derived public data | `public_rebuild.php`, `tools/rebuild_public_from_articles.py` |
 | Drive/Sheet | `publication.php`, `handoff.php`, `settings.php`, `composio.php` |
 | Integrity diagnostics | `integrity.php`, `editorial/integrity.php` |
@@ -337,3 +337,33 @@ become empty strings; Workspace does not fabricate stored metadata.
 The metadata control requires non-empty Alt only when an Editor explicitly saves
 that inline-image dialog. Existing untouched legacy images without Alt do not
 globally block Save, Stage, Review or Publish.
+
+### Nhập gói ảnh từ KTDT Image Creator
+
+`KTDT_IMAGE_PACK` v1 là contract import-only:
+
+```text
+Image Creator copy JSON
+→ Editorial kiểm tra current TinyMCE DOM
+→ server tải và validate toàn bộ asset
+→ browser kiểm tra lại DOM
+→ thay Featured + đúng IMG theo old_src
+→ Draft dirty
+```
+
+Contract không yêu cầu article ID, paragraph hash, source fingerprint hoặc
+placement engine. `article.title` bắt buộc; `article.slug` chỉ hỗ trợ cảnh báo
+UX. Featured xử lý riêng. Mỗi inline item dùng `old_src` để match chính xác một
+IMG trong current TinyMCE DOM; 0 match, 2+ match, duplicate canonical
+`old_src`, hoặc cấu trúc không thể thêm Caption/Credit an toàn đều block Apply.
+
+`editorial/image-pack-import.php` giữ cùng auth/CSRF/current
+owner/active-assignment/lock checks như upload thường. Endpoint chỉ tải,
+validate MIME/size và lưu file; nó không sửa Draft hoặc public content.
+Browser mới thay các Featured fields, đổi `img.src`, gọi lại
+`writeInlineImageMetadata()` và `markDraftDirty()`.
+
+Import không tự Save, Stage, Review, Publish hoặc Handoff. Thay đổi public vẫn
+chỉ xảy ra qua Safe Publish. Nếu server transfer đã thành công nhưng DOM re-check
+thất bại, Draft không bị mutate; các file vừa tải có thể trở thành orphan trong
+race hiếm này vì V1 không thêm cleanup token/endpoint.

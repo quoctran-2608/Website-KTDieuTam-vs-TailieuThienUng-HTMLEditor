@@ -165,6 +165,14 @@ uploads/articles/YYYY/MM/<filename>
 Do not store media as filesystem absolute paths or move them into
 `editorial/storage/`.
 
+`KTDT_IMAGE_PACK` version 1 is an import-only clipboard contract. Its required
+shape remains `protocol`, `version`, `article.title`, `featured` and
+`inline_images`; inline replacement authority is exact canonical `old_src`
+matching against the current TinyMCE DOM. The server may download and persist
+validated assets, but only the browser mutates current Draft fields. Image Pack
+import must never auto-Save, Stage, Review, Publish or Handoff. Public content
+changes still belong to Safe Publish.
+
 ### INV-18 — Taxonomy boundary
 
 Editorial V2 preserves catalog taxonomy and uses public taxonomy artifacts
@@ -194,7 +202,7 @@ updates derived artifacts; it does not change this architecture.
 | Publication eligibility | `editorial/includes/publication.php` |
 | Public rebuild and ready marker | `editorial/includes/public_rebuild.php` |
 | Google handoff | `editorial/includes/handoff.php` |
-| Media upload | `editorial/includes/media.php` and `editorial/upload.php` |
+| Media upload / Image Pack transfer | `editorial/includes/media.php`, `editorial/upload.php` and `editorial/image-pack-import.php` |
 | Schema | `editorial/includes/migrations.php` |
 | Integrity scanner | `editorial/includes/integrity.php` |
 
