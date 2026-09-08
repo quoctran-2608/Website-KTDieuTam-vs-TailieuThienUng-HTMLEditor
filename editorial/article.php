@@ -1073,13 +1073,6 @@ $innerScript = <<<JS
         }
       }
     }
-    return {
-      mode: metadataMode || (figure ? 'FULL_METADATA' : 'BASIC_METADATA'),
-      metadataApplied: !basicMetadata && Boolean(figure || (!caption && !credit)),
-      warning: basicMetadata
-        ? 'Caption/Nguồn chưa thể áp dụng do cấu trúc HTML cũ.'
-        : ''
-    };
   }
 
   function exitFullscreen() {
