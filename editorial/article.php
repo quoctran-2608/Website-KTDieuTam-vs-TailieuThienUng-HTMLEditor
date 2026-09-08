@@ -1400,8 +1400,14 @@ $innerScript = <<<JS
       const liveIdCount = liveProseImages.filter(
         (entry) => String(entry.id || '').trim() === id
       ).length;
-      if (liveIdCount !== 1) return [];
-      return currentImages.filter((image) => String(image.getAttribute('id') || '').trim() === id);
+      if (liveIdCount === 1) {
+        const idMatches = currentImages.filter(
+          (image) => String(image.getAttribute('id') || '').trim() === id
+        );
+        // A unique live id wins when it resolves one Draft target. Multiple
+        // Draft matches stay visible to the caller as an ambiguity conflict.
+        if (idMatches.length !== 0) return idMatches;
+      }
     }
     const alt = String(liveImage.alt || '').trim();
     const title = String(liveImage.title || '').trim();

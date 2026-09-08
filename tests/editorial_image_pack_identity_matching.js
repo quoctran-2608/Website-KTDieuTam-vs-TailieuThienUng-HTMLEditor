@@ -118,8 +118,37 @@ const anchorMatches = sandbox.exactLiveAnchorCandidates(
   [anchorTarget]
 );
 if (anchorMatches.length !== 1 || anchorMatches[0] !== anchorTarget) {
-  throw new Error('Exact unique live id anchor did not resolve Draft image.');
+  throw new Error('CASE A: exact unique live id anchor did not resolve Draft image.');
 }
+
+const altTitleFallback = image({
+  alt: 'Hoá đơn đã lập khi bán hàng',
+  title: 'Hoá đơn đã lập khi bán hàng',
+  src: 'uploads/articles/2026/09/draft-lost-id.webp'
+});
+const fallbackMatches = sandbox.exactLiveAnchorCandidates(
+  sandbox.liveProseImages[0],
+  [altTitleFallback]
+);
+if (fallbackMatches.length !== 1 || fallbackMatches[0] !== altTitleFallback) {
+  throw new Error('CASE B: Draft without id did not fall through to exact alt+title.');
+}
+
+const duplicateFallback = sandbox.exactLiveAnchorCandidates(
+  sandbox.liveProseImages[0],
+  [
+    altTitleFallback,
+    image({
+      alt: 'Hoá đơn đã lập khi bán hàng',
+      title: 'Hoá đơn đã lập khi bán hàng',
+      src: 'uploads/articles/2026/09/draft-lost-id-2.webp'
+    })
+  ]
+);
+if (duplicateFallback.length !== 2) {
+  throw new Error('CASE C: duplicate Draft alt+title must remain ambiguous.');
+}
+
 const ambiguousAnchor = sandbox.exactLiveAnchorCandidates(
   sandbox.liveProseImages[0],
   [anchorTarget, image({ id: 'Hoá đơn đã lập khi bán hàng', src: 'other.webp' })]
@@ -141,11 +170,16 @@ vm.createContext(duplicateLiveSandbox);
   'imageSourceIdentities',
   'exactLiveAnchorCandidates'
 ].forEach((name) => vm.runInContext(extractFunction(name), duplicateLiveSandbox));
+const duplicateLiveAltTitle = image({
+  alt: 'Hoá đơn đã lập khi bán hàng',
+  title: 'Hoá đơn đã lập khi bán hàng',
+  src: 'uploads/articles/2026/09/draft-lost-id.webp'
+});
 if (duplicateLiveSandbox.exactLiveAnchorCandidates(
   duplicateLiveSandbox.liveProseImages[0],
-  [anchorTarget]
+  [duplicateLiveAltTitle]
 ).length !== 0) {
-  throw new Error('Duplicate live id must not become a stable anchor.');
+  throw new Error('CASE D: duplicate live alt+title must not become a safe fallback.');
 }
 
 if (source.includes('normalizeCompareSlug')
