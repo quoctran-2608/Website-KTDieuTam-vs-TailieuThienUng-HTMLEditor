@@ -544,6 +544,67 @@ $innerScript = <<<JS
   let editorReady = false;
   let suppressDraftSignals = false;
 
+  async function copyTextToClipboard(value) {
+    const text = String(value || '');
+    if (!text) {
+      throw new Error('Không có dữ liệu để sao chép.');
+    }
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+
+    const fallback = document.createElement('textarea');
+    fallback.value = text;
+    fallback.setAttribute('readonly', '');
+    fallback.style.position = 'fixed';
+    fallback.style.opacity = '0';
+    fallback.style.pointerEvents = 'none';
+    document.body.appendChild(fallback);
+    fallback.select();
+    const copied = typeof document.execCommand === 'function' && document.execCommand('copy');
+    fallback.remove();
+    if (!copied) {
+      throw new Error('Trình duyệt không thể sao chép vào clipboard.');
+    }
+  }
+
+  function copyWithFeedback(value, button, feedback, successMessage) {
+    if (button) button.disabled = true;
+    copyTextToClipboard(value)
+      .then(() => {
+        if (feedback) feedback.textContent = successMessage;
+      })
+      .catch((error) => {
+        if (feedback) {
+          feedback.textContent = error instanceof Error
+            ? error.message
+            : 'Không thể sao chép. Vui lòng thử lại.';
+        }
+      })
+      .finally(() => {
+        if (button) button.disabled = false;
+        if (feedback) {
+          window.setTimeout(() => {
+            feedback.textContent = '';
+          }, 2200);
+        }
+      });
+  }
+
+  const publicUrlCopyButton = document.getElementById('publicUrlCopyButton');
+  const publicUrlCopyStatus = document.getElementById('publicUrlCopyStatus');
+  if (publicUrlCopyButton) {
+    publicUrlCopyButton.addEventListener('click', () => {
+      copyWithFeedback(
+        publicUrlCopyButton.dataset.publicUrl || '',
+        publicUrlCopyButton,
+        publicUrlCopyStatus,
+        'Đã sao chép liên kết'
+      );
+    });
+  }
+
   function updateSaveStatus() {
     document.querySelectorAll('[data-save-status]').forEach((status) => {
       status.textContent = '● Chưa lưu';
@@ -632,6 +693,67 @@ $innerScript = <<<JS
         ? normalizeImageCredit(String((compatibleFigure.querySelector('.article-image-credit') || {}).textContent || ''))
         : ''
     };
+  }
+
+  const inlineImageSeoInspector = document.getElementById('inlineImageSeoInspector');
+  const inlineImageEditMetadata = document.getElementById('inlineImageEditMetadata');
+  const inlineImageCopyMetadata = document.getElementById('inlineImageCopyMetadata');
+  const inlineImageCopyStatus = document.getElementById('inlineImageCopyStatus');
+  const inlineImageSeoFields = {
+    src: document.querySelector('[data-inline-image-seo="src"]'),
+    original_src: document.querySelector('[data-inline-image-seo="original_src"]'),
+    alt: document.querySelector('[data-inline-image-seo="alt"]'),
+    title: document.querySelector('[data-inline-image-seo="title"]'),
+    caption: document.querySelector('[data-inline-image-seo="caption"]'),
+    credit: document.querySelector('[data-inline-image-seo="credit"]'),
+  };
+  let inspectedInlineImage = null;
+  let inspectedInlineImageInstance = null;
+
+  function inlineImageMetadataPayload(image) {
+    const metadata = readInlineImageMetadata(image);
+    return {
+      protocol: 'KTDT_IMAGE_META',
+      version: 1,
+      image_type: 'inline',
+      src: String(image.getAttribute('src') || image.getAttribute('data-mce-src') || '').trim(),
+      original_src: String(image.getAttribute('data-editorial-original-src') || '').trim(),
+      alt: metadata.alt,
+      title: metadata.title,
+      caption: metadata.caption,
+      credit: metadata.credit,
+    };
+  }
+
+  function clearInlineImageSeoInspector() {
+    inspectedInlineImage = null;
+    inspectedInlineImageInstance = null;
+    Object.values(inlineImageSeoFields).forEach((field) => {
+      if (field) field.textContent = '';
+    });
+    if (inlineImageSeoInspector) inlineImageSeoInspector.hidden = true;
+    if (inlineImageEditMetadata) inlineImageEditMetadata.disabled = true;
+    if (inlineImageCopyMetadata) inlineImageCopyMetadata.disabled = true;
+    if (inlineImageCopyStatus) inlineImageCopyStatus.textContent = '';
+  }
+
+  function updateInlineImageSeoInspector(instance, selectedImage = null) {
+    const image = selectedImage || resolveSelectedEditorImage(instance);
+    if (!image) {
+      clearInlineImageSeoInspector();
+      return;
+    }
+
+    const payload = inlineImageMetadataPayload(image);
+    Object.entries(payload).forEach(([key, value]) => {
+      const field = inlineImageSeoFields[key];
+      if (field) field.textContent = String(value);
+    });
+    inspectedInlineImage = image;
+    inspectedInlineImageInstance = instance;
+    if (inlineImageSeoInspector) inlineImageSeoInspector.hidden = false;
+    if (inlineImageEditMetadata) inlineImageEditMetadata.disabled = false;
+    if (inlineImageCopyMetadata) inlineImageCopyMetadata.disabled = false;
   }
 
   function isStandaloneImageParagraph(paragraph, image) {
@@ -909,8 +1031,8 @@ $innerScript = <<<JS
     }
   }
 
-  function openInlineImageMetadataDialog(instance) {
-    const image = resolveSelectedEditorImage(instance);
+  function openInlineImageMetadataDialog(instance, selectedImage = null) {
+    const image = selectedImage || resolveSelectedEditorImage(instance);
     if (!image) {
       instance.notificationManager.open({
         text: 'Vui lòng chọn một ảnh trong nội dung trước.',
@@ -947,8 +1069,27 @@ $innerScript = <<<JS
           return;
         }
         writeInlineImageMetadata(instance, image, values);
+        updateInlineImageSeoInspector(instance, image);
         api.close();
       }
+    });
+  }
+
+  if (inlineImageEditMetadata) {
+    inlineImageEditMetadata.addEventListener('click', () => {
+      if (!inspectedInlineImage || !inspectedInlineImageInstance) return;
+      openInlineImageMetadataDialog(inspectedInlineImageInstance, inspectedInlineImage);
+    });
+  }
+  if (inlineImageCopyMetadata) {
+    inlineImageCopyMetadata.addEventListener('click', () => {
+      if (!inspectedInlineImage) return;
+      copyWithFeedback(
+        JSON.stringify(inlineImageMetadataPayload(inspectedInlineImage), null, 2),
+        inlineImageCopyMetadata,
+        inlineImageCopyStatus,
+        'Đã sao chép metadata JSON'
+      );
     });
   }
 
@@ -1202,6 +1343,9 @@ $innerScript = <<<JS
           onAction: () => openInlineImageMetadataDialog(instance)
         });
         instance.on('init', () => { editorReady = true; });
+        instance.on('NodeChange click', () => {
+          updateInlineImageSeoInspector(instance);
+        });
         instance.on('input change keyup', () => {
           if (suppressDraftSignals) return;
           if (editorReady) markDraftDirty();
@@ -1236,6 +1380,22 @@ $innerScript = <<<JS
   const featuredImageTitle = document.getElementById('featuredImageTitle');
   const featuredImageCaption = document.getElementById('featuredImageCaption');
   const featuredImageCredit = document.getElementById('featuredImageCredit');
+  const featuredImageCopyMetadata = document.getElementById('featuredImageCopyMetadata');
+  const featuredImageCopyStatus = document.getElementById('featuredImageCopyStatus');
+
+  function featuredImageMetadataPayload() {
+    return {
+      protocol: 'KTDT_IMAGE_META',
+      version: 1,
+      image_type: 'featured',
+      src: String((featuredImageInput || {}).value || '').trim(),
+      original_src: '',
+      alt: String((featuredImageAlt || {}).value || ''),
+      title: String((featuredImageTitle || {}).value || ''),
+      caption: String((featuredImageCaption || {}).value || ''),
+      credit: normalizeImageCredit(String((featuredImageCredit || {}).value || '')),
+    };
+  }
 
   function clearFeaturedImageMetadata() {
     [featuredImageAlt, featuredImageTitle, featuredImageCaption, featuredImageCredit].forEach((field) => {
@@ -1305,6 +1465,16 @@ $innerScript = <<<JS
       clearFeaturedImageMetadata();
       markDraftDirty();
       syncFeaturedImagePreview();
+    });
+  }
+  if (featuredImageCopyMetadata) {
+    featuredImageCopyMetadata.addEventListener('click', () => {
+      copyWithFeedback(
+        JSON.stringify(featuredImageMetadataPayload(), null, 2),
+        featuredImageCopyMetadata,
+        featuredImageCopyStatus,
+        'Đã sao chép metadata JSON'
+      );
     });
   }
   syncFeaturedImagePreview();
@@ -2052,9 +2222,23 @@ editorial_layout_header([
                 </span>
                 &nbsp;
             <?php endif; ?>
-            <a href="<?= editorial_h($publicViewUrl) ?>" target="_blank" rel="noopener" style="font-size:0.85rem;" title="Chỉ hiển thị nội dung đã Publish; query v chỉ dùng để tránh cache khi kiểm tra.">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem bản đang xuất bản
-            </a>
+            <span class="editorial-public-view-actions">
+                <a href="<?= editorial_h($publicViewUrl) ?>" target="_blank" rel="noopener" style="font-size:0.85rem;" title="Chỉ hiển thị nội dung đã Publish; query v chỉ dùng để tránh cache khi kiểm tra.">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem bản đang xuất bản
+                </a>
+                <button
+                    type="button"
+                    id="publicUrlCopyButton"
+                    class="editorial-copy-icon-button"
+                    data-public-url="<?= editorial_h($publicUrl) ?>"
+                    title="<?= $publicUrl === '#' ? 'Không có liên kết bài viết hợp lệ để sao chép' : 'Sao chép liên kết bài viết' ?>"
+                    aria-label="Sao chép liên kết bài viết"
+                    <?= $publicUrl === '#' ? 'disabled' : '' ?>
+                >
+                    <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                </button>
+                <span id="publicUrlCopyStatus" class="editorial-copy-feedback" aria-live="polite"></span>
+            </span>
         </p>
     </div>
 
@@ -2268,6 +2452,30 @@ editorial_layout_header([
         </div>
         <textarea id="proseEditor" name="prose_html" class="prose-textarea" required style="min-height:400px;"><?= editorial_h((string) ($form['prose_html'] ?? '')) ?></textarea>
 
+        <section id="inlineImageSeoInspector" class="editorial-inline-image-seo-inspector" aria-labelledby="inlineImageSeoInspectorTitle" hidden>
+            <div class="editorial-inline-image-seo-inspector__head">
+                <h3 id="inlineImageSeoInspectorTitle"><i class="fa-solid fa-image" aria-hidden="true"></i> SEO ảnh đang chọn</h3>
+                <span>Đọc từ nội dung hiện tại, chưa cần lưu nháp.</span>
+            </div>
+            <dl class="editorial-inline-image-seo-inspector__fields">
+                <div><dt>Đường dẫn</dt><dd data-inline-image-seo="src"></dd></div>
+                <div><dt>Nguồn gốc</dt><dd data-inline-image-seo="original_src"></dd></div>
+                <div><dt>Alt</dt><dd data-inline-image-seo="alt"></dd></div>
+                <div><dt>Title</dt><dd data-inline-image-seo="title"></dd></div>
+                <div><dt>Caption</dt><dd data-inline-image-seo="caption"></dd></div>
+                <div><dt>Nguồn</dt><dd data-inline-image-seo="credit"></dd></div>
+            </dl>
+            <div class="editorial-inline-image-seo-inspector__actions">
+                <button type="button" id="inlineImageEditMetadata" class="editorial-media-button" disabled>
+                    <i class="fa-solid fa-pen"></i> Chỉnh metadata
+                </button>
+                <button type="button" id="inlineImageCopyMetadata" class="editorial-media-button editorial-media-button--muted" disabled>
+                    <i class="fa-regular fa-copy"></i> Copy metadata JSON
+                </button>
+                <span id="inlineImageCopyStatus" class="editorial-copy-feedback" aria-live="polite"></span>
+            </div>
+        </section>
+
         <!-- Preview -->
         <details class="editor-info-panel" style="margin-top:16px;">
             <summary><i class="fa-solid fa-eye"></i> Xem trước nội dung</summary>
@@ -2306,6 +2514,10 @@ editorial_layout_header([
                             <button type="button" id="featuredImageClear" class="editorial-media-button editorial-media-button--muted">
                                 <i class="fa-solid fa-xmark"></i> Xóa lựa chọn
                             </button>
+                            <button type="button" id="featuredImageCopyMetadata" class="editorial-media-button editorial-media-button--muted">
+                                <i class="fa-regular fa-copy"></i> Copy metadata JSON
+                            </button>
+                            <span id="featuredImageCopyStatus" class="editorial-copy-feedback" aria-live="polite"></span>
                         </div>
                         <div class="editorial-featured-image-preview">
                             <img id="featuredImagePreview" alt="Xem trước ảnh đại diện" hidden>
@@ -2315,8 +2527,8 @@ editorial_layout_header([
                             <label for="featuredImageAlt">Mô tả ảnh / Alt text</label>
                             <input type="text" id="featuredImageAlt" name="featured_image_alt" value="<?= editorial_h((string) ($form['featured_image_alt'] ?? '')) ?>" class="field-input">
                         </div>
-                        <details class="editorial-featured-image-extra">
-                            <summary>Thông tin bổ sung</summary>
+                        <details class="editorial-featured-image-extra" open>
+                            <summary>SEO metadata ảnh đại diện</summary>
                             <div class="editorial-featured-image-extra__fields">
                                 <div class="filter-field">
                                     <label for="featuredImageTitle">Title</label>
