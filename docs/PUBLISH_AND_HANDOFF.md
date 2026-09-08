@@ -147,6 +147,13 @@ khi mọi `old_src` inline match đúng một IMG và không duplicate. `article
 mismatch chỉ warning; `article.slug` không tham gia identity, warning hay
 eligibility.
 
+Exact source identity may use `src`, `data-mce-src`,
+`data-editorial-original-src` or supported exact legacy source attributes.
+Workspace current origin and article canonical origin are known aliases. If
+Draft attributes have changed, a unique exact stable anchor from current live
+prose (`id`, then unique `alt + title`) may resolve one Draft IMG. No fuzzy
+filename or image-order matching is permitted.
+
 `editorial/image-pack-import.php` tải Featured cùng toàn bộ ảnh inline về server,
 giữ cùng auth/CSRF/ownership/assignment/lock protection như upload thường, chặn
 private/reserved network destinations, không follow redirect, giới hạn 8 MiB
@@ -166,6 +173,8 @@ Caption/Credit không còn là hard blocker. Nếu IMG nằm cuối một block 
 `P`/`DIV` an toàn, browser có thể tách riêng target IMG thành managed figure để
 áp dụng đầy đủ metadata. Nếu ảnh nằm giữa prose hoặc structure không an toàn,
 browser vẫn thay local src + Alt + Title, skip Caption/Credit và báo warning.
+Sau Apply thành công và serialization pass, browser giữ original source marker,
+mark Draft dirty, sync Preview và tự đóng hộp thoại; không auto Save.
 
 Luồng này không tự Save, Stage, Review, Publish hoặc Handoff và không trực tiếp
 sửa live HTML, `article-meta`, catalog, derived artifact hay public-ready

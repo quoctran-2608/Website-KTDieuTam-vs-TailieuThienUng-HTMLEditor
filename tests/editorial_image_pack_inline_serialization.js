@@ -94,6 +94,12 @@ if (!source.includes('serializedImagePackMatches(')
   || !source.includes('metadata_mode !== \'BASIC_METADATA\'')) {
   throw new Error('Image Pack success is missing the serialized HTML invariant.');
 }
+if (!source.includes('data-editorial-original-src')
+  || !source.includes('imageSourceIdentities(image)')
+  || !source.includes('exactLiveAnchorCandidates(')
+  || !source.includes('closeAfterSuccess')) {
+  throw new Error('Image Pack exact identity or success-close contract is missing.');
+}
 
 console.log(
   'editorial image pack inline serialization: ok'

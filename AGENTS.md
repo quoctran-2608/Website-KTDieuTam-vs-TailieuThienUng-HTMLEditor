@@ -187,6 +187,15 @@ block. Caption/Credit is best-effort: when legacy HTML cannot safely host a
 managed figure, import still replaces the image plus Alt/Title and reports that
 Caption/Credit was skipped.
 
+Image identity may come exactly from `src`, `data-mce-src`,
+`data-editorial-original-src` or supported exact legacy source attributes.
+Current Workspace origin and the article canonical origin are logical site
+aliases; arbitrary external origins are not collapsed. If Draft identities no
+longer match, a unique exact `id`—or a unique exact `alt + title` tuple—from
+the current live article prose may anchor the same Draft image. Ambiguity still
+blocks. On successful Apply, retain the first `data-editorial-original-src` and
+close the Image Pack dialog only after serialization passes and Draft is dirty.
+
 ### INV-18 — Taxonomy boundary
 
 Editorial V2 preserves catalog taxonomy and uses public taxonomy artifacts

@@ -358,6 +358,17 @@ hoặc Apply eligibility. Featured xử lý riêng. Mỗi inline item dùng `old
 để match chính xác một IMG trong current TinyMCE DOM; 0 match, 2+ match hoặc
 duplicate canonical `old_src` vẫn block Apply.
 
+Exact image identity may be found in `src`, `data-mce-src`,
+`data-editorial-original-src` and supported exact legacy lazy-source
+attributes. Current Workspace origin and article canonical origin are the only
+logical site aliases; arbitrary external origins retain their own identity.
+When Draft source attributes no longer match but live prose has exactly one
+`old_src`, browser may use a unique live `id`, or a unique exact `alt + title`
+tuple, to locate exactly one Draft IMG. No basename, fuzzy, ordinal or nearest
+image fallback is allowed. A successful import preserves the first original
+source marker for later re-import and closes the modal only after DOM mutation,
+serialization verification, preview sync and Draft dirty complete.
+
 Caption/Credit dùng best-effort metadata mode:
 
 - figure an toàn hiện có: áp dụng đầy đủ;

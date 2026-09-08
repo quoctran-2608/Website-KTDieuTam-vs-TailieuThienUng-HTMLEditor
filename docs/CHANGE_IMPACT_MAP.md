@@ -301,6 +301,11 @@ Preserve:
   placement requirement;
 - canonical current-site pathname matching while retaining external
   `origin + pathname`;
+- exact source identity set (`src`, `data-mce-src`, original marker and
+  supported legacy source attributes), with current/canonical article origins
+  as the only site aliases;
+- exact unique live-prose anchor fallback (`id`, then unique `alt + title`) if
+  Draft identities changed; still block ambiguity;
 - 0/2+ matches and duplicate package `old_src` as blocking conflicts;
 - title mismatch as warning-only; do not use package slug for identity, warning
   or eligibility;

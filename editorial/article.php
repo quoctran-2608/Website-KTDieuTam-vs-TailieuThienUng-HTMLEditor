@@ -456,6 +456,52 @@ $liveArticleHtml = file_get_contents($htmlPath);
 if ($liveArticleHtml === false) {
     $liveArticleHtml = '';
 }
+$liveProseImages = [];
+if ($liveArticleHtml !== '') {
+    libxml_use_internal_errors(true);
+    $liveDom = new DOMDocument();
+    if ($liveDom->loadHTML(
+        '<?xml encoding="utf-8" ?>' . $liveArticleHtml,
+        LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD
+    )) {
+        $liveXPath = new DOMXPath($liveDom);
+        $liveNodes = $liveXPath->query(
+            '//div[contains(concat(" ", normalize-space(@class), " "), " article-prose ")]//img'
+        );
+        if ($liveNodes !== false) {
+            foreach ($liveNodes as $liveImage) {
+                $liveProseImages[] = [
+                    'src' => trim((string) $liveImage->getAttribute('src')),
+                    'id' => trim((string) $liveImage->getAttribute('id')),
+                    'alt' => trim((string) $liveImage->getAttribute('alt')),
+                    'title' => trim((string) $liveImage->getAttribute('title')),
+                ];
+            }
+        }
+    }
+    libxml_clear_errors();
+}
+$liveProseImagesJson = json_encode(
+    $liveProseImages,
+    JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
+);
+if ($liveProseImagesJson === false) {
+    $liveProseImagesJson = '[]';
+}
+$canonicalArticleOrigin = '';
+$canonicalArticleUrl = trim((string) ($article['canonical'] ?? ''));
+$canonicalParts = $canonicalArticleUrl !== '' ? parse_url($canonicalArticleUrl) : false;
+if (is_array($canonicalParts)
+    && isset($canonicalParts['scheme'], $canonicalParts['host'])
+    && in_array(strtolower((string) $canonicalParts['scheme']), ['http', 'https'], true)) {
+    $canonicalArticleOrigin = strtolower((string) $canonicalParts['scheme'])
+        . '://' . strtolower((string) $canonicalParts['host'])
+        . (isset($canonicalParts['port']) ? ':' . (int) $canonicalParts['port'] : '');
+}
+$canonicalArticleOriginJson = json_encode($canonicalArticleOrigin, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+if ($canonicalArticleOriginJson === false) {
+    $canonicalArticleOriginJson = '""';
+}
 $previewPlaceholder = '__EDITORIAL_PREVIEW_PROSE__';
 $previewTemplate = editorial_build_public_article_preview_document(
     $liveArticleHtml,
@@ -483,6 +529,8 @@ $innerScript = <<<JS
   const lockTokenField = document.getElementById('lockTokenField');
   const csrfField = form ? form.querySelector('input[name="_csrf_token"]') : null;
   const previewTemplate = $previewTemplateJson;
+  const canonicalArticleOrigin = $canonicalArticleOriginJson;
+  const liveProseImages = $liveProseImagesJson;
   if (!editor) return;
   let draftDirty = false;
   let editorReady = false;
@@ -1128,7 +1176,7 @@ $innerScript = <<<JS
       image_description: true,
       image_title: true,
       image_caption: false,
-      extended_valid_elements: 'figure[class|data-editorial-image-meta],figcaption,span[class],img[src|alt|title|width|height|loading|decoding]',
+      extended_valid_elements: 'figure[class|data-editorial-image-meta],figcaption,span[class],img[src|alt|title|width|height|loading|decoding|data-mce-src|data-editorial-original-src]',
       content_css: [
         siteBaseUrl + 'assets/css/editorial-design-system.css',
       ],
@@ -1307,7 +1355,10 @@ $innerScript = <<<JS
     const pathname = safeDecodePathname(url.pathname || '/');
     const basePathRaw = safeDecodePathname(site.pathname || '/').replace(/\/+$/, '');
     const basePath = basePathRaw === '' ? '/' : basePathRaw;
-    if (url.origin === site.origin) {
+    const origin = url.origin.toLowerCase();
+    const currentOrigin = site.origin.toLowerCase();
+    const canonicalOrigin = String(canonicalArticleOrigin || '').toLowerCase();
+    if (origin === currentOrigin) {
       if (basePath === '/') {
         return 'site:' + pathname.replace(/^\/+/, '');
       }
@@ -1318,7 +1369,52 @@ $innerScript = <<<JS
         return 'site:' + pathname.slice(basePath.length).replace(/^\/+/, '');
       }
     }
-    return 'origin:' + url.origin.toLowerCase() + pathname;
+    if (canonicalOrigin && origin === canonicalOrigin) {
+      return 'site:' + pathname.replace(/^\/+/, '');
+    }
+    return 'origin:' + origin + pathname;
+  }
+
+  function imageSourceIdentities(image) {
+    const identities = new Set();
+    if (!image || !image.getAttribute) return identities;
+    [
+      'src',
+      'data-mce-src',
+      'data-editorial-original-src',
+      'data-src',
+      'data-original',
+      'data-original-src',
+      'data-lazy-src'
+    ].forEach((attribute) => {
+      const identity = canonicalImageSrc(image.getAttribute(attribute));
+      if (identity) identities.add(identity);
+    });
+    return identities;
+  }
+
+  function exactLiveAnchorCandidates(liveImage, currentImages) {
+    if (!liveImage) return [];
+    const id = String(liveImage.id || '').trim();
+    if (id) {
+      const liveIdCount = liveProseImages.filter(
+        (entry) => String(entry.id || '').trim() === id
+      ).length;
+      if (liveIdCount !== 1) return [];
+      return currentImages.filter((image) => String(image.getAttribute('id') || '').trim() === id);
+    }
+    const alt = String(liveImage.alt || '').trim();
+    const title = String(liveImage.title || '').trim();
+    if (!alt || !title) return [];
+    const liveTupleCount = liveProseImages.filter((entry) => (
+      String(entry.alt || '').trim() === alt
+      && String(entry.title || '').trim() === title
+    )).length;
+    if (liveTupleCount !== 1) return [];
+    return currentImages.filter((image) => (
+      String(image.getAttribute('alt') || '').trim() === alt
+      && String(image.getAttribute('title') || '').trim() === title
+    ));
   }
 
   function imagePackHttpUrl(value) {
@@ -1430,10 +1526,26 @@ $innerScript = <<<JS
     pack.inline_images.forEach((item, index) => {
       const identity = canonicalImageSrc(item.old_src);
       if (!identity) return;
-      const matches = currentImages.filter((image) => canonicalImageSrc(image.getAttribute('src')) === identity);
+      let matches = currentImages.filter((image) => imageSourceIdentities(image).has(identity));
+      let matchTier = 'source';
       if (matches.length === 0) {
-        conflicts.push('Ảnh nội dung #' + (index + 1) + ': không tìm thấy old_src trong bài hiện tại.');
-        return;
+        const liveMatches = liveProseImages.filter(
+          (liveImage) => canonicalImageSrc(liveImage.src) === identity
+        );
+        if (liveMatches.length === 0) {
+          conflicts.push('Ảnh #' + (index + 1) + ': old_src không tồn tại trong bài gốc hiện tại.');
+          return;
+        }
+        if (liveMatches.length !== 1) {
+          conflicts.push('Ảnh #' + (index + 1) + ': old_src trong bài gốc không xác định duy nhất ảnh cần thay.');
+          return;
+        }
+        matches = exactLiveAnchorCandidates(liveMatches[0], currentImages);
+        if (matches.length === 0) {
+          conflicts.push('Ảnh #' + (index + 1) + ': ảnh tồn tại trong bài gốc nhưng Draft hiện tại đã thay đổi, không thể xác định duy nhất ảnh cần thay.');
+          return;
+        }
+        matchTier = 'live_anchor';
       }
       if (matches.length > 1) {
         conflicts.push('Ảnh nội dung #' + (index + 1) + ': old_src khớp nhiều ảnh trong bài hiện tại.');
@@ -1443,11 +1555,16 @@ $innerScript = <<<JS
       if (metadata.warning) {
         warnings.push('Ảnh nội dung #' + (index + 1) + ' ' + metadata.warning);
       }
+      if (matchTier === 'live_anchor') {
+        warnings.push('Ảnh nội dung #' + (index + 1) + ' được đối chiếu qua nhận diện HTML gốc vì đường dẫn ảnh trong Draft đã thay đổi.');
+      }
       mappings.push({
         index,
         identity,
         image: matches[0],
         raw_src: String(matches[0].getAttribute('src') || ''),
+        original_src: String(matches[0].getAttribute('data-editorial-original-src') || '').trim(),
+        match_tier: matchTier,
         metadata_mode: metadata.mode,
         metadata_warning: metadata.warning
       });
@@ -1687,6 +1804,11 @@ $innerScript = <<<JS
           return { ok: false, message: 'Caption/Nguồn của ảnh nội dung #' + (index + 1) + ' chưa được serialize đúng.' };
         }
       }
+      const expectedOriginal = String(mapping && mapping.original_src || item.old_src).trim();
+      const originalMarker = String(image.getAttribute('data-editorial-original-src') || '').trim();
+      if (!originalMarker || originalMarker !== expectedOriginal) {
+        return { ok: false, message: 'Nhận diện ảnh gốc của ảnh nội dung #' + (index + 1) + ' chưa được serialize đúng.' };
+      }
     }
     return { ok: true, html: serialized };
   }
@@ -1736,6 +1858,7 @@ $innerScript = <<<JS
       setImagePackStatus('Đang tải và kiểm tra toàn bộ ảnh...', 'busy');
       const initialHtml = initial.html;
       let transferCompleted = false;
+      let closeAfterSuccess = false;
       try {
         const response = await transferImagePack(pack);
         transferCompleted = true;
@@ -1760,6 +1883,13 @@ $innerScript = <<<JS
               const item = pack.inline_images[mapping.index];
               const remote = responseByIndex.get(mapping.index);
               setEditorImageSource(recheck.instance, mapping.image, remote.public_path);
+              if (!mapping.original_src) {
+                recheck.instance.dom.setAttrib(
+                  mapping.image,
+                  'data-editorial-original-src',
+                  item.old_src
+                );
+              }
               writeInlineImageMetadata(recheck.instance, mapping.image, item, {
                 metadataMode: mapping.metadata_mode
               });
@@ -1788,6 +1918,7 @@ $innerScript = <<<JS
         markDraftDirty();
         syncPreview();
         currentImagePack = null;
+        closeAfterSuccess = true;
         const inlineCount = recheck.mappings.length;
         const basicMetadataCount = recheck.mappings.filter(
           (mapping) => mapping.metadata_mode === 'BASIC_METADATA'
@@ -1803,6 +1934,13 @@ $innerScript = <<<JS
           'success'
         );
         imagePackApply.disabled = true;
+        if (recheck.instance.notificationManager) {
+          recheck.instance.notificationManager.open({
+            text: 'Đã áp dụng gói ảnh. Hãy kiểm tra lại bài rồi Lưu nháp.',
+            type: 'success',
+            timeout: 4500
+          });
+        }
       } catch (error) {
         const message = error instanceof Error ? error.message : 'Không thể áp dụng gói ảnh.';
         renderImagePackList(imagePackErrors, [message]);
@@ -1818,6 +1956,9 @@ $innerScript = <<<JS
         if (currentImagePack) {
           const latest = inspectImagePack(currentImagePack);
           if (imagePackApply) imagePackApply.disabled = !latest.ok;
+        }
+        if (closeAfterSuccess) {
+          closeImagePackDialog();
         }
       }
     });
