@@ -629,6 +629,16 @@ $innerScript = <<<JS
       return figure;
     };
 
+    const extractCandidate = findExtractableLegacyImageCandidate(image);
+    if (extractCandidate) {
+      const figure = createFigure();
+      extractCandidate.block.parentNode.insertBefore(figure, extractCandidate.block.nextSibling);
+      figure.appendChild(image);
+      removeLegacyImagePlacementAttributes(image);
+      pruneLegacyImageTail(extractCandidate.block);
+      return figure;
+    }
+
     const standaloneParagraph = image.closest ? image.closest('p') : null;
     if (standaloneParagraph) {
       if (!isStandaloneImageParagraph(standaloneParagraph, image)
@@ -655,18 +665,119 @@ $innerScript = <<<JS
     return figure;
   }
 
-  function writeInlineImageMetadata(instance, image, values) {
+  function isLegacyTailIgnorable(node) {
+    if (node.nodeType === 3) {
+      return !String(node.nodeValue || '').replace(/\u00a0/g, ' ').trim();
+    }
+    if (node.nodeType !== 1) return false;
+    if (node.nodeName === 'BR') return true;
+    if (node.nodeName !== 'SPAN') return false;
+    return Array.from(node.childNodes).every(isLegacyTailIgnorable);
+  }
+
+  function findExtractableLegacyImageCandidate(image) {
+    if (!image || !image.parentElement) return null;
+    let node = image.parentElement;
+    let block = null;
+    while (node) {
+      if (node.nodeName === 'P' || node.nodeName === 'DIV') {
+        block = node;
+        break;
+      }
+      if (node.nodeName !== 'SPAN') return null;
+      node = node.parentElement;
+    }
+    if (!block || !canContainMetadataFigure(block.parentElement)) return null;
+    if (block.querySelectorAll('img').length !== 1) return null;
+
+    let foundTarget = false;
+    let safeTail = true;
+    const inspect = (current) => {
+      if (!safeTail || current === image) {
+        if (current === image) foundTarget = true;
+        return;
+      }
+      if (current.nodeType === 3) {
+        if (foundTarget && !isLegacyTailIgnorable(current)) safeTail = false;
+        return;
+      }
+      if (current.nodeType !== 1) {
+        if (foundTarget) safeTail = false;
+        return;
+      }
+      if (current === image) {
+        foundTarget = true;
+        return;
+      }
+      if (!foundTarget) {
+        Array.from(current.childNodes).forEach(inspect);
+        return;
+      }
+      if (!isLegacyTailIgnorable(current)) safeTail = false;
+    };
+    Array.from(block.childNodes).forEach(inspect);
+    return foundTarget && safeTail ? { block } : null;
+  }
+
+  function pruneLegacyImageTail(block) {
+    const prune = (node) => {
+      Array.from(node.children || []).forEach(prune);
+      if (node !== block && node.nodeName === 'SPAN' && isLegacyTailIgnorable(node)) {
+        node.remove();
+      }
+    };
+    prune(block);
+  }
+
+  function removeLegacyImagePlacementAttributes(image) {
+    image.removeAttribute('width');
+    image.removeAttribute('height');
+    image.removeAttribute('align');
+    const style = String(image.getAttribute('style') || '');
+    if (!style) return;
+    const remaining = style.split(';').filter((rule) => {
+      const property = String(rule.split(':', 1)[0] || '').trim().toLowerCase();
+      return property !== 'float'
+        && property !== 'width'
+        && property !== 'height'
+        && property !== 'vertical-align';
+    }).map((rule) => rule.trim()).filter(Boolean);
+    if (remaining.length) image.setAttribute('style', remaining.join('; ') + ';');
+    else image.removeAttribute('style');
+  }
+
+  function inlineMetadataMode(image, item) {
+    const hasCaptionMetadata = Boolean(
+      String(item.caption || '').trim() || normalizeImageCredit(item.credit)
+    );
+    if (!hasCaptionMetadata) return { mode: 'FULL_METADATA', warning: '' };
+    const articleFigure = image.closest ? image.closest('figure.article-image') : null;
+    if (articleFigure && articleFigure.querySelectorAll('img').length === 1) {
+      return { mode: 'FULL_METADATA', warning: '' };
+    }
+    if (!articleFigure && !image.closest('figure') && findExtractableLegacyImageCandidate(image)) {
+      return { mode: 'EXTRACT_TO_FIGURE', warning: '' };
+    }
+    return {
+      mode: 'BASIC_METADATA',
+      warning: 'đã được thay, nhưng Caption/Nguồn chưa thể áp dụng do cấu trúc HTML cũ.'
+    };
+  }
+
+  function writeInlineImageMetadata(instance, image, values, options = {}) {
     const alt = String(values.alt || '').trim();
     const title = String(values.title || '').trim();
     const caption = String(values.caption || '').trim();
     const credit = normalizeImageCredit(values.credit);
+    const metadataMode = String(options.metadataMode || '');
+    const basicMetadata = metadataMode === 'BASIC_METADATA';
     image.setAttribute('alt', alt);
     if (title) image.setAttribute('title', title);
     else image.removeAttribute('title');
 
     let figure = image.closest ? image.closest('figure.article-image') : null;
     const legacyFigure = image.closest ? image.closest('figure') : null;
-    if (!figure && (caption || credit)) {
+    if (!basicMetadata && !figure && (caption || credit)) {
       if (legacyFigure) {
         instance.notificationManager.open({
           text: 'Không thể thêm Caption/Nguồn vào cấu trúc figure cũ. Alt và Title đã được cập nhật.',
@@ -685,7 +796,7 @@ $innerScript = <<<JS
       }
     }
 
-    if (figure) {
+    if (figure && !basicMetadata) {
       let figcaption = figure.querySelector(':scope > figcaption');
       if (caption || credit) {
         if (!figcaption) {
@@ -962,6 +1073,13 @@ $innerScript = <<<JS
         }
       }
     }
+    return {
+      mode: metadataMode || (figure ? 'FULL_METADATA' : 'BASIC_METADATA'),
+      metadataApplied: !basicMetadata && Boolean(figure || (!caption && !credit)),
+      warning: basicMetadata
+        ? 'Caption/Nguồn chưa thể áp dụng do cấu trúc HTML cũ.'
+        : ''
+    };
   }
 
   function exitFullscreen() {
@@ -1281,46 +1399,8 @@ $innerScript = <<<JS
     };
   }
 
-  function inlineMetadataCompatible(image, item) {
-    if (!String(item.caption || '').trim() && !String(item.credit || '').trim()) {
-      return true;
-    }
-    const articleFigure = image.closest ? image.closest('figure.article-image') : null;
-    if (articleFigure) {
-      return articleFigure.querySelectorAll('img').length === 1;
-    }
-    if (image.closest && image.closest('figure')) {
-      return false;
-    }
-    const standaloneParagraph = image.closest ? image.closest('p') : null;
-    if (standaloneParagraph) {
-      return isStandaloneImageParagraph(standaloneParagraph, image)
-        && canContainMetadataFigure(standaloneParagraph.parentElement);
-    }
-    const parent = image.parentElement;
-    if (!parent) return false;
-    return canContainMetadataFigure(parent);
-  }
-
   function normalizeCompareText(value) {
     return String(value || '').trim().replace(/\s+/g, ' ').toLocaleLowerCase('vi');
-  }
-
-  function normalizeCompareSlug(value) {
-    let slug = String(value || '').trim();
-    if (!slug) return '';
-    try {
-      const url = new URL(slug, siteBaseUrl);
-      slug = url.pathname.split('/').filter(Boolean).pop() || '';
-    } catch (error) {
-      slug = slug.split(/[?#]/, 1)[0].split('/').filter(Boolean).pop() || '';
-    }
-    try {
-      slug = decodeURIComponent(slug);
-    } catch (error) {
-      // Keep the original slug when percent-decoding is invalid.
-    }
-    return slug.replace(/\.html?$/i, '').toLocaleLowerCase('vi');
   }
 
   function inspectImagePack(pack) {
@@ -1366,27 +1446,23 @@ $innerScript = <<<JS
         conflicts.push('Ảnh nội dung #' + (index + 1) + ': old_src khớp nhiều ảnh trong bài hiện tại.');
         return;
       }
-      if (!inlineMetadataCompatible(matches[0], item)) {
-        conflicts.push('Ảnh nội dung #' + (index + 1) + ': cấu trúc HTML hiện tại không thể thêm Caption/Nguồn an toàn.');
-        return;
+      const metadata = inlineMetadataMode(matches[0], item);
+      if (metadata.warning) {
+        warnings.push('Ảnh nội dung #' + (index + 1) + ' ' + metadata.warning);
       }
       mappings.push({
         index,
         identity,
         image: matches[0],
-        raw_src: String(matches[0].getAttribute('src') || '')
+        raw_src: String(matches[0].getAttribute('src') || ''),
+        metadata_mode: metadata.mode,
+        metadata_warning: metadata.warning
       });
     });
 
     const titleInput = document.getElementById('titleInput');
     if (normalizeCompareText(pack.article.title) !== normalizeCompareText(titleInput ? titleInput.value : '')) {
-      warnings.push('Gói ảnh có vẻ thuộc bài khác.');
-    }
-    const currentSlug = normalizeCompareSlug(articleIdField ? articleIdField.value : '');
-    const packageSlug = normalizeCompareSlug(pack.article.slug);
-    if (packageSlug && currentSlug && packageSlug !== currentSlug
-      && !warnings.includes('Gói ảnh có vẻ thuộc bài khác.')) {
-      warnings.push('Gói ảnh có vẻ thuộc bài khác.');
+      warnings.push('Gói ảnh có tiêu đề khác bài đang mở.');
     }
     return {
       ok: conflicts.length === 0 && mappings.length === pack.inline_images.length,
@@ -1576,7 +1652,7 @@ $innerScript = <<<JS
     return byIndex;
   }
 
-  function serializedImagePackMatches(instance, pack, responseByIndex) {
+  function serializedImagePackMatches(instance, pack, responseByIndex, mappingsByIndex) {
     const serialized = instance.getContent();
     const documentNode = new DOMParser().parseFromString(
       '<div id="image-pack-serialized-root">' + serialized + '</div>',
@@ -1607,7 +1683,8 @@ $innerScript = <<<JS
       }
       const caption = String(item.caption || '').trim();
       const credit = normalizeImageCredit(item.credit);
-      if (caption || credit) {
+      const mapping = mappingsByIndex.get(index);
+      if ((caption || credit) && mapping && mapping.metadata_mode !== 'BASIC_METADATA') {
         const figure = image.closest('figure.article-image');
         const captionNode = figure && figure.querySelector('.article-image-caption');
         const creditNode = figure && figure.querySelector('.article-image-credit');
@@ -1690,11 +1767,19 @@ $innerScript = <<<JS
               const item = pack.inline_images[mapping.index];
               const remote = responseByIndex.get(mapping.index);
               setEditorImageSource(recheck.instance, mapping.image, remote.public_path);
-              writeInlineImageMetadata(recheck.instance, mapping.image, item);
+              writeInlineImageMetadata(recheck.instance, mapping.image, item, {
+                metadataMode: mapping.metadata_mode
+              });
             });
           });
           applyFeaturedImagePack(pack, response);
-          const serializedCheck = serializedImagePackMatches(recheck.instance, pack, responseByIndex);
+          const mappingByIndex = new Map(recheck.mappings.map((mapping) => [mapping.index, mapping]));
+          const serializedCheck = serializedImagePackMatches(
+            recheck.instance,
+            pack,
+            responseByIndex,
+            mappingByIndex
+          );
           if (!serializedCheck.ok) {
             throw new Error(serializedCheck.message);
           }
@@ -1711,8 +1796,17 @@ $innerScript = <<<JS
         syncPreview();
         currentImagePack = null;
         const inlineCount = recheck.mappings.length;
+        const basicMetadataCount = recheck.mappings.filter(
+          (mapping) => mapping.metadata_mode === 'BASIC_METADATA'
+        ).length;
+        const fullMetadataCount = inlineCount - basicMetadataCount;
         setImagePackStatus(
-          'Đã áp dụng 1 ảnh đại diện và ' + inlineCount + ' ảnh nội dung. Hãy kiểm tra lại bài rồi Lưu nháp.',
+          'Đã áp dụng 1 ảnh đại diện và ' + inlineCount + ' ảnh nội dung. '
+          + fullMetadataCount + ' ảnh đã có đầy đủ Caption.'
+          + (basicMetadataCount
+            ? ' ' + basicMetadataCount + ' ảnh đã thay ảnh/Alt/Title nhưng chưa thể thêm Caption do HTML cũ.'
+            : '')
+          + ' Hãy kiểm tra lại bài rồi Lưu nháp.',
           'success'
         );
         imagePackApply.disabled = true;

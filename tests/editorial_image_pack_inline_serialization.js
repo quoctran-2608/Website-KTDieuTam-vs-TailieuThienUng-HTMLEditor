@@ -90,7 +90,8 @@ if (!submitSource.includes('const raw = currentEditorContent();')
   || submitSource.includes("const raw = editor.value || ''")) {
   throw new Error('Workspace submit no longer treats TinyMCE getContent as save authority.');
 }
-if (!source.includes('serializedImagePackMatches(recheck.instance, pack, responseByIndex)')) {
+if (!source.includes('serializedImagePackMatches(')
+  || !source.includes('metadata_mode !== \'BASIC_METADATA\'')) {
   throw new Error('Image Pack success is missing the serialized HTML invariant.');
 }
 

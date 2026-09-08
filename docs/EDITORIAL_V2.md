@@ -352,10 +352,23 @@ Image Creator copy JSON
 ```
 
 Contract không yêu cầu article ID, paragraph hash, source fingerprint hoặc
-placement engine. `article.title` bắt buộc; `article.slug` chỉ hỗ trợ cảnh báo
-UX. Featured xử lý riêng. Mỗi inline item dùng `old_src` để match chính xác một
-IMG trong current TinyMCE DOM; 0 match, 2+ match, duplicate canonical
-`old_src`, hoặc cấu trúc không thể thêm Caption/Credit an toàn đều block Apply.
+placement engine. `article.title` bắt buộc nhưng mismatch chỉ là warning;
+`article.slug` được giữ trong schema v1 nhưng không dùng cho warning, conflict
+hoặc Apply eligibility. Featured xử lý riêng. Mỗi inline item dùng `old_src`
+để match chính xác một IMG trong current TinyMCE DOM; 0 match, 2+ match hoặc
+duplicate canonical `old_src` vẫn block Apply.
+
+Caption/Credit dùng best-effort metadata mode:
+
+- figure an toàn hiện có: áp dụng đầy đủ;
+- IMG cuối một block legacy `P`/`DIV` an toàn: tách chỉ IMG thành managed
+  `figure.article-image` ngay sau block, giữ text trước IMG;
+- cấu trúc phức tạp hoặc IMG giữa prose: vẫn thay local `src`, Alt và Title,
+  skip Caption/Credit kèm warning, không block package.
+
+Khi extract, chỉ presentation placement legacy của target IMG như float,
+width/height, align và HTML width/height được bỏ để CSS `.article-image` quản
+lý layout. Không rewrite toàn prose hoặc sửa ảnh khác.
 
 `editorial/image-pack-import.php` giữ cùng auth/CSRF/current
 owner/active-assignment/lock checks như upload thường. Endpoint chỉ tải,
@@ -365,10 +378,10 @@ Browser mới thay các Featured fields, đổi `img.src`, gọi lại
 
 Inline replacement uses `editor.dom.setAttrib()` and synchronizes both `src`
 and TinyMCE internal `data-mce-src`. Before reporting success, Editorial
-serializes current editor HTML and verifies that the new local path plus
-Alt/Title/Caption/Credit are present and `old_src` is gone. Form submission
-encodes `currentEditorContent()` directly; the textarea is not the sole source
-of truth.
+always verifies local path, removed `old_src`, Alt and Title. Caption/Credit is
+also verified for full/extract modes, but is intentionally not required for
+basic legacy fallback. Form submission encodes `currentEditorContent()`
+directly; the textarea is not the sole source of truth.
 
 Import không tự Save, Stage, Review, Publish hoặc Handoff. Thay đổi public vẫn
 chỉ xảy ra qua Safe Publish. Nếu server transfer đã thành công nhưng DOM re-check

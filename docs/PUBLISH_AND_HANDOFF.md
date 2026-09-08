@@ -143,8 +143,9 @@ Snapshot revision chỉ lưu references trong payload, không duplicate binary f
 
 Image Pack là luồng import-only từ KTDT Image Creator. Browser nhận JSON qua
 Clipboard hoặc textarea fallback, kiểm tra current TinyMCE DOM và chỉ cho Apply
-khi mọi `old_src` inline match đúng một IMG, không duplicate và tương thích với
-metadata Caption/Credit.
+khi mọi `old_src` inline match đúng một IMG và không duplicate. `article.title`
+mismatch chỉ warning; `article.slug` không tham gia identity, warning hay
+eligibility.
 
 `editorial/image-pack-import.php` tải Featured cùng toàn bộ ảnh inline về server,
 giữ cùng auth/CSRF/ownership/assignment/lock protection như upload thường, chặn
@@ -157,9 +158,14 @@ Sau response thành công, browser re-check DOM rồi mới:
 - map Featured `public_path` vào năm Featured payload fields;
 - thay từng inline `img.src` bằng local `public_path`;
 - đồng bộ TinyMCE `src` và `data-mce-src`, rồi verify `getContent()` đã serialize
-  local path và metadata trước khi báo thành công;
+  local path, Alt/Title và metadata theo mode trước khi báo thành công;
 - gọi lại `writeInlineImageMetadata()` cho Alt/Title/Caption/Credit;
 - đánh dấu Draft dirty.
+
+Caption/Credit không còn là hard blocker. Nếu IMG nằm cuối một block legacy
+`P`/`DIV` an toàn, browser có thể tách riêng target IMG thành managed figure để
+áp dụng đầy đủ metadata. Nếu ảnh nằm giữa prose hoặc structure không an toàn,
+browser vẫn thay local src + Alt + Title, skip Caption/Credit và báo warning.
 
 Luồng này không tự Save, Stage, Review, Publish hoặc Handoff và không trực tiếp
 sửa live HTML, `article-meta`, catalog, derived artifact hay public-ready

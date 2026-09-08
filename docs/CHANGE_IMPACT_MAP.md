@@ -302,7 +302,10 @@ Preserve:
 - canonical current-site pathname matching while retaining external
   `origin + pathname`;
 - 0/2+ matches and duplicate package `old_src` as blocking conflicts;
-- Caption/Credit compatibility preflight before server transfer;
+- title mismatch as warning-only; do not use package slug for identity, warning
+  or eligibility;
+- Caption/Credit best-effort mode: full metadata, safe end-of-block extraction,
+  or basic src/Alt/Title fallback with warning;
 - auth, CSRF, current owner, active assignment and valid lock at the endpoint;
 - HTTP(S)-only server download with private/reserved IP rejection, no redirect,
   8 MiB per image and `finfo` MIME authority;

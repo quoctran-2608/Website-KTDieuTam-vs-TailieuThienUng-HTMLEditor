@@ -181,6 +181,12 @@ fallback. Publish renders one managed static Featured block marked
 that block rather than creating a duplicate. A local `uploads/articles/...`
 Featured path must exist and remain inside the upload root before Publish.
 
+`article.title` mismatch is warning-only; `article.slug` is not used for Image
+Pack identity or eligibility. Missing/duplicate exact `old_src` remains a hard
+block. Caption/Credit is best-effort: when legacy HTML cannot safely host a
+managed figure, import still replaces the image plus Alt/Title and reports that
+Caption/Credit was skipped.
+
 ### INV-18 — Taxonomy boundary
 
 Editorial V2 preserves catalog taxonomy and uses public taxonomy artifacts
