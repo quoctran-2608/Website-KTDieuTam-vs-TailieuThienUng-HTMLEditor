@@ -173,6 +173,14 @@ validated assets, but only the browser mutates current Draft fields. Image Pack
 import must never auto-Save, Stage, Review, Publish or Handoff. Public content
 changes still belong to Safe Publish.
 
+When Image Pack replaces an inline image, update it through TinyMCE DOM APIs and
+keep `src` and `data-mce-src` synchronized. Save authority is
+`tinymce.get('proseEditor').getContent()`; the textarea is only a synchronized
+fallback. Publish renders one managed static Featured block marked
+`data-editorial-featured="1"` before `#articleTopNav`; public JavaScript hydrates
+that block rather than creating a duplicate. A local `uploads/articles/...`
+Featured path must exist and remain inside the upload root before Publish.
+
 ### INV-18 — Taxonomy boundary
 
 Editorial V2 preserves catalog taxonomy and uses public taxonomy artifacts

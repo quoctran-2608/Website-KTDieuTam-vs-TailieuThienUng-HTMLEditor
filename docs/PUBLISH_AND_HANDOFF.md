@@ -78,11 +78,20 @@ payload verified
 → content index / hub JSON / card hub tĩnh / list-detail public
 ```
 
-Publish giữ ảnh hiện có nếu payload `featured_image` để trống theo contract
-normalization. Với bốn key metadata mới, Publish phân biệt:
+Publish phân biệt key vắng mặt và explicit clear:
 
-- key **vắng mặt** trong snapshot legacy → giữ giá trị `article-meta` live;
+- `featured_image` **vắng mặt** trong snapshot legacy → giữ ảnh live/catalog;
+- `featured_image` **có mặt nhưng rỗng** → clear ảnh và remove managed block;
+- metadata key **vắng mặt** trong snapshot legacy → giữ giá trị live;
 - key **có mặt nhưng rỗng** → xóa giá trị live cũ có chủ ý.
+
+Safe Publish kiểm tra local `uploads/articles/...` Featured asset còn tồn tại,
+readable và không escape upload root. Renderer ghi đúng một
+`figure.article-featured-media[data-editorial-featured="1"]` trước
+`#articleTopNav`; validator đối chiếu exact path/Alt/Title/Caption/Credit trước
+atomic replace. Public `article-layout.js` hydrate/reuse block này. Nếu ảnh tải
+lỗi, runtime ghi diagnostic chứa URL thật rồi gỡ figure; static block vẫn là
+fallback khi JavaScript không chạy.
 
 Rebuild đồng bộ image và image Alt target vào dynamic artifact, patch ảnh card
 hub tĩnh có liên quan, rồi xác minh representation trước khi ghi marker ready.
@@ -147,6 +156,8 @@ Sau response thành công, browser re-check DOM rồi mới:
 
 - map Featured `public_path` vào năm Featured payload fields;
 - thay từng inline `img.src` bằng local `public_path`;
+- đồng bộ TinyMCE `src` và `data-mce-src`, rồi verify `getContent()` đã serialize
+  local path và metadata trước khi báo thành công;
 - gọi lại `writeInlineImageMetadata()` cho Alt/Title/Caption/Credit;
 - đánh dấu Draft dirty.
 

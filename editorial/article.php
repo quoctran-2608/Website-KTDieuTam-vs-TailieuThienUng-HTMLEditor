@@ -446,6 +446,12 @@ $saveStatusText = $hasSavedDraft
 // ─── Public article URL ──────────────────────────────────────────
 
 $publicUrl = editorial_public_article_url($article);
+$publicViewUrl = $publicUrl;
+$publishedHash = trim((string) ($state['published_live_hash'] ?? ''));
+if ($publicViewUrl !== '#' && $publishedHash !== '') {
+    $publicViewUrl .= (str_contains($publicViewUrl, '?') ? '&' : '?')
+        . 'v=' . rawurlencode(substr($publishedHash, 0, 12));
+}
 $liveArticleHtml = file_get_contents($htmlPath);
 if ($liveArticleHtml === false) {
     $liveArticleHtml = '';
@@ -515,6 +521,17 @@ $innerScript = <<<JS
       if (instance) return instance.getContent();
     }
     return editor.value || '';
+  }
+
+  function setEditorImageSource(instance, image, publicPath) {
+    const path = String(publicPath || '').trim();
+    if (!instance || !instance.dom || !image || !path) {
+      throw new Error('Không thể đồng bộ đường dẫn ảnh với TinyMCE.');
+    }
+    instance.dom.setAttrib(image, 'src', path);
+    // TinyMCE serializes data-mce-src as the external src when present.
+    // Keep both values identical so stale internal state cannot restore old_src.
+    instance.dom.setAttrib(image, 'data-mce-src', path);
   }
 
   const siteBaseUrl = window.location.origin + window.location.pathname.replace(/\/editorial\/.*$/, '/');
@@ -818,12 +835,10 @@ $innerScript = <<<JS
       return;
     }
     form.dataset.submitting = '1';
-    if (window.tinymce && typeof window.tinymce.triggerSave === 'function') {
-      window.tinymce.triggerSave();
-    }
     const b64Field = document.getElementById('proseHtmlB64');
     try {
-      const raw = editor.value || '';
+      const raw = currentEditorContent();
+      editor.value = raw;
       b64Field.value = btoa(unescape(encodeURIComponent(raw)));
       editor.removeAttribute('name');
     } catch (err) {
@@ -1561,6 +1576,51 @@ $innerScript = <<<JS
     return byIndex;
   }
 
+  function serializedImagePackMatches(instance, pack, responseByIndex) {
+    const serialized = instance.getContent();
+    const documentNode = new DOMParser().parseFromString(
+      '<div id="image-pack-serialized-root">' + serialized + '</div>',
+      'text/html'
+    );
+    const root = documentNode.getElementById('image-pack-serialized-root');
+    if (!root) {
+      return { ok: false, message: 'Không thể kiểm tra HTML TinyMCE sau khi nhập ảnh.' };
+    }
+    const images = Array.from(root.querySelectorAll('img'));
+    for (let index = 0; index < pack.inline_images.length; index += 1) {
+      const item = pack.inline_images[index];
+      const remote = responseByIndex.get(index);
+      const newIdentity = canonicalImageSrc(remote && remote.public_path);
+      const oldIdentity = canonicalImageSrc(item.old_src);
+      const matches = images.filter((image) => canonicalImageSrc(image.getAttribute('src')) === newIdentity);
+      if (!newIdentity || matches.length !== 1) {
+        return { ok: false, message: 'TinyMCE chưa serialize đúng ảnh nội dung #' + (index + 1) + '.' };
+      }
+      if (oldIdentity !== newIdentity
+        && images.some((image) => canonicalImageSrc(image.getAttribute('src')) === oldIdentity)) {
+        return { ok: false, message: 'TinyMCE vẫn còn serialize old_src của ảnh nội dung #' + (index + 1) + '.' };
+      }
+      const image = matches[0];
+      if (String(image.getAttribute('alt') || '').trim() !== String(item.alt || '').trim()
+        || String(image.getAttribute('title') || '').trim() !== String(item.title || '').trim()) {
+        return { ok: false, message: 'Alt/Title của ảnh nội dung #' + (index + 1) + ' chưa được serialize đúng.' };
+      }
+      const caption = String(item.caption || '').trim();
+      const credit = normalizeImageCredit(item.credit);
+      if (caption || credit) {
+        const figure = image.closest('figure.article-image');
+        const captionNode = figure && figure.querySelector('.article-image-caption');
+        const creditNode = figure && figure.querySelector('.article-image-credit');
+        if (!figure
+          || (caption && String(captionNode && captionNode.textContent || '').trim() !== caption)
+          || (credit && String(creditNode && creditNode.textContent || '').trim() !== 'Nguồn: ' + credit)) {
+          return { ok: false, message: 'Caption/Nguồn của ảnh nội dung #' + (index + 1) + ' chưa được serialize đúng.' };
+        }
+      }
+    }
+    return { ok: true, html: serialized };
+  }
+
   function featuredImageSnapshot() {
     return {
       image: featuredImageInput ? featuredImageInput.value : '',
@@ -1629,11 +1689,15 @@ $innerScript = <<<JS
             recheck.mappings.forEach((mapping) => {
               const item = pack.inline_images[mapping.index];
               const remote = responseByIndex.get(mapping.index);
-              mapping.image.setAttribute('src', String(remote.public_path));
+              setEditorImageSource(recheck.instance, mapping.image, remote.public_path);
               writeInlineImageMetadata(recheck.instance, mapping.image, item);
             });
           });
           applyFeaturedImagePack(pack, response);
+          const serializedCheck = serializedImagePackMatches(recheck.instance, pack, responseByIndex);
+          if (!serializedCheck.ok) {
+            throw new Error(serializedCheck.message);
+          }
         } catch (error) {
           recheck.instance.setContent(initialHtml);
           restoreFeaturedImage(featuredBefore);
@@ -1746,7 +1810,7 @@ editorial_layout_header([
                 </span>
                 &nbsp;
             <?php endif; ?>
-            <a href="<?= editorial_h($publicUrl) ?>" target="_blank" rel="noopener" style="font-size:0.85rem;" title="Chỉ hiển thị nội dung đã Publish.">
+            <a href="<?= editorial_h($publicViewUrl) ?>" target="_blank" rel="noopener" style="font-size:0.85rem;" title="Chỉ hiển thị nội dung đã Publish; query v chỉ dùng để tránh cache khi kiểm tra.">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem bản đang xuất bản
             </a>
         </p>

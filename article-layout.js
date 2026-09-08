@@ -1105,22 +1105,31 @@
   }
 
   function syncArticleFeaturedMedia(data) {
-    var existing = document.querySelector('.article-featured-media');
-    if (existing) existing.remove();
+    var figure = document.querySelector('figure[data-editorial-featured="1"]');
     var meta = getArticleMeta();
     var index = getContentIndex();
     var indexArticle = meta && index && index.articles ? index.articles[meta.id] : null;
     var imageValue = explicitCurrentArticleImage(meta, indexArticle)
       || String(data && data.currentImage || '').trim();
-    if (!imageValue) return;
+    if (!imageValue) {
+      if (figure) figure.remove();
+      return;
+    }
 
     var hero = document.querySelector('.article-hero .container');
     var topNav = document.getElementById('articleTopNav');
     if (!hero || !topNav) return;
 
-    var figure = document.createElement('figure');
-    figure.className = 'article-featured-media';
-    var image = document.createElement('img');
+    if (!figure) {
+      figure = document.createElement('figure');
+      figure.className = 'article-featured-media';
+      figure.setAttribute('data-editorial-featured', '1');
+    }
+    var image = figure.querySelector(':scope > img');
+    if (!image) {
+      image = document.createElement('img');
+      figure.prepend(image);
+    }
     image.src = sitePath(imageValue);
     var fallbackTitle = String(data && data.currentTitle || meta && meta.title || '');
     var imageAlt = imageAltValue(meta, indexArticle, data, fallbackTitle);
@@ -1129,11 +1138,24 @@
     var imageCredit = normalizedCredit(imageMetadataValue(meta, indexArticle, data, 'imageCredit'));
     image.alt = imageAlt;
     if (imageTitle) image.title = imageTitle;
+    else image.removeAttribute('title');
     image.decoding = 'async';
-    image.addEventListener('error', function () {
+    image.onerror = function () {
+      if (typeof console !== 'undefined' && typeof console.error === 'function') {
+        console.error('Featured Image failed to load:', image.src);
+      }
       figure.remove();
-    }, { once: true });
-    figure.appendChild(image);
+    };
+    if (image.complete && image.naturalWidth === 0) {
+      if (typeof console !== 'undefined' && typeof console.error === 'function') {
+        console.error('Featured Image failed to load:', image.src);
+      }
+      figure.remove();
+      return;
+    }
+
+    var existingCaption = figure.querySelector(':scope > figcaption');
+    if (existingCaption) existingCaption.remove();
     if (imageCaption || imageCredit) {
       var figcaption = document.createElement('figcaption');
       figcaption.className = 'article-featured-caption';
@@ -1151,7 +1173,9 @@
       }
       figure.appendChild(figcaption);
     }
-    hero.insertBefore(figure, topNav);
+    if (figure.parentNode !== hero || figure.nextElementSibling !== topNav) {
+      hero.insertBefore(figure, topNav);
+    }
   }
 
   function setButtonLabel(button, label, iconClass) {

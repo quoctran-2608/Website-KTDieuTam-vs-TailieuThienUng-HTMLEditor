@@ -363,7 +363,22 @@ validate MIME/size và lưu file; nó không sửa Draft hoặc public content.
 Browser mới thay các Featured fields, đổi `img.src`, gọi lại
 `writeInlineImageMetadata()` và `markDraftDirty()`.
 
+Inline replacement uses `editor.dom.setAttrib()` and synchronizes both `src`
+and TinyMCE internal `data-mce-src`. Before reporting success, Editorial
+serializes current editor HTML and verifies that the new local path plus
+Alt/Title/Caption/Credit are present and `old_src` is gone. Form submission
+encodes `currentEditorContent()` directly; the textarea is not the sole source
+of truth.
+
 Import không tự Save, Stage, Review, Publish hoặc Handoff. Thay đổi public vẫn
 chỉ xảy ra qua Safe Publish. Nếu server transfer đã thành công nhưng DOM re-check
 thất bại, Draft không bị mutate; các file vừa tải có thể trở thành orphan trong
 race hiếm này vì V1 không thêm cleanup token/endpoint.
+
+Safe Publish renders one managed Featured block directly in article HTML:
+`figure.article-featured-media[data-editorial-featured="1"]`, immediately before
+`#articleTopNav`. Later Publish replaces/removes only this marked block.
+`article-layout.js` hydrates/reuses it, so Featured remains visible if runtime
+JavaScript is delayed or unavailable and no duplicate figure is created.
+Local `uploads/articles/...` Featured paths must exist, stay inside the upload
+root and be readable. External/legacy image support remains unchanged.

@@ -61,6 +61,141 @@ function editorial_parse_tags_text(string $tagsText): array
     return $result;
 }
 
+function editorial_publish_featured_image_is_visible(string $image): bool
+{
+    $image = trim($image);
+    if ($image === '') {
+        return false;
+    }
+    $generic = 'assets/images/content/chia_se_kien_thuc_tai_lieu_KeToanDieuTam.jpg';
+    $path = (string) (parse_url($image, PHP_URL_PATH) ?? $image);
+    $path = ltrim(str_replace('\\', '/', rawurldecode($path)), '/');
+    return $path !== $generic && !str_ends_with($path, '/' . $generic);
+}
+
+/**
+ * Local uploads must still exist when the immutable Publish candidate is
+ * rendered. Legacy and external image URLs retain their existing support.
+ *
+ * @return array{ok:bool,message:string}
+ */
+function editorial_publish_validate_featured_image_asset(string $image): array
+{
+    $image = trim($image);
+    $parts = $image !== '' ? parse_url($image) : [];
+    if ($parts === false) {
+        return ['ok' => false, 'message' => 'Đường dẫn Featured Image không hợp lệ.'];
+    }
+    if (is_array($parts) && (isset($parts['scheme']) || isset($parts['host']))) {
+        return ['ok' => true, 'message' => 'Featured Image dùng URL external hiện có.'];
+    }
+    $path = is_array($parts) ? (string) ($parts['path'] ?? '') : '';
+    $path = str_replace('\\', '/', rawurldecode($path));
+    $relativePath = ltrim($path, '/');
+    if (str_contains($path, "\0")
+        || preg_match('#(?:^|/)\.\.(?:/|$)#', $relativePath) === 1) {
+        return ['ok' => false, 'message' => 'Đường dẫn Featured Image local không hợp lệ.'];
+    }
+    if (!str_starts_with($relativePath, 'uploads/articles/')) {
+        return ['ok' => true, 'message' => 'Featured Image không phải local Editorial upload.'];
+    }
+
+    $uploadRoot = realpath(dirname(dirname(__DIR__)) . '/uploads');
+    $assetPath = realpath(dirname(dirname(__DIR__)) . '/' . $relativePath);
+    if ($uploadRoot === false
+        || $assetPath === false
+        || !str_starts_with($assetPath, $uploadRoot . DIRECTORY_SEPARATOR)
+        || !is_file($assetPath)
+        || !is_readable($assetPath)) {
+        return ['ok' => false, 'message' => 'Featured Image local không tồn tại hoặc không đọc được.'];
+    }
+    return ['ok' => true, 'message' => 'Featured Image local hợp lệ.'];
+}
+
+function editorial_publish_featured_credit(string $credit): string
+{
+    return trim((string) preg_replace('/^(?:nguồn|source)\s*:\s*/iu', '', trim($credit)));
+}
+
+function editorial_publish_managed_featured_html(array $normalized): string
+{
+    $image = trim((string) ($normalized['image'] ?? ''));
+    if (!editorial_publish_featured_image_is_visible($image)) {
+        return '';
+    }
+    $alt = trim((string) ($normalized['imageAlt'] ?? ''));
+    if ($alt === '') {
+        $alt = trim((string) ($normalized['title'] ?? ''));
+    }
+    $title = trim((string) ($normalized['imageTitle'] ?? ''));
+    $caption = trim((string) ($normalized['imageCaption'] ?? ''));
+    $credit = editorial_publish_featured_credit((string) ($normalized['imageCredit'] ?? ''));
+
+    $imageAttributes = ' src="' . htmlspecialchars($image, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"'
+        . ' alt="' . htmlspecialchars($alt, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"'
+        . ($title !== ''
+            ? ' title="' . htmlspecialchars($title, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"'
+            : '')
+        . ' decoding="async"';
+    $figcaption = '';
+    if ($caption !== '' || $credit !== '') {
+        $parts = [];
+        if ($caption !== '') {
+            $parts[] = '<span class="article-featured-caption__text">'
+                . htmlspecialchars($caption, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')
+                . '</span>';
+        }
+        if ($credit !== '') {
+            $parts[] = '<span class="article-featured-caption__credit">Nguồn: '
+                . htmlspecialchars($credit, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')
+                . '</span>';
+        }
+        $figcaption = "\n      <figcaption class=\"article-featured-caption\">"
+            . implode('', $parts)
+            . '</figcaption>';
+    }
+    return '<figure class="article-featured-media" data-editorial-featured="1">'
+        . "\n      <img" . $imageAttributes . '>'
+        . $figcaption
+        . "\n    </figure>";
+}
+
+/**
+ * @return array{ok:bool,html?:string,message:string}
+ */
+function editorial_publish_sync_managed_featured(string $html, array $normalized): array
+{
+    $pattern = '#\s*<figure\b[^>]*\bdata-editorial-featured\s*=\s*(["\'])1\1[^>]*>.*?</figure>\s*#is';
+    $managedCount = preg_match_all($pattern, $html);
+    if ($managedCount === false || $managedCount > 1) {
+        return ['ok' => false, 'message' => 'Managed Featured Image trong live HTML không hợp lệ.'];
+    }
+    $withoutManaged = preg_replace($pattern, "\n", $html);
+    if (!is_string($withoutManaged)) {
+        return ['ok' => false, 'message' => 'Không thể làm sạch managed Featured Image cũ.'];
+    }
+    $featuredHtml = editorial_publish_managed_featured_html($normalized);
+    if ($featuredHtml === '') {
+        return ['ok' => true, 'html' => $withoutManaged, 'message' => 'Managed Featured Image đã được gỡ.'];
+    }
+
+    $topNavPattern = '/<div\b(?=[^>]*\bid=(["\'])articleTopNav\1)[^>]*>/i';
+    $topNavCount = preg_match_all($topNavPattern, $withoutManaged);
+    if ($topNavCount !== 1) {
+        return ['ok' => false, 'message' => 'Không tìm thấy đúng một #articleTopNav để chèn Featured Image.'];
+    }
+    $updated = preg_replace_callback(
+        $topNavPattern,
+        static fn(array $match): string => $featuredHtml . "\n    " . (string) $match[0],
+        $withoutManaged,
+        1
+    );
+    if (!is_string($updated)) {
+        return ['ok' => false, 'message' => 'Không thể chèn managed Featured Image.'];
+    }
+    return ['ok' => true, 'html' => $updated, 'message' => 'Managed Featured Image đã được đồng bộ.'];
+}
+
 // ─── Normalized Publish Payload ──────────────────────────────────────────────
 
 /**
@@ -81,12 +216,15 @@ function editorial_normalize_publish_payload(array $approvedPayload, array $live
 
     $tags = editorial_parse_tags_text((string) ($approvedPayload['tags_text'] ?? ''));
 
-    // featured_image: legacy fallback — empty → preserve current article image
-    // Explicit non-empty chain: approved → live meta → catalog
-    $approvedImage = trim((string) ($approvedPayload['featured_image'] ?? ''));
+    // Missing featured_image belongs to a legacy snapshot and preserves the
+    // current live/catalog value. A present empty value is an explicit clear.
+    $hasApprovedImage = array_key_exists('featured_image', $approvedPayload);
+    $approvedImage = $hasApprovedImage
+        ? trim((string) $approvedPayload['featured_image'])
+        : '';
     $liveImage = trim((string) ($liveMeta['image'] ?? ''));
     $catalogImage = trim((string) ($article['image'] ?? ''));
-    $image = $approvedImage !== ''
+    $image = $hasApprovedImage
         ? $approvedImage
         : ($liveImage !== '' ? $liveImage : $catalogImage);
 
@@ -349,6 +487,11 @@ function editorial_resolve_publish_context(
 
 function editorial_render_approved_html(string $liveHtml, array $article, array $normalized, bool $cacheBustAssets = true): array
 {
+    $assetValidation = editorial_publish_validate_featured_image_asset((string) ($normalized['image'] ?? ''));
+    if (!$assetValidation['ok']) {
+        return $assetValidation;
+    }
+
     // 1. Parse liveHtml
     $parsed = editorial_parse_article_html($liveHtml, '');
     if (!$parsed['ok']) {
@@ -430,7 +573,15 @@ function editorial_render_approved_html(string $liveHtml, array $article, array 
         return ['ok' => false, 'message' => 'Không tìm thấy .article-summary trong HTML để cập nhật.'];
     }
 
-    // 7. Safe Publish cache-busts derived JS. External archival rendering
+    // 7. Keep one server-rendered Featured block so the image remains visible
+    // without article-layout.js. Only the managed marker is replaced/removed.
+    $featuredResult = editorial_publish_sync_managed_featured($html, $normalized);
+    if (!$featuredResult['ok']) {
+        return $featuredResult;
+    }
+    $html = (string) $featuredResult['html'];
+
+    // 8. Safe Publish cache-busts derived JS. External archival rendering
     // disables this so the same immutable source renders deterministically.
     if ($cacheBustAssets) {
         $assetVersion = date('YmdHis');
@@ -497,6 +648,21 @@ function editorial_validate_rendered_html(string $newHtml, array $normalized): a
     foreach (['imageAlt', 'imageTitle', 'imageCaption', 'imageCredit'] as $key) {
         if (($metaPayload[$key] ?? '') !== $normalized[$key]) {
             return ['ok' => false, 'message' => 'Rendered meta ' . $key . ' mismatch.'];
+        }
+    }
+    $expectedManaged = editorial_publish_managed_featured_html($normalized);
+    $managedPattern = '#<figure\b[^>]*\bdata-editorial-featured\s*=\s*(["\'])1\1[^>]*>.*?</figure>#is';
+    $managedCount = preg_match_all($managedPattern, $newHtml, $managedMatches);
+    if ($managedCount === false
+        || ($expectedManaged === '' && $managedCount !== 0)
+        || ($expectedManaged !== '' && ($managedCount !== 1 || trim((string) $managedMatches[0][0]) !== $expectedManaged))) {
+        return ['ok' => false, 'message' => 'Rendered managed Featured Image không khớp Publish payload.'];
+    }
+    if ($expectedManaged !== '') {
+        $managedOffset = strpos($newHtml, (string) $managedMatches[0][0]);
+        $topNavOffset = strpos($newHtml, 'id="articleTopNav"');
+        if ($managedOffset === false || $topNavOffset === false || $managedOffset >= $topNavOffset) {
+            return ['ok' => false, 'message' => 'Rendered managed Featured Image không nằm trước #articleTopNav.'];
         }
     }
 
@@ -758,34 +924,11 @@ function editorial_update_article_source(string $articleId, array $normalized): 
         return ['ok' => false, 'message' => 'data/articles.json không hợp lệ.'];
     }
 
-    // Exactly-one article ID match
-    $matchCount = 0;
-    $foundIndex = -1;
-    foreach ($catalog as $i => $item) {
-        if (($item['id'] ?? '') === $articleId) {
-            $matchCount++;
-            $foundIndex = $i;
-        }
+    $updatedCatalog = editorial_apply_normalized_article_to_catalog($catalog, $articleId, $normalized);
+    if (!$updatedCatalog['ok']) {
+        return $updatedCatalog;
     }
-
-    if ($matchCount === 0) {
-        return ['ok' => false, 'message' => 'Không tìm thấy bài viết trong data/articles.json.'];
-    }
-    if ($matchCount > 1) {
-        return ['ok' => false, 'message' => 'data/articles.json có article_id trùng lặp. Publish bị chặn.'];
-    }
-
-    // Update ONLY editable fields using normalized payload
-    $catalog[$foundIndex]['title'] = $normalized['title'];
-    $catalog[$foundIndex]['excerpt'] = $normalized['excerpt'];
-    $catalog[$foundIndex]['publishDate'] = $normalized['publishDate'];
-    $catalog[$foundIndex]['modifiedDate'] = $normalized['modifiedDate'];
-    $catalog[$foundIndex]['tags'] = $normalized['tags'];
-    $catalog[$foundIndex]['image'] = $normalized['image'];
-    $catalog[$foundIndex]['imageAlt'] = $normalized['imageAlt'];
-    $catalog[$foundIndex]['imageTitle'] = $normalized['imageTitle'];
-    $catalog[$foundIndex]['imageCaption'] = $normalized['imageCaption'];
-    $catalog[$foundIndex]['imageCredit'] = $normalized['imageCredit'];
+    $catalog = $updatedCatalog['catalog'];
 
     $newSourceBytes = json_encode($catalog, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     if ($newSourceBytes === false) {
@@ -839,6 +982,47 @@ function editorial_update_article_source(string $articleId, array $normalized): 
     }
 
     return array_merge(['ok' => true, 'new_hash' => $finalHash], $mutationCtx);
+}
+
+/**
+ * Pure catalog mutation used by the atomic writer and regression fixtures.
+ *
+ * @return array{ok:bool,catalog?:array<int,array<string,mixed>>,message:string}
+ */
+function editorial_apply_normalized_article_to_catalog(
+    array $catalog,
+    string $articleId,
+    array $normalized
+): array {
+    // Exactly-one article ID match
+    $matchCount = 0;
+    $foundIndex = -1;
+    foreach ($catalog as $i => $item) {
+        if (($item['id'] ?? '') === $articleId) {
+            $matchCount++;
+            $foundIndex = $i;
+        }
+    }
+
+    if ($matchCount === 0) {
+        return ['ok' => false, 'message' => 'Không tìm thấy bài viết trong data/articles.json.'];
+    }
+    if ($matchCount > 1) {
+        return ['ok' => false, 'message' => 'data/articles.json có article_id trùng lặp. Publish bị chặn.'];
+    }
+
+    // Update ONLY editable fields using normalized payload
+    $catalog[$foundIndex]['title'] = $normalized['title'];
+    $catalog[$foundIndex]['excerpt'] = $normalized['excerpt'];
+    $catalog[$foundIndex]['publishDate'] = $normalized['publishDate'];
+    $catalog[$foundIndex]['modifiedDate'] = $normalized['modifiedDate'];
+    $catalog[$foundIndex]['tags'] = $normalized['tags'];
+    $catalog[$foundIndex]['image'] = $normalized['image'];
+    $catalog[$foundIndex]['imageAlt'] = $normalized['imageAlt'];
+    $catalog[$foundIndex]['imageTitle'] = $normalized['imageTitle'];
+    $catalog[$foundIndex]['imageCaption'] = $normalized['imageCaption'];
+    $catalog[$foundIndex]['imageCredit'] = $normalized['imageCredit'];
+    return ['ok' => true, 'catalog' => $catalog, 'message' => 'Catalog payload đã được cập nhật.'];
 }
 
 // ─── Public Rebuild ──────────────────────────────────────────────────────────

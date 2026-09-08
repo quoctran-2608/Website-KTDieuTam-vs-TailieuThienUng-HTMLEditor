@@ -309,10 +309,18 @@ Preserve:
 - all downloads validated before permanent persistence and all browser mappings
   re-checked before any Draft mutation;
 - `writeInlineImageMetadata()` reuse and one final `markDraftDirty()`;
+- TinyMCE DOM source update must keep `src` and `data-mce-src` aligned, and Save
+  must encode `getContent()` rather than trust textarea state alone;
 - no whole-prose replacement and no automatic Save/Stage/Review/Publish.
 
 Do not log signed source URLs or package JSON. A browser-side race after server
 success may leave orphan files; do not add cleanup architecture casually.
+
+For Featured persistence, trace Draft/Stage/normalized payload through
+`article-meta`, catalog and rebuild, then verify the managed static block
+`data-editorial-featured="1"` before `#articleTopNav`. Public JS must hydrate
+that block. Never allow a local `uploads/articles/...` path to Publish when the
+file is missing, unreadable or outside upload root.
 
 ### Public rebuild
 
