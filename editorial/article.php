@@ -399,19 +399,27 @@ $handoffDisabledReason = !$handoffPublicationReady
     : (!$handoffSettingsReady
         ? (string) ($handoffConfigStatus['message'] ?? 'Drive + Sheet cần kiểm tra cấu hình.')
         : '');
-$hasPublication = trim((string) ($state['published_revision_id'] ?? '')) !== '';
-$publishedAt = trim((string) ($state['published_at'] ?? ''));
-$approvedCheckpoint = null;
-$approvedCheckpointUser = null;
-if (trim((string) ($state['approved_revision_id'] ?? '')) !== '') {
-    $approvedCheckpoint = editorial_get_revision((string) $state['approved_revision_id']);
-    if (trim((string) ($state['approved_by'] ?? '')) !== '') {
-        $approvedCheckpointUser = editorial_find_user_by_id((string) $state['approved_by']);
+    $hasPublication = trim((string) ($state['published_revision_id'] ?? '')) !== '';
+    $publishedAt = trim((string) ($state['published_at'] ?? ''));
+    $returnNote = null;
+    $returnNotePreview = null;
+    if ($articleStatus === 'returned') {
+        $returnNote = editorial_get_latest_return_note($articleId);
+        if ($returnNote !== null && trim($returnNote) !== '') {
+            $returnNotePreview = editorial_return_note_preview($returnNote);
+        }
     }
-}
-$saveStatusText = $hasSavedDraft
-    ? '✓ v' . $draftVersion
-    : 'Chưa có bản nháp đã lưu';
+    $approvedCheckpoint = null;
+    $approvedCheckpointUser = null;
+    if (trim((string) ($state['approved_revision_id'] ?? '')) !== '') {
+        $approvedCheckpoint = editorial_get_revision((string) $state['approved_revision_id']);
+        if (trim((string) ($state['approved_by'] ?? '')) !== '') {
+            $approvedCheckpointUser = editorial_find_user_by_id((string) $state['approved_by']);
+        }
+    }
+    $saveStatusText = $hasSavedDraft
+        ? '✓ v' . $draftVersion
+        : 'Chưa có bản nháp đã lưu';
     $assignmentBaseline = null;
     foreach (editorial_get_article_revisions($articleId, 50) as $revision) {
         if (($revision['assignment_id'] ?? '') === $assignment['id']
@@ -2073,6 +2081,26 @@ editorial_layout_header([
         </div>
     <?php endif; ?>
 
+    <?php if ($returnNotePreview !== null && $returnNote !== null): ?>
+        <section class="editorial-return-feedback-banner" aria-label="Phản hồi trả bài của Admin">
+            <i class="fa-solid fa-rotate-left editorial-return-feedback-banner__icon" aria-hidden="true"></i>
+            <div class="editorial-return-feedback-banner__content">
+                <strong>Admin đã trả lại bài để chỉnh sửa</strong>
+                <p class="editorial-return-feedback-preview editorial-return-feedback-preview--workspace">
+                    <span class="editorial-return-feedback-preview__text"><?= editorial_h($returnNotePreview['text']) ?></span>
+                    <?php if ($returnNotePreview['truncated']): ?>
+                        <button
+                            type="button"
+                            class="editorial-return-feedback-preview__open"
+                            data-return-feedback-source="editorialReturnFeedbackSource"
+                        >Xem đầy đủ phản hồi</button>
+                        <template id="editorialReturnFeedbackSource"><?= editorial_h($returnNote) ?></template>
+                    <?php endif; ?>
+                </p>
+            </div>
+        </section>
+    <?php endif; ?>
+
     <form id="editorialEditorForm" method="post" action="<?= editorial_h(editorial_url('article.php?id=' . urlencode($articleId))) ?>">
         <?= editorial_csrf_input() ?>
         <input type="hidden" name="_intent" id="editorialFormIntent" value="save_draft">
@@ -2479,4 +2507,5 @@ editorial_layout_header([
 
 </section>
 
+<?php editorial_render_return_feedback_dialog(); ?>
 <?php editorial_layout_footer(); ?>

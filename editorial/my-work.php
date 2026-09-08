@@ -84,6 +84,7 @@ editorial_layout_header([
         </div>
     </section>
 <?php else: ?>
+    <?php $returnFeedbackSourceNumber = 0; ?>
     <?php foreach ($statusGroups as $statusKey => $group): ?>
         <?php if (empty($group['items'])) continue; ?>
         <section class="admin-panel">
@@ -144,8 +145,26 @@ editorial_layout_header([
                                     </span>
                                     <?php if ($statusKey === 'returned'): ?>
                                         <?php $returnNote = editorial_get_latest_return_note($article['id']); ?>
-                                        <?php if ($returnNote !== null): ?>
-                                            <br><small class="editorial-return-note"><i class="fa-solid fa-comment-dots"></i> <?= nl2br(editorial_h($returnNote)) ?></small>
+                                        <?php if ($returnNote !== null && trim($returnNote) !== ''): ?>
+                                            <?php
+                                            $returnPreview = editorial_return_note_preview($returnNote);
+                                            $returnFeedbackSourceNumber++;
+                                            $returnFeedbackSourceId = 'editorialReturnFeedbackSource' . $returnFeedbackSourceNumber;
+                                            ?>
+                                            <div class="editorial-return-feedback-preview editorial-return-feedback-preview--table">
+                                                <span class="editorial-return-feedback-preview__text">
+                                                    <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+                                                    <?= editorial_h($returnPreview['text']) ?>
+                                                </span>
+                                                <?php if ($returnPreview['truncated']): ?>
+                                                    <button
+                                                        type="button"
+                                                        class="editorial-return-feedback-preview__open"
+                                                        data-return-feedback-source="<?= editorial_h($returnFeedbackSourceId) ?>"
+                                                    >Xem đầy đủ</button>
+                                                    <template id="<?= editorial_h($returnFeedbackSourceId) ?>"><?= editorial_h($returnNote) ?></template>
+                                                <?php endif; ?>
+                                            </div>
                                         <?php endif; ?>
                                     <?php endif; ?>
                                     <?php if ($statusKey === 'approved' && $approvedCheckpoint): ?>
@@ -180,4 +199,5 @@ editorial_layout_header([
     <?php endforeach; ?>
 <?php endif; ?>
 
+<?php editorial_render_return_feedback_dialog(); ?>
 <?php editorial_layout_footer(); ?>

@@ -1290,6 +1290,37 @@ function editorial_get_latest_return_note(string $articleId): ?string
     if (is_array($payload) && isset($payload['note'])) {
         return (string)$payload['note'];
     }
-    
+
     return null;
+}
+
+/**
+ * Build a compact, UTF-8-safe return-feedback preview for read-only UI.
+ *
+ * Full feedback remains in the activity payload and must retain its original
+ * line breaks when shown in the feedback dialog.
+ *
+ * @return array{text:string,truncated:bool}
+ */
+function editorial_return_note_preview(string $note, int $limit = 220): array
+{
+    $normalized = trim($note);
+    $collapsed = preg_replace('/\s+/u', ' ', $normalized);
+    if ($collapsed !== null) {
+        $normalized = trim($collapsed);
+    }
+
+    $limit = max(1, $limit);
+    if (mb_strlen($normalized) <= $limit) {
+        return ['text' => $normalized, 'truncated' => false];
+    }
+
+    if ($limit === 1) {
+        return ['text' => '…', 'truncated' => true];
+    }
+
+    return [
+        'text' => rtrim(mb_substr($normalized, 0, $limit - 1)) . '…',
+        'truncated' => true,
+    ];
 }

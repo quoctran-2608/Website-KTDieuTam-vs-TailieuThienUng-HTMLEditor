@@ -212,3 +212,43 @@ function editorial_layout_footer(): void
     </html>
     <?php
 }
+
+/**
+ * Render the page-level, read-only dialog used to display full return feedback.
+ *
+ * Trigger buttons identify an escaped <template> source by
+ * data-return-feedback-source. editorial.js copies its text with textContent,
+ * so feedback is never treated as HTML.
+ */
+function editorial_render_return_feedback_dialog(): void
+{
+    ?>
+    <dialog
+        id="editorialReturnFeedbackDialog"
+        class="editorial-return-feedback-dialog"
+        aria-labelledby="editorialReturnFeedbackDialogTitle"
+    >
+        <div class="editorial-return-feedback-dialog__head">
+            <strong id="editorialReturnFeedbackDialogTitle">Lý do Admin trả lại</strong>
+            <button
+                type="button"
+                class="editorial-dialog-close"
+                data-return-feedback-close
+                aria-label="Đóng"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div
+            id="editorialReturnFeedbackDialogBody"
+            class="editorial-return-feedback-dialog__body"
+            tabindex="-1"
+        ></div>
+        <div class="editorial-return-feedback-dialog__actions">
+            <button type="button" class="editorial-return-feedback-dialog__close-button" data-return-feedback-close>
+                Đóng
+            </button>
+        </div>
+    </dialog>
+    <?php
+}
