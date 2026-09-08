@@ -119,6 +119,12 @@ the revision-scoped `article.review.submitted` activity event, not in the
 immutable Stage2 snapshot. Admin review must resolve that note by the exact
 `review_revision_id`. Do not weaken or guess this evidence chain.
 
+Admin return feedback is plain trimmed text stored in
+`article.review.returned` activity payload. It must remain non-empty and is
+limited server-side to 10.000 characters. Display it as escaped text with
+preserved line breaks; never render return feedback as HTML or change the
+Review transition/evidence chain for a UI improvement.
+
 ### INV-14 — Handoff content authority
 
 Google Drive + Sheet Handoff uses only the verified

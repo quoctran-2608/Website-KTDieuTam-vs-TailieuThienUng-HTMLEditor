@@ -94,6 +94,26 @@ function editorial_transaction(callable $callback): mixed
     }
 }
 
+function editorial_log_activity(
+    string $eventType,
+    ?string $articleId = null,
+    ?string $actorUserId = null,
+    ?string $payloadJson = null
+): void {
+    editorial_db()->prepare('
+        INSERT INTO editorial_activity
+            (event_type, article_id, actor_user_id, payload_json, created_at)
+        VALUES
+            (:event_type, :article_id, :actor_user_id, :payload_json, :created_at)
+    ')->execute([
+        'event_type' => $eventType,
+        'article_id' => $articleId,
+        'actor_user_id' => $actorUserId,
+        'payload_json' => $payloadJson,
+        'created_at' => date('c'),
+    ]);
+}
+
 function editorial_find_article(string $articleId): ?array
 {
     return $articleId === TEST_ARTICLE_ID ? ['id' => TEST_ARTICLE_ID] : null;
@@ -120,7 +140,8 @@ function editorial_get_article_state(string $articleId): ?array
 
 function editorial_can_transition(string $from, string $to): bool
 {
-    return in_array($from, ['editing', 'returned'], true) && $to === 'ready_review';
+    return (in_array($from, ['editing', 'returned'], true) && $to === 'ready_review')
+        || ($from === 'ready_review' && $to === 'returned');
 }
 
 function editorial_get_active_assignment(string $articleId): ?array
@@ -243,6 +264,41 @@ if (($payload['revision_id'] ?? '') !== 'stage2-review-note'
     || ($payload['assignment_id'] ?? '') !== TEST_ASSIGNMENT_ID
     || ($payload['note'] ?? '') !== "Đã rà soát số liệu.\nNhờ Admin kiểm tra mục 3.") {
     $failures[] = 'review activity did not preserve revision evidence and normalized note';
+}
+
+$longReturnNote = "Đoạn 1 cần sửa...\n- mục A\n- mục B\n\n"
+    . str_repeat('Nội dung phản hồi dài. ', 230);
+$returnResult = editorial_return_review(
+    TEST_ARTICLE_ID,
+    'admin-review-note',
+    $longReturnNote
+);
+if (empty($returnResult['ok'])) {
+    $failures[] = '5000-character return note was rejected: '
+        . json_encode($returnResult, JSON_UNESCAPED_UNICODE);
+}
+$returnedState = editorial_get_article_state(TEST_ARTICLE_ID);
+if (($returnedState['status'] ?? '') !== 'returned') {
+    $failures[] = 'return review did not move state to returned';
+}
+$returnedActivity = $testDb->query("
+    SELECT * FROM editorial_activity
+    WHERE event_type = 'article.review.returned'
+    ORDER BY id DESC LIMIT 1
+")->fetch();
+$returnedPayload = json_decode((string) ($returnedActivity['payload_json'] ?? ''), true);
+if (($returnedPayload['note'] ?? '') !== trim($longReturnNote)
+    || !str_contains((string) ($returnedPayload['note'] ?? ''), "\n- mục A\n- mục B\n\n")) {
+    $failures[] = 'long multiline return note was not preserved in activity payload';
+}
+$tooLongReturn = editorial_return_review(
+    TEST_ARTICLE_ID,
+    'admin-review-note',
+    str_repeat('a', 10001)
+);
+if (!empty($tooLongReturn['ok'])
+    || ($tooLongReturn['message'] ?? '') !== 'Lý do trả lại không được vượt quá 10000 ký tự.') {
+    $failures[] = '10000-character return note limit was not enforced';
 }
 
 if ($failures !== []) {

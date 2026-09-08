@@ -159,10 +159,56 @@ if ($articleId !== '') {
         $latestReturnNote = $note ?? '';
     }
 
+    $returnEditorScript = <<<'JS'
+(() => {
+  const textarea = document.getElementById('returnReviewNote');
+  const wrapper = document.getElementById('returnReviewEditor');
+  const expand = document.getElementById('returnReviewExpand');
+  const collapse = document.getElementById('returnReviewCollapse');
+  const counter = document.getElementById('returnReviewCounter');
+  if (!textarea || !wrapper || !counter) return;
+
+  const limit = Number(textarea.maxLength) || 10000;
+  const format = new Intl.NumberFormat('vi-VN');
+  let expanded = false;
+
+  const updateCounter = () => {
+    counter.textContent = format.format(textarea.value.length) + ' / ' + format.format(limit) + ' ký tự';
+    counter.classList.toggle('is-near-limit', textarea.value.length >= limit * 0.9);
+  };
+  const collapseEditor = () => {
+    if (!expanded) return;
+    expanded = false;
+    wrapper.classList.remove('is-expanded');
+    document.body.classList.remove('editorial-return-editor-open');
+    textarea.focus();
+  };
+  const expandEditor = () => {
+    if (expanded) return;
+    expanded = true;
+    wrapper.classList.add('is-expanded');
+    document.body.classList.add('editorial-return-editor-open');
+    textarea.focus();
+  };
+
+  textarea.addEventListener('input', updateCounter);
+  if (expand) expand.addEventListener('click', expandEditor);
+  if (collapse) collapse.addEventListener('click', collapseEditor);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && expanded) {
+      event.preventDefault();
+      collapseEditor();
+    }
+  });
+  updateCounter();
+})();
+JS;
+
     editorial_layout_header([
         'title' => 'Duyệt bài',
         'active' => 'review',
         'description' => 'Chi tiết duyệt: ' . $article['title'],
+        'inner_script' => $returnEditorScript,
     ]);
     ?>
     <section class="admin-panel editorial-review-dossier">
@@ -198,7 +244,8 @@ if ($articleId !== '') {
 
         <?php if ($status === 'returned' && $latestReturnNote !== ''): ?>
             <div class="flash flash-warning">
-                <strong>Lý do trả về gần nhất:</strong> <?= editorial_h($latestReturnNote) ?>
+                <strong>Lý do trả về gần nhất:</strong><br>
+                <?= nl2br(editorial_h($latestReturnNote)) ?>
             </div>
         <?php endif; ?>
 
@@ -281,12 +328,25 @@ if ($articleId !== '') {
                     </form>
                     <details class="editorial-review-return-action">
                         <summary><i class="fa-solid fa-rotate-left"></i> Trả lại để chỉnh sửa</summary>
-                        <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>">
+                        <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>" class="editorial-review-return-form">
                             <?= editorial_csrf_input() ?>
                             <input type="hidden" name="_intent" value="return_review">
                             <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
-                            <label for="returnReviewNote">Lý do trả lại</label>
-                            <textarea id="returnReviewNote" name="return_note" required minlength="1" maxlength="2000" rows="4" placeholder="Nêu rõ phần cần chỉnh..."></textarea>
+                            <div class="editorial-return-review-editor" id="returnReviewEditor">
+                                <div class="editorial-return-review-editor__head">
+                                    <label for="returnReviewNote">Lý do trả lại</label>
+                                    <button type="button" class="editorial-return-review-expand" id="returnReviewExpand">
+                                        <i class="fa-solid fa-expand"></i> Phóng to
+                                    </button>
+                                    <button type="button" class="editorial-return-review-collapse" id="returnReviewCollapse">
+                                        <i class="fa-solid fa-compress"></i> Thu nhỏ
+                                    </button>
+                                </div>
+                                <textarea id="returnReviewNote" name="return_note" required minlength="1" maxlength="10000" rows="10" placeholder="Nêu rõ các phần cần chỉnh, checklist, ảnh hoặc caption cần sửa..."></textarea>
+                                <div class="editorial-return-review-editor__foot">
+                                    <span class="editorial-return-review-counter" id="returnReviewCounter" aria-live="polite"></span>
+                                </div>
+                            </div>
                             <button type="submit" class="editorial-return-btn">Gửi yêu cầu chỉnh lại</button>
                         </form>
                     </details>

@@ -145,7 +145,7 @@ editorial_layout_header([
                                     <?php if ($statusKey === 'returned'): ?>
                                         <?php $returnNote = editorial_get_latest_return_note($article['id']); ?>
                                         <?php if ($returnNote !== null): ?>
-                                            <br><small class="editorial-return-note"><i class="fa-solid fa-comment-dots"></i> <?= editorial_h($returnNote) ?></small>
+                                            <br><small class="editorial-return-note"><i class="fa-solid fa-comment-dots"></i> <?= nl2br(editorial_h($returnNote)) ?></small>
                                         <?php endif; ?>
                                     <?php endif; ?>
                                     <?php if ($statusKey === 'approved' && $approvedCheckpoint): ?>

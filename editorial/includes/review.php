@@ -586,8 +586,8 @@ function editorial_return_review(string $articleId, string $adminUserId, string 
     if ($note === '') {
         return ['ok' => false, 'message' => 'Vui lòng nhập lý do trả lại.'];
     }
-    if (mb_strlen($note) > 2000) {
-        return ['ok' => false, 'message' => 'Lý do trả lại không được vượt quá 2000 ký tự.'];
+    if (mb_strlen($note) > 10000) {
+        return ['ok' => false, 'message' => 'Lý do trả lại không được vượt quá 10000 ký tự.'];
     }
 
     return editorial_transaction(function() use ($articleId, $adminUserId, $note) {

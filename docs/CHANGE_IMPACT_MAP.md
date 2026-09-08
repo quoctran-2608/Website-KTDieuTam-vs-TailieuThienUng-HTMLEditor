@@ -77,7 +77,7 @@ route/UI/CSS.
 | Stage1 / Stage2 | HIGH | `editorial/includes/revision.php` | `article.php`, `compare.php`, `review.php` | Newest verified Stage1; Stage2 newer than active Stage1; Stage1 recreation deactivates old Stage2 chain. | `AGENTS.md`, `EDITORIAL_V2.md` |
 | Compare UI / snapshot preview | MEDIUM | `editorial/compare.php` | `revision.php`, `workspace.php` | Read-only GET; snapshot authority; live HTML only presentation context. | `AGENTS.md`, `EDITORIAL_V2.md` |
 | Send Review | HIGH | `editorial/includes/review.php` | `revision.php`, `workspace.php`, `article.php`, `editorial_activity` | Verified Baseline + Stage1 + Stage2; draft equals active Stage2; current owner/lock; optional note stored in revision-scoped submission event. | `AGENTS.md`, `EDITORIAL_V2.md` |
-| Return / Approve review | HIGH | `editorial/includes/review.php` | `editorial/review.php`, `compare.php`, `assignment.php`, `publish.php` | Admin-only; `review_revision_id` is dossier authority; resolve matching submission note; keep both baseline comparisons visible. | `EDITORIAL_V2.md`, this map |
+| Return / Approve review | HIGH | `editorial/includes/review.php` | `editorial/review.php`, `my-work.php`, `compare.php`, `assignment.php`, `publish.php` | Admin-only; `review_revision_id` is dossier authority; return reason is trimmed plain text, non-empty, max 10.000 server-side, escaped with preserved line breaks; keep both baseline comparisons visible. | `EDITORIAL_V2.md`, this map |
 | Same-owner resume after approval | HIGH | `editorial/includes/assignment.php` | `resume-editing.php`, `review.php`, `workspace.php` | Same current owner + active assignment + `approved → editing`. | `EDITORIAL_V2.md` |
 | Editor Direct Publish | HIGH | `editorial/includes/publish.php` | `revision.php`, `workspace.php`, `article.php`, `public_rebuild.php` | Saved server-side immutable candidate; draft freshness; owner/lock; non-terminal workflow. | `AGENTS.md`, `PUBLISH_AND_HANDOFF.md`, `EDITORIAL_V2.md` |
 | Admin-approved Publish | HIGH | `editorial/includes/publish.php` | `review.php`, `revision.php`, `editorial/publish.php`, `public_rebuild.php` | Approved revision; live hash; backup; atomic replace; compensation; terminal state. | `AGENTS.md`, `PUBLISH_AND_HANDOFF.md`, `OPERATIONS.md` |
@@ -239,6 +239,11 @@ Preserve verified Baseline/Stage1/Stage2, draft equals active Stage2,
 Submission note belongs to the `article.review.submitted` event for that exact
 revision, not to Stage2 content. Do not casually reassign `ready_review`, guess
 the latest note by article alone, or hide the two baseline comparison actions.
+
+Return feedback belongs to `article.review.returned` activity payload. It is
+plain trimmed text with a 10.000-character server-side limit. A larger textarea
+or fullscreen editor is presentation only: do not create a second value source,
+change the return transition, or render stored feedback as raw HTML.
 
 ### Publish
 

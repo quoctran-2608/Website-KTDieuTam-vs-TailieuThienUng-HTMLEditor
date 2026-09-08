@@ -188,7 +188,11 @@ Review service ở `editorial/includes/review.php`:
 6. Admin review cockpit ưu tiên hiển thị tiêu đề, trạng thái, người gửi, thời
    điểm, revision, tính toàn vẹn, ghi chú và hai đối chiếu
    **Bài gốc ↔ Chặng 1** / **Bài gốc ↔ Chặng 2**.
-7. Admin approve hoặc return với evidence review. Return vẫn bắt buộc lý do.
+7. Admin approve hoặc return với evidence review. Return vẫn bắt buộc lý do:
+   plain text đã `trim`, không rỗng, tối đa 10.000 ký tự server-side và lưu
+   trong `article.review.returned` activity payload. UI dùng một textarea
+   authority duy nhất, có counter/expanded mode; multiline phải render bằng
+   escaped text với line break được giữ ở Admin và Editor.
 
 Nếu một bài bị trả rồi gửi lại, UI phải lấy event gửi duyệt mới nhất của chính
 `review_revision_id` đang xem; không dùng ghi chú của lần gửi cũ hoặc revision
