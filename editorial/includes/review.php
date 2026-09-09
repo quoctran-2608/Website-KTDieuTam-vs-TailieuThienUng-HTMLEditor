@@ -353,32 +353,34 @@ function editorial_get_recent_review_decisions(int $limit = 20): array
 {
     $limit = max(1, min($limit, 100));
 
-    // Fetch more rows than needed to account for deduplication.
-    // With a generous multiplier we avoid most edge cases while keeping the
-    // query bounded.
-    $fetchLimit = $limit * 4;
-
     $stmt = editorial_db()->prepare("
-        SELECT id, event_type, article_id, actor_user_id, payload_json, created_at
-        FROM editorial_activity
-        WHERE event_type IN ('article.review.approved', 'article.review.returned')
-          AND COALESCE(article_id, '') <> ''
-        ORDER BY id DESC
-        LIMIT :fetch_limit
+        SELECT a.id,
+               a.event_type,
+               a.article_id,
+               a.actor_user_id,
+               a.payload_json,
+               a.created_at
+        FROM editorial_activity a
+        INNER JOIN (
+            SELECT article_id, MAX(id) AS latest_id
+            FROM editorial_activity
+            WHERE event_type IN (
+                'article.review.approved',
+                'article.review.returned'
+            )
+              AND COALESCE(article_id, '') <> ''
+            GROUP BY article_id
+        ) latest
+            ON latest.latest_id = a.id
+        ORDER BY a.id DESC
+        LIMIT :limit
     ");
-    $stmt->bindValue(':fetch_limit', $fetchLimit, PDO::PARAM_INT);
+    $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $seen = [];
     $results = [];
     foreach ($rows as $row) {
-        $articleId = (string) ($row['article_id'] ?? '');
-        if ($articleId === '' || isset($seen[$articleId])) {
-            continue;
-        }
-        $seen[$articleId] = true;
-
         $payload = [];
         $payloadJson = (string) ($row['payload_json'] ?? '');
         if ($payloadJson !== '') {
@@ -390,7 +392,7 @@ function editorial_get_recent_review_decisions(int $limit = 20): array
 
         $results[] = [
             'activity_id'   => (int) ($row['id'] ?? 0),
-            'article_id'    => $articleId,
+            'article_id'    => (string) ($row['article_id'] ?? ''),
             'actor_user_id' => (string) ($row['actor_user_id'] ?? ''),
             'event_type'    => (string) ($row['event_type'] ?? ''),
             'created_at'    => (string) ($row['created_at'] ?? ''),
@@ -399,10 +401,6 @@ function editorial_get_recent_review_decisions(int $limit = 20): array
                 ? 'approved'
                 : 'returned',
         ];
-
-        if (count($results) >= $limit) {
-            break;
-        }
     }
 
     return $results;

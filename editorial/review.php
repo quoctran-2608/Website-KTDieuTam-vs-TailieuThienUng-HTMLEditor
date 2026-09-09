@@ -763,9 +763,13 @@ JS;
                         ?>
                             <tr>
                                 <td>
+                                <?php if ($dDecision === 'approved'): ?>
                                     <a class="editorial-article-title-link" href="<?= editorial_h(editorial_url('review.php?id=' . urlencode((string) $a['id']))) ?>">
                                         <strong><?= editorial_h($a['title']) ?></strong>
                                     </a>
+                                <?php else: ?>
+                                    <strong class="editorial-article-title-link"><?= editorial_h($a['title']) ?></strong>
+                                <?php endif; ?>
                                     <br><small style="color:#868e96;"><?= editorial_h($a['id']) ?></small>
                                     <?php if ($dReturnNote !== ''):
                                         $dReturnPreview = editorial_return_note_preview($dReturnNote);
