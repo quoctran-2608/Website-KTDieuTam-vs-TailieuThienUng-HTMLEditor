@@ -351,6 +351,16 @@
     color: #00695c;
 }
 
+/* Review decision outcome badges */
+.editorial-review-decision-approved {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+.editorial-review-decision-returned {
+    background: #fff3e0;
+    color: #bf5f00;
+}
+
 /* Section badge */
 .editorial-badge-section {
     background: #f3e5f5;

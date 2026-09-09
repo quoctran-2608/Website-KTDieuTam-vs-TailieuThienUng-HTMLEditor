@@ -528,13 +528,16 @@ JS;
     $db = editorial_db();
     $readyStates = $db->query("SELECT * FROM editorial_article_state WHERE status = 'ready_review' ORDER BY review_requested_at ASC")
         ->fetchAll(PDO::FETCH_ASSOC);
-    $recentApprovedStates = editorial_get_recent_approved_reviews(20);
+    $recentDecisions = editorial_get_recent_review_decisions(20);
 
     $userIdsToPreload = [];
-    foreach (array_merge($readyStates, $recentApprovedStates) as $s) {
+    foreach ($readyStates as $s) {
         if (!empty($s['assigned_user_id'])) $userIdsToPreload[] = (string) $s['assigned_user_id'];
         if (!empty($s['review_requested_by'])) $userIdsToPreload[] = (string) $s['review_requested_by'];
         if (!empty($s['approved_by'])) $userIdsToPreload[] = (string) $s['approved_by'];
+    }
+    foreach ($recentDecisions as $dec) {
+        if (!empty($dec['actor_user_id'])) $userIdsToPreload[] = (string) $dec['actor_user_id'];
     }
     $queueSubmissionContexts = editorial_get_review_submission_contexts(array_values(array_filter(
         array_map(static fn(array $state): string => (string) ($state['review_revision_id'] ?? ''), $readyStates)
@@ -544,6 +547,20 @@ JS;
             $userIdsToPreload[] = (string) $submissionContext['actor_user_id'];
         }
     }
+
+    // Preload article states for recent decisions to show current status and
+    // owner, and collect those user IDs too.
+    $decisionStates = [];
+    foreach ($recentDecisions as $dec) {
+        $dState = editorial_get_article_state((string) $dec['article_id']);
+        if ($dState !== null) {
+            $decisionStates[(string) $dec['article_id']] = $dState;
+            if (!empty($dState['assigned_user_id'])) {
+                $userIdsToPreload[] = (string) $dState['assigned_user_id'];
+            }
+        }
+    }
+
     $userNames = editorial_preload_user_names(array_values(array_unique($userIdsToPreload)));
     $filterStates = static function (array $states) use ($filters, $q): array {
         $items = [];
@@ -564,14 +581,34 @@ JS;
         }
         return $items;
     };
+    $filterDecisions = static function (array $decisions) use ($filters, $q): array {
+        $items = [];
+        foreach ($decisions as $dec) {
+            $article = editorial_find_article((string) ($dec['article_id'] ?? ''));
+            if ($article === null || !editorial_article_matches_taxonomy($article, $filters)) {
+                continue;
+            }
+            if ($q !== '') {
+                $qLower = mb_strtolower($q, 'UTF-8');
+                $titleLower = mb_strtolower((string) $article['title'], 'UTF-8');
+                if (!str_contains($titleLower, $qLower)
+                    && !str_contains(mb_strtolower((string) $article['id'], 'UTF-8'), $qLower)) {
+                    continue;
+                }
+            }
+            $items[] = ['decision' => $dec, 'article' => $article];
+        }
+        return $items;
+    };
     $readyItems = $filterStates($readyStates);
-    $recentApprovedItems = $filterStates($recentApprovedStates);
+    $recentDecisionItems = $filterDecisions($recentDecisions);
+    $returnFeedbackSourceNumber = 0;
     $sidebarTreeHtml = editorial_render_taxonomy_tree($filters, 'review.php', ['show_counts' => false]);
 
     editorial_layout_header([
         'title' => 'Danh sách chờ duyệt',
         'active' => 'review',
-        'description' => 'Các bài viết đang chờ phê duyệt hoặc đã duyệt gần đây.',
+        'description' => 'Các bài viết đang chờ phê duyệt hoặc đã xử lý gần đây.',
         'sidebar_extra_html' => $sidebarTreeHtml,
         'sidebar_note' => 'Lọc hàng đợi theo phân loại',
     ]);
@@ -690,31 +727,39 @@ JS;
 
     <section class="admin-panel editorial-recent-approved-panel">
         <div class="panel-head">
-            <h2>Đã duyệt gần đây</h2>
-            <p>Các hồ sơ đã duyệt gần nhất; không đồng nghĩa với phiên bản website hiện tại.</p>
+            <h2>Đã xử lý gần đây</h2>
+            <p>Các hồ sơ Admin đã xử lý gần nhất, gồm phê duyệt và trả lại để chỉnh sửa.</p>
         </div>
-        <?php if (empty($recentApprovedItems)): ?>
-            <p class="editorial-recent-approved-empty">Chưa có bài nào được duyệt gần đây.</p>
+        <?php if (empty($recentDecisionItems)): ?>
+            <p class="editorial-recent-approved-empty">Chưa có hồ sơ nào được xử lý gần đây.</p>
         <?php else: ?>
             <div class="table-wrap">
                 <table class="admin-table">
                     <thead>
                         <tr>
                             <th>Bài viết</th>
-                            <th>Người biên tập</th>
-                            <th>Duyệt bởi</th>
-                            <th>Duyệt lúc</th>
+                            <th>Người phụ trách</th>
+                            <th>Người xử lý</th>
+                            <th>Kết quả</th>
+                            <th>Xử lý lúc</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($recentApprovedItems as $item):
-                            $s = $item['state'];
+                        <?php foreach ($recentDecisionItems as $item):
+                            $dec = $item['decision'];
                             $a = $item['article'];
-                            $ownerId = (string) ($s['assigned_user_id'] ?? '');
-                            $ownerName = $ownerId !== '' ? ($userNames[$ownerId] ?? $ownerId) : 'Không rõ';
-                            $approvedById = (string) ($s['approved_by'] ?? '');
-                            $approvedByName = $approvedById !== '' ? ($userNames[$approvedById] ?? $approvedById) : 'Không rõ';
+                            $dArticleId = (string) $dec['article_id'];
+                            $dState = $decisionStates[$dArticleId] ?? null;
+                            $dOwnerId = $dState !== null ? (string) ($dState['assigned_user_id'] ?? '') : '';
+                            $dOwnerName = $dOwnerId !== '' ? ($userNames[$dOwnerId] ?? $dOwnerId) : 'Không rõ';
+                            $dActorId = (string) ($dec['actor_user_id'] ?? '');
+                            $dActorName = $dActorId !== '' ? ($userNames[$dActorId] ?? $dActorId) : 'Không rõ';
+                            $dDecision = (string) ($dec['decision'] ?? '');
+                            $dCurrentStatus = $dState !== null ? (string) ($dState['status'] ?? '') : '';
+                            $dReturnNote = $dDecision === 'returned'
+                                ? trim((string) ($dec['payload']['note'] ?? ''))
+                                : '';
                         ?>
                             <tr>
                                 <td>
@@ -722,19 +767,60 @@ JS;
                                         <strong><?= editorial_h($a['title']) ?></strong>
                                     </a>
                                     <br><small style="color:#868e96;"><?= editorial_h($a['id']) ?></small>
-                                </td>
-                                <td><?= editorial_h($ownerName) ?></td>
-                                <td><?= editorial_h($approvedByName) ?></td>
-                                <td>
-                                    <?= !empty($s['approved_at']) ? editorial_h(editorial_format_datetime((string) $s['approved_at'])) : '—' ?>
-                                    <?php if ((string) ($s['status'] ?? '') !== 'approved'): ?>
-                                        <br><small style="color:#64748b;">Hiện: <?= editorial_h(editorial_status_label((string) $s['status'])) ?></small>
+                                    <?php if ($dReturnNote !== ''):
+                                        $dReturnPreview = editorial_return_note_preview($dReturnNote);
+                                        $returnFeedbackSourceNumber++;
+                                        $dReturnFeedbackSourceId = 'reviewDecisionFeedbackSource' . $returnFeedbackSourceNumber;
+                                    ?>
+                                        <div class="editorial-return-feedback-preview editorial-return-feedback-preview--table">
+                                            <span class="editorial-return-feedback-preview__text">
+                                                <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+                                                <?= editorial_h($dReturnPreview['text']) ?>
+                                            </span>
+                                            <?php if ($dReturnPreview['truncated']): ?>
+                                                <button
+                                                    type="button"
+                                                    class="editorial-return-feedback-preview__open"
+                                                    data-return-feedback-source="<?= editorial_h($dReturnFeedbackSourceId) ?>"
+                                                >Xem lý do</button>
+                                                <template id="<?= editorial_h($dReturnFeedbackSourceId) ?>"><?= editorial_h($dReturnNote) ?></template>
+                                            <?php endif; ?>
+                                        </div>
                                     <?php endif; ?>
                                 </td>
+                                <td><?= editorial_h($dOwnerName) ?></td>
+                                <td><?= editorial_h($dActorName) ?></td>
+                                <td>
+                                    <?php if ($dDecision === 'approved'): ?>
+                                        <span class="editorial-badge editorial-review-decision-approved">Đã duyệt</span>
+                                    <?php else: ?>
+                                        <span class="editorial-badge editorial-review-decision-returned">Trả lại chỉnh sửa</span>
+                                    <?php endif; ?>
+                                    <?php if ($dCurrentStatus !== '' && $dCurrentStatus !== $dDecision): ?>
+                                        <br><small style="color:#64748b;">Hiện: <?= editorial_h(editorial_status_label($dCurrentStatus)) ?></small>
+                                    <?php endif; ?>
+                                </td>
+                                <td><?= !empty($dec['created_at']) ? editorial_h(editorial_format_datetime((string) $dec['created_at'])) : '—' ?></td>
                                 <td class="editorial-action-cell">
-                                    <a href="<?= editorial_h(editorial_url('review.php?id=' . urlencode((string) $a['id']))) ?>" class="admin-btn admin-btn-sm">
-                                        <i class="fa-solid fa-clipboard-check"></i> Xem hồ sơ
-                                    </a>
+                                    <?php if ($dDecision === 'approved'): ?>
+                                        <a href="<?= editorial_h(editorial_url('review.php?id=' . urlencode((string) $a['id']))) ?>" class="admin-btn admin-btn-sm">
+                                            <i class="fa-solid fa-clipboard-check"></i> Xem hồ sơ
+                                        </a>
+                                    <?php elseif ($dReturnNote !== '' && !$dReturnPreview['truncated']): ?>
+                                        <a href="<?= editorial_h(editorial_public_article_url($a)) ?>" target="_blank" rel="noopener" class="admin-btn admin-btn-sm">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem bài
+                                        </a>
+                                    <?php elseif ($dReturnNote !== '' && $dReturnPreview['truncated']): ?>
+                                        <button
+                                            type="button"
+                                            class="admin-btn admin-btn-sm"
+                                            data-return-feedback-source="<?= editorial_h($dReturnFeedbackSourceId) ?>"
+                                        ><i class="fa-solid fa-comment-dots"></i> Xem lý do</button>
+                                    <?php else: ?>
+                                        <a href="<?= editorial_h(editorial_public_article_url($a)) ?>" target="_blank" rel="noopener" class="admin-btn admin-btn-sm">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem bài
+                                        </a>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -743,6 +829,7 @@ JS;
             </div>
         <?php endif; ?>
     </section>
+    <?php editorial_render_return_feedback_dialog(); ?>
     <?php
     editorial_layout_footer();
 }

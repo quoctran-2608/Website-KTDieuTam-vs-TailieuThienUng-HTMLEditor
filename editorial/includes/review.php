@@ -339,6 +339,75 @@ function editorial_get_recent_approved_reviews(int $limit = 20): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+/**
+ * Return the latest review decision (approved or returned) per article,
+ * newest first, sourced from editorial_activity.
+ *
+ * Each returned element contains:
+ *   article_id, actor_user_id, event_type, created_at,
+ *   payload (decoded array), decision ('approved'|'returned').
+ *
+ * @return array<int,array<string,mixed>>
+ */
+function editorial_get_recent_review_decisions(int $limit = 20): array
+{
+    $limit = max(1, min($limit, 100));
+
+    // Fetch more rows than needed to account for deduplication.
+    // With a generous multiplier we avoid most edge cases while keeping the
+    // query bounded.
+    $fetchLimit = $limit * 4;
+
+    $stmt = editorial_db()->prepare("
+        SELECT id, event_type, article_id, actor_user_id, payload_json, created_at
+        FROM editorial_activity
+        WHERE event_type IN ('article.review.approved', 'article.review.returned')
+          AND COALESCE(article_id, '') <> ''
+        ORDER BY id DESC
+        LIMIT :fetch_limit
+    ");
+    $stmt->bindValue(':fetch_limit', $fetchLimit, PDO::PARAM_INT);
+    $stmt->execute();
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $seen = [];
+    $results = [];
+    foreach ($rows as $row) {
+        $articleId = (string) ($row['article_id'] ?? '');
+        if ($articleId === '' || isset($seen[$articleId])) {
+            continue;
+        }
+        $seen[$articleId] = true;
+
+        $payload = [];
+        $payloadJson = (string) ($row['payload_json'] ?? '');
+        if ($payloadJson !== '') {
+            $decoded = json_decode($payloadJson, true);
+            if (is_array($decoded)) {
+                $payload = $decoded;
+            }
+        }
+
+        $results[] = [
+            'activity_id'   => (int) ($row['id'] ?? 0),
+            'article_id'    => $articleId,
+            'actor_user_id' => (string) ($row['actor_user_id'] ?? ''),
+            'event_type'    => (string) ($row['event_type'] ?? ''),
+            'created_at'    => (string) ($row['created_at'] ?? ''),
+            'payload'       => $payload,
+            'decision'      => (string) ($row['event_type'] ?? '') === 'article.review.approved'
+                ? 'approved'
+                : 'returned',
+        ];
+
+        if (count($results) >= $limit) {
+            break;
+        }
+    }
+
+    return $results;
+}
+
 function editorial_send_for_review(string $articleId, string $userId, string $lockToken, string $note = ''): array
 {
     $normalizedNote = editorial_normalize_review_submission_note($note);
