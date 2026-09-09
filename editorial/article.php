@@ -1333,7 +1333,6 @@ $innerScript = <<<JS
       image_description: true,
       image_title: true,
       image_caption: false,
-      extended_valid_elements: 'figure[class|data-editorial-image-meta],figcaption,span[class],img[src|alt|title|width|height|loading|decoding|data-mce-src|data-editorial-original-src]',
       content_css: [
         siteBaseUrl + 'assets/css/editorial-design-system.css',
       ],
