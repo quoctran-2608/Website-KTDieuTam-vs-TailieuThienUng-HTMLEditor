@@ -596,12 +596,20 @@ $innerScript = <<<JS
   const publicUrlCopyStatus = document.getElementById('publicUrlCopyStatus');
   if (publicUrlCopyButton) {
     publicUrlCopyButton.addEventListener('click', () => {
-      copyWithFeedback(
-        publicUrlCopyButton.dataset.publicUrl || '',
-        publicUrlCopyButton,
-        publicUrlCopyStatus,
-        'Đã sao chép liên kết'
-      );
+      const stableUrl = publicUrlCopyButton.dataset.publicUrl || '';
+      let absoluteUrl = '';
+      try {
+        absoluteUrl = new URL(stableUrl, window.location.origin).href;
+      } catch (error) {
+        if (publicUrlCopyStatus) {
+          publicUrlCopyStatus.textContent = 'Không thể xác định liên kết bài viết.';
+          window.setTimeout(() => {
+            publicUrlCopyStatus.textContent = '';
+          }, 2200);
+        }
+        return;
+      }
+      copyWithFeedback(absoluteUrl, publicUrlCopyButton, publicUrlCopyStatus, 'Đã sao chép liên kết');
     });
   }
 

@@ -25,7 +25,21 @@ if (editorial_is_post()) {
             editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
             break;
         case 'return_review':
-            $returnNote = trim((string) ($_POST['return_note'] ?? ''));
+            if (array_key_exists('return_note_b64', $_POST)) {
+                $encodedReturnNote = (string) $_POST['return_note_b64'];
+                $decodedReturnNote = $encodedReturnNote === ''
+                    ? false
+                    : base64_decode($encodedReturnNote, true);
+                if ($decodedReturnNote === false) {
+                    editorial_flash_set('danger', 'Nội dung phản hồi gửi lên không hợp lệ. Bài viết chưa bị trả lại.');
+                    break;
+                }
+                $returnNote = trim($decodedReturnNote);
+            } else {
+                // Legacy/internal callers can still use the previous raw field.
+                // The production form below uses only return_note_b64.
+                $returnNote = trim((string) ($_POST['return_note'] ?? ''));
+            }
             $result = editorial_return_review($articleId, $adminUserId, $returnNote);
             editorial_flash_set($result['ok'] ? 'success' : 'danger', $result['message']);
             break;
@@ -166,7 +180,11 @@ if ($articleId !== '') {
   const expand = document.getElementById('returnReviewExpand');
   const collapse = document.getElementById('returnReviewCollapse');
   const counter = document.getElementById('returnReviewCounter');
-  if (!textarea || !wrapper || !counter) return;
+  const form = document.getElementById('returnReviewForm');
+  const encodedNote = document.getElementById('returnReviewNoteB64');
+  const submitStatus = document.getElementById('returnReviewSubmitStatus');
+  const decisionCard = document.getElementById('returnReviewDecisionCard');
+  if (!textarea || !wrapper || !counter || !form || !encodedNote) return;
 
   const limit = Number(textarea.maxLength) || 10000;
   const format = new Intl.NumberFormat('vi-VN');
@@ -180,6 +198,7 @@ if ($articleId !== '') {
     if (!expanded) return;
     expanded = false;
     wrapper.classList.remove('is-expanded');
+    if (decisionCard) decisionCard.classList.remove('is-return-editor-expanded');
     document.body.classList.remove('editorial-return-editor-open');
     textarea.focus();
   };
@@ -187,13 +206,42 @@ if ($articleId !== '') {
     if (expanded) return;
     expanded = true;
     wrapper.classList.add('is-expanded');
+    if (decisionCard) decisionCard.classList.add('is-return-editor-expanded');
     document.body.classList.add('editorial-return-editor-open');
     textarea.focus();
+  };
+  const encodeUtf8Base64 = (value) => {
+    if (typeof TextEncoder !== 'function') {
+      throw new Error('Trình duyệt không hỗ trợ mã hóa UTF-8.');
+    }
+    const bytes = new TextEncoder().encode(value);
+    let binary = '';
+    const chunkSize = 0x8000;
+    for (let index = 0; index < bytes.length; index += chunkSize) {
+      binary += String.fromCharCode(...bytes.subarray(index, index + chunkSize));
+    }
+    return btoa(binary);
   };
 
   textarea.addEventListener('input', updateCounter);
   if (expand) expand.addEventListener('click', expandEditor);
   if (collapse) collapse.addEventListener('click', collapseEditor);
+  form.addEventListener('submit', (event) => {
+    try {
+      encodedNote.value = encodeUtf8Base64(textarea.value);
+      if (submitStatus) {
+        submitStatus.hidden = true;
+        submitStatus.textContent = '';
+      }
+    } catch (error) {
+      event.preventDefault();
+      encodedNote.value = '';
+      if (submitStatus) {
+        submitStatus.textContent = 'Không thể chuẩn bị nội dung phản hồi để gửi. Vui lòng thử lại.';
+        submitStatus.hidden = false;
+      }
+    }
+  });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && expanded) {
       event.preventDefault();
@@ -314,7 +362,7 @@ JS;
                 </div>
             </section>
 
-            <aside class="editorial-review-decision-card">
+            <aside class="editorial-review-decision-card" id="returnReviewDecisionCard">
                 <?php if ($status === 'ready_review'): ?>
                     <h3>Quyết định duyệt</h3>
                     <p>Đối chiếu hai chặng trước khi chọn hành động.</p>
@@ -328,10 +376,11 @@ JS;
                     </form>
                     <details class="editorial-review-return-action">
                         <summary><i class="fa-solid fa-rotate-left"></i> Trả lại để chỉnh sửa</summary>
-                        <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>" class="editorial-review-return-form">
+                        <form method="post" action="<?= editorial_h(editorial_url('review.php')) ?>" class="editorial-review-return-form" id="returnReviewForm">
                             <?= editorial_csrf_input() ?>
                             <input type="hidden" name="_intent" value="return_review">
                             <input type="hidden" name="article_id" value="<?= editorial_h($articleId) ?>">
+                            <input type="hidden" name="return_note_b64" id="returnReviewNoteB64" value="">
                             <div class="editorial-return-review-editor" id="returnReviewEditor">
                                 <div class="editorial-return-review-editor__head">
                                     <label for="returnReviewNote">Lý do trả lại</label>
@@ -342,11 +391,12 @@ JS;
                                         <i class="fa-solid fa-compress"></i> Thu nhỏ
                                     </button>
                                 </div>
-                                <textarea id="returnReviewNote" name="return_note" required minlength="1" maxlength="10000" rows="10" placeholder="Nêu rõ các phần cần chỉnh, checklist, ảnh hoặc caption cần sửa..."></textarea>
+                                <textarea id="returnReviewNote" required minlength="1" maxlength="10000" rows="10" placeholder="Nêu rõ các phần cần chỉnh, checklist, ảnh hoặc caption cần sửa..."></textarea>
                                 <div class="editorial-return-review-editor__foot">
                                     <span class="editorial-return-review-counter" id="returnReviewCounter" aria-live="polite"></span>
                                 </div>
                             </div>
+                            <p class="editorial-return-review-submit-status" id="returnReviewSubmitStatus" role="alert" hidden></p>
                             <button type="submit" class="editorial-return-btn">Gửi yêu cầu chỉnh lại</button>
                         </form>
                     </details>

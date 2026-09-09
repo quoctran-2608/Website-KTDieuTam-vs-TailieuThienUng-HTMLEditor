@@ -1755,6 +1755,9 @@ body.editor-fullscreen-active .editor-fs-status button {
     padding: 16px;
     background: #f9fbfd;
 }
+.editorial-review-decision-card.is-return-editor-expanded {
+    z-index: 10050;
+}
 .editorial-review-decision-card h3 {
     margin: 0;
     color: #263246;
@@ -1884,10 +1887,19 @@ body.editor-fullscreen-active .editor-fs-status button {
     color: #b45309;
     font-weight: 700;
 }
+.editorial-return-review-submit-status {
+    margin: 0;
+    color: #a52a2a;
+    font-size: .78rem;
+    line-height: 1.45;
+}
+.editorial-return-review-submit-status[hidden] {
+    display: none;
+}
 .editorial-return-review-editor.is-expanded {
     position: fixed;
     inset: 24px;
-    z-index: 10050;
+    z-index: 10060;
     grid-template-rows: auto minmax(0, 1fr) auto;
     gap: 12px;
     padding: 20px;
