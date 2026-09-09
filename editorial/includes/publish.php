@@ -564,9 +564,11 @@ function editorial_render_approved_html(string $liveHtml, array $article, array 
     // 6. Update .article-summary — legacy contract with replacement count validation
     $summaryEscaped = htmlspecialchars($normalized['excerpt'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
     $summaryCount = 0;
-    $html = preg_replace(
+    $html = preg_replace_callback(
         '/(<p\b[^>]*class=(["\'])(?:(?!\2).)*\barticle-summary\b(?:(?!\2).)*\2[^>]*>).*?(<\/p>)/is',
-        '$1' . $summaryEscaped . '$3',
+        static function (array $match) use ($summaryEscaped): string {
+            return $match[1] . $summaryEscaped . $match[3];
+        },
         $html, 1, $summaryCount
     );
     if ($summaryCount !== 1) {
