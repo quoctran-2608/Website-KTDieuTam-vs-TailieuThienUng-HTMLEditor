@@ -526,7 +526,7 @@ JS;
     $q = $filters['q'];
 
     $db = editorial_db();
-    $readyStates = $db->query("SELECT * FROM editorial_article_state WHERE status = 'ready_review' ORDER BY review_requested_at ASC")
+    $readyStates = $db->query("SELECT * FROM editorial_article_state WHERE status = 'ready_review' ORDER BY review_requested_at DESC, updated_at DESC, article_id ASC")
         ->fetchAll(PDO::FETCH_ASSOC);
     $recentDecisions = editorial_get_recent_review_decisions(20);
 
@@ -602,6 +602,15 @@ JS;
     };
     $readyItems = $filterStates($readyStates);
     $recentDecisionItems = $filterDecisions($recentDecisions);
+    $recentDecisionItems = array_values(array_filter(
+        $recentDecisionItems,
+        static function (array $item) use ($decisionStates): bool {
+            $decisionArticleId = (string) ($item['decision']['article_id'] ?? '');
+            $currentState = $decisionStates[$decisionArticleId] ?? null;
+            return !is_array($currentState)
+                || (string) ($currentState['status'] ?? '') !== 'ready_review';
+        }
+    ));
     $returnFeedbackSourceNumber = 0;
     $sidebarTreeHtml = editorial_render_taxonomy_tree($filters, 'review.php', ['show_counts' => false]);
 
