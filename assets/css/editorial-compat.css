@@ -1,0 +1,14 @@
+/* ==========================================================================
+   EDITORIAL DESIGN SYSTEM — compatibility guards
+   ========================================================================== */
+
+/*
+ * .ct-fact-list is primarily a definition-list contract (dl > dt + dd).
+ * Some legacy/generated articles use the same class on ul/ol. Keep those
+ * list semantics in one column instead of auto-placing li items into the
+ * two-column definition-list grid.
+ */
+:is(ul, ol).ct-fact-list {
+  display: block;
+  grid-template-columns: none;
+}
